@@ -24,6 +24,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was created.
   *   `deletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was deleted.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded.
+  *   `eventStream` (*type:* `GoogleApi.StorageTransfer.V1.Model.EventStream.t`, *default:* `nil`) - Specifies the event stream for the transfer job for event-driven transfers. When EventStream is specified, the Schedule fields are ignored.
   *   `lastModificationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the transfer job was last modified.
   *   `latestOperationName` (*type:* `String.t`, *default:* `nil`) - The name of the most recently started TransferOperation of this JobConfig. Present if a TransferOperation has been created for this JobConfig.
   *   `loggingConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.LoggingConfig.t`, *default:* `nil`) - Logging configuration.
@@ -41,6 +42,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
           :creationTime => DateTime.t() | nil,
           :deletionTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :eventStream => GoogleApi.StorageTransfer.V1.Model.EventStream.t() | nil,
           :lastModificationTime => DateTime.t() | nil,
           :latestOperationName => String.t() | nil,
           :loggingConfig => GoogleApi.StorageTransfer.V1.Model.LoggingConfig.t() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   field(:creationTime, as: DateTime)
   field(:deletionTime, as: DateTime)
   field(:description)
+  field(:eventStream, as: GoogleApi.StorageTransfer.V1.Model.EventStream)
   field(:lastModificationTime, as: DateTime)
   field(:latestOperationName)
   field(:loggingConfig, as: GoogleApi.StorageTransfer.V1.Model.LoggingConfig)

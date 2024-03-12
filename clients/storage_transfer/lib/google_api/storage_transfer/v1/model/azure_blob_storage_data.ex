@@ -23,6 +23,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData do
 
   *   `azureCredentials` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t`, *default:* `nil`) - Required. Input only. Credentials used to authenticate API requests to Azure. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials).
   *   `container` (*type:* `String.t`, *default:* `nil`) - Required. The container to transfer from the Azure Storage account.
+  *   `credentialsSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The Resource name of a secret in Secret Manager. The Azure SAS token must be stored in Secret Manager in JSON format: { "sas_token" : "SAS_TOKEN" } GoogleServiceAccount must be granted `roles/secretmanager.secretAccessor` for the resource. See [Configure access to a source: Microsoft Azure Blob Storage] (https://cloud.google.com/storage-transfer/docs/source-microsoft-azure#secret_manager) for more information. If `credentials_secret` is specified, do not specify azure_credentials. Format: `projects/{project_number}/secrets/{secret_name}`
   *   `path` (*type:* `String.t`, *default:* `nil`) - Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
   *   `storageAccount` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Azure Storage account.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData do
   @type t :: %__MODULE__{
           :azureCredentials => GoogleApi.StorageTransfer.V1.Model.AzureCredentials.t() | nil,
           :container => String.t() | nil,
+          :credentialsSecret => String.t() | nil,
           :path => String.t() | nil,
           :storageAccount => String.t() | nil
         }
 
   field(:azureCredentials, as: GoogleApi.StorageTransfer.V1.Model.AzureCredentials)
   field(:container)
+  field(:credentialsSecret)
   field(:path)
   field(:storageAccount)
 end

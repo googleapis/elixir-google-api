@@ -23,6 +23,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
 
   *   `awsAccessKey` (*type:* `GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t`, *default:* `nil`) - Input only. AWS access key used to sign the API requests to the AWS S3 bucket. Permissions on the bucket must be granted to the access ID of the AWS access key. For information on our data retention policy for user credentials, see [User credentials](/storage-transfer/docs/data-retention#user-credentials).
   *   `bucketName` (*type:* `String.t`, *default:* `nil`) - Required. S3 Bucket name (see [Creating a bucket](https://docs.aws.amazon.com/AmazonS3/latest/dev/create-bucket-get-location-example.html)).
+  *   `cloudfrontDomain` (*type:* `String.t`, *default:* `nil`) - Optional. The CloudFront distribution domain name pointing to this bucket, to use when fetching. See [Transfer from S3 via CloudFront](https://cloud.google.com/storage-transfer/docs/s3-cloudfront) for more information. Format: `https://{id}.cloudfront.net` or any valid custom domain. Must begin with `https://`.
+  *   `credentialsSecret` (*type:* `String.t`, *default:* `nil`) - Optional. The Resource name of a secret in Secret Manager. AWS credentials must be stored in Secret Manager in JSON format: { "access_key_id": "ACCESS_KEY_ID", "secret_access_key": "SECRET_ACCESS_KEY" } GoogleServiceAccount must be granted `roles/secretmanager.secretAccessor` for the resource. See [Configure access to a source: Amazon S3] (https://cloud.google.com/storage-transfer/docs/source-amazon-s3#secret_manager) for more information. If `credentials_secret` is specified, do not specify role_arn or aws_access_key. Format: `projects/{project_number}/secrets/{secret_name}`
   *   `path` (*type:* `String.t`, *default:* `nil`) - Root path to transfer objects. Must be an empty string or full path name that ends with a '/'. This field is treated as an object prefix. As such, it should generally not begin with a '/'.
   *   `roleArn` (*type:* `String.t`, *default:* `nil`) - The Amazon Resource Name (ARN) of the role to support temporary credentials via `AssumeRoleWithWebIdentity`. For more information about ARNs, see [IAM ARNs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns). When a role ARN is provided, Transfer Service fetches temporary credentials for the session using a `AssumeRoleWithWebIdentity` call for the provided role using the GoogleServiceAccount for this project.
   """
@@ -32,12 +34,16 @@ defmodule GoogleApi.StorageTransfer.V1.Model.AwsS3Data do
   @type t :: %__MODULE__{
           :awsAccessKey => GoogleApi.StorageTransfer.V1.Model.AwsAccessKey.t() | nil,
           :bucketName => String.t() | nil,
+          :cloudfrontDomain => String.t() | nil,
+          :credentialsSecret => String.t() | nil,
           :path => String.t() | nil,
           :roleArn => String.t() | nil
         }
 
   field(:awsAccessKey, as: GoogleApi.StorageTransfer.V1.Model.AwsAccessKey)
   field(:bucketName)
+  field(:cloudfrontDomain)
+  field(:credentialsSecret)
   field(:path)
   field(:roleArn)
 end

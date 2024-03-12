@@ -26,7 +26,8 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   *   `azureBlobStorageDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.AzureBlobStorageData.t`, *default:* `nil`) - An Azure Blob Storage data source.
   *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data sink.
   *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - A Cloud Storage data source.
-  *   `gcsIntermediateDataLocation` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - Cloud Storage intermediate data location.
+  *   `gcsIntermediateDataLocation` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - For transfers between file systems, specifies a Cloud Storage bucket to be used as an intermediate location through which to transfer data. See [Transfer data between file systems](https://cloud.google.com/storage-transfer/docs/file-to-file) for more information.
+  *   `hdfsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HdfsData.t`, *default:* `nil`) - An HDFS cluster data source.
   *   `httpDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.HttpData.t`, *default:* `nil`) - An HTTP URL data source.
   *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Only objects that satisfy these object conditions are included in the set of data source and data sink objects. Object conditions based on objects' "last modification time" do not exclude objects in a data sink.
   *   `posixDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t`, *default:* `nil`) - A POSIX Filesystem data sink.
@@ -48,6 +49,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
           :gcsDataSink => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
           :gcsDataSource => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
           :gcsIntermediateDataLocation => GoogleApi.StorageTransfer.V1.Model.GcsData.t() | nil,
+          :hdfsDataSource => GoogleApi.StorageTransfer.V1.Model.HdfsData.t() | nil,
           :httpDataSource => GoogleApi.StorageTransfer.V1.Model.HttpData.t() | nil,
           :objectConditions => GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t() | nil,
           :posixDataSink => GoogleApi.StorageTransfer.V1.Model.PosixFilesystem.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferSpec do
   field(:gcsDataSink, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:gcsDataSource, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
   field(:gcsIntermediateDataLocation, as: GoogleApi.StorageTransfer.V1.Model.GcsData)
+  field(:hdfsDataSource, as: GoogleApi.StorageTransfer.V1.Model.HdfsData)
   field(:httpDataSource, as: GoogleApi.StorageTransfer.V1.Model.HttpData)
   field(:objectConditions, as: GoogleApi.StorageTransfer.V1.Model.ObjectConditions)
   field(:posixDataSink, as: GoogleApi.StorageTransfer.V1.Model.PosixFilesystem)
