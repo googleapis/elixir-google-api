@@ -21,16 +21,19 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
 
   ## Attributes
 
-  *   `deviceRecognitionVerdict` (*type:* `list(String.t)`, *default:* `nil`) - Details about the integrity of the device the app is running on
+  *   `deviceRecognitionVerdict` (*type:* `list(String.t)`, *default:* `nil`) - Details about the integrity of the device the app is running on.
+  *   `recentDeviceActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t`, *default:* `nil`) - Details about the device activity of the device the app is running on.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceRecognitionVerdict => list(String.t()) | nil
+          :deviceRecognitionVerdict => list(String.t()) | nil,
+          :recentDeviceActivity => GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity.t() | nil
         }
 
   field(:deviceRecognitionVerdict, type: :list)
+  field(:recentDeviceActivity, as: GoogleApi.PlayIntegrity.V1.Model.RecentDeviceActivity)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do

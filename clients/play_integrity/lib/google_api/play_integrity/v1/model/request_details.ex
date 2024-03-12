@@ -21,7 +21,8 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.RequestDetails do
 
   ## Attributes
 
-  *   `nonce` (*type:* `String.t`, *default:* `nil`) - Required. Nonce that was provided in the request (which is base64 web-safe no-wrap).
+  *   `nonce` (*type:* `String.t`, *default:* `nil`) - Nonce that was provided in the request (which is base64 web-safe no-wrap).
+  *   `requestHash` (*type:* `String.t`, *default:* `nil`) - Request hash that was provided in the request.
   *   `requestPackageName` (*type:* `String.t`, *default:* `nil`) - Required. Application package name this attestation was requested for. Note: This field makes no guarantees or promises on the caller integrity. For details on application integrity, check application_integrity.
   *   `timestampMillis` (*type:* `String.t`, *default:* `nil`) - Required. Timestamp, in milliseconds, of the integrity application request.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.RequestDetails do
 
   @type t :: %__MODULE__{
           :nonce => String.t() | nil,
+          :requestHash => String.t() | nil,
           :requestPackageName => String.t() | nil,
           :timestampMillis => String.t() | nil
         }
 
   field(:nonce)
+  field(:requestHash)
   field(:requestPackageName)
   field(:timestampMillis)
 end

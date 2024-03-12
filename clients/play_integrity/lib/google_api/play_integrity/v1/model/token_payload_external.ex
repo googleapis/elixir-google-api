@@ -24,6 +24,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.TokenPayloadExternal do
   *   `accountDetails` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountDetails.t`, *default:* `nil`) - Required. Details about the Play Store account.
   *   `appIntegrity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AppIntegrity.t`, *default:* `nil`) - Required. Details about the application integrity.
   *   `deviceIntegrity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity.t`, *default:* `nil`) - Required. Details about the device integrity.
+  *   `environmentDetails` (*type:* `GoogleApi.PlayIntegrity.V1.Model.EnvironmentDetails.t`, *default:* `nil`) - Details of the environment Play Integrity API runs in.
   *   `requestDetails` (*type:* `GoogleApi.PlayIntegrity.V1.Model.RequestDetails.t`, *default:* `nil`) - Required. Details about the integrity request.
   *   `testingDetails` (*type:* `GoogleApi.PlayIntegrity.V1.Model.TestingDetails.t`, *default:* `nil`) - Indicates that this payload is generated for testing purposes and contains any additional data that is linked with testing status.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.TokenPayloadExternal do
           :accountDetails => GoogleApi.PlayIntegrity.V1.Model.AccountDetails.t() | nil,
           :appIntegrity => GoogleApi.PlayIntegrity.V1.Model.AppIntegrity.t() | nil,
           :deviceIntegrity => GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity.t() | nil,
+          :environmentDetails => GoogleApi.PlayIntegrity.V1.Model.EnvironmentDetails.t() | nil,
           :requestDetails => GoogleApi.PlayIntegrity.V1.Model.RequestDetails.t() | nil,
           :testingDetails => GoogleApi.PlayIntegrity.V1.Model.TestingDetails.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.TokenPayloadExternal do
   field(:accountDetails, as: GoogleApi.PlayIntegrity.V1.Model.AccountDetails)
   field(:appIntegrity, as: GoogleApi.PlayIntegrity.V1.Model.AppIntegrity)
   field(:deviceIntegrity, as: GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity)
+  field(:environmentDetails, as: GoogleApi.PlayIntegrity.V1.Model.EnvironmentDetails)
   field(:requestDetails, as: GoogleApi.PlayIntegrity.V1.Model.RequestDetails)
   field(:testingDetails, as: GoogleApi.PlayIntegrity.V1.Model.TestingDetails)
 end

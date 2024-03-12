@@ -21,7 +21,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AccountDetails do
 
   ## Attributes
 
-  *   `accountActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountActivity.t`, *default:* `nil`) - Details about the account activity for the user in the scope.
+  *   `accountActivity` (*type:* `GoogleApi.PlayIntegrity.V1.Model.AccountActivity.t`, *default:* `nil`) - (Restricted Access) Details about the account activity for the user in the scope.
   *   `appLicensingVerdict` (*type:* `String.t`, *default:* `nil`) - Required. Details about the licensing status of the user for the app in the scope.
   """
 
