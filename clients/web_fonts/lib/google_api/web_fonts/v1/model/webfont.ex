@@ -21,11 +21,13 @@ defmodule GoogleApi.WebFonts.V1.Model.Webfont do
 
   ## Attributes
 
+  *   `axes` (*type:* `list(GoogleApi.WebFonts.V1.Model.Axis.t)`, *default:* `nil`) - Axis for variable fonts.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the font.
   *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the font.
   *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available variants, as a key : value map.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a webfont object in the webfonts service.
   *   `lastModified` (*type:* `String.t`, *default:* `nil`) - The date (format "yyyy-MM-dd") the font was modified for the last time.
+  *   `menu` (*type:* `String.t`, *default:* `nil`) - Font URL for menu subset, a subset of the font that is enough to display the font name
   *   `subsets` (*type:* `list(String.t)`, *default:* `nil`) - The scripts supported by the font.
   *   `variants` (*type:* `list(String.t)`, *default:* `nil`) - The available variants for the font.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The font version.
@@ -34,21 +36,25 @@ defmodule GoogleApi.WebFonts.V1.Model.Webfont do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :axes => list(GoogleApi.WebFonts.V1.Model.Axis.t()) | nil,
           :category => String.t() | nil,
           :family => String.t() | nil,
           :files => map() | nil,
           :kind => String.t() | nil,
           :lastModified => String.t() | nil,
+          :menu => String.t() | nil,
           :subsets => list(String.t()) | nil,
           :variants => list(String.t()) | nil,
           :version => String.t() | nil
         }
 
+  field(:axes, as: GoogleApi.WebFonts.V1.Model.Axis, type: :list)
   field(:category)
   field(:family)
   field(:files, type: :map)
   field(:kind)
   field(:lastModified)
+  field(:menu)
   field(:subsets, type: :list)
   field(:variants, type: :list)
   field(:version)
