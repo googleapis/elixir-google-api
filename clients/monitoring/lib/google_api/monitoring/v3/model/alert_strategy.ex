@@ -22,6 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
   ## Attributes
 
   *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this long, any open incidents will close
+  *   `notificationChannelStrategy` (*type:* `list(GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy.t)`, *default:* `nil`) - Control how notifications will be sent out, on a per-channel basis.
   *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based.
   """
 
@@ -29,10 +30,18 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   @type t :: %__MODULE__{
           :autoClose => String.t() | nil,
+          :notificationChannelStrategy =>
+            list(GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy.t()) | nil,
           :notificationRateLimit => GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t() | nil
         }
 
   field(:autoClose)
+
+  field(:notificationChannelStrategy,
+    as: GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy,
+    type: :list
+  )
+
   field(:notificationRateLimit, as: GoogleApi.Monitoring.V3.Model.NotificationRateLimit)
 end
 

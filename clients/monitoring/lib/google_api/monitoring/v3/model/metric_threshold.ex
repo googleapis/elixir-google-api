@@ -26,8 +26,9 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricThreshold do
   *   `denominatorAggregations` (*type:* `list(GoogleApi.Monitoring.V3.Model.Aggregation.t)`, *default:* `nil`) - Specifies the alignment of data points in individual time series selected by denominatorFilter as well as how to combine the retrieved time series together (such as when aggregating multiple streams on each resource to a single stream for each resource or when aggregating streams across all members of a group of resources).When computing ratios, the aggregations and denominator_aggregations fields must use the same alignment period and produce time series that have the same periodicity and labels.
   *   `denominatorFilter` (*type:* `String.t`, *default:* `nil`) - A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies a time series that should be used as the denominator of a ratio that will be compared with the threshold. If a denominator_filter is specified, the time series specified by the filter field will be used as the numerator.The filter must specify the metric type and optionally may contain restrictions on resource type, resource labels, and metric labels. This field may not exceed 2048 Unicode characters in length.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - The amount of time that a time series must violate the threshold to be considered failing. Currently, only values that are a multiple of a minute--e.g., 0, 60, 120, or 300 seconds--are supported. If an invalid value is given, an error will be returned. When choosing a duration, it is useful to keep in mind the frequency of the underlying time series data (which may also be affected by any alignments specified in the aggregations field); a good duration is long enough so that a single outlier does not generate spurious alerts, but short enough that unhealthy states are detected and alerted on quickly.
-  *   `evaluationMissingData` (*type:* `String.t`, *default:* `nil`) - A condition control that determines how metric-threshold conditions are evaluated when data stops arriving.
+  *   `evaluationMissingData` (*type:* `String.t`, *default:* `nil`) - A condition control that determines how metric-threshold conditions are evaluated when data stops arriving. To use this control, the value of the duration field must be greater than or equal to 60 seconds.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that call is useful to verify the time series that will be retrieved / processed). The filter must specify the metric type and the resource type. Optionally, it can specify resource labels and metric labels. This field must not exceed 2048 Unicode characters in length.
+  *   `forecastOptions` (*type:* `GoogleApi.Monitoring.V3.Model.ForecastOptions.t`, *default:* `nil`) - When this field is present, the MetricThreshold condition forecasts whether the time series is predicted to violate the threshold within the forecast_horizon. When this field is not set, the MetricThreshold tests the current value of the timeseries against the threshold.
   *   `thresholdValue` (*type:* `float()`, *default:* `nil`) - A value against which to compare the time series.
   *   `trigger` (*type:* `GoogleApi.Monitoring.V3.Model.Trigger.t`, *default:* `nil`) - The number/percent of time series for which the comparison must hold in order for the condition to trigger. If unspecified, then the condition will trigger if the comparison is true for any of the time series that have been identified by filter and aggregations, or by the ratio, if denominator_filter and denominator_aggregations are specified.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricThreshold do
           :duration => String.t() | nil,
           :evaluationMissingData => String.t() | nil,
           :filter => String.t() | nil,
+          :forecastOptions => GoogleApi.Monitoring.V3.Model.ForecastOptions.t() | nil,
           :thresholdValue => float() | nil,
           :trigger => GoogleApi.Monitoring.V3.Model.Trigger.t() | nil
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.Monitoring.V3.Model.MetricThreshold do
   field(:duration)
   field(:evaluationMissingData)
   field(:filter)
+  field(:forecastOptions, as: GoogleApi.Monitoring.V3.Model.ForecastOptions)
   field(:thresholdValue)
   field(:trigger, as: GoogleApi.Monitoring.V3.Model.Trigger)
 end

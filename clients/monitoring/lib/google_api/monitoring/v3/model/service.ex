@@ -33,7 +33,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Service do
   *   `gkeWorkload` (*type:* `GoogleApi.Monitoring.V3.Model.GkeWorkload.t`, *default:* `nil`) - Type used for GKE Workloads.
   *   `istioCanonicalService` (*type:* `GoogleApi.Monitoring.V3.Model.IstioCanonicalService.t`, *default:* `nil`) - Type used for canonical services scoped to an Istio mesh. Metrics for Istio are documented here (https://istio.io/latest/docs/reference/config/metrics/)
   *   `meshIstio` (*type:* `GoogleApi.Monitoring.V3.Model.MeshIstio.t`, *default:* `nil`) - Type used for Istio services scoped to an Istio mesh.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `telemetry` (*type:* `GoogleApi.Monitoring.V3.Model.Telemetry.t`, *default:* `nil`) - Configuration for how to query telemetry on a Service.
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - Labels which have been used to annotate the service. Label keys must start with a letter. Label keys and values may contain lowercase letters, numbers, underscores, and dashes. Label keys and values have a maximum length of 63 characters, and must be less than 128 bytes in size. Up to 64 label entries may be stored. For labels which do not have a semantic value, the empty string may be supplied for the label value.
   """
