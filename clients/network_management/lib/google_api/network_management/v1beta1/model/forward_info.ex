@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo do
 
   ## Attributes
 
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the target (if applicable).
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - URI of the resource that the packet is forwarded to.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target type where this packet is forwarded to.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ipAddress => String.t() | nil,
           :resourceUri => String.t() | nil,
           :target => String.t() | nil
         }
 
+  field(:ipAddress)
   field(:resourceUri)
   field(:target)
 end

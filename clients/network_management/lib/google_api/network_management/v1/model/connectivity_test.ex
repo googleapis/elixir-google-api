@@ -27,6 +27,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The display name of a Connectivity Test.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user-provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test_id}`
+  *   `probingDetails` (*type:* `GoogleApi.NetworkManagement.V1.Model.ProbingDetails.t`, *default:* `nil`) - Output only. The probing details of this test from the latest run, present for applicable tests only. The details are updated when creating a new test, updating an existing test, or triggering a one-time rerun of an existing test.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - IP Protocol of the test. When not provided, "TCP" is assumed.
   *   `reachabilityDetails` (*type:* `GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails.t`, *default:* `nil`) - Output only. The reachability details of this test from the latest run. The details are updated when creating a new test, updating an existing test, or triggering a one-time rerun of an existing test.
   *   `relatedProjects` (*type:* `list(String.t)`, *default:* `nil`) - Other projects that may be relevant for reachability analysis. This is applicable to scenarios where a test can cross project boundaries.
@@ -43,6 +44,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
           :displayName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :probingDetails => GoogleApi.NetworkManagement.V1.Model.ProbingDetails.t() | nil,
           :protocol => String.t() | nil,
           :reachabilityDetails =>
             GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
   field(:displayName)
   field(:labels, type: :map)
   field(:name)
+  field(:probingDetails, as: GoogleApi.NetworkManagement.V1.Model.ProbingDetails)
   field(:protocol)
   field(:reachabilityDetails, as: GoogleApi.NetworkManagement.V1.Model.ReachabilityDetails)
   field(:relatedProjects, type: :list)

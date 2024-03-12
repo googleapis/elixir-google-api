@@ -25,13 +25,17 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   *   `cloudFunction` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint.t`, *default:* `nil`) - A [Cloud Function](https://cloud.google.com/functions).
   *   `cloudRunRevision` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint.t`, *default:* `nil`) - A [Cloud Run](https://cloud.google.com/run) [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
   *   `cloudSqlInstance` (*type:* `String.t`, *default:* `nil`) - A [Cloud SQL](https://cloud.google.com/sql) instance URI.
+  *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - A forwarding rule and its corresponding IP address represent the frontend configuration of a Google Cloud load balancer. Forwarding rules are also used for protocol forwarding, Private Service Connect and other network services to provide forwarding information in the control plane. Format: projects/{project}/global/forwardingRules/{id} or projects/{project}/regions/{region}/forwardingRules/{id}
+  *   `forwardingRuleTarget` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the type of the target of the forwarding rule.
   *   `gkeMasterCluster` (*type:* `String.t`, *default:* `nil`) - A cluster URI for [Google Kubernetes Engine master](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture).
   *   `instance` (*type:* `String.t`, *default:* `nil`) - A Compute Engine instance URI.
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address of the endpoint, which can be an external or internal IP. An IPv6 address is only allowed when the test's destination is a [global load balancer VIP](https://cloud.google.com/load-balancing/docs/load-balancing-overview).
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The IP address of the endpoint, which can be an external or internal IP.
+  *   `loadBalancerId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the load balancer the forwarding rule points to. Empty for forwarding rules not related to load balancers.
+  *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the load balancer the forwarding rule points to.
   *   `network` (*type:* `String.t`, *default:* `nil`) - A Compute Engine network URI.
   *   `networkType` (*type:* `String.t`, *default:* `nil`) - Type of the network where the endpoint is located. Applicable only to source endpoint, as destination network type can be inferred from the source.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID where the endpoint is located. The Project ID can be derived from the URI if you provide a VM instance or network URI. The following are two cases where you must provide the project ID: 1. Only the IP address is specified, and the IP address is within a GCP project. 2. When you are using Shared VPC and the IP address that you provide is from the service project. In this case, the network that the IP address resides in is defined in the host project.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID where the endpoint is located. The Project ID can be derived from the URI if you provide a VM instance or network URI. The following are two cases where you must provide the project ID: 1. Only the IP address is specified, and the IP address is within a Google Cloud project. 2. When you are using Shared VPC and the IP address that you provide is from the service project. In this case, the network that the IP address resides in is defined in the host project.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,9 +48,13 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
           :cloudRunRevision =>
             GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint.t() | nil,
           :cloudSqlInstance => String.t() | nil,
+          :forwardingRule => String.t() | nil,
+          :forwardingRuleTarget => String.t() | nil,
           :gkeMasterCluster => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
+          :loadBalancerId => String.t() | nil,
+          :loadBalancerType => String.t() | nil,
           :network => String.t() | nil,
           :networkType => String.t() | nil,
           :port => integer() | nil,
@@ -57,9 +65,13 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   field(:cloudFunction, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudFunctionEndpoint)
   field(:cloudRunRevision, as: GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionEndpoint)
   field(:cloudSqlInstance)
+  field(:forwardingRule)
+  field(:forwardingRuleTarget)
   field(:gkeMasterCluster)
   field(:instance)
   field(:ipAddress)
+  field(:loadBalancerId)
+  field(:loadBalancerType)
   field(:network)
   field(:networkType)
   field(:port)

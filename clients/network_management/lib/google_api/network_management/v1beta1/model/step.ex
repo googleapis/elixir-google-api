@@ -35,12 +35,17 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   *   `forward` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo.t`, *default:* `nil`) - Display information of the final state "forward" and reason.
   *   `forwardingRule` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo.t`, *default:* `nil`) - Display information of a Compute Engine forwarding rule.
   *   `gkeMaster` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo.t`, *default:* `nil`) - Display information of a Google Kubernetes Engine cluster master.
+  *   `googleService` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.GoogleServiceInfo.t`, *default:* `nil`) - Display information of a Google service
   *   `instance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo.t`, *default:* `nil`) - Display information of a Compute Engine instance.
-  *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display information of the load balancers.
+  *   `loadBalancer` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo.t`, *default:* `nil`) - Display information of the load balancers. Deprecated in favor of the `load_balancer_backend_info` field, not used in new tests.
+  *   `loadBalancerBackendInfo` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackendInfo.t`, *default:* `nil`) - Display information of a specific load balancer backend.
+  *   `nat` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.NatInfo.t`, *default:* `nil`) - Display information of a NAT.
   *   `network` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo.t`, *default:* `nil`) - Display information of a Google Cloud network.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that contains the configuration this step is validating.
+  *   `proxyConnection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t`, *default:* `nil`) - Display information of a ProxyConnection.
   *   `route` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t`, *default:* `nil`) - Display information of a Compute Engine route.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Each step is in one of the pre-defined states.
+  *   `storageBucket` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo.t`, *default:* `nil`) - Display information of a Storage Bucket. Used only for return traces.
   *   `vpcConnector` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo.t`, *default:* `nil`) - Display information of a VPC connector.
   *   `vpnGateway` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.VpnGatewayInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN gateway.
   *   `vpnTunnel` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.VpnTunnelInfo.t`, *default:* `nil`) - Display information of a Compute Engine VPN tunnel.
@@ -67,12 +72,19 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
           :forwardingRule =>
             GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo.t() | nil,
           :gkeMaster => GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo.t() | nil,
+          :googleService => GoogleApi.NetworkManagement.V1beta1.Model.GoogleServiceInfo.t() | nil,
           :instance => GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo.t() | nil,
           :loadBalancer => GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo.t() | nil,
+          :loadBalancerBackendInfo =>
+            GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackendInfo.t() | nil,
+          :nat => GoogleApi.NetworkManagement.V1beta1.Model.NatInfo.t() | nil,
           :network => GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo.t() | nil,
           :projectId => String.t() | nil,
+          :proxyConnection =>
+            GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t() | nil,
           :route => GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t() | nil,
           :state => String.t() | nil,
+          :storageBucket => GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo.t() | nil,
           :vpcConnector => GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo.t() | nil,
           :vpnGateway => GoogleApi.NetworkManagement.V1beta1.Model.VpnGatewayInfo.t() | nil,
           :vpnTunnel => GoogleApi.NetworkManagement.V1beta1.Model.VpnTunnelInfo.t() | nil
@@ -92,12 +104,21 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   field(:forward, as: GoogleApi.NetworkManagement.V1beta1.Model.ForwardInfo)
   field(:forwardingRule, as: GoogleApi.NetworkManagement.V1beta1.Model.ForwardingRuleInfo)
   field(:gkeMaster, as: GoogleApi.NetworkManagement.V1beta1.Model.GKEMasterInfo)
+  field(:googleService, as: GoogleApi.NetworkManagement.V1beta1.Model.GoogleServiceInfo)
   field(:instance, as: GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo)
   field(:loadBalancer, as: GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo)
+
+  field(:loadBalancerBackendInfo,
+    as: GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackendInfo
+  )
+
+  field(:nat, as: GoogleApi.NetworkManagement.V1beta1.Model.NatInfo)
   field(:network, as: GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo)
   field(:projectId)
+  field(:proxyConnection, as: GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo)
   field(:route, as: GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo)
   field(:state)
+  field(:storageBucket, as: GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo)
   field(:vpcConnector, as: GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo)
   field(:vpnGateway, as: GoogleApi.NetworkManagement.V1beta1.Model.VpnGatewayInfo)
   field(:vpnTunnel, as: GoogleApi.NetworkManagement.V1beta1.Model.VpnTunnelInfo)

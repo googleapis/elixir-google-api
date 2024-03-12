@@ -24,7 +24,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerInfo do
   *   `backendType` (*type:* `String.t`, *default:* `nil`) - Type of load balancer's backend configuration.
   *   `backendUri` (*type:* `String.t`, *default:* `nil`) - Backend configuration URI.
   *   `backends` (*type:* `list(GoogleApi.NetworkManagement.V1beta1.Model.LoadBalancerBackend.t)`, *default:* `nil`) - Information for the loadbalancer backends.
-  *   `healthCheckUri` (*type:* `String.t`, *default:* `nil`) - URI of the health check for the load balancer.
+  *   `healthCheckUri` (*type:* `String.t`, *default:* `nil`) - URI of the health check for the load balancer. Deprecated and no longer populated as different load balancer backends might have different health checks.
   *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - Type of the load balancer.
   """
 

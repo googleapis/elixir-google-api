@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Trace do
   ## Attributes
 
   *   `endpointInfo` (*type:* `GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t`, *default:* `nil`) - Derived from the source and destination endpoints definition specified by user request, and validated by the data plane model. If there are multiple traces starting from different source locations, then the endpoint_info may be different between traces.
+  *   `forwardTraceId` (*type:* `integer()`, *default:* `nil`) - ID of trace. For forward traces, this ID is unique for each trace. For return traces, it matches ID of associated forward trace. A single forward trace can be associated with none, one or more than one return trace.
   *   `steps` (*type:* `list(GoogleApi.NetworkManagement.V1.Model.Step.t)`, *default:* `nil`) - A trace of a test contains multiple steps from the initial state to the final state (delivered, dropped, forwarded, or aborted). The steps are ordered by the processing sequence within the simulated network state machine. It is critical to preserve the order of the steps and avoid reordering or sorting them.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.NetworkManagement.V1.Model.Trace do
 
   @type t :: %__MODULE__{
           :endpointInfo => GoogleApi.NetworkManagement.V1.Model.EndpointInfo.t() | nil,
+          :forwardTraceId => integer() | nil,
           :steps => list(GoogleApi.NetworkManagement.V1.Model.Step.t()) | nil
         }
 
   field(:endpointInfo, as: GoogleApi.NetworkManagement.V1.Model.EndpointInfo)
+  field(:forwardTraceId)
   field(:steps, as: GoogleApi.NetworkManagement.V1.Model.Step, type: :list)
 end
 
