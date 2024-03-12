@@ -23,7 +23,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Channel do
 
   *   `activationToken` (*type:* `String.t`, *default:* `nil`) - Output only. The activation token for the channel. The token must be used by the provider to register the channel for publishing.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
-  *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the channel. Must be unique within the location on the project and must be in `projects/{project}/locations/{location}/channels/{channel_id}` format.
   *   `provider` (*type:* `String.t`, *default:* `nil`) - The name of the event provider (e.g. Eventarc SaaS partner) associated with the channel. This provider will be granted permissions to publish events to the channel. Format: `projects/{project}/locations/{location}/providers/{provider_id}`.
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Pub/Sub topic created and managed by Eventarc system as a transport for the event delivery. Format: `projects/{project}/topics/{topic_id}`.

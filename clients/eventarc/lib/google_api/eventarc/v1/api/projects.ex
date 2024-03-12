@@ -827,7 +827,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:channelId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the channel.
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -904,7 +904,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1197,7 +1197,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - The fields to be updated; only fields explicitly provided are updated. If no field mask is provided, all provided fields in the request are updated. To update all fields, provide a field mask of "*".
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1616,7 +1616,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -1861,7 +1861,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:triggerId` (*type:* `String.t`) - Required. The user-provided ID to be assigned to the trigger.
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1940,7 +1940,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, the request will succeed but no action will be taken on the server.
       *   `:etag` (*type:* `String.t`) - If provided, the trigger will only be deleted if the etag matches the current etag on the resource.
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2238,7 +2238,7 @@ defmodule GoogleApi.Eventarc.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and the trigger is not found, a new trigger will be created. In this situation, `update_mask` is ignored.
       *   `:updateMask` (*type:* `String.t`) - The fields to be updated; only fields explicitly provided are updated. If no field mask is provided, all provided fields in the request are updated. To update all fields, provide a field mask of "*".
-      *   `:validateOnly` (*type:* `boolean()`) - Required. If set, validate the request and preview the review, but do not post it.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. If set, validate the request and preview the review, but do not post it.
       *   `:body` (*type:* `GoogleApi.Eventarc.V1.Model.Trigger.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
