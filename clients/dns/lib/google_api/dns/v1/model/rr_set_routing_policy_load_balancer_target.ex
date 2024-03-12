@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyLoadBalancerTarget do
   @moduledoc """
-
+  The configuration for an individual load balancer to health check.
 
   ## Attributes
 
-  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The frontend IP address of the
-  *   `ipProtocol` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - The frontend IP address of the load balancer to health check.
+  *   `ipProtocol` (*type:* `String.t`, *default:* `nil`) - The protocol of the load balancer to health check.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyLoadBalancerTarget`) - 
-  *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified url of the network on which the ILB is
-  *   `port` (*type:* `String.t`, *default:* `nil`) - Load Balancer to health check. The configured port of the Load Balancer.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - present. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network} The project ID in which the ILB exists.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - The region for regional ILBs.
+  *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - The type of load balancer specified by this target. This value must match the configuration of the load balancer located at the LoadBalancerTarget's IP address, port, and region. Use the following: - *regionalL4ilb*: for a regional internal passthrough Network Load Balancer. - *regionalL7ilb*: for a regional internal Application Load Balancer. - *globalL7ilb*: for a global internal Application Load Balancer. 
+  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the network that the load balancer is attached to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network} .
+  *   `port` (*type:* `String.t`, *default:* `nil`) - The configured port of the load balancer.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID in which the load balancer is located.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The region in which the load balancer is located.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy do
 
   ## Attributes
 
-  *   `enableFencing` (*type:* `boolean()`, *default:* `nil`) - Without fencing, if health check fails for all configured items in the current geo bucket, we'll failover to the next nearest geo bucket. With fencing, if health check is enabled, as long as some targets in the current geo bucket are healthy, we'll return only the healthy targets. However, if they're all unhealthy, we won't failover to the next nearest bucket, we'll simply return all the items in the current bucket even though they're unhealthy.
+  *   `enableFencing` (*type:* `boolean()`, *default:* `nil`) - Without fencing, if health check fails for all configured items in the current geo bucket, we failover to the next nearest geo bucket. With fencing, if health checking is enabled, as long as some targets in the current geo bucket are healthy, we return only the healthy targets. However, if all targets are unhealthy, we don't failover to the next nearest bucket; instead, we return all the items in the current bucket even when all targets are unhealthy.
   *   `items` (*type:* `list(GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem.t)`, *default:* `nil`) - The primary geo routing configuration. If there are multiple items with the same location, an error is returned instead.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyGeoPolicy`) - 
   """
