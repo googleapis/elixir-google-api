@@ -26,8 +26,10 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion was created.
   *   `destroyEventTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was destroyed. Only present if state is DESTROYED.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED.
+  *   `externalDestructionFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of the most recent external destruction failure. Only present if state is EXTERNAL_DESTRUCTION_FAILED.
   *   `externalProtectionLevelOptions` (*type:* `GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t`, *default:* `nil`) - ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
   *   `generateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this CryptoKeyVersion's key material was generated.
+  *   `generationFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of the most recent generation failure. Only present if state is GENERATION_FAILED.
   *   `importFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED.
   *   `importJob` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported.
   *   `importTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKeyVersion's key material was most recently imported.
@@ -45,9 +47,11 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
           :createTime => DateTime.t() | nil,
           :destroyEventTime => DateTime.t() | nil,
           :destroyTime => DateTime.t() | nil,
+          :externalDestructionFailureReason => String.t() | nil,
           :externalProtectionLevelOptions =>
             GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions.t() | nil,
           :generateTime => DateTime.t() | nil,
+          :generationFailureReason => String.t() | nil,
           :importFailureReason => String.t() | nil,
           :importJob => String.t() | nil,
           :importTime => DateTime.t() | nil,
@@ -62,12 +66,14 @@ defmodule GoogleApi.CloudKMS.V1.Model.CryptoKeyVersion do
   field(:createTime, as: DateTime)
   field(:destroyEventTime, as: DateTime)
   field(:destroyTime, as: DateTime)
+  field(:externalDestructionFailureReason)
 
   field(:externalProtectionLevelOptions,
     as: GoogleApi.CloudKMS.V1.Model.ExternalProtectionLevelOptions
   )
 
   field(:generateTime, as: DateTime)
+  field(:generationFailureReason)
   field(:importFailureReason)
   field(:importJob)
   field(:importTime, as: DateTime)
