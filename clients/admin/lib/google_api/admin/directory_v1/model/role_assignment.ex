@@ -21,7 +21,8 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
 
   ## Attributes
 
-  *   `assignedTo` (*type:* `String.t`, *default:* `nil`) - The unique ID of the entity this role is assigned to—either the `user_id` of a user or the `uniqueId` of a service account, as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
+  *   `assignedTo` (*type:* `String.t`, *default:* `nil`) - The unique ID of the entity this role is assigned to—either the `user_id` of a user, the `group_id` of a group, or the `uniqueId` of a service account as defined in [Identity and Access Management (IAM)](https://cloud.google.com/iam/docs/reference/rest/v1/projects.serviceAccounts).
+  *   `assigneeType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the assignee (`USER` or `GROUP`).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#roleAssignment`) - The type of the API resource. This is always `admin#directory#roleAssignment`.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - If the role is restricted to an organization unit, this contains the ID for the organization unit the exercise of this role is restricted to.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
 
   @type t :: %__MODULE__{
           :assignedTo => String.t() | nil,
+          :assigneeType => String.t() | nil,
           :etag => String.t() | nil,
           :kind => String.t() | nil,
           :orgUnitId => String.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.RoleAssignment do
         }
 
   field(:assignedTo)
+  field(:assigneeType)
   field(:etag)
   field(:kind)
   field(:orgUnitId)

@@ -105,7 +105,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
+  *   `customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
   *   `role_assignment_id` (*type:* `String.t`) - Immutable ID of the role assignment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -245,7 +245,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Directory_v1.Connection.t`) - Connection to server
-  *   `customer` (*type:* `String.t`) - Immutable ID of the Google Workspace account.
+  *   `customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -258,10 +258,11 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeIndirectRoleAssignments` (*type:* `boolean()`) - When set to `true`, fetches indirect role assignments (i.e. role assignment via a group) as well as direct ones. Defaults to `false`. You must specify `user_key` or the indirect role assignments will not be included.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:pageToken` (*type:* `String.t`) - Token to specify the next page in the list.
       *   `:roleId` (*type:* `String.t`) - Immutable ID of a role. If included in the request, returns only role assignments containing this role ID.
-      *   `:userKey` (*type:* `String.t`) - The user's primary email address, alias email address, or unique user ID. If included in the request, returns role assignments only for this user.
+      *   `:userKey` (*type:* `String.t`) - The primary email address, alias email address, or unique user or group ID. If included in the request, returns role assignments only for this user or group.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -287,6 +288,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.RoleAssignments do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :includeIndirectRoleAssignments => :query,
       :maxResults => :query,
       :pageToken => :query,
       :roleId => :query,

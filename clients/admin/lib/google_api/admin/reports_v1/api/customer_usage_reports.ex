@@ -31,7 +31,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.CustomerUsageReports do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Admin.Reports_v1.Connection.t`) - Connection to server
-  *   `date` (*type:* `String.t`) - Represents the date the usage occurred, based on PST time zone. The timestamp is in the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601), `yyyy-mm-dd`.
+  *   `date` (*type:* `String.t`) - Represents the date the usage occurred, based on UTC-8:00 (Pacific Standard Time). The timestamp is in the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601), `yyyy-mm-dd`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

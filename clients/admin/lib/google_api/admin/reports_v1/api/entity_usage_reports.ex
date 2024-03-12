@@ -33,7 +33,7 @@ defmodule GoogleApi.Admin.Reports_v1.Api.EntityUsageReports do
   *   `connection` (*type:* `GoogleApi.Admin.Reports_v1.Connection.t`) - Connection to server
   *   `entity_type` (*type:* `String.t`) - Represents the type of entity for the report.
   *   `entity_key` (*type:* `String.t`) - Represents the key of the object to filter the data with. It is a string which can take the value `all` to get activity events for all users, or any other value for an app-specific entity. For details on how to obtain the `entityKey` for a particular `entityType`, see the Entities Usage parameters reference guides.
-  *   `date` (*type:* `String.t`) - Represents the date the usage occurred. The timestamp is in the ISO 8601 format, yyyy-mm-dd. We recommend you use your account's time zone for this.
+  *   `date` (*type:* `String.t`) - Represents the date the usage occurred, based on UTC-8:00 (Pacific Standard Time). The timestamp is in the [ISO 8601 format](https://en.wikipedia.org/wiki/ISO_8601), `yyyy-mm-dd`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
