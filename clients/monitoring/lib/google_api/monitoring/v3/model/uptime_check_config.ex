@@ -28,10 +28,11 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   *   `internalCheckers` (*type:* `list(GoogleApi.Monitoring.V3.Model.InternalChecker.t)`, *default:* `nil`) - The internal checkers that this check will egress from. If is_internal is true and this list is empty, the check will egress from all the InternalCheckers configured for the project that owns this UptimeCheckConfig.
   *   `isInternal` (*type:* `boolean()`, *default:* `nil`) - If this is true, then checks are made only from the 'internal_checkers'. If it is false, then checks are made only from the 'selected_regions'. It is an error to provide 'selected_regions' when is_internal is true, or to provide 'internal_checkers' when is_internal is false.
   *   `monitoredResource` (*type:* `GoogleApi.Monitoring.V3.Model.MonitoredResource.t`, *default:* `nil`) - The monitored resource (https://cloud.google.com/monitoring/api/resources) associated with the configuration. The following monitored resource types are valid for this field: uptime_url, gce_instance, gae_app, aws_ec2_instance, aws_elb_load_balancer k8s_service servicedirectory_service cloud_run_revision
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] [PROJECT_ID_OR_NUMBER] is the Workspace host project associated with the Uptime check.This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] [PROJECT_ID_OR_NUMBER] is the Workspace host project associated with the Uptime check.This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   *   `period` (*type:* `String.t`, *default:* `nil`) - How often, in seconds, the Uptime check is performed. Currently, the only supported values are 60s (1 minute), 300s (5 minutes), 600s (10 minutes), and 900s (15 minutes). Optional, defaults to 60s.
   *   `resourceGroup` (*type:* `GoogleApi.Monitoring.V3.Model.ResourceGroup.t`, *default:* `nil`) - The group resource associated with the configuration.
   *   `selectedRegions` (*type:* `list(String.t)`, *default:* `nil`) - The list of regions from which the check will be run. Some regions contain one location, and others contain more than one. If this field is specified, enough regions must be provided to include a minimum of 3 locations. Not specifying this field will result in Uptime checks running from all available regions.
+  *   `syntheticMonitor` (*type:* `GoogleApi.Monitoring.V3.Model.SyntheticMonitorTarget.t`, *default:* `nil`) - Specifies a Synthetic Monitor to invoke.
   *   `tcpCheck` (*type:* `GoogleApi.Monitoring.V3.Model.TcpCheck.t`, *default:* `nil`) - Contains information needed to make a TCP check.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - The maximum amount of time to wait for the request to complete (must be between 1 and 60 seconds). Required.
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-supplied key/value data to be used for organizing and identifying the UptimeCheckConfig objects.The field can contain up to 64 entries. Each key and value is limited to 63 Unicode characters or 128 bytes, whichever is smaller. Labels and values can contain only lowercase letters, numerals, underscores, and dashes. Keys must begin with a letter.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
           :period => String.t() | nil,
           :resourceGroup => GoogleApi.Monitoring.V3.Model.ResourceGroup.t() | nil,
           :selectedRegions => list(String.t()) | nil,
+          :syntheticMonitor => GoogleApi.Monitoring.V3.Model.SyntheticMonitorTarget.t() | nil,
           :tcpCheck => GoogleApi.Monitoring.V3.Model.TcpCheck.t() | nil,
           :timeout => String.t() | nil,
           :userLabels => map() | nil
@@ -67,6 +69,7 @@ defmodule GoogleApi.Monitoring.V3.Model.UptimeCheckConfig do
   field(:period)
   field(:resourceGroup, as: GoogleApi.Monitoring.V3.Model.ResourceGroup)
   field(:selectedRegions, type: :list)
+  field(:syntheticMonitor, as: GoogleApi.Monitoring.V3.Model.SyntheticMonitorTarget)
   field(:tcpCheck, as: GoogleApi.Monitoring.V3.Model.TcpCheck)
   field(:timeout)
   field(:userLabels, type: :map)

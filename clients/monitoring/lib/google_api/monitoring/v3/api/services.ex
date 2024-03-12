@@ -327,7 +327,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
+  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Identifier. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `v3_id1` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -424,7 +424,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:serviceLevelObjectiveId` (*type:* `String.t`) - Optional. The ServiceLevelObjective id to use for this ServiceLevelObjective. If omitted, an id will be generated instead. Must match the pattern [a-z0-9\\-]+
+      *   `:serviceLevelObjectiveId` (*type:* `String.t`) - Optional. The ServiceLevelObjective id to use for this ServiceLevelObjective. If omitted, an id will be generated instead. Must match the pattern ^[a-zA-Z0-9-_:.]+$
       *   `:body` (*type:* `GoogleApi.Monitoring.V3.Model.ServiceLevelObjective.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -753,7 +753,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
+  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Identifier. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `v3_id1` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `services_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
   *   `service_level_objectives_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
