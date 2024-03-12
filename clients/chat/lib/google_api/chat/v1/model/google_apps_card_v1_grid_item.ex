@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1GridItem do
   @moduledoc """
-  Represents a single item in the grid layout.
+  Represents an item in a grid layout. Items can contain text, an image, or both text and an image. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - A user-specified identifier for this grid item. This identifier is returned in the parent Grid's onClick callback parameters.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - A user-specified identifier for this grid item. This identifier is returned in the parent grid's `onClick` callback parameters.
   *   `image` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1ImageComponent.t`, *default:* `nil`) - The image that displays in the grid item.
   *   `layout` (*type:* `String.t`, *default:* `nil`) - The layout to use for the grid item.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The grid item's subtitle.

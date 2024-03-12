@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.DriveDataRef do
 
   ## Attributes
 
-  *   `driveFileId` (*type:* `String.t`, *default:* `nil`) - The id for the drive file, for use with the Drive API.
+  *   `driveFileId` (*type:* `String.t`, *default:* `nil`) - The ID for the drive file. Use with the Drive API.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.FormAction do
   @moduledoc """
-  A form action describes the behavior when the form is submitted. For example, an Apps Script can be invoked to handle the form.
+  A form action describes the behavior when the form is submitted. For example, you can invoke Apps Script to handle the form.
 
   ## Attributes
 
-  *   `actionMethodName` (*type:* `String.t`, *default:* `nil`) - The method name is used to identify which part of the form triggered the form submission. This information is echoed back to the Chat app as part of the card click event. The same method name can be used for several elements that trigger a common behavior if desired.
+  *   `actionMethodName` (*type:* `String.t`, *default:* `nil`) - The method name is used to identify which part of the form triggered the form submission. This information is echoed back to the Chat app as part of the card click event. You can use the same method name for several elements that trigger a common behavior.
   *   `parameters` (*type:* `list(GoogleApi.Chat.V1.Model.ActionParameter.t)`, *default:* `nil`) - List of action parameters.
   """
 

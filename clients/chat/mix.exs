@@ -48,7 +48,7 @@ defmodule GoogleApi.Chat.Mixfile do
 
   defp description() do
     """
-    Google Chat API client library. Enables apps to fetch information and perform actions in Google Chat. Authentication is a prerequisite for using the Google Chat REST API.
+    Google Chat API client library. The Google Chat API lets you build Chat apps to integrate your services with Google Chat and manage Chat resources such as spaces, members, and messages.
     """
   end
 

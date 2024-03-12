@@ -17,24 +17,30 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem do
   @moduledoc """
-  A selectable item in a selection input, such as a check box or a switch.
+  An item that users can select in a selection input, such as a checkbox or switch. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `selected` (*type:* `boolean()`, *default:* `nil`) - When `true`, more than one item is selected. If more than one item is selected for radio buttons and dropdown menus, the first selected item is received and the ones after are ignored.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - The text displayed to users.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value associated with this item. The client should use this as a form input value. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
+  *   `bottomText` (*type:* `String.t`, *default:* `nil`) - For multiselect menus, a text description or label that's displayed below the item's `text` field.
+  *   `selected` (*type:* `boolean()`, *default:* `nil`) - Whether the item is selected by default. If the selection input only accepts one value (such as for radio buttons or a dropdown menu), only set this field for one item.
+  *   `startIconUri` (*type:* `String.t`, *default:* `nil`) - For multiselect menus, the URL for the icon displayed next to the item's `text` field. Supports PNG and JPEG files. Must be an `HTTPS` URL. For example, `https://developers.google.com/chat/images/quickstart-app-avatar.png`.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text that identifies or describes the item to users.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value associated with this item. The client should use this as a form input value. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bottomText => String.t() | nil,
           :selected => boolean() | nil,
+          :startIconUri => String.t() | nil,
           :text => String.t() | nil,
           :value => String.t() | nil
         }
 
+  field(:bottomText)
   field(:selected)
+  field(:startIconUri)
   field(:text)
   field(:value)
 end

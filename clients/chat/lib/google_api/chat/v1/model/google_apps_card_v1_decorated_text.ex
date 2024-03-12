@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1DecoratedText do
   @moduledoc """
-  A widget that displays text with optional decorations such as a label above or below the text, an icon in front of the text, a selection widget or a button after the text.
+  A widget that displays text with optional decorations such as a label above or below the text, an icon in front of the text, a selection widget, or a button after the text. For an example in Google Chat apps, see [Decorated text](https://developers.google.com/chat/ui/widgets/decorated-text). [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears below `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details.
-  *   `button` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button.t`, *default:* `nil`) - A button that can be clicked to trigger an action.
-  *   `endIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - An icon displayed after the text. Supports [standard](https://developers.google.com/chat/api/guides/message-formats/cards#builtinicons) and [custom](https://developers.google.com/chat/api/guides/message-formats/cards#customicons) icons.
+  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears below `text`. Always wraps.
+  *   `button` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Button.t`, *default:* `nil`) - A button that a user can click to trigger an action.
+  *   `endIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - An icon displayed after the text. Supports [built-in](https://developers.google.com/chat/format-messages#builtinicons) and [custom](https://developers.google.com/chat/format-messages#customicons) icons.
   *   `icon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - Deprecated in favor of `startIcon`.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - When users click on `topLabel` or `bottomLabel`, this action triggers.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - This action is triggered when users click `topLabel` or `bottomLabel`.
   *   `startIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon.t`, *default:* `nil`) - The icon displayed in front of the text.
-  *   `switchControl` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl.t`, *default:* `nil`) - A switch widget can be clicked to change its state and trigger an action. Currently supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) is coming soon.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Required. The primary text. Supports simple formatting. See Text formatting for formatting details.
-  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears above `text`. Always truncates. Supports simple formatting. See Text formatting for formatting details.
+  *   `switchControl` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl.t`, *default:* `nil`) - A switch widget that a user can click to change its state and trigger an action.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Required. The primary text. Supports simple formatting. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text that appears above `text`. Always truncates.
   *   `wrapText` (*type:* `boolean()`, *default:* `nil`) - The wrap text setting. If `true`, the text wraps and displays on multiple lines. Otherwise, the text is truncated. Only applies to `text`, not `topLabel` and `bottomLabel`.
   """
 

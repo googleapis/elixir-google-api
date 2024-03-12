@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.SlashCommand do
 
   ## Attributes
 
-  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The id of the slash command invoked.
+  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The ID of the slash command invoked.
   """
 
   use GoogleApi.Gax.ModelBase

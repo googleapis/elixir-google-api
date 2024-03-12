@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.SpaceDetails do
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the space. It could describe the space's discussion topic, functional purpose, or participants.
-  *   `guidelines` (*type:* `String.t`, *default:* `nil`) - Optional. The space's rules, expectations, and etiquette.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the space. For example, describe the space's discussion topic, functional purpose, or participants. Supports up to 150 characters.
+  *   `guidelines` (*type:* `String.t`, *default:* `nil`) - Optional. The space's rules, expectations, and etiquette. Supports up to 5,000 characters.
   """
 
   use GoogleApi.Gax.ModelBase

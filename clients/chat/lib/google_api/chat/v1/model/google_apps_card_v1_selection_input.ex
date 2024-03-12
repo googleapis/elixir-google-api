@@ -17,31 +17,44 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionInput do
   @moduledoc """
-  A widget that creates a UI item with options for users to select. For example, a dropdown menu or check list. Chat apps receive and can process the value of entered text during form input events. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs). When you need to collect data from users that matches options you set, use a selection input. To collect abstract data from users, use the text input widget instead. Only supported in [dialogs](https://developers.google.com/chat/how-tos/dialogs). Support for [card messages](https://developers.google.com/chat/api/guides/message-formats/cards) coming soon.
+  A widget that creates one or more UI items that users can select. For example, a dropdown menu or checkboxes. You can use this widget to collect data that can be predicted or enumerated. For an example in Google Chat apps, see [Selection input](https://developers.google.com/chat/ui/widgets/selection-input). Chat apps can process the value of items that users select or input. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data). To collect undefined or abstract data from users, use the TextInput widget. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - An array of the selected items. For example, all the selected check boxes.
+  *   `externalDataSource` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - An external data source, such as a relational data base.
+  *   `items` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t)`, *default:* `nil`) - An array of selectable items. For example, an array of radio buttons or checkboxes. Supports up to 100 items.
   *   `label` (*type:* `String.t`, *default:* `nil`) - The text that appears above the selection input field in the user interface. Specify text that helps the user enter the information your app needs. For example, if users are selecting the urgency of a work ticket from a drop-down menu, the label might be "Urgency" or "Select urgency".
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the selection input is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
-  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button that submits the form. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/how-tos/dialogs#receive_form_data_from_dialogs).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The way that an option appears to users. Different options support different types of interactions. For example, users can enable multiple check boxes, but can only select one value from a dropdown menu. Each selection input supports one type of selection. Mixing check boxes and switches, for example, is not supported.
+  *   `multiSelectMaxSelectedItems` (*type:* `integer()`, *default:* `nil`) - For multiselect menus, the maximum number of items that a user can select. Minimum value is 1 item. If unspecified, defaults to 3 items.
+  *   `multiSelectMinQueryLength` (*type:* `integer()`, *default:* `nil`) - For multiselect menus, the number of text characters that a user inputs before the Chat app queries autocomplete and displays suggested items in the menu. If unspecified, defaults to 0 characters for static data sources and 3 characters for external data sources.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name that identifies the selection input in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data).
+  *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - If specified, the form is submitted when the selection changes. If not specified, you must specify a separate button that submits the form. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data).
+  *   `platformDataSource` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1PlatformDataSource.t`, *default:* `nil`) - A data source from Google Workspace.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of items that are displayed to users in a `SelectionInput` widget. Selection types support different types of interactions. For example, users can select one or more checkboxes, but they can only select one value from a dropdown menu.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :externalDataSource => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t() | nil,
           :items => list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem.t()) | nil,
           :label => String.t() | nil,
+          :multiSelectMaxSelectedItems => integer() | nil,
+          :multiSelectMinQueryLength => integer() | nil,
           :name => String.t() | nil,
           :onChangeAction => GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t() | nil,
+          :platformDataSource =>
+            GoogleApi.Chat.V1.Model.GoogleAppsCardV1PlatformDataSource.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:externalDataSource, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action)
   field(:items, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1SelectionItem, type: :list)
   field(:label)
+  field(:multiSelectMaxSelectedItems)
+  field(:multiSelectMinQueryLength)
   field(:name)
   field(:onChangeAction, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action)
+  field(:platformDataSource, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1PlatformDataSource)
   field(:type)
 end
 

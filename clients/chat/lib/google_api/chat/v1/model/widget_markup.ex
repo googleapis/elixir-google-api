@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.WidgetMarkup do
   @moduledoc """
-  A widget is a UI element that presents texts, images, etc.
+  A widget is a UI element that presents text and images.
 
   ## Attributes
 
-  *   `buttons` (*type:* `list(GoogleApi.Chat.V1.Model.Button.t)`, *default:* `nil`) - A list of buttons. Buttons is also oneof data and only one of these fields should be set.
+  *   `buttons` (*type:* `list(GoogleApi.Chat.V1.Model.Button.t)`, *default:* `nil`) - A list of buttons. Buttons is also `oneof data` and only one of these fields should be set.
   *   `image` (*type:* `GoogleApi.Chat.V1.Model.Image.t`, *default:* `nil`) - Display an image in this widget.
   *   `keyValue` (*type:* `GoogleApi.Chat.V1.Model.KeyValue.t`, *default:* `nil`) - Display a key value item in this widget.
   *   `textParagraph` (*type:* `GoogleApi.Chat.V1.Model.TextParagraph.t`, *default:* `nil`) - Display a text paragraph in this widget.

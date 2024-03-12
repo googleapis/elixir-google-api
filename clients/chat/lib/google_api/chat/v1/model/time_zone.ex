@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.TimeZone do
   @moduledoc """
-  The timezone ID and offset from Coordinated Universal Time (UTC). Not supported by Chat apps.
+  The timezone ID and offset from Coordinated Universal Time (UTC). Only supported for the event types [`CARD_CLICKED`](https://developers.google.com/chat/api/reference/rest/v1/EventType#ENUM_VALUES.CARD_CLICKED) and [`SUBMIT_DIALOG`](https://developers.google.com/chat/api/reference/rest/v1/DialogEventType#ENUM_VALUES.SUBMIT_DIALOG).
 
   ## Attributes
 

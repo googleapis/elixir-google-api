@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.Chat.V1.Model.ActionResponse do
   @moduledoc """
-  Parameters that a Chat app can use to configure how it's response is posted.
+  Parameters that a Chat app can use to configure how its response is posted.
 
   ## Attributes
 
-  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - Input only. A response to an event related to a [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be accompanied by `ResponseType.Dialog`.
+  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - Input only. A response to an interaction event related to a [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be accompanied by `ResponseType.Dialog`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Input only. The type of Chat app response.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Input only. URL for users to auth or config. (Only for REQUEST_CONFIG response types.)
+  *   `updatedWidget` (*type:* `GoogleApi.Chat.V1.Model.UpdatedWidget.t`, *default:* `nil`) - Input only. The response of the updated widget.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Input only. URL for users to authenticate or configure. (Only for `REQUEST_CONFIG` response types.)
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,11 +32,13 @@ defmodule GoogleApi.Chat.V1.Model.ActionResponse do
   @type t :: %__MODULE__{
           :dialogAction => GoogleApi.Chat.V1.Model.DialogAction.t() | nil,
           :type => String.t() | nil,
+          :updatedWidget => GoogleApi.Chat.V1.Model.UpdatedWidget.t() | nil,
           :url => String.t() | nil
         }
 
   field(:dialogAction, as: GoogleApi.Chat.V1.Model.DialogAction)
   field(:type)
+  field(:updatedWidget, as: GoogleApi.Chat.V1.Model.UpdatedWidget)
   field(:url)
 end
 
