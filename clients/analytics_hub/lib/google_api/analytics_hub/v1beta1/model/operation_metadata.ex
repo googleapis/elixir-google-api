@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.AnalyticsHub.V1beta1.Model.OperationMetadata do
   @moduledoc """
-  Represents the metadata of the long-running operation.
+  Represents the metadata of a long-running operation in Analytics Hub.
 
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - Output only. API version used to start the operation.
-  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have been cancelled successfully have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
-  *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
+  *   `requestedCancellation` (*type:* `boolean()`, *default:* `nil`) - Output only. Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable status of the operation, if any.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined resource path for the target of the operation.
   *   `verb` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the verb executed by the operation.
   """
@@ -34,19 +34,19 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.OperationMetadata do
 
   @type t :: %__MODULE__{
           :apiVersion => String.t() | nil,
-          :cancelRequested => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
-          :statusDetail => String.t() | nil,
+          :requestedCancellation => boolean() | nil,
+          :statusMessage => String.t() | nil,
           :target => String.t() | nil,
           :verb => String.t() | nil
         }
 
   field(:apiVersion)
-  field(:cancelRequested)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
-  field(:statusDetail)
+  field(:requestedCancellation)
+  field(:statusMessage)
   field(:target)
   field(:verb)
 end
