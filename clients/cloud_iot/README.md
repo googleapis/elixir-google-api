@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_iot, "~> 0.27"}]
+  [{:google_api_cloud_iot, "~> 0.28"}]
 end
 ```
 
