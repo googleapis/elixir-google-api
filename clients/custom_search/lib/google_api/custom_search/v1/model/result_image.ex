@@ -21,7 +21,7 @@ defmodule GoogleApi.CustomSearch.V1.Model.ResultImage do
 
   ## Attributes
 
-  *   `byteSize` (*type:* `integer()`, *default:* `nil`) - The size of the image, in pixels.
+  *   `byteSize` (*type:* `integer()`, *default:* `nil`) - The size of the image, in bytes.
   *   `contextLink` (*type:* `String.t`, *default:* `nil`) - A URL pointing to the webpage hosting the image.
   *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the image, in pixels.
   *   `thumbnailHeight` (*type:* `integer()`, *default:* `nil`) - The height of the thumbnail image, in pixels.
