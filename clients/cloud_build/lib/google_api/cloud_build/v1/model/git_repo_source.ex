@@ -25,7 +25,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
   *   `githubEnterpriseConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the github enterprise config. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`. `projects/{project}/githubEnterpriseConfigs/{id}`.
   *   `ref` (*type:* `String.t`, *default:* `nil`) - The branch or tag to use. Must start with "refs/" (required).
   *   `repoType` (*type:* `String.t`, *default:* `nil`) - See RepoType below.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo. Either uri or repository can be specified and is required.
+  *   `repository` (*type:* `String.t`, *default:* `nil`) - The connected repository resource name, in the format `projects/*/locations/*/connections/*/repositories/*`. Either `uri` or `repository` can be specified and is required.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo (e.g. https://github.com/user/repo.git). Either `uri` or `repository` can be specified and is required.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
           :githubEnterpriseConfig => String.t() | nil,
           :ref => String.t() | nil,
           :repoType => String.t() | nil,
+          :repository => String.t() | nil,
           :uri => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitRepoSource do
   field(:githubEnterpriseConfig)
   field(:ref)
   field(:repoType)
+  field(:repository)
   field(:uri)
 end
 

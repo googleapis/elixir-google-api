@@ -21,10 +21,12 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
 
   ## Attributes
 
-  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Requested disk size for the VM that runs the build. Note that this is *NOT* "disk free"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 1000GB; builds that request more than the maximum are rejected with an error.
+  *   `automapSubstitutions` (*type:* `boolean()`, *default:* `nil`) - Option to include built-in and custom substitutions as env variables for all build steps.
+  *   `defaultLogsBucketBehavior` (*type:* `String.t`, *default:* `nil`) - Optional. Option to specify how default logs buckets are setup.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Requested disk size for the VM that runs the build. Note that this is *NOT* "disk free"; some of the space will be used by the operating system and build utilities. Also note that this is the minimum disk size that will be allocated for the build -- the build may run with a larger disk than requested. At present, the maximum disk size is 2000GB; builds that request more than the maximum are rejected with an error.
   *   `dynamicSubstitutions` (*type:* `boolean()`, *default:* `nil`) - Option to specify whether or not to apply bash style string operations to the substitutions. NOTE: this is always enabled for triggered builds and cannot be overridden in the build configuration file.
   *   `env` (*type:* `list(String.t)`, *default:* `nil`) - A list of global environment variable definitions that will exist for all build steps in this build. If a variable is defined in both globally and in a build step, the variable will use the build step value. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
-  *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Google Cloud Storage.
+  *   `logStreamingOption` (*type:* `String.t`, *default:* `nil`) - Option to define build log streaming behavior to Cloud Storage.
   *   `logging` (*type:* `String.t`, *default:* `nil`) - Option to specify the logging mode, which determines if and where build logs are stored.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type on which to run the build.
   *   `pool` (*type:* `GoogleApi.CloudBuild.V1.Model.PoolOption.t`, *default:* `nil`) - Optional. Specification for execution on a `WorkerPool`. See [running builds in a private pool](https://cloud.google.com/build/docs/private-pools/run-builds-in-private-pool) for more information.
@@ -39,6 +41,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :automapSubstitutions => boolean() | nil,
+          :defaultLogsBucketBehavior => String.t() | nil,
           :diskSizeGb => String.t() | nil,
           :dynamicSubstitutions => boolean() | nil,
           :env => list(String.t()) | nil,
@@ -54,6 +58,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.BuildOptions do
           :workerPool => String.t() | nil
         }
 
+  field(:automapSubstitutions)
+  field(:defaultLogsBucketBehavior)
   field(:diskSizeGb)
   field(:dynamicSubstitutions)
   field(:env, type: :list)
