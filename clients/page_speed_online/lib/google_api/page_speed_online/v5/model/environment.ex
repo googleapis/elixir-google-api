@@ -22,6 +22,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Environment do
   ## Attributes
 
   *   `benchmarkIndex` (*type:* `float()`, *default:* `nil`) - The benchmark index number that indicates rough device class.
+  *   `credits` (*type:* `map()`, *default:* `nil`) - The version of libraries with which these results were generated. Ex: axe-core.
   *   `hostUserAgent` (*type:* `String.t`, *default:* `nil`) - The user agent string of the version of Chrome used.
   *   `networkUserAgent` (*type:* `String.t`, *default:* `nil`) - The user agent string that was sent over the network.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Environment do
 
   @type t :: %__MODULE__{
           :benchmarkIndex => float() | nil,
+          :credits => map() | nil,
           :hostUserAgent => String.t() | nil,
           :networkUserAgent => String.t() | nil
         }
 
   field(:benchmarkIndex)
+  field(:credits, type: :map)
   field(:hostUserAgent)
   field(:networkUserAgent)
 end
