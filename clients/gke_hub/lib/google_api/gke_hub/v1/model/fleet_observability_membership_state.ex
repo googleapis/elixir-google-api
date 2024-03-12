@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipState do
   @moduledoc """
-  **FleetObservability**: An empty state left as an example membership-specific Feature state.
+  **FleetObservability**: Membership-specific Feature state for fleetobservability.
 
   ## Attributes
 

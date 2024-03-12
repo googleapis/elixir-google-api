@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig do
 
   ## Attributes
 
-  *   `gcpServiceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The GCP Service Account Email used for auth when secret_type is gcpServiceAccount.
+  *   `gcpServiceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Service Account Email used for auth when secret_type is gcpServiceAccount.
   *   `httpsProxy` (*type:* `String.t`, *default:* `nil`) - URL for the HTTPS proxy to be used when communicating with the Git repo.
   *   `policyDir` (*type:* `String.t`, *default:* `nil`) - The path within the Git repository that represents the top level of the repo to sync. Default: the root directory of the repository.
   *   `secretType` (*type:* `String.t`, *default:* `nil`) - Type of secret configured for access to the Git repo. Must be one of ssh, cookiefile, gcenode, token, gcpserviceaccount or none. The validation of this is case-sensitive. Required.

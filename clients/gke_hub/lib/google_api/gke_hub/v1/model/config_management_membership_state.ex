@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipState do
 
   ## Attributes
 
-  *   `clusterName` (*type:* `String.t`, *default:* `nil`) - The user-defined name for the cluster used by ClusterSelectors to group clusters together. This should match Membership's membership_name, unless the user installed ACM on the cluster manually prior to enabling the ACM hub feature. Unique within a Anthos Config Management installation.
+  *   `clusterName` (*type:* `String.t`, *default:* `nil`) - This field is set to the `cluster_name` field of the Membership Spec if it is not empty. Otherwise, it is set to the cluster's fleet membership name.
   *   `configSyncState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState.t`, *default:* `nil`) - Current sync status
   *   `hierarchyControllerState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerState.t`, *default:* `nil`) - Hierarchy Controller status
   *   `membershipSpec` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec.t`, *default:* `nil`) - Membership configuration in the cluster. This represents the actual state in the cluster, while the MembershipSpec in the FeatureSpec represents the intended state

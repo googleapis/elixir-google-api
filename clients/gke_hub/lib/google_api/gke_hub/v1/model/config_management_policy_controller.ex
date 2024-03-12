@@ -29,6 +29,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
   *   `mutationEnabled` (*type:* `boolean()`, *default:* `nil`) - Enable or disable mutation in policy controller. If true, mutation CRDs, webhook and controller deployment will be deployed to the cluster.
   *   `referentialRulesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables the ability to use Constraint Templates that reference to objects other than the object currently being evaluated.
   *   `templateLibraryInstalled` (*type:* `boolean()`, *default:* `nil`) - Installs the default template library along with Policy Controller.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last time this membership spec was updated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +43,8 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
             GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMonitoring.t() | nil,
           :mutationEnabled => boolean() | nil,
           :referentialRulesEnabled => boolean() | nil,
-          :templateLibraryInstalled => boolean() | nil
+          :templateLibraryInstalled => boolean() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:auditIntervalSeconds)
@@ -53,6 +55,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do
   field(:mutationEnabled)
   field(:referentialRulesEnabled)
   field(:templateLibraryInstalled)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController do

@@ -21,8 +21,10 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec do
 
   ## Attributes
 
+  *   `cluster` (*type:* `String.t`, *default:* `nil`) - The user-specified cluster name used by Config Sync cluster-name-selector annotation or ClusterSelector, for applying configs to only a subset of clusters. Omit this field if the cluster's fleet membership name is used by Config Sync cluster-name-selector annotation or ClusterSelector. Set this field if a name different from the cluster's fleet membership name is used by Config Sync cluster-name-selector annotation or ClusterSelector.
   *   `configSync` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync.t`, *default:* `nil`) - Config Sync configuration for the cluster.
   *   `hierarchyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig.t`, *default:* `nil`) - Hierarchy Controller configuration for the cluster.
+  *   `management` (*type:* `String.t`, *default:* `nil`) - Enables automatic Feature management.
   *   `policyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController.t`, *default:* `nil`) - Policy Controller configuration for the cluster.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Version of ACM installed.
   """
@@ -30,20 +32,24 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cluster => String.t() | nil,
           :configSync => GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync.t() | nil,
           :hierarchyController =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig.t() | nil,
+          :management => String.t() | nil,
           :policyController =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:cluster)
   field(:configSync, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync)
 
   field(:hierarchyController,
     as: GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig
   )
 
+  field(:management)
   field(:policyController, as: GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController)
   field(:version)
 end

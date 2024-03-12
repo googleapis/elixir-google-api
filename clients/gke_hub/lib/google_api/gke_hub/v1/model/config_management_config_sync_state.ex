@@ -22,6 +22,10 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState do
   ## Attributes
 
   *   `deploymentState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState.t`, *default:* `nil`) - Information about the deployment of ConfigSync, including the version of the various Pods deployed
+  *   `errors` (*type:* `list(GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError.t)`, *default:* `nil`) - Errors pertaining to the installation of Config Sync.
+  *   `reposyncCrd` (*type:* `String.t`, *default:* `nil`) - The state of the Reposync CRD
+  *   `rootsyncCrd` (*type:* `String.t`, *default:* `nil`) - The state of the RootSync CRD
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of CS This field summarizes the other fields in this message.
   *   `syncState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementSyncState.t`, *default:* `nil`) - The state of ConfigSync's process to sync configs to a cluster
   *   `version` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion.t`, *default:* `nil`) - The version of ConfigSync deployed
   """
@@ -31,11 +35,19 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncState do
   @type t :: %__MODULE__{
           :deploymentState =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState.t() | nil,
+          :errors => list(GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError.t()) | nil,
+          :reposyncCrd => String.t() | nil,
+          :rootsyncCrd => String.t() | nil,
+          :state => String.t() | nil,
           :syncState => GoogleApi.GKEHub.V1.Model.ConfigManagementSyncState.t() | nil,
           :version => GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion.t() | nil
         }
 
   field(:deploymentState, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState)
+  field(:errors, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncError, type: :list)
+  field(:reposyncCrd)
+  field(:rootsyncCrd)
+  field(:state)
   field(:syncState, as: GoogleApi.GKEHub.V1.Model.ConfigManagementSyncState)
   field(:version, as: GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion)
 end

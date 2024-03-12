@@ -24,8 +24,10 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig do
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - ID for the registered client application that makes authentication requests to the Azure AD identity provider.
   *   `clientSecret` (*type:* `String.t`, *default:* `nil`) - Input only. Unencrypted AzureAD client secret will be passed to the GKE Hub CLH.
   *   `encryptedClientSecret` (*type:* `String.t`, *default:* `nil`) - Output only. Encrypted AzureAD client secret.
+  *   `groupFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Format of the AzureAD groups that the client wants for auth.
   *   `kubectlRedirectUri` (*type:* `String.t`, *default:* `nil`) - The redirect URL that kubectl uses for authorization.
   *   `tenant` (*type:* `String.t`, *default:* `nil`) - Kind of Azure AD account to be authenticated. Supported values are or for accounts belonging to a specific tenant.
+  *   `userClaim` (*type:* `String.t`, *default:* `nil`) - Optional. Claim in the AzureAD ID Token that holds the user details.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,15 +36,19 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig do
           :clientId => String.t() | nil,
           :clientSecret => String.t() | nil,
           :encryptedClientSecret => String.t() | nil,
+          :groupFormat => String.t() | nil,
           :kubectlRedirectUri => String.t() | nil,
-          :tenant => String.t() | nil
+          :tenant => String.t() | nil,
+          :userClaim => String.t() | nil
         }
 
   field(:clientId)
   field(:clientSecret)
   field(:encryptedClientSecret)
+  field(:groupFormat)
   field(:kubectlRedirectUri)
   field(:tenant)
+  field(:userClaim)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig do

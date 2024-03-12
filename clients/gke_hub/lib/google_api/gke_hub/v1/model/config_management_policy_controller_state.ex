@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerState do
   ## Attributes
 
   *   `deploymentState` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementGatekeeperDeploymentState.t`, *default:* `nil`) - The state about the policy controller installation.
+  *   `migration` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMigration.t`, *default:* `nil`) - Record state of ACM -> PoCo Hub migration for this feature.
   *   `version` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerVersion.t`, *default:* `nil`) - The version of Gatekeeper Policy Controller deployed.
   """
 
@@ -30,10 +31,13 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerState do
   @type t :: %__MODULE__{
           :deploymentState =>
             GoogleApi.GKEHub.V1.Model.ConfigManagementGatekeeperDeploymentState.t() | nil,
+          :migration =>
+            GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMigration.t() | nil,
           :version => GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerVersion.t() | nil
         }
 
   field(:deploymentState, as: GoogleApi.GKEHub.V1.Model.ConfigManagementGatekeeperDeploymentState)
+  field(:migration, as: GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerMigration)
   field(:version, as: GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyControllerVersion)
 end
 

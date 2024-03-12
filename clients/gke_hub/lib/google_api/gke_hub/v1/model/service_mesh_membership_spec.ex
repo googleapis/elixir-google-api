@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec do
 
   ## Attributes
 
-  *   `controlPlane` (*type:* `String.t`, *default:* `nil`) - Enables automatic control plane management.
+  *   `controlPlane` (*type:* `String.t`, *default:* `nil`) - Deprecated: use `management` instead Enables automatic control plane management.
   *   `management` (*type:* `String.t`, *default:* `nil`) - Enables automatic Service Mesh management.
   """
 

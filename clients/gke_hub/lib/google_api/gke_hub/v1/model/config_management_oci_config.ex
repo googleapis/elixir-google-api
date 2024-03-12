@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig do
 
   ## Attributes
 
-  *   `gcpServiceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The GCP Service Account Email used for auth when secret_type is gcpServiceAccount.
+  *   `gcpServiceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Service Account Email used for auth when secret_type is gcpServiceAccount.
   *   `policyDir` (*type:* `String.t`, *default:* `nil`) - The absolute path of the directory that contains the local resources. Default: the root directory of the image.
   *   `secretType` (*type:* `String.t`, *default:* `nil`) - Type of secret configured for access to the Git repo.
   *   `syncRepo` (*type:* `String.t`, *default:* `nil`) - The OCI image repository URL for the package to sync from. e.g. `LOCATION-docker.pkg.dev/PROJECT_ID/REPOSITORY_NAME/PACKAGE_NAME`.
