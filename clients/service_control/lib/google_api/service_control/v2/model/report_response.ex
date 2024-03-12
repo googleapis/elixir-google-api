@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ServiceControl.V2.Model.ReportResponse do
   @moduledoc """
-  Response message for the Report method. If the request contains any invalid data, the server returns an RPC error.
+  Response message for the Report method.
 
   ## Attributes
 

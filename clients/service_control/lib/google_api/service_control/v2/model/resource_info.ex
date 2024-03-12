@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceControl.V2.Model.ResourceInfo do
 
   ## Attributes
 
-  *   `container` (*type:* `String.t`, *default:* `nil`) - Optional. The identifier of the container of this resource. For Google Cloud APIs, the resource container must be one of the following formats: - `projects/` - `folders/` - `organizations/` For the policy enforcement on the container level (VPCSC and Location Policy check), this field takes precedence on the container extracted from name when presents.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The location of the resource. The value must be a valid zone, region or multiregion. For example: "europe-west4" or "northamerica-northeast1-a"
+  *   `container` (*type:* `String.t`, *default:* `nil`) - Optional. The identifier of the container of this resource. For Google Cloud APIs, the resource container must be one of the following formats: - `projects/` - `folders/` - `organizations/` Required for the policy enforcement on the container level (e.g. VPCSC, Location Policy check, Org Policy check).
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The location of the resource, it must be a valid zone, region or multiregion, for example: "europe-west4", "northamerica-northeast1-a". Required for location policy check.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource referenced in the request.
   *   `permission` (*type:* `String.t`, *default:* `nil`) - The resource permission needed for this request. The format must be "{service}/{plural}.{verb}".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The resource type in the format of "{service}/{kind}".

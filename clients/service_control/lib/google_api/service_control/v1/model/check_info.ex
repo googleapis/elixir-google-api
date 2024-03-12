@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckInfo do
 
   ## Attributes
 
+  *   `apiKeyUid` (*type:* `String.t`, *default:* `nil`) - The unique id of the api key in the format of "apikey:". This field will be populated when the consumer passed to Chemist is an API key and all the API key related validations are successful.
   *   `consumerInfo` (*type:* `GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t`, *default:* `nil`) - Consumer info of this check.
   *   `unusedArguments` (*type:* `list(String.t)`, *default:* `nil`) - A list of fields and label keys that are ignored by the server. The client doesn't need to send them for following requests to improve performance and allow better aggregation.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.ServiceControl.V1.Model.CheckInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :apiKeyUid => String.t() | nil,
           :consumerInfo => GoogleApi.ServiceControl.V1.Model.ConsumerInfo.t() | nil,
           :unusedArguments => list(String.t()) | nil
         }
 
+  field(:apiKeyUid)
   field(:consumerInfo, as: GoogleApi.ServiceControl.V1.Model.ConsumerInfo)
   field(:unusedArguments, type: :list)
 end
