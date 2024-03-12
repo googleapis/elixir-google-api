@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudProfiler.V2.Model.CreateProfileRequest do
 
   ## Attributes
 
-  *   `deployment` (*type:* `GoogleApi.CloudProfiler.V2.Model.Deployment.t`, *default:* `nil`) - Required. Deployment details.
-  *   `profileType` (*type:* `list(String.t)`, *default:* `nil`) - Required. One or more profile types that the agent is capable of providing.
+  *   `deployment` (*type:* `GoogleApi.CloudProfiler.V2.Model.Deployment.t`, *default:* `nil`) - Deployment details.
+  *   `profileType` (*type:* `list(String.t)`, *default:* `nil`) - One or more profile types that the agent is capable of providing.
   """
 
   use GoogleApi.Gax.ModelBase

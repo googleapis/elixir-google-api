@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudProfiler.V2.Model.Profile do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Opaque, server-assigned, unique ID for this profile.
   *   `profileBytes` (*type:* `String.t`, *default:* `nil`) - Input only. Profile bytes, as a gzip compressed serialized proto, the format is https://github.com/google/pprof/blob/master/proto/profile.proto.
   *   `profileType` (*type:* `String.t`, *default:* `nil`) - Type of profile. For offline mode, this must be specified when creating the profile. For online mode it is assigned and returned by the server.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Start time for the profile. This output is only present in response from the ListProfiles method.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.CloudProfiler.V2.Model.Profile do
           :labels => map() | nil,
           :name => String.t() | nil,
           :profileBytes => String.t() | nil,
-          :profileType => String.t() | nil
+          :profileType => String.t() | nil,
+          :startTime => DateTime.t() | nil
         }
 
   field(:deployment, as: GoogleApi.CloudProfiler.V2.Model.Deployment)
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudProfiler.V2.Model.Profile do
   field(:name)
   field(:profileBytes)
   field(:profileType)
+  field(:startTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudProfiler.V2.Model.Profile do
