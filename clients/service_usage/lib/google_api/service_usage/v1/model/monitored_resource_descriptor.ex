@@ -26,7 +26,7 @@ defmodule GoogleApi.ServiceUsage.V1.Model.MonitoredResourceDescriptor do
   *   `labels` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.LabelDescriptor.t)`, *default:* `nil`) - Required. A set of labels used to describe instances of this monitored resource type. For example, an individual Google Cloud SQL database is identified by values for the labels `"database_id"` and `"zone"`.
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Optional. The launch stage of the monitored resource definition.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the monitored resource descriptor: `"projects/{project_id}/monitoredResourceDescriptors/{type}"` where {type} is the value of the `type` field in this object and {project_id} is a project ID that provides API-specific context for accessing the type. APIs that do not use project information can use the resource name format `"monitoredResourceDescriptors/{type}"`.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The monitored resource type. For example, the type `"cloudsql_database"` represents databases in Google Cloud SQL. For a list of types, see [Monitoring resource types](https://cloud.google.com/monitoring/api/resources) and [Logging resource types](https://cloud.google.com/logging/docs/api/v2/resource-list).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The monitored resource type. For example, the type `"cloudsql_database"` represents databases in Google Cloud SQL. For a list of types, see [Monitored resource types](https://cloud.google.com/monitoring/api/resources) and [Logging resource types](https://cloud.google.com/logging/docs/api/v2/resource-list).
   """
 
   use GoogleApi.Gax.ModelBase
