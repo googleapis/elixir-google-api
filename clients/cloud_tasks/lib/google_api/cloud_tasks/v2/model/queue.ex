@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
   ## Attributes
 
   *   `appEngineRoutingOverride` (*type:* `GoogleApi.CloudTasks.V2.Model.AppEngineRouting.t`, *default:* `nil`) - Overrides for task-level app_engine_routing. These settings apply only to App Engine tasks in this queue. Http tasks are not affected. If set, `app_engine_routing_override` is used for all App Engine tasks in the queue, no matter what the setting is for the task-level app_engine_routing.
+  *   `httpTarget` (*type:* `GoogleApi.CloudTasks.V2.Model.HttpTarget.t`, *default:* `nil`) - Modifies HTTP target for HTTP tasks.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Caller-specified and required in CreateQueue, after which it becomes output only. The queue name. The queue name must have the following format: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the queue's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or hyphens (-). The maximum length is 100 characters.
   *   `purgeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time this queue was purged. All tasks that were created before this time were purged. A queue can be purged using PurgeQueue, the [App Engine Task Queue SDK, or the Cloud Console](https://cloud.google.com/appengine/docs/standard/python/taskqueue/push/deleting-tasks-and-queues#purging_all_tasks_from_a_queue). Purge time will be truncated to the nearest microsecond. Purge time will be unset if the queue has never been purged.
   *   `rateLimits` (*type:* `GoogleApi.CloudTasks.V2.Model.RateLimits.t`, *default:* `nil`) - Rate limits for task dispatches. rate_limits and retry_config are related because they both control task attempts. However they control task attempts in different ways: * rate_limits controls the total rate of dispatches from a queue (i.e. all traffic dispatched from the queue, regardless of whether the dispatch is from a first attempt or a retry). * retry_config controls what happens to particular a task after its first attempt fails. That is, retry_config controls task retries (the second attempt, third attempt, etc). The queue's actual dispatch rate is the result of: * Number of tasks in the queue * User-specified throttling: rate_limits, retry_config, and the queue's state. * System throttling due to `429` (Too Many Requests) or `503` (Service Unavailable) responses from the worker, high error rates, or to smooth sudden large traffic spikes.
@@ -34,6 +35,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
 
   @type t :: %__MODULE__{
           :appEngineRoutingOverride => GoogleApi.CloudTasks.V2.Model.AppEngineRouting.t() | nil,
+          :httpTarget => GoogleApi.CloudTasks.V2.Model.HttpTarget.t() | nil,
           :name => String.t() | nil,
           :purgeTime => DateTime.t() | nil,
           :rateLimits => GoogleApi.CloudTasks.V2.Model.RateLimits.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.CloudTasks.V2.Model.Queue do
         }
 
   field(:appEngineRoutingOverride, as: GoogleApi.CloudTasks.V2.Model.AppEngineRouting)
+  field(:httpTarget, as: GoogleApi.CloudTasks.V2.Model.HttpTarget)
   field(:name)
   field(:purgeTime, as: DateTime)
   field(:rateLimits, as: GoogleApi.CloudTasks.V2.Model.RateLimits)
