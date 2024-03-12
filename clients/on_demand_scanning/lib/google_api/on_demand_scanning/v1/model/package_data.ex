@@ -21,15 +21,21 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
 
   ## Attributes
 
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the package.
+  *   `binarySourceInfo` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.BinarySourceInfo.t)`, *default:* `nil`) - A bundle containing the binary and source information.
+  *   `binaryVersion` (*type:* `GoogleApi.OnDemandScanning.V1.Model.PackageVersion.t`, *default:* `nil`) - DEPRECATED
   *   `cpeUri` (*type:* `String.t`, *default:* `nil`) - The cpe_uri in [cpe format] (https://cpe.mitre.org/specification/) in which the vulnerability may manifest. Examples include distro or storage location for vulnerable jar.
   *   `dependencyChain` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t)`, *default:* `nil`) - The dependency chain between this package and the user's artifact. List in order from the customer's package under review first, to the current package last. Inclusive of the original package and the current package.
   *   `fileLocation` (*type:* `list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t)`, *default:* `nil`) - The path to the jar file / go binary file.
   *   `hashDigest` (*type:* `String.t`, *default:* `nil`) - HashDigest stores the SHA512 hash digest of the jar file if the package is of type Maven. This field will be unset for non Maven packages.
+  *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - The list of licenses found that are related to a given package. Note that licenses may also be stored on the BinarySourceInfo. If there is no BinarySourceInfo (because there's no concept of source vs binary), then it will be stored here, while if there are BinarySourceInfos, it will be stored there, as one source can have multiple binaries with different licenses.
+  *   `maintainer` (*type:* `GoogleApi.OnDemandScanning.V1.Model.Maintainer.t`, *default:* `nil`) - The maintainer of the package.
   *   `os` (*type:* `String.t`, *default:* `nil`) - The OS affected by a vulnerability Used to generate the cpe_uri for OS packages
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The version of the OS Used to generate the cpe_uri for OS packages
   *   `package` (*type:* `String.t`, *default:* `nil`) - The package being analysed for vulnerabilities
   *   `packageType` (*type:* `String.t`, *default:* `nil`) - The type of package: os, maven, go, etc.
   *   `patchedCve` (*type:* `list(String.t)`, *default:* `nil`) - CVEs that this package is no longer vulnerable to go/drydock-dd-custom-binary-scanning
+  *   `sourceVersion` (*type:* `GoogleApi.OnDemandScanning.V1.Model.PackageVersion.t`, *default:* `nil`) - DEPRECATED
   *   `unused` (*type:* `String.t`, *default:* `nil`) - 
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the package being analysed
   """
@@ -37,20 +43,30 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :architecture => String.t() | nil,
+          :binarySourceInfo =>
+            list(GoogleApi.OnDemandScanning.V1.Model.BinarySourceInfo.t()) | nil,
+          :binaryVersion => GoogleApi.OnDemandScanning.V1.Model.PackageVersion.t() | nil,
           :cpeUri => String.t() | nil,
           :dependencyChain =>
             list(GoogleApi.OnDemandScanning.V1.Model.LanguagePackageDependency.t()) | nil,
           :fileLocation => list(GoogleApi.OnDemandScanning.V1.Model.FileLocation.t()) | nil,
           :hashDigest => String.t() | nil,
+          :licenses => list(String.t()) | nil,
+          :maintainer => GoogleApi.OnDemandScanning.V1.Model.Maintainer.t() | nil,
           :os => String.t() | nil,
           :osVersion => String.t() | nil,
           :package => String.t() | nil,
           :packageType => String.t() | nil,
           :patchedCve => list(String.t()) | nil,
+          :sourceVersion => GoogleApi.OnDemandScanning.V1.Model.PackageVersion.t() | nil,
           :unused => String.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:architecture)
+  field(:binarySourceInfo, as: GoogleApi.OnDemandScanning.V1.Model.BinarySourceInfo, type: :list)
+  field(:binaryVersion, as: GoogleApi.OnDemandScanning.V1.Model.PackageVersion)
   field(:cpeUri)
 
   field(:dependencyChain,
@@ -60,11 +76,14 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.PackageData do
 
   field(:fileLocation, as: GoogleApi.OnDemandScanning.V1.Model.FileLocation, type: :list)
   field(:hashDigest)
+  field(:licenses, type: :list)
+  field(:maintainer, as: GoogleApi.OnDemandScanning.V1.Model.Maintainer)
   field(:os)
   field(:osVersion)
   field(:package)
   field(:packageType)
   field(:patchedCve, type: :list)
+  field(:sourceVersion, as: GoogleApi.OnDemandScanning.V1.Model.PackageVersion)
   field(:unused)
   field(:version)
 end
