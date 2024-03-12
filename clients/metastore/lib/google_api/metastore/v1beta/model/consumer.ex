@@ -21,17 +21,20 @@ defmodule GoogleApi.Metastore.V1beta.Model.Consumer do
 
   ## Attributes
 
+  *   `endpointLocation` (*type:* `String.t`, *default:* `nil`) - Output only. The location of the endpoint URI. Format: projects/{project}/locations/{location}.
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the endpoint used to access the metastore service.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Immutable. The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint. It is accessible to hosts in the subnet and to all hosts in a subnet in the same region and same network. There must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:`projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Immutable. The subnetwork of the customer project from which an IP address is reserved and used as the Dataproc Metastore service's endpoint. It is accessible to hosts in the subnet and to all hosts in a subnet in the same region and same network. There must be at least one IP address available in the subnet's primary range. The subnet is specified in the following form:projects/{project_number}/regions/{region_id}/subnetworks/{subnetwork_id}
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :endpointLocation => String.t() | nil,
           :endpointUri => String.t() | nil,
           :subnetwork => String.t() | nil
         }
 
+  field(:endpointLocation)
   field(:endpointUri)
   field(:subnetwork)
 end

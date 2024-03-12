@@ -22,15 +22,18 @@ defmodule GoogleApi.Metastore.V1beta.Model.NetworkConfig do
   ## Attributes
 
   *   `consumers` (*type:* `list(GoogleApi.Metastore.V1beta.Model.Consumer.t)`, *default:* `nil`) - Immutable. The consumer-side network configuration for the Dataproc Metastore instance.
+  *   `customRoutesEnabled` (*type:* `boolean()`, *default:* `nil`) - Enables custom routes to be imported and exported for the Dataproc Metastore service's peered VPC network.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consumers => list(GoogleApi.Metastore.V1beta.Model.Consumer.t()) | nil
+          :consumers => list(GoogleApi.Metastore.V1beta.Model.Consumer.t()) | nil,
+          :customRoutesEnabled => boolean() | nil
         }
 
   field(:consumers, as: GoogleApi.Metastore.V1beta.Model.Consumer, type: :list)
+  field(:customRoutesEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Metastore.V1beta.Model.NetworkConfig do

@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.TelemetryConfig do
 
   ## Attributes
 
-  *   `logFormat` (*type:* `String.t`, *default:* `nil`) - 
+  *   `logFormat` (*type:* `String.t`, *default:* `nil`) - The output format of the Dataproc Metastore service's logs.
   """
 
   use GoogleApi.Gax.ModelBase

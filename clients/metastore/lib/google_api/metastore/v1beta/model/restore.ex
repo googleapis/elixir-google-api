@@ -22,6 +22,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Restore do
   ## Attributes
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the metastore service backup to restore from, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}/backups/{backup_id}.
+  *   `backupLocation` (*type:* `String.t`, *default:* `nil`) - Optional. A Cloud Storage URI specifying where the backup artifacts are stored, in the format gs:///.
   *   `details` (*type:* `String.t`, *default:* `nil`) - Output only. The restore details containing the revision of the service to be restored to, in format of JSON.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the restore ended.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the restore started.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Restore do
 
   @type t :: %__MODULE__{
           :backup => String.t() | nil,
+          :backupLocation => String.t() | nil,
           :details => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :startTime => DateTime.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Restore do
         }
 
   field(:backup)
+  field(:backupLocation)
   field(:details)
   field(:endTime, as: DateTime)
   field(:startTime, as: DateTime)
