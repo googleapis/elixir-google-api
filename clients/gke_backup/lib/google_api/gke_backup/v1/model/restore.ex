@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.Restore do
   @moduledoc """
-  Represents both a request to Restore some portion of a Backup into a target GKE cluster and a record of the restore operation itself. Next id: 18
+  Represents both a request to Restore some portion of a Backup into a target GKE cluster and a record of the restore operation itself. Next id: 20
 
   ## Attributes
 

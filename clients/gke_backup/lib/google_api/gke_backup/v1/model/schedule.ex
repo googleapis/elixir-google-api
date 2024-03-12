@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.Schedule do
   @moduledoc """
-  Schedule defines scheduling parameters for automatically creating Backups via this BackupPlan.
+  Defines scheduling parameters for automatically creating Backups via this BackupPlan.
 
   ## Attributes
 
-  *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - A standard [cron](https://wikipedia.com/wiki/cron) string that defines a repeating schedule for creating Backups via this BackupPlan. If this is defined, then backup_retain_days must also be defined. Default (empty): no automatic backup creation will occur.
-  *   `paused` (*type:* `boolean()`, *default:* `nil`) - This flag denotes whether automatic Backup creation is paused for this BackupPlan. Default: False
+  *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that defines a repeating schedule for creating Backups via this BackupPlan. This is mutually exclusive with the rpo_config field since at most one schedule can be defined for a BackupPlan. If this is defined, then backup_retain_days must also be defined. Default (empty): no automatic backup creation will occur.
+  *   `paused` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag denotes whether automatic Backup creation is paused for this BackupPlan. Default: False
   """
 
   use GoogleApi.Gax.ModelBase

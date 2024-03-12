@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.NamespacedNames do
 
   ## Attributes
 
-  *   `namespacedNames` (*type:* `list(GoogleApi.GKEBackup.V1.Model.NamespacedName.t)`, *default:* `nil`) - A list of namespaced Kubernetes resources.
+  *   `namespacedNames` (*type:* `list(GoogleApi.GKEBackup.V1.Model.NamespacedName.t)`, *default:* `nil`) - Optional. A list of namespaced Kubernetes resources.
   """
 
   use GoogleApi.Gax.ModelBase

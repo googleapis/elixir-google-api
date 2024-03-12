@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.Backup do
   @moduledoc """
-  Represents a request to perform a single point-in-time capture of some portion of the state of a GKE cluster, the record of the backup operation itself, and an anchor for the underlying artifacts that comprise the Backup (the config backup and VolumeBackups). Next id: 28
+  Represents a request to perform a single point-in-time capture of some portion of the state of a GKE cluster, the record of the backup operation itself, and an anchor for the underlying artifacts that comprise the Backup (the config backup and VolumeBackups). Next id: 29
 
   ## Attributes
 
@@ -28,17 +28,17 @@ defmodule GoogleApi.GKEBackup.V1.Model.Backup do
   *   `containsSecrets` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not the Backup contains Kubernetes Secrets. Controlled by the parent BackupPlan's include_secrets value.
   *   `containsVolumeData` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not the Backup contains volume data. Controlled by the parent BackupPlan's include_volume_data value.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this Backup resource was created.
-  *   `deleteLockDays` (*type:* `integer()`, *default:* `nil`) - Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
+  *   `deleteLockDays` (*type:* `integer()`, *default:* `nil`) - Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
   *   `deleteLockExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days).
-  *   `description` (*type:* `String.t`, *default:* `nil`) - User specified descriptive string for this Backup.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User specified descriptive string for this Backup.
   *   `encryptionKey` (*type:* `GoogleApi.GKEBackup.V1.Model.EncryptionKey.t`, *default:* `nil`) - Output only. The customer managed encryption key that was used to encrypt the Backup's artifacts. Inherited from the parent BackupPlan's encryption_key value.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` or `DeleteBackup` to ensure that their change will be applied to the same version of the resource.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - A set of custom labels supplied by user.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A set of custom labels supplied by user.
   *   `manual` (*type:* `boolean()`, *default:* `nil`) - Output only. This flag indicates whether this Backup resource was created manually by a user or via a schedule in the BackupPlan. A value of True means that the Backup was created manually.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`
   *   `podCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of Kubernetes Pods contained in the Backup.
   *   `resourceCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of Kubernetes resources included in the Backup.
-  *   `retainDays` (*type:* `integer()`, *default:* `nil`) - The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
+  *   `retainDays` (*type:* `integer()`, *default:* `nil`) - Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
   *   `retainExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days).
   *   `selectedApplications` (*type:* `GoogleApi.GKEBackup.V1.Model.NamespacedNames.t`, *default:* `nil`) - Output only. If set, the list of ProtectedApplications whose resources were included in the Backup.
   *   `selectedNamespaces` (*type:* `GoogleApi.GKEBackup.V1.Model.Namespaces.t`, *default:* `nil`) - Output only. If set, the list of namespaces that were included in the Backup.

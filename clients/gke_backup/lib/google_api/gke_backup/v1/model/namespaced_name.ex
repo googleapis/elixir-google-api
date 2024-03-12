@@ -21,8 +21,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.NamespacedName do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Kubernetes resource.
-  *   `namespace` (*type:* `String.t`, *default:* `nil`) - The Namespace of the Kubernetes resource.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the Kubernetes resource.
+  *   `namespace` (*type:* `String.t`, *default:* `nil`) - Optional. The Namespace of the Kubernetes resource.
   """
 
   use GoogleApi.Gax.ModelBase
