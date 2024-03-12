@@ -22,6 +22,7 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.VerificationOption do
   ## Attributes
 
   *   `addressData` (*type:* `GoogleApi.MyBusinessVerifications.V1.Model.AddressVerificationData.t`, *default:* `nil`) - Set only if the method is MAIL.
+  *   `announcement` (*type:* `String.t`, *default:* `nil`) - Set only if the method is VETTED_PARTNER.
   *   `emailData` (*type:* `GoogleApi.MyBusinessVerifications.V1.Model.EmailVerificationData.t`, *default:* `nil`) - Set only if the method is EMAIL.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - Set only if the method is PHONE_CALL or SMS. Phone number that the PIN will be sent to.
   *   `verificationMethod` (*type:* `String.t`, *default:* `nil`) - Method to verify the location.
@@ -32,6 +33,7 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.VerificationOption do
   @type t :: %__MODULE__{
           :addressData =>
             GoogleApi.MyBusinessVerifications.V1.Model.AddressVerificationData.t() | nil,
+          :announcement => String.t() | nil,
           :emailData =>
             GoogleApi.MyBusinessVerifications.V1.Model.EmailVerificationData.t() | nil,
           :phoneNumber => String.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.VerificationOption do
         }
 
   field(:addressData, as: GoogleApi.MyBusinessVerifications.V1.Model.AddressVerificationData)
+  field(:announcement)
   field(:emailData, as: GoogleApi.MyBusinessVerifications.V1.Model.EmailVerificationData)
   field(:phoneNumber)
   field(:verificationMethod)
