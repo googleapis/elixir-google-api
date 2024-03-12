@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitFileSource do
   *   `githubEnterpriseConfig` (*type:* `String.t`, *default:* `nil`) - The full resource name of the github enterprise config. Format: `projects/{project}/locations/{location}/githubEnterpriseConfigs/{id}`. `projects/{project}/githubEnterpriseConfigs/{id}`.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The path of the file, with the repo root as the root of the path.
   *   `repoType` (*type:* `String.t`, *default:* `nil`) - See RepoType above.
+  *   `repository` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the Repos API repository. Either URI or repository can be specified. If unspecified, the repo from which the trigger invocation originated is assumed to be the repo from which to read the specified path.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The branch, tag, arbitrary ref, or SHA version of the repo to use when resolving the filename (optional). This field respects the same syntax/resolution as described here: https://git-scm.com/docs/gitrevisions If unspecified, the revision from which the trigger invocation originated is assumed to be the revision from which to read the specified path.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the repo. Either uri or repository can be specified. If unspecified, the repo from which the trigger invocation originated is assumed to be the repo from which to read the specified path.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitFileSource do
           :githubEnterpriseConfig => String.t() | nil,
           :path => String.t() | nil,
           :repoType => String.t() | nil,
+          :repository => String.t() | nil,
           :revision => String.t() | nil,
           :uri => String.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitFileSource do
   field(:githubEnterpriseConfig)
   field(:path)
   field(:repoType)
+  field(:repository)
   field(:revision)
   field(:uri)
 end

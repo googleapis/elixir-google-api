@@ -21,19 +21,25 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
 
   ## Attributes
 
+  *   `connectedRepository` (*type:* `GoogleApi.CloudBuild.V1.Model.ConnectedRepository.t`, *default:* `nil`) - Optional. If provided, get the source from this 2nd-gen Google Cloud Build repository resource.
+  *   `gitSource` (*type:* `GoogleApi.CloudBuild.V1.Model.GitSource.t`, *default:* `nil`) - If provided, get the source from this Git repository.
   *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
-  *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
-  *   `storageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
+  *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Cloud Storage.
+  *   `storageSourceManifest` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectedRepository => GoogleApi.CloudBuild.V1.Model.ConnectedRepository.t() | nil,
+          :gitSource => GoogleApi.CloudBuild.V1.Model.GitSource.t() | nil,
           :repoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
           :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil,
           :storageSourceManifest => GoogleApi.CloudBuild.V1.Model.StorageSourceManifest.t() | nil
         }
 
+  field(:connectedRepository, as: GoogleApi.CloudBuild.V1.Model.ConnectedRepository)
+  field(:gitSource, as: GoogleApi.CloudBuild.V1.Model.GitSource)
   field(:repoSource, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
   field(:storageSource, as: GoogleApi.CloudBuild.V1.Model.StorageSource)
   field(:storageSourceManifest, as: GoogleApi.CloudBuild.V1.Model.StorageSourceManifest)

@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BitbucketServerConfig do
   *   `hostUri` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The URI of the Bitbucket Server host. Once this field has been set, it cannot be changed. If you need to change it, please create another BitbucketServerConfig.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the config.
   *   `peeredNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The network to be used when reaching out to the Bitbucket Server instance. The VPC network must be enabled for private service connection. This should be set if the Bitbucket Server instance is hosted on-premises and not reachable by public internet. If this field is left empty, no network peering will occur and calls to the Bitbucket Server instance will be made over the public internet. Must be in the format `projects/{project}/global/networks/{network}`, where {project} is a project number or id and {network} is the name of a VPC network in the project.
+  *   `peeredNetworkIpRange` (*type:* `String.t`, *default:* `nil`) - Immutable. IP range within the peered network. This is specified in CIDR notation with a slash and the subnet prefix size. You can optionally specify an IP address before the subnet prefix value. e.g. `192.168.0.0/29` would specify an IP range starting at 192.168.0.0 with a 29 bit prefix size. `/16` would specify a prefix size of 16 bits, with an automatically determined IP within the peered VPC. If unspecified, a value of `/24` will be used. The field only has an effect if peered_network is set.
   *   `secrets` (*type:* `GoogleApi.CloudBuild.V1.Model.BitbucketServerSecrets.t`, *default:* `nil`) - Required. Secret Manager secrets needed by the config.
   *   `sslCa` (*type:* `String.t`, *default:* `nil`) - Optional. SSL certificate to use for requests to Bitbucket Server. The format should be PEM format but the extension can be one of .pem, .cer, or .crt.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Username of the account Cloud Build will use on Bitbucket Server.
@@ -43,6 +44,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BitbucketServerConfig do
           :hostUri => String.t() | nil,
           :name => String.t() | nil,
           :peeredNetwork => String.t() | nil,
+          :peeredNetworkIpRange => String.t() | nil,
           :secrets => GoogleApi.CloudBuild.V1.Model.BitbucketServerSecrets.t() | nil,
           :sslCa => String.t() | nil,
           :username => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.BitbucketServerConfig do
   field(:hostUri)
   field(:name)
   field(:peeredNetwork)
+  field(:peeredNetworkIpRange)
   field(:secrets, as: GoogleApi.CloudBuild.V1.Model.BitbucketServerSecrets)
   field(:sslCa)
   field(:username)

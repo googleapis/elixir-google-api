@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.PullRequestFilter do
   ## Attributes
 
   *   `branch` (*type:* `String.t`, *default:* `nil`) - Regex of branches to match. The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
-  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - Configure builds to run whether a repository owner or collaborator need to comment `/gcbrun`.
+  *   `commentControl` (*type:* `String.t`, *default:* `nil`) - If CommentControl is enabled, depending on the setting, builds may not fire until a repository writer comments `/gcbrun` on a pull request or `/gcbrun` is in the pull request description. Only PR comments that contain `/gcbrun` will trigger builds. If CommentControl is set to disabled, comments with `/gcbrun` from a user with repository write permission or above will still trigger builds to run.
   *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - If true, branches that do NOT match the git_ref will trigger a build.
   """
 
