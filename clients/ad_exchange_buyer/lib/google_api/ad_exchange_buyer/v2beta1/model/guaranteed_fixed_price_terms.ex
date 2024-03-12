@@ -23,9 +23,9 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.GuaranteedFixedPriceTerms do
 
   *   `fixedPrices` (*type:* `list(GoogleApi.AdExchangeBuyer.V2beta1.Model.PricePerBuyer.t)`, *default:* `nil`) - Fixed price for the specified buyer.
   *   `guaranteedImpressions` (*type:* `String.t`, *default:* `nil`) - Guaranteed impressions as a percentage. This is the percentage of guaranteed looks that the buyer is guaranteeing to buy.
-  *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. Required for deal, optional for product.
+  *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. Required for deal, optional for product. For CPD deals, buyer changes to guaranteed_looks will be ignored.
   *   `impressionCap` (*type:* `String.t`, *default:* `nil`) - The lifetime impression cap for CPM sponsorship deals. The deal will stop serving when the cap is reached.
-  *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types.
+  *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks.
   *   `percentShareOfVoice` (*type:* `String.t`, *default:* `nil`) - For sponsorship deals, this is the percentage of the seller's eligible impressions that the deal will serve until the cap is reached.
   *   `reservationType` (*type:* `String.t`, *default:* `nil`) - The reservation type for a Programmatic Guaranteed deal. This indicates whether the number of impressions is fixed, or a percent of available impressions. If not specified, the default reservation type is STANDARD.
   """
