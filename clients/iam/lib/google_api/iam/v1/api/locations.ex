@@ -26,6 +26,690 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Creates a new WorkforcePool. You cannot reuse the name of a deleted pool until 30 days after deletion.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `location`. The location of the pool to create. Format: `locations/{location}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:workforcePoolId` (*type:* `String.t`) - The ID to use for the pool, which becomes the final component of the resource name. The IDs must be a globally unique string of 6 to 63 lowercase letters, digits, or hyphens. It must start with a letter, and cannot have a trailing hyphen. The prefix `gcp-` is reserved for use by Google, and may not be specified.
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePool.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_create(
+        connection,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :workforcePoolId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a WorkforcePool. You cannot use a deleted WorkforcePool to exchange external credentials for Google Cloud credentials. However, deletion does not revoke credentials that have already been issued. Credentials issued for a deleted pool do not grant access to resources. If the pool is undeleted, and the credentials are not expired, they grant access again. You can undelete a pool for 30 days. After 30 days, deletion is permanent. You cannot update deleted pools. However, you can view and list them.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_delete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" =>
+          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets an individual WorkforcePool.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.WorkforcePool{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.WorkforcePool.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_get(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" =>
+          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.WorkforcePool{}])
+  end
+
+  @doc """
+  Gets IAM policies on a WorkforcePool.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.GetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_get_iam_policy(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:getIamPolicy",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Lists all non-deleted WorkforcePools under the specified parent. If `show_deleted` is set to `true`, then deleted pools are also listed.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `location`. The location of the pool. Format: `locations/{location}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of pools to return. If unspecified, at most 50 pools will be returned. The maximum value is 1000; values above 1000 are truncated to 1000.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListWorkforcePools` call. Provide this to retrieve the subsequent page.
+      *   `:parent` (*type:* `String.t`) - Required. The parent resource to list pools for. Format: `organizations/{org-id}`.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to return soft-deleted pools.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.ListWorkforcePoolsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.IAM.V1.Model.ListWorkforcePoolsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_list(
+        connection,
+        locations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :parent => :query,
+      :showDeleted => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.ListWorkforcePoolsResponse{}])
+  end
+
+  @doc """
+  Updates an existing WorkforcePool.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `workforcePool.name`. Output only. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `workforcePool.name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to update.
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePool.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_patch(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" =>
+          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Sets IAM policies on a WorkforcePool.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_set_iam_policy(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:setIamPolicy",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns the caller's permissions on the WorkforcePool. If the pool does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_test_iam_permissions(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:testIamPermissions",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.TestIamPermissionsResponse{}])
+  end
+
+  @doc """
+  Undeletes a WorkforcePool, as long as it was deleted fewer than 30 days ago.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.UndeleteWorkforcePoolRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_undelete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:undelete", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
   Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
@@ -96,6 +780,927 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
           "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
           "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Creates a new WorkforcePoolProvider in a WorkforcePool. You cannot reuse the name of a deleted provider until 30 days after deletion.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The pool to create this provider in. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:workforcePoolProviderId` (*type:* `String.t`) - Required. The ID for the provider, which becomes the final component of the resource name. This value must be 4-32 characters, and may contain the characters [a-z0-9-]. The prefix `gcp-` is reserved for use by Google, and may not be specified.
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePoolProvider.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_create(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :workforcePoolProviderId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a WorkforcePoolProvider. Deleting a provider does not revoke credentials that have already been\\ issued; they continue to grant access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You cannot update deleted providers. However, you can view and list them.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_delete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets an individual WorkforcePoolProvider.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.WorkforcePoolProvider{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.WorkforcePoolProvider.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_get(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.WorkforcePoolProvider{}])
+  end
+
+  @doc """
+  Lists all non-deleted WorkforcePoolProviders in a WorkforcePool. If `show_deleted` is set to `true`, then deleted providers are also listed.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The pool to list providers for. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of providers to return. If unspecified, at most 50 providers are returned. The maximum value is 100; values above 100 are truncated to 100.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListWorkforcePoolProviders` call. Provide this to retrieve the subsequent page.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to return soft-deleted providers.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.ListWorkforcePoolProvidersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.ListWorkforcePoolProvidersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_list(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :showDeleted => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers", %{
+        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IAM.V1.Model.ListWorkforcePoolProvidersResponse{}]
+    )
+  end
+
+  @doc """
+  Updates an existing WorkforcePoolProvider.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to update.
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePoolProvider.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_patch(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Undeletes a WorkforcePoolProvider, as long as it was deleted fewer than 30 days ago.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.UndeleteWorkforcePoolProviderRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_undelete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}:undelete",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Creates a new WorkforcePoolProviderKey in a WorkforcePoolProvider.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The provider to create this key in.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:workforcePoolProviderKeyId` (*type:* `String.t`) - Required. The ID to use for the key, which becomes the final component of the resource name. This value must be 4-32 characters, and may contain the characters [a-z0-9-].
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.WorkforcePoolProviderKey.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_keys_create(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_keys_create(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :workforcePoolProviderKeyId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a WorkforcePoolProviderKey. You can undelete a key for 30 days. After 30 days, deletion is permanent.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to delete.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_keys_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_keys_delete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        keys_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
+          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Gets a WorkforcePoolProviderKey.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to retrieve.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.WorkforcePoolProviderKey{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_keys_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.WorkforcePoolProviderKey.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_keys_get(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        keys_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
+          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.WorkforcePoolProviderKey{}])
+  end
+
+  @doc """
+  Lists all non-deleted WorkforcePoolProviderKeys in a WorkforcePoolProvider. If `show_deleted` is set to `true`, then deleted keys are also listed.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The provider resource to list encryption keys for. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of keys to return. If unspecified, all keys are returned. The maximum value is 10; values above 10 are truncated to 10.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListWorkforcePoolProviderKeys` call. Provide this to retrieve the subsequent page.
+      *   `:showDeleted` (*type:* `boolean()`) - Whether to return soft-deleted keys.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.ListWorkforcePoolProviderKeysResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_keys_list(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.ListWorkforcePoolProviderKeysResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_keys_list(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query,
+      :showDeleted => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.IAM.V1.Model.ListWorkforcePoolProviderKeysResponse{}]
+    )
+  end
+
+  @doc """
+  Undeletes a WorkforcePoolProviderKey, as long as it was deleted fewer than 30 days ago.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to undelete.
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.UndeleteWorkforcePoolProviderKeyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_providers_keys_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_providers_keys_undelete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        providers_id,
+        keys_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}:undelete",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
+          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -270,6 +1875,170 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
           "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
           "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Deletes a WorkforcePoolSubject. Subject must not already be in a deleted state. A WorkforcePoolSubject is automatically created the first time an external credential is exchanged for a Google Cloud credential with a mapped `google.subject` attribute. There is no path to manually create WorkforcePoolSubjects. Once deleted, the WorkforcePoolSubject may not be used for 30 days. After 30 days, the WorkforcePoolSubject will be deleted forever and can be reused in token exchanges with Google Cloud STS. This will automatically create a new WorkforcePoolSubject that is independent of the previously deleted WorkforcePoolSubject with the same google.subject value.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_subjects_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_subjects_delete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        subjects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/subjects/{subjectsId}",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "subjectsId" => URI.encode(subjects_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.IAM.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Undeletes a WorkforcePoolSubject, as long as it was deleted fewer than 30 days ago.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
+  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.IAM.V1.Model.UndeleteWorkforcePoolSubjectRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec iam_locations_workforce_pools_subjects_undelete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def iam_locations_workforce_pools_subjects_undelete(
+        connection,
+        locations_id,
+        workforce_pools_id,
+        subjects_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/subjects/{subjectsId}:undelete",
+        %{
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
+          "subjectsId" => URI.encode(subjects_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)

@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
   @moduledoc """
-  Represents a collection of external workload identities. You can define IAM policies to grant these identities access to Google Cloud resources.
+  Represents a collection of workload identities. You can define IAM policies to grant these identities access to Google Cloud resources.
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the pool. Cannot exceed 256 characters.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Whether the pool is disabled. You cannot use a disabled pool to exchange tokens, or use existing tokens to access resources. If the pool is re-enabled, existing tokens grant access again.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A display name for the pool. Cannot exceed 32 characters.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workload identity pool will be permanently purged and cannot be recovered.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the pool.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the pool.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
           :description => String.t() | nil,
           :disabled => boolean() | nil,
           :displayName => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPool do
   field(:description)
   field(:disabled)
   field(:displayName)
+  field(:expireTime, as: DateTime)
   field(:name)
   field(:state)
 end
