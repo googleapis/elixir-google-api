@@ -22,24 +22,45 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.Device do
   ## Attributes
 
   *   `androidId` (*type:* `String.t`, *default:* `nil`) - The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, "123456789abcdef0".
+  *   `device` (*type:* `String.t`, *default:* `nil`) - The internal hardware codename of the device. This comes from android.os.Build.DEVICE. (field named "device" per logs/wireless/android/android_checkin.proto)
+  *   `latestBuildFingerprint` (*type:* `String.t`, *default:* `nil`) - The build fingerprint of the device if known.
+  *   `maker` (*type:* `String.t`, *default:* `nil`) - The manufacturer of the device. This comes from android.os.Build.MANUFACTURER.
   *   `managementType` (*type:* `String.t`, *default:* `nil`) - Identifies the extent to which the device is controlled by a managed Google Play EMM in various deployment configurations. Possible values include: - "managedDevice", a device that has the EMM's device policy controller (DPC) as the device owner. - "managedProfile", a device that has a profile managed by the DPC (DPC is profile owner) in addition to a separate, personal profile that is unavailable to the DPC. - "containerApp", no longer used (deprecated). - "unmanagedProfile", a device that has been allowed (by the domain's admin, using the Admin Console to enable the privilege) to use managed Google Play, but the profile is itself not owned by a DPC. 
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The model name of the device. This comes from android.os.Build.MODEL.
   *   `policy` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.Policy.t`, *default:* `nil`) - The policy enforced on the device.
+  *   `product` (*type:* `String.t`, *default:* `nil`) - The product name of the device. This comes from android.os.Build.PRODUCT.
   *   `report` (*type:* `GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t`, *default:* `nil`) - The device report updated with the latest app states.
+  *   `retailBrand` (*type:* `String.t`, *default:* `nil`) - Retail brand for the device, if set. See android.os.Build.BRAND
+  *   `sdkVersion` (*type:* `integer()`, *default:* `nil`) - API compatibility version.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :androidId => String.t() | nil,
+          :device => String.t() | nil,
+          :latestBuildFingerprint => String.t() | nil,
+          :maker => String.t() | nil,
           :managementType => String.t() | nil,
+          :model => String.t() | nil,
           :policy => GoogleApi.AndroidEnterprise.V1.Model.Policy.t() | nil,
-          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t() | nil
+          :product => String.t() | nil,
+          :report => GoogleApi.AndroidEnterprise.V1.Model.DeviceReport.t() | nil,
+          :retailBrand => String.t() | nil,
+          :sdkVersion => integer() | nil
         }
 
   field(:androidId)
+  field(:device)
+  field(:latestBuildFingerprint)
+  field(:maker)
   field(:managementType)
+  field(:model)
   field(:policy, as: GoogleApi.AndroidEnterprise.V1.Model.Policy)
+  field(:product)
   field(:report, as: GoogleApi.AndroidEnterprise.V1.Model.DeviceReport)
+  field(:retailBrand)
+  field(:sdkVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidEnterprise.V1.Model.Device do
