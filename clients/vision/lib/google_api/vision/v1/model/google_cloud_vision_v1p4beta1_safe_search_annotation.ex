@@ -25,7 +25,7 @@ defmodule GoogleApi.Vision.V1.Model.GoogleCloudVisionV1p4beta1SafeSearchAnnotati
   *   `medical` (*type:* `String.t`, *default:* `nil`) - Likelihood that this is a medical image.
   *   `racy` (*type:* `String.t`, *default:* `nil`) - Likelihood that the request image contains racy content. Racy content may include (but is not limited to) skimpy or sheer clothing, strategically covered nudity, lewd or provocative poses, or close-ups of sensitive body areas.
   *   `spoof` (*type:* `String.t`, *default:* `nil`) - Spoof likelihood. The likelihood that an modification was made to the image's canonical version to make it appear funny or offensive.
-  *   `violence` (*type:* `String.t`, *default:* `nil`) - Likelihood that this image contains violent content.
+  *   `violence` (*type:* `String.t`, *default:* `nil`) - Likelihood that this image contains violent content. Violent content may include death, serious harm, or injury to individuals or groups of individuals.
   """
 
   use GoogleApi.Gax.ModelBase
