@@ -22,13 +22,13 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `androidSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AndroidKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by Android apps.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp corresponding to the creation of this Key.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-readable display name of this key. Modifiable by user.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp corresponding to the creation of this key.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name of this key. Modifiable by user.
   *   `iosSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1IOSKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by iOS apps.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - See Creating and managing labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the Key in the format "projects/{project}/keys/{key}".
-  *   `testingOptions` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions.t`, *default:* `nil`) - Options for user acceptance testing.
-  *   `wafSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings.t`, *default:* `nil`) - Settings for WAF
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels] (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name for the Key in the format `projects/{project}/keys/{key}`.
+  *   `testingOptions` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions.t`, *default:* `nil`) - Optional. Options for user acceptance testing.
+  *   `wafSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings.t`, *default:* `nil`) - Optional. Settings for WAF
   *   `webSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WebKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by websites.
   """
 

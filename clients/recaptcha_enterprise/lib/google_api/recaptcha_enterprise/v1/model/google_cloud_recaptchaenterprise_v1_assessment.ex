@@ -17,14 +17,18 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Assessment do
   @moduledoc """
-  A recaptcha assessment resource.
+  A reCAPTCHA Enterprise assessment resource.
 
   ## Attributes
 
-  *   `accountDefenderAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment.t`, *default:* `nil`) - Assessment returned by account defender when a hashed_account_id is provided.
-  *   `event` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t`, *default:* `nil`) - The event being assessed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the Assessment in the format "projects/{project}/assessments/{assessment}".
-  *   `privatePasswordLeakVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t`, *default:* `nil`) - The private password leak verification field contains the parameters that are used to to check for leaks privately without sharing user credentials.
+  *   `accountDefenderAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment.t`, *default:* `nil`) - Output only. Assessment returned by account defender when an account identifier is provided.
+  *   `accountVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo.t`, *default:* `nil`) - Optional. Account verification information for identity verification. The assessment event must include a token and site key to use this feature.
+  *   `event` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t`, *default:* `nil`) - Optional. The event being assessed.
+  *   `firewallPolicyAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment.t`, *default:* `nil`) - Output only. Assessment returned when firewall policies belonging to the project are evaluated using the field firewall_policy_evaluation.
+  *   `fraudPreventionAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment.t`, *default:* `nil`) - Output only. Assessment returned by Fraud Prevention when TransactionData is provided.
+  *   `fraudSignals` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudSignals.t`, *default:* `nil`) - Output only. Fraud Signals specific to the users involved in a payment transaction.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name for the Assessment in the format `projects/{project}/assessments/{assessment}`.
+  *   `privatePasswordLeakVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t`, *default:* `nil`) - Optional. The private password leak verification field contains the parameters that are used to to check for leaks privately without sharing user credentials.
   *   `riskAnalysis` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RiskAnalysis.t`, *default:* `nil`) - Output only. The risk analysis result for the event being assessed.
   *   `tokenProperties` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TokenProperties.t`, *default:* `nil`) - Output only. Properties of the provided event token.
   """
@@ -35,8 +39,20 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
           :accountDefenderAssessment =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment.t()
             | nil,
+          :accountVerification =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo.t()
+            | nil,
           :event =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t() | nil,
+          :firewallPolicyAssessment =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment.t()
+            | nil,
+          :fraudPreventionAssessment =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment.t()
+            | nil,
+          :fraudSignals =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudSignals.t()
+            | nil,
           :name => String.t() | nil,
           :privatePasswordLeakVerification =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t()
@@ -54,7 +70,27 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
       GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment
   )
 
+  field(:accountVerification,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
+  )
+
   field(:event, as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event)
+
+  field(:firewallPolicyAssessment,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment
+  )
+
+  field(:fraudPreventionAssessment,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment
+  )
+
+  field(:fraudSignals,
+    as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudSignals
+  )
+
   field(:name)
 
   field(:privatePasswordLeakVerification,

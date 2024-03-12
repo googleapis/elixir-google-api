@@ -21,19 +21,22 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `allowAllPackageNames` (*type:* `boolean()`, *default:* `nil`) - If set to true, allowed_package_names are not enforced.
-  *   `allowedPackageNames` (*type:* `list(String.t)`, *default:* `nil`) - Android package names of apps allowed to use the key. Example: 'com.companyname.appname'
+  *   `allowAllPackageNames` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, allowed_package_names are not enforced.
+  *   `allowedPackageNames` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Android package names of apps allowed to use the key. Example: 'com.companyname.appname'
+  *   `supportNonGoogleAppStoreDistribution` (*type:* `boolean()`, *default:* `nil`) - Optional. Set to true for keys that are used in an Android application that is available for download in app stores in addition to the Google Play Store.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :allowAllPackageNames => boolean() | nil,
-          :allowedPackageNames => list(String.t()) | nil
+          :allowedPackageNames => list(String.t()) | nil,
+          :supportNonGoogleAppStoreDistribution => boolean() | nil
         }
 
   field(:allowAllPackageNames)
   field(:allowedPackageNames, type: :list)
+  field(:supportNonGoogleAppStoreDistribution)
 end
 
 defimpl Poison.Decoder,

@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TokenProperties do
   @moduledoc """
-
+  Properties of the provided event token.
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Action name provided at token generation.
-  *   `androidPackageName` (*type:* `String.t`, *default:* `nil`) - The name of the Android package with which the token was generated (Android keys only).
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp corresponding to the generation of the token.
-  *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname of the page on which the token was generated (Web keys only).
-  *   `invalidReason` (*type:* `String.t`, *default:* `nil`) - Reason associated with the response when valid = false.
-  *   `iosBundleId` (*type:* `String.t`, *default:* `nil`) - The ID of the iOS bundle with which the token was generated (iOS keys only).
-  *   `valid` (*type:* `boolean()`, *default:* `nil`) - Whether the provided user response token is valid. When valid = false, the reason could be specified in invalid_reason or it could also be due to a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey used to generate the token was different than the one specified in the assessment).
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Output only. Action name provided at token generation.
+  *   `androidPackageName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Android package with which the token was generated (Android keys only).
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp corresponding to the generation of the token.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Output only. The hostname of the page on which the token was generated (Web keys only).
+  *   `invalidReason` (*type:* `String.t`, *default:* `nil`) - Output only. Reason associated with the response when valid = false.
+  *   `iosBundleId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the iOS bundle with which the token was generated (iOS keys only).
+  *   `valid` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the provided user response token is valid. When valid = false, the reason could be specified in invalid_reason or it could also be due to a user failing to solve a challenge or a sitekey mismatch (i.e the sitekey used to generate the token was different than the one specified in the assessment).
   """
 
   use GoogleApi.Gax.ModelBase

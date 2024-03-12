@@ -2,7 +2,7 @@
 
 reCAPTCHA Enterprise API client library.
 
-
+Help protect your website from fraudulent activity, spam, and abuse without creating friction.
 
 ## Installation
 
