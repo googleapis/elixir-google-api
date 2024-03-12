@@ -21,7 +21,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceHierarchyDatasets do
 
   ## Attributes
 
-  *   `datasetTemplate` (*type:* `GoogleApi.Datastream.V1.Model.DatasetTemplate.t`, *default:* `nil`) - 
+  *   `datasetTemplate` (*type:* `GoogleApi.Datastream.V1.Model.DatasetTemplate.t`, *default:* `nil`) - The dataset template to use for dynamic dataset creation.
   """
 
   use GoogleApi.Gax.ModelBase

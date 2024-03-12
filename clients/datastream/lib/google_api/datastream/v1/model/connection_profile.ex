@@ -32,6 +32,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   *   `oracleProfile` (*type:* `GoogleApi.Datastream.V1.Model.OracleProfile.t`, *default:* `nil`) - Oracle ConnectionProfile configuration.
   *   `postgresqlProfile` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlProfile.t`, *default:* `nil`) - PostgreSQL Connection Profile configuration.
   *   `privateConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.PrivateConnectivity.t`, *default:* `nil`) - Private connectivity.
+  *   `sqlServerProfile` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerProfile.t`, *default:* `nil`) - SQLServer Connection Profile configuration.
   *   `staticServiceIpConnectivity` (*type:* `GoogleApi.Datastream.V1.Model.StaticServiceIpConnectivity.t`, *default:* `nil`) - Static Service IP connectivity.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time of the resource.
   """
@@ -51,6 +52,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
           :oracleProfile => GoogleApi.Datastream.V1.Model.OracleProfile.t() | nil,
           :postgresqlProfile => GoogleApi.Datastream.V1.Model.PostgresqlProfile.t() | nil,
           :privateConnectivity => GoogleApi.Datastream.V1.Model.PrivateConnectivity.t() | nil,
+          :sqlServerProfile => GoogleApi.Datastream.V1.Model.SqlServerProfile.t() | nil,
           :staticServiceIpConnectivity =>
             GoogleApi.Datastream.V1.Model.StaticServiceIpConnectivity.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -67,6 +69,7 @@ defmodule GoogleApi.Datastream.V1.Model.ConnectionProfile do
   field(:oracleProfile, as: GoogleApi.Datastream.V1.Model.OracleProfile)
   field(:postgresqlProfile, as: GoogleApi.Datastream.V1.Model.PostgresqlProfile)
   field(:privateConnectivity, as: GoogleApi.Datastream.V1.Model.PrivateConnectivity)
+  field(:sqlServerProfile, as: GoogleApi.Datastream.V1.Model.SqlServerProfile)
 
   field(:staticServiceIpConnectivity,
     as: GoogleApi.Datastream.V1.Model.StaticServiceIpConnectivity

@@ -24,7 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillJob do
   *   `errors` (*type:* `list(GoogleApi.Datastream.V1.Model.Error.t)`, *default:* `nil`) - Output only. Errors which caused the backfill job to fail.
   *   `lastEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Backfill job's end time.
   *   `lastStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Backfill job's start time.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Backfill job state.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Backfill job state.
   *   `trigger` (*type:* `String.t`, *default:* `nil`) - Backfill job's triggering reason.
   """
 

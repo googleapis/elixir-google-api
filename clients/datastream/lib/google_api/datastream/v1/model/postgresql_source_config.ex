@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig do
 
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL objects to include in the stream.
+  *   `maxConcurrentBackfillTasks` (*type:* `integer()`, *default:* `nil`) - Maximum number of concurrent backfill tasks. The number should be non negative. If not set (or set to 0), the system's default value will be used.
   *   `publication` (*type:* `String.t`, *default:* `nil`) - Required. The name of the publication that includes the set of all tables that are defined in the stream's include_objects.
   *   `replicationSlot` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The name of the logical replication slot that's configured with the pgoutput plugin.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Datastream.V1.Model.PostgresqlSourceConfig do
   @type t :: %__MODULE__{
           :excludeObjects => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
           :includeObjects => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
+          :maxConcurrentBackfillTasks => integer() | nil,
           :publication => String.t() | nil,
           :replicationSlot => String.t() | nil
         }
 
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
+  field(:maxConcurrentBackfillTasks)
   field(:publication)
   field(:replicationSlot)
 end

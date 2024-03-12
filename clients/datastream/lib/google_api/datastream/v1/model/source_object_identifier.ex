@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
   *   `mysqlIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier.t`, *default:* `nil`) - Mysql data source object identifier.
   *   `oracleIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.OracleObjectIdentifier.t`, *default:* `nil`) - Oracle data source object identifier.
   *   `postgresqlIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier.t`, *default:* `nil`) - PostgreSQL data source object identifier.
+  *   `sqlServerIdentifier` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerObjectIdentifier.t`, *default:* `nil`) - SQLServer data source object identifier.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +33,15 @@ defmodule GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
           :mysqlIdentifier => GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier.t() | nil,
           :oracleIdentifier => GoogleApi.Datastream.V1.Model.OracleObjectIdentifier.t() | nil,
           :postgresqlIdentifier =>
-            GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier.t() | nil
+            GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier.t() | nil,
+          :sqlServerIdentifier =>
+            GoogleApi.Datastream.V1.Model.SqlServerObjectIdentifier.t() | nil
         }
 
   field(:mysqlIdentifier, as: GoogleApi.Datastream.V1.Model.MysqlObjectIdentifier)
   field(:oracleIdentifier, as: GoogleApi.Datastream.V1.Model.OracleObjectIdentifier)
   field(:postgresqlIdentifier, as: GoogleApi.Datastream.V1.Model.PostgresqlObjectIdentifier)
+  field(:sqlServerIdentifier, as: GoogleApi.Datastream.V1.Model.SqlServerObjectIdentifier)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.SourceObjectIdentifier do
