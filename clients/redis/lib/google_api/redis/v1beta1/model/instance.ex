@@ -30,6 +30,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - An arbitrary and optional user-provided name for the instance.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `authorizedNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine [network](https://cloud.google.com/vpc/docs/vpc) to which the instance is connected. If left unspecified, the `default` network will be used.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. Reserved for future use.
   *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. Date and time of upcoming maintenance events which have been scheduled.
   *   `suspensionReasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. reasons that causes instance in "SUSPENDED" state.
   *   `alternativeLocationId` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in [location_id]. Additional nodes beyond the first 2 will be placed in zones selected by the service.
@@ -51,10 +52,11 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   *   `persistenceIamIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation.
   *   `authEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether OSS Redis AUTH is enabled for the instance. If set to "true" AUTH is enabled on the instance. Default value is "false" meaning AUTH is disabled.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. Reserved for future use.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - Required. The service tier of the instance.
   *   `readEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'.
   *   `readEndpointPort` (*type:* `integer()`, *default:* `nil`) - Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'.
-  *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility
+  *   `redisVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of Redis software. If not provided, latest supported version will be used. Currently, the supported values are: * `REDIS_3_2` for Redis 3.2 compatibility * `REDIS_4_0` for Redis 4.0 compatibility (default) * `REDIS_5_0` for Redis 5.0 compatibility * `REDIS_6_X` for Redis 6.x compatibility * `REDIS_7_0` for Redis 7.0 compatibility
   *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1beta1.Model.MaintenancePolicy.t`, *default:* `nil`) - Optional. The maintenance policy for the instance. If not provided, maintenance events can be performed at any time.
   """
 
@@ -70,6 +72,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
           :displayName => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :authorizedNetwork => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :maintenanceSchedule => GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule.t() | nil,
           :suspensionReasons => list(String.t()) | nil,
           :alternativeLocationId => String.t() | nil,
@@ -91,6 +94,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
           :persistenceIamIdentity => String.t() | nil,
           :authEnabled => boolean() | nil,
           :labels => map() | nil,
+          :satisfiesPzi => boolean() | nil,
           :tier => String.t() | nil,
           :readEndpoint => String.t() | nil,
           :readEndpointPort => integer() | nil,
@@ -107,6 +111,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   field(:displayName)
   field(:createTime, as: DateTime)
   field(:authorizedNetwork)
+  field(:satisfiesPzs)
   field(:maintenanceSchedule, as: GoogleApi.Redis.V1beta1.Model.MaintenanceSchedule)
   field(:suspensionReasons, type: :list)
   field(:alternativeLocationId)
@@ -128,6 +133,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Instance do
   field(:persistenceIamIdentity)
   field(:authEnabled)
   field(:labels, type: :map)
+  field(:satisfiesPzi)
   field(:tier)
   field(:readEndpoint)
   field(:readEndpointPort)
