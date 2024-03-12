@@ -25,6 +25,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.X509Parameters do
   *   `aiaOcspServers` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the "Authority Information Access" extension in the certificate.
   *   `caOptions` (*type:* `GoogleApi.PrivateCA.V1.Model.CaOptions.t`, *default:* `nil`) - Optional. Describes options in this X509Parameters that are relevant in a CA certificate.
   *   `keyUsage` (*type:* `GoogleApi.PrivateCA.V1.Model.KeyUsage.t`, *default:* `nil`) - Optional. Indicates the intended use for keys that correspond to a certificate.
+  *   `nameConstraints` (*type:* `GoogleApi.PrivateCA.V1.Model.NameConstraints.t`, *default:* `nil`) - Optional. Describes the X.509 name constraints extension.
   *   `policyIds` (*type:* `list(GoogleApi.PrivateCA.V1.Model.ObjectId.t)`, *default:* `nil`) - Optional. Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.X509Parameters do
           :aiaOcspServers => list(String.t()) | nil,
           :caOptions => GoogleApi.PrivateCA.V1.Model.CaOptions.t() | nil,
           :keyUsage => GoogleApi.PrivateCA.V1.Model.KeyUsage.t() | nil,
+          :nameConstraints => GoogleApi.PrivateCA.V1.Model.NameConstraints.t() | nil,
           :policyIds => list(GoogleApi.PrivateCA.V1.Model.ObjectId.t()) | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.X509Parameters do
   field(:aiaOcspServers, type: :list)
   field(:caOptions, as: GoogleApi.PrivateCA.V1.Model.CaOptions)
   field(:keyUsage, as: GoogleApi.PrivateCA.V1.Model.KeyUsage)
+  field(:nameConstraints, as: GoogleApi.PrivateCA.V1.Model.NameConstraints)
   field(:policyIds, as: GoogleApi.PrivateCA.V1.Model.ObjectId, type: :list)
 end
 
