@@ -21,7 +21,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - KRM-style annotations for the resource.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Output only. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
+  *   `cancelledCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of tasks which reached phase Cancelled.
   *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Represents time when the execution was completed. It is not guaranteed to be set in happens-before order across separate operations.
   *   `conditions` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t)`, *default:* `nil`) - Output only. The Condition of this Execution, containing its readiness status, and detailed error information in case it did not reach the desired state.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Represents time when the execution was acknowledged by the execution controller. It is not guaranteed to be set in happens-before order across separate operations.
@@ -31,16 +32,19 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
   *   `failedCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of tasks which reached phase Failed.
   *   `generation` (*type:* `String.t`, *default:* `nil`) - Output only. A number that monotonically increases every time the user modifies the desired state.
   *   `job` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the parent Job.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - KRM-style labels for the resource. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with 'run.googleapis.com' or 'serving.knative.dev' namespaces. Those labels are read-only, and user changes will not be preserved.
-  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Set the launch stage to a preview stage on write to allow use of preview features in that stage. On read, describes whether the resource uses preview features. Launch Stages are defined at [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages).
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - The least stable launch stage needed to create this resource, as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. Note that this value might not be what was used as input. For example, if ALPHA was provided as input in the parent resource, but only BETA and GA-level features are were, this field will be BETA.
+  *   `logUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI where logs for this execution can be found in Cloud Console.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique name of this Execution.
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Execution. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-  *   `parallelism` (*type:* `integer()`, *default:* `nil`) - Output only. Specifies the maximum desired number of tasks the execution should run at any given time. Must be <= task_count. The actual number of tasks running in steady state will be less than this number when ((.spec.task_count - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+  *   `parallelism` (*type:* `integer()`, *default:* `nil`) - Output only. Specifies the maximum desired number of tasks the execution should run at any given time. Must be <= task_count. The actual number of tasks running in steady state will be less than this number when ((.spec.task_count - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the resource's reconciliation is still in progress. See comments in `Job.reconciling` for additional information on reconciliation process in Cloud Run.
+  *   `retriedCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of tasks which have retried at least once.
   *   `runningCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of actively running tasks.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Represents time when the execution started to run. It is not guaranteed to be set in happens-before order across separate operations.
   *   `succeededCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of tasks which reached phase Succeeded.
-  *   `taskCount` (*type:* `integer()`, *default:* `nil`) - Output only. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+  *   `taskCount` (*type:* `integer()`, *default:* `nil`) - Output only. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution.
   *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskTemplate.t`, *default:* `nil`) - Output only. The template used to create tasks for this execution.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the Execution. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
@@ -50,6 +54,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
 
   @type t :: %__MODULE__{
           :annotations => map() | nil,
+          :cancelledCount => integer() | nil,
           :completionTime => DateTime.t() | nil,
           :conditions => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t()) | nil,
           :createTime => DateTime.t() | nil,
@@ -61,11 +66,14 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
           :job => String.t() | nil,
           :labels => map() | nil,
           :launchStage => String.t() | nil,
+          :logUri => String.t() | nil,
           :name => String.t() | nil,
           :observedGeneration => String.t() | nil,
           :parallelism => integer() | nil,
           :reconciling => boolean() | nil,
+          :retriedCount => integer() | nil,
           :runningCount => integer() | nil,
+          :satisfiesPzs => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :succeededCount => integer() | nil,
           :taskCount => integer() | nil,
@@ -75,6 +83,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
         }
 
   field(:annotations, type: :map)
+  field(:cancelledCount)
   field(:completionTime, as: DateTime)
   field(:conditions, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition, type: :list)
   field(:createTime, as: DateTime)
@@ -86,11 +95,14 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Execution do
   field(:job)
   field(:labels, type: :map)
   field(:launchStage)
+  field(:logUri)
   field(:name)
   field(:observedGeneration)
   field(:parallelism)
   field(:reconciling)
+  field(:retriedCount)
   field(:runningCount)
+  field(:satisfiesPzs)
   field(:startTime, as: DateTime)
   field(:succeededCount)
   field(:taskCount)

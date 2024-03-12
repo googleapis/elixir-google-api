@@ -22,7 +22,10 @@ defmodule GoogleApi.Run.V1.Model.Volume do
   ## Attributes
 
   *   `configMap` (*type:* `GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t`, *default:* `nil`) - Not supported in Cloud Run.
+  *   `csi` (*type:* `GoogleApi.Run.V1.Model.CSIVolumeSource.t`, *default:* `nil`) - Volume specified by the Container Storage Interface driver
+  *   `emptyDir` (*type:* `GoogleApi.Run.V1.Model.EmptyDirVolumeSource.t`, *default:* `nil`) - Ephemeral storage used as a shared volume.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Volume's name. In Cloud Run Fully Managed, the name 'cloudsql' is reserved.
+  *   `nfs` (*type:* `GoogleApi.Run.V1.Model.NFSVolumeSource.t`, *default:* `nil`) - 
   *   `secret` (*type:* `GoogleApi.Run.V1.Model.SecretVolumeSource.t`, *default:* `nil`) - The secret's value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secretName.
   """
 
@@ -30,12 +33,18 @@ defmodule GoogleApi.Run.V1.Model.Volume do
 
   @type t :: %__MODULE__{
           :configMap => GoogleApi.Run.V1.Model.ConfigMapVolumeSource.t() | nil,
+          :csi => GoogleApi.Run.V1.Model.CSIVolumeSource.t() | nil,
+          :emptyDir => GoogleApi.Run.V1.Model.EmptyDirVolumeSource.t() | nil,
           :name => String.t() | nil,
+          :nfs => GoogleApi.Run.V1.Model.NFSVolumeSource.t() | nil,
           :secret => GoogleApi.Run.V1.Model.SecretVolumeSource.t() | nil
         }
 
   field(:configMap, as: GoogleApi.Run.V1.Model.ConfigMapVolumeSource)
+  field(:csi, as: GoogleApi.Run.V1.Model.CSIVolumeSource)
+  field(:emptyDir, as: GoogleApi.Run.V1.Model.EmptyDirVolumeSource)
   field(:name)
+  field(:nfs, as: GoogleApi.Run.V1.Model.NFSVolumeSource)
   field(:secret, as: GoogleApi.Run.V1.Model.SecretVolumeSource)
 end
 

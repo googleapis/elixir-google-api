@@ -24,10 +24,10 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Probe do
   *   `failureThreshold` (*type:* `integer()`, *default:* `nil`) - Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
   *   `grpc` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2GRPCAction.t`, *default:* `nil`) - GRPC specifies an action involving a gRPC port. Exactly one of httpGet, tcpSocket, or grpc must be specified.
   *   `httpGet` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPGetAction.t`, *default:* `nil`) - HTTPGet specifies the http request to perform. Exactly one of httpGet, tcpSocket, or grpc must be specified.
-  *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+  *   `initialDelaySeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240.
   *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
   *   `tcpSocket` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2TCPSocketAction.t`, *default:* `nil`) - TCPSocket specifies an action involving a TCP port. Exactly one of httpGet, tcpSocket, or grpc must be specified.
-  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+  *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds.
   """
 
   use GoogleApi.Gax.ModelBase

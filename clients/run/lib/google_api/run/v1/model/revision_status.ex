@@ -22,6 +22,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionStatus do
   ## Attributes
 
   *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `ContainerHealthy`: `True` when the Revision readiness check completes. * `Active`: `True` when the Revision may receive traffic.
+  *   `desiredReplicas` (*type:* `integer()`, *default:* `nil`) - Output only. The configured number of instances running this revision. For Cloud Run, this only includes instances provisioned using the minScale annotation. It does not include instances created by autoscaling.
   *   `imageDigest` (*type:* `String.t`, *default:* `nil`) - ImageDigest holds the resolved digest for the image specified within .Spec.Container.Image. The digest is resolved during the creation of Revision. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object.
   *   `logUrl` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the generated logging url for this particular revision based on the revision url template specified in the controller's config.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionStatus do
 
   @type t :: %__MODULE__{
           :conditions => list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t()) | nil,
+          :desiredReplicas => integer() | nil,
           :imageDigest => String.t() | nil,
           :logUrl => String.t() | nil,
           :observedGeneration => integer() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionStatus do
         }
 
   field(:conditions, as: GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition, type: :list)
+  field(:desiredReplicas)
   field(:imageDigest)
   field(:logUrl)
   field(:observedGeneration)

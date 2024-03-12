@@ -21,11 +21,16 @@ defmodule GoogleApi.Run.V1.Model.RunJobRequest do
 
   ## Attributes
 
+  *   `overrides` (*type:* `GoogleApi.Run.V1.Model.Overrides.t`, *default:* `nil`) - Optional. Overrides existing job configuration for one specific new job execution only, using the specified values to update the job configuration for the new execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :overrides => GoogleApi.Run.V1.Model.Overrides.t() | nil
+        }
+
+  field(:overrides, as: GoogleApi.Run.V1.Model.Overrides)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V1.Model.RunJobRequest do

@@ -21,19 +21,22 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ResourceRequirements do
 
   ## Attributes
 
-  *   `cpuIdle` (*type:* `boolean()`, *default:* `nil`) - Determines whether CPU should be throttled or not outside of requests.
-  *   `limits` (*type:* `map()`, *default:* `nil`) - Only memory and CPU are supported. Note: The only supported values for CPU are '1', '2', '4', and '8'. Setting 4 CPU requires at least 2Gi of memory. The values of the map is string form of the 'quantity' k8s type: https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go
+  *   `cpuIdle` (*type:* `boolean()`, *default:* `nil`) - Determines whether CPU is only allocated during requests (true by default). However, if ResourceRequirements is set, the caller must explicitly set this field to true to preserve the default behavior.
+  *   `limits` (*type:* `map()`, *default:* `nil`) - Only `memory` and `cpu` keys in the map are supported. Notes: * The only supported values for CPU are '1', '2', '4', and '8'. Setting 4 CPU requires at least 2Gi of memory. For more information, go to https://cloud.google.com/run/docs/configuring/cpu. * For supported 'memory' values and syntax, go to https://cloud.google.com/run/docs/configuring/memory-limits
+  *   `startupCpuBoost` (*type:* `boolean()`, *default:* `nil`) - Determines whether CPU should be boosted on startup of a new container instance above the requested CPU threshold, this can help reduce cold-start latency.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cpuIdle => boolean() | nil,
-          :limits => map() | nil
+          :limits => map() | nil,
+          :startupCpuBoost => boolean() | nil
         }
 
   field(:cpuIdle)
   field(:limits, type: :map)
+  field(:startupCpuBoost)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V2.Model.GoogleCloudRunV2ResourceRequirements do

@@ -22,20 +22,29 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume do
   ## Attributes
 
   *   `cloudSqlInstance` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2CloudSqlInstance.t`, *default:* `nil`) - For Cloud SQL volumes, contains the specific instances that should be mounted. Visit https://cloud.google.com/sql/docs/mysql/connect-run for more information on how to connect Cloud SQL and Cloud Run.
+  *   `emptyDir` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2EmptyDirVolumeSource.t`, *default:* `nil`) - Ephemeral storage used as a shared volume.
+  *   `gcs` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource.t`, *default:* `nil`) - Persistent storage backed by a Google Cloud Storage bucket.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Volume's name.
-  *   `secret` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2SecretVolumeSource.t`, *default:* `nil`) - Secret represents a secret that should populate this volume. More info: https://kubernetes.io/docs/concepts/storage/volumes#secret
+  *   `nfs` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2NFSVolumeSource.t`, *default:* `nil`) - For NFS Voumes, contains the path to the nfs Volume
+  *   `secret` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2SecretVolumeSource.t`, *default:* `nil`) - Secret represents a secret that should populate this volume.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cloudSqlInstance => GoogleApi.Run.V2.Model.GoogleCloudRunV2CloudSqlInstance.t() | nil,
+          :emptyDir => GoogleApi.Run.V2.Model.GoogleCloudRunV2EmptyDirVolumeSource.t() | nil,
+          :gcs => GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource.t() | nil,
           :name => String.t() | nil,
+          :nfs => GoogleApi.Run.V2.Model.GoogleCloudRunV2NFSVolumeSource.t() | nil,
           :secret => GoogleApi.Run.V2.Model.GoogleCloudRunV2SecretVolumeSource.t() | nil
         }
 
   field(:cloudSqlInstance, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2CloudSqlInstance)
+  field(:emptyDir, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2EmptyDirVolumeSource)
+  field(:gcs, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource)
   field(:name)
+  field(:nfs, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2NFSVolumeSource)
   field(:secret, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2SecretVolumeSource)
 end
 

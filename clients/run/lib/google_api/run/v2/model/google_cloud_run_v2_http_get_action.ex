@@ -23,17 +23,20 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPGetAction do
 
   *   `httpHeaders` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server. Defaults to '/'.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number to access on the container. Must be in the range 1 to 65535. If not specified, defaults to the exposed port of the container, which is the value of container.ports[0].containerPort.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :httpHeaders => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader.t()) | nil,
-          :path => String.t() | nil
+          :path => String.t() | nil,
+          :port => integer() | nil
         }
 
   field(:httpHeaders, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader, type: :list)
   field(:path)
+  field(:port)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPGetAction do

@@ -21,27 +21,31 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run will populate some annotations using 'run.googleapis.com' or 'serving.knative.dev' namespaces. This field follows Kubernetes annotations' namespacing, limits, and rules. More info: https://kubernetes.io/docs/user-guide/annotations
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected in new resources. All system annotations in v1 now have a corresponding field in v2 Service. This field follows Kubernetes annotations' namespacing, limits, and rules.
   *   `binaryAuthorization` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2BinaryAuthorization.t`, *default:* `nil`) - Settings for the Binary Authorization feature.
   *   `client` (*type:* `String.t`, *default:* `nil`) - Arbitrary identifier for the API client.
   *   `clientVersion` (*type:* `String.t`, *default:* `nil`) - Arbitrary version identifier for the API client.
   *   `conditions` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t)`, *default:* `nil`) - Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Service does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of the authenticated creator.
+  *   `customAudiences` (*type:* `list(String.t)`, *default:* `nil`) - One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests. For more information, see https://cloud.google.com/run/docs/configuring/custom-audiences.
+  *   `defaultUriDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables public resolution of the default URI of this service.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The deletion time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of the Service. This field currently has a 512-character limit.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. For a deleted resource, the time after which it will be permamently deleted.
   *   `generation` (*type:* `String.t`, *default:* `nil`) - Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
   *   `ingress` (*type:* `String.t`, *default:* `nil`) - Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Map of string keys and values that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with 'run.googleapis.com' or 'serving.knative.dev' namespaces. Those labels are read-only, and user changes will not be preserved.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Service.
   *   `lastModifier` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of the last authenticated modifier.
   *   `latestCreatedRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the last created revision. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `latestReadyRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the latest revision that is serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed.
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified name of this Service. In CreateServiceRequest, this field is ignored, and instead composed from CreateServiceRequest.parent and CreateServiceRequest.service_id. Format: projects/{project}/locations/{location}/services/{service_id}
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Service currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Returns true if the Service is currently being acted upon by the system to bring it into the desired state. When a new Service is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Service to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation`, `latest_ready_revison`, `traffic_statuses`, and `uri` will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the serving state matches the Service, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `traffic` and `traffic_statuses`, `observed_generation` and `generation`, `latest_ready_revision` and `latest_created_revision`. If reconciliation failed, `traffic_statuses`, `observed_generation`, and `latest_ready_revision` will have the state of the last serving revision, or empty for newly created Services. Additional information on the failure can be found in `terminal_condition` and `conditions`.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `scaling` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling.t`, *default:* `nil`) - Optional. Specifies service-level scaling settings
   *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate.t`, *default:* `nil`) - Required. The template used to create revisions for this Service.
   *   `terminalCondition` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t`, *default:* `nil`) - Output only. The Condition of this Service, containing its readiness status, and detailed error information in case it did not reach a serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `traffic` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2TrafficTarget.t)`, *default:* `nil`) - Specifies how to distribute traffic over a collection of Revisions belonging to the Service. If traffic is empty or not provided, defaults to 100% traffic to the latest `Ready` Revision.
@@ -62,6 +66,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
           :conditions => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t()) | nil,
           :createTime => DateTime.t() | nil,
           :creator => String.t() | nil,
+          :customAudiences => list(String.t()) | nil,
+          :defaultUriDisabled => boolean() | nil,
           :deleteTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
@@ -76,6 +82,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
           :name => String.t() | nil,
           :observedGeneration => String.t() | nil,
           :reconciling => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
+          :scaling => GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling.t() | nil,
           :template => GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate.t() | nil,
           :terminalCondition => GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t() | nil,
           :traffic => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2TrafficTarget.t()) | nil,
@@ -93,6 +101,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
   field(:conditions, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition, type: :list)
   field(:createTime, as: DateTime)
   field(:creator)
+  field(:customAudiences, type: :list)
+  field(:defaultUriDisabled)
   field(:deleteTime, as: DateTime)
   field(:description)
   field(:etag)
@@ -107,6 +117,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
   field(:name)
   field(:observedGeneration)
   field(:reconciling)
+  field(:satisfiesPzs)
+  field(:scaling, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling)
   field(:template, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate)
   field(:terminalCondition, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition)
   field(:traffic, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2TrafficTarget, type: :list)

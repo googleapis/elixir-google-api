@@ -21,15 +21,17 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - KRM-style annotations for the resource.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system annotations in v1 now have a corresponding field in v2 RevisionTemplate. This field follows Kubernetes annotations' namespacing, limits, and rules.
   *   `containers` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t)`, *default:* `nil`) - Holds the single container that defines the unit of execution for this Revision.
   *   `encryptionKey` (*type:* `String.t`, *default:* `nil`) - A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek
   *   `executionEnvironment` (*type:* `String.t`, *default:* `nil`) - The sandbox environment to host this Revision.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - KRM-style labels for the resource.
+  *   `healthCheckDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables health checking containers during deployment.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 RevisionTemplate.
   *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Sets the maximum number of requests that each serving instance can receive.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name.
   *   `scaling` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t`, *default:* `nil`) - Scaling settings for this Revision.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
+  *   `sessionAffinity` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Max allowed time for an instance to respond to a request.
   *   `volumes` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t)`, *default:* `nil`) - A list of Volumes to make available to containers.
   *   `vpcAccess` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess.t`, *default:* `nil`) - VPC Access configuration to use for this Revision. For more information, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
@@ -42,11 +44,13 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
           :containers => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t()) | nil,
           :encryptionKey => String.t() | nil,
           :executionEnvironment => String.t() | nil,
+          :healthCheckDisabled => boolean() | nil,
           :labels => map() | nil,
           :maxInstanceRequestConcurrency => integer() | nil,
           :revision => String.t() | nil,
           :scaling => GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t() | nil,
           :serviceAccount => String.t() | nil,
+          :sessionAffinity => boolean() | nil,
           :timeout => String.t() | nil,
           :volumes => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t()) | nil,
           :vpcAccess => GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess.t() | nil
@@ -56,11 +60,13 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
   field(:containers, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Container, type: :list)
   field(:encryptionKey)
   field(:executionEnvironment)
+  field(:healthCheckDisabled)
   field(:labels, type: :map)
   field(:maxInstanceRequestConcurrency)
   field(:revision)
   field(:scaling, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling)
   field(:serviceAccount)
+  field(:sessionAffinity)
   field(:timeout)
   field(:volumes, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume, type: :list)
   field(:vpcAccess, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess)

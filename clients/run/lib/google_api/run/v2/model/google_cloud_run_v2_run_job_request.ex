@@ -22,6 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RunJobRequest do
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
+  *   `overrides` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Overrides.t`, *default:* `nil`) - Overrides specification for a given execution of a job. If provided, overrides will be applied to update the execution or task spec.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Indicates that the request should be validated without actually deleting any resources.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RunJobRequest do
 
   @type t :: %__MODULE__{
           :etag => String.t() | nil,
+          :overrides => GoogleApi.Run.V2.Model.GoogleCloudRunV2Overrides.t() | nil,
           :validateOnly => boolean() | nil
         }
 
   field(:etag)
+  field(:overrides, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Overrides)
   field(:validateOnly)
 end
 
