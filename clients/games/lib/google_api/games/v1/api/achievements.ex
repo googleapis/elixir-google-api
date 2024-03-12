@@ -32,7 +32,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `achievement_id` (*type:* `String.t`) - The ID of the achievement used by this method.
-  *   `steps_to_increment` (*type:* `integer()`) - The number of steps to increment.
+  *   `steps_to_increment` (*type:* `integer()`) - Required. The number of steps to increment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -238,7 +238,7 @@ defmodule GoogleApi.Games.V1.Api.Achievements do
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `achievement_id` (*type:* `String.t`) - The ID of the achievement used by this method.
-  *   `steps` (*type:* `integer()`) - The minimum value to set the steps to.
+  *   `steps` (*type:* `integer()`) - Required. The minimum value to set the steps to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
