@@ -21,25 +21,37 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Andro
 
   ## Attributes
 
+  *   `ctsProfileMatch` (*type:* `boolean()`, *default:* `nil`) - Whether the device passes Android CTS compliance.
   *   `enabledUnknownSources` (*type:* `boolean()`, *default:* `nil`) - Whether applications from unknown sources can be installed on device.
+  *   `hasPotentiallyHarmfulApps` (*type:* `boolean()`, *default:* `nil`) - Whether any potentially harmful apps were detected on the device.
   *   `ownerProfileAccount` (*type:* `boolean()`, *default:* `nil`) - Whether this account is on an owner/primary profile. For phones, only true for owner profiles. Android 4+ devices can have secondary or restricted user profiles.
   *   `ownershipPrivilege` (*type:* `String.t`, *default:* `nil`) - Ownership privileges on device.
   *   `supportsWorkProfile` (*type:* `boolean()`, *default:* `nil`) - Whether device supports Android work profiles. If false, this service will not block access to corp data even if an administrator turns on the "Enforce Work Profile" policy.
+  *   `verifiedBoot` (*type:* `boolean()`, *default:* `nil`) - Whether Android verified boot status is GREEN.
+  *   `verifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Google Play Protect Verify Apps is enabled.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ctsProfileMatch => boolean() | nil,
           :enabledUnknownSources => boolean() | nil,
+          :hasPotentiallyHarmfulApps => boolean() | nil,
           :ownerProfileAccount => boolean() | nil,
           :ownershipPrivilege => String.t() | nil,
-          :supportsWorkProfile => boolean() | nil
+          :supportsWorkProfile => boolean() | nil,
+          :verifiedBoot => boolean() | nil,
+          :verifyAppsEnabled => boolean() | nil
         }
 
+  field(:ctsProfileMatch)
   field(:enabledUnknownSources)
+  field(:hasPotentiallyHarmfulApps)
   field(:ownerProfileAccount)
   field(:ownershipPrivilege)
   field(:supportsWorkProfile)
+  field(:verifiedBoot)
+  field(:verifyAppsEnabled)
 end
 
 defimpl Poison.Decoder,

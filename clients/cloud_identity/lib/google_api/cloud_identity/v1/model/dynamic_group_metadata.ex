@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.DynamicGroupMetadata do
 
   ## Attributes
 
-  *   `queries` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery.t)`, *default:* `nil`) - Memberships will be the union of all queries. Only one entry with USER resource is currently supported. Customers can create up to 100 dynamic groups.
+  *   `queries` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.DynamicGroupQuery.t)`, *default:* `nil`) - Memberships will be the union of all queries. Only one entry with USER resource is currently supported. Customers can create up to 500 dynamic groups.
   *   `status` (*type:* `GoogleApi.CloudIdentity.V1.Model.DynamicGroupStatus.t`, *default:* `nil`) - Output only. Status of the dynamic group.
   """
 
