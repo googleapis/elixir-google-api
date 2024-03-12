@@ -20,7 +20,7 @@ defmodule GoogleApi.WebFonts.V1 do
   API client metadata for GoogleApi.WebFonts.V1.
   """
 
-  @discovery_revision "20210213"
+  @discovery_revision "20240306"
 
   def discovery_revision(), do: @discovery_revision
 end
