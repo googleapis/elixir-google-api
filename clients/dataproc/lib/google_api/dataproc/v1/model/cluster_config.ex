@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
   ## Attributes
 
   *   `autoscalingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t`, *default:* `nil`) - Optional. Autoscaling config for the policy associated with the cluster. Cluster does not autoscale if this field is unset.
+  *   `auxiliaryNodeGroups` (*type:* `list(GoogleApi.Dataproc.V1.Model.AuxiliaryNodeGroup.t)`, *default:* `nil`) - Optional. The node group settings.
   *   `configBucket` (*type:* `String.t`, *default:* `nil`) - Optional. A Cloud Storage bucket used to stage job dependencies, config files, and job driver console output. If you do not specify a staging bucket, Cloud Dataproc will determine a Cloud Storage location (US, ASIA, or EU) for your cluster's staging bucket according to the Compute Engine zone where your cluster is deployed, and then create and manage this project-level, per-location bucket (see Dataproc staging and temp buckets (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/staging-bucket)). This field requires a Cloud Storage bucket name, not a gs://... URI to a Cloud Storage bucket.
   *   `dataprocMetricConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DataprocMetricConfig.t`, *default:* `nil`) - Optional. The config for Dataproc metrics.
   *   `encryptionConfig` (*type:* `GoogleApi.Dataproc.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. Encryption settings for the cluster.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
 
   @type t :: %__MODULE__{
           :autoscalingConfig => GoogleApi.Dataproc.V1.Model.AutoscalingConfig.t() | nil,
+          :auxiliaryNodeGroups => list(GoogleApi.Dataproc.V1.Model.AuxiliaryNodeGroup.t()) | nil,
           :configBucket => String.t() | nil,
           :dataprocMetricConfig => GoogleApi.Dataproc.V1.Model.DataprocMetricConfig.t() | nil,
           :encryptionConfig => GoogleApi.Dataproc.V1.Model.EncryptionConfig.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ClusterConfig do
         }
 
   field(:autoscalingConfig, as: GoogleApi.Dataproc.V1.Model.AutoscalingConfig)
+  field(:auxiliaryNodeGroups, as: GoogleApi.Dataproc.V1.Model.AuxiliaryNodeGroup, type: :list)
   field(:configBucket)
   field(:dataprocMetricConfig, as: GoogleApi.Dataproc.V1.Model.DataprocMetricConfig)
   field(:encryptionConfig, as: GoogleApi.Dataproc.V1.Model.EncryptionConfig)

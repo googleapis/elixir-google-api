@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
 
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - Optional. Optional custom container image for the job runtime environment. If not specified, a default container image will be used.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, which are used to configure workload execution.
+  *   `repositoryConfig` (*type:* `GoogleApi.Dataproc.V1.Model.RepositoryConfig.t`, *default:* `nil`) - Optional. Dependency repository configuration.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Optional. Version of the batch runtime.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
   @type t :: %__MODULE__{
           :containerImage => String.t() | nil,
           :properties => map() | nil,
+          :repositoryConfig => GoogleApi.Dataproc.V1.Model.RepositoryConfig.t() | nil,
           :version => String.t() | nil
         }
 
   field(:containerImage)
   field(:properties, type: :map)
+  field(:repositoryConfig, as: GoogleApi.Dataproc.V1.Model.RepositoryConfig)
   field(:version)
 end
 

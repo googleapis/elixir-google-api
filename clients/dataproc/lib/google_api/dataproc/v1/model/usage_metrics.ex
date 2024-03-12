@@ -21,6 +21,8 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageMetrics do
 
   ## Attributes
 
+  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Optional. Accelerator type being used, if any
+  *   `milliAcceleratorSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Accelerator usage in (milliAccelerator x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   *   `milliDcuSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. DCU (Dataproc Compute Units) usage in (milliDCU x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   *   `shuffleStorageGbSeconds` (*type:* `String.t`, *default:* `nil`) - Optional. Shuffle storage usage in (GB x seconds) (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
   """
@@ -28,10 +30,14 @@ defmodule GoogleApi.Dataproc.V1.Model.UsageMetrics do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acceleratorType => String.t() | nil,
+          :milliAcceleratorSeconds => String.t() | nil,
           :milliDcuSeconds => String.t() | nil,
           :shuffleStorageGbSeconds => String.t() | nil
         }
 
+  field(:acceleratorType)
+  field(:milliAcceleratorSeconds)
   field(:milliDcuSeconds)
   field(:shuffleStorageGbSeconds)
 end

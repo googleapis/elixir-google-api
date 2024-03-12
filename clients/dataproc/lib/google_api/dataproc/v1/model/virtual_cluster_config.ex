@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataproc.V1.Model.VirtualClusterConfig do
   @moduledoc """
-  The Dataproc cluster config for a cluster that does not directly control the underlying compute resources, such as a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke).
+  The Dataproc cluster config for a cluster that does not directly control the underlying compute resources, such as a Dataproc-on-GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
 
   ## Attributes
 

@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplate do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time template was created.
   *   `dagTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Timeout duration for the DAG of jobs, expressed in seconds (see JSON representation of duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). The timeout duration must be from 10 minutes ("600s") to 24 hours ("86400s"). The timer begins when the first job is submitted. If the workflow is running at the end of the timeout period, any remaining jobs are cancelled, the workflow is ended, and if the workflow was running on a managed cluster, the cluster is deleted.
+  *   `encryptionConfig` (*type:* `GoogleApi.Dataproc.V1.Model.GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig.t`, *default:* `nil`) - Optional. Encryption settings for encrypting workflow template job arguments.
   *   `id` (*type:* `String.t`, *default:* `nil`) - 
   *   `jobs` (*type:* `list(GoogleApi.Dataproc.V1.Model.OrderedJob.t)`, *default:* `nil`) - Required. The Directed Acyclic Graph of Jobs to submit.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template.
@@ -38,6 +39,9 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplate do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :dagTimeout => String.t() | nil,
+          :encryptionConfig =>
+            GoogleApi.Dataproc.V1.Model.GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig.t()
+            | nil,
           :id => String.t() | nil,
           :jobs => list(GoogleApi.Dataproc.V1.Model.OrderedJob.t()) | nil,
           :labels => map() | nil,
@@ -50,6 +54,11 @@ defmodule GoogleApi.Dataproc.V1.Model.WorkflowTemplate do
 
   field(:createTime, as: DateTime)
   field(:dagTimeout)
+
+  field(:encryptionConfig,
+    as: GoogleApi.Dataproc.V1.Model.GoogleCloudDataprocV1WorkflowTemplateEncryptionConfig
+  )
+
   field(:id)
   field(:jobs, as: GoogleApi.Dataproc.V1.Model.OrderedJob, type: :list)
   field(:labels, type: :map)

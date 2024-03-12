@@ -26,9 +26,9 @@ defmodule GoogleApi.Dataproc.V1.Model.SparkJob do
   *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of files to be placed in the working directory of each executor. Useful for naively parallel tasks.
   *   `jarFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Spark driver and tasks.
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
-  *   `mainClass` (*type:* `String.t`, *default:* `nil`) - The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jar_file_uris.
+  *   `mainClass` (*type:* `String.t`, *default:* `nil`) - The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in SparkJob.jar_file_uris.
   *   `mainJarFileUri` (*type:* `String.t`, *default:* `nil`) - The HCFS URI of the jar file that contains the main class.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Spark. Properties that conflict with values set by the Dataproc API might be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
   """
 
   use GoogleApi.Gax.ModelBase
