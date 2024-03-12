@@ -21,6 +21,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.SecurityKey do
 
   ## Attributes
 
+  *   `deviceNickname` (*type:* `String.t`, *default:* `nil`) - The security key nickname explicitly set by the user.
   *   `privateKey` (*type:* `String.t`, *default:* `nil`) - Hardware-backed private key text in SSH format.
   *   `publicKey` (*type:* `String.t`, *default:* `nil`) - Public key text in SSH format, defined by [RFC4253]("https://www.ietf.org/rfc/rfc4253.txt") section 6.6.
   *   `universalTwoFactor` (*type:* `GoogleApi.OSLogin.V1alpha.Model.UniversalTwoFactor.t`, *default:* `nil`) - The U2F protocol type.
@@ -30,12 +31,14 @@ defmodule GoogleApi.OSLogin.V1alpha.Model.SecurityKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deviceNickname => String.t() | nil,
           :privateKey => String.t() | nil,
           :publicKey => String.t() | nil,
           :universalTwoFactor => GoogleApi.OSLogin.V1alpha.Model.UniversalTwoFactor.t() | nil,
           :webAuthn => GoogleApi.OSLogin.V1alpha.Model.WebAuthn.t() | nil
         }
 
+  field(:deviceNickname)
   field(:privateKey)
   field(:publicKey)
   field(:universalTwoFactor, as: GoogleApi.OSLogin.V1alpha.Model.UniversalTwoFactor)
