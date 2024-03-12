@@ -23,7 +23,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.BackupInfo do
 
   *   `backup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. This time that the backup was finished. Row data in the backup will be no newer than this timestamp.
-  *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup from which this backup was copied. If a backup is not created by copying a backup, this field will be empty. Values are of the form: projects//instances//backups/.
+  *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup from which this backup was copied. If a backup is not created by copying a backup, this field will be empty. Values are of the form: projects//instances//clusters//backups/
   *   `sourceTable` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the table the backup was created from.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time that the backup was started. Row data in the backup will be no older than this timestamp.
   """

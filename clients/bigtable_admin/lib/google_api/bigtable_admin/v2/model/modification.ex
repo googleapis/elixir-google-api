@@ -25,6 +25,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Modification do
   *   `drop` (*type:* `boolean()`, *default:* `nil`) - Drop (delete) the column family with the given ID, or fail if no such family exists.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the column family to be modified.
   *   `update` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t`, *default:* `nil`) - Update an existing column family to the specified schema, or fail if no column family exists with the given ID.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. A mask specifying which fields (e.g. `gc_rule`) in the `update` mod should be updated, ignored for other modification types. If unset or empty, we treat it as updating `gc_rule` to be backward compatible.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Modification do
           :create => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t() | nil,
           :drop => boolean() | nil,
           :id => String.t() | nil,
-          :update => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t() | nil
+          :update => GoogleApi.BigtableAdmin.V2.Model.ColumnFamily.t() | nil,
+          :updateMask => String.t() | nil
         }
 
   field(:create, as: GoogleApi.BigtableAdmin.V2.Model.ColumnFamily)
   field(:drop)
   field(:id)
   field(:update, as: GoogleApi.BigtableAdmin.V2.Model.ColumnFamily)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.Modification do
