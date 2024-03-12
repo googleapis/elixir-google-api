@@ -21,7 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.TextDetectionParams do
 
   ## Attributes
 
-  *   `advancedOcrOptions` (*type:* `list(String.t)`, *default:* `nil`) - A list of advanced OCR options to fine-tune OCR behavior.
+  *   `advancedOcrOptions` (*type:* `list(String.t)`, *default:* `nil`) - A list of advanced OCR options to further fine-tune OCR behavior. Current valid values are: - `legacy_layout`: a heuristics layout detection algorithm, which serves as an alternative to the current ML-based layout detection algorithm. Customers can choose the best suitable layout algorithm based on their situation.
   *   `enableTextDetectionConfidenceScore` (*type:* `boolean()`, *default:* `nil`) - By default, Cloud Vision API only includes confidence score for DOCUMENT_TEXT_DETECTION result. Set the flag to true to include confidence score for TEXT_DETECTION as well.
   """
 

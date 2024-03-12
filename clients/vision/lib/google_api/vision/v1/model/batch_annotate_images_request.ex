@@ -21,6 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateImagesRequest do
 
   ## Attributes
 
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Optional. Target project and location to make a call. Format: `projects/{project-id}/locations/{location-id}`. If no parent is specified, a region will be chosen automatically. Supported location-ids: `us`: USA country only, `asia`: East asia areas, like Japan, Taiwan, `eu`: The European Union. Example: `projects/project-A/locations/eu`.
   *   `requests` (*type:* `list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t)`, *default:* `nil`) - Required. Individual image annotation requests for this batch.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Vision.V1.Model.BatchAnnotateImagesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :labels => map() | nil,
           :parent => String.t() | nil,
           :requests => list(GoogleApi.Vision.V1.Model.AnnotateImageRequest.t()) | nil
         }
 
+  field(:labels, type: :map)
   field(:parent)
   field(:requests, as: GoogleApi.Vision.V1.Model.AnnotateImageRequest, type: :list)
 end

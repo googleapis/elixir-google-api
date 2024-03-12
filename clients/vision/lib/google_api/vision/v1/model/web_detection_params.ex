@@ -21,7 +21,7 @@ defmodule GoogleApi.Vision.V1.Model.WebDetectionParams do
 
   ## Attributes
 
-  *   `includeGeoResults` (*type:* `boolean()`, *default:* `nil`) - Whether to include results derived from the geo information in the image.
+  *   `includeGeoResults` (*type:* `boolean()`, *default:* `nil`) - This field has no effect on results.
   """
 
   use GoogleApi.Gax.ModelBase
