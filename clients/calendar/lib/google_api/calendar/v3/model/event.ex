@@ -34,6 +34,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       There can be at most 25 attachments per event,
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event. Can contain HTML. Optional.
   *   `kind` (*type:* `String.t`, *default:* `calendar#event`) - Type of the resource ("calendar#event").
+  *   `outOfOfficeProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventOutOfOfficeProperties.t`, *default:* `nil`) - Out of office event data. Used if eventType is outOfOffice.
   *   `guestsCanModify` (*type:* `boolean()`, *default:* `false`) - Whether attendees other than the organizer can modify the event. Optional. The default is False.
   *   `attendees` (*type:* `list(GoogleApi.Calendar.V3.Model.EventAttendee.t)`, *default:* `nil`) - The attendees of the event. See the Events with attendees guide for more information on scheduling events with other calendar users. Service accounts need to use domain-wide delegation of authority to populate the attendee list.
   *   `start` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance.
@@ -60,6 +61,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `colorId` (*type:* `String.t`, *default:* `nil`) - The color of the event. This is an ID referring to an entry in the event section of the colors definition (see the  colors endpoint). Optional.
   *   `guestsCanInviteOthers` (*type:* `boolean()`, *default:* `true`) - Whether attendees other than the organizer can invite others to the event. Optional. The default is True.
   *   `extendedProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventExtendedProperties.t`, *default:* `nil`) - Extended properties of the event.
+  *   `workingLocationProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventWorkingLocationProperties.t`, *default:* `nil`) - Working location event data.
   *   `sequence` (*type:* `integer()`, *default:* `nil`) - Sequence number as per iCalendar.
   *   `recurrence` (*type:* `list(String.t)`, *default:* `nil`) - List of RRULE, EXRULE, RDATE and EXDATE lines for a recurring event, as specified in RFC5545. Note that DTSTART and DTEND lines are not allowed in this field; event start and end times are specified in the start and end fields. This field is omitted for single events or instances of recurring events.
   *   `transparency` (*type:* `String.t`, *default:* `opaque`) - Whether the event blocks time on the calendar. Optional. Possible values are:  
@@ -75,15 +77,17 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       Note that the icalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same icalUIDs.
   *   `end` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - The (exclusive) end time of the event. For a recurring event, this is the end time of the first instance.
   *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modification time of the event (as a RFC3339 timestamp). Read-only.
+  *   `focusTimeProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventFocusTimeProperties.t`, *default:* `nil`) - Focus Time event data. Used if eventType is focusTime.
   *   `originalStartTime` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - For an instance of a recurring event, this is the time at which this event would start according to the recurrence data in the recurring event identified by recurringEventId. It uniquely identifies the instance within the recurring event series even if the instance was moved to a different time. Immutable.
   *   `locked` (*type:* `boolean()`, *default:* `false`) - Whether this is a locked event copy where no changes can be made to the main event fields "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-Only.
   *   `created` (*type:* `DateTime.t`, *default:* `nil`) - Creation time of the event (as a RFC3339 timestamp). Read-only.
   *   `htmlLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to this event in the Google Calendar Web UI. Read-only.
   *   `source` (*type:* `GoogleApi.Calendar.V3.Model.EventSource.t`, *default:* `nil`) - Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event.
-  *   `eventType` (*type:* `String.t`, *default:* `default`) - Specific type of the event. Read-only. Possible values are:  
+  *   `eventType` (*type:* `String.t`, *default:* `default`) - Specific type of the event. This cannot be modified after the event is created. Possible values are:  
       - "default" - A regular event or not further specified. 
       - "outOfOffice" - An out-of-office event. 
-      - "focusTime" - A focus-time event.
+      - "focusTime" - A focus-time event. 
+      - "workingLocation" - A working location event.  Currently, only "default " and "workingLocation" events can be created using the API. Extended support for other event types will be made available in later releases.
   *   `iCalUID` (*type:* `String.t`, *default:* `nil`) - Event unique identifier as defined in RFC5545. It is used to uniquely identify events accross calendaring systems and must be supplied when importing events via the import method.
       Note that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method.
   """
@@ -102,6 +106,8 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
           :attachments => list(GoogleApi.Calendar.V3.Model.EventAttachment.t()) | nil,
           :description => String.t() | nil,
           :kind => String.t() | nil,
+          :outOfOfficeProperties =>
+            GoogleApi.Calendar.V3.Model.EventOutOfOfficeProperties.t() | nil,
           :guestsCanModify => boolean() | nil,
           :attendees => list(GoogleApi.Calendar.V3.Model.EventAttendee.t()) | nil,
           :start => GoogleApi.Calendar.V3.Model.EventDateTime.t() | nil,
@@ -115,6 +121,8 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
           :colorId => String.t() | nil,
           :guestsCanInviteOthers => boolean() | nil,
           :extendedProperties => GoogleApi.Calendar.V3.Model.EventExtendedProperties.t() | nil,
+          :workingLocationProperties =>
+            GoogleApi.Calendar.V3.Model.EventWorkingLocationProperties.t() | nil,
           :sequence => integer() | nil,
           :recurrence => list(String.t()) | nil,
           :transparency => String.t() | nil,
@@ -123,6 +131,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
           :id => String.t() | nil,
           :end => GoogleApi.Calendar.V3.Model.EventDateTime.t() | nil,
           :updated => DateTime.t() | nil,
+          :focusTimeProperties => GoogleApi.Calendar.V3.Model.EventFocusTimeProperties.t() | nil,
           :originalStartTime => GoogleApi.Calendar.V3.Model.EventDateTime.t() | nil,
           :locked => boolean() | nil,
           :created => DateTime.t() | nil,
@@ -143,6 +152,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   field(:attachments, as: GoogleApi.Calendar.V3.Model.EventAttachment, type: :list)
   field(:description)
   field(:kind)
+  field(:outOfOfficeProperties, as: GoogleApi.Calendar.V3.Model.EventOutOfOfficeProperties)
   field(:guestsCanModify)
   field(:attendees, as: GoogleApi.Calendar.V3.Model.EventAttendee, type: :list)
   field(:start, as: GoogleApi.Calendar.V3.Model.EventDateTime)
@@ -156,6 +166,9 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   field(:colorId)
   field(:guestsCanInviteOthers)
   field(:extendedProperties, as: GoogleApi.Calendar.V3.Model.EventExtendedProperties)
+
+  field(:workingLocationProperties, as: GoogleApi.Calendar.V3.Model.EventWorkingLocationProperties)
+
   field(:sequence)
   field(:recurrence, type: :list)
   field(:transparency)
@@ -164,6 +177,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   field(:id)
   field(:end, as: GoogleApi.Calendar.V3.Model.EventDateTime)
   field(:updated, as: DateTime)
+  field(:focusTimeProperties, as: GoogleApi.Calendar.V3.Model.EventFocusTimeProperties)
   field(:originalStartTime, as: GoogleApi.Calendar.V3.Model.EventDateTime)
   field(:locked)
   field(:created, as: DateTime)
