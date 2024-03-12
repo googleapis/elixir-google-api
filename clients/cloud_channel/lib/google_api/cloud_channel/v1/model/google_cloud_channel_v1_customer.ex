@@ -25,12 +25,13 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Customer do
   *   `channelPartnerId` (*type:* `String.t`, *default:* `nil`) - Cloud Identity ID of the customer's channel partner. Populated only if a channel partner exists for this customer.
   *   `cloudIdentityId` (*type:* `String.t`, *default:* `nil`) - Output only. The customer's Cloud Identity ID if the customer has a Cloud Identity resource.
   *   `cloudIdentityInfo` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityInfo.t`, *default:* `nil`) - Output only. Cloud Identity information for the customer. Populated only if a Cloud Identity account exists for this customer.
+  *   `correlationId` (*type:* `String.t`, *default:* `nil`) - Optional. External CRM ID for the customer. Populated only if a CRM ID exists for this customer.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the customer was created.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. The customer's primary domain. Must match the primary contact email's domain.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the customer. Format: accounts/{account_id}/customers/{customer_id}
   *   `orgDisplayName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the organization that the customer entity represents.
-  *   `orgPostalAddress` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - Required. The organization address for the customer. To enforce US laws and embargoes, we require a region and zip code. You must provide valid addresses for every customer. To set the customer's language, use the Customer-level language code.
+  *   `orgPostalAddress` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypePostalAddress.t`, *default:* `nil`) - Required. The organization address for the customer. To enforce US laws and embargoes, we require a region, postal code, and address lines. You must provide valid addresses for every customer. To set the customer's language, use the Customer-level language code.
   *   `primaryContactInfo` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ContactInfo.t`, *default:* `nil`) - Primary contact info.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the customer was updated.
   """
@@ -43,6 +44,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Customer do
           :cloudIdentityId => String.t() | nil,
           :cloudIdentityInfo =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityInfo.t() | nil,
+          :correlationId => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :domain => String.t() | nil,
           :languageCode => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Customer do
     as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityInfo
   )
 
+  field(:correlationId)
   field(:createTime, as: DateTime)
   field(:domain)
   field(:languageCode)

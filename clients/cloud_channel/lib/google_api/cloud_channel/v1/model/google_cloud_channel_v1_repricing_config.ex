@@ -22,9 +22,10 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfig do
   ## Attributes
 
   *   `adjustment` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingAdjustment.t`, *default:* `nil`) - Required. Information about the adjustment.
-  *   `channelPartnerGranularity` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity.t`, *default:* `nil`) - Applies the repricing configuration at the channel partner level. This is the only supported value for ChannelPartnerRepricingConfig.
+  *   `channelPartnerGranularity` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity.t`, *default:* `nil`) - Applies the repricing configuration at the channel partner level. Only ChannelPartnerRepricingConfig supports this value. Deprecated: This is no longer supported. Use RepricingConfig.entitlement_granularity instead.
+  *   `conditionalOverrides` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ConditionalOverride.t)`, *default:* `nil`) - The conditional overrides to apply for this configuration. If you list multiple overrides, only the first valid override is used. If you don't list any overrides, the API uses the normal adjustment and rebilling basis.
   *   `effectiveInvoiceMonth` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - Required. The YearMonth when these adjustments activate. The Day field needs to be "0" since we only accept YearMonth repricing boundaries.
-  *   `entitlementGranularity` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigEntitlementGranularity.t`, *default:* `nil`) - Applies the repricing configuration at the entitlement level. This is the only supported value for CustomerRepricingConfig.
+  *   `entitlementGranularity` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigEntitlementGranularity.t`, *default:* `nil`) - Applies the repricing configuration at the entitlement level. Note: If a ChannelPartnerRepricingConfig using RepricingConfig.EntitlementGranularity becomes effective, then no existing or future RepricingConfig.ChannelPartnerGranularity will apply to the RepricingConfig.EntitlementGranularity.entitlement. This is the recommended value for both CustomerRepricingConfig and ChannelPartnerRepricingConfig.
   *   `rebillingBasis` (*type:* `String.t`, *default:* `nil`) - Required. The RebillingBasis to use for this bill. Specifies the relative cost based on repricing costs you will apply.
   """
 
@@ -35,6 +36,9 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfig do
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingAdjustment.t() | nil,
           :channelPartnerGranularity =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity.t()
+            | nil,
+          :conditionalOverrides =>
+            list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ConditionalOverride.t())
             | nil,
           :effectiveInvoiceMonth => GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t() | nil,
           :entitlementGranularity =>
@@ -48,6 +52,11 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfig do
   field(:channelPartnerGranularity,
     as:
       GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity
+  )
+
+  field(:conditionalOverrides,
+    as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ConditionalOverride,
+    type: :list
   )
 
   field(:effectiveInvoiceMonth, as: GoogleApi.CloudChannel.V1.Model.GoogleTypeDate)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RepricingConfigChannelPartnerGranularity do
   @moduledoc """
-  Applies the repricing configuration at the channel partner level. The channel partner value is derived from the resource name. Takes an empty json object.
+  Applies the repricing configuration at the channel partner level. The channel partner value is derived from the resource name. Takes an empty json object. Deprecated: This is no longer supported. Use RepricingConfig.EntitlementGranularity instead.
 
   ## Attributes
 

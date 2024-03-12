@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ChangeOfferRequest
 
   ## Attributes
 
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account resource name that is used to pay for this entitlement when setting up billing on a trial subscription. This field is only relevant for multi-currency accounts. It should be left empty for single currency accounts.
   *   `offer` (*type:* `String.t`, *default:* `nil`) - Required. New Offer. Format: accounts/{account_id}/offers/{offer_id}.
   *   `parameters` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Parameter.t)`, *default:* `nil`) - Optional. Parameters needed to purchase the Offer. To view the available Parameters refer to the Offer.parameter_definitions from the desired offer.
   *   `purchaseOrderId` (*type:* `String.t`, *default:* `nil`) - Optional. Purchase order id provided by the reseller.
@@ -30,6 +31,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ChangeOfferRequest
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :billingAccount => String.t() | nil,
           :offer => String.t() | nil,
           :parameters =>
             list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Parameter.t()) | nil,
@@ -37,6 +39,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ChangeOfferRequest
           :requestId => String.t() | nil
         }
 
+  field(:billingAccount)
   field(:offer)
 
   field(:parameters,

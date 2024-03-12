@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Report do
   @moduledoc """
-  The ID and description of a report that was used to generate report data. For example, "GCP Daily Spend", "Google Workspace License Activity", etc.
+  The ID and description of a report that was used to generate report data. For example, "Google Cloud Daily Spend", "Google Workspace License Activity", etc.
 
   ## Attributes
 

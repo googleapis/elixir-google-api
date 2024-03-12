@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1FetchReportResults
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. Requested page size of the report. The server may return fewer results than requested. If you don't specify a page size, the server uses a sensible default (may change over time). The maximum value is 30,000; the server will change larger values to 30,000.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. A token that specifies a page of results beyond the first page. Obtained through FetchReportResultsResponse.next_page_token of the previous CloudChannelReportsService.FetchReportResults call.
+  *   `partitionKeys` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of keys specifying which report partitions to return. If empty, returns all partitions.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :pageSize => integer() | nil,
-          :pageToken => String.t() | nil
+          :pageToken => String.t() | nil,
+          :partitionKeys => list(String.t()) | nil
         }
 
   field(:pageSize)
   field(:pageToken)
+  field(:partitionKeys, type: :list)
 end
 
 defimpl Poison.Decoder,

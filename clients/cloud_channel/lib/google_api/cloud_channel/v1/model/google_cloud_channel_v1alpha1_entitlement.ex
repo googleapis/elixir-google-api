@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Entitlement 
 
   *   `assignedUnits` (*type:* `integer()`, *default:* `nil`) - The current number of users that are assigned a license for the product defined in provisioned_service.skuId. Read-only. Deprecated: Use `parameters` instead.
   *   `associationInfo` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1AssociationInfo.t`, *default:* `nil`) - Association information to other entitlements.
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account resource name that is used to pay for this entitlement.
   *   `channelPartnerId` (*type:* `String.t`, *default:* `nil`) - Cloud Identity ID of a channel partner who will be the direct reseller for the customer's order. This field is generally used in 2-tier ordering, where the order is placed by a top-level distributor on behalf of their channel partner or reseller. Required for distributors. Deprecated: `channel_partner_id` has been moved to the Customer.
   *   `commitmentSettings` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CommitmentSettings.t`, *default:* `nil`) - Commitment settings for a commitment-based Offer. Required for commitment based offers.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the entitlement is created.
@@ -30,7 +31,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Entitlement 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of an entitlement in the form: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}.
   *   `numUnits` (*type:* `integer()`, *default:* `nil`) - Number of units for a commitment-based Offer. For example, for seat-based Offers, this would be the number of seats; for license-based Offers, this would be the number of licenses. Required for creating commitment-based Offers. Deprecated: Use `parameters` instead.
   *   `offer` (*type:* `String.t`, *default:* `nil`) - Required. The offer resource name for which the entitlement is to be created. Takes the form: accounts/{account_id}/offers/{offer_id}.
-  *   `parameters` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Parameter.t)`, *default:* `nil`) - Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers.
+  *   `parameters` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Parameter.t)`, *default:* `nil`) - Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. For Google Workspace, the following Parameters may be accepted as input: - max_units: The maximum assignable units for a flexible offer OR - num_units: The total commitment for commitment-based offers The response may additionally include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. For Google Cloud billing subaccounts, the following Parameter may be accepted as input: - display_name: The display name of the billing subaccount.
   *   `provisionedService` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1ProvisionedService.t`, *default:* `nil`) - Output only. Service provisioning details for the entitlement.
   *   `provisioningState` (*type:* `String.t`, *default:* `nil`) - Output only. Current provisioning state of the entitlement.
   *   `purchaseOrderId` (*type:* `String.t`, *default:* `nil`) - Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. This is only supported for Google Workspace entitlements.
@@ -45,6 +46,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Entitlement 
           :assignedUnits => integer() | nil,
           :associationInfo =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1AssociationInfo.t() | nil,
+          :billingAccount => String.t() | nil,
           :channelPartnerId => String.t() | nil,
           :commitmentSettings =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1CommitmentSettings.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Entitlement 
     as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1AssociationInfo
   )
 
+  field(:billingAccount)
   field(:channelPartnerId)
 
   field(:commitmentSettings,

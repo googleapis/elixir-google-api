@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1DateRange do
 
   ## Attributes
 
-  *   `invoiceEndDate` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - The latest invoice date (exclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the following month.
-  *   `invoiceStartDate` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - The earliest invoice date (inclusive). If your product uses monthly invoices, and this value is not the beginning of a month, this will adjust the date to the first day of the given month.
+  *   `invoiceEndDate` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - The latest invoice date (inclusive). If this value is not the last day of a month, this will move it forward to the last day of the given month.
+  *   `invoiceStartDate` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - The earliest invoice date (inclusive). If this value is not the first day of a month, this will move it back to the first day of the given month.
   *   `usageEndDateTime` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDateTime.t`, *default:* `nil`) - The latest usage date time (exclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage end date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time.
   *   `usageStartDateTime` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleTypeDateTime.t`, *default:* `nil`) - The earliest usage date time (inclusive). If you use time groupings (daily, weekly, etc), each group uses midnight to midnight (Pacific time). The usage start date is rounded down to include all usage from the specified date. We recommend that clients pass `usage_start_date_time` in Pacific time.
   """

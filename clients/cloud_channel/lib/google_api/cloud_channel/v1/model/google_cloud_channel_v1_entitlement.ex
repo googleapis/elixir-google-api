@@ -22,11 +22,12 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Entitlement do
   ## Attributes
 
   *   `associationInfo` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1AssociationInfo.t`, *default:* `nil`) - Association information to other entitlements.
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account resource name that is used to pay for this entitlement.
   *   `commitmentSettings` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CommitmentSettings.t`, *default:* `nil`) - Commitment settings for a commitment-based Offer. Required for commitment based offers.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the entitlement is created.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of an entitlement in the form: accounts/{account_id}/customers/{customer_id}/entitlements/{entitlement_id}.
   *   `offer` (*type:* `String.t`, *default:* `nil`) - Required. The offer resource name for which the entitlement is to be created. Takes the form: accounts/{account_id}/offers/{offer_id}.
-  *   `parameters` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Parameter.t)`, *default:* `nil`) - Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. The response may include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. - max_units: The maximum assignable units for a flexible offer. - num_units: The total commitment for commitment-based offers.
+  *   `parameters` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Parameter.t)`, *default:* `nil`) - Extended entitlement parameters. When creating an entitlement, valid parameter names and values are defined in the Offer.parameter_definitions. For Google Workspace, the following Parameters may be accepted as input: - max_units: The maximum assignable units for a flexible offer OR - num_units: The total commitment for commitment-based offers The response may additionally include the following output-only Parameters: - assigned_units: The number of licenses assigned to users. For Google Cloud billing subaccounts, the following Parameter may be accepted as input: - display_name: The display name of the billing subaccount.
   *   `provisionedService` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ProvisionedService.t`, *default:* `nil`) - Output only. Service provisioning details for the entitlement.
   *   `provisioningState` (*type:* `String.t`, *default:* `nil`) - Output only. Current provisioning state of the entitlement.
   *   `purchaseOrderId` (*type:* `String.t`, *default:* `nil`) - Optional. This purchase order (PO) information is for resellers to use for their company tracking usage. If a purchaseOrderId value is given, it appears in the API responses and shows up in the invoice. The property accepts up to 80 plain text characters. This is only supported for Google Workspace entitlements.
@@ -40,6 +41,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Entitlement do
   @type t :: %__MODULE__{
           :associationInfo =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1AssociationInfo.t() | nil,
+          :billingAccount => String.t() | nil,
           :commitmentSettings =>
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CommitmentSettings.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Entitlement do
         }
 
   field(:associationInfo, as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1AssociationInfo)
+  field(:billingAccount)
 
   field(:commitmentSettings,
     as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CommitmentSettings
