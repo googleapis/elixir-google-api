@@ -21,10 +21,10 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata do
 
   ## Attributes
 
-  *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If populated, the Antenna Model Pattern to use. Format is: RecordCreatorId:PatternId
-  *   `commonChannelGroup` (*type:* `String.t`, *default:* `nil`) - CCG. A group of CBSDs in the same ICG requesting a common primary channel assignment. See CBRSA-TS-2001 V3.0.0 for more details.
-  *   `interferenceCoordinationGroup` (*type:* `String.t`, *default:* `nil`) - ICG. A group of CBSDs that manage their own interference with the group. See CBRSA-TS-2001 V3.0.0 for more details.
-  *   `nrqzValidated` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether a CPI has validated to have coordinated with the National Quiet Zone office.
+  *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If populated, the Antenna Model Pattern to use. Format is: `RecordCreatorId:PatternId`
+  *   `commonChannelGroup` (*type:* `String.t`, *default:* `nil`) - Common Channel Group (CCG). A group of CBSDs in the same ICG requesting a common primary channel assignment. For more details, see [CBRSA-TS-2001 V3.0.0](https://ongoalliance.org/wp-content/uploads/2020/02/CBRSA-TS-2001-V3.0.0_Approved-for-publication.pdf).
+  *   `interferenceCoordinationGroup` (*type:* `String.t`, *default:* `nil`) - Interference Coordination Group (ICG). A group of CBSDs that manage their own interference with the group. For more details, see [CBRSA-TS-2001 V3.0.0](https://ongoalliance.org/wp-content/uploads/2020/02/CBRSA-TS-2001-V3.0.0_Approved-for-publication.pdf).
+  *   `nrqzValidated` (*type:* `boolean()`, *default:* `nil`) - Output only. Set to `true` if a CPI has validated that they have coordinated with the National Quiet Zone office.
   *   `nrqzValidation` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation.t`, *default:* `nil`) - Output only. National Radio Quiet Zone validation info.
   """
 

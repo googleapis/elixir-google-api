@@ -25,8 +25,8 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDevice do
   *   `currentChannels` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalChannelWithScore.t)`, *default:* `nil`) - Output only. Current channels with scores.
   *   `deviceMetadata` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceMetadata.t`, *default:* `nil`) - Device parameters that can be overridden by both SAS Portal and SAS registration requests.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Device display name.
-  *   `fccId` (*type:* `String.t`, *default:* `nil`) - The FCC identifier of the device.
-  *   `grantRangeAllowlists` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t)`, *default:* `nil`) - Only ranges within the allowlists are available for new grants.
+  *   `fccId` (*type:* `String.t`, *default:* `nil`) - The FCC identifier of the device. Refer to https://www.fcc.gov/oet/ea/fccid for FccID format. Accept underscores and periods because some test-SAS customers use them.
+  *   `grantRangeAllowlists` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalFrequencyRange.t)`, *default:* `nil`) - Only ranges that are within the allowlists are available for new grants.
   *   `grants` (*type:* `list(GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceGrant.t)`, *default:* `nil`) - Output only. Grants held by the device.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource path name.
   *   `preloadedConfig` (*type:* `GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeviceConfig.t`, *default:* `nil`) - Configuration of the device, as specified via SAS Portal API.

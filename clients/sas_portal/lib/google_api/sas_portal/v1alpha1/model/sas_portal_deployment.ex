@@ -22,7 +22,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalDeployment do
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The deployment's display name.
-  *   `frns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The FRNs copied from its direct parent.
+  *   `frns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The FCC Registration Numbers (FRNs) copied from its direct parent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name.
   *   `sasUserIds` (*type:* `list(String.t)`, *default:* `nil`) - User ID used by the devices belonging to this deployment. Each deployment should be associated with one unique user ID.
   """
