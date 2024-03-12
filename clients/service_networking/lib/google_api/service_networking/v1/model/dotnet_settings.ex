@@ -22,15 +22,30 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.DotnetSettings do
   ## Attributes
 
   *   `common` (*type:* `GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings.t`, *default:* `nil`) - Some settings.
+  *   `forcedNamespaceAliases` (*type:* `list(String.t)`, *default:* `nil`) - Namespaces which must be aliased in snippets due to a known (but non-generator-predictable) naming collision
+  *   `handwrittenSignatures` (*type:* `list(String.t)`, *default:* `nil`) - Method signatures (in the form "service.method(signature)") which are provided separately, so shouldn't be generated. Snippets *calling* these methods are still generated, however.
+  *   `ignoredResources` (*type:* `list(String.t)`, *default:* `nil`) - List of full resource types to ignore during generation. This is typically used for API-specific Location resources, which should be handled by the generator as if they were actually the common Location resources. Example entry: "documentai.googleapis.com/Location"
+  *   `renamedResources` (*type:* `map()`, *default:* `nil`) - Map from full resource types to the effective short name for the resource. This is used when otherwise resource named from different services would cause naming collisions. Example entry: "datalabeling.googleapis.com/Dataset": "DataLabelingDataset"
+  *   `renamedServices` (*type:* `map()`, *default:* `nil`) - Map from original service names to renamed versions. This is used when the default generated types would cause a naming conflict. (Neither name is fully-qualified.) Example: Subscriber to SubscriberServiceApi.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings.t() | nil
+          :common => GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings.t() | nil,
+          :forcedNamespaceAliases => list(String.t()) | nil,
+          :handwrittenSignatures => list(String.t()) | nil,
+          :ignoredResources => list(String.t()) | nil,
+          :renamedResources => map() | nil,
+          :renamedServices => map() | nil
         }
 
   field(:common, as: GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings)
+  field(:forcedNamespaceAliases, type: :list)
+  field(:handwrittenSignatures, type: :list)
+  field(:ignoredResources, type: :list)
+  field(:renamedResources, type: :map)
+  field(:renamedServices, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.DotnetSettings do

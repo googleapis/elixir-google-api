@@ -31,7 +31,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.ClientLibrarySettings do
   *   `pythonSettings` (*type:* `GoogleApi.ServiceNetworking.V1.Model.PythonSettings.t`, *default:* `nil`) - Settings for Python client libraries.
   *   `restNumericEnums` (*type:* `boolean()`, *default:* `nil`) - When using transport=rest, the client request will encode enums as numbers rather than strings.
   *   `rubySettings` (*type:* `GoogleApi.ServiceNetworking.V1.Model.RubySettings.t`, *default:* `nil`) - Settings for Ruby client libraries.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the API to apply these settings to.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the API to apply these settings to. This is the full protobuf package for the API, ending in the version element. Examples: "google.cloud.speech.v1" and "google.spanner.admin.database.v1".
   """
 
   use GoogleApi.Gax.ModelBase
