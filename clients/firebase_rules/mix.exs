@@ -18,7 +18,7 @@
 defmodule GoogleApi.FirebaseRules.Mixfile do
   use Mix.Project
 
-  @version "0.16.5"
+  @version "0.17.0"
 
   def project() do
     [
