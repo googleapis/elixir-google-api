@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfig do
   @moduledoc """
-  The PageOptimizationConfig for model training. This determines how many panels to optimize for, and which serving configurations to consider for each panel. The purpose of this model is to optimize which ServingConfig to show on which panels in way that optimizes the visitors shopping journey.
+  The PageOptimizationConfig for model training. This determines how many panels to optimize for, and which serving configs to consider for each panel. The purpose of this model is to optimize which ServingConfig to show on which panels in way that optimizes the visitors shopping journey.
 
   ## Attributes
 

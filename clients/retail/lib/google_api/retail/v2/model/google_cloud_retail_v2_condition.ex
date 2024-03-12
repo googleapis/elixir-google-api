@@ -22,6 +22,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Condition do
   ## Attributes
 
   *   `activeTimeRange` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionTimeRange.t)`, *default:* `nil`) - Range of time(s) specifying when Condition is active. Condition true if any time range matches.
+  *   `pageCategories` (*type:* `list(String.t)`, *default:* `nil`) - Used to support browse uses cases. A list (up to 10 entries) of categories or departments. The format should be the same as UserEvent.page_categories;
   *   `queryTerms` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionQueryTerm.t)`, *default:* `nil`) - A list (up to 10 entries) of terms to match the query on. If not specified, match all queries. If many query terms are specified, the condition is matched if any of the terms is a match (i.e. using the OR operator).
   """
 
@@ -30,6 +31,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Condition do
   @type t :: %__MODULE__{
           :activeTimeRange =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionTimeRange.t()) | nil,
+          :pageCategories => list(String.t()) | nil,
           :queryTerms =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionQueryTerm.t()) | nil
         }
@@ -38,6 +40,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Condition do
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionTimeRange,
     type: :list
   )
+
+  field(:pageCategories, type: :list)
 
   field(:queryTerms,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ConditionQueryTerm,

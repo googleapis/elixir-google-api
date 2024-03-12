@@ -25,9 +25,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
   *   `condition` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Condition.t`, *default:* `nil`) - Required. The condition that triggers the rule. If the condition is empty, the rule will always apply.
   *   `doNotAssociateAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleDoNotAssociateAction.t`, *default:* `nil`) - Prevents term from being associated with other terms.
   *   `filterAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleFilterAction.t`, *default:* `nil`) - Filters results.
+  *   `forceReturnFacetAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetAction.t`, *default:* `nil`) - Force returns an attribute as a facet in the request.
   *   `ignoreAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleIgnoreAction.t`, *default:* `nil`) - Ignores specific terms from query during search.
   *   `onewaySynonymsAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleOnewaySynonymsAction.t`, *default:* `nil`) - Treats specific term as a synonym with a group of terms. Group of terms will not be treated as synonyms with the specific term.
   *   `redirectAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction.t`, *default:* `nil`) - Redirects a shopper to a specific page.
+  *   `removeFacetAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRemoveFacetAction.t`, *default:* `nil`) - Remove an attribute as a facet in the request (if present).
   *   `replacementAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleReplacementAction.t`, *default:* `nil`) - Replaces specific terms in the query.
   *   `twowaySynonymsAction` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleTwowaySynonymsAction.t`, *default:* `nil`) - Treats a set of terms as synonyms of one another.
   """
@@ -41,12 +43,16 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleDoNotAssociateAction.t() | nil,
           :filterAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleFilterAction.t() | nil,
+          :forceReturnFacetAction =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetAction.t() | nil,
           :ignoreAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleIgnoreAction.t() | nil,
           :onewaySynonymsAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleOnewaySynonymsAction.t() | nil,
           :redirectAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction.t() | nil,
+          :removeFacetAction =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRemoveFacetAction.t() | nil,
           :replacementAction =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleReplacementAction.t() | nil,
           :twowaySynonymsAction =>
@@ -61,6 +67,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
   )
 
   field(:filterAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleFilterAction)
+
+  field(:forceReturnFacetAction,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetAction
+  )
+
   field(:ignoreAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleIgnoreAction)
 
   field(:onewaySynonymsAction,
@@ -68,6 +79,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule do
   )
 
   field(:redirectAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRedirectAction)
+
+  field(:removeFacetAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleRemoveFacetAction)
 
   field(:replacementAction, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleReplacementAction)
 

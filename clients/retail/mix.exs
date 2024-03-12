@@ -48,7 +48,7 @@ defmodule GoogleApi.Retail.Mixfile do
 
   defp description() do
     """
-    Retail API client library. Cloud Retail service enables customers to build end-to-end personalized recommendation systems without requiring a high level of expertise in machine learning, recommendation system, or Google Cloud.
+    Vertex AI Search for Retail API client library.
     """
   end
 
