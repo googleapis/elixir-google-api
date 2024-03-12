@@ -21,16 +21,28 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
+  *   `annotatorSelector` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector.t`, *default:* `nil`) - To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.
   *   `runtimeIntegrationAnalysisPercentage` (*type:* `float()`, *default:* `nil`) - Percentage of conversations created using Dialogflow runtime integration to analyze automatically, between [0, 100].
+  *   `uploadConversationAnalysisPercentage` (*type:* `float()`, *default:* `nil`) - Percentage of conversations created using the UploadConversation endpoint to analyze automatically, between [0, 100].
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :runtimeIntegrationAnalysisPercentage => float() | nil
+          :annotatorSelector =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector.t()
+            | nil,
+          :runtimeIntegrationAnalysisPercentage => float() | nil,
+          :uploadConversationAnalysisPercentage => float() | nil
         }
 
+  field(:annotatorSelector,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotatorSelector
+  )
+
   field(:runtimeIntegrationAnalysisPercentage)
+  field(:uploadConversationAnalysisPercentage)
 end
 
 defimpl Poison.Decoder,

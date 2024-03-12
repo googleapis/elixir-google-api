@@ -23,6 +23,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
+  *   `ingestConversationsStats` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStats.t`, *default:* `nil`) - Output only. Statistics for IngestConversations operation.
   *   `partialErrors` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Output only. Partial errors during ingest operation that might cause the operation output to be incomplete.
   *   `request` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequest.t`, *default:* `nil`) - Output only. The original request for ingest.
   """
@@ -32,6 +33,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
+          :ingestConversationsStats =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStats.t()
+            | nil,
           :partialErrors =>
             list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t()) | nil,
           :request =>
@@ -41,6 +45,12 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
+
+  field(:ingestConversationsStats,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsMetadataIngestConversationsStats
+  )
+
   field(:partialErrors, as: GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus, type: :list)
 
   field(:request,

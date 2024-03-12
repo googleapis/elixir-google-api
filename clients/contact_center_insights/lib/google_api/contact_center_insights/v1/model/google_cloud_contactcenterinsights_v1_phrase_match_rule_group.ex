@@ -21,7 +21,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
-  *   `phraseMatchRules` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchRule.t)`, *default:* `nil`) - A list of phase match rules that are included in this group.
+  *   `phraseMatchRules` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1PhraseMatchRule.t)`, *default:* `nil`) - A list of phrase match rules that are included in this group.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of this phrase match rule group.
   """
 

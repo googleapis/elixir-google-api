@@ -26,7 +26,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the settings was created.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - A language code to be applied to each transcript segment unless the segment already specifies a language code. Language code defaults to "en-US" if it is neither specified on the segment nor here.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the settings resource. Format: projects/{project}/locations/{location}/settings
-  *   `pubsubNotificationSettings` (*type:* `map()`, *default:* `nil`) - A map that maps a notification trigger to a Pub/Sub topic. Each time a specified trigger occurs, Insights will notify the corresponding Pub/Sub topic. Keys are notification triggers. Supported keys are: * "all-triggers": Notify each time any of the supported triggers occurs. * "create-analysis": Notify each time an analysis is created. * "create-conversation": Notify each time a conversation is created. * "export-insights-data": Notify each time an export is complete. * "update-conversation": Notify each time a conversation is updated via UpdateConversation. Values are Pub/Sub topics. The format of each Pub/Sub topic is: projects/{project}/topics/{topic}
+  *   `pubsubNotificationSettings` (*type:* `map()`, *default:* `nil`) - A map that maps a notification trigger to a Pub/Sub topic. Each time a specified trigger occurs, Insights will notify the corresponding Pub/Sub topic. Keys are notification triggers. Supported keys are: * "all-triggers": Notify each time any of the supported triggers occurs. * "create-analysis": Notify each time an analysis is created. * "create-conversation": Notify each time a conversation is created. * "export-insights-data": Notify each time an export is complete. * "ingest-conversations": Notify each time an IngestConversations LRO completes. * "update-conversation": Notify each time a conversation is updated via UpdateConversation. * "upload-conversation": Notify when an UploadConversation LRO completes. Values are Pub/Sub topics. The format of each Pub/Sub topic is: projects/{project}/topics/{topic}
+  *   `redactionConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig.t`, *default:* `nil`) - Default DLP redaction resources to be applied while ingesting conversations.
+  *   `speechConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig.t`, *default:* `nil`) - Optional. Default Speech-to-Text resources to be used while ingesting audio files. Optional, CCAI Insights will create a default if not provided.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the settings were last updated.
   """
 
@@ -41,6 +43,12 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :languageCode => String.t() | nil,
           :name => String.t() | nil,
           :pubsubNotificationSettings => map() | nil,
+          :redactionConfig =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig.t()
+            | nil,
+          :speechConfig =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig.t()
+            | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -54,6 +62,15 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:languageCode)
   field(:name)
   field(:pubsubNotificationSettings, type: :map)
+
+  field(:redactionConfig,
+    as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RedactionConfig
+  )
+
+  field(:speechConfig,
+    as: GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SpeechConfig
+  )
+
   field(:updateTime, as: DateTime)
 end
 

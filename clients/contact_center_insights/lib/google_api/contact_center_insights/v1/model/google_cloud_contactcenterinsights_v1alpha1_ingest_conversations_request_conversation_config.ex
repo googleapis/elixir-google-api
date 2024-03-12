@@ -21,16 +21,22 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
+  *   `agentChannel` (*type:* `integer()`, *default:* `nil`) - Optional. Indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for conversations to be properly displayed and analyzed.
   *   `agentId` (*type:* `String.t`, *default:* `nil`) - An opaque, user-specified string representing the human agent who handled the conversations.
+  *   `customerChannel` (*type:* `integer()`, *default:* `nil`) - Optional. Indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for conversations to be properly displayed and analyzed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agentId => String.t() | nil
+          :agentChannel => integer() | nil,
+          :agentId => String.t() | nil,
+          :customerChannel => integer() | nil
         }
 
+  field(:agentChannel)
   field(:agentId)
+  field(:customerChannel)
 end
 
 defimpl Poison.Decoder,

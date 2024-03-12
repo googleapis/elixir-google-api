@@ -24,6 +24,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this issue model was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The representative name for the issue model.
   *   `inputDataConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IssueModelInputDataConfig.t`, *default:* `nil`) - Configs for the input data that used to create the issue model.
+  *   `issueCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of issues in this issue model.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language of the model.
+  *   `modelType` (*type:* `String.t`, *default:* `nil`) - Type of the model.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model}
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the model.
   *   `trainingStats` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IssueModelLabelStats.t`, *default:* `nil`) - Output only. Immutable. The issue model's label statistics on its training data.
@@ -38,6 +41,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :inputDataConfig =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IssueModelInputDataConfig.t()
             | nil,
+          :issueCount => String.t() | nil,
+          :languageCode => String.t() | nil,
+          :modelType => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
           :trainingStats =>
@@ -54,6 +60,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IssueModelInputDataConfig
   )
 
+  field(:issueCount)
+  field(:languageCode)
+  field(:modelType)
   field(:name)
   field(:state)
 
