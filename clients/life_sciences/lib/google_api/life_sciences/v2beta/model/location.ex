@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.LifeSciences.V2beta.Model.Location do
   @moduledoc """
-  A resource that represents Google Cloud Platform location.
+  A resource that represents a Google Cloud location.
 
   ## Attributes
 
