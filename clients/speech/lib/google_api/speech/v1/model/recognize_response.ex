@@ -25,6 +25,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
   *   `results` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t)`, *default:* `nil`) - Sequential list of transcription results corresponding to sequential portions of audio.
   *   `speechAdaptationInfo` (*type:* `GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t`, *default:* `nil`) - Provides information on adaptation behavior in response
   *   `totalBilledTime` (*type:* `String.t`, *default:* `nil`) - When available, billed audio seconds for the corresponding request.
+  *   `usingLegacyModels` (*type:* `boolean()`, *default:* `nil`) - Whether request used legacy asr models (was not automatically migrated to use conformer models).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Speech.V1.Model.RecognizeResponse do
           :requestId => String.t() | nil,
           :results => list(GoogleApi.Speech.V1.Model.SpeechRecognitionResult.t()) | nil,
           :speechAdaptationInfo => GoogleApi.Speech.V1.Model.SpeechAdaptationInfo.t() | nil,
-          :totalBilledTime => String.t() | nil
+          :totalBilledTime => String.t() | nil,
+          :usingLegacyModels => boolean() | nil
         }
 
   field(:requestId)
   field(:results, as: GoogleApi.Speech.V1.Model.SpeechRecognitionResult, type: :list)
   field(:speechAdaptationInfo, as: GoogleApi.Speech.V1.Model.SpeechAdaptationInfo)
   field(:totalBilledTime)
+  field(:usingLegacyModels)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Speech.V1.Model.RecognizeResponse do

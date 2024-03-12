@@ -21,7 +21,7 @@ defmodule GoogleApi.Speech.V1.Model.SpeakerDiarizationConfig do
 
   ## Attributes
 
-  *   `enableSpeakerDiarization` (*type:* `boolean()`, *default:* `nil`) - If 'true', enables speaker detection for each recognized word in the top alternative of the recognition result using a speaker_tag provided in the WordInfo.
+  *   `enableSpeakerDiarization` (*type:* `boolean()`, *default:* `nil`) - If 'true', enables speaker detection for each recognized word in the top alternative of the recognition result using a speaker_label provided in the WordInfo.
   *   `maxSpeakerCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of speakers in the conversation. This range gives you more flexibility by allowing the system to automatically determine the correct number of speakers. If not set, the default value is 6.
   *   `minSpeakerCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of speakers in the conversation. This range gives you more flexibility by allowing the system to automatically determine the correct number of speakers. If not set, the default value is 2.
   *   `speakerTag` (*type:* `integer()`, *default:* `nil`) - Output only. Unused.
