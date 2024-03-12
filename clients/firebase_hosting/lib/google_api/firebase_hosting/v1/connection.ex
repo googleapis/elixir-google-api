@@ -23,7 +23,13 @@ defmodule GoogleApi.FirebaseHosting.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
+      "https://www.googleapis.com/auth/cloud-platform",
+
+      # View and administer all your Firebase data and settings
+      "https://www.googleapis.com/auth/firebase"
+    ],
     otp_app: :google_api_firebase_hosting,
     base_url: "https://firebasehosting.googleapis.com/"
 end
