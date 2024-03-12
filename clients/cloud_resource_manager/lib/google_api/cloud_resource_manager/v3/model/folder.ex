@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.Folder do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the folder. Its format is `folders/{folder_id}`, for example: "folders/1234".
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The folder's parent's resource name. Updates to the folder's parent must be performed using MoveFolder.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the folder. Updates to the state must be performed using DeleteFolder and UndeleteFolder.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this folder. Each item in the map must be expressed as " : ". For example: "123/environment" : "production", "123/costCenter" : "marketing"
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the folder was last modified.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.Folder do
           :name => String.t() | nil,
           :parent => String.t() | nil,
           :state => String.t() | nil,
+          :tags => map() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.Folder do
   field(:name)
   field(:parent)
   field(:state)
+  field(:tags, type: :map)
   field(:updateTime, as: DateTime)
 end
 

@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.TagBinding do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the TagBinding. This is a String of the form: `tagBindings/{full-resource-name}/{tag-value-name}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`).
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource the TagValue is bound to. E.g. `//cloudresourcemanager.googleapis.com/projects/123`
   *   `tagValue` (*type:* `String.t`, *default:* `nil`) - The TagValue of the TagBinding. Must be of the form `tagValues/456`.
+  *   `tagValueNamespacedName` (*type:* `String.t`, *default:* `nil`) - The namespaced name for the TagValue of the TagBinding. Must be in the format `{parent_id}/{tag_key_short_name}/{short_name}`. For methods that support TagValue namespaced name, only one of tag_value_namespaced_name or tag_value may be filled. Requests with both fields will be rejected.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.TagBinding do
   @type t :: %__MODULE__{
           :name => String.t() | nil,
           :parent => String.t() | nil,
-          :tagValue => String.t() | nil
+          :tagValue => String.t() | nil,
+          :tagValueNamespacedName => String.t() | nil
         }
 
   field(:name)
   field(:parent)
   field(:tagValue)
+  field(:tagValueNamespacedName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V3.Model.TagBinding do

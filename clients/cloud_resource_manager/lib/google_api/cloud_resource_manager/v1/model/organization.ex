@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Organization do
   ## Attributes
 
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when the Organization was created. Assigned by the server.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human-readable string that refers to the Organization in the GCP Console UI. This string is set by the server and cannot be changed. The string will be set to the primary domain (for example, "google.com") of the G Suite customer that owns the organization.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human-readable string that refers to the Organization in the Google Cloud console. This string is set by the server and cannot be changed. The string will be set to the primary domain (for example, "google.com") of the G Suite customer that owns the organization.
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - The organization's current lifecycle state. Assigned by the server.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the organization. This is the organization's relative path in the API. Its format is "organizations/[organization_id]". For example, "organizations/1234".
   *   `owner` (*type:* `GoogleApi.CloudResourceManager.V1.Model.OrganizationOwner.t`, *default:* `nil`) - The owner of this Organization. The owner should be specified on creation. Once set, it cannot be changed. This field is required.
