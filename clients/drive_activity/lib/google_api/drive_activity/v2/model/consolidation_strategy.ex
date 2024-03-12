@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.ConsolidationStrategy do
   @moduledoc """
-  How the individual activities are consolidated. A set of activities may be consolidated into one combined activity if they are related in some way, such as one actor performing the same action on multiple targets, or multiple actors performing the same action on a single target. The strategy defines the rules for which activities are related.
+  How the individual activities are consolidated. If a set of activities is related they can be consolidated into one combined activity, such as one actor performing the same action on multiple targets, or multiple actors performing the same action on a single target. The strategy defines the rules for which activities are related.
 
   ## Attributes
 

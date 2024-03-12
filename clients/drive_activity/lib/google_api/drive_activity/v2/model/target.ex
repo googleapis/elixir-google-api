@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.Target do
   @moduledoc """
-  Information about the target of activity.
+  Information about the target of activity. For more information on how activity history is shared with users, see [Activity history visibility](https://developers.google.com/drive/activity/v2#activityhistory).
 
   ## Attributes
 

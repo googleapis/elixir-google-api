@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DriveActivity.V2.Model.NoConsolidation do
   @moduledoc """
-  A strategy which does no consolidation of individual activities.
+  A strategy that does no consolidation of individual activities.
 
   ## Attributes
 
