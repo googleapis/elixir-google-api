@@ -24,6 +24,7 @@ defmodule GoogleApi.VMMigration.V1.Model.Group do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create time timestamp.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of the group.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name is a user defined name for this group which can be updated.
+  *   `migrationTargetType` (*type:* `String.t`, *default:* `nil`) - Immutable. The target type of this group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The Group name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time timestamp.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.VMMigration.V1.Model.Group do
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :migrationTargetType => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.VMMigration.V1.Model.Group do
   field(:createTime, as: DateTime)
   field(:description)
   field(:displayName)
+  field(:migrationTargetType)
   field(:name)
   field(:updateTime, as: DateTime)
 end

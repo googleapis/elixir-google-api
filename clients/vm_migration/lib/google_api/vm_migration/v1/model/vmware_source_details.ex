@@ -22,6 +22,7 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareSourceDetails do
   ## Attributes
 
   *   `password` (*type:* `String.t`, *default:* `nil`) - Input only. The credentials password. This is write only and can not be read in a GET operation.
+  *   `resolvedVcenterHost` (*type:* `String.t`, *default:* `nil`) - The hostname of the vcenter.
   *   `thumbprint` (*type:* `String.t`, *default:* `nil`) - The thumbprint representing the certificate for the vcenter.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The credentials username.
   *   `vcenterIp` (*type:* `String.t`, *default:* `nil`) - The ip address of the vcenter this Source represents.
@@ -31,12 +32,14 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareSourceDetails do
 
   @type t :: %__MODULE__{
           :password => String.t() | nil,
+          :resolvedVcenterHost => String.t() | nil,
           :thumbprint => String.t() | nil,
           :username => String.t() | nil,
           :vcenterIp => String.t() | nil
         }
 
   field(:password)
+  field(:resolvedVcenterHost)
   field(:thumbprint)
   field(:username)
   field(:vcenterIp)

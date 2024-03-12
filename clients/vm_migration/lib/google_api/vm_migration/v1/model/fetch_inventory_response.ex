@@ -21,6 +21,8 @@ defmodule GoogleApi.VMMigration.V1.Model.FetchInventoryResponse do
 
   ## Attributes
 
+  *   `awsVms` (*type:* `GoogleApi.VMMigration.V1.Model.AwsVmsDetails.t`, *default:* `nil`) - The description of the VMs in a Source of type AWS.
+  *   `azureVms` (*type:* `GoogleApi.VMMigration.V1.Model.AzureVmsDetails.t`, *default:* `nil`) - The description of the VMs in a Source of type Azure.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the source was last queried (if the result is from the cache).
   *   `vmwareVms` (*type:* `GoogleApi.VMMigration.V1.Model.VmwareVmsDetails.t`, *default:* `nil`) - The description of the VMs in a Source of type Vmware.
@@ -29,11 +31,15 @@ defmodule GoogleApi.VMMigration.V1.Model.FetchInventoryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :awsVms => GoogleApi.VMMigration.V1.Model.AwsVmsDetails.t() | nil,
+          :azureVms => GoogleApi.VMMigration.V1.Model.AzureVmsDetails.t() | nil,
           :nextPageToken => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :vmwareVms => GoogleApi.VMMigration.V1.Model.VmwareVmsDetails.t() | nil
         }
 
+  field(:awsVms, as: GoogleApi.VMMigration.V1.Model.AwsVmsDetails)
+  field(:azureVms, as: GoogleApi.VMMigration.V1.Model.AzureVmsDetails)
   field(:nextPageToken)
   field(:updateTime, as: DateTime)
   field(:vmwareVms, as: GoogleApi.VMMigration.V1.Model.VmwareVmsDetails)

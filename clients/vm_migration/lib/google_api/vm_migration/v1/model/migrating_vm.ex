@@ -21,14 +21,19 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
 
   ## Attributes
 
+  *   `awsSourceVmDetails` (*type:* `GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails.t`, *default:* `nil`) - Output only. Details of the VM from an AWS source.
+  *   `azureSourceVmDetails` (*type:* `GoogleApi.VMMigration.V1.Model.AzureSourceVmDetails.t`, *default:* `nil`) - Output only. Details of the VM from an Azure source.
+  *   `computeEngineDisksTargetDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDefaults.t`, *default:* `nil`) - Details of the target Persistent Disks in Compute Engine.
   *   `computeEngineTargetDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults.t`, *default:* `nil`) - Details of the target VM in Compute Engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the migrating VM was created (this refers to this resource and not to the time it was installed in the source).
-  *   `currentSyncInfo` (*type:* `GoogleApi.VMMigration.V1.Model.ReplicationCycle.t`, *default:* `nil`) - Output only. The percentage progress of the current running replication cycle.
+  *   `currentSyncInfo` (*type:* `GoogleApi.VMMigration.V1.Model.ReplicationCycle.t`, *default:* `nil`) - Output only. Details of the current running replication cycle.
+  *   `cutoverForecast` (*type:* `GoogleApi.VMMigration.V1.Model.CutoverForecast.t`, *default:* `nil`) - Output only. Provides details of future CutoverJobs of a MigratingVm. Set to empty when cutover forecast is unavailable.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description attached to the migrating VM by the user.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name attached to the MigratingVm by the user.
   *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details on the state of the Migrating VM in case of an error in replication.
   *   `group` (*type:* `String.t`, *default:* `nil`) - Output only. The group this migrating vm is included in, if any. The group is represented by the full path of the appropriate Group resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels of the migrating VM.
+  *   `lastReplicationCycle` (*type:* `GoogleApi.VMMigration.V1.Model.ReplicationCycle.t`, *default:* `nil`) - Output only. Details of the last replication cycle. This will be updated whenever a replication cycle is finished and is not to be confused with last_sync which is only updated on successful replication cycles.
   *   `lastSync` (*type:* `GoogleApi.VMMigration.V1.Model.ReplicationSync.t`, *default:* `nil`) - Output only. The most updated snapshot created time in the source that finished replication.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The identifier of the MigratingVm.
   *   `policy` (*type:* `GoogleApi.VMMigration.V1.Model.SchedulePolicy.t`, *default:* `nil`) - The replication schedule policy.
@@ -38,20 +43,27 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the MigratingVm.
   *   `stateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time the migrating VM state was updated.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time the migrating VM resource was updated.
+  *   `vmwareSourceVmDetails` (*type:* `GoogleApi.VMMigration.V1.Model.VmwareSourceVmDetails.t`, *default:* `nil`) - Output only. Details of the VM from a Vmware source.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :awsSourceVmDetails => GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails.t() | nil,
+          :azureSourceVmDetails => GoogleApi.VMMigration.V1.Model.AzureSourceVmDetails.t() | nil,
+          :computeEngineDisksTargetDefaults =>
+            GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDefaults.t() | nil,
           :computeEngineTargetDefaults =>
             GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults.t() | nil,
           :createTime => DateTime.t() | nil,
           :currentSyncInfo => GoogleApi.VMMigration.V1.Model.ReplicationCycle.t() | nil,
+          :cutoverForecast => GoogleApi.VMMigration.V1.Model.CutoverForecast.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :error => GoogleApi.VMMigration.V1.Model.Status.t() | nil,
           :group => String.t() | nil,
           :labels => map() | nil,
+          :lastReplicationCycle => GoogleApi.VMMigration.V1.Model.ReplicationCycle.t() | nil,
           :lastSync => GoogleApi.VMMigration.V1.Model.ReplicationSync.t() | nil,
           :name => String.t() | nil,
           :policy => GoogleApi.VMMigration.V1.Model.SchedulePolicy.t() | nil,
@@ -60,8 +72,16 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
           :sourceVmId => String.t() | nil,
           :state => String.t() | nil,
           :stateTime => DateTime.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :vmwareSourceVmDetails => GoogleApi.VMMigration.V1.Model.VmwareSourceVmDetails.t() | nil
         }
+
+  field(:awsSourceVmDetails, as: GoogleApi.VMMigration.V1.Model.AwsSourceVmDetails)
+  field(:azureSourceVmDetails, as: GoogleApi.VMMigration.V1.Model.AzureSourceVmDetails)
+
+  field(:computeEngineDisksTargetDefaults,
+    as: GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDefaults
+  )
 
   field(:computeEngineTargetDefaults,
     as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults
@@ -69,11 +89,13 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
 
   field(:createTime, as: DateTime)
   field(:currentSyncInfo, as: GoogleApi.VMMigration.V1.Model.ReplicationCycle)
+  field(:cutoverForecast, as: GoogleApi.VMMigration.V1.Model.CutoverForecast)
   field(:description)
   field(:displayName)
   field(:error, as: GoogleApi.VMMigration.V1.Model.Status)
   field(:group)
   field(:labels, type: :map)
+  field(:lastReplicationCycle, as: GoogleApi.VMMigration.V1.Model.ReplicationCycle)
   field(:lastSync, as: GoogleApi.VMMigration.V1.Model.ReplicationSync)
   field(:name)
   field(:policy, as: GoogleApi.VMMigration.V1.Model.SchedulePolicy)
@@ -83,6 +105,7 @@ defmodule GoogleApi.VMMigration.V1.Model.MigratingVm do
   field(:state)
   field(:stateTime, as: DateTime)
   field(:updateTime, as: DateTime)
+  field(:vmwareSourceVmDetails, as: GoogleApi.VMMigration.V1.Model.VmwareSourceVmDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.VMMigration.V1.Model.MigratingVm do

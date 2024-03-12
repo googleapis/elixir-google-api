@@ -21,6 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
 
   ## Attributes
 
+  *   `computeEngineDisksTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDetails.t`, *default:* `nil`) - Output only. Details of the target Persistent Disks in Compute Engine.
   *   `computeEngineTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails.t`, *default:* `nil`) - Output only. Details of the target VM in Compute Engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the cutover job was created (as an API call, not when it was actually created in the target).
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the cutover job had finished.
@@ -36,6 +37,8 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :computeEngineDisksTargetDetails =>
+            GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDetails.t() | nil,
           :computeEngineTargetDetails =>
             GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -48,6 +51,10 @@ defmodule GoogleApi.VMMigration.V1.Model.CutoverJob do
           :stateTime => DateTime.t() | nil,
           :steps => list(GoogleApi.VMMigration.V1.Model.CutoverStep.t()) | nil
         }
+
+  field(:computeEngineDisksTargetDetails,
+    as: GoogleApi.VMMigration.V1.Model.ComputeEngineDisksTargetDetails
+  )
 
   field(:computeEngineTargetDetails, as: GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDetails)
 

@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.VMMigration.V1.Model.DatacenterConnector do
   @moduledoc """
-  DatacenterConnector message describes a connector between the Source and GCP, which is installed on a vmware datacenter (an OVA vm installed by the user) to connect the Datacenter to GCP and support vm migration data transfer.
+  DatacenterConnector message describes a connector between the Source and Google Cloud, which is installed on a vmware datacenter (an OVA vm installed by the user) to connect the Datacenter to Google Cloud and support vm migration data transfer.
 
   ## Attributes
 
   *   `applianceInfrastructureVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Appliance OVA version. This is the OVA which is manually installed by the user and contains the infrastructure for the automatically updatable components on the appliance.
   *   `applianceSoftwareVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Appliance last installed update bundle version. This is the version of the automatically updatable components on the appliance.
   *   `availableVersions` (*type:* `GoogleApi.VMMigration.V1.Model.AvailableUpdates.t`, *default:* `nil`) - Output only. The available versions for updating this appliance.
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Output only. The communication channel between the datacenter connector and GCP.
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Output only. The communication channel between the datacenter connector and Google Cloud.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the connector was created (as an API call, not when it was actually installed).
   *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details on the state of the Datacenter Connector in case of an error.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The connector's name.
