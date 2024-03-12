@@ -176,7 +176,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   end
 
   @doc """
-  Get the OS policy asssignment report for the specified Compute Engine VM instance.
+  Get the OS policy assignment report for the specified Compute Engine VM instance.
 
   ## Parameters
 
@@ -246,7 +246,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   end
 
   @doc """
-  List OS policy asssignment reports for all Compute Engine VM instances in the specified zone.
+  List OS policy assignment reports for all Compute Engine VM instances in the specified zone.
 
   ## Parameters
 

@@ -25,7 +25,7 @@ defmodule GoogleApi.OSConfig.V1.Model.OSPolicyResourceExecResourceExec do
   *   `file` (*type:* `GoogleApi.OSConfig.V1.Model.OSPolicyResourceFile.t`, *default:* `nil`) - A remote or local file.
   *   `interpreter` (*type:* `String.t`, *default:* `nil`) - Required. The script interpreter to use.
   *   `outputFilePath` (*type:* `String.t`, *default:* `nil`) - Only recorded for enforce Exec. Path to an output file (that is created by this Exec) whose content will be recorded in OSPolicyResourceCompliance after a successful run. Absence or failure to read this file will result in this ExecResource being non-compliant. Output file size is limited to 100K bytes.
-  *   `script` (*type:* `String.t`, *default:* `nil`) - An inline script. The size of the script is limited to 1024 characters.
+  *   `script` (*type:* `String.t`, *default:* `nil`) - An inline script. The size of the script is limited to 32KiB.
   """
 
   use GoogleApi.Gax.ModelBase
