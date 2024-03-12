@@ -21,21 +21,27 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Phase do
 
   ## Attributes
 
+  *   `childRolloutJobs` (*type:* `GoogleApi.CloudDeploy.V1.Model.ChildRolloutJobs.t`, *default:* `nil`) - Output only. ChildRollout job composition.
   *   `deploymentJobs` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeploymentJobs.t`, *default:* `nil`) - Output only. Deployment job composition.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Phase.
+  *   `skipMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information on why the Phase was skipped, if available.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the Phase.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :childRolloutJobs => GoogleApi.CloudDeploy.V1.Model.ChildRolloutJobs.t() | nil,
           :deploymentJobs => GoogleApi.CloudDeploy.V1.Model.DeploymentJobs.t() | nil,
           :id => String.t() | nil,
+          :skipMessage => String.t() | nil,
           :state => String.t() | nil
         }
 
+  field(:childRolloutJobs, as: GoogleApi.CloudDeploy.V1.Model.ChildRolloutJobs)
   field(:deploymentJobs, as: GoogleApi.CloudDeploy.V1.Model.DeploymentJobs)
   field(:id)
+  field(:skipMessage)
   field(:state)
 end
 

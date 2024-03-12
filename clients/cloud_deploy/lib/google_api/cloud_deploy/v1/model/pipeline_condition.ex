@@ -22,7 +22,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.PipelineCondition do
   ## Attributes
 
   *   `pipelineReadyCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.PipelineReadyCondition.t`, *default:* `nil`) - Details around the Pipeline's overall status.
-  *   `targetsPresentCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t`, *default:* `nil`) - Detalis around targets enumerated in the pipeline.
+  *   `targetsPresentCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t`, *default:* `nil`) - Details around targets enumerated in the pipeline.
+  *   `targetsTypeCondition` (*type:* `GoogleApi.CloudDeploy.V1.Model.TargetsTypeCondition.t`, *default:* `nil`) - Details on the whether the targets enumerated in the pipeline are of the same type.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,11 +32,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.PipelineCondition do
           :pipelineReadyCondition =>
             GoogleApi.CloudDeploy.V1.Model.PipelineReadyCondition.t() | nil,
           :targetsPresentCondition =>
-            GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t() | nil
+            GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition.t() | nil,
+          :targetsTypeCondition => GoogleApi.CloudDeploy.V1.Model.TargetsTypeCondition.t() | nil
         }
 
   field(:pipelineReadyCondition, as: GoogleApi.CloudDeploy.V1.Model.PipelineReadyCondition)
   field(:targetsPresentCondition, as: GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition)
+  field(:targetsTypeCondition, as: GoogleApi.CloudDeploy.V1.Model.TargetsTypeCondition)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.PipelineCondition do

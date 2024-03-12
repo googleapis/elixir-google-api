@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Strategy do
 
   ## Attributes
 
+  *   `canary` (*type:* `GoogleApi.CloudDeploy.V1.Model.Canary.t`, *default:* `nil`) - Canary deployment strategy provides progressive percentage based deployments to a Target.
   *   `standard` (*type:* `GoogleApi.CloudDeploy.V1.Model.Standard.t`, *default:* `nil`) - Standard deployment strategy executes a single deploy and allows verifying the deployment.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :canary => GoogleApi.CloudDeploy.V1.Model.Canary.t() | nil,
           :standard => GoogleApi.CloudDeploy.V1.Model.Standard.t() | nil
         }
 
+  field(:canary, as: GoogleApi.CloudDeploy.V1.Model.Canary)
   field(:standard, as: GoogleApi.CloudDeploy.V1.Model.Standard)
 end
 

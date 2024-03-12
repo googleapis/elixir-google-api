@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudDeploy.Mixfile do
 
   defp description() do
     """
-    Google Cloud Deploy API client library. 
+    Cloud Deploy API client library. 
     """
   end
 

@@ -21,18 +21,24 @@ defmodule GoogleApi.CloudDeploy.V1.Model.SkaffoldVersion do
 
   ## Attributes
 
+  *   `maintenanceModeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this version of Skaffold will enter maintenance mode.
   *   `supportEndDate` (*type:* `GoogleApi.CloudDeploy.V1.Model.Date.t`, *default:* `nil`) - Date when this version is expected to no longer be supported.
+  *   `supportExpirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this version of Skaffold will no longer be supported.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Release version number. For example, "1.20.3".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :maintenanceModeTime => DateTime.t() | nil,
           :supportEndDate => GoogleApi.CloudDeploy.V1.Model.Date.t() | nil,
+          :supportExpirationTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:maintenanceModeTime, as: DateTime)
   field(:supportEndDate, as: GoogleApi.CloudDeploy.V1.Model.Date)
+  field(:supportExpirationTime, as: DateTime)
   field(:version)
 end
 

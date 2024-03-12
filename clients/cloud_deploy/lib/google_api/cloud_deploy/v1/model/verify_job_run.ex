@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.VerifyJobRun do
   ## Attributes
 
   *   `artifactUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI of a directory containing the verify artifacts. This contains the Skaffold event log.
-  *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to verify. Format is projects/{project}/locations/{location}/builds/{build}.
+  *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to verify. Format is `projects/{project}/locations/{location}/builds/{build}`.
   *   `eventLogPath` (*type:* `String.t`, *default:* `nil`) - Output only. File path of the Skaffold event log relative to the artifact URI.
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the verify failed. This will always be unspecified while the verify is in progress or if it succeeded.
   *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the verify failure, if available.

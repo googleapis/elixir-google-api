@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.TargetsPresentCondition do
   @moduledoc """
-  TargetsPresentCondition contains information on any Targets defined in the Delivery Pipeline that do not actually exist.
+  `TargetsPresentCondition` contains information on any Targets referenced in the Delivery Pipeline that do not actually exist.
 
   ## Attributes
 
-  *   `missingTargets` (*type:* `list(String.t)`, *default:* `nil`) - The list of Target names that are missing. For example, projects/{project_id}/locations/{location_name}/targets/{target_name}.
+  *   `missingTargets` (*type:* `list(String.t)`, *default:* `nil`) - The list of Target names that do not exist. For example, `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
   *   `status` (*type:* `boolean()`, *default:* `nil`) - True if there aren't any missing Targets.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time the condition was updated.
   """

@@ -22,7 +22,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ReleaseNotificationEvent do
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - Debug message for when a notification fails to send.
+  *   `pipelineUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `DeliveryPipeline`.
   *   `release` (*type:* `String.t`, *default:* `nil`) - The name of the `Release`.
+  *   `releaseUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `Release`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this notification, e.g. for a Pub/Sub failure.
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ReleaseNotificationEvent do
 
   @type t :: %__MODULE__{
           :message => String.t() | nil,
+          :pipelineUid => String.t() | nil,
           :release => String.t() | nil,
+          :releaseUid => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:message)
+  field(:pipelineUid)
   field(:release)
+  field(:releaseUid)
   field(:type)
 end
 

@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline do
   @moduledoc """
-  A `DeliveryPipeline` resource in the Google Cloud Deploy API. A `DeliveryPipeline` defines a pipeline through which a Skaffold configuration can progress.
+  A `DeliveryPipeline` resource in the Cloud Deploy API. A `DeliveryPipeline` defines a pipeline through which a Skaffold configuration can progress.
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy.
   *   `condition` (*type:* `GoogleApi.CloudDeploy.V1.Model.PipelineCondition.t`, *default:* `nil`) - Output only. Information around the state of the Delivery Pipeline.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the pipeline was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `DeliveryPipeline`. Max length is 255 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `DeliveryPipeline`. Format is projects/{project}/ locations/{location}/deliveryPipelines/a-z{0,62}.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `DeliveryPipeline`. Format is `projects/{project}/locations/{location}/deliveryPipelines/a-z{0,62}`.
   *   `serialPipeline` (*type:* `GoogleApi.CloudDeploy.V1.Model.SerialPipeline.t`, *default:* `nil`) - SerialPipeline defines a sequential set of stages for a `DeliveryPipeline`.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - When suspended, no new releases or rollouts can be created, but in-progress ones will complete.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `DeliveryPipeline`.

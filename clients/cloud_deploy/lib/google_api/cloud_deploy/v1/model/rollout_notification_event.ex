@@ -23,8 +23,10 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RolloutNotificationEvent do
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - Debug message for when a notification fails to send.
   *   `pipelineUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `DeliveryPipeline`.
+  *   `release` (*type:* `String.t`, *default:* `nil`) - The name of the `Release`.
   *   `releaseUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `Release`.
   *   `rollout` (*type:* `String.t`, *default:* `nil`) - The name of the `Rollout`.
+  *   `rolloutUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `Rollout`.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - ID of the `Target` that the rollout is deployed to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this notification, e.g. for a Pub/Sub failure.
   """
@@ -34,16 +36,20 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RolloutNotificationEvent do
   @type t :: %__MODULE__{
           :message => String.t() | nil,
           :pipelineUid => String.t() | nil,
+          :release => String.t() | nil,
           :releaseUid => String.t() | nil,
           :rollout => String.t() | nil,
+          :rolloutUid => String.t() | nil,
           :targetId => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:message)
   field(:pipelineUid)
+  field(:release)
   field(:releaseUid)
   field(:rollout)
+  field(:rolloutUid)
   field(:targetId)
   field(:type)
 end

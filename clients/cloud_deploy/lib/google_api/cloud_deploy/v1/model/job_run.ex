@@ -17,17 +17,21 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.JobRun do
   @moduledoc """
-  A `JobRun` resource in the Google Cloud Deploy API. A `JobRun` contains information of a single `Rollout` job evaluation.
+  A `JobRun` resource in the Cloud Deploy API. A `JobRun` contains information of a single `Rollout` job evaluation.
 
   ## Attributes
 
+  *   `advanceChildRolloutJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJobRun.t`, *default:* `nil`) - Output only. Information specific to an advanceChildRollout `JobRun`
+  *   `createChildRolloutJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJobRun.t`, *default:* `nil`) - Output only. Information specific to a createChildRollout `JobRun`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `JobRun` was created.
   *   `deployJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeployJobRun.t`, *default:* `nil`) - Output only. Information specific to a deploy `JobRun`.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `JobRun` ended.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the `Rollout` job this `JobRun` corresponds to.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `JobRun`. Format is projects/{project}/locations/{location}/ deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/ {rollouts}/jobRuns/{uuid}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `JobRun`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{releases}/rollouts/{rollouts}/jobRuns/{uuid}`.
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the `Rollout` phase this `JobRun` belongs in.
+  *   `postdeployJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.PostdeployJobRun.t`, *default:* `nil`) - Output only. Information specific to a postdeploy `JobRun`.
+  *   `predeployJobRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.PredeployJobRun.t`, *default:* `nil`) - Output only. Information specific to a predeploy `JobRun`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `JobRun` was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the `JobRun`.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the `JobRun`.
@@ -37,6 +41,10 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advanceChildRolloutJobRun =>
+            GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJobRun.t() | nil,
+          :createChildRolloutJobRun =>
+            GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJobRun.t() | nil,
           :createTime => DateTime.t() | nil,
           :deployJobRun => GoogleApi.CloudDeploy.V1.Model.DeployJobRun.t() | nil,
           :endTime => DateTime.t() | nil,
@@ -44,12 +52,16 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRun do
           :jobId => String.t() | nil,
           :name => String.t() | nil,
           :phaseId => String.t() | nil,
+          :postdeployJobRun => GoogleApi.CloudDeploy.V1.Model.PostdeployJobRun.t() | nil,
+          :predeployJobRun => GoogleApi.CloudDeploy.V1.Model.PredeployJobRun.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :uid => String.t() | nil,
           :verifyJobRun => GoogleApi.CloudDeploy.V1.Model.VerifyJobRun.t() | nil
         }
 
+  field(:advanceChildRolloutJobRun, as: GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJobRun)
+  field(:createChildRolloutJobRun, as: GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJobRun)
   field(:createTime, as: DateTime)
   field(:deployJobRun, as: GoogleApi.CloudDeploy.V1.Model.DeployJobRun)
   field(:endTime, as: DateTime)
@@ -57,6 +69,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRun do
   field(:jobId)
   field(:name)
   field(:phaseId)
+  field(:postdeployJobRun, as: GoogleApi.CloudDeploy.V1.Model.PostdeployJobRun)
+  field(:predeployJobRun, as: GoogleApi.CloudDeploy.V1.Model.PredeployJobRun)
   field(:startTime, as: DateTime)
   field(:state)
   field(:uid)

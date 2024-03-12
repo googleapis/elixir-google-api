@@ -21,9 +21,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Job do
 
   ## Attributes
 
+  *   `advanceChildRolloutJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJob.t`, *default:* `nil`) - Output only. An advanceChildRollout Job.
+  *   `createChildRolloutJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJob.t`, *default:* `nil`) - Output only. A createChildRollout Job.
   *   `deployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeployJob.t`, *default:* `nil`) - Output only. A deploy Job.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Job.
   *   `jobRun` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the `JobRun` responsible for the most recent invocation of this Job.
+  *   `postdeployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.PostdeployJob.t`, *default:* `nil`) - Output only. A postdeploy Job.
+  *   `predeployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.PredeployJob.t`, *default:* `nil`) - Output only. A predeploy Job.
+  *   `skipMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information on why the Job was skipped, if available.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the Job.
   *   `verifyJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.VerifyJob.t`, *default:* `nil`) - Output only. A verify Job.
   """
@@ -31,16 +36,28 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Job do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advanceChildRolloutJob =>
+            GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJob.t() | nil,
+          :createChildRolloutJob =>
+            GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJob.t() | nil,
           :deployJob => GoogleApi.CloudDeploy.V1.Model.DeployJob.t() | nil,
           :id => String.t() | nil,
           :jobRun => String.t() | nil,
+          :postdeployJob => GoogleApi.CloudDeploy.V1.Model.PostdeployJob.t() | nil,
+          :predeployJob => GoogleApi.CloudDeploy.V1.Model.PredeployJob.t() | nil,
+          :skipMessage => String.t() | nil,
           :state => String.t() | nil,
           :verifyJob => GoogleApi.CloudDeploy.V1.Model.VerifyJob.t() | nil
         }
 
+  field(:advanceChildRolloutJob, as: GoogleApi.CloudDeploy.V1.Model.AdvanceChildRolloutJob)
+  field(:createChildRolloutJob, as: GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJob)
   field(:deployJob, as: GoogleApi.CloudDeploy.V1.Model.DeployJob)
   field(:id)
   field(:jobRun)
+  field(:postdeployJob, as: GoogleApi.CloudDeploy.V1.Model.PostdeployJob)
+  field(:predeployJob, as: GoogleApi.CloudDeploy.V1.Model.PredeployJob)
+  field(:skipMessage)
   field(:state)
   field(:verifyJob, as: GoogleApi.CloudDeploy.V1.Model.VerifyJob)
 end

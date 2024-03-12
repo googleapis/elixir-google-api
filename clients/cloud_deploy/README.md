@@ -1,6 +1,6 @@
 # GoogleApi.CloudDeploy
 
-Google Cloud Deploy API client library.
+Cloud Deploy API client library.
 
 
 

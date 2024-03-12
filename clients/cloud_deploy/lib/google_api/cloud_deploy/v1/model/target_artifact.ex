@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TargetArtifact do
 
   *   `artifactUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI of a directory containing the artifacts. This contains deployment configuration used by Skaffold during a rollout, and all paths are relative to this location.
   *   `manifestPath` (*type:* `String.t`, *default:* `nil`) - Output only. File path of the rendered manifest relative to the URI.
+  *   `phaseArtifacts` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.PhaseArtifact.t}`, *default:* `nil`) - Output only. Map from the phase ID to the phase artifacts for the `Target`.
   *   `skaffoldConfigPath` (*type:* `String.t`, *default:* `nil`) - Output only. File path of the resolved Skaffold configuration relative to the URI.
   """
 
@@ -31,11 +32,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TargetArtifact do
   @type t :: %__MODULE__{
           :artifactUri => String.t() | nil,
           :manifestPath => String.t() | nil,
+          :phaseArtifacts =>
+            %{optional(String.t()) => GoogleApi.CloudDeploy.V1.Model.PhaseArtifact.t()} | nil,
           :skaffoldConfigPath => String.t() | nil
         }
 
   field(:artifactUri)
   field(:manifestPath)
+  field(:phaseArtifacts, as: GoogleApi.CloudDeploy.V1.Model.PhaseArtifact, type: :map)
   field(:skaffoldConfigPath)
 end
 
