@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ArtifactRegistry.V1.Model.KfpArtifact do
   @moduledoc """
-  A detailed representation of a GooGet artifact.
+  A detailed representation of a KFP artifact.
 
   ## Attributes
 

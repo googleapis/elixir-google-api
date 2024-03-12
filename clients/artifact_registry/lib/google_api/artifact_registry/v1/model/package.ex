@@ -21,21 +21,24 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Package do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client specified annotations.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the package was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the package.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the package, for example: "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1". If the package ID part contains slashes, the slashes are escaped.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the package, for example: `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`. If the package ID part contains slashes, the slashes are escaped.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the package was last updated. This includes publishing a new version of the package.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:createTime, as: DateTime)
   field(:displayName)
   field(:name)
