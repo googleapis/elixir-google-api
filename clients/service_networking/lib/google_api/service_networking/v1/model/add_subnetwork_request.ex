@@ -21,18 +21,21 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
 
   ## Attributes
 
+  *   `allowSubnetCidrRoutesOverlap` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines the allowSubnetCidrRoutesOverlap field of the subnet, e.g. Available in alpha and beta according to [Compute API documentation](https://cloud.google.com/compute/docs/reference/rest/beta/subnetworks/insert)
   *   `checkServiceNetworkingUsePermission` (*type:* `boolean()`, *default:* `nil`) - Optional. The IAM permission check determines whether the consumer project has 'servicenetworking.services.use' permission or not.
   *   `computeIdempotencyWindow` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies a custom time bucket for Arcus subnetwork request idempotency. If two equivalent concurrent requests are made, Arcus will know to ignore the request if it has already been completed or is in progress. Only requests with matching compute_idempotency_window have guaranteed idempotency. Changing this time window between requests results in undefined behavior. Zero (or empty) value with custom_compute_idempotency_window=true specifies no idempotency (i.e. no request ID is provided to Arcus). Maximum value of 14 days (enforced by Arcus limit). For more information on how to use, see: go/revisit-sn-idempotency-window
   *   `consumer` (*type:* `String.t`, *default:* `nil`) - Required. A resource that represents the service consumer, such as `projects/123456`. The project number can be different from the value in the consumer network parameter. For example, the network might be part of a Shared VPC network. In those cases, Service Networking validates that this resource belongs to that Shared VPC.
   *   `consumerNetwork` (*type:* `String.t`, *default:* `nil`) - Required. The name of the service consumer's VPC network. The network must have an existing private connection that was provisioned through the connections.create method. The name must be in the following format: `projects/{project}/global/networks/{network}`, where {project} is a project number, such as `12345`. {network} is the name of a VPC network in the project.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the subnet.
-  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `30` to provision a subnet with an `x.x.x.x/30` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range.
+  *   `internalRange` (*type:* `String.t`, *default:* `nil`) - Optional. The url of an Internal Range. Eg: `projects//locations/global/internalRanges/`. If specified, it means that the subnetwork cidr will be created using the combination of requested_address/ip_prefix_length. Note that the subnet cidr has to be within the cidr range of this Internal Range.
+  *   `ipPrefixLength` (*type:* `integer()`, *default:* `nil`) - Required. The prefix length of the subnet's IP address range. Use CIDR range notation, such as `29` to provision a subnet with an `x.x.x.x/29` CIDR range. The IP address range is drawn from a pool of available ranges in the service consumer's allocated range. GCE disallows subnets with prefix_length > 29
   *   `outsideAllocationPublicIpRange` (*type:* `String.t`, *default:* `nil`) - Optional. Enable outside allocation using public IP addresses. Any public IP range may be specified. If this field is provided, we will not use customer reserved ranges for this primary IP range.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - Optional. The private IPv6 google access type for the VMs in this subnet. For information about the access types that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `purpose` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the purpose field of the subnet, e.g. 'PRIVATE_SERVICE_CONNECT'. For information about the purposes that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `region` (*type:* `String.t`, *default:* `nil`) - Required. The name of a [region](/compute/docs/regions-zones) for the subnet, such `europe-west1`.
   *   `requestedAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The starting address of a range. The address must be a valid IPv4 address in the x.x.x.x format. This value combined with the IP prefix range is the CIDR range for the subnet. The range must be within the allocated range that is assigned to the private connection. If the CIDR range isn't available, the call fails.
   *   `requestedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of one or more allocated IP address ranges associated with this private service access connection. If no range names are provided all ranges associated with this connection will be considered. If a CIDR range with the specified IP prefix length is not available within these ranges, the call fails.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the role field of the subnet, e.g. 'ACTIVE'. For information about the roles that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `secondaryIpRangeSpecs` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t)`, *default:* `nil`) - Optional. A list of secondary IP ranges to be created within the new subnetwork.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `roles/servicenetworking.subnetworkAdmin` role on the subnet.
@@ -42,11 +45,13 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowSubnetCidrRoutesOverlap => boolean() | nil,
           :checkServiceNetworkingUsePermission => boolean() | nil,
           :computeIdempotencyWindow => String.t() | nil,
           :consumer => String.t() | nil,
           :consumerNetwork => String.t() | nil,
           :description => String.t() | nil,
+          :internalRange => String.t() | nil,
           :ipPrefixLength => integer() | nil,
           :outsideAllocationPublicIpRange => String.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
@@ -54,6 +59,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :region => String.t() | nil,
           :requestedAddress => String.t() | nil,
           :requestedRanges => list(String.t()) | nil,
+          :role => String.t() | nil,
           :secondaryIpRangeSpecs =>
             list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()) | nil,
           :subnetwork => String.t() | nil,
@@ -61,11 +67,13 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :useCustomComputeIdempotencyWindow => boolean() | nil
         }
 
+  field(:allowSubnetCidrRoutesOverlap)
   field(:checkServiceNetworkingUsePermission)
   field(:computeIdempotencyWindow)
   field(:consumer)
   field(:consumerNetwork)
   field(:description)
+  field(:internalRange)
   field(:ipPrefixLength)
   field(:outsideAllocationPublicIpRange)
   field(:privateIpv6GoogleAccess)
@@ -73,6 +81,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   field(:region)
   field(:requestedAddress)
   field(:requestedRanges, type: :list)
+  field(:role)
 
   field(:secondaryIpRangeSpecs,
     as: GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec,
