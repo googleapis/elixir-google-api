@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
   *   `parent` (*type:* `GoogleApi.CloudResourceManager.V1.Model.ResourceId.t`, *default:* `nil`) - An optional reference to a parent Resource. Supported parent types include "organization" and "folder". Once set, the parent cannot be cleared. The `parent` can be set on creation or using the `UpdateProject` method; the end user must have the `resourcemanager.projects.create` permission on the parent.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The unique, user-assigned ID of the Project. It must be 6 to 30 lowercase letters, digits, or hyphens. It must start with a letter. Trailing hyphens are prohibited. Example: `tokyo-rain-123` Read-only after creation.
   *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The number uniquely identifying the project. Example: `415104041262` Read-only.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this project. Each item in the map must be expressed as " : ". For example: "123/environment" : "production", "123/costCenter" : "marketing" Note: Currently this field is in Preview.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
           :name => String.t() | nil,
           :parent => GoogleApi.CloudResourceManager.V1.Model.ResourceId.t() | nil,
           :projectId => String.t() | nil,
-          :projectNumber => String.t() | nil
+          :projectNumber => String.t() | nil,
+          :tags => map() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -49,6 +51,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Model.Project do
   field(:parent, as: GoogleApi.CloudResourceManager.V1.Model.ResourceId)
   field(:projectId)
   field(:projectNumber)
+  field(:tags, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V1.Model.Project do

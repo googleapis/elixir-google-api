@@ -22,9 +22,10 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.EffectiveTag do
   ## Attributes
 
   *   `inherited` (*type:* `boolean()`, *default:* `nil`) - Indicates the inheritance status of a tag value attached to the given resource. If the tag value is inherited from one of the resource's ancestors, inherited will be true. If false, then the tag value is directly attached to the resource, inherited will be false.
-  *   `namespacedTagKey` (*type:* `String.t`, *default:* `nil`) - The namespaced_name of the TagKey. Now only supported in the format of `{organization_id}/{tag_key_short_name}`. Other formats will be supported when we add non-org parented tags.
-  *   `namespacedTagValue` (*type:* `String.t`, *default:* `nil`) - Namespaced name of the TagValue. Now only supported in the format `{organization_id}/{tag_key_short_name}/{tag_value_short_name}`. Other formats will be supported when we add non-org parented tags.
+  *   `namespacedTagKey` (*type:* `String.t`, *default:* `nil`) - The namespaced name of the TagKey. Can be in the form `{organization_id}/{tag_key_short_name}` or `{project_id}/{tag_key_short_name}` or `{project_number}/{tag_key_short_name}`.
+  *   `namespacedTagValue` (*type:* `String.t`, *default:* `nil`) - The namespaced name of the TagValue. Can be in the form `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or `{project_number}/{tag_key_short_name}/{tag_value_short_name}`.
   *   `tagKey` (*type:* `String.t`, *default:* `nil`) - The name of the TagKey, in the format `tagKeys/{id}`, such as `tagKeys/123`.
+  *   `tagKeyParentName` (*type:* `String.t`, *default:* `nil`) - The parent name of the tag key. Must be in the format `organizations/{organization_id}` or `projects/{project_number}`
   *   `tagValue` (*type:* `String.t`, *default:* `nil`) - Resource name for TagValue in the format `tagValues/456`.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.EffectiveTag do
           :namespacedTagKey => String.t() | nil,
           :namespacedTagValue => String.t() | nil,
           :tagKey => String.t() | nil,
+          :tagKeyParentName => String.t() | nil,
           :tagValue => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Model.EffectiveTag do
   field(:namespacedTagKey)
   field(:namespacedTagValue)
   field(:tagKey)
+  field(:tagKeyParentName)
   field(:tagValue)
 end
 
