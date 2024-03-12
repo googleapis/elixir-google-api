@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
   @moduledoc """
-  Security policies set to secure values by default. To maintain the security posture of a device, we don't recommend overriding any of the default values.
+  Advanced security settings. In most cases, setting these is not needed.
 
   ## Attributes
 
   *   `commonCriteriaMode` (*type:* `String.t`, *default:* `nil`) - Controls Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC). Enabling Common Criteria Mode increases certain security components on a device, including AES-GCM encryption of Bluetooth Long Term Keys, and Wi-Fi configuration stores.Warning: Common Criteria Mode enforces a strict security model typically only required for IT products used in national security systems and other highly sensitive organizations. Standard device use may be affected. Only enabled if required.
   *   `developerSettings` (*type:* `String.t`, *default:* `nil`) - Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated).
   *   `googlePlayProtectVerifyApps` (*type:* `String.t`, *default:* `nil`) - Whether Google Play Protect verification (https://support.google.com/accounts/answer/2812853) is enforced. Replaces ensureVerifyAppsEnabled (deprecated).
+  *   `mtePolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls Memory Tagging Extension (MTE) (https://source.android.com/docs/security/test/memory-safety/arm-mte) on the device. The device needs to be rebooted to apply changes to the MTE policy.
   *   `personalAppsThatCanReadWorkNotifications` (*type:* `list(String.t)`, *default:* `nil`) - Personal apps that can read work profile notifications using a NotificationListenerService (https://developer.android.com/reference/android/service/notification/NotificationListenerService). By default, no personal apps (aside from system apps) can read work notifications. Each value in the list must be a package name.
   *   `untrustedAppsPolicy` (*type:* `String.t`, *default:* `nil`) - The policy for untrusted apps (apps from unknown sources) enforced on the device. Replaces install_unknown_sources_allowed (deprecated).
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
           :commonCriteriaMode => String.t() | nil,
           :developerSettings => String.t() | nil,
           :googlePlayProtectVerifyApps => String.t() | nil,
+          :mtePolicy => String.t() | nil,
           :personalAppsThatCanReadWorkNotifications => list(String.t()) | nil,
           :untrustedAppsPolicy => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
   field(:commonCriteriaMode)
   field(:developerSettings)
   field(:googlePlayProtectVerifyApps)
+  field(:mtePolicy)
   field(:personalAppsThatCanReadWorkNotifications, type: :list)
   field(:untrustedAppsPolicy)
 end

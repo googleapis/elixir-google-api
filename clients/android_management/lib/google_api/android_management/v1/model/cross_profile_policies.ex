@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies do
   @moduledoc """
-  Cross-profile policies applied on the device.
+  Controls the data from the work profile that can be accessed from the personal profile and vice versa. A nonComplianceDetail with MANAGEMENT_MODE is reported if the device does not have a work profile.
 
   ## Attributes
 
   *   `crossProfileCopyPaste` (*type:* `String.t`, *default:* `nil`) - Whether text copied from one profile (personal or work) can be pasted in the other profile.
   *   `crossProfileDataSharing` (*type:* `String.t`, *default:* `nil`) - Whether data from one profile (personal or work) can be shared with apps in the other profile. Specifically controls simple data sharing via intents. Management of other cross-profile communication channels, such as contact search, copy/paste, or connected work & personal apps, are configured separately.
-  *   `showWorkContactsInPersonalProfile` (*type:* `String.t`, *default:* `nil`) - Whether contacts stored in the work profile can be shown in personal profile contact searches and incoming calls.
+  *   `exemptionsToShowWorkContactsInPersonalProfile` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - List of apps which are excluded from the ShowWorkContactsInPersonalProfile setting. For this to be set, ShowWorkContactsInPersonalProfile must be set to one of the following values: SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_ALLOWED. In this case, these exemptions act as a blocklist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED. In this case, these exemptions act as an allowlist. SHOW_WORK_CONTACTS_IN_PERSONAL_PROFILE_DISALLOWED_EXCEPT_SYSTEM. In this case, these exemptions act as an allowlist, in addition to the already allowlisted system apps.Supported on Android 14 and above. A nonComplianceDetail with API_LEVEL is reported if the Android version is less than 14.
+  *   `showWorkContactsInPersonalProfile` (*type:* `String.t`, *default:* `nil`) - Whether personal apps can access contacts stored in the work profile.See also exemptions_to_show_work_contacts_in_personal_profile.
+  *   `workProfileWidgetsDefault` (*type:* `String.t`, *default:* `nil`) - Specifies the default behaviour for work profile widgets. If the policy does not specify work_profile_widgets for a specific application, it will behave according to the value specified here.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,21 @@ defmodule GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies do
   @type t :: %__MODULE__{
           :crossProfileCopyPaste => String.t() | nil,
           :crossProfileDataSharing => String.t() | nil,
-          :showWorkContactsInPersonalProfile => String.t() | nil
+          :exemptionsToShowWorkContactsInPersonalProfile =>
+            GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil,
+          :showWorkContactsInPersonalProfile => String.t() | nil,
+          :workProfileWidgetsDefault => String.t() | nil
         }
 
   field(:crossProfileCopyPaste)
   field(:crossProfileDataSharing)
+
+  field(:exemptionsToShowWorkContactsInPersonalProfile,
+    as: GoogleApi.AndroidManagement.V1.Model.PackageNameList
+  )
+
   field(:showWorkContactsInPersonalProfile)
+  field(:workProfileWidgetsDefault)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies do

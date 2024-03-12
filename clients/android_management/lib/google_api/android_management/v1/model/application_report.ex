@@ -30,6 +30,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
   *   `packageSha256Hash` (*type:* `String.t`, *default:* `nil`) - The SHA-256 hash of the app's APK file, which can be used to verify the app hasn't been modified. Each byte of the hash value is represented as a two-digit hexadecimal number.
   *   `signingKeyCertFingerprints` (*type:* `list(String.t)`, *default:* `nil`) - The SHA-1 hash of each android.content.pm.Signature (https://developer.android.com/reference/android/content/pm/Signature.html) associated with the app package. Each byte of each hash value is represented as a two-digit hexadecimal number.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Application state.
+  *   `userFacingType` (*type:* `String.t`, *default:* `nil`) - Whether the app is user facing.
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - The app version code, which can be used to determine whether one version is more recent than another.
   *   `versionName` (*type:* `String.t`, *default:* `nil`) - The app version as displayed to the user.
   """
@@ -46,6 +47,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
           :packageSha256Hash => String.t() | nil,
           :signingKeyCertFingerprints => list(String.t()) | nil,
           :state => String.t() | nil,
+          :userFacingType => String.t() | nil,
           :versionCode => integer() | nil,
           :versionName => String.t() | nil
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationReport do
   field(:packageSha256Hash)
   field(:signingKeyCertFingerprints, type: :list)
   field(:state)
+  field(:userFacingType)
   field(:versionCode)
   field(:versionName)
 end
