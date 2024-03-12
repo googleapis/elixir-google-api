@@ -21,7 +21,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.SubjectConfig do
 
   ## Attributes
 
-  *   `subject` (*type:* `GoogleApi.PrivateCA.V1.Model.Subject.t`, *default:* `nil`) - Required. Contains distinguished name fields such as the common name, location and organization.
+  *   `subject` (*type:* `GoogleApi.PrivateCA.V1.Model.Subject.t`, *default:* `nil`) - Optional. Contains distinguished name fields such as the common name, location and organization.
   *   `subjectAltName` (*type:* `GoogleApi.PrivateCA.V1.Model.SubjectAltNames.t`, *default:* `nil`) - Optional. The subject alternative name fields.
   """
 

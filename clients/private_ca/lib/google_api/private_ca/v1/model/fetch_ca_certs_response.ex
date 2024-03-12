@@ -21,7 +21,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.FetchCaCertsResponse do
 
   ## Attributes
 
-  *   `caCerts` (*type:* `list(GoogleApi.PrivateCA.V1.Model.CertChain.t)`, *default:* `nil`) - The PEM encoded CA certificate chains of all ACTIVE CertificateAuthority resources in this CaPool.
+  *   `caCerts` (*type:* `list(GoogleApi.PrivateCA.V1.Model.CertChain.t)`, *default:* `nil`) - The PEM encoded CA certificate chains of all Certificate Authorities in this CaPool in the ENABLED, DISABLED, or STAGED states.
   """
 
   use GoogleApi.Gax.ModelBase
