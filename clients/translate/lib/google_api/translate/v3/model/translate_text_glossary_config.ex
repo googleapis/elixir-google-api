@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig do
   @moduledoc """
-  Configures which glossary should be used for a specific target language, and defines options for applying that glossary.
+  Configures which glossary is used for a specific target language and defines options for applying that glossary.
 
   ## Attributes
 
-  *   `glossary` (*type:* `String.t`, *default:* `nil`) - Required. The `glossary` to be applied for this translation. The format depends on glossary: - User provided custom glossary: `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
-  *   `ignoreCase` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates match is case-insensitive. Default value is false if missing.
+  *   `glossary` (*type:* `String.t`, *default:* `nil`) - Required. The `glossary` to be applied for this translation. The format depends on the glossary: - User-provided custom glossary: `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`
+  *   `ignoreCase` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates match is case insensitive. The default value is `false` if missing.
   """
 
   use GoogleApi.Gax.ModelBase

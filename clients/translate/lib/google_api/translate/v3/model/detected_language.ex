@@ -22,7 +22,7 @@ defmodule GoogleApi.Translate.V3.Model.DetectedLanguage do
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The confidence of the detection result for this language.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code of source content in the request, detected automatically.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The ISO-639 language code of the source content in the request, detected automatically.
   """
 
   use GoogleApi.Gax.ModelBase
