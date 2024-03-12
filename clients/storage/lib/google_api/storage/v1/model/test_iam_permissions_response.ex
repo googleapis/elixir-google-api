@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Storage.V1.Model.TestIamPermissionsResponse do
   @moduledoc """
-  A storage.(buckets|objects).testIamPermissions response.
+  A storage.(buckets|objects|managedFolders).testIamPermissions response.
 
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `storage#testIamPermissionsResponse`) - The kind of item this is.
-  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - The permissions held by the caller. Permissions are always of the format storage.resource.capability, where resource is one of buckets or objects. The supported permissions are as follows:  
+  *   `permissions` (*type:* `list(String.t)`, *default:* `nil`) - The permissions held by the caller. Permissions are always of the format storage.resource.capability, where resource is one of buckets, objects, or managedFolders. The supported permissions are as follows:  
       - storage.buckets.delete — Delete bucket.  
       - storage.buckets.get — Read bucket metadata.  
       - storage.buckets.getIamPolicy — Read bucket IAM policy.  
@@ -36,7 +36,13 @@ defmodule GoogleApi.Storage.V1.Model.TestIamPermissionsResponse do
       - storage.objects.create — Create object.  
       - storage.objects.list — List objects.  
       - storage.objects.setIamPolicy — Update object IAM policy.  
-      - storage.objects.update — Update object metadata.
+      - storage.objects.update — Update object metadata. 
+      - storage.managedFolders.delete — Delete managed folder.  
+      - storage.managedFolders.get — Read managed folder metadata.  
+      - storage.managedFolders.getIamPolicy — Read managed folder IAM policy.  
+      - storage.managedFolders.create — Create managed folder.  
+      - storage.managedFolders.list — List managed folders.  
+      - storage.managedFolders.setIamPolicy — Update managed folder IAM policy.
   """
 
   use GoogleApi.Gax.ModelBase

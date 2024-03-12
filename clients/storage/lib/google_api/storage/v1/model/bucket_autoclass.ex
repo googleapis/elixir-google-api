@@ -22,6 +22,8 @@ defmodule GoogleApi.Storage.V1.Model.BucketAutoclass do
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not Autoclass is enabled on this bucket
+  *   `terminalStorageClass` (*type:* `String.t`, *default:* `nil`) - The storage class that objects in the bucket eventually transition to if they are not read for a certain length of time. Valid values are NEARLINE and ARCHIVE.
+  *   `terminalStorageClassUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - A date and time in RFC 3339 format representing the time of the most recent update to "terminalStorageClass".
   *   `toggleTime` (*type:* `DateTime.t`, *default:* `nil`) - A date and time in RFC 3339 format representing the instant at which "enabled" was last toggled.
   """
 
@@ -29,10 +31,14 @@ defmodule GoogleApi.Storage.V1.Model.BucketAutoclass do
 
   @type t :: %__MODULE__{
           :enabled => boolean() | nil,
+          :terminalStorageClass => String.t() | nil,
+          :terminalStorageClassUpdateTime => DateTime.t() | nil,
           :toggleTime => DateTime.t() | nil
         }
 
   field(:enabled)
+  field(:terminalStorageClass)
+  field(:terminalStorageClassUpdateTime, as: DateTime)
   field(:toggleTime, as: DateTime)
 end
 

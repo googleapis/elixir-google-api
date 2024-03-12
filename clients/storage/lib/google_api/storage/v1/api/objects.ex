@@ -26,13 +26,69 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Initiates a long-running bulk restore operation on the specified bucket.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
+  *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:body` (*type:* `GoogleApi.Storage.V1.Model.BulkRestoreObjectsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Storage.V1.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec storage_objects_bulk_restore(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def storage_objects_bulk_restore(connection, bucket, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :userIp => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/o/bulkRestore", %{
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.GoogleLongrunningOperation{}])
+  end
+
+  @doc """
   Concatenates a list of existing objects into a new object in the same bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `destination_bucket` (*type:* `String.t`) - Name of the bucket containing the source objects. The destination object is stored in this bucket.
-  *   `destination_object` (*type:* `String.t`) - Name of the new object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `destination_object` (*type:* `String.t`) - Name of the new object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -106,8 +162,8 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `source_bucket` (*type:* `String.t`) - Name of the bucket in which to find the source object.
-  *   `source_object` (*type:* `String.t`) - Name of the source object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
-  *   `destination_bucket` (*type:* `String.t`) - Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `source_object` (*type:* `String.t`) - Name of the source object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
+  *   `destination_bucket` (*type:* `String.t`) - Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `destination_object` (*type:* `String.t`) - Name of the new object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -213,7 +269,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -278,7 +334,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -294,6 +350,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -328,6 +385,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
+      :softDeleted => :query,
       :userProject => :query
     }
 
@@ -353,7 +411,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -440,7 +498,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
-      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -519,7 +577,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
-      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -613,7 +671,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
-      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -701,7 +759,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:kmsKeyName` (*type:* `String.t`) - Resource name of the Cloud KMS key, of the form projects/my-project/locations/global/keyRings/my-kr/cryptoKeys/my-key, that will be used to encrypt the object. Overrides the object metadata's kms_key_name value, if any.
-      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+      *   `:name` (*type:* `String.t`) - Name of the object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the object resource specifies the acl property, when it defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -790,11 +848,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:delimiter` (*type:* `String.t`) - Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.
       *   `:endOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
+      *   `:includeFoldersAsPrefixes` (*type:* `boolean()`) - Only applicable if delimiter is set to '/'. If true, will also include folders and managed folders (besides objects) in the returned prefixes.
       *   `:includeTrailingDelimiter` (*type:* `boolean()`) - If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
+      *   `:matchGlob` (*type:* `String.t`) - Filter results to objects and prefixes that match this glob pattern.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
@@ -822,11 +883,14 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :userIp => :query,
       :delimiter => :query,
       :endOffset => :query,
+      :includeFoldersAsPrefixes => :query,
       :includeTrailingDelimiter => :query,
+      :matchGlob => :query,
       :maxResults => :query,
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
+      :softDeleted => :query,
       :startOffset => :query,
       :userProject => :query,
       :versions => :query
@@ -853,7 +917,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -868,6 +932,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
+      *   `:overrideUnlockedRetention` (*type:* `boolean()`) - Must be true to remove the retention configuration, reduce its unlocked retention period, or change its mode from unlocked to locked.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request, for Requester Pays buckets.
@@ -899,6 +964,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifGenerationNotMatch => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
+      :overrideUnlockedRetention => :query,
       :predefinedAcl => :query,
       :projection => :query,
       :userProject => :query,
@@ -921,15 +987,85 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   end
 
   @doc """
+  Restores a soft-deleted object.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
+  *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:copySourceAcl` (*type:* `boolean()`) - If true, copies the source object's ACL; otherwise, uses the bucket's default object ACL. The default is false.
+      *   `:ifGenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's one live generation matches the given value. Setting to 0 makes the operation succeed only if there are no live versions of the object.
+      *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether none of the object's live generations match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
+      *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's one live metageneration matches the given value.
+      *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether none of the object's live metagenerations match the given value.
+      *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
+      *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Storage.V1.Model.Object{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec storage_objects_restore(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Storage.V1.Model.Object.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def storage_objects_restore(connection, bucket, object, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :userIp => :query,
+      :copySourceAcl => :query,
+      :ifGenerationMatch => :query,
+      :ifGenerationNotMatch => :query,
+      :ifMetagenerationMatch => :query,
+      :ifMetagenerationNotMatch => :query,
+      :projection => :query,
+      :userProject => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/o/{object}/restore", %{
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
+        "object" => URI.encode(object, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Object{}])
+  end
+
+  @doc """
   Rewrites a source object to a destination object. Optionally overrides metadata.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `source_bucket` (*type:* `String.t`) - Name of the bucket in which to find the source object.
-  *   `source_object` (*type:* `String.t`) - Name of the source object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `source_object` (*type:* `String.t`) - Name of the source object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `destination_bucket` (*type:* `String.t`) - Name of the bucket in which to store the new object. Overrides the provided object metadata's bucket value, if any.
-  *   `destination_object` (*type:* `String.t`) - Name of the new object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `destination_object` (*type:* `String.t`) - Name of the new object. Required when the object metadata is not otherwise provided. Overrides the object metadata's name value, if any. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -1038,7 +1174,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -1112,7 +1248,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `permissions` (*type:* `list(String.t)`) - Permissions to test.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -1188,7 +1324,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -1203,6 +1339,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifGenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current generation does not match the given value. If no live object exists, the precondition fails. Setting to 0 makes the operation succeed only if there is a live version of the object.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
+      *   `:overrideUnlockedRetention` (*type:* `boolean()`) - Must be true to remove the retention configuration, reduce its unlocked retention period, or change its mode from unlocked to locked.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this object.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
@@ -1234,6 +1371,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifGenerationNotMatch => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
+      :overrideUnlockedRetention => :query,
       :predefinedAcl => :query,
       :projection => :query,
       :userProject => :query,
