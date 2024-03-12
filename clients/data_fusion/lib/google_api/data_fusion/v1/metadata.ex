@@ -20,7 +20,7 @@ defmodule GoogleApi.DataFusion.V1 do
   API client metadata for GoogleApi.DataFusion.V1.
   """
 
-  @discovery_revision "20220908"
+  @discovery_revision "20240111"
 
   def discovery_revision(), do: @discovery_revision
 end
