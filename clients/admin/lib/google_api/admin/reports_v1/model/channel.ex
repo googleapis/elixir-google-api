@@ -26,7 +26,7 @@ defmodule GoogleApi.Admin.Reports_v1.Model.Channel do
   *   `id` (*type:* `String.t`, *default:* `nil`) - A UUID or similar unique string that identifies this channel.
   *   `kind` (*type:* `String.t`, *default:* `api#channel`) - Identifies this as a notification channel used to watch for changes to a resource, which is "`api#channel`".
   *   `params` (*type:* `map()`, *default:* `nil`) - Additional parameters controlling delivery channel behavior. Optional.
-  *   `payload` (*type:* `boolean()`, *default:* `nil`) - A Boolean value to indicate whether payload is wanted. Optional.
+  *   `payload` (*type:* `boolean()`, *default:* `nil`) - A Boolean value to indicate whether payload is wanted. A payload is data that is sent in the body of an HTTP POST, PUT, or PATCH message and contains important information about the request. Optional.
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - An opaque ID that identifies the resource being watched on this channel. Stable across different API versions.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - A version-specific identifier for the watched resource.
   *   `token` (*type:* `String.t`, *default:* `nil`) - An arbitrary string delivered to the target address with each notification delivered over this channel. Optional.

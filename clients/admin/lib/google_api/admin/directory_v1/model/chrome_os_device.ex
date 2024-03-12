@@ -33,8 +33,11 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `osUpdateStatus` (*type:* `GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus.t`, *default:* `nil`) - The status of the OS updates for the device.
   *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - A list of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
   *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
+  *   `deviceLicenseType` (*type:* `String.t`, *default:* `nil`) - Output only. Device license type.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
+  *   `deprovisionReason` (*type:* `String.t`, *default:* `nil`) - (Read-only) Deprovision reason.
   *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - A list of recent device users, in descending order, by last login time.
+  *   `backlightInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t)`, *default:* `nil`) - Output only. Contains backlight information for the device.
   *   `supportEndDate` (*type:* `DateTime.t`, *default:* `nil`) - Final date the device will be supported (Read-only)
   *   `lastSync` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
@@ -61,6 +64,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this device added by the administrator. This property can be [searched](https://support.google.com/chrome/a/answer/1698333) with the [list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method's `query` parameter. Maximum length is 500 characters. Empty values are allowed.
   *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Determines if the device will auto renew its support after the support end date. This is a read-only property.
+  *   `lastDeprovisionTimestamp` (*type:* `String.t`, *default:* `nil`) - (Read-only) Date and time for the last deprovision of the device.
   *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
   """
 
@@ -81,9 +85,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :screenshotFiles =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
           :annotatedUser => String.t() | nil,
+          :deviceLicenseType => String.t() | nil,
           :kind => String.t() | nil,
+          :deprovisionReason => String.t() | nil,
           :recentUsers =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()) | nil,
+          :backlightInfo => list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t()) | nil,
           :supportEndDate => DateTime.t() | nil,
           :lastSync => DateTime.t() | nil,
           :deviceId => String.t() | nil,
@@ -115,6 +122,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :autoUpdateExpiration => String.t() | nil,
           :notes => String.t() | nil,
           :willAutoRenew => boolean() | nil,
+          :lastDeprovisionTimestamp => String.t() | nil,
           :lastKnownNetwork =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t()) | nil
         }
@@ -141,13 +149,16 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   )
 
   field(:annotatedUser)
+  field(:deviceLicenseType)
   field(:kind)
+  field(:deprovisionReason)
 
   field(:recentUsers,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers,
     type: :list
   )
 
+  field(:backlightInfo, as: GoogleApi.Admin.Directory_v1.Model.BacklightInfo, type: :list)
   field(:supportEndDate, as: DateTime)
   field(:lastSync, as: DateTime)
   field(:deviceId)
@@ -193,6 +204,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:autoUpdateExpiration)
   field(:notes)
   field(:willAutoRenew)
+  field(:lastDeprovisionTimestamp)
 
   field(:lastKnownNetwork,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork,

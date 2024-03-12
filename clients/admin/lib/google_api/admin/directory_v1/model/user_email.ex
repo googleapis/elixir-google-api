@@ -24,6 +24,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserEmail do
   *   `address` (*type:* `String.t`, *default:* `nil`) - Email id of the user.
   *   `customType` (*type:* `String.t`, *default:* `nil`) - Custom Type.
   *   `primary` (*type:* `boolean()`, *default:* `nil`) - If this is user's primary email. Only one entry could be marked as primary.
+  *   `public_key_encryption_certificates` (*type:* `GoogleApi.Admin.Directory_v1.Model.UserEmailPublicKeyEncryptionCertificates.t`, *default:* `nil`) - Public Key Encryption Certificates. Current limit: 1 per email address, and 5 per user.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Each entry can have a type which indicates standard types of that entry. For example email could be of home, work etc. In addition to the standard type, an entry can have a custom type and can take any value Such types should have the CUSTOM value as type and also have a customType value.
   """
 
@@ -33,12 +34,19 @@ defmodule GoogleApi.Admin.Directory_v1.Model.UserEmail do
           :address => String.t() | nil,
           :customType => String.t() | nil,
           :primary => boolean() | nil,
+          :public_key_encryption_certificates =>
+            GoogleApi.Admin.Directory_v1.Model.UserEmailPublicKeyEncryptionCertificates.t() | nil,
           :type => String.t() | nil
         }
 
   field(:address)
   field(:customType)
   field(:primary)
+
+  field(:public_key_encryption_certificates,
+    as: GoogleApi.Admin.Directory_v1.Model.UserEmailPublicKeyEncryptionCertificates
+  )
+
   field(:type)
 end
 

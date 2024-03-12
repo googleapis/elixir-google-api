@@ -21,6 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommandResu
 
   ## Attributes
 
+  *   `commandResultPayload` (*type:* `String.t`, *default:* `nil`) - The payload for the command result. The following commands respond with a payload: * `DEVICE_START_CRD_SESSION`: Payload is a stringified JSON object in the form: { "url": url }. The URL provides a link to the Chrome Remote Desktop session.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - The error message with a short explanation as to why the command failed. Only present if the command failed.
   *   `executeTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the command was executed or failed to execute.
   *   `result` (*type:* `String.t`, *default:* `nil`) - The result of the command.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Admin.Directory_v1.Model.DirectoryChromeosdevicesCommandResu
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commandResultPayload => String.t() | nil,
           :errorMessage => String.t() | nil,
           :executeTime => DateTime.t() | nil,
           :result => String.t() | nil
         }
 
+  field(:commandResultPayload)
   field(:errorMessage)
   field(:executeTime, as: DateTime)
   field(:result)

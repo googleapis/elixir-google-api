@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.OrgUnit do
 
   ## Attributes
 
-  *   `blockInheritance` (*type:* `boolean()`, *default:* `nil`) - Determines if a sub-organizational unit can inherit the settings of the parent organization. The default value is `false`, meaning a sub-organizational unit inherits the settings of the nearest parent organizational unit. For more information on inheritance and users in an organization structure, see the [administration help center](https://support.google.com/a/answer/4352075).
+  *   `blockInheritance` (*type:* `boolean()`, *default:* `nil`) - Determines if a sub-organizational unit can inherit the settings of the parent organization. The default value is `false`, meaning a sub-organizational unit inherits the settings of the nearest parent organizational unit. This field is deprecated. Setting it to `true` is no longer supported and can have _unintended consequences_. For more information about inheritance and users in an organization structure, see the [administration help center](https://support.google.com/a/answer/4352075).
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the organizational unit.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `kind` (*type:* `String.t`, *default:* `admin#directory#orgUnit`) - The type of the API resource. For Orgunits resources, the value is `admin#directory#orgUnit`.

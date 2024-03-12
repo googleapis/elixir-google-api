@@ -149,7 +149,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Creates a user.
+  Creates a user. Mutate calls immediately following user creation might sometimes fail as the user isn't fully created due to propagation delay in our backends. Check the error details for the "User creation is not complete" message to see if this is the case. Retrying the calls after some time can help in this case.
 
   ## Parameters
 
@@ -166,6 +166,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:resolveConflictAccount` (*type:* `boolean()`) - Optional. If set to `true`, the option selected for [handling unmanaged user accounts](https://support.google.com/a/answer/11112794) will apply. Default: `false`
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.User.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -192,6 +193,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :resolveConflictAccount => :query,
       :body => :body
     }
 
@@ -226,7 +228,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
-      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users). Either the `customer` or the `domain` parameter must be provided.
+      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
       *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
       *   `:event` (*type:* `String.t`) - Event on which subscription is intended (if subscribing)
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
@@ -348,7 +350,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Updates a user using patch semantics. The update method should be used instead, since it also supports patch semantics and has better performance. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.
+  Updates a user using patch semantics. The update method should be used instead, because it also supports patch semantics and has better performance. If you're mapping an external identity to a Google identity, use the [`update`](https://developers.google.com/admin-sdk/directory/v1/reference/users/update) method instead of the `patch` method. This method is unable to clear fields that contain repeated objects (`addresses`, `phones`, etc). Use the update method instead.
 
   ## Parameters
 
@@ -526,7 +528,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Updates a user. This method supports patch semantics, meaning you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared.
+  Updates a user. This method supports patch semantics, meaning that you only need to include the fields you wish to update. Fields that are not present in the request will be preserved, and fields set to `null` will be cleared. For repeating fields that contain arrays, individual items in the array can't be patched piecemeal; they must be supplied in the request body with the desired values for all items. See the [user accounts guide](https://developers.google.com/admin-sdk/directory/v1/guides/manage-users#update_user) for more information.
 
   ## Parameters
 

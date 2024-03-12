@@ -21,7 +21,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.Member do
 
   ## Attributes
 
-  *   `delivery_settings` (*type:* `String.t`, *default:* `nil`) - Defines mail delivery preferences of member. This is only supported by create/update/get.
+  *   `delivery_settings` (*type:* `String.t`, *default:* `nil`) - Defines mail delivery preferences of member. This field is only supported by `insert`, `update`, and `get` methods.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The member's email address. A member can be a user or another group. This property is required when adding a member to a group. The `email` must be unique and cannot be an alias of another group. If the email address is changed, the API automatically reflects the email address changes.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of the group member. A member `id` can be used as a member request URI's `memberKey`.

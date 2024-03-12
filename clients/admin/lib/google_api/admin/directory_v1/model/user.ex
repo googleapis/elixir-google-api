@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Admin.Directory_v1.Model.User do
   @moduledoc """
-  The Directory API allows you to create and manage your account's users, user aliases, and user Gmail chat profile photos. For more information about common tasks, see the [User Accounts Developer's Guide](/admin-sdk/directory/v1/guides/manage-users.html) and the [User Aliases Developer's Guide](/admin-sdk/directory/v1/guides/manage-user-aliases.html).
+  The Directory API allows you to create and manage your account's users, user aliases, and user Google profile photos. For more information about common tasks, see the [User Accounts Developer's Guide](/admin-sdk/directory/v1/guides/manage-users.html) and the [User Aliases Developer's Guide](/admin-sdk/directory/v1/guides/manage-user-aliases.html).
 
   ## Attributes
 
@@ -49,19 +49,19 @@ defmodule GoogleApi.Admin.Directory_v1.Model.User do
   *   `recoveryEmail` (*type:* `String.t`, *default:* `nil`) - Recovery email of the user.
   *   `websites` (*type:* `any()`, *default:* `nil`) - The user's websites. The maximum allowed data size for this field is 2KB.
   *   `primaryEmail` (*type:* `String.t`, *default:* `nil`) - The user's primary email address. This property is required in a request to create a user account. The `primaryEmail` must be unique and cannot be an alias of another user.
-  *   `ipWhitelisted` (*type:* `boolean()`, *default:* `nil`) - If `true`, the user's IP address is [whitelisted](https://support.google.com/a/answer/60752).
+  *   `ipWhitelisted` (*type:* `boolean()`, *default:* `nil`) - If `true`, the user's IP address is subject to a deprecated IP address [`allowlist`](https://support.google.com/a/answer/60752) configuration.
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - User's G Suite account creation time. (Read-only)
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The customer ID to [retrieve all account users](/admin-sdk/directory/v1/guides/manage-users.html#get_all_users). You can use the alias `my_customer` to represent your account's `customerId`. As a reseller administrator, you can use the resold customer account's `customerId`. To get a `customerId`, use the account's primary domain in the `domain` parameter of a [users.list](/admin-sdk/directory/v1/reference/users/list) request.
   *   `archived` (*type:* `boolean()`, *default:* `nil`) - Indicates if user is archived.
   *   `isDelegatedAdmin` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if the user is a delegated administrator. Delegated administrators are supported by the API but cannot create or undelete users, or make users administrators. These requests are ignored by the API service. Roles and privileges for administrators are assigned using the [Admin console](https://support.google.com/a/answer/33325).
   *   `locations` (*type:* `any()`, *default:* `nil`) - The user's locations. The maximum allowed data size for this field is 10KB.
   *   `nonEditableAliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of the user's non-editable alias email addresses. These are typically outside the account's primary domain or sub-domain.
-  *   `emails` (*type:* `any()`, *default:* `nil`) - The list of the user's email addresses. The maximum allowed data size for this field is 10KB.
+  *   `emails` (*type:* `any()`, *default:* `nil`) - The list of the user's email addresses. The maximum allowed data size for this field is 10KB. This excludes `publicKeyEncryptionCertificates`.
   *   `isAdmin` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates a user with super admininistrator privileges. The `isAdmin` property can only be edited in the [Make a user an administrator](/admin-sdk/directory/v1/guides/manage-users.html#make_admin) operation ( [makeAdmin](/admin-sdk/directory/v1/reference/users/makeAdmin.html) method). If edited in the user [insert](/admin-sdk/directory/v1/reference/users/insert.html) or [update](/admin-sdk/directory/v1/reference/users/update.html) methods, the edit is ignored by the API service.
   *   `aliases` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of the user's alias email addresses.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for the user. A user `id` can be used as a user request URI's `userKey`.
   *   `isEnforcedIn2Sv` (*type:* `boolean()`, *default:* `nil`) - Output only. Is 2-step verification enforced (Read-only)
-  *   `thumbnailPhotoUrl` (*type:* `String.t`, *default:* `nil`) - Output only. Photo Url of the user (Read-only)
+  *   `thumbnailPhotoUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The URL of the user's profile photo. The URL might be temporary or private.
   *   `phones` (*type:* `any()`, *default:* `nil`) - The list of the user's phone numbers. The maximum allowed data size for this field is 1KB.
   *   `notes` (*type:* `any()`, *default:* `nil`) - Notes for the user.
   *   `changePasswordAtNextLogin` (*type:* `boolean()`, *default:* `nil`) - Indicates if the user is forced to change their password at next login. This setting doesn't apply when [the user signs in via a third-party identity provider](https://support.google.com/a/answer/60224).
