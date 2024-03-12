@@ -41,7 +41,7 @@ jobs:
           git push -f origin action/auto-update-api-list
       - name: Open PR
         if: ${{ env.FOUND_CHANGES == 'true' }}
-        uses: actions/github-script@v2
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
           script: |
