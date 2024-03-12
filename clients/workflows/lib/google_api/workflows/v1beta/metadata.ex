@@ -20,7 +20,7 @@ defmodule GoogleApi.Workflows.V1beta do
   API client metadata for GoogleApi.Workflows.V1beta.
   """
 
-  @discovery_revision "20220406"
+  @discovery_revision "20240221"
 
   def discovery_revision(), do: @discovery_revision
 end
