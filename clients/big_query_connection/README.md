@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/bigquery/](https://cloud.google.com/bigquery/).
+Product documentation is available at [https://cloud.google.com/bigquery/docs/connections-api-intro](https://cloud.google.com/bigquery/docs/connections-api-intro).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_big_query_connection](https://hexdocs.pm/google_api_big_query_connection).
