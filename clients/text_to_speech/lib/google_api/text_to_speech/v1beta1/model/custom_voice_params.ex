@@ -22,7 +22,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.CustomVoiceParams do
   ## Attributes
 
   *   `model` (*type:* `String.t`, *default:* `nil`) - Required. The name of the AutoML model that synthesizes the custom voice.
-  *   `reportedUsage` (*type:* `String.t`, *default:* `nil`) - Optional. The usage of the synthesized audio to be reported.
+  *   `reportedUsage` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated. The usage of the synthesized audio to be reported.
   """
 
   use GoogleApi.Gax.ModelBase
