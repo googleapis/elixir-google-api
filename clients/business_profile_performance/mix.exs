@@ -18,7 +18,7 @@
 defmodule GoogleApi.BusinessProfilePerformance.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.3.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.BusinessProfilePerformance.Mixfile do
 
   defp description() do
     """
-    Business Profile Performance API client library. The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google.
+    Business Profile Performance API client library. The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 
