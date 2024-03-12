@@ -27,7 +27,7 @@ defmodule GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry do
   *   `framework` (*type:* `String.t`, *default:* `nil`) - The framework of this notebook instance.
   *   `snapshot` (*type:* `String.t`, *default:* `nil`) - The snapshot of the boot disk of this notebook instance before upgrade.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of this instance upgrade history entry.
-  *   `targetImage` (*type:* `String.t`, *default:* `nil`) - Target VM Image. Format: ainotebooks-vm/project/image-name/name.
+  *   `targetImage` (*type:* `String.t`, *default:* `nil`) - Target VM Image. Format: `ainotebooks-vm/project/image-name/name`.
   *   `targetVersion` (*type:* `String.t`, *default:* `nil`) - Target VM Version, like m63.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the notebook instance before this upgrade.
   *   `vmImage` (*type:* `String.t`, *default:* `nil`) - The VM image before this instance upgrade.

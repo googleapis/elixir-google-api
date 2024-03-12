@@ -23,7 +23,7 @@ defmodule GoogleApi.Notebooks.V1.Model.ListRuntimesResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that can be used to continue listing from the last result in the next list call.
   *   `runtimes` (*type:* `list(GoogleApi.Notebooks.V1.Model.Runtime.t)`, *default:* `nil`) - A list of returned Runtimes.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. For example, ['us-west1', 'us-central1']. A ListRuntimesResponse will only contain either runtimes or unreachables,
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. For example, `['us-west1', 'us-central1']`. A ListRuntimesResponse will only contain either runtimes or unreachables,
   """
 
   use GoogleApi.Gax.ModelBase

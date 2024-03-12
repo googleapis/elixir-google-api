@@ -672,7 +672,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter applied to resulting executions. Currently only supports filtering executions by a specified schedule_id. Format: `schedule_id=`
+      *   `:filter` (*type:* `String.t`) - Filter applied to resulting executions. Currently only supports filtering executions by a specified `schedule_id`. Format: `schedule_id=`
       *   `:orderBy` (*type:* `String.t`) - Sort by field.
       *   `:pageSize` (*type:* `integer()`) - Maximum return size of the list call.
       *   `:pageToken` (*type:* `String.t`) - A previous returned page token that can be used to continue listing from the last result.
@@ -1090,7 +1090,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
   end
 
   @doc """
-  Check if a notebook instance is healthy.
+  Checks whether a notebook instance is healthy.
 
   ## Parameters
 
@@ -1162,7 +1162,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
   end
 
   @doc """
-  Check if a notebook instance is upgradable.
+  Checks whether a notebook instance is upgradable.
 
   ## Parameters
 
@@ -1254,6 +1254,8 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. List filter.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sort results. Supported values are "name", "name desc" or "" (unsorted).
       *   `:pageSize` (*type:* `integer()`) - Maximum return size of the list call.
       *   `:pageToken` (*type:* `String.t`) - A previous returned page token that can be used to continue listing from the last result.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1291,6 +1293,8 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1307,6 +1311,78 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Notebooks.V1.Model.ListInstancesResponse{}])
+  end
+
+  @doc """
+  Migrates an existing User-Managed Notebook to Workbench Instances.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Notebooks.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Notebooks.V1.Model.MigrateInstanceRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Notebooks.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec notebooks_projects_locations_instances_migrate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Notebooks.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def notebooks_projects_locations_instances_migrate(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:migrate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Notebooks.V1.Model.Operation{}])
   end
 
   @doc """
@@ -1443,6 +1519,78 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       Request.new()
       |> Request.method(:post)
       |> Request.url("/v1/{+name}:report", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Notebooks.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Reports and processes an instance event.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Notebooks.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Notebooks.V1.Model.ReportInstanceEventRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Notebooks.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec notebooks_projects_locations_instances_report_event(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Notebooks.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def notebooks_projects_locations_instances_report_event(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:reportEvent", %{
         "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -2678,7 +2826,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -3134,6 +3282,8 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. List filter.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Sort results. Supported values are "name", "name desc" or "" (unsorted).
       *   `:pageSize` (*type:* `integer()`) - Maximum return size of the list call.
       *   `:pageToken` (*type:* `String.t`) - A previous returned page token that can be used to continue listing from the last result.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3171,6 +3321,8 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -3187,6 +3339,78 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Notebooks.V1.Model.ListRuntimesResponse{}])
+  end
+
+  @doc """
+  Migrate an existing Runtime to a new Workbench Instance.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Notebooks.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Format: `projects/{project_id}/locations/{location}/runtimes/{runtime_id}`
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Notebooks.V1.Model.MigrateRuntimeRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Notebooks.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec notebooks_projects_locations_runtimes_migrate(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Notebooks.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def notebooks_projects_locations_runtimes_migrate(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+name}:migrate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Notebooks.V1.Model.Operation{}])
   end
 
   @doc """
@@ -3209,7 +3433,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:requestId` (*type:* `String.t`) - Idempotent request UUID.
-      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Runtime`, of the field to update. For example, to change the software configuration kernels, the `update_mask` parameter would be specified as `software_config.kernels`, and the `PATCH` request body would specify the new value, as follows: { "software_config":{ "kernels": [{ 'repository': 'gcr.io/deeplearning-platform-release/pytorch-gpu', 'tag': 'latest' }], } } Currently, only the following fields can be updated: - software_config.kernels - software_config.post_startup_script - software_config.custom_gpu_driver_path - software_config.idle_shutdown - software_config.idle_shutdown_timeout - software_config.disable_terminal
+      *   `:updateMask` (*type:* `String.t`) - Required. Specifies the path, relative to `Runtime`, of the field to update. For example, to change the software configuration kernels, the `update_mask` parameter would be specified as `software_config.kernels`, and the `PATCH` request body would specify the new value, as follows: { "software_config":{ "kernels": [{ 'repository': 'gcr.io/deeplearning-platform-release/pytorch-gpu', 'tag': 'latest' }], } } Currently, only the following fields can be updated: - `software_config.kernels` - `software_config.post_startup_script` - `software_config.custom_gpu_driver_path` - `software_config.idle_shutdown` - `software_config.idle_shutdown_timeout` - `software_config.disable_terminal` - `labels`
       *   `:body` (*type:* `GoogleApi.Notebooks.V1.Model.Runtime.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3340,7 +3564,7 @@ defmodule GoogleApi.Notebooks.V1.Api.Projects do
   end
 
   @doc """
-  Report and process a runtime event.
+  Reports and processes a runtime event.
 
   ## Parameters
 

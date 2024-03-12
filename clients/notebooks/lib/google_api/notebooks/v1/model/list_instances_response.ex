@@ -23,7 +23,7 @@ defmodule GoogleApi.Notebooks.V1.Model.ListInstancesResponse do
 
   *   `instances` (*type:* `list(GoogleApi.Notebooks.V1.Model.Instance.t)`, *default:* `nil`) - A list of returned instances.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token that can be used to continue listing from the last result in the next list call.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. For example, ['us-west1-a', 'us-central1-b']. A ListInstancesResponse will only contain either instances or unreachables,
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached. For example, `['us-west1-a', 'us-central1-b']`. A ListInstancesResponse will only contain either instances or unreachables,
   """
 
   use GoogleApi.Gax.ModelBase

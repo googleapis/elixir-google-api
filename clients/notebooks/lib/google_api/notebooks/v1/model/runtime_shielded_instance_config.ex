@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Notebooks.V1.Model.RuntimeShieldedInstanceConfig do
   @moduledoc """
-  A set of Shielded Instance options. Check [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm). Not all combinations are valid.
+  A set of Shielded Instance options. See [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm). Not all combinations are valid.
 
   ## Attributes
 

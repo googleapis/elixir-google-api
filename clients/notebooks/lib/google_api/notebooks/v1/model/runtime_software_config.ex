@@ -28,10 +28,12 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
   *   `idleShutdownTimeout` (*type:* `integer()`, *default:* `nil`) - Time in minutes to wait before shutting down runtime. Default: 180 minutes
   *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Install Nvidia Driver automatically. Default: True
   *   `kernels` (*type:* `list(GoogleApi.Notebooks.V1.Model.ContainerImage.t)`, *default:* `nil`) - Optional. Use a list of container images to use as Kernels in the notebook instance.
+  *   `mixerDisabled` (*type:* `boolean()`, *default:* `nil`) - Bool indicating whether mixer client should be disabled. Default: False
   *   `notebookUpgradeSchedule` (*type:* `String.t`, *default:* `nil`) - Cron expression in UTC timezone, used to schedule instance auto upgrade. Please follow the [cron format](https://en.wikipedia.org/wiki/Cron).
   *   `postStartupScript` (*type:* `String.t`, *default:* `nil`) - Path to a Bash script that automatically runs after a notebook instance fully boots up. The path must be a URL or Cloud Storage path (`gs://path-to-file/file-name`).
   *   `postStartupScriptBehavior` (*type:* `String.t`, *default:* `nil`) - Behavior for the post startup script.
   *   `upgradeable` (*type:* `boolean()`, *default:* `nil`) - Output only. Bool indicating whether an newer image is available in an image family.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Output only. version of boot image such as M100, from release label of the image.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,10 +46,12 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
           :idleShutdownTimeout => integer() | nil,
           :installGpuDriver => boolean() | nil,
           :kernels => list(GoogleApi.Notebooks.V1.Model.ContainerImage.t()) | nil,
+          :mixerDisabled => boolean() | nil,
           :notebookUpgradeSchedule => String.t() | nil,
           :postStartupScript => String.t() | nil,
           :postStartupScriptBehavior => String.t() | nil,
-          :upgradeable => boolean() | nil
+          :upgradeable => boolean() | nil,
+          :version => String.t() | nil
         }
 
   field(:customGpuDriverPath)
@@ -57,10 +61,12 @@ defmodule GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do
   field(:idleShutdownTimeout)
   field(:installGpuDriver)
   field(:kernels, as: GoogleApi.Notebooks.V1.Model.ContainerImage, type: :list)
+  field(:mixerDisabled)
   field(:notebookUpgradeSchedule)
   field(:postStartupScript)
   field(:postStartupScriptBehavior)
   field(:upgradeable)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig do

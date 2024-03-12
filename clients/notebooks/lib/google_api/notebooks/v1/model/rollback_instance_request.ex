@@ -21,7 +21,7 @@ defmodule GoogleApi.Notebooks.V1.Model.RollbackInstanceRequest do
 
   ## Attributes
 
-  *   `targetSnapshot` (*type:* `String.t`, *default:* `nil`) - Required. The snapshot for rollback. Example: "projects/test-project/global/snapshots/krwlzipynril".
+  *   `targetSnapshot` (*type:* `String.t`, *default:* `nil`) - Required. The snapshot for rollback. Example: `projects/test-project/global/snapshots/krwlzipynril`.
   """
 
   use GoogleApi.Gax.ModelBase
