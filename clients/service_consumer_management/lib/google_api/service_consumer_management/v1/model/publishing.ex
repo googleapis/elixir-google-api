@@ -28,8 +28,10 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Publishing do
   *   `githubLabel` (*type:* `String.t`, *default:* `nil`) - GitHub label to apply to issues and pull requests opened for this API.
   *   `librarySettings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.ClientLibrarySettings.t)`, *default:* `nil`) - Client library settings. If the same version string appears multiple times in this list, then the last one wins. Settings from earlier settings with the same version string are discarded.
   *   `methodSettings` (*type:* `list(GoogleApi.ServiceConsumerManagement.V1.Model.MethodSettings.t)`, *default:* `nil`) - A list of API method settings, e.g. the behavior for methods that use the long-running operation pattern.
-  *   `newIssueUri` (*type:* `String.t`, *default:* `nil`) - Link to a place that API users can report issues. Example: https://issuetracker.google.com/issues/new?component=190865&template=1161103
+  *   `newIssueUri` (*type:* `String.t`, *default:* `nil`) - Link to a *public* URI where users can report issues. Example: https://issuetracker.google.com/issues/new?component=190865&template=1161103
   *   `organization` (*type:* `String.t`, *default:* `nil`) - For whom the client library is being published.
+  *   `protoReferenceDocumentationUri` (*type:* `String.t`, *default:* `nil`) - Optional link to proto reference documentation. Example: https://cloud.google.com/pubsub/lite/docs/reference/rpc
+  *   `restReferenceDocumentationUri` (*type:* `String.t`, *default:* `nil`) - Optional link to REST reference documentation. Example: https://cloud.google.com/pubsub/lite/docs/reference/rest
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +47,9 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Publishing do
           :methodSettings =>
             list(GoogleApi.ServiceConsumerManagement.V1.Model.MethodSettings.t()) | nil,
           :newIssueUri => String.t() | nil,
-          :organization => String.t() | nil
+          :organization => String.t() | nil,
+          :protoReferenceDocumentationUri => String.t() | nil,
+          :restReferenceDocumentationUri => String.t() | nil
         }
 
   field(:apiShortName)
@@ -66,6 +70,8 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.Publishing do
 
   field(:newIssueUri)
   field(:organization)
+  field(:protoReferenceDocumentationUri)
+  field(:restReferenceDocumentationUri)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceConsumerManagement.V1.Model.Publishing do
