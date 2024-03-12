@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.SearchCaseClassificationsResponse 
   ## Attributes
 
   *   `caseClassifications` (*type:* `list(GoogleApi.CloudSupport.V2beta.Model.CaseClassification.t)`, *default:* `nil`) - The classifications retrieved.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. This should be set in the `page_token` field of subsequent `SearchCaseClassificationsRequest` message that is issued. If unspecified, there are no more results to retrieve.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Set this in the `page_token` field of subsequent `caseClassifications.list` requests. If unspecified, there are no more results to retrieve.
   """
 
   use GoogleApi.Gax.ModelBase
