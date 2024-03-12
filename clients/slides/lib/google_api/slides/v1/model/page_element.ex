@@ -29,6 +29,7 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
   *   `shape` (*type:* `GoogleApi.Slides.V1.Model.Shape.t`, *default:* `nil`) - A generic shape.
   *   `sheetsChart` (*type:* `GoogleApi.Slides.V1.Model.SheetsChart.t`, *default:* `nil`) - A linked chart embedded from Google Sheets. Unlinked charts are represented as images.
   *   `size` (*type:* `GoogleApi.Slides.V1.Model.Size.t`, *default:* `nil`) - The size of the page element.
+  *   `speakerSpotlight` (*type:* `GoogleApi.Slides.V1.Model.SpeakerSpotlight.t`, *default:* `nil`) - A Speaker Spotlight.
   *   `table` (*type:* `GoogleApi.Slides.V1.Model.Table.t`, *default:* `nil`) - A table page element.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the page element. Combined with description to display alt text. The field is not supported for Group elements.
   *   `transform` (*type:* `GoogleApi.Slides.V1.Model.AffineTransform.t`, *default:* `nil`) - The transform of the page element. The visual appearance of the page element is determined by its absolute transform. To compute the absolute transform, preconcatenate a page element's transform with the transforms of all of its parent groups. If the page element is not in a group, its absolute transform is the same as the value in this field. The initial transform for the newly created Group is always the identity transform.
@@ -47,6 +48,7 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
           :shape => GoogleApi.Slides.V1.Model.Shape.t() | nil,
           :sheetsChart => GoogleApi.Slides.V1.Model.SheetsChart.t() | nil,
           :size => GoogleApi.Slides.V1.Model.Size.t() | nil,
+          :speakerSpotlight => GoogleApi.Slides.V1.Model.SpeakerSpotlight.t() | nil,
           :table => GoogleApi.Slides.V1.Model.Table.t() | nil,
           :title => String.t() | nil,
           :transform => GoogleApi.Slides.V1.Model.AffineTransform.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Slides.V1.Model.PageElement do
   field(:shape, as: GoogleApi.Slides.V1.Model.Shape)
   field(:sheetsChart, as: GoogleApi.Slides.V1.Model.SheetsChart)
   field(:size, as: GoogleApi.Slides.V1.Model.Size)
+  field(:speakerSpotlight, as: GoogleApi.Slides.V1.Model.SpeakerSpotlight)
   field(:table, as: GoogleApi.Slides.V1.Model.Table)
   field(:title)
   field(:transform, as: GoogleApi.Slides.V1.Model.AffineTransform)
