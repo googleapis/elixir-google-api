@@ -27,6 +27,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiVersion do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-meaningful name.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `apigeeregistry.googleapis.com/` and cannot be changed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
+  *   `primarySpec` (*type:* `String.t`, *default:* `nil`) - The primary spec for this version. Format: projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}
   *   `state` (*type:* `String.t`, *default:* `nil`) - A user-definable description of the lifecycle phase of this API version. Format: free-form, but we expect single words that describe API maturity, e.g., "CONCEPT", "DESIGN", "DEVELOPMENT", "STAGING", "PRODUCTION", "DEPRECATED", "RETIRED".
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last update timestamp.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiVersion do
           :displayName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :primarySpec => String.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiVersion do
   field(:displayName)
   field(:labels, type: :map)
   field(:name)
+  field(:primarySpec)
   field(:state)
   field(:updateTime, as: DateTime)
 end

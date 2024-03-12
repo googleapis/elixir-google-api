@@ -21,6 +21,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Instance do
 
   ## Attributes
 
+  *   `build` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.Build.t`, *default:* `nil`) - Output only. Build info of the Instance if it's in `ACTIVE` state.
   *   `config` (*type:* `GoogleApi.ApigeeRegistry.V1.Model.Config.t`, *default:* `nil`) - Required. Config of the Instance.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Format: `projects/*/locations/*/instance`. Currently only `locations/global` is supported.
@@ -32,6 +33,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :build => GoogleApi.ApigeeRegistry.V1.Model.Build.t() | nil,
           :config => GoogleApi.ApigeeRegistry.V1.Model.Config.t() | nil,
           :createTime => DateTime.t() | nil,
           :name => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Instance do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:build, as: GoogleApi.ApigeeRegistry.V1.Model.Build)
   field(:config, as: GoogleApi.ApigeeRegistry.V1.Model.Config)
   field(:createTime, as: DateTime)
   field(:name)
