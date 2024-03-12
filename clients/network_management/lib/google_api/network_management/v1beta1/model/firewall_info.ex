@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.FirewallInfo do
 
   ## Attributes
 
-  *   `action` (*type:* `String.t`, *default:* `nil`) - Possible values: ALLOW, DENY
+  *   `action` (*type:* `String.t`, *default:* `nil`) - Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
   *   `direction` (*type:* `String.t`, *default:* `nil`) - Possible values: INGRESS, EGRESS
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the VPC firewall rule. This field is not applicable to hierarchical firewall policy rules.
   *   `firewallRuleType` (*type:* `String.t`, *default:* `nil`) - The firewall rule's type.

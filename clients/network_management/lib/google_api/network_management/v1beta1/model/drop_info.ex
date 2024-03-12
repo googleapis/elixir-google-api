@@ -22,18 +22,27 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.DropInfo do
   ## Attributes
 
   *   `cause` (*type:* `String.t`, *default:* `nil`) - Cause that the packet is dropped.
+  *   `destinationIp` (*type:* `String.t`, *default:* `nil`) - Destination IP address of the dropped packet (if relevant).
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Region of the dropped packet (if relevant).
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - URI of the resource that caused the drop.
+  *   `sourceIp` (*type:* `String.t`, *default:* `nil`) - Source IP address of the dropped packet (if relevant).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cause => String.t() | nil,
-          :resourceUri => String.t() | nil
+          :destinationIp => String.t() | nil,
+          :region => String.t() | nil,
+          :resourceUri => String.t() | nil,
+          :sourceIp => String.t() | nil
         }
 
   field(:cause)
+  field(:destinationIp)
+  field(:region)
   field(:resourceUri)
+  field(:sourceIp)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkManagement.V1beta1.Model.DropInfo do

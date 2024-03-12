@@ -25,6 +25,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.EndpointInfo do
   *   `destinationNetworkUri` (*type:* `String.t`, *default:* `nil`) - URI of the network where this packet is sent to.
   *   `destinationPort` (*type:* `integer()`, *default:* `nil`) - Destination port. Only valid when protocol is TCP or UDP.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - IP protocol in string format, for example: "TCP", "UDP", "ICMP".
+  *   `sourceAgentUri` (*type:* `String.t`, *default:* `nil`) - URI of the source telemetry agent this packet originates from.
   *   `sourceIp` (*type:* `String.t`, *default:* `nil`) - Source IP address.
   *   `sourceNetworkUri` (*type:* `String.t`, *default:* `nil`) - URI of the network where this packet originates from.
   *   `sourcePort` (*type:* `integer()`, *default:* `nil`) - Source port. Only valid when protocol is TCP or UDP.
@@ -37,6 +38,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.EndpointInfo do
           :destinationNetworkUri => String.t() | nil,
           :destinationPort => integer() | nil,
           :protocol => String.t() | nil,
+          :sourceAgentUri => String.t() | nil,
           :sourceIp => String.t() | nil,
           :sourceNetworkUri => String.t() | nil,
           :sourcePort => integer() | nil
@@ -46,6 +48,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.EndpointInfo do
   field(:destinationNetworkUri)
   field(:destinationPort)
   field(:protocol)
+  field(:sourceAgentUri)
   field(:sourceIp)
   field(:sourceNetworkUri)
   field(:sourcePort)
