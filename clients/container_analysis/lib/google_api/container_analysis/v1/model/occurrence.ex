@@ -36,6 +36,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Occurrence do
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.PackageOccurrence.t`, *default:* `nil`) - Describes the installation of a package on the linked resource.
   *   `remediation` (*type:* `String.t`, *default:* `nil`) - A description of actions that can be taken to remedy the note.
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. A URI that represents the resource for which the occurrence applies. For example, `https://gcr.io/project/image@sha256:123abc` for a Docker image.
+  *   `sbomReference` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceOccurrence.t`, *default:* `nil`) - Describes a specific SBOM reference occurrences.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this occurrence was last updated.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.UpgradeOccurrence.t`, *default:* `nil`) - Describes an available package upgrade on the linked resource.
   *   `vulnerability` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityOccurrence.t`, *default:* `nil`) - Describes a security vulnerability.
@@ -60,6 +61,8 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Occurrence do
           :package => GoogleApi.ContainerAnalysis.V1.Model.PackageOccurrence.t() | nil,
           :remediation => String.t() | nil,
           :resourceUri => String.t() | nil,
+          :sbomReference =>
+            GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceOccurrence.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upgrade => GoogleApi.ContainerAnalysis.V1.Model.UpgradeOccurrence.t() | nil,
           :vulnerability => GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityOccurrence.t() | nil
@@ -80,6 +83,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Occurrence do
   field(:package, as: GoogleApi.ContainerAnalysis.V1.Model.PackageOccurrence)
   field(:remediation)
   field(:resourceUri)
+  field(:sbomReference, as: GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceOccurrence)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1.Model.UpgradeOccurrence)
   field(:vulnerability, as: GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityOccurrence)

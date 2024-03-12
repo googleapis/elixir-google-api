@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceManifest do
   @moduledoc """
-  Location of the source manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
+  Location of the source manifest in Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
 
   ## Attributes
 
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing the source manifest (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-  *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
-  *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing the source manifest. This object must be a JSON file.
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket containing the source manifest (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
+  *   `object` (*type:* `String.t`, *default:* `nil`) - Cloud Storage object containing the source manifest. This object must be a JSON file.
   """
 
   use GoogleApi.Gax.ModelBase

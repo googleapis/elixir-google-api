@@ -36,10 +36,12 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Note do
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.PackageNote.t`, *default:* `nil`) - A note describing a package hosted by various package managers.
   *   `relatedNoteNames` (*type:* `list(String.t)`, *default:* `nil`) - Other notes related to this note.
   *   `relatedUrl` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.RelatedUrl.t)`, *default:* `nil`) - URLs associated with this note.
+  *   `sbomReference` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceNote.t`, *default:* `nil`) - A note describing an SBOM reference.
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this note.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.UpgradeNote.t`, *default:* `nil`) - A note describing available package upgrades.
   *   `vulnerability` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityNote.t`, *default:* `nil`) - A note describing a package vulnerability.
+  *   `vulnerabilityAssessment` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityAssessmentNote.t`, *default:* `nil`) - A note describing a vulnerability assessment.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -60,10 +62,13 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Note do
           :package => GoogleApi.ContainerAnalysis.V1.Model.PackageNote.t() | nil,
           :relatedNoteNames => list(String.t()) | nil,
           :relatedUrl => list(GoogleApi.ContainerAnalysis.V1.Model.RelatedUrl.t()) | nil,
+          :sbomReference => GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceNote.t() | nil,
           :shortDescription => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upgrade => GoogleApi.ContainerAnalysis.V1.Model.UpgradeNote.t() | nil,
-          :vulnerability => GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityNote.t() | nil
+          :vulnerability => GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityNote.t() | nil,
+          :vulnerabilityAssessment =>
+            GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityAssessmentNote.t() | nil
         }
 
   field(:attestation, as: GoogleApi.ContainerAnalysis.V1.Model.AttestationNote)
@@ -81,10 +86,15 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.Note do
   field(:package, as: GoogleApi.ContainerAnalysis.V1.Model.PackageNote)
   field(:relatedNoteNames, type: :list)
   field(:relatedUrl, as: GoogleApi.ContainerAnalysis.V1.Model.RelatedUrl, type: :list)
+  field(:sbomReference, as: GoogleApi.ContainerAnalysis.V1.Model.SBOMReferenceNote)
   field(:shortDescription)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1.Model.UpgradeNote)
   field(:vulnerability, as: GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityNote)
+
+  field(:vulnerabilityAssessment,
+    as: GoogleApi.ContainerAnalysis.V1.Model.VulnerabilityAssessmentNote
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1.Model.Note do

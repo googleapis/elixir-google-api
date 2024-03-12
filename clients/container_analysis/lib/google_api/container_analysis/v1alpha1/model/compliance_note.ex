@@ -23,6 +23,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote do
 
   *   `cisBenchmark` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.CisBenchmark.t`, *default:* `nil`) - Right now we only have one compliance type, but we may add additional types in the future.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description about this compliance check.
+  *   `impact` (*type:* `String.t`, *default:* `nil`) - Potential impact of the suggested remediation
   *   `rationale` (*type:* `String.t`, *default:* `nil`) - A rationale for the existence of this compliance check.
   *   `remediation` (*type:* `String.t`, *default:* `nil`) - A description of remediation steps if the compliance check fails.
   *   `scanInstructions` (*type:* `String.t`, *default:* `nil`) - Serialized scan instructions with a predefined format.
@@ -35,6 +36,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote do
   @type t :: %__MODULE__{
           :cisBenchmark => GoogleApi.ContainerAnalysis.V1alpha1.Model.CisBenchmark.t() | nil,
           :description => String.t() | nil,
+          :impact => String.t() | nil,
           :rationale => String.t() | nil,
           :remediation => String.t() | nil,
           :scanInstructions => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ComplianceNote do
 
   field(:cisBenchmark, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.CisBenchmark)
   field(:description)
+  field(:impact)
   field(:rationale)
   field(:remediation)
   field(:scanInstructions)

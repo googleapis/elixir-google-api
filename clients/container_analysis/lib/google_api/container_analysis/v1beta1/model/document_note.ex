@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.DocumentNote do
   @moduledoc """
-  DocumentNote represents an SPDX Document Creation Information section: https://spdx.github.io/spdx-spec/v2.3/document-creation-information/
+  DocumentNote represents an SPDX Document Creation Information section: https://spdx.github.io/spdx-spec/2-document-creation-information/
 
   ## Attributes
 

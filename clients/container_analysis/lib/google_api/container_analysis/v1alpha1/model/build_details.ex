@@ -21,6 +21,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
 
   ## Attributes
 
+  *   `inTotoSlsaProvenanceV1` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoSlsaProvenanceV1.t`, *default:* `nil`) - In-Toto Slsa Provenance V1 represents a slsa provenance meeting the slsa spec, wrapped in an in-toto statement. This allows for direct jsonification of a to-spec in-toto slsa statement with a to-spec slsa provenance.
   *   `intotoProvenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t`, *default:* `nil`) - Deprecated. See InTotoStatement for the replacement. In-toto Provenance representation as defined in spec.
   *   `intotoStatement` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoStatement.t`, *default:* `nil`) - In-toto Statement representation as defined in spec. The intoto_statement can contain any type of provenance. The serialized payload of the statement can be stored and signed in the Occurrence's envelope.
   *   `provenance` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t`, *default:* `nil`) - The actual provenance
@@ -30,6 +31,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :inTotoSlsaProvenanceV1 =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoSlsaProvenanceV1.t() | nil,
           :intotoProvenance =>
             GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance.t() | nil,
           :intotoStatement =>
@@ -37,6 +40,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildDetails do
           :provenance => GoogleApi.ContainerAnalysis.V1alpha1.Model.BuildProvenance.t() | nil,
           :provenanceBytes => String.t() | nil
         }
+
+  field(:inTotoSlsaProvenanceV1,
+    as: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoSlsaProvenanceV1
+  )
 
   field(:intotoProvenance, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoProvenance)
   field(:intotoStatement, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.InTotoStatement)

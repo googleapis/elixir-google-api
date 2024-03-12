@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSource do
   @moduledoc """
-  Location of the source in an archive file in Google Cloud Storage.
+  Location of the source in an archive file in Cloud Storage.
 
   ## Attributes
 
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing the source (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-  *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
-  *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing the source. This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`) containing source to build.
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket containing the source (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
+  *   `object` (*type:* `String.t`, *default:* `nil`) - Cloud Storage object containing the source. This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`) containing source to build.
+  *   `sourceFetcher` (*type:* `String.t`, *default:* `nil`) - Optional. Option to specify the tool to fetch the source file for the build.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   @type t :: %__MODULE__{
           :bucket => String.t() | nil,
           :generation => String.t() | nil,
-          :object => String.t() | nil
+          :object => String.t() | nil,
+          :sourceFetcher => String.t() | nil
         }
 
   field(:bucket)
   field(:generation)
   field(:object)
+  field(:sourceFetcher)
 end
 
 defimpl Poison.Decoder,
