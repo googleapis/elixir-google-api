@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsData.V1beta.Model.MinuteRange do
   @moduledoc """
-  A contiguous set of minutes: startMinutesAgo, startMinutesAgo + 1, ..., endMinutesAgo. Requests are allowed up to 2 minute ranges.
+  A contiguous set of minutes: `startMinutesAgo`, `startMinutesAgo + 1`, ..., `endMinutesAgo`. Requests are allowed up to 2 minute ranges.
 
   ## Attributes
 

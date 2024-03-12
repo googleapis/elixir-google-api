@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsData.V1beta.Model.Metadata do
   @moduledoc """
-  The dimensions and metrics currently accepted in reporting methods.
+  The dimensions, metrics and comparisons currently accepted in reporting methods.
 
   ## Attributes
 

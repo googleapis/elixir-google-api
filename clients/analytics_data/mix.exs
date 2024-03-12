@@ -48,7 +48,7 @@ defmodule GoogleApi.AnalyticsData.Mixfile do
 
   defp description() do
     """
-    Google Analytics Data API client library. Accesses report data in Google Analytics.
+    Google Analytics Data API client library.
     """
   end
 
