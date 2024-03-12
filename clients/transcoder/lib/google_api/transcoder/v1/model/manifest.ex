@@ -21,19 +21,22 @@ defmodule GoogleApi.Transcoder.V1.Model.Manifest do
 
   ## Attributes
 
-  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The name of the generated file. The default is `manifest` with the extension suffix corresponding to the `Manifest.type`.
-  *   `muxStreams` (*type:* `list(String.t)`, *default:* `nil`) - Required. List of user given `MuxStream.key`s that should appear in this manifest. When `Manifest.type` is `HLS`, a media manifest with name `MuxStream.key` and `.m3u8` extension is generated for each element of the `Manifest.mux_streams`.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the manifest, can be `HLS` or `DASH`.
+  *   `dash` (*type:* `GoogleApi.Transcoder.V1.Model.DashConfig.t`, *default:* `nil`) - `DASH` manifest configuration.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The name of the generated file. The default is `manifest` with the extension suffix corresponding to the Manifest.type.
+  *   `muxStreams` (*type:* `list(String.t)`, *default:* `nil`) - Required. List of user supplied MuxStream.key values that should appear in this manifest. When Manifest.type is `HLS`, a media manifest with name MuxStream.key and `.m3u8` extension is generated for each element in this list.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the manifest.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dash => GoogleApi.Transcoder.V1.Model.DashConfig.t() | nil,
           :fileName => String.t() | nil,
           :muxStreams => list(String.t()) | nil,
           :type => String.t() | nil
         }
 
+  field(:dash, as: GoogleApi.Transcoder.V1.Model.DashConfig)
   field(:fileName)
   field(:muxStreams, type: :list)
   field(:type)
