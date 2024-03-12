@@ -24,7 +24,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.FinalizedDeal do
   *   `deal` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.Deal.t`, *default:* `nil`) - A copy of the Deal made upon finalization. During renegotiation, this will reflect the last finalized deal before renegotiation was initiated.
   *   `dealPausingInfo` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DealPausingInfo.t`, *default:* `nil`) - Information related to deal pausing for the deal.
   *   `dealServingStatus` (*type:* `String.t`, *default:* `nil`) - Serving status of the deal.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the finalized deal. Format: `buyers/{accountId}/finalizeddeals/{finalizedDealId}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the finalized deal. Format: `buyers/{accountId}/finalizedDeals/{finalizedDealId}`
   *   `readyToServe` (*type:* `boolean()`, *default:* `nil`) - Whether the Programmatic Guaranteed deal is ready for serving.
   *   `rtbMetrics` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.RtbMetrics.t`, *default:* `nil`) - Real-time bidding metrics for this deal.
   """
