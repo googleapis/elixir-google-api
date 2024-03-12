@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.MyBusinessLodging.V1.Model.SustainabilityCertifications do
   @moduledoc """
-  Sustainability certifications the hotel has been awarded.
+  Sustainability certifications the hotel has been awarded. Deprecated: this message is no longer populated. All certification data is now provided by BeCause.
 
   ## Attributes
 
   *   `breeamCertification` (*type:* `String.t`, *default:* `nil`) - BREEAM certification.
   *   `breeamCertificationException` (*type:* `String.t`, *default:* `nil`) - BREEAM certification exception.
   *   `ecoCertifications` (*type:* `list(GoogleApi.MyBusinessLodging.V1.Model.EcoCertification.t)`, *default:* `nil`) - The eco certificates awarded to the hotel.
-  *   `leedCertification` (*type:* `String.t`, *default:* `nil`) - LEED certification. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.
-  *   `leedCertificationException` (*type:* `String.t`, *default:* `nil`) - LEED certification exception. Deprecated: this field is no longer populated. LEED certification status is now provided directly by USGBC.
+  *   `leedCertification` (*type:* `String.t`, *default:* `nil`) - LEED certification.
+  *   `leedCertificationException` (*type:* `String.t`, *default:* `nil`) - LEED certification exception.
   """
 
   use GoogleApi.Gax.ModelBase

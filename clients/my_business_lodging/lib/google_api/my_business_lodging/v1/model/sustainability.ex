@@ -22,7 +22,7 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.Sustainability do
   ## Attributes
 
   *   `energyEfficiency` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.EnergyEfficiency.t`, *default:* `nil`) - Energy efficiency practices implemented at the hotel.
-  *   `sustainabilityCertifications` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.SustainabilityCertifications.t`, *default:* `nil`) - Sustainability certifications the hotel has been awarded.
+  *   `sustainabilityCertifications` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.SustainabilityCertifications.t`, *default:* `nil`) - Sustainability certifications the hotel has been awarded. Deprecated: this field is no longer populated. All certification data is now provided by BeCause.
   *   `sustainableSourcing` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.SustainableSourcing.t`, *default:* `nil`) - Sustainable sourcing practices implemented at the hotel.
   *   `wasteReduction` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.WasteReduction.t`, *default:* `nil`) - Waste reduction practices implemented at the hotel.
   *   `waterConservation` (*type:* `GoogleApi.MyBusinessLodging.V1.Model.WaterConservation.t`, *default:* `nil`) - Water conservation practices implemented at the hotel.

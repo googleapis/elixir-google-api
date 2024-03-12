@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.MyBusinessLodging.V1.Model.EcoCertification do
   @moduledoc """
-  An eco certificate awarded to the hotel.
+  An eco certificate awarded to the hotel. Deprecated: this message is no longer populated. All certification data is now provided by BeCause.
 
   ## Attributes
 
