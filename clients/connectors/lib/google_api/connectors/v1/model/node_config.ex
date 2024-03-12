@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Connectors.V1.Model.NodeConfig do
   @moduledoc """
-  Configuration for the connection.
+  Node configuration for the connection.
 
   ## Attributes
 

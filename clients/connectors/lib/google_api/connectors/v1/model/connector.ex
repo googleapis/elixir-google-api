@@ -25,6 +25,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description of the resource.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name.
   *   `documentationUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to documentation page.
+  *   `eventingDetails` (*type:* `GoogleApi.Connectors.V1.Model.EventingDetails.t`, *default:* `nil`) - Output only. Eventing details. Will be null if eventing is not supported.
   *   `externalUri` (*type:* `String.t`, *default:* `nil`) - Output only. Link to external page.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :documentationUri => String.t() | nil,
+          :eventingDetails => GoogleApi.Connectors.V1.Model.EventingDetails.t() | nil,
           :externalUri => String.t() | nil,
           :labels => map() | nil,
           :launchStage => String.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   field(:description)
   field(:displayName)
   field(:documentationUri)
+  field(:eventingDetails, as: GoogleApi.Connectors.V1.Model.EventingDetails)
   field(:externalUri)
   field(:labels, type: :map)
   field(:launchStage)

@@ -26,6 +26,7 @@ defmodule GoogleApi.Connectors.V1.Model.Field do
   *   `defaultValue` (*type:* `any()`, *default:* `nil`) - The following field specifies the default value of the Field provided by the external system if a value is not provided.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of the Field.
   *   `field` (*type:* `String.t`, *default:* `nil`) - Name of the Field.
+  *   `jsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - JsonSchema representation of this entity's schema
   *   `key` (*type:* `boolean()`, *default:* `nil`) - The following boolean field specifies if the current Field acts as a primary key or id if the parent is of type entity.
   *   `nullable` (*type:* `boolean()`, *default:* `nil`) - Specifies whether a null value is allowed.
   *   `readonly` (*type:* `boolean()`, *default:* `nil`) - Specifies if the Field is readonly.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Connectors.V1.Model.Field do
           :defaultValue => any() | nil,
           :description => String.t() | nil,
           :field => String.t() | nil,
+          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil,
           :key => boolean() | nil,
           :nullable => boolean() | nil,
           :readonly => boolean() | nil
@@ -49,6 +51,7 @@ defmodule GoogleApi.Connectors.V1.Model.Field do
   field(:defaultValue)
   field(:description)
   field(:field)
+  field(:jsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
   field(:key)
   field(:nullable)
   field(:readonly)

@@ -21,24 +21,34 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfigTemplate do
 
   ## Attributes
 
+  *   `authKey` (*type:* `String.t`, *default:* `nil`) - Identifier key for auth config
   *   `authType` (*type:* `String.t`, *default:* `nil`) - The type of authentication configured.
   *   `configVariableTemplates` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t)`, *default:* `nil`) - Config variables to describe an `AuthConfig` for a `Connection`.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Connector specific description for an authentication template.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for authentication template.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :authKey => String.t() | nil,
           :authType => String.t() | nil,
           :configVariableTemplates =>
-            list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t()) | nil
+            list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t()) | nil,
+          :description => String.t() | nil,
+          :displayName => String.t() | nil
         }
 
+  field(:authKey)
   field(:authType)
 
   field(:configVariableTemplates,
     as: GoogleApi.Connectors.V1.Model.ConfigVariableTemplate,
     type: :list
   )
+
+  field(:description)
+  field(:displayName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.AuthConfigTemplate do

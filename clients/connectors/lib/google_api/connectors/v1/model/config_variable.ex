@@ -22,6 +22,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariable do
   ## Attributes
 
   *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Value is a bool.
+  *   `encryptionKeyValue` (*type:* `GoogleApi.Connectors.V1.Model.EncryptionKey.t`, *default:* `nil`) - Value is a Encryption Key.
   *   `intValue` (*type:* `String.t`, *default:* `nil`) - Value is an integer
   *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
   *   `secretValue` (*type:* `GoogleApi.Connectors.V1.Model.Secret.t`, *default:* `nil`) - Value is a secret.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariable do
 
   @type t :: %__MODULE__{
           :boolValue => boolean() | nil,
+          :encryptionKeyValue => GoogleApi.Connectors.V1.Model.EncryptionKey.t() | nil,
           :intValue => String.t() | nil,
           :key => String.t() | nil,
           :secretValue => GoogleApi.Connectors.V1.Model.Secret.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariable do
         }
 
   field(:boolValue)
+  field(:encryptionKeyValue, as: GoogleApi.Connectors.V1.Model.EncryptionKey)
   field(:intValue)
   field(:key)
   field(:secretValue, as: GoogleApi.Connectors.V1.Model.Secret)

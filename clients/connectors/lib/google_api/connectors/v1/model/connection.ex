@@ -23,19 +23,29 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
 
   *   `authConfig` (*type:* `GoogleApi.Connectors.V1.Model.AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
   *   `configVariables` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
+  *   `connectionRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Connection revision. This field is only updated when the connection is created or updated by User.
   *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Required. Connector version on which the connection is created. The format is: projects/*/locations/*/providers/*/connectors/*/versions/* Only global location is supported for ConnectorVersion resource.
+  *   `connectorVersionInfraConfig` (*type:* `GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig.t`, *default:* `nil`) - Output only. Infra configs supported by Connector Version.
+  *   `connectorVersionLaunchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
   *   `destinationConfigs` (*type:* `list(GoogleApi.Connectors.V1.Model.DestinationConfig.t)`, *default:* `nil`) - Optional. Configuration of the Connector's destination. Only accepted for Connectors that accepts user defined destination(s).
   *   `envoyImageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName}
+  *   `eventingConfig` (*type:* `GoogleApi.Connectors.V1.Model.EventingConfig.t`, *default:* `nil`) - Optional. Eventing config of a connection
+  *   `eventingEnablementType` (*type:* `String.t`, *default:* `nil`) - Optional. Eventing enablement type. Will be nil if eventing is not enabled.
+  *   `eventingRuntimeData` (*type:* `GoogleApi.Connectors.V1.Model.EventingRuntimeData.t`, *default:* `nil`) - Output only. Eventing Runtime Data.
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
+  *   `isTrustedTester` (*type:* `boolean()`, *default:* `nil`) - Output only. Is trusted tester program enabled for the project.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `lockConfig` (*type:* `GoogleApi.Connectors.V1.Model.LockConfig.t`, *default:* `nil`) - Optional. Configuration that indicates whether or not the Connection can be edited.
+  *   `logConfig` (*type:* `GoogleApi.Connectors.V1.Model.ConnectorsLogConfig.t`, *default:* `nil`) - Optional. Log configuration for the connection.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection}
-  *   `nodeConfig` (*type:* `GoogleApi.Connectors.V1.Model.NodeConfig.t`, *default:* `nil`) - Optional. Configuration for the connection.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Service account needed for runtime plane to access GCP resources.
+  *   `nodeConfig` (*type:* `GoogleApi.Connectors.V1.Model.NodeConfig.t`, *default:* `nil`) - Optional. Node configuration for the connection.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Service account needed for runtime plane to access Google Cloud resources.
   *   `serviceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors"
+  *   `sslConfig` (*type:* `GoogleApi.Connectors.V1.Model.SslConfig.t`, *default:* `nil`) - Optional. Ssl config of a connection
   *   `status` (*type:* `GoogleApi.Connectors.V1.Model.ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
+  *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. This subscription type enum states the subscription type of the project.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
@@ -45,38 +55,63 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   @type t :: %__MODULE__{
           :authConfig => GoogleApi.Connectors.V1.Model.AuthConfig.t() | nil,
           :configVariables => list(GoogleApi.Connectors.V1.Model.ConfigVariable.t()) | nil,
+          :connectionRevision => String.t() | nil,
           :connectorVersion => String.t() | nil,
+          :connectorVersionInfraConfig =>
+            GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig.t() | nil,
+          :connectorVersionLaunchStage => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :destinationConfigs => list(GoogleApi.Connectors.V1.Model.DestinationConfig.t()) | nil,
           :envoyImageLocation => String.t() | nil,
+          :eventingConfig => GoogleApi.Connectors.V1.Model.EventingConfig.t() | nil,
+          :eventingEnablementType => String.t() | nil,
+          :eventingRuntimeData => GoogleApi.Connectors.V1.Model.EventingRuntimeData.t() | nil,
           :imageLocation => String.t() | nil,
+          :isTrustedTester => boolean() | nil,
           :labels => map() | nil,
           :lockConfig => GoogleApi.Connectors.V1.Model.LockConfig.t() | nil,
+          :logConfig => GoogleApi.Connectors.V1.Model.ConnectorsLogConfig.t() | nil,
           :name => String.t() | nil,
           :nodeConfig => GoogleApi.Connectors.V1.Model.NodeConfig.t() | nil,
           :serviceAccount => String.t() | nil,
           :serviceDirectory => String.t() | nil,
+          :sslConfig => GoogleApi.Connectors.V1.Model.SslConfig.t() | nil,
           :status => GoogleApi.Connectors.V1.Model.ConnectionStatus.t() | nil,
+          :subscriptionType => String.t() | nil,
           :suspended => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:authConfig, as: GoogleApi.Connectors.V1.Model.AuthConfig)
   field(:configVariables, as: GoogleApi.Connectors.V1.Model.ConfigVariable, type: :list)
+  field(:connectionRevision)
   field(:connectorVersion)
+
+  field(:connectorVersionInfraConfig,
+    as: GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig
+  )
+
+  field(:connectorVersionLaunchStage)
   field(:createTime, as: DateTime)
   field(:description)
   field(:destinationConfigs, as: GoogleApi.Connectors.V1.Model.DestinationConfig, type: :list)
   field(:envoyImageLocation)
+  field(:eventingConfig, as: GoogleApi.Connectors.V1.Model.EventingConfig)
+  field(:eventingEnablementType)
+  field(:eventingRuntimeData, as: GoogleApi.Connectors.V1.Model.EventingRuntimeData)
   field(:imageLocation)
+  field(:isTrustedTester)
   field(:labels, type: :map)
   field(:lockConfig, as: GoogleApi.Connectors.V1.Model.LockConfig)
+  field(:logConfig, as: GoogleApi.Connectors.V1.Model.ConnectorsLogConfig)
   field(:name)
   field(:nodeConfig, as: GoogleApi.Connectors.V1.Model.NodeConfig)
   field(:serviceAccount)
   field(:serviceDirectory)
+  field(:sslConfig, as: GoogleApi.Connectors.V1.Model.SslConfig)
   field(:status, as: GoogleApi.Connectors.V1.Model.ConnectionStatus)
+  field(:subscriptionType)
   field(:suspended)
   field(:updateTime, as: DateTime)
 end

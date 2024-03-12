@@ -24,6 +24,7 @@ defmodule GoogleApi.Connectors.V1.Model.InputParameter do
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - The data type of the Parameter.
   *   `defaultValue` (*type:* `any()`, *default:* `nil`) - The following field specifies the default value of the Parameter provided by the external system if a value is not provided.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of the Parameter.
+  *   `jsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - JsonSchema representation of this action's parameter
   *   `nullable` (*type:* `boolean()`, *default:* `nil`) - Specifies whether a null value is allowed.
   *   `parameter` (*type:* `String.t`, *default:* `nil`) - Name of the Parameter.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.Connectors.V1.Model.InputParameter do
           :dataType => String.t() | nil,
           :defaultValue => any() | nil,
           :description => String.t() | nil,
+          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil,
           :nullable => boolean() | nil,
           :parameter => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.Connectors.V1.Model.InputParameter do
   field(:dataType)
   field(:defaultValue)
   field(:description)
+  field(:jsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
   field(:nullable)
   field(:parameter)
 end
