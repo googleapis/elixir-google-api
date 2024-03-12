@@ -21,9 +21,9 @@ defmodule GoogleApi.PubSub.V1.Model.SchemaSettings do
 
   ## Attributes
 
-  *   `encoding` (*type:* `String.t`, *default:* `nil`) - The encoding of messages validated against `schema`.
-  *   `firstRevisionId` (*type:* `String.t`, *default:* `nil`) - The minimum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against last_revision or any revision created before.
-  *   `lastRevisionId` (*type:* `String.t`, *default:* `nil`) - The maximum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against first_revision or any revision created after.
+  *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The encoding of messages validated against `schema`.
+  *   `firstRevisionId` (*type:* `String.t`, *default:* `nil`) - Optional. The minimum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against last_revision or any revision created before.
+  *   `lastRevisionId` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum (inclusive) revision allowed for validating messages. If empty or not present, allow any revision to be validated against first_revision or any revision created after.
   *   `schema` (*type:* `String.t`, *default:* `nil`) - Required. The name of the schema that messages published should be validated against. Format is `projects/{project}/schemas/{schema}`. The value of this field will be `_deleted-schema_` if the schema has been deleted.
   """
 

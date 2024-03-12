@@ -21,16 +21,19 @@ defmodule GoogleApi.PubSub.V1.Model.MessageStoragePolicy do
 
   ## Attributes
 
-  *   `allowedPersistenceRegions` (*type:* `list(String.t)`, *default:* `nil`) - A list of IDs of GCP regions where messages that are published to the topic may be persisted in storage. Messages published by publishers running in non-allowed GCP regions (or running outside of GCP altogether) will be routed for storage in one of the allowed regions. An empty list means that no regions are allowed, and is not a valid configuration.
+  *   `allowedPersistenceRegions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of IDs of Google Cloud regions where messages that are published to the topic may be persisted in storage. Messages published by publishers running in non-allowed Google Cloud regions (or running outside of Google Cloud altogether) are routed for storage in one of the allowed regions. An empty list means that no regions are allowed, and is not a valid configuration.
+  *   `enforceInTransit` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, `allowed_persistence_regions` is also used to enforce in-transit guarantees for messages. That is, Pub/Sub will fail Publish operations on this topic and subscribe operations on any subscription attached to this topic in any region that is not in `allowed_persistence_regions`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedPersistenceRegions => list(String.t()) | nil
+          :allowedPersistenceRegions => list(String.t()) | nil,
+          :enforceInTransit => boolean() | nil
         }
 
   field(:allowedPersistenceRegions, type: :list)
+  field(:enforceInTransit)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.MessageStoragePolicy do

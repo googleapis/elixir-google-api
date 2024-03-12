@@ -21,7 +21,7 @@ defmodule GoogleApi.PubSub.V1.Model.PublishResponse do
 
   ## Attributes
 
-  *   `messageIds` (*type:* `list(String.t)`, *default:* `nil`) - The server-assigned ID of each published message, in the same order as the messages in the request. IDs are guaranteed to be unique within the topic.
+  *   `messageIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The server-assigned ID of each published message, in the same order as the messages in the request. IDs are guaranteed to be unique within the topic.
   """
 
   use GoogleApi.Gax.ModelBase

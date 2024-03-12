@@ -21,26 +21,32 @@ defmodule GoogleApi.PubSub.V1.Model.BigQueryConfig do
 
   ## Attributes
 
-  *   `dropUnknownFields` (*type:* `boolean()`, *default:* `nil`) - When true and use_topic_schema is true, any fields that are a part of the topic schema that are not part of the BigQuery table schema are dropped when writing to BigQuery. Otherwise, the schemas must be kept in sync and any messages with extra fields are not written and remain in the subscription's backlog.
+  *   `dropUnknownFields` (*type:* `boolean()`, *default:* `nil`) - Optional. When true and use_topic_schema is true, any fields that are a part of the topic schema that are not part of the BigQuery table schema are dropped when writing to BigQuery. Otherwise, the schemas must be kept in sync and any messages with extra fields are not written and remain in the subscription's backlog.
+  *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Optional. The service account to use to write to BigQuery. The subscription creator or updater that specifies this field must have `iam.serviceAccounts.actAs` permission on the service account. If not specified, the Pub/Sub [service agent](https://cloud.google.com/iam/docs/service-agents), service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com, is used.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. An output-only field that indicates whether or not the subscription can receive messages.
-  *   `table` (*type:* `String.t`, *default:* `nil`) - The name of the table to which to write data, of the form {projectId}.{datasetId}.{tableId}
-  *   `useTopicSchema` (*type:* `boolean()`, *default:* `nil`) - When true, use the topic's schema as the columns to write to in BigQuery, if it exists.
-  *   `writeMetadata` (*type:* `boolean()`, *default:* `nil`) - When true, write the subscription name, message_id, publish_time, attributes, and ordering_key to additional columns in the table. The subscription name, message_id, and publish_time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column.
+  *   `table` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the table to which to write data, of the form {projectId}.{datasetId}.{tableId}
+  *   `useTableSchema` (*type:* `boolean()`, *default:* `nil`) - Optional. When true, use the BigQuery table's schema as the columns to write to in BigQuery. `use_table_schema` and `use_topic_schema` cannot be enabled at the same time.
+  *   `useTopicSchema` (*type:* `boolean()`, *default:* `nil`) - Optional. When true, use the topic's schema as the columns to write to in BigQuery, if it exists. `use_topic_schema` and `use_table_schema` cannot be enabled at the same time.
+  *   `writeMetadata` (*type:* `boolean()`, *default:* `nil`) - Optional. When true, write the subscription name, message_id, publish_time, attributes, and ordering_key to additional columns in the table. The subscription name, message_id, and publish_time fields are put in their own columns while all other message properties (other than data) are written to a JSON object in the attributes column.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dropUnknownFields => boolean() | nil,
+          :serviceAccountEmail => String.t() | nil,
           :state => String.t() | nil,
           :table => String.t() | nil,
+          :useTableSchema => boolean() | nil,
           :useTopicSchema => boolean() | nil,
           :writeMetadata => boolean() | nil
         }
 
   field(:dropUnknownFields)
+  field(:serviceAccountEmail)
   field(:state)
   field(:table)
+  field(:useTableSchema)
   field(:useTopicSchema)
   field(:writeMetadata)
 end

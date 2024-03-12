@@ -21,27 +21,33 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
 
   ## Attributes
 
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The resource name of the Cloud KMS CryptoKey to be used to protect access to messages published on this topic. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - See [Creating and managing labels] (https://cloud.google.com/pubsub/docs/labels).
-  *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last `message_retention_duration` are always available to subscribers. For instance, it allows any attached subscription to [seek to a timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) that is up to `message_retention_duration` in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes.
-  *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.
+  *   `ingestionDataSourceSettings` (*type:* `GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings.t`, *default:* `nil`) - Optional. Settings for ingestion from a data source into this topic.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the Cloud KMS CryptoKey to be used to protect access to messages published on this topic. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels] (https://cloud.google.com/pubsub/docs/labels).
+  *   `messageRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates the minimum duration to retain a message after it is published to the topic. If this field is set, messages published to the topic in the last `message_retention_duration` are always available to subscribers. For instance, it allows any attached subscription to [seek to a timestamp](https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time) that is up to `message_retention_duration` in the past. If this field is not set, message retention is controlled by settings on individual subscriptions. Cannot be more than 31 days or less than 10 minutes.
+  *   `messageStoragePolicy` (*type:* `GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t`, *default:* `nil`) - Optional. Policy constraining the set of Google Cloud Platform regions where messages published to the topic may be stored. If not present, then no constraints are in effect.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
-  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
-  *   `schemaSettings` (*type:* `GoogleApi.PubSub.V1.Model.SchemaSettings.t`, *default:* `nil`) - Settings for validating messages published against a schema.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Optional. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
+  *   `schemaSettings` (*type:* `GoogleApi.PubSub.V1.Model.SchemaSettings.t`, *default:* `nil`) - Optional. Settings for validating messages published against a schema.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. An output-only field indicating the state of the topic.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ingestionDataSourceSettings =>
+            GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings.t() | nil,
           :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :messageRetentionDuration => String.t() | nil,
           :messageStoragePolicy => GoogleApi.PubSub.V1.Model.MessageStoragePolicy.t() | nil,
           :name => String.t() | nil,
           :satisfiesPzs => boolean() | nil,
-          :schemaSettings => GoogleApi.PubSub.V1.Model.SchemaSettings.t() | nil
+          :schemaSettings => GoogleApi.PubSub.V1.Model.SchemaSettings.t() | nil,
+          :state => String.t() | nil
         }
 
+  field(:ingestionDataSourceSettings, as: GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings)
   field(:kmsKeyName)
   field(:labels, type: :map)
   field(:messageRetentionDuration)
@@ -49,6 +55,7 @@ defmodule GoogleApi.PubSub.V1.Model.Topic do
   field(:name)
   field(:satisfiesPzs)
   field(:schemaSettings, as: GoogleApi.PubSub.V1.Model.SchemaSettings)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.Topic do
