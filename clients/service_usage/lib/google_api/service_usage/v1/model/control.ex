@@ -22,15 +22,18 @@ defmodule GoogleApi.ServiceUsage.V1.Model.Control do
   ## Attributes
 
   *   `environment` (*type:* `String.t`, *default:* `nil`) - The service controller environment to use. If empty, no control plane feature (like quota and billing) will be enabled. The recommended value for most services is servicecontrol.googleapis.com
+  *   `methodPolicies` (*type:* `list(GoogleApi.ServiceUsage.V1.Model.MethodPolicy.t)`, *default:* `nil`) - Defines policies applying to the API methods of the service.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => String.t() | nil
+          :environment => String.t() | nil,
+          :methodPolicies => list(GoogleApi.ServiceUsage.V1.Model.MethodPolicy.t()) | nil
         }
 
   field(:environment)
+  field(:methodPolicies, as: GoogleApi.ServiceUsage.V1.Model.MethodPolicy, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceUsage.V1.Model.Control do
