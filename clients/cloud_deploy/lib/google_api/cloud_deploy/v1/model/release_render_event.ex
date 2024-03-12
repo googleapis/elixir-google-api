@@ -22,18 +22,27 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ReleaseRenderEvent do
   ## Attributes
 
   *   `message` (*type:* `String.t`, *default:* `nil`) - Debug message for when a render transition occurs. Provides further details as rendering progresses through render states.
-  *   `release` (*type:* `String.t`, *default:* `nil`) - The name of the `Release`.
+  *   `pipelineUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `DeliveryPipeline`.
+  *   `release` (*type:* `String.t`, *default:* `nil`) - The name of the release. release_uid is not in this log message because we write some of these log messages at release creation time, before we've generated the uid.
+  *   `releaseRenderState` (*type:* `String.t`, *default:* `nil`) - The state of the release render.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this notification, e.g. for a release render state change event.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :message => String.t() | nil,
-          :release => String.t() | nil
+          :pipelineUid => String.t() | nil,
+          :release => String.t() | nil,
+          :releaseRenderState => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:message)
+  field(:pipelineUid)
   field(:release)
+  field(:releaseRenderState)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.ReleaseRenderEvent do

@@ -17,25 +17,28 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.Release do
   @moduledoc """
-  A `Release` resource in the Google Cloud Deploy API. A `Release` defines a specific Skaffold configuration instance that can be deployed.
+  A `Release` resource in the Cloud Deploy API. A `Release` defines a specific Skaffold configuration instance that can be deployed.
 
   ## Attributes
 
   *   `abandoned` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this is an abandoned release.
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Google Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
   *   `buildArtifacts` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.BuildArtifact.t)`, *default:* `nil`) - List of artifacts to pass through to Skaffold command.
+  *   `condition` (*type:* `GoogleApi.CloudDeploy.V1.Model.ReleaseCondition.t`, *default:* `nil`) - Output only. Information around the state of the Release.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Release` was created.
+  *   `customTargetTypeSnapshots` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.CustomTargetType.t)`, *default:* `nil`) - Output only. Snapshot of the custom target types referenced by the targets taken at release creation time.
   *   `deliveryPipelineSnapshot` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline.t`, *default:* `nil`) - Output only. Snapshot of the parent pipeline taken at release creation time.
+  *   `deployParameters` (*type:* `map()`, *default:* `nil`) - Optional. The deploy parameters to use for all targets in this release.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `Release`. Max length is 255 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Google Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Release`. Format is projects/{project}/ locations/{location}/deliveryPipelines/{deliveryPipeline}/ releases/a-z{0,62}.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/a-z{0,62}`.
   *   `renderEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the render completed.
   *   `renderStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the render began.
   *   `renderState` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the render operation.
   *   `skaffoldConfigPath` (*type:* `String.t`, *default:* `nil`) - Filepath of the Skaffold config inside of the config URI.
   *   `skaffoldConfigUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage URI of tar.gz archive containing Skaffold configuration.
-  *   `skaffoldVersion` (*type:* `String.t`, *default:* `nil`) - The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Google Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used.
+  *   `skaffoldVersion` (*type:* `String.t`, *default:* `nil`) - The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used.
   *   `targetArtifacts` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.TargetArtifact.t}`, *default:* `nil`) - Output only. Map from target ID to the target artifacts created during the render operation.
   *   `targetRenders` (*type:* `%{optional(String.t) => GoogleApi.CloudDeploy.V1.Model.TargetRender.t}`, *default:* `nil`) - Output only. Map from target ID to details of the render operation for that target.
   *   `targetSnapshots` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.Target.t)`, *default:* `nil`) - Output only. Snapshot of the targets taken at release creation time.
@@ -48,8 +51,12 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
           :abandoned => boolean() | nil,
           :annotations => map() | nil,
           :buildArtifacts => list(GoogleApi.CloudDeploy.V1.Model.BuildArtifact.t()) | nil,
+          :condition => GoogleApi.CloudDeploy.V1.Model.ReleaseCondition.t() | nil,
           :createTime => DateTime.t() | nil,
+          :customTargetTypeSnapshots =>
+            list(GoogleApi.CloudDeploy.V1.Model.CustomTargetType.t()) | nil,
           :deliveryPipelineSnapshot => GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline.t() | nil,
+          :deployParameters => map() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
@@ -71,8 +78,16 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
   field(:abandoned)
   field(:annotations, type: :map)
   field(:buildArtifacts, as: GoogleApi.CloudDeploy.V1.Model.BuildArtifact, type: :list)
+  field(:condition, as: GoogleApi.CloudDeploy.V1.Model.ReleaseCondition)
   field(:createTime, as: DateTime)
+
+  field(:customTargetTypeSnapshots,
+    as: GoogleApi.CloudDeploy.V1.Model.CustomTargetType,
+    type: :list
+  )
+
   field(:deliveryPipelineSnapshot, as: GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline)
+  field(:deployParameters, type: :map)
   field(:description)
   field(:etag)
   field(:labels, type: :map)

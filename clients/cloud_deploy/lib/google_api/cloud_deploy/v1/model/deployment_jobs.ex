@@ -21,7 +21,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeploymentJobs do
 
   ## Attributes
 
-  *   `deployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.Job.t`, *default:* `nil`) - Output only. The deploy Job. This is the first job run in the phase.
+  *   `deployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.Job.t`, *default:* `nil`) - Output only. The deploy Job. This is the deploy job in the phase.
+  *   `postdeployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.Job.t`, *default:* `nil`) - Output only. The postdeploy Job, which is the last job on the phase.
+  *   `predeployJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.Job.t`, *default:* `nil`) - Output only. The predeploy Job, which is the first job on the phase.
   *   `verifyJob` (*type:* `GoogleApi.CloudDeploy.V1.Model.Job.t`, *default:* `nil`) - Output only. The verify Job. Runs after a deploy if the deploy succeeds.
   """
 
@@ -29,10 +31,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeploymentJobs do
 
   @type t :: %__MODULE__{
           :deployJob => GoogleApi.CloudDeploy.V1.Model.Job.t() | nil,
+          :postdeployJob => GoogleApi.CloudDeploy.V1.Model.Job.t() | nil,
+          :predeployJob => GoogleApi.CloudDeploy.V1.Model.Job.t() | nil,
           :verifyJob => GoogleApi.CloudDeploy.V1.Model.Job.t() | nil
         }
 
   field(:deployJob, as: GoogleApi.CloudDeploy.V1.Model.Job)
+  field(:postdeployJob, as: GoogleApi.CloudDeploy.V1.Model.Job)
+  field(:predeployJob, as: GoogleApi.CloudDeploy.V1.Model.Job)
   field(:verifyJob, as: GoogleApi.CloudDeploy.V1.Model.Job)
 end
 

@@ -24,7 +24,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRunNotificationEvent do
   *   `jobRun` (*type:* `String.t`, *default:* `nil`) - The name of the `JobRun`.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Debug message for when a notification fails to send.
   *   `pipelineUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `DeliveryPipeline`.
+  *   `release` (*type:* `String.t`, *default:* `nil`) - The name of the `Release`.
   *   `releaseUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `Release`.
+  *   `rollout` (*type:* `String.t`, *default:* `nil`) - The name of the `Rollout`.
   *   `rolloutUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `Rollout`.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - ID of the `Target`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this notification, e.g. for a Pub/Sub failure.
@@ -36,7 +38,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRunNotificationEvent do
           :jobRun => String.t() | nil,
           :message => String.t() | nil,
           :pipelineUid => String.t() | nil,
+          :release => String.t() | nil,
           :releaseUid => String.t() | nil,
+          :rollout => String.t() | nil,
           :rolloutUid => String.t() | nil,
           :targetId => String.t() | nil,
           :type => String.t() | nil
@@ -45,7 +49,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.JobRunNotificationEvent do
   field(:jobRun)
   field(:message)
   field(:pipelineUid)
+  field(:release)
   field(:releaseUid)
+  field(:rollout)
   field(:rolloutUid)
   field(:targetId)
   field(:type)

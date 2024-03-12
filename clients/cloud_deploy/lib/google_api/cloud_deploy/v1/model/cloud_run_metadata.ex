@@ -21,19 +21,22 @@ defmodule GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata do
 
   ## Attributes
 
+  *   `job` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Cloud Run job that is associated with a `Rollout`. Format is `projects/{project}/locations/{location}/jobs/{job_name}`.
   *   `revision` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Run Revision id associated with a `Rollout`.
-  *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Cloud Run Service that is associated with a `Rollout`. Format is projects/{project}/locations/{location}/services/{service}.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Cloud Run Service that is associated with a `Rollout`. Format is `projects/{project}/locations/{location}/services/{service}`.
   *   `serviceUrls` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The Cloud Run Service urls that are associated with a `Rollout`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :job => String.t() | nil,
           :revision => String.t() | nil,
           :service => String.t() | nil,
           :serviceUrls => list(String.t()) | nil
         }
 
+  field(:job)
   field(:revision)
   field(:service)
   field(:serviceUrls, type: :list)

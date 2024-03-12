@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipelineNotificationEvent do
 
   *   `deliveryPipeline` (*type:* `String.t`, *default:* `nil`) - The name of the `Delivery Pipeline`.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Debug message for when a notification fails to send.
+  *   `pipelineUid` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the `DeliveryPipeline`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of this notification, e.g. for a Pub/Sub failure.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeliveryPipelineNotificationEvent do
   @type t :: %__MODULE__{
           :deliveryPipeline => String.t() | nil,
           :message => String.t() | nil,
+          :pipelineUid => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:deliveryPipeline)
   field(:message)
+  field(:pipelineUid)
   field(:type)
 end
 

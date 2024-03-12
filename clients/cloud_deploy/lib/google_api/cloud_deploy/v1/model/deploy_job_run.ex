@@ -21,7 +21,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeployJobRun do
 
   ## Attributes
 
-  *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to deploy. Format is projects/{project}/locations/{location}/builds/{build}.
+  *   `artifact` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeployArtifact.t`, *default:* `nil`) - Output only. The artifact of a deploy job run, if available.
+  *   `build` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Cloud Build `Build` object that is used to deploy. Format is `projects/{project}/locations/{location}/builds/{build}`.
   *   `failureCause` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the deploy failed. This will always be unspecified while the deploy is in progress or if it succeeded.
   *   `failureMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the deploy failure, if available.
   *   `metadata` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata.t`, *default:* `nil`) - Output only. Metadata containing information about the deploy job run.
@@ -30,12 +31,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeployJobRun do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :artifact => GoogleApi.CloudDeploy.V1.Model.DeployArtifact.t() | nil,
           :build => String.t() | nil,
           :failureCause => String.t() | nil,
           :failureMessage => String.t() | nil,
           :metadata => GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata.t() | nil
         }
 
+  field(:artifact, as: GoogleApi.CloudDeploy.V1.Model.DeployArtifact)
   field(:build)
   field(:failureCause)
   field(:failureMessage)

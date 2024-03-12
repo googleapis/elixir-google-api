@@ -21,9 +21,9 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Config do
 
   ## Attributes
 
-  *   `defaultSkaffoldVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Default Skaffold version that is assigned when a Release is created without specifying a Skaffold version.
+  *   `defaultSkaffoldVersion` (*type:* `String.t`, *default:* `nil`) - Default Skaffold version that is assigned when a Release is created without specifying a Skaffold version.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the configuration.
-  *   `supportedVersions` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.SkaffoldVersion.t)`, *default:* `nil`) - Output only. All supported versions of Skaffold.
+  *   `supportedVersions` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.SkaffoldVersion.t)`, *default:* `nil`) - All supported versions of Skaffold.
   """
 
   use GoogleApi.Gax.ModelBase

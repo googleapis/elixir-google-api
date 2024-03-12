@@ -22,15 +22,21 @@ defmodule GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata do
   ## Attributes
 
   *   `cloudRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t`, *default:* `nil`) - Output only. The name of the Cloud Run Service that is associated with a `DeployJobRun`.
+  *   `custom` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomMetadata.t`, *default:* `nil`) - Output only. Custom metadata provided by user-defined deploy operation.
+  *   `customTarget` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomTargetDeployMetadata.t`, *default:* `nil`) - Output only. Custom Target metadata associated with a `DeployJobRun`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRun => GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t() | nil
+          :cloudRun => GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t() | nil,
+          :custom => GoogleApi.CloudDeploy.V1.Model.CustomMetadata.t() | nil,
+          :customTarget => GoogleApi.CloudDeploy.V1.Model.CustomTargetDeployMetadata.t() | nil
         }
 
   field(:cloudRun, as: GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata)
+  field(:custom, as: GoogleApi.CloudDeploy.V1.Model.CustomMetadata)
+  field(:customTarget, as: GoogleApi.CloudDeploy.V1.Model.CustomTargetDeployMetadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.DeployJobRunMetadata do

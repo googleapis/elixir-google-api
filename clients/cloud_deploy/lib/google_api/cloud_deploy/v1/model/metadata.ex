@@ -21,16 +21,22 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Metadata do
 
   ## Attributes
 
+  *   `automation` (*type:* `GoogleApi.CloudDeploy.V1.Model.AutomationRolloutMetadata.t`, *default:* `nil`) - Output only. AutomationRolloutMetadata contains the information about the interactions between Automation service and this rollout.
   *   `cloudRun` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t`, *default:* `nil`) - Output only. The name of the Cloud Run Service that is associated with a `Rollout`.
+  *   `custom` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomMetadata.t`, *default:* `nil`) - Output only. Custom metadata provided by user-defined `Rollout` operations.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cloudRun => GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t() | nil
+          :automation => GoogleApi.CloudDeploy.V1.Model.AutomationRolloutMetadata.t() | nil,
+          :cloudRun => GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata.t() | nil,
+          :custom => GoogleApi.CloudDeploy.V1.Model.CustomMetadata.t() | nil
         }
 
+  field(:automation, as: GoogleApi.CloudDeploy.V1.Model.AutomationRolloutMetadata)
   field(:cloudRun, as: GoogleApi.CloudDeploy.V1.Model.CloudRunMetadata)
+  field(:custom, as: GoogleApi.CloudDeploy.V1.Model.CustomMetadata)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.Metadata do
