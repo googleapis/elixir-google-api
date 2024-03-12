@@ -22,11 +22,14 @@ defmodule GoogleApi.Logging.V2.Model.CopyLogEntriesMetadata do
   ## Attributes
 
   *   `cancellationRequested` (*type:* `boolean()`, *default:* `nil`) - Identifies whether the user has requested cancellation of the operation.
+  *   `destination` (*type:* `String.t`, *default:* `nil`) - Destination to which to copy log entries.For example, a Cloud Storage bucket:"storage.googleapis.com/my-cloud-storage-bucket"
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The end time of an operation.
   *   `progress` (*type:* `integer()`, *default:* `nil`) - Estimated progress of the operation (0 - 100%).
-  *   `request` (*type:* `GoogleApi.Logging.V2.Model.CopyLogEntriesRequest.t`, *default:* `nil`) - CopyLogEntries RPC request.
+  *   `request` (*type:* `GoogleApi.Logging.V2.Model.CopyLogEntriesRequest.t`, *default:* `nil`) - CopyLogEntries RPC request. This field is deprecated and not used.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - Source from which to copy log entries.For example, a log bucket:"projects/my-project/locations/global/buckets/my-source-bucket"
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The create time of an operation.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - State of an operation.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of an operation.
+  *   `verb` (*type:* `String.t`, *default:* `nil`) - Name of the verb executed by the operation.For example,"copy"
   *   `writerIdentity` (*type:* `String.t`, *default:* `nil`) - The IAM identity of a service account that must be granted access to the destination.If the service account is not granted permission to the destination within an hour, the operation will be cancelled.For example: "serviceAccount:foo@bar.com"
   """
 
@@ -34,20 +37,26 @@ defmodule GoogleApi.Logging.V2.Model.CopyLogEntriesMetadata do
 
   @type t :: %__MODULE__{
           :cancellationRequested => boolean() | nil,
+          :destination => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :progress => integer() | nil,
           :request => GoogleApi.Logging.V2.Model.CopyLogEntriesRequest.t() | nil,
+          :source => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :verb => String.t() | nil,
           :writerIdentity => String.t() | nil
         }
 
   field(:cancellationRequested)
+  field(:destination)
   field(:endTime, as: DateTime)
   field(:progress)
   field(:request, as: GoogleApi.Logging.V2.Model.CopyLogEntriesRequest)
+  field(:source)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:verb)
   field(:writerIdentity)
 end
 
