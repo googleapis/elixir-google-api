@@ -48,7 +48,7 @@ defmodule GoogleApi.MyBusinessAccountManagement.Mixfile do
 
   defp description() do
     """
-    My Business Account Management API client library. The My Business Account Management API provides an interface for managing access to a location on Google.
+    My Business Account Management API client library. The My Business Account Management API provides an interface for managing access to a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 
