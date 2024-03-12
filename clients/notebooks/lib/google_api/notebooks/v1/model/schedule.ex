@@ -22,9 +22,9 @@ defmodule GoogleApi.Notebooks.V1.Model.Schedule do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the schedule was created.
-  *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Cron-tab formatted schedule by which the job will execute. Format: minute, hour, day of month, month, day of week, e.g. 0 0 * * WED = every Wednesday More examples: https://crontab.guru/examples.html
+  *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Cron-tab formatted schedule by which the job will execute. Format: minute, hour, day of month, month, day of week, e.g. `0 0 * * WED` = every Wednesday More examples: https://crontab.guru/examples.html
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of this environment.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name used for UI purposes. Name can only contain alphanumeric characters, hyphens '-', and underscores '_'.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name used for UI purposes. Name can only contain alphanumeric characters, hyphens `-`, and underscores `_`.
   *   `executionTemplate` (*type:* `GoogleApi.Notebooks.V1.Model.ExecutionTemplate.t`, *default:* `nil`) - Notebook Execution Template corresponding to this schedule.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this schedule. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
   *   `recentExecutions` (*type:* `list(GoogleApi.Notebooks.V1.Model.Execution.t)`, *default:* `nil`) - Output only. The most recent execution names triggered from this schedule and their corresponding states.

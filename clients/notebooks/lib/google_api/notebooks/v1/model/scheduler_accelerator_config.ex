@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Notebooks.V1.Model.SchedulerAcceleratorConfig do
   @moduledoc """
-  Definition of a hardware accelerator. Note that not all combinations of `type` and `core_count` are valid. Check [GPUs on Compute Engine](https://cloud.google.com/compute/docs/gpus) to find a valid combination. TPUs are not supported.
+  Definition of a hardware accelerator. Note that not all combinations of `type` and `core_count` are valid. See [GPUs on Compute Engine](https://cloud.google.com/compute/docs/gpus) to find a valid combination. TPUs are not supported.
 
   ## Attributes
 

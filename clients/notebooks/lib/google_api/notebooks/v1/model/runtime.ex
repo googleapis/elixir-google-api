@@ -24,8 +24,11 @@ defmodule GoogleApi.Notebooks.V1.Model.Runtime do
   *   `accessConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeAccessConfig.t`, *default:* `nil`) - The config settings for accessing runtime.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Runtime creation time.
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Output only. Runtime health_state.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this Managed Notebook or Runtime. Label **keys** must contain 1 to 63 characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). Label **values** may be empty, but, if present, must contain 1 to 63 characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster.
   *   `metrics` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeMetrics.t`, *default:* `nil`) - Output only. Contains Runtime daemon metrics such as Service status and JupyterLab stats.
+  *   `migrated` (*type:* `boolean()`, *default:* `nil`) - Output only. Bool indicating whether this notebook has been migrated to a Workbench Instance
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the runtime. Format: `projects/{project}/locations/{location}/runtimes/{runtimeId}`
+  *   `runtimeMigrationEligibility` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeMigrationEligibility.t`, *default:* `nil`) - Output only. Checks how feasible a migration from GmN to WbI is.
   *   `softwareConfig` (*type:* `GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig.t`, *default:* `nil`) - The config settings for software inside the runtime.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Runtime state.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Runtime update time.
@@ -38,8 +41,12 @@ defmodule GoogleApi.Notebooks.V1.Model.Runtime do
           :accessConfig => GoogleApi.Notebooks.V1.Model.RuntimeAccessConfig.t() | nil,
           :createTime => DateTime.t() | nil,
           :healthState => String.t() | nil,
+          :labels => map() | nil,
           :metrics => GoogleApi.Notebooks.V1.Model.RuntimeMetrics.t() | nil,
+          :migrated => boolean() | nil,
           :name => String.t() | nil,
+          :runtimeMigrationEligibility =>
+            GoogleApi.Notebooks.V1.Model.RuntimeMigrationEligibility.t() | nil,
           :softwareConfig => GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -49,8 +56,13 @@ defmodule GoogleApi.Notebooks.V1.Model.Runtime do
   field(:accessConfig, as: GoogleApi.Notebooks.V1.Model.RuntimeAccessConfig)
   field(:createTime, as: DateTime)
   field(:healthState)
+  field(:labels, type: :map)
   field(:metrics, as: GoogleApi.Notebooks.V1.Model.RuntimeMetrics)
+  field(:migrated)
   field(:name)
+
+  field(:runtimeMigrationEligibility, as: GoogleApi.Notebooks.V1.Model.RuntimeMigrationEligibility)
+
   field(:softwareConfig, as: GoogleApi.Notebooks.V1.Model.RuntimeSoftwareConfig)
   field(:state)
   field(:updateTime, as: DateTime)

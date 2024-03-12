@@ -21,7 +21,7 @@ defmodule GoogleApi.Notebooks.V1.Model.SetInstanceAcceleratorRequest do
 
   ## Attributes
 
-  *   `coreCount` (*type:* `String.t`, *default:* `nil`) - Required. Count of cores of this accelerator. Note that not all combinations of `type` and `core_count` are valid. Check [GPUs on Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a valid combination. TPUs are not supported.
+  *   `coreCount` (*type:* `String.t`, *default:* `nil`) - Required. Count of cores of this accelerator. Note that not all combinations of `type` and `core_count` are valid. See [GPUs on Compute Engine](https://cloud.google.com/compute/docs/gpus/#gpus-list) to find a valid combination. TPUs are not supported.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of this accelerator.
   """
 
