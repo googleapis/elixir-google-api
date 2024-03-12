@@ -2,7 +2,7 @@
 
 Google Play Integrity API client library.
 
-Play Integrity
+The Play Integrity API helps you check that you're interacting with your genuine app on a genuine Android device powered by Google Play services. The Play Integrity API has replaced SafetyNet Attestation and Android Device Verification.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_play_integrity, "~> 0.6"}]
+  [{:google_api_play_integrity, "~> 0.7"}]
 end
 ```
 

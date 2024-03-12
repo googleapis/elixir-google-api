@@ -18,7 +18,7 @@
 defmodule GoogleApi.PlayIntegrity.Mixfile do
   use Mix.Project
 
-  @version "0.6.0"
+  @version "0.7.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.PlayIntegrity.Mixfile do
 
   defp description() do
     """
-    Google Play Integrity API client library. Play Integrity
+    Google Play Integrity API client library. The Play Integrity API helps you check that you're interacting with your genuine app on a genuine Android device powered by Google Play services. The Play Integrity API has replaced SafetyNet Attestation and Android Device Verification.
     """
   end
 
