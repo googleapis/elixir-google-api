@@ -21,6 +21,7 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseResult do
 
   ## Attributes
 
+  *   `attestedDeviceId` (*type:* `String.t`, *default:* `nil`) - Attested device id (ADID) of the device, read from the verified data.
   *   `deviceEnrollmentId` (*type:* `String.t`, *default:* `nil`) - Device enrollment id is returned in this field (for the machine response only).
   *   `devicePermanentId` (*type:* `String.t`, *default:* `nil`) - Device permanent id is returned in this field (for the machine response only).
   *   `signedPublicKeyAndChallenge` (*type:* `String.t`, *default:* `nil`) - Certificate Signing Request (in the SPKAC format, base64 encoded) is returned in this field. This field will be set only if device has included CSR in its challenge response. (the option to include CSR is now available for both user and machine responses)
@@ -30,12 +31,14 @@ defmodule GoogleApi.VerifiedAccess.V1.Model.VerifyChallengeResponseResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :attestedDeviceId => String.t() | nil,
           :deviceEnrollmentId => String.t() | nil,
           :devicePermanentId => String.t() | nil,
           :signedPublicKeyAndChallenge => String.t() | nil,
           :verificationOutput => String.t() | nil
         }
 
+  field(:attestedDeviceId)
   field(:deviceEnrollmentId)
   field(:devicePermanentId)
   field(:signedPublicKeyAndChallenge)
