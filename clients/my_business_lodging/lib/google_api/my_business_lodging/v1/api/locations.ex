@@ -172,7 +172,7 @@ defmodule GoogleApi.MyBusinessLodging.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.MyBusinessLodging.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Google identifier for this location in the form: `accounts/{account_id}/locations/{location_id}/lodging`
+  *   `name` (*type:* `String.t`) - Required. Google identifier for this location in the form: `locations/{location_id}/lodging`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
