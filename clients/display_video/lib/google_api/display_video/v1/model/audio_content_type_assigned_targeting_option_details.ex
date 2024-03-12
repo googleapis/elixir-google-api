@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.AudioContentTypeAssignedTargetingOptio
 
   ## Attributes
 
-  *   `audioContentType` (*type:* `String.t`, *default:* `nil`) - The audio content type. Output only in v1. Required in v2.
+  *   `audioContentType` (*type:* `String.t`, *default:* `nil`) - Required. The audio content type.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_AUDIO_CONTENT_TYPE`.
   """
 

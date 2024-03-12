@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.GenderAssignedTargetingOptionDetails d
 
   ## Attributes
 
-  *   `gender` (*type:* `String.t`, *default:* `nil`) - The gender of the audience. Output only in v1. Required in v2.
+  *   `gender` (*type:* `String.t`, *default:* `nil`) - Required. The gender of the audience.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_GENDER`.
   """
 

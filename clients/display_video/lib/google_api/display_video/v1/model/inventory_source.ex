@@ -38,7 +38,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
   *   `readPartnerIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of partners with read-only access to the inventory source. All advertisers of partners in this field inherit read-only access to the inventory source.
   *   `readWriteAccessors` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceAccessors.t`, *default:* `nil`) - The partner or advertisers that have read/write access to the inventory source. Output only when commitment is `INVENTORY_SOURCE_COMMITMENT_GUARANTEED`, in which case the read/write accessors are inherited from the parent guaranteed order. Required when commitment is `INVENTORY_SOURCE_COMMITMENT_NON_GUARANTEED`. If commitment is `INVENTORY_SOURCE_COMMITMENT_NON_GUARANTEED` and a partner is set in this field, all advertisers under this partner will automatically have read-only access to the inventory source. These advertisers will not be included in read_advertiser_ids.
   *   `status` (*type:* `GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus.t`, *default:* `nil`) - The status settings of the inventory source.
-  *   `subSitePropertyId` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique ID of the sub-site property assigned to this inventory source.
   *   `timeRange` (*type:* `GoogleApi.DisplayVideo.V1.Model.TimeRange.t`, *default:* `nil`) - The time range when this inventory source starts and stops serving.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the inventory source was last updated. Assigned by the system.
   """
@@ -64,7 +63,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
           :readWriteAccessors =>
             GoogleApi.DisplayVideo.V1.Model.InventorySourceAccessors.t() | nil,
           :status => GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus.t() | nil,
-          :subSitePropertyId => String.t() | nil,
           :timeRange => GoogleApi.DisplayVideo.V1.Model.TimeRange.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -86,7 +84,6 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InventorySource do
   field(:readPartnerIds, type: :list)
   field(:readWriteAccessors, as: GoogleApi.DisplayVideo.V1.Model.InventorySourceAccessors)
   field(:status, as: GoogleApi.DisplayVideo.V1.Model.InventorySourceStatus)
-  field(:subSitePropertyId)
   field(:timeRange, as: GoogleApi.DisplayVideo.V1.Model.TimeRange)
   field(:updateTime, as: DateTime)
 end

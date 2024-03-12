@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BulkListCampaignAssignedTargetingOptionsResponse do
   @moduledoc """
-  Response message for BulkListCampaignAssignedTargetingOptions.
+
 
   ## Attributes
 

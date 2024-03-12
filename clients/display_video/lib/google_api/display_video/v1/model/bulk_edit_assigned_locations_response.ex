@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BulkEditAssignedLocationsResponse do
   @moduledoc """
-  Response message for AssignedLocationService.BulkEditAssignedLocations.
+
 
   ## Attributes
 

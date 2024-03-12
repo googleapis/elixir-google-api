@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.EnvironmentAssignedTargetingOptionDeta
 
   ## Attributes
 
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - The serving environment. Output only in v1. Required in v2.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - Required. The serving environment.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_ENVIRONMENT` (e.g., "508010" for targeting the `ENVIRONMENT_WEB_OPTIMIZED` option).
   """
 

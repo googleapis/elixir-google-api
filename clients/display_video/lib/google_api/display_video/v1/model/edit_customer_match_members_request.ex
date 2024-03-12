@@ -24,6 +24,8 @@ defmodule GoogleApi.DisplayVideo.V1.Model.EditCustomerMatchMembersRequest do
   *   `addedContactInfoList` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t`, *default:* `nil`) - Input only. A list of contact information to define the members to be added.
   *   `addedMobileDeviceIdList` (*type:* `GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t`, *default:* `nil`) - Input only. A list of mobile device IDs to define the members to be added.
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the owner advertiser of the updated Customer Match FirstAndThirdPartyAudience.
+  *   `removedContactInfoList` (*type:* `GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t`, *default:* `nil`) - Input only. A list of contact information to define the members to be removed.
+  *   `removedMobileDeviceIdList` (*type:* `GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t`, *default:* `nil`) - Input only. A list of mobile device IDs to define the members to be removed.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +34,17 @@ defmodule GoogleApi.DisplayVideo.V1.Model.EditCustomerMatchMembersRequest do
           :addedContactInfoList => GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t() | nil,
           :addedMobileDeviceIdList =>
             GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t() | nil,
-          :advertiserId => String.t() | nil
+          :advertiserId => String.t() | nil,
+          :removedContactInfoList => GoogleApi.DisplayVideo.V1.Model.ContactInfoList.t() | nil,
+          :removedMobileDeviceIdList =>
+            GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList.t() | nil
         }
 
   field(:addedContactInfoList, as: GoogleApi.DisplayVideo.V1.Model.ContactInfoList)
   field(:addedMobileDeviceIdList, as: GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList)
   field(:advertiserId)
+  field(:removedContactInfoList, as: GoogleApi.DisplayVideo.V1.Model.ContactInfoList)
+  field(:removedMobileDeviceIdList, as: GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DisplayVideo.V1.Model.EditCustomerMatchMembersRequest do

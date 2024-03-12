@@ -21,15 +21,18 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ContactInfoList do
 
   ## Attributes
 
+  *   `consent` (*type:* `GoogleApi.DisplayVideo.V1.Model.Consent.t`, *default:* `nil`) - Input only. The consent setting for the users in contact_infos. Leaving this field unset indicates that consent is not specified. If ad_user_data or ad_personalization fields are set to `CONSENT_STATUS_DENIED`, the request will return an error.
   *   `contactInfos` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ContactInfo.t)`, *default:* `nil`) - A list of ContactInfo objects defining Customer Match audience members. The size of members after splitting the contact_infos mustn't be greater than 500,000.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :consent => GoogleApi.DisplayVideo.V1.Model.Consent.t() | nil,
           :contactInfos => list(GoogleApi.DisplayVideo.V1.Model.ContactInfo.t()) | nil
         }
 
+  field(:consent, as: GoogleApi.DisplayVideo.V1.Model.Consent)
   field(:contactInfos, as: GoogleApi.DisplayVideo.V1.Model.ContactInfo, type: :list)
 end
 

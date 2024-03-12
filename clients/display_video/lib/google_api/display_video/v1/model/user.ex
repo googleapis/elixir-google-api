@@ -24,6 +24,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.User do
   *   `assignedUserRoles` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t)`, *default:* `nil`) - The assigned user roles. Required in CreateUser. Output only in UpdateUser. Can only be updated through BulkEditAssignedUserRoles.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the user. Must be UTF-8 encoded with a maximum size of 240 bytes.
   *   `email` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The email address used to identify the user.
+  *   `lastLoginTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the user last logged in DV360 UI.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the user.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the user. Assigned by the system.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.User do
           :assignedUserRoles => list(GoogleApi.DisplayVideo.V1.Model.AssignedUserRole.t()) | nil,
           :displayName => String.t() | nil,
           :email => String.t() | nil,
+          :lastLoginTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :userId => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.User do
   field(:assignedUserRoles, as: GoogleApi.DisplayVideo.V1.Model.AssignedUserRole, type: :list)
   field(:displayName)
   field(:email)
+  field(:lastLoginTime, as: DateTime)
   field(:name)
   field(:userId)
 end
