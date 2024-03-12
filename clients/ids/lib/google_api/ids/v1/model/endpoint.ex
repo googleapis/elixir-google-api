@@ -30,6 +30,7 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
   *   `network` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified URL of the network to which the IDS Endpoint is attached.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Required. Lowest threat severity that this endpoint will alert on.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the endpoint.
+  *   `threatExceptions` (*type:* `list(String.t)`, *default:* `nil`) - List of threat IDs to be excepted from generating alerts.
   *   `trafficLogs` (*type:* `boolean()`, *default:* `nil`) - Whether the endpoint should report traffic logs in addition to threat logs.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update time timestamp.
   """
@@ -46,6 +47,7 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
           :network => String.t() | nil,
           :severity => String.t() | nil,
           :state => String.t() | nil,
+          :threatExceptions => list(String.t()) | nil,
           :trafficLogs => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -59,6 +61,7 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
   field(:network)
   field(:severity)
   field(:state)
+  field(:threatExceptions, type: :list)
   field(:trafficLogs)
   field(:updateTime, as: DateTime)
 end
