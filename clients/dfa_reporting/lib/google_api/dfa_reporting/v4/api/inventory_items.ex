@@ -91,11 +91,11 @@ defmodule GoogleApi.DFAReporting.V4.Api.InventoryItems do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/projects/{projectId}/inventoryItems/{id}",
+        "/dfareporting/v4/userprofiles/{+profileId}/projects/{projectId}/inventoryItems/{+id}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-          "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -187,7 +187,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.InventoryItems do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/projects/{projectId}/inventoryItems",
+        "/dfareporting/v4/userprofiles/{+profileId}/projects/{projectId}/inventoryItems",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)

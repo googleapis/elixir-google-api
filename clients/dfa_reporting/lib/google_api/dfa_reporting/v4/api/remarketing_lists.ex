@@ -87,9 +87,9 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingLists/{id}", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingLists/{+id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -160,7 +160,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingLists", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingLists", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -178,7 +178,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `advertiser_id` (*type:* `String.t`) - Select only remarketing lists owned by this advertiser.
+  *   `advertiser_id` (*type:* `String.t`) - Required. Select only remarketing lists owned by this advertiser.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -247,7 +247,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingLists", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingLists", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :advertiserId, advertiser_id)
@@ -262,13 +262,13 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
   end
 
   @doc """
-  Updates an existing remarketing list. This method supports patch semantics.
+  Updates an existing RemarketingList. This method supports patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `id` (*type:* `String.t`) - RemarketingList ID.
+  *   `id` (*type:* `String.t`) - Required. RemarketingList ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -325,7 +325,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingLists", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingLists", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :id, id)
@@ -398,7 +398,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingLists", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingLists", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

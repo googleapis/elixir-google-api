@@ -74,7 +74,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Metros do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/metros", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/metros", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

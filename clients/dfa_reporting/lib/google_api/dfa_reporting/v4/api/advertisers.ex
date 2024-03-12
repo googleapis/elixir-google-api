@@ -81,9 +81,9 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/advertisers/{id}", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/advertisers/{+id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -144,7 +144,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/advertisers", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/advertisers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -228,7 +228,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/advertisers", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/advertisers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -248,7 +248,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `id` (*type:* `String.t`) - Advertiser ID.
+  *   `id` (*type:* `String.t`) - Required. Advertiser ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -305,7 +305,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/advertisers", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/advertisers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :id, id)
@@ -368,7 +368,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Advertisers do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/advertisers", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/advertisers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

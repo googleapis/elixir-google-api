@@ -87,9 +87,9 @@ defmodule GoogleApi.DFAReporting.V4.Api.PostalCodes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/postalCodes/{code}", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/postalCodes/{+code}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "code" => URI.encode(code, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "code" => URI.encode(code, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -148,7 +148,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.PostalCodes do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/postalCodes", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/postalCodes", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

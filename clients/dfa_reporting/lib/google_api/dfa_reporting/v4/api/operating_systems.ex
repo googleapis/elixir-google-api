@@ -87,9 +87,9 @@ defmodule GoogleApi.DFAReporting.V4.Api.OperatingSystems do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/operatingSystems/{dartId}", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/operatingSystems/{+dartId}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "dartId" => URI.encode(dart_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "dartId" => URI.encode(dart_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -153,7 +153,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.OperatingSystems do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/operatingSystems", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/operatingSystems", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

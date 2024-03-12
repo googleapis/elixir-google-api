@@ -29,6 +29,8 @@ defmodule GoogleApi.DFAReporting.V35.Model.CreativeAssetMetadata do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Numeric ID of the asset. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V35.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the numeric ID of the asset. This is a read-only, auto-generated field.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#creativeAssetMetadata".
+  *   `mediaRequestInfo` (*type:* `GoogleApi.DFAReporting.V35.Model.MediaRequestInfo.t`, *default:* `nil`) - 
+  *   `mediaResponseInfo` (*type:* `GoogleApi.DFAReporting.V35.Model.MediaResponseInfo.t`, *default:* `nil`) - 
   *   `richMedia` (*type:* `boolean()`, *default:* `nil`) - True if the uploaded asset is a rich media asset. This is a read-only, auto-generated field.
   *   `timerCustomEvents` (*type:* `list(GoogleApi.DFAReporting.V35.Model.CreativeCustomEvent.t)`, *default:* `nil`) - List of timer events configured for the asset. This is a read-only, auto-generated field and only applicable to a rich media asset.
   *   `warnedValidationRules` (*type:* `list(String.t)`, *default:* `nil`) - Rules validated during code generation that generated a warning. This is a read-only, auto-generated field. Possible values are: - "ADMOB_REFERENCED" - "ASSET_FORMAT_UNSUPPORTED_DCM" - "ASSET_INVALID" - "CLICK_TAG_HARD_CODED" - "CLICK_TAG_INVALID" - "CLICK_TAG_IN_GWD" - "CLICK_TAG_MISSING" - "CLICK_TAG_MORE_THAN_ONE" - "CLICK_TAG_NON_TOP_LEVEL" - "COMPONENT_UNSUPPORTED_DCM" - "ENABLER_UNSUPPORTED_METHOD_DCM" - "EXTERNAL_FILE_REFERENCED" - "FILE_DETAIL_EMPTY" - "FILE_TYPE_INVALID" - "GWD_PROPERTIES_INVALID" - "HTML5_FEATURE_UNSUPPORTED" - "LINKED_FILE_NOT_FOUND" - "MAX_FLASH_VERSION_11" - "MRAID_REFERENCED" - "NOT_SSL_COMPLIANT" - "ORPHANED_ASSET" - "PRIMARY_HTML_MISSING" - "SVG_INVALID" - "ZIP_INVALID" 
@@ -47,6 +49,8 @@ defmodule GoogleApi.DFAReporting.V35.Model.CreativeAssetMetadata do
           :id => String.t() | nil,
           :idDimensionValue => GoogleApi.DFAReporting.V35.Model.DimensionValue.t() | nil,
           :kind => String.t() | nil,
+          :mediaRequestInfo => GoogleApi.DFAReporting.V35.Model.MediaRequestInfo.t() | nil,
+          :mediaResponseInfo => GoogleApi.DFAReporting.V35.Model.MediaResponseInfo.t() | nil,
           :richMedia => boolean() | nil,
           :timerCustomEvents =>
             list(GoogleApi.DFAReporting.V35.Model.CreativeCustomEvent.t()) | nil,
@@ -66,6 +70,8 @@ defmodule GoogleApi.DFAReporting.V35.Model.CreativeAssetMetadata do
   field(:id)
   field(:idDimensionValue, as: GoogleApi.DFAReporting.V35.Model.DimensionValue)
   field(:kind)
+  field(:mediaRequestInfo, as: GoogleApi.DFAReporting.V35.Model.MediaRequestInfo)
+  field(:mediaResponseInfo, as: GoogleApi.DFAReporting.V35.Model.MediaResponseInfo)
   field(:richMedia)
   field(:timerCustomEvents, as: GoogleApi.DFAReporting.V35.Model.CreativeCustomEvent, type: :list)
   field(:warnedValidationRules, type: :list)

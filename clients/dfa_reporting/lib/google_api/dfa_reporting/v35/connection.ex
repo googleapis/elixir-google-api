@@ -24,12 +24,6 @@ defmodule GoogleApi.DFAReporting.V35.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage DoubleClick Digital Marketing conversions
-      "https://www.googleapis.com/auth/ddmconversions",
-
-      # View and manage DoubleClick for Advertisers reports
-      "https://www.googleapis.com/auth/dfareporting",
-
       # View and manage your DoubleClick Campaign Manager's (DCM) display ad campaigns
       "https://www.googleapis.com/auth/dfatrafficking"
     ],

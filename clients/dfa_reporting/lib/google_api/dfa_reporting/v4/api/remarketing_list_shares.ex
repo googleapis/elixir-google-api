@@ -88,11 +88,10 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingListShares do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/remarketingListShares/{remarketingListId}",
+        "/dfareporting/v4/userprofiles/{+profileId}/remarketingListShares/{+remarketingListId}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "remarketingListId" =>
-            URI.encode(remarketing_list_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "remarketingListId" => URI.encode(remarketing_list_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -104,13 +103,13 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingListShares do
   end
 
   @doc """
-  Updates an existing remarketing list share. This method supports patch semantics.
+  Updates an existing RemarketingListShare. This method supports patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `id` (*type:* `String.t`) - RemarketingList ID.
+  *   `id` (*type:* `String.t`) - Required. RemarketingList ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -167,7 +166,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingListShares do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingListShares", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingListShares", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :id, id)
@@ -240,7 +239,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingListShares do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/remarketingListShares", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/remarketingListShares", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

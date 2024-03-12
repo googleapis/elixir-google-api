@@ -28,6 +28,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.ReportSchedule do
   *   `repeatsOnWeekDays` (*type:* `list(String.t)`, *default:* `nil`) - List of week days "WEEKLY" on which scheduled reports should run.
   *   `runsOnDayOfMonth` (*type:* `String.t`, *default:* `nil`) - Enum to define for "MONTHLY" scheduled reports whether reports should be repeated on the same day of the month as "startDate" or the same day of the week of the month. Example: If 'startDate' is Monday, April 2nd 2012 (2012-04-02), "DAY_OF_MONTH" would run subsequent reports on the 2nd of every Month, and "WEEK_OF_MONTH" would run subsequent reports on the first Monday of the month.
   *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
+  *   `timezone` (*type:* `String.t`, *default:* `nil`) - The timezone when the report will run.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.DFAReporting.V4.Model.ReportSchedule do
           :repeats => String.t() | nil,
           :repeatsOnWeekDays => list(String.t()) | nil,
           :runsOnDayOfMonth => String.t() | nil,
-          :startDate => Date.t() | nil
+          :startDate => Date.t() | nil,
+          :timezone => String.t() | nil
         }
 
   field(:active)
@@ -49,6 +51,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.ReportSchedule do
   field(:repeatsOnWeekDays, type: :list)
   field(:runsOnDayOfMonth)
   field(:startDate, as: Date)
+  field(:timezone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DFAReporting.V4.Model.ReportSchedule do

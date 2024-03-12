@@ -29,6 +29,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
   *   `keyName` (*type:* `String.t`, *default:* `nil`) - Key name of this placement. This is a read-only, auto-generated field.
   *   `subaccountId` (*type:* `String.t`, *default:* `nil`) - Subaccount ID of this placement. This field can be left blank.
   *   `lastModifiedInfo` (*type:* `GoogleApi.DFAReporting.V4.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the most recent modification of this placement. This is a read-only field.
+  *   `conversionDomainOverride` (*type:* `GoogleApi.DFAReporting.V4.Model.PlacementConversionDomainOverride.t`, *default:* `nil`) - Optional. Conversion domain overrides for a placement.
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this placement. This field can be left blank.
   *   `advertiserIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V4.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the advertiser. This is a read-only, auto-generated field.
   *   `publisherUpdateInfo` (*type:* `GoogleApi.DFAReporting.V4.Model.LastModifiedInfo.t`, *default:* `nil`) - Information about the last publisher update. This is a read-only field.
@@ -77,6 +78,8 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
           :keyName => String.t() | nil,
           :subaccountId => String.t() | nil,
           :lastModifiedInfo => GoogleApi.DFAReporting.V4.Model.LastModifiedInfo.t() | nil,
+          :conversionDomainOverride =>
+            GoogleApi.DFAReporting.V4.Model.PlacementConversionDomainOverride.t() | nil,
           :accountId => String.t() | nil,
           :advertiserIdDimensionValue => GoogleApi.DFAReporting.V4.Model.DimensionValue.t() | nil,
           :publisherUpdateInfo => GoogleApi.DFAReporting.V4.Model.LastModifiedInfo.t() | nil,
@@ -126,6 +129,11 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
   field(:keyName)
   field(:subaccountId)
   field(:lastModifiedInfo, as: GoogleApi.DFAReporting.V4.Model.LastModifiedInfo)
+
+  field(:conversionDomainOverride,
+    as: GoogleApi.DFAReporting.V4.Model.PlacementConversionDomainOverride
+  )
+
   field(:accountId)
   field(:advertiserIdDimensionValue, as: GoogleApi.DFAReporting.V4.Model.DimensionValue)
   field(:publisherUpdateInfo, as: GoogleApi.DFAReporting.V4.Model.LastModifiedInfo)

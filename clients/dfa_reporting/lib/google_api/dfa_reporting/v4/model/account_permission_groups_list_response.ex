@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.AccountPermissionGroupsListResponse do
   ## Attributes
 
   *   `accountPermissionGroups` (*type:* `list(GoogleApi.DFAReporting.V4.Model.AccountPermissionGroup.t)`, *default:* `nil`) - Account permission group collection.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroupsListResponse".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountPermissionGroupGroupsListResponse".
   """
 
   use GoogleApi.Gax.ModelBase

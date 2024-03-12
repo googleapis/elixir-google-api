@@ -88,7 +88,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.BillingRates do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/billingProfiles/{billingProfileId}/billingRates",
+        "/dfareporting/v4/userprofiles/{+profileId}/billingProfiles/{+billingProfileId}/billingRates",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "billingProfileId" => URI.encode(billing_profile_id, &URI.char_unreserved?/1)

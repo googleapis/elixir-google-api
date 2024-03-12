@@ -90,7 +90,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.BillingAssignments do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/billingProfiles/{billingProfileId}/billingAssignments",
+        "/dfareporting/v4/userprofiles/{+profileId}/billingProfiles/{+billingProfileId}/billingAssignments",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "billingProfileId" => URI.encode(billing_profile_id, &URI.char_unreserved?/1)
@@ -167,7 +167,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.BillingAssignments do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/billingProfiles/{billingProfileId}/billingAssignments",
+        "/dfareporting/v4/userprofiles/{+profileId}/billingProfiles/{+billingProfileId}/billingAssignments",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "billingProfileId" => URI.encode(billing_profile_id, &URI.char_unreserved?/1)

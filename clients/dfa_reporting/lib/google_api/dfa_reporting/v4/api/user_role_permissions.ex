@@ -87,9 +87,9 @@ defmodule GoogleApi.DFAReporting.V4.Api.UserRolePermissions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/userRolePermissions/{id}", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/userRolePermissions/{+id}", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-        "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "id" => URI.encode(id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -160,7 +160,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.UserRolePermissions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/userRolePermissions", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/userRolePermissions", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

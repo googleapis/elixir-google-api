@@ -88,10 +88,10 @@ defmodule GoogleApi.DFAReporting.V4.Api.TargetableRemarketingLists do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/targetableRemarketingLists/{id}",
+        "/dfareporting/v4/userprofiles/{+profileId}/targetableRemarketingLists/{+id}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -111,7 +111,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.TargetableRemarketingLists do
 
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
-  *   `advertiser_id` (*type:* `String.t`) - Select only targetable remarketing lists targetable by these advertisers.
+  *   `advertiser_id` (*type:* `String.t`) - Required. Select only targetable remarketing lists targetable by these advertisers.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -178,7 +178,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.TargetableRemarketingLists do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/targetableRemarketingLists", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/targetableRemarketingLists", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :advertiserId, advertiser_id)

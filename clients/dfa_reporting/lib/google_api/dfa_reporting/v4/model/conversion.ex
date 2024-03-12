@@ -21,6 +21,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
 
   ## Attributes
 
+  *   `adUserDataConsent` (*type:* `String.t`, *default:* `nil`) - This represents consent for ad user data.
   *   `childDirectedTreatment` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 13, under COPPA compliance.
   *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V4.Model.CustomFloodlightVariable.t)`, *default:* `nil`) - Custom floodlight variables. This field may only be used when calling batchinsert; it is not supported by batchupdate.
   *   `dclid` (*type:* `String.t`, *default:* `nil`) - The display click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid, and impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid or impressionId is a required field.
@@ -36,15 +37,17 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
   *   `mobileDeviceId` (*type:* `String.t`, *default:* `nil`) - The mobile device ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, gclid, dclid, and impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or gclid or dclid or impressionId is a required field.
   *   `nonPersonalizedAd` (*type:* `boolean()`, *default:* `nil`) - Whether the conversion was for a non personalized ad.
   *   `ordinal` (*type:* `String.t`, *default:* `nil`) - The ordinal of the conversion. Use this field to control how conversions of the same user and day are de-duplicated. This is a required field.
-  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the conversion.
+  *   `quantity` (*type:* `String.t`, *default:* `nil`) - The quantity of the conversion. This is a required field.
   *   `timestampMicros` (*type:* `String.t`, *default:* `nil`) - The timestamp of conversion, in Unix epoch micros. This is a required field.
   *   `treatmentForUnderage` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 16 (may differ by country), under compliance with the European Union's General Data Protection Regulation (GDPR).
-  *   `value` (*type:* `float()`, *default:* `nil`) - The value of the conversion.
+  *   `userIdentifiers` (*type:* `list(GoogleApi.DFAReporting.V4.Model.UserIdentifier.t)`, *default:* `nil`) - The user identifiers to enhance the conversion. The maximum number of user identifiers for each conversion is 5.
+  *   `value` (*type:* `float()`, *default:* `nil`) - The value of the conversion. This is a required field.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :adUserDataConsent => String.t() | nil,
           :childDirectedTreatment => boolean() | nil,
           :customVariables =>
             list(GoogleApi.DFAReporting.V4.Model.CustomFloodlightVariable.t()) | nil,
@@ -64,9 +67,11 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
           :quantity => String.t() | nil,
           :timestampMicros => String.t() | nil,
           :treatmentForUnderage => boolean() | nil,
+          :userIdentifiers => list(GoogleApi.DFAReporting.V4.Model.UserIdentifier.t()) | nil,
           :value => float() | nil
         }
 
+  field(:adUserDataConsent)
   field(:childDirectedTreatment)
 
   field(:customVariables,
@@ -90,6 +95,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
   field(:quantity)
   field(:timestampMicros)
   field(:treatmentForUnderage)
+  field(:userIdentifiers, as: GoogleApi.DFAReporting.V4.Model.UserIdentifier, type: :list)
   field(:value)
 end
 
