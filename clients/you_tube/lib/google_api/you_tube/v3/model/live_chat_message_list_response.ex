@@ -21,6 +21,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
 
   ## Attributes
 
+  *   `activePollItem` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessage.t`, *default:* `nil`) - Set when there is an active poll.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - Serialized EventId of the request which produced this response.
   *   `items` (*type:* `list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t)`, *default:* `nil`) - 
@@ -36,6 +37,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :activePollItem => GoogleApi.YouTube.V3.Model.LiveChatMessage.t() | nil,
           :etag => String.t() | nil,
           :eventId => String.t() | nil,
           :items => list(GoogleApi.YouTube.V3.Model.LiveChatMessage.t()) | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageListResponse do
           :visitorId => String.t() | nil
         }
 
+  field(:activePollItem, as: GoogleApi.YouTube.V3.Model.LiveChatMessage)
   field(:etag)
   field(:eventId)
   field(:items, as: GoogleApi.YouTube.V3.Model.LiveChatMessage, type: :list)

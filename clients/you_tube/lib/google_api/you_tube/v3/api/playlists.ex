@@ -168,7 +168,7 @@ defmodule GoogleApi.YouTube.V3.Api.Playlists do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:channelId` (*type:* `String.t`) - Return the playlists owned by the specified channel ID.
-      *   `:hl` (*type:* `String.t`) - Returen content in specified language
+      *   `:hl` (*type:* `String.t`) - Return content in specified language
       *   `:id` (*type:* `list(String.t)`) - Return the playlists with the given IDs for Stubby or Apiary.
       *   `:maxResults` (*type:* `integer()`) - The *maxResults* parameter specifies the maximum number of items that should be returned in the result set.
       *   `:mine` (*type:* `boolean()`) - Return the playlists owned by the authenticated user.

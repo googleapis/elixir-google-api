@@ -25,6 +25,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Etag of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube assigns to uniquely identify the broadcast.
   *   `kind` (*type:* `String.t`, *default:* `youtube#liveBroadcast`) - Identifies what kind of resource this is. Value: the fixed string "youtube#liveBroadcast".
+  *   `monetizationDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastMonetizationDetails.t`, *default:* `nil`) - The monetizationDetails object contains information about the event's monetization details.
   *   `snippet` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t`, *default:* `nil`) - The snippet object contains basic details about the event, including its title, description, start time, and end time.
   *   `statistics` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t`, *default:* `nil`) - The statistics object contains info about the event's current stats. These include concurrent viewers and total chat count. Statistics can change (in either direction) during the lifetime of an event. Statistics are only returned while the event is live.
   *   `status` (*type:* `GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t`, *default:* `nil`) - The status object contains information about the event's status.
@@ -37,6 +38,8 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
           :etag => String.t() | nil,
           :id => String.t() | nil,
           :kind => String.t() | nil,
+          :monetizationDetails =>
+            GoogleApi.YouTube.V3.Model.LiveBroadcastMonetizationDetails.t() | nil,
           :snippet => GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet.t() | nil,
           :statistics => GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics.t() | nil,
           :status => GoogleApi.YouTube.V3.Model.LiveBroadcastStatus.t() | nil
@@ -46,6 +49,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveBroadcast do
   field(:etag)
   field(:id)
   field(:kind)
+  field(:monetizationDetails, as: GoogleApi.YouTube.V3.Model.LiveBroadcastMonetizationDetails)
   field(:snippet, as: GoogleApi.YouTube.V3.Model.LiveBroadcastSnippet)
   field(:statistics, as: GoogleApi.YouTube.V3.Model.LiveBroadcastStatistics)
   field(:status, as: GoogleApi.YouTube.V3.Model.LiveBroadcastStatus)

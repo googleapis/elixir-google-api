@@ -45,6 +45,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:categoryId` (*type:* `String.t`) - Return the channels within the specified guide category ID.
+      *   `:forHandle` (*type:* `String.t`) - Return the channel associated with a YouTube handle.
       *   `:forUsername` (*type:* `String.t`) - Return the channel associated with a YouTube username.
       *   `:hl` (*type:* `String.t`) - Stands for "host language". Specifies the localization language of the metadata to be filled into snippet.localized. The field is filled with the default metadata if there is no localization in the specified language. The parameter value must be a language code included in the list returned by the i18nLanguages.list method (e.g. en_US, es_MX).
       *   `:id` (*type:* `list(String.t)`) - Return the channels with the specified IDs.
@@ -80,6 +81,7 @@ defmodule GoogleApi.YouTube.V3.Api.Channels do
       :uploadType => :query,
       :upload_protocol => :query,
       :categoryId => :query,
+      :forHandle => :query,
       :forUsername => :query,
       :hl => :query,
       :id => :query,

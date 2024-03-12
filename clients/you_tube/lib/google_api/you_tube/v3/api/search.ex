@@ -60,7 +60,6 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       *   `:publishedBefore` (*type:* `DateTime.t`) - Filter on resources published before this date.
       *   `:q` (*type:* `String.t`) - Textual search terms to match.
       *   `:regionCode` (*type:* `String.t`) - Display the content as seen by viewers in this country.
-      *   `:relatedToVideoId` (*type:* `String.t`) - Search related to a resource.
       *   `:relevanceLanguage` (*type:* `String.t`) - Return results relevant to this language.
       *   `:safeSearch` (*type:* `String.t`) - Indicates whether the search results should include restricted content as well as standard content.
       *   `:topicId` (*type:* `String.t`) - Restrict results to a particular topic.
@@ -72,6 +71,7 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       *   `:videoDuration` (*type:* `String.t`) - Filter on the duration of the videos.
       *   `:videoEmbeddable` (*type:* `String.t`) - Filter on embeddable videos.
       *   `:videoLicense` (*type:* `String.t`) - Filter on the license of the videos.
+      *   `:videoPaidProductPlacement` (*type:* `String.t`) - 
       *   `:videoSyndicated` (*type:* `String.t`) - Filter on syndicated videos.
       *   `:videoType` (*type:* `String.t`) - Filter on videos of a specific type.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -115,7 +115,6 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       :publishedBefore => :query,
       :q => :query,
       :regionCode => :query,
-      :relatedToVideoId => :query,
       :relevanceLanguage => :query,
       :safeSearch => :query,
       :topicId => :query,
@@ -127,6 +126,7 @@ defmodule GoogleApi.YouTube.V3.Api.Search do
       :videoDuration => :query,
       :videoEmbeddable => :query,
       :videoLicense => :query,
+      :videoPaidProductPlacement => :query,
       :videoSyndicated => :query,
       :videoType => :query
     }
