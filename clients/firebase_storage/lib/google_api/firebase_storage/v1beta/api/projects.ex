@@ -31,7 +31,7 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseStorage.V1beta.Connection.t`) - Connection to server
-  *   `bucket` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_number}/buckets/{bucket_id}`.
+  *   `bucket` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_id_or_number}/buckets/{bucket_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -103,7 +103,7 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseStorage.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_number}/buckets/{bucket_id}`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_id_or_number}/buckets/{bucket_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -163,7 +163,7 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseStorage.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent Firebase project, `projects/{project_number}`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent Firebase project, `projects/{project_id_or_number}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -234,7 +234,7 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseStorage.V1beta.Connection.t`) - Connection to server
-  *   `bucket` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_number}/buckets/{bucket_id}`.
+  *   `bucket` (*type:* `String.t`) - Required. Resource name of the bucket, mirrors the ID of the underlying Google Cloud Storage bucket, `projects/{project_id_or_number}/buckets/{bucket_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
