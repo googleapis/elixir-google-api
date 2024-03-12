@@ -48,7 +48,7 @@ defmodule GoogleApi.AnalyticsAdmin.Mixfile do
 
   defp description() do
     """
-    Google Analytics Admin API client library. 
+    Google Analytics Admin API client library.
     """
   end
 

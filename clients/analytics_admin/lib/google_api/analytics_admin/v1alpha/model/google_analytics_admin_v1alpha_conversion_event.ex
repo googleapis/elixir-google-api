@@ -21,9 +21,11 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConv
 
   ## Attributes
 
+  *   `countingMethod` (*type:* `String.t`, *default:* `nil`) - Optional. The method by which conversions will be counted across multiple events within a session. If this value is not provided, it will be set to `ONCE_PER_EVENT`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this conversion event was created in the property.
   *   `custom` (*type:* `boolean()`, *default:* `nil`) - Output only. If set to true, this conversion event refers to a custom event. If set to false, this conversion event refers to a default event in GA. Default events typically have special meaning in GA. Default events are usually created for you by the GA system, but in some cases can be created by property admins. Custom events count towards the maximum number of custom conversion events that may be created per property.
-  *   `deletable` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, this event can currently be deleted via DeleteConversionEvent.
+  *   `defaultConversionValue` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEventDefaultConversionValue.t`, *default:* `nil`) - Optional. Defines a default value/currency for a conversion event.
+  *   `deletable` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, this event can currently be deleted with DeleteConversionEvent.
   *   `eventName` (*type:* `String.t`, *default:* `nil`) - Immutable. The event name for this conversion event. Examples: 'click', 'purchase'
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this conversion event. Format: properties/{property}/conversionEvents/{conversion_event}
   """
@@ -31,15 +33,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConv
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :countingMethod => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :custom => boolean() | nil,
+          :defaultConversionValue =>
+            GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEventDefaultConversionValue.t()
+            | nil,
           :deletable => boolean() | nil,
           :eventName => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:countingMethod)
   field(:createTime, as: DateTime)
   field(:custom)
+
+  field(:defaultConversionValue,
+    as:
+      GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaConversionEventDefaultConversionValue
+  )
+
   field(:deletable)
   field(:eventName)
   field(:name)
