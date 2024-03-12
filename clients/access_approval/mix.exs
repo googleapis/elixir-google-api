@@ -59,7 +59,7 @@ defmodule GoogleApi.AccessApproval.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/access_approval",
-        "Homepage" => "https://cloud.google.com/cloud-provider-access-management/access-approval/docs"
+        "Homepage" => "https://cloud.google.com/assured-workloads/access-approval/docs"
       }
     ]
   end

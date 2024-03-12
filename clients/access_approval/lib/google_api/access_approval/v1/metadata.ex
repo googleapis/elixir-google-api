@@ -20,7 +20,7 @@ defmodule GoogleApi.AccessApproval.V1 do
   API client metadata for GoogleApi.AccessApproval.V1.
   """
 
-  @discovery_revision "20220826"
+  @discovery_revision "20240311"
 
   def discovery_revision(), do: @discovery_revision
 end
