@@ -21,17 +21,20 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Metric do
 
   ## Attributes
 
+  *   `fractions` (*type:* `map()`, *default:* `nil`) - For enum metrics, provides fractions which add up to approximately 1.0.
   *   `histogram` (*type:* `list(GoogleApi.ChromeUXReport.V1.Model.Bin.t)`, *default:* `nil`) - The histogram of user experiences for a metric. The histogram will have at least one bin and the densities of all bins will add up to ~1.
-  *   `percentiles` (*type:* `GoogleApi.ChromeUXReport.V1.Model.Percentiles.t`, *default:* `nil`) - Common useful percentiles of the Metric. The value type for the percentiles will be the same as the value types given for the Histogram bins.
+  *   `percentiles` (*type:* `GoogleApi.ChromeUXReport.V1.Model.Percentiles.t`, *default:* `nil`) - Commonly useful percentiles of the Metric. The value type for the percentiles will be the same as the value types given for the Histogram bins.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :fractions => map() | nil,
           :histogram => list(GoogleApi.ChromeUXReport.V1.Model.Bin.t()) | nil,
           :percentiles => GoogleApi.ChromeUXReport.V1.Model.Percentiles.t() | nil
         }
 
+  field(:fractions, type: :map)
   field(:histogram, as: GoogleApi.ChromeUXReport.V1.Model.Bin, type: :list)
   field(:percentiles, as: GoogleApi.ChromeUXReport.V1.Model.Percentiles)
 end
