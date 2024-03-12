@@ -22,6 +22,7 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
   ## Attributes
 
   *   `decimalValue` (*type:* `GoogleApi.PlayDeveloperReporting.V1beta1.Model.GoogleTypeDecimal.t`, *default:* `nil`) - Actual value, represented as a decimal number.
+  *   `decimalValueConfidenceInterval` (*type:* `GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1DecimalConfidenceInterval.t`, *default:* `nil`) - Confidence interval of a value that is of type `type.Decimal`.
   *   `metric` (*type:* `String.t`, *default:* `nil`) - Name of the metric.
   """
 
@@ -30,10 +31,19 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
   @type t :: %__MODULE__{
           :decimalValue =>
             GoogleApi.PlayDeveloperReporting.V1beta1.Model.GoogleTypeDecimal.t() | nil,
+          :decimalValueConfidenceInterval =>
+            GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1DecimalConfidenceInterval.t()
+            | nil,
           :metric => String.t() | nil
         }
 
   field(:decimalValue, as: GoogleApi.PlayDeveloperReporting.V1beta1.Model.GoogleTypeDecimal)
+
+  field(:decimalValueConfidenceInterval,
+    as:
+      GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1DecimalConfidenceInterval
+  )
+
   field(:metric)
 end
 

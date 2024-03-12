@@ -24,7 +24,7 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
   *   `dimensions` (*type:* `list(GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1DimensionValue.t)`, *default:* `nil`) - Combination of dimensions in which the anomaly was detected.
   *   `metric` (*type:* `GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1MetricValue.t`, *default:* `nil`) - Metric where the anomaly was detected, together with the anomalous value.
   *   `metricSet` (*type:* `String.t`, *default:* `nil`) - Metric set resource where the anomaly was detected.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the anomaly. Format: apps/{app}/anomalies/{anomaly}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the anomaly. Format: apps/{app}/anomalies/{anomaly}
   *   `timelineSpec` (*type:* `GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1TimelineSpec.t`, *default:* `nil`) - Timeline specification that covers the anomaly period.
   """
 

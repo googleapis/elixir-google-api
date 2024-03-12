@@ -23,7 +23,10 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # See metrics and data about the apps in your Google Play Developer account
+      "https://www.googleapis.com/auth/playdeveloperreporting"
+    ],
     otp_app: :google_api_play_developer_reporting,
     base_url: "https://playdeveloperreporting.googleapis.com/"
 end
