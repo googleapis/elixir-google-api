@@ -21,7 +21,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogRe
 
   ## Attributes
 
-  *   `includeGcpPublicDatasets` (*type:* `boolean()`, *default:* `nil`) - If `true`, include Google Cloud Platform (GCP) public datasets in search results. By default, they are excluded. See [Google Cloud Public Datasets](/public-datasets) for more information.
+  *   `includeGcpPublicDatasets` (*type:* `boolean()`, *default:* `nil`) - If `true`, include Google Cloud public datasets in search results. By default, they are excluded. See [Google Cloud Public Datasets](/public-datasets) for more information.
   *   `includeOrgIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of organization IDs to search within. To find your organization ID, follow the steps from [Creating and managing organizations] (/resource-manager/docs/creating-managing-organization).
   *   `includeProjectIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of project IDs to search within. For more information on the distinction between project names, IDs, and numbers, see [Projects](/docs/overview/#projects).
   *   `includePublicTagTemplates` (*type:* `boolean()`, *default:* `nil`) - Optional. This field is deprecated. The search mechanism for public and private tag templates is the same.

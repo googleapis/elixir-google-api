@@ -22,9 +22,14 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema do
   ## Attributes
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - Required. Name of the column. Must be a UTF-8 string without dots (.). The maximum size is 64 bytes.
+  *   `defaultValue` (*type:* `String.t`, *default:* `nil`) - Optional. Default value for the column.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the column. Default value is an empty string. The description must be a UTF-8 string with the maximum size of 2000 bytes.
   *   `gcRule` (*type:* `String.t`, *default:* `nil`) - Optional. Garbage collection policy for the column or column family. Applies to systems like Cloud Bigtable.
+  *   `highestIndexingType` (*type:* `String.t`, *default:* `nil`) - Optional. Most important inclusion of this column.
+  *   `lookerColumnSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec.t`, *default:* `nil`) - Looker specific column info of this column.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. A column's mode indicates whether values in this column are required, nullable, or repeated. Only `NULLABLE`, `REQUIRED`, and `REPEATED` values are supported. Default mode is `NULLABLE`.
+  *   `ordinalPosition` (*type:* `integer()`, *default:* `nil`) - Optional. Ordinal position
+  *   `rangeElementType` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaFieldElementType.t`, *default:* `nil`) - Optional. The subtype of the RANGE, if the type of this field is RANGE. If the type is RANGE, this field is required. Possible values for the field element type of a RANGE include: * DATE * DATETIME * TIMESTAMP
   *   `subcolumns` (*type:* `list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema.t)`, *default:* `nil`) - Optional. Schema of sub-columns. A column can have zero or more sub-columns.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of the column. Must be a UTF-8 string with the maximum size of 128 bytes.
   """
@@ -33,18 +38,39 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema do
 
   @type t :: %__MODULE__{
           :column => String.t() | nil,
+          :defaultValue => String.t() | nil,
           :description => String.t() | nil,
           :gcRule => String.t() | nil,
+          :highestIndexingType => String.t() | nil,
+          :lookerColumnSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec.t()
+            | nil,
           :mode => String.t() | nil,
+          :ordinalPosition => integer() | nil,
+          :rangeElementType =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaFieldElementType.t()
+            | nil,
           :subcolumns =>
             list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema.t()) | nil,
           :type => String.t() | nil
         }
 
   field(:column)
+  field(:defaultValue)
   field(:description)
   field(:gcRule)
+  field(:highestIndexingType)
+
+  field(:lookerColumnSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaLookerColumnSpec
+  )
+
   field(:mode)
+  field(:ordinalPosition)
+
+  field(:rangeElementType,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchemaFieldElementType
+  )
 
   field(:subcolumns,
     as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ColumnSchema,

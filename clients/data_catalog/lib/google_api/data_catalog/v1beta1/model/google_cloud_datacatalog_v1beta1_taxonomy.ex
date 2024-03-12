@@ -24,8 +24,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
   *   `activatedPolicyTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of policy types that are activated for this taxonomy. If not set, defaults to an empty list.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of this taxonomy. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User defined name of this taxonomy. It must: contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8. The taxonomy display name must be unique within an organization.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
   *   `policyTagCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of policy tags contained in this taxonomy.
+  *   `service` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TaxonomyService.t`, *default:* `nil`) - Output only. Identity of the service which owns the Taxonomy. This field is only populated when the taxonomy is created by a Google Cloud service. Currently only 'DATAPLEX' is supported.
   *   `taxonomyTimestamps` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps about this taxonomy. Only create_time and update_time are used.
   """
 
@@ -37,6 +38,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :policyTagCount => integer() | nil,
+          :service =>
+            GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TaxonomyService.t()
+            | nil,
           :taxonomyTimestamps =>
             GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps.t()
             | nil
@@ -47,6 +51,10 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1Taxon
   field(:displayName)
   field(:name)
   field(:policyTagCount)
+
+  field(:service,
+    as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TaxonomyService
+  )
 
   field(:taxonomyTimestamps,
     as: GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1SystemTimestamps
