@@ -22,7 +22,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.UpdatePolicy do
   ## Attributes
 
   *   `channel` (*type:* `String.t`, *default:* `nil`) - Optional. Relative scheduling channel applied to resource.
-  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.ManagedIdentities.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. User can specify zero or more non-overlapping deny periods. Maximum number of deny_maintenance_periods expected is one.
+  *   `denyMaintenancePeriods` (*type:* `list(GoogleApi.ManagedIdentities.V1.Model.DenyMaintenancePeriod.t)`, *default:* `nil`) - Deny Maintenance Period that is applied to resource to indicate when maintenance is forbidden. The protocol supports zero-to-many such periods, but the current SLM Rollout implementation only supports zero-to-one.
   *   `window` (*type:* `GoogleApi.ManagedIdentities.V1.Model.MaintenanceWindow.t`, *default:* `nil`) - Optional. Maintenance window that is applied to resources covered by this policy.
   """
 
