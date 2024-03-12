@@ -21,7 +21,7 @@ defmodule GoogleApi.Transcoder.V1.Model.Overlay do
 
   ## Attributes
 
-  *   `animations` (*type:* `list(GoogleApi.Transcoder.V1.Model.Animation.t)`, *default:* `nil`) - List of Animations. The list should be chronological, without any time overlap.
+  *   `animations` (*type:* `list(GoogleApi.Transcoder.V1.Model.Animation.t)`, *default:* `nil`) - List of animations. The list should be chronological, without any time overlap.
   *   `image` (*type:* `GoogleApi.Transcoder.V1.Model.Image.t`, *default:* `nil`) - Image overlay.
   """
 

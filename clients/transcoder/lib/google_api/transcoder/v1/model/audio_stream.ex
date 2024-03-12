@@ -25,7 +25,9 @@ defmodule GoogleApi.Transcoder.V1.Model.AudioStream do
   *   `channelCount` (*type:* `integer()`, *default:* `nil`) - Number of audio channels. Must be between 1 and 6. The default is 2.
   *   `channelLayout` (*type:* `list(String.t)`, *default:* `nil`) - A list of channel names specifying layout of the audio channels. This only affects the metadata embedded in the container headers, if supported by the specified format. The default is `["fl", "fr"]`. Supported channel names: - `fl` - Front left channel - `fr` - Front right channel - `sl` - Side left channel - `sr` - Side right channel - `fc` - Front center channel - `lfe` - Low frequency
   *   `codec` (*type:* `String.t`, *default:* `nil`) - The codec for this audio stream. The default is `aac`. Supported audio codecs: - `aac` - `aac-he` - `aac-he-v2` - `mp3` - `ac3` - `eac3`
-  *   `mapping` (*type:* `list(GoogleApi.Transcoder.V1.Model.AudioMapping.t)`, *default:* `nil`) - The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name for this particular audio stream that will be added to the HLS/DASH manifest. Not supported in MP4 files.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not supported in MP4 files.
+  *   `mapping` (*type:* `list(GoogleApi.Transcoder.V1.Model.AudioMapping.t)`, *default:* `nil`) - The mapping for the JobConfig.edit_list atoms with audio EditAtom.inputs.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - The audio sample rate in Hertz. The default is 48000 Hertz.
   """
 
@@ -36,6 +38,8 @@ defmodule GoogleApi.Transcoder.V1.Model.AudioStream do
           :channelCount => integer() | nil,
           :channelLayout => list(String.t()) | nil,
           :codec => String.t() | nil,
+          :displayName => String.t() | nil,
+          :languageCode => String.t() | nil,
           :mapping => list(GoogleApi.Transcoder.V1.Model.AudioMapping.t()) | nil,
           :sampleRateHertz => integer() | nil
         }
@@ -44,6 +48,8 @@ defmodule GoogleApi.Transcoder.V1.Model.AudioStream do
   field(:channelCount)
   field(:channelLayout, type: :list)
   field(:codec)
+  field(:displayName)
+  field(:languageCode)
   field(:mapping, as: GoogleApi.Transcoder.V1.Model.AudioMapping, type: :list)
   field(:sampleRateHertz)
 end

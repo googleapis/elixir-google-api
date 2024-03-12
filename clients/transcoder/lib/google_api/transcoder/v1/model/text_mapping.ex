@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Transcoder.V1.Model.TextMapping do
   @moduledoc """
-  The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+  The mapping for the JobConfig.edit_list atoms with text EditAtom.inputs.
 
   ## Attributes
 
-  *   `atomKey` (*type:* `String.t`, *default:* `nil`) - Required. The `EditAtom.key` that references atom with text inputs in the `Job.edit_list`.
-  *   `inputKey` (*type:* `String.t`, *default:* `nil`) - Required. The `Input.key` that identifies the input file.
+  *   `atomKey` (*type:* `String.t`, *default:* `nil`) - Required. The EditAtom.key that references atom with text inputs in the JobConfig.edit_list.
+  *   `inputKey` (*type:* `String.t`, *default:* `nil`) - Required. The Input.key that identifies the input file.
   *   `inputTrack` (*type:* `integer()`, *default:* `nil`) - Required. The zero-based index of the track in the input file.
   """
 

@@ -22,9 +22,11 @@ defmodule GoogleApi.Transcoder.V1.Model.MuxStream do
   ## Attributes
 
   *   `container` (*type:* `String.t`, *default:* `nil`) - The container format. The default is `mp4` Supported container formats: - `ts` - `fmp4`- the corresponding file extension is `.m4s` - `mp4` - `vtt` See also: [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats)
-  *   `elementaryStreams` (*type:* `list(String.t)`, *default:* `nil`) - List of `ElementaryStream.key`s multiplexed in this stream.
-  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The name of the generated file. The default is `MuxStream.key` with the extension suffix corresponding to the `MuxStream.container`. Individual segments also have an incremental 10-digit zero-padded suffix starting from 0 before the extension, such as `mux_stream0000000123.ts`.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - A unique key for this multiplexed stream. HLS media manifests will be named `MuxStream.key` with the `.m3u8` extension suffix.
+  *   `elementaryStreams` (*type:* `list(String.t)`, *default:* `nil`) - List of ElementaryStream.key values multiplexed in this stream.
+  *   `encryptionId` (*type:* `String.t`, *default:* `nil`) - Identifier of the encryption configuration to use. If omitted, output will be unencrypted.
+  *   `fileName` (*type:* `String.t`, *default:* `nil`) - The name of the generated file. The default is MuxStream.key with the extension suffix corresponding to the MuxStream.container. Individual segments also have an incremental 10-digit zero-padded suffix starting from 0 before the extension, such as `mux_stream0000000123.ts`.
+  *   `fmp4` (*type:* `GoogleApi.Transcoder.V1.Model.Fmp4Config.t`, *default:* `nil`) - Optional. `fmp4` container configuration.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - A unique key for this multiplexed stream.
   *   `segmentSettings` (*type:* `GoogleApi.Transcoder.V1.Model.SegmentSettings.t`, *default:* `nil`) - Segment settings for `ts`, `fmp4` and `vtt`.
   """
 
@@ -33,14 +35,18 @@ defmodule GoogleApi.Transcoder.V1.Model.MuxStream do
   @type t :: %__MODULE__{
           :container => String.t() | nil,
           :elementaryStreams => list(String.t()) | nil,
+          :encryptionId => String.t() | nil,
           :fileName => String.t() | nil,
+          :fmp4 => GoogleApi.Transcoder.V1.Model.Fmp4Config.t() | nil,
           :key => String.t() | nil,
           :segmentSettings => GoogleApi.Transcoder.V1.Model.SegmentSettings.t() | nil
         }
 
   field(:container)
   field(:elementaryStreams, type: :list)
+  field(:encryptionId)
   field(:fileName)
+  field(:fmp4, as: GoogleApi.Transcoder.V1.Model.Fmp4Config)
   field(:key)
   field(:segmentSettings, as: GoogleApi.Transcoder.V1.Model.SegmentSettings)
 end

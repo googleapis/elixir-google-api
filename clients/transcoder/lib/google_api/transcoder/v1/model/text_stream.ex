@@ -22,17 +22,23 @@ defmodule GoogleApi.Transcoder.V1.Model.TextStream do
   ## Attributes
 
   *   `codec` (*type:* `String.t`, *default:* `nil`) - The codec for this text stream. The default is `webvtt`. Supported text codecs: - `srt` - `ttml` - `cea608` - `cea708` - `webvtt`
-  *   `mapping` (*type:* `list(GoogleApi.Transcoder.V1.Model.TextMapping.t)`, *default:* `nil`) - The mapping for the `Job.edit_list` atoms with text `EditAtom.inputs`.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name for this particular text stream that will be added to the HLS/DASH manifest. Not supported in MP4 files.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not supported in MP4 files.
+  *   `mapping` (*type:* `list(GoogleApi.Transcoder.V1.Model.TextMapping.t)`, *default:* `nil`) - The mapping for the JobConfig.edit_list atoms with text EditAtom.inputs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :codec => String.t() | nil,
+          :displayName => String.t() | nil,
+          :languageCode => String.t() | nil,
           :mapping => list(GoogleApi.Transcoder.V1.Model.TextMapping.t()) | nil
         }
 
   field(:codec)
+  field(:displayName)
+  field(:languageCode)
   field(:mapping, as: GoogleApi.Transcoder.V1.Model.TextMapping, type: :list)
 end
 

@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Transcoder.V1.Model.AudioMapping do
   @moduledoc """
-  The mapping for the `Job.edit_list` atoms with audio `EditAtom.inputs`.
+  The mapping for the JobConfig.edit_list atoms with audio EditAtom.inputs.
 
   ## Attributes
 
-  *   `atomKey` (*type:* `String.t`, *default:* `nil`) - Required. The `EditAtom.key` that references the atom with audio inputs in the `Job.edit_list`.
+  *   `atomKey` (*type:* `String.t`, *default:* `nil`) - Required. The EditAtom.key that references the atom with audio inputs in the JobConfig.edit_list.
   *   `gainDb` (*type:* `float()`, *default:* `nil`) - Audio volume control in dB. Negative values decrease volume, positive values increase. The default is 0.
   *   `inputChannel` (*type:* `integer()`, *default:* `nil`) - Required. The zero-based index of the channel in the input audio stream.
-  *   `inputKey` (*type:* `String.t`, *default:* `nil`) - Required. The `Input.key` that identifies the input file.
+  *   `inputKey` (*type:* `String.t`, *default:* `nil`) - Required. The Input.key that identifies the input file.
   *   `inputTrack` (*type:* `integer()`, *default:* `nil`) - Required. The zero-based index of the track in the input file.
   *   `outputChannel` (*type:* `integer()`, *default:* `nil`) - Required. The zero-based index of the channel in the output audio stream.
   """
