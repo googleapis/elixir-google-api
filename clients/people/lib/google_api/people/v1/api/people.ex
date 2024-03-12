@@ -733,7 +733,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of `people/{person_id}`.
+  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string in the form of `people/{person_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

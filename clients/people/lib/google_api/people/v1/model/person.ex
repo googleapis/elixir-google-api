@@ -56,7 +56,7 @@ defmodule GoogleApi.People.V1.Model.Person do
   *   `emailAddresses` (*type:* `list(GoogleApi.People.V1.Model.EmailAddress.t)`, *default:* `nil`) - The person's email addresses. For `people.connections.list` and `otherContacts.list` the number of email addresses is limited to 100. If a Person has more email addresses the entire set can be obtained by calling GetPeople.
   *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Output only. **DEPRECATED** (Please use `person.ageRanges` instead) The person's age range.
   *   `urls` (*type:* `list(GoogleApi.People.V1.Model.Url.t)`, *default:* `nil`) - The person's associated URLs.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string with a max length of 27 characters, in the form of `people/{person_id}`.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - The resource name for the person, assigned by the server. An ASCII string in the form of `people/{person_id}`.
   *   `miscKeywords` (*type:* `list(GoogleApi.People.V1.Model.MiscKeyword.t)`, *default:* `nil`) - The person's miscellaneous keywords.
   *   `organizations` (*type:* `list(GoogleApi.People.V1.Model.Organization.t)`, *default:* `nil`) - The person's past or current organizations.
   """
