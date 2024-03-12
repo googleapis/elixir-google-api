@@ -18,7 +18,7 @@
 defmodule GoogleApi.Calendar.Mixfile do
   use Mix.Project
 
-  @version "0.21.9"
+  @version "0.22.0"
 
   def project() do
     [
