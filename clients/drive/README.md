@@ -1,8 +1,8 @@
 # GoogleApi.Drive
 
-Drive API client library.
+Google Drive API client library.
 
-Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.
+The Google Drive API allows clients to access resources from Google Drive.
 
 ## Installation
 

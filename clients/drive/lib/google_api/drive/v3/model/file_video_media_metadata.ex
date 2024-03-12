@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Drive.V3.Model.FileVideoMediaMetadata do
   @moduledoc """
-  Additional metadata about video media. This may not be available immediately upon upload.
+  Output only. Additional metadata about video media. This may not be available immediately upon upload.
 
   ## Attributes
 
-  *   `durationMillis` (*type:* `String.t`, *default:* `nil`) - The duration of the video in milliseconds.
-  *   `height` (*type:* `integer()`, *default:* `nil`) - The height of the video in pixels.
-  *   `width` (*type:* `integer()`, *default:* `nil`) - The width of the video in pixels.
+  *   `durationMillis` (*type:* `String.t`, *default:* `nil`) - Output only. The duration of the video in milliseconds.
+  *   `height` (*type:* `integer()`, *default:* `nil`) - Output only. The height of the video in pixels.
+  *   `width` (*type:* `integer()`, *default:* `nil`) - Output only. The width of the video in pixels.
   """
 
   use GoogleApi.Gax.ModelBase

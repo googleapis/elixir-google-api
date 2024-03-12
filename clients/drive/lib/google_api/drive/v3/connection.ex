@@ -30,6 +30,9 @@ defmodule GoogleApi.Drive.V3.Connection do
       # See, create, and delete its own configuration data in your Google Drive
       "https://www.googleapis.com/auth/drive.appdata",
 
+      # View your Google Drive apps
+      "https://www.googleapis.com/auth/drive.apps.readonly",
+
       # See, edit, create, and delete only the specific Google Drive files you use with this app
       "https://www.googleapis.com/auth/drive.file",
 

@@ -21,12 +21,12 @@ defmodule GoogleApi.Drive.V3.Model.User do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A plain text displayable name for this user.
-  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the user. This may not be present in certain contexts if the user has not made their email address visible to the requester.
-  *   `kind` (*type:* `String.t`, *default:* `drive#user`) - Identifies what kind of resource this is. Value: the fixed string "drive#user".
-  *   `me` (*type:* `boolean()`, *default:* `nil`) - Whether this user is the requesting user.
-  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - The user's ID as visible in Permission resources.
-  *   `photoLink` (*type:* `String.t`, *default:* `nil`) - A link to the user's profile photo, if available.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. A plain text displayable name for this user.
+  *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The email address of the user. This may not be present in certain contexts if the user has not made their email address visible to the requester.
+  *   `kind` (*type:* `String.t`, *default:* `drive#user`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#user"`.
+  *   `me` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether this user is the requesting user.
+  *   `permissionId` (*type:* `String.t`, *default:* `nil`) - Output only. The user's ID as visible in Permission resources.
+  *   `photoLink` (*type:* `String.t`, *default:* `nil`) - Output only. A link to the user's profile photo, if available.
   """
 
   use GoogleApi.Gax.ModelBase

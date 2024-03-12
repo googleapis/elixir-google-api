@@ -32,17 +32,21 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
 
   *   `connection` (*type:* `GoogleApi.Drive.V3.Connection.t`) - Connection to server
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:driveId` (*type:* `String.t`) - The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive is returned.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:driveId` (*type:* `String.t`) - The ID of the shared drive for which the starting pageToken for listing future changes from that shared drive will be returned.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
-      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
-      *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
+      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated: Use `supportsAllDrives` instead.
+      *   `:teamDriveId` (*type:* `String.t`) - Deprecated: Use `driveId` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -57,13 +61,17 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
           | {:error, any()}
   def drive_changes_get_start_page_token(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :driveId => :query,
       :supportsAllDrives => :query,
       :supportsTeamDrives => :query,
@@ -90,26 +98,30 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   *   `connection` (*type:* `GoogleApi.Drive.V3.Connection.t`) - Connection to server
   *   `page_token` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:driveId` (*type:* `String.t`) - The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
-      *   `:includeLabels` (*type:* `String.t`) - A comma-separated list of IDs of labels to include in the labelInfo part of the response.
+      *   `:includeLabels` (*type:* `String.t`) - A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.
       *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-      *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
+      *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated: Use `includeItemsFromAllDrives` instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
       *   `:restrictToMyDrive` (*type:* `boolean()`) - Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
-      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
+      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
-      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
-      *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
+      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated: Use `supportsAllDrives` instead.
+      *   `:teamDriveId` (*type:* `String.t`) - Deprecated: Use `driveId` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -124,13 +136,17 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
           | {:error, any()}
   def drive_changes_list(connection, page_token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :driveId => :query,
       :includeCorpusRemovals => :query,
       :includeItemsFromAllDrives => :query,
@@ -167,26 +183,30 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
   *   `connection` (*type:* `GoogleApi.Drive.V3.Connection.t`) - Connection to server
   *   `page_token` (*type:* `String.t`) - The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response or to the response from the getStartPageToken method.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:driveId` (*type:* `String.t`) - The shared drive from which changes are returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:driveId` (*type:* `String.t`) - The shared drive from which changes will be returned. If specified the change IDs will be reflective of the shared drive; use the combined drive ID and change ID as an identifier.
       *   `:includeCorpusRemovals` (*type:* `boolean()`) - Whether changes should include the file resource if the file is still accessible by the user at the time of the request, even when a file was removed from the list of changes and there will be no further change entries for this file.
       *   `:includeItemsFromAllDrives` (*type:* `boolean()`) - Whether both My Drive and shared drive items should be included in results.
-      *   `:includeLabels` (*type:* `String.t`) - A comma-separated list of IDs of labels to include in the labelInfo part of the response.
+      *   `:includeLabels` (*type:* `String.t`) - A comma-separated list of IDs of labels to include in the `labelInfo` part of the response.
       *   `:includePermissionsForView` (*type:* `String.t`) - Specifies which additional view's permissions to include in the response. Only 'published' is supported.
       *   `:includeRemoved` (*type:* `boolean()`) - Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
-      *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated use includeItemsFromAllDrives instead.
+      *   `:includeTeamDriveItems` (*type:* `boolean()`) - Deprecated: Use `includeItemsFromAllDrives` instead.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of changes to return per page.
       *   `:restrictToMyDrive` (*type:* `boolean()`) - Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
-      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the user corpus. Supported values are 'drive', 'appDataFolder' and 'photos'.
+      *   `:spaces` (*type:* `String.t`) - A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
       *   `:supportsAllDrives` (*type:* `boolean()`) - Whether the requesting application supports both My Drives and shared drives.
-      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated use supportsAllDrives instead.
-      *   `:teamDriveId` (*type:* `String.t`) - Deprecated use driveId instead.
+      *   `:supportsTeamDrives` (*type:* `boolean()`) - Deprecated: Use `supportsAllDrives` instead.
+      *   `:teamDriveId` (*type:* `String.t`) - Deprecated: Use `driveId` instead.
       *   `:resource` (*type:* `GoogleApi.Drive.V3.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -202,13 +222,17 @@ defmodule GoogleApi.Drive.V3.Api.Changes do
           | {:error, any()}
   def drive_changes_watch(connection, page_token, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :driveId => :query,
       :includeCorpusRemovals => :query,
       :includeItemsFromAllDrives => :query,

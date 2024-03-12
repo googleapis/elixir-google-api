@@ -17,25 +17,24 @@
 
 defmodule GoogleApi.Drive.V3.Model.Revision do
   @moduledoc """
-  The metadata for a revision to a file.
+  The metadata for a revision to a file. Some resource methods (such as `revisions.update`) require a `revisionId`. Use the `revisions.list` method to retrieve the ID for a revision.
 
   ## Attributes
 
-  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Links for exporting Docs Editors files to specific formats.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the revision.
-  *   `keepForever` (*type:* `boolean()`, *default:* `nil`) - Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file.
-      This field is only applicable to files with binary content in Drive.
-  *   `kind` (*type:* `String.t`, *default:* `drive#revision`) - Identifies what kind of resource this is. Value: the fixed string "drive#revision".
-  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The last user to modify this revision.
-  *   `md5Checksum` (*type:* `String.t`, *default:* `nil`) - The MD5 checksum of the revision's content. This is only applicable to files with binary content in Drive.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The MIME type of the revision.
+  *   `exportLinks` (*type:* `map()`, *default:* `nil`) - Output only. Links for exporting Docs Editors files to specific formats.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the revision.
+  *   `keepForever` (*type:* `boolean()`, *default:* `nil`) - Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file. This field is only applicable to files with binary content in Drive.
+  *   `kind` (*type:* `String.t`, *default:* `drive#revision`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#revision"`.
+  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The last user to modify this revision.
+  *   `md5Checksum` (*type:* `String.t`, *default:* `nil`) - Output only. The MD5 checksum of the revision's content. This is only applicable to files with binary content in Drive.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The MIME type of the revision.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the revision was modified (RFC 3339 date-time).
-  *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - The original filename used to create this revision. This is only applicable to files with binary content in Drive.
+  *   `originalFilename` (*type:* `String.t`, *default:* `nil`) - Output only. The original filename used to create this revision. This is only applicable to files with binary content in Drive.
   *   `publishAuto` (*type:* `boolean()`, *default:* `nil`) - Whether subsequent revisions will be automatically republished. This is only applicable to Docs Editors files.
   *   `published` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published. This is only applicable to Docs Editors files.
-  *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - A link to the published revision. This is only populated for Google Sites files.
+  *   `publishedLink` (*type:* `String.t`, *default:* `nil`) - Output only. A link to the published revision. This is only populated for Google Sites files.
   *   `publishedOutsideDomain` (*type:* `boolean()`, *default:* `nil`) - Whether this revision is published outside the domain. This is only applicable to Docs Editors files.
-  *   `size` (*type:* `String.t`, *default:* `nil`) - The size of the revision's content in bytes. This is only applicable to files with binary content in Drive.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - Output only. The size of the revision's content in bytes. This is only applicable to files with binary content in Drive.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Drive.V3.Model.StartPageToken do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#startPageToken`) - Identifies what kind of resource this is. Value: the fixed string "drive#startPageToken".
-  *   `startPageToken` (*type:* `String.t`, *default:* `nil`) - The starting page token for listing changes.
+  *   `kind` (*type:* `String.t`, *default:* `drive#startPageToken`) - Identifies what kind of resource this is. Value: the fixed string `"drive#startPageToken"`.
+  *   `startPageToken` (*type:* `String.t`, *default:* `nil`) - The starting page token for listing future changes. The page token doesn't expire.
   """
 
   use GoogleApi.Gax.ModelBase

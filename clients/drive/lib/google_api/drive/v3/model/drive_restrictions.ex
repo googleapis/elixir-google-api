@@ -17,14 +17,15 @@
 
 defmodule GoogleApi.Drive.V3.Model.DriveRestrictions do
   @moduledoc """
-  A set of restrictions that apply to this shared drive or items inside this shared drive.
+  A set of restrictions that apply to this shared drive or items inside this shared drive. Note that restrictions can't be set when creating a shared drive. To add a restriction, first create a shared drive and then use `drives.update` to add restrictions.
 
   ## Attributes
 
   *   `adminManagedRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether administrative privileges on this shared drive are required to modify restrictions.
-  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download files inside this shared drive, should be disabled for readers and commenters. When this restriction is set to true, it will override the similarly named field to true for any file inside this shared drive.
+  *   `copyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Whether the options to copy, print, or download files inside this shared drive, should be disabled for readers and commenters. When this restriction is set to `true`, it will override the similarly named field to `true` for any file inside this shared drive.
   *   `domainUsersOnly` (*type:* `boolean()`, *default:* `nil`) - Whether access to this shared drive and items inside this shared drive is restricted to users of the domain to which this shared drive belongs. This restriction may be overridden by other sharing policies controlled outside of this shared drive.
   *   `driveMembersOnly` (*type:* `boolean()`, *default:* `nil`) - Whether access to items inside this shared drive is restricted to its members.
+  *   `sharingFoldersRequiresOrganizerPermission` (*type:* `boolean()`, *default:* `nil`) - If true, only users with the organizer role can share folders. If false, users with either the organizer role or the file organizer role can share folders.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Drive.V3.Model.DriveRestrictions do
           :adminManagedRestrictions => boolean() | nil,
           :copyRequiresWriterPermission => boolean() | nil,
           :domainUsersOnly => boolean() | nil,
-          :driveMembersOnly => boolean() | nil
+          :driveMembersOnly => boolean() | nil,
+          :sharingFoldersRequiresOrganizerPermission => boolean() | nil
         }
 
   field(:adminManagedRestrictions)
   field(:copyRequiresWriterPermission)
   field(:domainUsersOnly)
   field(:driveMembersOnly)
+  field(:sharingFoldersRequiresOrganizerPermission)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.DriveRestrictions do

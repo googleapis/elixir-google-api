@@ -22,7 +22,7 @@ defmodule GoogleApi.Drive.V3.Model.GeneratedIds do
   ## Attributes
 
   *   `ids` (*type:* `list(String.t)`, *default:* `nil`) - The IDs generated for the requesting user in the specified space.
-  *   `kind` (*type:* `String.t`, *default:* `drive#generatedIds`) - Identifies what kind of resource this is. Value: the fixed string "drive#generatedIds".
+  *   `kind` (*type:* `String.t`, *default:* `drive#generatedIds`) - Identifies what kind of resource this is. Value: the fixed string `"drive#generatedIds"`.
   *   `space` (*type:* `String.t`, *default:* `nil`) - The type of file that can be created with these IDs.
   """
 

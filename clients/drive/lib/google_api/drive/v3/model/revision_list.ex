@@ -21,8 +21,8 @@ defmodule GoogleApi.Drive.V3.Model.RevisionList do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#revisionList`) - Identifies what kind of resource this is. Value: the fixed string "drive#revisionList".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of revisions. This will be absent if the end of the revisions list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.
+  *   `kind` (*type:* `String.t`, *default:* `drive#revisionList`) - Identifies what kind of resource this is. Value: the fixed string `"drive#revisionList"`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of revisions. This will be absent if the end of the revisions list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. The page token is typically valid for several hours. However, if new items are added or removed, your expected results might differ.
   *   `revisions` (*type:* `list(GoogleApi.Drive.V3.Model.Revision.t)`, *default:* `nil`) - The list of revisions. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched.
   """
 

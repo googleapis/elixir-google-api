@@ -21,8 +21,8 @@ defmodule GoogleApi.Drive.V3.Model.ReplyList do
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#replyList`) - Identifies what kind of resource this is. Value: the fixed string "drive#replyList".
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of replies. This will be absent if the end of the replies list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results.
+  *   `kind` (*type:* `String.t`, *default:* `drive#replyList`) - Identifies what kind of resource this is. Value: the fixed string `"drive#replyList"`.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The page token for the next page of replies. This will be absent if the end of the replies list has been reached. If the token is rejected for any reason, it should be discarded, and pagination should be restarted from the first page of results. The page token is typically valid for several hours. However, if new items are added or removed, your expected results might differ.
   *   `replies` (*type:* `list(GoogleApi.Drive.V3.Model.Reply.t)`, *default:* `nil`) - The list of replies. If nextPageToken is populated, then this list may be incomplete and an additional page of results should be fetched.
   """
 

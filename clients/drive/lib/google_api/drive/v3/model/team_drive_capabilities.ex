@@ -22,10 +22,11 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   ## Attributes
 
   *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add children to folders in this Team Drive.
-  *   `canChangeCopyRequiresWriterPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the copyRequiresWriterPermission restriction of this Team Drive.
-  *   `canChangeDomainUsersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the domainUsersOnly restriction of this Team Drive.
+  *   `canChangeCopyRequiresWriterPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the `copyRequiresWriterPermission` restriction of this Team Drive.
+  *   `canChangeDomainUsersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the `domainUsersOnly` restriction of this Team Drive.
+  *   `canChangeSharingFoldersRequiresOrganizerPermissionRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the `sharingFoldersRequiresOrganizerPermission` restriction of this Team Drive.
   *   `canChangeTeamDriveBackground` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the background of this Team Drive.
-  *   `canChangeTeamMembersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the teamMembersOnly restriction of this Team Drive.
+  *   `canChangeTeamMembersOnlyRestriction` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can change the `teamMembersOnly` restriction of this Team Drive.
   *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can comment on files in this Team Drive.
   *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can copy files in this Team Drive.
   *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can delete children from folders in this Team Drive.
@@ -35,7 +36,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can list the children of folders in this Team Drive.
   *   `canManageMembers` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can add members to this Team Drive or remove them or change their role.
   *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can read the revisions resource of files in this Team Drive.
-  *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canDeleteChildren or canTrashChildren instead.
+  *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Use `canDeleteChildren` or `canTrashChildren` instead.
   *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename files or folders in this Team Drive.
   *   `canRenameTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can rename this Team Drive.
   *   `canResetTeamDriveRestrictions` (*type:* `boolean()`, *default:* `nil`) - Whether the current user can reset the Team Drive restrictions to defaults.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
           :canAddChildren => boolean() | nil,
           :canChangeCopyRequiresWriterPermissionRestriction => boolean() | nil,
           :canChangeDomainUsersOnlyRestriction => boolean() | nil,
+          :canChangeSharingFoldersRequiresOrganizerPermissionRestriction => boolean() | nil,
           :canChangeTeamDriveBackground => boolean() | nil,
           :canChangeTeamMembersOnlyRestriction => boolean() | nil,
           :canComment => boolean() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.Drive.V3.Model.TeamDriveCapabilities do
   field(:canAddChildren)
   field(:canChangeCopyRequiresWriterPermissionRestriction)
   field(:canChangeDomainUsersOnlyRestriction)
+  field(:canChangeSharingFoldersRequiresOrganizerPermissionRestriction)
   field(:canChangeTeamDriveBackground)
   field(:canChangeTeamMembersOnlyRestriction)
   field(:canComment)

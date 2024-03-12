@@ -17,43 +17,25 @@
 
 defmodule GoogleApi.Drive.V3.Model.Permission do
   @moduledoc """
-  A permission for a file. A permission grants a user, group, domain or the world access to a file or a folder hierarchy.
+  A permission for a file. A permission grants a user, group, domain, or the world access to a file or a folder hierarchy. Some resource methods (such as `permissions.update`) require a `permissionId`. Use the `permissions.list` method to retrieve the ID for a file, folder, or shared drive.
 
   ## Attributes
 
-  *   `allowFileDiscovery` (*type:* `boolean()`, *default:* `nil`) - Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type domain or anyone.
-  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The "pretty" name of the value of the permission. The following is a list of examples for each type of permission:  
-      - user - User's full name, as defined for their Google account, such as "Joe Smith." 
-      - group - Name of the Google Group, such as "The Company Administrators." 
-      - domain - String domain name, such as "thecompany.com." 
-      - anyone - No displayName is present.
+  *   `allowFileDiscovery` (*type:* `boolean()`, *default:* `nil`) - Whether the permission allows the file to be discovered through search. This is only applicable for permissions of type `domain` or `anyone`.
+  *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the account associated with this permission has been deleted. This field only pertains to user and group permissions.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The "pretty" name of the value of the permission. The following is a list of examples for each type of permission: * `user` - User's full name, as defined for their Google account, such as "Joe Smith." * `group` - Name of the Google Group, such as "The Company Administrators." * `domain` - String domain name, such as "thecompany.com." * `anyone` - No `displayName` is present.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - The domain to which this permission refers.
   *   `emailAddress` (*type:* `String.t`, *default:* `nil`) - The email address of the user or group to which this permission refers.
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions:  
-      - They cannot be set on shared drive items 
-      - They can only be set on user and group permissions 
-      - The time must be in the future 
-      - The time cannot be more than a year in the future
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as permissionId. IDs should be treated as opaque values.
-  *   `kind` (*type:* `String.t`, *default:* `drive#permission`) - Identifies what kind of resource this is. Value: the fixed string "drive#permission".
-  *   `pendingOwner` (*type:* `boolean()`, *default:* `nil`) - Whether the account associated with this permission is a pending owner. Only populated for user type permissions for files that are not in a shared drive.
-  *   `permissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t)`, *default:* `nil`) - Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items.
-  *   `photoLink` (*type:* `String.t`, *default:* `nil`) - A link to the user's profile photo, if available.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The role granted by this permission. While new values may be supported in the future, the following are currently allowed:  
-      - owner 
-      - organizer 
-      - fileOrganizer 
-      - writer 
-      - commenter 
-      - reader
-  *   `teamDrivePermissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails.t)`, *default:* `nil`) - Deprecated - use permissionDetails instead.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the grantee. Valid values are:  
-      - user 
-      - group 
-      - domain 
-      - anyone  When creating a permission, if type is user or group, you must provide an emailAddress for the user or group. When type is domain, you must provide a domain. There isn't extra information required for a anyone type.
-  *   `view` (*type:* `String.t`, *default:* `nil`) - Indicates the view for this permission. Only populated for permissions that belong to a view. published is the only supported value.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this permission will expire (RFC 3339 date-time). Expiration times have the following restrictions: - They can only be set on user and group permissions - The time must be in the future - The time cannot be more than a year in the future
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of this permission. This is a unique identifier for the grantee, and is published in User resources as `permissionId`. IDs should be treated as opaque values.
+  *   `kind` (*type:* `String.t`, *default:* `drive#permission`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#permission"`.
+  *   `pendingOwner` (*type:* `boolean()`, *default:* `nil`) - Whether the account associated with this permission is a pending owner. Only populated for `user` type permissions for files that are not in a shared drive.
+  *   `permissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionPermissionDetails.t)`, *default:* `nil`) - Output only. Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items.
+  *   `photoLink` (*type:* `String.t`, *default:* `nil`) - Output only. A link to the user's profile photo, if available.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role granted by this permission. While new values may be supported in the future, the following are currently allowed: * `owner` * `organizer` * `fileOrganizer` * `writer` * `commenter` * `reader`
+  *   `teamDrivePermissionDetails` (*type:* `list(GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails.t)`, *default:* `nil`) - Output only. Deprecated: Output only. Use `permissionDetails` instead.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the grantee. Valid values are: * `user` * `group` * `domain` * `anyone` When creating a permission, if `type` is `user` or `group`, you must provide an `emailAddress` for the user or group. When `type` is `domain`, you must provide a `domain`. There isn't extra information required for an `anyone` type.
+  *   `view` (*type:* `String.t`, *default:* `nil`) - Indicates the view for this permission. Only populated for permissions that belong to a view. 'published' is the only supported value.
   """
 
   use GoogleApi.Gax.ModelBase

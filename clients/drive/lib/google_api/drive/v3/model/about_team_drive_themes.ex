@@ -21,9 +21,9 @@ defmodule GoogleApi.Drive.V3.Model.AboutTeamDriveThemes do
 
   ## Attributes
 
-  *   `backgroundImageLink` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveThemes/backgroundImageLink instead.
-  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveThemes/colorRgb instead.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Deprecated - use driveThemes/id instead.
+  *   `backgroundImageLink` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use `driveThemes/backgroundImageLink` instead.
+  *   `colorRgb` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use `driveThemes/colorRgb` instead.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Deprecated: Use `driveThemes/id` instead.
   """
 
   use GoogleApi.Gax.ModelBase

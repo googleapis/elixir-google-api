@@ -23,16 +23,16 @@ defmodule GoogleApi.Drive.V3.Model.About do
 
   *   `appInstalled` (*type:* `boolean()`, *default:* `nil`) - Whether the user has installed the requesting app.
   *   `canCreateDrives` (*type:* `boolean()`, *default:* `nil`) - Whether the user can create shared drives.
-  *   `canCreateTeamDrives` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use canCreateDrives instead.
+  *   `canCreateTeamDrives` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Use `canCreateDrives` instead.
   *   `driveThemes` (*type:* `list(GoogleApi.Drive.V3.Model.AboutDriveThemes.t)`, *default:* `nil`) - A list of themes that are supported for shared drives.
   *   `exportFormats` (*type:* `map()`, *default:* `nil`) - A map of source MIME type to possible targets for all supported exports.
   *   `folderColorPalette` (*type:* `list(String.t)`, *default:* `nil`) - The currently supported folder colors as RGB hex strings.
   *   `importFormats` (*type:* `map()`, *default:* `nil`) - A map of source MIME type to possible targets for all supported imports.
-  *   `kind` (*type:* `String.t`, *default:* `drive#about`) - Identifies what kind of resource this is. Value: the fixed string "drive#about".
+  *   `kind` (*type:* `String.t`, *default:* `drive#about`) - Identifies what kind of resource this is. Value: the fixed string `"drive#about"`.
   *   `maxImportSizes` (*type:* `map()`, *default:* `nil`) - A map of maximum import sizes by MIME type, in bytes.
   *   `maxUploadSize` (*type:* `String.t`, *default:* `nil`) - The maximum upload size in bytes.
   *   `storageQuota` (*type:* `GoogleApi.Drive.V3.Model.AboutStorageQuota.t`, *default:* `nil`) - The user's storage quota limits and usage. All fields are measured in bytes.
-  *   `teamDriveThemes` (*type:* `list(GoogleApi.Drive.V3.Model.AboutTeamDriveThemes.t)`, *default:* `nil`) - Deprecated - use driveThemes instead.
+  *   `teamDriveThemes` (*type:* `list(GoogleApi.Drive.V3.Model.AboutTeamDriveThemes.t)`, *default:* `nil`) - Deprecated: Use `driveThemes` instead.
   *   `user` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The authenticated user.
   """
 

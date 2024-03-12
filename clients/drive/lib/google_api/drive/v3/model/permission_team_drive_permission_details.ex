@@ -21,10 +21,10 @@ defmodule GoogleApi.Drive.V3.Model.PermissionTeamDrivePermissionDetails do
 
   ## Attributes
 
-  *   `inherited` (*type:* `boolean()`, *default:* `nil`) - Deprecated - use permissionDetails/inherited instead.
-  *   `inheritedFrom` (*type:* `String.t`, *default:* `nil`) - Deprecated - use permissionDetails/inheritedFrom instead.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Deprecated - use permissionDetails/role instead.
-  *   `teamDrivePermissionType` (*type:* `String.t`, *default:* `nil`) - Deprecated - use permissionDetails/permissionType instead.
+  *   `inherited` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `permissionDetails/inherited` instead.
+  *   `inheritedFrom` (*type:* `String.t`, *default:* `nil`) - Deprecated: Output only. Use `permissionDetails/inheritedFrom` instead.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Deprecated: Output only. Use `permissionDetails/role` instead.
+  *   `teamDrivePermissionType` (*type:* `String.t`, *default:* `nil`) - Deprecated: Output only. Use `permissionDetails/permissionType` instead.
   """
 
   use GoogleApi.Gax.ModelBase

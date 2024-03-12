@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Drive.V3.Model.DriveBackgroundImageFile do
   @moduledoc """
-  An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set.
+  An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on `drive.drives.update` requests that don't set `themeId`. When specified, all fields of the `backgroundImageFile` must be set.
 
   ## Attributes
 

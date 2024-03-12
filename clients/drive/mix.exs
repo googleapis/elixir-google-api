@@ -48,7 +48,7 @@ defmodule GoogleApi.Drive.Mixfile do
 
   defp description() do
     """
-    Drive API client library. Manages files in Drive including uploading, downloading, searching, detecting changes, and updating sharing permissions.
+    Google Drive API client library. The Google Drive API allows clients to access resources from Google Drive.
     """
   end
 

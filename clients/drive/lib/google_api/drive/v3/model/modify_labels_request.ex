@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Drive.V3.Model.ModifyLabelsRequest do
   @moduledoc """
-  A request to modify the set of labels on a file. This request may contain many modifications that will either all succeed or all fail transactionally.
+  A request to modify the set of labels on a file. This request may contain many modifications that will either all succeed or all fail atomically.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `drive#modifyLabelsRequest`) - This is always drive#modifyLabelsRequest
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always drive#modifyLabelsRequest.
   *   `labelModifications` (*type:* `list(GoogleApi.Drive.V3.Model.LabelModification.t)`, *default:* `nil`) - The list of modifications to apply to the labels on the file.
   """
 
