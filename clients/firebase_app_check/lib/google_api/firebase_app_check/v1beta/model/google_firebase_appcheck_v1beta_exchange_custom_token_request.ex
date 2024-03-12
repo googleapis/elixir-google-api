@@ -22,15 +22,18 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
   ## Attributes
 
   *   `customToken` (*type:* `String.t`, *default:* `nil`) - Required. A custom token signed using your project's Admin SDK service account credentials.
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :customToken => String.t() | nil
+          :customToken => String.t() | nil,
+          :limitedUse => boolean() | nil
         }
 
   field(:customToken)
+  field(:limitedUse)
 end
 
 defimpl Poison.Decoder,

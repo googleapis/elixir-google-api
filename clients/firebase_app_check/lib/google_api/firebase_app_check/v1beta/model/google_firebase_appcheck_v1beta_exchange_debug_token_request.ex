@@ -22,15 +22,18 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
   ## Attributes
 
   *   `debugToken` (*type:* `String.t`, *default:* `nil`) - Required. A debug token secret. This string must match a debug token secret previously created using CreateDebugToken.
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugToken => String.t() | nil
+          :debugToken => String.t() | nil,
+          :limitedUse => boolean() | nil
         }
 
   field(:debugToken)
+  field(:limitedUse)
 end
 
 defimpl Poison.Decoder,
