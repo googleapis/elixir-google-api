@@ -21,7 +21,7 @@ defmodule GoogleApi.SecretManager.V1.Model.AccessSecretVersionResponse do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `payload` (*type:* `GoogleApi.SecretManager.V1.Model.SecretPayload.t`, *default:* `nil`) - Secret payload
   """
 
