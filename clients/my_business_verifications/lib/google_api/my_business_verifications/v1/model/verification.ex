@@ -21,6 +21,7 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.Verification do
 
   ## Attributes
 
+  *   `announcement` (*type:* `String.t`, *default:* `nil`) - Optional. Response announcement set only if the method is VETTED_PARTNER.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the verification is requested.
   *   `method` (*type:* `String.t`, *default:* `nil`) - The method of the verification.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the verification.
@@ -30,12 +31,14 @@ defmodule GoogleApi.MyBusinessVerifications.V1.Model.Verification do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :announcement => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :method => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil
         }
 
+  field(:announcement)
   field(:createTime, as: DateTime)
   field(:method)
   field(:name)
