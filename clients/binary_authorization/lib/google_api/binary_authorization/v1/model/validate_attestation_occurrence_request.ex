@@ -21,7 +21,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.ValidateAttestationOccurrenceRe
 
   ## Attributes
 
-  *   `attestation` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence.t`, *default:* `nil`) - Required. An AttestationOccurrence to be checked that it can be verified by the Attestor. It does not have to be an existing entity in Container Analysis. It must otherwise be a valid AttestationOccurrence.
+  *   `attestation` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.AttestationOccurrence.t`, *default:* `nil`) - Required. An AttestationOccurrence to be checked that it can be verified by the `Attestor`. It does not have to be an existing entity in Container Analysis. It must otherwise be a valid `AttestationOccurrence`.
   *   `occurrenceNote` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the Note to which the containing Occurrence is associated.
   *   `occurrenceResourceUri` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the artifact (e.g. container image) that is the subject of the containing Occurrence.
   """
