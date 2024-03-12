@@ -21,9 +21,11 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
 
   ## Attributes
 
-  *   `cloudFunction` (*type:* `String.t`, *default:* `nil`) - The Cloud Function resource name. Only Cloud Functions V2 is supported. Format: `projects/{project}/locations/{location}/functions/{function}`
+  *   `cloudFunction` (*type:* `String.t`, *default:* `nil`) - The Cloud Function resource name. Cloud Functions V1 and V2 are supported. Format: `projects/{project}/locations/{location}/functions/{function}` This is a read-only field. Creating Cloud Functions V1/V2 triggers is only supported via the Cloud Functions product. An error will be returned if the user sets this value.
   *   `cloudRun` (*type:* `GoogleApi.Eventarc.V1.Model.CloudRun.t`, *default:* `nil`) - Cloud Run fully-managed resource that receives the events. The resource should be in the same project as the trigger.
   *   `gke` (*type:* `GoogleApi.Eventarc.V1.Model.GKE.t`, *default:* `nil`) - A GKE service capable of receiving events. The service should be running in the same project as the trigger.
+  *   `httpEndpoint` (*type:* `GoogleApi.Eventarc.V1.Model.HttpEndpoint.t`, *default:* `nil`) - An HTTP endpoint destination described by an URI.
+  *   `networkConfig` (*type:* `GoogleApi.Eventarc.V1.Model.NetworkConfig.t`, *default:* `nil`) - Optional. Network config is used to configure how Eventarc resolves and connect to a destination. This should only be used with HttpEndpoint destination type.
   *   `workflow` (*type:* `String.t`, *default:* `nil`) - The resource name of the Workflow whose Executions are triggered by the events. The Workflow resource should be deployed in the same project as the trigger. Format: `projects/{project}/locations/{location}/workflows/{workflow}`
   """
 
@@ -33,12 +35,16 @@ defmodule GoogleApi.Eventarc.V1.Model.Destination do
           :cloudFunction => String.t() | nil,
           :cloudRun => GoogleApi.Eventarc.V1.Model.CloudRun.t() | nil,
           :gke => GoogleApi.Eventarc.V1.Model.GKE.t() | nil,
+          :httpEndpoint => GoogleApi.Eventarc.V1.Model.HttpEndpoint.t() | nil,
+          :networkConfig => GoogleApi.Eventarc.V1.Model.NetworkConfig.t() | nil,
           :workflow => String.t() | nil
         }
 
   field(:cloudFunction)
   field(:cloudRun, as: GoogleApi.Eventarc.V1.Model.CloudRun)
   field(:gke, as: GoogleApi.Eventarc.V1.Model.GKE)
+  field(:httpEndpoint, as: GoogleApi.Eventarc.V1.Model.HttpEndpoint)
+  field(:networkConfig, as: GoogleApi.Eventarc.V1.Model.NetworkConfig)
   field(:workflow)
 end
 

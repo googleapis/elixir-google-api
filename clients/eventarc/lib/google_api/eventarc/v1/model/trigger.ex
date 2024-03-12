@@ -26,11 +26,12 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `destination` (*type:* `GoogleApi.Eventarc.V1.Model.Destination.t`, *default:* `nil`) - Required. Destination specifies where the events should be sent to.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding.
+  *   `eventDataContentType` (*type:* `String.t`, *default:* `nil`) - Optional. EventDataContentType specifies the type of payload in MIME format that is expected from the CloudEvent data field. This is set to `application/json` if the value is not defined.
   *   `eventFilters` (*type:* `list(GoogleApi.Eventarc.V1.Model.EventFilter.t)`, *default:* `nil`) - Required. Unordered list. The list of filters that applies to event attributes. Only events that match all the provided filters are sent to the destination.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User labels attached to the triggers that can be used to group resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the trigger. Must be unique within the location of the project and must be in `projects/{project}/locations/{location}/triggers/{trigger}` format.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The principal who calls this API must have the `iam.serviceAccounts.actAs` permission in the service account. See https://cloud.google.com/iam/docs/understanding-service-accounts?hl=en#sa_common for more information. For Cloud Run destinations, this service account is used to generate identity tokens when invoking the service. See https://cloud.google.com/run/docs/triggering/pubsub-push#create-service-account for information on how to invoke authenticated Cloud Run services. To create Audit Log triggers, the service account should also have the `roles/eventarc.eventReceiver` IAM role.
-  *   `transport` (*type:* `GoogleApi.Eventarc.V1.Model.Transport.t`, *default:* `nil`) - Optional. To deliver messages, Eventarc might use other GCP products as a transport intermediary. This field contains a reference to that transport intermediary. This information can be used for debugging purposes.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The `iam.serviceAccounts.actAs` permission must be granted on the service account to allow a principal to impersonate the service account. For more information, see the [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific to the trigger destination.
+  *   `transport` (*type:* `GoogleApi.Eventarc.V1.Model.Transport.t`, *default:* `nil`) - Optional. To deliver messages, Eventarc might use other Google Cloud products as a transport intermediary. This field contains a reference to that transport intermediary. This information can be used for debugging purposes.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server-assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
           :createTime => DateTime.t() | nil,
           :destination => GoogleApi.Eventarc.V1.Model.Destination.t() | nil,
           :etag => String.t() | nil,
+          :eventDataContentType => String.t() | nil,
           :eventFilters => list(GoogleApi.Eventarc.V1.Model.EventFilter.t()) | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
   field(:createTime, as: DateTime)
   field(:destination, as: GoogleApi.Eventarc.V1.Model.Destination)
   field(:etag)
+  field(:eventDataContentType)
   field(:eventFilters, as: GoogleApi.Eventarc.V1.Model.EventFilter, type: :list)
   field(:labels, type: :map)
   field(:name)
