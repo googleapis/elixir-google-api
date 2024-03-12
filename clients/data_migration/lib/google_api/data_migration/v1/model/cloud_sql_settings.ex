@@ -26,10 +26,12 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Optional. Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data availability. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available).
   *   `cmekKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for the csql instance.
   *   `collation` (*type:* `String.t`, *default:* `nil`) - The Cloud SQL default instance level collation.
+  *   `dataCacheConfig` (*type:* `GoogleApi.DataMigration.V1.Model.DataCacheConfig.t`, *default:* `nil`) - Optional. Data cache is an optional feature available for Cloud SQL for MySQL Enterprise Plus edition only. For more information on data cache, see [Data cache overview](https://cloud.google.com/sql/help/mysql-data-cache) in Cloud SQL documentation.
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The storage capacity available to the database, in GB. The minimum (and default) size is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of storage: `PD_SSD` (default) or `PD_HDD`.
   *   `databaseFlags` (*type:* `map()`, *default:* `nil`) - The database flags passed to the Cloud SQL instance at startup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version.
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. The edition of the given Cloud SQL instance.
   *   `ipConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlIpConfig.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Input only. Initial root password.
   *   `rootPasswordSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates If this connection profile root password is stored.
@@ -49,10 +51,12 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
           :availabilityType => String.t() | nil,
           :cmekKeyName => String.t() | nil,
           :collation => String.t() | nil,
+          :dataCacheConfig => GoogleApi.DataMigration.V1.Model.DataCacheConfig.t() | nil,
           :dataDiskSizeGb => String.t() | nil,
           :dataDiskType => String.t() | nil,
           :databaseFlags => map() | nil,
           :databaseVersion => String.t() | nil,
+          :edition => String.t() | nil,
           :ipConfig => GoogleApi.DataMigration.V1.Model.SqlIpConfig.t() | nil,
           :rootPassword => String.t() | nil,
           :rootPasswordSet => boolean() | nil,
@@ -69,10 +73,12 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   field(:availabilityType)
   field(:cmekKeyName)
   field(:collation)
+  field(:dataCacheConfig, as: GoogleApi.DataMigration.V1.Model.DataCacheConfig)
   field(:dataDiskSizeGb)
   field(:dataDiskType)
   field(:databaseFlags, type: :map)
   field(:databaseVersion)
+  field(:edition)
   field(:ipConfig, as: GoogleApi.DataMigration.V1.Model.SqlIpConfig)
   field(:rootPassword)
   field(:rootPasswordSet)

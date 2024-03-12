@@ -23,7 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.GenerateSshScriptRequest do
 
   *   `vm` (*type:* `String.t`, *default:* `nil`) - Required. Bastion VM Instance name to use or to create.
   *   `vmCreationConfig` (*type:* `GoogleApi.DataMigration.V1.Model.VmCreationConfig.t`, *default:* `nil`) - The VM creation configuration
-  *   `vmPort` (*type:* `integer()`, *default:* `nil`) - The port that will be open on the bastion host
+  *   `vmPort` (*type:* `integer()`, *default:* `nil`) - The port that will be open on the bastion host.
   *   `vmSelectionConfig` (*type:* `GoogleApi.DataMigration.V1.Model.VmSelectionConfig.t`, *default:* `nil`) - The VM selection configuration
   """
 

@@ -21,36 +21,51 @@ defmodule GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile do
 
   ## Attributes
 
+  *   `alloydbClusterId` (*type:* `String.t`, *default:* `nil`) - Optional. If the destination is an AlloyDB database, use this field to provide the AlloyDB cluster ID.
   *   `cloudSqlId` (*type:* `String.t`, *default:* `nil`) - If the source is a Cloud SQL database, use this field to provide the Cloud SQL instance ID of the source.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The IP or hostname of the source PostgreSQL database.
   *   `networkArchitecture` (*type:* `String.t`, *default:* `nil`) - Output only. If the source is a Cloud SQL database, this field indicates the network architecture it's associated with.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password for the user that Database Migration Service will be using to connect to the database. This field is not returned on request, and the value is encrypted when stored in Database Migration Service.
   *   `passwordSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates If this connection profile password is stored.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The network port of the source PostgreSQL database.
+  *   `privateServiceConnectConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.PrivateServiceConnectConnectivity.t`, *default:* `nil`) - Private service connect connectivity.
   *   `ssl` (*type:* `GoogleApi.DataMigration.V1.Model.SslConfig.t`, *default:* `nil`) - SSL configuration for the destination to connect to the source database.
+  *   `staticIpConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.StaticIpConnectivity.t`, *default:* `nil`) - Static ip connectivity data (default, no additional details needed).
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. The username that Database Migration Service will use to connect to the database. The value is encrypted when stored in Database Migration Service.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alloydbClusterId => String.t() | nil,
           :cloudSqlId => String.t() | nil,
           :host => String.t() | nil,
           :networkArchitecture => String.t() | nil,
           :password => String.t() | nil,
           :passwordSet => boolean() | nil,
           :port => integer() | nil,
+          :privateServiceConnectConnectivity =>
+            GoogleApi.DataMigration.V1.Model.PrivateServiceConnectConnectivity.t() | nil,
           :ssl => GoogleApi.DataMigration.V1.Model.SslConfig.t() | nil,
+          :staticIpConnectivity =>
+            GoogleApi.DataMigration.V1.Model.StaticIpConnectivity.t() | nil,
           :username => String.t() | nil
         }
 
+  field(:alloydbClusterId)
   field(:cloudSqlId)
   field(:host)
   field(:networkArchitecture)
   field(:password)
   field(:passwordSet)
   field(:port)
+
+  field(:privateServiceConnectConnectivity,
+    as: GoogleApi.DataMigration.V1.Model.PrivateServiceConnectConnectivity
+  )
+
   field(:ssl, as: GoogleApi.DataMigration.V1.Model.SslConfig)
+  field(:staticIpConnectivity, as: GoogleApi.DataMigration.V1.Model.StaticIpConnectivity)
   field(:username)
 end
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ListMigrationJobsResponse do
   ## Attributes
 
   *   `migrationJobs` (*type:* `list(GoogleApi.DataMigration.V1.Model.MigrationJob.t)`, *default:* `nil`) - The list of migration jobs objects.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
