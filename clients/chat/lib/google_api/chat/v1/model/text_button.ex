@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.TextButton do
   @moduledoc """
-  A button with text and onclick action.
+  A button with text and `onclick` action.
 
   ## Attributes
 
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action of the button.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The `onclick` action of the button.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The text of the button.
   """
 

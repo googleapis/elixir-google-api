@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Image do
   @moduledoc """
-  An image that is specified by a URL and can have an `onClick` action.
+  An image that is specified by a URL and can have an `onClick` action. For an example, see [Image](https://developers.google.com/chat/ui/widgets/image). [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image, used for accessibility.
-  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The `https` URL that hosts the image. For example: ``` https://developers.google.com/chat/images/quickstart-app-avatar.png ```
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - When a user clicks on the image, the click triggers this action.
+  *   `altText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image that's used for accessibility.
+  *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The HTTPS URL that hosts the image. For example: ``` https://developers.google.com/chat/images/quickstart-app-avatar.png ```
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1OnClick.t`, *default:* `nil`) - When a user clicks the image, the click triggers this action.
   """
 
   use GoogleApi.Gax.ModelBase

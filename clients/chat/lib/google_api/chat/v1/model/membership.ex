@@ -21,10 +21,12 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time of the membership, such as when a member joined or was invited to join a space.
-  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - A Google Chat user or app. Format: `users/{user}` or `users/app` When `users/{user}`, represents a [person](https://developers.google.com/people/api/rest/v1/people) in the People API or a [user](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users) in the Admin SDK Directory API. When `users/app`, represents a Chat app creating membership for itself.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership. Format: spaces/{space}/members/{member}
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Output only. User's role within a Chat space, which determines their permitted actions in the space.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. The creation time of the membership, such as when a member joined or was invited to join a space. This field is output only, except when used to import historical memberships in import mode spaces.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. The deletion time of the membership, such as when a member left or was removed from a space. This field is output only, except when used to import historical memberships in import mode spaces.
+  *   `groupMember` (*type:* `GoogleApi.Chat.V1.Model.Group.t`, *default:* `nil`) - The Google Group the membership corresponds to. Only supports read operations. Other operations, like creating or updating a membership, aren't currently supported.
+  *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The Google Chat user or app the membership corresponds to. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the output populates the [user](https://developers.google.com/chat/api/reference/rest/v1/User) `name` and `type`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership, assigned by the server. Format: `spaces/{space}/members/{member}`
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. User's role within a Chat space, which determines their permitted actions in the space. [Developer Preview](https://developers.google.com/workspace/preview): This field can only be used as input in `UpdateMembership`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the membership.
   """
 
@@ -32,6 +34,8 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :groupMember => GoogleApi.Chat.V1.Model.Group.t() | nil,
           :member => GoogleApi.Chat.V1.Model.User.t() | nil,
           :name => String.t() | nil,
           :role => String.t() | nil,
@@ -39,6 +43,8 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
         }
 
   field(:createTime, as: DateTime)
+  field(:deleteTime, as: DateTime)
+  field(:groupMember, as: GoogleApi.Chat.V1.Model.Group)
   field(:member, as: GoogleApi.Chat.V1.Model.User)
   field(:name)
   field(:role)

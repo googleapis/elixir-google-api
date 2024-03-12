@@ -24,8 +24,23 @@ defmodule GoogleApi.Chat.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # Private Service: https://www.googleapis.com/auth/chat.bot
+      "https://www.googleapis.com/auth/chat.bot",
+
+      # Delete conversations and spaces & remove access to associated files in Google Chat
+      "https://www.googleapis.com/auth/chat.delete",
+
+      # Import spaces, messages, and memberships into Google Chat.
+      "https://www.googleapis.com/auth/chat.import",
+
       # View, add, and remove members from conversations in Google Chat
       "https://www.googleapis.com/auth/chat.memberships",
+
+      # Add and remove itself from conversations in Google Chat
+      "https://www.googleapis.com/auth/chat.memberships.app",
+
+      # View members in Google Chat conversations.
+      "https://www.googleapis.com/auth/chat.memberships.readonly",
 
       # View, compose, send, update, and delete messages, and add, view, and delete reactions to messages.
       "https://www.googleapis.com/auth/chat.messages",
@@ -33,8 +48,26 @@ defmodule GoogleApi.Chat.V1.Connection do
       # Compose and send messages in Google Chat
       "https://www.googleapis.com/auth/chat.messages.create",
 
-      # view messages and reactions in Google Chat
-      "https://www.googleapis.com/auth/chat.messages.readonly"
+      # View, add, and delete reactions to messages in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.reactions",
+
+      # Add reactions to messages in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.reactions.create",
+
+      # View reactions to messages in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.reactions.readonly",
+
+      # View messages and reactions in Google Chat
+      "https://www.googleapis.com/auth/chat.messages.readonly",
+
+      # Create conversations and spaces and see or edit metadata (including history settings and access settings) in Google Chat
+      "https://www.googleapis.com/auth/chat.spaces",
+
+      # Create new conversations in Google Chat
+      "https://www.googleapis.com/auth/chat.spaces.create",
+
+      # View chat and spaces in Google Chat
+      "https://www.googleapis.com/auth/chat.spaces.readonly"
     ],
     otp_app: :google_api_chat,
     base_url: "https://chat.googleapis.com/"

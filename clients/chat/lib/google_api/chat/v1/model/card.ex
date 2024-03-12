@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.Card do
   @moduledoc """
-  A card is a UI element that can contain UI widgets such as texts, images.
+  A card is a UI element that can contain UI widgets such as text and images.
 
   ## Attributes
 

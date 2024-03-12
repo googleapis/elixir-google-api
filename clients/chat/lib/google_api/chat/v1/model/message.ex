@@ -17,27 +17,34 @@
 
 defmodule GoogleApi.Chat.V1.Model.Message do
   @moduledoc """
-  A message in Google Chat.
+  A message in a Google Chat space.
 
   ## Attributes
 
   *   `actionResponse` (*type:* `GoogleApi.Chat.V1.Model.ActionResponse.t`, *default:* `nil`) - Input only. Parameters that a Chat app can use to configure how its response is posted.
-  *   `annotations` (*type:* `list(GoogleApi.Chat.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Annotations associated with the text in this message.
-  *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message with all Chat app mentions stripped out.
-  *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User uploaded attachment.
-  *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Deprecated: Use `cards_v2` instead. Rich, formatted and interactive cards that can be used to display UI elements such as: formatted texts, buttons, clickable images. Cards are normally displayed below the plain-text body of the message.
-  *   `cardsV2` (*type:* `list(GoogleApi.Chat.V1.Model.CardWithId.t)`, *default:* `nil`) - Richly formatted and interactive cards that display UI elements and editable widgets, such as: - Formatted text - Buttons - Clickable images - Checkboxes - Radio buttons - Input widgets. Cards are usually displayed below the text-body of a Chat message, but can situationally appear other places, such as [dialogs](https://developers.google.com/chat/how-tos/dialogs). The `cardId` is a unique identifier among cards in the same message and for identifying user input values. Currently supported widgets include: - `TextParagraph` - `DecoratedText` - `Image` - `ButtonList` - `Divider`
-  *   `clientAssignedMessageId` (*type:* `String.t`, *default:* `nil`) - A custom name for a Chat message assigned at creation. Must start with `client-` and contain only lowercase letters, numbers, and hyphens up to 63 characters in length. Specify this field to get, update, or delete the message with the specified value. For example usage, see [Name a created message](https://developers.google.com/chat/api/guides/crudl/messages#name_a_created_message).
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was created in Google Chat server.
-  *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards cannot be displayed (e.g. mobile notifications).
+  *   `annotations` (*type:* `list(GoogleApi.Chat.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Annotations associated with the `text` in this message.
+  *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Output only. Plain-text body of the message with all Chat app mentions stripped out.
+  *   `attachedGifs` (*type:* `list(GoogleApi.Chat.V1.Model.AttachedGif.t)`, *default:* `nil`) - Output only. GIF images that are attached to the message.
+  *   `attachment` (*type:* `list(GoogleApi.Chat.V1.Model.Attachment.t)`, *default:* `nil`) - User-uploaded attachment.
+  *   `cards` (*type:* `list(GoogleApi.Chat.V1.Model.Card.t)`, *default:* `nil`) - Deprecated: Use `cards_v2` instead. Rich, formatted, and interactive cards that you can use to display UI elements such as: formatted texts, buttons, and clickable images. Cards are normally displayed below the plain-text body of the message. `cards` and `cards_v2` can have a maximum size of 32 KB.
+  *   `cardsV2` (*type:* `list(GoogleApi.Chat.V1.Model.CardWithId.t)`, *default:* `nil`) - An array of [cards](https://developers.google.com/chat/api/reference/rest/v1/cards). Only Chat apps can create cards. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the messages can't contain cards. To learn about cards and how to create them, see [Design dynamic, interactive, and consistent UIs with cards](https://developers.google.com/chat/ui). [Card builder](https://addons.gsuite.google.com/uikit/builder)
+  *   `clientAssignedMessageId` (*type:* `String.t`, *default:* `nil`) - Optional. A custom ID for the message. You can use field to identify a message, or to get, delete, or update a message. To set a custom ID, specify the [`messageId`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#body.QUERY_PARAMETERS.message_id) field when you create the message. For details, see [Name a message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. For spaces created in Chat, the time at which the message was created. This field is output only, except when used in import mode spaces. For import mode spaces, set this field to the historical timestamp at which the message was created in the source in order to preserve the original creation time.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was deleted in Google Chat. If the message is never deleted, this field is empty.
+  *   `deletionMetadata` (*type:* `GoogleApi.Chat.V1.Model.DeletionMetadata.t`, *default:* `nil`) - Output only. Information about a deleted message. A message is deleted when `delete_time` is set.
+  *   `emojiReactionSummaries` (*type:* `list(GoogleApi.Chat.V1.Model.EmojiReactionSummary.t)`, *default:* `nil`) - Output only. The list of emoji reaction summaries on the message.
+  *   `fallbackText` (*type:* `String.t`, *default:* `nil`) - A plain-text description of the message's cards, used when the actual cards can't be displayed—for example, mobile notifications.
+  *   `formattedText` (*type:* `String.t`, *default:* `nil`) - Output only. Contains the message `text` with markups added to communicate formatting. This field might not capture all formatting visible in the UI, but includes the following: * [Markup syntax](https://developers.google.com/chat/format-messages) for bold, italic, strikethrough, monospace, monospace block, and bulleted list. * [User mentions](https://developers.google.com/chat/format-messages#messages-@mention) using the format ``. * Custom hyperlinks using the format `<{url}|{rendered_text}>` where the first string is the URL and the second is the rendered text—for example, ``. * Custom emoji using the format `:{emoji_name}:`—for example, `:smile:`. This doesn't apply to Unicode emoji, such as `U+1F600` for a grinning face emoji. For more information, see [View text formatting sent in a message](https://developers.google.com/chat/format-messages#view_text_formatting_sent_in_a_message)
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the message was last edited by a user. If the message has never been edited, this field is empty.
-  *   `matchedUrl` (*type:* `GoogleApi.Chat.V1.Model.MatchedUrl.t`, *default:* `nil`) - Output only. A URL in `spaces.messages.text` that matches a link preview pattern. For more information, refer to [Preview links](https://developers.google.com/chat/how-tos/preview-links).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name in the form `spaces/*/messages/*`. Example: `spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB`
-  *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Output only. The user who created the message.
+  *   `matchedUrl` (*type:* `GoogleApi.Chat.V1.Model.MatchedUrl.t`, *default:* `nil`) - Output only. A URL in `spaces.messages.text` that matches a link preview pattern. For more information, see [Preview links](https://developers.google.com/chat/how-tos/preview-links).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the message. Format: `spaces/{space}/messages/{message}` Where `{space}` is the ID of the space where the message is posted and `{message}` is a system-assigned ID for the message. For example, `spaces/AAAAAAAAAAA/messages/BBBBBBBBBBB.BBBBBBBBBBB`. If you set a custom ID when you create a message, you can use this ID to specify the message in a request by replacing `{message}` with the value from the `clientAssignedMessageId` field. For example, `spaces/AAAAAAAAAAA/messages/client-custom-name`. For details, see [Name a message](https://developers.google.com/chat/api/guides/v1/messages/create#name_a_created_message).
+  *   `privateMessageViewer` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Immutable. Input for creating a message, otherwise output only. The user that can view the message. When set, the message is private and only visible to the specified user and the Chat app. Link previews and attachments aren't supported for private messages. Only Chat apps can send private messages. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users) to send a message, the message can't be private and must omit this field. For details, see [Send private messages to Google Chat users](https://developers.google.com/chat/api/guides/v1/messages/private).
+  *   `quotedMessageMetadata` (*type:* `GoogleApi.Chat.V1.Model.QuotedMessageMetadata.t`, *default:* `nil`) - Output only. Information about a message that's quoted by a Google Chat user in a space. Google Chat users can quote a message to reply to it.
+  *   `sender` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - Output only. The user who created the message. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the output populates the [user](https://developers.google.com/chat/api/reference/rest/v1/User) `name` and `type`.
   *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommand.t`, *default:* `nil`) - Output only. Slash command information, if applicable.
-  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space the message belongs to. When accessed with [user authentication](https://developers.google.com/chat/api/guides/auth/users), only the name of the Space is populated.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message. The first link to an image, video, web page, or other preview-able item generates a preview chip.
-  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread).
+  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the output populates the [space](https://developers.google.com/chat/api/reference/rest/v1/spaces) `name`.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Plain-text body of the message. The first link to an image, video, or web page generates a [preview chip](https://developers.google.com/chat/how-tos/preview-links). You can also [@mention a Google Chat user](https://developers.google.com/chat/format-messages#messages-@mention), or everyone in the space. To learn about creating text messages, see [Send a text message](https://developers.google.com/chat/api/guides/v1/messages/create#create-text-messages).
+  *   `thread` (*type:* `GoogleApi.Chat.V1.Model.Thread.t`, *default:* `nil`) - The thread the message belongs to. For example usage, see [Start or reply to a message thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread).
   *   `threadReply` (*type:* `boolean()`, *default:* `nil`) - Output only. When `true`, the message is a response in a reply thread. When `false`, the message is visible in the space's top-level conversation as either the first message of a thread or a message with no threaded replies. If the space doesn't support reply in threads, this field is always `false`.
   """
 
@@ -47,15 +54,22 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :actionResponse => GoogleApi.Chat.V1.Model.ActionResponse.t() | nil,
           :annotations => list(GoogleApi.Chat.V1.Model.Annotation.t()) | nil,
           :argumentText => String.t() | nil,
+          :attachedGifs => list(GoogleApi.Chat.V1.Model.AttachedGif.t()) | nil,
           :attachment => list(GoogleApi.Chat.V1.Model.Attachment.t()) | nil,
           :cards => list(GoogleApi.Chat.V1.Model.Card.t()) | nil,
           :cardsV2 => list(GoogleApi.Chat.V1.Model.CardWithId.t()) | nil,
           :clientAssignedMessageId => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
+          :deletionMetadata => GoogleApi.Chat.V1.Model.DeletionMetadata.t() | nil,
+          :emojiReactionSummaries => list(GoogleApi.Chat.V1.Model.EmojiReactionSummary.t()) | nil,
           :fallbackText => String.t() | nil,
+          :formattedText => String.t() | nil,
           :lastUpdateTime => DateTime.t() | nil,
           :matchedUrl => GoogleApi.Chat.V1.Model.MatchedUrl.t() | nil,
           :name => String.t() | nil,
+          :privateMessageViewer => GoogleApi.Chat.V1.Model.User.t() | nil,
+          :quotedMessageMetadata => GoogleApi.Chat.V1.Model.QuotedMessageMetadata.t() | nil,
           :sender => GoogleApi.Chat.V1.Model.User.t() | nil,
           :slashCommand => GoogleApi.Chat.V1.Model.SlashCommand.t() | nil,
           :space => GoogleApi.Chat.V1.Model.Space.t() | nil,
@@ -67,15 +81,22 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   field(:actionResponse, as: GoogleApi.Chat.V1.Model.ActionResponse)
   field(:annotations, as: GoogleApi.Chat.V1.Model.Annotation, type: :list)
   field(:argumentText)
+  field(:attachedGifs, as: GoogleApi.Chat.V1.Model.AttachedGif, type: :list)
   field(:attachment, as: GoogleApi.Chat.V1.Model.Attachment, type: :list)
   field(:cards, as: GoogleApi.Chat.V1.Model.Card, type: :list)
   field(:cardsV2, as: GoogleApi.Chat.V1.Model.CardWithId, type: :list)
   field(:clientAssignedMessageId)
   field(:createTime, as: DateTime)
+  field(:deleteTime, as: DateTime)
+  field(:deletionMetadata, as: GoogleApi.Chat.V1.Model.DeletionMetadata)
+  field(:emojiReactionSummaries, as: GoogleApi.Chat.V1.Model.EmojiReactionSummary, type: :list)
   field(:fallbackText)
+  field(:formattedText)
   field(:lastUpdateTime, as: DateTime)
   field(:matchedUrl, as: GoogleApi.Chat.V1.Model.MatchedUrl)
   field(:name)
+  field(:privateMessageViewer, as: GoogleApi.Chat.V1.Model.User)
+  field(:quotedMessageMetadata, as: GoogleApi.Chat.V1.Model.QuotedMessageMetadata)
   field(:sender, as: GoogleApi.Chat.V1.Model.User)
   field(:slashCommand, as: GoogleApi.Chat.V1.Model.SlashCommand)
   field(:space, as: GoogleApi.Chat.V1.Model.Space)

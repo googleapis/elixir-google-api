@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.TimeInput do
   @moduledoc """
-  Time input values. Not supported by Chat apps.
+  Time input values.
 
   ## Attributes
 

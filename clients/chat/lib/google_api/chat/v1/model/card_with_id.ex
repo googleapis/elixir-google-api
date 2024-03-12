@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.CardWithId do
   @moduledoc """
-  Widgets for Chat apps to specify.
+  A [card](https://developers.google.com/chat/api/reference/rest/v1/cards) in a Google Chat message. Only Chat apps can create cards. If your Chat app [authenticates as a user](https://developers.google.com/chat/api/guides/auth/users), the message can't contain cards. [Card builder](https://addons.gsuite.google.com/uikit/builder)
 
   ## Attributes
 
-  *   `card` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t`, *default:* `nil`) - Card proto that allows Chat apps to specify UI elements and editable widgets.
-  *   `cardId` (*type:* `String.t`, *default:* `nil`) - Required for `cardsV2` messages. Chat app-specified identifier for this widget. Scoped within a message.
+  *   `card` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card.t`, *default:* `nil`) - A card. Maximum size is 32 KB.
+  *   `cardId` (*type:* `String.t`, *default:* `nil`) - Required if the message contains multiple cards. A unique identifier for a card in a message.
   """
 
   use GoogleApi.Gax.ModelBase

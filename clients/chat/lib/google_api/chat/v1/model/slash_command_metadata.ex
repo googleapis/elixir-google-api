@@ -22,9 +22,9 @@ defmodule GoogleApi.Chat.V1.Model.SlashCommandMetadata do
   ## Attributes
 
   *   `bot` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The Chat app whose command was invoked.
-  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The command id of the invoked slash command.
+  *   `commandId` (*type:* `String.t`, *default:* `nil`) - The command ID of the invoked slash command.
   *   `commandName` (*type:* `String.t`, *default:* `nil`) - The name of the invoked slash command.
-  *   `triggersDialog` (*type:* `boolean()`, *default:* `nil`) - Indicating whether the slash command is for a dialog.
+  *   `triggersDialog` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the slash command is for a dialog.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of slash command.
   """
 

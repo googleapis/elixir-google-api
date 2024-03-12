@@ -21,8 +21,8 @@ defmodule GoogleApi.Chat.V1.Model.Button do
 
   ## Attributes
 
-  *   `imageButton` (*type:* `GoogleApi.Chat.V1.Model.ImageButton.t`, *default:* `nil`) - A button with image and onclick action.
-  *   `textButton` (*type:* `GoogleApi.Chat.V1.Model.TextButton.t`, *default:* `nil`) - A button with text and onclick action.
+  *   `imageButton` (*type:* `GoogleApi.Chat.V1.Model.ImageButton.t`, *default:* `nil`) - A button with image and `onclick` action.
+  *   `textButton` (*type:* `GoogleApi.Chat.V1.Model.TextButton.t`, *default:* `nil`) - A button with text and `onclick` action.
   """
 
   use GoogleApi.Gax.ModelBase

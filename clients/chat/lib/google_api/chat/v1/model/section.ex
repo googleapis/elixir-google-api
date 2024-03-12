@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.Section do
   @moduledoc """
-  A section contains a collection of widgets that are rendered (vertically) in the order that they are specified. Across all platforms, cards have a narrow fixed width, so there is currently no need for layout properties (e.g. float).
+  A section contains a collection of widgets that are rendered (vertically) in the order that they are specified. Across all platforms, cards have a narrow fixed width, so there's currently no need for layout properties (for example, float).
 
   ## Attributes
 
-  *   `header` (*type:* `String.t`, *default:* `nil`) - The header of the section, text formatted supported.
-  *   `widgets` (*type:* `list(GoogleApi.Chat.V1.Model.WidgetMarkup.t)`, *default:* `nil`) - A section must contain at least 1 widget.
+  *   `header` (*type:* `String.t`, *default:* `nil`) - The header of the section. Formatted text is supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `widgets` (*type:* `list(GoogleApi.Chat.V1.Model.WidgetMarkup.t)`, *default:* `nil`) - A section must contain at least one widget.
   """
 
   use GoogleApi.Gax.ModelBase

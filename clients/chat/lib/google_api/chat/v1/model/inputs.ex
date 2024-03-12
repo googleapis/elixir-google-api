@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Chat.V1.Model.Inputs do
   @moduledoc """
-  Types of data inputs for widgets. Users enter data with these inputs.
+  Types of data that users can [input on cards or dialogs](https://developers.google.com/chat/ui/read-form-data). The input type depends on the type of values that the widget accepts.
 
   ## Attributes
 
-  *   `dateInput` (*type:* `GoogleApi.Chat.V1.Model.DateInput.t`, *default:* `nil`) - Date input values. Not supported by Chat apps.
-  *   `dateTimeInput` (*type:* `GoogleApi.Chat.V1.Model.DateTimeInput.t`, *default:* `nil`) - Date and time input values. Not supported by Chat apps.
-  *   `stringInputs` (*type:* `GoogleApi.Chat.V1.Model.StringInputs.t`, *default:* `nil`) - Input parameter for regular widgets. For single-valued widgets, it is a single value list. For multi-valued widgets, such as checkbox, all the values are presented.
-  *   `timeInput` (*type:* `GoogleApi.Chat.V1.Model.TimeInput.t`, *default:* `nil`) - Time input values. Not supported by Chat apps.
+  *   `dateInput` (*type:* `GoogleApi.Chat.V1.Model.DateInput.t`, *default:* `nil`) - Date input values from a [`DateTimePicker`](https://developers.google.com/chat/api/reference/rest/v1/cards#DateTimePicker) widget that only accepts date values.
+  *   `dateTimeInput` (*type:* `GoogleApi.Chat.V1.Model.DateTimeInput.t`, *default:* `nil`) - Date and time input values from a [`DateTimePicker`](https://developers.google.com/chat/api/reference/rest/v1/cards#DateTimePicker) widget that accepts both a date and time.
+  *   `stringInputs` (*type:* `GoogleApi.Chat.V1.Model.StringInputs.t`, *default:* `nil`) - A list of strings that represent the values that the user inputs in a widget. If the widget only accepts one value, such as a [`TextInput`](https://developers.google.com/chat/api/reference/rest/v1/cards#TextInput) widget, the list contains one string object. If the widget accepts multiple values, such as a [`SelectionInput`](https://developers.google.com/chat/api/reference/rest/v1/cards#selectioninput) widget of checkboxes, the list contains a string object for each value that the user inputs or selects.
+  *   `timeInput` (*type:* `GoogleApi.Chat.V1.Model.TimeInput.t`, *default:* `nil`) - Time input values from a [`DateTimePicker`](https://developers.google.com/chat/api/reference/rest/v1/cards#DateTimePicker) widget that only accepts time values.
   """
 
   use GoogleApi.Gax.ModelBase

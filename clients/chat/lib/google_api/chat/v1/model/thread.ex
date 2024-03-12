@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.Thread do
   @moduledoc """
-  A thread in Google Chat.
+  A thread in a Google Chat space. For example usage, see [Start or reply to a message thread](https://developers.google.com/chat/api/guides/v1/messages/create#create-message-thread). If you specify a thread when creating a message, you can set the [`messageReplyOption`](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages/create#messagereplyoption) field to determine what happens if no matching thread is found.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the thread. Example: spaces/{space}/threads/{thread}
-  *   `threadKey` (*type:* `String.t`, *default:* `nil`) - Optional. Opaque thread identifier. To start or add to a thread, create a message and specify a `threadKey` or the thread.name. For example usage, see [Start or reply to a message thread](/chat/api/guides/crudl/messages#start_or_reply_to_a_message_thread). For other requests, this is an output only field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the thread. Example: `spaces/{space}/threads/{thread}`
+  *   `threadKey` (*type:* `String.t`, *default:* `nil`) - Optional. Input for creating or updating a thread. Otherwise, output only. ID for the thread. Supports up to 4000 characters. This ID is unique to the Chat app that sets it. For example, if multiple Chat apps create a message using the same thread key, the messages are posted in different threads. To reply in a thread created by a person or another Chat app, specify the thread `name` field instead.
   """
 
   use GoogleApi.Gax.ModelBase

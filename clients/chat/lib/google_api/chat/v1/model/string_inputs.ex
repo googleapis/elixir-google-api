@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.StringInputs do
 
   ## Attributes
 
-  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - An array of strings entered by the user.
+  *   `value` (*type:* `list(String.t)`, *default:* `nil`) - An list of strings entered by the user.
   """
 
   use GoogleApi.Gax.ModelBase

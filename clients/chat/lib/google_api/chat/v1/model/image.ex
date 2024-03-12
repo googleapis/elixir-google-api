@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Chat.V1.Model.Image do
   @moduledoc """
-  An image that is specified by a URL and can have an onclick action.
+  An image that's specified by a URL and can have an `onclick` action.
 
   ## Attributes
 
-  *   `aspectRatio` (*type:* `float()`, *default:* `nil`) - The aspect ratio of this image (width/height). This field allows clients to reserve the right height for the image while waiting for it to load. It's not meant to override the native aspect ratio of the image. If unset, the server fills it by prefetching the image.
+  *   `aspectRatio` (*type:* `float()`, *default:* `nil`) - The aspect ratio of this image (width and height). This field lets you reserve the right height for the image while waiting for it to load. It's not meant to override the built-in aspect ratio of the image. If unset, the server fills it by prefetching the image.
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the image.
-  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The onclick action.
+  *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The `onclick` action.
   """
 
   use GoogleApi.Gax.ModelBase

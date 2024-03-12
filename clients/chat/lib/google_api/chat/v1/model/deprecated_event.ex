@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   @moduledoc """
-  Google Chat events.
+  A Google Chat app interaction event. To learn about interaction events, see [Receive and respond to interactions with your Google Chat app](https://developers.google.com/chat/api/guides/message-formats). To learn about event types and for example event payloads, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events).
 
   ## Attributes
 
-  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - The form action data associated with an interactive card that was clicked. Only populated for CARD_CLICKED events. See the [Interactive Cards guide](/chat/how-tos/cards-onclick) for more information.
+  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - For `CARD_CLICKED` interaction events, the form action data associated when a user clicks a card or dialog. To learn more, see [Read form data input by users on cards](https://developers.google.com/chat/ui/read-form-data).
   *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/chat/how-tos/dialogs), like data entered on a card.
-  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the Chat app should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. See the [Authorizing access to 3p services guide](/chat/how-tos/auth-3p) for more information.
-  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/chat/how-tos/dialogs) event received.
-  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the event occurred.
-  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - True when the event is related to [dialogs](https://developers.google.com/chat/how-tos/dialogs).
-  *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the event, if applicable.
-  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the event occurred.
-  *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The Chat app-defined key for the thread related to the event. See the thread_key field of the `spaces.message.create` request for more information.
+  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the Chat app should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. For more information, see [Connect a Chat app with other services & tools](https://developers.google.com/chat/how-tos/connect-web-services-tools).
+  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/chat/how-tos/dialogs) interaction event received.
+  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the interaction event occurred.
+  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - For `CARD_CLICKED` interaction events, whether the user interacted with a [dialog](https://developers.google.com/chat/how-tos/dialogs).
+  *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the interaction event, if applicable.
+  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the interaction event occurred.
+  *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The Chat app-defined key for the thread related to the interaction event. See [`spaces.messages.thread.threadKey`](/chat/api/reference/rest/v1/spaces.messages#Thread.FIELDS.thread_key) for more information.
   *   `token` (*type:* `String.t`, *default:* `nil`) - A secret value that legacy Chat apps can use to verify if a request is from Google. Google randomly generates the token, and its value remains static. You can obtain, revoke, or regenerate the token from the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat) in the Google Cloud Console. Modern Chat apps don't use this field. It is absent from API responses and the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the event.
-  *   `user` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user that triggered the event.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of interaction event. For details, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events).
+  *   `user` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user that triggered the interaction event.
   """
 
   use GoogleApi.Gax.ModelBase

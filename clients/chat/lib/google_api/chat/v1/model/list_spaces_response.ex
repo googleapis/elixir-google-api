@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
   @moduledoc """
-  The response corresponding to ListSpacesRequest.
+
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - You can send a token as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages.
   *   `spaces` (*type:* `list(GoogleApi.Chat.V1.Model.Space.t)`, *default:* `nil`) - List of spaces in the requested (or first) page.
   """
 

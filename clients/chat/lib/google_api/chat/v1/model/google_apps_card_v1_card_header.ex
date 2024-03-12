@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader do
   @moduledoc """
-  Represents a card header.
+  Represents a card header. For an example in Google Chat apps, see [Card header](https://developers.google.com/chat/ui/widgets/card-header). [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
 
   ## Attributes
 
-  *   `imageAltText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image which is used for accessibility.
-  *   `imageType` (*type:* `String.t`, *default:* `nil`) - The shape used to crop the image.
+  *   `imageAltText` (*type:* `String.t`, *default:* `nil`) - The alternative text of this image that's used for accessibility.
+  *   `imageType` (*type:* `String.t`, *default:* `nil`) - The shape used to crop the image. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - The HTTPS URL of the image in the card header.
   *   `subtitle` (*type:* `String.t`, *default:* `nil`) - The subtitle of the card header. If specified, appears on its own line below the `title`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the card header. The header has a fixed height: if both a title and subtitle are specified, each takes up one line. If only the title is specified, it takes up both lines.

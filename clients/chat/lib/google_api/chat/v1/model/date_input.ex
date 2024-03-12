@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.DateInput do
   @moduledoc """
-  Date input values. Not supported by Chat apps.
+  Date input values.
 
   ## Attributes
 
