@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidManagement.V1.Model.MemoryEvent do
   @moduledoc """
-  An event related to memory and storage measurements.
+  An event related to memory and storage measurements.To distinguish between new and old events, we recommend using the createTime field.
 
   ## Attributes
 

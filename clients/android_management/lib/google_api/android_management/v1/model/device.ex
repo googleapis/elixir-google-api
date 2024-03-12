@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `previousDeviceNames` (*type:* `list(String.t)`, *default:* `nil`) - If the same physical device has been enrolled multiple times, this field contains its previous device names. The serial number is used as the unique identifier to determine if the same physical device has enrolled previously. The names are in chronological order.
   *   `hardwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.HardwareInfo.t`, *default:* `nil`) - Detailed information about the device hardware.
   *   `enrollmentTokenData` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token with additional data provided, this field contains that data.
-  *   `memoryEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t)`, *default:* `nil`) - Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy.
+  *   `memoryEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t)`, *default:* `nil`) - Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy.Events are retained for a certain period of time and old events are deleted.
   *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
   *   `memoryInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t`, *default:* `nil`) - Memory information: contains information about device memory and storage.
   *   `policyCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether the device is compliant with its policy.
@@ -41,6 +41,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   *   `hardwareStatusSamples` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.HardwareStatus.t)`, *default:* `nil`) - Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device's policy.
   *   `powerManagementEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t)`, *default:* `nil`) - Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device's policy.
   *   `appliedPolicyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy currently applied to the device.
+  *   `dpcMigrationInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t`, *default:* `nil`) - Output only. Information related to whether this device was migrated from being managed by another Device Policy Controller (DPC).
   *   `applicationReports` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationReport.t)`, *default:* `nil`) - Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device's policy.
   *   `userName` (*type:* `String.t`, *default:* `nil`) - The resource name of the user that owns this device in the form enterprises/{enterpriseId}/users/{userId}.
   *   `nonComplianceDetails` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail.t)`, *default:* `nil`) - Details about policy settings that the device is not compliant with.
@@ -83,6 +84,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
           :powerManagementEvents =>
             list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t()) | nil,
           :appliedPolicyName => String.t() | nil,
+          :dpcMigrationInfo => GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t() | nil,
           :applicationReports =>
             list(GoogleApi.AndroidManagement.V1.Model.ApplicationReport.t()) | nil,
           :userName => String.t() | nil,
@@ -133,6 +135,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
   )
 
   field(:appliedPolicyName)
+  field(:dpcMigrationInfo, as: GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo)
 
   field(:applicationReports,
     as: GoogleApi.AndroidManagement.V1.Model.ApplicationReport,

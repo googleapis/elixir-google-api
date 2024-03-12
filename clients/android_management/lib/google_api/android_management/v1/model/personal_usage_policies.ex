@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies do
 
   *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
   *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, the camera is disabled on the personal profile.
-  *   `maxDaysWithWorkOff` (*type:* `integer()`, *default:* `nil`) - Controls how long the work profile can stay off. The duration must be at least 3 days.
+  *   `maxDaysWithWorkOff` (*type:* `integer()`, *default:* `nil`) - Controls how long the work profile can stay off. The minimum duration must be at least 3 days. Other details are as follows: - If the duration is set to 0, the feature is turned off. - If the duration is set to a value smaller than the minimum duration, the feature returns an error. *Note:* If you want to avoid personal profiles being suspended during long periods of off-time, you can temporarily set a large value for this parameter.
   *   `personalApplications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersonalApplicationPolicy.t)`, *default:* `nil`) - Policy applied to applications in the personal profile.
   *   `personalPlayStoreMode` (*type:* `String.t`, *default:* `nil`) - Used together with personalApplications to control how apps in the personal profile are allowed or blocked.
   *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, screen capture is disabled for all users.
