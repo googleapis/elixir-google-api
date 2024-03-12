@@ -27,6 +27,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User data for display name in UI. Validation: <= 60 chars.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
+  *   `ownershipScope` (*type:* `String.t`, *default:* `nil`) - 
   *   `thresholdRules` (*type:* `list(GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ThresholdRule.t)`, *default:* `nil`) - Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
   """
 
@@ -45,6 +46,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
           :displayName => String.t() | nil,
           :etag => String.t() | nil,
           :name => String.t() | nil,
+          :ownershipScope => String.t() | nil,
           :thresholdRules =>
             list(
               GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ThresholdRule.t()
@@ -67,6 +69,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   field(:displayName)
   field(:etag)
   field(:name)
+  field(:ownershipScope)
 
   field(:thresholdRules,
     as: GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1ThresholdRule,
