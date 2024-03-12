@@ -29,6 +29,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
   *   `cpe` (*type:* `String.t`, *default:* `nil`) - The CPE of the resource being scanned.
   *   `lastScanTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this resource was scanned.
+  *   `sbomStatus` (*type:* `GoogleApi.OnDemandScanning.V1.Model.SBOMStatus.t`, *default:* `nil`) - The status of an SBOM generation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
           :archiveTime => DateTime.t() | nil,
           :continuousAnalysis => String.t() | nil,
           :cpe => String.t() | nil,
-          :lastScanTime => DateTime.t() | nil
+          :lastScanTime => DateTime.t() | nil,
+          :sbomStatus => GoogleApi.OnDemandScanning.V1.Model.SBOMStatus.t() | nil
         }
 
   field(:analysisCompleted, as: GoogleApi.OnDemandScanning.V1.Model.AnalysisCompleted)
@@ -52,6 +54,7 @@ defmodule GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
   field(:continuousAnalysis)
   field(:cpe)
   field(:lastScanTime, as: DateTime)
+  field(:sbomStatus, as: GoogleApi.OnDemandScanning.V1.Model.SBOMStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.OnDemandScanning.V1.Model.DiscoveryOccurrence do
