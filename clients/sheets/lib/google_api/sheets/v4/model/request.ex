@@ -27,7 +27,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `addNamedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t`, *default:* `nil`) - Adds a named range.
   *   `setDataValidation` (*type:* `GoogleApi.Sheets.V4.Model.SetDataValidationRequest.t`, *default:* `nil`) - Sets data validation for one or more cells.
   *   `updateDimensionProperties` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionPropertiesRequest.t`, *default:* `nil`) - Updates dimensions' properties.
-  *   `refreshDataSource` (*type:* `GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t`, *default:* `nil`) - Refreshs one or multiple data sources and associated dbobjects.
+  *   `refreshDataSource` (*type:* `GoogleApi.Sheets.V4.Model.RefreshDataSourceRequest.t`, *default:* `nil`) - Refreshes one or multiple data sources and associated dbobjects.
   *   `updateEmbeddedObjectBorder` (*type:* `GoogleApi.Sheets.V4.Model.UpdateEmbeddedObjectBorderRequest.t`, *default:* `nil`) - Updates an embedded object's border.
   *   `updateDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.UpdateDimensionGroupRequest.t`, *default:* `nil`) - Updates the state of the specified group.
   *   `appendDimension` (*type:* `GoogleApi.Sheets.V4.Model.AppendDimensionRequest.t`, *default:* `nil`) - Appends dimensions to the end of a sheet.

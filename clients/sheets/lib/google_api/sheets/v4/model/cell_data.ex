@@ -32,7 +32,7 @@ defmodule GoogleApi.Sheets.V4.Model.CellData do
   *   `pivotTable` (*type:* `GoogleApi.Sheets.V4.Model.PivotTable.t`, *default:* `nil`) - A pivot table anchored at this cell. The size of pivot table itself is computed dynamically based on its data, grouping, filters, values, etc. Only the top-left cell of the pivot table contains the pivot table definition. The other cells will contain the calculated values of the results of the pivot in their effective_value fields.
   *   `textFormatRuns` (*type:* `list(GoogleApi.Sheets.V4.Model.TextFormatRun.t)`, *default:* `nil`) - Runs of rich text applied to subsections of the cell. Runs are only valid on user entered strings, not formulas, bools, or numbers. Properties of a run start at a specific index in the text and continue until the next run. Runs will inherit the properties of the cell unless explicitly changed. When writing, the new runs will overwrite any prior runs. When writing a new user_entered_value, previous runs are erased.
   *   `userEnteredFormat` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The format the user entered for the cell. When writing, the new format will be merged with the existing format.
-  *   `userEnteredValue` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The value the user entered in the cell. e.g, `1234`, `'Hello'`, or `=NOW()` Note: Dates, Times and DateTimes are represented as doubles in serial number format.
+  *   `userEnteredValue` (*type:* `GoogleApi.Sheets.V4.Model.ExtendedValue.t`, *default:* `nil`) - The value the user entered in the cell. e.g., `1234`, `'Hello'`, or `=NOW()` Note: Dates, Times and DateTimes are represented as doubles in serial number format.
   """
 
   use GoogleApi.Gax.ModelBase
