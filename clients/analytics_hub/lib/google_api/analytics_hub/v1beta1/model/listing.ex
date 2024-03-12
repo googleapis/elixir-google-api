@@ -32,6 +32,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Listing do
   *   `primaryContact` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
   *   `publisher` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.Publisher.t`, *default:* `nil`) - Optional. Details of the publisher who owns the listing and who can share the source data.
   *   `requestAccess` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes.
+  *   `restrictedExportConfig` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.RestrictedExportConfig.t`, *default:* `nil`) - Optional. If set, restricted export configuration will be propagated and enforced on the linked dataset.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the listing.
   """
 
@@ -50,6 +51,8 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Listing do
           :primaryContact => String.t() | nil,
           :publisher => GoogleApi.AnalyticsHub.V1beta1.Model.Publisher.t() | nil,
           :requestAccess => String.t() | nil,
+          :restrictedExportConfig =>
+            GoogleApi.AnalyticsHub.V1beta1.Model.RestrictedExportConfig.t() | nil,
           :state => String.t() | nil
         }
 
@@ -64,6 +67,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Listing do
   field(:primaryContact)
   field(:publisher, as: GoogleApi.AnalyticsHub.V1beta1.Model.Publisher)
   field(:requestAccess)
+  field(:restrictedExportConfig, as: GoogleApi.AnalyticsHub.V1beta1.Model.RestrictedExportConfig)
   field(:state)
 end
 
