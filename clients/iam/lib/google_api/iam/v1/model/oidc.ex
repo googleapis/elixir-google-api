@@ -23,17 +23,20 @@ defmodule GoogleApi.IAM.V1.Model.Oidc do
 
   *   `allowedAudiences` (*type:* `list(String.t)`, *default:* `nil`) - Acceptable values for the `aud` field (audience) in the OIDC token. Token exchange requests are rejected if the token audience does not match one of the configured values. Each audience may be at most 256 characters. A maximum of 10 audiences may be configured. If this list is empty, the OIDC token audience must be equal to the full canonical resource name of the WorkloadIdentityPoolProvider, with or without the HTTPS prefix. For example: ``` //iam.googleapis.com/projects//locations//workloadIdentityPools//providers/ https://iam.googleapis.com/projects//locations//workloadIdentityPools//providers/ ```
   *   `issuerUri` (*type:* `String.t`, *default:* `nil`) - Required. The OIDC issuer URL. Must be an HTTPS endpoint.
+  *   `jwksJson` (*type:* `String.t`, *default:* `nil`) - Optional. OIDC JWKs in JSON String format. For details on the definition of a JWK, see https://tools.ietf.org/html/rfc7517. If not set, the `jwks_uri` from the discovery document(fetched from the .well-known path of the `issuer_uri`) will be used. Currently, RSA and EC asymmetric keys are supported. The JWK must use following format and include only the following fields: { "keys": [ { "kty": "RSA/EC", "alg": "", "use": "sig", "kid": "", "n": "", "e": "", "x": "", "y": "", "crv": "" } ] }
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :allowedAudiences => list(String.t()) | nil,
-          :issuerUri => String.t() | nil
+          :issuerUri => String.t() | nil,
+          :jwksJson => String.t() | nil
         }
 
   field(:allowedAudiences, type: :list)
   field(:issuerUri)
+  field(:jwksJson)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.Oidc do
