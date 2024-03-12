@@ -18,7 +18,7 @@
 defmodule GoogleApi.MyBusinessBusinessInformation.Mixfile do
   use Mix.Project
 
-  @version "0.3.3"
+  @version "0.4.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.MyBusinessBusinessInformation.Mixfile do
 
   defp description() do
     """
-    My Business Business Information API client library. The My Business Business Information API provides an interface for managing business information on Google.
+    My Business Business Information API client library. The My Business Business Information API provides an interface for managing business information. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 
