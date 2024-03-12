@@ -26,12 +26,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists `Constraints` that could be applied on the specified resource.
+  Lists constraints that could be applied on the specified resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The Cloud resource that parents the constraint. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The Google Cloud resource that parents the constraint. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -103,7 +103,7 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a CustomConstraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint already exists on the given organization.
+  Creates a custom constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the organization does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the constraint already exists on the given organization.
 
   ## Parameters
 
@@ -177,12 +177,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a Custom Constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist.
+  Deletes a custom constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the custom constraint to delete. See `CustomConstraint` for naming rules.
+  *   `name` (*type:* `String.t`) - Required. Name of the custom constraint to delete. See the custom constraint entry for naming rules.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -247,12 +247,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a CustomConstraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the CustomConstraint does not exist.
+  Gets a custom constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the custom constraint does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the custom constraint. See `CustomConstraint` for naming requirements.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the custom constraint. See the custom constraint entry for naming requirements.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -319,12 +319,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Retrieves all of the `CustomConstraints` that exist on a particular organization resource.
+  Retrieves all of the custom constraints that exist on a particular organization resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The target Cloud resource that parents the set of custom constraints that will be returned from this call. Must be in one of the following forms: * `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The target Google Cloud resource that parents the set of custom constraints that will be returned from this call. Must be in one of the following forms: * `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -400,12 +400,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Updates a Custom Constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Note: the supplied policy will perform a full overwrite of all fields.
+  Updates a custom constraint. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Note: the supplied policy will perform a full overwrite of all fields.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. Name of the constraint. This is unique within the organization. Format of the name should be * `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example : "organizations/123/customConstraints/custom.createOnlyE2TypeVms" The max length is 70 characters and the min length is 1. Note that the prefix "organizations/{organization_id}/customConstraints/" is not counted.
+  *   `name` (*type:* `String.t`) - Immutable. Name of the constraint. This is unique within the organization. Format of the name should be * `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms` The max length is 70 characters and the minimum length is 1. Note that the prefix `organizations/{organization_id}/customConstraints/` is not counted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -474,12 +474,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Creates a Policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy already exists on the given Cloud resource.
+  Creates a policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint does not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ALREADY_EXISTS` if the policy already exists on the given Google Cloud resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The Cloud resource that will parent the new Policy. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The Google Cloud resource that will parent the new policy. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -548,12 +548,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Deletes a Policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or Org Policy does not exist.
+  Deletes a policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or organization policy does not exist.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the policy to delete. See `Policy` for naming rules.
+  *   `name` (*type:* `String.t`) - Required. Name of the policy to delete. See the policy entry for naming rules.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -566,6 +566,7 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:etag` (*type:* `String.t`) - Optional. The current etag of policy. If an etag is provided and does not match the current etag of the policy, deletion will be blocked and an ABORTED error will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -595,7 +596,8 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :etag => :query
     }
 
     request =
@@ -613,12 +615,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Gets a `Policy` on a resource. If no `Policy` is set on the resource, NOT_FOUND is returned. The `etag` value can be used with `UpdatePolicy()` to update a `Policy` during read-modify-write.
+  Gets a policy on a resource. If no policy is set on the resource, `NOT_FOUND` is returned. The `etag` value can be used with `UpdatePolicy()` to update a policy during read-modify-write.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Resource name of the policy. See `Policy` for naming requirements.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the policy. See Policy for naming requirements.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -675,12 +677,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Gets the effective `Policy` on a resource. This is the result of merging `Policies` in the resource hierarchy and evaluating conditions. The returned `Policy` will not have an `etag` or `condition` set because it is a computed `Policy` across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
+  Gets the effective policy on a resource. This is the result of merging policies in the resource hierarchy and evaluating conditions. The returned policy will not have an `etag` or `condition` set because it is an evaluated policy across multiple resources. Subtrees of Resource Manager resource hierarchy with 'under:' prefix will not be expanded.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The effective policy to compute. See `Policy` for naming rules.
+  *   `name` (*type:* `String.t`) - Required. The effective policy to compute. See Policy for naming requirements.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -747,12 +749,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Retrieves all of the `Policies` that exist on a particular resource.
+  Retrieves all of the policies that exist on a particular resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The target Cloud resource that parents the set of constraints and policies that will be returned from this call. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The target Google Cloud resource that parents the set of constraints and policies that will be returned from this call. Must be in one of the following forms: * `projects/{project_number}` * `projects/{project_id}` * `folders/{folder_id}` * `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -818,12 +820,12 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
   end
 
   @doc """
-  Updates a Policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag supplied in the request does not match the persisted etag of the policy Note: the supplied policy will perform a full overwrite of all fields.
+  Updates a policy. Returns a `google.rpc.Status` with `google.rpc.Code.NOT_FOUND` if the constraint or the policy do not exist. Returns a `google.rpc.Status` with `google.rpc.Code.ABORTED` if the etag supplied in the request does not match the persisted etag of the policy Note: the supplied policy will perform a full overwrite of all fields.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OrgPolicy.V2.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The resource name of the Policy. Must be one of the following forms, where constraint_name is the name of the constraint which this Policy configures: * `projects/{project_number}/policies/{constraint_name}` * `folders/{folder_id}/policies/{constraint_name}` * `organizations/{organization_id}/policies/{constraint_name}` For example, "projects/123/policies/compute.disableSerialPortAccess". Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name of the policy. Must be one of the following forms, where `constraint_name` is the name of the constraint which this policy configures: * `projects/{project_number}/policies/{constraint_name}` * `folders/{folder_id}/policies/{constraint_name}` * `organizations/{organization_id}/policies/{constraint_name}` For example, `projects/123/policies/compute.disableSerialPortAccess`. Note: `projects/{project_id}/policies/{constraint_name}` is also an acceptable name for API requests, but responses will return the name using the equivalent project number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -836,6 +838,7 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Field mask used to specify the fields to be overwritten in the policy by the set. The fields specified in the update_mask are relative to the policy, not the full request.
       *   `:body` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Policy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -867,6 +870,7 @@ defmodule GoogleApi.OrgPolicy.V2.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :updateMask => :query,
       :body => :body
     }
 

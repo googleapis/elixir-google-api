@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint do
   @moduledoc """
-  A custom constraint defined by customers which can *only* be applied to the given resource types and organization. By creating a custom constraint, customers can applied policies of this custom constraint. *Creating a custom constraint itself does NOT apply any policy enforcement*.
+  A custom constraint defined by customers which can *only* be applied to the given resource types and organization. By creating a custom constraint, customers can apply policies of this custom constraint. *Creating a custom constraint itself does NOT apply any policy enforcement*.
 
   ## Attributes
 
   *   `actionType` (*type:* `String.t`, *default:* `nil`) - Allow or deny type.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Org policy condition/expression. For example: `resource.instanceName.matches("[production|test]_.*_(\\d)+")'` or, `resource.management.auto_upgrade == true` The max length of the condition is 1000 characters.
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Org policy condition/expression. For example: `resource.instanceName.matches("[production|test]_.*_(\\d)+")` or, `resource.management.auto_upgrade == true` The max length of the condition is 1000 characters.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed information about this custom policy constraint. The max length of the description is 2000 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - One line display name for the UI. The max length of the display_name is 200 characters.
   *   `methodTypes` (*type:* `list(String.t)`, *default:* `nil`) - All the operations being applied for this constraint.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the constraint. This is unique within the organization. Format of the name should be * `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example : "organizations/123/customConstraints/custom.createOnlyE2TypeVms" The max length is 70 characters and the min length is 1. Note that the prefix "organizations/{organization_id}/customConstraints/" is not counted.
-  *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - Immutable. The Resource Instance type on which this policy applies to. Format will be of the form : "/" Example: * `compute.googleapis.com/Instance`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the constraint. This is unique within the organization. Format of the name should be * `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms` The max length is 70 characters and the minimum length is 1. Note that the prefix `organizations/{organization_id}/customConstraints/` is not counted.
+  *   `resourceTypes` (*type:* `list(String.t)`, *default:* `nil`) - Immutable. The resource instance type on which this policy applies. Format will be of the form : `/` Example: * `compute.googleapis.com/Instance`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time this custom constraint was updated. This represents the last time that the `CreateCustomConstraint` or `UpdateCustomConstraint` RPC was called
   """
 

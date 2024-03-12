@@ -22,7 +22,7 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2AlternatePolicySpec
   ## Attributes
 
   *   `launch` (*type:* `String.t`, *default:* `nil`) - Reference to the launch that will be used while audit logging and to control the launch. Should be set only in the alternate policy.
-  *   `spec` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2PolicySpec.t`, *default:* `nil`) - Specify `Constraint` for configurations of Cloud Platform resources.
+  *   `spec` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2PolicySpec.t`, *default:* `nil`) - Specify constraint for configurations of Google Cloud resources.
   """
 
   use GoogleApi.Gax.ModelBase

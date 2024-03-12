@@ -48,7 +48,7 @@ defmodule GoogleApi.OrgPolicy.Mixfile do
 
   defp description() do
     """
-    Organization Policy API client library. The Org Policy API allows users to configure governance rules on their GCP resources across the Cloud Resource Hierarchy.
+    Organization Policy API client library. The Organization Policy API allows users to configure governance rules on their Google Cloud resources across the resource hierarchy.
     """
   end
 

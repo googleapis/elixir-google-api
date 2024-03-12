@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ListPoliciesResponse do
   @moduledoc """
-  The response returned from the ListPolicies method. It will be empty if no `Policies` are set on the resource.
+  The response returned from the ListPolicies method. It will be empty if no policies are set on the resource.
 
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used, but the server may at any point start supplying a valid token.
-  *   `policies` (*type:* `list(GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Policy.t)`, *default:* `nil`) - All `Policies` that exist on the resource. It will be empty if no `Policies` are set.
+  *   `policies` (*type:* `list(GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Policy.t)`, *default:* `nil`) - All policies that exist on the resource. It will be empty if no policies are set.
   """
 
   use GoogleApi.Gax.ModelBase
