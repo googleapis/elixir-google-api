@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `introductoryPricingSpecs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec.t)`, *default:* `nil`) - Specifies the introductory pricing periods.
+  *   `introductoryPricingSpecs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetailsIntroductoryPricingSpec.t)`, *default:* `nil`) - Output only. Specifies the introductory pricing periods.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ExtendSubscriptionResponse do
   @moduledoc """
-
+  Response that contains the timestamps after the extension.
 
   ## Attributes
 

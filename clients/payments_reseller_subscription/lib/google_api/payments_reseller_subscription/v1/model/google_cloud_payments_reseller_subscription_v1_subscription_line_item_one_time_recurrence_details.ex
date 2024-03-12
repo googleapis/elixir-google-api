@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `servicePeriod` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod.t`, *default:* `nil`) - The service period of the ONE_TIME line item.
+  *   `servicePeriod` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ServicePeriod.t`, *default:* `nil`) - Output only. The service period of the ONE_TIME line item.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -25,7 +25,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Specifies the end time (exclusive) of the period that the promotion is available in. If unset, the promotion is available indefinitely.
   *   `freeTrialDuration` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t`, *default:* `nil`) - Optional. Specifies the duration of the free trial of the subscription when promotion_type is PROMOTION_TYPE_FREE_TRIAL
   *   `introductoryPricingDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1PromotionIntroductoryPricingDetails.t`, *default:* `nil`) - Optional. Specifies the introductory pricing details when the promotion_type is PROMOTION_TYPE_INTRODUCTORY_PRICING.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Response only. Resource name of the subscription promotion. It will have the format of "partners/{partner_id}/promotion/{promotion_id}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Response only. Resource name of the subscription promotion. It will have the format of "partners/{partner_id}/promotion/{promotion_id}"
   *   `promotionType` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Specifies the type of the promotion.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. 2-letter ISO region code where the promotion is available in. Ex. "US" Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Specifies the start time (inclusive) of the period that the promotion is available in.

@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason of the cancellation.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Output only. The reason of the cancellation.
   """
 
   use GoogleApi.Gax.ModelBase

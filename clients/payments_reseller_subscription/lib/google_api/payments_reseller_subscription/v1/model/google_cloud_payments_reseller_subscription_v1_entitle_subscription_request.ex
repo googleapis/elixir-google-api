@@ -21,11 +21,24 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
+  *   `lineItemEntitlementDetails` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetails.t)`, *default:* `nil`) - Optional. The line items to be entitled. If unspecified, all line items will be entitled.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :lineItemEntitlementDetails =>
+            list(
+              GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetails.t()
+            )
+            | nil
+        }
+
+  field(:lineItemEntitlementDetails,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionRequestLineItemEntitlementDetails,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

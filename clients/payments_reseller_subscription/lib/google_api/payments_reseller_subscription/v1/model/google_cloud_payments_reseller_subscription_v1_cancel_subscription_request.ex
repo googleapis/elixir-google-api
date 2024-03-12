@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionRequest do
   @moduledoc """
-
+  Request to cancel a subscription.
 
   ## Attributes
 
-  *   `cancelImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, Google will cancel the subscription immediately, and issue a prorated refund for the remainder of the billing cycle. Otherwise, Google defers the cancelation at renewal_time, and therefore, will not issue a refund.
+  *   `cancelImmediately` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, Google will cancel the subscription immediately, and may or may not (based on the contract) issue a prorated refund for the remainder of the billing cycle. Otherwise, Google defers the cancelation at renewal_time, and will not issue a refund.
   *   `cancellationReason` (*type:* `String.t`, *default:* `nil`) - Specifies the reason for the cancellation.
   """
 
