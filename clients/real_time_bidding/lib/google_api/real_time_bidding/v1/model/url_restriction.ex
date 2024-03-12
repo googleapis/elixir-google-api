@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RealTimeBidding.V1.Model.UrlRestriction do
   @moduledoc """
-  Represents the URL restriction (for the URL captured by the pixel callback) for a user list.
+  Deprecated. This will be removed in October 2023. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Represents the URL restriction (for the URL captured by the pixel callback) for a user list.
 
   ## Attributes
 

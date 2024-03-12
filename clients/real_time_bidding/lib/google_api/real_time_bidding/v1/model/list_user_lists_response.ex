@@ -21,7 +21,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.ListUserListsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation page token to send back to the server in a subsequent request. Due to a currently known issue, it is recommended that the caller keep invoking the list method till the time a next page token is not returned (even if the result set is empty).
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation page token to send back to the server in a subsequent request. Due to a currently known issue, it is recommended that the caller keep invoking the list method until the time a next page token is not returned, even if the result set is empty.
   *   `userLists` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.UserList.t)`, *default:* `nil`) - List of user lists from the search.
   """
 

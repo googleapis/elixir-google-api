@@ -23,6 +23,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry do
 
   *   `evidences` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence.t)`, *default:* `nil`) - Pieces of evidence associated with this policy topic entry.
   *   `helpCenterUrl` (*type:* `String.t`, *default:* `nil`) - URL of the help center article describing this policy topic.
+  *   `missingCertificate` (*type:* `boolean()`, *default:* `nil`) - Whether or not the policy topic is missing a certificate. Some policy topics require a certificate to unblock serving in some regions. For more information about creative certification, refer to: https://support.google.com/authorizedbuyers/answer/7450776
   *   `policyTopic` (*type:* `String.t`, *default:* `nil`) - Policy topic this entry refers to. For example, "ALCOHOL", "TRADEMARKS_IN_AD_TEXT", or "DESTINATION_NOT_WORKING". The set of possible policy topics is not fixed for a particular API version and may change at any time. Can be used to filter the response of the creatives.list method
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEntry do
   @type t :: %__MODULE__{
           :evidences => list(GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence.t()) | nil,
           :helpCenterUrl => String.t() | nil,
+          :missingCertificate => boolean() | nil,
           :policyTopic => String.t() | nil
         }
 
   field(:evidences, as: GoogleApi.RealTimeBidding.V1.Model.PolicyTopicEvidence, type: :list)
   field(:helpCenterUrl)
+  field(:missingCertificate)
   field(:policyTopic)
 end
 
