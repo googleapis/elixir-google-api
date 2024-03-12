@@ -25,6 +25,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserEvent do
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - Highly recommended for user events that are the result of PredictionService.Predict. This field enables accurate attribution of recommendation model performance. The value must be a valid PredictResponse.attribution_token for user events that are the result of PredictionService.Predict. The value must be a valid SearchResponse.attribution_token for user events that are the result of SearchService.Search. This token enables us to accurately attribute page view or purchase back to the event and the particular predict response containing this clicked/purchased product. If user clicks on product K in the recommendation results, pass PredictResponse.attribution_token as a URL parameter to product K's page. When recording events on product K's page, log the PredictResponse.attribution_token to this field.
   *   `cartId` (*type:* `String.t`, *default:* `nil`) - The ID or name of the associated shopping cart. This ID is used to associate multiple items added or present in the cart before purchase. This can only be set for `add-to-cart`, `purchase-complete`, or `shopping-cart-page-view` events.
   *   `completionDetail` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompletionDetail.t`, *default:* `nil`) - The main auto-completion details related to the event. This field should be set for `search` event when autocomplete function is enabled and the user clicks a suggestion for search.
+  *   `entity` (*type:* `String.t`, *default:* `nil`) - The entity for customers that may run multiple different entities, domains, sites or regions, for example, `Google US`, `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. We recommend that you set this field to get better per-entity search, completion, and prediction results.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Only required for UserEventService.ImportUserEvents method. Timestamp of when the user event happened.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - Required. User event type. Allowed values are: * `add-to-cart`: Products being added to cart. * `category-page-view`: Special pages such as sale or promotion pages viewed. * `detail-page-view`: Products detail page viewed. * `home-page-view`: Homepage viewed. * `promotion-offered`: Promotion is offered to a user. * `promotion-not-offered`: Promotion is not offered to a user. * `purchase-complete`: User finishing a purchase. * `search`: Product search. * `shopping-cart-page-view`: User viewing a shopping cart.
   *   `experimentIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of identifiers for the independent experiment groups this user event belongs to. This is used to distinguish between user events associated with different experiment setups (e.g. using Retail API, using different recommendation models).
@@ -56,6 +57,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserEvent do
           :cartId => String.t() | nil,
           :completionDetail =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompletionDetail.t() | nil,
+          :entity => String.t() | nil,
           :eventTime => DateTime.t() | nil,
           :eventType => String.t() | nil,
           :experimentIds => list(String.t()) | nil,
@@ -80,6 +82,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserEvent do
   field(:attributionToken)
   field(:cartId)
   field(:completionDetail, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompletionDetail)
+  field(:entity)
   field(:eventTime, as: DateTime)
   field(:eventType)
   field(:experimentIds, type: :list)

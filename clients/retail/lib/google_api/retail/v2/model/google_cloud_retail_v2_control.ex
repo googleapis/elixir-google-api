@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Control do
 
   ## Attributes
 
-  *   `associatedServingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of serving configuration ids that are associated with this control in the same Catalog. Note the association is managed via the ServingConfig, this is an output only denormalized view.
+  *   `associatedServingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of serving config ids that are associated with this control in the same Catalog. Note the association is managed via the ServingConfig, this is an output only denormalized view.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human readable control display name. Used in Retail UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is thrown.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/*/locations/global/catalogs/*/controls/*`
   *   `rule` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2Rule.t`, *default:* `nil`) - A rule control - a condition-action pair. Enacts a set action when the condition is triggered. For example: Boost "gShoe" when query full matches "Running Shoes".

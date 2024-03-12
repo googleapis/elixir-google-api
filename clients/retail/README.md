@@ -1,8 +1,8 @@
 # GoogleApi.Retail
 
-Retail API client library.
+Vertex AI Search for Retail API client library.
 
-Cloud Retail service enables customers to build end-to-end personalized recommendation systems without requiring a high level of expertise in machine learning, recommendation system, or Google Cloud.
+Vertex AI Search for Retail API is made up of Retail Search, Browse and Recommendations. These discovery AI solutions help you implement personalized search, browse and recommendations, based on machine learning models, across your websites and mobile applications.
 
 ## Installation
 

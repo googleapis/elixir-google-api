@@ -26,6 +26,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the model. Should be human readable, used to display Recommendation Models in the Retail Cloud Console Dashboard. UTF-8 encoded string with limit of 1024 characters.
   *   `filteringOption` (*type:* `String.t`, *default:* `nil`) - Optional. If `RECOMMENDATIONS_FILTERING_ENABLED`, recommendation filtering by attributes is enabled for the model.
   *   `lastTuneTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the latest successful tune finished.
+  *   `modelFeaturesConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfig.t`, *default:* `nil`) - Optional. Additional model features config.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified resource name of the model. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}/models/{model_id}` catalog_id has char limit of 50. recommendation_model_id has char limit of 40.
   *   `optimizationObjective` (*type:* `String.t`, *default:* `nil`) - Optional. The optimization objective e.g. `cvr`. Currently supported values: `ctr`, `cvr`, `revenue-per-order`. If not specified, we choose default based on model type. Default depends on type of recommendation: `recommended-for-you` => `ctr` `others-you-may-like` => `ctr` `frequently-bought-together` => `revenue_per_order` This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs.
   *   `pageOptimizationConfig` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelPageOptimizationConfig.t`, *default:* `nil`) - Optional. The page optimization config.
@@ -34,7 +35,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
   *   `servingState` (*type:* `String.t`, *default:* `nil`) - Output only. The serving state of the model: `ACTIVE`, `NOT_ACTIVE`.
   *   `trainingState` (*type:* `String.t`, *default:* `nil`) - Optional. The training state that the model is in (e.g. `TRAINING` or `PAUSED`). Since part of the cost of running the service is frequency of training - this can be used to determine when to train model in order to control cost. If not specified: the default value for `CreateModel` method is `TRAINING`. The default value for `UpdateModel` method is to keep the state the same as before.
   *   `tuningOperation` (*type:* `String.t`, *default:* `nil`) - Output only. The tune operation associated with the model. Can be used to determine if there is an ongoing tune for this recommendation. Empty field implies no tune is goig on.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of model e.g. `home-page`. Currently supported values: `recommended-for-you`, `others-you-may-like`, `frequently-bought-together`, `page-optimization`, `similar-items`, `buy-it-again`, and `recently-viewed`(readonly value). This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of model e.g. `home-page`. Currently supported values: `recommended-for-you`, `others-you-may-like`, `frequently-bought-together`, `page-optimization`, `similar-items`, `buy-it-again`, `on-sale-items`, and `recently-viewed`(readonly value). This field together with optimization_objective describe model metadata to use to control model training and serving. See https://cloud.google.com/retail/docs/models for more details on what the model metadata control and which combination of parameters are valid. For invalid combinations of parameters (e.g. type = `frequently-bought-together` and optimization_objective = `ctr`), you receive an error 400 if you try to create/update a recommendation with this set of knobs.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the Recommendation Model was last updated. E.g. if a Recommendation Model was paused - this would be the time the pause was initiated.
   """
 
@@ -46,6 +47,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
           :displayName => String.t() | nil,
           :filteringOption => String.t() | nil,
           :lastTuneTime => DateTime.t() | nil,
+          :modelFeaturesConfig =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfig.t() | nil,
           :name => String.t() | nil,
           :optimizationObjective => String.t() | nil,
           :pageOptimizationConfig =>
@@ -67,6 +70,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModel do
   field(:displayName)
   field(:filteringOption)
   field(:lastTuneTime, as: DateTime)
+
+  field(:modelFeaturesConfig,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2alphaModelModelFeaturesConfig
+  )
+
   field(:name)
   field(:optimizationObjective)
 
