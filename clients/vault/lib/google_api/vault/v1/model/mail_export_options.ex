@@ -22,6 +22,7 @@ defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
   ## Attributes
 
   *   `exportFormat` (*type:* `String.t`, *default:* `nil`) - The file format for exported messages.
+  *   `exportLinkedDriveFiles` (*type:* `boolean()`, *default:* `nil`) - Optional. To enable exporting linked Drive files, set to **true**.
   *   `showConfidentialModeContent` (*type:* `boolean()`, *default:* `nil`) - To export confidential mode content, set to **true**.
   *   `useNewExport` (*type:* `boolean()`, *default:* `nil`) - To use the new export system, set to **true**.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Vault.V1.Model.MailExportOptions do
 
   @type t :: %__MODULE__{
           :exportFormat => String.t() | nil,
+          :exportLinkedDriveFiles => boolean() | nil,
           :showConfidentialModeContent => boolean() | nil,
           :useNewExport => boolean() | nil
         }
 
   field(:exportFormat)
+  field(:exportLinkedDriveFiles)
   field(:showConfidentialModeContent)
   field(:useNewExport)
 end

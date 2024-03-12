@@ -21,9 +21,9 @@ defmodule GoogleApi.Vault.V1.Model.CloudStorageFile do
 
   ## Attributes
 
-  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage bucket for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis), but not to list the bucket contents. Instead, you can [get individual export files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by object name.
+  *   `bucketName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage bucket for the export file. You can use this value in the Cloud Storage [JSON API](https://cloud.google.com/storage/docs/json_api) or [XML API](https://cloud.google.com/storage/docs/xml-api), but not to list the bucket contents. Instead, you can [get individual export files](https://cloud.google.com/storage/docs/json_api/v1/objects/get) by object name.
   *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - The md5 hash of the file.
-  *   `objectName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage object for the export file. You can use this value in the [Cloud Storage JSON or XML APIs](https://cloud.google.com/storage/docs/apis).
+  *   `objectName` (*type:* `String.t`, *default:* `nil`) - The name of the Cloud Storage object for the export file. You can use this value in the Cloud Storage [JSON API](https://cloud.google.com/storage/docs/json_api) or [XML API](https://cloud.google.com/storage/docs/xml-api).
   *   `size` (*type:* `String.t`, *default:* `nil`) - The export file size.
   """
 
