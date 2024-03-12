@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryDevice do
   @moduledoc """
-  Telemetry data collected from a managed device.
+  Telemetry data collected from a managed device. * Granular permission needed: TELEMETRY_API_DEVICE
 
   ## Attributes
 
@@ -31,14 +31,19 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab
   *   `graphicsInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsInfo.t`, *default:* `nil`) - Output only. Contains information regarding Graphic peripherals for the device.
   *   `graphicsStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsStatusReport.t)`, *default:* `nil`) - Output only. Graphics reports collected periodically.
+  *   `heartbeatStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1HeartbeatStatusReport.t)`, *default:* `nil`) - Output only. Heartbeat status report containing timestamps periodically sorted in decreasing order of report_time
+  *   `kioskAppStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1KioskAppStatusReport.t)`, *default:* `nil`) - Output only. Kiosk app status report for the kiosk device
   *   `memoryInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo.t`, *default:* `nil`) - Output only. Information regarding memory specs for the device.
   *   `memoryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryStatusReport.t)`, *default:* `nil`) - Output only. Memory status reports collected periodically sorted decreasing by report_time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the device.
+  *   `networkBandwidthReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkBandwidthReport.t)`, *default:* `nil`) - Output only. Network bandwidth reports collected periodically sorted in a decreasing order of report_time.
   *   `networkDiagnosticsReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport.t)`, *default:* `nil`) - Output only. Network diagnostics collected periodically.
   *   `networkInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkInfo.t`, *default:* `nil`) - Output only. Network devices information.
   *   `networkStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkStatusReport.t)`, *default:* `nil`) - Output only. Network specs collected periodically.
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization unit ID of the device.
   *   `osUpdateStatus` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1OsUpdateStatus.t)`, *default:* `nil`) - Output only. Contains relevant information regarding ChromeOS update status.
+  *   `peripheralsReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1PeripheralsReport.t)`, *default:* `nil`) - Output only. Peripherals reports collected periodically sorted in a decreasing order of report_time.
+  *   `runtimeCountersReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RuntimeCountersReport.t)`, *default:* `nil`) - Output only. Runtime counters reports collected device lifetime runtime, as well as the counts of S0->S3, S0->S4, and S0->S5 transitions, meaning entering into sleep, hibernation, and power-off states
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the ChromeOS Devices tab.
   *   `storageInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageInfo.t`, *default:* `nil`) - Output only. Information of storage specs for the device.
   *   `storageStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1StorageStatusReport.t)`, *default:* `nil`) - Output only. Storage reports collected periodically.
@@ -80,6 +85,16 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsStatusReport.t()
             )
             | nil,
+          :heartbeatStatusReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1HeartbeatStatusReport.t()
+            )
+            | nil,
+          :kioskAppStatusReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1KioskAppStatusReport.t()
+            )
+            | nil,
           :memoryInfo =>
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo.t() | nil,
           :memoryStatusReport =>
@@ -88,6 +103,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
             )
             | nil,
           :name => String.t() | nil,
+          :networkBandwidthReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkBandwidthReport.t()
+            )
+            | nil,
           :networkDiagnosticsReport =>
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport.t()
@@ -103,6 +123,16 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
           :orgUnitId => String.t() | nil,
           :osUpdateStatus =>
             list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1OsUpdateStatus.t())
+            | nil,
+          :peripheralsReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1PeripheralsReport.t()
+            )
+            | nil,
+          :runtimeCountersReport =>
+            list(
+              GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RuntimeCountersReport.t()
+            )
             | nil,
           :serialNumber => String.t() | nil,
           :storageInfo =>
@@ -159,6 +189,16 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
     type: :list
   )
 
+  field(:heartbeatStatusReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1HeartbeatStatusReport,
+    type: :list
+  )
+
+  field(:kioskAppStatusReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1KioskAppStatusReport,
+    type: :list
+  )
+
   field(:memoryInfo, as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1MemoryInfo)
 
   field(:memoryStatusReport,
@@ -167,6 +207,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   )
 
   field(:name)
+
+  field(:networkBandwidthReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkBandwidthReport,
+    type: :list
+  )
 
   field(:networkDiagnosticsReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1NetworkDiagnosticsReport,
@@ -184,6 +229,16 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   field(:osUpdateStatus,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1OsUpdateStatus,
+    type: :list
+  )
+
+  field(:peripheralsReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1PeripheralsReport,
+    type: :list
+  )
+
+  field(:runtimeCountersReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1RuntimeCountersReport,
     type: :list
   )
 
