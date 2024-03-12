@@ -20,7 +20,7 @@ defmodule GoogleApi.TPU.V1 do
   API client metadata for GoogleApi.TPU.V1.
   """
 
-  @discovery_revision "20220412"
+  @discovery_revision "20240222"
 
   def discovery_revision(), do: @discovery_revision
 end
