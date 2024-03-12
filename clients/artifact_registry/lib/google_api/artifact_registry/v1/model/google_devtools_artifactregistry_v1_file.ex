@@ -21,18 +21,20 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Fi
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the File was created.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the File was created.
+  *   `fetchTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the last attempt to refresh the file's data was made. Only set when the repository is remote.
   *   `hashes` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Hash.t)`, *default:* `nil`) - The hashes of the file content.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file, for example: "projects/p1/locations/us-central1/repositories/repo1/files/a%2Fb%2Fc.txt". If the file ID part contains slashes, they are escaped.
   *   `owner` (*type:* `String.t`, *default:* `nil`) - The name of the Package or Version that owns this file, if any.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the File in bytes.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the File was last updated.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the File was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :fetchTime => DateTime.t() | nil,
           :hashes => list(GoogleApi.ArtifactRegistry.V1.Model.Hash.t()) | nil,
           :name => String.t() | nil,
           :owner => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Fi
         }
 
   field(:createTime, as: DateTime)
+  field(:fetchTime, as: DateTime)
   field(:hashes, as: GoogleApi.ArtifactRegistry.V1.Model.Hash, type: :list)
   field(:name)
   field(:owner)

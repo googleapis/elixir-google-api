@@ -278,7 +278,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:repositoryId` (*type:* `String.t`) - The repository id to use for this repository.
+      *   `:repositoryId` (*type:* `String.t`) - Required. The repository id to use for this repository.
       *   `:body` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Model.Repository.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -667,7 +667,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `repository.name`. The name of the repository, for example: "projects/p1/locations/us-central1/repositories/repo1".
+  *   `projects_id` (*type:* `String.t`) - Part of `repository.name`. The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`.
   *   `locations_id` (*type:* `String.t`) - Part of `repository.name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `repository.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -920,7 +920,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the file to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the file to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `files_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -1005,7 +1005,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the repository whose files will be listed. For example: "projects/p1/locations/us-central1/repositories/repo1
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the repository whose files will be listed. For example: "projects/p1/locations/us-central1/repositories/repo1
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1618,7 +1618,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource whose tags will be listed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the parent package whose tags will be listed. For example: `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `repositories_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `packages_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
