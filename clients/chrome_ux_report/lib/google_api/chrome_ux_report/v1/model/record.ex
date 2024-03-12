@@ -23,7 +23,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Record do
 
   *   `collectionPeriod` (*type:* `GoogleApi.ChromeUXReport.V1.Model.CollectionPeriod.t`, *default:* `nil`) - The collection period indicates when the data reflected in this record was collected.
   *   `key` (*type:* `GoogleApi.ChromeUXReport.V1.Model.Key.t`, *default:* `nil`) - Key defines all of the unique querying parameters needed to look up a user experience record.
-  *   `metrics` (*type:* `%{optional(String.t) => GoogleApi.ChromeUXReport.V1.Model.Metric.t}`, *default:* `nil`) - Metrics is the map of user experience data available for the record defined in the key field. Metrics are keyed on the metric name. Allowed key values: ["first_contentful_paint", "first_input_delay", "largest_contentful_paint", "cumulative_layout_shift"]
+  *   `metrics` (*type:* `%{optional(String.t) => GoogleApi.ChromeUXReport.V1.Model.Metric.t}`, *default:* `nil`) - Metrics is the map of user experience data available for the record defined in the key field. Metrics are keyed on the metric name. Allowed key values: ["first_contentful_paint", "first_input_delay", "largest_contentful_paint", "cumulative_layout_shift", "experimental_time_to_first_byte", "experimental_interaction_to_next_paint"]
   """
 
   use GoogleApi.Gax.ModelBase
