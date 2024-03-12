@@ -22,15 +22,21 @@ defmodule GoogleApi.CloudSearch.V1.Model.SpellResult do
   ## Attributes
 
   *   `suggestedQuery` (*type:* `String.t`, *default:* `nil`) - The suggested spelling of the query.
+  *   `suggestedQueryHtml` (*type:* `GoogleApi.CloudSearch.V1.Model.SafeHtmlProto.t`, *default:* `nil`) - The sanitized HTML representing the spell corrected query that can be used in the UI. This usually has language-specific tags to mark up parts of the query that are spell checked.
+  *   `suggestionType` (*type:* `String.t`, *default:* `nil`) - Suggestion triggered for the current query.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :suggestedQuery => String.t() | nil
+          :suggestedQuery => String.t() | nil,
+          :suggestedQueryHtml => GoogleApi.CloudSearch.V1.Model.SafeHtmlProto.t() | nil,
+          :suggestionType => String.t() | nil
         }
 
   field(:suggestedQuery)
+  field(:suggestedQueryHtml, as: GoogleApi.CloudSearch.V1.Model.SafeHtmlProto)
+  field(:suggestionType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSearch.V1.Model.SpellResult do

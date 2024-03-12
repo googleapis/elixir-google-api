@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudSearch.V1.Model.DataSource do
   @moduledoc """
-  Datasource is a logical namespace for items to be indexed. All items must belong to a datasource. This is the prerequisite before items can be indexed into Cloud Search.
+  Datasource is a logical namespace for items to be indexed. All items must belong to a datasource. This is the prerequisite before items can be indexed into Cloud Search. 
 
   ## Attributes
 
