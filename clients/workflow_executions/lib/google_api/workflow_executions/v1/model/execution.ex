@@ -23,12 +23,17 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
 
   *   `argument` (*type:* `String.t`, *default:* `nil`) - Input parameters of the execution represented as a JSON string. The size limit is 32KB. *Note*: If you are using the REST API directly to run your workflow, you must escape any JSON string value of `argument`. Example: `'{"argument":"{\\"firstName\\":\\"FIRST\\",\\"lastName\\":\\"LAST\\"}"}'`
   *   `callLogLevel` (*type:* `String.t`, *default:* `nil`) - The call logging level associated to this execution.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the creation of the execution.
+  *   `disableConcurrencyQuotaOverflowBuffering` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, the execution will not be backlogged when the concurrency quota is exhausted. The backlog execution starts when the concurrency quota becomes available.
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. Measures the duration of the execution.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the end of execution, successful or not.
   *   `error` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.Error.t`, *default:* `nil`) - Output only. The error which caused the execution to finish prematurely. The value is only present if the execution's state is `FAILED` or `CANCELLED`.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. By default, labels are inherited from the workflow but are overridden by any labels associated with the execution.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
   *   `result` (*type:* `String.t`, *default:* `nil`) - Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the beginning of execution.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the execution.
+  *   `stateError` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.StateError.t`, *default:* `nil`) - Output only. Error regarding the state of the Execution resource. For example, this field will have error details if the execution data is unavailable due to revoked KMS key permissions.
   *   `status` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.Status.t`, *default:* `nil`) - Output only. Status tracks the current steps and progress data of this execution.
   *   `workflowRevisionId` (*type:* `String.t`, *default:* `nil`) - Output only. Revision of the workflow this execution is using.
   """
@@ -38,24 +43,34 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
   @type t :: %__MODULE__{
           :argument => String.t() | nil,
           :callLogLevel => String.t() | nil,
+          :createTime => DateTime.t() | nil,
+          :disableConcurrencyQuotaOverflowBuffering => boolean() | nil,
+          :duration => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.WorkflowExecutions.V1.Model.Error.t() | nil,
+          :labels => map() | nil,
           :name => String.t() | nil,
           :result => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :stateError => GoogleApi.WorkflowExecutions.V1.Model.StateError.t() | nil,
           :status => GoogleApi.WorkflowExecutions.V1.Model.Status.t() | nil,
           :workflowRevisionId => String.t() | nil
         }
 
   field(:argument)
   field(:callLogLevel)
+  field(:createTime, as: DateTime)
+  field(:disableConcurrencyQuotaOverflowBuffering)
+  field(:duration)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.WorkflowExecutions.V1.Model.Error)
+  field(:labels, type: :map)
   field(:name)
   field(:result)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:stateError, as: GoogleApi.WorkflowExecutions.V1.Model.StateError)
   field(:status, as: GoogleApi.WorkflowExecutions.V1.Model.Status)
   field(:workflowRevisionId)
 end
