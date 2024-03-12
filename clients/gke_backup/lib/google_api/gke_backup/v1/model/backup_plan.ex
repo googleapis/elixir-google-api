@@ -21,17 +21,19 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
 
   ## Attributes
 
-  *   `backupConfig` (*type:* `GoogleApi.GKEBackup.V1.Model.BackupConfig.t`, *default:* `nil`) - Defines the configuration of Backups created via this BackupPlan.
-  *   `backupSchedule` (*type:* `GoogleApi.GKEBackup.V1.Model.Schedule.t`, *default:* `nil`) - Defines a schedule for automatic Backup creation via this BackupPlan.
+  *   `backupConfig` (*type:* `GoogleApi.GKEBackup.V1.Model.BackupConfig.t`, *default:* `nil`) - Optional. Defines the configuration of Backups created via this BackupPlan.
+  *   `backupSchedule` (*type:* `GoogleApi.GKEBackup.V1.Model.Schedule.t`, *default:* `nil`) - Optional. Defines a schedule for automatic Backup creation via this BackupPlan.
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this BackupPlan resource was created.
-  *   `deactivated` (*type:* `boolean()`, *default:* `nil`) - This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False
-  *   `description` (*type:* `String.t`, *default:* `nil`) - User specified descriptive string for this BackupPlan.
+  *   `deactivated` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User specified descriptive string for this BackupPlan.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` or `DeleteBackupPlan` to ensure that their change will be applied to the same version of the resource.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - A set of custom labels supplied by user.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A set of custom labels supplied by user.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`
   *   `protectedPodCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
-  *   `retentionPolicy` (*type:* `GoogleApi.GKEBackup.V1.Model.RetentionPolicy.t`, *default:* `nil`) - RetentionPolicy governs lifecycle of Backups created under this plan.
+  *   `retentionPolicy` (*type:* `GoogleApi.GKEBackup.V1.Model.RetentionPolicy.t`, *default:* `nil`) - Optional. RetentionPolicy governs lifecycle of Backups created under this plan.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update
+  *   `stateReason` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable description of why BackupPlan is in the current `state`
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this BackupPlan resource was last updated.
   """
@@ -50,6 +52,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
           :name => String.t() | nil,
           :protectedPodCount => integer() | nil,
           :retentionPolicy => GoogleApi.GKEBackup.V1.Model.RetentionPolicy.t() | nil,
+          :state => String.t() | nil,
+          :stateReason => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -65,6 +69,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
   field(:name)
   field(:protectedPodCount)
   field(:retentionPolicy, as: GoogleApi.GKEBackup.V1.Model.RetentionPolicy)
+  field(:state)
+  field(:stateReason)
   field(:uid)
   field(:updateTime, as: DateTime)
 end

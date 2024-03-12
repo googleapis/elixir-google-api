@@ -26,76 +26,6 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.GKEBackup.V1.Model.Empty{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec gkebackup_projects_locations_delete_operations(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.GKEBackup.V1.Model.Empty.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def gkebackup_projects_locations_delete_operations(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:delete)
-      |> Request.url("/v1/{+name}/operations", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(opts ++ [struct: %GoogleApi.GKEBackup.V1.Model.Empty{}])
-  end
-
-  @doc """
   Gets information about a location.
 
   ## Parameters
@@ -316,7 +246,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - If provided, this value must match the current value of the target BackupPlan's etag field or the request is rejected.
+      *   `:etag` (*type:* `String.t`) - Optional. If provided, this value must match the current value of the target BackupPlan's etag field or the request is rejected.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -532,10 +462,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListBackupPlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackupPlans` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListBackupPlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackupPlans` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -610,7 +540,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - This is used to specify the fields to be overwritten in the BackupPlan targeted for update. The values for each of these updated fields will be taken from the `backup_plan` provided with this request. Field names are relative to the root of the resource (e.g., `description`, `backup_config.include_volume_data`, etc.) If no `update_mask` is provided, all fields in `backup_plan` will be written to the target BackupPlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup_plan` are ignored and are not used to update the target BackupPlan.
+      *   `:updateMask` (*type:* `String.t`) - Optional. This is used to specify the fields to be overwritten in the BackupPlan targeted for update. The values for each of these updated fields will be taken from the `backup_plan` provided with this request. Field names are relative to the root of the resource (e.g., `description`, `backup_config.include_volume_data`, etc.) If no `update_mask` is provided, all fields in `backup_plan` will be written to the target BackupPlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup_plan` are ignored and are not used to update the target BackupPlan.
       *   `:body` (*type:* `GoogleApi.GKEBackup.V1.Model.BackupPlan.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -832,7 +762,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:backupId` (*type:* `String.t`) - The client-provided short name for the Backup resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of Backups in this BackupPlan
+      *   `:backupId` (*type:* `String.t`) - Optional. The client-provided short name for the Backup resource. This name must: - be between 1 and 63 characters long (inclusive) - consist of only lower-case ASCII letters, numbers, and dashes - start with a lower-case letter - end with a lower-case letter or number - be unique within the set of Backups in this BackupPlan
       *   `:body` (*type:* `GoogleApi.GKEBackup.V1.Model.Backup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -908,8 +838,8 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - If provided, this value must match the current value of the target Backup's etag field or the request is rejected.
-      *   `:force` (*type:* `boolean()`) - If set to true, any VolumeBackups below this Backup will also be deleted. Otherwise, the request will only succeed if the Backup has no VolumeBackups.
+      *   `:etag` (*type:* `String.t`) - Optional. If provided, this value must match the current value of the target Backup's etag field or the request is rejected.
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, any VolumeBackups below this Backup will also be deleted. Otherwise, the request will only succeed if the Backup has no VolumeBackups.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1126,10 +1056,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackups` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListBackups` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1204,7 +1134,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - This is used to specify the fields to be overwritten in the Backup targeted for update. The values for each of these updated fields will be taken from the `backup_plan` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `backup` will be written to the target Backup resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup` are ignored and are not used to update the target Backup.
+      *   `:updateMask` (*type:* `String.t`) - Optional. This is used to specify the fields to be overwritten in the Backup targeted for update. The values for each of these updated fields will be taken from the `backup_plan` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `backup` will be written to the target Backup resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `backup` are ignored and are not used to update the target Backup.
       *   `:body` (*type:* `GoogleApi.GKEBackup.V1.Model.Backup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1568,10 +1498,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListVolumeBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeBackups` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListVolumeBackups` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeBackups` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1848,6 +1778,76 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   end
 
   @doc """
+  Deletes a long-running operation. This method indicates that the client is no longer interested in the operation result. It does not cancel the operation. If the server doesn't support this method, it returns `google.rpc.Code.UNIMPLEMENTED`.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.GKEBackup.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.GKEBackup.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gkebackup_projects_locations_operations_delete(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.GKEBackup.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gkebackup_projects_locations_operations_delete(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.GKEBackup.V1.Model.Empty{}])
+  end
+
+  @doc """
   Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
 
   ## Parameters
@@ -1920,7 +1920,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -2092,8 +2092,8 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - If provided, this value must match the current value of the target RestorePlan's etag field or the request is rejected.
-      *   `:force` (*type:* `boolean()`) - If set to true, any Restores below this RestorePlan will also be deleted. Otherwise, the request will only succeed if the RestorePlan has no Restores.
+      *   `:etag` (*type:* `String.t`) - Optional. If provided, this value must match the current value of the target RestorePlan's etag field or the request is rejected.
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, any Restores below this RestorePlan will also be deleted. Otherwise, the request will only succeed if the RestorePlan has no Restores.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2310,10 +2310,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListRestorePlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestorePlans` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListRestorePlans` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestorePlans` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2388,7 +2388,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - This is used to specify the fields to be overwritten in the RestorePlan targeted for update. The values for each of these updated fields will be taken from the `restore_plan` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `restore_plan` will be written to the target RestorePlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore_plan` are ignored and are not used to update the target RestorePlan.
+      *   `:updateMask` (*type:* `String.t`) - Optional. This is used to specify the fields to be overwritten in the RestorePlan targeted for update. The values for each of these updated fields will be taken from the `restore_plan` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `restore_plan` will be written to the target RestorePlan resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore_plan` are ignored and are not used to update the target RestorePlan.
       *   `:body` (*type:* `GoogleApi.GKEBackup.V1.Model.RestorePlan.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2686,8 +2686,8 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - If provided, this value must match the current value of the target Restore's etag field or the request is rejected.
-      *   `:force` (*type:* `boolean()`) - If set to true, any VolumeRestores below this restore will also be deleted. Otherwise, the request will only succeed if the restore has no VolumeRestores.
+      *   `:etag` (*type:* `String.t`) - Optional. If provided, this value must match the current value of the target Restore's etag field or the request is rejected.
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, any VolumeRestores below this restore will also be deleted. Otherwise, the request will only succeed if the restore has no VolumeRestores.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2904,10 +2904,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestores` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListRestores` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2982,7 +2982,7 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - This is used to specify the fields to be overwritten in the Restore targeted for update. The values for each of these updated fields will be taken from the `restore` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `restore` will be written to the target Restore resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore` are ignored and are not used to update the target Restore.
+      *   `:updateMask` (*type:* `String.t`) - Optional. This is used to specify the fields to be overwritten in the Restore targeted for update. The values for each of these updated fields will be taken from the `restore` provided with this request. Field names are relative to the root of the resource. If no `update_mask` is provided, all fields in `restore` will be written to the target Restore resource. Note that OUTPUT_ONLY and IMMUTABLE fields in `restore` are ignored and are not used to update the target Restore.
       *   `:body` (*type:* `GoogleApi.GKEBackup.V1.Model.Restore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3346,10 +3346,10 @@ defmodule GoogleApi.GKEBackup.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Field match expression used to filter the results.
-      *   `:orderBy` (*type:* `String.t`) - Field by which to sort the results.
-      *   `:pageSize` (*type:* `integer()`) - The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may inclue a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
-      *   `:pageToken` (*type:* `String.t`) - The value of next_page_token received from a previous `ListVolumeRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeRestores` must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Field match expression used to filter the results.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Field by which to sort the results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The target number of results to return in a single response. If not specified, a default value will be chosen by the service. Note that the response may include a partial list and a caller should only rely on the response's next_page_token to determine if there are more instances left to be queried.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value of next_page_token received from a previous `ListVolumeRestores` call. Provide this to retrieve the subsequent page in a multi-page list of results. When paginating, all other parameters provided to `ListVolumeRestores` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

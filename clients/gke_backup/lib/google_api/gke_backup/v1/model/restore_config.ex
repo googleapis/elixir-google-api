@@ -17,18 +17,21 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.RestoreConfig do
   @moduledoc """
-  Configuration of a restore. Next id: 9
+  Configuration of a restore. Next id: 14
 
   ## Attributes
 
   *   `allNamespaces` (*type:* `boolean()`, *default:* `nil`) - Restore all namespaced resources in the Backup if set to "True". Specifying this field to "False" is an error.
-  *   `clusterResourceConflictPolicy` (*type:* `String.t`, *default:* `nil`) - Defines the behavior for handling the situation where cluster-scoped resources being restored already exist in the target cluster. This MUST be set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if cluster_resource_restore_scope is not empty.
-  *   `clusterResourceRestoreScope` (*type:* `GoogleApi.GKEBackup.V1.Model.ClusterResourceRestoreScope.t`, *default:* `nil`) - Identifies the cluster-scoped resources to restore from the Backup. Not specifying it means NO cluster resource will be restored.
-  *   `namespacedResourceRestoreMode` (*type:* `String.t`, *default:* `nil`) - Defines the behavior for handling the situation where sets of namespaced resources being restored already exist in the target cluster. This MUST be set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+  *   `clusterResourceConflictPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the behavior for handling the situation where cluster-scoped resources being restored already exist in the target cluster. This MUST be set to a value other than CLUSTER_RESOURCE_CONFLICT_POLICY_UNSPECIFIED if cluster_resource_restore_scope is not empty.
+  *   `clusterResourceRestoreScope` (*type:* `GoogleApi.GKEBackup.V1.Model.ClusterResourceRestoreScope.t`, *default:* `nil`) - Optional. Identifies the cluster-scoped resources to restore from the Backup. Not specifying it means NO cluster resource will be restored.
+  *   `excludedNamespaces` (*type:* `GoogleApi.GKEBackup.V1.Model.Namespaces.t`, *default:* `nil`) - A list of selected namespaces excluded from restoration. All namespaces except those in this list will be restored.
+  *   `namespacedResourceRestoreMode` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the behavior for handling the situation where sets of namespaced resources being restored already exist in the target cluster. This MUST be set to a value other than NAMESPACED_RESOURCE_RESTORE_MODE_UNSPECIFIED.
+  *   `noNamespaces` (*type:* `boolean()`, *default:* `nil`) - Do not restore any namespaced resources if set to "True". Specifying this field to "False" is not allowed.
   *   `selectedApplications` (*type:* `GoogleApi.GKEBackup.V1.Model.NamespacedNames.t`, *default:* `nil`) - A list of selected ProtectedApplications to restore. The listed ProtectedApplications and all the resources to which they refer will be restored.
   *   `selectedNamespaces` (*type:* `GoogleApi.GKEBackup.V1.Model.Namespaces.t`, *default:* `nil`) - A list of selected Namespaces to restore from the Backup. The listed Namespaces and all resources contained in them will be restored.
-  *   `substitutionRules` (*type:* `list(GoogleApi.GKEBackup.V1.Model.SubstitutionRule.t)`, *default:* `nil`) - A list of transformation rules to be applied against Kubernetes resources as they are selected for restoration from a Backup. Rules are executed in order defined - this order matters, as changes made by a rule may impact the filtering logic of subsequent rules. An empty list means no substitution will occur.
-  *   `volumeDataRestorePolicy` (*type:* `String.t`, *default:* `nil`) - Specifies the mechanism to be used to restore volume data. Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as NO_VOLUME_DATA_RESTORATION).
+  *   `substitutionRules` (*type:* `list(GoogleApi.GKEBackup.V1.Model.SubstitutionRule.t)`, *default:* `nil`) - Optional. A list of transformation rules to be applied against Kubernetes resources as they are selected for restoration from a Backup. Rules are executed in order defined - this order matters, as changes made by a rule may impact the filtering logic of subsequent rules. An empty list means no substitution will occur.
+  *   `transformationRules` (*type:* `list(GoogleApi.GKEBackup.V1.Model.TransformationRule.t)`, *default:* `nil`) - Optional. A list of transformation rules to be applied against Kubernetes resources as they are selected for restoration from a Backup. Rules are executed in order defined - this order matters, as changes made by a rule may impact the filtering logic of subsequent rules. An empty list means no transformation will occur.
+  *   `volumeDataRestorePolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the mechanism to be used to restore volume data. Default: VOLUME_DATA_RESTORE_POLICY_UNSPECIFIED (will be treated as NO_VOLUME_DATA_RESTORATION).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,10 +41,13 @@ defmodule GoogleApi.GKEBackup.V1.Model.RestoreConfig do
           :clusterResourceConflictPolicy => String.t() | nil,
           :clusterResourceRestoreScope =>
             GoogleApi.GKEBackup.V1.Model.ClusterResourceRestoreScope.t() | nil,
+          :excludedNamespaces => GoogleApi.GKEBackup.V1.Model.Namespaces.t() | nil,
           :namespacedResourceRestoreMode => String.t() | nil,
+          :noNamespaces => boolean() | nil,
           :selectedApplications => GoogleApi.GKEBackup.V1.Model.NamespacedNames.t() | nil,
           :selectedNamespaces => GoogleApi.GKEBackup.V1.Model.Namespaces.t() | nil,
           :substitutionRules => list(GoogleApi.GKEBackup.V1.Model.SubstitutionRule.t()) | nil,
+          :transformationRules => list(GoogleApi.GKEBackup.V1.Model.TransformationRule.t()) | nil,
           :volumeDataRestorePolicy => String.t() | nil
         }
 
@@ -50,10 +56,13 @@ defmodule GoogleApi.GKEBackup.V1.Model.RestoreConfig do
 
   field(:clusterResourceRestoreScope, as: GoogleApi.GKEBackup.V1.Model.ClusterResourceRestoreScope)
 
+  field(:excludedNamespaces, as: GoogleApi.GKEBackup.V1.Model.Namespaces)
   field(:namespacedResourceRestoreMode)
+  field(:noNamespaces)
   field(:selectedApplications, as: GoogleApi.GKEBackup.V1.Model.NamespacedNames)
   field(:selectedNamespaces, as: GoogleApi.GKEBackup.V1.Model.Namespaces)
   field(:substitutionRules, as: GoogleApi.GKEBackup.V1.Model.SubstitutionRule, type: :list)
+  field(:transformationRules, as: GoogleApi.GKEBackup.V1.Model.TransformationRule, type: :list)
   field(:volumeDataRestorePolicy)
 end
 

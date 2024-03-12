@@ -17,19 +17,28 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.ClusterResourceRestoreScope do
   @moduledoc """
-  Identifies the cluster-scoped resources to restore from the Backup.
+  Defines the scope of cluster-scoped resources to restore. Some group kinds are not reasonable choices for a restore, and will cause an error if selected here. Any scope selection that would restore "all valid" resources automatically excludes these group kinds. - gkebackup.gke.io/BackupJob - gkebackup.gke.io/RestoreJob - metrics.k8s.io/NodeMetrics - migration.k8s.io/StorageState - migration.k8s.io/StorageVersionMigration - Node - snapshot.storage.k8s.io/VolumeSnapshotContent - storage.k8s.io/CSINode Some group kinds are driven by restore configuration elsewhere, and will cause an error if selected here. - Namespace - PersistentVolume
 
   ## Attributes
 
-  *   `selectedGroupKinds` (*type:* `list(GoogleApi.GKEBackup.V1.Model.GroupKind.t)`, *default:* `nil`) - A list of "types" of cluster-scoped resources to be restored from the Backup. An empty list means that NO cluster-scoped resources will be restored. Note that Namespaces and PersistentVolume restoration is handled separately and is not governed by this field.
+  *   `allGroupKinds` (*type:* `boolean()`, *default:* `nil`) - Optional. If True, all valid cluster-scoped resources will be restored. Mutually exclusive to any other field in the message.
+  *   `excludedGroupKinds` (*type:* `list(GoogleApi.GKEBackup.V1.Model.GroupKind.t)`, *default:* `nil`) - Optional. A list of cluster-scoped resource group kinds to NOT restore from the backup. If specified, all valid cluster-scoped resources will be restored except for those specified in the list. Mutually exclusive to any other field in the message.
+  *   `noGroupKinds` (*type:* `boolean()`, *default:* `nil`) - Optional. If True, no cluster-scoped resources will be restored. This has the same restore scope as if the message is not defined. Mutually exclusive to any other field in the message.
+  *   `selectedGroupKinds` (*type:* `list(GoogleApi.GKEBackup.V1.Model.GroupKind.t)`, *default:* `nil`) - Optional. A list of cluster-scoped resource group kinds to restore from the backup. If specified, only the selected resources will be restored. Mutually exclusive to any other field in the message.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allGroupKinds => boolean() | nil,
+          :excludedGroupKinds => list(GoogleApi.GKEBackup.V1.Model.GroupKind.t()) | nil,
+          :noGroupKinds => boolean() | nil,
           :selectedGroupKinds => list(GoogleApi.GKEBackup.V1.Model.GroupKind.t()) | nil
         }
 
+  field(:allGroupKinds)
+  field(:excludedGroupKinds, as: GoogleApi.GKEBackup.V1.Model.GroupKind, type: :list)
+  field(:noGroupKinds)
   field(:selectedGroupKinds, as: GoogleApi.GKEBackup.V1.Model.GroupKind, type: :list)
 end
 

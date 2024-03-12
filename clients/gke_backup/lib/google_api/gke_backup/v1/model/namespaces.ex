@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Namespaces do
 
   ## Attributes
 
-  *   `namespaces` (*type:* `list(String.t)`, *default:* `nil`) - A list of Kubernetes Namespaces
+  *   `namespaces` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of Kubernetes Namespaces
   """
 
   use GoogleApi.Gax.ModelBase

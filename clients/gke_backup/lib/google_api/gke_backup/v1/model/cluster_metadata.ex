@@ -21,11 +21,11 @@ defmodule GoogleApi.GKEBackup.V1.Model.ClusterMetadata do
 
   ## Attributes
 
-  *   `anthosVersion` (*type:* `String.t`, *default:* `nil`) - Anthos version
-  *   `backupCrdVersions` (*type:* `map()`, *default:* `nil`) - A list of the Backup for GKE CRD versions found in the cluster.
-  *   `cluster` (*type:* `String.t`, *default:* `nil`) - The source cluster from which this Backup was created. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*` This is inherited from the parent BackupPlan's cluster field.
-  *   `gkeVersion` (*type:* `String.t`, *default:* `nil`) - GKE version
-  *   `k8sVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes server version of the source cluster.
+  *   `anthosVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Anthos version
+  *   `backupCrdVersions` (*type:* `map()`, *default:* `nil`) - Output only. A list of the Backup for GKE CRD versions found in the cluster.
+  *   `cluster` (*type:* `String.t`, *default:* `nil`) - Output only. The source cluster from which this Backup was created. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*` This is inherited from the parent BackupPlan's cluster field.
+  *   `gkeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. GKE version
+  *   `k8sVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The Kubernetes server version of the source cluster.
   """
 
   use GoogleApi.Gax.ModelBase
