@@ -29,6 +29,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
   *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. Location name of this ProvisioningConfig. It is optional only for Intake UI transition period.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated name of the provisioning config. This follows the UUID format.
   *   `networks` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.NetworkConfig.t)`, *default:* `nil`) - Networks to be created.
+  *   `pod` (*type:* `String.t`, *default:* `nil`) - Optional. Pod name. Pod is an independent part of infrastructure. Instance can be connected to the assets (networks, volumes, nfsshares) allocated in the same pod only.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of ProvisioningConfig.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Optional status messages associated with the FAILED state.
   *   `ticketId` (*type:* `String.t`, *default:* `nil`) - A generated ticket id to track provisioning request.
@@ -48,6 +49,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
           :location => String.t() | nil,
           :name => String.t() | nil,
           :networks => list(GoogleApi.BareMetalSolution.V2.Model.NetworkConfig.t()) | nil,
+          :pod => String.t() | nil,
           :state => String.t() | nil,
           :statusMessage => String.t() | nil,
           :ticketId => String.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.ProvisioningConfig do
   field(:location)
   field(:name)
   field(:networks, as: GoogleApi.BareMetalSolution.V2.Model.NetworkConfig, type: :list)
+  field(:pod)
   field(:state)
   field(:statusMessage)
   field(:ticketId)

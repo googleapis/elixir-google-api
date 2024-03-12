@@ -25,7 +25,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.OSImage do
   *   `code` (*type:* `String.t`, *default:* `nil`) - OS Image code.
   *   `description` (*type:* `String.t`, *default:* `nil`) - OS Image description.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. OS Image's unique name.
-  *   `supportedNetworkTemplates` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.ServerNetworkTemplate.t)`, *default:* `nil`) - Network templates that can be used with this OS Image.
+  *   `supportedNetworkTemplates` (*type:* `list(String.t)`, *default:* `nil`) - Network templates that can be used with this OS Image.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,19 +35,14 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.OSImage do
           :code => String.t() | nil,
           :description => String.t() | nil,
           :name => String.t() | nil,
-          :supportedNetworkTemplates =>
-            list(GoogleApi.BareMetalSolution.V2.Model.ServerNetworkTemplate.t()) | nil
+          :supportedNetworkTemplates => list(String.t()) | nil
         }
 
   field(:applicableInstanceTypes, type: :list)
   field(:code)
   field(:description)
   field(:name)
-
-  field(:supportedNetworkTemplates,
-    as: GoogleApi.BareMetalSolution.V2.Model.ServerNetworkTemplate,
-    type: :list
-  )
+  field(:supportedNetworkTemplates, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BareMetalSolution.V2.Model.OSImage do

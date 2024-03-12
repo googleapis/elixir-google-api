@@ -30,13 +30,14 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Network do
   *   `macAddress` (*type:* `list(String.t)`, *default:* `nil`) - List of physical interfaces.
   *   `mountPoints` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.NetworkMountPoint.t)`, *default:* `nil`) - Input only. List of mount points to attach the network to.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this `Network`. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. Format: `projects/{project}/locations/{location}/networks/{network}`
-  *   `pod` (*type:* `String.t`, *default:* `nil`) - Output only. Pod name.
+  *   `pod` (*type:* `String.t`, *default:* `nil`) - Immutable. Pod name. Pod is an independent part of infrastructure. Network can only be connected to the assets (instances, nfsshares) allocated in the same pod.
   *   `reservations` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.NetworkAddressReservation.t)`, *default:* `nil`) - List of IP address reservations in this network. When updating this field, an error will be generated if a reservation conflicts with an IP address already allocated to a physical server.
   *   `servicesCidr` (*type:* `String.t`, *default:* `nil`) - IP range for reserved for services (e.g. NFS).
   *   `state` (*type:* `String.t`, *default:* `nil`) - The Network state.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this network.
   *   `vlanId` (*type:* `String.t`, *default:* `nil`) - The vlan id of the Network.
-  *   `vrf` (*type:* `GoogleApi.BareMetalSolution.V2.Model.VRF.t`, *default:* `nil`) - The vrf for the Network.
+  *   `vrf` (*type:* `GoogleApi.BareMetalSolution.V2.Model.VRF.t`, *default:* `nil`) - The Vrf for the Network. Use this only if a new Vrf needs to be created.
+  *   `vrfAttachment` (*type:* `String.t`, *default:* `nil`) - Optional. The name of a pre-existing Vrf that the network should be attached to. Format is `vrfs/{vrf}`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,7 +59,8 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Network do
           :state => String.t() | nil,
           :type => String.t() | nil,
           :vlanId => String.t() | nil,
-          :vrf => GoogleApi.BareMetalSolution.V2.Model.VRF.t() | nil
+          :vrf => GoogleApi.BareMetalSolution.V2.Model.VRF.t() | nil,
+          :vrfAttachment => String.t() | nil
         }
 
   field(:cidr)
@@ -82,6 +84,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.Network do
   field(:type)
   field(:vlanId)
   field(:vrf, as: GoogleApi.BareMetalSolution.V2.Model.VRF)
+  field(:vrfAttachment)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BareMetalSolution.V2.Model.Network do
