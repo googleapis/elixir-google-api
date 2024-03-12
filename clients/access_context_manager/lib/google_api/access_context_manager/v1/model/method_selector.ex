@@ -21,8 +21,8 @@ defmodule GoogleApi.AccessContextManager.V1.Model.MethodSelector do
 
   ## Attributes
 
-  *   `method` (*type:* `String.t`, *default:* `nil`) - Value for `method` should be a valid method name for the corresponding `service_name` in ApiOperation. If `*` used as value for `method`, then ALL methods and permissions are allowed.
-  *   `permission` (*type:* `String.t`, *default:* `nil`) - Value for `permission` should be a valid Cloud IAM permission for the corresponding `service_name` in ApiOperation.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - A valid method name for the corresponding `service_name` in ApiOperation. If `*` is used as the value for the `method`, then ALL methods and permissions are allowed.
+  *   `permission` (*type:* `String.t`, *default:* `nil`) - A valid Cloud IAM permission for the corresponding `service_name` in ApiOperation.
   """
 
   use GoogleApi.Gax.ModelBase
