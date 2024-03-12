@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
 
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
-  *   `enableFlowLogs` (*type:* `boolean()`, *default:* `nil`) - Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+  *   `enableFlowLogs` (*type:* `boolean()`, *default:* `nil`) - Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set to REGIONAL_MANAGED_PROXY.
   *   `externalIpv6Prefix` (*type:* `String.t`, *default:* `nil`) - The external IPv6 address range that is owned by this subnetwork.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
   *   `gatewayAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
@@ -38,9 +38,10 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which this subnetwork belongs, provided by the client when initially creating the subnetwork. This field can be set only at resource creation time.
   *   `privateIpGoogleAccess` (*type:* `boolean()`, *default:* `nil`) - Whether the VMs in this subnet can access Google services without assigned external IP addresses. This field can be both set at resource creation time and updated using setPrivateIpGoogleAccess.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - This field is for internal use. This field can be both set at resource creation time and updated using patch.
-  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of the resource. This field can be either PRIVATE_RFC_1918 or INTERNAL_HTTPS_LOAD_BALANCER. A subnetwork with purpose set to INTERNAL_HTTPS_LOAD_BALANCER is a user-created subnetwork that is reserved for Internal HTTP(S) Load Balancing. If unspecified, the purpose defaults to PRIVATE_RFC_1918. The enableFlowLogs field isn't supported with the purpose field set to INTERNAL_HTTPS_LOAD_BALANCER.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The purpose of the resource. This field can be either PRIVATE, GLOBAL_MANAGED_PROXY, REGIONAL_MANAGED_PROXY, PRIVATE_SERVICE_CONNECT, or PRIVATE is the default purpose for user-created subnets or subnets that are automatically created in auto mode networks. Subnets with purpose set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY are user-created subnetworks that are reserved for Envoy-based load balancers. A subnet with purpose set to PRIVATE_SERVICE_CONNECT is used to publish services using Private Service Connect. If unspecified, the subnet purpose defaults to PRIVATE. The enableFlowLogs field isn't supported if the subnet purpose field is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY.
   *   `region` (*type:* `String.t`, *default:* `nil`) - URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of subnetwork. Currently, this field is only used when purpose = INTERNAL_HTTPS_LOAD_BALANCER. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Internal HTTP(S) Load Balancing. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
+  *   `reservedInternalRange` (*type:* `String.t`, *default:* `nil`) - The URL of the reserved internal range.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - The role of subnetwork. Currently, this field is only used when purpose is set to GLOBAL_MANAGED_PROXY or REGIONAL_MANAGED_PROXY. The value can be set to ACTIVE or BACKUP. An ACTIVE subnetwork is one that is currently being used for Envoy-based load balancers in a region. A BACKUP subnetwork is one that is ready to be promoted to ACTIVE or is currently draining. This field can be updated with a patch request.
   *   `secondaryIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t)`, *default:* `nil`) - An array of configurations for secondary IP ranges for VM instances contained in this subnetwork. The primary IP of such VM must belong to the primary ipCidrRange of the subnetwork. The alias IPs may belong to either primary or secondary ranges. This field can be updated with a patch request.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `stackType` (*type:* `String.t`, *default:* `nil`) - The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set to IPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated using patch.
@@ -69,6 +70,7 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
           :privateIpv6GoogleAccess => String.t() | nil,
           :purpose => String.t() | nil,
           :region => String.t() | nil,
+          :reservedInternalRange => String.t() | nil,
           :role => String.t() | nil,
           :secondaryIpRanges =>
             list(GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange.t()) | nil,
@@ -96,6 +98,7 @@ defmodule GoogleApi.Compute.V1.Model.Subnetwork do
   field(:privateIpv6GoogleAccess)
   field(:purpose)
   field(:region)
+  field(:reservedInternalRange)
   field(:role)
   field(:secondaryIpRanges, as: GoogleApi.Compute.V1.Model.SubnetworkSecondaryRange, type: :list)
   field(:selfLink)

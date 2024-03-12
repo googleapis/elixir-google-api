@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.VpnGatewayStatusVpnConnection do
   @moduledoc """
-  A VPN connection contains all VPN tunnels connected from this VpnGateway to the same peer gateway. The peer gateway could either be a external VPN gateway or GCP VPN gateway.
+  A VPN connection contains all VPN tunnels connected from this VpnGateway to the same peer gateway. The peer gateway could either be an external VPN gateway or a Google Cloud VPN gateway.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SourceInstanceParams do
 
   ## Attributes
 
-  *   `diskConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.DiskInstantiationConfig.t)`, *default:* `nil`) - Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, new custom images will be created from each disk. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
+  *   `diskConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.DiskInstantiationConfig.t)`, *default:* `nil`) - Attached disks configuration. If not provided, defaults are applied: For boot disk and any other R/W disks, the source images for each disk will be used. For read-only disks, they will be attached in read-only mode. Local SSD disks will be created as blank volumes.
   """
 
   use GoogleApi.Gax.ModelBase

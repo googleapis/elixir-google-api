@@ -21,31 +21,56 @@ defmodule GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do
 
   ## Attributes
 
+  *   `destAddressGroups` (*type:* `list(String.t)`, *default:* `nil`) - Address groups which should be matched against the traffic destination. Maximum number of destination address groups is 10.
+  *   `destFqdns` (*type:* `list(String.t)`, *default:* `nil`) - Fully Qualified Domain Name (FQDN) which should be matched against traffic destination. Maximum number of destination fqdn allowed is 100.
   *   `destIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of destination CIDR IP ranges allowed is 5000.
+  *   `destRegionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Region codes whose IP addresses will be used to match for destination of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of dest region codes allowed is 5000.
+  *   `destThreatIntelligences` (*type:* `list(String.t)`, *default:* `nil`) - Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic destination.
   *   `layer4Configs` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t)`, *default:* `nil`) - Pairs of IP protocols and ports that the rule should match.
+  *   `srcAddressGroups` (*type:* `list(String.t)`, *default:* `nil`) - Address groups which should be matched against the traffic source. Maximum number of source address groups is 10.
+  *   `srcFqdns` (*type:* `list(String.t)`, *default:* `nil`) - Fully Qualified Domain Name (FQDN) which should be matched against traffic source. Maximum number of source fqdn allowed is 100.
   *   `srcIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - CIDR IP address range. Maximum number of source CIDR IP ranges allowed is 5000.
+  *   `srcRegionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Region codes whose IP addresses will be used to match for source of traffic. Should be specified as 2 letter country code defined as per ISO 3166 alpha-2 country codes. ex."US" Maximum number of source region codes allowed is 5000.
   *   `srcSecureTags` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t)`, *default:* `nil`) - List of secure tag values, which should be matched at the source of the traffic. For INGRESS rule, if all the srcSecureTag are INEFFECTIVE, and there is no srcIpRange, this rule will be ignored. Maximum number of source tag values allowed is 256.
+  *   `srcThreatIntelligences` (*type:* `list(String.t)`, *default:* `nil`) - Names of Network Threat Intelligence lists. The IPs in these lists will be matched against traffic source.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :destAddressGroups => list(String.t()) | nil,
+          :destFqdns => list(String.t()) | nil,
           :destIpRanges => list(String.t()) | nil,
+          :destRegionCodes => list(String.t()) | nil,
+          :destThreatIntelligences => list(String.t()) | nil,
           :layer4Configs =>
             list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config.t()) | nil,
+          :srcAddressGroups => list(String.t()) | nil,
+          :srcFqdns => list(String.t()) | nil,
           :srcIpRanges => list(String.t()) | nil,
-          :srcSecureTags => list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t()) | nil
+          :srcRegionCodes => list(String.t()) | nil,
+          :srcSecureTags =>
+            list(GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag.t()) | nil,
+          :srcThreatIntelligences => list(String.t()) | nil
         }
 
+  field(:destAddressGroups, type: :list)
+  field(:destFqdns, type: :list)
   field(:destIpRanges, type: :list)
+  field(:destRegionCodes, type: :list)
+  field(:destThreatIntelligences, type: :list)
 
   field(:layer4Configs,
     as: GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcherLayer4Config,
     type: :list
   )
 
+  field(:srcAddressGroups, type: :list)
+  field(:srcFqdns, type: :list)
   field(:srcIpRanges, type: :list)
+  field(:srcRegionCodes, type: :list)
   field(:srcSecureTags, as: GoogleApi.Compute.V1.Model.FirewallPolicyRuleSecureTag, type: :list)
+  field(:srcThreatIntelligences, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.FirewallPolicyRuleMatcher do

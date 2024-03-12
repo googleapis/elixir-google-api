@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceIAP do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the serving infrastructure will authenticate and authorize all incoming requests. If true, the oauth2ClientId and oauth2ClientSecret fields must be non-empty.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the serving infrastructure will authenticate and authorize all incoming requests.
   *   `oauth2ClientId` (*type:* `String.t`, *default:* `nil`) - OAuth2 client ID to use for the authentication flow.
   *   `oauth2ClientSecret` (*type:* `String.t`, *default:* `nil`) - OAuth2 client secret to use for the authentication flow. For security reasons, this value cannot be retrieved via the API. Instead, the SHA-256 hash of the value is returned in the oauth2ClientSecretSha256 field. @InputOnly
   *   `oauth2ClientSecretSha256` (*type:* `String.t`, *default:* `nil`) - [Output Only] SHA256 hash value for the field oauth2_client_secret above.

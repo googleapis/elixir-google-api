@@ -25,6 +25,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
   *   `circuitId` (*type:* `String.t`, *default:* `nil`) - The unique ID for this link assigned during turn up by Google.
   *   `googleDemarc` (*type:* `String.t`, *default:* `nil`) - The Demarc address assigned by Google and provided in the LoA.
   *   `lacpStatus` (*type:* `GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus.t`, *default:* `nil`) - 
+  *   `macsec` (*type:* `GoogleApi.Compute.V1.Model.InterconnectDiagnosticsMacsecStatus.t`, *default:* `nil`) - Describes the status of MACsec encryption on this link.
+  *   `operationalStatus` (*type:* `String.t`, *default:* `nil`) - The operational status of the link.
   *   `receivingOpticalPower` (*type:* `GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t`, *default:* `nil`) - An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the received light level.
   *   `transmittingOpticalPower` (*type:* `GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t`, *default:* `nil`) - An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of the transmitted light level.
   """
@@ -38,6 +40,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
           :googleDemarc => String.t() | nil,
           :lacpStatus =>
             GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus.t() | nil,
+          :macsec => GoogleApi.Compute.V1.Model.InterconnectDiagnosticsMacsecStatus.t() | nil,
+          :operationalStatus => String.t() | nil,
           :receivingOpticalPower =>
             GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower.t() | nil,
           :transmittingOpticalPower =>
@@ -48,6 +52,8 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus do
   field(:circuitId)
   field(:googleDemarc)
   field(:lacpStatus, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkLACPStatus)
+  field(:macsec, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsMacsecStatus)
+  field(:operationalStatus)
 
   field(:receivingOpticalPower,
     as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkOpticalPower

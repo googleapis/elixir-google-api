@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
 
   ## Attributes
 
+  *   `allInstancesConfig` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerAllInstancesConfig.t`, *default:* `nil`) - Specifies configuration that overrides the instance template configuration for the group.
   *   `autoHealingPolicies` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy.t)`, *default:* `nil`) - The autohealing policy for this managed instance group. You can specify only one value.
   *   `baseInstanceName` (*type:* `String.t`, *default:* `nil`) - The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
@@ -30,6 +31,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] A unique identifier for this resource type. The server generates this identifier.
   *   `instanceGroup` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Instance Group resource.
+  *   `instanceLifecyclePolicy` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceLifecyclePolicy.t`, *default:* `nil`) - The repair policy for this managed instance group.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, run applyUpdatesToInstances, or set the group's updatePolicy.type to PROACTIVE.
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceGroupManager`) - [Output Only] The resource type, which is always compute#instanceGroupManager for managed instance groups.
   *   `listManagedInstancesResults` (*type:* `String.t`, *default:* `nil`) - Pagination behavior of the listManagedInstances API method for this managed instance group.
@@ -49,6 +51,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allInstancesConfig =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerAllInstancesConfig.t() | nil,
           :autoHealingPolicies =>
             list(GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy.t()) | nil,
           :baseInstanceName => String.t() | nil,
@@ -60,6 +64,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :fingerprint => String.t() | nil,
           :id => String.t() | nil,
           :instanceGroup => String.t() | nil,
+          :instanceLifecyclePolicy =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceLifecyclePolicy.t() | nil,
           :instanceTemplate => String.t() | nil,
           :kind => String.t() | nil,
           :listManagedInstancesResults => String.t() | nil,
@@ -76,6 +82,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :zone => String.t() | nil
         }
 
+  field(:allInstancesConfig, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerAllInstancesConfig)
+
   field(:autoHealingPolicies,
     as: GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy,
     type: :list
@@ -89,6 +97,11 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:fingerprint)
   field(:id)
   field(:instanceGroup)
+
+  field(:instanceLifecyclePolicy,
+    as: GoogleApi.Compute.V1.Model.InstanceGroupManagerInstanceLifecyclePolicy
+  )
+
   field(:instanceTemplate)
   field(:kind)
   field(:listManagedInstancesResults)

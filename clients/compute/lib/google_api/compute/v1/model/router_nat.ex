@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
 
   ## Attributes
 
+  *   `autoNetworkTier` (*type:* `String.t`, *default:* `nil`) - The network tier to use when automatically reserving NAT IP addresses. Must be one of: PREMIUM, STANDARD. If not specified, then the current project-level default tier is used.
   *   `drainNatIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT only.
   *   `enableDynamicPortAllocation` (*type:* `boolean()`, *default:* `nil`) - Enable Dynamic Port Allocation. If not specified, it is disabled by default. If set to true, - Dynamic Port Allocation will be enabled on this NAT config. - enableEndpointIndependentMapping cannot be set to true. - If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. If minPortsPerVm is not set, a minimum of 32 ports will be allocated to a VM from this NAT config. 
   *   `enableEndpointIndependentMapping` (*type:* `boolean()`, *default:* `nil`) - 
@@ -33,17 +34,19 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   *   `natIpAllocateOption` (*type:* `String.t`, *default:* `nil`) - Specify the NatIpAllocateOption, which can take one of the following values: - MANUAL_ONLY: Uses only Nat IP addresses provided by customers. When there are not enough specified Nat IPs, the Nat service fails for new VMs. - AUTO_ONLY: Nat IPs are allocated by Google Cloud Platform; customers can't specify any Nat IPs. When choosing AUTO_ONLY, then nat_ip should be empty. 
   *   `natIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources used for this Nat service. These IP addresses must be valid static external IP addresses assigned to the project.
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.RouterNatRule.t)`, *default:* `nil`) - A list of rules associated with this NAT.
-  *   `sourceSubnetworkIpRangesToNat` (*type:* `String.t`, *default:* `nil`) - Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES or ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, then there should not be any other Router.Nat section in any Router for this network in this region.
+  *   `sourceSubnetworkIpRangesToNat` (*type:* `String.t`, *default:* `nil`) - Specify the Nat option, which can take one of the following values: - ALL_SUBNETWORKS_ALL_IP_RANGES: All of the IP ranges in every Subnetwork are allowed to Nat. - ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES: All of the primary IP ranges in every Subnetwork are allowed to Nat. - LIST_OF_SUBNETWORKS: A list of Subnetworks are allowed to Nat (specified in the field subnetwork below) The default is SUBNETWORK_IP_RANGE_TO_NAT_OPTION_UNSPECIFIED. Note that if this field contains ALL_SUBNETWORKS_ALL_IP_RANGES then there should not be any other Router.Nat section in any Router for this network in this region.
   *   `subnetworks` (*type:* `list(GoogleApi.Compute.V1.Model.RouterNatSubnetworkToNat.t)`, *default:* `nil`) - A list of Subnetwork resources whose traffic should be translated by NAT Gateway. It is used only when LIST_OF_SUBNETWORKS is selected for the SubnetworkIpRangeToNatOption above.
   *   `tcpEstablishedIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set.
   *   `tcpTimeWaitTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
   *   `tcpTransitoryIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Indicates whether this NAT is used for public or private IP translation. If unspecified, it defaults to PUBLIC.
   *   `udpIdleTimeoutSec` (*type:* `integer()`, *default:* `nil`) - Timeout (in seconds) for UDP connections. Defaults to 30s if not set.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoNetworkTier => String.t() | nil,
           :drainNatIps => list(String.t()) | nil,
           :enableDynamicPortAllocation => boolean() | nil,
           :enableEndpointIndependentMapping => boolean() | nil,
@@ -61,9 +64,11 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
           :tcpEstablishedIdleTimeoutSec => integer() | nil,
           :tcpTimeWaitTimeoutSec => integer() | nil,
           :tcpTransitoryIdleTimeoutSec => integer() | nil,
+          :type => String.t() | nil,
           :udpIdleTimeoutSec => integer() | nil
         }
 
+  field(:autoNetworkTier)
   field(:drainNatIps, type: :list)
   field(:enableDynamicPortAllocation)
   field(:enableEndpointIndependentMapping)
@@ -81,6 +86,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterNat do
   field(:tcpEstablishedIdleTimeoutSec)
   field(:tcpTimeWaitTimeoutSec)
   field(:tcpTransitoryIdleTimeoutSec)
+  field(:type)
   field(:udpIdleTimeoutSec)
 end
 

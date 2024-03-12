@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   @moduledoc """
-  Represents an Instance Template resource. You can use instance templates to create VM instances and managed instance groups. For more information, read Instance Templates.
+  Represents an Instance Template resource. Google Compute Engine has two Instance Template resources: * [Global](/compute/docs/reference/rest/v1/instanceTemplates) * [Regional](/compute/docs/reference/rest/v1/regionInstanceTemplates) You can reuse a global instance template in different regions whereas you can use a regional instance template in a specified region only. If you want to reduce cross-region dependency or achieve data residency, use a regional instance template. To create VMs, managed instance groups, and reservations, you can use either global or regional instance templates. For more information, read Instance Templates.
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceTemplate`) - [Output Only] The resource type, which is always compute#instanceTemplate for instance templates.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `properties` (*type:* `GoogleApi.Compute.V1.Model.InstanceProperties.t`, *default:* `nil`) - The instance properties for this instance template.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this instance template. The server defines this URL.
   *   `sourceInstance` (*type:* `String.t`, *default:* `nil`) - The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /instances/instance - projects/project/zones/zone/instances/instance 
   *   `sourceInstanceParams` (*type:* `GoogleApi.Compute.V1.Model.SourceInstanceParams.t`, *default:* `nil`) - The source instance params to use to create this instance template.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
           :kind => String.t() | nil,
           :name => String.t() | nil,
           :properties => GoogleApi.Compute.V1.Model.InstanceProperties.t() | nil,
+          :region => String.t() | nil,
           :selfLink => String.t() | nil,
           :sourceInstance => String.t() | nil,
           :sourceInstanceParams => GoogleApi.Compute.V1.Model.SourceInstanceParams.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceTemplate do
   field(:kind)
   field(:name)
   field(:properties, as: GoogleApi.Compute.V1.Model.InstanceProperties)
+  field(:region)
   field(:selfLink)
   field(:sourceInstance)
   field(:sourceInstanceParams, as: GoogleApi.Compute.V1.Model.SourceInstanceParams)

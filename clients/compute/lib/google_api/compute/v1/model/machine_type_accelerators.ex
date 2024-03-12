@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineTypeAccelerators do
   ## Attributes
 
   *   `guestAcceleratorCount` (*type:* `integer()`, *default:* `nil`) - Number of accelerator cards exposed to the guest.
-  *   `guestAcceleratorType` (*type:* `String.t`, *default:* `nil`) - The accelerator type resource name, not a full URL, e.g. 'nvidia-tesla-k80'.
+  *   `guestAcceleratorType` (*type:* `String.t`, *default:* `nil`) - The accelerator type resource name, not a full URL, e.g. nvidia-tesla-t4.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -22,7 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterMd5AuthenticationKey do
   ## Attributes
 
   *   `key` (*type:* `String.t`, *default:* `nil`) - [Input only] Value of the key. For patch and update calls, it can be skipped to copy the value from the previous configuration. This is allowed if the key with the same name existed before the operation. Maximum length is 80 characters. Can only contain printable ASCII characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name used to identify the key. Must be unique within a router. Must be referenced by at least one bgpPeer. Must comply with RFC1035.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name used to identify the key. Must be unique within a router. Must be referenced by exactly one bgpPeer. Must comply with RFC1035.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
 
   ## Attributes
 
+  *   `allInstancesConfig` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusAllInstancesConfig.t`, *default:* `nil`) - [Output only] Status of all-instances configuration on the group.
   *   `autoscaler` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the Autoscaler that targets this instance group manager.
   *   `isStable` (*type:* `boolean()`, *default:* `nil`) - [Output Only] A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
   *   `stateful` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t`, *default:* `nil`) - [Output Only] Stateful status of the given Instance Group Manager.
@@ -30,12 +31,18 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allInstancesConfig =>
+            GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusAllInstancesConfig.t() | nil,
           :autoscaler => String.t() | nil,
           :isStable => boolean() | nil,
           :stateful => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusStateful.t() | nil,
           :versionTarget =>
             GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusVersionTarget.t() | nil
         }
+
+  field(:allInstancesConfig,
+    as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatusAllInstancesConfig
+  )
 
   field(:autoscaler)
   field(:isStable)

@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Compute.V1.Model.ForwardingRuleServiceDirectoryRegistration do
   @moduledoc """
-  Describes the auto-registration of the Forwarding Rule to Service Directory. The region and project of the Service Directory resource generated from this registration will be the same as this Forwarding Rule.
+  Describes the auto-registration of the forwarding rule to Service Directory. The region and project of the Service Directory resource generated from this registration will be the same as this forwarding rule.
 
   ## Attributes
 
   *   `namespace` (*type:* `String.t`, *default:* `nil`) - Service Directory namespace to register the forwarding rule under.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Service Directory service to register the forwarding rule under.
-  *   `serviceDirectoryRegion` (*type:* `String.t`, *default:* `nil`) - [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs Forwarding Rules on the same network should use the same Service Directory region.
+  *   `serviceDirectoryRegion` (*type:* `String.t`, *default:* `nil`) - [Optional] Service Directory region to register this global forwarding rule under. Default to "us-central1". Only used for PSC for Google APIs. All PSC for Google APIs forwarding rules on the same network should use the same Service Directory region.
   """
 
   use GoogleApi.Gax.ModelBase

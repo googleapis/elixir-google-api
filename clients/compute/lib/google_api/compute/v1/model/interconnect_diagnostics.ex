@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnostics do
   @moduledoc """
-  Diagnostics information about interconnect, contains detailed and current technical information about Google's side of the connection.
+  Diagnostics information about the Interconnect connection, which contains detailed and current technical information about Google's side of the connection.
 
   ## Attributes
 
   *   `arpCaches` (*type:* `list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t)`, *default:* `nil`) - A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently seen by the Google router in the ARP cache for the Interconnect. This will be empty when the Interconnect is not bundled.
+  *   `bundleAggregationType` (*type:* `String.t`, *default:* `nil`) - The aggregation type of the bundle interface.
+  *   `bundleOperationalStatus` (*type:* `String.t`, *default:* `nil`) - The operational status of the bundle interface.
   *   `links` (*type:* `list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus.t)`, *default:* `nil`) - A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on the Interconnect.
   *   `macAddress` (*type:* `String.t`, *default:* `nil`) - The MAC address of the Interconnect's bundle interface.
   """
@@ -31,11 +33,15 @@ defmodule GoogleApi.Compute.V1.Model.InterconnectDiagnostics do
   @type t :: %__MODULE__{
           :arpCaches =>
             list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry.t()) | nil,
+          :bundleAggregationType => String.t() | nil,
+          :bundleOperationalStatus => String.t() | nil,
           :links => list(GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus.t()) | nil,
           :macAddress => String.t() | nil
         }
 
   field(:arpCaches, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsARPEntry, type: :list)
+  field(:bundleAggregationType)
+  field(:bundleOperationalStatus)
   field(:links, as: GoogleApi.Compute.V1.Model.InterconnectDiagnosticsLinkStatus, type: :list)
   field(:macAddress)
 end

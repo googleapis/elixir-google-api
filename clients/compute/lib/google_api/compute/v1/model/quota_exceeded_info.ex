@@ -22,24 +22,30 @@ defmodule GoogleApi.Compute.V1.Model.QuotaExceededInfo do
   ## Attributes
 
   *   `dimensions` (*type:* `map()`, *default:* `nil`) - The map holding related quota dimensions.
+  *   `futureLimit` (*type:* `float()`, *default:* `nil`) - Future quota limit being rolled out. The limit's unit depends on the quota type or metric.
   *   `limit` (*type:* `float()`, *default:* `nil`) - Current effective quota limit. The limit's unit depends on the quota type or metric.
   *   `limitName` (*type:* `String.t`, *default:* `nil`) - The name of the quota limit.
   *   `metricName` (*type:* `String.t`, *default:* `nil`) - The Compute Engine quota metric name.
+  *   `rolloutStatus` (*type:* `String.t`, *default:* `nil`) - Rollout status of the future quota limit.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dimensions => map() | nil,
+          :futureLimit => float() | nil,
           :limit => float() | nil,
           :limitName => String.t() | nil,
-          :metricName => String.t() | nil
+          :metricName => String.t() | nil,
+          :rolloutStatus => String.t() | nil
         }
 
   field(:dimensions, type: :map)
+  field(:futureLimit)
   field(:limit)
   field(:limitName)
   field(:metricName)
+  field(:rolloutStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.QuotaExceededInfo do

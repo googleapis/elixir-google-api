@@ -22,18 +22,24 @@ defmodule GoogleApi.Compute.V1.Model.RouterNatRuleAction do
   ## Attributes
 
   *   `sourceNatActiveIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources used for this NAT rule. These IP addresses must be valid static external IP addresses assigned to the project. This field is used for public NAT.
+  *   `sourceNatActiveRanges` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the subnetworks used as source ranges for this NAT Rule. These subnetworks must have purpose set to PRIVATE_NAT. This field is used for private NAT.
   *   `sourceNatDrainIps` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. These IPs should be used for updating/patching a NAT rule only. This field is used for public NAT.
+  *   `sourceNatDrainRanges` (*type:* `list(String.t)`, *default:* `nil`) - A list of URLs of subnetworks representing source ranges to be drained. This is only supported on patch/update, and these subnetworks must have previously been used as active ranges in this NAT Rule. This field is used for private NAT.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :sourceNatActiveIps => list(String.t()) | nil,
-          :sourceNatDrainIps => list(String.t()) | nil
+          :sourceNatActiveRanges => list(String.t()) | nil,
+          :sourceNatDrainIps => list(String.t()) | nil,
+          :sourceNatDrainRanges => list(String.t()) | nil
         }
 
   field(:sourceNatActiveIps, type: :list)
+  field(:sourceNatActiveRanges, type: :list)
   field(:sourceNatDrainIps, type: :list)
+  field(:sourceNatDrainRanges, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.RouterNatRuleAction do

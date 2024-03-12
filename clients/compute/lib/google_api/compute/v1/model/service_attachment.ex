@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   @moduledoc """
-  Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service. next tag = 20
+  Represents a ServiceAttachment resource. A service attachment represents a service that a producer has exposed. It encapsulates the load balancer which fronts the service runs and a list of NAT IP ranges that the producers uses to represent the consumers connecting to the service.
 
   ## Attributes
 
@@ -36,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   *   `natSubnets` (*type:* `list(String.t)`, *default:* `nil`) - An array of URLs where each entry is the URL of a subnet provided by the service producer to use for NAT in this service attachment.
   *   `producerForwardingRule` (*type:* `String.t`, *default:* `nil`) - The URL of a forwarding rule with loadBalancingScheme INTERNAL* that is serving the endpoint identified by this service attachment.
   *   `pscServiceAttachmentId` (*type:* `GoogleApi.Compute.V1.Model.Uint128.t`, *default:* `nil`) - [Output Only] An 128-bit global unique ID of the PSC service attachment.
+  *   `reconcileConnections` (*type:* `boolean()`, *default:* `nil`) - This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `targetService` (*type:* `String.t`, *default:* `nil`) - The URL of a service serving the endpoint identified by this service attachment.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
           :natSubnets => list(String.t()) | nil,
           :producerForwardingRule => String.t() | nil,
           :pscServiceAttachmentId => GoogleApi.Compute.V1.Model.Uint128.t() | nil,
+          :reconcileConnections => boolean() | nil,
           :region => String.t() | nil,
           :selfLink => String.t() | nil,
           :targetService => String.t() | nil
@@ -90,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Model.ServiceAttachment do
   field(:natSubnets, type: :list)
   field(:producerForwardingRule)
   field(:pscServiceAttachmentId, as: GoogleApi.Compute.V1.Model.Uint128)
+  field(:reconcileConnections)
   field(:region)
   field(:selfLink)
   field(:targetService)

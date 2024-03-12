@@ -22,10 +22,12 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   ## Attributes
 
   *   `advertiseMode` (*type:* `String.t`, *default:* `nil`) - User-specified flag to indicate which mode to use for advertisement.
-  *   `advertisedGroups` (*type:* `list(String.t)`, *default:* `nil`) - User-specified list of prefix groups to advertise in custom mode, which can take one of the following options: - ALL_SUBNETS: Advertises all available subnets, including peer VPC subnets. - ALL_VPC_SUBNETS: Advertises the router's own VPC subnets. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
+  *   `advertisedGroups` (*type:* `list(String.t)`, *default:* `nil`) - User-specified list of prefix groups to advertise in custom mode, which currently supports the following option: - ALL_SUBNETS: Advertises all of the router's own VPC subnets. This excludes any routes learned for subnets that use VPC Network Peering. Note that this field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These groups are advertised in addition to any specified prefixes. Leave this field blank to advertise no custom groups.
   *   `advertisedIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t)`, *default:* `nil`) - User-specified list of individual IP ranges to advertise in custom mode. This field can only be populated if advertise_mode is CUSTOM and overrides the list defined for the router (in the "bgp" message). These IP ranges are advertised in addition to any specified groups. Leave this field blank to advertise no custom IP ranges.
   *   `advertisedRoutePriority` (*type:* `integer()`, *default:* `nil`) - The priority of routes advertised to this BGP peer. Where there is more than one matching route of maximum length, the routes with the lowest priority value win.
   *   `bfd` (*type:* `GoogleApi.Compute.V1.Model.RouterBgpPeerBfd.t`, *default:* `nil`) - BFD configuration for the BGP peering.
+  *   `customLearnedIpRanges` (*type:* `list(GoogleApi.Compute.V1.Model.RouterBgpPeerCustomLearnedIpRange.t)`, *default:* `nil`) - A list of user-defined custom learned route IP address ranges for a BGP session.
+  *   `customLearnedRoutePriority` (*type:* `integer()`, *default:* `nil`) - The user-defined custom learned route priority for a BGP session. This value is applied to all custom learned route ranges for the session. You can choose a value from `0` to `65335`. If you don't provide a value, Google Cloud assigns a priority of `100` to the ranges.
   *   `enable` (*type:* `String.t`, *default:* `nil`) - The status of the BGP peer connection. If set to FALSE, any active session with the peer is terminated and all associated routing information is removed. If set to TRUE, the peer connection can be established with routing information. The default is TRUE.
   *   `enableIpv6` (*type:* `boolean()`, *default:* `nil`) - Enable IPv6 traffic over BGP Peer. If not specified, it is disabled by default.
   *   `interfaceName` (*type:* `String.t`, *default:* `nil`) - Name of the interface the BGP peer is associated with.
@@ -49,6 +51,9 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
             list(GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange.t()) | nil,
           :advertisedRoutePriority => integer() | nil,
           :bfd => GoogleApi.Compute.V1.Model.RouterBgpPeerBfd.t() | nil,
+          :customLearnedIpRanges =>
+            list(GoogleApi.Compute.V1.Model.RouterBgpPeerCustomLearnedIpRange.t()) | nil,
+          :customLearnedRoutePriority => integer() | nil,
           :enable => String.t() | nil,
           :enableIpv6 => boolean() | nil,
           :interfaceName => String.t() | nil,
@@ -68,6 +73,13 @@ defmodule GoogleApi.Compute.V1.Model.RouterBgpPeer do
   field(:advertisedIpRanges, as: GoogleApi.Compute.V1.Model.RouterAdvertisedIpRange, type: :list)
   field(:advertisedRoutePriority)
   field(:bfd, as: GoogleApi.Compute.V1.Model.RouterBgpPeerBfd)
+
+  field(:customLearnedIpRanges,
+    as: GoogleApi.Compute.V1.Model.RouterBgpPeerCustomLearnedIpRange,
+    type: :list
+  )
+
+  field(:customLearnedRoutePriority)
   field(:enable)
   field(:enableIpv6)
   field(:interfaceName)

@@ -17,24 +17,24 @@
 
 defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroup do
   @moduledoc """
-  Represents a collection of network endpoints. A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs, see Setting up external HTTP(S) Load Balancing with internet NEGs, Setting up zonal NEGs, or Setting up external HTTP(S) Load Balancing with serverless NEGs.
+  Represents a collection of network endpoints. A network endpoint group (NEG) defines how a set of endpoints should be reached, whether they are reachable, and where they are located. For more information about using NEGs for different use cases, see Network endpoint groups overview.
 
   ## Attributes
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Metadata defined as annotations on the network endpoint group.
-  *   `appEngine` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
-  *   `cloudFunction` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
-  *   `cloudRun` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t`, *default:* `nil`) - Only valid when networkEndpointType is "SERVERLESS". Only one of cloudRun, appEngine or cloudFunction may be set.
+  *   `appEngine` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupAppEngine.t`, *default:* `nil`) - Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+  *   `cloudFunction` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudFunction.t`, *default:* `nil`) - Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
+  *   `cloudRun` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupCloudRun.t`, *default:* `nil`) - Only valid when networkEndpointType is SERVERLESS. Only one of cloudRun, appEngine or cloudFunction may be set.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `defaultPort` (*type:* `integer()`, *default:* `nil`) - The default port used if the port number is not specified in the network endpoint.
+  *   `defaultPort` (*type:* `integer()`, *default:* `nil`) - The default port used if the port number is not specified in the network endpoint. If the network endpoint type is either GCE_VM_IP, SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#networkEndpointGroup`) - [Output Only] Type of the resource. Always compute#networkEndpointGroup for network endpoint group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which all network endpoints in the NEG belong. Uses "default" project network if unspecified.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The URL of the network to which all network endpoints in the NEG belong. Uses default project network if unspecified.
   *   `networkEndpointType` (*type:* `String.t`, *default:* `nil`) - Type of network endpoints in this network endpoint group. Can be one of GCE_VM_IP, GCE_VM_IP_PORT, NON_GCP_PRIVATE_IP_PORT, INTERNET_FQDN_PORT, INTERNET_IP_PORT, SERVERLESS, PRIVATE_SERVICE_CONNECT.
   *   `pscData` (*type:* `GoogleApi.Compute.V1.Model.NetworkEndpointGroupPscData.t`, *default:* `nil`) - 
-  *   `pscTargetService` (*type:* `String.t`, *default:* `nil`) - The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: "asia-northeast3-cloudkms.googleapis.com"
+  *   `pscTargetService` (*type:* `String.t`, *default:* `nil`) - The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the network endpoint group is located.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `size` (*type:* `integer()`, *default:* `nil`) - [Output only] Number of network endpoints in the network endpoint group.

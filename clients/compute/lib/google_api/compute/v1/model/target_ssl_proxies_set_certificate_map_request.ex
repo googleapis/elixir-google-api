@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetSslProxiesSetCertificateMapRequest do
 
   ## Attributes
 
-  *   `certificateMap` (*type:* `String.t`, *default:* `nil`) - URL of the Certificate Map to associate with this TargetSslProxy.
+  *   `certificateMap` (*type:* `String.t`, *default:* `nil`) - URL of the Certificate Map to associate with this TargetSslProxy. Accepted format is //certificatemanager.googleapis.com/projects/{project }/locations/{location}/certificateMaps/{resourceName}.
   """
 
   use GoogleApi.Gax.ModelBase

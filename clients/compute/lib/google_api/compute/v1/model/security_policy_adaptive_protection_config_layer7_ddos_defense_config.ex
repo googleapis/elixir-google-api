@@ -17,23 +17,35 @@
 
 defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfig do
   @moduledoc """
-  Configuration options for L7 DDoS detection.
+  Configuration options for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
 
   ## Attributes
 
-  *   `enable` (*type:* `boolean()`, *default:* `nil`) - If set to true, enables CAAP for L7 DDoS detection.
-  *   `ruleVisibility` (*type:* `String.t`, *default:* `nil`) - Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules.
+  *   `enable` (*type:* `boolean()`, *default:* `nil`) - If set to true, enables CAAP for L7 DDoS detection. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
+  *   `ruleVisibility` (*type:* `String.t`, *default:* `nil`) - Rule visibility can be one of the following: STANDARD - opaque rules. (default) PREMIUM - transparent rules. This field is only supported in Global Security Policies of type CLOUD_ARMOR.
+  *   `thresholdConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig.t)`, *default:* `nil`) - Configuration options for layer7 adaptive protection for various customizable thresholds.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enable => boolean() | nil,
-          :ruleVisibility => String.t() | nil
+          :ruleVisibility => String.t() | nil,
+          :thresholdConfigs =>
+            list(
+              GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig.t()
+            )
+            | nil
         }
 
   field(:enable)
   field(:ruleVisibility)
+
+  field(:thresholdConfigs,
+    as:
+      GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfig,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

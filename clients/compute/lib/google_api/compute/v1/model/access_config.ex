@@ -21,15 +21,16 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
 
   ## Attributes
 
-  *   `externalIpv6` (*type:* `String.t`, *default:* `nil`) - The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. The field is output only, an IPv6 address from a subnetwork associated with the instance will be allocated dynamically.
-  *   `externalIpv6PrefixLength` (*type:* `integer()`, *default:* `nil`) - The prefix length of the external IPv6 range.
+  *   `externalIpv6` (*type:* `String.t`, *default:* `nil`) - Applies to ipv6AccessConfigs only. The first IPv6 address of the external IPv6 range associated with this instance, prefix length is stored in externalIpv6PrefixLength in ipv6AccessConfig. To use a static external IP address, it must be unused and in the same region as the instance's zone. If not specified, Google Cloud will automatically assign an external IPv6 address from the instance's subnetwork.
+  *   `externalIpv6PrefixLength` (*type:* `integer()`, *default:* `nil`) - Applies to ipv6AccessConfigs only. The prefix length of the external IPv6 range.
   *   `kind` (*type:* `String.t`, *default:* `compute#accessConfig`) - [Output Only] Type of the resource. Always compute#accessConfig for access configs.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this access configuration. The default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access.
-  *   `natIP` (*type:* `String.t`, *default:* `nil`) - An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this access configuration. In accessConfigs (IPv4), the default and recommended name is External NAT, but you can use any arbitrary string, such as My external IP or Network Access. In ipv6AccessConfigs, the recommend name is External IPv6.
+  *   `natIP` (*type:* `String.t`, *default:* `nil`) - Applies to accessConfigs (IPv4) only. An external IP address associated with this instance. Specify an unused static external IP address available to the project or leave this field undefined to use an IP from a shared ephemeral IP address pool. If you specify a static external IP address, it must live in the same region as the zone of the instance.
   *   `networkTier` (*type:* `String.t`, *default:* `nil`) - This signifies the networking tier used for configuring this access configuration and can only take the following values: PREMIUM, STANDARD. If an AccessConfig is specified without a valid external IP address, an ephemeral IP will be created with this networkTier. If an AccessConfig with a valid external IP address is specified, it must match that of the networkTier associated with the Address resource owning that IP.
   *   `publicPtrDomainName` (*type:* `String.t`, *default:* `nil`) - The DNS domain name for the public PTR record. You can set this field only if the `setPublicPtr` field is enabled in accessConfig. If this field is unspecified in ipv6AccessConfig, a default PTR record will be createc for first IP in associated external IPv6 range.
+  *   `securityPolicy` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource URL for the security policy associated with this access config.
   *   `setPublicPtr` (*type:* `boolean()`, *default:* `nil`) - Specifies whether a public DNS 'PTR' record should be created to map the external IP address of the instance to a DNS domain name. This field is not used in ipv6AccessConfig. A default PTR record will be created if the VM has external IPv6 range associated.
-  *   `type` (*type:* `String.t`, *default:* `ONE_TO_ONE_NAT`) - The type of configuration. The default and only option is ONE_TO_ONE_NAT.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of configuration. In accessConfigs (IPv4), the default and only option is ONE_TO_ONE_NAT. In ipv6AccessConfigs, the default and only option is DIRECT_IPV6.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
           :natIP => String.t() | nil,
           :networkTier => String.t() | nil,
           :publicPtrDomainName => String.t() | nil,
+          :securityPolicy => String.t() | nil,
           :setPublicPtr => boolean() | nil,
           :type => String.t() | nil
         }
@@ -53,6 +55,7 @@ defmodule GoogleApi.Compute.V1.Model.AccessConfig do
   field(:natIP)
   field(:networkTier)
   field(:publicPtrDomainName)
+  field(:securityPolicy)
   field(:setPublicPtr)
   field(:type)
 end

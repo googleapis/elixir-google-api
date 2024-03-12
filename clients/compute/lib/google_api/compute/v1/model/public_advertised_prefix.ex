@@ -21,14 +21,16 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
 
   ## Attributes
 
+  *   `byoipApiVersion` (*type:* `String.t`, *default:* `nil`) - [Output Only] The version of BYOIP API.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `dnsVerificationIp` (*type:* `String.t`, *default:* `nil`) - The IPv4 address to be used for reverse DNS verification.
+  *   `dnsVerificationIp` (*type:* `String.t`, *default:* `nil`) - The address to be used for reverse DNS verification.
   *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicAdvertisedPrefix. An up-to-date fingerprint must be provided in order to update the PublicAdvertisedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicAdvertisedPrefix.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource type. The server generates this identifier.
-  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IPv4 address range, in CIDR format, represented by this public advertised prefix.
+  *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The address range, in CIDR format, represented by this public advertised prefix.
   *   `kind` (*type:* `String.t`, *default:* `compute#publicAdvertisedPrefix`) - [Output Only] Type of the resource. Always compute#publicAdvertisedPrefix for public advertised prefixes.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `pdpScope` (*type:* `String.t`, *default:* `nil`) - Specifies how child public delegated prefix will be scoped. It could be one of following values: - `REGIONAL`: The public delegated prefix is regional only. The provisioning will take a few minutes. - `GLOBAL`: The public delegated prefix is global only. The provisioning will take ~4 weeks. - `GLOBAL_AND_REGIONAL` [output only]: The public delegated prefixes is BYOIP V1 legacy prefix. This is output only value and no longer supported in BYOIP V2. 
   *   `publicDelegatedPrefixs` (*type:* `list(GoogleApi.Compute.V1.Model.PublicAdvertisedPrefixPublicDelegatedPrefix.t)`, *default:* `nil`) - [Output Only] The list of public delegated prefixes that exist for this public advertised prefix.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `sharedSecret` (*type:* `String.t`, *default:* `nil`) - [Output Only] The shared secret to be used for reverse DNS verification.
@@ -38,6 +40,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :byoipApiVersion => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :dnsVerificationIp => String.t() | nil,
@@ -46,6 +49,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
           :ipCidrRange => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :pdpScope => String.t() | nil,
           :publicDelegatedPrefixs =>
             list(GoogleApi.Compute.V1.Model.PublicAdvertisedPrefixPublicDelegatedPrefix.t()) | nil,
           :selfLink => String.t() | nil,
@@ -53,6 +57,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
           :status => String.t() | nil
         }
 
+  field(:byoipApiVersion)
   field(:creationTimestamp)
   field(:description)
   field(:dnsVerificationIp)
@@ -61,6 +66,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicAdvertisedPrefix do
   field(:ipCidrRange)
   field(:kind)
   field(:name)
+  field(:pdpScope)
 
   field(:publicDelegatedPrefixs,
     as: GoogleApi.Compute.V1.Model.PublicAdvertisedPrefixPublicDelegatedPrefix,

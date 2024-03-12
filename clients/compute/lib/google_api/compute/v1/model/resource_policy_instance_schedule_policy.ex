@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicy do
 
   *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - The expiration time of the schedule. The timestamp is an RFC3339 string.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - The start time of the schedule. The timestamp is an RFC3339 string.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: http://en.wikipedia.org/wiki/Tz_database.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Specifies the time zone to be used in interpreting Schedule.schedule. The value of this field must be a time zone name from the tz database: https://wikipedia.org/wiki/Tz_database.
   *   `vmStartSchedule` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t`, *default:* `nil`) - Specifies the schedule for starting instances.
   *   `vmStopSchedule` (*type:* `GoogleApi.Compute.V1.Model.ResourcePolicyInstanceSchedulePolicySchedule.t`, *default:* `nil`) - Specifies the schedule for stopping instances.
   """

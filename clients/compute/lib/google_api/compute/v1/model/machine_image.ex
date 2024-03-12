@@ -29,6 +29,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineImage do
   *   `kind` (*type:* `String.t`, *default:* `compute#machineImage`) - [Output Only] The resource type, which is always compute#machineImage for machine image.
   *   `machineImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Encrypts the machine image using a customer-supplied encryption key. After you encrypt a machine image using a customer-supplied key, you must provide the same key if you use the machine image later. For example, you must provide the encryption key when you create an instance from the encrypted machine image in a future request. Customer-supplied encryption keys do not protect access to metadata of the machine image. If you do not provide an encryption key when creating the machine image, then the machine image will be encrypted using an automatically generated key and you do not need to provide a key to use the machine image later.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `savedDisks` (*type:* `list(GoogleApi.Compute.V1.Model.SavedDisk.t)`, *default:* `nil`) - An array of Machine Image specific properties for disks attached to the source instance
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this machine image. The server defines this URL.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineImage do
           :machineImageEncryptionKey =>
             GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :savedDisks => list(GoogleApi.Compute.V1.Model.SavedDisk.t()) | nil,
           :selfLink => String.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.Compute.V1.Model.MachineImage do
   field(:kind)
   field(:machineImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
   field(:name)
+  field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:savedDisks, as: GoogleApi.Compute.V1.Model.SavedDisk, type: :list)
   field(:selfLink)

@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceCommitment do
 
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Name of the accelerator type resource. Applicable only when the type is ACCELERATOR.
   *   `amount` (*type:* `String.t`, *default:* `nil`) - The amount of the resource purchased (in a type-dependent unit, such as bytes). For vCPUs, this can just be an integer. For memory, this must be provided in MB. Memory must be a multiple of 256 MB, with up to 6.5GB of memory per every vCPU.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of resource for which this commitment applies. Possible values are VCPU and MEMORY
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of resource for which this commitment applies. Possible values are VCPU, MEMORY, LOCAL_SSD, and ACCELERATOR.
   """
 
   use GoogleApi.Gax.ModelBase
