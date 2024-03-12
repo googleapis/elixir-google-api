@@ -66,7 +66,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:num` (*type:* `integer()`) - Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
       *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
       *   `:q` (*type:* `String.t`) - Query
-      *   `:relatedSite` (*type:* `String.t`) - Specifies that all search results should be pages that are related to the specified URL.
+      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
       *   `:rights` (*type:* `String.t`) - Filters based on licensing. Supported values include: `cc_publicdomain`, `cc_attribute`, `cc_sharealike`, `cc_noncommercial`, `cc_nonderived` and combinations of these. See [typical combinations](https://wiki.creativecommons.org/wiki/CC_Search_integration).
       *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
       *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
@@ -185,7 +185,7 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:num` (*type:* `integer()`) - Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
       *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
       *   `:q` (*type:* `String.t`) - Query
-      *   `:relatedSite` (*type:* `String.t`) - Specifies that all search results should be pages that are related to the specified URL.
+      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
       *   `:rights` (*type:* `String.t`) - Filters based on licensing. Supported values include: `cc_publicdomain`, `cc_attribute`, `cc_sharealike`, `cc_noncommercial`, `cc_nonderived` and combinations of these. See [typical combinations](https://wiki.creativecommons.org/wiki/CC_Search_integration).
       *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
       *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
