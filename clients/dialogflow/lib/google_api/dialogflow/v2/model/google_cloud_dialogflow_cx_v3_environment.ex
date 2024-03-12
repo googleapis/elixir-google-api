@@ -26,7 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3Environment do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the environment. Format: `projects//locations//agents//environments/`.
   *   `testCasesConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EnvironmentTestCasesConfig.t`, *default:* `nil`) - The test cases config for continuous tests of this environment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time of this environment.
-  *   `versionConfigs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EnvironmentVersionConfig.t)`, *default:* `nil`) - Required. A list of configurations for flow versions. You should include version configs for all flows that are reachable from `Start Flow` in the agent. Otherwise, an error will be returned.
+  *   `versionConfigs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EnvironmentVersionConfig.t)`, *default:* `nil`) - A list of configurations for flow versions. You should include version configs for all flows that are reachable from `Start Flow` in the agent. Otherwise, an error will be returned.
   *   `webhookConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EnvironmentWebhookConfig.t`, *default:* `nil`) - The webhook configuration for this environment.
   """
 

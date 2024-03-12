@@ -21,18 +21,24 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Page do
 
   ## Attributes
 
+  *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSettings.t`, *default:* `nil`) - Hierarchical advanced settings for this page. The settings exposed at the lower level overrides the settings exposed at the higher level.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the page. The maximum length is 500 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the page, unique within the flow.
   *   `entryFulfillment` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillment.t`, *default:* `nil`) - The fulfillment to call when the session is entering the page.
   *   `eventHandlers` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EventHandler.t)`, *default:* `nil`) - Handlers associated with the page to handle events such as webhook errors, no match or no input.
   *   `form` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Form.t`, *default:* `nil`) - The form associated with the page, used for collecting parameters relevant to the page.
+  *   `knowledgeConnectorSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1KnowledgeConnectorSettings.t`, *default:* `nil`) - Optional. Knowledge connector configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the page. Required for the Pages.UpdatePage method. Pages.CreatePage populates the name automatically. Format: `projects//locations//agents//flows//pages/`.
-  *   `transitionRouteGroups` (*type:* `list(String.t)`, *default:* `nil`) - Ordered list of `TransitionRouteGroups` associated with the page. Transition route groups must be unique within a page. * If multiple transition routes within a page scope refer to the same intent, then the precedence order is: page's transition route -> page's transition route group -> flow's transition routes. * If multiple transition route groups within a page contain the same intent, then the first group in the ordered list takes precedence. Format:`projects//locations//agents//flows//transitionRouteGroups/`.
+  *   `transitionRouteGroups` (*type:* `list(String.t)`, *default:* `nil`) - Ordered list of `TransitionRouteGroups` added to the page. Transition route groups must be unique within a page. If the page links both flow-level transition route groups and agent-level transition route groups, the flow-level ones will have higher priority and will be put before the agent-level ones. * If multiple transition routes within a page scope refer to the same intent, then the precedence order is: page's transition route -> page's transition route group -> flow's transition routes. * If multiple transition route groups within a page contain the same intent, then the first group in the ordered list takes precedence. Format:`projects//locations//agents//flows//transitionRouteGroups/` or `projects//locations//agents//transitionRouteGroups/` for agent-level groups.
   *   `transitionRoutes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TransitionRoute.t)`, *default:* `nil`) - A list of transitions for the transition rules of this page. They route the conversation to another page in the same flow, or another flow. When we are in a certain page, the TransitionRoutes are evalauted in the following order: * TransitionRoutes defined in the page with intent specified. * TransitionRoutes defined in the transition route groups with intent specified. * TransitionRoutes defined in flow with intent specified. * TransitionRoutes defined in the transition route groups with intent specified. * TransitionRoutes defined in the page with only condition specified. * TransitionRoutes defined in the transition route groups with only condition specified.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSettings =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSettings.t() | nil,
+          :description => String.t() | nil,
           :displayName => String.t() | nil,
           :entryFulfillment =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Fulfillment.t() | nil,
@@ -40,6 +46,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Page do
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1EventHandler.t())
             | nil,
           :form => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Form.t() | nil,
+          :knowledgeConnectorSettings =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1KnowledgeConnectorSettings.t()
+            | nil,
           :name => String.t() | nil,
           :transitionRouteGroups => list(String.t()) | nil,
           :transitionRoutes =>
@@ -47,6 +56,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Page do
             | nil
         }
 
+  field(:advancedSettings,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSettings
+  )
+
+  field(:description)
   field(:displayName)
 
   field(:entryFulfillment,
@@ -59,6 +73,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Page do
   )
 
   field(:form, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Form)
+
+  field(:knowledgeConnectorSettings,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1KnowledgeConnectorSettings
+  )
+
   field(:name)
   field(:transitionRouteGroups, type: :list)
 

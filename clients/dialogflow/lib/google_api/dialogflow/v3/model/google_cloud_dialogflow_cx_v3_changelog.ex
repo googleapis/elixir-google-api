@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Changelog do
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action of the change.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the change.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The affected resource display name of the change.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The affected language code of the change.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the changelog. Format: `projects//locations//agents//changelogs/`.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - The affected resource name of the change.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The affected resource type.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Changelog do
           :action => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :languageCode => String.t() | nil,
           :name => String.t() | nil,
           :resource => String.t() | nil,
           :type => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Changelog do
   field(:action)
   field(:createTime, as: DateTime)
   field(:displayName)
+  field(:languageCode)
   field(:name)
   field(:resource)
   field(:type)

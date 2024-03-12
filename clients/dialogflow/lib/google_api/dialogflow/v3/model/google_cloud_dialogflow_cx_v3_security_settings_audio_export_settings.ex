@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
 
   *   `audioExportPattern` (*type:* `String.t`, *default:* `nil`) - Filename pattern for exported audio.
   *   `audioFormat` (*type:* `String.t`, *default:* `nil`) - File format for exported audio file. Currently only in telephony recordings.
-  *   `enableAudioRedaction` (*type:* `boolean()`, *default:* `nil`) - Enable audio redaction if it is true.
+  *   `enableAudioRedaction` (*type:* `boolean()`, *default:* `nil`) - Enable audio redaction if it is true. Note that this only redacts end-user audio data; Synthesised audio from the virtual agent is not redacted.
   *   `gcsBucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket to export audio record to. Setting this field would grant the Storage Object Creator role to the Dialogflow Service Agent. API caller that tries to modify this field should have the permission of storage.buckets.setIamPolicy.
   """
 

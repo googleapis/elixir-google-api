@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ImportFlowReque
   ## Attributes
 
   *   `flowContent` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for flow.
+  *   `flowImportStrategy` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowImportStrategy.t`, *default:* `nil`) - Optional. Specifies the import strategy used when resolving resource conflicts.
   *   `flowUri` (*type:* `String.t`, *default:* `nil`) - The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to import flow from. The format of this URI must be `gs:///`. Dialogflow performs a read operation for the Cloud Storage object on the caller's behalf, so your request authentication must have read permissions for the object. For more information, see [Dialogflow access control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
   *   `importOption` (*type:* `String.t`, *default:* `nil`) - Flow import mode. If not specified, `KEEP` is assumed.
   """
@@ -30,11 +31,18 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ImportFlowReque
 
   @type t :: %__MODULE__{
           :flowContent => String.t() | nil,
+          :flowImportStrategy =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowImportStrategy.t() | nil,
           :flowUri => String.t() | nil,
           :importOption => String.t() | nil
         }
 
   field(:flowContent)
+
+  field(:flowImportStrategy,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowImportStrategy
+  )
+
   field(:flowUri)
   field(:importOption)
 end

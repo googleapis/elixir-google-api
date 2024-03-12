@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRouteGroup do
   @moduledoc """
-  An TransitionRouteGroup represents a group of `TransitionRoutes` to be used by a Page.
+  A TransitionRouteGroup represents a group of `TransitionRoutes` to be used by a Page.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the transition route group, unique within the flow. The display name can be no longer than 30 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the transition route group. TransitionRouteGroups.CreateTransitionRouteGroup populates the name automatically. Format: `projects//locations//agents//flows//transitionRouteGroups/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the transition route group. TransitionRouteGroups.CreateTransitionRouteGroup populates the name automatically. Format: `projects//locations//agents//flows//transitionRouteGroups/` .
   *   `transitionRoutes` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRoute.t)`, *default:* `nil`) - Transition routes associated with the TransitionRouteGroup.
   """
 

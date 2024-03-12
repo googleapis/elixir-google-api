@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3IntentCoverageI
 
   ## Attributes
 
-  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether or not the intent is covered by at least one of the agent's test cases.
+  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether the intent is covered by at least one of the agent's test cases.
   *   `intent` (*type:* `String.t`, *default:* `nil`) - The intent full resource name
   """
 

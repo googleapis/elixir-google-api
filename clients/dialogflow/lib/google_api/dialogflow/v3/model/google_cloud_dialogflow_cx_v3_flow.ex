@@ -21,22 +21,29 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Flow do
 
   ## Attributes
 
+  *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Hierarchical advanced settings for this flow. The settings exposed at the lower level overrides the settings exposed at the higher level.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the flow. The maximum length is 500 characters. If exceeded, the request is rejected.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the flow.
   *   `eventHandlers` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t)`, *default:* `nil`) - A flow's event handlers serve two purposes: * They are responsible for handling events (e.g. no match, webhook errors) in the flow. * They are inherited by every page's event handlers, which can be used to handle common events regardless of the current page. Event handlers defined in the page have higher priority than those defined in the flow. Unlike transition_routes, these handlers are evaluated on a first-match basis. The first one that matches the event get executed, with the rest being ignored.
+  *   `knowledgeConnectorSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings.t`, *default:* `nil`) - Optional. Knowledge connector configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the flow. Format: `projects//locations//agents//flows/`.
   *   `nluSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3NluSettings.t`, *default:* `nil`) - NLU related settings of the flow.
-  *   `transitionRouteGroups` (*type:* `list(String.t)`, *default:* `nil`) - A flow's transition route group serve two purposes: * They are responsible for matching the user's first utterances in the flow. * They are inherited by every page's transition route groups. Transition route groups defined in the page have higher priority than those defined in the flow. Format:`projects//locations//agents//flows//transitionRouteGroups/`.
+  *   `transitionRouteGroups` (*type:* `list(String.t)`, *default:* `nil`) - A flow's transition route group serve two purposes: * They are responsible for matching the user's first utterances in the flow. * They are inherited by every page's transition route groups. Transition route groups defined in the page have higher priority than those defined in the flow. Format:`projects//locations//agents//flows//transitionRouteGroups/` or `projects//locations//agents//transitionRouteGroups/` for agent-level groups.
   *   `transitionRoutes` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRoute.t)`, *default:* `nil`) - A flow's transition routes serve two purposes: * They are responsible for matching the user's first utterances in the flow. * They are inherited by every page's transition routes and can support use cases such as the user saying "help" or "can I talk to a human?", which can be handled in a common way regardless of the current page. Transition routes defined in the page have higher priority than those defined in the flow. TransitionRoutes are evalauted in the following order: * TransitionRoutes with intent specified. * TransitionRoutes with only condition specified. TransitionRoutes with intent specified are inherited by pages in the flow.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :eventHandlers =>
             list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t()) | nil,
+          :knowledgeConnectorSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings.t()
+            | nil,
           :name => String.t() | nil,
           :nluSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3NluSettings.t() | nil,
@@ -45,12 +52,20 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Flow do
             list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRoute.t()) | nil
         }
 
+  field(:advancedSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings
+  )
+
   field(:description)
   field(:displayName)
 
   field(:eventHandlers,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler,
     type: :list
+  )
+
+  field(:knowledgeConnectorSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings
   )
 
   field(:name)

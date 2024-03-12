@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AgentAssistantRec
   ## Attributes
 
   *   `articleSuggestionAnswer` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ArticleAnswer.t`, *default:* `nil`) - Output only. The article suggestion answer.
+  *   `dialogflowAssistAnswer` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DialogflowAssistAnswer.t`, *default:* `nil`) - Output only. Dialogflow assist answer.
   *   `faqAnswer` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FaqAnswer.t`, *default:* `nil`) - Output only. The FAQ answer.
   """
 
@@ -30,11 +31,17 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AgentAssistantRec
   @type t :: %__MODULE__{
           :articleSuggestionAnswer =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ArticleAnswer.t() | nil,
+          :dialogflowAssistAnswer =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DialogflowAssistAnswer.t() | nil,
           :faqAnswer => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FaqAnswer.t() | nil
         }
 
   field(:articleSuggestionAnswer,
     as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ArticleAnswer
+  )
+
+  field(:dialogflowAssistAnswer,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2DialogflowAssistAnswer
   )
 
   field(:faqAnswer, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2FaqAnswer)

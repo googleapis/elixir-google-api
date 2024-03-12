@@ -21,19 +21,22 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfi
 
   ## Attributes
 
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Which Speech model to select. Select the model best suited to your domain to get best results. If a model is not explicitly specified, then a default model is used. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model) for more details.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Which Speech model to select. Select the model best suited to your domain to get best results. If a model is not explicitly specified, then Dialogflow auto-selects a model based on other parameters in the SpeechToTextConfig and Agent settings. If enhanced speech model is enabled for the agent and an enhanced version of the specified model for the language does not exist, then the speech is recognized using the standard version of the specified model. Refer to [Cloud Speech API documentation](https://cloud.google.com/speech-to-text/docs/basics#select-model) for more details. If you specify a model, the following models typically have the best performance: - phone_call (best for Agent Assist and telephony) - latest_short (best for Dialogflow non-telephony) - command_and_search Leave this field unspecified to use [Agent Speech settings](https://cloud.google.com/dialogflow/cx/docs/concept/agent#settings-speech) for model selection.
   *   `speechModelVariant` (*type:* `String.t`, *default:* `nil`) - The speech model used in speech to text. `SPEECH_MODEL_VARIANT_UNSPECIFIED`, `USE_BEST_AVAILABLE` will be treated as `USE_ENHANCED`. It can be overridden in AnalyzeContentRequest and StreamingAnalyzeContentRequest request. If enhanced model variant is specified and an enhanced version of the specified model for the language does not exist, then it would emit an error.
+  *   `useTimeoutBasedEndpointing` (*type:* `boolean()`, *default:* `nil`) - Use timeout based endpointing, interpreting endpointer sensitivy as seconds of timeout value.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :model => String.t() | nil,
-          :speechModelVariant => String.t() | nil
+          :speechModelVariant => String.t() | nil,
+          :useTimeoutBasedEndpointing => boolean() | nil
         }
 
   field(:model)
   field(:speechModelVariant)
+  field(:useTimeoutBasedEndpointing)
 end
 
 defimpl Poison.Decoder,

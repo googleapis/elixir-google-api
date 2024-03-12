@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2GcsDestination do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URIs for the output. A URI is of the form: gs://bucket/object-prefix-or-name Whether a prefix or name is used depends on the use case. The requesting user must have "write-permission" to the bucket.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URIs for the output. A URI is of the form: `gs://bucket/object-prefix-or-name` Whether a prefix or name is used depends on the use case. The requesting user must have "write-permission" to the bucket.
   """
 
   use GoogleApi.Gax.ModelBase

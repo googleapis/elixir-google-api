@@ -17,23 +17,28 @@
 
 defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   @moduledoc """
-  Agents are best described as Natural Language Understanding (NLU) modules that transform user requests into actionable data. You can include agents in your app, product, or service to determine user intent and respond to the user in a natural way. After you create an agent, you can add Intents, Entity Types, Flows, Fulfillments, Webhooks, and so on to manage the conversation flows..
+  Agents are best described as Natural Language Understanding (NLU) modules that transform user requests into actionable data. You can include agents in your app, product, or service to determine user intent and respond to the user in a natural way. After you create an agent, you can add Intents, Entity Types, Flows, Fulfillments, Webhooks, TransitionRouteGroups and so on to manage the conversation flows.
 
   ## Attributes
 
   *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Hierarchical advanced settings for this agent. The settings exposed at the lower level overrides the settings exposed at the higher level.
+  *   `answerFeedbackSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings.t`, *default:* `nil`) - Optional. Answer feedback collection settings.
   *   `avatarUri` (*type:* `String.t`, *default:* `nil`) - The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted [Web Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo) integration.
   *   `defaultLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The default language of the agent as a language tag. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes. This field cannot be set by the Agents.UpdateAgent method.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the agent. The maximum length is 500 characters. If exceeded, the request is rejected.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the agent, unique within the location.
   *   `enableSpellCorrection` (*type:* `boolean()`, *default:* `nil`) - Indicates if automatic spell correction is enabled in detect intent requests.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Indicates if stackdriver logging is enabled for the agent. Please use agent.advanced_settings instead.
+  *   `genAppBuilderSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings.t`, *default:* `nil`) - Gen App Builder-related agent-level settings.
+  *   `gitIntegrationSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGitIntegrationSettings.t`, *default:* `nil`) - Git integration settings for this agent.
   *   `locked` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the agent is locked for changes. If the agent is locked, modifications to the agent will be rejected except for RestoreAgent.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the agent. Required for the Agents.UpdateAgent method. Agents.CreateAgent populates the name automatically. Format: `projects//locations//agents/`.
+  *   `personalizationSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings.t`, *default:* `nil`) - Optional. Settings for end user personalization.
   *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `speechToTextSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SpeechToTextSettings.t`, *default:* `nil`) - Speech recognition related settings.
   *   `startFlow` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the start flow in this agent. A start flow will be automatically created when the agent is created, and can only be deleted by deleting the agent. Format: `projects//locations//agents//flows/`.
   *   `supportedLanguageCodes` (*type:* `list(String.t)`, *default:* `nil`) - The list of all languages supported by the agent (except for the `default_language_code`).
+  *   `textToSpeechSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TextToSpeechSettings.t`, *default:* `nil`) - Settings on instructing the speech synthesizer on how to generate the output audio content.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Required. The time zone of the agent from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris.
   """
 
@@ -42,24 +47,42 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   @type t :: %__MODULE__{
           :advancedSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t() | nil,
+          :answerFeedbackSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings.t()
+            | nil,
           :avatarUri => String.t() | nil,
           :defaultLanguageCode => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :enableSpellCorrection => boolean() | nil,
           :enableStackdriverLogging => boolean() | nil,
+          :genAppBuilderSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings.t()
+            | nil,
+          :gitIntegrationSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGitIntegrationSettings.t()
+            | nil,
           :locked => boolean() | nil,
           :name => String.t() | nil,
+          :personalizationSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings.t()
+            | nil,
           :securitySettings => String.t() | nil,
           :speechToTextSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SpeechToTextSettings.t() | nil,
           :startFlow => String.t() | nil,
           :supportedLanguageCodes => list(String.t()) | nil,
+          :textToSpeechSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TextToSpeechSettings.t() | nil,
           :timeZone => String.t() | nil
         }
 
   field(:advancedSettings,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings
+  )
+
+  field(:answerFeedbackSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings
   )
 
   field(:avatarUri)
@@ -68,8 +91,22 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   field(:displayName)
   field(:enableSpellCorrection)
   field(:enableStackdriverLogging)
+
+  field(:genAppBuilderSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings
+  )
+
+  field(:gitIntegrationSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGitIntegrationSettings
+  )
+
   field(:locked)
   field(:name)
+
+  field(:personalizationSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentPersonalizationSettings
+  )
+
   field(:securitySettings)
 
   field(:speechToTextSettings,
@@ -78,6 +115,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
 
   field(:startFlow)
   field(:supportedLanguageCodes, type: :list)
+
+  field(:textToSpeechSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TextToSpeechSettings
+  )
+
   field(:timeZone)
 end
 

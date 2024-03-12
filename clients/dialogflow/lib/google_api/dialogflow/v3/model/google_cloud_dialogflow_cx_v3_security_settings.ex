@@ -30,7 +30,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
   *   `purgeDataTypes` (*type:* `list(String.t)`, *default:* `nil`) - List of types of data to remove when retention settings triggers purge.
   *   `redactionScope` (*type:* `String.t`, *default:* `nil`) - Defines the data for which Dialogflow applies redaction. Dialogflow does not redact data that it does not have access to – for example, Cloud logging.
   *   `redactionStrategy` (*type:* `String.t`, *default:* `nil`) - Strategy that defines how we do redaction.
-  *   `retentionWindowDays` (*type:* `integer()`, *default:* `nil`) - Retains the data for the specified number of days. User must set a value lower than Dialogflow's default 365d TTL (30 days for Agent Assist traffic), higher value will be ignored and use default. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use default TTL.
+  *   `retentionStrategy` (*type:* `String.t`, *default:* `nil`) - Specifies the retention behavior defined by SecuritySettings.RetentionStrategy.
+  *   `retentionWindowDays` (*type:* `integer()`, *default:* `nil`) - Retains the data for the specified number of days. User must set a value lower than Dialogflow's default 365d TTL (30 days for Agent Assist traffic), higher value will be ignored and use default. Setting a value higher than that has no effect. A missing value or setting to 0 also means we use default TTL. When data retention configuration is changed, it only applies to the data created after the change; the TTL of existing data created before the change stays intact.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,6 +50,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
           :purgeDataTypes => list(String.t()) | nil,
           :redactionScope => String.t() | nil,
           :redactionStrategy => String.t() | nil,
+          :retentionStrategy => String.t() | nil,
           :retentionWindowDays => integer() | nil
         }
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
   field(:purgeDataTypes, type: :list)
   field(:redactionScope)
   field(:redactionStrategy)
+  field(:retentionStrategy)
   field(:retentionWindowDays)
 end
 

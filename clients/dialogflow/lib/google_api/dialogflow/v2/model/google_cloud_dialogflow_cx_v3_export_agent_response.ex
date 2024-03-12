@@ -21,19 +21,22 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3ExportAgentResp
 
   ## Attributes
 
-  *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for agent.
-  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a file containing the exported agent. This field is populated only if `agent_uri` is specified in ExportAgentRequest.
+  *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for agent. This field is populated if none of `agent_uri` and `git_destination` are specified in ExportAgentRequest.
+  *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The URI to a file containing the exported agent. This field is populated if `agent_uri` is specified in ExportAgentRequest.
+  *   `commitSha` (*type:* `String.t`, *default:* `nil`) - Commit SHA of the git push. This field is populated if `git_destination` is specified in ExportAgentRequest.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :agentContent => String.t() | nil,
-          :agentUri => String.t() | nil
+          :agentUri => String.t() | nil,
+          :commitSha => String.t() | nil
         }
 
   field(:agentContent)
   field(:agentUri)
+  field(:commitSha)
 end
 
 defimpl Poison.Decoder,

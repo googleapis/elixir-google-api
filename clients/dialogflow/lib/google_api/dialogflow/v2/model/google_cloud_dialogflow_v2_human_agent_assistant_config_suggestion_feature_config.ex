@@ -23,7 +23,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
 
   *   `conversationModelConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationModelConfig.t`, *default:* `nil`) - Configs of custom conversation model.
   *   `conversationProcessConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig.t`, *default:* `nil`) - Configs for processing conversation.
-  *   `enableEventBasedSuggestion` (*type:* `boolean()`, *default:* `nil`) - Automatically iterates all participants and tries to compile suggestions. Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST.
+  *   `disableAgentQueryLogging` (*type:* `boolean()`, *default:* `nil`) - Optional. Disable the logging of search queries sent by human agents. It can prevent those queries from being stored at answer records. Supported features: KNOWLEDGE_SEARCH.
+  *   `enableConversationAugmentedQuery` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable including conversation context during query answer generation. Supported features: KNOWLEDGE_SEARCH.
+  *   `enableEventBasedSuggestion` (*type:* `boolean()`, *default:* `nil`) - Automatically iterates all participants and tries to compile suggestions. Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST, KNOWLEDGE_ASSIST.
   *   `queryConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig.t`, *default:* `nil`) - Configs of query.
   *   `suggestionFeature` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionFeature.t`, *default:* `nil`) - The suggestion feature.
   *   `suggestionTriggerSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionTriggerSettings.t`, *default:* `nil`) - Settings of suggestion trigger. Currently, only ARTICLE_SUGGESTION and FAQ will use this field.
@@ -38,6 +40,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
           :conversationProcessConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig.t()
             | nil,
+          :disableAgentQueryLogging => boolean() | nil,
+          :enableConversationAugmentedQuery => boolean() | nil,
           :enableEventBasedSuggestion => boolean() | nil,
           :queryConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig.t()
@@ -59,6 +63,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
       GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigConversationProcessConfig
   )
 
+  field(:disableAgentQueryLogging)
+  field(:enableConversationAugmentedQuery)
   field(:enableEventBasedSuggestion)
 
   field(:queryConfig,

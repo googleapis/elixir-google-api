@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRoute
 
   ## Attributes
 
-  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether or not the transition route is covered by at least one of the agent's test cases.
+  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether the transition route is covered by at least one of the agent's test cases.
   *   `transitionRoute` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionRoute.t`, *default:* `nil`) - Intent route or condition route.
   """
 
