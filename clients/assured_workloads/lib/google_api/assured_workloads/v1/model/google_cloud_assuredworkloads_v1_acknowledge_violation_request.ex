@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1AcknowledgeViolationRequest do
   @moduledoc """
-  Request for acknowledging the violation Next Id: 4
+  Request for acknowledging the violation
 
   ## Attributes
 
+  *   `acknowledgeType` (*type:* `String.t`, *default:* `nil`) - Optional. Acknowledge type of specified violation.
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Required. Business justification explaining the need for violation acknowledgement
   *   `nonCompliantOrgPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. This field is deprecated and will be removed in future version of the API. Name of the OrgPolicy which was modified with non-compliant change and resulted in this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Ackno
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acknowledgeType => String.t() | nil,
           :comment => String.t() | nil,
           :nonCompliantOrgPolicy => String.t() | nil
         }
 
+  field(:acknowledgeType)
   field(:comment)
   field(:nonCompliantOrgPolicy)
 end

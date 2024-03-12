@@ -20,7 +20,7 @@ defmodule GoogleApi.AssuredWorkloads.V1 do
   API client metadata for GoogleApi.AssuredWorkloads.V1.
   """
 
-  @discovery_revision "20221110"
+  @discovery_revision "20240229"
 
   def discovery_revision(), do: @discovery_revision
 end

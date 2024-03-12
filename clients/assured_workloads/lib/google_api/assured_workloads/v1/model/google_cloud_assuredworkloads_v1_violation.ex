@@ -22,19 +22,25 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Viola
   ## Attributes
 
   *   `acknowledged` (*type:* `boolean()`, *default:* `nil`) - A boolean that indicates if the violation is acknowledged
-  *   `acknowledgementTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp when this violation was acknowledged last. This will be absent when acknowledged field is marked as false.
+  *   `acknowledgementTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp when this violation was acknowledged first. Check exception_contexts to find the last time the violation was acknowledged when there are more than one violations. This field will be absent when acknowledged field is marked as false.
+  *   `associatedOrgPolicyViolationId` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Violation Id of the org-policy violation due to which the resource violation is caused. Empty for org-policy violations.
   *   `auditLogLink` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Audit Log Link for violated resource Format: https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{timeRange}{folder}
   *   `beginTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time of the event which triggered the Violation.
   *   `category` (*type:* `String.t`, *default:* `nil`) - Output only. Category under which this violation is mapped. e.g. Location, Service Usage, Access, Encryption, etc.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description for the Violation. e.g. OrgPolicy gcp.resourceLocations has non compliant value.
   *   `exceptionAuditLogLink` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Audit Log link to find business justification provided for violation exception. Format: https://console.cloud.google.com/logs/query;query={logName}{protoPayload.resourceName}{protoPayload.methodName}{timeRange}{organization}
+  *   `exceptionContexts` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationExceptionContext.t)`, *default:* `nil`) - Output only. List of all the exception detail added for the violation.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Name of the Violation. Format: organizations/{organization}/locations/{location}/workloads/{workload_id}/violations/{violations_id}
   *   `nonCompliantOrgPolicy` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. Name of the OrgPolicy which was modified with non-compliant change and resulted this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}
   *   `orgPolicyConstraint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The org-policy-constraint that was incorrectly changed, which resulted in this violation.
+  *   `parentProjectNumber` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Parent project number where resource is present. Empty for org-policy violations.
   *   `remediation` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationRemediation.t`, *default:* `nil`) - Output only. Compliance violation remediation
   *   `resolveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time of the event which fixed the Violation. If the violation is ACTIVE this will be empty.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Name of the resource like //storage.googleapis.com/myprojectxyz-testbucket. Empty for org-policy violations.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Type of the resource like compute.googleapis.com/Disk, etc. Empty for org-policy violations.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the violation
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last time when the Violation record was updated.
+  *   `violationType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the violation
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,40 +48,62 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Viola
   @type t :: %__MODULE__{
           :acknowledged => boolean() | nil,
           :acknowledgementTime => DateTime.t() | nil,
+          :associatedOrgPolicyViolationId => String.t() | nil,
           :auditLogLink => String.t() | nil,
           :beginTime => DateTime.t() | nil,
           :category => String.t() | nil,
           :description => String.t() | nil,
           :exceptionAuditLogLink => String.t() | nil,
+          :exceptionContexts =>
+            list(
+              GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationExceptionContext.t()
+            )
+            | nil,
           :name => String.t() | nil,
           :nonCompliantOrgPolicy => String.t() | nil,
           :orgPolicyConstraint => String.t() | nil,
+          :parentProjectNumber => String.t() | nil,
           :remediation =>
             GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationRemediation.t()
             | nil,
           :resolveTime => DateTime.t() | nil,
+          :resourceName => String.t() | nil,
+          :resourceType => String.t() | nil,
           :state => String.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :violationType => String.t() | nil
         }
 
   field(:acknowledged)
   field(:acknowledgementTime, as: DateTime)
+  field(:associatedOrgPolicyViolationId)
   field(:auditLogLink)
   field(:beginTime, as: DateTime)
   field(:category)
   field(:description)
   field(:exceptionAuditLogLink)
+
+  field(:exceptionContexts,
+    as:
+      GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationExceptionContext,
+    type: :list
+  )
+
   field(:name)
   field(:nonCompliantOrgPolicy)
   field(:orgPolicyConstraint)
+  field(:parentProjectNumber)
 
   field(:remediation,
     as: GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1ViolationRemediation
   )
 
   field(:resolveTime, as: DateTime)
+  field(:resourceName)
+  field(:resourceType)
   field(:state)
   field(:updateTime, as: DateTime)
+  field(:violationType)
 end
 
 defimpl Poison.Decoder,

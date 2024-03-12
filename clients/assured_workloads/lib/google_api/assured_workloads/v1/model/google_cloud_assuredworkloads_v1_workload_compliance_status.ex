@@ -21,18 +21,24 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
 
   ## Attributes
 
-  *   `acknowledgedViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of active Violations which are acknowledged in the Workload.
-  *   `activeViolationCount` (*type:* `integer()`, *default:* `nil`) - Count of active Violations which haven't been acknowledged.
+  *   `acknowledgedResourceViolationCount` (*type:* `integer()`, *default:* `nil`) - Number of current resource violations which are not acknowledged.
+  *   `acknowledgedViolationCount` (*type:* `integer()`, *default:* `nil`) - Number of current orgPolicy violations which are acknowledged.
+  *   `activeResourceViolationCount` (*type:* `integer()`, *default:* `nil`) - Number of current resource violations which are acknowledged.
+  *   `activeViolationCount` (*type:* `integer()`, *default:* `nil`) - Number of current orgPolicy violations which are not acknowledged.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acknowledgedResourceViolationCount => integer() | nil,
           :acknowledgedViolationCount => integer() | nil,
+          :activeResourceViolationCount => integer() | nil,
           :activeViolationCount => integer() | nil
         }
 
+  field(:acknowledgedResourceViolationCount)
   field(:acknowledgedViolationCount)
+  field(:activeResourceViolationCount)
   field(:activeViolationCount)
 end
 
