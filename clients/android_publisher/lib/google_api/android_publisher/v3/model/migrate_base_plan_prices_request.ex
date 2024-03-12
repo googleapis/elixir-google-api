@@ -21,6 +21,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.MigrateBasePlanPricesRequest do
 
   ## Attributes
 
+  *   `basePlanId` (*type:* `String.t`, *default:* `nil`) - Required. The unique base plan ID of the base plan to update prices on.
+  *   `latencyTolerance` (*type:* `String.t`, *default:* `nil`) - Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Required. Package name of the parent app. Must be equal to the package_name field on the Subscription resource.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the subscription to update. Must be equal to the product_id field on the Subscription resource.
   *   `regionalPriceMigrations` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig.t)`, *default:* `nil`) - Required. The regional prices to update.
   *   `regionsVersion` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RegionsVersion.t`, *default:* `nil`) - Required. The version of the available regions being used for the regional_price_migrations.
   """
@@ -28,10 +32,19 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.MigrateBasePlanPricesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :basePlanId => String.t() | nil,
+          :latencyTolerance => String.t() | nil,
+          :packageName => String.t() | nil,
+          :productId => String.t() | nil,
           :regionalPriceMigrations =>
             list(GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig.t()) | nil,
           :regionsVersion => GoogleApi.AndroidPublisher.V3.Model.RegionsVersion.t() | nil
         }
+
+  field(:basePlanId)
+  field(:latencyTolerance)
+  field(:packageName)
+  field(:productId)
 
   field(:regionalPriceMigrations,
     as: GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig,

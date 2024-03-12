@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ManagedProductTaxAndComplianceSett
   ## Attributes
 
   *   `eeaWithdrawalRightType` (*type:* `String.t`, *default:* `nil`) - Digital content or service classification for products distributed to users in the European Economic Area (EEA). The withdrawal regime under EEA consumer laws depends on this classification. Refer to the [Help Center article](https://support.google.com/googleplay/android-developer/answer/10463498) for more information.
+  *   `isTokenizedDigitalAsset` (*type:* `boolean()`, *default:* `nil`) - Whether this in-app product is declared as a product representing a tokenized digital asset.
   *   `taxRateInfoByRegionCode` (*type:* `%{optional(String.t) => GoogleApi.AndroidPublisher.V3.Model.RegionalTaxRateInfo.t}`, *default:* `nil`) - A mapping from region code to tax rate details. The keys are region codes as defined by Unicode's "CLDR".
   """
 
@@ -29,12 +30,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ManagedProductTaxAndComplianceSett
 
   @type t :: %__MODULE__{
           :eeaWithdrawalRightType => String.t() | nil,
+          :isTokenizedDigitalAsset => boolean() | nil,
           :taxRateInfoByRegionCode =>
             %{optional(String.t()) => GoogleApi.AndroidPublisher.V3.Model.RegionalTaxRateInfo.t()}
             | nil
         }
 
   field(:eeaWithdrawalRightType)
+  field(:isTokenizedDigitalAsset)
 
   field(:taxRateInfoByRegionCode,
     as: GoogleApi.AndroidPublisher.V3.Model.RegionalTaxRateInfo,

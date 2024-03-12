@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceTierConfig do
   @moduledoc """
-  LINT.IfChange Configuration describing device targeting criteria for the content of an app.
+  Configuration describing device targeting criteria for the content of an app.
 
   ## Attributes
 
   *   `deviceGroups` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.DeviceGroup.t)`, *default:* `nil`) - Definition of device groups for the app.
   *   `deviceTierConfigId` (*type:* `String.t`, *default:* `nil`) - Output only. The device tier config ID.
   *   `deviceTierSet` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeviceTierSet.t`, *default:* `nil`) - Definition of the set of device tiers for the app.
+  *   `userCountrySets` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.UserCountrySet.t)`, *default:* `nil`) - Definition of user country sets for the app.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeviceTierConfig do
   @type t :: %__MODULE__{
           :deviceGroups => list(GoogleApi.AndroidPublisher.V3.Model.DeviceGroup.t()) | nil,
           :deviceTierConfigId => String.t() | nil,
-          :deviceTierSet => GoogleApi.AndroidPublisher.V3.Model.DeviceTierSet.t() | nil
+          :deviceTierSet => GoogleApi.AndroidPublisher.V3.Model.DeviceTierSet.t() | nil,
+          :userCountrySets => list(GoogleApi.AndroidPublisher.V3.Model.UserCountrySet.t()) | nil
         }
 
   field(:deviceGroups, as: GoogleApi.AndroidPublisher.V3.Model.DeviceGroup, type: :list)
   field(:deviceTierConfigId)
   field(:deviceTierSet, as: GoogleApi.AndroidPublisher.V3.Model.DeviceTierSet)
+  field(:userCountrySets, as: GoogleApi.AndroidPublisher.V3.Model.UserCountrySet, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.DeviceTierConfig do

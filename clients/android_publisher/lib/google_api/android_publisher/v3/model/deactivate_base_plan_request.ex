@@ -21,11 +21,25 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.DeactivateBasePlanRequest do
 
   ## Attributes
 
+  *   `basePlanId` (*type:* `String.t`, *default:* `nil`) - Required. The unique base plan ID of the base plan to deactivate.
+  *   `latencyTolerance` (*type:* `String.t`, *default:* `nil`) - Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
+  *   `packageName` (*type:* `String.t`, *default:* `nil`) - Required. The parent app (package name) of the base plan to deactivate.
+  *   `productId` (*type:* `String.t`, *default:* `nil`) - Required. The parent subscription (ID) of the base plan to deactivate.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :basePlanId => String.t() | nil,
+          :latencyTolerance => String.t() | nil,
+          :packageName => String.t() | nil,
+          :productId => String.t() | nil
+        }
+
+  field(:basePlanId)
+  field(:latencyTolerance)
+  field(:packageName)
+  field(:productId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.DeactivateBasePlanRequest do

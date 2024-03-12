@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Variant do
   ## Attributes
 
   *   `deviceSpec` (*type:* `GoogleApi.AndroidPublisher.V3.Model.DeviceSpec.t`, *default:* `nil`) - The device spec used to generate the APK.
+  *   `options` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SystemApkOptions.t`, *default:* `nil`) - Optional. Options applied to the generated APK.
   *   `variantId` (*type:* `integer()`, *default:* `nil`) - Output only. The ID of a previously created system APK variant.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Variant do
 
   @type t :: %__MODULE__{
           :deviceSpec => GoogleApi.AndroidPublisher.V3.Model.DeviceSpec.t() | nil,
+          :options => GoogleApi.AndroidPublisher.V3.Model.SystemApkOptions.t() | nil,
           :variantId => integer() | nil
         }
 
   field(:deviceSpec, as: GoogleApi.AndroidPublisher.V3.Model.DeviceSpec)
+  field(:options, as: GoogleApi.AndroidPublisher.V3.Model.SystemApkOptions)
   field(:variantId)
 end
 

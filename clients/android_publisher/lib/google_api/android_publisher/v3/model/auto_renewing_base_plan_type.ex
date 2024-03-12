@@ -21,6 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType do
 
   ## Attributes
 
+  *   `accountHoldDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Account hold period of the subscription, specified in ISO 8601 format. Acceptable values must be in DAYS and in the range P0D (zero days) to P30D (30 days). If not specified, the default value is P30D (30 days).
   *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.
   *   `gracePeriodDuration` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Acceptable values are P0D (zero days), P3D (3 days), P7D (7 days), P14D (14 days), and P30D (30 days). If not specified, a default value will be used based on the recurring period duration.
   *   `legacyCompatible` (*type:* `boolean()`, *default:* `nil`) - Whether the renewing base plan is backward compatible. The backward compatible base plan is returned by the Google Play Billing Library deprecated method querySkuDetailsAsync(). Only one renewing base plan can be marked as legacy compatible for a given subscription.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accountHoldDuration => String.t() | nil,
           :billingPeriodDuration => String.t() | nil,
           :gracePeriodDuration => String.t() | nil,
           :legacyCompatible => boolean() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType do
           :resubscribeState => String.t() | nil
         }
 
+  field(:accountHoldDuration)
   field(:billingPeriodDuration)
   field(:gracePeriodDuration)
   field(:legacyCompatible)

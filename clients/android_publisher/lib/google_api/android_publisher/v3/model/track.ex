@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Track do
   ## Attributes
 
   *   `releases` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.TrackRelease.t)`, *default:* `nil`) - In a read request, represents all active releases in the track. In an update request, represents desired changes.
-  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier of the track.
+  *   `track` (*type:* `String.t`, *default:* `nil`) - Identifier of the track. Form factor tracks have a special prefix as an identifier, for example `wear:production`, `automotive:production`. [More on track name](https://developers.google.com/android-publisher/tracks#ff-track-name)
   """
 
   use GoogleApi.Gax.ModelBase

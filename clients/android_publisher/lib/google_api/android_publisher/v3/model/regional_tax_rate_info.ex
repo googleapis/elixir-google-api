@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalTaxRateInfo do
 
   ## Attributes
 
-  *   `eligibleForStreamingServiceTaxRate` (*type:* `boolean()`, *default:* `nil`) - You must tell us if your app contains streaming products to correctly charge US state and local sales tax. Field only supported in United States.
+  *   `eligibleForStreamingServiceTaxRate` (*type:* `boolean()`, *default:* `nil`) - You must tell us if your app contains streaming products to correctly charge US state and local sales tax. Field only supported in the United States.
   *   `streamingTaxType` (*type:* `String.t`, *default:* `nil`) - To collect communications or amusement taxes in the United States, choose the appropriate tax category. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498#streaming_tax).
   *   `taxTier` (*type:* `String.t`, *default:* `nil`) - Tax tier to specify reduced tax rate. Developers who sell digital news, magazines, newspapers, books, or audiobooks in various regions may be eligible for reduced tax rates. [Learn more](https://support.google.com/googleplay/android-developer/answer/10463498).
   """

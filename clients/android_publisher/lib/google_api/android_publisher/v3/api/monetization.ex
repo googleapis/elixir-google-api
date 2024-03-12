@@ -103,7 +103,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
   end
 
   @doc """
-  Archives a subscription. Can only be done if at least one base plan was active in the past, and no base plan is available for new or existing subscribers currently. This action is irreversible, and the subscription ID will remain reserved.
+  Deprecated: subscription archiving is not supported.
 
   ## Parameters
 
@@ -182,6 +182,157 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
   end
 
   @doc """
+  Reads one or more subscriptions.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) for which the subscriptions should be retrieved. Must be equal to the package_name field on all the requests.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:productIds` (*type:* `list(String.t)`) - Required. A list of up to 100 subscription product IDs to retrieve. All the IDs must be different.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_batch_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_batch_get(
+        connection,
+        package_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :productIds => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/androidpublisher/v3/applications/{packageName}/subscriptions:batchGet", %{
+        "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionsResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a batch of subscriptions. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) for which the subscriptions should be updated. Must be equal to the package_name field on all the Subscription resources.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_batch_update(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_batch_update(
+        connection,
+        package_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions:batchUpdate",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a new subscription. Newly added base plans will remain in draft state until activated.
 
   ## Parameters
@@ -201,7 +352,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:productId` (*type:* `String.t`) - Required. The ID to use for the subscription. For the requirements on this format, see the documentation of the product_id field on the Subscription resource.
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing the version of available regions being used for the specified resource. Regional prices for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available. The latest version is 2022/02.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -428,7 +579,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of subscriptions to return. The service may return fewer than this value. If unspecified, at most 50 subscriptions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListSubscriptions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscriptions` must match the call that provided the page token.
-      *   `:showArchived` (*type:* `boolean()`) - Whether archived subscriptions should be included in the response. Defaults to false.
+      *   `:showArchived` (*type:* `boolean()`) - Deprecated: subscription archiving is not supported.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -505,7 +656,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, and the subscription with the given package_name and product_id doesn't exist, the subscription will be created. If a new subscription is created, update_mask is ignored.
+      *   `:latencyTolerance` (*type:* `String.t`) - Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing the version of available regions being used for the specified resource. Regional prices for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available. The latest version is 2022/02.
       *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -545,6 +698,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
+      :latencyTolerance => :query,
       :"regionsVersion.version" => :query,
       :updateMask => :query,
       :body => :body
@@ -649,6 +804,168 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.Subscription{}])
+  end
+
+  @doc """
+  Batch variant of the MigrateBasePlanPrices endpoint. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) for which the subscriptions should be created or updated. Must be equal to the package_name field on all the Subscription resources.
+  *   `product_id` (*type:* `String.t`) - Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this batch update spans multiple subscriptions, set this field to "-". Must be set.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchMigrateBasePlanPricesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchMigrateBasePlanPricesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_base_plans_batch_migrate_prices(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchMigrateBasePlanPricesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_base_plans_batch_migrate_prices(
+        connection,
+        package_name,
+        product_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans:batchMigratePrices",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchMigrateBasePlanPricesResponse{}]
+    )
+  end
+
+  @doc """
+  Activates or deactivates base plans across one or multiple subscriptions. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) of the updated base plans.
+  *   `product_id` (*type:* `String.t`) - Required. The product ID of the parent subscription, if all updated base plans belong to the same subscription. If this batch update spans multiple subscriptions, set this field to "-". Must be set.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchUpdateBasePlanStatesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateBasePlanStatesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_base_plans_batch_update_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchUpdateBasePlanStatesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_base_plans_batch_update_states(
+        connection,
+        package_name,
+        product_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans:batchUpdateStates",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateBasePlanStatesResponse{}]
+    )
   end
 
   @doc """
@@ -984,6 +1301,267 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
   end
 
   @doc """
+  Reads one or more subscription offers.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) for which the subscriptions should be created or updated. Must be equal to the package_name field on all the requests.
+  *   `product_id` (*type:* `String.t`) - Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
+  *   `base_plan_id` (*type:* `String.t`) - Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read offers from multiple base plans.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionOffersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionOffersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_base_plans_offers_batch_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionOffersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_base_plans_offers_batch_get(
+        connection,
+        package_name,
+        product_id,
+        base_plan_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers:batchGet",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+          "basePlanId" => URI.encode(base_plan_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchGetSubscriptionOffersResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a batch of subscription offers. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) of the updated subscription offers. Must be equal to the package_name field on all the updated SubscriptionOffer resources.
+  *   `product_id` (*type:* `String.t`) - Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
+  *   `base_plan_id` (*type:* `String.t`) - Required. The parent base plan (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple base plans.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOffersRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOffersResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_base_plans_offers_batch_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOffersResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_base_plans_offers_batch_update(
+        connection,
+        package_name,
+        product_id,
+        base_plan_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers:batchUpdate",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+          "basePlanId" => URI.encode(base_plan_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [struct: %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOffersResponse{}]
+    )
+  end
+
+  @doc """
+  Updates a batch of subscription offer states. Set the latencyTolerance field on nested requests to PRODUCT_UPDATE_LATENCY_TOLERANCE_LATENCY_TOLERANT to achieve maximum update throughput.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
+  *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) of the updated subscription offers. Must be equal to the package_name field on all the updated SubscriptionOffer resources.
+  *   `product_id` (*type:* `String.t`) - Required. The product ID of the parent subscription, if all updated offers belong to the same subscription. If this request spans multiple subscriptions, set this field to "-". Must be set.
+  *   `base_plan_id` (*type:* `String.t`) - Required. The parent base plan (ID) for which the offers should be updated. May be specified as '-' to update offers from multiple base plans.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOfferStatesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOfferStatesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec androidpublisher_monetization_subscriptions_base_plans_offers_batch_update_states(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOfferStatesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def androidpublisher_monetization_subscriptions_base_plans_offers_batch_update_states(
+        connection,
+        package_name,
+        product_id,
+        base_plan_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/androidpublisher/v3/applications/{packageName}/subscriptions/{productId}/basePlans/{basePlanId}/offers:batchUpdateStates",
+        %{
+          "packageName" => URI.encode(package_name, &URI.char_unreserved?/1),
+          "productId" => URI.encode(product_id, &URI.char_unreserved?/1),
+          "basePlanId" => URI.encode(base_plan_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.AndroidPublisher.V3.Model.BatchUpdateSubscriptionOfferStatesResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Creates a new subscription offer. Only auto-renewing base plans can have subscription offers. The offer state will be DRAFT until it is activated.
 
   ## Parameters
@@ -1005,7 +1583,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:offerId` (*type:* `String.t`) - Required. The ID to use for the offer. For the requirements on this format, see the documentation of the offer_id field on the SubscriptionOffer resource.
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing the version of available regions being used for the specified resource. Regional prices for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available. The latest version is 2022/02.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionOffer.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1330,8 +1908,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
 
   *   `connection` (*type:* `GoogleApi.AndroidPublisher.V3.Connection.t`) - Connection to server
   *   `package_name` (*type:* `String.t`) - Required. The parent app (package name) for which the subscriptions should be read.
-  *   `product_id` (*type:* `String.t`) - Required. The parent subscription (ID) for which the offers should be read.
-  *   `base_plan_id` (*type:* `String.t`) - Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read all offers under a subscription.
+  *   `product_id` (*type:* `String.t`) - Required. The parent subscription (ID) for which the offers should be read. May be specified as '-' to read all offers under an app.
+  *   `base_plan_id` (*type:* `String.t`) - Required. The parent base plan (ID) for which the offers should be read. May be specified as '-' to read all offers under a subscription or an app. Must be specified as '-' if product_id is specified as '-'.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1432,7 +2010,9 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing version of the available regions being used for the specified resource. The current version is 2022/01.
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, and the subscription offer with the given package_name, product_id, base_plan_id and offer_id doesn't exist, an offer will be created. If a new offer is created, update_mask is ignored.
+      *   `:latencyTolerance` (*type:* `String.t`) - Optional. The latency tolerance for the propagation of this product update. Defaults to latency-sensitive.
+      *   `:"regionsVersion.version"` (*type:* `String.t`) - Required. A string representing the version of available regions being used for the specified resource. Regional prices for the resource have to be specified according to the information published in [this article](https://support.google.com/googleplay/android-developer/answer/10532353). Each time the supported locations substantially change, the version will be incremented. Using this field will ensure that creating and updating the resource with an older region's version and set of regional prices and currencies will succeed even though a new version is available. The latest version is 2022/02.
       *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionOffer.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1476,6 +2056,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Monetization do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
+      :latencyTolerance => :query,
       :"regionsVersion.version" => :query,
       :updateMask => :query,
       :body => :body
