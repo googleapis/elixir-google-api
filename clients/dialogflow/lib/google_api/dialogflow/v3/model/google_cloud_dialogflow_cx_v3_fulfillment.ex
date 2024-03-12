@@ -21,7 +21,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Fulfillment do
 
   ## Attributes
 
+  *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Hierarchical advanced settings for this fulfillment. The settings exposed at the lower level overrides the settings exposed at the higher level.
   *   `conditionalCases` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCases.t)`, *default:* `nil`) - Conditional cases for this fulfillment.
+  *   `enableGenerativeFallback` (*type:* `boolean()`, *default:* `nil`) - If the flag is true, the agent will utilize LLM to generate a text response. If LLM generation fails, the defined responses in the fulfillment will be respected. This flag is only useful for fulfillments associated with no-match event handlers.
   *   `messages` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ResponseMessage.t)`, *default:* `nil`) - The list of rich message responses to present to the user.
   *   `returnPartialResponses` (*type:* `boolean()`, *default:* `nil`) - Whether Dialogflow should return currently queued fulfillment response messages in streaming APIs. If a webhook is specified, it happens before Dialogflow invokes webhook. Warning: 1) This flag only affects streaming API. Responses are still queued and returned once in non-streaming API. 2) The flag can be enabled in any fulfillment but only the first 3 partial responses will be returned. You may only want to apply it to fulfillments that have slow webhooks.
   *   `setParameterActions` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FulfillmentSetParameterAction.t)`, *default:* `nil`) - Set parameter values before executing the webhook.
@@ -32,11 +34,14 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Fulfillment do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t() | nil,
           :conditionalCases =>
             list(
               GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCases.t()
             )
             | nil,
+          :enableGenerativeFallback => boolean() | nil,
           :messages =>
             list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ResponseMessage.t()) | nil,
           :returnPartialResponses => boolean() | nil,
@@ -49,10 +54,16 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Fulfillment do
           :webhook => String.t() | nil
         }
 
+  field(:advancedSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings
+  )
+
   field(:conditionalCases,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FulfillmentConditionalCases,
     type: :list
   )
+
+  field(:enableGenerativeFallback)
 
   field(:messages,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ResponseMessage,

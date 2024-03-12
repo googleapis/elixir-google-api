@@ -34,6 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   *   `securitySettings` (*type:* `String.t`, *default:* `nil`) - Name of the CX SecuritySettings reference for the agent. Format: `projects//locations//securitySettings/`.
   *   `sttConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig.t`, *default:* `nil`) - Settings for speech transcription.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The time zone of this conversational profile from the [time zone database](https://www.iana.org/time-zones), e.g., America/New_York, Europe/Paris. Defaults to America/New_York.
+  *   `ttsConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t`, *default:* `nil`) - Configuration for Text-to-Speech synthesization. Used by Phone Gateway to specify synthesization options. If agent defines synthesization options as well, agent settings overrides the option here.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time of the conversation profile.
   """
 
@@ -61,6 +62,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
           :sttConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig.t() | nil,
           :timeZone => String.t() | nil,
+          :ttsConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -94,6 +97,11 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfi
   field(:securitySettings)
   field(:sttConfig, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfig)
   field(:timeZone)
+
+  field(:ttsConfig,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SynthesizeSpeechConfig
+  )
+
   field(:updateTime, as: DateTime)
 end
 

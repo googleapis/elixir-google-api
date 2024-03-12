@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequest 
   ## Attributes
 
   *   `detectIntentResponseId` (*type:* `String.t`, *default:* `nil`) - Always present. The unique identifier of the DetectIntentResponse that will be returned to the API caller.
+  *   `dtmfDigits` (*type:* `String.t`, *default:* `nil`) - If DTMF was provided as input, this field will contain the DTMF digits.
   *   `fulfillmentInfo` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequestFulfillmentInfo.t`, *default:* `nil`) - Always present. Information about the fulfillment that triggered this webhook call.
   *   `intentInfo` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequestIntentInfo.t`, *default:* `nil`) - Information about the last matched intent.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language code specified in the original request.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequest 
 
   @type t :: %__MODULE__{
           :detectIntentResponseId => String.t() | nil,
+          :dtmfDigits => String.t() | nil,
           :fulfillmentInfo =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequestFulfillmentInfo.t()
             | nil,
@@ -63,6 +65,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequest 
         }
 
   field(:detectIntentResponseId)
+  field(:dtmfDigits)
 
   field(:fulfillmentInfo,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3WebhookRequestFulfillmentInfo

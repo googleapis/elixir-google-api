@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
   *   `queryParams` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters.t`, *default:* `nil`) - Parameters for a Dialogflow virtual-agent query.
   *   `replyAudioConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t`, *default:* `nil`) - Speech synthesis configuration. The speech synthesis settings for a virtual agent that may be configured for the associated conversation profile are not used when calling AnalyzeContent. If this configuration is not supplied, speech synthesis is disabled.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for this request. Restricted to 36 ASCII characters. A random UUID is recommended. This request is only idempotent if a `request_id` is provided.
+  *   `suggestionInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionInput.t`, *default:* `nil`) - An input representing the selection of a suggestion.
   *   `textInput` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t`, *default:* `nil`) - The natural language text to be processed.
   """
 
@@ -43,6 +44,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
           :replyAudioConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2OutputAudioConfig.t() | nil,
           :requestId => String.t() | nil,
+          :suggestionInput =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionInput.t() | nil,
           :textInput => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t() | nil
         }
 
@@ -59,6 +62,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnalyzeContentReq
   )
 
   field(:requestId)
+
+  field(:suggestionInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionInput)
+
   field(:textInput, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput)
 end
 

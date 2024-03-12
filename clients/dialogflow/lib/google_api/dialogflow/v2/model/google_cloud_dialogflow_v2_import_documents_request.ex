@@ -22,7 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportDocumentsRe
   ## Attributes
 
   *   `documentTemplate` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ImportDocumentTemplate.t`, *default:* `nil`) - Required. Document template used for importing all the documents.
-  *   `gcsSource` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GcsSources.t`, *default:* `nil`) - The Google Cloud Storage location for the documents. The path can include a wildcard. These URIs may have the forms `gs:///`. `gs:////*.`.
+  *   `gcsSource` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GcsSources.t`, *default:* `nil`) - Optional. The Google Cloud Storage location for the documents. The path can include a wildcard. These URIs may have the forms `gs:///`. `gs:////*.`.
   *   `importGcsCustomMetadata` (*type:* `boolean()`, *default:* `nil`) - Whether to import custom metadata from Google Cloud Storage. Only valid when the document source is Google Cloud Storage URI.
   """
 

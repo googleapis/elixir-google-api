@@ -21,15 +21,18 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
 
   ## Attributes
 
+  *   `baselineModelVersion` (*type:* `String.t`, *default:* `nil`) - Version of current baseline model. It will be ignored if model is set. Valid versions are: Article Suggestion baseline model: - 0.9 - 1.0 (default) Summarization baseline model: - 1.0
   *   `model` (*type:* `String.t`, *default:* `nil`) - Conversation model resource name. Format: `projects//conversationModels/`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :baselineModelVersion => String.t() | nil,
           :model => String.t() | nil
         }
 
+  field(:baselineModelVersion)
   field(:model)
 end
 

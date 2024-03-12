@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionCover
 
   ## Attributes
 
-  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether or not the transition is covered by at least one of the agent's test cases.
+  *   `covered` (*type:* `boolean()`, *default:* `nil`) - Whether the transition is covered by at least one of the agent's test cases.
   *   `eventHandler` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t`, *default:* `nil`) - Event handler.
   *   `index` (*type:* `integer()`, *default:* `nil`) - The index of a transition in the transition list. Starting from 0.
   *   `source` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TransitionCoverageTransitionNode.t`, *default:* `nil`) - The start node of a transition.

@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3MatchIntentRequ
 
   ## Attributes
 
+  *   `persistParameterChanges` (*type:* `boolean()`, *default:* `nil`) - Persist session parameter changes from `query_params`.
   *   `queryInput` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryInput.t`, *default:* `nil`) - Required. The input specification.
   *   `queryParams` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters.t`, *default:* `nil`) - The parameters of this query.
   """
@@ -28,12 +29,14 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3MatchIntentRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :persistParameterChanges => boolean() | nil,
           :queryInput =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryInput.t() | nil,
           :queryParams =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters.t() | nil
         }
 
+  field(:persistParameterChanges)
   field(:queryInput, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryInput)
   field(:queryParams, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters)
 end
