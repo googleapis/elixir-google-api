@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesVerifyExternalSyncSetting
 
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t`, *default:* `nil`) - Optional. MySQL-specific settings for start external sync.
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode
+  *   `syncParallelLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Parallel level for initial data sync. Currently only applicable for PostgreSQL.
   *   `verifyConnectionOnly` (*type:* `boolean()`, *default:* `nil`) - Flag to enable verifying connection only
   *   `verifyReplicationOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to verify settings required by replication setup only
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesVerifyExternalSyncSetting
   @type t :: %__MODULE__{
           :mysqlSyncConfig => GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t() | nil,
           :syncMode => String.t() | nil,
+          :syncParallelLevel => String.t() | nil,
           :verifyConnectionOnly => boolean() | nil,
           :verifyReplicationOnly => boolean() | nil
         }
 
   field(:mysqlSyncConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig)
   field(:syncMode)
+  field(:syncParallelLevel)
   field(:verifyConnectionOnly)
   field(:verifyReplicationOnly)
 end

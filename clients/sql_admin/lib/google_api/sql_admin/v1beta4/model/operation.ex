@@ -21,6 +21,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
 
   ## Attributes
 
+  *   `acquireSsrsLeaseContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.AcquireSsrsLeaseContext.t`, *default:* `nil`) - The context for acquire SSRS lease operation, if applicable.
+  *   `apiWarning` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t`, *default:* `nil`) - An Admin API warning message.
   *   `backupContext` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.BackupContext.t`, *default:* `nil`) - The context for backup operation, if applicable.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation finished in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   *   `error` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t`, *default:* `nil`) - If errors occurred during processing of this operation, this field will be populated.
@@ -42,6 +44,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :acquireSsrsLeaseContext =>
+            GoogleApi.SQLAdmin.V1beta4.Model.AcquireSsrsLeaseContext.t() | nil,
+          :apiWarning => GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning.t() | nil,
           :backupContext => GoogleApi.SQLAdmin.V1beta4.Model.BackupContext.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors.t() | nil,
@@ -60,6 +65,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.Operation do
           :user => String.t() | nil
         }
 
+  field(:acquireSsrsLeaseContext, as: GoogleApi.SQLAdmin.V1beta4.Model.AcquireSsrsLeaseContext)
+  field(:apiWarning, as: GoogleApi.SQLAdmin.V1beta4.Model.ApiWarning)
   field(:backupContext, as: GoogleApi.SQLAdmin.V1beta4.Model.BackupContext)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.SQLAdmin.V1beta4.Model.OperationErrors)

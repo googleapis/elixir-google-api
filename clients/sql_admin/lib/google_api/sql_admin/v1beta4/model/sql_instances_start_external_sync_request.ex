@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest 
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t`, *default:* `nil`) - MySQL-specific settings for start external sync.
   *   `skipVerification` (*type:* `boolean()`, *default:* `nil`) - Whether to skip the verification step (VESS).
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode.
+  *   `syncParallelLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Parallel level for initial data sync. Currently only applicable for MySQL.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest 
   @type t :: %__MODULE__{
           :mysqlSyncConfig => GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t() | nil,
           :skipVerification => boolean() | nil,
-          :syncMode => String.t() | nil
+          :syncMode => String.t() | nil,
+          :syncParallelLevel => String.t() | nil
         }
 
   field(:mysqlSyncConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig)
   field(:skipVerification)
   field(:syncMode)
+  field(:syncParallelLevel)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest do

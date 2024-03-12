@@ -21,22 +21,38 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ImportContextBakImportOptions do
 
   ## Attributes
 
+  *   `bakType` (*type:* `String.t`, *default:* `nil`) - Type of the bak content, FULL or DIFF
   *   `encryptionOptions` (*type:* `GoogleApi.SQLAdmin.V1.Model.ImportContextBakImportOptionsEncryptionOptions.t`, *default:* `nil`) - 
+  *   `noRecovery` (*type:* `boolean()`, *default:* `nil`) - Whether or not the backup importing will restore database with NORECOVERY option Applies only to Cloud SQL for SQL Server.
+  *   `recoveryOnly` (*type:* `boolean()`, *default:* `nil`) - Whether or not the backup importing request will just bring database online without downloading Bak content only one of "no_recovery" and "recovery_only" can be true otherwise error will return. Applies only to Cloud SQL for SQL Server.
+  *   `stopAt` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp when the import should stop. This timestamp is in the [RFC 3339](https://tools.ietf.org/html/rfc3339) format (for example, `2023-10-01T16:19:00.094`). This field is equivalent to the STOPAT keyword and applies to Cloud SQL for SQL Server only.
+  *   `stopAtMark` (*type:* `String.t`, *default:* `nil`) - Optional. The marked transaction where the import should stop. This field is equivalent to the STOPATMARK keyword and applies to Cloud SQL for SQL Server only.
   *   `striped` (*type:* `boolean()`, *default:* `nil`) - Whether or not the backup set being restored is striped. Applies only to Cloud SQL for SQL Server.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bakType => String.t() | nil,
           :encryptionOptions =>
             GoogleApi.SQLAdmin.V1.Model.ImportContextBakImportOptionsEncryptionOptions.t() | nil,
+          :noRecovery => boolean() | nil,
+          :recoveryOnly => boolean() | nil,
+          :stopAt => DateTime.t() | nil,
+          :stopAtMark => String.t() | nil,
           :striped => boolean() | nil
         }
+
+  field(:bakType)
 
   field(:encryptionOptions,
     as: GoogleApi.SQLAdmin.V1.Model.ImportContextBakImportOptionsEncryptionOptions
   )
 
+  field(:noRecovery)
+  field(:recoveryOnly)
+  field(:stopAt, as: DateTime)
+  field(:stopAtMark)
   field(:striped)
 end
 

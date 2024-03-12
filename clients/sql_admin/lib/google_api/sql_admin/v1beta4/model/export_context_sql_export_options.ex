@@ -22,8 +22,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
   ## Attributes
 
   *   `mysqlExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t`, *default:* `nil`) - Options for exporting from MySQL.
+  *   `parallel` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the export should be parallel.
   *   `schemaOnly` (*type:* `boolean()`, *default:* `nil`) - Export only schemas.
   *   `tables` (*type:* `list(String.t)`, *default:* `nil`) - Tables to export, or that were exported, from the specified database. If you specify tables, specify one and only one database. For PostgreSQL instances, you can specify only one table.
+  *   `threads` (*type:* `integer()`, *default:* `nil`) - Optional. The number of threads to use for parallel export.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,16 +34,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
           :mysqlExportOptions =>
             GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t()
             | nil,
+          :parallel => boolean() | nil,
           :schemaOnly => boolean() | nil,
-          :tables => list(String.t()) | nil
+          :tables => list(String.t()) | nil,
+          :threads => integer() | nil
         }
 
   field(:mysqlExportOptions,
     as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions
   )
 
+  field(:parallel)
   field(:schemaOnly)
   field(:tables, type: :list)
+  field(:threads)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do

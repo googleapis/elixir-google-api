@@ -25,6 +25,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This field is deprecated and will be removed from a future version of the API. Use the `settings.settingsVersion` field instead.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
+  *   `dnsName` (*type:* `String.t`, *default:* `nil`) - Output only. The dns name of the instance.
+  *   `sqlNetworkArchitecture` (*type:* `String.t`, *default:* `nil`) - The SQL network architecture for the instance.
   *   `suspensionReason` (*type:* `list(String.t)`, *default:* `nil`) - If the instance state is SUSPENDED, the reason for the suspension.
   *   `maintenanceVersion` (*type:* `String.t`, *default:* `nil`) - The current software version on the instance.
   *   `serviceAccountEmailAddress` (*type:* `String.t`, *default:* `nil`) - The service account email address assigned to the instance. \\This property is read-only.
@@ -37,17 +39,20 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud SQL instance. This does not include the project ID.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current serving state of the Cloud SQL instance.
-  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region. Can be: * `us-central` (`FIRST_GEN` instances only) * `us-central1` (`SECOND_GEN` instances only) * `asia-east1` or `europe-west1`. Defaults to `us-central` or `us-central1` depending on the instance type. The region cannot be changed after instance creation.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The geographical region of the Cloud SQL instance. It can be one of the [regions](https://cloud.google.com/sql/docs/mysql/locations#location-r) where Cloud SQL operates: For example, `asia-east1`, `europe-west1`, and `us-central1`. The default value is `us-central1`.
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ReplicaConfiguration.t`, *default:* `nil`) - Configuration specific to failover replicas and read replicas.
   *   `diskEncryptionStatus` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus.t`, *default:* `nil`) - Disk encryption status specific to an instance.
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name of the Cloud SQL instance used in connection strings.
   *   `onPremisesConfiguration` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t`, *default:* `nil`) - Configuration specific to on-premises instances.
-  *   `availableMaintenanceVersions` (*type:* `list(String.t)`, *default:* `nil`) - List all maintenance versions applicable on the instance
+  *   `primaryDnsName` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED: please use write_endpoint instead.
+  *   `availableMaintenanceVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List all maintenance versions applicable on the instance
+  *   `writeEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. The dns name of the primary instance in a replication group.
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The instance type.
   *   `ipAddresses` (*type:* `list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t)`, *default:* `nil`) - The assigned IP addresses for the instance.
   *   `replicaNames` (*type:* `list(String.t)`, *default:* `nil`) - The replicas of the instance.
   *   `currentDiskSize` (*type:* `String.t`, *default:* `nil`) - The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details.
   *   `secondaryGceZone` (*type:* `String.t`, *default:* `nil`) - The Compute Engine zone that the failover instance is currently serving from for a regional instance. This value could be different from the zone that was specified when the instance was created if the instance has failed over to its secondary/failover zone.
+  *   `pscServiceAttachmentLink` (*type:* `String.t`, *default:* `nil`) - Output only. The link to service attachment of PSC instance.
   *   `settings` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.Settings.t`, *default:* `nil`) - The user settings.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Initial root password. Use only on creation. You must set root passwords before you can connect to PostgreSQL instances.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
@@ -66,6 +71,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :etag => String.t() | nil,
           :databaseVersion => String.t() | nil,
           :serverCaCert => GoogleApi.SQLAdmin.V1beta4.Model.SslCert.t() | nil,
+          :dnsName => String.t() | nil,
+          :sqlNetworkArchitecture => String.t() | nil,
           :suspensionReason => list(String.t()) | nil,
           :maintenanceVersion => String.t() | nil,
           :serviceAccountEmailAddress => String.t() | nil,
@@ -86,12 +93,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
           :connectionName => String.t() | nil,
           :onPremisesConfiguration =>
             GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration.t() | nil,
+          :primaryDnsName => String.t() | nil,
           :availableMaintenanceVersions => list(String.t()) | nil,
+          :writeEndpoint => String.t() | nil,
           :instanceType => String.t() | nil,
           :ipAddresses => list(GoogleApi.SQLAdmin.V1beta4.Model.IpMapping.t()) | nil,
           :replicaNames => list(String.t()) | nil,
           :currentDiskSize => String.t() | nil,
           :secondaryGceZone => String.t() | nil,
+          :pscServiceAttachmentLink => String.t() | nil,
           :settings => GoogleApi.SQLAdmin.V1beta4.Model.Settings.t() | nil,
           :rootPassword => String.t() | nil,
           :selfLink => String.t() | nil,
@@ -110,6 +120,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:etag)
   field(:databaseVersion)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1beta4.Model.SslCert)
+  field(:dnsName)
+  field(:sqlNetworkArchitecture)
   field(:suspensionReason, type: :list)
   field(:maintenanceVersion)
   field(:serviceAccountEmailAddress)
@@ -127,12 +139,15 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.DatabaseInstance do
   field(:diskEncryptionStatus, as: GoogleApi.SQLAdmin.V1beta4.Model.DiskEncryptionStatus)
   field(:connectionName)
   field(:onPremisesConfiguration, as: GoogleApi.SQLAdmin.V1beta4.Model.OnPremisesConfiguration)
+  field(:primaryDnsName)
   field(:availableMaintenanceVersions, type: :list)
+  field(:writeEndpoint)
   field(:instanceType)
   field(:ipAddresses, as: GoogleApi.SQLAdmin.V1beta4.Model.IpMapping, type: :list)
   field(:replicaNames, type: :list)
   field(:currentDiskSize)
   field(:secondaryGceZone)
+  field(:pscServiceAttachmentLink)
   field(:settings, as: GoogleApi.SQLAdmin.V1beta4.Model.Settings)
   field(:rootPassword)
   field(:selfLink)

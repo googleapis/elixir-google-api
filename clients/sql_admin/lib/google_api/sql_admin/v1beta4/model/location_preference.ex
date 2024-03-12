@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.LocationPreference do
 
   *   `followGaeApplication` (*type:* `String.t`, *default:* `nil`) - The App Engine application to follow, it must be in the same region as the Cloud SQL instance. WARNING: Changing this might restart the instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#locationPreference`.
-  *   `secondaryZone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone for the secondary/failover (for example: us-central1-a, us-central1-b, etc.).
+  *   `secondaryZone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone for the secondary/failover (for example: us-central1-a, us-central1-b, etc.). To disable this field, set it to 'no_secondary_zone'.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - The preferred Compute Engine zone (for example: us-central1-a, us-central1-b, etc.). WARNING: Changing this might restart the instance.
   """
 

@@ -26,7 +26,9 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
   *   `enablePrivatePathForGoogleCloudServices` (*type:* `boolean()`, *default:* `nil`) - Controls connectivity to private IP instances from Google services, such as BigQuery.
   *   `ipv4Enabled` (*type:* `boolean()`, *default:* `nil`) - Whether the instance is assigned a public IP address or not.
   *   `privateNetwork` (*type:* `String.t`, *default:* `nil`) - The resource link for the VPC network from which the Cloud SQL instance is accessible for private IP. For example, `/projects/myProject/global/networks/default`. This setting can be updated, but it cannot be removed after it is set.
-  *   `requireSsl` (*type:* `boolean()`, *default:* `nil`) - Whether SSL connections over IP are enforced or not.
+  *   `pscConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.PscConfig.t`, *default:* `nil`) - PSC settings for this instance.
+  *   `requireSsl` (*type:* `boolean()`, *default:* `nil`) - Use `ssl_mode` instead for MySQL and PostgreSQL. SQL Server uses this flag. Whether SSL/TLS connections over IP are enforced. If set to false, then allow both non-SSL/non-TLS and SSL/TLS connections. For SSL/TLS connections, the client certificate won't be verified. If set to true, then only allow connections encrypted with SSL/TLS and with valid client certificates. If you want to enforce SSL/TLS without enforcing the requirement for valid client certificates, then use the `ssl_mode` flag instead of the `require_ssl` flag.
+  *   `sslMode` (*type:* `String.t`, *default:* `nil`) - Specify how SSL/TLS is enforced in database connections. MySQL and PostgreSQL use the `ssl_mode` flag. If you must use the `require_ssl` flag for backward compatibility, then only the following value pairs are valid: * `ssl_mode=ALLOW_UNENCRYPTED_AND_ENCRYPTED` and `require_ssl=false` * `ssl_mode=ENCRYPTED_ONLY` and `require_ssl=false` * `ssl_mode=TRUSTED_CLIENT_CERTIFICATE_REQUIRED` and `require_ssl=true` The value of `ssl_mode` gets priority over the value of `require_ssl`. For example, for the pair `ssl_mode=ENCRYPTED_ONLY` and `require_ssl=false`, the `ssl_mode=ENCRYPTED_ONLY` means only accept SSL connections, while the `require_ssl=false` means accept both non-SSL and SSL connections. MySQL and PostgreSQL databases respect `ssl_mode` in this case and accept only SSL connections. SQL Server uses the `require_ssl` flag. You can set the value for this flag to `true` or `false`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +39,9 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
           :enablePrivatePathForGoogleCloudServices => boolean() | nil,
           :ipv4Enabled => boolean() | nil,
           :privateNetwork => String.t() | nil,
-          :requireSsl => boolean() | nil
+          :pscConfig => GoogleApi.SQLAdmin.V1.Model.PscConfig.t() | nil,
+          :requireSsl => boolean() | nil,
+          :sslMode => String.t() | nil
         }
 
   field(:allocatedIpRange)
@@ -45,7 +49,9 @@ defmodule GoogleApi.SQLAdmin.V1.Model.IpConfiguration do
   field(:enablePrivatePathForGoogleCloudServices)
   field(:ipv4Enabled)
   field(:privateNetwork)
+  field(:pscConfig, as: GoogleApi.SQLAdmin.V1.Model.PscConfig)
   field(:requireSsl)
+  field(:sslMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.IpConfiguration do

@@ -23,7 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.UsersListResponse do
 
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.User.t)`, *default:* `nil`) - List of user resources in the instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#usersList`.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - An identifier that uniquely identifies the operation. You can use this identifier to retrieve the Operations resource that has information about the operation.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Unused.
   """
 
   use GoogleApi.Gax.ModelBase
