@@ -22,6 +22,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Additional description for this value.
+  *   `fieldDependencies` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies.t)`, *default:* `nil`) - Output only. Field conditions required for this value to be valid.
   *   `value` (*type:* `String.t`, *default:* `nil`) - Output only. The string represenstation of the value that can be set for the field.
   """
 
@@ -29,10 +30,21 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
 
   @type t :: %__MODULE__{
           :description => String.t() | nil,
+          :fieldDependencies =>
+            list(
+              GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies.t()
+            )
+            | nil,
           :value => String.t() | nil
         }
 
   field(:description)
+
+  field(:fieldDependencies,
+    as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies,
+    type: :list
+  )
+
   field(:value)
 end
 

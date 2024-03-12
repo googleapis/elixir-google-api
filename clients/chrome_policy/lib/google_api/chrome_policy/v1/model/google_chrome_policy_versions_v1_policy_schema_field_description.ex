@@ -24,12 +24,13 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
   *   `defaultValue` (*type:* `any()`, *default:* `nil`) - Output only. Client default if the policy is unset.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Deprecated. Use name and field_description instead. The description for the field.
   *   `field` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the field for associated with this description.
+  *   `fieldConstraints` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1FieldConstraints.t`, *default:* `nil`) - Output only. Information on any input constraints associated on the values for the field.
   *   `fieldDependencies` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies.t)`, *default:* `nil`) - Output only. Provides a list of fields and values. At least one of the fields must have the corresponding value in order for this field to be allowed to be set.
   *   `fieldDescription` (*type:* `String.t`, *default:* `nil`) - Output only. The description of the field.
   *   `inputConstraint` (*type:* `String.t`, *default:* `nil`) - Output only. Any input constraints associated on the values for the field.
   *   `knownValueDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldKnownValueDescription.t)`, *default:* `nil`) - Output only. If the field has a set of known values, this field will provide a description for these values.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the field.
-  *   `nestedFieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Provides the description of the fields nested in this field, if the field is a message type that defines multiple fields.
+  *   `nestedFieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Provides the description of the fields nested in this field, if the field is a message type that defines multiple fields. Fields are suggested to be displayed by the ordering in this list, not by field number.
   *   `requiredItems` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaRequiredItems.t)`, *default:* `nil`) - Output only. Provides a list of fields that are required to be set if this field has a certain value.
   """
 
@@ -39,6 +40,8 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
           :defaultValue => any() | nil,
           :description => String.t() | nil,
           :field => String.t() | nil,
+          :fieldConstraints =>
+            GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1FieldConstraints.t() | nil,
           :fieldDependencies =>
             list(
               GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies.t()
@@ -67,6 +70,10 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
   field(:defaultValue)
   field(:description)
   field(:field)
+
+  field(:fieldConstraints,
+    as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1FieldConstraints
+  )
 
   field(:fieldDependencies,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDependencies,
