@@ -27,6 +27,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for the endpoint in the format `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The Google Compute Engine network (VPC) of the endpoint in the format `projects//locations/global/networks/*`. The project must be specified by project number (project id is rejected). Incorrectly formatted networks are rejected, but no other validation is performed on this field (ex. network or project existence, reachability, or permissions).
   *   `port` (*type:* `integer()`, *default:* `nil`) - Optional. Service Directory rejects values outside of `[0, 65535]`.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A globally unique identifier (in UUID4 format) for this endpoint.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the endpoint was last updated.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :port => integer() | nil,
+          :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.ServiceDirectory.V1beta1.Model.Endpoint do
   field(:name)
   field(:network)
   field(:port)
+  field(:uid)
   field(:updateTime, as: DateTime)
 end
 
