@@ -21,7 +21,8 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupP
 
   ## Attributes
 
-  *   `policyNamespace` (*type:* `String.t`, *default:* `nil`) - Required. The namespace of the policy type for the request.
+  *   `policyNamespace` (*type:* `String.t`, *default:* `nil`) - The namespace of the policy type for the request.
+  *   `policySchema` (*type:* `String.t`, *default:* `nil`) - The schema name of the policy for the request.
   *   `policyTargetKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t`, *default:* `nil`) - Required. The key of the target for which we want to retrieve the group priority ordering. The target resource must point to an app.
   """
 
@@ -29,11 +30,13 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupP
 
   @type t :: %__MODULE__{
           :policyNamespace => String.t() | nil,
+          :policySchema => String.t() | nil,
           :policyTargetKey =>
             GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t() | nil
         }
 
   field(:policyNamespace)
+  field(:policySchema)
 
   field(:policyTargetKey,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey

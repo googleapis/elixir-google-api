@@ -22,7 +22,8 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UpdateGrou
   ## Attributes
 
   *   `groupIds` (*type:* `list(String.t)`, *default:* `nil`) - Required. The group IDs, in desired priority ordering.
-  *   `policyNamespace` (*type:* `String.t`, *default:* `nil`) - Required. The namespace of the policy type for the request.
+  *   `policyNamespace` (*type:* `String.t`, *default:* `nil`) - The namespace of the policy type for the request.
+  *   `policySchema` (*type:* `String.t`, *default:* `nil`) - The schema name of the policy for the request.
   *   `policyTargetKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t`, *default:* `nil`) - Required. The key of the target for which we want to update the group priority ordering. The target resource must point to an app.
   """
 
@@ -31,12 +32,14 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1UpdateGrou
   @type t :: %__MODULE__{
           :groupIds => list(String.t()) | nil,
           :policyNamespace => String.t() | nil,
+          :policySchema => String.t() | nil,
           :policyTargetKey =>
             GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t() | nil
         }
 
   field(:groupIds, type: :list)
   field(:policyNamespace)
+  field(:policySchema)
 
   field(:policyTargetKey,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey

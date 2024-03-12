@@ -23,6 +23,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupP
 
   *   `groupIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The group IDs, in priority ordering.
   *   `policyNamespace` (*type:* `String.t`, *default:* `nil`) - Output only. The namespace of the policy type of the group IDs.
+  *   `policySchema` (*type:* `String.t`, *default:* `nil`) - Output only. The schema name of the policy for the group IDs.
   *   `policyTargetKey` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t`, *default:* `nil`) - Output only. The target resource for which the group priority ordering has been retrieved.
   """
 
@@ -31,12 +32,14 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1ListGroupP
   @type t :: %__MODULE__{
           :groupIds => list(String.t()) | nil,
           :policyNamespace => String.t() | nil,
+          :policySchema => String.t() | nil,
           :policyTargetKey =>
             GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey.t() | nil
         }
 
   field(:groupIds, type: :list)
   field(:policyNamespace)
+  field(:policySchema)
 
   field(:policyTargetKey,
     as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyTargetKey
