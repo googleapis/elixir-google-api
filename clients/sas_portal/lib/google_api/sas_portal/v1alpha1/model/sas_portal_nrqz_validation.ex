@@ -21,10 +21,10 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalNrqzValidation do
 
   ## Attributes
 
-  *   `caseId` (*type:* `String.t`, *default:* `nil`) - Validation case id.
+  *   `caseId` (*type:* `String.t`, *default:* `nil`) - Validation case ID.
   *   `cpiId` (*type:* `String.t`, *default:* `nil`) - CPI who signed the validation.
-  *   `latitude` (*type:* `float()`, *default:* `nil`) - Device latitude associated with the validation.
-  *   `longitude` (*type:* `float()`, *default:* `nil`) - Device longitude associated with the validation.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - Device latitude that's associated with the validation.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - Device longitude that's associated with the validation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the NRQZ validation info.
   """
 
