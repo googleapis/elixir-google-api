@@ -21,15 +21,21 @@ defmodule GoogleApi.Container.V1.Model.PlacementPolicy do
 
   ## Attributes
 
+  *   `policyName` (*type:* `String.t`, *default:* `nil`) - If set, refers to the name of a custom resource policy supplied by the user. The resource policy must be in the same project and region as the node pool. If not found, InvalidArgument error is returned.
+  *   `tpuTopology` (*type:* `String.t`, *default:* `nil`) - Optional. TPU placement topology for pod slice node pool. https://cloud.google.com/tpu/docs/types-topologies#tpu_topologies
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of placement.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :policyName => String.t() | nil,
+          :tpuTopology => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:policyName)
+  field(:tpuTopology)
   field(:type)
 end
 

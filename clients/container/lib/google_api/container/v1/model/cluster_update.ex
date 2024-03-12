@@ -24,14 +24,19 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredServiceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field.
   *   `desiredDnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
   *   `desiredGatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - The desired config of Gateway API on this cluster.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The current etag of the cluster. If an etag is provided and does not match the current etag of the cluster, update will be blocked and an ABORTED error will be returned.
   *   `desiredDefaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - The desired status of whether to disable default sNAT for this cluster.
+  *   `enableK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Kubernetes open source beta apis enabled on the cluster. Only beta apis
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
   *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
   *   `desiredMeshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
   *   `desiredNodePoolAutoConfigNetworkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
+  *   `additionalPodRangesConfig` (*type:* `GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t`, *default:* `nil`) - The additional pod ranges to be added to the cluster. These pod ranges can be used by node pools to allocate pod IPs.
   *   `desiredAuthenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - The desired authenticator groups config for the cluster.
+  *   `desiredK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Desired Beta APIs to be enabled for cluster.
   *   `desiredCostManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - The desired configuration for the fine-grained cost management feature.
+  *   `desiredEnableCiliumClusterwideNetworkPolicy` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable Cilium Clusterwide Network Policy for the cluster.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredNodePoolId` (*type:* `String.t`, *default:* `nil`) - The node pool to be upgraded. This field is mandatory if "desired_node_version", "desired_image_family" or "desired_node_pool_autoscaling" is specified and there is more than one node pool on the cluster.
   *   `desiredIntraNodeVisibilityConfig` (*type:* `GoogleApi.Container.V1.Model.IntraNodeVisibilityConfig.t`, *default:* `nil`) - The desired config of Intra-node visibility.
@@ -39,25 +44,35 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredEnablePrivateEndpoint` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable private endpoint for the cluster's master.
   *   `desiredNodePoolLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - The desired node pool logging configuration defaults for the cluster.
   *   `desiredPrivateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services.
+  *   `desiredNodePoolAutoConfigResourceManagerTags` (*type:* `GoogleApi.Container.V1.Model.ResourceManagerTags.t`, *default:* `nil`) - The desired resource manager tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredResourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - The desired configuration for exporting resource usage.
   *   `desiredNotificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - The desired notification configuration.
   *   `desiredVerticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
+  *   `desiredInTransitEncryptionConfig` (*type:* `String.t`, *default:* `nil`) - Specify the details of in-transit encryption.
+  *   `desiredFleet` (*type:* `GoogleApi.Container.V1.Model.Fleet.t`, *default:* `nil`) - The desired fleet configuration for the cluster.
   *   `desiredAddonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
   *   `desiredNodePoolAutoscaling` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoscaling.t`, *default:* `nil`) - Autoscaler configuration for the node pool specified in desired_node_pool_id. If there is only one pool in the cluster and desired_node_pool_id is not provided then the change applies to that single node pool.
+  *   `removedAdditionalPodRangesConfig` (*type:* `GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t`, *default:* `nil`) - The additional pod ranges that are to be removed from the cluster. The pod ranges specified here must have been specified earlier in the 'additional_pod_ranges_config' argument.
   *   `desiredLocations` (*type:* `list(String.t)`, *default:* `nil`) - The desired list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This list must always include the cluster's primary zone. Warning: changing cluster locations will update the locations of all node pools and will result in nodes being added and/or removed.
+  *   `desiredNetworkPerformanceConfig` (*type:* `GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t`, *default:* `nil`) - The desired network performance config.
+  *   `desiredAutopilotWorkloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - The desired workload policy configuration for the autopilot cluster.
   *   `desiredIdentityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - The desired Identity Service component configuration.
   *   `desiredLoggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - The desired logging configuration.
+  *   `desiredStackType` (*type:* `String.t`, *default:* `nil`) - The desired stack type of the cluster. If a stack type is provided and does not match the current stack type of the cluster, update will attempt to change the stack type to the new type.
   *   `desiredMonitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - The desired monitoring configuration.
   *   `desiredMonitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics. Currently available options: * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
   *   `desiredL4ilbSubsettingConfig` (*type:* `GoogleApi.Container.V1.Model.ILBSubsettingConfig.t`, *default:* `nil`) - The desired L4 Internal Load Balancer Subsetting configuration.
   *   `desiredGcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - The desired GCFS config for the cluster
   *   `desiredClusterAutoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
+  *   `desiredSecurityPostureConfig` (*type:* `GoogleApi.Container.V1.Model.SecurityPostureConfig.t`, *default:* `nil`) - Enable/Disable Security Posture API features for the cluster.
+  *   `desiredParentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The desired parent product config for the cluster.
   *   `desiredMasterVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the master to. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the default Kubernetes version
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredDatapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for the cluster.
   *   `desiredLoggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
   *   `desiredWorkloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for Workload Identity.
+  *   `desiredEnableFqdnNetworkPolicy` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable FQDN Network Policy for the cluster.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
   """
 
@@ -68,7 +83,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
             GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
           :desiredDnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
           :desiredGatewayApiConfig => GoogleApi.Container.V1.Model.GatewayAPIConfig.t() | nil,
+          :etag => String.t() | nil,
           :desiredDefaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
+          :enableK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
           :desiredMasterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
           :desiredPrivateClusterConfig =>
@@ -77,10 +94,14 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredMeshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
           :desiredNodePoolAutoConfigNetworkTags =>
             GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
+          :additionalPodRangesConfig =>
+            GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t() | nil,
           :desiredAuthenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
+          :desiredK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
           :desiredCostManagementConfig =>
             GoogleApi.Container.V1.Model.CostManagementConfig.t() | nil,
+          :desiredEnableCiliumClusterwideNetworkPolicy => boolean() | nil,
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
           :desiredNodePoolId => String.t() | nil,
           :desiredIntraNodeVisibilityConfig =>
@@ -91,31 +112,47 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodePoolLoggingConfig =>
             GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil,
           :desiredPrivateIpv6GoogleAccess => String.t() | nil,
+          :desiredNodePoolAutoConfigResourceManagerTags =>
+            GoogleApi.Container.V1.Model.ResourceManagerTags.t() | nil,
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :desiredResourceUsageExportConfig =>
             GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
           :desiredNotificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
           :desiredVerticalPodAutoscaling =>
             GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil,
+          :desiredInTransitEncryptionConfig => String.t() | nil,
+          :desiredFleet => GoogleApi.Container.V1.Model.Fleet.t() | nil,
           :desiredAddonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
           :desiredNodePoolAutoscaling =>
             GoogleApi.Container.V1.Model.NodePoolAutoscaling.t() | nil,
+          :removedAdditionalPodRangesConfig =>
+            GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t() | nil,
           :desiredLocations => list(String.t()) | nil,
+          :desiredNetworkPerformanceConfig =>
+            GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t() | nil,
+          :desiredAutopilotWorkloadPolicyConfig =>
+            GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t() | nil,
           :desiredIdentityServiceConfig =>
             GoogleApi.Container.V1.Model.IdentityServiceConfig.t() | nil,
           :desiredLoggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
+          :desiredStackType => String.t() | nil,
           :desiredMonitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
           :desiredMonitoringService => String.t() | nil,
           :desiredL4ilbSubsettingConfig =>
             GoogleApi.Container.V1.Model.ILBSubsettingConfig.t() | nil,
           :desiredGcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
           :desiredClusterAutoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
+          :desiredSecurityPostureConfig =>
+            GoogleApi.Container.V1.Model.SecurityPostureConfig.t() | nil,
+          :desiredParentProductConfig =>
+            GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
           :desiredMasterVersion => String.t() | nil,
           :desiredImageType => String.t() | nil,
           :desiredDatapathProvider => String.t() | nil,
           :desiredLoggingService => String.t() | nil,
           :desiredWorkloadIdentityConfig =>
             GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t() | nil,
+          :desiredEnableFqdnNetworkPolicy => boolean() | nil,
           :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil
         }
 
@@ -125,7 +162,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredDnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
   field(:desiredGatewayApiConfig, as: GoogleApi.Container.V1.Model.GatewayAPIConfig)
+  field(:etag)
   field(:desiredDefaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
+  field(:enableK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
 
   field(:desiredMasterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
@@ -135,12 +174,15 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNodeVersion)
   field(:desiredMeshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
   field(:desiredNodePoolAutoConfigNetworkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
+  field(:additionalPodRangesConfig, as: GoogleApi.Container.V1.Model.AdditionalPodRangesConfig)
 
   field(:desiredAuthenticatorGroupsConfig,
     as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig
   )
 
+  field(:desiredK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
   field(:desiredCostManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
+  field(:desiredEnableCiliumClusterwideNetworkPolicy)
   field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
   field(:desiredNodePoolId)
 
@@ -152,6 +194,11 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredEnablePrivateEndpoint)
   field(:desiredNodePoolLoggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
   field(:desiredPrivateIpv6GoogleAccess)
+
+  field(:desiredNodePoolAutoConfigResourceManagerTags,
+    as: GoogleApi.Container.V1.Model.ResourceManagerTags
+  )
+
   field(:desiredDatabaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
 
   field(:desiredResourceUsageExportConfig,
@@ -160,21 +207,41 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredNotificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
   field(:desiredVerticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
+  field(:desiredInTransitEncryptionConfig)
+  field(:desiredFleet, as: GoogleApi.Container.V1.Model.Fleet)
   field(:desiredAddonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
   field(:desiredNodePoolAutoscaling, as: GoogleApi.Container.V1.Model.NodePoolAutoscaling)
+
+  field(:removedAdditionalPodRangesConfig,
+    as: GoogleApi.Container.V1.Model.AdditionalPodRangesConfig
+  )
+
   field(:desiredLocations, type: :list)
+
+  field(:desiredNetworkPerformanceConfig,
+    as: GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig
+  )
+
+  field(:desiredAutopilotWorkloadPolicyConfig,
+    as: GoogleApi.Container.V1.Model.WorkloadPolicyConfig
+  )
+
   field(:desiredIdentityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)
   field(:desiredLoggingConfig, as: GoogleApi.Container.V1.Model.LoggingConfig)
+  field(:desiredStackType)
   field(:desiredMonitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
   field(:desiredMonitoringService)
   field(:desiredL4ilbSubsettingConfig, as: GoogleApi.Container.V1.Model.ILBSubsettingConfig)
   field(:desiredGcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:desiredClusterAutoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
+  field(:desiredSecurityPostureConfig, as: GoogleApi.Container.V1.Model.SecurityPostureConfig)
+  field(:desiredParentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
   field(:desiredMasterVersion)
   field(:desiredImageType)
   field(:desiredDatapathProvider)
   field(:desiredLoggingService)
   field(:desiredWorkloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
+  field(:desiredEnableFqdnNetworkPolicy)
   field(:desiredReleaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
 end
 
