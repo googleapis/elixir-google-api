@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StragglerSummary do
 
   ## Attributes
 
+  *   `recentStragglers` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Straggler.t)`, *default:* `nil`) - The most recent stragglers.
   *   `stragglerCauseCount` (*type:* `map()`, *default:* `nil`) - Aggregated counts of straggler causes, keyed by the string representation of the StragglerCause enum.
   *   `totalStragglerCount` (*type:* `String.t`, *default:* `nil`) - The total count of stragglers.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StragglerSummary do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :recentStragglers => list(GoogleApi.Dataflow.V1b3.Model.Straggler.t()) | nil,
           :stragglerCauseCount => map() | nil,
           :totalStragglerCount => String.t() | nil
         }
 
+  field(:recentStragglers, as: GoogleApi.Dataflow.V1b3.Model.Straggler, type: :list)
   field(:stragglerCauseCount, type: :map)
   field(:totalStragglerCount)
 end

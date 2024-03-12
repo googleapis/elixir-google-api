@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SdkVersion do
 
   ## Attributes
 
+  *   `bugs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SdkBug.t)`, *default:* `nil`) - Output only. Known bugs found in this SDK version.
   *   `sdkSupportStatus` (*type:* `String.t`, *default:* `nil`) - The support status for this SDK version.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the SDK used to run the job.
   *   `versionDisplayName` (*type:* `String.t`, *default:* `nil`) - A readable string describing the version of the SDK.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.SdkVersion do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bugs => list(GoogleApi.Dataflow.V1b3.Model.SdkBug.t()) | nil,
           :sdkSupportStatus => String.t() | nil,
           :version => String.t() | nil,
           :versionDisplayName => String.t() | nil
         }
 
+  field(:bugs, as: GoogleApi.Dataflow.V1b3.Model.SdkBug, type: :list)
   field(:sdkSupportStatus)
   field(:version)
   field(:versionDisplayName)

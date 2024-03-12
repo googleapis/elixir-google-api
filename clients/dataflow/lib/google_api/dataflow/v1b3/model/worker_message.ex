@@ -21,34 +21,48 @@ defmodule GoogleApi.Dataflow.V1b3.Model.WorkerMessage do
 
   ## Attributes
 
+  *   `dataSamplingReport` (*type:* `GoogleApi.Dataflow.V1b3.Model.DataSamplingReport.t`, *default:* `nil`) - Optional. Contains metrics related to go/dataflow-data-sampling-telemetry.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are used to group WorkerMessages. For example, a worker_message about a particular container might have the labels: { "JOB_ID": "2015-04-22", "WORKER_ID": "wordcount-vm-2015…" "CONTAINER_TYPE": "worker", "CONTAINER_ID": "ac1234def"} Label tags typically correspond to Label enum values. However, for ease of development other strings can be used as tags. LABEL_UNSPECIFIED should not be used here.
+  *   `perWorkerMetrics` (*type:* `GoogleApi.Dataflow.V1b3.Model.PerWorkerMetrics.t`, *default:* `nil`) - System defined metrics for this worker.
+  *   `streamingScalingReport` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingScalingReport.t`, *default:* `nil`) - Contains per-user worker telemetry used in streaming autoscaling.
   *   `time` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the worker_message.
   *   `workerHealthReport` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport.t`, *default:* `nil`) - The health of a worker.
   *   `workerLifecycleEvent` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent.t`, *default:* `nil`) - Record of worker lifecycle events.
   *   `workerMessageCode` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode.t`, *default:* `nil`) - A worker message code.
   *   `workerMetrics` (*type:* `GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t`, *default:* `nil`) - Resource metrics reported by workers.
   *   `workerShutdownNotice` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice.t`, *default:* `nil`) - Shutdown notice by workers.
+  *   `workerThreadScalingReport` (*type:* `GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReport.t`, *default:* `nil`) - Thread scaling information reported by workers.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataSamplingReport => GoogleApi.Dataflow.V1b3.Model.DataSamplingReport.t() | nil,
           :labels => map() | nil,
+          :perWorkerMetrics => GoogleApi.Dataflow.V1b3.Model.PerWorkerMetrics.t() | nil,
+          :streamingScalingReport =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingScalingReport.t() | nil,
           :time => DateTime.t() | nil,
           :workerHealthReport => GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport.t() | nil,
           :workerLifecycleEvent => GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent.t() | nil,
           :workerMessageCode => GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode.t() | nil,
           :workerMetrics => GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport.t() | nil,
-          :workerShutdownNotice => GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice.t() | nil
+          :workerShutdownNotice => GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice.t() | nil,
+          :workerThreadScalingReport =>
+            GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReport.t() | nil
         }
 
+  field(:dataSamplingReport, as: GoogleApi.Dataflow.V1b3.Model.DataSamplingReport)
   field(:labels, type: :map)
+  field(:perWorkerMetrics, as: GoogleApi.Dataflow.V1b3.Model.PerWorkerMetrics)
+  field(:streamingScalingReport, as: GoogleApi.Dataflow.V1b3.Model.StreamingScalingReport)
   field(:time, as: DateTime)
   field(:workerHealthReport, as: GoogleApi.Dataflow.V1b3.Model.WorkerHealthReport)
   field(:workerLifecycleEvent, as: GoogleApi.Dataflow.V1b3.Model.WorkerLifecycleEvent)
   field(:workerMessageCode, as: GoogleApi.Dataflow.V1b3.Model.WorkerMessageCode)
   field(:workerMetrics, as: GoogleApi.Dataflow.V1b3.Model.ResourceUtilizationReport)
   field(:workerShutdownNotice, as: GoogleApi.Dataflow.V1b3.Model.WorkerShutdownNotice)
+  field(:workerThreadScalingReport, as: GoogleApi.Dataflow.V1b3.Model.WorkerThreadScalingReport)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.WorkerMessage do

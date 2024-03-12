@@ -32,7 +32,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   *   `serviceKmsKeyName` (*type:* `String.t`, *default:* `nil`) - If set, contains the Cloud KMS key identifier used to encrypt data at rest, AKA a Customer Managed Encryption Key (CMEK). Format: projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY
   *   `serviceOptions` (*type:* `list(String.t)`, *default:* `nil`) - The list of service options to enable. This field should be used for service related experiments only. These experiments, when graduating to GA, should be replaced by dedicated fields or become default (i.e. always on).
   *   `shuffleMode` (*type:* `String.t`, *default:* `nil`) - Output only. The shuffle mode used for the job.
+  *   `streamingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the Streaming Engine message processing guarantees. Reduces cost and latency but might result in duplicate messages committed to storage. Designed to run simple mapping streaming ETL jobs at the lowest cost. For example, Change Data Capture (CDC) to BigQuery is a canonical use case.
   *   `tempStoragePrefix` (*type:* `String.t`, *default:* `nil`) - The prefix of the resources the system should use for temporary storage. The system will append the suffix "/temp-{JOBNAME} to this resource prefix, where {JOBNAME} is the value of the job_name field. The resulting bucket and object prefix is used as the prefix of the resources used to store temporary data needed during the job execution. NOTE: This will override the value in taskrunner_settings. The supported resource type is: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}
+  *   `useStreamingEngineResourceBasedBilling` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the job uses the Streaming Engine resource-based billing model.
   *   `userAgent` (*type:* `map()`, *default:* `nil`) - A description of the process that generated the request.
   *   `version` (*type:* `map()`, *default:* `nil`) - A structure describing which components and their versions of the service are required in order to run the job.
   *   `workerPools` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t)`, *default:* `nil`) - The worker pools. At least one "harness" worker pool must be specified in order for the job to have workers.
@@ -54,7 +56,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
           :serviceKmsKeyName => String.t() | nil,
           :serviceOptions => list(String.t()) | nil,
           :shuffleMode => String.t() | nil,
+          :streamingMode => String.t() | nil,
           :tempStoragePrefix => String.t() | nil,
+          :useStreamingEngineResourceBasedBilling => boolean() | nil,
           :userAgent => map() | nil,
           :version => map() | nil,
           :workerPools => list(GoogleApi.Dataflow.V1b3.Model.WorkerPool.t()) | nil,
@@ -73,7 +77,9 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Environment do
   field(:serviceKmsKeyName)
   field(:serviceOptions, type: :list)
   field(:shuffleMode)
+  field(:streamingMode)
   field(:tempStoragePrefix)
+  field(:useStreamingEngineResourceBasedBilling)
   field(:userAgent, type: :map)
   field(:version, type: :map)
   field(:workerPools, as: GoogleApi.Dataflow.V1b3.Model.WorkerPool, type: :list)

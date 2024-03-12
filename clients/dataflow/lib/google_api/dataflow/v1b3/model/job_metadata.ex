@@ -28,6 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
   *   `pubsubDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t)`, *default:* `nil`) - Identification of a Pub/Sub source used in the Dataflow job.
   *   `sdkVersion` (*type:* `GoogleApi.Dataflow.V1b3.Model.SdkVersion.t`, *default:* `nil`) - The SDK version used to run the job.
   *   `spannerDetails` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t)`, *default:* `nil`) - Identification of a Spanner source used in the Dataflow job.
+  *   `userDisplayProperties` (*type:* `map()`, *default:* `nil`) - List of display properties to help UI filter jobs.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
           :fileDetails => list(GoogleApi.Dataflow.V1b3.Model.FileIODetails.t()) | nil,
           :pubsubDetails => list(GoogleApi.Dataflow.V1b3.Model.PubSubIODetails.t()) | nil,
           :sdkVersion => GoogleApi.Dataflow.V1b3.Model.SdkVersion.t() | nil,
-          :spannerDetails => list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t()) | nil
+          :spannerDetails => list(GoogleApi.Dataflow.V1b3.Model.SpannerIODetails.t()) | nil,
+          :userDisplayProperties => map() | nil
         }
 
   field(:bigTableDetails, as: GoogleApi.Dataflow.V1b3.Model.BigTableIODetails, type: :list)
@@ -49,6 +51,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.JobMetadata do
   field(:pubsubDetails, as: GoogleApi.Dataflow.V1b3.Model.PubSubIODetails, type: :list)
   field(:sdkVersion, as: GoogleApi.Dataflow.V1b3.Model.SdkVersion)
   field(:spannerDetails, as: GoogleApi.Dataflow.V1b3.Model.SpannerIODetails, type: :list)
+  field(:userDisplayProperties, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataflow.V1b3.Model.JobMetadata do
