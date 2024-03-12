@@ -23,7 +23,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Impact do
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Category that is being targeted.
   *   `costProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection.t`, *default:* `nil`) - Use with CategoryType.COST
-  *   `reliabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t`, *default:* `nil`) - Use with CategoryType.RELAIBILITY
+  *   `reliabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1ReliabilityProjection.t`, *default:* `nil`) - Use with CategoryType.RELIABILITY
   *   `securityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SecurityProjection.t`, *default:* `nil`) - Use with CategoryType.SECURITY
   *   `sustainabilityProjection` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1SustainabilityProjection.t`, *default:* `nil`) - Use with CategoryType.SUSTAINABILITY
   """

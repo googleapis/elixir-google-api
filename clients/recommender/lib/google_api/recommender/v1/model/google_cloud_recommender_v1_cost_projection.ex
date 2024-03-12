@@ -22,6 +22,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection 
   ## Attributes
 
   *   `cost` (*type:* `GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units. A user's permissions may affect whether the cost is computed using list prices or custom contract prices.
+  *   `costInLocalCurrency` (*type:* `GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t`, *default:* `nil`) - The approximate cost savings in the billing account's local currency.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration for which this cost applies.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1CostProjection 
 
   @type t :: %__MODULE__{
           :cost => GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t() | nil,
+          :costInLocalCurrency => GoogleApi.Recommender.V1.Model.GoogleTypeMoney.t() | nil,
           :duration => String.t() | nil
         }
 
   field(:cost, as: GoogleApi.Recommender.V1.Model.GoogleTypeMoney)
+  field(:costInLocalCurrency, as: GoogleApi.Recommender.V1.Model.GoogleTypeMoney)
   field(:duration)
 end
 

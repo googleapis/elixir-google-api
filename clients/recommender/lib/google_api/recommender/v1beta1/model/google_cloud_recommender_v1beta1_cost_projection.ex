@@ -22,18 +22,24 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1CostP
   ## Attributes
 
   *   `cost` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t`, *default:* `nil`) - An approximate projection on amount saved or amount incurred. Negative cost units indicate cost savings and positive cost units indicate increase. See google.type.Money documentation for positive/negative units. A user's permissions may affect whether the cost is computed using list prices or custom contract prices.
+  *   `costInLocalCurrency` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t`, *default:* `nil`) - The approximate cost savings in the billing account's local currency.
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration for which this cost applies.
+  *   `pricingType` (*type:* `String.t`, *default:* `nil`) - How the cost is calculated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cost => GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t() | nil,
-          :duration => String.t() | nil
+          :costInLocalCurrency => GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney.t() | nil,
+          :duration => String.t() | nil,
+          :pricingType => String.t() | nil
         }
 
   field(:cost, as: GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney)
+  field(:costInLocalCurrency, as: GoogleApi.Recommender.V1beta1.Model.GoogleTypeMoney)
   field(:duration)
+  field(:pricingType)
 end
 
 defimpl Poison.Decoder,
