@@ -21,7 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListOrganizationsResponse
 
   ## Attributes
 
-  *   `organizations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMapping.t)`, *default:* `nil`) - List of Apigee organizations and associated GCP projects.
+  *   `organizations` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMapping.t)`, *default:* `nil`) - List of Apigee organizations and associated Google Cloud projects.
   """
 
   use GoogleApi.Gax.ModelBase

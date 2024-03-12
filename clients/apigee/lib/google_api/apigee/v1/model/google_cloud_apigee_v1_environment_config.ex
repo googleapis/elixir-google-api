@@ -21,11 +21,14 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   ## Attributes
 
+  *   `addonsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig.t`, *default:* `nil`) - The latest runtime configurations for add-ons.
   *   `arcConfigLocation` (*type:* `String.t`, *default:* `nil`) - The location for the config blob of API Runtime Control, aka Envoy Adapter, for op-based authentication as a URI, e.g. a Cloud Storage URI. This is only used by Envoy-based gateways.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that the environment configuration was created.
   *   `dataCollectors` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t)`, *default:* `nil`) - List of data collectors used by the deployments in the environment.
   *   `debugMask` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t`, *default:* `nil`) - Debug mask that applies to all deployments in the environment.
+  *   `deploymentGroups` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentGroupConfig.t)`, *default:* `nil`) - List of deployment groups in the environment.
   *   `deployments` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t)`, *default:* `nil`) - List of deployments in the environment.
+  *   `envScopedRevisionId` (*type:* `String.t`, *default:* `nil`) - Revision ID for environment-scoped resources (e.g. target servers, keystores) in this config. This ID will increment any time a resource not scoped to a deployment group changes.
   *   `featureFlags` (*type:* `map()`, *default:* `nil`) - Feature flags inherited from the organization and environment.
   *   `flowhooks` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t)`, *default:* `nil`) - List of flow hooks in the environment.
   *   `forwardProxyUri` (*type:* `String.t`, *default:* `nil`) - The forward proxy's url to be used by the runtime. When set, runtime will send requests to the target via the given forward proxy. This is only used by programmable gateways.
@@ -46,13 +49,18 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :addonsConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig.t() | nil,
           :arcConfigLocation => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :dataCollectors =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DataCollectorConfig.t()) | nil,
           :debugMask => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask.t() | nil,
+          :deploymentGroups =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentGroupConfig.t()) | nil,
           :deployments =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig.t()) | nil,
+          :envScopedRevisionId => String.t() | nil,
           :featureFlags => map() | nil,
           :flowhooks =>
             list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig.t()) | nil,
@@ -76,6 +84,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
           :uid => String.t() | nil
         }
 
+  field(:addonsConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RuntimeAddonsConfig)
   field(:arcConfigLocation)
   field(:createTime, as: DateTime)
 
@@ -86,11 +95,17 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentConfig do
 
   field(:debugMask, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DebugMask)
 
+  field(:deploymentGroups,
+    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentGroupConfig,
+    type: :list
+  )
+
   field(:deployments,
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig,
     type: :list
   )
 
+  field(:envScopedRevisionId)
   field(:featureFlags, type: :map)
   field(:flowhooks, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1FlowHookConfig, type: :list)
   field(:forwardProxyUri)

@@ -17,28 +17,28 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListApiCategoriesResponse do
   @moduledoc """
-  the response for ListApiCategoriesRequest.
+  The response for `ListApiCategoriesRequest`. Next ID: 6
 
   ## Attributes
 
-  *   `data` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t)`, *default:* `nil`) - Details of categories.
-  *   `errorCode` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find errors in the log files.
+  *   `data` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategory.t)`, *default:* `nil`) - The API category resources.
+  *   `errorCode` (*type:* `String.t`, *default:* `nil`) - Unique error code for the request, if any.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Description of the operation.
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find request details in the log files.
+  *   `requestId` (*type:* `String.t`, *default:* `nil`) - Unique ID of the request.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t()) | nil,
+          :data => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategory.t()) | nil,
           :errorCode => String.t() | nil,
           :message => String.t() | nil,
           :requestId => String.t() | nil,
           :status => String.t() | nil
         }
 
-  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData, type: :list)
+  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategory, type: :list)
   field(:errorCode)
   field(:message)
   field(:requestId)

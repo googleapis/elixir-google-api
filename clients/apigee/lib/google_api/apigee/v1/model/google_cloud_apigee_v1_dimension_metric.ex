@@ -21,17 +21,20 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DimensionMetric do
 
   ## Attributes
 
+  *   `individualNames` (*type:* `list(String.t)`, *default:* `nil`) - Individual dimension names. E.g. ["dim1_name", "dim2_name"].
   *   `metrics` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t)`, *default:* `nil`) - List of metrics.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the dimension.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Comma joined dimension names. E.g. "dim1_name,dim2_name". Deprecated. If name already has comma before join, we may get wrong splits. Please use individual_names.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :individualNames => list(String.t()) | nil,
           :metrics => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric.t()) | nil,
           :name => String.t() | nil
         }
 
+  field(:individualNames, type: :list)
   field(:metrics, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Metric, type: :list)
   field(:name)
 end

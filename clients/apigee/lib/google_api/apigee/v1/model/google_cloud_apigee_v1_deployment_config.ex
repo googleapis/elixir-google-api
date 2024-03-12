@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   @moduledoc """
-  NEXT ID: 9
+  NEXT ID: 11
 
   ## Attributes
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Additional key-value metadata for the deployment.
   *   `basePath` (*type:* `String.t`, *default:* `nil`) - Base path where the application will be hosted. Defaults to "/".
+  *   `deploymentGroups` (*type:* `list(String.t)`, *default:* `nil`) - The list of deployment groups in which this proxy should be deployed. Not currently populated for shared flows.
+  *   `endpoints` (*type:* `map()`, *default:* `nil`) - A mapping from basepaths to proxy endpoint names in this proxy. Not populated for shared flows.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the API proxy bundle as a URI.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the API or shared flow revision to be deployed in the following format: `organizations/{org}/apis/{api}/revisions/{rev}` or `organizations/{org}/sharedflows/{sharedflow}/revisions/{rev}`
   *   `proxyUid` (*type:* `String.t`, *default:* `nil`) - Unique ID of the API proxy revision.
@@ -35,6 +37,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
   @type t :: %__MODULE__{
           :attributes => map() | nil,
           :basePath => String.t() | nil,
+          :deploymentGroups => list(String.t()) | nil,
+          :endpoints => map() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
           :proxyUid => String.t() | nil,
@@ -44,6 +48,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1DeploymentConfig do
 
   field(:attributes, type: :map)
   field(:basePath)
+  field(:deploymentGroups, type: :list)
+  field(:endpoints, type: :map)
   field(:location)
   field(:name)
   field(:proxyUid)

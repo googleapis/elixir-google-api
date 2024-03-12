@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TargetServer do
   @moduledoc """
-  TargetServer configuration. TargetServers are used to decouple a proxy's TargetEndpoint HTTPTargetConnections from concrete URLs for backend services.
+  TargetServer configuration. TargetServers are used to decouple a proxy TargetEndpoint HTTPTargetConnections from concrete URLs for backend services.
 
   ## Attributes
 
