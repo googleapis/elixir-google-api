@@ -20,7 +20,7 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1 do
   API client metadata for GoogleApi.PlayDeveloperReporting.V1beta1.
   """
 
-  @discovery_revision "20221103"
+  @discovery_revision "20240310"
 
   def discovery_revision(), do: @discovery_revision
 end
