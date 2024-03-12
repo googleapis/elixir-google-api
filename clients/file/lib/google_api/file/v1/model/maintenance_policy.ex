@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.File.V1.Model.MaintenancePolicy do
   @moduledoc """
-  Defines policies to service maintenance events.
+  LINT.IfChange Defines policies to service maintenance events.
 
   ## Attributes
 

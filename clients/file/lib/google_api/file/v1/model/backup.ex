@@ -25,8 +25,10 @@ defmodule GoogleApi.File.V1.Model.Backup do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
   *   `downloadBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Amount of bytes that will be downloaded if the backup is restored. This may be different than storage bytes, since sequential backups of the same disk will share storage.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Immutable. KMS key name used for data encryption.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `sourceFileShare` (*type:* `String.t`, *default:* `nil`) - Name of the file share in the source Filestore instance that the backup is created from.
   *   `sourceInstance` (*type:* `String.t`, *default:* `nil`) - The resource name of the source Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
@@ -42,8 +44,10 @@ defmodule GoogleApi.File.V1.Model.Backup do
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :downloadBytes => String.t() | nil,
+          :kmsKey => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :sourceFileShare => String.t() | nil,
           :sourceInstance => String.t() | nil,
@@ -56,8 +60,10 @@ defmodule GoogleApi.File.V1.Model.Backup do
   field(:createTime, as: DateTime)
   field(:description)
   field(:downloadBytes)
+  field(:kmsKey)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:sourceFileShare)
   field(:sourceInstance)
