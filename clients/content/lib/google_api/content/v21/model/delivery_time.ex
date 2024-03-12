@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.DeliveryTime do
 
   ## Attributes
 
-  *   `cutoffTime` (*type:* `GoogleApi.Content.V21.Model.CutoffTime.t`, *default:* `nil`) - Business days cutoff time definition. If not configured the cutoff time will be defaulted to 8AM PST.
+  *   `cutoffTime` (*type:* `GoogleApi.Content.V21.Model.CutoffTime.t`, *default:* `nil`) - Business days cutoff time definition. If not configured, the cutoff time will be defaulted to 8AM PST. If local delivery, use Service.StoreConfig.CutoffConfig.
   *   `handlingBusinessDayConfig` (*type:* `GoogleApi.Content.V21.Model.BusinessDayConfig.t`, *default:* `nil`) - The business days during which orders can be handled. If not provided, Monday to Friday business days will be assumed.
   *   `holidayCutoffs` (*type:* `list(GoogleApi.Content.V21.Model.HolidayCutoff.t)`, *default:* `nil`) - Holiday cutoff definitions. If configured, they specify order cutoff times for holiday-specific shipping.
   *   `maxHandlingTimeInDays` (*type:* `integer()`, *default:* `nil`) - Maximum number of business days spent before an order is shipped. 0 means same day shipped, 1 means next day shipped. Must be greater than or equal to `minHandlingTimeInDays`.

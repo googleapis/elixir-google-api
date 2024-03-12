@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Api.Quotas do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Lists the quota limit and quota usage per method for your Merchant Center account.
+  Lists the daily call quota and usage per method for your Merchant Center account.
 
   ## Parameters
 

@@ -26,6 +26,7 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponseEntry do
   *   `gmbAccounts` (*type:* `GoogleApi.Content.V21.Model.GmbAccounts.t`, *default:* `nil`) - The list of accessible Business Profiles.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "`content#liasettingsCustomBatchResponseEntry`"
   *   `liaSettings` (*type:* `GoogleApi.Content.V21.Model.LiaSettings.t`, *default:* `nil`) - The retrieved or updated Lia settings.
+  *   `omnichannelExperience` (*type:* `GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t`, *default:* `nil`) - The updated omnichannel experience for a country.
   *   `posDataProviders` (*type:* `list(GoogleApi.Content.V21.Model.PosDataProviders.t)`, *default:* `nil`) - The list of POS data providers.
   """
 
@@ -37,6 +38,8 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponseEntry do
           :gmbAccounts => GoogleApi.Content.V21.Model.GmbAccounts.t() | nil,
           :kind => String.t() | nil,
           :liaSettings => GoogleApi.Content.V21.Model.LiaSettings.t() | nil,
+          :omnichannelExperience =>
+            GoogleApi.Content.V21.Model.LiaOmnichannelExperience.t() | nil,
           :posDataProviders => list(GoogleApi.Content.V21.Model.PosDataProviders.t()) | nil
         }
 
@@ -45,6 +48,7 @@ defmodule GoogleApi.Content.V21.Model.LiasettingsCustomBatchResponseEntry do
   field(:gmbAccounts, as: GoogleApi.Content.V21.Model.GmbAccounts)
   field(:kind)
   field(:liaSettings, as: GoogleApi.Content.V21.Model.LiaSettings)
+  field(:omnichannelExperience, as: GoogleApi.Content.V21.Model.LiaOmnichannelExperience)
   field(:posDataProviders, as: GoogleApi.Content.V21.Model.PosDataProviders, type: :list)
 end
 

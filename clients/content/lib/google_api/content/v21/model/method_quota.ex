@@ -21,9 +21,9 @@ defmodule GoogleApi.Content.V21.Model.MethodQuota do
 
   ## Attributes
 
-  *   `method` (*type:* `String.t`, *default:* `nil`) - The method name, for example “products.list”. Method name does not contain version because quota can be shared between different API versions of the same method.
-  *   `quotaLimit` (*type:* `String.t`, *default:* `nil`) - The current quota limit, for example the maximum number of calls for the method.
-  *   `quotaUsage` (*type:* `String.t`, *default:* `nil`) - The current quota usage, for example the number of calls for the method.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - The method name, for example `products.list`. Method name does not contain version because quota can be shared between different API versions of the same method.
+  *   `quotaLimit` (*type:* `String.t`, *default:* `nil`) - The current quota limit per day, meaning the maximum number of calls for the method.
+  *   `quotaUsage` (*type:* `String.t`, *default:* `nil`) - The current quota usage, meaning the number of calls already made to the method.
   """
 
   use GoogleApi.Gax.ModelBase
