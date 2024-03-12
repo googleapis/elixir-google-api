@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint do
   @moduledoc """
-  A `Constraint` that allows or disallows a list of string values, which are configured by an Organization's policy administrator with a `Policy`.
+  A constraint that allows or disallows a list of string values, which are configured by an Organization Policy administrator with a policy.
 
   ## Attributes
 
   *   `supportsIn` (*type:* `boolean()`, *default:* `nil`) - Indicates whether values grouped into categories can be used in `Policy.allowed_values` and `Policy.denied_values`. For example, `"in:Python"` would match any value in the 'Python' group.
-  *   `supportsUnder` (*type:* `boolean()`, *default:* `nil`) - Indicates whether subtrees of Cloud Resource Manager resource hierarchy can be used in `Policy.allowed_values` and `Policy.denied_values`. For example, `"under:folders/123"` would match any resource under the 'folders/123' folder.
+  *   `supportsUnder` (*type:* `boolean()`, *default:* `nil`) - Indicates whether subtrees of the Resource Manager resource hierarchy can be used in `Policy.allowed_values` and `Policy.denied_values`. For example, `"under:folders/123"` would match any resource under the 'folders/123' folder.
   """
 
   use GoogleApi.Gax.ModelBase

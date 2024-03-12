@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ListCustomConstraintsResponse do
   @moduledoc """
-  The response returned from the ListCustomConstraints method. It will be empty if no `CustomConstraints` are set on the organization resource.
+  The response returned from the ListCustomConstraints method. It will be empty if no custom constraints are set on the organization resource.
 
   ## Attributes
 
-  *   `customConstraints` (*type:* `list(GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint.t)`, *default:* `nil`) - All `CustomConstraints` that exist on the organization resource. It will be empty if no `CustomConstraints` are set.
+  *   `customConstraints` (*type:* `list(GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2CustomConstraint.t)`, *default:* `nil`) - All custom constraints that exist on the organization resource. It will be empty if no custom constraints are set.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Page token used to retrieve the next page. This is currently not used, but the server may at any point start supplying a valid token.
   """
 
