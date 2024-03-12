@@ -26,7 +26,7 @@ defmodule GoogleApi.MyBusinessAccountManagement.V1.Model.Account do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name, in the format `accounts/{account_id}`.
   *   `organizationInfo` (*type:* `GoogleApi.MyBusinessAccountManagement.V1.Model.OrganizationInfo.t`, *default:* `nil`) - Output only. Additional info for an organization. This is populated only for an organization account.
   *   `permissionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the permission level the user has for this account.
-  *   `primaryOwner` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The resource name of the account which will be the primary owner of the account being created. It should be of the form `accounts/{account_id}/`.
+  *   `primaryOwner` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The resource name of the account which will be the primary owner of the account being created. It should be of the form `accounts/{account_id}`.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies the AccountRole of this account.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Contains the type of account. Accounts of type PERSONAL and ORGANIZATION cannot be created using this API.
   *   `verificationState` (*type:* `String.t`, *default:* `nil`) - Output only. If verified, future locations that are created are automatically connected to Google Maps, and have Google+ pages created, without requiring moderation.
