@@ -21,16 +21,25 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
+  *   `bucketObjectType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of the objects in `bucket_uri`.
   *   `bucketUri` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage bucket containing source objects.
+  *   `customMetadataKeys` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Custom keys to extract as conversation labels from metadata files in `metadata_bucket_uri`. Keys not included in this field will be ignored. Note that there is a limit of 20 labels per conversation.
+  *   `metadataBucketUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud Storage path to the source object metadata. Note that: [1] metadata files are expected to be in JSON format [2] metadata and source objects must be in separate buckets [3] a source object's metadata object must share the same name to be properly ingested
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :bucketUri => String.t() | nil
+          :bucketObjectType => String.t() | nil,
+          :bucketUri => String.t() | nil,
+          :customMetadataKeys => list(String.t()) | nil,
+          :metadataBucketUri => String.t() | nil
         }
 
+  field(:bucketObjectType)
   field(:bucketUri)
+  field(:customMetadataKeys, type: :list)
+  field(:metadataBucketUri)
 end
 
 defimpl Poison.Decoder,

@@ -22,6 +22,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   ## Attributes
 
   *   `analysisPercentage` (*type:* `number()`, *default:* `nil`) - Required. Percentage of selected conversation to analyze, between [0, 100].
+  *   `annotatorSelector` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector.t`, *default:* `nil`) - To select the annotators to run and the phrase matchers to use (if any). If not specified, all annotators will be run.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. Filter used to select the subset of conversations to analyze.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource to create analyses in.
   """
@@ -30,11 +31,20 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   @type t :: %__MODULE__{
           :analysisPercentage => number() | nil,
+          :annotatorSelector =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector.t()
+            | nil,
           :filter => String.t() | nil,
           :parent => String.t() | nil
         }
 
   field(:analysisPercentage)
+
+  field(:annotatorSelector,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotatorSelector
+  )
+
   field(:filter)
   field(:parent)
 end

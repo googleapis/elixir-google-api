@@ -24,6 +24,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `annotationId` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the annotation. Format: projects/{project}/locations/{location}/conversationDatasets/{dataset}/conversationDataItems/{data_item}/conversationAnnotations/{annotation}
   *   `answerFeedback` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnswerFeedback.t`, *default:* `nil`) - The feedback that the customer has about the answer in `data`.
   *   `articleSuggestion` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ArticleSuggestionData.t`, *default:* `nil`) - Agent Assist Article Suggestion data.
+  *   `conversationSummarizationSuggestion` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t`, *default:* `nil`) - Conversation summarization suggestion data.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this annotation was created.
   *   `dialogflowInteraction` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1DialogflowInteractionData.t`, *default:* `nil`) - Dialogflow interaction data.
   *   `endBoundary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotationBoundary.t`, *default:* `nil`) - The boundary in the conversation where the annotation ends, inclusive.
@@ -42,6 +43,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             | nil,
           :articleSuggestion =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ArticleSuggestionData.t()
+            | nil,
+          :conversationSummarizationSuggestion =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t()
             | nil,
           :createTime => DateTime.t() | nil,
           :dialogflowInteraction =>
@@ -73,6 +77,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:articleSuggestion,
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ArticleSuggestionData
+  )
+
+  field(:conversationSummarizationSuggestion,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData
   )
 
   field(:createTime, as: DateTime)
