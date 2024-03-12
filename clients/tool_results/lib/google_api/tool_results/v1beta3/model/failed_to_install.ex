@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ToolResults.V1beta3.Model.FailedToInstall do
   @moduledoc """
-  Failed to install the APK.
+  Failed to install the App.
 
   ## Attributes
 
