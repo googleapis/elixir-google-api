@@ -21,8 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.FhirFieldConfig do
 
   ## Attributes
 
-  *   `fieldMetadataList` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DeidentifyFieldMetadata.t)`, *default:* `nil`) - Specifies FHIR paths to match and how to transform them. Any field that is not matched by a `FieldMetadata` is passed through to the output dataset unmodified. All extensions will be processed according to `keep_extensions`. If a field can be matched by more than one `FieldMetadata`, the first `FieldMetadata.Action` is applied. Overrides `options` and `profile`.
-  *   `options` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DeidentifyOptions.t`, *default:* `nil`) - Specifies additional options, overriding the base `profile`.
+  *   `fieldMetadataList` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DeidentifyFieldMetadata.t)`, *default:* `nil`) - Specifies FHIR paths to match and how to transform them. Any field that is not matched by a FieldMetadata `action` is passed through to the output dataset unmodified. All extensions will be processed according to keep_extensions. If a field can be matched by more than one FieldMetadata `action`, the first `action` option is applied. Overrides options and the union field `profile` in FhirFieldConfig.
+  *   `options` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DeidentifyOptions.t`, *default:* `nil`) - Specifies additional options, overriding the base ProfileType.
   *   `profileType` (*type:* `String.t`, *default:* `nil`) - Base profile type for handling FHIR fields.
   """
 

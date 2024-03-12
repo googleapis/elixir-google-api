@@ -22,7 +22,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesResponse do
   ## Attributes
 
   *   `entities` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Entity.t)`, *default:* `nil`) - The union of all the candidate entities that the entity_mentions in this response could link to. These are UMLS concepts or normalized mention content.
-  *   `entityMentions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMention.t)`, *default:* `nil`) - entity_mentions contains all the annotated medical entities that were mentioned in the provided document.
+  *   `entityMentions` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMention.t)`, *default:* `nil`) - The `entity_mentions` field contains all the annotated medical entities that were mentioned in the provided document.
+  *   `fhirBundle` (*type:* `String.t`, *default:* `nil`) - The FHIR bundle ([`R4`](http://hl7.org/fhir/R4/bundle.html)) that includes all the entities, the entity mentions, and the relationships in JSON format.
   *   `relationships` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.EntityMentionRelationship.t)`, *default:* `nil`) - relationships contains all the binary relationships that were identified between entity mentions within the provided document.
   """
 
@@ -31,12 +32,14 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesResponse do
   @type t :: %__MODULE__{
           :entities => list(GoogleApi.HealthCare.V1beta1.Model.Entity.t()) | nil,
           :entityMentions => list(GoogleApi.HealthCare.V1beta1.Model.EntityMention.t()) | nil,
+          :fhirBundle => String.t() | nil,
           :relationships =>
             list(GoogleApi.HealthCare.V1beta1.Model.EntityMentionRelationship.t()) | nil
         }
 
   field(:entities, as: GoogleApi.HealthCare.V1beta1.Model.Entity, type: :list)
   field(:entityMentions, as: GoogleApi.HealthCare.V1beta1.Model.EntityMention, type: :list)
+  field(:fhirBundle)
 
   field(:relationships,
     as: GoogleApi.HealthCare.V1beta1.Model.EntityMentionRelationship,

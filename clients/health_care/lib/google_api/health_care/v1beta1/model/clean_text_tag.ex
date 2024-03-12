@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.CleanTextTag do
   @moduledoc """
-  Inspect text and transform sensitive text. Configurable using `TextConfig`. Supported [Value Representations] (http://dicom.nema.org/medical/dicom/2018e/output/chtml/part05/sect_6.2.html#table_6.2-1): AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS
+  Inspect text and transform sensitive text. Configurable using TextConfig. Supported [Value Representations] (http://dicom.nema.org/medical/dicom/2018e/output/chtml/part05/sect_6.2.html#table_6.2-1): AE, LO, LT, PN, SH, ST, UC, UT, DA, DT, AS
 
   ## Attributes
 

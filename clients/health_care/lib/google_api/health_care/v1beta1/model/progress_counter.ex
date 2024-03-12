@@ -23,6 +23,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ProgressCounter do
 
   *   `failure` (*type:* `String.t`, *default:* `nil`) - The number of units that failed in the operation.
   *   `pending` (*type:* `String.t`, *default:* `nil`) - The number of units that are pending in the operation.
+  *   `secondaryFailure` (*type:* `String.t`, *default:* `nil`) - The number of secondary units that failed in the operation.
+  *   `secondarySuccess` (*type:* `String.t`, *default:* `nil`) - The number of secondary units that succeeded in the operation.
   *   `success` (*type:* `String.t`, *default:* `nil`) - The number of units that succeeded in the operation.
   """
 
@@ -31,11 +33,15 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ProgressCounter do
   @type t :: %__MODULE__{
           :failure => String.t() | nil,
           :pending => String.t() | nil,
+          :secondaryFailure => String.t() | nil,
+          :secondarySuccess => String.t() | nil,
           :success => String.t() | nil
         }
 
   field(:failure)
   field(:pending)
+  field(:secondaryFailure)
+  field(:secondarySuccess)
   field(:success)
 end
 

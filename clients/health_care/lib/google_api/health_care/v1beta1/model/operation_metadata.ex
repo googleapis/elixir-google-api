@@ -25,8 +25,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.OperationMetadata do
   *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Specifies if cancellation was requested for the operation.
   *   `counter` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ProgressCounter.t`, *default:* `nil`) - 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation was created by the API.
-  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution was completed.
-  *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging).
+  *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which execution workloads were completed. Some tasks will complete after this time such as logging audit logs.
+  *   `logsUrl` (*type:* `String.t`, *default:* `nil`) - A link to audit and error logs in the log viewer. Error logs are generated only by some operations, listed at [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging). The `end_time` specified in this URL may not match the end time on the metadata because logs are written asynchronously from execution.
   """
 
   use GoogleApi.Gax.ModelBase

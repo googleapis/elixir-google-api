@@ -21,6 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesRequest do
 
   ## Attributes
 
+  *   `alternativeOutputFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Alternative output format to be generated based on the results of analysis.
   *   `documentContent` (*type:* `String.t`, *default:* `nil`) - document_content is a document to be annotated.
   *   `licensedVocabularies` (*type:* `list(String.t)`, *default:* `nil`) - A list of licensed vocabularies to use in the request, in addition to the default unlicensed vocabularies.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.AnalyzeEntitiesRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alternativeOutputFormat => String.t() | nil,
           :documentContent => String.t() | nil,
           :licensedVocabularies => list(String.t()) | nil
         }
 
+  field(:alternativeOutputFormat)
   field(:documentContent)
   field(:licensedVocabularies, type: :list)
 end

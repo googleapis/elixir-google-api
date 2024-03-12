@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.DateShiftField do
   @moduledoc """
-  Shift the date by a randomized number of days. See [date shifting](https://cloud.google.com/dlp/docs/concepts-date-shifting) for more information. Supported [types](https://www.hl7.org/fhir/datatypes.html): Date, DateTime
+  Shift the date by a randomized number of days. See [date shifting](https://cloud.google.com/dlp/docs/concepts-date-shifting) for more information. Supported [types](https://www.hl7.org/fhir/datatypes.html): Date, DateTime.
 
   ## Attributes
 

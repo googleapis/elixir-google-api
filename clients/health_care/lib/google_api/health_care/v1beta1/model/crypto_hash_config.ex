@@ -21,8 +21,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.CryptoHashConfig do
 
   ## Attributes
 
-  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the hash to be computed based on this key. A default key is generated for each Deidentify operation and is used when neither `crypto_key` nor `kms_wrapped` is specified. Must not be set if `kms_wrapped` is set.
-  *   `kmsWrapped` (*type:* `GoogleApi.HealthCare.V1beta1.Model.KmsWrappedCryptoKey.t`, *default:* `nil`) - KMS wrapped key. Must not be set if `crypto_key` is set.
+  *   `cryptoKey` (*type:* `String.t`, *default:* `nil`) - An AES 128/192/256 bit key. Causes the hash to be computed based on this key. A default key is generated for each Deidentify operation and is used when neither crypto_key nor kms_wrapped is specified. Must not be set if kms_wrapped is set.
+  *   `kmsWrapped` (*type:* `GoogleApi.HealthCare.V1beta1.Model.KmsWrappedCryptoKey.t`, *default:* `nil`) - KMS wrapped key. Must not be set if crypto_key is set.
   """
 
   use GoogleApi.Gax.ModelBase
