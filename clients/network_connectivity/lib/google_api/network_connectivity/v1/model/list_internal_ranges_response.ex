@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ListInternalRangesResponse do
 
   ## Attributes
 
-  *   `internalRanges` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.InternalRange.t)`, *default:* `nil`) - InternalRanges to be returned.
+  *   `internalRanges` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.InternalRange.t)`, *default:* `nil`) - Internal ranges to be returned.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the List response. It should be used as page_token for the following request. An empty value means no more result.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """

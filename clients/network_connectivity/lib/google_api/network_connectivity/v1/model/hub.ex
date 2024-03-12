@@ -17,15 +17,17 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.Hub do
   @moduledoc """
-  A Network Connectivity Center hub is a collection of spokes. A single hub can contain spokes from multiple regions. However, if any of a hub's spokes use the data transfer feature, the resources associated with those spokes must all reside in the same VPC network. Spokes that do not use data transfer can be associated with any VPC network in your project.
+  A Network Connectivity Center hub is a global management resource to which you attach spokes. A single hub can contain spokes from multiple regions. However, if any of a hub's spokes use the site-to-site data transfer feature, the resources associated with those spokes must all be in the same VPC network. Spokes that do not use site-to-site data transfer can be associated with any VPC network in your project.
 
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the hub was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of the hub.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key:value format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the hub. Hub names must be unique. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}`
+  *   `routeTables` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The route tables that belong to this hub. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}` This field is read-only. Network Connectivity Center automatically populates it based on the route tables nested under the hub.
   *   `routingVpcs` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC.t)`, *default:* `nil`) - The VPC networks associated with this hub's spokes. This field is read-only. Network Connectivity Center automatically populates it based on the set of spokes attached to the hub.
+  *   `spokeSummary` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.SpokeSummary.t`, *default:* `nil`) - Output only. A summary of the spokes associated with a hub. The summary includes a count of spokes according to type and according to state. If any spokes are inactive, the summary also lists the reasons they are inactive, including a count for each reason.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current lifecycle state of this hub.
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - Output only. The Google-generated UUID for the hub. This value is unique across all hub resources. If a hub is deleted and another with the same name is created, the new hub is assigned a different unique_id.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the hub was last updated.
@@ -38,7 +40,9 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Hub do
           :description => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :routeTables => list(String.t()) | nil,
           :routingVpcs => list(GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC.t()) | nil,
+          :spokeSummary => GoogleApi.NetworkConnectivity.V1.Model.SpokeSummary.t() | nil,
           :state => String.t() | nil,
           :uniqueId => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -48,7 +52,9 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Hub do
   field(:description)
   field(:labels, type: :map)
   field(:name)
+  field(:routeTables, type: :list)
   field(:routingVpcs, as: GoogleApi.NetworkConnectivity.V1.Model.RoutingVPC, type: :list)
+  field(:spokeSummary, as: GoogleApi.NetworkConnectivity.V1.Model.SpokeSummary)
   field(:state)
   field(:uniqueId)
   field(:updateTime, as: DateTime)
