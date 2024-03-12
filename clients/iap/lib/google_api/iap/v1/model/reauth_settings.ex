@@ -23,7 +23,7 @@ defmodule GoogleApi.IAP.V1.Model.ReauthSettings do
 
   *   `maxAge` (*type:* `String.t`, *default:* `nil`) - Reauth session lifetime, how long before a user has to reauthenticate again.
   *   `method` (*type:* `String.t`, *default:* `nil`) - Reauth method requested.
-  *   `policyType` (*type:* `String.t`, *default:* `nil`) - How IAP determines the effective policy in cases of hierarchial policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.
+  *   `policyType` (*type:* `String.t`, *default:* `nil`) - How IAP determines the effective policy in cases of hierarchical policies. Policies are merged from higher in the hierarchy to lower in the hierarchy.
   """
 
   use GoogleApi.Gax.ModelBase

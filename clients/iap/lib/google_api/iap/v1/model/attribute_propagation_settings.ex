@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.IAP.V1.Model.AttributePropagationSettings do
   @moduledoc """
-  Configuration for propagating attributes to customer applications protected by IAP. These attributes may be SAML attributes from a 3rd party IdP, or potentially other sources in the future.
+  Configuration for propagating attributes to applications protected by IAP.
 
   ## Attributes
 
   *   `enable` (*type:* `boolean()`, *default:* `nil`) - Whether the provided attribute propagation settings should be evaluated on user requests. If set to true, attributes returned from the expression will be propagated in the set output credentials.
-  *   `expression` (*type:* `String.t`, *default:* `nil`) - Raw string CEL expression. Expression should be of the form attributes.saml_attributes.filter(attribute, attribute.name in [{attribute_list}]). An example expression to select the attributes "my_attr" and "other_attr": attributes.saml_attributes.filter(attribute, attribute.name in ["my_attr", "other_attr"])
+  *   `expression` (*type:* `String.t`, *default:* `nil`) - Raw string CEL expression. Must return a list of attributes. A maximum of 45 attributes can be selected. Expressions can select different attribute types from `attributes`: `attributes.saml_attributes`, `attributes.iap_attributes`. The following functions are supported: - filter `.filter(, )`: Returns a subset of `` where `` is true for every item. - in ` in `: Returns true if `` contains ``. - selectByName `.selectByName()`: Returns the attribute in `` with the given `` name, otherwise returns empty. - emitAs `.emitAs()`: Sets the `` name field to the given `` for propagation in selected output credentials. - strict `.strict()`: Ignores the `x-goog-iap-attr-` prefix for the provided `` when propagating with the `HEADER` output credential, such as request headers. - append `.append()` OR `.append()`: Appends the provided `` or `` to the end of ``. Example expression: `attributes.saml_attributes.filter(x, x.name in ['test']).append(attributes.iap_attributes.selectByName('exact').emitAs('custom').strict())`
   *   `outputCredentials` (*type:* `list(String.t)`, *default:* `nil`) - Which output credentials attributes selected by the CEL expression should be propagated in. All attributes will be fully duplicated in each selected output credential.
   """
 
