@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Domains.V1alpha2.Model.RetrieveImportableDomainsResponse do
   @moduledoc """
-  Response for the `RetrieveImportableDomains` method.
+  Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). Response for the `RetrieveImportableDomains` method.
 
   ## Attributes
 

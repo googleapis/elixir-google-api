@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Domains.V1beta1.Model.TransferDomainRequest do
   @moduledoc """
-  Request for the `TransferDomain` method.
+  Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). Request for the `TransferDomain` method.
 
   ## Attributes
 
