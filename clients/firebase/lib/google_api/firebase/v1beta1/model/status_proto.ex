@@ -21,7 +21,7 @@ defmodule GoogleApi.Firebase.V1beta1.Model.StatusProto do
 
   ## Attributes
 
-  *   `canonicalCode` (*type:* `integer()`, *default:* `nil`) - The canonical error code (see codes.proto) that most closely corresponds to this status. May be missing.
+  *   `canonicalCode` (*type:* `integer()`, *default:* `nil`) - The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be.
   *   `code` (*type:* `integer()`, *default:* `nil`) - Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto
   *   `message` (*type:* `String.t`, *default:* `nil`) - Detail message
   *   `messageSet` (*type:* `GoogleApi.Firebase.V1beta1.Model.MessageSet.t`, *default:* `nil`) - message_set associates an arbitrary proto message with the status.

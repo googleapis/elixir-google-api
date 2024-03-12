@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firebase.V1beta1.Model.Location do
   @moduledoc """
-  A GCP resource location that can be selected for a FirebaseProject.
+  **DEPRECATED.** _This Location is no longer used to determine Firebase resource locations. Instead, consult product documentation to determine valid locations for each resource used in your Project._ A GCP resource location that can be selected for a FirebaseProject.
 
   ## Attributes
 
