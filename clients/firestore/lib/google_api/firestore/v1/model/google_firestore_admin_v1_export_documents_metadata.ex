@@ -23,10 +23,12 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsMeta
 
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being exported.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
+  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace ids are being exported.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the export operation.
-  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Where the entities are being exported to.
+  *   `outputUriPrefix` (*type:* `String.t`, *default:* `nil`) - Where the documents are being exported to.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.
+  *   `snapshotTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp that corresponds to the version of the database that is being exported. If unspecified, there are no guarantees about the consistency of the documents being exported.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation started.
   """
 
@@ -35,20 +37,24 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsMeta
   @type t :: %__MODULE__{
           :collectionIds => list(String.t()) | nil,
           :endTime => DateTime.t() | nil,
+          :namespaceIds => list(String.t()) | nil,
           :operationState => String.t() | nil,
           :outputUriPrefix => String.t() | nil,
           :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
           :progressDocuments =>
             GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
+          :snapshotTime => DateTime.t() | nil,
           :startTime => DateTime.t() | nil
         }
 
   field(:collectionIds, type: :list)
   field(:endTime, as: DateTime)
+  field(:namespaceIds, type: :list)
   field(:operationState)
   field(:outputUriPrefix)
   field(:progressBytes, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress)
   field(:progressDocuments, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress)
+  field(:snapshotTime, as: DateTime)
   field(:startTime, as: DateTime)
 end
 

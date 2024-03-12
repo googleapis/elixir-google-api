@@ -22,7 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryRequest do
   ## Attributes
 
   *   `newTransaction` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Starts a new transaction and reads the documents. Defaults to a read-only transaction. The new transaction ID will be returned as the first response in the stream.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
   *   `structuredQuery` (*type:* `GoogleApi.Firestore.V1.Model.StructuredQuery.t`, *default:* `nil`) - A structured query.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Run the query within an already active transaction. The value here is the opaque transaction ID to execute the query in.
   """

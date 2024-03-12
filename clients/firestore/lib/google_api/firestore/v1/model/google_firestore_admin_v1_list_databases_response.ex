@@ -22,16 +22,19 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ListDatabasesRespon
   ## Attributes
 
   *   `databases` (*type:* `list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database.t)`, *default:* `nil`) - The databases in the project.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - In the event that data about individual databases cannot be listed they will be recorded here. An example entry might be: projects/some_project/locations/some_location This can happen if the Cloud Region that the Database resides in is currently unavailable. In this case we can't fetch all the details about the database. You may be able to get a more detailed error message (or possibly fetch the resource) by sending a 'Get' request for the resource or a 'List' request for the specific location.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :databases =>
-            list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database.t()) | nil
+            list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:databases, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database, type: :list)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder,

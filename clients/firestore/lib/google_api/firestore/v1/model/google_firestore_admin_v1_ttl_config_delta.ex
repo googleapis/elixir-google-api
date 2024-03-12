@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1TtlConfigDelta do
   @moduledoc """
-  Information about an TTL configuration change.
+  Information about a TTL configuration change.
 
   ## Attributes
 

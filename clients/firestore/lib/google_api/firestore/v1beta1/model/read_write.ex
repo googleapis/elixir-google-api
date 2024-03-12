@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1beta1.Model.ReadWrite do
   @moduledoc """
-  Options for a transaction that can be used to read and write documents.
+  Options for a transaction that can be used to read and write documents. Firestore does not allow 3rd party auth requests to create read-write. transactions.
 
   ## Attributes
 

@@ -24,6 +24,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMeta
   *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being imported.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
   *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - The location of the documents being imported.
+  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace ids are being imported.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the import operation.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMeta
           :collectionIds => list(String.t()) | nil,
           :endTime => DateTime.t() | nil,
           :inputUriPrefix => String.t() | nil,
+          :namespaceIds => list(String.t()) | nil,
           :operationState => String.t() | nil,
           :progressBytes => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t() | nil,
           :progressDocuments =>
@@ -46,6 +48,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMeta
   field(:collectionIds, type: :list)
   field(:endTime, as: DateTime)
   field(:inputUriPrefix)
+  field(:namespaceIds, type: :list)
   field(:operationState)
   field(:progressBytes, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress)
   field(:progressDocuments, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress)

@@ -17,23 +17,29 @@
 
 defmodule GoogleApi.Firestore.V1beta1.Model.Aggregation do
   @moduledoc """
-  Defines a aggregation that produces a single result.
+  Defines an aggregation that produces a single result.
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - Optional. Optional name of the field to store the result of the aggregation into. If not provided, Firestore will pick a default name following the format `field_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS field_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS field_2 OVER ( ... ); ``` Requires: * Must be unique across all aggregation aliases. * Conform to document field name limitations.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - Optional. Optional name of the field to store the result of the aggregation into. If not provided, Firestore will pick a default name following the format `field_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS field_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) AS field_2 OVER ( ... ); ``` Requires: * Must be unique across all aggregation aliases. * Conform to document field name limitations.
+  *   `avg` (*type:* `GoogleApi.Firestore.V1beta1.Model.Avg.t`, *default:* `nil`) - Average aggregator.
   *   `count` (*type:* `GoogleApi.Firestore.V1beta1.Model.Count.t`, *default:* `nil`) - Count aggregator.
+  *   `sum` (*type:* `GoogleApi.Firestore.V1beta1.Model.Sum.t`, *default:* `nil`) - Sum aggregator.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :alias => String.t() | nil,
-          :count => GoogleApi.Firestore.V1beta1.Model.Count.t() | nil
+          :avg => GoogleApi.Firestore.V1beta1.Model.Avg.t() | nil,
+          :count => GoogleApi.Firestore.V1beta1.Model.Count.t() | nil,
+          :sum => GoogleApi.Firestore.V1beta1.Model.Sum.t() | nil
         }
 
   field(:alias)
+  field(:avg, as: GoogleApi.Firestore.V1beta1.Model.Avg)
   field(:count, as: GoogleApi.Firestore.V1beta1.Model.Count)
+  field(:sum, as: GoogleApi.Firestore.V1beta1.Model.Sum)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.Aggregation do

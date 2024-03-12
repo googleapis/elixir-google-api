@@ -639,7 +639,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
-      *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time. This may not be older than 270 seconds.
+      *   `:readTime` (*type:* `DateTime.t`) - Reads the version of the document at the given time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
       *   `:transaction` (*type:* `String.t`) - Reads the document in a transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -702,7 +702,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.
+  *   `collection_id` (*type:* `String.t`) - Optional. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`. This is optional, and when not provided, Firestore will list documents from all collections under the provided `parent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -716,12 +716,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
-      *   `:orderBy` (*type:* `String.t`) - The order to sort results by. For example: `priority desc, name`.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of documents to return.
-      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
-      *   `:readTime` (*type:* `DateTime.t`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
-      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.
-      *   `:transaction` (*type:* `String.t`) - Reads documents in a transaction.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token.
+      *   `:readTime` (*type:* `DateTime.t`) - Perform the read at the provided time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
+      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`.
+      *   `:transaction` (*type:* `String.t`) - Perform the read as part of an already active transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -866,7 +866,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1beta1.Connection.t`) - Connection to server
   *   `parent` (*type:* `String.t`) - Required. The parent resource name. In the format: `projects/{project_id}/databases/{database_id}/documents` or `projects/{project_id}/databases/{database_id}/documents/{document_path}`. For example: `projects/my-project/databases/my-database/documents` or `projects/my-project/databases/my-database/documents/chatrooms/my-chatroom`
-  *   `collection_id` (*type:* `String.t`) - Required. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`.
+  *   `collection_id` (*type:* `String.t`) - Optional. The collection ID, relative to `parent`, to list. For example: `chatrooms` or `messages`. This is optional, and when not provided, Firestore will list documents from all collections under the provided `parent`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -880,12 +880,12 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
-      *   `:orderBy` (*type:* `String.t`) - The order to sort results by. For example: `priority desc, name`.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of documents to return.
-      *   `:pageToken` (*type:* `String.t`) - The `next_page_token` value returned from a previous List request, if any.
-      *   `:readTime` (*type:* `DateTime.t`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
-      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A missing document is a document that does not exist but has sub-documents. These documents will be returned with a key but will not have fields, Document.create_time, or Document.update_time set. Requests with `show_missing` may not specify `where` or `order_by`.
-      *   `:transaction` (*type:* `String.t`) - Reads documents in a transaction.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value.
+      *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token.
+      *   `:readTime` (*type:* `DateTime.t`) - Perform the read at the provided time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
+      *   `:showMissing` (*type:* `boolean()`) - If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`.
+      *   `:transaction` (*type:* `String.t`) - Perform the read as part of an already active transaction.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -950,7 +950,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Listens to changes.
+  Listens to changes. This method is only available via gRPC or WebChannel (not REST).
 
   ## Parameters
 
@@ -1394,7 +1394,7 @@ defmodule GoogleApi.Firestore.V1beta1.Api.Projects do
   end
 
   @doc """
-  Streams batches of document updates and deletes, in order.
+  Streams batches of document updates and deletes, in order. This method is only available via gRPC or WebChannel (not REST).
 
   ## Parameters
 

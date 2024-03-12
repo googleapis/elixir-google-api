@@ -21,19 +21,22 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ExistenceFilter do
 
   ## Attributes
 
-  *   `count` (*type:* `integer()`, *default:* `nil`) - The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target.
+  *   `count` (*type:* `integer()`, *default:* `nil`) - The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target. The client can use the `unchanged_names` bloom filter to assist with this determination by testing ALL the document names against the filter; if the document name is NOT in the filter, it means the document no longer matches the target.
   *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID to which this filter applies.
+  *   `unchangedNames` (*type:* `GoogleApi.Firestore.V1beta1.Model.BloomFilter.t`, *default:* `nil`) - A bloom filter that, despite its name, contains the UTF-8 byte encodings of the resource names of ALL the documents that match target_id, in the form `projects/{project_id}/databases/{database_id}/documents/{document_path}`. This bloom filter may be omitted at the server's discretion, such as if it is deemed that the client will not make use of it or if it is too computationally expensive to calculate or transmit. Clients must gracefully handle this field being absent by falling back to the logic used before this field existed; that is, re-add the target without a resume token to figure out which documents in the client's cache are out of sync.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :count => integer() | nil,
-          :targetId => integer() | nil
+          :targetId => integer() | nil,
+          :unchangedNames => GoogleApi.Firestore.V1beta1.Model.BloomFilter.t() | nil
         }
 
   field(:count)
   field(:targetId)
+  field(:unchangedNames, as: GoogleApi.Firestore.V1beta1.Model.BloomFilter)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1beta1.Model.ExistenceFilter do
