@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.ExfilResource do
   @moduledoc """
-  Resource that has been exfiltrated or exfiltrated_to.
+  Resource where data was exfiltrated from or exfiltrated to.
 
   ## Attributes
 
-  *   `components` (*type:* `list(String.t)`, *default:* `nil`) - Subcomponents of the asset that is exfiltrated - these could be URIs used during exfiltration, table names, databases, filenames, etc. For example, multiple tables may be exfiltrated from the same CloudSQL instance, or multiple files from the same Cloud Storage bucket.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource's URI (https://google.aip.dev/122#full-resource-names)
+  *   `components` (*type:* `list(String.t)`, *default:* `nil`) - Subcomponents of the asset that was exfiltrated, like URIs used during exfiltration, table names, databases, and filenames. For example, multiple tables might have been exfiltrated from the same Cloud SQL instance, or multiple files might have been exfiltrated from the same Cloud Storage bucket.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource's [full resource name](https://cloud.google.com/apis/design/resource_names#full_resource_name).
   """
 
   use GoogleApi.Gax.ModelBase

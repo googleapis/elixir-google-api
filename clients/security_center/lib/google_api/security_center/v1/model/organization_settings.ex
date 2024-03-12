@@ -22,7 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.OrganizationSettings do
   ## Attributes
 
   *   `assetDiscoveryConfig` (*type:* `GoogleApi.SecurityCenter.V1.Model.AssetDiscoveryConfig.t`, *default:* `nil`) - The configuration used for Asset Discovery runs.
-  *   `enableAssetDiscovery` (*type:* `boolean()`, *default:* `nil`) - A flag that indicates if Asset Discovery should be enabled. If the flag is set to `true`, then discovery of assets will occur. If it is set to `false, all historical assets will remain, but discovery of future assets will not occur.
+  *   `enableAssetDiscovery` (*type:* `boolean()`, *default:* `nil`) - A flag that indicates if Asset Discovery should be enabled. If the flag is set to `true`, then discovery of assets will occur. If it is set to `false`, all historical assets will remain, but discovery of future assets will not occur.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the settings. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/organizationSettings".
   """
 

@@ -17,15 +17,16 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Database do
   @moduledoc """
-  Represents database access information, such as queries. A database may be a sub-resource of an instance (as in the case of CloudSQL instances or Cloud Spanner instances), or the database instance itself. Some database resources may not have the full resource name populated because these resource types are not yet supported by Cloud Asset Inventory (e.g. CloudSQL databases). In these cases only the display name will be provided.
+  Represents database access information, such as queries. A database may be a sub-resource of an instance (as in the case of Cloud SQL instances or Cloud Spanner instances), or the database instance itself. Some database resources might not have the [full resource name](https://google.aip.dev/122#full-resource-names) populated because these resource types, such as Cloud SQL databases, are not yet supported by Cloud Asset Inventory. In these cases only the display name is provided.
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of the database the user connected to.
-  *   `grantees` (*type:* `list(String.t)`, *default:* `nil`) - The target usernames/roles/groups of a SQL privilege grant (not an IAM policy change).
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the database the user connected to, if it is supported by CAI. (https://google.aip.dev/122#full-resource-names)
-  *   `query` (*type:* `String.t`, *default:* `nil`) - The SQL statement associated with the relevant access.
-  *   `userName` (*type:* `String.t`, *default:* `nil`) - The username used to connect to the DB. This may not necessarily be an IAM principal, and has no required format.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human-readable name of the database that the user connected to.
+  *   `grantees` (*type:* `list(String.t)`, *default:* `nil`) - The target usernames, roles, or groups of an SQL privilege grant, which is not an IAM policy change.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Some database resources may not have the [full resource name](https://google.aip.dev/122#full-resource-names) populated because these resource types are not yet supported by Cloud Asset Inventory (e.g. Cloud SQL databases). In these cases only the display name will be provided. The [full resource name](https://google.aip.dev/122#full-resource-names) of the database that the user connected to, if it is supported by Cloud Asset Inventory.
+  *   `query` (*type:* `String.t`, *default:* `nil`) - The SQL statement that is associated with the database access.
+  *   `userName` (*type:* `String.t`, *default:* `nil`) - The username used to connect to the database. The username might not be an IAM principal and does not have a set format.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the database, for example, POSTGRES_14. See [the complete list](https://cloud.google.com/sql/docs/mysql/admin-api/rest/v1/SqlDatabaseVersion).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Database do
           :grantees => list(String.t()) | nil,
           :name => String.t() | nil,
           :query => String.t() | nil,
-          :userName => String.t() | nil
+          :userName => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:displayName)
@@ -43,6 +45,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Database do
   field(:name)
   field(:query)
   field(:userName)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Database do

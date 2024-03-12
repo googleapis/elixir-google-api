@@ -17,17 +17,17 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.AccessReview do
   @moduledoc """
-  Conveys information about a Kubernetes access review (e.g. kubectl auth can-i ...) that was involved in a finding.
+  Conveys information about a Kubernetes access review (such as one returned by a [`kubectl auth can-i`](https://kubernetes.io/docs/reference/access-authn-authz/authorization/#checking-api-access) command) that was involved in a finding.
 
   ## Attributes
 
-  *   `group` (*type:* `String.t`, *default:* `nil`) - Group is the API Group of the Resource. "*" means all.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name is the name of the resource being requested. Empty means all.
+  *   `group` (*type:* `String.t`, *default:* `nil`) - The API group of the resource. "*" means all.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource being requested. Empty means all.
   *   `ns` (*type:* `String.t`, *default:* `nil`) - Namespace of the action being requested. Currently, there is no distinction between no namespace and all namespaces. Both are represented by "" (empty).
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - Resource is the optional resource type requested. "*" means all.
-  *   `subresource` (*type:* `String.t`, *default:* `nil`) - Subresource is the optional subresource type.
-  *   `verb` (*type:* `String.t`, *default:* `nil`) - Verb is a Kubernetes resource API verb, like: get, list, watch, create, update, delete, proxy. "*" means all.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Version is the API Version of the Resource. "*" means all.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The optional resource type requested. "*" means all.
+  *   `subresource` (*type:* `String.t`, *default:* `nil`) - The optional subresource type.
+  *   `verb` (*type:* `String.t`, *default:* `nil`) - A Kubernetes resource API verb, like get, list, watch, create, update, delete, proxy. "*" means all.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The API version of the resource. "*" means all.
   """
 
   use GoogleApi.Gax.ModelBase

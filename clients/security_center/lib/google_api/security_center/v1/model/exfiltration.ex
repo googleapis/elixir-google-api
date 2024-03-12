@@ -17,23 +17,26 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Exfiltration do
   @moduledoc """
-  Exfiltration represents a data exfiltration attempt of one or more sources to one or more targets. Sources represent the source of data that is exfiltrated, and Targets represents the destination the data was copied to.
+  Exfiltration represents a data exfiltration attempt from one or more sources to one or more targets. The `sources` attribute lists the sources of the exfiltrated data. The `targets` attribute lists the destinations the data was copied to.
 
   ## Attributes
 
   *   `sources` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple sources, then the data is considered "joined" between them. For instance, BigQuery can join multiple tables, and each table would be considered a source.
   *   `targets` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t)`, *default:* `nil`) - If there are multiple targets, each target would get a complete copy of the "joined" source data.
+  *   `totalExfiltratedBytes` (*type:* `String.t`, *default:* `nil`) - Total exfiltrated bytes processed for the entire job.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :sources => list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t()) | nil,
-          :targets => list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t()) | nil
+          :targets => list(GoogleApi.SecurityCenter.V1.Model.ExfilResource.t()) | nil,
+          :totalExfiltratedBytes => String.t() | nil
         }
 
   field(:sources, as: GoogleApi.SecurityCenter.V1.Model.ExfilResource, type: :list)
   field(:targets, as: GoogleApi.SecurityCenter.V1.Model.ExfilResource, type: :list)
+  field(:totalExfiltratedBytes)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Exfiltration do

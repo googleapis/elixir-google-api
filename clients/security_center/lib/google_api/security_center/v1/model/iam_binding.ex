@@ -22,7 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.IamBinding do
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action that was performed on a Binding.
-  *   `member` (*type:* `String.t`, *default:* `nil`) - A single identity requesting access for a Cloud Platform resource, e.g. "foo@google.com".
+  *   `member` (*type:* `String.t`, *default:* `nil`) - A single identity requesting access for a Cloud Platform resource, for example, "foo@google.com".
   *   `role` (*type:* `String.t`, *default:* `nil`) - Role that is assigned to "members". For example, "roles/viewer", "roles/editor", or "roles/owner".
   """
 

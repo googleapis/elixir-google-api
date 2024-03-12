@@ -21,10 +21,10 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Binding d
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for binding.
-  *   `ns` (*type:* `String.t`, *default:* `nil`) - Namespace for binding.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the binding.
+  *   `ns` (*type:* `String.t`, *default:* `nil`) - Namespace for the binding.
   *   `role` (*type:* `GoogleApi.SecurityCenter.V1.Model.Role.t`, *default:* `nil`) - The Role or ClusterRole referenced by the binding.
-  *   `subjects` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Subject.t)`, *default:* `nil`) - Represents the subjects(s) bound to the role. Not always available for PATCH requests.
+  *   `subjects` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Subject.t)`, *default:* `nil`) - Represents one or more subjects that are bound to the role. Not always available for PATCH requests.
   """
 
   use GoogleApi.Gax.ModelBase
