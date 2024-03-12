@@ -23,7 +23,7 @@ defmodule GoogleApi.MyBusinessBusinessInformation.V1.Model.ListLocationsResponse
 
   *   `locations` (*type:* `list(GoogleApi.MyBusinessBusinessInformation.V1.Model.Location.t)`, *default:* `nil`) - The locations.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the number of locations exceeded the requested page size, this field is populated with a token to fetch the next page of locations on a subsequent call to `ListLocations`. If there are no more locations, this field is not present in the response.
-  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The approximate number of Locations in the list irrespective of pagination.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The approximate number of Locations in the list irrespective of pagination. This field will only be returned if `filter` is used as a query parameter.
   """
 
   use GoogleApi.Gax.ModelBase
