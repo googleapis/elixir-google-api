@@ -18,7 +18,7 @@
 defmodule GoogleApi.HomeGraph.Mixfile do
   use Mix.Project
 
-  @version "0.12.1"
+  @version "0.13.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.HomeGraph.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/home_graph",
-        "Homepage" => "https://developers.google.com/actions/smarthome/create-app#request-sync"
+        "Homepage" => "https://developers.home.google.com/cloud-to-cloud/get-started"
       }
     ]
   end

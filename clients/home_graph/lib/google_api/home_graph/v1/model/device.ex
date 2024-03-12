@@ -17,21 +17,21 @@
 
 defmodule GoogleApi.HomeGraph.V1.Model.Device do
   @moduledoc """
-  Third-party device definition. Next ID = 14
+  Third-party device definition.
 
   ## Attributes
 
   *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes for the traits supported by the device.
-  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.google.com/assistant/smarthome/reference/intent/query) and [EXECUTE](https://developers.google.com/assistant/smarthome/reference/intent/execute) intent. Data in this object has a few constraints: No sensitive information, including but not limited to Personally Identifiable Information.
+  *   `customData` (*type:* `map()`, *default:* `nil`) - Custom device attributes stored in Home Graph and provided to your smart home Action in each [QUERY](https://developers.home.google.com/cloud-to-cloud/intents/query) and [EXECUTE](https://developers.home.google.com/cloud-to-cloud/intents/execute) intent. Data in this object has a few constraints: No sensitive information, including but not limited to Personally Identifiable Information.
   *   `deviceInfo` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceInfo.t`, *default:* `nil`) - Device manufacturer, model, hardware version, and software version.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Third-party device ID.
   *   `name` (*type:* `GoogleApi.HomeGraph.V1.Model.DeviceNames.t`, *default:* `nil`) - Names given to this device by your smart home Action.
   *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report notifications to Google for this device via ReportStateAndNotification. If your smart home Action enables users to control device notifications, you should update this field and call RequestSyncDevices.
-  *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - Alternate IDs associated with this device. This is used to identify cloud synced devices enabled for [local fulfillment](https://developers.google.com/assistant/smarthome/concepts/local).
+  *   `otherDeviceIds` (*type:* `list(GoogleApi.HomeGraph.V1.Model.AgentOtherDeviceId.t)`, *default:* `nil`) - Alternate IDs associated with this device. This is used to identify cloud synced devices enabled for [local fulfillment](https://developers.home.google.com/local-home/overview).
   *   `roomHint` (*type:* `String.t`, *default:* `nil`) - Suggested name for the room where this device is installed. Google attempts to use this value during user setup.
   *   `structureHint` (*type:* `String.t`, *default:* `nil`) - Suggested name for the structure where this device is installed. Google attempts to use this value during user setup.
-  *   `traits` (*type:* `list(String.t)`, *default:* `nil`) - Traits supported by the device. See [device traits](https://developers.google.com/assistant/smarthome/traits).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Hardware type of the device. See [device types](https://developers.google.com/assistant/smarthome/guides).
+  *   `traits` (*type:* `list(String.t)`, *default:* `nil`) - Traits supported by the device. See [device traits](https://developers.home.google.com/cloud-to-cloud/traits).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Hardware type of the device. See [device types](https://developers.home.google.com/cloud-to-cloud/guides).
   *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - Indicates whether your smart home Action will report state of this device to Google via ReportStateAndNotification.
   """
 
