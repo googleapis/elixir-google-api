@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   *   `contexts` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t)`, *default:* `nil`) - The collection of contexts to be activated before this query is executed.
   *   `geoLocation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t`, *default:* `nil`) - The geo location of this conversational query.
   *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data to your webhook. Arbitrary JSON objects are supported. If supplied, the value is used to populate the `WebhookRequest.original_detect_intent_request.payload` field sent to your webhook.
+  *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform of the virtual agent response messages. If not empty, only emits messages from this platform in the response. Valid values are the enum names of platform.
   *   `resetContexts` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to delete all contexts in the current session before the new ones are activated.
   *   `sentimentAnalysisRequestConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t`, *default:* `nil`) - Configures the type of sentiment analysis to perform. If not provided, sentiment analysis is not performed.
   *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SessionEntityType.t)`, *default:* `nil`) - Additional session entity types to replace or extend developer entity types with. The entity synonyms apply to all languages and persist for the session of this query.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
             list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context.t()) | nil,
           :geoLocation => GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng.t() | nil,
           :payload => map() | nil,
+          :platform => String.t() | nil,
           :resetContexts => boolean() | nil,
           :sentimentAnalysisRequestConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SentimentAnalysisRequestConfig.t()
@@ -51,6 +53,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2QueryParameters d
   field(:contexts, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2Context, type: :list)
   field(:geoLocation, as: GoogleApi.Dialogflow.V2.Model.GoogleTypeLatLng)
   field(:payload, type: :map)
+  field(:platform)
   field(:resetContexts)
 
   field(:sentimentAnalysisRequestConfig,

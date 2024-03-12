@@ -22,15 +22,24 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   ## Attributes
 
   *   `agent` (*type:* `String.t`, *default:* `nil`) - Required. The name of a Dialogflow virtual agent used for end user side intent detection and suggestion. Format: `projects//locations//agent`. When multiple agents are allowed in the same Dialogflow project.
+  *   `humanAgentSideConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDialogflowQuerySourceHumanAgentSideConfig.t`, *default:* `nil`) - Optional. The Dialogflow assist configuration for human agent.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agent => String.t() | nil
+          :agent => String.t() | nil,
+          :humanAgentSideConfig =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDialogflowQuerySourceHumanAgentSideConfig.t()
+            | nil
         }
 
   field(:agent)
+
+  field(:humanAgentSideConfig,
+    as:
+      GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfigDialogflowQuerySourceHumanAgentSideConfig
+  )
 end
 
 defimpl Poison.Decoder,

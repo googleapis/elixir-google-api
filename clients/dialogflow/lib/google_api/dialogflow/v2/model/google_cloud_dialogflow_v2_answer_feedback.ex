@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AnswerFeedback do
 
   *   `agentAssistantDetailFeedback` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2AgentAssistantFeedback.t`, *default:* `nil`) - Detail feedback of agent assist suggestions.
   *   `clickTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the answer/item was clicked.
-  *   `clicked` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the answer/item was clicked by the human agent or not. Default to false.
+  *   `clicked` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the answer/item was clicked by the human agent or not. Default to false. For knowledge search and knowledge assist, the answer record is considered to be clicked if the answer was copied or any URI was clicked.
   *   `correctnessLevel` (*type:* `String.t`, *default:* `nil`) - The correctness level of the specific answer.
   *   `displayTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the answer/item was displayed.
   *   `displayed` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the answer/item was displayed to the human agent in the agent desktop UI. Default to false.

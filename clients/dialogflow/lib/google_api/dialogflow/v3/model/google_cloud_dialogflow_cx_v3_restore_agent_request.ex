@@ -23,6 +23,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RestoreAgentReq
 
   *   `agentContent` (*type:* `String.t`, *default:* `nil`) - Uncompressed raw byte content for agent.
   *   `agentUri` (*type:* `String.t`, *default:* `nil`) - The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to restore agent from. The format of this URI must be `gs:///`. Dialogflow performs a read operation for the Cloud Storage object on the caller's behalf, so your request authentication must have read permissions for the object. For more information, see [Dialogflow access control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
+  *   `gitSource` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RestoreAgentRequestGitSource.t`, *default:* `nil`) - Setting for restoring from a git branch
   *   `restoreOption` (*type:* `String.t`, *default:* `nil`) - Agent restore mode. If not specified, `KEEP` is assumed.
   """
 
@@ -31,11 +32,19 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RestoreAgentReq
   @type t :: %__MODULE__{
           :agentContent => String.t() | nil,
           :agentUri => String.t() | nil,
+          :gitSource =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RestoreAgentRequestGitSource.t()
+            | nil,
           :restoreOption => String.t() | nil
         }
 
   field(:agentContent)
   field(:agentUri)
+
+  field(:gitSource,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RestoreAgentRequestGitSource
+  )
+
   field(:restoreOption)
 end
 

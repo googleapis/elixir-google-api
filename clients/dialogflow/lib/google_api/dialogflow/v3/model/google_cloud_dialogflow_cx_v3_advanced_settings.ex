@@ -21,19 +21,42 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSetting
 
   ## Attributes
 
+  *   `audioExportGcsDestination` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GcsDestination.t`, *default:* `nil`) - If present, incoming audio is exported by Dialogflow to the configured Google Cloud Storage destination. Exposed at the following levels: - Agent level - Flow level
+  *   `dtmfSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettings.t`, *default:* `nil`) - Settings for DTMF. Exposed at the following levels: - Agent level - Flow level - Page level - Parameter level.
   *   `loggingSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsLoggingSettings.t`, *default:* `nil`) - Settings for logging. Settings for Dialogflow History, Contact Center messages, StackDriver logs, and speech logging. Exposed at the following levels: - Agent level.
+  *   `speechSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings.t`, *default:* `nil`) - Settings for speech to text detection. Exposed at the following levels: - Agent level - Flow level - Page level - Parameter level
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audioExportGcsDestination =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GcsDestination.t() | nil,
+          :dtmfSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettings.t()
+            | nil,
           :loggingSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsLoggingSettings.t()
+            | nil,
+          :speechSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings.t()
             | nil
         }
 
+  field(:audioExportGcsDestination,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3GcsDestination
+  )
+
+  field(:dtmfSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsDtmfSettings
+  )
+
   field(:loggingSettings,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsLoggingSettings
+  )
+
+  field(:speechSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettingsSpeechSettings
   )
 end
 

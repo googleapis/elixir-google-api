@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GcsSources do
 
   ## Attributes
 
-  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Required. Google Cloud Storage URIs for the inputs. A URI is of the form: gs://bucket/object-prefix-or-name Whether a prefix or name is used depends on the use case.
+  *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Required. Google Cloud Storage URIs for the inputs. A URI is of the form: `gs://bucket/object-prefix-or-name` Whether a prefix or name is used depends on the use case.
   """
 
   use GoogleApi.Gax.ModelBase

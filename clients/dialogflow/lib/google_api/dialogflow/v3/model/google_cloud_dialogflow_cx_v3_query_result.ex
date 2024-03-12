@@ -21,9 +21,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
 
   ## Attributes
 
+  *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Returns the current advanced settings including IVR settings. Even though the operations configured by these settings are performed by Dialogflow, the client may need to perform special logic at the moment. For example, if Dialogflow exports audio to Google Cloud Storage, then the client may need to wait for the resulting object to appear in the bucket before proceeding.
+  *   `allowAnswerFeedback` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the Thumbs up/Thumbs down rating controls are need to be shown for the response in the Dialogflow Messenger widget.
   *   `currentPage` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page.t`, *default:* `nil`) - The current Page. Some, not all fields are filled in this message, including but not limited to `name` and `display_name`.
   *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - The free-form diagnostic info. For example, this field could contain webhook call latency. The fields of this data can change without notice, so you should not write code that depends on its structure. One of the fields is called "Alternative Matched Intents", which may aid with debugging. The following describes these intent results: - The list is empty if no intent was matched to end-user input. - Only intents that are referenced in the currently active flow are included. - The matched intent is included. - Other intents that could have matched end-user input, but did not match because they are referenced by intent routes that are out of [scope](https://cloud.google.com/dialogflow/cx/docs/concept/handler#scope), are included. - Other intents referenced by intent routes in scope that matched end-user input, but had a lower confidence score.
-  *   `dtmf` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput.t`, *default:* `nil`) - If a DTMF was provided as input, this field will contain a copy of the DTMFInput.
+  *   `dtmf` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput.t`, *default:* `nil`) - If a DTMF was provided as input, this field will contain a copy of the DtmfInput.
   *   `intent` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Intent.t`, *default:* `nil`) - The Intent that matched the conversational query. Some, not all fields are filled in this message, including but not limited to: `name` and `display_name`. This field is deprecated, please use QueryResult.match instead.
   *   `intentDetectionConfidence` (*type:* `number()`, *default:* `nil`) - The intent detection confidence. Values range from 0.0 (completely uncertain) to 1.0 (completely certain). This value is for informational purpose only and is only used to help match the best intent within the classification threshold. This value may change for the same end-user expression at any time due to a model retraining or change in implementation. This field is deprecated, please use QueryResult.match instead.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language that was triggered during intent detection. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes.
@@ -42,6 +44,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t() | nil,
+          :allowAnswerFeedback => boolean() | nil,
           :currentPage => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page.t() | nil,
           :diagnosticInfo => map() | nil,
           :dtmf => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput.t() | nil,
@@ -63,6 +68,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
           :webhookStatuses => list(GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus.t()) | nil
         }
 
+  field(:advancedSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings
+  )
+
+  field(:allowAnswerFeedback)
   field(:currentPage, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page)
   field(:diagnosticInfo, type: :map)
   field(:dtmf, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput)

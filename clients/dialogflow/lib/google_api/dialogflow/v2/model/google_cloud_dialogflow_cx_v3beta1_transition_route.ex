@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Transition
   ## Attributes
 
   *   `condition` (*type:* `String.t`, *default:* `nil`) - The condition to evaluate against form parameters or session parameters. See the [conditions reference](https://cloud.google.com/dialogflow/cx/docs/reference/condition). At least one of `intent` or `condition` must be specified. When both `intent` and `condition` are specified, the transition can only happen when both are fulfilled.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the transition route. The maximum length is 500 characters.
   *   `intent` (*type:* `String.t`, *default:* `nil`) - The unique identifier of an Intent. Format: `projects//locations//agents//intents/`. Indicates that the transition can only happen when the given intent is matched. At least one of `intent` or `condition` must be specified. When both `intent` and `condition` are specified, the transition can only happen when both are fulfilled.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of this transition route.
   *   `targetFlow` (*type:* `String.t`, *default:* `nil`) - The target flow to transition to. Format: `projects//locations//agents//flows/`.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Transition
 
   @type t :: %__MODULE__{
           :condition => String.t() | nil,
+          :description => String.t() | nil,
           :intent => String.t() | nil,
           :name => String.t() | nil,
           :targetFlow => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1Transition
         }
 
   field(:condition)
+  field(:description)
   field(:intent)
   field(:name)
   field(:targetFlow)

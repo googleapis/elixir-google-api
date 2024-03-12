@@ -22,27 +22,39 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
   ## Attributes
 
   *   `allowedCaCerts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification. This overrides the default SSL trust store. If this is empty or unspecified, Dialogflow will use Google's default trust store to verify certificates. N.B. Make sure the HTTPS server certificates are signed with "subject alt name". For instance a certificate can be self-signed using the following command, ``` openssl x509 -req -days 200 -in example.com.csr \\ -signkey example.com.key \\ -out example.com.crt \\ -extfile <(printf "\\nsubjectAltName='DNS:www.example.com'") ```
+  *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Optional. HTTP method for the flexible webhook calls. Standard webhook always uses POST.
+  *   `parameterMapping` (*type:* `map()`, *default:* `nil`) - Optional. Maps the values extracted from specific fields of the flexible webhook response into session parameters. - Key: session parameter name - Value: field path in the webhook response
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for HTTP Basic authentication.
+  *   `requestBody` (*type:* `String.t`, *default:* `nil`) - Optional. Defines a custom JSON object as request body to send to flexible webhook.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - The HTTP request headers to send together with webhook requests.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The webhook URI for receiving POST requests. It must use https protocol.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The user name for HTTP Basic authentication.
+  *   `webhookType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the webhook.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :allowedCaCerts => list(String.t()) | nil,
+          :httpMethod => String.t() | nil,
+          :parameterMapping => map() | nil,
           :password => String.t() | nil,
+          :requestBody => String.t() | nil,
           :requestHeaders => map() | nil,
           :uri => String.t() | nil,
-          :username => String.t() | nil
+          :username => String.t() | nil,
+          :webhookType => String.t() | nil
         }
 
   field(:allowedCaCerts, type: :list)
+  field(:httpMethod)
+  field(:parameterMapping, type: :map)
   field(:password)
+  field(:requestBody)
   field(:requestHeaders, type: :map)
   field(:uri)
   field(:username)
+  field(:webhookType)
 end
 
 defimpl Poison.Decoder,

@@ -24,6 +24,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExportAgentRequ
   *   `agentUri` (*type:* `String.t`, *default:* `nil`) - Optional. The [Google Cloud Storage](https://cloud.google.com/storage/docs/) URI to export the agent to. The format of this URI must be `gs:///`. If left unspecified, the serialized agent is returned inline. Dialogflow performs a write operation for the Cloud Storage object on the caller's behalf, so your request authentication must have write permissions for the object. For more information, see [Dialogflow access control](https://cloud.google.com/dialogflow/cx/docs/concept/access-control#storage).
   *   `dataFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The data format of the exported agent. If not specified, `BLOB` is assumed.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Optional. Environment name. If not set, draft environment is assumed. Format: `projects//locations//agents//environments/`.
+  *   `gitDestination` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination.t`, *default:* `nil`) - Optional. The Git branch to export the agent to.
+  *   `includeBigqueryExportSettings` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to include BigQuery Export setting.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +33,22 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExportAgentRequ
   @type t :: %__MODULE__{
           :agentUri => String.t() | nil,
           :dataFormat => String.t() | nil,
-          :environment => String.t() | nil
+          :environment => String.t() | nil,
+          :gitDestination =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination.t()
+            | nil,
+          :includeBigqueryExportSettings => boolean() | nil
         }
 
   field(:agentUri)
   field(:dataFormat)
   field(:environment)
+
+  field(:gitDestination,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExportAgentRequestGitDestination
+  )
+
+  field(:includeBigqueryExportSettings)
 end
 
 defimpl Poison.Decoder,

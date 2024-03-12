@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ValidationError d
 
   ## Attributes
 
-  *   `entries` (*type:* `list(String.t)`, *default:* `nil`) - The names of the entries that the error is associated with. Format: - "projects//agent", if the error is associated with the entire agent. - "projects//agent/intents/", if the error is associated with certain intents. - "projects//agent/intents//trainingPhrases/", if the error is associated with certain intent training phrases. - "projects//agent/intents//parameters/", if the error is associated with certain intent parameters. - "projects//agent/entities/", if the error is associated with certain entities.
+  *   `entries` (*type:* `list(String.t)`, *default:* `nil`) - The names of the entries that the error is associated with. Format: - `projects//agent`, if the error is associated with the entire agent. - `projects//agent/intents/`, if the error is associated with certain intents. - `projects//agent/intents//trainingPhrases/`, if the error is associated with certain intent training phrases. - `projects//agent/intents//parameters/`, if the error is associated with certain intent parameters. - `projects//agent/entities/`, if the error is associated with certain entities.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - The detailed error message.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the error.
   """

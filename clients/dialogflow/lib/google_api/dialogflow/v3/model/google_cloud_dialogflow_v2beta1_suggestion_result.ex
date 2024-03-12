@@ -23,6 +23,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
 
   *   `error` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus.t`, *default:* `nil`) - Error status if the request failed.
   *   `suggestArticlesResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse.t`, *default:* `nil`) - SuggestArticlesResponse if request is for ARTICLE_SUGGESTION.
+  *   `suggestDialogflowAssistsResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
+  *   `suggestEntityExtractionResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
   *   `suggestFaqAnswersResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse.t`, *default:* `nil`) - SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
   *   `suggestSmartRepliesResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse.t`, *default:* `nil`) - SuggestSmartRepliesResponse if request is for SMART_REPLY.
   """
@@ -33,6 +35,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
           :error => GoogleApi.Dialogflow.V3.Model.GoogleRpcStatus.t() | nil,
           :suggestArticlesResponse =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse.t()
+            | nil,
+          :suggestDialogflowAssistsResponse =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t()
+            | nil,
+          :suggestEntityExtractionResponse =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t()
             | nil,
           :suggestFaqAnswersResponse =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse.t()
@@ -46,6 +54,14 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
 
   field(:suggestArticlesResponse,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestArticlesResponse
+  )
+
+  field(:suggestDialogflowAssistsResponse,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse
+  )
+
+  field(:suggestEntityExtractionResponse,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse
   )
 
   field(:suggestFaqAnswersResponse,

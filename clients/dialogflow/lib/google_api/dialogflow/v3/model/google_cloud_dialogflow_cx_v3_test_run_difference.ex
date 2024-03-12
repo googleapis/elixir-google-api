@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TestRunDifferen
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the diff, showing the actual output vs expected output.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A human readable description of the diff, showing the actual output vs expected output.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of diff.
   """
 
