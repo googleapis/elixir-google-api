@@ -24,6 +24,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails do
   *   `gpsDataGapDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.GpsDataGapFailureDetails.t`, *default:* `nil`) - See GpsDataGapFailureDetails.
   *   `imuDataGapDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.ImuDataGapFailureDetails.t`, *default:* `nil`) - See ImuDataGapFailureDetails.
   *   `insufficientGpsDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.InsufficientGpsFailureDetails.t`, *default:* `nil`) - See InsufficientGpsFailureDetails.
+  *   `noOverlapGpsDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.NoOverlapGpsFailureDetails.t`, *default:* `nil`) - See NoOverlapGpsFailureDetails.
   *   `notOutdoorsDetails` (*type:* `GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails.t`, *default:* `nil`) - See NotOutdoorsFailureDetails.
   """
 
@@ -36,6 +37,8 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails do
             GoogleApi.StreetViewPublish.V1.Model.ImuDataGapFailureDetails.t() | nil,
           :insufficientGpsDetails =>
             GoogleApi.StreetViewPublish.V1.Model.InsufficientGpsFailureDetails.t() | nil,
+          :noOverlapGpsDetails =>
+            GoogleApi.StreetViewPublish.V1.Model.NoOverlapGpsFailureDetails.t() | nil,
           :notOutdoorsDetails =>
             GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails.t() | nil
         }
@@ -47,6 +50,7 @@ defmodule GoogleApi.StreetViewPublish.V1.Model.ProcessingFailureDetails do
     as: GoogleApi.StreetViewPublish.V1.Model.InsufficientGpsFailureDetails
   )
 
+  field(:noOverlapGpsDetails, as: GoogleApi.StreetViewPublish.V1.Model.NoOverlapGpsFailureDetails)
   field(:notOutdoorsDetails, as: GoogleApi.StreetViewPublish.V1.Model.NotOutdoorsFailureDetails)
 end
 
