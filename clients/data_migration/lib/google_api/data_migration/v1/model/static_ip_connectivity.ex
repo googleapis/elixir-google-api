@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DataMigration.V1.Model.StaticIpConnectivity do
   @moduledoc """
-  The source database will allow incoming connections from the destination database's public IP. You can retrieve the Cloud SQL instance's public IP from the Cloud SQL console or using Cloud SQL APIs. No additional configuration is required.
+  The source database will allow incoming connections from the public IP of the destination database. You can retrieve the public IP of the Cloud SQL instance from the Cloud SQL console or using Cloud SQL APIs. No additional configuration is required.
 
   ## Attributes
 

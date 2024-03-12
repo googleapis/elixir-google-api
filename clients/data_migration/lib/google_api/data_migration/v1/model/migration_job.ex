@@ -21,6 +21,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
 
   ## Attributes
 
+  *   `cmekKeyName` (*type:* `String.t`, *default:* `nil`) - The CMEK (customer-managed encryption key) fully qualified key name used for the migration job. This field supports all migration jobs types except for: * Mysql to Mysql (use the cmek field in the cloudsql connection profile instead). * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql connection profile instead). * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb connection profile instead). Each Cloud CMEK key has the following format: projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
+  *   `conversionWorkspace` (*type:* `GoogleApi.DataMigration.V1.Model.ConversionWorkspaceInfo.t`, *default:* `nil`) - The conversion workspace used by the migration.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
   *   `destination` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the destination connection profile.
   *   `destinationDatabase` (*type:* `GoogleApi.DataMigration.V1.Model.DatabaseType.t`, *default:* `nil`) - The database engine type and provider of the destination.
@@ -30,8 +32,10 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. If the migration job is completed, the time when it was completed.
   *   `error` (*type:* `GoogleApi.DataMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. The error details in case of state FAILED.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - This field can be used to select the entities to migrate as part of the migration job. It uses AIP-160 notation to select a subset of the entities configured on the associated conversion-workspace. This field should not be set on migration-jobs that are not associated with a conversion workspace.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
+  *   `performanceConfig` (*type:* `GoogleApi.DataMigration.V1.Model.PerformanceConfig.t`, *default:* `nil`) - Optional. Data dump parallelism settings used by the migration. Currently applicable only for MySQL to Cloud SQL for MySQL migrations only.
   *   `phase` (*type:* `String.t`, *default:* `nil`) - Output only. The current migration job phase.
   *   `reverseSshConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity.t`, *default:* `nil`) - The details needed to communicate to the source over Reverse SSH tunnel connectivity.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Required. The resource name (URI) of the source connection profile.
@@ -46,6 +50,9 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cmekKeyName => String.t() | nil,
+          :conversionWorkspace =>
+            GoogleApi.DataMigration.V1.Model.ConversionWorkspaceInfo.t() | nil,
           :createTime => DateTime.t() | nil,
           :destination => String.t() | nil,
           :destinationDatabase => GoogleApi.DataMigration.V1.Model.DatabaseType.t() | nil,
@@ -55,8 +62,10 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
           :duration => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.DataMigration.V1.Model.Status.t() | nil,
+          :filter => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :performanceConfig => GoogleApi.DataMigration.V1.Model.PerformanceConfig.t() | nil,
           :phase => String.t() | nil,
           :reverseSshConnectivity =>
             GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity.t() | nil,
@@ -71,6 +80,8 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
             GoogleApi.DataMigration.V1.Model.VpcPeeringConnectivity.t() | nil
         }
 
+  field(:cmekKeyName)
+  field(:conversionWorkspace, as: GoogleApi.DataMigration.V1.Model.ConversionWorkspaceInfo)
   field(:createTime, as: DateTime)
   field(:destination)
   field(:destinationDatabase, as: GoogleApi.DataMigration.V1.Model.DatabaseType)
@@ -80,8 +91,10 @@ defmodule GoogleApi.DataMigration.V1.Model.MigrationJob do
   field(:duration)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.DataMigration.V1.Model.Status)
+  field(:filter)
   field(:labels, type: :map)
   field(:name)
+  field(:performanceConfig, as: GoogleApi.DataMigration.V1.Model.PerformanceConfig)
   field(:phase)
   field(:reverseSshConnectivity, as: GoogleApi.DataMigration.V1.Model.ReverseSshConnectivity)
   field(:source)

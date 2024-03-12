@@ -21,6 +21,8 @@ defmodule GoogleApi.DataMigration.V1.Model.AlloyDbSettings do
 
   ## Attributes
 
+  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The database engine major version. This is an optional field. If a database version is not supplied at cluster creation time, then a default database version will be used.
+  *   `encryptionConfig` (*type:* `GoogleApi.DataMigration.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption config can be specified to encrypt the data disks and other persistent data resources of a cluster with a customer-managed encryption key (CMEK). When this field is not specified, the cluster will then use default encryption scheme to protect the user data.
   *   `initialUser` (*type:* `GoogleApi.DataMigration.V1.Model.UserPassword.t`, *default:* `nil`) - Required. Input only. Initial user to setup during cluster creation. Required.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels for the AlloyDB cluster created by DMS. An object containing a list of 'key', 'value' pairs.
   *   `primaryInstanceSettings` (*type:* `GoogleApi.DataMigration.V1.Model.PrimaryInstanceSettings.t`, *default:* `nil`) - 
@@ -30,6 +32,8 @@ defmodule GoogleApi.DataMigration.V1.Model.AlloyDbSettings do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseVersion => String.t() | nil,
+          :encryptionConfig => GoogleApi.DataMigration.V1.Model.EncryptionConfig.t() | nil,
           :initialUser => GoogleApi.DataMigration.V1.Model.UserPassword.t() | nil,
           :labels => map() | nil,
           :primaryInstanceSettings =>
@@ -37,6 +41,8 @@ defmodule GoogleApi.DataMigration.V1.Model.AlloyDbSettings do
           :vpcNetwork => String.t() | nil
         }
 
+  field(:databaseVersion)
+  field(:encryptionConfig, as: GoogleApi.DataMigration.V1.Model.EncryptionConfig)
   field(:initialUser, as: GoogleApi.DataMigration.V1.Model.UserPassword)
   field(:labels, type: :map)
   field(:primaryInstanceSettings, as: GoogleApi.DataMigration.V1.Model.PrimaryInstanceSettings)

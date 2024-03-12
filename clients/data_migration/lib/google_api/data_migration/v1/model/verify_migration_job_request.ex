@@ -21,11 +21,19 @@ defmodule GoogleApi.DataMigration.V1.Model.VerifyMigrationJobRequest do
 
   ## Attributes
 
+  *   `migrationJob` (*type:* `GoogleApi.DataMigration.V1.Model.MigrationJob.t`, *default:* `nil`) - Optional. The changed migration job parameters to verify. It will not update the migration job.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. Field mask is used to specify the changed fields to be verified. It will not update the migration job.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :migrationJob => GoogleApi.DataMigration.V1.Model.MigrationJob.t() | nil,
+          :updateMask => String.t() | nil
+        }
+
+  field(:migrationJob, as: GoogleApi.DataMigration.V1.Model.MigrationJob)
+  field(:updateMask)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataMigration.V1.Model.VerifyMigrationJobRequest do

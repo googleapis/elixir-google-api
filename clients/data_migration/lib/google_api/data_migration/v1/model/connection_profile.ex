@@ -29,6 +29,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The resource labels for connection profile to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
   *   `mysql` (*type:* `GoogleApi.DataMigration.V1.Model.MySqlConnectionProfile.t`, *default:* `nil`) - A MySQL database connection profile.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this connection profile resource in the form of projects/{project}/locations/{location}/connectionProfiles/{connectionProfile}.
+  *   `oracle` (*type:* `GoogleApi.DataMigration.V1.Model.OracleConnectionProfile.t`, *default:* `nil`) - An Oracle database connection profile.
   *   `postgresql` (*type:* `GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile.t`, *default:* `nil`) - A PostgreSQL database connection profile.
   *   `provider` (*type:* `String.t`, *default:* `nil`) - The database provider.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current connection profile state (e.g. DRAFT, READY, or FAILED).
@@ -46,6 +47,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
           :labels => map() | nil,
           :mysql => GoogleApi.DataMigration.V1.Model.MySqlConnectionProfile.t() | nil,
           :name => String.t() | nil,
+          :oracle => GoogleApi.DataMigration.V1.Model.OracleConnectionProfile.t() | nil,
           :postgresql => GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile.t() | nil,
           :provider => String.t() | nil,
           :state => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.DataMigration.V1.Model.ConnectionProfile do
   field(:labels, type: :map)
   field(:mysql, as: GoogleApi.DataMigration.V1.Model.MySqlConnectionProfile)
   field(:name)
+  field(:oracle, as: GoogleApi.DataMigration.V1.Model.OracleConnectionProfile)
   field(:postgresql, as: GoogleApi.DataMigration.V1.Model.PostgreSqlConnectionProfile)
   field(:provider)
   field(:state)
