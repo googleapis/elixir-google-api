@@ -21,6 +21,7 @@ defmodule GoogleApi.TagManager.V2.Model.Parameter do
 
   ## Attributes
 
+  *   `isWeakReference` (*type:* `boolean()`, *default:* `nil`) - Whether or not a reference type parameter is strongly or weakly referenced. Only used by Transformations. @mutable tagmanager.accounts.containers.workspaces.transformations.create @mutable tagmanager.accounts.containers.workspaces.transformations.update
   *   `key` (*type:* `String.t`, *default:* `nil`) - The named key that uniquely identifies a parameter. Required for top-level parameters, as well as map values. Ignored for list values. @mutable tagmanager.accounts.containers.workspaces.variables.create @mutable tagmanager.accounts.containers.workspaces.variables.update @mutable tagmanager.accounts.containers.workspaces.triggers.create @mutable tagmanager.accounts.containers.workspaces.triggers.update @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `list` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - This list parameter's parameters (keys will be ignored). @mutable tagmanager.accounts.containers.workspaces.variables.create @mutable tagmanager.accounts.containers.workspaces.variables.update @mutable tagmanager.accounts.containers.workspaces.triggers.create @mutable tagmanager.accounts.containers.workspaces.triggers.update @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
   *   `map` (*type:* `list(GoogleApi.TagManager.V2.Model.Parameter.t)`, *default:* `nil`) - This map parameter's parameters (must have keys; keys must be unique). @mutable tagmanager.accounts.containers.workspaces.variables.create @mutable tagmanager.accounts.containers.workspaces.variables.update @mutable tagmanager.accounts.containers.workspaces.triggers.create @mutable tagmanager.accounts.containers.workspaces.triggers.update @mutable tagmanager.accounts.containers.workspaces.tags.create @mutable tagmanager.accounts.containers.workspaces.tags.update
@@ -31,6 +32,7 @@ defmodule GoogleApi.TagManager.V2.Model.Parameter do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :isWeakReference => boolean() | nil,
           :key => String.t() | nil,
           :list => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
           :map => list(GoogleApi.TagManager.V2.Model.Parameter.t()) | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.TagManager.V2.Model.Parameter do
           :value => String.t() | nil
         }
 
+  field(:isWeakReference)
   field(:key)
   field(:list, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)
   field(:map, as: GoogleApi.TagManager.V2.Model.Parameter, type: :list)

@@ -32,6 +32,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   *   `numMacros` (*type:* `String.t`, *default:* `nil`) - Number of macros in the container version.
   *   `numRules` (*type:* `String.t`, *default:* `nil`) - Number of rules in the container version.
   *   `numTags` (*type:* `String.t`, *default:* `nil`) - Number of tags in the container version.
+  *   `numTransformations` (*type:* `String.t`, *default:* `nil`) - Number of transformations in the container version.
   *   `numTriggers` (*type:* `String.t`, *default:* `nil`) - Number of triggers in the container version.
   *   `numVariables` (*type:* `String.t`, *default:* `nil`) - Number of variables in the container version.
   *   `numZones` (*type:* `String.t`, *default:* `nil`) - Number of zones in the container version.
@@ -52,6 +53,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
           :numMacros => String.t() | nil,
           :numRules => String.t() | nil,
           :numTags => String.t() | nil,
+          :numTransformations => String.t() | nil,
           :numTriggers => String.t() | nil,
           :numVariables => String.t() | nil,
           :numZones => String.t() | nil,
@@ -69,6 +71,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersionHeader do
   field(:numMacros)
   field(:numRules)
   field(:numTags)
+  field(:numTransformations)
   field(:numTriggers)
   field(:numVariables)
   field(:numZones)

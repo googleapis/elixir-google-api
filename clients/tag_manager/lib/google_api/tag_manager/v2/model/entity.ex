@@ -21,31 +21,46 @@ defmodule GoogleApi.TagManager.V2.Model.Entity do
 
   ## Attributes
 
+  *   `builtInVariable` (*type:* `GoogleApi.TagManager.V2.Model.BuiltInVariable.t`, *default:* `nil`) - The built in variable being represented by the entity.
   *   `changeStatus` (*type:* `String.t`, *default:* `nil`) - Represents how the entity has been changed in the workspace.
   *   `client` (*type:* `GoogleApi.TagManager.V2.Model.Client.t`, *default:* `nil`) - The client being represented by the entity.
+  *   `customTemplate` (*type:* `GoogleApi.TagManager.V2.Model.CustomTemplate.t`, *default:* `nil`) - The custom template being represented by the entity.
   *   `folder` (*type:* `GoogleApi.TagManager.V2.Model.Folder.t`, *default:* `nil`) - The folder being represented by the entity.
+  *   `gtagConfig` (*type:* `GoogleApi.TagManager.V2.Model.GtagConfig.t`, *default:* `nil`) - The gtag config being represented by the entity.
   *   `tag` (*type:* `GoogleApi.TagManager.V2.Model.Tag.t`, *default:* `nil`) - The tag being represented by the entity.
+  *   `transformation` (*type:* `GoogleApi.TagManager.V2.Model.Transformation.t`, *default:* `nil`) - The transformation being represented by the entity.
   *   `trigger` (*type:* `GoogleApi.TagManager.V2.Model.Trigger.t`, *default:* `nil`) - The trigger being represented by the entity.
   *   `variable` (*type:* `GoogleApi.TagManager.V2.Model.Variable.t`, *default:* `nil`) - The variable being represented by the entity.
+  *   `zone` (*type:* `GoogleApi.TagManager.V2.Model.Zone.t`, *default:* `nil`) - The zone being represented by the entity.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :builtInVariable => GoogleApi.TagManager.V2.Model.BuiltInVariable.t() | nil,
           :changeStatus => String.t() | nil,
           :client => GoogleApi.TagManager.V2.Model.Client.t() | nil,
+          :customTemplate => GoogleApi.TagManager.V2.Model.CustomTemplate.t() | nil,
           :folder => GoogleApi.TagManager.V2.Model.Folder.t() | nil,
+          :gtagConfig => GoogleApi.TagManager.V2.Model.GtagConfig.t() | nil,
           :tag => GoogleApi.TagManager.V2.Model.Tag.t() | nil,
+          :transformation => GoogleApi.TagManager.V2.Model.Transformation.t() | nil,
           :trigger => GoogleApi.TagManager.V2.Model.Trigger.t() | nil,
-          :variable => GoogleApi.TagManager.V2.Model.Variable.t() | nil
+          :variable => GoogleApi.TagManager.V2.Model.Variable.t() | nil,
+          :zone => GoogleApi.TagManager.V2.Model.Zone.t() | nil
         }
 
+  field(:builtInVariable, as: GoogleApi.TagManager.V2.Model.BuiltInVariable)
   field(:changeStatus)
   field(:client, as: GoogleApi.TagManager.V2.Model.Client)
+  field(:customTemplate, as: GoogleApi.TagManager.V2.Model.CustomTemplate)
   field(:folder, as: GoogleApi.TagManager.V2.Model.Folder)
+  field(:gtagConfig, as: GoogleApi.TagManager.V2.Model.GtagConfig)
   field(:tag, as: GoogleApi.TagManager.V2.Model.Tag)
+  field(:transformation, as: GoogleApi.TagManager.V2.Model.Transformation)
   field(:trigger, as: GoogleApi.TagManager.V2.Model.Trigger)
   field(:variable, as: GoogleApi.TagManager.V2.Model.Variable)
+  field(:zone, as: GoogleApi.TagManager.V2.Model.Zone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.TagManager.V2.Model.Entity do
