@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfile do
   @moduledoc """
-  Profile information describing the structure and layout of the data and contains the profile info.
+  Contains name, type, mode and field type specific profile information.
 
   ## Attributes
 
-  *   `fields` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileField.t)`, *default:* `nil`) - The sequence of fields describing data in table entities.
+  *   `fields` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileField.t)`, *default:* `nil`) - List of fields with structural and profile information for each field.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,8 +21,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec
 
   ## Attributes
 
-  *   `field` (*type:* `String.t`, *default:* `nil`) - Immutable. The unnested field (Date or Timestamp) that contains values that monotonically increase over time.
-  *   `trigger` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Trigger.t`, *default:* `nil`) - Optional. Spec related to how often and when a scan should be triggered. If not specified, the default is OnDemand, which means the scan will not run until the user calls RunDataScan API.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - Immutable. The unnested field (of type Date or Timestamp) that contains values which monotonically increase over time.If not specified, a data scan will run for all data in the table.
+  *   `trigger` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Trigger.t`, *default:* `nil`) - Optional. Spec related to how often and when a scan should be triggered.If not specified, the default is OnDemand, which means the scan will not run until the user calls RunDataScan API.
   """
 
   use GoogleApi.Gax.ModelBase

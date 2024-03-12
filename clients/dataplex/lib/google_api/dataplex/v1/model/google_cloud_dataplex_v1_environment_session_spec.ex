@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EnvironmentSessionSpec do
   @moduledoc """
-
+  Configuration for sessions created for this environment.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListDataScanJobsRespo
 
   ## Attributes
 
-  *   `dataScanJobs` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob.t)`, *default:* `nil`) - DataScanJobs (metadata only) under a given dataScan.
+  *   `dataScanJobs` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob.t)`, *default:* `nil`) - DataScanJobs (BASIC view only) under a given dataScan.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 

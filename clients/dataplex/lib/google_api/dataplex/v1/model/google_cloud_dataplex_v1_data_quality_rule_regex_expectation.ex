@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRegexE
 
   ## Attributes
 
-  *   `regex` (*type:* `String.t`, *default:* `nil`) - 
+  *   `regex` (*type:* `String.t`, *default:* `nil`) - Optional. A regular expression the column value is expected to match.
   """
 
   use GoogleApi.Gax.ModelBase

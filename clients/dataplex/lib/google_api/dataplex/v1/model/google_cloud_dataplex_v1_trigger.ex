@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Trigger do
 
   ## Attributes
 
-  *   `onDemand` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TriggerOnDemand.t`, *default:* `nil`) - The scan runs one-time shortly after DataScan Creation.
+  *   `onDemand` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TriggerOnDemand.t`, *default:* `nil`) - The scan runs once via RunDataScan API.
   *   `schedule` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TriggerSchedule.t`, *default:* `nil`) - The scan is scheduled to run periodically.
   """
 

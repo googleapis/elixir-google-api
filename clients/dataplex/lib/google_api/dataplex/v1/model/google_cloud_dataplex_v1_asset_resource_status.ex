@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AssetResourceStatus d
 
   ## Attributes
 
+  *   `managedAccessIdentity` (*type:* `String.t`, *default:* `nil`) - Output only. Service account associated with the BigQuery Connection.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Additional information about the current state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the managed resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last update time of the status.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AssetResourceStatus d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :managedAccessIdentity => String.t() | nil,
           :message => String.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:managedAccessIdentity)
   field(:message)
   field(:state)
   field(:updateTime, as: DateTime)

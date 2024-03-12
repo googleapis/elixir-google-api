@@ -22,6 +22,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the job ended.
+  *   `executionSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionSpec.t`, *default:* `nil`) - Output only. Spec related to how a task is executed.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. User-defined labels for the task.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Output only. Additional information about the current state.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the job, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id}.
   *   `retryCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of times the job has been retried (excluding the initial attempt).
@@ -29,6 +31,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
   *   `serviceJob` (*type:* `String.t`, *default:* `nil`) - Output only. The full resource name for the job run under a particular service.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the job was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Execution state for the job.
+  *   `trigger` (*type:* `String.t`, *default:* `nil`) - Output only. Job execution trigger.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the job.
   """
 
@@ -36,6 +39,9 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
 
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
+          :executionSpec =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionSpec.t() | nil,
+          :labels => map() | nil,
           :message => String.t() | nil,
           :name => String.t() | nil,
           :retryCount => integer() | nil,
@@ -43,10 +49,13 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
           :serviceJob => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
+          :trigger => String.t() | nil,
           :uid => String.t() | nil
         }
 
   field(:endTime, as: DateTime)
+  field(:executionSpec, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskExecutionSpec)
+  field(:labels, type: :map)
   field(:message)
   field(:name)
   field(:retryCount)
@@ -54,6 +63,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Job do
   field(:serviceJob)
   field(:startTime, as: DateTime)
   field(:state)
+  field(:trigger)
   field(:uid)
 end
 

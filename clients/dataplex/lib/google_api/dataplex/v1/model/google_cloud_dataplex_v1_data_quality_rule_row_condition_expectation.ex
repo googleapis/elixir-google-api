@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation do
   @moduledoc """
-  Evaluates whether each row passes the specified condition. The SQL expression needs to use BigQuery standard SQL syntax and should produce a boolean per row as the result. Example: col1 >= 0 AND col2 < 10
+  Evaluates whether each row passes the specified condition.The SQL expression needs to use BigQuery standard SQL syntax and should produce a boolean value per row as the result.Example: col1 >= 0 AND col2 < 10
 
   ## Attributes
 
-  *   `sqlExpression` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sqlExpression` (*type:* `String.t`, *default:* `nil`) - Optional. The SQL expression.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExp
 
   ## Attributes
 
-  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Expected values for the column value.
   """
 
   use GoogleApi.Gax.ModelBase

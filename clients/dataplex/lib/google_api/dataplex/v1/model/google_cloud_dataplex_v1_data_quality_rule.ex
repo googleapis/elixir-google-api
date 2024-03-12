@@ -22,25 +22,29 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
   ## Attributes
 
   *   `column` (*type:* `String.t`, *default:* `nil`) - Optional. The unnested column which this rule is evaluated against.
-  *   `dimension` (*type:* `String.t`, *default:* `nil`) - Required. The dimension a rule belongs to. Results are also aggregated at the dimension-level. Supported dimensions are "COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"
-  *   `ignoreNull` (*type:* `boolean()`, *default:* `nil`) - Optional. Rows with null values will automatically fail a rule, unless ignore_null is true. In that case, such null rows are trivially considered passing. Only applicable to ColumnMap rules.
-  *   `nonNullExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleNonNullExpectation.t`, *default:* `nil`) - ColumnMap rule which evaluates whether each column value is null.
-  *   `rangeExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRangeExpectation.t`, *default:* `nil`) - ColumnMap rule which evaluates whether each column value lies between a specified range.
-  *   `regexExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRegexExpectation.t`, *default:* `nil`) - ColumnMap rule which evaluates whether each column value matches a specified regex.
-  *   `rowConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation.t`, *default:* `nil`) - Table rule which evaluates whether each row passes the specified condition.
-  *   `setExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExpectation.t`, *default:* `nil`) - ColumnMap rule which evaluates whether each column value is contained by a specified set.
-  *   `statisticRangeExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation.t`, *default:* `nil`) - ColumnAggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
-  *   `tableConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation.t`, *default:* `nil`) - Table rule which evaluates whether the provided expression is true.
-  *   `threshold` (*type:* `float()`, *default:* `nil`) - Optional. The minimum ratio of passing_rows / total_rows required to pass this rule. Default = 1.0
-  *   `uniquenessExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation.t`, *default:* `nil`) - ColumnAggregate rule which evaluates whether the column has duplicates.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the rule. The maximum length is 1,024 characters.
+  *   `dimension` (*type:* `String.t`, *default:* `nil`) - Required. The dimension a rule belongs to. Results are also aggregated at the dimension level. Supported dimensions are "COMPLETENESS", "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "INTEGRITY"
+  *   `ignoreNull` (*type:* `boolean()`, *default:* `nil`) - Optional. Rows with null values will automatically fail a rule, unless ignore_null is true. In that case, such null rows are trivially considered passing.This field is only valid for the following type of rules: RangeExpectation RegexExpectation SetExpectation UniquenessExpectation
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. A mutable name for the rule. The name must contain only letters (a-z, A-Z), numbers (0-9), or hyphens (-). The maximum length is 63 characters. Must start with a letter. Must end with a number or a letter.
+  *   `nonNullExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleNonNullExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value is null.
+  *   `rangeExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRangeExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value lies between a specified range.
+  *   `regexExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRegexExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value matches a specified regex.
+  *   `rowConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each row in a table passes the specified condition.
+  *   `setExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value is contained by a specified set.
+  *   `statisticRangeExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation.t`, *default:* `nil`) - Aggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
+  *   `tableConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation.t`, *default:* `nil`) - Aggregate rule which evaluates whether the provided expression is true for a table.
+  *   `threshold` (*type:* `float()`, *default:* `nil`) - Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules.
+  *   `uniquenessExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleUniquenessExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value is unique.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :column => String.t() | nil,
+          :description => String.t() | nil,
           :dimension => String.t() | nil,
           :ignoreNull => boolean() | nil,
+          :name => String.t() | nil,
           :nonNullExpectation =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleNonNullExpectation.t()
             | nil,
@@ -69,8 +73,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
         }
 
   field(:column)
+  field(:description)
   field(:dimension)
   field(:ignoreNull)
+  field(:name)
 
   field(:nonNullExpectation,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleNonNullExpectation

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListDataScansResponse
 
   ## Attributes
 
-  *   `dataScans` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan.t)`, *default:* `nil`) - DataScans (metadata only) under the given parent location.
+  *   `dataScans` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan.t)`, *default:* `nil`) - DataScans (BASIC view only) under the given parent location.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """

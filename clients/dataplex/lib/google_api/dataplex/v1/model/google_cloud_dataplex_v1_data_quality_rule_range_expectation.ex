@@ -23,8 +23,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRangeE
 
   *   `maxValue` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum column value allowed for a row to pass this validation. At least one of min_value and max_value need to be provided.
   *   `minValue` (*type:* `String.t`, *default:* `nil`) - Optional. The minimum column value allowed for a row to pass this validation. At least one of min_value and max_value need to be provided.
-  *   `strictMaxEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether each value needs to be strictly lesser than ('<') the maximum, or if equality is allowed. Only relevant if a max_value has been defined. Default = false.
-  *   `strictMinEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether each value needs to be strictly greater than ('>') the minimum, or if equality is allowed. Only relevant if a min_value has been defined. Default = false.
+  *   `strictMaxEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether each value needs to be strictly lesser than ('<') the maximum, or if equality is allowed.Only relevant if a max_value has been defined. Default = false.
+  *   `strictMinEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether each value needs to be strictly greater than ('>') the minimum, or if equality is allowed.Only relevant if a min_value has been defined. Default = false.
   """
 
   use GoogleApi.Gax.ModelBase

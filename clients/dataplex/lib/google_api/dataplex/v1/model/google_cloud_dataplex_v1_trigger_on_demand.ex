@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TriggerOnDemand do
   @moduledoc """
-  The scan runs one-time via RunDataScan API.
+  The scan runs once via RunDataScan API.
 
   ## Attributes
 

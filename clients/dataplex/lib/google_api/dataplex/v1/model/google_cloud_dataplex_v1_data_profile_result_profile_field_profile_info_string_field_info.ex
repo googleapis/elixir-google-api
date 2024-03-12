@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo do
   @moduledoc """
-  StringFieldInfo defines output info for any string type field.
+  The profile information for a string type field.
 
   ## Attributes
 
-  *   `averageLength` (*type:* `float()`, *default:* `nil`) - The average length of a string field in the sampled data. Optional if zero non-null rows.
-  *   `maxLength` (*type:* `String.t`, *default:* `nil`) - The maximum length of a string field in the sampled data. Optional if zero non-null rows.
-  *   `minLength` (*type:* `String.t`, *default:* `nil`) - The minimum length of the string field in the sampled data. Optional if zero non-null rows.
+  *   `averageLength` (*type:* `float()`, *default:* `nil`) - Average length of non-null values in the scanned data.
+  *   `maxLength` (*type:* `String.t`, *default:* `nil`) - Maximum length of non-null values in the scanned data.
+  *   `minLength` (*type:* `String.t`, *default:* `nil`) - Minimum length of non-null values in the scanned data.
   """
 
   use GoogleApi.Gax.ModelBase
