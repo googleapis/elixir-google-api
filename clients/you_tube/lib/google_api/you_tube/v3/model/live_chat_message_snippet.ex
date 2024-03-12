@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   @moduledoc """
-  Next ID: 33
+  Next ID: 34
 
   ## Attributes
 
-  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor memberMilestoneChatEvent - the member that sent the message membershipGiftingEvent - the user that made the purchase giftMembershipReceivedEvent - the user that received the gift membership messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase
+  *   `authorChannelId` (*type:* `String.t`, *default:* `nil`) - The ID of the user that authored this message, this field is not always filled. textMessageEvent - the user that wrote the message fanFundingEvent - the user that funded the broadcast newSponsorEvent - the user that just became a sponsor memberMilestoneChatEvent - the member that sent the message membershipGiftingEvent - the user that made the purchase giftMembershipReceivedEvent - the user that received the gift membership messageDeletedEvent - the moderator that took the action messageRetractedEvent - the author that retracted their message userBannedEvent - the moderator that took the action superChatEvent - the user that made the purchase superStickerEvent - the user that made the purchase pollEvent - the user that created the poll
   *   `displayMessage` (*type:* `String.t`, *default:* `nil`) - Contains a string that can be displayed to the user. If this field is not present the message is silent, at the moment only messages of type TOMBSTONE and CHAT_ENDED_EVENT are silent.
   *   `fanFundingEventDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatFanFundingEventDetails.t`, *default:* `nil`) - Details about the funding event, this is only set if the type is 'fanFundingEvent'.
   *   `giftMembershipReceivedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatGiftMembershipReceivedDetails.t`, *default:* `nil`) - Details about the Gift Membership Received event, this is only set if the type is 'giftMembershipReceivedEvent'.
@@ -32,6 +32,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   *   `messageDeletedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails.t`, *default:* `nil`) - 
   *   `messageRetractedDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t`, *default:* `nil`) - 
   *   `newSponsorDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatNewSponsorDetails.t`, *default:* `nil`) - Details about the New Member Announcement event, this is only set if the type is 'newSponsorEvent'. Please note that "member" is the new term for "sponsor".
+  *   `pollDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatPollDetails.t`, *default:* `nil`) - Details about the poll event, this is only set if the type is 'pollEvent'.
   *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time when the message was orignally published.
   *   `superChatDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t`, *default:* `nil`) - Details about the Super Chat event, this is only set if the type is 'superChatEvent'.
   *   `superStickerDetails` (*type:* `GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails.t`, *default:* `nil`) - Details about the Super Sticker event, this is only set if the type is 'superStickerEvent'.
@@ -60,6 +61,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
           :messageRetractedDetails =>
             GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails.t() | nil,
           :newSponsorDetails => GoogleApi.YouTube.V3.Model.LiveChatNewSponsorDetails.t() | nil,
+          :pollDetails => GoogleApi.YouTube.V3.Model.LiveChatPollDetails.t() | nil,
           :publishedAt => DateTime.t() | nil,
           :superChatDetails => GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails.t() | nil,
           :superStickerDetails =>
@@ -90,6 +92,7 @@ defmodule GoogleApi.YouTube.V3.Model.LiveChatMessageSnippet do
   field(:messageDeletedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageDeletedDetails)
   field(:messageRetractedDetails, as: GoogleApi.YouTube.V3.Model.LiveChatMessageRetractedDetails)
   field(:newSponsorDetails, as: GoogleApi.YouTube.V3.Model.LiveChatNewSponsorDetails)
+  field(:pollDetails, as: GoogleApi.YouTube.V3.Model.LiveChatPollDetails)
   field(:publishedAt, as: DateTime)
   field(:superChatDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperChatDetails)
   field(:superStickerDetails, as: GoogleApi.YouTube.V3.Model.LiveChatSuperStickerDetails)
