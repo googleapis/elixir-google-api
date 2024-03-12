@@ -24,7 +24,7 @@ defmodule GoogleApi.Sheets.V4.Model.SlicerSpec do
   *   `applyToPivotTables` (*type:* `boolean()`, *default:* `nil`) - True if the filter should apply to pivot tables. If not set, default to `True`.
   *   `backgroundColor` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - The background color of the slicer. Deprecated: Use background_color_style.
   *   `backgroundColorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - The background color of the slicer. If background_color is also set, this field takes precedence.
-  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The column index in the data table on which the filter is applied to.
+  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based column index in the data table on which the filter is applied to.
   *   `dataRange` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The data range of the slicer.
   *   `filterCriteria` (*type:* `GoogleApi.Sheets.V4.Model.FilterCriteria.t`, *default:* `nil`) - The filtering criteria of the slicer.
   *   `horizontalAlignment` (*type:* `String.t`, *default:* `nil`) - The horizontal alignment of title in the slicer. If unspecified, defaults to `LEFT`

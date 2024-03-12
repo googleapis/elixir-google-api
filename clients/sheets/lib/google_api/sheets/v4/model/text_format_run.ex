@@ -22,7 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.TextFormatRun do
   ## Attributes
 
   *   `format` (*type:* `GoogleApi.Sheets.V4.Model.TextFormat.t`, *default:* `nil`) - The format of this run. Absent values inherit the cell's format.
-  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The character index where this run starts.
+  *   `startIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based character index where this run starts, in UTF-16 code units.
   """
 
   use GoogleApi.Gax.ModelBase

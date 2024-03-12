@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.PivotFilterSpec do
 
   ## Attributes
 
-  *   `columnOffsetIndex` (*type:* `integer()`, *default:* `nil`) - The column offset of the source range.
+  *   `columnOffsetIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based column offset of the source range.
   *   `dataSourceColumnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - The reference to the data source column.
   *   `filterCriteria` (*type:* `GoogleApi.Sheets.V4.Model.PivotFilterCriteria.t`, *default:* `nil`) - The criteria for the column.
   """

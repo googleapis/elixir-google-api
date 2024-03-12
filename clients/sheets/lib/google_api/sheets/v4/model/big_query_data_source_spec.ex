@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec do
 
   ## Attributes
 
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of a BigQuery enabled GCP project with a billing account attached. For any queries executed against the data source, the project is charged.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of a BigQuery enabled Google Cloud project with a billing account attached. For any queries executed against the data source, the project is charged.
   *   `querySpec` (*type:* `GoogleApi.Sheets.V4.Model.BigQueryQuerySpec.t`, *default:* `nil`) - A BigQueryQuerySpec.
   *   `tableSpec` (*type:* `GoogleApi.Sheets.V4.Model.BigQueryTableSpec.t`, *default:* `nil`) - A BigQueryTableSpec.
   """

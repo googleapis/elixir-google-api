@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.FilterSpec do
 
   ## Attributes
 
-  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The column index.
+  *   `columnIndex` (*type:* `integer()`, *default:* `nil`) - The zero-based column index.
   *   `dataSourceColumnReference` (*type:* `GoogleApi.Sheets.V4.Model.DataSourceColumnReference.t`, *default:* `nil`) - Reference to a data source column.
   *   `filterCriteria` (*type:* `GoogleApi.Sheets.V4.Model.FilterCriteria.t`, *default:* `nil`) - The criteria for the column.
   """

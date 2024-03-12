@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.BandedRange do
 
   ## Attributes
 
-  *   `bandedRangeId` (*type:* `integer()`, *default:* `nil`) - The id of the banded range.
+  *   `bandedRangeId` (*type:* `integer()`, *default:* `nil`) - The ID of the banded range.
   *   `columnProperties` (*type:* `GoogleApi.Sheets.V4.Model.BandingProperties.t`, *default:* `nil`) - Properties for column bands. These properties are applied on a column- by-column basis throughout all the columns in the range. At least one of row_properties or column_properties must be specified.
   *   `range` (*type:* `GoogleApi.Sheets.V4.Model.GridRange.t`, *default:* `nil`) - The range over which these properties are applied.
   *   `rowProperties` (*type:* `GoogleApi.Sheets.V4.Model.BandingProperties.t`, *default:* `nil`) - Properties for row bands. These properties are applied on a row-by-row basis throughout all the rows in the range. At least one of row_properties or column_properties must be specified.

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.BigQueryTableSpec do
   @moduledoc """
-  Specifies a BigQuery table definition. Only [native tables](https://cloud.google.com/bigquery/docs/tables-intro) is allowed.
+  Specifies a BigQuery table definition. Only [native tables](https://cloud.google.com/bigquery/docs/tables-intro) are allowed.
 
   ## Attributes
 

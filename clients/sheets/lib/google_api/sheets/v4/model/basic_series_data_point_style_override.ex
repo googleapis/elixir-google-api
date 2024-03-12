@@ -23,7 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.BasicSeriesDataPointStyleOverride do
 
   *   `color` (*type:* `GoogleApi.Sheets.V4.Model.Color.t`, *default:* `nil`) - Color of the series data point. If empty, the series default is used. Deprecated: Use color_style.
   *   `colorStyle` (*type:* `GoogleApi.Sheets.V4.Model.ColorStyle.t`, *default:* `nil`) - Color of the series data point. If empty, the series default is used. If color is also set, this field takes precedence.
-  *   `index` (*type:* `integer()`, *default:* `nil`) - Zero based index of the series data point.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The zero-based index of the series data point.
   *   `pointStyle` (*type:* `GoogleApi.Sheets.V4.Model.PointStyle.t`, *default:* `nil`) - Point style of the series data point. Valid only if the chartType is AREA, LINE, or SCATTER. COMBO charts are also supported if the series chart type is AREA, LINE, or SCATTER. If empty, the series default is used.
   """
 

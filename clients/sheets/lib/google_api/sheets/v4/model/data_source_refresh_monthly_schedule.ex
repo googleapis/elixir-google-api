@@ -21,7 +21,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceRefreshMonthlySchedule do
 
   ## Attributes
 
-  *   `daysOfMonth` (*type:* `list(integer())`, *default:* `nil`) - Days of the month to refresh. Only 1-28 are supported, mapping to the 1st to the 28th day. At lesat one day must be specified.
+  *   `daysOfMonth` (*type:* `list(integer())`, *default:* `nil`) - Days of the month to refresh. Only 1-28 are supported, mapping to the 1st to the 28th day. At least one day must be specified.
   *   `startTime` (*type:* `GoogleApi.Sheets.V4.Model.TimeOfDay.t`, *default:* `nil`) - The start time of a time interval in which a data source refresh is scheduled. Only `hours` part is used. The time interval size defaults to that in the Sheets editor.
   """
 
