@@ -18,7 +18,7 @@
 defmodule GoogleApi.CloudBilling.Mixfile do
   use Mix.Project
 
-  @version "0.23.6"
+  @version "0.24.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.CloudBilling.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/cloud_billing",
-        "Homepage" => "https://cloud.google.com/billing/"
+        "Homepage" => "https://cloud.google.com/billing/docs/apis"
       }
     ]
   end
