@@ -86,7 +86,7 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -103,10 +103,10 @@ defmodule GoogleApi.CloudFunctions.V1.Api.Operations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Required. A filter for matching the requested operations. The supported formats of *filter* are: To query for a specific function: project:*,location:*,function:* To query for all of the latest operations for a project: project:*,latest:true
-      *   `:name` (*type:* `String.t`) - Must not be set.
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of records that should be returned. Requested page size cannot exceed 100. If not set, the default page size is 100. Pagination is only supported when querying for a specific function.
-      *   `:pageToken` (*type:* `String.t`) - Token identifying which result to start with, which is returned by a previous list call. Pagination is only supported when querying for a specific function.
+      *   `:filter` (*type:* `String.t`) - The standard list filter.
+      *   `:name` (*type:* `String.t`) - The name of the operation's parent resource.
+      *   `:pageSize` (*type:* `integer()`) - The standard list page size.
+      *   `:pageToken` (*type:* `String.t`) - The standard list page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

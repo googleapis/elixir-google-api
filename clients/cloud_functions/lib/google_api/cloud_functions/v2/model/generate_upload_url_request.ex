@@ -21,11 +21,19 @@ defmodule GoogleApi.CloudFunctions.V2.Model.GenerateUploadUrlRequest do
 
   ## Attributes
 
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - The function environment the generated upload url will be used for. The upload url for 2nd Gen functions can also be used for 1st gen functions, but not vice versa. If not specified, 2nd generation-style upload URLs are generated.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - [Preview] Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function source code objects in intermediate Cloud Storage buckets. When you generate an upload url and upload your source code, it gets copied to an intermediate Cloud Storage bucket. The source code is then copied to a versioned directory in the sources bucket in the consumer project during the function deployment. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`. The Google Cloud Functions service account (service-{project_number}@gcf-admin-robot.iam.gserviceaccount.com) must be granted the role 'Cloud KMS CryptoKey Encrypter/Decrypter (roles/cloudkms.cryptoKeyEncrypterDecrypter)' on the Key/KeyRing/Project/Organization (least access preferred).
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :environment => String.t() | nil,
+          :kmsKeyName => String.t() | nil
+        }
+
+  field(:environment)
+  field(:kmsKeyName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V2.Model.GenerateUploadUrlRequest do

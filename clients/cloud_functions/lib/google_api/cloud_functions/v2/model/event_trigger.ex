@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.EventTrigger do
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - Required. The type of event to observe. For example: `google.cloud.audit.log.v1.written` or `google.cloud.pubsub.topic.v1.messagePublished`.
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Optional. The name of a Pub/Sub topic in the same project that will be used as the transport topic for the event delivery. Format: `projects/{project}/topics/{topic}`. This is only valid for events of type `google.cloud.pubsub.topic.v1.messagePublished`. The topic provided here will not be deleted at function deletion.
   *   `retryPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. If unset, then defaults to ignoring failures (i.e. not retrying them).
+  *   `service` (*type:* `String.t`, *default:* `nil`) - Optional. The hostname of the service that 1st Gen function should be observed. If no string is provided, the default service implementing the API will be used. For example, `storage.googleapis.com` is the default for all event types in the `google.storage` namespace. The field is only applicable to 1st Gen functions.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Optional. The email of the trigger's service account. The service account must have permission to invoke Cloud Run services, the permission is `run.routes.invoke`. If empty, defaults to the Compute Engine default service account: `{project_number}-compute@developer.gserviceaccount.com`.
   *   `trigger` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Eventarc trigger. The format of this field is `projects/{project}/locations/{region}/triggers/{trigger}`.
   *   `triggerRegion` (*type:* `String.t`, *default:* `nil`) - The region that the trigger will be in. The trigger will only receive events originating in this region. It can be the same region as the function, a different region or multi-region, or the global region. If not provided, defaults to the same region as the function.
@@ -39,6 +40,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.EventTrigger do
           :eventType => String.t() | nil,
           :pubsubTopic => String.t() | nil,
           :retryPolicy => String.t() | nil,
+          :service => String.t() | nil,
           :serviceAccountEmail => String.t() | nil,
           :trigger => String.t() | nil,
           :triggerRegion => String.t() | nil
@@ -49,6 +51,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.EventTrigger do
   field(:eventType)
   field(:pubsubTopic)
   field(:retryPolicy)
+  field(:service)
   field(:serviceAccountEmail)
   field(:trigger)
   field(:triggerRegion)

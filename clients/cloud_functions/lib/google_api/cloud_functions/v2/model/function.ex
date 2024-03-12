@@ -22,39 +22,52 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Function do
   ## Attributes
 
   *   `buildConfig` (*type:* `GoogleApi.CloudFunctions.V2.Model.BuildConfig.t`, *default:* `nil`) - Describes the Build step of the function that builds a container from the given source.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create timestamp of a Cloud Function. This is only applicable to 2nd Gen functions.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of a function.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - Describe whether the function is gen1 or gen2.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - Describe whether the function is 1st Gen or 2nd Gen.
   *   `eventTrigger` (*type:* `GoogleApi.CloudFunctions.V2.Model.EventTrigger.t`, *default:* `nil`) - An Eventarc trigger managed by Google Cloud Functions that fires events in response to a condition in another service.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - [Preview] Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this Cloud Function.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `serviceConfig` (*type:* `GoogleApi.CloudFunctions.V2.Model.ServiceConfig.t`, *default:* `nil`) - Describes the Service being deployed. Currently deploys services to Cloud Run (fully managed).
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the function.
   *   `stateMessages` (*type:* `list(GoogleApi.CloudFunctions.V2.Model.GoogleCloudFunctionsV2StateMessage.t)`, *default:* `nil`) - Output only. State Messages for this Cloud Function.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a Cloud Function.
+  *   `upgradeInfo` (*type:* `GoogleApi.CloudFunctions.V2.Model.UpgradeInfo.t`, *default:* `nil`) - Output only. UpgradeInfo for this Cloud Function
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Output only. The deployed url for the function.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :buildConfig => GoogleApi.CloudFunctions.V2.Model.BuildConfig.t() | nil,
+          :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :environment => String.t() | nil,
           :eventTrigger => GoogleApi.CloudFunctions.V2.Model.EventTrigger.t() | nil,
+          :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :serviceConfig => GoogleApi.CloudFunctions.V2.Model.ServiceConfig.t() | nil,
           :state => String.t() | nil,
           :stateMessages =>
             list(GoogleApi.CloudFunctions.V2.Model.GoogleCloudFunctionsV2StateMessage.t()) | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :upgradeInfo => GoogleApi.CloudFunctions.V2.Model.UpgradeInfo.t() | nil,
+          :url => String.t() | nil
         }
 
   field(:buildConfig, as: GoogleApi.CloudFunctions.V2.Model.BuildConfig)
+  field(:createTime, as: DateTime)
   field(:description)
   field(:environment)
   field(:eventTrigger, as: GoogleApi.CloudFunctions.V2.Model.EventTrigger)
+  field(:kmsKeyName)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzs)
   field(:serviceConfig, as: GoogleApi.CloudFunctions.V2.Model.ServiceConfig)
   field(:state)
 
@@ -64,6 +77,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Function do
   )
 
   field(:updateTime, as: DateTime)
+  field(:upgradeInfo, as: GoogleApi.CloudFunctions.V2.Model.UpgradeInfo)
+  field(:url)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V2.Model.Function do

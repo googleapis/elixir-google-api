@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Source do
 
   ## Attributes
 
+  *   `gitUri` (*type:* `String.t`, *default:* `nil`) - If provided, get the source from GitHub repository. This option is valid only for GCF 1st Gen function. Example: https://github.com///blob//
   *   `repoSource` (*type:* `GoogleApi.CloudFunctions.V2.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.CloudFunctions.V2.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Source do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gitUri => String.t() | nil,
           :repoSource => GoogleApi.CloudFunctions.V2.Model.RepoSource.t() | nil,
           :storageSource => GoogleApi.CloudFunctions.V2.Model.StorageSource.t() | nil
         }
 
+  field(:gitUri)
   field(:repoSource, as: GoogleApi.CloudFunctions.V2.Model.RepoSource)
   field(:storageSource, as: GoogleApi.CloudFunctions.V2.Model.StorageSource)
 end

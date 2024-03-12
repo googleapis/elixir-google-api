@@ -22,10 +22,12 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2OperationMetad
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version used to start the operation.
-  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
+  *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have google.longrunning.Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
   *   `requestResource` (*type:* `map()`, *default:* `nil`) - The original request that started the operation.
+  *   `sourceToken` (*type:* `String.t`, *default:* `nil`) - An identifier for Firebase function sources. Disclaimer: This field is only supported for Firebase function deployments.
   *   `stages` (*type:* `list(GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2Stage.t)`, *default:* `nil`) - Mechanism for reporting in-progress stages
   *   `statusDetail` (*type:* `String.t`, *default:* `nil`) - Human-readable status of the operation, if any.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Server-defined resource path for the target of the operation.
@@ -39,7 +41,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2OperationMetad
           :cancelRequested => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
+          :operationType => String.t() | nil,
           :requestResource => map() | nil,
+          :sourceToken => String.t() | nil,
           :stages =>
             list(GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2Stage.t()) | nil,
           :statusDetail => String.t() | nil,
@@ -51,7 +55,9 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2OperationMetad
   field(:cancelRequested)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
+  field(:operationType)
   field(:requestResource, type: :map)
+  field(:sourceToken)
   field(:stages, as: GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2Stage, type: :list)
   field(:statusDetail)
   field(:target)
