@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus do
   @moduledoc """
-
+  Success or errors for the profile generation.
 
   ## Attributes
 
-  *   `status` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Profiling status code and optional message
+  *   `status` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Profiling status code and optional message. The `status.code` value is 0 (default value) for OK.
   *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Time when the profile generation status was updated
   """
 

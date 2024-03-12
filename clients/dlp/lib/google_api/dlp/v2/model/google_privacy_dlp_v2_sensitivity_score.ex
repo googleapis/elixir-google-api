@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore do
   @moduledoc """
-  Score is a summary of all elements in the data profile. A higher number means more sensitive.
+  Score is calculated from of all elements in the data profile. A higher level means the data is more sensitive.
 
   ## Attributes
 
-  *   `score` (*type:* `String.t`, *default:* `nil`) - The score applied to the resource.
+  *   `score` (*type:* `String.t`, *default:* `nil`) - The sensitivity score applied to the resource.
   """
 
   use GoogleApi.Gax.ModelBase

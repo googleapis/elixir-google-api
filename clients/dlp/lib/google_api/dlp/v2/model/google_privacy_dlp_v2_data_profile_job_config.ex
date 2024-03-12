@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileJobConfig do
   @moduledoc """
-  Configuration for setting up a job to scan resources for profile generation. Only one data profile configuration may exist per organization, folder, or project. The generated data profiles are retained according to the [data retention policy] (https://cloud.google.com/dlp/docs/data-profiles#retention).
+  Configuration for setting up a job to scan resources for profile generation. Only one data profile configuration may exist per organization, folder, or project. The generated data profiles are retained according to the [data retention policy] (https://cloud.google.com/sensitive-data-protection/docs/data-profiles#retention).
 
   ## Attributes
 
   *   `dataProfileActions` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction.t)`, *default:* `nil`) - Actions to execute at the completion of the job.
-  *   `inspectTemplates` (*type:* `list(String.t)`, *default:* `nil`) - Detection logic for profile generation. Not all template features are used by profiles. FindingLimits, include_quote and exclude_info_types have no impact on data profiling. Multiple templates may be provided if there is data in multiple regions. At most one template must be specified per-region (including "global"). Each region is scanned using the applicable template. If no region-specific template is specified, but a "global" template is specified, it will be copied to that region and used instead. If no global or region-specific template is provided for a region with data, that region's data will not be scanned. For more information, see https://cloud.google.com/dlp/docs/data-profiles#data_residency.
+  *   `inspectTemplates` (*type:* `list(String.t)`, *default:* `nil`) - Detection logic for profile generation. Not all template features are used by profiles. FindingLimits, include_quote and exclude_info_types have no impact on data profiling. Multiple templates may be provided if there is data in multiple regions. At most one template must be specified per-region (including "global"). Each region is scanned using the applicable template. If no region-specific template is specified, but a "global" template is specified, it will be copied to that region and used instead. If no global or region-specific template is provided for a region with data, that region's data will not be scanned. For more information, see https://cloud.google.com/sensitive-data-protection/docs/data-profiles#data-residency.
   *   `location` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileLocation.t`, *default:* `nil`) - The data to scan.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project that will run the scan. The DLP service account that exists within this project must have access to all resources that are profiled, and the Cloud DLP API must be enabled.
   """

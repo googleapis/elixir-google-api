@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListStoredInfoTypesResponse d
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in following ListStoredInfoTypes request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in the following ListStoredInfoTypes request.
   *   `storedInfoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredInfoType.t)`, *default:* `nil`) - List of storedInfoTypes, up to page_size in ListStoredInfoTypesRequest.
   """
 

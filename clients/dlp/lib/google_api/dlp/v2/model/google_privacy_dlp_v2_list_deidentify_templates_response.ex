@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListDeidentifyTemplatesRespon
   ## Attributes
 
   *   `deidentifyTemplates` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DeidentifyTemplate.t)`, *default:* `nil`) - List of deidentify templates, up to page_size in ListDeidentifyTemplatesRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in following ListDeidentifyTemplates request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in the following ListDeidentifyTemplates request.
   """
 
   use GoogleApi.Gax.ModelBase

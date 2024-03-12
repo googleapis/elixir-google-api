@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
   ## Attributes
 
   *   `details` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Detailed error codes and messages.
-  *   `timestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - The times the error occurred.
+  *   `timestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - The times the error occurred. List includes the oldest timestamp and the last 9 timestamps.
   """
 
   use GoogleApi.Gax.ModelBase

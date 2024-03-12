@@ -21,8 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordKey do
 
   ## Attributes
 
-  *   `bigQueryKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t`, *default:* `nil`) - 
-  *   `datastoreKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t`, *default:* `nil`) - 
+  *   `bigQueryKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryKey.t`, *default:* `nil`) - Datastore key
+  *   `datastoreKey` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreKey.t`, *default:* `nil`) - BigQuery key
   *   `idValues` (*type:* `list(String.t)`, *default:* `nil`) - Values of identifying columns in the given row. Order of values matches the order of `identifying_fields` specified in the scanning request.
   """
 

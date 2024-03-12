@@ -1,8 +1,8 @@
 # GoogleApi.DLP
 
-Cloud Data Loss Prevention (DLP) API client library.
+Sensitive Data Protection (DLP) client library.
 
-Provides methods for detection, risk analysis, and de-identification of privacy-sensitive fragments in text, images, and Google Cloud Platform storage repositories.
+Discover and protect your sensitive data. A fully managed service designed to help you discover, classify, and protect your valuable data assets with ease.
 
 ## Installation
 
@@ -17,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/dlp/docs/](https://cloud.google.com/dlp/docs/).
+Product documentation is available at [https://cloud.google.com/sensitive-data-protection/docs/](https://cloud.google.com/sensitive-data-protection/docs/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_dlp](https://hexdocs.pm/google_api_dlp).

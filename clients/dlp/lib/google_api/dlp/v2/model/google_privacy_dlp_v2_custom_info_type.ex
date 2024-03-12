@@ -27,6 +27,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - CustomInfoType can either be a new infoType, or an extension of built-in infoType, when the name matches one of existing infoTypes and that infoType is specified in `InspectContent.info_types` field. Specifying the latter adds findings to the one detected by the system. If built-in info type is not specified in `InspectContent.info_types` list then the name is treated as a custom info type.
   *   `likelihood` (*type:* `String.t`, *default:* `nil`) - Likelihood to return for this CustomInfoType. This base value can be altered by a detection rule if the finding meets the criteria specified by the rule. Defaults to `VERY_LIKELY` if not specified.
   *   `regex` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t`, *default:* `nil`) - Regular expression based CustomInfoType.
+  *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - Sensitivity for this CustomInfoType. If this CustomInfoType extends an existing InfoType, the sensitivity here will take precedence over that of the original InfoType. If unset for a CustomInfoType, it will default to HIGH. This only applies to data profiling.
   *   `storedType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t`, *default:* `nil`) - Load an existing `StoredInfoType` resource for use in `InspectDataSource`. Not currently supported in `InspectContent`.
   *   `surrogateType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t`, *default:* `nil`) - Message for detecting output from deidentification transformations that support reversing.
   """
@@ -41,6 +42,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil,
           :likelihood => String.t() | nil,
           :regex => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex.t() | nil,
+          :sensitivityScore =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
           :storedType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType.t() | nil,
           :surrogateType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType.t() | nil
         }
@@ -51,6 +54,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CustomInfoType do
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
   field(:likelihood)
   field(:regex, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Regex)
+  field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
   field(:storedType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StoredType)
   field(:surrogateType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SurrogateType)
 end

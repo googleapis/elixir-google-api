@@ -21,8 +21,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot do
 
   ## Attributes
 
-  *   `dataProfileJob` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileJobConfig.t`, *default:* `nil`) - A copy of the configuration used to generate this profile.
+  *   `dataProfileJob` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileJobConfig.t`, *default:* `nil`) - A copy of the configuration used to generate this profile. This is deprecated, and the DiscoveryConfig field is preferred moving forward. DataProfileJobConfig will still be written here for Discovery in BigQuery for backwards compatibility, but will not be updated with new fields, while DiscoveryConfig will.
+  *   `discoveryConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig.t`, *default:* `nil`) - A copy of the configuration used to generate this profile.
   *   `inspectConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t`, *default:* `nil`) - A copy of the inspection config used to generate this profile. This is a copy of the inspect_template specified in `DataProfileJobConfig`.
+  *   `inspectTemplateModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when the template was modified
+  *   `inspectTemplateName` (*type:* `String.t`, *default:* `nil`) - Name of the inspection template used to generate this profile
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +33,17 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot do
   @type t :: %__MODULE__{
           :dataProfileJob =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileJobConfig.t() | nil,
-          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil
+          :discoveryConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig.t() | nil,
+          :inspectConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig.t() | nil,
+          :inspectTemplateModifiedTime => DateTime.t() | nil,
+          :inspectTemplateName => String.t() | nil
         }
 
   field(:dataProfileJob, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileJobConfig)
+  field(:discoveryConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig)
   field(:inspectConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectConfig)
+  field(:inspectTemplateModifiedTime, as: DateTime)
+  field(:inspectTemplateName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot do

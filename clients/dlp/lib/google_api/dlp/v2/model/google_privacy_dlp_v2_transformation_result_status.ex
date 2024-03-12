@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TransformationResultStatus do
   @moduledoc """
-
+  The outcome of a transformation.
 
   ## Attributes
 

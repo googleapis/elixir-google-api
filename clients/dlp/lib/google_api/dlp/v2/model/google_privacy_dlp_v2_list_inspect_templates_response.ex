@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListInspectTemplatesResponse 
   ## Attributes
 
   *   `inspectTemplates` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectTemplate.t)`, *default:* `nil`) - List of inspectTemplates, up to page_size in ListInspectTemplatesRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in following ListInspectTemplates request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in the following ListInspectTemplates request.
   """
 
   use GoogleApi.Gax.ModelBase

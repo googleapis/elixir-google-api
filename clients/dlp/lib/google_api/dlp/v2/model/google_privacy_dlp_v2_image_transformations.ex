@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformations do
 
   ## Attributes
 
-  *   `transforms` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformation.t)`, *default:* `nil`) - 
+  *   `transforms` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ImageTransformation.t)`, *default:* `nil`) - List of transforms to make.
   """
 
   use GoogleApi.Gax.ModelBase

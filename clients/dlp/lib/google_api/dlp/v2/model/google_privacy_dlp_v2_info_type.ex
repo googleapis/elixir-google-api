@@ -21,7 +21,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/dlp/docs/infotypes-reference when specifying a built-in type. When sending Cloud DLP results to Data Catalog, infoType names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the information type. Either a name of your choosing when creating a CustomInfoType, or one of the names listed at https://cloud.google.com/sensitive-data-protection/docs/infotypes-reference when specifying a built-in type. When sending Cloud DLP results to Data Catalog, infoType names should conform to the pattern `[A-Za-z0-9$_-]{1,64}`.
+  *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - Optional custom sensitivity for this InfoType. This only applies to data profiling.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Optional version name for this InfoType.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType do
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
+          :sensitivityScore =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
           :version => String.t() | nil
         }
 
   field(:name)
+  field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
   field(:version)
 end
 

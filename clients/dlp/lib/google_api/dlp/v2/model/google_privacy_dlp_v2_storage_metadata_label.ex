@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageMetadataLabel do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - 
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Label name.
   """
 
   use GoogleApi.Gax.ModelBase
