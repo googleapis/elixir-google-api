@@ -1,9 +1,8 @@
 # GoogleApi.Translate
 
-Google Cloud Translation API client library.
+Cloud Translation API client library.
 
-The Google Cloud Translation API lets websites and programs integrate with
-    Google Translate programmatically.
+Integrates text translation into your website or application.
 
 ## Installation
 
@@ -18,7 +17,7 @@ end
 
 ## For more information
 
-Product documentation is available at [https://code.google.com/apis/language/translate/v2/getting_started.html](https://code.google.com/apis/language/translate/v2/getting_started.html).
+Product documentation is available at [https://cloud.google.com/translate/docs/quickstarts](https://cloud.google.com/translate/docs/quickstarts).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_translate](https://hexdocs.pm/google_api_translate).
