@@ -22,9 +22,9 @@ defmodule GoogleApi.Logging.V2.Model.LogView do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the view.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Describes this view.
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - Filter that restricts which log entries in a bucket are visible in this view.Filters are restricted to be a logical AND of ==/!= of any of the following: originating project/folder/organization/billing account. resource type log idFor example:SOURCE("projects/myproject") AND resource.type = "gce_instance" AND LOG_ID("stdout")
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the view.For example:projects/my-project/locations/global/buckets/my-bucket/views/my-view
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Describes this view.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. Filter that restricts which log entries in a bucket are visible in this view.Filters must be logical conjunctions that use the AND operator, and they can use any of the following qualifiers: SOURCE(), which specifies a project, folder, organization, or billing account of origin. resource.type, which specifies the resource type. LOG_ID(), which identifies the log.They can also use the negations of these qualifiers with the NOT operator.For example:SOURCE("projects/myproject") AND resource.type = "gce_instance" AND NOT LOG_ID("stdout")
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the view.For example:projects/my-project/locations/global/buckets/my-bucket/views/my-view
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the view.
   """
 
