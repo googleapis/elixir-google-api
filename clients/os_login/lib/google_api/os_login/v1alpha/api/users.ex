@@ -113,6 +113,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:projectId` (*type:* `String.t`) - The project ID of the Google Cloud Platform project.
+      *   `:regions` (*type:* `list(String.t)`) - Optional. The regions to which to assert that the key was written. If unspecified, defaults to all regions. Regions are listed at https://cloud.google.com/about/locations#region.
       *   `:view` (*type:* `String.t`) - The view configures whether to retrieve security keys information.
       *   `:body` (*type:* `GoogleApi.OSLogin.V1alpha.Model.SshPublicKey.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -141,6 +142,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
       :uploadType => :query,
       :upload_protocol => :query,
       :projectId => :query,
+      :regions => :query,
       :view => :query,
       :body => :body
     }
@@ -221,6 +223,154 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.Empty{}])
+  end
+
+  @doc """
+  Signs an SSH public key for a user to authenticate to a virtual machine on Google Compute Engine.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The parent project and zone for the signing request. This is needed to properly ensure per-organization ISS processing and potentially to provide for the possibility of zone-specific certificates used in the signing process.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec oslogin_users_projects_locations_sign_ssh_public_key(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def oslogin_users_projects_locations_sign_ssh_public_key(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1alpha/{+parent}:signSshPublicKey", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse{}]
+    )
+  end
+
+  @doc """
+  Signs an SSH public key for a user to authenticate to a virtual machine on Google Compute Engine.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - The parent project and zone for the signing request. This is needed to properly ensure per-organization ISS processing and potentially to provide for the possibility of zone-specific certificates used in the signing process.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec oslogin_users_projects_zones_sign_ssh_public_key(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def oslogin_users_projects_zones_sign_ssh_public_key(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1alpha/{+parent}:signSshPublicKey", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.OSLogin.V1alpha.Model.SignSshPublicKeyResponse{}]
+    )
   end
 
   @doc """
