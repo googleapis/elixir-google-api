@@ -22,7 +22,7 @@ defmodule GoogleApi.File.V1.Model.FileShareConfig do
   ## Attributes
 
   *   `capacityGb` (*type:* `String.t`, *default:* `nil`) - File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the file share (must be 16 characters or less).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the file share. Must use 1-16 characters for the basic service tier and 1-63 characters for all other service tiers. Must use lowercase letters, numbers, or underscores `[a-z0-9_]`. Must start with a letter. Immutable.
   *   `nfsExportOptions` (*type:* `list(GoogleApi.File.V1.Model.NfsExportOptions.t)`, *default:* `nil`) - Nfs Export Options. There is a limit of 10 export options per file share.
   *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`, that this file share has been restored from.
   """
