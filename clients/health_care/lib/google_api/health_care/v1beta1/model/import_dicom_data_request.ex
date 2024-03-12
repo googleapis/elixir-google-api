@@ -21,16 +21,21 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ImportDicomDataRequest do
 
   ## Attributes
 
+  *   `blobStorageSettings` (*type:* `GoogleApi.HealthCare.V1beta1.Model.BlobStorageSettings.t`, *default:* `nil`) - Optional. The blob storage settings for the data imported by this operation.
   *   `gcsSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsSource.t`, *default:* `nil`) - Cloud Storage source data location and import configuration. The Cloud Healthcare Service Agent requires the `roles/storage.objectViewer` Cloud IAM roles on the Cloud Storage location.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blobStorageSettings =>
+            GoogleApi.HealthCare.V1beta1.Model.BlobStorageSettings.t() | nil,
           :gcsSource =>
             GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsSource.t()
             | nil
         }
+
+  field(:blobStorageSettings, as: GoogleApi.HealthCare.V1beta1.Model.BlobStorageSettings)
 
   field(:gcsSource,
     as: GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DicomGcsSource

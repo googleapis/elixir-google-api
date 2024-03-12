@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.GoogleCloudHealthcareV1beta1DeidentifyOptions do
   @moduledoc """
-  Specifies additional options to apply to the base `profile`.
+  Specifies additional options to apply to the base ProfileType.
 
   ## Attributes
 
-  *   `characterMaskConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CharacterMaskConfig.t`, *default:* `nil`) - Character mask config for `CharacterMaskField` `FieldMetadatas`.
+  *   `characterMaskConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CharacterMaskConfig.t`, *default:* `nil`) - Character mask config for CharacterMaskField.
   *   `contextualDeid` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ContextualDeidConfig.t`, *default:* `nil`) - Configure contextual de-id.
-  *   `cryptoHashConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CryptoHashConfig.t`, *default:* `nil`) - Crypo hash config for `CharacterMaskField` `FieldMetadatas`.
-  *   `dateShiftConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DateShiftConfig.t`, *default:* `nil`) - Date shifting config for `CharacterMaskField` `FieldMetadatas`.
+  *   `cryptoHashConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.CryptoHashConfig.t`, *default:* `nil`) - Crypto hash config for CharacterMaskField.
+  *   `dateShiftConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DateShiftConfig.t`, *default:* `nil`) - Date shifting config for CharacterMaskField.
   *   `keepExtensions` (*type:* `GoogleApi.HealthCare.V1beta1.Model.KeepExtensionsConfig.t`, *default:* `nil`) - Configure keeping extensions by default.
   """
 

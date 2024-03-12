@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.Location do
   @moduledoc """
-  A resource that represents Google Cloud Platform location.
+  A resource that represents a Google Cloud location.
 
   ## Attributes
 

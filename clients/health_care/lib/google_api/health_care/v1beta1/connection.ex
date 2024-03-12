@@ -24,6 +24,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # Read, write and manage healthcare data
+      "https://www.googleapis.com/auth/cloud-healthcare",
+
       # See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
       "https://www.googleapis.com/auth/cloud-platform"
     ],

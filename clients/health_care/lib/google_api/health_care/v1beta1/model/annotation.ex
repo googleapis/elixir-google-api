@@ -21,10 +21,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.Annotation do
 
   ## Attributes
 
-  *   `annotationSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AnnotationSource.t`, *default:* `nil`) - Details of the source.
+  *   `annotationSource` (*type:* `GoogleApi.HealthCare.V1beta1.Model.AnnotationSource.t`, *default:* `nil`) - Required. Details of the source.
   *   `customData` (*type:* `map()`, *default:* `nil`) - Additional information for this annotation record, such as annotator and verifier information or study campaign.
   *   `imageAnnotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageAnnotation.t`, *default:* `nil`) - Annotations for images. For example, bounding polygons.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Annotation, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}/annotations/{annotation_id}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the Annotation, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}/annotations/{annotation_id}`.
   *   `resourceAnnotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ResourceAnnotation.t`, *default:* `nil`) - Annotations for resource. For example, classification tags.
   *   `textAnnotation` (*type:* `GoogleApi.HealthCare.V1beta1.Model.SensitiveTextAnnotation.t`, *default:* `nil`) - Annotations for sensitive texts. For example, a range that describes the location of sensitive text.
   """

@@ -23,7 +23,7 @@ defmodule GoogleApi.HealthCare.V1.Model.EntityMention do
 
   *   `certaintyAssessment` (*type:* `GoogleApi.HealthCare.V1.Model.Feature.t`, *default:* `nil`) - The certainty assessment of the entity mention. Its value is one of: LIKELY, SOMEWHAT_LIKELY, UNCERTAIN, SOMEWHAT_UNLIKELY, UNLIKELY, CONDITIONAL
   *   `confidence` (*type:* `float()`, *default:* `nil`) - The model's confidence in this entity mention annotation. A number between 0 and 1.
-  *   `linkedEntities` (*type:* `list(GoogleApi.HealthCare.V1.Model.LinkedEntity.t)`, *default:* `nil`) - linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.it
+  *   `linkedEntities` (*type:* `list(GoogleApi.HealthCare.V1.Model.LinkedEntity.t)`, *default:* `nil`) - linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.
   *   `mentionId` (*type:* `String.t`, *default:* `nil`) - mention_id uniquely identifies each entity mention in a single response.
   *   `subject` (*type:* `GoogleApi.HealthCare.V1.Model.Feature.t`, *default:* `nil`) - The subject this entity mention relates to. Its value is one of: PATIENT, FAMILY_MEMBER, OTHER
   *   `temporalAssessment` (*type:* `GoogleApi.HealthCare.V1.Model.Feature.t`, *default:* `nil`) - How this entity mention relates to the subject temporally. Its value is one of: CURRENT, CLINICAL_HISTORY, FAMILY_HISTORY, UPCOMING, ALLERGY

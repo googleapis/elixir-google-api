@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.CreateMessageRequest do
 
   ## Attributes
 
-  *   `message` (*type:* `GoogleApi.HealthCare.V1.Model.Message.t`, *default:* `nil`) - HL7v2 message.
+  *   `message` (*type:* `GoogleApi.HealthCare.V1.Model.Message.t`, *default:* `nil`) - Required. HL7v2 message.
   """
 
   use GoogleApi.Gax.ModelBase

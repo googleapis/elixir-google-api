@@ -25,7 +25,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ConsentArtifact do
   *   `consentContentVersion` (*type:* `String.t`, *default:* `nil`) - Optional. An string indicating the version of the consent information shown to the user.
   *   `guardianSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. A signature from a guardian.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Metadata associated with the Consent artifact. For example, the consent locale or user agent version.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the Consent artifact, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. Cannot be changed after creation.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the Consent artifact, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`. Cannot be changed after creation.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Required. User's UUID provided by the client.
   *   `userSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. User's signature.
   *   `witnessSignature` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Signature.t`, *default:* `nil`) - Optional. A signature from a witness.

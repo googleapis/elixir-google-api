@@ -21,9 +21,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EntityMention do
 
   ## Attributes
 
+  *   `additionalInfo` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.Feature.t)`, *default:* `nil`) - Additional information about the entity mention. For example, for an entity mention of type `DATE` this can be its more specific date types from the following list: `ADMISSION_DATE`, `CONSULTATION_DATE`, `DISCHARGE_DATE`, `SERVICE_DATE`, `VISIT_DATE`, `DIAGNOSIS_DATE`, `MED_STARTED_DATE`, `MED_ENDED_DATE`, `NOTE_DATE`, `PROCEDURE_DATE`, `RADIATION_STARTED_DATE`, `RADIATION_ENDED_DATE`, `STAGE_DATE`
   *   `certaintyAssessment` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Feature.t`, *default:* `nil`) - The certainty assessment of the entity mention. Its value is one of: LIKELY, SOMEWHAT_LIKELY, UNCERTAIN, SOMEWHAT_UNLIKELY, UNLIKELY, CONDITIONAL
   *   `confidence` (*type:* `float()`, *default:* `nil`) - The model's confidence in this entity mention annotation. A number between 0 and 1.
-  *   `linkedEntities` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.LinkedEntity.t)`, *default:* `nil`) - linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.it
+  *   `linkedEntities` (*type:* `list(GoogleApi.HealthCare.V1beta1.Model.LinkedEntity.t)`, *default:* `nil`) - linked_entities are candidate ontological concepts that this entity mention may refer to. They are sorted by decreasing confidence.
   *   `mentionId` (*type:* `String.t`, *default:* `nil`) - mention_id uniquely identifies each entity mention in a single response.
   *   `subject` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Feature.t`, *default:* `nil`) - The subject this entity mention relates to. Its value is one of: PATIENT, FAMILY_MEMBER, OTHER
   *   `temporalAssessment` (*type:* `GoogleApi.HealthCare.V1beta1.Model.Feature.t`, *default:* `nil`) - How this entity mention relates to the subject temporally. Its value is one of: CURRENT, CLINICAL_HISTORY, FAMILY_HISTORY, UPCOMING, ALLERGY
@@ -34,6 +35,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EntityMention do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalInfo => list(GoogleApi.HealthCare.V1beta1.Model.Feature.t()) | nil,
           :certaintyAssessment => GoogleApi.HealthCare.V1beta1.Model.Feature.t() | nil,
           :confidence => float() | nil,
           :linkedEntities => list(GoogleApi.HealthCare.V1beta1.Model.LinkedEntity.t()) | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.EntityMention do
           :type => String.t() | nil
         }
 
+  field(:additionalInfo, as: GoogleApi.HealthCare.V1beta1.Model.Feature, type: :list)
   field(:certaintyAssessment, as: GoogleApi.HealthCare.V1beta1.Model.Feature)
   field(:confidence)
   field(:linkedEntities, as: GoogleApi.HealthCare.V1beta1.Model.LinkedEntity, type: :list)
