@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudShell.V1 do
   API client metadata for GoogleApi.CloudShell.V1.
   """
 
-  @discovery_revision "20220319"
+  @discovery_revision "20240212"
 
   def discovery_revision(), do: @discovery_revision
 end
