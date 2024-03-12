@@ -22,15 +22,18 @@ defmodule GoogleApi.Spanner.V1.Model.QueryPlan do
   ## Attributes
 
   *   `planNodes` (*type:* `list(GoogleApi.Spanner.V1.Model.PlanNode.t)`, *default:* `nil`) - The nodes in the query plan. Plan nodes are returned in pre-order starting with the plan root. Each PlanNode's `id` corresponds to its index in `plan_nodes`.
+  *   `queryAdvice` (*type:* `GoogleApi.Spanner.V1.Model.QueryAdvisorResult.t`, *default:* `nil`) - Optional. The advices/recommendations for a query. Currently this field will be serving index recommendations for a query.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :planNodes => list(GoogleApi.Spanner.V1.Model.PlanNode.t()) | nil
+          :planNodes => list(GoogleApi.Spanner.V1.Model.PlanNode.t()) | nil,
+          :queryAdvice => GoogleApi.Spanner.V1.Model.QueryAdvisorResult.t() | nil
         }
 
   field(:planNodes, as: GoogleApi.Spanner.V1.Model.PlanNode, type: :list)
+  field(:queryAdvice, as: GoogleApi.Spanner.V1.Model.QueryAdvisorResult)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.QueryPlan do

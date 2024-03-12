@@ -25,6 +25,7 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the session is created.
   *   `creatorRole` (*type:* `String.t`, *default:* `nil`) - The database role which created this session.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels for the session. * Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?`. * Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`. * No more than 64 labels can be associated with a given session. See https://goo.gl/xmQnxf for more information on and examples of labels.
+  *   `multiplexed` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, specifies a multiplexed session. A multiplexed session may be used for multiple, concurrent read-only operations but can not be used for read-write transactions, partitioned reads, or partitioned queries. Multiplexed sessions can be created via CreateSession but not via BatchCreateSessions. Multiplexed sessions may not be deleted nor listed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the session. This is always system-assigned.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
           :createTime => DateTime.t() | nil,
           :creatorRole => String.t() | nil,
           :labels => map() | nil,
+          :multiplexed => boolean() | nil,
           :name => String.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Spanner.V1.Model.Session do
   field(:createTime, as: DateTime)
   field(:creatorRole)
   field(:labels, type: :map)
+  field(:multiplexed)
   field(:name)
 end
 

@@ -23,6 +23,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceMetadata do
 
   *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation was cancelled. If set, this operation is in the process of undoing itself (which is guaranteed to succeed) and cannot be cancelled again.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation failed or was completed successfully.
+  *   `expectedFulfillmentPeriod` (*type:* `String.t`, *default:* `nil`) - The expected fulfillment period of this update operation.
   *   `instance` (*type:* `GoogleApi.Spanner.V1.Model.Instance.t`, *default:* `nil`) - The desired end state of the update.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which UpdateInstance request was received.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceMetadata do
   @type t :: %__MODULE__{
           :cancelTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
+          :expectedFulfillmentPeriod => String.t() | nil,
           :instance => GoogleApi.Spanner.V1.Model.Instance.t() | nil,
           :startTime => DateTime.t() | nil
         }
 
   field(:cancelTime, as: DateTime)
   field(:endTime, as: DateTime)
+  field(:expectedFulfillmentPeriod)
   field(:instance, as: GoogleApi.Spanner.V1.Model.Instance)
   field(:startTime, as: DateTime)
 end

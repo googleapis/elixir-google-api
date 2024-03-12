@@ -21,15 +21,18 @@ defmodule GoogleApi.Spanner.V1.Model.GetDatabaseDdlResponse do
 
   ## Attributes
 
+  *   `protoDescriptors` (*type:* `String.t`, *default:* `nil`) - Proto descriptors stored in the database. Contains a protobuf-serialized [google.protobuf.FileDescriptorSet](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto). For more details, see protobuffer [self description](https://developers.google.com/protocol-buffers/docs/techniques#self-description).
   *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - A list of formatted DDL statements defining the schema of the database specified in the request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :protoDescriptors => String.t() | nil,
           :statements => list(String.t()) | nil
         }
 
+  field(:protoDescriptors)
   field(:statements, type: :list)
 end
 

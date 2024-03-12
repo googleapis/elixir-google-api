@@ -22,6 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlRequest do
   ## Attributes
 
   *   `operationId` (*type:* `String.t`, *default:* `nil`) - If empty, the new update request is assigned an automatically-generated operation ID. Otherwise, `operation_id` is used to construct the name of the resulting Operation. Specifying an explicit operation ID simplifies determining whether the statements were executed in the event that the UpdateDatabaseDdl call is replayed, or the return value is otherwise lost: the database and `operation_id` fields can be combined to form the name of the resulting longrunning.Operation: `/operations/`. `operation_id` should be unique within the database, and must be a valid identifier: `a-z*`. Note that automatically-generated operation IDs always begin with an underscore. If the named operation already exists, UpdateDatabaseDdl returns `ALREADY_EXISTS`.
+  *   `protoDescriptors` (*type:* `String.t`, *default:* `nil`) - Optional. Proto descriptors used by CREATE/ALTER PROTO BUNDLE statements. Contains a protobuf-serialized [google.protobuf.FileDescriptorSet](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto). To generate it, [install](https://grpc.io/docs/protoc-installation/) and run `protoc` with --include_imports and --descriptor_set_out. For example, to generate for moon/shot/app.proto, run ``` $protoc --proto_path=/app_path --proto_path=/lib_path \\ --include_imports \\ --descriptor_set_out=descriptors.data \\ moon/shot/app.proto ``` For more details, see protobuffer [self description](https://developers.google.com/protocol-buffers/docs/techniques#self-description).
   *   `statements` (*type:* `list(String.t)`, *default:* `nil`) - Required. DDL statements to be applied to the database.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateDatabaseDdlRequest do
 
   @type t :: %__MODULE__{
           :operationId => String.t() | nil,
+          :protoDescriptors => String.t() | nil,
           :statements => list(String.t()) | nil
         }
 
   field(:operationId)
+  field(:protoDescriptors)
   field(:statements, type: :list)
 end
 

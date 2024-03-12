@@ -21,6 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.TransactionOptions do
 
   ## Attributes
 
+  *   `excludeTxnFromChangeStreams` (*type:* `boolean()`, *default:* `nil`) - When `exclude_txn_from_change_streams` is set to `true`: * Mutations from this transaction will not be recorded in change streams with DDL option `allow_txn_exclusion=true` that are tracking columns modified by these transactions. * Mutations from this transaction will be recorded in change streams with DDL option `allow_txn_exclusion=false or not set` that are tracking columns modified by these transactions. When `exclude_txn_from_change_streams` is set to `false` or not set, mutations from this transaction will be recorded in all change streams that are tracking columns modified by these transactions. `exclude_txn_from_change_streams` may only be specified for read-write or partitioned-dml transactions, otherwise the API will return an `INVALID_ARGUMENT` error.
   *   `partitionedDml` (*type:* `GoogleApi.Spanner.V1.Model.PartitionedDml.t`, *default:* `nil`) - Partitioned DML transaction. Authorization to begin a Partitioned DML transaction requires `spanner.databases.beginPartitionedDmlTransaction` permission on the `session` resource.
   *   `readOnly` (*type:* `GoogleApi.Spanner.V1.Model.ReadOnly.t`, *default:* `nil`) - Transaction will not write. Authorization to begin a read-only transaction requires `spanner.databases.beginReadOnlyTransaction` permission on the `session` resource.
   *   `readWrite` (*type:* `GoogleApi.Spanner.V1.Model.ReadWrite.t`, *default:* `nil`) - Transaction may write. Authorization to begin a read-write transaction requires `spanner.databases.beginOrRollbackReadWriteTransaction` permission on the `session` resource.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Spanner.V1.Model.TransactionOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :excludeTxnFromChangeStreams => boolean() | nil,
           :partitionedDml => GoogleApi.Spanner.V1.Model.PartitionedDml.t() | nil,
           :readOnly => GoogleApi.Spanner.V1.Model.ReadOnly.t() | nil,
           :readWrite => GoogleApi.Spanner.V1.Model.ReadWrite.t() | nil
         }
 
+  field(:excludeTxnFromChangeStreams)
   field(:partitionedDml, as: GoogleApi.Spanner.V1.Model.PartitionedDml)
   field(:readOnly, as: GoogleApi.Spanner.V1.Model.ReadOnly)
   field(:readWrite, as: GoogleApi.Spanner.V1.Model.ReadWrite)

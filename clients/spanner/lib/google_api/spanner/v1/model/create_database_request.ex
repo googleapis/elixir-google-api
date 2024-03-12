@@ -25,6 +25,7 @@ defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
   *   `databaseDialect` (*type:* `String.t`, *default:* `nil`) - Optional. The dialect of the Cloud Spanner Database.
   *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Optional. The encryption configuration for the database. If this field is not specified, Cloud Spanner will encrypt/decrypt all data at rest using Google default encryption.
   *   `extraStatements` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database: if there is an error in any statement, the database is not created.
+  *   `protoDescriptors` (*type:* `String.t`, *default:* `nil`) - Optional. Proto descriptors used by CREATE/ALTER PROTO BUNDLE statements in 'extra_statements' above. Contains a protobuf-serialized [google.protobuf.FileDescriptorSet](https://github.com/protocolbuffers/protobuf/blob/main/src/google/protobuf/descriptor.proto). To generate it, [install](https://grpc.io/docs/protoc-installation/) and run `protoc` with --include_imports and --descriptor_set_out. For example, to generate for moon/shot/app.proto, run ``` $protoc --proto_path=/app_path --proto_path=/lib_path \\ --include_imports \\ --descriptor_set_out=descriptors.data \\ moon/shot/app.proto ``` For more details, see protobuffer [self description](https://developers.google.com/protocol-buffers/docs/techniques#self-description).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
           :createStatement => String.t() | nil,
           :databaseDialect => String.t() | nil,
           :encryptionConfig => GoogleApi.Spanner.V1.Model.EncryptionConfig.t() | nil,
-          :extraStatements => list(String.t()) | nil
+          :extraStatements => list(String.t()) | nil,
+          :protoDescriptors => String.t() | nil
         }
 
   field(:createStatement)
   field(:databaseDialect)
   field(:encryptionConfig, as: GoogleApi.Spanner.V1.Model.EncryptionConfig)
   field(:extraStatements, type: :list)
+  field(:protoDescriptors)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Spanner.V1.Model.CreateDatabaseRequest do
