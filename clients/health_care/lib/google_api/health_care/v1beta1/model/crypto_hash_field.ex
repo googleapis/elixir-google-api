@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.CryptoHashField do
   @moduledoc """
-  Replace field value with a hash of that value. Supported [types](https://www.hl7.org/fhir/datatypes.html): Code, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml
+  Replace field value with a hash of that value. Supported [types](https://www.hl7.org/fhir/datatypes.html): Code, Decimal, HumanName, Id, LanguageCode, Markdown, Oid, String, Uri, Uuid, Xhtml.
 
   ## Attributes
 

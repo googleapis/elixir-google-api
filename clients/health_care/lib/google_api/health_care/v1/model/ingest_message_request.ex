@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1.Model.IngestMessageRequest do
 
   ## Attributes
 
-  *   `message` (*type:* `GoogleApi.HealthCare.V1.Model.Message.t`, *default:* `nil`) - HL7v2 message to ingest.
+  *   `message` (*type:* `GoogleApi.HealthCare.V1.Model.Message.t`, *default:* `nil`) - Required. HL7v2 message to ingest.
   """
 
   use GoogleApi.Gax.ModelBase

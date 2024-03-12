@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1beta1.Model.KeepExtensionsConfig do
   @moduledoc """
-  The behaviour for handling FHIR extensions that aren't otherwise specified for de-identification. If provided, all extensions are preserved during de-identification by default. If unspecified, all extensions are removed during de-identification by default.
+  The behavior for handling FHIR extensions that aren't otherwise specified for de-identification. If provided, all extensions are preserved during de-identification by default. If unspecified, all extensions are removed during de-identification by default.
 
   ## Attributes
 

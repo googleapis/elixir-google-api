@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1.Model.DeidentifyDatasetRequest do
   ## Attributes
 
   *   `config` (*type:* `GoogleApi.HealthCare.V1.Model.DeidentifyConfig.t`, *default:* `nil`) - Deidentify configuration. Only one of `config` and `gcs_config_uri` can be specified.
-  *   `destinationDataset` (*type:* `String.t`, *default:* `nil`) - The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same location as the source dataset. De-identifying data across multiple locations is not supported.
+  *   `destinationDataset` (*type:* `String.t`, *default:* `nil`) - Required. The name of the dataset resource to create and write the redacted data to. * The destination dataset must not exist. * The destination dataset must be in the same location as the source dataset. De-identifying data across multiple locations is not supported.
   *   `gcsConfigUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage location to read the JSON cloud.healthcare.deidentify.DeidentifyConfig from, overriding the default config. Must be of the form `gs://{bucket_id}/path/to/object`. The Cloud Storage location must grant the Cloud IAM role `roles/storage.objectViewer` to the project's Cloud Healthcare Service Agent service account. Only one of `config` and `gcs_config_uri` can be specified.
   """
 

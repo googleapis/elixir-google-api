@@ -21,15 +21,26 @@ defmodule GoogleApi.HealthCare.V1.Model.TextConfig do
 
   ## Attributes
 
-  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - The transformations to apply to the detected data.
+  *   `additionalTransformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - Transformations to apply to the detected data, overridden by `exclude_info_types`.
+  *   `excludeInfoTypes` (*type:* `list(String.t)`, *default:* `nil`) - InfoTypes to skip transforming, overriding `additional_transformations`.
+  *   `transformations` (*type:* `list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t)`, *default:* `nil`) - The transformations to apply to the detected data. Deprecated. Use `additional_transformations` instead.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additionalTransformations =>
+            list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t()) | nil,
+          :excludeInfoTypes => list(String.t()) | nil,
           :transformations => list(GoogleApi.HealthCare.V1.Model.InfoTypeTransformation.t()) | nil
         }
 
+  field(:additionalTransformations,
+    as: GoogleApi.HealthCare.V1.Model.InfoTypeTransformation,
+    type: :list
+  )
+
+  field(:excludeInfoTypes, type: :list)
   field(:transformations, as: GoogleApi.HealthCare.V1.Model.InfoTypeTransformation, type: :list)
 end
 

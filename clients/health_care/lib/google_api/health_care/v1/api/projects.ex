@@ -176,7 +176,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the project where the server creates the dataset. For example, `projects/{project_id}/locations/{location_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project where the server creates the dataset. For example, `projects/{project_id}/locations/{location_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -190,7 +190,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:datasetId` (*type:* `String.t`) - The ID of the dataset that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
+      *   `:datasetId` (*type:* `String.t`) - Required. The ID of the dataset that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.Dataset.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -254,7 +254,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceDataset`. Source dataset resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `sourceDataset`. Required. Source dataset resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `sourceDataset`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `sourceDataset`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -337,7 +337,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the dataset to delete. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the dataset to delete. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -415,7 +415,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the dataset to read. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the dataset to read. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -576,7 +576,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the project whose datasets should be listed. For example, `projects/{project_id}/locations/{location_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project whose datasets should be listed. For example, `projects/{project_id}/locations/{location_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -654,7 +654,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -669,7 +669,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.Dataset.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1513,7 +1513,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consentStore.name`. Resource name of the consent store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. Cannot be changed after creation.
+  *   `projects_id` (*type:* `String.t`) - Part of `consentStore.name`. Identifier. Resource name of the consent store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. Cannot be changed after creation.
   *   `locations_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
   *   `consent_stores_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
@@ -2228,7 +2228,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. Resource name of the Attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`. Cannot be changed after creation.
+  *   `projects_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. Identifier. Resource name of the Attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`. Cannot be changed after creation.
   *   `locations_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
   *   `consent_stores_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
@@ -3315,7 +3315,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consent.name`. Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. Cannot be changed after creation.
+  *   `projects_id` (*type:* `String.t`) - Part of `consent.name`. Identifier. Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. Cannot be changed after creation.
   *   `locations_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
   *   `consent_stores_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
@@ -4132,12 +4132,278 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"options.requestedPolicyVersion"` (*type:* `integer()`) - Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_data_mapper_workspaces_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_data_mapper_workspaces_get_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        data_mapper_workspaces_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"options.requestedPolicyVersion" => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:getIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dataMapperWorkspacesId" =>
+            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Sets the access control policy on the specified resource. Replaces any existing policy. Can return `NOT_FOUND`, `INVALID_ARGUMENT`, and `PERMISSION_DENIED` errors.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.SetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_data_mapper_workspaces_set_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_data_mapper_workspaces_set_iam_policy(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        data_mapper_workspaces_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:setIamPolicy",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dataMapperWorkspacesId" =>
+            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error. Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_data_mapper_workspaces_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_data_mapper_workspaces_test_iam_permissions(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        data_mapper_workspaces_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:testIamPermissions",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dataMapperWorkspacesId" =>
+            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.HealthCare.V1.Model.TestIamPermissionsResponse{}]
+    )
+  end
+
+  @doc """
   Creates a new DICOM store within the parent dataset.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the dataset this DICOM store belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this DICOM store belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4152,7 +4418,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:dicomStoreId` (*type:* `String.t`) - The ID of the DICOM store that is being created. Any string value up to 256 characters in length.
+      *   `:dicomStoreId` (*type:* `String.t`) - Required. The ID of the DICOM store that is being created. Any string value up to 256 characters in length.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.DicomStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4222,7 +4488,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Source DICOM store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Required. Source DICOM store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
@@ -4309,7 +4575,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the DICOM store to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4394,7 +4660,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The DICOM store resource name from which to export the data. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The DICOM store resource name from which to export the data. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4481,7 +4747,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the DICOM store to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4558,6 +4824,91 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.DicomStore{}])
+  end
+
+  @doc """
+  Gets metrics associated with the DICOM store.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to get metrics for.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.DicomStoreMetrics{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_dicom_stores_get_dicom_store_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.DicomStoreMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_dicom_stores_get_dicom_store_metrics(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        dicom_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:getDICOMStoreMetrics",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.DicomStoreMetrics{}])
   end
 
   @doc """
@@ -4653,7 +5004,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the DICOM store resource into which the data is imported. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the DICOM store resource into which the data is imported. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -4740,7 +5091,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the dataset.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4827,7 +5178,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Resource name of the DICOM store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Identifier. Resource name of the DICOM store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
@@ -4843,7 +5194,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.DicomStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4911,12 +5262,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -4996,12 +5347,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForSeries returns a list of matching series. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForSeries, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForSeries, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForSeries returns a list of matching series. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForSeries, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForSeries, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -5081,12 +5432,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForStudies returns a list of matching studies. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForStudies, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForStudies, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForStudies returns a list of matching studies. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForStudies, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForStudies, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -5253,12 +5604,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  StoreInstances stores DICOM instances associated with study instance unique identifiers (SUID). See [Store Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5). For details on the implementation of StoreInstances, see [Store transaction](https://cloud.google.com/healthcare/docs/dicom#store_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call StoreInstances, see [Storing DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#storing_dicom_data).
+  StoreInstances stores DICOM instances associated with study instance unique identifiers (SUID). See [Store Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5). For details on the implementation of StoreInstances, see [Store transaction](https://cloud.google.com/healthcare/docs/dicom#store_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call StoreInstances, see [Store DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#store-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -5429,7 +5780,189 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  DeleteStudy deletes all instances within the given study. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a study that is being deleted by an operation until the operation completes. For samples that show how to call DeleteStudy, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance).
+  GetStudyMetrics returns metrics for a study.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `study`. Required. The study resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
+  *   `dicom_stores_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.StudyMetrics{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_get_study_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.StudyMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_get_study_metrics(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        dicom_stores_id,
+        studies_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}:getStudyMetrics",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.StudyMetrics{}])
+  end
+
+  @doc """
+  GetSeriesMetrics returns metrics for a series.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `series`. Required. The series resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}/series/{series_uid}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `dicom_stores_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `studies_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `series_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.SeriesMetrics{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_get_series_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.SeriesMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_get_series_metrics(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        dicom_stores_id,
+        studies_id,
+        series_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}:getSeriesMetrics",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
+          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
+          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.SeriesMetrics{}])
+  end
+
+  @doc """
+  DeleteStudy deletes all instances within the given study. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a study that is being deleted by an operation until the operation completes. For samples that show how to call DeleteStudy, see [Delete a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#delete-dicom).
 
   ## Parameters
 
@@ -5438,7 +5971,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the DeleteStudy request. For example, `studies/{study_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteStudy request. For example, `studies/{study_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5518,16 +6051,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveStudyMetadata returns instance associated with the given study presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveStudyMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveStudyMetadata, see [Retrieving metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_metadata).
+  RetrieveStudyMetadata returns instance associated with the given study presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveStudyMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveStudyMetadata, see [Retrieve metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-metadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveStudyMetadata DICOMweb request. For example, `studies/{study_uid}/metadata`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveStudyMetadata DICOMweb request. For example, `studies/{study_uid}/metadata`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5607,16 +6140,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveStudy returns all instances within the given study. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveStudy, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveStudy, see [Retrieving DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_dicom_data).
+  RetrieveStudy returns all instances within the given study. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveStudy, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveStudy, see [Retrieve DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveStudy DICOMweb request. For example, `studies/{study_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveStudy DICOMweb request. For example, `studies/{study_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5696,16 +6229,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5785,16 +6318,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForSeries returns a list of matching series. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForSeries, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForSeries, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForSeries returns a list of matching series. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForSeries, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForSeries, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the SearchForSeries DICOMweb request. For example, `series` or `studies/{study_uid}/series`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForSeries DICOMweb request. For example, `series` or `studies/{study_uid}/series`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5874,16 +6407,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  StoreInstances stores DICOM instances associated with study instance unique identifiers (SUID). See [Store Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5). For details on the implementation of StoreInstances, see [Store transaction](https://cloud.google.com/healthcare/docs/dicom#store_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call StoreInstances, see [Storing DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#storing_dicom_data).
+  StoreInstances stores DICOM instances associated with study instance unique identifiers (SUID). See [Store Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.5). For details on the implementation of StoreInstances, see [Store transaction](https://cloud.google.com/healthcare/docs/dicom#store_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call StoreInstances, see [Store DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#store-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the StoreInstances DICOMweb request. For example, `studies/[{study_uid}]`. Note that the `study_uid` is optional.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the StoreInstances DICOMweb request. For example, `studies/[{study_uid}]`. Note that the `study_uid` is optional.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5965,16 +6498,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  DeleteSeries deletes all instances within the given study and series. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a series that is being deleted by an operation until the operation completes. For samples that show how to call DeleteSeries, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance).
+  DeleteSeries deletes all instances within the given study and series. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. The method returns an Operation which will be marked successful when the deletion is complete. Warning: Instances cannot be inserted into a series that is being deleted by an operation until the operation completes. For samples that show how to call DeleteSeries, see [Delete a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#delete-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the DeleteSeries request. For example, `studies/{study_uid}/series/{series_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteSeries request. For example, `studies/{study_uid}/series/{series_uid}`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -6058,16 +6591,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveSeriesMetadata returns instance associated with the given study and series, presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveSeriesMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveSeriesMetadata, see [Retrieving metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_metadata).
+  RetrieveSeriesMetadata returns instance associated with the given study and series, presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveSeriesMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveSeriesMetadata, see [Retrieve metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-metadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveSeriesMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/metadata`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveSeriesMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/metadata`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -6151,16 +6684,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveSeries returns all instances within the given study and series. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveSeries, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveSeries, see [Retrieving DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_dicom_data).
+  RetrieveSeries returns all instances within the given study and series. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveSeries, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveSeries, see [Retrieve DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveSeries DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveSeries DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -6244,16 +6777,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Searching for studies, series, instances, and frames](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#searching_for_studies_series_instances_and_frames).
+  SearchForInstances returns a list of matching instances. See [Search Transaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.6). For details on the implementation of SearchForInstances, see [Search transaction](https://cloud.google.com/healthcare/docs/dicom#search_transaction) in the Cloud Healthcare API conformance statement. For samples that show how to call SearchForInstances, see [Search for DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#search-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -6337,16 +6870,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  DeleteInstance deletes an instance associated with the given study, series, and SOP Instance UID. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. Study and series search results can take a few seconds to be updated after an instance is deleted using DeleteInstance. For samples that show how to call DeleteInstance, see [Deleting a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#deleting_a_study_series_or_instance).
+  DeleteInstance deletes an instance associated with the given study, series, and SOP Instance UID. Delete requests are equivalent to the GET requests specified in the Retrieve transaction. Study and series search results can take a few seconds to be updated after an instance is deleted using DeleteInstance. For samples that show how to call DeleteInstance, see [Delete a study, series, or instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#delete-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the DeleteInstance request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteInstance request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6434,16 +6967,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveInstance returns instance associated with the given study, series, and SOP Instance UID. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveInstance, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) and [DICOM instances](https://cloud.google.com/healthcare/docs/dicom#dicom_instances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveInstance, see [Retrieving an instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_an_instance).
+  RetrieveInstance returns instance associated with the given study, series, and SOP Instance UID. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveInstance, see [DICOM study/series/instances](https://cloud.google.com/healthcare/docs/dicom#dicom_studyseriesinstances) and [DICOM instances](https://cloud.google.com/healthcare/docs/dicom#dicom_instances) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveInstance, see [Retrieve an instance](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-instance).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6531,16 +7064,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveInstanceMetadata returns instance associated with the given study, series, and SOP Instance UID presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveInstanceMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveInstanceMetadata, see [Retrieving metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_metadata).
+  RetrieveInstanceMetadata returns instance associated with the given study, series, and SOP Instance UID presented as metadata with the bulk data removed. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveInstanceMetadata, see [Metadata resources](https://cloud.google.com/healthcare/docs/dicom#metadata_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveInstanceMetadata, see [Retrieve metadata](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-metadata).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveInstanceMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/metadata`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveInstanceMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/metadata`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6628,16 +7161,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveRenderedInstance returns instance associated with the given study, series, and SOP Instance UID in an acceptable Rendered Media Type. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveRenderedInstance, see [Rendered resources](https://cloud.google.com/healthcare/docs/dicom#rendered_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveRenderedInstance, see [Retrieving consumer image formats](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_consumer_image_formats).
+  RetrieveRenderedInstance returns instance associated with the given study, series, and SOP Instance UID in an acceptable Rendered Media Type. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveRenderedInstance, see [Rendered resources](https://cloud.google.com/healthcare/docs/dicom#rendered_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveRenderedInstance, see [Retrieve consumer image formats](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-consumer).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveRenderedInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/rendered`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveRenderedInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/rendered`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6725,16 +7258,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4}. For details on the implementation of RetrieveFrames, see [DICOM frames](https://cloud.google.com/healthcare/docs/dicom#dicom_frames) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveFrames, see [Retrieving DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_dicom_data).
+  RetrieveFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4}. For details on the implementation of RetrieveFrames, see [DICOM frames](https://cloud.google.com/healthcare/docs/dicom#dicom_frames) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveFrames, see [Retrieve DICOM data](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-dicom).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `frames_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
@@ -6826,16 +7359,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  RetrieveRenderedFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers in an acceptable Rendered Media Type. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveRenderedFrames, see [Rendered resources](https://cloud.google.com/healthcare/docs/dicom#rendered_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveRenderedFrames, see [Retrieving consumer image formats](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieving_consumer_image_formats).
+  RetrieveRenderedFrames returns instances associated with the given study, series, SOP Instance UID and frame numbers in an acceptable Rendered Media Type. See [RetrieveTransaction] (http://dicom.nema.org/medical/dicom/current/output/html/part18.html#sect_10.4). For details on the implementation of RetrieveRenderedFrames, see [Rendered resources](https://cloud.google.com/healthcare/docs/dicom#rendered_resources) in the Cloud Healthcare API conformance statement. For samples that show how to call RetrieveRenderedFrames, see [Retrieve consumer image formats](https://cloud.google.com/healthcare/docs/how-tos/dicomweb#retrieve-consumer).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. The path of the RetrieveRenderedFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}/rendered`.
+  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveRenderedFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}/rendered`.
   *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
   *   `frames_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
@@ -6932,7 +7465,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the dataset this FHIR store belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this FHIR store belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -6947,7 +7480,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:fhirStoreId` (*type:* `String.t`) - The ID of the FHIR store that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
+      *   `:fhirStoreId` (*type:* `String.t`) - Required. The ID of the FHIR store that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.FhirStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -7017,7 +7550,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Source FHIR store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Required. Source FHIR store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
@@ -7104,7 +7637,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the FHIR store to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -7189,7 +7722,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to export resource from, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to export resource from, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -7276,7 +7809,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the FHIR store to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -7353,6 +7886,91 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.FhirStore{}])
+  end
+
+  @doc """
+  Gets metrics associated with the FHIR store.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to get metrics for.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.FhirStoreMetrics{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_get_fhir_store_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.FhirStoreMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_get_fhir_store_metrics(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:getFHIRStoreMetrics",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.FhirStoreMetrics{}])
   end
 
   @doc """
@@ -7448,7 +8066,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the FHIR store to import FHIR resources to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to import FHIR resources to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -7535,7 +8153,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the dataset.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -7622,7 +8240,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `fhirStore.name`. Output only. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `fhirStore.name`. Output only. Identifier. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
@@ -7638,7 +8256,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.FhirStore.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -7703,6 +8321,93 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.FhirStore{}])
+  end
+
+  @doc """
+  Rolls back resources from the FHIR store to the specified time. This method returns an Operation that can be used to track the status of the rollback by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type RollbackFhirResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to rollback, in the format of "projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /fhirStores/{fhir_store_id}".
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.RollbackFhirResourcesRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_rollback(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_rollback(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:rollback",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Operation{}])
   end
 
   @doc """
@@ -7887,7 +8592,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Name of the `Patient` resource for which the information is required.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the `Patient` resource for which the information is required.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -7904,12 +8609,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:_count` (*type:* `integer()`) - Maximum number of resources in a page. If not specified, 100 is used. May not be larger than 1000.
+      *   `:_count` (*type:* `integer()`) - Optional. Maximum number of resources in a page. If not specified, 100 is used. May not be larger than 1000.
       *   `:_page_token` (*type:* `String.t`) - Used to retrieve the next or previous page of results when using pagination. Set `_page_token` to the value of _page_token set in next or previous page links' url. Next and previous page are returned in the response bundle's links field, where `link.relation` is "previous" or "next". Omit `_page_token` if no previous request has been made.
-      *   `:_since` (*type:* `String.t`) - If provided, only resources updated after this time are returned. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone.
-      *   `:_type` (*type:* `String.t`) - String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are returned.
-      *   `:end` (*type:* `String.t`) - The response includes records prior to the end date. The date uses the format YYYY-MM-DD. If no end date is provided, all records subsequent to the start date are in scope.
-      *   `:start` (*type:* `String.t`) - The response includes records subsequent to the start date. The date uses the format YYYY-MM-DD. If no start date is provided, all records prior to the end date are in scope.
+      *   `:_since` (*type:* `String.t`) - Optional. If provided, only resources updated after this time are returned. The time uses the format YYYY-MM-DDThh:mm:ss.sss+zz:zz. For example, `2015-02-07T13:28:17.239+02:00` or `2017-01-01T00:00:00Z`. The time must be specified to the second and include a time zone.
+      *   `:_type` (*type:* `String.t`) - Optional. String of comma-delimited FHIR resource types. If provided, only resources of the specified resource type(s) are returned. Specifying multiple `_type` parameters isn't supported. For example, the result of `_type=Observation&_type=Encounter` is undefined. Use `_type=Observation,Encounter` instead.
+      *   `:end` (*type:* `String.t`) - Optional. The response includes records prior to the end date. The date uses the format YYYY-MM-DD. If no end date is provided, all records subsequent to the start date are in scope.
+      *   `:start` (*type:* `String.t`) - Optional. The response includes records subsequent to the start date. The date uses the format YYYY-MM-DD. If no start date is provided, all records prior to the end date are in scope.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -7988,7 +8693,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to purge.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to purge.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8081,11 +8786,11 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the FHIR store that holds the profiles being used for validation.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store that holds the profiles being used for validation.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type of the resource being validated. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), or [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type of the resource being validated. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), or [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8098,7 +8803,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:profile` (*type:* `String.t`) - The canonical URL of a profile that this resource should be validated against. For example, to validate a Patient resource against the US Core Patient profile this parameter would be `http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient`. A StructureDefinition with this canonical URL must exist in the FHIR store.
+      *   `:profile` (*type:* `String.t`) - Required. The canonical URL of a profile that this resource should be validated against. For example, to validate a Patient resource against the US Core Patient profile this parameter would be `http://hl7.org/fhir/us/core/StructureDefinition/us-core-patient`. A StructureDefinition with this canonical URL must exist in the FHIR store.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.HttpBody.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -8174,7 +8879,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Name of the FHIR store to retrieve the capabilities for.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the FHIR store to retrieve the capabilities for.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8254,16 +8959,287 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource).
+  Deletes a FHIR resource that match an identifier search query. Implements the FHIR standard conditional delete interaction, limited to searching by resource identifier. If multiple resources match, 412 Precondition Failed error will be returned. Search term for identifier should be in the pattern `identifier=system|value` or `identifier=value` - similar to the `search` method on resources with a specific identifier. Note: Unless resource versioning is disabled by setting the disable_resource_versioning flag on the FHIR store, the deleted resource is moved to a history repository that can still be retrieved through vread and related methods, unless they are removed by the purge method. For samples that show how to call `conditionalDelete`, see [Conditionally deleting a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_deleting_a_fhir_resource).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the FHIR store this resource belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. The FHIR resource type to create, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to delete, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_delete(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        fhir_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Empty{}])
+  end
+
+  @doc """
+  If a resource is found with the identifier specified in the query parameters, updates part of that resource by applying the operations specified in a [JSON Patch](http://jsonpatch.com/) document. Implements the FHIR standard conditional patch interaction, limited to searching by resource identifier. DSTU2 doesn't define a conditional patch method, but the server supports it in the same way it supports STU3. Search term for identifier should be in the pattern `identifier=system|value` or `identifier=value` - similar to the `search` method on resources with a specific identifier. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. The request body must contain a JSON Patch document, and the request headers must contain `Content-Type: application/json-patch+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `conditionalPatch`, see [Conditionally patching a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_patching_a_fhir_resource).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.HttpBody.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.HttpBody{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_patch(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        fhir_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.HttpBody{}])
+  end
+
+  @doc """
+  If a resource is found with the identifier specified in the query parameters, updates the entire contents of that resource. Implements the FHIR standard conditional update interaction, limited to searching by resource identifier. Search term for identifier should be in the pattern `identifier=system|value` or `identifier=value` - similar to the `search` method on resources with a specific identifier. If the search criteria identify more than one match, the request returns a `412 Precondition Failed` error. If the search criteria identify zero matches, and the supplied resource body contains an `id`, and the FHIR store has enable_update_create set, creates the resource with the client-specified ID. It is strongly advised not to include or encode any sensitive data such as patient identifiers in client-specified resource IDs. Those IDs are part of the FHIR resource path recorded in Cloud Audit Logs and Pub/Sub notifications. Those IDs can also be contained in reference fields within other resources. If the search criteria identify zero matches, and the supplied resource body does not contain an `id`, the resource is created with a server-assigned ID as per the create method. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the updated resource, including the server-assigned version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `conditionalUpdate`, see [Conditionally updating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#conditionally_updating_a_fhir_resource).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.HttpBody.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.HttpBody{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_update(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.HttpBody.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_update(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        fhir_stores_id,
+        fhir_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:put)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
+          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.HttpBody{}])
+  end
+
+  @doc """
+  Creates a FHIR resource. Implements the FHIR standard create interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#create), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#create), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#create)), which creates a new resource with a server-assigned resource ID. Also supports the FHIR standard conditional create interaction ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/http.html#ccreate), [STU3](https://hl7.org/implement/standards/fhir/STU3/http.html#ccreate), [R4](https://hl7.org/implement/standards/fhir/R4/http.html#ccreate)), specified by supplying an `If-None-Exist` header containing a FHIR search query, limited to searching by resource identifier. If no resources match this search query, the server processes the create operation as normal. When using conditional create, the search term for identifier should be in the pattern `identifier=system|value` or `identifier=value` - similar to the `search` method on resources with a specific identifier. The request body must contain a JSON-encoded FHIR resource, and the request headers must contain `Content-Type: application/fhir+json`. On success, the response body contains a JSON-encoded representation of the resource as it was created on the server, including the server-assigned resource ID and version ID. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. For samples that show how to call `create`, see [Creating a FHIR resource](https://cloud.google.com/healthcare/docs/how-tos/fhir-resources#creating_a_fhir_resource).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
+  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to create, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8350,7 +9326,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8443,7 +9419,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the FHIR store in which this bundle will be executed.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store in which this bundle will be executed.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -8530,7 +9506,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8631,7 +9607,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to update.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to update.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8726,7 +9702,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -8814,12 +9790,12 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` "next", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search).
+  Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `recurse` (DSTU2 and STU3) or `:iterate` (R4). Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. The server might return fewer resources than requested to prevent excessively large responses. If there are additional results, the returned `Bundle` contains a link of `relation` "next", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changed, and the time when the change reflects in search results. The only exception is resource identifier data, which is indexed synchronously as a special index. As a result, searching using resource identifier is not subject to indexing delay. To use the special synchronous index, the search term for identifier should be in the pattern `identifier=[system]|[value]` or `identifier=[value]`, and any of the following search result parameters can be used: * `_count` * `_include` * `_revinclude` * `_summary` * `_elements` If your query contains any other search parameters, the standard asynchronous index will be used instead. Note that searching against the special index is optimized for resolving a small number of matches. The search isn't optimized if your identifier search criteria matches a large number (i.e. more than 2,000) of resources. For a search query that will match a large number of resources, you can avoiding using the special synchronous index by including an additional `_sort` parameter in your query. Use `_sort=-_lastUpdated` if you want to keep the default sorting order. Note: The special synchronous identifier index are currently disabled for DocumentReference and DocumentManifest searches. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the FHIR store to retrieve resources from.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store to retrieve resources from.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -8901,16 +9877,16 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `:recurse`. Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. If there are additional results, the returned `Bundle` contains a link of `relation` "next", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changes and when the change is reflected in search results. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search).
+  Searches for resources in the given FHIR store according to criteria specified as query parameters. Implements the FHIR standard search interaction ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/http.html#search), [STU3](http://hl7.org/implement/standards/fhir/STU3/http.html#search), [R4](http://hl7.org/implement/standards/fhir/R4/http.html#search)) using the search semantics described in the FHIR Search specification ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/search.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/search.html), [R4](http://hl7.org/implement/standards/fhir/R4/search.html)). Supports four methods of search defined by the specification: * `GET [base]?[parameters]` to search across all resources. * `GET [base]/[type]?[parameters]` to search resources of a specified type. * `POST [base]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method across all resources. * `POST [base]/[type]/_search?[parameters]` as an alternate form having the same semantics as the `GET` method for the specified type. The `GET` and `POST` methods do not support compartment searches. The `POST` method does not support `application/x-www-form-urlencoded` search parameters. On success, the response body contains a JSON-encoded representation of a `Bundle` resource of type `searchset`, containing the results of the search. Errors generated by the FHIR store contain a JSON-encoded `OperationOutcome` resource describing the reason for the error. If the request cannot be mapped to a valid API method on a FHIR store, a generic GCP error might be returned instead. The server's capability statement, retrieved through capabilities, indicates what search parameters are supported on each FHIR resource. A list of all search parameters defined by the specification can be found in the FHIR Search Parameter Registry ([STU3](http://hl7.org/implement/standards/fhir/STU3/searchparameter-registry.html), [R4](http://hl7.org/implement/standards/fhir/R4/searchparameter-registry.html)). FHIR search parameters for DSTU2 can be found on each resource's definition page. Supported search modifiers: `:missing`, `:exact`, `:contains`, `:text`, `:in`, `:not-in`, `:above`, `:below`, `:[type]`, `:not`, and `recurse` (DSTU2 and STU3) or `:iterate` (R4). Supported search result parameters: `_sort`, `_count`, `_include`, `_revinclude`, `_summary=text`, `_summary=data`, and `_elements`. The maximum number of search results returned defaults to 100, which can be overridden by the `_count` parameter up to a maximum limit of 1000. The server might return fewer resources than requested to prevent excessively large responses. If there are additional results, the returned `Bundle` contains a link of `relation` "next", which has a `_page_token` parameter for an opaque pagination token that can be used to retrieve the next page. Resources with a total size larger than 5MB or a field count larger than 50,000 might not be fully searchable as the server might trim its generated search index in those cases. Note: FHIR resources are indexed asynchronously, so there might be a slight delay between the time a resource is created or changed, and the time when the change reflects in search results. The only exception is resource identifier data, which is indexed synchronously as a special index. As a result, searching using resource identifier is not subject to indexing delay. To use the special synchronous index, the search term for identifier should be in the pattern `identifier=[system]|[value]` or `identifier=[value]`, and any of the following search result parameters can be used: * `_count` * `_include` * `_revinclude` * `_summary` * `_elements` If your query contains any other search parameters, the standard asynchronous index will be used instead. Note that searching against the special index is optimized for resolving a small number of matches. The search isn't optimized if your identifier search criteria matches a large number (i.e. more than 2,000) of resources. For a search query that will match a large number of resources, you can avoiding using the special synchronous index by including an additional `_sort` parameter in your query. Use `_sort=-_lastUpdated` if you want to keep the default sorting order. Note: The special synchronous identifier index are currently disabled for DocumentReference and DocumentManifest searches. For samples and detailed information, see [Searching for FHIR resources](https://cloud.google.com/healthcare/docs/how-tos/fhir-search) and [Advanced FHIR search features](https://cloud.google.com/healthcare/docs/how-tos/fhir-advanced-search).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the FHIR store to retrieve resources from.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store to retrieve resources from.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `resource_type` (*type:* `String.t`) - The FHIR resource type to search, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
+  *   `resource_type` (*type:* `String.t`) - Required. The FHIR resource type to search, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8997,7 +9973,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource to update.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to update.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9092,7 +10068,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the resource version to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource version to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9189,7 +10165,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the dataset this HL7v2 store belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this HL7v2 store belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -9204,7 +10180,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:hl7V2StoreId` (*type:* `String.t`) - The ID of the HL7v2 store that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
+      *   `:hl7V2StoreId` (*type:* `String.t`) - Required. The ID of the HL7v2 store that is being created. The string must match the following regex: `[\\p{L}\\p{N}_\\-\\.]{1,256}`.
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.Hl7V2Store.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -9274,7 +10250,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the HL7v2 store to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9359,7 +10335,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the source HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the source HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9446,7 +10422,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the HL7v2 store to get.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to get.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9523,6 +10499,91 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Hl7V2Store{}])
+  end
+
+  @doc """
+  Gets metrics associated with the HL7v2 store.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to get metrics for, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1.Model.Hl7V2StoreMetrics{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_hl7_v2_stores_get_hl7v2_store_metrics(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1.Model.Hl7V2StoreMetrics.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_hl7_v2_stores_get_hl7v2_store_metrics(
+        connection,
+        projects_id,
+        locations_id,
+        datasets_id,
+        hl7_v2_stores_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url(
+        "/v1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:getHL7v2StoreMetrics",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
+          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1.Model.Hl7V2StoreMetrics{}])
   end
 
   @doc """
@@ -9618,7 +10679,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the target HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the target HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -9705,7 +10766,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the dataset.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -9792,7 +10853,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Identifier. Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
@@ -9808,7 +10869,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.Hl7V2Store.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -10057,7 +11118,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the dataset this message belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the HL7v2 store this message belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -10144,7 +11205,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the HL7v2 message to delete.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 message to delete.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -10233,7 +11294,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource name of the HL7v2 message to retrieve.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 message to retrieve.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -10324,7 +11385,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the HL7v2 store this message belongs to.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the HL7v2 store this message belongs to.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -10411,7 +11472,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the HL7v2 store to retrieve messages from.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the HL7v2 store to retrieve messages from.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
@@ -10506,7 +11567,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `message.name`. Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
+  *   `projects_id` (*type:* `String.t`) - Part of `message.name`. Output only. Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
   *   `locations_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
   *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
@@ -10523,7 +11584,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
       *   `:body` (*type:* `GoogleApi.HealthCare.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -10766,7 +11827,7 @@ defmodule GoogleApi.HealthCare.V1.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 

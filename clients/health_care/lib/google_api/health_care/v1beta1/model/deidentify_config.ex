@@ -29,6 +29,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   *   `image` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t`, *default:* `nil`) - Configures the de-identification of image pixels in the source_dataset. Deprecated. Use `dicom_tag_config.options.clean_image` instead.
   *   `operationMetadata` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t`, *default:* `nil`) - Details about the work the de-identify operation performed.
   *   `text` (*type:* `GoogleApi.HealthCare.V1beta1.Model.TextConfig.t`, *default:* `nil`) - Configures de-identification of text wherever it is found in the source_dataset.
+  *   `useRegionalDataProcessing` (*type:* `boolean()`, *default:* `nil`) - Ensures in-flight data remains in the region of origin during de-identification. Using this option results in a significant reduction of throughput, and is not compatible with `LOCATION` or `ORGANIZATION_NAME` infoTypes. If the deprecated DicomConfig or FhirConfig are used, then `LOCATION` must be excluded within TextConfig, and must also be excluded within ImageConfig if image redaction is required.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,7 +43,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
           :image => GoogleApi.HealthCare.V1beta1.Model.ImageConfig.t() | nil,
           :operationMetadata =>
             GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata.t() | nil,
-          :text => GoogleApi.HealthCare.V1beta1.Model.TextConfig.t() | nil
+          :text => GoogleApi.HealthCare.V1beta1.Model.TextConfig.t() | nil,
+          :useRegionalDataProcessing => boolean() | nil
         }
 
   field(:annotation, as: GoogleApi.HealthCare.V1beta1.Model.AnnotationConfig)
@@ -53,6 +55,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
   field(:image, as: GoogleApi.HealthCare.V1beta1.Model.ImageConfig)
   field(:operationMetadata, as: GoogleApi.HealthCare.V1beta1.Model.DeidentifyOperationMetadata)
   field(:text, as: GoogleApi.HealthCare.V1beta1.Model.TextConfig)
+  field(:useRegionalDataProcessing)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.HealthCare.V1beta1.Model.DeidentifyConfig do
