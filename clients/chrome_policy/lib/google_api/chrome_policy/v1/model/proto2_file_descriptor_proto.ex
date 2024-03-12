@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
 
   ## Attributes
 
+  *   `editionDeprecated` (*type:* `String.t`, *default:* `nil`) - BEGIN GOOGLE-INTERNAL TODO(b/297898292) Deprecate and remove this field in favor of enums. END GOOGLE-INTERNAL
   *   `enumType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto.t)`, *default:* `nil`) - 
   *   `messageType` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t)`, *default:* `nil`) - All top-level definitions in this file.
   *   `name` (*type:* `String.t`, *default:* `nil`) - file name, relative to root of source tree
@@ -31,6 +32,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :editionDeprecated => String.t() | nil,
           :enumType => list(GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto.t()) | nil,
           :messageType => list(GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto.t()) | nil,
           :name => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto do
           :syntax => String.t() | nil
         }
 
+  field(:editionDeprecated)
   field(:enumType, as: GoogleApi.ChromePolicy.V1.Model.Proto2EnumDescriptorProto, type: :list)
   field(:messageType, as: GoogleApi.ChromePolicy.V1.Model.Proto2DescriptorProto, type: :list)
   field(:name)

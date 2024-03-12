@@ -25,14 +25,14 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
   *   `additionalTargetKeyNames` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1AdditionalTargetKeyName.t)`, *default:* `nil`) - Output only. Additional key names that will be used to identify the target of the policy value. When specifying a `policyTargetKey`, each of the additional keys specified here will have to be included in the `additionalTargetKeys` map.
   *   `categoryTitle` (*type:* `String.t`, *default:* `nil`) - Title of the category in which a setting belongs.
   *   `definition` (*type:* `GoogleApi.ChromePolicy.V1.Model.Proto2FileDescriptorProto.t`, *default:* `nil`) - Schema definition using proto descriptor.
-  *   `fieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Detailed description of each field that is part of the schema.
+  *   `fieldDescriptions` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaFieldDescription.t)`, *default:* `nil`) - Output only. Detailed description of each field that is part of the schema. Fields are suggested to be displayed by the ordering in this list, not by field number.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Format: name=customers/{customer}/policySchemas/{schema_namespace}
   *   `notices` (*type:* `list(GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySchemaNoticeDescription.t)`, *default:* `nil`) - Output only. Special notice messages related to setting certain values in certain fields in the schema.
-  *   `policyApiLifecycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Output only. Current lifecycle information.
-  *   `policyApiLifeycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t`, *default:* `nil`) - Deprecated field because of typo.
+  *   `policyApiLifecycle` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyApiLifecycle.t`, *default:* `nil`) - Output only. Current lifecycle information.
   *   `policyDescription` (*type:* `String.t`, *default:* `nil`) - Output only. Description about the policy schema for user consumption.
   *   `schemaName` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the policy schema. This value is used to fill the field `policy_schema` in PolicyValue when calling BatchInheritOrgUnitPolicies BatchModifyOrgUnitPolicies BatchModifyGroupPolicies or BatchDeleteGroupPolicies.
   *   `supportUri` (*type:* `String.t`, *default:* `nil`) - Output only. URI to related support article for this schema.
+  *   `supportedPlatforms` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List indicates that the policy will only apply to devices/users on these platforms.
   *   `validTargetResources` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Information about applicable target resources for the policy.
   """
 
@@ -59,14 +59,12 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
             )
             | nil,
           :policyApiLifecycle =>
-            GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t()
-            | nil,
-          :policyApiLifeycle =>
-            GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle.t()
+            GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyApiLifecycle.t()
             | nil,
           :policyDescription => String.t() | nil,
           :schemaName => String.t() | nil,
           :supportUri => String.t() | nil,
+          :supportedPlatforms => list(String.t()) | nil,
           :validTargetResources => list(String.t()) | nil
         }
 
@@ -93,16 +91,13 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicySche
   )
 
   field(:policyApiLifecycle,
-    as: GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle
-  )
-
-  field(:policyApiLifeycle,
-    as: GoogleApi.ChromePolicy.V1.Model.ChromeCrosDpanelAutosettingsProtoPolicyApiLifecycle
+    as: GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyApiLifecycle
   )
 
   field(:policyDescription)
   field(:schemaName)
   field(:supportUri)
+  field(:supportedPlatforms, type: :list)
   field(:validTargetResources, type: :list)
 end
 
