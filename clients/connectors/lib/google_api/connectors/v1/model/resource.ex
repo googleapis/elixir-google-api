@@ -21,7 +21,7 @@ defmodule GoogleApi.Connectors.V1.Model.Resource do
 
   ## Attributes
 
-  *   `pathTemplate` (*type:* `String.t`, *default:* `nil`) - Template to uniquely represent a GCP resource in a format IAM expects This is a template that can have references to other values provided in the config variable template.
+  *   `pathTemplate` (*type:* `String.t`, *default:* `nil`) - Template to uniquely represent a Google Cloud resource in a format IAM expects This is a template that can have references to other values provided in the config variable template.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Different types of resource supported.
   """
 

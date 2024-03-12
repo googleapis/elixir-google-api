@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectionSchemaMetadata do
 
   *   `actions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of actions.
   *   `entities` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of entity names.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Error message for users.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name. Format: projects/{project}/locations/{location}/connections/{connection}/connectionSchemaMetadata
   *   `refreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the connection runtime schema refresh was triggered.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of runtime schema.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectionSchemaMetadata do
   @type t :: %__MODULE__{
           :actions => list(String.t()) | nil,
           :entities => list(String.t()) | nil,
+          :errorMessage => String.t() | nil,
           :name => String.t() | nil,
           :refreshTime => DateTime.t() | nil,
           :state => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectionSchemaMetadata do
 
   field(:actions, type: :list)
   field(:entities, type: :list)
+  field(:errorMessage)
   field(:name)
   field(:refreshTime, as: DateTime)
   field(:state)

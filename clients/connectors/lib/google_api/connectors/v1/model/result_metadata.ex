@@ -24,6 +24,7 @@ defmodule GoogleApi.Connectors.V1.Model.ResultMetadata do
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - The data type of the field.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of the field.
   *   `field` (*type:* `String.t`, *default:* `nil`) - Name of the result field.
+  *   `jsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - JsonSchema representation of this action's result
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Connectors.V1.Model.ResultMetadata do
   @type t :: %__MODULE__{
           :dataType => String.t() | nil,
           :description => String.t() | nil,
-          :field => String.t() | nil
+          :field => String.t() | nil,
+          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil
         }
 
   field(:dataType)
   field(:description)
   field(:field)
+  field(:jsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.ResultMetadata do

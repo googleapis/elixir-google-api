@@ -23,17 +23,20 @@ defmodule GoogleApi.Connectors.V1.Model.RuntimeEntitySchema do
 
   *   `entity` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the entity.
   *   `fields` (*type:* `list(GoogleApi.Connectors.V1.Model.Field.t)`, *default:* `nil`) - Output only. List of fields in the entity.
+  *   `jsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - Output only. JsonSchema representation of this entity's metadata
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :entity => String.t() | nil,
-          :fields => list(GoogleApi.Connectors.V1.Model.Field.t()) | nil
+          :fields => list(GoogleApi.Connectors.V1.Model.Field.t()) | nil,
+          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil
         }
 
   field(:entity)
   field(:fields, as: GoogleApi.Connectors.V1.Model.Field, type: :list)
+  field(:jsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.RuntimeEntitySchema do

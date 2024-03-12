@@ -25,8 +25,12 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of the parameter.
   *   `enumOptions` (*type:* `list(GoogleApi.Connectors.V1.Model.EnumOption.t)`, *default:* `nil`) - Enum options. To be populated if `ValueType` is `ENUM`
+  *   `enumSource` (*type:* `String.t`, *default:* `nil`) - Optional. enum source denotes the source of api to fill the enum options
+  *   `isAdvanced` (*type:* `boolean()`, *default:* `nil`) - Indicates if current template is part of advanced settings
   *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
+  *   `locationType` (*type:* `String.t`, *default:* `nil`) - Optional. Location Tyep denotes where this value should be sent in BYOC connections.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Flag represents that this `ConfigVariable` must be provided for a connection.
+  *   `requiredCondition` (*type:* `GoogleApi.Connectors.V1.Model.LogicalExpression.t`, *default:* `nil`) - Condition under which a field would be required. The condition can be represented in the form of a logical expression.
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Role grant configuration for the config variable.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the config variable.
   *   `validationRegex` (*type:* `String.t`, *default:* `nil`) - Regular expression in RE2 syntax used for validating the `value` of a `ConfigVariable`.
@@ -40,8 +44,12 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :enumOptions => list(GoogleApi.Connectors.V1.Model.EnumOption.t()) | nil,
+          :enumSource => String.t() | nil,
+          :isAdvanced => boolean() | nil,
           :key => String.t() | nil,
+          :locationType => String.t() | nil,
           :required => boolean() | nil,
+          :requiredCondition => GoogleApi.Connectors.V1.Model.LogicalExpression.t() | nil,
           :roleGrant => GoogleApi.Connectors.V1.Model.RoleGrant.t() | nil,
           :state => String.t() | nil,
           :validationRegex => String.t() | nil,
@@ -52,8 +60,12 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   field(:description)
   field(:displayName)
   field(:enumOptions, as: GoogleApi.Connectors.V1.Model.EnumOption, type: :list)
+  field(:enumSource)
+  field(:isAdvanced)
   field(:key)
+  field(:locationType)
   field(:required)
+  field(:requiredCondition, as: GoogleApi.Connectors.V1.Model.LogicalExpression)
   field(:roleGrant, as: GoogleApi.Connectors.V1.Model.RoleGrant)
   field(:state)
   field(:validationRegex)
