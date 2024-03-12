@@ -21,16 +21,19 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource do
 
   ## Attributes
 
-  *   `entity` (*type:* `String.t`, *default:* `nil`) - Immutable. The dataplex entity that contains the data for DataScan, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}.
+  *   `entity` (*type:* `String.t`, *default:* `nil`) - Immutable. The Dataplex entity that represents the data source (e.g. BigQuery table) for DataScan, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - Immutable. The service-qualified full resource name of the cloud resource for a DataScan job to scan against. The field could be: BigQuery table of type "TABLE" for DataProfileScan/DataQualityScan Format: //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :entity => String.t() | nil
+          :entity => String.t() | nil,
+          :resource => String.t() | nil
         }
 
   field(:entity)
+  field(:resource)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataSource do

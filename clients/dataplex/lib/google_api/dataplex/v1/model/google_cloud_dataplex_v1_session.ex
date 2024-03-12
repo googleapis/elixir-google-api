@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Session do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Session start time.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the content, of the form: projects/{project_id}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}/sessions/{session_id}
-  *   `state` (*type:* `String.t`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of Session
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Output only. Email of user running the session.
   """
 

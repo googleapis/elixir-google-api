@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EnvironmentSessionStatus do
   @moduledoc """
-
+  Status of sessions created for this environment.
 
   ## Attributes
 

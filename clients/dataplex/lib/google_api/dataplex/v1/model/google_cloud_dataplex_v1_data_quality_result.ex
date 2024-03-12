@@ -21,25 +21,40 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult do
 
   ## Attributes
 
-  *   `dimensions` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult.t)`, *default:* `nil`) - A list of results at the dimension-level.
+  *   `columns` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityColumnResult.t)`, *default:* `nil`) - Output only. A list of results at the column level.A column will have a corresponding DataQualityColumnResult if and only if there is at least one rule with the 'column' field set to it.
+  *   `dimensions` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult.t)`, *default:* `nil`) - A list of results at the dimension level.A dimension will have a corresponding DataQualityDimensionResult if and only if there is at least one rule with the 'dimension' field set to it.
   *   `passed` (*type:* `boolean()`, *default:* `nil`) - Overall data quality result -- true if all rules passed.
+  *   `postScanActionsResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResultPostScanActionsResult.t`, *default:* `nil`) - Output only. The result of post scan actions.
   *   `rowCount` (*type:* `String.t`, *default:* `nil`) - The count of rows processed.
   *   `rules` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult.t)`, *default:* `nil`) - A list of all the rules in a job, and their results.
   *   `scannedData` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t`, *default:* `nil`) - The data scanned for this result.
+  *   `score` (*type:* `number()`, *default:* `nil`) - Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :columns =>
+            list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityColumnResult.t())
+            | nil,
           :dimensions =>
             list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult.t())
             | nil,
           :passed => boolean() | nil,
+          :postScanActionsResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResultPostScanActionsResult.t()
+            | nil,
           :rowCount => String.t() | nil,
           :rules =>
             list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult.t()) | nil,
-          :scannedData => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t() | nil
+          :scannedData => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t() | nil,
+          :score => number() | nil
         }
+
+  field(:columns,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityColumnResult,
+    type: :list
+  )
 
   field(:dimensions,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult,
@@ -47,6 +62,11 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult do
   )
 
   field(:passed)
+
+  field(:postScanActionsResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResultPostScanActionsResult
+  )
+
   field(:rowCount)
 
   field(:rules,
@@ -55,6 +75,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult do
   )
 
   field(:scannedData, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData)
+  field(:score)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult do

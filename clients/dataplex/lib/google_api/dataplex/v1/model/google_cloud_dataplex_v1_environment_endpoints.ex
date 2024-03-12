@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EnvironmentEndpoints do
   @moduledoc """
-
+  URI Endpoints to access sessions associated with the Environment.
 
   ## Attributes
 

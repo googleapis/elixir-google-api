@@ -21,9 +21,9 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedDataIncrementa
 
   ## Attributes
 
-  *   `end` (*type:* `String.t`, *default:* `nil`) - Value that marks the end of the range
-  *   `field` (*type:* `String.t`, *default:* `nil`) - The field that contains values which monotonically increases over time (e.g. timestamp).
-  *   `start` (*type:* `String.t`, *default:* `nil`) - Value that marks the start of the range
+  *   `end` (*type:* `String.t`, *default:* `nil`) - Value that marks the end of the range.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - The field that contains values which monotonically increases over time (e.g. a timestamp column).
+  *   `start` (*type:* `String.t`, *default:* `nil`) - Value that marks the start of the range.
   """
 
   use GoogleApi.Gax.ModelBase

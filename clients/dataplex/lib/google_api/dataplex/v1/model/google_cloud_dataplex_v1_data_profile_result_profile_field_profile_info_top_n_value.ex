@@ -17,22 +17,25 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue do
   @moduledoc """
-  The TopNValue defines the structure of output of top N values of a field.
+  Top N non-null values in the scanned data.
 
   ## Attributes
 
-  *   `count` (*type:* `String.t`, *default:* `nil`) - The frequency count of the corresponding value in the field.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value is the string value of the actual value from the field.
+  *   `count` (*type:* `String.t`, *default:* `nil`) - Count of the corresponding value in the scanned data.
+  *   `ratio` (*type:* `float()`, *default:* `nil`) - Ratio of the corresponding value in the field against the total number of rows in the scanned data.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - String value of a top N non-null value.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :count => String.t() | nil,
+          :ratio => float() | nil,
           :value => String.t() | nil
         }
 
   field(:count)
+  field(:ratio)
   field(:value)
 end
 

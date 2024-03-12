@@ -17,16 +17,20 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEvent do
   @moduledoc """
-  These messages contain information about the execution of a datascan. The monitored resource is 'DataScan'
+  These messages contain information about the execution of a datascan. The monitored resource is 'DataScan' Next ID: 13
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the data scan job was created.
   *   `dataProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileResult.t`, *default:* `nil`) - Data profile result for data profile type data scan.
+  *   `dataProfileConfigs` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileAppliedConfigs.t`, *default:* `nil`) - Applied configs for data profile type data scan.
   *   `dataQuality` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityResult.t`, *default:* `nil`) - Data quality result for data quality type data scan.
+  *   `dataQualityConfigs` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityAppliedConfigs.t`, *default:* `nil`) - Applied configs for data quality type data scan.
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - The data source of the data scan
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the data scan job finished.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - The identifier of the specific data scan job this log entry is for.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The message describing the data scan job event.
+  *   `postScanActionsResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventPostScanActionsResult.t`, *default:* `nil`) - The result of post scan actions.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - The scope of the data scan (e.g. full, incremental).
   *   `specVersion` (*type:* `String.t`, *default:* `nil`) - A version identifier of the spec which was used to execute this job.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the data scan job started to run.
@@ -38,16 +42,26 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t() | nil,
           :dataProfile =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileResult.t()
             | nil,
+          :dataProfileConfigs =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileAppliedConfigs.t()
+            | nil,
           :dataQuality =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityResult.t()
+            | nil,
+          :dataQualityConfigs =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityAppliedConfigs.t()
             | nil,
           :dataSource => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :jobId => String.t() | nil,
           :message => String.t() | nil,
+          :postScanActionsResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventPostScanActionsResult.t()
+            | nil,
           :scope => String.t() | nil,
           :specVersion => String.t() | nil,
           :startTime => DateTime.t() | nil,
@@ -56,18 +70,33 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEvent do
           :type => String.t() | nil
         }
 
+  field(:createTime, as: DateTime)
+
   field(:dataProfile,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileResult
+  )
+
+  field(:dataProfileConfigs,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataProfileAppliedConfigs
   )
 
   field(:dataQuality,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityResult
   )
 
+  field(:dataQualityConfigs,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQualityAppliedConfigs
+  )
+
   field(:dataSource)
   field(:endTime, as: DateTime)
   field(:jobId)
   field(:message)
+
+  field(:postScanActionsResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventPostScanActionsResult
+  )
+
   field(:scope)
   field(:specVersion)
   field(:startTime, as: DateTime)

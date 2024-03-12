@@ -17,20 +17,27 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimensionResult do
   @moduledoc """
-  DataQualityDimensionResult provides a more detailed, per-dimension level view of the results.
+  DataQualityDimensionResult provides a more detailed, per-dimension view of the results.
 
   ## Attributes
 
+  *   `dimension` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimension.t`, *default:* `nil`) - Output only. The dimension config specified in the DataQualitySpec, as is.
   *   `passed` (*type:* `boolean()`, *default:* `nil`) - Whether the dimension passed or failed.
+  *   `score` (*type:* `number()`, *default:* `nil`) - Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :passed => boolean() | nil
+          :dimension =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimension.t() | nil,
+          :passed => boolean() | nil,
+          :score => number() | nil
         }
 
+  field(:dimension, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityDimension)
   field(:passed)
+  field(:score)
 end
 
 defimpl Poison.Decoder,

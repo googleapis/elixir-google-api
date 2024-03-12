@@ -21,19 +21,27 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult do
 
   ## Attributes
 
-  *   `profile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfile.t`, *default:* `nil`) - This represents the profile information per field.
-  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - The count of all rows in the sampled data. Return 0, if zero rows.
-  *   `scannedData` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t`, *default:* `nil`) - The data scanned for this profile.
+  *   `postScanActionsResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultPostScanActionsResult.t`, *default:* `nil`) - Output only. The result of post scan actions.
+  *   `profile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfile.t`, *default:* `nil`) - The profile information per field.
+  *   `rowCount` (*type:* `String.t`, *default:* `nil`) - The count of rows scanned.
+  *   `scannedData` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t`, *default:* `nil`) - The data scanned for this result.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :postScanActionsResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultPostScanActionsResult.t()
+            | nil,
           :profile =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfile.t() | nil,
           :rowCount => String.t() | nil,
           :scannedData => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ScannedData.t() | nil
         }
+
+  field(:postScanActionsResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultPostScanActionsResult
+  )
 
   field(:profile, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfile)
   field(:rowCount)

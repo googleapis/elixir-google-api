@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1RunDataScanResponse d
 
   ## Attributes
 
-  *   `job` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob.t`, *default:* `nil`) - DataScanJob created by RunDataScan API.
+  *   `job` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob.t`, *default:* `nil`) - DataScanJob created by RunDataScan request.
   """
 
   use GoogleApi.Gax.ModelBase

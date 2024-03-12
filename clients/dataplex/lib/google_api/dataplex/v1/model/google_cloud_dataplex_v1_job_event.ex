@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1JobEvent do
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the job ended running.
+  *   `executionTrigger` (*type:* `String.t`, *default:* `nil`) - Job execution trigger.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - The unique id identifying the job.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The log message.
   *   `retries` (*type:* `integer()`, *default:* `nil`) - The number of retries.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1JobEvent do
 
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
+          :executionTrigger => String.t() | nil,
           :jobId => String.t() | nil,
           :message => String.t() | nil,
           :retries => integer() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1JobEvent do
         }
 
   field(:endTime, as: DateTime)
+  field(:executionTrigger)
   field(:jobId)
   field(:message)
   field(:retries)

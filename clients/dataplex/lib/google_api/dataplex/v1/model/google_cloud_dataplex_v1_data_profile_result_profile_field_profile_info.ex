@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo do
   @moduledoc """
-  ProfileInfo defines the profile information for each schema field type.
+  The profile information for each field type.
 
   ## Attributes
 
-  *   `distinctRatio` (*type:* `float()`, *default:* `nil`) - The ratio of rows that are distinct against the rows in the sampled data.
-  *   `doubleProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo.t`, *default:* `nil`) - The corresponding double field profile.
-  *   `integerProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo.t`, *default:* `nil`) - The corresponding integer field profile.
-  *   `nullRatio` (*type:* `float()`, *default:* `nil`) - The ratio of null rows against the rows in the sampled data.
-  *   `stringProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo.t`, *default:* `nil`) - The corresponding string field profile.
-  *   `topNValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue.t)`, *default:* `nil`) - The array of top N values of the field in the sampled data. Currently N is set as 10 or equal to distinct values in the field, whichever is smaller. This will be optional for complex non-groupable data-types such as JSON, ARRAY, JSON, STRUCT.
+  *   `distinctRatio` (*type:* `float()`, *default:* `nil`) - Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
+  *   `doubleProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo.t`, *default:* `nil`) - Double type field information.
+  *   `integerProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo.t`, *default:* `nil`) - Integer type field information.
+  *   `nullRatio` (*type:* `float()`, *default:* `nil`) - Ratio of rows with null value against total scanned rows.
+  *   `stringProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo.t`, *default:* `nil`) - String type field information.
+  *   `topNValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue.t)`, *default:* `nil`) - The list of top N non-null values, frequency and ratio with which they occur in the scanned data. N is 10 or equal to the number of distinct values in the field, whichever is smaller. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
   """
 
   use GoogleApi.Gax.ModelBase

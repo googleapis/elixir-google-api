@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormat do
   *   `compressionFormat` (*type:* `String.t`, *default:* `nil`) - Optional. The compression type associated with the stored data. If unspecified, the data is uncompressed.
   *   `csv` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatCsvOptions.t`, *default:* `nil`) - Optional. Additional information about CSV formatted data.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Output only. The data format associated with the stored data, which represents content type values. The value is inferred from mime type.
+  *   `iceberg` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatIcebergOptions.t`, *default:* `nil`) - Optional. Additional information about iceberg tables.
   *   `json` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatJsonOptions.t`, *default:* `nil`) - Optional. Additional information about CSV formatted data.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Required. The mime type descriptor for the data. Must match the pattern {type}/{subtype}. Supported values: application/x-parquet application/x-avro application/x-orc application/x-tfrecord application/x-parquet+iceberg application/x-avro+iceberg application/x-orc+iceberg application/json application/{subtypes} text/csv text/ image/{image subtype} video/{video subtype} audio/{audio subtype}
   """
@@ -35,6 +36,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormat do
           :csv =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatCsvOptions.t() | nil,
           :format => String.t() | nil,
+          :iceberg =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatIcebergOptions.t() | nil,
           :json =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatJsonOptions.t() | nil,
           :mimeType => String.t() | nil
@@ -43,6 +46,9 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormat do
   field(:compressionFormat)
   field(:csv, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatCsvOptions)
   field(:format)
+
+  field(:iceberg, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatIcebergOptions)
+
   field(:json, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormatJsonOptions)
   field(:mimeType)
 end

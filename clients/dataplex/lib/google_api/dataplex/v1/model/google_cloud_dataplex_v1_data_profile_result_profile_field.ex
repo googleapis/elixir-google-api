@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileField do
   @moduledoc """
-  Represents a column field within a table schema.
+  A field within a table.
 
   ## Attributes
 
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode of the field. Its value will be: REQUIRED, if it is a required field. NULLABLE, if it is an optional field. REPEATED, if it is a repeated field.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode of the field. Possible values include: REQUIRED, if it is a required field. NULLABLE, if it is an optional field. REPEATED, if it is a repeated field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the field.
-  *   `profile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo.t`, *default:* `nil`) - The profile information for the corresponding field.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The field data type. Possible values include: STRING BYTE INT64 INT32 INT16 DOUBLE FLOAT DECIMAL BOOLEAN BINARY TIMESTAMP DATE TIME NULL RECORD
+  *   `profile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo.t`, *default:* `nil`) - Profile information for the corresponding field.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The data type retrieved from the schema of the data source. For instance, for a BigQuery native table, it is the BigQuery Table Schema (https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema). For a Dataplex Entity, it is the Entity Schema (https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
   """
 
   use GoogleApi.Gax.ModelBase

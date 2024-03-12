@@ -21,17 +21,31 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec do
 
   ## Attributes
 
-  *   `rules` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t)`, *default:* `nil`) - The list of rules to evaluate against a data source. At least one rule is required.
+  *   `postScanActions` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpecPostScanActions.t`, *default:* `nil`) - Optional. Actions to take upon job completion.
+  *   `rowFilter` (*type:* `String.t`, *default:* `nil`) - Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10
+  *   `rules` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t)`, *default:* `nil`) - Required. The list of rules to evaluate against a data source. At least one rule is required.
+  *   `samplingPercent` (*type:* `number()`, *default:* `nil`) - Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :postScanActions =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpecPostScanActions.t()
+            | nil,
+          :rowFilter => String.t() | nil,
           :rules =>
-            list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t()) | nil
+            list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t()) | nil,
+          :samplingPercent => number() | nil
         }
 
+  field(:postScanActions,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpecPostScanActions
+  )
+
+  field(:rowFilter)
   field(:rules, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule, type: :list)
+  field(:samplingPercent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec do

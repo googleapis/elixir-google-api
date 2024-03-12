@@ -21,22 +21,31 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanEventDataQual
 
   ## Attributes
 
+  *   `columnScore` (*type:* `map()`, *default:* `nil`) - The score of each column scanned in the data scan job. The key of the map is the name of the column. The value is the data quality score for the column.The score ranges between 0, 100 (up to two decimal points).
   *   `dimensionPassed` (*type:* `map()`, *default:* `nil`) - The result of each dimension for data quality result. The key of the map is the name of the dimension. The value is the bool value depicting whether the dimension result was pass or not.
+  *   `dimensionScore` (*type:* `map()`, *default:* `nil`) - The score of each dimension for data quality result. The key of the map is the name of the dimension. The value is the data quality score for the dimension.The score ranges between 0, 100 (up to two decimal points).
   *   `passed` (*type:* `boolean()`, *default:* `nil`) - Whether the data quality result was pass or not.
   *   `rowCount` (*type:* `String.t`, *default:* `nil`) - The count of rows processed in the data scan job.
+  *   `score` (*type:* `number()`, *default:* `nil`) - The table-level data quality score for the data scan job.The data quality score ranges between 0, 100 (up to two decimal points).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :columnScore => map() | nil,
           :dimensionPassed => map() | nil,
+          :dimensionScore => map() | nil,
           :passed => boolean() | nil,
-          :rowCount => String.t() | nil
+          :rowCount => String.t() | nil,
+          :score => number() | nil
         }
 
+  field(:columnScore, type: :map)
   field(:dimensionPassed, type: :map)
+  field(:dimensionScore, type: :map)
   field(:passed)
   field(:rowCount)
+  field(:score)
 end
 
 defimpl Poison.Decoder,

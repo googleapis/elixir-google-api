@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
   @moduledoc """
-  Represents a user-visible job which provides the insights for the related data source. For examples: - Data Quality: generates queries based on the rules and run against the data to get data quality check results. - Data Profile: analyzes the data in table(s) and generates insights about the structure, content and relationships (such as null percent, cardinality, min/max/mean, etc).
+  Represents a user-visible job which provides the insights for the related data source.For example: Data Quality: generates queries based on the rules and runs against the data to get data quality check results. Data Profile: analyzes the data in table(s) and generates insights about the structure, content and relationships (such as null percent, cardinality, min/max/mean, etc).
 
   ## Attributes
 
@@ -27,11 +27,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
   *   `dataProfileSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec.t`, *default:* `nil`) - DataProfileScan related setting.
   *   `dataQualityResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult.t`, *default:* `nil`) - Output only. The result of the data quality scan.
   *   `dataQualitySpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualitySpec.t`, *default:* `nil`) - DataQualityScan related setting.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the scan. * Must be between 1-1024 characters.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name. * Must be between 1-256 characters.
-  *   `executionSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec.t`, *default:* `nil`) - Optional. DataScan execution settings. If not specified, the fields under it will use their default values.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the scan. Must be between 1-1024 characters.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name. Must be between 1-256 characters.
+  *   `executionSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec.t`, *default:* `nil`) - Optional. DataScan execution settings.If not specified, the fields in it will use their default values.
+  *   `executionStatus` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStatus.t`, *default:* `nil`) - Output only. Status of the data scan execution.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the scan.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}. where {project} refers to a project_id or project_number and location_id refers to a GCP region.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a GCP region.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the DataScan.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of DataScan.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the scan. This ID will be different if the scan is deleted and re-created with the same name.
@@ -55,6 +56,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
           :displayName => String.t() | nil,
           :executionSpec =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec.t() | nil,
+          :executionStatus =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStatus.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
@@ -77,6 +80,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScan do
   field(:displayName)
 
   field(:executionSpec, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionSpec)
+
+  field(:executionStatus,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStatus
+  )
 
   field(:labels, type: :map)
   field(:name)

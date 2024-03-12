@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entity do
 
   ## Attributes
 
+  *   `access` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageAccess.t`, *default:* `nil`) - Output only. Identifies the access mechanism to the entity. Not user settable.
   *   `asset` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The ID of the asset associated with the storage location containing the entity data. The entity must be with in the same zone with the asset.
   *   `catalogEntry` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the associated Data Catalog entry.
   *   `compatibility` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntityCompatibilityStatus.t`, *default:* `nil`) - Output only. Metadata stores that the entity is compatible with.
@@ -31,17 +32,19 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entity do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name must be shorter than or equal to 256 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. The etag associated with the entity, which can be retrieved with a GetEntity request. Required for update and delete requests.
   *   `format` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageFormat.t`, *default:* `nil`) - Required. Identifies the storage format of the entity data. It does not apply to entities with data stored in BigQuery.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. A user-provided entity ID. It is mutable, and will be used as the published table name. Specifying a new ID in an update entity request will override the existing value. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores. Must begin with a letter and consist of 256 or fewer characters.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. A user-provided entity ID. It is mutable, and will be used as the published table name. Specifying a new ID in an update entity request will override the existing value. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores, and consist of 256 or fewer characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the entity, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{id}.
   *   `schema` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Schema.t`, *default:* `nil`) - Required. The description of the data structure and layout. The schema is not included in list responses. It is only included in SCHEMA and FULL entity views of a GetEntity response.
   *   `system` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Identifies the storage system of the entity data.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The type of entity.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated unique ID for the Entity. This ID will be different if the Entity is deleted and re-created with the same name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the entity was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :access => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageAccess.t() | nil,
           :asset => String.t() | nil,
           :catalogEntry => String.t() | nil,
           :compatibility =>
@@ -58,9 +61,11 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entity do
           :schema => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Schema.t() | nil,
           :system => String.t() | nil,
           :type => String.t() | nil,
+          :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:access, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1StorageAccess)
   field(:asset)
   field(:catalogEntry)
 
@@ -80,6 +85,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entity do
   field(:schema, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Schema)
   field(:system)
   field(:type)
+  field(:uid)
   field(:updateTime, as: DateTime)
 end
 
