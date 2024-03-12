@@ -23,7 +23,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.AlertFeedback do
 
   *   `alertId` (*type:* `String.t`, *default:* `nil`) - Output only. The alert identifier.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this feedback was created.
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Google account of the customer.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Google Workspace account of the customer.
   *   `email` (*type:* `String.t`, *default:* `nil`) - Output only. The email of the user that provided the feedback.
   *   `feedbackId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the feedback.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the feedback.

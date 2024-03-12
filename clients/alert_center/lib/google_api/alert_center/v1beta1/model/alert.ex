@@ -23,7 +23,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.Alert do
 
   *   `alertId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier for the alert.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this alert was created.
-  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Google account of the customer.
+  *   `customerId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Google Workspace account of the customer.
   *   `data` (*type:* `map()`, *default:* `nil`) - Optional. The data associated with this alert, for example google.apps.alertcenter.type.DeviceCompromised.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. `True` if this alert is marked for deletion.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time the event that caused this alert ceased being active. If provided, the end time must not be earlier than the start time. If not provided, it indicates an ongoing alert.

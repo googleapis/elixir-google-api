@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.AlertCenter.V1beta1.Model.ApnsCertificateExpirationInfo do
   @moduledoc """
-  The explanation message associated with ApnsCertificationExpiring and ApnsCertificationExpired alerts.
+  The explanation message associated with "APNS certificate is expiring soon" and "APNS certificate has expired" alerts.
 
   ## Attributes
 
-  *   `appleId` (*type:* `String.t`, *default:* `nil`) - The Apple ID used for the certificate, may be blank if admins did not enter it.
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The expiration date of the APNS Certificate.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - The UID for the certificate.
+  *   `appleId` (*type:* `String.t`, *default:* `nil`) - The Apple ID used to create the certificate. It may be blank if admins didn't enter it.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - The expiration date of the APNS certificate.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - The UID of the certificate.
   """
 
   use GoogleApi.Gax.ModelBase

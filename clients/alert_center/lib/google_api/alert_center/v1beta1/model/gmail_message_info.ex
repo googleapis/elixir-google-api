@@ -28,6 +28,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo do
   *   `messageBodySnippet` (*type:* `String.t`, *default:* `nil`) - The snippet of the message body text (only available for reported emails).
   *   `messageId` (*type:* `String.t`, *default:* `nil`) - The message ID.
   *   `recipient` (*type:* `String.t`, *default:* `nil`) - The recipient of this email.
+  *   `sentTime` (*type:* `DateTime.t`, *default:* `nil`) - The sent time of the email.
   *   `subjectText` (*type:* `String.t`, *default:* `nil`) - The email subject text (only available for reported emails).
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo do
           :messageBodySnippet => String.t() | nil,
           :messageId => String.t() | nil,
           :recipient => String.t() | nil,
+          :sentTime => DateTime.t() | nil,
           :subjectText => String.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.GmailMessageInfo do
   field(:messageBodySnippet)
   field(:messageId)
   field(:recipient)
+  field(:sentTime, as: DateTime)
   field(:subjectText)
 end
 
