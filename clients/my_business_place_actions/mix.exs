@@ -48,7 +48,7 @@ defmodule GoogleApi.MyBusinessPlaceActions.Mixfile do
 
   defp description() do
     """
-    My Business Place Actions API client library. The My Business Place Actions API provides an interface for managing place action links of a location on Google.
+    My Business Place Actions API client library. The My Business Place Actions API provides an interface for managing place action links of a location on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 
