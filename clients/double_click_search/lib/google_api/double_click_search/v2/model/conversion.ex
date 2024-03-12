@@ -50,6 +50,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
   *   `engineAccountId` (*type:* `String.t`, *default:* `nil`) - DS engine account ID.
   *   `dsConversionId` (*type:* `String.t`, *default:* `nil`) - ID that DoubleClick Search generates for each conversion.
   *   `clickId` (*type:* `String.t`, *default:* `nil`) - DS click ID for the conversion.
+  *   `adUserDataConsent` (*type:* `String.t`, *default:* `nil`) - Represents consent for core platform services (CPS) preferences in settings. No default value. Acceptable values are: GRANTED: The desired consent status is to grant. Read the CPS preferences from GTE settings. DENIED: The desired consent status is to deny; CPS list is empty.
   *   `adGroupId` (*type:* `String.t`, *default:* `nil`) - DS ad group ID.
   *   `productLanguage` (*type:* `String.t`, *default:* `nil`) - The language registered for the Merchant Center feed that contains the product. Use an ISO 639 code to specify a language.
   *   `productGroupId` (*type:* `String.t`, *default:* `nil`) - DS product group ID.
@@ -90,6 +91,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
           :engineAccountId => String.t() | nil,
           :dsConversionId => String.t() | nil,
           :clickId => String.t() | nil,
+          :adUserDataConsent => String.t() | nil,
           :adGroupId => String.t() | nil,
           :productLanguage => String.t() | nil,
           :productGroupId => String.t() | nil,
@@ -126,6 +128,7 @@ defmodule GoogleApi.DoubleClickSearch.V2.Model.Conversion do
   field(:engineAccountId)
   field(:dsConversionId)
   field(:clickId)
+  field(:adUserDataConsent)
   field(:adGroupId)
   field(:productLanguage)
   field(:productGroupId)
