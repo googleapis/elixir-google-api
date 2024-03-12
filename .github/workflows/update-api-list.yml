@@ -25,10 +25,10 @@ jobs:
         run: |
           mix google_apis.discover_update apis.json
           if [ -n "$(git diff)" ]; then
-            echo "::set-env name=FOUND_CHANGES::true"
+            echo "FOUND_CHANGES=true" >> "$GITHUB_ENV"
             echo "Changes were made to apis.json"
           else
-            echo "::set-env name=FOUND_CHANGES::false"
+            echo "FOUND_CHANGES=false" >> "$GITHUB_ENV"
             echo "No changes were made to apis.json"
           fi
       - name: Push changes to branch
