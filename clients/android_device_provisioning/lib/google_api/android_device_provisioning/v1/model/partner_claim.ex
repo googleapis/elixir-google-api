@@ -21,17 +21,20 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
 
   ## Attributes
 
+  *   `configurationId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the configuration applied to the device section.
   *   `customerId` (*type:* `String.t`, *default:* `nil`) - The ID of the customer for whom the device is being claimed.
   *   `deviceIdentifier` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t`, *default:* `nil`) - Required. Required. Device identifier of the device.
   *   `deviceMetadata` (*type:* `GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t`, *default:* `nil`) - Required. The metadata to attach to the device at claim.
   *   `googleWorkspaceCustomerId` (*type:* `String.t`, *default:* `nil`) - The Google Workspace customer ID.
   *   `preProvisioningToken` (*type:* `String.t`, *default:* `nil`) - Optional. Must and can only be set for Chrome OS devices.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Required. The section type of the device's provisioning record.
+  *   `simlockProfileId` (*type:* `String.t`, *default:* `nil`) - Optional. Must and can only be set when DeviceProvisioningSectionType is SECTION_TYPE_SIM_LOCK. The unique identifier of the SimLock profile.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :configurationId => String.t() | nil,
           :customerId => String.t() | nil,
           :deviceIdentifier =>
             GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier.t() | nil,
@@ -39,15 +42,18 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do
             GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata.t() | nil,
           :googleWorkspaceCustomerId => String.t() | nil,
           :preProvisioningToken => String.t() | nil,
-          :sectionType => String.t() | nil
+          :sectionType => String.t() | nil,
+          :simlockProfileId => String.t() | nil
         }
 
+  field(:configurationId)
   field(:customerId)
   field(:deviceIdentifier, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier)
   field(:deviceMetadata, as: GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceMetadata)
   field(:googleWorkspaceCustomerId)
   field(:preProvisioningToken)
   field(:sectionType)
+  field(:simlockProfileId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidDeviceProvisioning.V1.Model.PartnerClaim do

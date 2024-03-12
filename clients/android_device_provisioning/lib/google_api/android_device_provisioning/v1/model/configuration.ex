@@ -29,6 +29,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration do
   *   `customMessage` (*type:* `String.t`, *default:* `nil`) - A message, containing one or two sentences, to help device users get help or give them more details about what’s happening to their device. Zero-touch enrollment shows this message before the device is provisioned.
   *   `dpcExtras` (*type:* `String.t`, *default:* `nil`) - The JSON-formatted EMM provisioning extras that are passed to the DPC.
   *   `dpcResourcePath` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the selected DPC (device policy controller) in the format `customers/[CUSTOMER_ID]/dpcs/*`. To list the supported DPCs, call `customers.dpcs.list`.
+  *   `forcedResetTime` (*type:* `String.t`, *default:* `nil`) - Optional. The timeout before forcing factory reset the device if the device doesn't go through provisioning in the setup wizard, usually due to lack of network connectivity during setup wizard. Ranges from 0-6 hours, with 2 hours being the default if unset.
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Required. Whether this is the default configuration that zero-touch enrollment applies to any new devices the organization purchases in the future. Only one customer configuration can be the default. Setting this value to `true`, changes the previous default configuration's `isDefault` value to `false`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration do
           :customMessage => String.t() | nil,
           :dpcExtras => String.t() | nil,
           :dpcResourcePath => String.t() | nil,
+          :forcedResetTime => String.t() | nil,
           :isDefault => boolean() | nil,
           :name => String.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.Configuration do
   field(:customMessage)
   field(:dpcExtras)
   field(:dpcResourcePath)
+  field(:forcedResetTime)
   field(:isDefault)
   field(:name)
 end

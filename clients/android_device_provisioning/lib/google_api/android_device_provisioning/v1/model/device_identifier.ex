@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   *   `imei` (*type:* `String.t`, *default:* `nil`) - The device’s IMEI number. Validated on input.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [Android manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
   *   `meid` (*type:* `String.t`, *default:* `nil`) - The device’s MEID number.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175?hl=en#identify_compatible).
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175#identify_compatible).
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be unique across different device models.
   """
 

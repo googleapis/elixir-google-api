@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.PerDeviceStatusInBatch do
 
   ## Attributes
 
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - If processing succeeds, the device ID of the Android device.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - If processing succeeds, the device ID of the device.
   *   `errorIdentifier` (*type:* `String.t`, *default:* `nil`) - If processing fails, the error type.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - If processing fails, a developer message explaining what went wrong.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The result status of the device after processing.
