@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   ## Attributes
 
   *   `size` (*type:* `number()`, *default:* `nil`) - Font size for the text.
-  *   `unit` (*type:* `String.t`, *default:* `nil`) - Unit for the font size. Follows CSS naming (in, px, pt, etc.).
+  *   `unit` (*type:* `String.t`, *default:* `nil`) - Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`).
   """
 
   use GoogleApi.Gax.ModelBase

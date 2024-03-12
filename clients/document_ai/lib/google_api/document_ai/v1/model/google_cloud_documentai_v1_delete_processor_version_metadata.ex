@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DeleteProcessorVersionMetadata do
   @moduledoc """
-  The long running operation metadata for delete processor version method.
+  The long-running operation metadata for the DeleteProcessorVersion method.
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - Raw byte content of the image.
   *   `height` (*type:* `integer()`, *default:* `nil`) - Height of the image in pixels.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Encoding mime type for the image.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image.
   *   `width` (*type:* `integer()`, *default:* `nil`) - Width of the image in pixels.
   """
 

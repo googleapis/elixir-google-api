@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanRe
 
   ## Attributes
 
-  *   `humanReviewOperation` (*type:* `String.t`, *default:* `nil`) - The name of the operation triggered by the processed document. This field is populated only when the [state] is [HUMAN_REVIEW_IN_PROGRESS]. It has the same response type and metadata as the long running operation returned by [ReviewDocument] method.
+  *   `humanReviewOperation` (*type:* `String.t`, *default:* `nil`) - The name of the operation triggered by the processed document. This field is populated only when the state is `HUMAN_REVIEW_IN_PROGRESS`. It has the same response type and metadata as the long-running operation returned by ReviewDocument.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of human review on the processing request.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - A message providing more details about the human review state.
   """

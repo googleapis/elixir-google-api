@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DisableProcessorResponse do
   @moduledoc """
-  Response message for the disable processor method. Intentionally empty proto for adding fields in future.
+  Response message for the DisableProcessor method. Intentionally empty proto for adding fields in future.
 
   ## Attributes
 

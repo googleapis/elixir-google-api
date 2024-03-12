@@ -26,7 +26,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `category` (*type:* `String.t`, *default:* `nil`) - The processor category, used by UI to group processor types.
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Launch stage of the processor type
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor type. Format: `projects/{project}/processorTypes/{processor_type}`
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc.
+  *   `sampleDocumentUris` (*type:* `list(String.t)`, *default:* `nil`) - A set of Cloud Storage URIs of sample documents for this processor.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,6 +42,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :category => String.t() | nil,
           :launchStage => String.t() | nil,
           :name => String.t() | nil,
+          :sampleDocumentUris => list(String.t()) | nil,
           :type => String.t() | nil
         }
 
@@ -54,6 +56,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   field(:category)
   field(:launchStage)
   field(:name)
+  field(:sampleDocumentUris, type: :list)
   field(:type)
 end
 

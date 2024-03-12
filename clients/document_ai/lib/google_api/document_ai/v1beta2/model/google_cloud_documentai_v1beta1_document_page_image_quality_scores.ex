@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScores do
   @moduledoc """
-  Image Quality Scores for the page image
+  Image quality scores for the page image.
 
   ## Attributes
 
   *   `detectedDefects` (*type:* `list(GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect.t)`, *default:* `nil`) - A list of detected defects.
-  *   `qualityScore` (*type:* `number()`, *default:* `nil`) - The overall quality score. Range `[0, 1]` where 1 is perfect quality.
+  *   `qualityScore` (*type:* `number()`, *default:* `nil`) - The overall quality score. Range `[0, 1]` where `1` is perfect quality.
   """
 
   use GoogleApi.Gax.ModelBase

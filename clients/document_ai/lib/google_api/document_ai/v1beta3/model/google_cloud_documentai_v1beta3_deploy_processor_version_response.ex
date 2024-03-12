@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DeployProcessorVersionResponse do
   @moduledoc """
-  Response message for the deploy processor version method.
+  Response message for the DeployProcessorVersion method.
 
   ## Attributes
 

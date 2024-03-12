@@ -26,14 +26,14 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2Document do
   *   `entityRelations` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentEntityRelation.t)`, *default:* `nil`) - Placeholder. Relationship among Document.entities.
   *   `error` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Any error that occurred while processing this document.
   *   `labels` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentLabel.t)`, *default:* `nil`) - Labels for this document.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published MIME type (also referred to as media type). For more information, see https://www.iana.org/assignments/media-types/media-types.xhtml.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml).
   *   `pages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage.t)`, *default:* `nil`) - Visual page layout for the Document.
   *   `revisions` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentRevision.t)`, *default:* `nil`) - Placeholder. Revision history of this document.
   *   `shardInfo` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentShardInfo.t`, *default:* `nil`) - Information about the sharding if this document is sharded part of a larger document. If the document is not sharded, this message is not specified.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Optional. UTF-8 encoded text in reading order from the document.
   *   `textChanges` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentTextChange.t)`, *default:* `nil`) - Placeholder. A list of text corrections made to Document.text. This is usually used for annotating corrections to OCR mistakes. Text changes for a given revision may not overlap with each other.
-  *   `textStyles` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentStyle.t)`, *default:* `nil`) - Placeholder. Styles for the Document.text.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Optional. Currently supports Google Cloud Storage URI of the form `gs://bucket_name/object_name`. Object versioning is not supported. See [Google Cloud Storage Request URIs](https://cloud.google.com/storage/docs/reference-uris) for more info.
+  *   `textStyles` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentStyle.t)`, *default:* `nil`) - Styles for the Document.text.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Optional. Currently supports Google Cloud Storage URI of the form `gs://bucket_name/object_name`. Object versioning is not supported. For more information, refer to [Google Cloud Storage Request URIs](https://cloud.google.com/storage/docs/reference-uris).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,11 +24,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the processor was created.
   *   `defaultProcessorVersion` (*type:* `String.t`, *default:* `nil`) - The default processor version.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key used for encryption/decryption in CMEK scenarios. See https://cloud.google.com/security-key-management.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The [KMS key](https://cloud.google.com/security-key-management) used for encryption and decryption in CMEK scenarios.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}`
   *   `processEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The http endpoint that can be called to invoke processing.
+  *   `processorVersionAliases` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionAlias.t)`, *default:* `nil`) - Output only. The processor version aliases.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, e.g., `OCR_PROCESSOR`, `INVOICE_PROCESSOR`, etc. To get a list of processors types, see FetchProcessorTypes.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`. To get a list of processor types, see FetchProcessorTypes.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,6 +41,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :kmsKeyName => String.t() | nil,
           :name => String.t() | nil,
           :processEndpoint => String.t() | nil,
+          :processorVersionAliases =>
+            list(
+              GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionAlias.t()
+            )
+            | nil,
           :state => String.t() | nil,
           :type => String.t() | nil
         }
@@ -50,6 +56,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   field(:kmsKeyName)
   field(:name)
   field(:processEndpoint)
+
+  field(:processorVersionAliases,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionAlias,
+    type: :list
+  )
+
   field(:state)
   field(:type)
 end

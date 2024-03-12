@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId do
   @moduledoc """
-  Identifies a document uniquely within the scope of a dataset in the GCS-based option.
+  Identifies a document uniquely within the scope of a dataset in the user-managed Cloud Storage option.
 
   ## Attributes
 
-  *   `cwDocId` (*type:* `String.t`, *default:* `nil`) - Optional. Id of the document (indexed) managed by Content Warehouse.
-  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage uri where the actual document is stored.
+  *   `cwDocId` (*type:* `String.t`, *default:* `nil`) - Id of the document (indexed) managed by Content Warehouse.
+  *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage URI where the actual document is stored.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ReviewDocumentRequest do
   @moduledoc """
-  Request message for review document method.
+  Request message for the ReviewDocument method.
 
   ## Attributes
 

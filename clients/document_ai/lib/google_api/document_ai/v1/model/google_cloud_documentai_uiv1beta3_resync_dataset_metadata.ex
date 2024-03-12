@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadata do
   @moduledoc """
-  The metadata proto of ResyncDataset method.
+  The metadata proto of `ResyncDataset` method.
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
-  *   `datasetResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus.t)`, *default:* `nil`) - The list of dataset resync statuses. Not checked when `dataset_documents` is specified in ResyncRequest.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
+  *   `datasetResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataDatasetResyncStatus.t)`, *default:* `nil`) - The list of dataset resync statuses. Not checked when ResyncDatasetRequest.dataset_documents is specified.
   *   `individualDocumentResyncStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncDatasetMetadataIndividualDocumentResyncStatus.t)`, *default:* `nil`) - The list of document resync statuses. The same document could have multiple `individual_document_resync_statuses` if it has multiple inconsistencies.
   """
 

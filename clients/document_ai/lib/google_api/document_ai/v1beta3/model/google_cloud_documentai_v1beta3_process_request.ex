@@ -17,15 +17,18 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessRequest do
   @moduledoc """
-  Request message for the process document method.
+  Request message for the ProcessDocument method.
 
   ## Attributes
 
-  *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document payload, the [content] and [mime_type] fields must be set.
-  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in ProcessResponse's document. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
+  *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document payload, the content and mime_type fields must be set.
+  *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in the ProcessResponse.document output. Only supports top-level document and pages field, so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
+  *   `gcsDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocument.t`, *default:* `nil`) - A raw document on Google Cloud Storage.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - An inline document proto.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
+  *   `processOptions` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions.t`, *default:* `nil`) - Inference-time options for the process API
   *   `rawDocument` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t`, *default:* `nil`) - A raw document content (bytes).
-  *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
+  *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether human review should be skipped for this request. Default to `false`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,8 +37,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :document =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
           :fieldMask => String.t() | nil,
+          :gcsDocument =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocument.t() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t() | nil,
+          :labels => map() | nil,
+          :processOptions =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions.t()
+            | nil,
           :rawDocument =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3RawDocument.t() | nil,
           :skipHumanReview => boolean() | nil
@@ -44,8 +53,18 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   field(:document, as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document)
   field(:fieldMask)
 
+  field(:gcsDocument,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3GcsDocument
+  )
+
   field(:inlineDocument,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document
+  )
+
+  field(:labels, type: :map)
+
+  field(:processOptions,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions
   )
 
   field(:rawDocument,

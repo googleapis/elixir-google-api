@@ -23,17 +23,26 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentOutputCon
 
   *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in the output documents. Only supports top level document and pages field so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
   *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage uri (a directory) of the output.
+  *   `shardingConfig` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig.t`, *default:* `nil`) - Specifies the sharding config for the output document.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :fieldMask => String.t() | nil,
-          :gcsUri => String.t() | nil
+          :gcsUri => String.t() | nil,
+          :shardingConfig =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig.t()
+            | nil
         }
 
   field(:fieldMask)
   field(:gcsUri)
+
+  field(:shardingConfig,
+    as:
+      GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig
+  )
 end
 
 defimpl Poison.Decoder,

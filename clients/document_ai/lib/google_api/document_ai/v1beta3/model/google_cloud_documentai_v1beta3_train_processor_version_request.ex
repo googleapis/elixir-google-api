@@ -17,13 +17,15 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequest do
   @moduledoc """
-  Request message for the create processor version method.
+  Request message for the TrainProcessorVersion method.
 
   ## Attributes
 
   *   `baseProcessorVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The processor version to use as a base for training. This processor version must be a child of `parent`. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`.
+  *   `customDocumentExtractionOptions` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestCustomDocumentExtractionOptions.t`, *default:* `nil`) - Options to control Custom Document Extraction (CDE) Processor.
   *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t`, *default:* `nil`) - Optional. The schema the processor version will be trained with.
-  *   `inputData` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestInputData.t`, *default:* `nil`) - Optional. The input data used to train the `ProcessorVersion`.
+  *   `foundationModelTuningOptions` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestFoundationModelTuningOptions.t`, *default:* `nil`) - Options to control foundation model tuning of a processor.
+  *   `inputData` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestInputData.t`, *default:* `nil`) - Optional. The input data used to train the ProcessorVersion.
   *   `processorVersion` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersion.t`, *default:* `nil`) - Required. The processor version to be created.
   """
 
@@ -31,8 +33,14 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainPr
 
   @type t :: %__MODULE__{
           :baseProcessorVersion => String.t() | nil,
+          :customDocumentExtractionOptions =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestCustomDocumentExtractionOptions.t()
+            | nil,
           :documentSchema =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t()
+            | nil,
+          :foundationModelTuningOptions =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestFoundationModelTuningOptions.t()
             | nil,
           :inputData =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestInputData.t()
@@ -44,8 +52,18 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainPr
 
   field(:baseProcessorVersion)
 
+  field(:customDocumentExtractionOptions,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestCustomDocumentExtractionOptions
+  )
+
   field(:documentSchema,
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema
+  )
+
+  field(:foundationModelTuningOptions,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestFoundationModelTuningOptions
   )
 
   field(:inputData,

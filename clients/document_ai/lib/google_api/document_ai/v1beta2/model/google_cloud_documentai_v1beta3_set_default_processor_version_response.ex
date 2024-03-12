@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3SetDefaultProcessorVersionResponse do
   @moduledoc """
-  Response message for set default processor version method.
+  Response message for the SetDefaultProcessorVersion method.
 
   ## Attributes
 

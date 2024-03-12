@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Impor
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   *   `importConfigValidationResults` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataImportConfigValidationResult.t)`, *default:* `nil`) - Validation statuses of the batch documents import config.
   *   `individualImportStatuses` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus.t)`, *default:* `nil`) - The list of response details of each document.
   *   `totalDocumentCount` (*type:* `integer()`, *default:* `nil`) - Total number of the documents that are qualified for importing.

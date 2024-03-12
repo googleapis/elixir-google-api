@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig do
   @moduledoc """
-  The message for output config in batch process.
+  The output configuration in the BatchProcessDocuments method.
 
   ## Attributes
 

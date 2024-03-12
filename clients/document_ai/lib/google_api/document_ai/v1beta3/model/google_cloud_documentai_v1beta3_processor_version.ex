@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersion do
   @moduledoc """
-  A processor version is an implementation of a processor. Each processor can have multiple versions, pre-trained by Google internally or up-trained by the customer. At a time, a processor can only have one default version version. So the processor's behavior (when processing documents) is defined by a default version
+  A processor version is an implementation of a processor. Each processor can have multiple versions, pretrained by Google internally or uptrained by the customer. A processor can only have one default version at a time. Its document-processing behavior is defined by that version.
 
   ## Attributes
 
@@ -25,9 +25,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `deprecationInfo` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionDeprecationInfo.t`, *default:* `nil`) - If set, information about the eventual deprecation of this version.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
   *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t`, *default:* `nil`) - The schema of the processor version. Describes the output.
-  *   `googleManaged` (*type:* `boolean()`, *default:* `nil`) - Denotes that this ProcessorVersion is managed by google.
+  *   `googleManaged` (*type:* `boolean()`, *default:* `nil`) - Output only. Denotes that this `ProcessorVersion` is managed by Google.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for encryption.
   *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - The KMS key version with which data is encrypted.
+  *   `latestEvaluation` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EvaluationReference.t`, *default:* `nil`) - The most recently invoked evaluation for the processor version.
+  *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. The model type of this processor version.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the processor version.
   """
@@ -46,6 +48,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :googleManaged => boolean() | nil,
           :kmsKeyName => String.t() | nil,
           :kmsKeyVersionName => String.t() | nil,
+          :latestEvaluation =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EvaluationReference.t()
+            | nil,
+          :modelType => String.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil
         }
@@ -66,6 +72,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   field(:googleManaged)
   field(:kmsKeyName)
   field(:kmsKeyVersionName)
+
+  field(:latestEvaluation,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EvaluationReference
+  )
+
+  field(:modelType)
   field(:name)
   field(:state)
 end

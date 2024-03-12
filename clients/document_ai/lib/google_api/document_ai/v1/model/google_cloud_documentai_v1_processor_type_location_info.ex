@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorTypeLoca
 
   ## Attributes
 
-  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The location id, currently must be one of [us, eu].
+  *   `locationId` (*type:* `String.t`, *default:* `nil`) - The location ID. For supported locations, refer to [regional and multi-regional support](/document-ai/docs/regions).
   """
 
   use GoogleApi.Gax.ModelBase

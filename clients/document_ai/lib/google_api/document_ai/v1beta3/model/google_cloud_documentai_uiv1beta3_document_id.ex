@@ -21,8 +21,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Docum
 
   ## Attributes
 
-  *   `gcsManagedDocId` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId.t`, *default:* `nil`) - 
-  *   `revisionReference` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionReference.t`, *default:* `nil`) - Points to a specific revision of the document if set.
+  *   `gcsManagedDocId` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId.t`, *default:* `nil`) - A document id within user-managed Cloud Storage.
+  *   `revisionRef` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionRef.t`, *default:* `nil`) - Points to a specific revision of the document if set.
+  *   `unmanagedDocId` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdUnmanagedDocumentId.t`, *default:* `nil`) - A document id within unmanaged dataset.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,8 +32,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Docum
           :gcsManagedDocId =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId.t()
             | nil,
-          :revisionReference =>
-            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionReference.t()
+          :revisionRef =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionRef.t() | nil,
+          :unmanagedDocId =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdUnmanagedDocumentId.t()
             | nil
         }
 
@@ -41,8 +44,13 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3Docum
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdGCSManagedDocumentId
   )
 
-  field(:revisionReference,
-    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionReference
+  field(:revisionRef,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3RevisionRef
+  )
+
+  field(:unmanagedDocId,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiUiv1beta3DocumentIdUnmanagedDocumentId
   )
 end
 
