@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Model.ErrorGroup do
 
   ## Attributes
 
-  *   `groupId` (*type:* `String.t`, *default:* `nil`) - Group IDs are unique for a given project. If the same kind of error occurs in different service contexts, it will receive the same group ID.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name. Example: projects/my-project-123/groups/CNSgkpnppqKCUw
+  *   `groupId` (*type:* `String.t`, *default:* `nil`) - An opaque identifier of the group. This field is assigned by the Error Reporting system and always populated. In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The group resource name. Written as `projects/{projectID}/groups/{group_id}`. Example: `projects/my-project-123/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
   *   `resolutionStatus` (*type:* `String.t`, *default:* `nil`) - Error group's resolution status. An unspecified resolution status will be interpreted as OPEN
   *   `trackingIssues` (*type:* `list(GoogleApi.CloudErrorReporting.V1beta1.Model.TrackingIssue.t)`, *default:* `nil`) - Associated tracking issues.
   """

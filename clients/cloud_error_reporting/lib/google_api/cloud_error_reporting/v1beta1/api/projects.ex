@@ -116,7 +116,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:groupId` (*type:* `String.t`) - Required. The group for which events shall be returned.
+      *   `:groupId` (*type:* `String.t`) - Required. The group for which events shall be returned. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response.
       *   `:pageToken` (*type:* `String.t`) - Optional. A `next_page_token` provided by a previous response.
       *   `:"serviceFilter.resourceType"` (*type:* `String.t`) - Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
@@ -184,7 +184,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   end
 
   @doc """
-  Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting] (https://cloud.google.com/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects. For more information, see [Using Error Reporting with regionalized logs] (https://cloud.google.com/error-reporting/docs/regionalization).
+  Report an individual error event and record the event to a log. This endpoint accepts **either** an OAuth token, **or** an [API key](https://support.google.com/cloud/answer/6158862) for authentication. To use an API key, append it to the URL as the value of a `key` parameter. For example: `POST https://clouderrorreporting.googleapis.com/v1beta1/{projectName}/events:report?key=123ABC456` **Note:** [Error Reporting] (https://cloud.google.com/error-reporting) is a global service built on Cloud Logging and doesn't analyze logs stored in regional log buckets or logs routed to other Google Cloud projects.
 
   ## Parameters
 
@@ -278,7 +278,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:alignment` (*type:* `String.t`) - Optional. The alignment of the timed counts to be returned. Default is `ALIGNMENT_EQUAL_AT_END`.
       *   `:alignmentTime` (*type:* `DateTime.t`) - Optional. Time where the timed counts shall be aligned if rounded alignment is chosen. Default is 00:00 UTC.
-      *   `:groupId` (*type:* `list(String.t)`) - Optional. List all ErrorGroupStats with these IDs.
+      *   `:groupId` (*type:* `list(String.t)`) - Optional. List all ErrorGroupStats with these IDs. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice] (https://cloud.google.com/terms/cloud-privacy-notice).
       *   `:order` (*type:* `String.t`) - Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return per response. Default is 20.
       *   `:pageToken` (*type:* `String.t`) - Optional. A next_page_token provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
@@ -357,7 +357,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as `projects/{projectID}/groups/{group_name}`. Call groupStats.list to return a list of groups belonging to this project. Example: `projects/my-project-123/groups/my-group`
+  *   `projects_id` (*type:* `String.t`) - Part of `groupName`. Required. The group resource name. Written as `projects/{projectID}/groups/{group_id}`. Call groupStats.list to return a list of groups belonging to this project. Example: `projects/my-project-123/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
   *   `groups_id` (*type:* `String.t`) - Part of `groupName`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -433,7 +433,7 @@ defmodule GoogleApi.CloudErrorReporting.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudErrorReporting.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name. Example: projects/my-project-123/groups/CNSgkpnppqKCUw
+  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. The group resource name. Written as `projects/{projectID}/groups/{group_id}`. Example: `projects/my-project-123/groups/my-group` In the group resource name, the `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
   *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
