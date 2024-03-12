@@ -197,8 +197,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional filter to list devices. Filters can be done on: Device custom name (substring match): 'customName=wing'
-      *   `:pageSize` (*type:* `integer()`) - Optional requested page size. Server may return fewer devices than requested. If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - Optional token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -235,9 +233,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :filter => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :filter => :query
     }
 
     request =
@@ -353,8 +349,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional filter to list structures.
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer structures than requested. If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - The token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -391,9 +385,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :filter => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :filter => :query
     }
 
     request =
@@ -507,8 +499,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer rooms than requested. If unspecified, server will pick an appropriate default.
-      *   `:pageToken` (*type:* `String.t`) - The token of the page to retrieve.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -544,9 +534,7 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Api.Enterprises do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :pageSize => :query,
-      :pageToken => :query
+      :upload_protocol => :query
     }
 
     request =
