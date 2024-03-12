@@ -22,6 +22,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.TriggerPubsubExecutionRequest do
   ## Attributes
 
   *   `GCPCloudEventsMode` (*type:* `String.t`, *default:* `nil`) - Required. LINT: LEGACY_NAMES The query parameter value for __GCP_CloudEventsMode, set by the Eventarc service when configuring triggers.
+  *   `deliveryAttempt` (*type:* `integer()`, *default:* `nil`) - The number of attempts that have been made to deliver this message. This is set by Pub/Sub for subscriptions that have the "dead letter" feature enabled, and hence provided here for compatibility, but is ignored by Workflows.
   *   `message` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.PubsubMessage.t`, *default:* `nil`) - Required. The message of the Pub/Sub push notification.
   *   `subscription` (*type:* `String.t`, *default:* `nil`) - Required. The subscription of the Pub/Sub push notification. Format: projects/{project}/subscriptions/{sub}
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.TriggerPubsubExecutionRequest do
 
   @type t :: %__MODULE__{
           :GCPCloudEventsMode => String.t() | nil,
+          :deliveryAttempt => integer() | nil,
           :message => GoogleApi.WorkflowExecutions.V1.Model.PubsubMessage.t() | nil,
           :subscription => String.t() | nil
         }
 
   field(:GCPCloudEventsMode)
+  field(:deliveryAttempt)
   field(:message, as: GoogleApi.WorkflowExecutions.V1.Model.PubsubMessage)
   field(:subscription)
 end
