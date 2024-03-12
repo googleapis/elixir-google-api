@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillAllStrategy do
   *   `mysqlExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.MysqlRdbms.t`, *default:* `nil`) - MySQL data source objects to avoid backfilling.
   *   `oracleExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.OracleRdbms.t`, *default:* `nil`) - Oracle data source objects to avoid backfilling.
   *   `postgresqlExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t`, *default:* `nil`) - PostgreSQL data source objects to avoid backfilling.
+  *   `sqlServerExcludedObjects` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerRdbms.t`, *default:* `nil`) - SQLServer data source objects to avoid backfilling
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Datastream.V1.Model.BackfillAllStrategy do
   @type t :: %__MODULE__{
           :mysqlExcludedObjects => GoogleApi.Datastream.V1.Model.MysqlRdbms.t() | nil,
           :oracleExcludedObjects => GoogleApi.Datastream.V1.Model.OracleRdbms.t() | nil,
-          :postgresqlExcludedObjects => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil
+          :postgresqlExcludedObjects => GoogleApi.Datastream.V1.Model.PostgresqlRdbms.t() | nil,
+          :sqlServerExcludedObjects => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil
         }
 
   field(:mysqlExcludedObjects, as: GoogleApi.Datastream.V1.Model.MysqlRdbms)
   field(:oracleExcludedObjects, as: GoogleApi.Datastream.V1.Model.OracleRdbms)
   field(:postgresqlExcludedObjects, as: GoogleApi.Datastream.V1.Model.PostgresqlRdbms)
+  field(:sqlServerExcludedObjects, as: GoogleApi.Datastream.V1.Model.SqlServerRdbms)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.BackfillAllStrategy do

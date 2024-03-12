@@ -24,6 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   *   `connectionAttributes` (*type:* `map()`, *default:* `nil`) - Connection string attributes
   *   `databaseService` (*type:* `String.t`, *default:* `nil`) - Required. Database for the Oracle connection.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Required. Hostname for the Oracle connection.
+  *   `oracleSslConfig` (*type:* `GoogleApi.Datastream.V1.Model.OracleSslConfig.t`, *default:* `nil`) - Optional. SSL configuration for the Oracle connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Password for the Oracle connection.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Port for the Oracle connection, default value is 1521.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. Username for the Oracle connection.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
           :connectionAttributes => map() | nil,
           :databaseService => String.t() | nil,
           :hostname => String.t() | nil,
+          :oracleSslConfig => GoogleApi.Datastream.V1.Model.OracleSslConfig.t() | nil,
           :password => String.t() | nil,
           :port => integer() | nil,
           :username => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.Datastream.V1.Model.OracleProfile do
   field(:connectionAttributes, type: :map)
   field(:databaseService)
   field(:hostname)
+  field(:oracleSslConfig, as: GoogleApi.Datastream.V1.Model.OracleSslConfig)
   field(:password)
   field(:port)
   field(:username)

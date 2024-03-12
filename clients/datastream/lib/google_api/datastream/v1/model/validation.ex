@@ -24,7 +24,7 @@ defmodule GoogleApi.Datastream.V1.Model.Validation do
   *   `code` (*type:* `String.t`, *default:* `nil`) - A custom code identifying this validation.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A short description of the validation.
   *   `message` (*type:* `list(GoogleApi.Datastream.V1.Model.ValidationMessage.t)`, *default:* `nil`) - Messages reflecting the validation results.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Validation execution status.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Validation execution status.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
   @moduledoc """
-
+  BigQuery destination configuration
 
   ## Attributes
 

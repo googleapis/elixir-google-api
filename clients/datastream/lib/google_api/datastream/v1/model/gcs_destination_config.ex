@@ -22,7 +22,7 @@ defmodule GoogleApi.Datastream.V1.Model.GcsDestinationConfig do
   ## Attributes
 
   *   `avroFileFormat` (*type:* `GoogleApi.Datastream.V1.Model.AvroFileFormat.t`, *default:* `nil`) - AVRO file format configuration.
-  *   `fileRotationInterval` (*type:* `String.t`, *default:* `nil`) - The maximum duration for which new events are added before a file is closed and a new file is created.
+  *   `fileRotationInterval` (*type:* `String.t`, *default:* `nil`) - The maximum duration for which new events are added before a file is closed and a new file is created. Values within the range of 15-60 seconds are allowed.
   *   `fileRotationMb` (*type:* `integer()`, *default:* `nil`) - The maximum file size to be saved in the bucket.
   *   `jsonFileFormat` (*type:* `GoogleApi.Datastream.V1.Model.JsonFileFormat.t`, *default:* `nil`) - JSON file format configuration.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path inside the Cloud Storage bucket to write data to.
