@@ -27,6 +27,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
   *   `analysisStatusError` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t`, *default:* `nil`) - When an error is encountered this will contain a LocalizedMessage under details to show to the user. The LocalizedMessage is output only and populated by the API.
   *   `continuousAnalysis` (*type:* `String.t`, *default:* `nil`) - Whether the resource is continuously analyzed.
   *   `lastAnalysisTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time continuous analysis was done for this resource. Deprecated, do not use.
+  *   `lastScanTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this resource was scanned.
+  *   `sbomStatus` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Model.SBOMStatus.t`, *default:* `nil`) - The status of an SBOM generation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +40,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
           :analysisStatus => String.t() | nil,
           :analysisStatusError => GoogleApi.ContainerAnalysis.V1beta1.Model.Status.t() | nil,
           :continuousAnalysis => String.t() | nil,
-          :lastAnalysisTime => DateTime.t() | nil
+          :lastAnalysisTime => DateTime.t() | nil,
+          :lastScanTime => DateTime.t() | nil,
+          :sbomStatus => GoogleApi.ContainerAnalysis.V1beta1.Model.SBOMStatus.t() | nil
         }
 
   field(:analysisCompleted, as: GoogleApi.ContainerAnalysis.V1beta1.Model.AnalysisCompleted)
@@ -47,6 +51,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do
   field(:analysisStatusError, as: GoogleApi.ContainerAnalysis.V1beta1.Model.Status)
   field(:continuousAnalysis)
   field(:lastAnalysisTime, as: DateTime)
+  field(:lastScanTime, as: DateTime)
+  field(:sbomStatus, as: GoogleApi.ContainerAnalysis.V1beta1.Model.SBOMStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1beta1.Model.Discovered do

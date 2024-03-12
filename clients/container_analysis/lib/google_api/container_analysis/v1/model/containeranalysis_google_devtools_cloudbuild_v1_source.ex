@@ -21,14 +21,22 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
 
   ## Attributes
 
+  *   `connectedRepository` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository.t`, *default:* `nil`) - Optional. If provided, get the source from this 2nd-gen Google Cloud Build repository resource.
+  *   `gitSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitSource.t`, *default:* `nil`) - If provided, get the source from this Git repository.
   *   `repoSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
-  *   `storageSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Google Cloud Storage.
-  *   `storageSourceManifest` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Google Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
+  *   `storageSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Cloud Storage.
+  *   `storageSourceManifest` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceManifest.t`, *default:* `nil`) - If provided, get the source from this manifest in Cloud Storage. This feature is in Preview; see description [here](https://github.com/GoogleCloudPlatform/cloud-builders/tree/master/gcs-fetcher).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :connectedRepository =>
+            GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository.t()
+            | nil,
+          :gitSource =>
+            GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitSource.t()
+            | nil,
           :repoSource =>
             GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource.t()
             | nil,
@@ -39,6 +47,15 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
             GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSourceManifest.t()
             | nil
         }
+
+  field(:connectedRepository,
+    as:
+      GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository
+  )
+
+  field(:gitSource,
+    as: GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitSource
+  )
 
   field(:repoSource,
     as: GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource

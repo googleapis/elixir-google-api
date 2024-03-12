@@ -48,7 +48,7 @@ defmodule GoogleApi.ContainerAnalysis.Mixfile do
 
   defp description() do
     """
-    Container Analysis API client library. An implementation of the Grafeas API, which stores, and enables querying and retrieval of critical metadata about all of your software artifacts.
+    Container Analysis API client library.
     """
   end
 

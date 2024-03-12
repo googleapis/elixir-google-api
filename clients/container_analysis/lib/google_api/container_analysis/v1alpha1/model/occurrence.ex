@@ -38,6 +38,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   *   `resource` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t`, *default:* `nil`) -  The resource for which the `Occurrence` applies.
   *   `resourceUrl` (*type:* `String.t`, *default:* `nil`) - The unique URL of the image or the container for which the `Occurrence` applies. For example, https://gcr.io/project/image@sha256:foo This field can be used as a filter in list requests.
   *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence.t`, *default:* `nil`) - Describes a specific software bill of materials document.
+  *   `sbomReference` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceOccurrence.t`, *default:* `nil`) - This represents an SBOM reference occurrence
   *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence.t`, *default:* `nil`) - Describes a specific SPDX File.
   *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoOccurrence.t`, *default:* `nil`) - Describes a specific SPDX Package.
   *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipOccurrence.t`, *default:* `nil`) - Describes a specific relationship between SPDX elements.
@@ -68,6 +69,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
           :resource => GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource.t() | nil,
           :resourceUrl => String.t() | nil,
           :sbom => GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence.t() | nil,
+          :sbomReference =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceOccurrence.t() | nil,
           :spdxFile => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence.t() | nil,
           :spdxPackage =>
             GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoOccurrence.t() | nil,
@@ -98,6 +101,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Occurrence do
   field(:resource, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Resource)
   field(:resourceUrl)
   field(:sbom, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentOccurrence)
+  field(:sbomReference, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceOccurrence)
   field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileOccurrence)
   field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoOccurrence)
   field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipOccurrence)

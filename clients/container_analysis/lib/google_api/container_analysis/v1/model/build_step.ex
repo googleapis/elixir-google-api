@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.ContainerAnalysis.V1.Model.BuildStep do
   @moduledoc """
-  A step in the build pipeline. Next ID: 20
+  A step in the build pipeline. Next ID: 21
 
   ## Attributes
 
   *   `allowExitCodes` (*type:* `list(integer())`, *default:* `nil`) - Allow this build step to fail without failing the entire build if and only if the exit code is one of the specified codes. If allow_failure is also specified, this field will take precedence.
   *   `allowFailure` (*type:* `boolean()`, *default:* `nil`) - Allow this build step to fail without failing the entire build. If false, the entire build will fail if this step fails. Otherwise, the build will succeed, but this step will still have a failure status. Error information will be reported in the failure_detail field.
   *   `args` (*type:* `list(String.t)`, *default:* `nil`) - A list of arguments that will be presented to the step when it is started. If the image used to run the step's container has an entrypoint, the `args` are used as arguments to that entrypoint. If the image does not define an entrypoint, the first element in args is used as the entrypoint, and the remainder will be used as arguments.
+  *   `automapSubstitutions` (*type:* `boolean()`, *default:* `nil`) - Option to include built-in and custom substitutions as env variables for this build step. This option will override the global option in BuildOption.
   *   `dir` (*type:* `String.t`, *default:* `nil`) - Working directory to use when running this step's container. If this value is a relative path, it is relative to the build's working directory. If this value is absolute, it may be outside the build's working directory, in which case the contents of the path may not be persisted across build step executions, unless a `volume` for that path is specified. If the build specifies a `RepoSource` with `dir` and a step with a `dir`, which specifies an absolute path, the `RepoSource` `dir` is ignored for the step's execution.
   *   `entrypoint` (*type:* `String.t`, *default:* `nil`) - Entrypoint to be used instead of the build step image's default entrypoint. If unset, the image's default entrypoint is used.
   *   `env` (*type:* `list(String.t)`, *default:* `nil`) - A list of environment variable definitions to be used when running a step. The elements are of the form "KEY=VALUE" for the environment variable "KEY" being given the value "VALUE".
@@ -46,6 +47,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.BuildStep do
           :allowExitCodes => list(integer()) | nil,
           :allowFailure => boolean() | nil,
           :args => list(String.t()) | nil,
+          :automapSubstitutions => boolean() | nil,
           :dir => String.t() | nil,
           :entrypoint => String.t() | nil,
           :env => list(String.t()) | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.BuildStep do
   field(:allowExitCodes, type: :list)
   field(:allowFailure)
   field(:args, type: :list)
+  field(:automapSubstitutions)
   field(:dir)
   field(:entrypoint)
   field(:env, type: :list)

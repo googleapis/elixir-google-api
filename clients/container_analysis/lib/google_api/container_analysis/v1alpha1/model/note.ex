@@ -36,12 +36,14 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   *   `package` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t`, *default:* `nil`) - A note describing a package hosted by various package managers.
   *   `relatedUrl` (*type:* `list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t)`, *default:* `nil`) - URLs associated with this note
   *   `sbom` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t`, *default:* `nil`) - A note describing a software bill of materials.
+  *   `sbomReference` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceNote.t`, *default:* `nil`) - A note describing a reference to an SBOM.
   *   `shortDescription` (*type:* `String.t`, *default:* `nil`) - A one sentence description of this `Note`.
   *   `spdxFile` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t`, *default:* `nil`) - A note describing an SPDX File.
   *   `spdxPackage` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote.t`, *default:* `nil`) - A note describing an SPDX Package.
   *   `spdxRelationship` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t`, *default:* `nil`) - A note describing a relationship between SPDX elements.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this note was last updated. This field can be used as a filter in list requests.
   *   `upgrade` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t`, *default:* `nil`) - A note describing an upgrade.
+  *   `vulnerabilityAssessment` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAssessmentNote.t`, *default:* `nil`) - A note describing a vulnerability assessment.
   *   `vulnerabilityType` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t`, *default:* `nil`) - A package vulnerability type of note.
   """
 
@@ -65,6 +67,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
           :package => GoogleApi.ContainerAnalysis.V1alpha1.Model.Package.t() | nil,
           :relatedUrl => list(GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl.t()) | nil,
           :sbom => GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote.t() | nil,
+          :sbomReference =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceNote.t() | nil,
           :shortDescription => String.t() | nil,
           :spdxFile => GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote.t() | nil,
           :spdxPackage => GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote.t() | nil,
@@ -72,6 +76,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
             GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote.t() | nil,
           :updateTime => DateTime.t() | nil,
           :upgrade => GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote.t() | nil,
+          :vulnerabilityAssessment =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAssessmentNote.t() | nil,
           :vulnerabilityType =>
             GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType.t() | nil
         }
@@ -92,12 +98,18 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Note do
   field(:package, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Package)
   field(:relatedUrl, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelatedUrl, type: :list)
   field(:sbom, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.DocumentNote)
+  field(:sbomReference, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMReferenceNote)
   field(:shortDescription)
   field(:spdxFile, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.FileNote)
   field(:spdxPackage, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.PackageInfoNote)
   field(:spdxRelationship, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.RelationshipNote)
   field(:updateTime, as: DateTime)
   field(:upgrade, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.UpgradeNote)
+
+  field(:vulnerabilityAssessment,
+    as: GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAssessmentNote
+  )
+
   field(:vulnerabilityType, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityType)
 end
 
