@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.AvroOptions do
   @moduledoc """
-
+  Options for external data sources.
 
   ## Attributes
 
-  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - [Optional] If sourceFormat is set to "AVRO", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).
+  *   `useAvroLogicalTypes` (*type:* `boolean()`, *default:* `nil`) - Optional. If sourceFormat is set to "AVRO", indicates whether to interpret logical types as the corresponding BigQuery data type (for example, TIMESTAMP), instead of using the raw type (for example, INTEGER).
   """
 
   use GoogleApi.Gax.ModelBase

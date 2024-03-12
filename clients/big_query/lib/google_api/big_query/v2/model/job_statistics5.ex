@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics5 do
   @moduledoc """
-
+  Statistics for a copy job.
 
   ## Attributes
 
-  *   `copied_logical_bytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of logical bytes copied to the destination table.
-  *   `copied_rows` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of rows copied to the destination table.
+  *   `copiedLogicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of logical bytes copied to the destination table.
+  *   `copiedRows` (*type:* `String.t`, *default:* `nil`) - Output only. Number of rows copied to the destination table.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :copied_logical_bytes => String.t() | nil,
-          :copied_rows => String.t() | nil
+          :copiedLogicalBytes => String.t() | nil,
+          :copiedRows => String.t() | nil
         }
 
-  field(:copied_logical_bytes)
-  field(:copied_rows)
+  field(:copiedLogicalBytes)
+  field(:copiedRows)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics5 do

@@ -21,18 +21,19 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
 
   ## Attributes
 
-  *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - [Beta] Clustering specification for this table, if configured.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - The time when this table was created, in milliseconds since the epoch.
-  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - [Optional] The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
+  *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - Clustering specification for this table, if configured.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this table was created, in milliseconds since the epoch.
+  *   `expirationTime` (*type:* `String.t`, *default:* `nil`) - The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed.
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - The user-friendly name for this table.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of the table
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#table`) - The resource type.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of the table.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The resource type.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables.
-  *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - The range partitioning specification for this table, if configured.
-  *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference uniquely identifying the table.
-  *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - The time-based partitioning specification for this table, if configured.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of table. Possible values are: TABLE, VIEW.
-  *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.TableListTablesView.t`, *default:* `nil`) - Additional details for a view.
+  *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - The range partitioning for this table.
+  *   `requirePartitionFilter` (*type:* `boolean()`, *default:* `false`) - Optional. If set to true, queries including this table must specify a partition filter. This filter is used for partition elimination.
+  *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - A reference uniquely identifying table.
+  *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - The time-based partitioning for this table.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of table.
+  *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.TableListTablesView.t`, *default:* `nil`) - Information about a logical view.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,6 +47,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
           :kind => String.t() | nil,
           :labels => map() | nil,
           :rangePartitioning => GoogleApi.BigQuery.V2.Model.RangePartitioning.t() | nil,
+          :requirePartitionFilter => boolean() | nil,
           :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
           :type => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableListTables do
   field(:kind)
   field(:labels, type: :map)
   field(:rangePartitioning, as: GoogleApi.BigQuery.V2.Model.RangePartitioning)
+  field(:requirePartitionFilter)
   field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)
   field(:type)

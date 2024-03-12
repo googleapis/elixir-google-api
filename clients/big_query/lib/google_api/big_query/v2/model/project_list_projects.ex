@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ProjectListProjects do
   @moduledoc """
-
+  Information about a single project.
 
   ## Attributes
 
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - A descriptive name for this project.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - A descriptive name for this project. A wrapper is used here because friendlyName can be set to the empty string.
   *   `id` (*type:* `String.t`, *default:* `nil`) - An opaque ID of this project.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#project`) - The resource type.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The resource type.
   *   `numericId` (*type:* `String.t`, *default:* `nil`) - The numeric ID of this project.
   *   `projectReference` (*type:* `GoogleApi.BigQuery.V2.Model.ProjectReference.t`, *default:* `nil`) - A unique reference to this project.
   """

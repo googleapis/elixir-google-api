@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequestRows do
   @moduledoc """
-
+  Data for a single insertion row.
 
   ## Attributes
 
-  *   `insertId` (*type:* `String.t`, *default:* `nil`) - [Optional] A unique ID for each row. BigQuery uses this property to detect duplicate insertion requests on a best-effort basis.
-  *   `json` (*type:* `GoogleApi.BigQuery.V2.Model.JsonObject.t`, *default:* `nil`) - [Required] A JSON object that contains a row of data. The object's properties and values must match the destination table's schema.
+  *   `insertId` (*type:* `String.t`, *default:* `nil`) - Insertion ID for best-effort deduplication. This feature is not recommended, and users seeking stronger insertion semantics are encouraged to use other mechanisms such as the BigQuery Write API.
+  *   `json` (*type:* `GoogleApi.BigQuery.V2.Model.JsonObject.t`, *default:* `nil`) - Data for a single row.
   """
 
   use GoogleApi.Gax.ModelBase

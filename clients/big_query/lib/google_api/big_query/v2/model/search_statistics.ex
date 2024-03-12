@@ -17,22 +17,22 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.SearchStatistics do
   @moduledoc """
-
+  Statistics for a search query. Populated as part of JobStatistics2.
 
   ## Attributes
 
-  *   `indexUnusedReason` (*type:* `list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t)`, *default:* `nil`) - When index_usage_mode is UNUSED or PARTIALLY_USED, this field explains why index was not used in all or part of the search query. If index_usage_mode is FULLLY_USED, this field is not populated.
-  *   `indexUsageMode` (*type:* `String.t`, *default:* `nil`) - Specifies index usage mode for the query.
+  *   `indexUnusedReasons` (*type:* `list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t)`, *default:* `nil`) - When `indexUsageMode` is `UNUSED` or `PARTIALLY_USED`, this field explains why indexes were not used in all or part of the search query. If `indexUsageMode` is `FULLY_USED`, this field is not populated.
+  *   `indexUsageMode` (*type:* `String.t`, *default:* `nil`) - Specifies the index usage mode for the query.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :indexUnusedReason => list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t()) | nil,
+          :indexUnusedReasons => list(GoogleApi.BigQuery.V2.Model.IndexUnusedReason.t()) | nil,
           :indexUsageMode => String.t() | nil
         }
 
-  field(:indexUnusedReason, as: GoogleApi.BigQuery.V2.Model.IndexUnusedReason, type: :list)
+  field(:indexUnusedReasons, as: GoogleApi.BigQuery.V2.Model.IndexUnusedReason, type: :list)
   field(:indexUsageMode)
 end
 

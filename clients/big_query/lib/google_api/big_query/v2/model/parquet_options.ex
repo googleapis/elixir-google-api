@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ParquetOptions do
   @moduledoc """
-
+  Parquet Options for load and make external tables.
 
   ## Attributes
 
-  *   `enableListInference` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates whether to use schema inference specifically for Parquet LIST logical type.
-  *   `enumAsString` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
+  *   `enableListInference` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to use schema inference specifically for Parquet LIST logical type.
+  *   `enumAsString` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
   """
 
   use GoogleApi.Gax.ModelBase

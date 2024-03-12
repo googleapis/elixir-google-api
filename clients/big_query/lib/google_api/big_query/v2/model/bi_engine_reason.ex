@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.BiEngineReason do
   @moduledoc """
-
+  Reason why BI Engine didn't accelerate the query (or sub-query).
 
   ## Attributes
 
-  *   `code` (*type:* `String.t`, *default:* `$(reason.code)`) - [Output-only] High-level BI Engine reason for partial or disabled acceleration.
-  *   `message` (*type:* `String.t`, *default:* `$(reason.message)`) - [Output-only] Free form human-readable reason for partial or disabled acceleration.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Output only. High-level BI Engine reason for partial or disabled acceleration
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Output only. Free form human-readable reason for partial or disabled acceleration.
   """
 
   use GoogleApi.Gax.ModelBase

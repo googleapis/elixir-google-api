@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableList do
   @moduledoc """
-
+  Partial projection of the metadata for a given table in a list response.
 
   ## Attributes
 

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.SessionInfo do
   @moduledoc """
-
+  [Preview] Information related to sessions.
 
   ## Attributes
 
-  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - [Output-only] // [Preview] Id of the session.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the session.
   """
 
   use GoogleApi.Gax.ModelBase

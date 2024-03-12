@@ -17,21 +17,24 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.BiEngineStatistics do
   @moduledoc """
-
+  Statistics for a BI Engine specific query. Populated as part of JobStatistics2
 
   ## Attributes
 
-  *   `biEngineMode` (*type:* `String.t`, *default:* `$(stats.bi_engine_mode)`) - [Output-only] Specifies which mode of BI Engine acceleration was performed (if any).
+  *   `accelerationMode` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies which mode of BI Engine acceleration was performed (if any).
+  *   `biEngineMode` (*type:* `String.t`, *default:* `nil`) - Output only. Specifies which mode of BI Engine acceleration was performed (if any).
   *   `biEngineReasons` (*type:* `list(GoogleApi.BigQuery.V2.Model.BiEngineReason.t)`, *default:* `nil`) - In case of DISABLED or PARTIAL bi_engine_mode, these contain the explanatory reasons as to why BI Engine could not accelerate. In case the full query was accelerated, this field is not populated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerationMode => String.t() | nil,
           :biEngineMode => String.t() | nil,
           :biEngineReasons => list(GoogleApi.BigQuery.V2.Model.BiEngineReason.t()) | nil
         }
 
+  field(:accelerationMode)
   field(:biEngineMode)
   field(:biEngineReasons, as: GoogleApi.BigQuery.V2.Model.BiEngineReason, type: :list)
 end

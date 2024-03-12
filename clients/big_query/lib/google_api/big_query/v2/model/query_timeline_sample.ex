@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.QueryTimelineSample do
   @moduledoc """
-
+  Summary of the state of query execution at a given time.
 
   ## Attributes
 
-  *   `activeUnits` (*type:* `String.t`, *default:* `nil`) - Total number of units currently being processed by workers. This does not correspond directly to slot usage. This is the largest value observed since the last sample.
+  *   `activeUnits` (*type:* `String.t`, *default:* `nil`) - Total number of active workers. This does not correspond directly to slot usage. This is the largest value observed since the last sample.
   *   `completedUnits` (*type:* `String.t`, *default:* `nil`) - Total parallel units of work completed by this query.
   *   `elapsedMs` (*type:* `String.t`, *default:* `nil`) - Milliseconds elapsed since the start of query execution.
-  *   `estimatedRunnableUnits` (*type:* `String.t`, *default:* `nil`) - Units of work that can be scheduled immediately. Providing additional slots for these units of work will speed up the query, provided no other query in the reservation needs additional slots.
+  *   `estimatedRunnableUnits` (*type:* `String.t`, *default:* `nil`) - Units of work that can be scheduled immediately. Providing additional slots for these units of work will accelerate the query, if no other query in the reservation needs additional slots.
   *   `pendingUnits` (*type:* `String.t`, *default:* `nil`) - Total units of work remaining for the query. This number can be revised (increased or decreased) while the query is running.
   *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - Cumulative slot-ms consumed by the query.
   """

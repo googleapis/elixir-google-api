@@ -17,25 +17,28 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameterType do
   @moduledoc """
-
+  The type of a query parameter.
 
   ## Attributes
 
-  *   `arrayType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Optional] The type of the array's elements, if this is an array.
-  *   `structTypes` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t)`, *default:* `nil`) - [Optional] The types of the fields of this struct, in order, if this is a struct.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - [Required] The top level type of this field.
+  *   `arrayType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - Optional. The type of the array's elements, if this is an array.
+  *   `rangeElementType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - Optional. The element type of the range, if this is a range.
+  *   `structTypes` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t)`, *default:* `nil`) - Optional. The types of the fields of this struct, in order, if this is a struct.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The top level type of this field.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :arrayType => GoogleApi.BigQuery.V2.Model.QueryParameterType.t() | nil,
+          :rangeElementType => GoogleApi.BigQuery.V2.Model.QueryParameterType.t() | nil,
           :structTypes =>
             list(GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes.t()) | nil,
           :type => String.t() | nil
         }
 
   field(:arrayType, as: GoogleApi.BigQuery.V2.Model.QueryParameterType)
+  field(:rangeElementType, as: GoogleApi.BigQuery.V2.Model.QueryParameterType)
   field(:structTypes, as: GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes, type: :list)
   field(:type)
 end

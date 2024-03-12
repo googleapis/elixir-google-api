@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ModelReference do
   @moduledoc """
-
+  Id path of a model.
 
   ## Attributes
 
-  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the dataset containing this model.
-  *   `modelId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the model. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the project containing this model.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the dataset containing this model.
+  *   `modelId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the model. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 1,024 characters.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the project containing this model.
   """
 
   use GoogleApi.Gax.ModelBase

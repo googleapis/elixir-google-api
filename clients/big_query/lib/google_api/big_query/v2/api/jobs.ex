@@ -31,17 +31,21 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the job to cancel
-  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the job to cancel
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the job to cancel
+  *   `job_id` (*type:* `String.t`) - Required. Job ID of the job to cancel
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:location` (*type:* `String.t`) - The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. You must specify the location to run the job for the following scenarios: - If the location to run a job is not in the `us` or the `eu` multi-regional location - If the job's location is in a single region (for example, `us-central1`) For more information, see https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -56,20 +60,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           | {:error, any()}
   def bigquery_jobs_cancel(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :location => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/bigquery/v2/projects/{projectId}/jobs/{jobId}/cancel", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/jobs/{+jobId}/cancel", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
@@ -90,13 +98,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   *   `project_id` (*type:* `String.t`) - Required. Project ID of the job for which metadata is to be deleted.
   *   `job_id` (*type:* `String.t`) - Required. Job ID of the job for which metadata is to be deleted. If this is a parent job which has child jobs, the metadata from all child jobs will be deleted as well. Direct deletion of the metadata of child jobs is not allowed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:location` (*type:* `String.t`) - The geographic location of the job. Required. See details at: https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -109,13 +121,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
   def bigquery_jobs_delete(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :location => :query
     }
 
@@ -140,17 +156,21 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the requested job
-  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the requested job
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the requested job.
+  *   `job_id` (*type:* `String.t`) - Required. Job ID of the requested job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:location` (*type:* `String.t`) - The geographic location of the job. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. You must specify the location to run the job for the following scenarios: - If the location to run a job is not in the `us` or the `eu` multi-regional location - If the job's location is in a single region (for example, `us-central1`) For more information, see https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -165,22 +185,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           | {:error, any()}
   def bigquery_jobs_get(connection, project_id, job_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :location => :query
     }
 
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/bigquery/v2/projects/{projectId}/jobs/{jobId}", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/jobs/{+jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -191,26 +215,31 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Retrieves the results of a query job.
+  RPC to get the results of a query job.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - [Required] Project ID of the query job
-  *   `job_id` (*type:* `String.t`) - [Required] Job ID of the query job
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the query job.
+  *   `job_id` (*type:* `String.t`) - Required. Job ID of the query job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:location` (*type:* `String.t`) - The geographic location where the job should run. Required except for US and EU. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to read
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
-      *   `:startIndex` (*type:* `String.t`) - Zero-based index of the starting row
-      *   `:timeoutMs` (*type:* `integer()`) - How long to wait for the query to complete, in milliseconds, before returning. Default is 10 seconds. If the timeout passes before the job completes, the 'jobComplete' field in the response will be false
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"formatOptions.useInt64Timestamp"` (*type:* `boolean()`) - Optional. Output timestamp as usec int64. Default is false.
+      *   `:location` (*type:* `String.t`) - The geographic location of the job. You must specify the location to run the job for the following scenarios: - If the location to run a job is not in the `us` or the `eu` multi-regional location - If the job's location is in a single region (for example, `us-central1`) For more information, see https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to read.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results.
+      *   `:startIndex` (*type:* `String.t`) - Zero-based index of the starting row.
+      *   `:timeoutMs` (*type:* `integer()`) - Optional: Specifies the maximum amount of time, in milliseconds, that the client is willing to wait for the query to complete. By default, this limit is 10 seconds (10,000 milliseconds). If the query is complete, the jobComplete field in the response is true. If the query has not yet completed, jobComplete is false. You can request a longer timeout period in the timeoutMs field. However, the call is not guaranteed to wait for the specified timeout; it typically returns after around 200 seconds (200,000 milliseconds), even if the query is not complete. If jobComplete is false, you can continue to wait for the query to complete by calling the getQueryResults method until the jobComplete field in the getQueryResults response is true.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -237,13 +266,18 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"formatOptions.useInt64Timestamp" => :query,
       :location => :query,
       :maxResults => :query,
       :pageToken => :query,
@@ -254,9 +288,9 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/bigquery/v2/projects/{projectId}/queries/{jobId}", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/queries/{+jobId}", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "jobId" => URI.encode(job_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+        "jobId" => URI.encode(job_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -267,20 +301,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Starts a new asynchronous job. Requires the Can View project role.
+  Starts a new asynchronous job. This API has two different kinds of endpoint URIs, as this method supports a variety of use cases. * The *Metadata* URI is used for most interactions, as it accepts the job configuration directly. * The *Upload* URI is ONLY for the case when you're sending both a load job configuration and a data stream together. In this case, the Upload URI accepts the job configuration and the data as two distinct multipart MIME parts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `project_id` (*type:* `String.t`) - Project ID of project that will be billed for the job.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -296,20 +334,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           | {:error, any()}
   def bigquery_jobs_insert(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/jobs", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -321,23 +363,27 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Starts a new asynchronous job. Requires the Can View project role.
+  Starts a new asynchronous job. This API has two different kinds of endpoint URIs, as this method supports a variety of use cases. * The *Metadata* URI is used for most interactions, as it accepts the job configuration directly. * The *Upload* URI is ONLY for the case when you're sending both a load job configuration and a data stream together. In this case, the Upload URI accepts the job configuration and the data as two distinct multipart MIME parts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `project_id` (*type:* `String.t`) - Project ID of project that will be billed for the job.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - object metadata
   *   `data` (*type:* `iodata`) - Content to upload, as a string or iolist
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -368,19 +414,23 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/upload/bigquery/v2/projects/{projectId}/jobs", %{
+      |> Request.url("/upload/bigquery/v2/projects/{+projectId}/jobs", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -395,21 +445,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Starts a new asynchronous job. Requires the Can View project role.
+  Starts a new asynchronous job. This API has two different kinds of endpoint URIs, as this method supports a variety of use cases. * The *Metadata* URI is used for most interactions, as it accepts the job configuration directly. * The *Upload* URI is ONLY for the case when you're sending both a load job configuration and a data stream together. In this case, the Upload URI accepts the job configuration and the data as two distinct multipart MIME parts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `project_id` (*type:* `String.t`) - Project ID of project that will be billed for the job.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "resumable".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -433,20 +487,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/resumable/upload/bigquery/v2/projects/{projectId}/jobs", %{
+      |> Request.url("/resumable/upload/bigquery/v2/projects/{+projectId}/jobs", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -459,23 +517,27 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   end
 
   @doc """
-  Starts a new asynchronous job. Requires the Can View project role.
+  Starts a new asynchronous job. This API has two different kinds of endpoint URIs, as this method supports a variety of use cases. * The *Metadata* URI is used for most interactions, as it accepts the job configuration directly. * The *Upload* URI is ONLY for the case when you're sending both a load job configuration and a data stream together. In this case, the Upload URI accepts the job configuration and the data as two distinct multipart MIME parts.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the project that will be billed for the job
+  *   `project_id` (*type:* `String.t`) - Project ID of project that will be billed for the job.
   *   `upload_type` (*type:* `String.t`) - Upload type. Must be "multipart".
   *   `metadata` (*type:* `GoogleApi.BigQuery.V2.Model.Job.t`) - object metadata
   *   `data` (*type:* `String.t`) - Path to file containing content to upload
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -506,19 +568,23 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/upload/bigquery/v2/projects/{projectId}/jobs", %{
+      |> Request.url("/upload/bigquery/v2/projects/{+projectId}/jobs", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_param(:query, :uploadType, upload_type)
@@ -538,21 +604,25 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the jobs to list
+  *   `project_id` (*type:* `String.t`) - Project ID of the jobs to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:allUsers` (*type:* `boolean()`) - Whether to display jobs owned by all users in the project. Default false
-      *   `:maxCreationTime` (*type:* `String.t`) - Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
-      *   `:minCreationTime` (*type:* `String.t`) - Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
-      *   `:parentJobId` (*type:* `String.t`) - If set, retrieves only jobs whose parent is this job. Otherwise, retrieves only jobs which have no parent
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allUsers` (*type:* `boolean()`) - Whether to display jobs owned by all users in the project. Default False.
+      *   `:maxCreationTime` (*type:* `String.t`) - Max value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created before or at this timestamp are returned.
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
+      *   `:minCreationTime` (*type:* `String.t`) - Min value for job creation time, in milliseconds since the POSIX epoch. If set, only jobs created after or at this timestamp are returned.
+      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results.
+      *   `:parentJobId` (*type:* `String.t`) - If set, show only child jobs of the specified parent. Otherwise, show all top-level jobs.
       *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields
       *   `:stateFilter` (*type:* `list(String.t)`) - Filter for job state
   *   `opts` (*type:* `keyword()`) - Call options
@@ -569,13 +639,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           | {:error, any()}
   def bigquery_jobs_list(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :allUsers => :query,
       :maxCreationTime => :query,
       :maxResults => :query,
@@ -589,7 +663,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/bigquery/v2/projects/{projectId}/jobs", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/jobs", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -606,15 +680,19 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the project billed for the query
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the query request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.QueryRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -630,20 +708,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Jobs do
           | {:error, any()}
   def bigquery_jobs_query(connection, project_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/bigquery/v2/projects/{projectId}/queries", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/queries", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

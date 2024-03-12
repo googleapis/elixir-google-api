@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
   @moduledoc """
-
+  Schema of a table
 
   ## Attributes
 

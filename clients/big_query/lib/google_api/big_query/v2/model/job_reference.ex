@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobReference do
   @moduledoc """
-
+  A job reference is a fully qualified identifier for referring to a job.
 
   ## Attributes
 
-  *   `jobId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location of the job. See details at https://cloud.google.com/bigquery/docs/locations#specifying_your_location.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the project containing this job.
+  *   `jobId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the job. The ID must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). The maximum length is 1,024 characters.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The geographic location of the job. The default value is US. For more information about BigQuery locations, see: https://cloud.google.com/bigquery/docs/locations
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the project containing this job.
   """
 
   use GoogleApi.Gax.ModelBase

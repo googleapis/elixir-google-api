@@ -21,10 +21,10 @@ defmodule GoogleApi.BigQuery.V2.Model.BqmlTrainingRun do
 
   ## Attributes
 
-  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.BqmlIterationResult.t)`, *default:* `nil`) - [Output-only, Beta] List of each iteration results.
-  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - [Output-only, Beta] Training run start time in milliseconds since the epoch.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - [Output-only, Beta] Different state applicable for a training run. IN PROGRESS: Training run is in progress. FAILED: Training run ended due to a non-retryable failure. SUCCEEDED: Training run successfully completed. CANCELLED: Training run cancelled by the user.
-  *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions.t`, *default:* `nil`) - [Output-only, Beta] Training options used by this training run. These options are mutable for subsequent training runs. Default values are explicitly stored for options not specified in the input query of the first training run. For subsequent training runs, any option not explicitly specified in the input query will be copied from the previous training run.
+  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.BqmlIterationResult.t)`, *default:* `nil`) - Deprecated.
+  *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Deprecated.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Deprecated.
+  *   `trainingOptions` (*type:* `GoogleApi.BigQuery.V2.Model.BqmlTrainingRunTrainingOptions.t`, *default:* `nil`) - Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase

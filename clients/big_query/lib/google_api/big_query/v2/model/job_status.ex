@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatus do
 
   ## Attributes
 
-  *   `errorResult` (*type:* `GoogleApi.BigQuery.V2.Model.ErrorProto.t`, *default:* `nil`) - [Output-only] Final error result of the job. If present, indicates that the job has completed and was unsuccessful.
-  *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - [Output-only] The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has completed or was unsuccessful.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - [Output-only] Running state of the job.
+  *   `errorResult` (*type:* `GoogleApi.BigQuery.V2.Model.ErrorProto.t`, *default:* `nil`) - Output only. Final error result of the job. If present, indicates that the job has completed and was unsuccessful.
+  *   `errors` (*type:* `list(GoogleApi.BigQuery.V2.Model.ErrorProto.t)`, *default:* `nil`) - Output only. The first errors encountered during the running of the job. The final message includes the number of errors that caused the process to stop. Errors here do not necessarily mean that the job has not completed or was unsuccessful.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Running state of the job. Valid states include 'PENDING', 'RUNNING', and 'DONE'.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ErrorProto do
   @moduledoc """
-
+  Error details.
 
   ## Attributes
 

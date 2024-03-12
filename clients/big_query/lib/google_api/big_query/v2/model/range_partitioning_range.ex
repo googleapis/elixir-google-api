@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.RangePartitioningRange do
   @moduledoc """
-  [TrustedTester] [Required] Defines the ranges for range partitioning.
+  [Experimental] Defines the ranges for range partitioning.
 
   ## Attributes
 
-  *   `end` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The end of range partitioning, exclusive.
-  *   `interval` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The width of each interval.
-  *   `start` (*type:* `String.t`, *default:* `nil`) - [TrustedTester] [Required] The start of range partitioning, inclusive.
+  *   `end` (*type:* `String.t`, *default:* `nil`) - [Experimental] The end of range partitioning, exclusive.
+  *   `interval` (*type:* `String.t`, *default:* `nil`) - [Experimental] The width of each interval.
+  *   `start` (*type:* `String.t`, *default:* `nil`) - [Experimental] The start of range partitioning, inclusive.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.CsvOptions do
   @moduledoc """
-
+  Information related to a CSV data source.
 
   ## Attributes
 
-  *   `allowJaggedRows` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if BigQuery should accept rows that are missing trailing optional columns. If true, BigQuery treats missing trailing columns as null values. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false.
-  *   `allowQuotedNewlines` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false.
-  *   `encoding` (*type:* `String.t`, *default:* `nil`) - [Optional] The character encoding of the data. The supported values are UTF-8 or ISO-8859-1. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties.
-  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - [Optional] The separator for fields in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. BigQuery also supports the escape sequence "\\t" to specify a tab separator. The default value is a comma (',').
-  *   `null_marker` (*type:* `String.t`, *default:* `nil`) - [Optional] An custom string that will represent a NULL value in CSV import data.
-  *   `preserveAsciiControlCharacters` (*type:* `boolean()`, *default:* `nil`) - [Optional] Preserves the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') when loading from CSV. Only applicable to CSV, ignored for other formats.
-  *   `quote` (*type:* `String.t`, *default:* `"`) - [Optional] The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true.
-  *   `skipLeadingRows` (*type:* `String.t`, *default:* `nil`) - [Optional] The number of rows at the top of a CSV file that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. When autodetect is on, the behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema.
+  *   `allowJaggedRows` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if BigQuery should accept rows that are missing trailing optional columns. If true, BigQuery treats missing trailing columns as null values. If false, records with missing trailing columns are treated as bad records, and if there are too many bad records, an invalid error is returned in the job result. The default value is false.
+  *   `allowQuotedNewlines` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if BigQuery should allow quoted data sections that contain newline characters in a CSV file. The default value is false.
+  *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The character encoding of the data. The supported values are UTF-8, ISO-8859-1, UTF-16BE, UTF-16LE, UTF-32BE, and UTF-32LE. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the quote and fieldDelimiter properties.
+  *   `fieldDelimiter` (*type:* `String.t`, *default:* `nil`) - Optional. The separator character for fields in a CSV file. The separator is interpreted as a single byte. For files encoded in ISO-8859-1, any single character can be used as a separator. For files encoded in UTF-8, characters represented in decimal range 1-127 (U+0001-U+007F) can be used without any modification. UTF-8 characters encoded with multiple bytes (i.e. U+0080 and above) will have only the first byte used for separating fields. The remaining bytes will be treated as a part of the field. BigQuery also supports the escape sequence "\\t" (U+0009) to specify a tab separator. The default value is comma (",", U+002C).
+  *   `nullMarker` (*type:* `String.t`, *default:* `nil`) - [Optional] A custom string that will represent a NULL value in CSV import data.
+  *   `preserveAsciiControlCharacters` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the embedded ASCII control characters (the first 32 characters in the ASCII-table, from '\\x00' to '\\x1F') are preserved.
+  *   `quote` (*type:* `String.t`, *default:* `"`) - Optional. The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ("). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. To include the specific quote character within a quoted value, precede it with an additional matching quote character. For example, if you want to escape the default character ' " ', use ' "" '.
+  *   `skipLeadingRows` (*type:* `String.t`, *default:* `nil`) - Optional. The number of rows at the top of a CSV file that BigQuery will skip when reading the data. The default value is 0. This property is useful if you have header rows in the file that should be skipped. When autodetect is on, the behavior is the following: * skipLeadingRows unspecified - Autodetect tries to detect headers in the first row. If they are not detected, the row is read as data. Otherwise data is read starting from the second row. * skipLeadingRows is 0 - Instructs autodetect that there are no headers and data should be read starting from the first row. * skipLeadingRows = N > 0 - Autodetect skips N-1 rows and tries to detect headers in row N. If headers are not detected, row N is just skipped. Otherwise row N is used to extract column names for the detected schema.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +38,7 @@ defmodule GoogleApi.BigQuery.V2.Model.CsvOptions do
           :allowQuotedNewlines => boolean() | nil,
           :encoding => String.t() | nil,
           :fieldDelimiter => String.t() | nil,
-          :null_marker => String.t() | nil,
+          :nullMarker => String.t() | nil,
           :preserveAsciiControlCharacters => boolean() | nil,
           :quote => String.t() | nil,
           :skipLeadingRows => String.t() | nil
@@ -48,7 +48,7 @@ defmodule GoogleApi.BigQuery.V2.Model.CsvOptions do
   field(:allowQuotedNewlines)
   field(:encoding)
   field(:fieldDelimiter)
-  field(:null_marker)
+  field(:nullMarker)
   field(:preserveAsciiControlCharacters)
   field(:quote)
   field(:skipLeadingRows)

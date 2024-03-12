@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponse do
   @moduledoc """
-
+  Describes the format of a streaming insert response.
 
   ## Attributes
 
-  *   `insertErrors` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t)`, *default:* `nil`) - An array of errors for rows that were not inserted.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataInsertAllResponse`) - The resource type of the response.
+  *   `insertErrors` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors.t)`, *default:* `nil`) - Describes specific errors encountered while processing the request.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataInsertAllResponse`) - Returns "bigquery#tableDataInsertAllResponse".
   """
 
   use GoogleApi.Gax.ModelBase

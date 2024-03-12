@@ -17,23 +17,32 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.MlStatistics do
   @moduledoc """
-
+  Job statistics specific to a BigQuery ML training job.
 
   ## Attributes
 
-  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Results for all completed iterations.
-  *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop.
+  *   `hparamTrials` (*type:* `list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t)`, *default:* `nil`) - Output only. Trials of a [hyperparameter tuning job](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) sorted by trial_id.
+  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Results for all completed iterations. Empty for [hyperparameter tuning jobs](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview).
+  *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - Output only. Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop.
+  *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the model that is being trained.
+  *   `trainingType` (*type:* `String.t`, *default:* `nil`) - Output only. Training type of the job.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hparamTrials => list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t()) | nil,
           :iterationResults => list(GoogleApi.BigQuery.V2.Model.IterationResult.t()) | nil,
-          :maxIterations => String.t() | nil
+          :maxIterations => String.t() | nil,
+          :modelType => String.t() | nil,
+          :trainingType => String.t() | nil
         }
 
+  field(:hparamTrials, as: GoogleApi.BigQuery.V2.Model.HparamTuningTrial, type: :list)
   field(:iterationResults, as: GoogleApi.BigQuery.V2.Model.IterationResult, type: :list)
   field(:maxIterations)
+  field(:modelType)
+  field(:trainingType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.MlStatistics do

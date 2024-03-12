@@ -17,25 +17,28 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameterValue do
   @moduledoc """
-
+  The value of a query parameter.
 
   ## Attributes
 
-  *   `arrayValues` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameterValue.t)`, *default:* `nil`) - [Optional] The array values, if this is an array type.
-  *   `structValues` (*type:* `%{optional(String.t) => GoogleApi.BigQuery.V2.Model.QueryParameterValue.t}`, *default:* `nil`) - [Optional] The struct field values, in order of the struct type's declaration.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - [Optional] The value of this value, if a simple scalar type.
+  *   `arrayValues` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryParameterValue.t)`, *default:* `nil`) - Optional. The array values, if this is an array type.
+  *   `rangeValue` (*type:* `GoogleApi.BigQuery.V2.Model.RangeValue.t`, *default:* `nil`) - Optional. The range value, if this is a range type.
+  *   `structValues` (*type:* `%{optional(String.t) => GoogleApi.BigQuery.V2.Model.QueryParameterValue.t}`, *default:* `nil`) - The struct field values.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Optional. The value of this value, if a simple scalar type.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :arrayValues => list(GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()) | nil,
+          :rangeValue => GoogleApi.BigQuery.V2.Model.RangeValue.t() | nil,
           :structValues =>
             %{optional(String.t()) => GoogleApi.BigQuery.V2.Model.QueryParameterValue.t()} | nil,
           :value => String.t() | nil
         }
 
   field(:arrayValues, as: GoogleApi.BigQuery.V2.Model.QueryParameterValue, type: :list)
+  field(:rangeValue, as: GoogleApi.BigQuery.V2.Model.RangeValue)
   field(:structValues, as: GoogleApi.BigQuery.V2.Model.QueryParameterValue, type: :map)
   field(:value)
 end

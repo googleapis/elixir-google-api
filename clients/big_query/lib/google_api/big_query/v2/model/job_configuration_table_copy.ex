@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
   @moduledoc """
-
+  JobConfigurationTableCopy configures a job that copies data from one table to another. For more information on copying tables, see [Copy a table](https://cloud.google.com/bigquery/docs/managing-tables#copy-table).
 
   ## Attributes
 
-  *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies whether the job is allowed to create new tables. The following values are supported: CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `createDisposition` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether the job is allowed to create new tables. The following values are supported: * CREATE_IF_NEEDED: If the table does not exist, BigQuery creates the table. * CREATE_NEVER: The table must already exist. If it does not, a 'notFound' error is returned in the job result. The default value is CREATE_IF_NEEDED. Creation, truncation and append actions occur as one atomic update upon job completion.
   *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
-  *   `destinationExpirationTime` (*type:* `any()`, *default:* `nil`) - [Optional] The time when the destination table expires. Expired tables will be deleted and their storage reclaimed.
-  *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] The destination table
-  *   `operationType` (*type:* `String.t`, *default:* `nil`) - [Optional] Supported operation types in table copy job.
+  *   `destinationExpirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the destination table expires. Expired tables will be deleted and their storage reclaimed.
+  *   `destinationTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] The destination table.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - Optional. Supported operation types in table copy job.
   *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Pick one] Source table to copy.
   *   `sourceTables` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - [Pick one] Source tables to copy.
-  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - [Optional] Specifies the action that occurs if the destination table already exists. The following values are supported: WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data. WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
+  *   `writeDisposition` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the action that occurs if the destination table already exists. The following values are supported: * WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema and table constraints from the source table. * WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. * WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +37,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
           :createDisposition => String.t() | nil,
           :destinationEncryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
-          :destinationExpirationTime => any() | nil,
+          :destinationExpirationTime => DateTime.t() | nil,
           :destinationTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :operationType => String.t() | nil,
           :sourceTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
@@ -51,7 +51,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationTableCopy do
     as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration
   )
 
-  field(:destinationExpirationTime)
+  field(:destinationExpirationTime, as: DateTime)
   field(:destinationTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:operationType)
   field(:sourceTable, as: GoogleApi.BigQuery.V2.Model.TableReference)

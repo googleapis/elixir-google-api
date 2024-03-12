@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.RowAccessPolicyReference do
   @moduledoc """
-
+  Id path of a row access policy.
 
   ## Attributes
 
-  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the dataset containing this row access policy.
-  *   `policyId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the row access policy. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the project containing this row access policy.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - [Required] The ID of the table containing this row access policy.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the dataset containing this row access policy.
+  *   `policyId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the row access policy. The ID must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_). The maximum length is 256 characters.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the project containing this row access policy.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the table containing this row access policy.
   """
 
   use GoogleApi.Gax.ModelBase

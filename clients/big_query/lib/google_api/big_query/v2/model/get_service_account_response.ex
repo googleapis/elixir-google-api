@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.GetServiceAccountResponse do
   @moduledoc """
-
+  Response object of GetServiceAccount
 
   ## Attributes
 

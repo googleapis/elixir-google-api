@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.Streamingbuffer do
 
   ## Attributes
 
-  *   `estimatedBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] A lower-bound estimate of the number of bytes currently in the streaming buffer.
-  *   `estimatedRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] A lower-bound estimate of the number of rows currently in the streaming buffer.
-  *   `oldestEntryTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available.
+  *   `estimatedBytes` (*type:* `String.t`, *default:* `nil`) - Output only. A lower-bound estimate of the number of bytes currently in the streaming buffer.
+  *   `estimatedRows` (*type:* `String.t`, *default:* `nil`) - Output only. A lower-bound estimate of the number of rows currently in the streaming buffer.
+  *   `oldestEntryTime` (*type:* `String.t`, *default:* `nil`) - Output only. Contains the timestamp of the oldest entry in the streaming buffer, in milliseconds since the epoch, if the streaming buffer is available.
   """
 
   use GoogleApi.Gax.ModelBase

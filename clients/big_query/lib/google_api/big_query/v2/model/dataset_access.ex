@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
   @moduledoc """
-
+  An object that defines dataset access for an entity.
 
   ## Attributes
 
@@ -25,11 +25,11 @@ defmodule GoogleApi.BigQuery.V2.Model.DatasetAccess do
   *   `domain` (*type:* `String.t`, *default:* `nil`) - [Pick one] A domain to grant access to. Any users signed in with the domain specified will be granted the specified access. Example: "example.com". Maps to IAM policy member "domain:DOMAIN".
   *   `groupByEmail` (*type:* `String.t`, *default:* `nil`) - [Pick one] An email address of a Google Group to grant access to. Maps to IAM policy member "group:GROUP".
   *   `iamMember` (*type:* `String.t`, *default:* `nil`) - [Pick one] Some other type of member that appears in the IAM Policy but isn't a user, group, domain, or special group.
-  *   `role` (*type:* `String.t`, *default:* `nil`) - [Required] An IAM role ID that should be granted to the user, group, or domain specified in this access entry. The following legacy mappings will be applied: OWNER  roles/bigquery.dataOwner WRITER  roles/bigquery.dataEditor READER  roles/bigquery.dataViewer This field will accept any of the above formats, but will return only the legacy format. For example, if you set this field to "roles/bigquery.dataOwner", it will be returned back as "OWNER".
+  *   `role` (*type:* `String.t`, *default:* `nil`) - An IAM role ID that should be granted to the user, group, or domain specified in this access entry. The following legacy mappings will be applied: OWNER <=> roles/bigquery.dataOwner WRITER <=> roles/bigquery.dataEditor READER <=> roles/bigquery.dataViewer This field will accept any of the above formats, but will return only the legacy format. For example, if you set this field to "roles/bigquery.dataOwner", it will be returned back as "OWNER".
   *   `routine` (*type:* `GoogleApi.BigQuery.V2.Model.RoutineReference.t`, *default:* `nil`) - [Pick one] A routine from a different dataset to grant access to. Queries executed against that routine will have read access to views/tables/routines in this dataset. Only UDF is supported for now. The role field is not required when this field is set. If that routine is updated by any user, access to the routine needs to be granted again via an update operation.
   *   `specialGroup` (*type:* `String.t`, *default:* `nil`) - [Pick one] A special group to grant access to. Possible values include: projectOwners: Owners of the enclosing project. projectReaders: Readers of the enclosing project. projectWriters: Writers of the enclosing project. allAuthenticatedUsers: All authenticated BigQuery users. Maps to similarly-named IAM members.
   *   `userByEmail` (*type:* `String.t`, *default:* `nil`) - [Pick one] An email address of a user to grant access to. For example: fred@example.com. Maps to IAM policy member "user:EMAIL" or "serviceAccount:EMAIL".
-  *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to tables in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation.
+  *   `view` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Pick one] A view from a different dataset to grant access to. Queries executed against that view will have read access to views/tables/routines in this dataset. The role field is not required when this field is set. If that view is updated by any user, access to the view needs to be granted again via an update operation.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DatasetAccessEntry do
   @moduledoc """
-
+  Grants all resources of particular types in a particular dataset read access to the current dataset. Similar to how individually authorized views work, updates to any resource granted through its dataset (including creation of new resources) requires read permission to referenced resources, plus write permission to the authorizing dataset.
 
   ## Attributes
 
-  *   `dataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Required] The dataset this entry applies to.
-  *   `targetTypes` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `dataset` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - The dataset this entry applies to
+  *   `targetTypes` (*type:* `list(String.t)`, *default:* `nil`) - Which resources in the dataset this entry applies to. Currently, only views are supported, but additional target types may be added in the future.
   """
 
   use GoogleApi.Gax.ModelBase

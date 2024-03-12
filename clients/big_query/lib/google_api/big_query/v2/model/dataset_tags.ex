@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DatasetTags do
   @moduledoc """
-
+  A global tag managed by Resource Manager. https://cloud.google.com/iam/docs/tags-access-control#definitions
 
   ## Attributes
 
-  *   `tagKey` (*type:* `String.t`, *default:* `nil`) - [Required] The namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is org id.
-  *   `tagValue` (*type:* `String.t`, *default:* `nil`) - [Required] Friendly short name of the tag value, e.g. "production".
+  *   `tagKey` (*type:* `String.t`, *default:* `nil`) - Required. The namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is org id.
+  *   `tagValue` (*type:* `String.t`, *default:* `nil`) - Required. The friendly short name of the tag value, e.g. "production".
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DatasetListDatasets do
   @moduledoc """
-
+  A dataset resource with only a subset of fields, to be returned in a list of datasets.
 
   ## Attributes
 
   *   `datasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - The dataset reference. Use this property to access specific parts of the dataset's ID, such as project ID or dataset ID.
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - A descriptive name for the dataset, if one exists.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - An alternate name for the dataset. The friendly name is purely decorative in nature.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The fully-qualified, unique, opaque ID of the dataset.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#dataset`) - The resource type. This property always returns the value "bigquery#dataset".
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The resource type. This property always returns the value "bigquery#dataset"
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this dataset. You can use these to organize and group your datasets.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the data resides.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset resides.
   """
 
   use GoogleApi.Gax.ModelBase

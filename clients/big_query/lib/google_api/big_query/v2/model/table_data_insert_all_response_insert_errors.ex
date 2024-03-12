@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableDataInsertAllResponseInsertErrors do
   @moduledoc """
-
+  Error details about a single row's insertion.
 
   ## Attributes
 

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchemaCategories do
   @moduledoc """
-  [Optional] The categories attached to this field, used for field-level access control.
+  Deprecated.
 
   ## Attributes
 
-  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - A list of category resource names. For example, "projects/1/taxonomies/2/categories/3". At most 5 categories are allowed.
+  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase

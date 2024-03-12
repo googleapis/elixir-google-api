@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ProjectList do
   @moduledoc """
-
+  Response object of ListProjects
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of the page of results
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#projectList`) - The type of list.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
-  *   `projects` (*type:* `list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t)`, *default:* `nil`) - Projects to which you have at least READ access.
-  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of projects in the list.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - A hash of the page of results.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#projectList`) - The resource type of the response.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Use this token to request the next page of results.
+  *   `projects` (*type:* `list(GoogleApi.BigQuery.V2.Model.ProjectListProjects.t)`, *default:* `nil`) - Projects to which the user has at least READ access.
+  *   `totalItems` (*type:* `integer()`, *default:* `nil`) - The total number of projects in the page. A wrapper is used here because the field should still be in the response when the value is 0.
   """
 
   use GoogleApi.Gax.ModelBase
