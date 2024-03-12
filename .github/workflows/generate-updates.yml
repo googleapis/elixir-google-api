@@ -9,7 +9,7 @@ on:
 jobs:
   generate-updates:
     if: ${{ github.repository == 'googleapis/elixir-google-api' }}
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     env:
       GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
       APPROVAL_GITHUB_TOKEN: ${{secrets.YOSHI_APPROVER_TOKEN}}
