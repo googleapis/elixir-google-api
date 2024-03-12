@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BinaryAuthorization.V1.Model.ListAttestorsResponse do
   @moduledoc """
-  Response message for BinauthzManagementService.ListAttestors.
+  Response message for BinauthzManagementServiceV1.ListAttestors.
 
   ## Attributes
 
