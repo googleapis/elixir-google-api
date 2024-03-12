@@ -22,9 +22,9 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.ProgrammaticGuaranteedT
   ## Attributes
 
   *   `fixedPrice` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.Price.t`, *default:* `nil`) - Fixed price for the deal.
-  *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks.
+  *   `guaranteedLooks` (*type:* `String.t`, *default:* `nil`) - Count of guaranteed looks. For CPD deals, buyer changes to guaranteed_looks will be ignored.
   *   `impressionCap` (*type:* `String.t`, *default:* `nil`) - The lifetime impression cap for CPM Sponsorship deals. Deal will stop serving when cap is reached.
-  *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types.
+  *   `minimumDailyLooks` (*type:* `String.t`, *default:* `nil`) - Daily minimum looks for CPD deal types. For CPD deals, buyer should negotiate on this field instead of guaranteed_looks.
   *   `percentShareOfVoice` (*type:* `String.t`, *default:* `nil`) - For sponsorship deals, this is the percentage of the seller's eligible impressions that the deal will serve until the cap is reached. Valid value is within range 0~100.
   *   `reservationType` (*type:* `String.t`, *default:* `nil`) - The reservation type for a Programmatic Guaranteed deal. This indicates whether the number of impressions is fixed, or a percent of available impressions. If not specified, the default reservation type is STANDARD.
   """
