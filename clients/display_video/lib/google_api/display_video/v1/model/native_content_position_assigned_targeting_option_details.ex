@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.NativeContentPositionAssignedTargeting
 
   ## Attributes
 
-  *   `contentPosition` (*type:* `String.t`, *default:* `nil`) - The content position. Output only in v1. Required in v2.
+  *   `contentPosition` (*type:* `String.t`, *default:* `nil`) - Required. The content position.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_NATIVE_CONTENT_POSITION`.
   """
 

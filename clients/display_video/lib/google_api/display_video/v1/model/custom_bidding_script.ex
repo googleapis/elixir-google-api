@@ -25,7 +25,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CustomBiddingScript do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the script was created.
   *   `customBiddingAlgorithmId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the custom bidding algorithm the script belongs to.
   *   `customBiddingScriptId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the custom bidding script.
-  *   `errors` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ScriptError.t)`, *default:* `nil`) - Output only. Error details of a rejected custom bidding script. This field will only be populated when Script.state is REJECTED.
+  *   `errors` (*type:* `list(GoogleApi.DisplayVideo.V1.Model.ScriptError.t)`, *default:* `nil`) - Output only. Error details of a rejected custom bidding script. This field will only be populated when state is REJECTED.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the custom bidding script.
   *   `script` (*type:* `GoogleApi.DisplayVideo.V1.Model.CustomBiddingScriptRef.t`, *default:* `nil`) - The reference to the uploaded script file.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the custom bidding script.

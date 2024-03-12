@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.PerformanceGoal do
   @moduledoc """
-  Settings that control the performance goal of a campaign or insertion order.
+  Settings that control the performance goal of a campaign.
 
   ## Attributes
 

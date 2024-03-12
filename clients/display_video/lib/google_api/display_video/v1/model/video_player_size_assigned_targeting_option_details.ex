@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.VideoPlayerSizeAssignedTargetingOption
   ## Attributes
 
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id field when targeting_type is `TARGETING_TYPE_VIDEO_PLAYER_SIZE`.
-  *   `videoPlayerSize` (*type:* `String.t`, *default:* `nil`) - The video player size. Output only in v1. Required in v2.
+  *   `videoPlayerSize` (*type:* `String.t`, *default:* `nil`) - Required. The video player size.
   """
 
   use GoogleApi.Gax.ModelBase

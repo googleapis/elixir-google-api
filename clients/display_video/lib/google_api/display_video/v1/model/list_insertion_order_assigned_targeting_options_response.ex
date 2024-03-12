@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.ListInsertionOrderAssignedTargetingOptionsResponse do
   @moduledoc """
-  Response message for ListInsertionOrderAssignedTargetingOptions.
+
 
   ## Attributes
 

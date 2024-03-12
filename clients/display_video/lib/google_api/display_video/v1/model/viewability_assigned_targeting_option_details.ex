@@ -22,7 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.ViewabilityAssignedTargetingOptionDeta
   ## Attributes
 
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_VIEWABILITY` (e.g., "509010" for targeting the `VIEWABILITY_10_PERCENT_OR_MORE` option).
-  *   `viewability` (*type:* `String.t`, *default:* `nil`) - The predicted viewability percentage. Output only in v1. Required in v2.
+  *   `viewability` (*type:* `String.t`, *default:* `nil`) - Required. The predicted viewability percentage.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,15 +21,18 @@ defmodule GoogleApi.DisplayVideo.V1.Model.MobileDeviceIdList do
 
   ## Attributes
 
+  *   `consent` (*type:* `GoogleApi.DisplayVideo.V1.Model.Consent.t`, *default:* `nil`) - Input only. The consent setting for the users in mobile_device_ids. Leaving this field unset indicates that consent is not specified. If ad_user_data or ad_personalization fields are set to `CONSENT_STATUS_DENIED`, the request will return an error.
   *   `mobileDeviceIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of mobile device IDs defining Customer Match audience members. The size of mobile_device_ids mustn't be greater than 500,000.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :consent => GoogleApi.DisplayVideo.V1.Model.Consent.t() | nil,
           :mobileDeviceIds => list(String.t()) | nil
         }
 
+  field(:consent, as: GoogleApi.DisplayVideo.V1.Model.Consent)
   field(:mobileDeviceIds, type: :list)
 end
 

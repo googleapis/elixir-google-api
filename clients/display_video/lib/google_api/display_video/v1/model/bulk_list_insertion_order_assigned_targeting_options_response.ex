@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.BulkListInsertionOrderAssignedTargetingOptionsResponse do
   @moduledoc """
-  Response message for BulkListInsertionOrderAssignedTargetingOptions.
+
 
   ## Attributes
 

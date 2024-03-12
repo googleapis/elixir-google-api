@@ -23,7 +23,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.InsertionOrder do
 
   *   `advertiserId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the advertiser the insertion order belongs to.
   *   `bidStrategy` (*type:* `GoogleApi.DisplayVideo.V1.Model.BiddingStrategy.t`, *default:* `nil`) - The bidding strategy of the insertion order. By default, fixed_bid is set.
-  *   `billableOutcome` (*type:* `String.t`, *default:* `nil`) - Immutable. The billable outcome of the insertion order.
+  *   `billableOutcome` (*type:* `String.t`, *default:* `nil`) - Immutable. The billable outcome of the insertion order. Outcome based buying is deprecated. `BILLABLE_OUTCOME_PAY_PER_IMPRESSION` is the only valid value.
   *   `budget` (*type:* `GoogleApi.DisplayVideo.V1.Model.InsertionOrderBudget.t`, *default:* `nil`) - Required. The budget allocation settings of the insertion order.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique ID of the campaign that the insertion order belongs to.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the insertion order. Must be UTF-8 encoded with a maximum size of 240 bytes.

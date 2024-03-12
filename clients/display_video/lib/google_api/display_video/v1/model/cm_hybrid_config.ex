@@ -22,6 +22,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CmHybridConfig do
   ## Attributes
 
   *   `cmAccountId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Account ID of the CM360 Floodlight configuration linked with the DV360 advertiser.
+  *   `cmAdvertiserIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The set of CM360 Advertiser IDs sharing the CM360 Floodlight configuration.
   *   `cmFloodlightConfigId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. ID of the CM360 Floodlight configuration linked with the DV360 advertiser.
   *   `cmFloodlightLinkingAuthorized` (*type:* `boolean()`, *default:* `nil`) - Required. Immutable. By setting this field to `true`, you, on behalf of your company, authorize the sharing of information from the given Floodlight configuration to this Display & Video 360 advertiser.
   *   `cmSyncableSiteIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of CM360 sites whose placements will be synced to DV360 as creatives. If absent or empty in CreateAdvertiser method, the system will automatically create a CM360 site. Removing sites from this list may cause DV360 creatives synced from CM360 to be deleted. At least one site must be specified.
@@ -33,6 +34,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CmHybridConfig do
 
   @type t :: %__MODULE__{
           :cmAccountId => String.t() | nil,
+          :cmAdvertiserIds => list(String.t()) | nil,
           :cmFloodlightConfigId => String.t() | nil,
           :cmFloodlightLinkingAuthorized => boolean() | nil,
           :cmSyncableSiteIds => list(String.t()) | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.CmHybridConfig do
         }
 
   field(:cmAccountId)
+  field(:cmAdvertiserIds, type: :list)
   field(:cmFloodlightConfigId)
   field(:cmFloodlightLinkingAuthorized)
   field(:cmSyncableSiteIds, type: :list)

@@ -21,7 +21,7 @@ defmodule GoogleApi.DisplayVideo.V1.Model.HouseholdIncomeAssignedTargetingOption
 
   ## Attributes
 
-  *   `householdIncome` (*type:* `String.t`, *default:* `nil`) - The household income of the audience. Output only in v1. Required in v2.
+  *   `householdIncome` (*type:* `String.t`, *default:* `nil`) - Required. The household income of the audience.
   *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The targeting_option_id of a TargetingOption of type `TARGETING_TYPE_HOUSEHOLD_INCOME`.
   """
 

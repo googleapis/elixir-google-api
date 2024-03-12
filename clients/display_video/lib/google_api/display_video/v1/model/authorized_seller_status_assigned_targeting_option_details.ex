@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AuthorizedSellerStatusAssignedTargetingOptionDetails do
   @moduledoc """
-  Represents an assigned authorized seller status. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`.
+  Represents an assigned authorized seller status. This will be populated in the details field of an AssignedTargetingOption when targeting_type is `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS`. If a resource does not have an `TARGETING_TYPE_AUTHORIZED_SELLER_STATUS` assigned targeting option, it is using the "Authorized Direct Sellers and Resellers" option.
 
   ## Attributes
 

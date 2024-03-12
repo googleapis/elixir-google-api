@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DisplayVideo.V1.Model.AssignedLocation do
   @moduledoc """
-  An assignment between a location list and a relevant targeting option. Currently, geo region targeting options are the only supported option for assignment.
+  An assignment between a location list and a relevant targeting option.
 
   ## Attributes
 
   *   `assignedLocationId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the assigned location. The ID is only unique within a location list. It may be reused in other contexts.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the assigned location.
-  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the targeting option assigned to the location list. Must be of type TARGETING_TYPE_GEO_REGION.
+  *   `targetingOptionId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the targeting option assigned to the location list.
   """
 
   use GoogleApi.Gax.ModelBase
