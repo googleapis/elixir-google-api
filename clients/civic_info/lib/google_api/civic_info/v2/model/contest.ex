@@ -31,7 +31,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
   *   `numberVotingFor` (*type:* `String.t`, *default:* `nil`) - The number of candidates that a voter may vote for in this contest.
   *   `office` (*type:* `String.t`, *default:* `nil`) - The name of the office for this contest.
   *   `primaryParties` (*type:* `list(String.t)`, *default:* `nil`) - If this is a partisan election, the name of the party/parties it is for.
-  *   `primaryParty` (*type:* `String.t`, *default:* `nil`) - [DEPRECATED] If this is a partisan election, the name of the party it is for. This field as deprecated in favor of the array "primaryParties", as contests may contain more than one party.
   *   `referendumBallotResponses` (*type:* `list(String.t)`, *default:* `nil`) - The set of ballot responses for the referendum. A ballot response represents a line on the ballot. Common examples might include "yes" or "no" for referenda. This field is only populated for contests of type 'Referendum'.
   *   `referendumBrief` (*type:* `String.t`, *default:* `nil`) - Specifies a short summary of the referendum that is typically on the ballot below the title but above the text. This field is only populated for contests of type 'Referendum'.
   *   `referendumConStatement` (*type:* `String.t`, *default:* `nil`) - A statement in opposition to the referendum. It does not necessarily appear on the ballot. This field is only populated for contests of type 'Referendum'.
@@ -61,7 +60,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
           :numberVotingFor => String.t() | nil,
           :office => String.t() | nil,
           :primaryParties => list(String.t()) | nil,
-          :primaryParty => String.t() | nil,
           :referendumBallotResponses => list(String.t()) | nil,
           :referendumBrief => String.t() | nil,
           :referendumConStatement => String.t() | nil,
@@ -88,7 +86,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Contest do
   field(:numberVotingFor)
   field(:office)
   field(:primaryParties, type: :list)
-  field(:primaryParty)
   field(:referendumBallotResponses, type: :list)
   field(:referendumBrief)
   field(:referendumConStatement)

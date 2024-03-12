@@ -43,6 +43,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:productionDataOnly` (*type:* `boolean()`) - Whether to include data that has not been allowlisted yet
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -67,7 +68,8 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :productionDataOnly => :query
     }
 
     request =
@@ -103,6 +105,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:electionId` (*type:* `String.t`) - The unique ID of the election to look up. A list of election IDs can be obtained at https://www.googleapis.com/civicinfo/{version}/elections. If no election ID is specified in the query and there is more than one election with data for the given voter, the additional elections are provided in the otherElections response field.
       *   `:officialOnly` (*type:* `boolean()`) - If set to true, only data from official state sources will be returned.
+      *   `:productionDataOnly` (*type:* `boolean()`) - Whether to include data that has not been vetted yet. Should only be made available to internal IPs or trusted partners. This is a non-discoverable parameter in the One Platform API config.
       *   `:returnAllAvailableData` (*type:* `boolean()`) - If set to true, the query will return the success code and include any partial information when it is unable to determine a matching address or unable to determine the election for electionId=0 queries.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -131,6 +134,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       :upload_protocol => :query,
       :electionId => :query,
       :officialOnly => :query,
+      :productionDataOnly => :query,
       :returnAllAvailableData => :query
     }
 

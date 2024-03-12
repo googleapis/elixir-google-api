@@ -24,7 +24,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Official do
   *   `address` (*type:* `list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t)`, *default:* `nil`) - Addresses at which to contact the official.
   *   `channels` (*type:* `list(GoogleApi.CivicInfo.V2.Model.Channel.t)`, *default:* `nil`) - A list of known (social) media channels for this official.
   *   `emails` (*type:* `list(String.t)`, *default:* `nil`) - The direct email addresses for the official.
-  *   `geocodingSummaries` (*type:* `list(GoogleApi.CivicInfo.V2.Model.GeocodingSummary.t)`, *default:* `nil`) - Detailed summary about the official's address's geocoding
   *   `name` (*type:* `String.t`, *default:* `nil`) - The official's name.
   *   `party` (*type:* `String.t`, *default:* `nil`) - The full name of the party the official belongs to.
   *   `phones` (*type:* `list(String.t)`, *default:* `nil`) - The official's public contact phone numbers.
@@ -38,7 +37,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Official do
           :address => list(GoogleApi.CivicInfo.V2.Model.SimpleAddressType.t()) | nil,
           :channels => list(GoogleApi.CivicInfo.V2.Model.Channel.t()) | nil,
           :emails => list(String.t()) | nil,
-          :geocodingSummaries => list(GoogleApi.CivicInfo.V2.Model.GeocodingSummary.t()) | nil,
           :name => String.t() | nil,
           :party => String.t() | nil,
           :phones => list(String.t()) | nil,
@@ -49,7 +47,6 @@ defmodule GoogleApi.CivicInfo.V2.Model.Official do
   field(:address, as: GoogleApi.CivicInfo.V2.Model.SimpleAddressType, type: :list)
   field(:channels, as: GoogleApi.CivicInfo.V2.Model.Channel, type: :list)
   field(:emails, type: :list)
-  field(:geocodingSummaries, as: GoogleApi.CivicInfo.V2.Model.GeocodingSummary, type: :list)
   field(:name)
   field(:party)
   field(:phones, type: :list)
