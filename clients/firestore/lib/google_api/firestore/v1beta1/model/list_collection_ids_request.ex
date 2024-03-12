@@ -23,7 +23,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.ListCollectionIdsRequest do
 
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A page token. Must be a value from ListCollectionIdsResponse.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This may not be older than 270 seconds.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
   """
 
   use GoogleApi.Gax.ModelBase

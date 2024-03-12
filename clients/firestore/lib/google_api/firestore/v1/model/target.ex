@@ -22,17 +22,19 @@ defmodule GoogleApi.Firestore.V1.Model.Target do
   ## Attributes
 
   *   `documents` (*type:* `GoogleApi.Firestore.V1.Model.DocumentsTarget.t`, *default:* `nil`) - A target specified by a set of document names.
+  *   `expectedCount` (*type:* `integer()`, *default:* `nil`) - The number of documents that last matched the query at the resume token or read time. This value is only relevant when a `resume_type` is provided. This value being present and greater than zero signals that the client wants `ExistenceFilter.unchanged_names` to be included in the response.
   *   `once` (*type:* `boolean()`, *default:* `nil`) - If the target should be removed once it is current and consistent.
   *   `query` (*type:* `GoogleApi.Firestore.V1.Model.QueryTarget.t`, *default:* `nil`) - A target specified by a query.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Start listening after a specific `read_time`. The client must know the state of matching documents at this time.
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - A resume token from a prior TargetChange for an identical target. Using a resume token with a different target is unsupported and may fail.
-  *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID that identifies the target on the stream. Must be a positive number and non-zero.
+  *   `targetId` (*type:* `integer()`, *default:* `nil`) - The target ID that identifies the target on the stream. Must be a positive number and non-zero. If `target_id` is 0 (or unspecified), the server will assign an ID for this target and return that in a `TargetChange::ADD` event. Once a target with `target_id=0` is added, all subsequent targets must also have `target_id=0`. If an `AddTarget` request with `target_id != 0` is sent to the server after a target with `target_id=0` is added, the server will immediately send a response with a `TargetChange::Remove` event. Note that if the client sends multiple `AddTarget` requests without an ID, the order of IDs returned in `TargetChage.target_ids` are undefined. Therefore, clients should provide a target ID instead of relying on the server to assign one. If `target_id` is non-zero, there must not be an existing active target on this stream with the same ID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :documents => GoogleApi.Firestore.V1.Model.DocumentsTarget.t() | nil,
+          :expectedCount => integer() | nil,
           :once => boolean() | nil,
           :query => GoogleApi.Firestore.V1.Model.QueryTarget.t() | nil,
           :readTime => DateTime.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.Firestore.V1.Model.Target do
         }
 
   field(:documents, as: GoogleApi.Firestore.V1.Model.DocumentsTarget)
+  field(:expectedCount)
   field(:once)
   field(:query, as: GoogleApi.Firestore.V1.Model.QueryTarget)
   field(:readTime, as: DateTime)

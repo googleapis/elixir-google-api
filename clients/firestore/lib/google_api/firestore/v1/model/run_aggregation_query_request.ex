@@ -22,7 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.RunAggregationQueryRequest do
   ## Attributes
 
   *   `newTransaction` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Starts a new transaction as part of the query, defaulting to read-only. The new transaction ID will be returned as the first response in the stream.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Executes the query at the given timestamp. Requires: * Cannot be more than 270 seconds in the past.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Executes the query at the given timestamp. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
   *   `structuredAggregationQuery` (*type:* `GoogleApi.Firestore.V1.Model.StructuredAggregationQuery.t`, *default:* `nil`) - An aggregation query.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - Run the aggregation within an already active transaction. The value here is the opaque transaction ID to execute the query in.
   """

@@ -22,7 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.ListDocumentsResponse do
   ## Attributes
 
   *   `documents` (*type:* `list(GoogleApi.Firestore.V1.Model.Document.t)`, *default:* `nil`) - The Documents found.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next page token.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of documents. If this field is omitted, there are no subsequent pages.
   """
 
   use GoogleApi.Gax.ModelBase

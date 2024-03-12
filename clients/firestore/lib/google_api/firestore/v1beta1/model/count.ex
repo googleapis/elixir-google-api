@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.Count do
 
   ## Attributes
 
-  *   `upTo` (*type:* `String.t`, *default:* `nil`) - Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency and cost. Unspecified is interpreted as no bound. High-Level Example: ``` AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k ); ``` Requires: * Must be greater than zero when present.
+  *   `upTo` (*type:* `String.t`, *default:* `nil`) - Optional. Optional constraint on the maximum number of documents to count. This provides a way to set an upper bound on the number of documents to scan, limiting latency, and cost. Unspecified is interpreted as no bound. High-Level Example: ``` AGGREGATE COUNT_UP_TO(1000) OVER ( SELECT * FROM k ); ``` Requires: * Must be greater than zero when present.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.FieldReference do
 
   ## Attributes
 
-  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - The relative path of the document being referenced. Requires: * Conform to document field name limitations.
+  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - A reference to a field in a document. Requires: * MUST be a dot-delimited (`.`) string of segments, where each segment conforms to document field name limitations.
   """
 
   use GoogleApi.Gax.ModelBase
