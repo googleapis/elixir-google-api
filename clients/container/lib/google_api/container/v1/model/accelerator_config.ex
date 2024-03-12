@@ -23,6 +23,7 @@ defmodule GoogleApi.Container.V1.Model.AcceleratorConfig do
 
   *   `acceleratorCount` (*type:* `String.t`, *default:* `nil`) - The number of the accelerator cards exposed to an instance.
   *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The accelerator type resource name. List of supported accelerators [here](https://cloud.google.com/compute/docs/gpus)
+  *   `gpuDriverInstallationConfig` (*type:* `GoogleApi.Container.V1.Model.GPUDriverInstallationConfig.t`, *default:* `nil`) - The configuration for auto installation of GPU driver.
   *   `gpuPartitionSize` (*type:* `String.t`, *default:* `nil`) - Size of partitions to create on the GPU. Valid values are described in the NVIDIA [mig user guide](https://docs.nvidia.com/datacenter/tesla/mig-user-guide/#partitioning).
   *   `gpuSharingConfig` (*type:* `GoogleApi.Container.V1.Model.GPUSharingConfig.t`, *default:* `nil`) - The configuration for GPU sharing options.
   """
@@ -32,12 +33,17 @@ defmodule GoogleApi.Container.V1.Model.AcceleratorConfig do
   @type t :: %__MODULE__{
           :acceleratorCount => String.t() | nil,
           :acceleratorType => String.t() | nil,
+          :gpuDriverInstallationConfig =>
+            GoogleApi.Container.V1.Model.GPUDriverInstallationConfig.t() | nil,
           :gpuPartitionSize => String.t() | nil,
           :gpuSharingConfig => GoogleApi.Container.V1.Model.GPUSharingConfig.t() | nil
         }
 
   field(:acceleratorCount)
   field(:acceleratorType)
+
+  field(:gpuDriverInstallationConfig, as: GoogleApi.Container.V1.Model.GPUDriverInstallationConfig)
+
   field(:gpuPartitionSize)
   field(:gpuSharingConfig, as: GoogleApi.Container.V1.Model.GPUSharingConfig)
 end

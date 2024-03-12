@@ -26,11 +26,13 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   *   `dnsCacheConfig` (*type:* `GoogleApi.Container.V1.Model.DnsCacheConfig.t`, *default:* `nil`) - Configuration for NodeLocalDNS, a dns cache running on cluster nodes
   *   `gcePersistentDiskCsiDriverConfig` (*type:* `GoogleApi.Container.V1.Model.GcePersistentDiskCsiDriverConfig.t`, *default:* `nil`) - Configuration for the Compute Engine Persistent Disk CSI driver.
   *   `gcpFilestoreCsiDriverConfig` (*type:* `GoogleApi.Container.V1.Model.GcpFilestoreCsiDriverConfig.t`, *default:* `nil`) - Configuration for the GCP Filestore CSI driver.
+  *   `gcsFuseCsiDriverConfig` (*type:* `GoogleApi.Container.V1.Model.GcsFuseCsiDriverConfig.t`, *default:* `nil`) - Configuration for the Cloud Storage Fuse CSI driver.
   *   `gkeBackupAgentConfig` (*type:* `GoogleApi.Container.V1.Model.GkeBackupAgentConfig.t`, *default:* `nil`) - Configuration for the Backup for GKE agent addon.
   *   `horizontalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t`, *default:* `nil`) - Configuration for the horizontal pod autoscaling feature, which increases or decreases the number of replica pods a replication controller has based on the resource usage of the existing pods.
   *   `httpLoadBalancing` (*type:* `GoogleApi.Container.V1.Model.HttpLoadBalancing.t`, *default:* `nil`) - Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster.
   *   `kubernetesDashboard` (*type:* `GoogleApi.Container.V1.Model.KubernetesDashboard.t`, *default:* `nil`) - Configuration for the Kubernetes Dashboard. This addon is deprecated, and will be disabled in 1.15. It is recommended to use the Cloud Console to manage and monitor your Kubernetes clusters, workloads and applications. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
   *   `networkPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicyConfig.t`, *default:* `nil`) - Configuration for NetworkPolicy. This only tracks whether the addon is enabled or not on the Master, it does not track whether network policy is enabled for the nodes.
+  *   `statefulHaConfig` (*type:* `GoogleApi.Container.V1.Model.StatefulHAConfig.t`, *default:* `nil`) - Optional. Configuration for the StatefulHA add-on.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,12 +45,15 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
             GoogleApi.Container.V1.Model.GcePersistentDiskCsiDriverConfig.t() | nil,
           :gcpFilestoreCsiDriverConfig =>
             GoogleApi.Container.V1.Model.GcpFilestoreCsiDriverConfig.t() | nil,
+          :gcsFuseCsiDriverConfig =>
+            GoogleApi.Container.V1.Model.GcsFuseCsiDriverConfig.t() | nil,
           :gkeBackupAgentConfig => GoogleApi.Container.V1.Model.GkeBackupAgentConfig.t() | nil,
           :horizontalPodAutoscaling =>
             GoogleApi.Container.V1.Model.HorizontalPodAutoscaling.t() | nil,
           :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t() | nil,
           :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t() | nil,
-          :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t() | nil
+          :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t() | nil,
+          :statefulHaConfig => GoogleApi.Container.V1.Model.StatefulHAConfig.t() | nil
         }
 
   field(:cloudRunConfig, as: GoogleApi.Container.V1.Model.CloudRunConfig)
@@ -61,11 +66,13 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
 
   field(:gcpFilestoreCsiDriverConfig, as: GoogleApi.Container.V1.Model.GcpFilestoreCsiDriverConfig)
 
+  field(:gcsFuseCsiDriverConfig, as: GoogleApi.Container.V1.Model.GcsFuseCsiDriverConfig)
   field(:gkeBackupAgentConfig, as: GoogleApi.Container.V1.Model.GkeBackupAgentConfig)
   field(:horizontalPodAutoscaling, as: GoogleApi.Container.V1.Model.HorizontalPodAutoscaling)
   field(:httpLoadBalancing, as: GoogleApi.Container.V1.Model.HttpLoadBalancing)
   field(:kubernetesDashboard, as: GoogleApi.Container.V1.Model.KubernetesDashboard)
   field(:networkPolicyConfig, as: GoogleApi.Container.V1.Model.NetworkPolicyConfig)
+  field(:statefulHaConfig, as: GoogleApi.Container.V1.Model.StatefulHAConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.AddonsConfig do

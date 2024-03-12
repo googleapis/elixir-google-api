@@ -22,15 +22,18 @@ defmodule GoogleApi.Container.V1.Model.NodePoolAutoConfig do
   ## Attributes
 
   *   `networkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster creation. Each tag within the list must comply with RFC1035.
+  *   `resourceManagerTags` (*type:* `GoogleApi.Container.V1.Model.ResourceManagerTags.t`, *default:* `nil`) - Resource manager tag keys and values to be attached to the nodes for managing Compute Engine firewalls using Network Firewall Policies.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :networkTags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil
+          :networkTags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
+          :resourceManagerTags => GoogleApi.Container.V1.Model.ResourceManagerTags.t() | nil
         }
 
   field(:networkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
+  field(:resourceManagerTags, as: GoogleApi.Container.V1.Model.ResourceManagerTags)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodePoolAutoConfig do

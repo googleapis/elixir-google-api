@@ -24,10 +24,15 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   *   `datapathProvider` (*type:* `String.t`, *default:* `nil`) - The desired datapath provider for this cluster. By default, uses the IPTables-based kube-proxy implementation.
   *   `defaultSnatStatus` (*type:* `GoogleApi.Container.V1.Model.DefaultSnatStatus.t`, *default:* `nil`) - Whether the cluster disables default in-node sNAT rules. In-node sNAT rules will be disabled when default_snat_status is disabled. When disabled is set to false, default IP masquerade rules will be applied to the nodes to prevent sNAT on cluster internal traffic.
   *   `dnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
+  *   `enableCiliumClusterwideNetworkPolicy` (*type:* `boolean()`, *default:* `nil`) - Whether CiliumClusterwideNetworkPolicy is enabled on this cluster.
+  *   `enableFqdnNetworkPolicy` (*type:* `boolean()`, *default:* `nil`) - Whether FQDN Network Policy is enabled on this cluster.
   *   `enableIntraNodeVisibility` (*type:* `boolean()`, *default:* `nil`) - Whether Intra-node visibility is enabled for this cluster. This makes same node pod to pod traffic visible for VPC network.
   *   `enableL4ilbSubsetting` (*type:* `boolean()`, *default:* `nil`) - Whether L4ILB Subsetting is enabled for this cluster.
+  *   `enableMultiNetworking` (*type:* `boolean()`, *default:* `nil`) - Whether multi-networking is enabled for this cluster.
   *   `gatewayApiConfig` (*type:* `GoogleApi.Container.V1.Model.GatewayAPIConfig.t`, *default:* `nil`) - GatewayAPIConfig contains the desired config of Gateway API on this cluster.
+  *   `inTransitEncryptionConfig` (*type:* `String.t`, *default:* `nil`) - Specify the details of in-transit encryption.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine network(https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. Example: projects/my-project/global/networks/my-network
+  *   `networkPerformanceConfig` (*type:* `GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t`, *default:* `nil`) - Network bandwidth tier configuration.
   *   `privateIpv6GoogleAccess` (*type:* `String.t`, *default:* `nil`) - The desired state of IPv6 connectivity to Google Services. By default, no private IPv6 access to or from Google Services (all access will be via IPv4)
   *   `serviceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies if services with externalIPs field are blocked or not.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The relative name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/vpc) to which the cluster is connected. Example: projects/my-project/regions/us-central1/subnetworks/my-subnet
@@ -39,10 +44,16 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
           :datapathProvider => String.t() | nil,
           :defaultSnatStatus => GoogleApi.Container.V1.Model.DefaultSnatStatus.t() | nil,
           :dnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
+          :enableCiliumClusterwideNetworkPolicy => boolean() | nil,
+          :enableFqdnNetworkPolicy => boolean() | nil,
           :enableIntraNodeVisibility => boolean() | nil,
           :enableL4ilbSubsetting => boolean() | nil,
+          :enableMultiNetworking => boolean() | nil,
           :gatewayApiConfig => GoogleApi.Container.V1.Model.GatewayAPIConfig.t() | nil,
+          :inTransitEncryptionConfig => String.t() | nil,
           :network => String.t() | nil,
+          :networkPerformanceConfig =>
+            GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t() | nil,
           :privateIpv6GoogleAccess => String.t() | nil,
           :serviceExternalIpsConfig =>
             GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
@@ -52,10 +63,19 @@ defmodule GoogleApi.Container.V1.Model.NetworkConfig do
   field(:datapathProvider)
   field(:defaultSnatStatus, as: GoogleApi.Container.V1.Model.DefaultSnatStatus)
   field(:dnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
+  field(:enableCiliumClusterwideNetworkPolicy)
+  field(:enableFqdnNetworkPolicy)
   field(:enableIntraNodeVisibility)
   field(:enableL4ilbSubsetting)
+  field(:enableMultiNetworking)
   field(:gatewayApiConfig, as: GoogleApi.Container.V1.Model.GatewayAPIConfig)
+  field(:inTransitEncryptionConfig)
   field(:network)
+
+  field(:networkPerformanceConfig,
+    as: GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig
+  )
+
   field(:privateIpv6GoogleAccess)
   field(:serviceExternalIpsConfig, as: GoogleApi.Container.V1.Model.ServiceExternalIPsConfig)
   field(:subnetwork)

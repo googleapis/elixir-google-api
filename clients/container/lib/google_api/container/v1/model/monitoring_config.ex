@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.MonitoringConfig do
 
   ## Attributes
 
+  *   `advancedDatapathObservabilityConfig` (*type:* `GoogleApi.Container.V1.Model.AdvancedDatapathObservabilityConfig.t`, *default:* `nil`) - Configuration of Advanced Datapath Observability features.
   *   `componentConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringComponentConfig.t`, *default:* `nil`) - Monitoring components configuration
   *   `managedPrometheusConfig` (*type:* `GoogleApi.Container.V1.Model.ManagedPrometheusConfig.t`, *default:* `nil`) - Enable Google Cloud Managed Service for Prometheus in the cluster.
   """
@@ -28,10 +29,16 @@ defmodule GoogleApi.Container.V1.Model.MonitoringConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedDatapathObservabilityConfig =>
+            GoogleApi.Container.V1.Model.AdvancedDatapathObservabilityConfig.t() | nil,
           :componentConfig => GoogleApi.Container.V1.Model.MonitoringComponentConfig.t() | nil,
           :managedPrometheusConfig =>
             GoogleApi.Container.V1.Model.ManagedPrometheusConfig.t() | nil
         }
+
+  field(:advancedDatapathObservabilityConfig,
+    as: GoogleApi.Container.V1.Model.AdvancedDatapathObservabilityConfig
+  )
 
   field(:componentConfig, as: GoogleApi.Container.V1.Model.MonitoringComponentConfig)
   field(:managedPrometheusConfig, as: GoogleApi.Container.V1.Model.ManagedPrometheusConfig)
