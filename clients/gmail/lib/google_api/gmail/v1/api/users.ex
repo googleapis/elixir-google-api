@@ -2015,7 +2015,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message.
 
   ## Parameters
 
@@ -2033,7 +2033,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
       *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
@@ -2085,7 +2085,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message.
 
   ## Parameters
 
@@ -2106,7 +2106,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
       *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
@@ -2175,7 +2175,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message.
 
   ## Parameters
 
@@ -2194,7 +2194,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
       *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
@@ -2255,7 +2255,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message. Note: This function doesn't trigger forwarding rules or filters set up by the user.
+  Imports a message into only this user's mailbox, with standard email delivery scanning and classification similar to receiving via SMTP. This method doesn't perform SPF checks, so it might not work for some spam messages, such as those attempting to perform domain spoofing. This method does not send a message.
 
   ## Parameters
 
@@ -2276,7 +2276,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:neverMarkSpam` (*type:* `boolean()`) - Ignore the Gmail spam classifier decision and never mark this email as SPAM in the mailbox.
       *   `:processForCalendar` (*type:* `boolean()`) - Process calendar invites in the email and add any extracted meetings to the Google Calendar for this user.
@@ -2363,7 +2363,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2432,7 +2432,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2516,7 +2516,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
       *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.Message.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2594,7 +2594,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for G Suite accounts.
+      *   `:deleted` (*type:* `boolean()`) - Mark the email as permanently deleted (not TRASH) and only visible in Google Vault to a Vault administrator. Only used for Google Workspace accounts.
       *   `:internalDateSource` (*type:* `String.t`) - Source for Gmail's internal date of the message.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2678,7 +2678,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeSpamTrash` (*type:* `boolean()`) - Include messages from `SPAM` and `TRASH` in the results.
-      *   `:labelIds` (*type:* `list(String.t)`) - Only return messages with labels that match all of the specified label IDs.
+      *   `:labelIds` (*type:* `list(String.t)`) - Only return messages with labels that match all of the specified label IDs. Messages in a thread might have labels that other messages in the same thread don't have. To learn more, see [Manage labels on messages and threads](https://developers.google.com/gmail/api/guides/labels#manage_labels_on_messages_threads).
       *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
@@ -2799,7 +2799,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.
+  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).
 
   ## Parameters
 
@@ -2861,7 +2861,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.
+  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).
 
   ## Parameters
 
@@ -2943,7 +2943,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.
+  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).
 
   ## Parameters
 
@@ -3015,7 +3015,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers.
+  Sends the specified message to the recipients in the `To`, `Cc`, and `Bcc` headers. For example usage, see [Sending email](https://developers.google.com/gmail/api/guides/sending).
 
   ## Parameters
 
@@ -3941,7 +3941,819 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
   end
 
   @doc """
-  Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same G Suite organization as the delegator user. Gmail imposes limitations on the number of delegates and delegators each user in a G Suite organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. Note that a delegate user must be referred to by their primary email address, and not an email alias. Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.
+  Creates and configures a client-side encryption identity that's authorized to send mail from the user account. Google publishes the S/MIME certificate to a shared domain-wide directory so that people within a Google Workspace organization can encrypt and send mail to the identity.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.CseIdentity.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseIdentity{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_identities_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseIdentity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_identities_create(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/identities", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseIdentity{}])
+  end
+
+  @doc """
+  Deletes a client-side encryption identity. The authenticated user can no longer use the identity to send encrypted messages. You cannot restore the identity after you delete it. Instead, use the CreateCseIdentity method to create another identity with the same configuration.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `cse_email_address` (*type:* `String.t`) - The primary email address associated with the client-side encryption identity configuration that's removed.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_identities_delete(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  def gmail_users_settings_cse_identities_delete(
+        connection,
+        user_id,
+        cse_email_address,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:delete)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "cseEmailAddress" =>
+          URI.encode(cse_email_address, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Retrieves a client-side encryption identity configuration.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `cse_email_address` (*type:* `String.t`) - The primary email address associated with the client-side encryption identity configuration that's retrieved.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseIdentity{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_identities_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseIdentity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_identities_get(
+        connection,
+        user_id,
+        cse_email_address,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/identities/{cseEmailAddress}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "cseEmailAddress" =>
+          URI.encode(cse_email_address, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseIdentity{}])
+  end
+
+  @doc """
+  Lists the client-side encrypted identities for an authenticated user.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The number of identities to return. If not provided, the page size will default to 20 entries.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token indicating which page of identities to return. If the token is not supplied, then the API will return the first page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.ListCseIdentitiesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_identities_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.ListCseIdentitiesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_identities_list(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/identities", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.ListCseIdentitiesResponse{}])
+  end
+
+  @doc """
+  Associates a different key pair with an existing client-side encryption identity. The updated key pair must validate against Google's [S/MIME certificate profiles](https://support.google.com/a/answer/7300887).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `email_address` (*type:* `String.t`) - The email address of the client-side encryption identity to update.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.CseIdentity.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseIdentity{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_identities_patch(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseIdentity.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_identities_patch(
+        connection,
+        user_id,
+        email_address,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/identities/{emailAddress}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "emailAddress" => URI.encode(email_address, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseIdentity{}])
+  end
+
+  @doc """
+  Creates and uploads a client-side encryption S/MIME public key certificate chain and private key metadata for the authenticated user.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.CseKeyPair.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseKeyPair{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseKeyPair.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_keypairs_create(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseKeyPair{}])
+  end
+
+  @doc """
+  Turns off a client-side encryption key pair. The authenticated user can no longer use the key pair to decrypt incoming CSE message texts or sign outgoing CSE mail. To regain access, use the EnableCseKeyPair to turn on the key pair. After 30 days, you can permanently delete the key pair by using the ObliterateCseKeyPair method.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `key_pair_id` (*type:* `String.t`) - The identifier of the key pair to turn off.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.DisableCseKeyPairRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseKeyPair{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_disable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseKeyPair.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_keypairs_disable(
+        connection,
+        user_id,
+        key_pair_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:disable", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "keyPairId" => URI.encode(key_pair_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseKeyPair{}])
+  end
+
+  @doc """
+  Turns on a client-side encryption key pair that was turned off. The key pair becomes active again for any associated client-side encryption identities.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `key_pair_id` (*type:* `String.t`) - The identifier of the key pair to turn on.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.EnableCseKeyPairRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseKeyPair{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_enable(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseKeyPair.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_keypairs_enable(
+        connection,
+        user_id,
+        key_pair_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:enable", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "keyPairId" => URI.encode(key_pair_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseKeyPair{}])
+  end
+
+  @doc """
+  Retrieves an existing client-side encryption key pair.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `key_pair_id` (*type:* `String.t`) - The identifier of the key pair to retrieve.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.CseKeyPair{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_get(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.CseKeyPair.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_keypairs_get(
+        connection,
+        user_id,
+        key_pair_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "keyPairId" => URI.encode(key_pair_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.CseKeyPair{}])
+  end
+
+  @doc """
+  Lists client-side encryption key pairs for an authenticated user.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The number of key pairs to return. If not provided, the page size will default to 20 entries.
+      *   `:pageToken` (*type:* `String.t`) - Pagination token indicating which page of key pairs to return. If the token is not supplied, then the API will return the first page of results.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Gmail.V1.Model.ListCseKeyPairsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Gmail.V1.Model.ListCseKeyPairsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def gmail_users_settings_cse_keypairs_list(
+        connection,
+        user_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Gmail.V1.Model.ListCseKeyPairsResponse{}])
+  end
+
+  @doc """
+  Deletes a client-side encryption key pair permanently and immediately. You can only permanently delete key pairs that have been turned off for more than 30 days. To turn off a key pair, use the DisableCseKeyPair method. Gmail can't restore or decrypt any messages that were encrypted by an obliterated key. Authenticated users and Google Workspace administrators lose access to reading the encrypted messages.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Gmail.V1.Connection.t`) - Connection to server
+  *   `user_id` (*type:* `String.t`) - The requester's primary email address. To indicate the authenticated user, you can use the special value `me`.
+  *   `key_pair_id` (*type:* `String.t`) - The identifier of the key pair to obliterate.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Gmail.V1.Model.ObliterateCseKeyPairRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec gmail_users_settings_cse_keypairs_obliterate(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) :: {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  def gmail_users_settings_cse_keypairs_obliterate(
+        connection,
+        user_id,
+        key_pair_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/gmail/v1/users/{userId}/settings/cse/keypairs/{keyPairId}:obliterate", %{
+        "userId" => URI.encode(user_id, &URI.char_unreserved?/1),
+        "keyPairId" => URI.encode(key_pair_id, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
+  end
+
+  @doc """
+  Adds a delegate with its verification status set directly to `accepted`, without sending any verification email. The delegate user must be a member of the same Google Workspace organization as the delegator user. Gmail imposes limitations on the number of delegates and delegators each user in a Google Workspace organization can have. These limits depend on your organization, but in general each user can have up to 25 delegates and up to 10 delegators. Note that a delegate user must be referred to by their primary email address, and not an email alias. Also note that when a new delegate is created, there may be up to a one minute delay before the new delegate is available for use. This method is only available to service account clients that have been delegated domain-wide authority.
 
   ## Parameters
 
