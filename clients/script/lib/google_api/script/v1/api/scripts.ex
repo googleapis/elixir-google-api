@@ -31,7 +31,7 @@ defmodule GoogleApi.Script.V1.Api.Scripts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Script.V1.Connection.t`) - Connection to server
-  *   `script_id` (*type:* `String.t`) - The script ID of the script to be executed. Find the script ID on the **Project settings** page under "IDs."
+  *   `script_id` (*type:* `String.t`) - The script ID of the script to be executed. Find the script ID on the **Project settings** page under "IDs." As multiple executable APIs can be deployed in new IDE for same script, this field should be populated with DeploymentID generated while deploying in new IDE instead of script ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

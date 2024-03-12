@@ -26,6 +26,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   *   `processStatus` (*type:* `String.t`, *default:* `nil`) - The executions status.
   *   `processType` (*type:* `String.t`, *default:* `nil`) - The executions type.
   *   `projectName` (*type:* `String.t`, *default:* `nil`) - Name of the script being executed.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Which version of maestro to use to execute the script.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time the execution started.
   *   `userAccessLevel` (*type:* `String.t`, *default:* `nil`) - The executing users access level to the script.
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
           :processStatus => String.t() | nil,
           :processType => String.t() | nil,
           :projectName => String.t() | nil,
+          :runtimeVersion => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :userAccessLevel => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.Script.V1.Model.GoogleAppsScriptTypeProcess do
   field(:processStatus)
   field(:processType)
   field(:projectName)
+  field(:runtimeVersion)
   field(:startTime, as: DateTime)
   field(:userAccessLevel)
 end
