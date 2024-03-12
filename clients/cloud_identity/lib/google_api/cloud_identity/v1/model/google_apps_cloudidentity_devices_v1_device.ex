@@ -34,6 +34,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `enabledDeveloperOptions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether developer options is enabled on device.
   *   `enabledUsbDebugging` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether USB debugging is enabled on device.
   *   `encryptionState` (*type:* `String.t`, *default:* `nil`) - Output only. Device encryption state.
+  *   `hostname` (*type:* `String.t`, *default:* `nil`) - Host name of the device.
   *   `imei` (*type:* `String.t`, *default:* `nil`) - Output only. IMEI number of device if GSM device; empty otherwise.
   *   `kernelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Kernel version of the device.
   *   `lastSyncTime` (*type:* `DateTime.t`, *default:* `nil`) - Most recent time when device synced with this service.
@@ -70,6 +71,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
           :enabledDeveloperOptions => boolean() | nil,
           :enabledUsbDebugging => boolean() | nil,
           :encryptionState => String.t() | nil,
+          :hostname => String.t() | nil,
           :imei => String.t() | nil,
           :kernelVersion => String.t() | nil,
           :lastSyncTime => DateTime.t() | nil,
@@ -104,6 +106,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   field(:enabledDeveloperOptions)
   field(:enabledUsbDebugging)
   field(:encryptionState)
+  field(:hostname)
   field(:imei)
   field(:kernelVersion)
   field(:lastSyncTime, as: DateTime)
