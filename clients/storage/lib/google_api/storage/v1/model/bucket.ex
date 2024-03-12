@@ -21,104 +21,114 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
 
   ## Attributes
 
-  *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.BucketAccessControl.t)`, *default:* `nil`) - Access controls on the bucket.
-  *   `autoclass` (*type:* `GoogleApi.Storage.V1.Model.BucketAutoclass.t`, *default:* `nil`) - The bucket's Autoclass configuration.
-  *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
-  *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
-  *   `customPlacementConfig` (*type:* `GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t`, *default:* `nil`) - The bucket's custom placement configuration for Custom Dual Regions.
-  *   `defaultEventBasedHold` (*type:* `boolean()`, *default:* `nil`) - The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed.
-  *   `defaultObjectAcl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Default access controls to apply to new objects when no ACL is provided.
-  *   `encryption` (*type:* `GoogleApi.Storage.V1.Model.BucketEncryption.t`, *default:* `nil`) - Encryption configuration for a bucket.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the bucket.
   *   `iamConfiguration` (*type:* `GoogleApi.Storage.V1.Model.BucketIamConfiguration.t`, *default:* `nil`) - The bucket's IAM configuration.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the bucket. For buckets, the id and name properties are the same.
-  *   `kind` (*type:* `String.t`, *default:* `storage#bucket`) - The kind of item this is. For buckets, this is always storage#bucket.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - User-provided labels, in key/value pairs.
-  *   `lifecycle` (*type:* `GoogleApi.Storage.V1.Model.BucketLifecycle.t`, *default:* `nil`) - The bucket's lifecycle configuration. See lifecycle management for more information.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer's guide for the authoritative list.
-  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of the bucket location.
-  *   `logging` (*type:* `GoogleApi.Storage.V1.Model.BucketLogging.t`, *default:* `nil`) - The bucket's logging configuration, which defines the destination bucket and optional name prefix for the current bucket's logs.
-  *   `metageneration` (*type:* `String.t`, *default:* `nil`) - The metadata generation of this bucket.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the bucket.
-  *   `owner` (*type:* `GoogleApi.Storage.V1.Model.BucketOwner.t`, *default:* `nil`) - The owner of the bucket. This is always the project team's owner group.
-  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The project number of the project the bucket belongs to.
-  *   `retentionPolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t`, *default:* `nil`) - The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error.
-  *   `rpo` (*type:* `String.t`, *default:* `nil`) - The Recovery Point Objective (RPO) of this bucket. Set to ASYNC_TURBO to turn on Turbo Replication on a bucket.
-  *   `satisfiesPZS` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this bucket.
-  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
+  *   `autoclass` (*type:* `GoogleApi.Storage.V1.Model.BucketAutoclass.t`, *default:* `nil`) - The bucket's Autoclass configuration.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the bucket.
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the bucket in RFC 3339 format.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the bucket in RFC 3339 format.
-  *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - The project number of the project the bucket belongs to.
   *   `website` (*type:* `GoogleApi.Storage.V1.Model.BucketWebsite.t`, *default:* `nil`) - The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
+  *   `lifecycle` (*type:* `GoogleApi.Storage.V1.Model.BucketLifecycle.t`, *default:* `nil`) - The bucket's lifecycle configuration. See lifecycle management for more information.
+  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
+  *   `kind` (*type:* `String.t`, *default:* `storage#bucket`) - The kind of item this is. For buckets, this is always storage#bucket.
+  *   `defaultEventBasedHold` (*type:* `boolean()`, *default:* `nil`) - The default value for event-based hold on newly created objects in this bucket. Event-based hold is a way to retain objects indefinitely until an event occurs, signified by the hold's release. After being released, such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false. Objects under event-based hold cannot be deleted, overwritten or archived until the hold is removed.
+  *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
+  *   `rpo` (*type:* `String.t`, *default:* `nil`) - The Recovery Point Objective (RPO) of this bucket. Set to ASYNC_TURBO to turn on Turbo Replication on a bucket.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the bucket.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer's guide for the authoritative list.
+  *   `customPlacementConfig` (*type:* `GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t`, *default:* `nil`) - The bucket's custom placement configuration for Custom Dual Regions.
+  *   `encryption` (*type:* `GoogleApi.Storage.V1.Model.BucketEncryption.t`, *default:* `nil`) - Encryption configuration for a bucket.
+  *   `owner` (*type:* `GoogleApi.Storage.V1.Model.BucketOwner.t`, *default:* `nil`) - The owner of the bucket. This is always the project team's owner group.
+  *   `softDeletePolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy.t`, *default:* `nil`) - The bucket's soft delete policy, which defines the period of time that soft-deleted objects will be retained, and cannot be permanently deleted.
+  *   `logging` (*type:* `GoogleApi.Storage.V1.Model.BucketLogging.t`, *default:* `nil`) - The bucket's logging configuration, which defines the destination bucket and optional name prefix for the current bucket's logs.
+  *   `retentionPolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t`, *default:* `nil`) - The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error.
+  *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
+  *   `defaultObjectAcl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Default access controls to apply to new objects when no ACL is provided.
+  *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of the bucket location.
+  *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.BucketAccessControl.t)`, *default:* `nil`) - Access controls on the bucket.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the bucket. For buckets, the id and name properties are the same.
+  *   `objectRetention` (*type:* `GoogleApi.Storage.V1.Model.BucketObjectRetention.t`, *default:* `nil`) - The bucket's object retention config.
+  *   `satisfiesPZS` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the bucket in RFC 3339 format.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - User-provided labels, in key/value pairs.
+  *   `hierarchicalNamespace` (*type:* `GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace.t`, *default:* `nil`) - The bucket's hierarchical namespace configuration.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this bucket.
+  *   `metageneration` (*type:* `String.t`, *default:* `nil`) - The metadata generation of this bucket.
+  *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :acl => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()) | nil,
+          :iamConfiguration => GoogleApi.Storage.V1.Model.BucketIamConfiguration.t() | nil,
           :autoclass => GoogleApi.Storage.V1.Model.BucketAutoclass.t() | nil,
-          :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil,
+          :etag => String.t() | nil,
+          :timeCreated => DateTime.t() | nil,
+          :projectNumber => String.t() | nil,
+          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t() | nil,
+          :lifecycle => GoogleApi.Storage.V1.Model.BucketLifecycle.t() | nil,
+          :storageClass => String.t() | nil,
+          :kind => String.t() | nil,
+          :defaultEventBasedHold => boolean() | nil,
           :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()) | nil,
+          :rpo => String.t() | nil,
+          :name => String.t() | nil,
+          :location => String.t() | nil,
           :customPlacementConfig =>
             GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig.t() | nil,
-          :defaultEventBasedHold => boolean() | nil,
-          :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
           :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t() | nil,
-          :etag => String.t() | nil,
-          :iamConfiguration => GoogleApi.Storage.V1.Model.BucketIamConfiguration.t() | nil,
-          :id => String.t() | nil,
-          :kind => String.t() | nil,
-          :labels => map() | nil,
-          :lifecycle => GoogleApi.Storage.V1.Model.BucketLifecycle.t() | nil,
-          :location => String.t() | nil,
-          :locationType => String.t() | nil,
-          :logging => GoogleApi.Storage.V1.Model.BucketLogging.t() | nil,
-          :metageneration => String.t() | nil,
-          :name => String.t() | nil,
           :owner => GoogleApi.Storage.V1.Model.BucketOwner.t() | nil,
-          :projectNumber => String.t() | nil,
+          :softDeletePolicy => GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy.t() | nil,
+          :logging => GoogleApi.Storage.V1.Model.BucketLogging.t() | nil,
           :retentionPolicy => GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t() | nil,
-          :rpo => String.t() | nil,
-          :satisfiesPZS => boolean() | nil,
-          :selfLink => String.t() | nil,
-          :storageClass => String.t() | nil,
-          :timeCreated => DateTime.t() | nil,
-          :updated => DateTime.t() | nil,
           :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t() | nil,
-          :website => GoogleApi.Storage.V1.Model.BucketWebsite.t() | nil
+          :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
+          :locationType => String.t() | nil,
+          :acl => list(GoogleApi.Storage.V1.Model.BucketAccessControl.t()) | nil,
+          :id => String.t() | nil,
+          :objectRetention => GoogleApi.Storage.V1.Model.BucketObjectRetention.t() | nil,
+          :satisfiesPZS => boolean() | nil,
+          :updated => DateTime.t() | nil,
+          :labels => map() | nil,
+          :hierarchicalNamespace =>
+            GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace.t() | nil,
+          :selfLink => String.t() | nil,
+          :metageneration => String.t() | nil,
+          :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil
         }
 
-  field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
-  field(:autoclass, as: GoogleApi.Storage.V1.Model.BucketAutoclass)
-  field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
-  field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
-  field(:customPlacementConfig, as: GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig)
-  field(:defaultEventBasedHold)
-  field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
-  field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
-  field(:etag)
   field(:iamConfiguration, as: GoogleApi.Storage.V1.Model.BucketIamConfiguration)
-  field(:id)
-  field(:kind)
-  field(:labels, type: :map)
-  field(:lifecycle, as: GoogleApi.Storage.V1.Model.BucketLifecycle)
-  field(:location)
-  field(:locationType)
-  field(:logging, as: GoogleApi.Storage.V1.Model.BucketLogging)
-  field(:metageneration)
-  field(:name)
-  field(:owner, as: GoogleApi.Storage.V1.Model.BucketOwner)
-  field(:projectNumber)
-  field(:retentionPolicy, as: GoogleApi.Storage.V1.Model.BucketRetentionPolicy)
-  field(:rpo)
-  field(:satisfiesPZS)
-  field(:selfLink)
-  field(:storageClass)
+  field(:autoclass, as: GoogleApi.Storage.V1.Model.BucketAutoclass)
+  field(:etag)
   field(:timeCreated, as: DateTime)
-  field(:updated, as: DateTime)
-  field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
+  field(:projectNumber)
   field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
+  field(:lifecycle, as: GoogleApi.Storage.V1.Model.BucketLifecycle)
+  field(:storageClass)
+  field(:kind)
+  field(:defaultEventBasedHold)
+  field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
+  field(:rpo)
+  field(:name)
+  field(:location)
+  field(:customPlacementConfig, as: GoogleApi.Storage.V1.Model.BucketCustomPlacementConfig)
+  field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
+  field(:owner, as: GoogleApi.Storage.V1.Model.BucketOwner)
+  field(:softDeletePolicy, as: GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy)
+  field(:logging, as: GoogleApi.Storage.V1.Model.BucketLogging)
+  field(:retentionPolicy, as: GoogleApi.Storage.V1.Model.BucketRetentionPolicy)
+  field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
+  field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
+  field(:locationType)
+  field(:acl, as: GoogleApi.Storage.V1.Model.BucketAccessControl, type: :list)
+  field(:id)
+  field(:objectRetention, as: GoogleApi.Storage.V1.Model.BucketObjectRetention)
+  field(:satisfiesPZS)
+  field(:updated, as: DateTime)
+  field(:labels, type: :map)
+  field(:hierarchicalNamespace, as: GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace)
+  field(:selfLink)
+  field(:metageneration)
+  field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Bucket do

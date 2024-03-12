@@ -218,6 +218,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:enableObjectRetention` (*type:* `boolean()`) - When set to true, object retention is enabled for this bucket.
       *   `:predefinedAcl` (*type:* `String.t`) - Apply a predefined set of access controls to this bucket.
       *   `:predefinedDefaultObjectAcl` (*type:* `String.t`) - Apply a predefined set of default object access controls to this bucket.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl, unless the bucket resource specifies acl or defaultObjectAcl properties, when it defaults to full.
@@ -245,6 +246,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
+      :enableObjectRetention => :query,
       :predefinedAcl => :query,
       :predefinedDefaultObjectAcl => :query,
       :projection => :query,
