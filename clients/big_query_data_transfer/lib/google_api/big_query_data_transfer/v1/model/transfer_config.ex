@@ -25,12 +25,13 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   *   `dataSourceId` (*type:* `String.t`, *default:* `nil`) - Data source ID. This cannot be changed once data transfer is created. The full list of available data source IDs can be returned through an API call: https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list
   *   `datasetRegion` (*type:* `String.t`, *default:* `nil`) - Output only. Region in which BigQuery dataset is located.
   *   `destinationDatasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery target dataset id.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs are scheduled for a given transfer.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Is this config disabled. When set to true, no runs will be scheduled for this transfer config.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User specified display name for the data transfer.
   *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Email notifications will be sent according to these preferences to the email address of the user who owns this transfer config.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config. Transfer config names have the form `projects/{project_id}/locations/{region}/transferConfigs/{config_id}`. Where `config_id` is usually a uuid, even though it is not guaranteed or required. The name is ignored when creating a transfer config.
+  *   `encryptionConfiguration` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration.t`, *default:* `nil`) - The encryption configuration part. Currently, it is only used for the optional KMS key name. The BigQuery service account of your project must be granted permissions to use the key. Read methods will return the key name applied in effect. Write methods will apply the key if it is present, or otherwise try to apply project default keys if it is absent.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the transfer config. Transfer config names have the form either `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or `projects/{project_id}/transferConfigs/{config_id}`, where `config_id` is usually a UUID, even though it is not guaranteed or required. The name is ignored when creating a transfer config.
   *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
-  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project}/topics/{topic}`
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project_id}/topics/{topic_id}`
   *   `ownerInfo` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.UserInfo.t`, *default:* `nil`) - Output only. Information about the user whose credentials are used to transfer data. Populated only for `transferConfigs.get` requests. In case the user information is not available, this field will not be populated.
   *   `params` (*type:* `map()`, *default:* `nil`) - Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer' section for each data source. For example the parameters for Cloud Storage transfers are listed here: https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: The minimum interval time between recurring transfers depends on the data source; refer to the documentation for your data source.
@@ -50,6 +51,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
           :disabled => boolean() | nil,
           :displayName => String.t() | nil,
           :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t() | nil,
+          :encryptionConfiguration =>
+            GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration.t() | nil,
           :name => String.t() | nil,
           :nextRunTime => DateTime.t() | nil,
           :notificationPubsubTopic => String.t() | nil,
@@ -69,6 +72,11 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   field(:disabled)
   field(:displayName)
   field(:emailPreferences, as: GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences)
+
+  field(:encryptionConfiguration,
+    as: GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration
+  )
+
   field(:name)
   field(:nextRunTime, as: DateTime)
   field(:notificationPubsubTopic)
