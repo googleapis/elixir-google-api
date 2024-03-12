@@ -17,23 +17,29 @@
 
 defmodule GoogleApi.Datastore.V1.Model.Aggregation do
   @moduledoc """
-  Defines a aggregation that produces a single result.
+  Defines an aggregation that produces a single result.
 
   ## Attributes
 
-  *   `alias` (*type:* `String.t`, *default:* `nil`) - Optional. Optional name of the property to store the result of the aggregation. If not provided, Datastore will pick a default name following the format `property_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS property_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT_UP_TO(4) AS property_2 OVER ( ... ); ``` Requires: * Must be unique across all aggregation aliases. * Conform to entity property name limitations.
+  *   `alias` (*type:* `String.t`, *default:* `nil`) - Optional. Optional name of the property to store the result of the aggregation. If not provided, Datastore will pick a default name following the format `property_`. For example: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2), COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) OVER ( ... ); ``` becomes: ``` AGGREGATE COUNT_UP_TO(1) AS count_up_to_1, COUNT_UP_TO(2) AS property_1, COUNT_UP_TO(3) AS count_up_to_3, COUNT(*) AS property_2 OVER ( ... ); ``` Requires: * Must be unique across all aggregation aliases. * Conform to entity property name limitations.
+  *   `avg` (*type:* `GoogleApi.Datastore.V1.Model.Avg.t`, *default:* `nil`) - Average aggregator.
   *   `count` (*type:* `GoogleApi.Datastore.V1.Model.Count.t`, *default:* `nil`) - Count aggregator.
+  *   `sum` (*type:* `GoogleApi.Datastore.V1.Model.Sum.t`, *default:* `nil`) - Sum aggregator.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :alias => String.t() | nil,
-          :count => GoogleApi.Datastore.V1.Model.Count.t() | nil
+          :avg => GoogleApi.Datastore.V1.Model.Avg.t() | nil,
+          :count => GoogleApi.Datastore.V1.Model.Count.t() | nil,
+          :sum => GoogleApi.Datastore.V1.Model.Sum.t() | nil
         }
 
   field(:alias)
+  field(:avg, as: GoogleApi.Datastore.V1.Model.Avg)
   field(:count, as: GoogleApi.Datastore.V1.Model.Count)
+  field(:sum, as: GoogleApi.Datastore.V1.Model.Sum)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.Aggregation do

@@ -23,17 +23,20 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryResponse do
 
   *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.AggregationResultBatch.t`, *default:* `nil`) - A batch of aggregation results. Always present.
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.AggregationQuery.t`, *default:* `nil`) - The parsed form of the `GqlQuery` from the request, if it was set.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction that was started as part of this RunAggregationQuery request. Set only when ReadOptions.new_transaction was set in RunAggregationQueryRequest.read_options.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :batch => GoogleApi.Datastore.V1.Model.AggregationResultBatch.t() | nil,
-          :query => GoogleApi.Datastore.V1.Model.AggregationQuery.t() | nil
+          :query => GoogleApi.Datastore.V1.Model.AggregationQuery.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:batch, as: GoogleApi.Datastore.V1.Model.AggregationResultBatch)
   field(:query, as: GoogleApi.Datastore.V1.Model.AggregationQuery)
+  field(:transaction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.RunAggregationQueryResponse do

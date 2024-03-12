@@ -21,19 +21,22 @@ defmodule GoogleApi.Datastore.V1.Model.ReadOptions do
 
   ## Attributes
 
+  *   `newTransaction` (*type:* `GoogleApi.Datastore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Options for beginning a new transaction for this request. The new transaction identifier will be returned in the corresponding response as either LookupResponse.transaction or RunQueryResponse.transaction.
   *   `readConsistency` (*type:* `String.t`, *default:* `nil`) - The non-transactional read consistency to use.
-  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads entities as they were at the given time. This may not be older than 270 seconds. This value is only supported for Cloud Firestore in Datastore mode.
+  *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads entities as they were at the given time. This value is only supported for Cloud Firestore in Datastore mode. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction in which to read. A transaction identifier is returned by a call to Datastore.BeginTransaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :newTransaction => GoogleApi.Datastore.V1.Model.TransactionOptions.t() | nil,
           :readConsistency => String.t() | nil,
           :readTime => DateTime.t() | nil,
           :transaction => String.t() | nil
         }
 
+  field(:newTransaction, as: GoogleApi.Datastore.V1.Model.TransactionOptions)
   field(:readConsistency)
   field(:readTime, as: DateTime)
   field(:transaction)

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Datastore.V1.Model.Entity do
   @moduledoc """
-  A Datastore data object. An entity is limited to 1 megabyte when stored. That _roughly_ corresponds to a limit of 1 megabyte for the serialized form of this message.
+  A Datastore data object. Must not exceed 1 MiB - 4 bytes.
 
   ## Attributes
 
   *   `key` (*type:* `GoogleApi.Datastore.V1.Model.Key.t`, *default:* `nil`) - The entity's key. An entity must have a key, unless otherwise documented (for example, an entity in `Value.entity_value` may have no key). An entity's kind is its key path's last element's kind, or null if it has no key.
-  *   `properties` (*type:* `%{optional(String.t) => GoogleApi.Datastore.V1.Model.Value.t}`, *default:* `nil`) - The entity's properties. The map's keys are property names. A property name matching regex `__.*__` is reserved. A reserved property name is forbidden in certain documented contexts. The name must not contain more than 500 characters. The name cannot be `""`.
+  *   `properties` (*type:* `%{optional(String.t) => GoogleApi.Datastore.V1.Model.Value.t}`, *default:* `nil`) - The entity's properties. The map's keys are property names. A property name matching regex `__.*__` is reserved. A reserved property name is forbidden in certain documented contexts. The map keys, represented as UTF-8, must not exceed 1,500 bytes and cannot be empty.
   """
 
   use GoogleApi.Gax.ModelBase

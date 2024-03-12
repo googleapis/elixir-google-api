@@ -25,6 +25,7 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
   *   `found` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities found as `ResultType.FULL` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
   *   `missing` (*type:* `list(GoogleApi.Datastore.V1.Model.EntityResult.t)`, *default:* `nil`) - Entities not found as `ResultType.KEY_ONLY` entities. The order of results in this field is undefined and has no relation to the order of the keys in the input.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which these entities were read or found missing.
+  *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction that was started as part of this Lookup request. Set only when ReadOptions.new_transaction was set in LookupRequest.read_options.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Datastore.V1.Model.LookupResponse do
           :deferred => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
           :found => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
           :missing => list(GoogleApi.Datastore.V1.Model.EntityResult.t()) | nil,
-          :readTime => DateTime.t() | nil
+          :readTime => DateTime.t() | nil,
+          :transaction => String.t() | nil
         }
 
   field(:deferred, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
   field(:found, as: GoogleApi.Datastore.V1.Model.EntityResult, type: :list)
   field(:missing, as: GoogleApi.Datastore.V1.Model.EntityResult, type: :list)
   field(:readTime, as: DateTime)
+  field(:transaction)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastore.V1.Model.LookupResponse do

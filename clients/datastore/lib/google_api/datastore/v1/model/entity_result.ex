@@ -21,6 +21,7 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the entity was created. This field is set for `FULL` entity results. If this entity is missing, this field will not be set.
   *   `cursor` (*type:* `String.t`, *default:* `nil`) - A cursor that points to the position after the result entity. Set only when the `EntityResult` is part of a `QueryResultBatch` message.
   *   `entity` (*type:* `GoogleApi.Datastore.V1.Model.Entity.t`, *default:* `nil`) - The resulting entity.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the entity was last changed. This field is set for `FULL` entity results. If this entity is missing, this field will not be set.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Datastore.V1.Model.EntityResult do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t() | nil,
           :cursor => String.t() | nil,
           :entity => GoogleApi.Datastore.V1.Model.Entity.t() | nil,
           :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:createTime, as: DateTime)
   field(:cursor)
   field(:entity, as: GoogleApi.Datastore.V1.Model.Entity)
   field(:updateTime, as: DateTime)
