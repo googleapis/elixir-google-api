@@ -29,6 +29,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   *   `lowFpsVideoRecording` (*type:* `boolean()`, *default:* `nil`) - True if and only if tests with this model are recorded by stitching together screenshots. See use_low_spec_video_recording in device config.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The manufacturer of this device.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable marketing name for this device model. Examples: "Nexus 5", "Galaxy S5".
+  *   `perVersionInfo` (*type:* `list(GoogleApi.Testing.V1.Model.PerAndroidVersionInfo.t)`, *default:* `nil`) - Version-specific information of an Android model.
   *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI. This corresponds to ro.sf.lcd_density
   *   `screenX` (*type:* `integer()`, *default:* `nil`) - Screen size in the horizontal (X) dimension measured in pixels.
   *   `screenY` (*type:* `integer()`, *default:* `nil`) - Screen size in the vertical (Y) dimension measured in pixels.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
           :lowFpsVideoRecording => boolean() | nil,
           :manufacturer => String.t() | nil,
           :name => String.t() | nil,
+          :perVersionInfo => list(GoogleApi.Testing.V1.Model.PerAndroidVersionInfo.t()) | nil,
           :screenDensity => integer() | nil,
           :screenX => integer() | nil,
           :screenY => integer() | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   field(:lowFpsVideoRecording)
   field(:manufacturer)
   field(:name)
+  field(:perVersionInfo, as: GoogleApi.Testing.V1.Model.PerAndroidVersionInfo, type: :list)
   field(:screenDensity)
   field(:screenX)
   field(:screenY)

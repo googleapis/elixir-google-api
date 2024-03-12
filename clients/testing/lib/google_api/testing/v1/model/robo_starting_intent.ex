@@ -22,6 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
   ## Attributes
 
   *   `launcherActivity` (*type:* `GoogleApi.Testing.V1.Model.LauncherActivityIntent.t`, *default:* `nil`) - An intent that starts the main launcher activity.
+  *   `noActivity` (*type:* `GoogleApi.Testing.V1.Model.NoActivityIntent.t`, *default:* `nil`) - Skips the starting activity
   *   `startActivity` (*type:* `GoogleApi.Testing.V1.Model.StartActivityIntent.t`, *default:* `nil`) - An intent that starts an activity with specific details.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Timeout in seconds for each intent.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Testing.V1.Model.RoboStartingIntent do
 
   @type t :: %__MODULE__{
           :launcherActivity => GoogleApi.Testing.V1.Model.LauncherActivityIntent.t() | nil,
+          :noActivity => GoogleApi.Testing.V1.Model.NoActivityIntent.t() | nil,
           :startActivity => GoogleApi.Testing.V1.Model.StartActivityIntent.t() | nil,
           :timeout => String.t() | nil
         }
 
   field(:launcherActivity, as: GoogleApi.Testing.V1.Model.LauncherActivityIntent)
+  field(:noActivity, as: GoogleApi.Testing.V1.Model.NoActivityIntent)
   field(:startActivity, as: GoogleApi.Testing.V1.Model.StartActivityIntent)
   field(:timeout)
 end

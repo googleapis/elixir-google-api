@@ -25,6 +25,7 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - Whether this device is a phone, tablet, wearable, etc.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model. Use this for invoking the TestExecutionService.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable name for this device model. Examples: "iPhone 4s", "iPad Mini 2".
+  *   `perVersionInfo` (*type:* `list(GoogleApi.Testing.V1.Model.PerIosVersionInfo.t)`, *default:* `nil`) - Version-specific information of an iOS model.
   *   `screenDensity` (*type:* `integer()`, *default:* `nil`) - Screen density in DPI.
   *   `screenX` (*type:* `integer()`, *default:* `nil`) - Screen size in the horizontal (X) dimension measured in pixels.
   *   `screenY` (*type:* `integer()`, *default:* `nil`) - Screen size in the vertical (Y) dimension measured in pixels.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
           :formFactor => String.t() | nil,
           :id => String.t() | nil,
           :name => String.t() | nil,
+          :perVersionInfo => list(GoogleApi.Testing.V1.Model.PerIosVersionInfo.t()) | nil,
           :screenDensity => integer() | nil,
           :screenX => integer() | nil,
           :screenY => integer() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Testing.V1.Model.IosModel do
   field(:formFactor)
   field(:id)
   field(:name)
+  field(:perVersionInfo, as: GoogleApi.Testing.V1.Model.PerIosVersionInfo, type: :list)
   field(:screenDensity)
   field(:screenX)
   field(:screenY)

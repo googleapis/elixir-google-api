@@ -21,6 +21,7 @@ defmodule GoogleApi.Testing.V1.Model.Shard do
 
   ## Attributes
 
+  *   `estimatedShardDuration` (*type:* `String.t`, *default:* `nil`) - Output only. The estimated shard duration based on previous test case timing records, if available.
   *   `numShards` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of shards.
   *   `shardIndex` (*type:* `integer()`, *default:* `nil`) - Output only. The index of the shard among all the shards.
   *   `testTargetsForShard` (*type:* `GoogleApi.Testing.V1.Model.TestTargetsForShard.t`, *default:* `nil`) - Output only. Test targets for each shard. Only set for manual sharding.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Testing.V1.Model.Shard do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :estimatedShardDuration => String.t() | nil,
           :numShards => integer() | nil,
           :shardIndex => integer() | nil,
           :testTargetsForShard => GoogleApi.Testing.V1.Model.TestTargetsForShard.t() | nil
         }
 
+  field(:estimatedShardDuration)
   field(:numShards)
   field(:shardIndex)
   field(:testTargetsForShard, as: GoogleApi.Testing.V1.Model.TestTargetsForShard)

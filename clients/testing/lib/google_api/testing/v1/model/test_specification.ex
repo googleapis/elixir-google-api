@@ -26,6 +26,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   *   `androidTestLoop` (*type:* `GoogleApi.Testing.V1.Model.AndroidTestLoop.t`, *default:* `nil`) - An Android Application with a Test Loop.
   *   `disablePerformanceMetrics` (*type:* `boolean()`, *default:* `nil`) - Disables performance metrics recording. May reduce test latency.
   *   `disableVideoRecording` (*type:* `boolean()`, *default:* `nil`) - Disables video recording. May reduce test latency.
+  *   `iosRoboTest` (*type:* `GoogleApi.Testing.V1.Model.IosRoboTest.t`, *default:* `nil`) - An iOS Robo test.
   *   `iosTestLoop` (*type:* `GoogleApi.Testing.V1.Model.IosTestLoop.t`, *default:* `nil`) - An iOS application with a test loop.
   *   `iosTestSetup` (*type:* `GoogleApi.Testing.V1.Model.IosTestSetup.t`, *default:* `nil`) - Test setup requirements for iOS.
   *   `iosXcTest` (*type:* `GoogleApi.Testing.V1.Model.IosXcTest.t`, *default:* `nil`) - An iOS XCTest, via an .xctestrun file.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
           :androidTestLoop => GoogleApi.Testing.V1.Model.AndroidTestLoop.t() | nil,
           :disablePerformanceMetrics => boolean() | nil,
           :disableVideoRecording => boolean() | nil,
+          :iosRoboTest => GoogleApi.Testing.V1.Model.IosRoboTest.t() | nil,
           :iosTestLoop => GoogleApi.Testing.V1.Model.IosTestLoop.t() | nil,
           :iosTestSetup => GoogleApi.Testing.V1.Model.IosTestSetup.t() | nil,
           :iosXcTest => GoogleApi.Testing.V1.Model.IosXcTest.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSpecification do
   field(:androidTestLoop, as: GoogleApi.Testing.V1.Model.AndroidTestLoop)
   field(:disablePerformanceMetrics)
   field(:disableVideoRecording)
+  field(:iosRoboTest, as: GoogleApi.Testing.V1.Model.IosRoboTest)
   field(:iosTestLoop, as: GoogleApi.Testing.V1.Model.IosTestLoop)
   field(:iosTestSetup, as: GoogleApi.Testing.V1.Model.IosTestSetup)
   field(:iosXcTest, as: GoogleApi.Testing.V1.Model.IosXcTest)

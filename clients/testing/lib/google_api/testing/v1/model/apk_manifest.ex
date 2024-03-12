@@ -27,6 +27,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   *   `metadata` (*type:* `list(GoogleApi.Testing.V1.Model.Metadata.t)`, *default:* `nil`) - Meta-data tags defined in the manifest.
   *   `minSdkVersion` (*type:* `integer()`, *default:* `nil`) - Minimum API level required for the application to run.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Full Java-style package name for this application, e.g. "com.example.foo".
+  *   `services` (*type:* `list(GoogleApi.Testing.V1.Model.Service.t)`, *default:* `nil`) - Services contained in the tag.
   *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - Specifies the API Level on which the application is designed to run.
   *   `usesFeature` (*type:* `list(GoogleApi.Testing.V1.Model.UsesFeature.t)`, *default:* `nil`) - Feature usage tags defined in the manifest.
   *   `usesPermission` (*type:* `list(String.t)`, *default:* `nil`) - Permissions declared to be used by the application
@@ -43,6 +44,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
           :metadata => list(GoogleApi.Testing.V1.Model.Metadata.t()) | nil,
           :minSdkVersion => integer() | nil,
           :packageName => String.t() | nil,
+          :services => list(GoogleApi.Testing.V1.Model.Service.t()) | nil,
           :targetSdkVersion => integer() | nil,
           :usesFeature => list(GoogleApi.Testing.V1.Model.UsesFeature.t()) | nil,
           :usesPermission => list(String.t()) | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.Testing.V1.Model.ApkManifest do
   field(:metadata, as: GoogleApi.Testing.V1.Model.Metadata, type: :list)
   field(:minSdkVersion)
   field(:packageName)
+  field(:services, as: GoogleApi.Testing.V1.Model.Service, type: :list)
   field(:targetSdkVersion)
   field(:usesFeature, as: GoogleApi.Testing.V1.Model.UsesFeature, type: :list)
   field(:usesPermission, type: :list)

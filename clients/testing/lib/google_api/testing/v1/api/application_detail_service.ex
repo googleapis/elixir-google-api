@@ -43,6 +43,7 @@ defmodule GoogleApi.Testing.V1.Api.ApplicationDetailService do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"bundleLocation.gcsPath"` (*type:* `String.t`) - A path to a file in Google Cloud Storage. Example: gs://build-app-1414623860166/app%40debug-unaligned.apk These paths are expected to be url encoded (percent encoding)
       *   `:body` (*type:* `GoogleApi.Testing.V1.Model.FileReference.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -77,6 +78,7 @@ defmodule GoogleApi.Testing.V1.Api.ApplicationDetailService do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :"bundleLocation.gcsPath" => :query,
       :body => :body
     }
 

@@ -23,6 +23,7 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
 
   *   `clientInfo` (*type:* `GoogleApi.Testing.V1.Model.ClientInfo.t`, *default:* `nil`) - Information about the client which invoked the test.
   *   `environmentMatrix` (*type:* `GoogleApi.Testing.V1.Model.EnvironmentMatrix.t`, *default:* `nil`) - Required. The devices the tests are being executed on.
+  *   `extendedInvalidMatrixDetails` (*type:* `list(GoogleApi.Testing.V1.Model.MatrixErrorDetail.t)`, *default:* `nil`) - Output only. Details about why a matrix was deemed invalid. If multiple checks can be safely performed, they will be reported but no assumptions should be made about the length of this list.
   *   `failFast` (*type:* `boolean()`, *default:* `nil`) - If true, only a single attempt at most will be made to run each execution/shard in the matrix. Flaky test attempts are not affected. Normally, 2 or more attempts are made if a potential infrastructure issue is detected. This feature is for latency sensitive workloads. The incidence of execution failures may be significantly greater for fail-fast matrices and support is more limited because of that expectation.
   *   `flakyTestAttempts` (*type:* `integer()`, *default:* `nil`) - The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns.
   *   `invalidMatrixDetails` (*type:* `String.t`, *default:* `nil`) - Output only. Describes why the matrix is considered invalid. Only useful for matrices in the INVALID state.
@@ -41,6 +42,8 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
   @type t :: %__MODULE__{
           :clientInfo => GoogleApi.Testing.V1.Model.ClientInfo.t() | nil,
           :environmentMatrix => GoogleApi.Testing.V1.Model.EnvironmentMatrix.t() | nil,
+          :extendedInvalidMatrixDetails =>
+            list(GoogleApi.Testing.V1.Model.MatrixErrorDetail.t()) | nil,
           :failFast => boolean() | nil,
           :flakyTestAttempts => integer() | nil,
           :invalidMatrixDetails => String.t() | nil,
@@ -56,6 +59,12 @@ defmodule GoogleApi.Testing.V1.Model.TestMatrix do
 
   field(:clientInfo, as: GoogleApi.Testing.V1.Model.ClientInfo)
   field(:environmentMatrix, as: GoogleApi.Testing.V1.Model.EnvironmentMatrix)
+
+  field(:extendedInvalidMatrixDetails,
+    as: GoogleApi.Testing.V1.Model.MatrixErrorDetail,
+    type: :list
+  )
+
   field(:failFast)
   field(:flakyTestAttempts)
   field(:invalidMatrixDetails)
