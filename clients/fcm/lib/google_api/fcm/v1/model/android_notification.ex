@@ -38,6 +38,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
   *   `localOnly` (*type:* `boolean()`, *default:* `nil`) - Set whether or not this notification is relevant only to the current device. Some notifications can be bridged to other devices for remote display, such as a Wear OS watch. This hint can be set to recommend this notification not be bridged. See [Wear OS guides](https://developer.android.com/training/wearables/notifications/bridger#existing-method-of-preventing-bridging)
   *   `notificationCount` (*type:* `integer()`, *default:* `nil`) - Sets the number of items this notification represents. May be displayed as a badge count for launchers that support badging.See [Notification Badge](https://developer.android.com/training/notify-user/badges). For example, this might be useful if you're using just one notification to represent multiple new messages but you want the count here to represent the number of total new messages. If zero or unspecified, systems that support badging use the default, which is to increment a number displayed on the long-press menu each time a new notification arrives.
   *   `notificationPriority` (*type:* `String.t`, *default:* `nil`) - Set the relative priority for this notification. Priority is an indication of how much of the user's attention should be consumed by this notification. Low-priority notifications may be hidden from the user in certain situations, while the user might be interrupted for a higher-priority notification. The effect of setting the same priorities may differ slightly on different platforms. Note this priority differs from `AndroidMessagePriority`. This priority is processed by the client after the message has been delivered, whereas [AndroidMessagePriority](https://firebase.google.com/docs/reference/fcm/rest/v1/projects.messages#androidmessagepriority) is an FCM concept that controls when the message is delivered.
+  *   `proxy` (*type:* `String.t`, *default:* `nil`) - Setting to control when a notification may be proxied.
   *   `sound` (*type:* `String.t`, *default:* `nil`) - The sound to play when the device receives the notification. Supports "default" or the filename of a sound resource bundled in the app. Sound files must reside in /res/raw/.
   *   `sticky` (*type:* `boolean()`, *default:* `nil`) - When set to false or unset, the notification is automatically dismissed when the user clicks it in the panel. When set to true, the notification persists even when the user clicks it.
   *   `tag` (*type:* `String.t`, *default:* `nil`) - Identifier used to replace existing notifications in the notification drawer. If not specified, each request creates a new notification. If specified and a notification with the same tag is already being shown, the new notification replaces the existing one in the notification drawer.
@@ -69,6 +70,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
           :localOnly => boolean() | nil,
           :notificationCount => integer() | nil,
           :notificationPriority => String.t() | nil,
+          :proxy => String.t() | nil,
           :sound => String.t() | nil,
           :sticky => boolean() | nil,
           :tag => String.t() | nil,
@@ -97,6 +99,7 @@ defmodule GoogleApi.FCM.V1.Model.AndroidNotification do
   field(:localOnly)
   field(:notificationCount)
   field(:notificationPriority)
+  field(:proxy)
   field(:sound)
   field(:sticky)
   field(:tag)
