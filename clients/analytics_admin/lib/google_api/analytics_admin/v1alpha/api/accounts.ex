@@ -26,7 +26,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Marks target Account as soft-deleted (ie: "trashed") and returns it. This API does not have a method to restore soft-deleted accounts. However, they can be restored using the Trash Can UI. If the accounts are not restored before the expiration time, the account and all child resources (eg: Properties, GoogleAdsLinks, Streams, UserLinks) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found.
+  Marks target Account as soft-deleted (ie: "trashed") and returns it. This API does not have a method to restore soft-deleted accounts. However, they can be restored using the Trash Can UI. If the accounts are not restored before the expiration time, the account and all child resources (eg: Properties, GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found.
 
   ## Parameters
 
@@ -316,7 +316,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated. Field names must be in snake case (e.g., "field_to_update"). Omitted fields will not be updated. To replace the entire entity, use one path with the string "*" to match all fields.
+      *   `:updateMask` (*type:* `String.t`) - Required. The list of fields to be updated. Field names must be in snake case (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire entity, use one path with the string "*" to match all fields.
       *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -435,12 +435,91 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
+  Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years. Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators. These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase & Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
+  *   `entity` (*type:* `String.t`) - The Data Access Report supports requesting at the property level or account level. If requested at the account level, Data Access Reports include all access for all properties under that account. To request at the property level, entity should be for example 'properties/123' if "123" is your GA4 property ID. To request at the account level, entity should be for example 'accounts/1234' if "1234" is your GA4 Account ID.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaRunAccessReportRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaRunAccessReportResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec analyticsadmin_accounts_run_access_report(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaRunAccessReportResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def analyticsadmin_accounts_run_access_report(
+        connection,
+        entity,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1alpha/{+entity}:runAccessReport", %{
+        "entity" => URI.encode(entity, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaRunAccessReportResponse{}
+        ]
+    )
+  end
+
+  @doc """
   Searches through all changes to an account or its children given the specified set of filters.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `account` (*type:* `String.t`) - Required. The account resource for which to return change history resources.
+  *   `account` (*type:* `String.t`) - Required. The account resource for which to return change history resources. Format: accounts/{account} Example: "accounts/100"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -514,12 +593,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Lists all user links on an account or property, including implicit ones that come from effective permissions granted by groups or organization admin roles. If a returned user link does not have direct permissions, they cannot be removed from the account or property directly with the DeleteUserLink command. They have to be removed from the group/etc that gives them permissions, which is currently only usable/discoverable in the GA or GMP UIs.
+  Creates information about multiple access bindings to an account or property. This method is transactional. If any AccessBinding cannot be created, none of the AccessBindings will be created.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. The account or property that owns the access bindings. The parent field in the CreateAccessBindingRequest messages must either be empty or match this field. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -532,26 +611,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAuditUserLinksRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAuditUserLinksResponse{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_audit(
+  @spec analyticsadmin_accounts_access_bindings_batch_create(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
           {:ok,
-           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAuditUserLinksResponse.t()}
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_audit(
+  def analyticsadmin_accounts_access_bindings_batch_create(
         connection,
         parent,
         optional_params \\ [],
@@ -575,7 +654,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/userLinks:audit", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings:batchCreate", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -587,86 +666,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       opts ++
         [
           struct:
-            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAuditUserLinksResponse{}
-        ]
-    )
-  end
-
-  @doc """
-  Creates information about multiple users' links to an account or property. This method is transactional. If any UserLink cannot be created, none of the UserLinks will be created.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The account or property that all user links in the request are for. This field is required. The parent field in the CreateUserLinkRequest messages must either be empty or match this field. Example format: accounts/1234
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateUserLinksRequest.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateUserLinksResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec analyticsadmin_accounts_user_links_batch_create(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok,
-           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateUserLinksResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def analyticsadmin_accounts_user_links_batch_create(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/userLinks:batchCreate", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateUserLinksResponse{}
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchCreateAccessBindingsResponse{}
         ]
     )
   end
@@ -677,7 +677,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The account or property that all user links in the request are for. The parent of all values for user link names to delete must match this field. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. The account or property that owns the access bindings. The parent of all provided values for the 'names' field in DeleteAccessBindingRequest messages must match this field. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -690,7 +690,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchDeleteUserLinksRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchDeleteAccessBindingsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -698,7 +698,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_batch_delete(
+  @spec analyticsadmin_accounts_access_bindings_batch_delete(
           Tesla.Env.client(),
           String.t(),
           keyword(),
@@ -708,7 +708,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_batch_delete(
+  def analyticsadmin_accounts_access_bindings_batch_delete(
         connection,
         parent,
         optional_params \\ [],
@@ -732,7 +732,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/userLinks:batchDelete", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings:batchDelete", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -746,12 +746,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Gets information about multiple users' links to an account or property.
+  Gets information about multiple access bindings to an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The account or property that all user links in the request are for. The parent of all provided values for the 'names' field must match this field. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. The account or property that owns the access bindings. The parent of all provided values for the 'names' field must match this field. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -764,26 +764,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:names` (*type:* `list(String.t)`) - Required. The names of the user links to retrieve. A maximum of 1000 user links can be retrieved in a batch. Format: accounts/{accountId}/userLinks/{userLinkId}
+      *   `:names` (*type:* `list(String.t)`) - Required. The names of the access bindings to retrieve. A maximum of 1000 access bindings can be retrieved in a batch. Formats: - accounts/{account}/accessBindings/{accessBinding} - properties/{property}/accessBindings/{accessBinding}
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetUserLinksResponse{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetAccessBindingsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_batch_get(
+  @spec analyticsadmin_accounts_access_bindings_batch_get(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
           {:ok,
-           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetUserLinksResponse.t()}
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetAccessBindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_batch_get(
+  def analyticsadmin_accounts_access_bindings_batch_get(
         connection,
         parent,
         optional_params \\ [],
@@ -807,7 +807,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha/{+parent}/userLinks:batchGet", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings:batchGet", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -819,18 +819,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       opts ++
         [
           struct:
-            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetUserLinksResponse{}
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchGetAccessBindingsResponse{}
         ]
     )
   end
 
   @doc """
-  Updates information about multiple users' links to an account or property.
+  Updates information about multiple access bindings to an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The account or property that all user links in the request are for. The parent field in the UpdateUserLinkRequest messages must either be empty or match this field. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. The account or property that owns the access bindings. The parent of all provided AccessBinding in UpdateAccessBindingRequest messages must match this field. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -843,26 +843,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateUserLinksRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateUserLinksResponse{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_batch_update(
+  @spec analyticsadmin_accounts_access_bindings_batch_update(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
           {:ok,
-           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateUserLinksResponse.t()}
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_batch_update(
+  def analyticsadmin_accounts_access_bindings_batch_update(
         connection,
         parent,
         optional_params \\ [],
@@ -886,7 +886,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/userLinks:batchUpdate", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings:batchUpdate", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -898,18 +898,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       opts ++
         [
           struct:
-            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateUserLinksResponse{}
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBatchUpdateAccessBindingsResponse{}
         ]
     )
   end
 
   @doc """
-  Creates a user link on an account or property. If the user with the specified email already has permissions on the account or property, then the user's existing permissions will be unioned with the permissions specified in the new UserLink.
+  Creates an access binding on an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -922,26 +922,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:notifyNewUser` (*type:* `boolean()`) - Optional. If set, then email the new user notifying them that they've been granted permissions to the resource.
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t`) - 
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_create(
+  @spec analyticsadmin_accounts_access_bindings_create(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
+          {:ok,
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_create(
+  def analyticsadmin_accounts_access_bindings_create(
         connection,
         parent,
         optional_params \\ [],
@@ -959,14 +959,13 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :notifyNewUser => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha/{+parent}/userLinks", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -976,17 +975,20 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}]
+        [
+          struct:
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}
+        ]
     )
   end
 
   @doc """
-  Deletes a user link on an account or property.
+  Deletes an access binding on an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Example format: accounts/1234/userLinks/5678
+  *   `name` (*type:* `String.t`) - Required. Formats: - accounts/{account}/accessBindings/{accessBinding} - properties/{property}/accessBindings/{accessBinding}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1006,7 +1008,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleProtobufEmpty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_delete(
+  @spec analyticsadmin_accounts_access_bindings_delete(
           Tesla.Env.client(),
           String.t(),
           keyword(),
@@ -1016,7 +1018,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_delete(
+  def analyticsadmin_accounts_access_bindings_delete(
         connection,
         name,
         optional_params \\ [],
@@ -1053,12 +1055,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   end
 
   @doc """
-  Gets information about a user's link to an account or property.
+  Gets information about an access binding.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Example format: accounts/1234/userLinks/5678
+  *   `name` (*type:* `String.t`) - Required. The name of the access binding to retrieve. Formats: - accounts/{account}/accessBindings/{accessBinding} - properties/{property}/accessBindings/{accessBinding}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1075,20 +1077,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_get(
+  @spec analyticsadmin_accounts_access_bindings_get(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
+          {:ok,
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_get(connection, name, optional_params \\ [], opts \\ []) do
+  def analyticsadmin_accounts_access_bindings_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1116,17 +1124,20 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}]
+        [
+          struct:
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}
+        ]
     )
   end
 
   @doc """
-  Lists all user links on an account or property.
+  Lists all access bindings on an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Example format: accounts/1234
+  *   `parent` (*type:* `String.t`) - Required. Formats: - accounts/{account} - properties/{property}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1139,27 +1150,27 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of user links to return. The service may return fewer than this value. If unspecified, at most 200 user links will be returned. The maximum value is 500; values above 500 will be coerced to 500.
-      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListUserLinks` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListUserLinks` must match the call that provided the page token.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of access bindings to return. The service may return fewer than this value. If unspecified, at most 200 access bindings will be returned. The maximum value is 500; values above 500 will be coerced to 500.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListAccessBindings` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAccessBindings` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListUserLinksResponse{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListAccessBindingsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_list(
+  @spec analyticsadmin_accounts_access_bindings_list(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
           {:ok,
-           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListUserLinksResponse.t()}
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListAccessBindingsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_list(
+  def analyticsadmin_accounts_access_bindings_list(
         connection,
         parent,
         optional_params \\ [],
@@ -1184,7 +1195,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha/{+parent}/userLinks", %{
+      |> Request.url("/v1alpha/{+parent}/accessBindings", %{
         "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -1196,18 +1207,18 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       opts ++
         [
           struct:
-            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListUserLinksResponse{}
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaListAccessBindingsResponse{}
         ]
     )
   end
 
   @doc """
-  Updates a user link on an account or property.
+  Updates an access binding on an account or property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Example format: properties/1234/userLinks/5678
+  *   `name` (*type:* `String.t`) - Output only. Resource name of this binding. Format: accounts/{account}/accessBindings/{access_binding} or properties/{property}/accessBindings/{access_binding} Example: "accounts/100/accessBindings/200"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1220,25 +1231,26 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t`) - 
+      *   `:body` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}}` on success
+  *   `{:ok, %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec analyticsadmin_accounts_user_links_patch(
+  @spec analyticsadmin_accounts_access_bindings_patch(
           Tesla.Env.client(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink.t()}
+          {:ok,
+           GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def analyticsadmin_accounts_user_links_patch(
+  def analyticsadmin_accounts_access_bindings_patch(
         connection,
         name,
         optional_params \\ [],
@@ -1272,7 +1284,10 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++
-        [struct: %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaUserLink{}]
+        [
+          struct:
+            %GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccessBinding{}
+        ]
     )
   end
 end

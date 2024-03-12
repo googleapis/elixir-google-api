@@ -22,7 +22,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProv
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAccount.t`, *default:* `nil`) - The account to create.
-  *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in Developers Console as a Redirect URI
+  *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - Redirect URI where the user will be sent after accepting Terms of Service. Must be configured in Cloud Console as a Redirect URI.
   """
 
   use GoogleApi.Gax.ModelBase
