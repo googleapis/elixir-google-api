@@ -25,7 +25,7 @@ defmodule GoogleApi.WebRisk.V1.Model.GoogleLongrunningOperation do
   *   `error` (*type:* `GoogleApi.WebRisk.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Contains a `SubmitUriMetadata` object.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Matches the `/v1/{project-name}/operations/{operation-id}` pattern.
-  *   `response` (*type:* `map()`, *default:* `nil`) - The normal response of the operation in case of success. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
+  *   `response` (*type:* `map()`, *default:* `nil`) - The normal, successful response of the operation. If the original method returns no data on success, such as `Delete`, the response is `google.protobuf.Empty`. If the original method is standard `Get`/`Create`/`Update`, the response should be the resource. For other methods, the response should have the type `XxxResponse`, where `Xxx` is the original method name. For example, if the original method name is `TakeSnapshot()`, the inferred response type is `TakeSnapshotResponse`.
   """
 
   use GoogleApi.Gax.ModelBase

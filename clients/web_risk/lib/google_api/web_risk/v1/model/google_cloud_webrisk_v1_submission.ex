@@ -21,18 +21,15 @@ defmodule GoogleApi.WebRisk.V1.Model.GoogleCloudWebriskV1Submission do
 
   ## Attributes
 
-  *   `threatTypes` (*type:* `list(String.t)`, *default:* `nil`) - ThreatTypes found to be associated with the submitted URI after reviewing it. This might be empty if the URI was not added to any list.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URI that is being reported for malicious content to be analyzed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :threatTypes => list(String.t()) | nil,
           :uri => String.t() | nil
         }
 
-  field(:threatTypes, type: :list)
   field(:uri)
 end
 
