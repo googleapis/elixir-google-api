@@ -124,7 +124,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard.
   *   `collection` (*type:* `String.t`) - The collection of scores you're requesting.
-  *   `time_span` (*type:* `String.t`) - The time span for the scores and ranks you're requesting.
+  *   `time_span` (*type:* `String.t`) - Required. The time span for the scores and ranks you're requesting.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -208,7 +208,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard.
   *   `collection` (*type:* `String.t`) - The collection of scores you're requesting.
-  *   `time_span` (*type:* `String.t`) - The time span for the scores and ranks you're requesting.
+  *   `time_span` (*type:* `String.t`) - Required. The time span for the scores and ranks you're requesting.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -295,7 +295,7 @@ defmodule GoogleApi.Games.V1.Api.Scores do
 
   *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
   *   `leaderboard_id` (*type:* `String.t`) - The ID of the leaderboard.
-  *   `score` (*type:* `String.t`) - The score you're submitting. The submitted score is ignored if it is worse than a previously submitted score, where worse depends on the leaderboard sort order. The meaning of the score value depends on the leaderboard format type. For fixed-point, the score represents the raw value. For time, the score represents elapsed time in milliseconds. For currency, the score represents a value in micro units.
+  *   `score` (*type:* `String.t`) - Required. The score you're submitting. The submitted score is ignored if it is worse than a previously submitted score, where worse depends on the leaderboard sort order. The meaning of the score value depends on the leaderboard format type. For fixed-point, the score represents the raw value. For time, the score represents elapsed time in milliseconds. For currency, the score represents a value in micro units.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
