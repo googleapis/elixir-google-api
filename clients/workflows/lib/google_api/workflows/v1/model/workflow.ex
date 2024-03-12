@@ -21,22 +21,28 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the workflow was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the workflow provided by the user. Must be at most 1000 unicode characters long.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this workflow. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores and dashes. Label keys must start with a letter. International characters are allowed.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the workflow. Format: projects/{project}/locations/{location}/workflows/{workflow}
-  *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp that the latest revision of the workflow was created.
-  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision of the workflow. A new revision of a workflow is created as a result of updating the following properties of a workflow: - Service account - Workflow code to be executed The format is "000001-a4d", where the first 6 characters define the zero-padded revision ordinal number. They are followed by a hyphen and 3 hexadecimal random characters.
+  *   `callLogLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Describes the level of platform logging to apply to calls and call responses during executions of this workflow. If both the workflow and the execution specify a logging level, the execution level takes precedence.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for when the workflow was created. This is a workflow-wide field and is not tied to a specific revision.
+  *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of a KMS crypto key used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. If not provided, data associated with the workflow will not be CMEK-encrypted.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the workflow provided by the user. Must be at most 1000 Unicode characters long. This is a workflow-wide field and is not tied to a specific revision.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this workflow. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. This is a workflow-wide field and is not tied to a specific revision.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the workflow. Format: projects/{project}/locations/{location}/workflows/{workflow}. This is a workflow-wide field and is not tied to a specific revision.
+  *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for the latest revision of the workflow's creation.
+  *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. The revision of the workflow. A new revision of a workflow is created as a result of updating the following properties of a workflow: - Service account - Workflow code to be executed The format is "000001-a4d", where the first six characters define the zero-padded revision ordinal number. They are followed by a hyphen and three hexadecimal random characters.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account associated with the latest workflow version. This service account represents the identity of the workflow and determines what permissions the workflow has. Format: projects/{project}/serviceAccounts/{account} or {account} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. The `{account}` value can be the `email` address or the `unique_id` of the service account. If not provided, workflow will use the project's default service account. Modifying this field for an existing workflow results in a new workflow revision.
   *   `sourceContents` (*type:* `String.t`, *default:* `nil`) - Workflow code to be executed. The size limit is 128KB.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the workflow deployment.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of the workflow.
+  *   `stateError` (*type:* `GoogleApi.Workflows.V1.Model.StateError.t`, *default:* `nil`) - Output only. Error regarding the state of the workflow. For example, this field will have error details if the execution data is unavailable due to revoked KMS key permissions.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for when the workflow was last updated. This is a workflow-wide field and is not tied to a specific revision.
+  *   `userEnvVars` (*type:* `map()`, *default:* `nil`) - Optional. User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or "WORKFLOWS".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :callLogLevel => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :cryptoKeyName => String.t() | nil,
           :description => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -45,10 +51,14 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
           :serviceAccount => String.t() | nil,
           :sourceContents => String.t() | nil,
           :state => String.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :stateError => GoogleApi.Workflows.V1.Model.StateError.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :userEnvVars => map() | nil
         }
 
+  field(:callLogLevel)
   field(:createTime, as: DateTime)
+  field(:cryptoKeyName)
   field(:description)
   field(:labels, type: :map)
   field(:name)
@@ -57,7 +67,9 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   field(:serviceAccount)
   field(:sourceContents)
   field(:state)
+  field(:stateError, as: GoogleApi.Workflows.V1.Model.StateError)
   field(:updateTime, as: DateTime)
+  field(:userEnvVars, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Workflows.V1.Model.Workflow do
