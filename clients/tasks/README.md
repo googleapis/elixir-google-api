@@ -1,6 +1,6 @@
 # GoogleApi.Tasks
 
-Tasks API client library.
+Google Tasks API client library.
 
 The Google Tasks API lets you manage your tasks and task lists.
 
