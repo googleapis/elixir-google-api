@@ -22,8 +22,9 @@ defmodule GoogleApi.Transcoder.V1.Model.JobConfig do
   ## Attributes
 
   *   `adBreaks` (*type:* `list(GoogleApi.Transcoder.V1.Model.AdBreak.t)`, *default:* `nil`) - List of ad breaks. Specifies where to insert ad break tags in the output manifests.
-  *   `editList` (*type:* `list(GoogleApi.Transcoder.V1.Model.EditAtom.t)`, *default:* `nil`) - List of `Edit atom`s. Defines the ultimate timeline of the resulting file or manifest.
+  *   `editList` (*type:* `list(GoogleApi.Transcoder.V1.Model.EditAtom.t)`, *default:* `nil`) - List of edit atoms. Defines the ultimate timeline of the resulting file or manifest.
   *   `elementaryStreams` (*type:* `list(GoogleApi.Transcoder.V1.Model.ElementaryStream.t)`, *default:* `nil`) - List of elementary streams.
+  *   `encryptions` (*type:* `list(GoogleApi.Transcoder.V1.Model.Encryption.t)`, *default:* `nil`) - List of encryption configurations for the content. Each configuration has an ID. Specify this ID in the MuxStream.encryption_id field to indicate the configuration to use for that `MuxStream` output.
   *   `inputs` (*type:* `list(GoogleApi.Transcoder.V1.Model.Input.t)`, *default:* `nil`) - List of input assets stored in Cloud Storage.
   *   `manifests` (*type:* `list(GoogleApi.Transcoder.V1.Model.Manifest.t)`, *default:* `nil`) - List of output manifests.
   *   `muxStreams` (*type:* `list(GoogleApi.Transcoder.V1.Model.MuxStream.t)`, *default:* `nil`) - List of multiplexing settings for output streams.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Transcoder.V1.Model.JobConfig do
           :adBreaks => list(GoogleApi.Transcoder.V1.Model.AdBreak.t()) | nil,
           :editList => list(GoogleApi.Transcoder.V1.Model.EditAtom.t()) | nil,
           :elementaryStreams => list(GoogleApi.Transcoder.V1.Model.ElementaryStream.t()) | nil,
+          :encryptions => list(GoogleApi.Transcoder.V1.Model.Encryption.t()) | nil,
           :inputs => list(GoogleApi.Transcoder.V1.Model.Input.t()) | nil,
           :manifests => list(GoogleApi.Transcoder.V1.Model.Manifest.t()) | nil,
           :muxStreams => list(GoogleApi.Transcoder.V1.Model.MuxStream.t()) | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Transcoder.V1.Model.JobConfig do
   field(:adBreaks, as: GoogleApi.Transcoder.V1.Model.AdBreak, type: :list)
   field(:editList, as: GoogleApi.Transcoder.V1.Model.EditAtom, type: :list)
   field(:elementaryStreams, as: GoogleApi.Transcoder.V1.Model.ElementaryStream, type: :list)
+  field(:encryptions, as: GoogleApi.Transcoder.V1.Model.Encryption, type: :list)
   field(:inputs, as: GoogleApi.Transcoder.V1.Model.Input, type: :list)
   field(:manifests, as: GoogleApi.Transcoder.V1.Model.Manifest, type: :list)
   field(:muxStreams, as: GoogleApi.Transcoder.V1.Model.MuxStream, type: :list)

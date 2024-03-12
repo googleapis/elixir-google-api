@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Transcoder.V1.Model.Image do
   @moduledoc """
-  Overlaid jpeg image.
+  Overlaid image.
 
   ## Attributes
 
   *   `alpha` (*type:* `float()`, *default:* `nil`) - Target image opacity. Valid values are from `1.0` (solid, default) to `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
   *   `resolution` (*type:* `GoogleApi.Transcoder.V1.Model.NormalizedCoordinate.t`, *default:* `nil`) - Normalized image resolution, based on output video resolution. Valid values: `0.0`–`1.0`. To respect the original image aspect ratio, set either `x` or `y` to `0.0`. To use the original image resolution, set both `x` and `y` to `0.0`.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. URI of the JPEG image in Cloud Storage. For example, `gs://bucket/inputs/image.jpeg`. JPEG is the only supported image type.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. URI of the image in Cloud Storage. For example, `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported.
   """
 
   use GoogleApi.Gax.ModelBase

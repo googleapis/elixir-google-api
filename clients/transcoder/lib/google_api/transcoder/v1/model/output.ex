@@ -21,7 +21,7 @@ defmodule GoogleApi.Transcoder.V1.Model.Output do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the output file(s). For example, `gs://my-bucket/outputs/`. If empty, the value is populated from `Job.output_uri`. See [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the output file(s). For example, `gs://my-bucket/outputs/`. If empty, the value is populated from Job.output_uri. See [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
   """
 
   use GoogleApi.Gax.ModelBase

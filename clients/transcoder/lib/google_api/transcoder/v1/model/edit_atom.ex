@@ -22,7 +22,7 @@ defmodule GoogleApi.Transcoder.V1.Model.EditAtom do
   ## Attributes
 
   *   `endTimeOffset` (*type:* `String.t`, *default:* `nil`) - End time in seconds for the atom, relative to the input file timeline. When `end_time_offset` is not specified, the `inputs` are used until the end of the atom.
-  *   `inputs` (*type:* `list(String.t)`, *default:* `nil`) - List of `Input.key`s identifying files that should be used in this atom. The listed `inputs` must have the same timeline.
+  *   `inputs` (*type:* `list(String.t)`, *default:* `nil`) - List of Input.key values identifying files that should be used in this atom. The listed `inputs` must have the same timeline.
   *   `key` (*type:* `String.t`, *default:* `nil`) - A unique key for this atom. Must be specified when using advanced mapping.
   *   `startTimeOffset` (*type:* `String.t`, *default:* `nil`) - Start time in seconds for the atom, relative to the input file timeline. The default is `0s`.
   """
