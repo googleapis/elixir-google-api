@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Plan do
 
   ## Attributes
 
-  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Reseller Billing account to charge after an offer transaction. Only present for Google Cloud Platform offers.
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Reseller Billing account to charge after an offer transaction. Only present for Google Cloud offers.
   *   `paymentCycle` (*type:* `GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Period.t`, *default:* `nil`) - Describes how frequently the reseller will be billed, such as once per month.
   *   `paymentPlan` (*type:* `String.t`, *default:* `nil`) - Describes how a reseller will be billed.
   *   `paymentType` (*type:* `String.t`, *default:* `nil`) - Specifies when the payment needs to happen.

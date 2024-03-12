@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListTransferableOf
 
   ## Attributes
 
+  *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The Billing Account to look up Offers for. Format: accounts/{account_id}/billingAccounts/{billing_account_id}. This field is only relevant for multi-currency accounts. It should be left empty for single currency accounts.
   *   `cloudIdentityId` (*type:* `String.t`, *default:* `nil`) - Customer's Cloud Identity ID
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - A reseller should create a customer and use the resource name of that customer here.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Optional. The BCP-47 language code. For example, "en-US". The response will localize in the corresponding language code, if specified. The default value is "en-US".
@@ -32,6 +33,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListTransferableOf
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :billingAccount => String.t() | nil,
           :cloudIdentityId => String.t() | nil,
           :customerName => String.t() | nil,
           :languageCode => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ListTransferableOf
           :sku => String.t() | nil
         }
 
+  field(:billingAccount)
   field(:cloudIdentityId)
   field(:customerName)
   field(:languageCode)

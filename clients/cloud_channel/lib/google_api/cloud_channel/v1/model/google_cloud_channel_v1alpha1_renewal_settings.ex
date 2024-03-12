@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1RenewalSetti
   *   `paymentOption` (*type:* `String.t`, *default:* `nil`) - Set if enable_renewal=true. Deprecated: Use `payment_cycle` instead.
   *   `paymentPlan` (*type:* `String.t`, *default:* `nil`) - Describes how a reseller will be billed.
   *   `resizeUnitCount` (*type:* `boolean()`, *default:* `nil`) - If true and enable_renewal = true, the unit (for example seats or licenses) will be set to the number of active units at renewal time.
+  *   `scheduledRenewalOffer` (*type:* `String.t`, *default:* `nil`) - Output only. The offer resource name that the entitlement will renew on at the end date. Takes the form: accounts/{account_id}/offers/{offer_id}.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -38,7 +39,8 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1RenewalSetti
             GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1Period.t() | nil,
           :paymentOption => String.t() | nil,
           :paymentPlan => String.t() | nil,
-          :resizeUnitCount => boolean() | nil
+          :resizeUnitCount => boolean() | nil,
+          :scheduledRenewalOffer => String.t() | nil
         }
 
   field(:disableCommitment)
@@ -47,6 +49,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1RenewalSetti
   field(:paymentOption)
   field(:paymentPlan)
   field(:resizeUnitCount)
+  field(:scheduledRenewalOffer)
 end
 
 defimpl Poison.Decoder,

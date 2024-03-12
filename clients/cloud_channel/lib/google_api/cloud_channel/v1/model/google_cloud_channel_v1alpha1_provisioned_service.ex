@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1alpha1ProvisionedS
   ## Attributes
 
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Output only. The product pertaining to the provisioning resource as specified in the Offer.
-  *   `provisioningId` (*type:* `String.t`, *default:* `nil`) - Output only. Provisioning ID of the entitlement. For Google Workspace, this is the underlying Subscription ID. For Google Cloud Platform, this is the Billing Account ID of the billing subaccount."
+  *   `provisioningId` (*type:* `String.t`, *default:* `nil`) - Output only. Provisioning ID of the entitlement. For Google Workspace, this is the underlying Subscription ID. For Google Cloud, this is the Billing Account ID of the billing subaccount.
   *   `skuId` (*type:* `String.t`, *default:* `nil`) - Output only. The SKU pertaining to the provisioning resource as specified in the Offer.
   """
 

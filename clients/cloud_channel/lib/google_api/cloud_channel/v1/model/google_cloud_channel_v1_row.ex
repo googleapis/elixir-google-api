@@ -21,16 +21,19 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1Row do
 
   ## Attributes
 
+  *   `partitionKey` (*type:* `String.t`, *default:* `nil`) - The key for the partition this row belongs to. This field is empty if the report is not partitioned.
   *   `values` (*type:* `list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ReportValue.t)`, *default:* `nil`) - The list of values in the row.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :partitionKey => String.t() | nil,
           :values =>
             list(GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ReportValue.t()) | nil
         }
 
+  field(:partitionKey)
   field(:values, as: GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ReportValue, type: :list)
 end
 
