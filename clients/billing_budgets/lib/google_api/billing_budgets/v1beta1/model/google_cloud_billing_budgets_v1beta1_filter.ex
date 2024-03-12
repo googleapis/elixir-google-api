@@ -27,6 +27,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
   *   `customPeriod` (*type:* `GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta1CustomPeriod.t`, *default:* `nil`) - Optional. Specifies to track usage from any start date (required) to any end date (optional). This time period is static, it does not recur.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A single label and value pair specifying that usage from only this set of labeled resources should be included in the budget. If omitted, the report will include all labeled and unlabeled usage. An object containing a single `"key": value` pair. Example: `{ "name": "wrench" }`. _Currently, multiple entries or multiple values per entry are not allowed._
   *   `projects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of projects of the form `projects/{project}`, specifying that usage from only this set of projects should be included in the budget. If omitted, the report will include all usage for the billing account, regardless of which project the usage occurred on.
+  *   `resourceAncestors` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of folder and organization names of the form `folders/{folderId}` or `organizations/{organizationId}`, specifying that usage from only this set of folders and organizations should be included in the budget. If omitted, the budget includes all usage that the billing account pays for. If the folder or organization contains projects that are paid for by a different Cloud Billing account, the budget *doesn't* apply to those projects.
   *   `services` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of services of the form `services/{service_id}`, specifying that usage from only this set of services should be included in the budget. If omitted, the report will include usage for all the services. The service names are available through the Catalog API: https://cloud.google.com/billing/v1/how-tos/catalog-api.
   *   `subaccounts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of subaccounts of the form `billingAccounts/{account_id}`, specifying that usage from only this set of subaccounts should be included in the budget. If a subaccount is set to the name of the parent account, usage from the parent account will be included. If omitted, the report will include usage from the parent account and all subaccounts, if they exist.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
             | nil,
           :labels => map() | nil,
           :projects => list(String.t()) | nil,
+          :resourceAncestors => list(String.t()) | nil,
           :services => list(String.t()) | nil,
           :subaccounts => list(String.t()) | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Model.GoogleCloudBillingBudgetsV1beta
 
   field(:labels, type: :map)
   field(:projects, type: :list)
+  field(:resourceAncestors, type: :list)
   field(:services, type: :list)
   field(:subaccounts, type: :list)
 end

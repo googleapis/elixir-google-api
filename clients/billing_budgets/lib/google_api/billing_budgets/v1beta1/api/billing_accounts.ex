@@ -266,6 +266,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of budgets to return per page. The default and maximum value are 100.
       *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListBudgetsResponse` which indicates that this is a continuation of a prior `ListBudgets` call, and that the system should return the next page of data.
+      *   `:scope` (*type:* `String.t`) - Optional. Set the scope of the budgets to be returned, in the format of the resource name. The scope of a budget is the cost that it tracks, such as costs for a single project, or the costs for all projects in a folder. Only project scope (in the format of "projects/project-id" or "projects/123") is supported in this field. When this field is set to a project's resource name, the budgets returned are tracking the costs for that project.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -303,7 +304,8 @@ defmodule GoogleApi.BillingBudgets.V1beta1.Api.BillingAccounts do
       :uploadType => :query,
       :upload_protocol => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :scope => :query
     }
 
     request =

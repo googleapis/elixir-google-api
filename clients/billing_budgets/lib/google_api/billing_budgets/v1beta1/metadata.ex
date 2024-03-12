@@ -20,7 +20,7 @@ defmodule GoogleApi.BillingBudgets.V1beta1 do
   API client metadata for GoogleApi.BillingBudgets.V1beta1.
   """
 
-  @discovery_revision "20221019"
+  @discovery_revision "20240302"
 
   def discovery_revision(), do: @discovery_revision
 end
