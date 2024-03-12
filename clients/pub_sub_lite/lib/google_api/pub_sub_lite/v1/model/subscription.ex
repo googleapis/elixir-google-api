@@ -22,6 +22,7 @@ defmodule GoogleApi.PubSubLite.V1.Model.Subscription do
   ## Attributes
 
   *   `deliveryConfig` (*type:* `GoogleApi.PubSubLite.V1.Model.DeliveryConfig.t`, *default:* `nil`) - The settings for this subscription's message delivery.
+  *   `exportConfig` (*type:* `GoogleApi.PubSubLite.V1.Model.ExportConfig.t`, *default:* `nil`) - If present, messages are automatically written from the Pub/Sub Lite topic associated with this subscription to a destination.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the subscription. Structured like: projects/{project_number}/locations/{location}/subscriptions/{subscription_id}
   *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the topic this subscription is attached to. Structured like: projects/{project_number}/locations/{location}/topics/{topic_id}
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.PubSubLite.V1.Model.Subscription do
 
   @type t :: %__MODULE__{
           :deliveryConfig => GoogleApi.PubSubLite.V1.Model.DeliveryConfig.t() | nil,
+          :exportConfig => GoogleApi.PubSubLite.V1.Model.ExportConfig.t() | nil,
           :name => String.t() | nil,
           :topic => String.t() | nil
         }
 
   field(:deliveryConfig, as: GoogleApi.PubSubLite.V1.Model.DeliveryConfig)
+  field(:exportConfig, as: GoogleApi.PubSubLite.V1.Model.ExportConfig)
   field(:name)
   field(:topic)
 end
