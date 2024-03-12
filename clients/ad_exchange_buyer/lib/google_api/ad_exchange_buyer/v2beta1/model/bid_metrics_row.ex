@@ -23,7 +23,7 @@ defmodule GoogleApi.AdExchangeBuyer.V2beta1.Model.BidMetricsRow do
 
   *   `bids` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that Ad Exchange received from the buyer.
   *   `bidsInAuction` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that were permitted to compete in the auction.
-  *   `billedImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the buyer was billed.
+  *   `billedImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the buyer was billed. Also called valid impressions as invalid impressions are not billed.
   *   `impressionsWon` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won the auction.
   *   `measurableImpressions` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids for which the corresponding impression was measurable for viewability (as defined by Active View).
   *   `reachedQueries` (*type:* `GoogleApi.AdExchangeBuyer.V2beta1.Model.MetricValue.t`, *default:* `nil`) - The number of bids that won the auction and also won the mediation waterfall (if any).
