@@ -37,6 +37,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   *   `path` (*type:* `String.t`, *default:* `nil`) - GTM Container Version's API relative path.
   *   `tag` (*type:* `list(GoogleApi.TagManager.V2.Model.Tag.t)`, *default:* `nil`) - The tags in the container that this version was taken from.
   *   `tagManagerUrl` (*type:* `String.t`, *default:* `nil`) - Auto generated link to the tag manager UI
+  *   `transformation` (*type:* `list(GoogleApi.TagManager.V2.Model.Transformation.t)`, *default:* `nil`) - The transformations in the container that this version was taken from.
   *   `trigger` (*type:* `list(GoogleApi.TagManager.V2.Model.Trigger.t)`, *default:* `nil`) - The triggers in the container that this version was taken from.
   *   `variable` (*type:* `list(GoogleApi.TagManager.V2.Model.Variable.t)`, *default:* `nil`) - The variables in the container that this version was taken from.
   *   `zone` (*type:* `list(GoogleApi.TagManager.V2.Model.Zone.t)`, *default:* `nil`) - The zones in the container that this version was taken from.
@@ -61,6 +62,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
           :path => String.t() | nil,
           :tag => list(GoogleApi.TagManager.V2.Model.Tag.t()) | nil,
           :tagManagerUrl => String.t() | nil,
+          :transformation => list(GoogleApi.TagManager.V2.Model.Transformation.t()) | nil,
           :trigger => list(GoogleApi.TagManager.V2.Model.Trigger.t()) | nil,
           :variable => list(GoogleApi.TagManager.V2.Model.Variable.t()) | nil,
           :zone => list(GoogleApi.TagManager.V2.Model.Zone.t()) | nil
@@ -82,6 +84,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerVersion do
   field(:path)
   field(:tag, as: GoogleApi.TagManager.V2.Model.Tag, type: :list)
   field(:tagManagerUrl)
+  field(:transformation, as: GoogleApi.TagManager.V2.Model.Transformation, type: :list)
   field(:trigger, as: GoogleApi.TagManager.V2.Model.Trigger, type: :list)
   field(:variable, as: GoogleApi.TagManager.V2.Model.Variable, type: :list)
   field(:zone, as: GoogleApi.TagManager.V2.Model.Zone, type: :list)

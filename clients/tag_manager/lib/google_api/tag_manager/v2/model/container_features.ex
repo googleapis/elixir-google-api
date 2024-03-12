@@ -28,6 +28,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerFeatures do
   *   `supportGtagConfigs` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports Google tag config.
   *   `supportTags` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports tags.
   *   `supportTemplates` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports templates.
+  *   `supportTransformations` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports transformations.
   *   `supportTriggers` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports triggers.
   *   `supportUserPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports user permissions managed by GTM.
   *   `supportVariables` (*type:* `boolean()`, *default:* `nil`) - Whether this Container supports variables.
@@ -46,6 +47,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerFeatures do
           :supportGtagConfigs => boolean() | nil,
           :supportTags => boolean() | nil,
           :supportTemplates => boolean() | nil,
+          :supportTransformations => boolean() | nil,
           :supportTriggers => boolean() | nil,
           :supportUserPermissions => boolean() | nil,
           :supportVariables => boolean() | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.TagManager.V2.Model.ContainerFeatures do
   field(:supportGtagConfigs)
   field(:supportTags)
   field(:supportTemplates)
+  field(:supportTransformations)
   field(:supportTriggers)
   field(:supportUserPermissions)
   field(:supportVariables)
