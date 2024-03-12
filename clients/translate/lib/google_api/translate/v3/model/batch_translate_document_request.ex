@@ -21,18 +21,24 @@ defmodule GoogleApi.Translate.V3.Model.BatchTranslateDocumentRequest do
 
   ## Attributes
 
-  *   `formatConversions` (*type:* `map()`, *default:* `nil`) - Optional.
+  *   `customizedAttribution` (*type:* `String.t`, *default:* `nil`) - Optional. This flag is to support user customized attribution. If not provided, the default is `Machine Translated by Google`. Customized attribution should follow rules in https://cloud.google.com/translate/attribution#attribution_and_logos
+  *   `enableRotationCorrection` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, enable auto rotation correction in DVS.
+  *   `enableShadowRemovalNativePdf` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, use the text removal server to remove the shadow text on background image for native pdf translation. Shadow removal feature can only be enabled when is_translate_native_pdf_only: false && pdf_native_only: false
+  *   `formatConversions` (*type:* `map()`, *default:* `nil`) - Optional. The file format conversion map that is applied to all input files. The map key is the original mime_type. The map value is the target mime_type of translated documents. Supported file format conversion includes: - `application/pdf` to `application/vnd.openxmlformats-officedocument.wordprocessingml.document` If nothing specified, output files will be in the same format as the original file.
   *   `glossaries` (*type:* `%{optional(String.t) => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t}`, *default:* `nil`) - Optional. Glossaries to be applied. It's keyed by target language code.
   *   `inputConfigs` (*type:* `list(GoogleApi.Translate.V3.Model.BatchDocumentInputConfig.t)`, *default:* `nil`) - Required. Input configurations. The total number of files matched should be <= 100. The total content size to translate should be <= 100M Unicode codepoints. The files must use UTF-8 encoding.
   *   `models` (*type:* `map()`, *default:* `nil`) - Optional. The models to use for translation. Map's key is target language code. Map's value is the model name. Value can be a built-in general model, or an AutoML Translation model. The value format depends on model type: - AutoML Translation models: `projects/{project-number-or-id}/locations/{location-id}/models/{model-id}` - General (built-in) models: `projects/{project-number-or-id}/locations/{location-id}/models/general/nmt`, If the map is empty or a specific model is not requested for a language pair, then default google model (nmt) is used.
   *   `outputConfig` (*type:* `GoogleApi.Translate.V3.Model.BatchDocumentOutputConfig.t`, *default:* `nil`) - Required. Output configuration. If 2 input configs match to the same file (that is, same input path), we don't generate output for duplicate inputs.
-  *   `sourceLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The BCP-47 language code of the input document if known, for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language Support](https://cloud.google.com/translate/docs/languages).
-  *   `targetLanguageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Required. The BCP-47 language code to use for translation of the input document. Specify up to 10 language codes here.
+  *   `sourceLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. The ISO-639 language code of the input document if known, for example, "en-US" or "sr-Latn". Supported language codes are listed in [Language Support](https://cloud.google.com/translate/docs/languages).
+  *   `targetLanguageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Required. The ISO-639 language code to use for translation of the input document. Specify up to 10 language codes here.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customizedAttribution => String.t() | nil,
+          :enableRotationCorrection => boolean() | nil,
+          :enableShadowRemovalNativePdf => boolean() | nil,
           :formatConversions => map() | nil,
           :glossaries =>
             %{
@@ -46,6 +52,9 @@ defmodule GoogleApi.Translate.V3.Model.BatchTranslateDocumentRequest do
           :targetLanguageCodes => list(String.t()) | nil
         }
 
+  field(:customizedAttribution)
+  field(:enableRotationCorrection)
+  field(:enableShadowRemovalNativePdf)
   field(:formatConversions, type: :map)
   field(:glossaries, as: GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig, type: :map)
   field(:inputConfigs, as: GoogleApi.Translate.V3.Model.BatchDocumentInputConfig, type: :list)

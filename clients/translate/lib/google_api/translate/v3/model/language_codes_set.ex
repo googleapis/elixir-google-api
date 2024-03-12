@@ -21,7 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.LanguageCodesSet do
 
   ## Attributes
 
-  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - The BCP-47 language code(s) for terms defined in the glossary. All entries are unique. The list contains at least two entries. Expected to be an exact match for GlossaryTerm.language_code.
+  *   `languageCodes` (*type:* `list(String.t)`, *default:* `nil`) - The ISO-639 language code(s) for terms defined in the glossary. All entries are unique. The list contains at least two entries. Expected to be an exact match for GlossaryTerm.language_code.
   """
 
   use GoogleApi.Gax.ModelBase

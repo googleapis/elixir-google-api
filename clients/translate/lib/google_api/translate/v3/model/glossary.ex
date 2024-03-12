@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Translate.V3.Model.Glossary do
   @moduledoc """
-  Represents a glossary built from user provided data.
+  Represents a glossary built from user-provided data.
 
   ## Attributes
 
