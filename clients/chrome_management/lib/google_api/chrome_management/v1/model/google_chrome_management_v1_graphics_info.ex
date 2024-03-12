@@ -17,11 +17,14 @@
 
 defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsInfo do
   @moduledoc """
-  Information of the graphics subsystem. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceGraphicsStatus](https://chromeenterprise.google/policies/#ReportDeviceGraphicsStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A
+  Information of the graphics subsystem. * This field provides device information, which is static and will not change over time. * Data for this field is controlled via policy: [ReportDeviceGraphicsStatus](https://chromeenterprise.google/policies/#ReportDeviceGraphicsStatus) * Data Collection Frequency: Only at Upload * Default Data Reporting Frequency: 3 hours - Policy Controlled: Yes * Cache: If the device is offline, the collected data is stored locally, and will be reported when the device is next online: No * Reported for affiliated users only: N/A * Granular permission needed: TELEMETRY_API_GRAPHICS_INFO
 
   ## Attributes
 
   *   `adapterInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsAdapterInfo.t`, *default:* `nil`) - Output only. Information about the graphics adapter (GPU).
+  *   `displayDevices` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayDevice.t)`, *default:* `nil`) - Output only. Information about the display(s) of the device.
+  *   `eprivacySupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is ePrivacy screen supported or not.
+  *   `touchScreenInfo` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TouchScreenInfo.t`, *default:* `nil`) - Output only. Information about the internal touch screen(s) of the device.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +32,28 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsIn
   @type t :: %__MODULE__{
           :adapterInfo =>
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsAdapterInfo.t()
-            | nil
+            | nil,
+          :displayDevices =>
+            list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayDevice.t())
+            | nil,
+          :eprivacySupported => boolean() | nil,
+          :touchScreenInfo =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TouchScreenInfo.t() | nil
         }
 
   field(:adapterInfo,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1GraphicsAdapterInfo
+  )
+
+  field(:displayDevices,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayDevice,
+    type: :list
+  )
+
+  field(:eprivacySupported)
+
+  field(:touchScreenInfo,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TouchScreenInfo
   )
 end
 

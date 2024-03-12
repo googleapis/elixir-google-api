@@ -22,6 +22,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayInf
   ## Attributes
 
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Output only. Represents the graphics card device id.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display device name.
   *   `isInternal` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if display is internal or not.
   *   `refreshRate` (*type:* `integer()`, *default:* `nil`) - Output only. Refresh rate in Hz.
   *   `resolutionHeight` (*type:* `integer()`, *default:* `nil`) - Output only. Resolution height in pixels.
@@ -32,6 +33,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayInf
 
   @type t :: %__MODULE__{
           :deviceId => String.t() | nil,
+          :displayName => String.t() | nil,
           :isInternal => boolean() | nil,
           :refreshRate => integer() | nil,
           :resolutionHeight => integer() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DisplayInf
         }
 
   field(:deviceId)
+  field(:displayName)
   field(:isInternal)
   field(:refreshRate)
   field(:resolutionHeight)

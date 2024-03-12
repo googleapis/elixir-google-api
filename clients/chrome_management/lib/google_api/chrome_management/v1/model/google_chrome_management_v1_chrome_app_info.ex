@@ -31,6 +31,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
   *   `permissions` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppPermission.t)`, *default:* `nil`) - Output only. Every custom permission requested by the app. Version-specific field that will only be set when the requested app version is found.
   *   `siteAccess` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppSiteAccess.t)`, *default:* `nil`) - Output only. Every permission giving access to domains or broad host patterns. ( e.g. www.google.com). This includes the matches from content scripts as well as hosts in the permissions node of the manifest. Version-specific field that will only be set when the requested app version is found.
   *   `supportEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. The app developer has enabled support for their app. Version-specific field that will only be set when the requested app version is found.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Types of an item in the Chrome Web Store
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppSiteAccess.t()
             )
             | nil,
-          :supportEnabled => boolean() | nil
+          :supportEnabled => boolean() | nil,
+          :type => String.t() | nil
         }
 
   field(:googleOwned)
@@ -75,6 +77,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ChromeAppI
   )
 
   field(:supportEnabled)
+  field(:type)
 end
 
 defimpl Poison.Decoder,
