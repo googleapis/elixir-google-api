@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseStorage.V1beta.Model.Bucket do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the bucket.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the bucket.
   """
 
   use GoogleApi.Gax.ModelBase
