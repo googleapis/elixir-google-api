@@ -21,19 +21,15 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1List
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results. If this field is omitted, there are no subsequent pages.
   *   `rooms` (*type:* `list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room.t)`, *default:* `nil`) - The list of rooms.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :nextPageToken => String.t() | nil,
           :rooms =>
             list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room.t()) | nil
         }
-
-  field(:nextPageToken)
 
   field(:rooms,
     as: GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Room,

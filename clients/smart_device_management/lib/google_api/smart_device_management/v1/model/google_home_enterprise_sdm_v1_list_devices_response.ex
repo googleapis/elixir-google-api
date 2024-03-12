@@ -22,7 +22,6 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1List
   ## Attributes
 
   *   `devices` (*type:* `list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device.t)`, *default:* `nil`) - The list of devices.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The pagination token to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,16 +29,13 @@ defmodule GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1List
   @type t :: %__MODULE__{
           :devices =>
             list(GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device.t())
-            | nil,
-          :nextPageToken => String.t() | nil
+            | nil
         }
 
   field(:devices,
     as: GoogleApi.SmartDeviceManagement.V1.Model.GoogleHomeEnterpriseSdmV1Device,
     type: :list
   )
-
-  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder,
