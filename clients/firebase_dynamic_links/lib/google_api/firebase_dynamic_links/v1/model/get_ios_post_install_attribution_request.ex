@@ -27,7 +27,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosPostInstallAttributionRe
   *   `iosVersion` (*type:* `String.t`, *default:* `nil`) - iOS version, ie: 9.3.5. Consider adding "build".
   *   `retrievalMethod` (*type:* `String.t`, *default:* `nil`) - App post install attribution retrieval information. Disambiguates mechanism (iSDK or developer invoked) to retrieve payload from clicked link.
   *   `sdkVersion` (*type:* `String.t`, *default:* `nil`) - Google SDK version. Version takes the form "$major.$minor.$patch"
-  *   `uniqueMatchLinkToCheck` (*type:* `String.t`, *default:* `nil`) - Possible unique matched link that server need to check before performing fingerprint match. If passed link is short server need to expand the link. If link is long server need to vslidate the link.
+  *   `uniqueMatchLinkToCheck` (*type:* `String.t`, *default:* `nil`) - Possible unique matched link that server need to check before performing device heuristics match. If passed link is short server need to expand the link. If link is long server need to vslidate the link.
   *   `visualStyle` (*type:* `String.t`, *default:* `nil`) - Strong match page information. Disambiguates between default UI and custom page to present when strong match succeeds/fails to find cookie.
   """
 
