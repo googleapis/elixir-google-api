@@ -39,6 +39,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   *   `profanityFilter` (*type:* `boolean()`, *default:* `nil`) - If set to `true`, the server will attempt to filter out profanities, replacing all but the initial character in each filtered word with asterisks, e.g. "f***". If set to `false` or omitted, profanities won't be filtered out.
   *   `sampleRateHertz` (*type:* `integer()`, *default:* `nil`) - Sample rate in Hertz of the audio data sent in all `RecognitionAudio` messages. Valid values are: 8000-48000. 16000 is optimal. For best results, set the sampling rate of the audio source to 16000 Hz. If that's not possible, use the native sample rate of the audio source (instead of re-sampling). This field is optional for FLAC and WAV audio files, but is required for all other audio formats. For details, see AudioEncoding.
   *   `speechContexts` (*type:* `list(GoogleApi.Speech.V1.Model.SpeechContext.t)`, *default:* `nil`) - Array of SpeechContext. A means to provide context to assist the speech recognition. For more information, see [speech adaptation](https://cloud.google.com/speech-to-text/docs/adaptation).
+  *   `transcriptNormalization` (*type:* `GoogleApi.Speech.V1.Model.TranscriptNormalization.t`, *default:* `nil`) - Optional. Use transcription normalization to automatically replace parts of the transcript with phrases of your choosing. For StreamingRecognize, this normalization only applies to stable partial transcripts (stability > 0.8) and final transcripts.
   *   `useEnhanced` (*type:* `boolean()`, *default:* `nil`) - Set to true to use an enhanced model for speech recognition. If `use_enhanced` is set to true and the `model` field is not set, then an appropriate enhanced model is chosen if an enhanced model exists for the audio. If `use_enhanced` is true and an enhanced version of the specified model does not exist, then the speech is recognized using the standard version of the specified model.
   """
 
@@ -63,6 +64,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
           :profanityFilter => boolean() | nil,
           :sampleRateHertz => integer() | nil,
           :speechContexts => list(GoogleApi.Speech.V1.Model.SpeechContext.t()) | nil,
+          :transcriptNormalization => GoogleApi.Speech.V1.Model.TranscriptNormalization.t() | nil,
           :useEnhanced => boolean() | nil
         }
 
@@ -84,6 +86,7 @@ defmodule GoogleApi.Speech.V1.Model.RecognitionConfig do
   field(:profanityFilter)
   field(:sampleRateHertz)
   field(:speechContexts, as: GoogleApi.Speech.V1.Model.SpeechContext, type: :list)
+  field(:transcriptNormalization, as: GoogleApi.Speech.V1.Model.TranscriptNormalization)
   field(:useEnhanced)
 end
 
