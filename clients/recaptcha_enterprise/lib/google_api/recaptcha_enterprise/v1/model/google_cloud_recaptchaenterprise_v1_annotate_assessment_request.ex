@@ -21,22 +21,33 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - Optional. A stable account identifier to apply to the assessment. This is an alternative to setting `account_id` in `CreateAssessment`, for example when a stable account identifier is not yet known in the initial request.
   *   `annotation` (*type:* `String.t`, *default:* `nil`) - Optional. The annotation that will be assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent.
-  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Unique stable hashed user identifier to apply to the assessment. This is an alternative to setting the hashed_account_id in CreateAssessment, for example when the account identifier is not yet known in the initial request. It is recommended that the identifier is hashed using hmac-sha256 with stable secret.
-  *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Optional reasons for the annotation that will be assigned to the Event.
+  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. A stable hashed account identifier to apply to the assessment. This is an alternative to setting `hashed_account_id` in `CreateAssessment`, for example when a stable account identifier is not yet known in the initial request.
+  *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Reasons for the annotation that are assigned to the event.
+  *   `transactionEvent` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TransactionEvent.t`, *default:* `nil`) - Optional. If the assessment is part of a payment transaction, provide details on payment lifecycle events that occur in the transaction.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accountId => String.t() | nil,
           :annotation => String.t() | nil,
           :hashedAccountId => String.t() | nil,
-          :reasons => list(String.t()) | nil
+          :reasons => list(String.t()) | nil,
+          :transactionEvent =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TransactionEvent.t()
+            | nil
         }
 
+  field(:accountId)
   field(:annotation)
   field(:hashedAccountId)
   field(:reasons, type: :list)
+
+  field(:transactionEvent,
+    as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TransactionEvent
+  )
 end
 
 defimpl Poison.Decoder,

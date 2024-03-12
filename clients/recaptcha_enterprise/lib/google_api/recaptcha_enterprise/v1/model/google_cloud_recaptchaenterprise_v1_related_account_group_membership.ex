@@ -21,17 +21,20 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - The unique stable hashed user identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name for this membership in the format `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
+  *   `accountId` (*type:* `String.t`, *default:* `nil`) - The unique stable account identifier of the member. The identifier corresponds to an `account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+  *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Deprecated: use `account_id` instead. The unique stable hashed account identifier of the member. The identifier corresponds to a `hashed_account_id` provided in a previous `CreateAssessment` or `AnnotateAssessment` call.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. The resource name for this membership in the format `projects/{project}/relatedaccountgroups/{relatedaccountgroup}/memberships/{membership}`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accountId => String.t() | nil,
           :hashedAccountId => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:accountId)
   field(:hashedAccountId)
   field(:name)
 end

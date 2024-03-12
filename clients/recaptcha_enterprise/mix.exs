@@ -48,7 +48,7 @@ defmodule GoogleApi.RecaptchaEnterprise.Mixfile do
 
   defp description() do
     """
-    reCAPTCHA Enterprise API client library. 
+    reCAPTCHA Enterprise API client library. Help protect your website from fraudulent activity, spam, and abuse without creating friction.
     """
   end
 
