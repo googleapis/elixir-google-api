@@ -22,7 +22,7 @@ defmodule GoogleApi.Language.V1.Model.ClassificationCategory do
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the category representing the document, from the [predefined taxonomy](https://cloud.google.com/natural-language/docs/categories).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the category representing the document.
   """
 
   use GoogleApi.Gax.ModelBase
