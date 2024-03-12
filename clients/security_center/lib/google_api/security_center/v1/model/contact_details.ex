@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.ContactDetails do
   @moduledoc """
-  The details pertaining to specific contacts
+  Details about specific contacts
 
   ## Attributes
 

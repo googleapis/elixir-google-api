@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Indicator do
   @moduledoc """
-  Represents what's commonly known as an Indicator of compromise (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. Reference: https://en.wikipedia.org/wiki/Indicator_of_compromise
+  Represents what's commonly known as an _indicator of compromise_ (IoC) in computer forensics. This is an artifact observed on a network or in an operating system that, with high confidence, indicates a computer intrusion. For more information, see [Indicator of compromise](https://en.wikipedia.org/wiki/Indicator_of_compromise).
 
   ## Attributes
 
   *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - List of domains associated to the Finding.
-  *   `ipAddresses` (*type:* `list(String.t)`, *default:* `nil`) - List of ip addresses associated to the Finding.
+  *   `ipAddresses` (*type:* `list(String.t)`, *default:* `nil`) - The list of IP addresses that are associated with the finding.
   *   `signatures` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ProcessSignature.t)`, *default:* `nil`) - The list of matched signatures indicating that the given process is present in the environment.
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The list of URIs associated to the Findings.
   """

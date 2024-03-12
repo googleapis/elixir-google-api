@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Pod do
   @moduledoc """
-  Kubernetes Pod.
+  A Kubernetes Pod.
 
   ## Attributes
 

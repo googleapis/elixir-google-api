@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Node do
   @moduledoc """
-  Kubernetes Nodes associated with the finding.
+  Kubernetes nodes associated with the finding.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Full Resource name of the Compute Engine VM running the cluster node.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - [Full resource name](https://google.aip.dev/122#full-resource-names) of the Compute Engine VM running the cluster node.
   """
 
   use GoogleApi.Gax.ModelBase

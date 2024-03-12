@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Contact do
   @moduledoc """
-  Representa a single contact's email address
+  The email address of a contact.
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - An email address e.g. "person123@company.com"
+  *   `email` (*type:* `String.t`, *default:* `nil`) - An email address. For example, "`person123@company.com`".
   """
 
   use GoogleApi.Gax.ModelBase

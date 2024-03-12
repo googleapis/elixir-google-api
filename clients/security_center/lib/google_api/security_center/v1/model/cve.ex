@@ -17,29 +17,41 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
   @moduledoc """
-  CVE stands for Common Vulnerabilities and Exposures. More information: https://cve.mitre.org
+  CVE stands for Common Vulnerabilities and Exposures. Information from the [CVE record](https://www.cve.org/ResourcesSupport/Glossary) that describes this vulnerability.
 
   ## Attributes
 
   *   `cvssv3` (*type:* `GoogleApi.SecurityCenter.V1.Model.Cvssv3.t`, *default:* `nil`) - Describe Common Vulnerability Scoring System specified at https://www.first.org/cvss/v3.1/specification-document
+  *   `exploitationActivity` (*type:* `String.t`, *default:* `nil`) - The exploitation activity of the vulnerability in the wild.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the vulnerability. e.g. CVE-2021-34527
+  *   `impact` (*type:* `String.t`, *default:* `nil`) - The potential impact of the vulnerability if it was to be exploited.
+  *   `observedInTheWild` (*type:* `boolean()`, *default:* `nil`) - Whether or not the vulnerability has been observed in the wild.
   *   `references` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Reference.t)`, *default:* `nil`) - Additional information about the CVE. e.g. https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34527
   *   `upstreamFixAvailable` (*type:* `boolean()`, *default:* `nil`) - Whether upstream fix is available for the CVE.
+  *   `zeroDay` (*type:* `boolean()`, *default:* `nil`) - Whether or not the vulnerability was zero day when the finding was published.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cvssv3 => GoogleApi.SecurityCenter.V1.Model.Cvssv3.t() | nil,
+          :exploitationActivity => String.t() | nil,
           :id => String.t() | nil,
+          :impact => String.t() | nil,
+          :observedInTheWild => boolean() | nil,
           :references => list(GoogleApi.SecurityCenter.V1.Model.Reference.t()) | nil,
-          :upstreamFixAvailable => boolean() | nil
+          :upstreamFixAvailable => boolean() | nil,
+          :zeroDay => boolean() | nil
         }
 
   field(:cvssv3, as: GoogleApi.SecurityCenter.V1.Model.Cvssv3)
+  field(:exploitationActivity)
   field(:id)
+  field(:impact)
+  field(:observedInTheWild)
   field(:references, as: GoogleApi.SecurityCenter.V1.Model.Reference, type: :list)
   field(:upstreamFixAvailable)
+  field(:zeroDay)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.Cve do
