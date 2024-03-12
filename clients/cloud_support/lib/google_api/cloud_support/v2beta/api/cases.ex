@@ -26,12 +26,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Close the specified case.
+  Close a case. EXAMPLES: cURL: ```shell case="projects/some-project/cases/43595344" curl \\ --request POST \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$case:close" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().close( name="projects/some-project/cases/43595344" ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the case resource to be closed.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The name of the case to close.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -106,12 +106,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Create a new case and associate it with the given Cloud resource. The case object must have the following fields set: display_name, description, classification, and severity.
+  Create a new case and associate it with a parent. It must have the following fields set: `display_name`, `description`, `classification`, and `priority`. If you're just testing the API and don't want to route your case to an agent, set `testCase=true`. EXAMPLES: cURL: ```shell parent="projects/some-project" curl \\ --request POST \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ --header 'Content-Type: application/json' \\ --data '{ "display_name": "Test case created by me.", "description": "a random test case, feel free to close", "classification": { "id": "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8" }, "time_zone": "-07:00", "subscriber_email_addresses": [ "foo@domain.com", "bar@domain.com" ], "testCase": true, "priority": "P3" }' \\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().create( parent="projects/some-project", body={ "displayName": "A Test Case", "description": "This is a test case.", "testCase": True, "priority": "P2", "classification": { "id": "100IK2AKCLHMGRJ9CDGMOCGP8DM6UTB4BT262T31BT1M2T31DHNMENPO6KS36CPJ786L2TBFEHGN6NPI64R3CDHN8880G08I1H3MURR7DHII0GRCDTQM8" }, }, ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Cloud resource under which the case should be created.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent under which the case should be created.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -182,12 +182,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Escalate a case. Escalating a case will initiate the Cloud Support escalation management process. This operation is only available to certain Customer Care tiers. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which tiers are able to perform escalations.
+  Escalate a case, starting the Google Cloud Support escalation management process. This operation is only available for some support services. Go to https://cloud.google.com/support and look for 'Technical support escalations' in the feature list to find out which ones let you do that. EXAMPLES: cURL: ```shell case="projects/some-project/cases/43595344" curl \\ --request POST \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ --header "Content-Type: application/json" \\ --data '{ "escalation": { "reason": "BUSINESS_IMPACT", "justification": "This is a test escalation." } }' \\ "https://cloudsupport.googleapis.com/v2/$case:escalate" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().escalate( name="projects/some-project/cases/43595344", body={ "escalation": { "reason": "BUSINESS_IMPACT", "justification": "This is a test escalation.", }, }, ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the Case resource to be escalated.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The name of the case to be escalated.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -262,12 +262,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Retrieve the specified case.
+  Retrieve a case. EXAMPLES: cURL: ```shell case="projects/some-project/cases/16033687" curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$case" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().get( name="projects/some-project/cases/43595344", ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of a case to be retrieved.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `name`. Required. The full name of a case to be retrieved.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -340,12 +340,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Retrieve all cases under the specified parent. Note: Listing cases under an Organization returns only the cases directly parented by that organization. To retrieve all cases under an organization, including cases parented by projects under that organization, use `cases.search`.
+  Retrieve all cases under a parent, but not its children. For example, listing cases under an organization only returns the cases that are directly parented by that organization. To retrieve cases under an organization and its projects, use `cases.search`. EXAMPLES: cURL: ```shell parent="projects/some-project" curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$parent/cases" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().list(parent="projects/some-project") print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The fully qualified name of parent resource to list cases under.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of a parent to list cases under.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -359,9 +359,10 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An expression written in filter language. If non-empty, the query returns the cases that match the filter. Else, the query doesn't filter the cases. Filter expressions use the following fields with the operators equals (`=`) and `AND`: - `state`: The accepted values are `OPEN` or `CLOSED`. - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - [DEPRECATED] `severity`: The accepted values are `S0`, `S1`, `S2`, `S3`, or `S4`. - `creator.email`: The email address of the case creator. Examples: - `state=CLOSED` - `state=OPEN AND creator.email="tester@example.com"` - `state=OPEN AND (priority=P0 OR priority=P1)`
+      *   `:filter` (*type:* `String.t`) - An expression used to filter cases. If it's an empty string, then no filtering happens. Otherwise, the endpoint returns the cases that match the filter. Expressions use the following fields separated by `AND` and specified with `=`: - `state`: Can be `OPEN` or `CLOSED`. - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - `creator.email`: The email address of the case creator. EXAMPLES: - `state=CLOSED` - `state=OPEN AND creator.email="tester@example.com"` - `state=OPEN AND (priority=P0 OR priority=P1)`
       *   `:pageSize` (*type:* `integer()`) - The maximum number of cases fetched with each request. Defaults to 10.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
+      *   `:productLine` (*type:* `String.t`) - The product line for which to request cases for. If unspecified, only Google Cloud cases will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -395,7 +396,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :productLine => :query
     }
 
     request =
@@ -414,7 +416,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Update the specified case. Only a subset of fields (display_name, description, time_zone, subscriber_email_addresses, related_resources, severity, priority, primary_contact, and labels) can be updated.
+  Update a case. Only some fields can be updated. EXAMPLES: cURL: ```shell case="projects/some-project/cases/43595344" curl \\ --request PATCH \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ --header "Content-Type: application/json" \\ --data '{ "priority": "P1" }' \\ "https://cloudsupport.googleapis.com/v2/$case?updateMask=priority" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().patch( name="projects/some-project/cases/43112854", body={ "displayName": "This is Now a New Title", "priority": "P2", }, ) print(request.execute()) ```
 
   ## Parameters
 
@@ -434,7 +436,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - A field that represents attributes of a case object that should be updated as part of this request. Supported values are severity, display_name, and subscriber_email_addresses. If no fields are specified, all supported fields will be updated. WARNING: If you do not provide a field mask then you may accidentally clear some fields. For example, if you leave field mask empty and do not provide a value for subscriber_email_addresses then subscriber_email_addresses will be updated to empty.
+      *   `:updateMask` (*type:* `String.t`) - A list of attributes of the case that should be updated. Supported values are `priority`, `display_name`, and `subscriber_email_addresses`. If no fields are specified, all supported fields are updated. Be careful - if you do not provide a field mask, then you might accidentally clear some fields. For example, if you leave the field mask empty and do not provide a value for `subscriber_email_addresses`, then `subscriber_email_addresses` is updated to empty.
       *   `:body` (*type:* `GoogleApi.CloudSupport.V2beta.Model.Case.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -496,7 +498,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Search cases using the specified query.
+  Search for cases using a query. EXAMPLES: cURL: ```shell parent="projects/some-project" curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$parent/cases:search" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = supportApiService.cases().search( parent="projects/some-project", query="state=OPEN" ) print(request.execute()) ```
 
   ## Parameters
 
@@ -515,7 +517,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of cases fetched with each request. The default page size is 10.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
-      *   `:query` (*type:* `String.t`) - An expression written in filter language. A query uses the following fields with the operators equals (`=`) and `AND`: - `organization`: An organization name in the form `organizations/`. - `project`: A project name in the form `projects/`. - `state`: The accepted values are `OPEN` or `CLOSED`. - `priority`: The accepted values are `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - [DEPRECATED] `severity`: The accepted values are `S0`, `S1`, `S2`, `S3`, or `S4`. - `creator.email`: The email address of the case creator. - `billingAccount`: A billing account in the form `billingAccounts/` You must specify eitehr `organization` or `project`. To search across `displayName`, `description`, and comments, use a global restriction with no keyword or operator. For example, `"my search"`. To search only cases updated after a certain date, use `update_time` retricted with that particular date, time, and timezone in ISO datetime format. For example, `update_time>"2020-01-01T00:00:00-05:00"`. `update_time` only supports the greater than operator (`>`). Examples: - `organization="organizations/123456789"` - `project="projects/my-project-id"` - `project="projects/123456789"` - `billing_account="billingAccounts/123456-A0B0C0-CUZ789"` - `organization="organizations/123456789" AND state=CLOSED` - `project="projects/my-project-id" AND creator.email="tester@example.com"` - `project="projects/my-project-id" AND (priority=P0 OR priority=P1)`
+      *   `:parent` (*type:* `String.t`) - The name of the parent resource to search for cases under.
+      *   `:query` (*type:* `String.t`) - An expression used to filter cases. Expressions use the following fields separated by `AND` and specified with `=`: - `organization`: An organization name in the form `organizations/`. - `project`: A project name in the form `projects/`. - `state`: Can be `OPEN` or `CLOSED`. - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - `creator.email`: The email address of the case creator. You must specify either `organization` or `project`. To search across `displayName`, `description`, and comments, use a global restriction with no keyword or operator. For example, `"my search"`. To search only cases updated after a certain date, use `update_time` restricted with that particular date, time, and timezone in ISO datetime format. For example, `update_time>"2020-01-01T00:00:00-05:00"`. `update_time` only supports the greater than operator (`>`). Examples: - `organization="organizations/123456789"` - `project="projects/my-project-id"` - `project="projects/123456789"` - `organization="organizations/123456789" AND state=CLOSED` - `project="projects/my-project-id" AND creator.email="tester@example.com"` - `project="projects/my-project-id" AND (priority=P0 OR priority=P1)`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -543,6 +546,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       :upload_protocol => :query,
       :pageSize => :query,
       :pageToken => :query,
+      :parent => :query,
       :query => :query
     }
 
@@ -561,12 +565,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Retrieve all attachments associated with a support case.
+  List all the attachments associated with a support case. EXAMPLES: cURL: ```shell case="projects/some-project/cases/23598314" curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$case/attachments" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = ( supportApiService.cases() .attachments() .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of Case object for which attachments should be listed.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case for which attachments should be listed.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -645,12 +649,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Add a new comment to the specified Case. The comment object must have the following fields set: body.
+  Add a new comment to a case. The comment must have the following fields set: `body`. EXAMPLES: cURL: ```shell case="projects/some-project/cases/43591344" curl \\ --request POST \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ --header 'Content-Type: application/json' \\ --data '{ "body": "This is a test comment." }' \\ "https://cloudsupport.googleapis.com/v2/$case/comments" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = ( supportApiService.cases() .comments() .create( parent="projects/some-project/cases/43595344", body={"body": "This is a test comment."}, ) ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of Case to which this comment should be added.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case to which the comment should be added.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -725,12 +729,12 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
   end
 
   @doc """
-  Retrieve all Comments associated with the Case object.
+  List all the comments associated with a case. EXAMPLES: cURL: ```shell case="projects/some-project/cases/43595344" curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ "https://cloudsupport.googleapis.com/v2/$case/comments" ``` Python: ```python import googleapiclient.discovery api_version = "v2" supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version=api_version, discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version={api_version}", ) request = ( supportApiService.cases() .comments() .list(parent="projects/some-project/cases/43595344") ) print(request.execute()) ```
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2beta.Connection.t`) - Connection to server
-  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of Case object for which comments should be listed.
+  *   `v2beta_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case for which to list comments.
   *   `v2beta_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2betaId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -745,8 +749,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of comments fetched with each request. Defaults to 10.
-      *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of comments to fetch. Defaults to 10.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

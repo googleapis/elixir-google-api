@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.ListCommentsResponse do
 
   ## Attributes
 
-  *   `comments` (*type:* `list(GoogleApi.CloudSupport.V2beta.Model.Comment.t)`, *default:* `nil`) - The list of Comments associated with the given Case.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. This should be set in the `page_token` field of subsequent `ListCommentsRequest` message that is issued. If unspecified, there are no more results to retrieve.
+  *   `comments` (*type:* `list(GoogleApi.CloudSupport.V2beta.Model.Comment.t)`, *default:* `nil`) - List of the comments associated with the case.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Set this in the `page_token` field of subsequent `cases.comments.list` requests. If unspecified, there are no more results to retrieve.
   """
 
   use GoogleApi.Gax.ModelBase

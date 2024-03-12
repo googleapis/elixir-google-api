@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.SearchCasesResponse do
 
   ## Attributes
 
-  *   `cases` (*type:* `list(GoogleApi.CloudSupport.V2beta.Model.Case.t)`, *default:* `nil`) - The list of Case associated with the cloud resource, after any filters have been applied.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. This should be set in the `page_token` field of subsequent `SearchCaseRequest` message that is issued. If unspecified, there are no more results to retrieve.
+  *   `cases` (*type:* `list(GoogleApi.CloudSupport.V2beta.Model.Case.t)`, *default:* `nil`) - The list of cases associated with the parent after any filters have been applied.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Set this in the `page_token` field of subsequent `cases.search` requests. If unspecified, there are no more results to retrieve.
   """
 
   use GoogleApi.Gax.ModelBase

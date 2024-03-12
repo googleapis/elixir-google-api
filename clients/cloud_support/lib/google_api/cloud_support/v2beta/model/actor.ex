@@ -17,13 +17,14 @@
 
 defmodule GoogleApi.CloudSupport.V2beta.Model.Actor do
   @moduledoc """
-  An object containing information about the effective user and authenticated principal responsible for an action.
+  An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case.
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name to display for the actor. If not provided, it is inferred from credentials supplied during case creation. When an email is provided, a display name must also be provided. This will be obfuscated if the user is a Google Support agent.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the actor. If not provided, it is inferred from credentials supplied during case creation. If the authenticated principal does not have an email address, one must be provided. When a name is provided, an email must also be provided. This will be obfuscated if the user is a Google Support agent.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the actor. If not provided, it is inferred from the credentials supplied during case creation. When a name is provided, an email must also be provided. If the user is a Google Support agent, this is obfuscated. This field is deprecated. Use **username** field instead.
   *   `googleSupport` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the actor is a Google support actor.
+  *   `username` (*type:* `String.t`, *default:* `nil`) - Output only. The username of the actor. It may look like an email or other format provided by the identity provider. If not provided, it is inferred from the credentials supplied. When a name is provided, a username must also be provided. If the user is a Google Support agent, this will not be set.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.Actor do
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :email => String.t() | nil,
-          :googleSupport => boolean() | nil
+          :googleSupport => boolean() | nil,
+          :username => String.t() | nil
         }
 
   field(:displayName)
   field(:email)
   field(:googleSupport)
+  field(:username)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSupport.V2beta.Model.Actor do

@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.CaseClassifications do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Retrieve valid classifications to be used when creating a support case. The classications are hierarchical, with each classification containing all levels of the hierarchy, separated by " > ". For example "Technical Issue > Compute > Compute Engine".
+  Retrieve valid classifications to use when creating a support case. Classifications are hierarchical. Each classification is a string containing all levels of the hierarchy separated by `" > "`. For example, `"Technical Issue > Compute > Compute Engine"`. Classification IDs returned by this endpoint are valid for at least six months. When a classification is deactivated, this endpoint immediately stops returning it. After six months, `case.create` requests using the classification will fail. EXAMPLES: cURL: ```shell curl \\ --header "Authorization: Bearer $(gcloud auth print-access-token)" \\ 'https://cloudsupport.googleapis.com/v2/caseClassifications:search?query=display_name:"*Compute%20Engine*"' ``` Python: ```python import googleapiclient.discovery supportApiService = googleapiclient.discovery.build( serviceName="cloudsupport", version="v2", discoveryServiceUrl=f"https://cloudsupport.googleapis.com/$discovery/rest?version=v2", ) request = supportApiService.caseClassifications().search( query='display_name:"*Compute Engine*"' ) print(request.execute()) ```
 
   ## Parameters
 
@@ -43,9 +43,11 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.CaseClassifications do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of cases fetched with each request.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of classifications fetched with each request.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
-      *   `:query` (*type:* `String.t`) - An expression written in the Cloud filter language. If non-empty, then only cases whose fields match the filter are returned. If empty, then no messages are filtered out.
+      *   `:"product.productLine"` (*type:* `String.t`) - The Product Line of the Product.
+      *   `:"product.productSubline"` (*type:* `String.t`) - The Product Subline of the Product, such as "Maps Billing".
+      *   `:query` (*type:* `String.t`) - An expression used to filter case classifications. If it's an empty string, then no filtering happens. Otherwise, case classifications will be returned that match the filter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -73,6 +75,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.CaseClassifications do
       :upload_protocol => :query,
       :pageSize => :query,
       :pageToken => :query,
+      :"product.productLine" => :query,
+      :"product.productSubline" => :query,
       :query => :query
     }
 
