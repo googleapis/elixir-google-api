@@ -22,10 +22,11 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
   ## Attributes
 
   *   `azureadConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig.t`, *default:* `nil`) - AzureAD specific Configuration.
-  *   `googleConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t`, *default:* `nil`) - GoogleConfig specific configuration
+  *   `googleConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t`, *default:* `nil`) - GoogleConfig specific configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier for auth config.
   *   `oidcConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t`, *default:* `nil`) - OIDC specific configuration.
   *   `proxy` (*type:* `String.t`, *default:* `nil`) - Proxy server address to use for auth method.
+  *   `samlConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceSamlConfig.t`, *default:* `nil`) - SAML specific configuration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
           :googleConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t() | nil,
           :name => String.t() | nil,
           :oidcConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t() | nil,
-          :proxy => String.t() | nil
+          :proxy => String.t() | nil,
+          :samlConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceSamlConfig.t() | nil
         }
 
   field(:azureadConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig)
@@ -43,6 +45,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
   field(:name)
   field(:oidcConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig)
   field(:proxy)
+  field(:samlConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceSamlConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do

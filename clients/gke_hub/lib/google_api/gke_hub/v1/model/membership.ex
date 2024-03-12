@@ -27,8 +27,9 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description of this membership, limited to 63 characters. Must match the regex: `a-zA-Z0-9*` This field is present for legacy purposes.
   *   `endpoint` (*type:* `GoogleApi.GKEHub.V1.Model.MembershipEndpoint.t`, *default:* `nil`) - Optional. Endpoint information to reach this member.
   *   `externalId` (*type:* `String.t`, *default:* `nil`) - Optional. An externally-generated and managed ID for this Membership. This ID may be modified after creation, but this is not recommended. The ID must match the regex: `a-zA-Z0-9*` If this Membership represents a Kubernetes cluster, this value should be set to the UID of the `kube-system` namespace object.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. GCP labels for this membership.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels for this membership.
   *   `lastConnectionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. For clusters using Connect, the timestamp of the most recent connection established with Google Cloud. This time is updated every several minutes, not continuously. For clusters that do not use GKE Connect, or that have never connected successfully, this field will be unset.
+  *   `monitoringConfig` (*type:* `GoogleApi.GKEHub.V1.Model.MonitoringConfig.t`, *default:* `nil`) - Optional. The monitoring config information for this membership.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full, unique name of this Membership resource in the format `projects/*/locations/*/memberships/{membership_id}`, set during creation. `membership_id` must be a valid RFC 1123 compliant DNS label: 1. At most 63 characters in length 2. It must consist of lower case alphanumeric characters or `-` 3. It must start and end with an alphanumeric character Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters.
   *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.MembershipState.t`, *default:* `nil`) - Output only. State of the Membership resource.
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - Output only. Google-generated UUID for this resource. This is unique across all Membership resources. If a Membership resource is deleted and another resource with the same name is created, it gets a different unique_id.
@@ -46,6 +47,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
           :externalId => String.t() | nil,
           :labels => map() | nil,
           :lastConnectionTime => DateTime.t() | nil,
+          :monitoringConfig => GoogleApi.GKEHub.V1.Model.MonitoringConfig.t() | nil,
           :name => String.t() | nil,
           :state => GoogleApi.GKEHub.V1.Model.MembershipState.t() | nil,
           :uniqueId => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Membership do
   field(:externalId)
   field(:labels, type: :map)
   field(:lastConnectionTime, as: DateTime)
+  field(:monitoringConfig, as: GoogleApi.GKEHub.V1.Model.MonitoringConfig)
   field(:name)
   field(:state, as: GoogleApi.GKEHub.V1.Model.MembershipState)
   field(:uniqueId)

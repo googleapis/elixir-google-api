@@ -22,7 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.GkeCluster do
   ## Attributes
 
   *   `clusterMissing` (*type:* `boolean()`, *default:* `nil`) - Output only. If cluster_missing is set then it denotes that the GKE cluster no longer exists in the GKE Control Plane.
-  *   `resourceLink` (*type:* `String.t`, *default:* `nil`) - Immutable. Self-link of the GCP resource for the GKE cluster. For example: //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster Zonal clusters are also supported.
+  *   `resourceLink` (*type:* `String.t`, *default:* `nil`) - Immutable. Self-link of the Google Cloud resource for the GKE cluster. For example: //container.googleapis.com/projects/my-project/locations/us-west1-a/clusters/my-cluster Zonal clusters are also supported.
   """
 
   use GoogleApi.Gax.ModelBase

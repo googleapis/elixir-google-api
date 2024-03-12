@@ -23,7 +23,8 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Feature resource was created.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Feature resource was deleted.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - GCP labels for this Feature.
+  *   `fleetDefaultMemberConfig` (*type:* `GoogleApi.GKEHub.V1.Model.CommonFleetDefaultMemberConfigSpec.t`, *default:* `nil`) - Optional. Feature configuration applicable to all memberships of the fleet.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels for this Feature.
   *   `membershipSpecs` (*type:* `%{optional(String.t) => GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec.t}`, *default:* `nil`) - Optional. Membership-specific configuration for this Feature. If this Feature does not support any per-Membership configuration, this field may be unused. The keys indicate which Membership the configuration is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Membership is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature.
   *   `membershipStates` (*type:* `%{optional(String.t) => GoogleApi.GKEHub.V1.Model.MembershipFeatureState.t}`, *default:* `nil`) - Output only. Membership-specific Feature status. If this Feature does report any per-Membership status, this field may be unused. The keys indicate which Membership the state is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project number, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} MUST match the Feature's project number.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full, unique name of this Feature resource in the format `projects/*/locations/*/features/*`.
@@ -40,6 +41,8 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :deleteTime => DateTime.t() | nil,
+          :fleetDefaultMemberConfig =>
+            GoogleApi.GKEHub.V1.Model.CommonFleetDefaultMemberConfigSpec.t() | nil,
           :labels => map() | nil,
           :membershipSpecs =>
             %{optional(String.t()) => GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec.t()} | nil,
@@ -58,6 +61,11 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
 
   field(:createTime, as: DateTime)
   field(:deleteTime, as: DateTime)
+
+  field(:fleetDefaultMemberConfig,
+    as: GoogleApi.GKEHub.V1.Model.CommonFleetDefaultMemberConfigSpec
+  )
+
   field(:labels, type: :map)
   field(:membershipSpecs, as: GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec, type: :map)
   field(:membershipStates, as: GoogleApi.GKEHub.V1.Model.MembershipFeatureState, type: :map)

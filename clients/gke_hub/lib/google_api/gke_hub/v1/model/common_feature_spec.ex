@@ -22,6 +22,8 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
   ## Attributes
 
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec.t`, *default:* `nil`) - Appdevexperience specific spec.
+  *   `clusterupgrade` (*type:* `GoogleApi.GKEHub.V1.Model.ClusterUpgradeFleetSpec.t`, *default:* `nil`) - ClusterUpgrade (fleet-based) feature spec.
+  *   `dataplanev2` (*type:* `GoogleApi.GKEHub.V1.Model.DataplaneV2FeatureSpec.t`, *default:* `nil`) - DataplaneV2 feature spec.
   *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec.t`, *default:* `nil`) - FleetObservability feature spec.
   *   `multiclusteringress` (*type:* `GoogleApi.GKEHub.V1.Model.MultiClusterIngressFeatureSpec.t`, *default:* `nil`) - Multicluster Ingress-specific spec.
   """
@@ -30,6 +32,8 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
 
   @type t :: %__MODULE__{
           :appdevexperience => GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec.t() | nil,
+          :clusterupgrade => GoogleApi.GKEHub.V1.Model.ClusterUpgradeFleetSpec.t() | nil,
+          :dataplanev2 => GoogleApi.GKEHub.V1.Model.DataplaneV2FeatureSpec.t() | nil,
           :fleetobservability =>
             GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec.t() | nil,
           :multiclusteringress =>
@@ -37,6 +41,8 @@ defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
         }
 
   field(:appdevexperience, as: GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureSpec)
+  field(:clusterupgrade, as: GoogleApi.GKEHub.V1.Model.ClusterUpgradeFleetSpec)
+  field(:dataplanev2, as: GoogleApi.GKEHub.V1.Model.DataplaneV2FeatureSpec)
   field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec)
   field(:multiclusteringress, as: GoogleApi.GKEHub.V1.Model.MultiClusterIngressFeatureSpec)
 end

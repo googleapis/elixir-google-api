@@ -21,9 +21,10 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
 
   ## Attributes
 
-  *   `allowVerticalScale` (*type:* `boolean()`, *default:* `nil`) - Set to true to allow the vertical scaling. Defaults to false which disallows vertical scaling.
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables the installation of ConfigSync. If set to true, ConfigSync resources will be created and the other ConfigSync fields will be applied if exist. If set to false, all other ConfigSync fields will be ignored, ConfigSync resources will be deleted. If omitted, ConfigSync resources will be managed depends on the presence of git field.
+  *   `allowVerticalScale` (*type:* `boolean()`, *default:* `nil`) - Set to true to allow the vertical scaling. Defaults to false which disallows vertical scaling. This field is deprecated.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Enables the installation of ConfigSync. If set to true, ConfigSync resources will be created and the other ConfigSync fields will be applied if exist. If set to false, all other ConfigSync fields will be ignored, ConfigSync resources will be deleted. If omitted, ConfigSync resources will be managed depends on the presence of the git or oci field.
   *   `git` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t`, *default:* `nil`) - Git repo configuration for the cluster.
+  *   `metricsGcpServiceAccountEmail` (*type:* `String.t`, *default:* `nil`) - The Email of the Google Cloud Service Account (GSA) used for exporting Config Sync metrics to Cloud Monitoring and Cloud Monarch when Workload Identity is enabled. The GSA should have the Monitoring Metric Writer (roles/monitoring.metricWriter) IAM role. The Kubernetes ServiceAccount `default` in the namespace `config-management-monitoring` should be bound to the GSA.
   *   `oci` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t`, *default:* `nil`) - OCI repo configuration for the cluster
   *   `preventDrift` (*type:* `boolean()`, *default:* `nil`) - Set to true to enable the Config Sync admission webhook to prevent drifts. If set to `false`, disables the Config Sync admission webhook and does not prevent drifts.
   *   `sourceFormat` (*type:* `String.t`, *default:* `nil`) - Specifies whether the Config Sync Repo is in "hierarchical" or "unstructured" mode.
@@ -35,6 +36,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
           :allowVerticalScale => boolean() | nil,
           :enabled => boolean() | nil,
           :git => GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig.t() | nil,
+          :metricsGcpServiceAccountEmail => String.t() | nil,
           :oci => GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig.t() | nil,
           :preventDrift => boolean() | nil,
           :sourceFormat => String.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync do
   field(:allowVerticalScale)
   field(:enabled)
   field(:git, as: GoogleApi.GKEHub.V1.Model.ConfigManagementGitConfig)
+  field(:metricsGcpServiceAccountEmail)
   field(:oci, as: GoogleApi.GKEHub.V1.Model.ConfigManagementOciConfig)
   field(:preventDrift)
   field(:sourceFormat)

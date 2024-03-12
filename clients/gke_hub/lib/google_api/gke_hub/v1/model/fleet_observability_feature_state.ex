@@ -17,15 +17,29 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState do
   @moduledoc """
-  **FleetObservability**: An empty state left as an example Hub-wide Feature state.
+  **FleetObservability**: Hub-wide Feature for FleetObservability feature. state.
 
   ## Attributes
 
+  *   `logging` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityLoggingState.t`, *default:* `nil`) - The feature state of default logging.
+  *   `monitoring` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityMonitoringState.t`, *default:* `nil`) - The feature state of fleet monitoring.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :logging =>
+            GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityLoggingState.t() | nil,
+          :monitoring =>
+            GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityMonitoringState.t()
+            | nil
+        }
+
+  field(:logging, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityLoggingState)
+
+  field(:monitoring,
+    as: GoogleApi.GKEHub.V1.Model.FleetObservabilityFleetObservabilityMonitoringState
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState do

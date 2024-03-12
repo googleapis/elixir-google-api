@@ -21,11 +21,16 @@ defmodule GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec do
 
   ## Attributes
 
+  *   `loggingConfig` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityLoggingConfig.t`, *default:* `nil`) - Specified if fleet logging feature is enabled for the entire fleet. If UNSPECIFIED, fleet logging feature is disabled for the entire fleet.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :loggingConfig => GoogleApi.GKEHub.V1.Model.FleetObservabilityLoggingConfig.t() | nil
+        }
+
+  field(:loggingConfig, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityLoggingConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureSpec do

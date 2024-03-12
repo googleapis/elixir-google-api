@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   @moduledoc """
-  MembershipFeatureSpec contains configuration information for a single Membership.
+  MembershipFeatureSpec contains configuration information for a single Membership. NOTE: Please use snake case in your feature name.
 
   ## Attributes
 
@@ -25,6 +25,8 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec.t`, *default:* `nil`) - Fleet observability membership spec
   *   `identityservice` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec.t`, *default:* `nil`) - Identity Service-specific spec.
   *   `mesh` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t`, *default:* `nil`) - Anthos Service Mesh-specific spec
+  *   `origin` (*type:* `GoogleApi.GKEHub.V1.Model.Origin.t`, *default:* `nil`) - Whether this per-Membership spec was inherited from a fleet-level default. This field can be updated by users by either overriding a Membership config (updated to USER implicitly) or setting to FLEET explicitly.
+  *   `policycontroller` (*type:* `GoogleApi.GKEHub.V1.Model.PolicyControllerMembershipSpec.t`, *default:* `nil`) - Policy Controller spec.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +36,17 @@ defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
           :fleetobservability =>
             GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec.t() | nil,
           :identityservice => GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec.t() | nil,
-          :mesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t() | nil
+          :mesh => GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec.t() | nil,
+          :origin => GoogleApi.GKEHub.V1.Model.Origin.t() | nil,
+          :policycontroller => GoogleApi.GKEHub.V1.Model.PolicyControllerMembershipSpec.t() | nil
         }
 
   field(:configmanagement, as: GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec)
   field(:fleetobservability, as: GoogleApi.GKEHub.V1.Model.FleetObservabilityMembershipSpec)
   field(:identityservice, as: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec)
   field(:mesh, as: GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipSpec)
+  field(:origin, as: GoogleApi.GKEHub.V1.Model.Origin)
+  field(:policycontroller, as: GoogleApi.GKEHub.V1.Model.PolicyControllerMembershipSpec)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
