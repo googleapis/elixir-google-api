@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy do
   ## Attributes
 
   *   `complexity` (*type:* `String.t`, *default:* `nil`) - The complexity of the password.
+  *   `disallowCompromisedCredentials` (*type:* `boolean()`, *default:* `nil`) - This field is deprecated and will be removed in a future version of the API.
   *   `disallowUsernameSubstring` (*type:* `boolean()`, *default:* `nil`) - Disallow username as a part of the password.
   *   `enablePasswordPolicy` (*type:* `boolean()`, *default:* `nil`) - Whether the password policy is enabled or not.
   *   `minLength` (*type:* `integer()`, *default:* `nil`) - Minimum number of characters allowed.
@@ -33,6 +34,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy do
 
   @type t :: %__MODULE__{
           :complexity => String.t() | nil,
+          :disallowCompromisedCredentials => boolean() | nil,
           :disallowUsernameSubstring => boolean() | nil,
           :enablePasswordPolicy => boolean() | nil,
           :minLength => integer() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.PasswordValidationPolicy do
         }
 
   field(:complexity)
+  field(:disallowCompromisedCredentials)
   field(:disallowUsernameSubstring)
   field(:enablePasswordPolicy)
   field(:minLength)

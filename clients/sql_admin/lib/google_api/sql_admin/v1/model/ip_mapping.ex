@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SQLAdmin.V1.Model.IpMapping do
   @moduledoc """
-  Database instance IP Mapping.
+  Database instance IP mapping
 
   ## Attributes
 

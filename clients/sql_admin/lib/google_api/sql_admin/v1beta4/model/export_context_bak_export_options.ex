@@ -21,6 +21,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions do
 
   ## Attributes
 
+  *   `bakType` (*type:* `String.t`, *default:* `nil`) - Type of this bak file will be export, FULL or DIFF, SQL Server only
+  *   `copyOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated: copy_only is deprecated. Use differential_base instead
+  *   `differentialBase` (*type:* `boolean()`, *default:* `nil`) - Whether or not the backup can be used as a differential base copy_only backup can not be served as differential base
   *   `stripeCount` (*type:* `integer()`, *default:* `nil`) - Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen.
   *   `striped` (*type:* `boolean()`, *default:* `nil`) - Whether or not the export should be striped.
   """
@@ -28,10 +31,16 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bakType => String.t() | nil,
+          :copyOnly => boolean() | nil,
+          :differentialBase => boolean() | nil,
           :stripeCount => integer() | nil,
           :striped => boolean() | nil
         }
 
+  field(:bakType)
+  field(:copyOnly)
+  field(:differentialBase)
   field(:stripeCount)
   field(:striped)
 end

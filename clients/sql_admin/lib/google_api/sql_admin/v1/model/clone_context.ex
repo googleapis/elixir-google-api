@@ -28,6 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#cloneContext`.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
   *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp, if specified, identifies the time to which the source instance is cloned.
+  *   `preferredZone` (*type:* `String.t`, *default:* `nil`) - Optional. (Point-in-time recovery for PostgreSQL only) Clone to an instance in the specified zone. If no zone is specified, clone to the same zone as the source instance.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
           :destinationInstanceName => String.t() | nil,
           :kind => String.t() | nil,
           :pitrTimestampMs => String.t() | nil,
-          :pointInTime => DateTime.t() | nil
+          :pointInTime => DateTime.t() | nil,
+          :preferredZone => String.t() | nil
         }
 
   field(:allocatedIpRange)
@@ -49,6 +51,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
   field(:kind)
   field(:pitrTimestampMs)
   field(:pointInTime, as: DateTime)
+  field(:preferredZone)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.CloneContext do
