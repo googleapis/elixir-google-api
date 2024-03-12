@@ -21,15 +21,18 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.MoveAssignmentRequest do
 
   ## Attributes
 
+  *   `assignmentId` (*type:* `String.t`, *default:* `nil`) - The optional assignment ID. A new assignment name is generated if this field is empty. This field can contain only lowercase alphanumeric characters or dashes. Max length is 64 characters.
   *   `destinationId` (*type:* `String.t`, *default:* `nil`) - The new reservation ID, e.g.: `projects/myotherproject/locations/US/reservations/team2-prod`
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :assignmentId => String.t() | nil,
           :destinationId => String.t() | nil
         }
 
+  field(:assignmentId)
   field(:destinationId)
 end
 
