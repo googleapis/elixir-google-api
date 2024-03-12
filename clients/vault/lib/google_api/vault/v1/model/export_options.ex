@@ -21,6 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
 
   ## Attributes
 
+  *   `calendarOptions` (*type:* `GoogleApi.Vault.V1.Model.CalendarExportOptions.t`, *default:* `nil`) - Option available for Calendar export.
   *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveExportOptions.t`, *default:* `nil`) - Options for Drive exports.
   *   `groupsOptions` (*type:* `GoogleApi.Vault.V1.Model.GroupsExportOptions.t`, *default:* `nil`) - Options for Groups exports.
   *   `hangoutsChatOptions` (*type:* `GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t`, *default:* `nil`) - Options for Chat exports.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :calendarOptions => GoogleApi.Vault.V1.Model.CalendarExportOptions.t() | nil,
           :driveOptions => GoogleApi.Vault.V1.Model.DriveExportOptions.t() | nil,
           :groupsOptions => GoogleApi.Vault.V1.Model.GroupsExportOptions.t() | nil,
           :hangoutsChatOptions => GoogleApi.Vault.V1.Model.HangoutsChatExportOptions.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Vault.V1.Model.ExportOptions do
           :voiceOptions => GoogleApi.Vault.V1.Model.VoiceExportOptions.t() | nil
         }
 
+  field(:calendarOptions, as: GoogleApi.Vault.V1.Model.CalendarExportOptions)
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveExportOptions)
   field(:groupsOptions, as: GoogleApi.Vault.V1.Model.GroupsExportOptions)
   field(:hangoutsChatOptions, as: GoogleApi.Vault.V1.Model.HangoutsChatExportOptions)

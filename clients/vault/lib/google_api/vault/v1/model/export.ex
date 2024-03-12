@@ -27,6 +27,7 @@ defmodule GoogleApi.Vault.V1.Model.Export do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The generated export ID.
   *   `matterId` (*type:* `String.t`, *default:* `nil`) - Output only. The matter ID.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The export name. Don't use special characters (~!$'(),;@:/?) in the name, they can prevent you from downloading exports.
+  *   `parentExportId` (*type:* `String.t`, *default:* `nil`) - Output only. Identifies the parent export that spawned this child export. This is only set on child exports.
   *   `query` (*type:* `GoogleApi.Vault.V1.Model.Query.t`, *default:* `nil`) - The query parameters used to create the export.
   *   `requester` (*type:* `GoogleApi.Vault.V1.Model.UserInfo.t`, *default:* `nil`) - Output only. The requester of the export.
   *   `stats` (*type:* `GoogleApi.Vault.V1.Model.ExportStats.t`, *default:* `nil`) - Output only. Details about the export progress and size.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Vault.V1.Model.Export do
           :id => String.t() | nil,
           :matterId => String.t() | nil,
           :name => String.t() | nil,
+          :parentExportId => String.t() | nil,
           :query => GoogleApi.Vault.V1.Model.Query.t() | nil,
           :requester => GoogleApi.Vault.V1.Model.UserInfo.t() | nil,
           :stats => GoogleApi.Vault.V1.Model.ExportStats.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Vault.V1.Model.Export do
   field(:id)
   field(:matterId)
   field(:name)
+  field(:parentExportId)
   field(:query, as: GoogleApi.Vault.V1.Model.Query)
   field(:requester, as: GoogleApi.Vault.V1.Model.UserInfo)
   field(:stats, as: GoogleApi.Vault.V1.Model.ExportStats)

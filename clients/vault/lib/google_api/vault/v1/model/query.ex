@@ -22,6 +22,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
   ## Attributes
 
   *   `accountInfo` (*type:* `GoogleApi.Vault.V1.Model.AccountInfo.t`, *default:* `nil`) - Required when **SearchMethod** is **ACCOUNT**.
+  *   `calendarOptions` (*type:* `GoogleApi.Vault.V1.Model.CalendarOptions.t`, *default:* `nil`) - Set Calendar search-specific options.
   *   `corpus` (*type:* `String.t`, *default:* `nil`) - The Google Workspace service to search.
   *   `dataScope` (*type:* `String.t`, *default:* `nil`) - The data source to search.
   *   `driveOptions` (*type:* `GoogleApi.Vault.V1.Model.DriveOptions.t`, *default:* `nil`) - Set Drive search-specific options.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
 
   @type t :: %__MODULE__{
           :accountInfo => GoogleApi.Vault.V1.Model.AccountInfo.t() | nil,
+          :calendarOptions => GoogleApi.Vault.V1.Model.CalendarOptions.t() | nil,
           :corpus => String.t() | nil,
           :dataScope => String.t() | nil,
           :driveOptions => GoogleApi.Vault.V1.Model.DriveOptions.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Vault.V1.Model.Query do
         }
 
   field(:accountInfo, as: GoogleApi.Vault.V1.Model.AccountInfo)
+  field(:calendarOptions, as: GoogleApi.Vault.V1.Model.CalendarOptions)
   field(:corpus)
   field(:dataScope)
   field(:driveOptions, as: GoogleApi.Vault.V1.Model.DriveOptions)
