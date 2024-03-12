@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsData.V1beta.Model.DateRange do
   @moduledoc """
-  A contiguous set of days: startDate, startDate + 1, ..., endDate. Requests are allowed up to 4 date ranges.
+  A contiguous set of days: `startDate`, `startDate + 1`, ..., `endDate`. Requests are allowed up to 4 date ranges.
 
   ## Attributes
 

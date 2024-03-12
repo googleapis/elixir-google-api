@@ -23,7 +23,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.DimensionMetadata do
 
   *   `apiName` (*type:* `String.t`, *default:* `nil`) - This dimension's name. Useable in [Dimension](#Dimension)'s `name`. For example, `eventName`.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The display name of the category that this dimension belongs to. Similar dimensions and metrics are categorized together.
-  *   `customDefinition` (*type:* `boolean()`, *default:* `nil`) - True if the dimension is a custom dimension for this property.
+  *   `customDefinition` (*type:* `boolean()`, *default:* `nil`) - True if the dimension is custom to this property. This includes user, event, & item scoped custom dimensions; to learn more about custom dimensions, see https://support.google.com/analytics/answer/14240153. This also include custom channel groups; to learn more about custom channel groups, see https://support.google.com/analytics/answer/13051316.
   *   `deprecatedApiNames` (*type:* `list(String.t)`, *default:* `nil`) - Still usable but deprecated names for this dimension. If populated, this dimension is available by either `apiName` or one of `deprecatedApiNames` for a period of time. After the deprecation period, the dimension will be available only by `apiName`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of how this dimension is used and calculated.
   *   `uiName` (*type:* `String.t`, *default:* `nil`) - This dimension's name within the Google Analytics user interface. For example, `Event name`.
