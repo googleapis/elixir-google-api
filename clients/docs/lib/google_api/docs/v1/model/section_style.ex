@@ -30,6 +30,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
   *   `evenPageHeaderId` (*type:* `String.t`, *default:* `nil`) - The ID of the header used only for even pages. If the value of DocumentStyle's use_even_page_header_footer is true, this value is used for the headers on even pages in the section. If it is false, the headers on even pages use the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's even_page_header_id. This property is read-only.
   *   `firstPageFooterId` (*type:* `String.t`, *default:* `nil`) - The ID of the footer used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the footer on the first page of the section. If it's false, the footer on the first page of the section uses the default_footer_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_footer_id. This property is read-only.
   *   `firstPageHeaderId` (*type:* `String.t`, *default:* `nil`) - The ID of the header used only for the first page of the section. If use_first_page_header_footer is true, this value is used for the header on the first page of the section. If it's false, the header on the first page of the section uses the default_header_id. If unset, the value inherits from the previous SectionBreak's SectionStyle. If the value is unset in the first SectionBreak, it inherits from DocumentStyle's first_page_header_id. This property is read-only.
+  *   `flipPageOrientation` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to flip the dimensions of DocumentStyle's page_size for this section, which allows changing the page orientation between portrait and landscape. If unset, the value inherits from DocumentStyle's flip_page_orientation. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
   *   `marginBottom` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The bottom page margin of the section. If unset, the value defaults to margin_bottom from DocumentStyle. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
   *   `marginFooter` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The footer margin of the section. If unset, the value defaults to margin_footer from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a footer margin is being respected for this section When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
   *   `marginHeader` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The header margin of the section. If unset, the value defaults to margin_header from DocumentStyle. If updated, use_custom_header_footer_margins is set to true on DocumentStyle. The value of use_custom_header_footer_margins on DocumentStyle indicates if a header margin is being respected for this section. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
@@ -53,6 +54,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
           :evenPageHeaderId => String.t() | nil,
           :firstPageFooterId => String.t() | nil,
           :firstPageHeaderId => String.t() | nil,
+          :flipPageOrientation => boolean() | nil,
           :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
           :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
           :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.Docs.V1.Model.SectionStyle do
   field(:evenPageHeaderId)
   field(:firstPageFooterId)
   field(:firstPageHeaderId)
+  field(:flipPageOrientation)
   field(:marginBottom, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginFooter, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginHeader, as: GoogleApi.Docs.V1.Model.Dimension)

@@ -28,6 +28,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
   *   `evenPageHeaderId` (*type:* `String.t`, *default:* `nil`) - The ID of the header used only for even pages. The value of use_even_page_header_footer determines whether to use the default_header_id or this value for the header on even pages. If not set, there's no even page header. This property is read-only.
   *   `firstPageFooterId` (*type:* `String.t`, *default:* `nil`) - The ID of the footer used only for the first page. If not set then a unique footer for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_footer_id or this value for the footer on the first page. If not set, there's no first page footer. This property is read-only.
   *   `firstPageHeaderId` (*type:* `String.t`, *default:* `nil`) - The ID of the header used only for the first page. If not set then a unique header for the first page does not exist. The value of use_first_page_header_footer determines whether to use the default_header_id or this value for the header on the first page. If not set, there's no first page header. This property is read-only.
+  *   `flipPageOrientation` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to flip the dimensions of the page_size, which allows changing the page orientation between portrait and landscape.
   *   `marginBottom` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The bottom page margin. Updating the bottom page margin on the document style clears the bottom page margin on all section styles.
   *   `marginFooter` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of space between the bottom of the page and the contents of the footer.
   *   `marginHeader` (*type:* `GoogleApi.Docs.V1.Model.Dimension.t`, *default:* `nil`) - The amount of space between the top of the page and the contents of the header.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
           :evenPageHeaderId => String.t() | nil,
           :firstPageFooterId => String.t() | nil,
           :firstPageHeaderId => String.t() | nil,
+          :flipPageOrientation => boolean() | nil,
           :marginBottom => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
           :marginFooter => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
           :marginHeader => GoogleApi.Docs.V1.Model.Dimension.t() | nil,
@@ -71,6 +73,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyle do
   field(:evenPageHeaderId)
   field(:firstPageFooterId)
   field(:firstPageHeaderId)
+  field(:flipPageOrientation)
   field(:marginBottom, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginFooter, as: GoogleApi.Docs.V1.Model.Dimension)
   field(:marginHeader, as: GoogleApi.Docs.V1.Model.Dimension)

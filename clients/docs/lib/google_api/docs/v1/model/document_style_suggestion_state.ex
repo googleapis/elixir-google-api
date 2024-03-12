@@ -28,6 +28,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   *   `evenPageHeaderIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to even_page_header_id.
   *   `firstPageFooterIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to first_page_footer_id.
   *   `firstPageHeaderIdSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to first_page_header_id.
+  *   `flipPageOrientationSuggested` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if there was a suggested change to flip_page_orientation.
   *   `marginBottomSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_bottom.
   *   `marginFooterSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_footer.
   *   `marginHeaderSuggested` (*type:* `boolean()`, *default:* `nil`) - Indicates if there was a suggested change to margin_header.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
           :evenPageHeaderIdSuggested => boolean() | nil,
           :firstPageFooterIdSuggested => boolean() | nil,
           :firstPageHeaderIdSuggested => boolean() | nil,
+          :flipPageOrientationSuggested => boolean() | nil,
           :marginBottomSuggested => boolean() | nil,
           :marginFooterSuggested => boolean() | nil,
           :marginHeaderSuggested => boolean() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.Docs.V1.Model.DocumentStyleSuggestionState do
   field(:evenPageHeaderIdSuggested)
   field(:firstPageFooterIdSuggested)
   field(:firstPageHeaderIdSuggested)
+  field(:flipPageOrientationSuggested)
   field(:marginBottomSuggested)
   field(:marginFooterSuggested)
   field(:marginHeaderSuggested)
