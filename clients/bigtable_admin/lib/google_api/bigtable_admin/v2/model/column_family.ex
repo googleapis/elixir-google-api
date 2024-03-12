@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ColumnFamily do
   ## Attributes
 
   *   `gcRule` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GcRule.t`, *default:* `nil`) - Garbage collection rule specified as a protobuf. Must serialize to at most 500 bytes. NOTE: Garbage collection executes opportunistically in the background, and so it's possible for reads to return a cell even if it matches the active GC expression for its family.
-  *   `stats` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamilyStats.t`, *default:* `nil`) - Only available with STATS_VIEW, this includes summary statistics about column family contents. For statistics over an entire table, see TableStats above.
+  *   `stats` (*type:* `GoogleApi.BigtableAdmin.V2.Model.ColumnFamilyStats.t`, *default:* `nil`) - Output only. Only available with STATS_VIEW, this includes summary statistics about column family contents. For statistics over an entire table, see TableStats above.
   """
 
   use GoogleApi.Gax.ModelBase

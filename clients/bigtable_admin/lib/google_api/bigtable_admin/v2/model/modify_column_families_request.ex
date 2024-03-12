@@ -21,15 +21,18 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.ModifyColumnFamiliesRequest do
 
   ## Attributes
 
+  *   `ignoreWarnings` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, ignore safety checks when modifying the column families.
   *   `modifications` (*type:* `list(GoogleApi.BigtableAdmin.V2.Model.Modification.t)`, *default:* `nil`) - Required. Modifications to be atomically applied to the specified table's families. Entries are applied in order, meaning that earlier modifications can be masked by later ones (in the case of repeated updates to the same family, for example).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ignoreWarnings => boolean() | nil,
           :modifications => list(GoogleApi.BigtableAdmin.V2.Model.Modification.t()) | nil
         }
 
+  field(:ignoreWarnings)
   field(:modifications, as: GoogleApi.BigtableAdmin.V2.Model.Modification, type: :list)
 end
 

@@ -25,7 +25,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Strongly validated etag for optimistic concurrency control. Preserve the value returned from `GetAppProfile` when calling `UpdateAppProfile` to fail the request if there has been a modification in the mean time. The `update_mask` of the request need not include `etag` for this protection to apply. See [Wikipedia](https://en.wikipedia.org/wiki/HTTP_ETag) and [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more details.
   *   `multiClusterRoutingUseAny` (*type:* `GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t`, *default:* `nil`) - Use a multi-cluster routing policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - This field has been deprecated in favor of `standard_isolation.priority`. If you set this field, `standard_isolation.priority` will be set instead. The priority of requests sent using this app profile.
   *   `singleClusterRouting` (*type:* `GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t`, *default:* `nil`) - Use a single-cluster routing policy.
+  *   `standardIsolation` (*type:* `GoogleApi.BigtableAdmin.V2.Model.StandardIsolation.t`, *default:* `nil`) - The standard options used for isolating this app profile's traffic from other use cases.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +38,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
           :multiClusterRoutingUseAny =>
             GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t() | nil,
           :name => String.t() | nil,
-          :singleClusterRouting => GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t() | nil
+          :priority => String.t() | nil,
+          :singleClusterRouting =>
+            GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t() | nil,
+          :standardIsolation => GoogleApi.BigtableAdmin.V2.Model.StandardIsolation.t() | nil
         }
 
   field(:description)
@@ -45,7 +50,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
   field(:multiClusterRoutingUseAny, as: GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny)
 
   field(:name)
+  field(:priority)
   field(:singleClusterRouting, as: GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting)
+  field(:standardIsolation, as: GoogleApi.BigtableAdmin.V2.Model.StandardIsolation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.AppProfile do
