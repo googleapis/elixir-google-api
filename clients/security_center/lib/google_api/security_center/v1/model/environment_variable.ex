@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.EnvironmentVariable do
   @moduledoc """
-  EnvironmentVariable is a name-value pair to store environment variables for Process.
+  A name-value pair representing an environment variable used in an operating system process.
 
   ## Attributes
 

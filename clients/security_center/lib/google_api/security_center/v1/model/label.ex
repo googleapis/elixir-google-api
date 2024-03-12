@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Label do
   @moduledoc """
-  Label represents a generic name=value label. Label has separate name and value fields to support filtering with contains().
+  Represents a generic name-value label. A label has separate name and value fields to support filtering with the `contains()` function. For more information, see [Filtering on array-type fields](https://cloud.google.com/security-command-center/docs/how-to-api-list-findings#array-contains-filtering).
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Label name.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Label value.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the label.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Value that corresponds to the label's name.
   """
 
   use GoogleApi.Gax.ModelBase

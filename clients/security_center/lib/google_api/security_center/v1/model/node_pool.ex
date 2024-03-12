@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.NodePool do
   @moduledoc """
-  Provides GKE Node Pool information.
+  Provides GKE node pool information.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Kubernetes Node pool name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Kubernetes node pool name.
   *   `nodes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Node.t)`, *default:* `nil`) - Nodes associated with the finding.
   """
 

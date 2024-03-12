@@ -17,16 +17,17 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Kubernetes do
   @moduledoc """
-  Kubernetes related attributes.
+  Kubernetes-related attributes.
 
   ## Attributes
 
-  *   `accessReviews` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.AccessReview.t)`, *default:* `nil`) - Provides information on any Kubernetes access reviews (i.e. privilege checks) relevant to the finding.
-  *   `bindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Binding.t)`, *default:* `nil`) - Provides Kubernetes role binding information for findings that involve RoleBindings or ClusterRoleBindings.
-  *   `nodePools` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.NodePool.t)`, *default:* `nil`) - GKE Node Pools associated with the finding. This field will contain NodePool information for each Node, when it is available.
-  *   `nodes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Node.t)`, *default:* `nil`) - Provides Kubernetes Node information.
-  *   `pods` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Pod.t)`, *default:* `nil`) - Kubernetes Pods associated with the finding. This field will contain Pod records for each container that is owned by a Pod.
-  *   `roles` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Role.t)`, *default:* `nil`) - Provides Kubernetes role information for findings that involve Roles or ClusterRoles.
+  *   `accessReviews` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.AccessReview.t)`, *default:* `nil`) - Provides information on any Kubernetes access reviews (privilege checks) relevant to the finding.
+  *   `bindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Binding.t)`, *default:* `nil`) - Provides Kubernetes role binding information for findings that involve [RoleBindings or ClusterRoleBindings](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
+  *   `nodePools` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.NodePool.t)`, *default:* `nil`) - GKE [node pools](https://cloud.google.com/kubernetes-engine/docs/concepts/node-pools) associated with the finding. This field contains node pool information for each node, when it is available.
+  *   `nodes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Node.t)`, *default:* `nil`) - Provides Kubernetes [node](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture#nodes) information.
+  *   `objects` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Object.t)`, *default:* `nil`) - Kubernetes objects related to the finding.
+  *   `pods` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Pod.t)`, *default:* `nil`) - Kubernetes [Pods](https://cloud.google.com/kubernetes-engine/docs/concepts/pod) associated with the finding. This field contains Pod records for each container that is owned by a Pod.
+  *   `roles` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Role.t)`, *default:* `nil`) - Provides Kubernetes role information for findings that involve [Roles or ClusterRoles](https://cloud.google.com/kubernetes-engine/docs/how-to/role-based-access-control).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,6 +38,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Kubernetes do
             list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1Binding.t()) | nil,
           :nodePools => list(GoogleApi.SecurityCenter.V1.Model.NodePool.t()) | nil,
           :nodes => list(GoogleApi.SecurityCenter.V1.Model.Node.t()) | nil,
+          :objects => list(GoogleApi.SecurityCenter.V1.Model.Object.t()) | nil,
           :pods => list(GoogleApi.SecurityCenter.V1.Model.Pod.t()) | nil,
           :roles => list(GoogleApi.SecurityCenter.V1.Model.Role.t()) | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Kubernetes do
 
   field(:nodePools, as: GoogleApi.SecurityCenter.V1.Model.NodePool, type: :list)
   field(:nodes, as: GoogleApi.SecurityCenter.V1.Model.Node, type: :list)
+  field(:objects, as: GoogleApi.SecurityCenter.V1.Model.Object, type: :list)
   field(:pods, as: GoogleApi.SecurityCenter.V1.Model.Pod, type: :list)
   field(:roles, as: GoogleApi.SecurityCenter.V1.Model.Role, type: :list)
 end

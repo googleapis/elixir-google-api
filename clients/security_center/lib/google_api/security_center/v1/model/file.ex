@@ -21,7 +21,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.File do
 
   ## Attributes
 
-  *   `contents` (*type:* `String.t`, *default:* `nil`) - Prefix of the file contents as a JSON encoded string. (Currently only populated for Malicious Script Executed findings.)
+  *   `contents` (*type:* `String.t`, *default:* `nil`) - Prefix of the file contents as a JSON-encoded string.
+  *   `diskPath` (*type:* `GoogleApi.SecurityCenter.V1.Model.DiskPath.t`, *default:* `nil`) - Path of the file in terms of underlying disk/partition identifiers.
   *   `hashedSize` (*type:* `String.t`, *default:* `nil`) - The length in bytes of the file prefix that was hashed. If hashed_size == size, any hashes reported represent the entire file.
   *   `partiallyHashed` (*type:* `boolean()`, *default:* `nil`) - True when the hash covers only a prefix of the file.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Absolute path of the file as a JSON encoded string.
@@ -33,6 +34,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.File do
 
   @type t :: %__MODULE__{
           :contents => String.t() | nil,
+          :diskPath => GoogleApi.SecurityCenter.V1.Model.DiskPath.t() | nil,
           :hashedSize => String.t() | nil,
           :partiallyHashed => boolean() | nil,
           :path => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.File do
         }
 
   field(:contents)
+  field(:diskPath, as: GoogleApi.SecurityCenter.V1.Model.DiskPath)
   field(:hashedSize)
   field(:partiallyHashed)
   field(:path)

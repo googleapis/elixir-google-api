@@ -21,21 +21,24 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Container do
 
   ## Attributes
 
-  *   `imageId` (*type:* `String.t`, *default:* `nil`) - Optional container image id, when provided by the container runtime. Uniquely identifies the container image launched using a container image digest.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the container was created.
+  *   `imageId` (*type:* `String.t`, *default:* `nil`) - Optional container image ID, if provided by the container runtime. Uniquely identifies the container image launched using a container image digest.
   *   `labels` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Label.t)`, *default:* `nil`) - Container labels, as provided by the container runtime.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Container name.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Container image URI provided when configuring a pod/container. May identify a container image version using mutable tags.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the container.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Container image URI provided when configuring a pod or container. This string can identify a container image version using mutable tags.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t() | nil,
           :imageId => String.t() | nil,
           :labels => list(GoogleApi.SecurityCenter.V1.Model.Label.t()) | nil,
           :name => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:createTime, as: DateTime)
   field(:imageId)
   field(:labels, as: GoogleApi.SecurityCenter.V1.Model.Label, type: :list)
   field(:name)

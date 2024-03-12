@@ -22,27 +22,45 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ExternalS
   ## Attributes
 
   *   `assignees` (*type:* `list(String.t)`, *default:* `nil`) - References primary/secondary etc assignees in the external system.
-  *   `externalSystemUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The most recent time when the corresponding finding's ticket/tracker was updated in the external system.
-  *   `externalUid` (*type:* `String.t`, *default:* `nil`) - Identifier that's used to track the given finding in the external system.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - External System Name e.g. jira, demisto, etc. e.g.: `organizations/1234/sources/5678/findings/123456/externalSystems/jira` `folders/1234/sources/5678/findings/123456/externalSystems/jira` `projects/1234/sources/5678/findings/123456/externalSystems/jira`
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Most recent status of the corresponding finding's ticket/tracker in the external system.
+  *   `caseCloseTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the case was closed, as reported by the external system.
+  *   `caseCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the case was created, as reported by the external system.
+  *   `casePriority` (*type:* `String.t`, *default:* `nil`) - The priority of the finding's corresponding case in the external system.
+  *   `caseSla` (*type:* `DateTime.t`, *default:* `nil`) - The SLA of the finding's corresponding case in the external system.
+  *   `caseUri` (*type:* `String.t`, *default:* `nil`) - The link to the finding's corresponding case in the external system.
+  *   `externalSystemUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the case was last updated, as reported by the external system.
+  *   `externalUid` (*type:* `String.t`, *default:* `nil`) - The identifier that's used to track the finding's corresponding case in the external system.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full resource name of the external system, for example: "organizations/1234/sources/5678/findings/123456/externalSystems/jira", "folders/1234/sources/5678/findings/123456/externalSystems/jira", "projects/1234/sources/5678/findings/123456/externalSystems/jira"
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The most recent status of the finding's corresponding case, as reported by the external system.
+  *   `ticketInfo` (*type:* `GoogleApi.SecurityCenter.V1.Model.TicketInfo.t`, *default:* `nil`) - Information about the ticket, if any, that is being used to track the resolution of the issue that is identified by this finding.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :assignees => list(String.t()) | nil,
+          :caseCloseTime => DateTime.t() | nil,
+          :caseCreateTime => DateTime.t() | nil,
+          :casePriority => String.t() | nil,
+          :caseSla => DateTime.t() | nil,
+          :caseUri => String.t() | nil,
           :externalSystemUpdateTime => DateTime.t() | nil,
           :externalUid => String.t() | nil,
           :name => String.t() | nil,
-          :status => String.t() | nil
+          :status => String.t() | nil,
+          :ticketInfo => GoogleApi.SecurityCenter.V1.Model.TicketInfo.t() | nil
         }
 
   field(:assignees, type: :list)
+  field(:caseCloseTime, as: DateTime)
+  field(:caseCreateTime, as: DateTime)
+  field(:casePriority)
+  field(:caseSla, as: DateTime)
+  field(:caseUri)
   field(:externalSystemUpdateTime, as: DateTime)
   field(:externalUid)
   field(:name)
   field(:status)
+  field(:ticketInfo, as: GoogleApi.SecurityCenter.V1.Model.TicketInfo)
 end
 
 defimpl Poison.Decoder,

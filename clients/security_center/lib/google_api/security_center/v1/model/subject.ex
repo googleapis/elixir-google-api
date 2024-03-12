@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.Subject do
   @moduledoc """
-  Represents a Kubernetes Subject.
+  Represents a Kubernetes subject.
 
   ## Attributes
 
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Authentication type for subject.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for subject.
-  *   `ns` (*type:* `String.t`, *default:* `nil`) - Namespace for subject.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Authentication type for the subject.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the subject.
+  *   `ns` (*type:* `String.t`, *default:* `nil`) - Namespace for the subject.
   """
 
   use GoogleApi.Gax.ModelBase

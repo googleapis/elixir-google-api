@@ -22,6 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ProcessSignature do
   ## Attributes
 
   *   `memoryHashSignature` (*type:* `GoogleApi.SecurityCenter.V1.Model.MemoryHashSignature.t`, *default:* `nil`) - Signature indicating that a binary family was matched.
+  *   `signatureType` (*type:* `String.t`, *default:* `nil`) - Describes the type of resource associated with the signature.
   *   `yaraRuleSignature` (*type:* `GoogleApi.SecurityCenter.V1.Model.YaraRuleSignature.t`, *default:* `nil`) - Signature indicating that a YARA rule was matched.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ProcessSignature do
 
   @type t :: %__MODULE__{
           :memoryHashSignature => GoogleApi.SecurityCenter.V1.Model.MemoryHashSignature.t() | nil,
+          :signatureType => String.t() | nil,
           :yaraRuleSignature => GoogleApi.SecurityCenter.V1.Model.YaraRuleSignature.t() | nil
         }
 
   field(:memoryHashSignature, as: GoogleApi.SecurityCenter.V1.Model.MemoryHashSignature)
+  field(:signatureType)
   field(:yaraRuleSignature, as: GoogleApi.SecurityCenter.V1.Model.YaraRuleSignature)
 end
 
