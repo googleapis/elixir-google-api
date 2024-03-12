@@ -22,7 +22,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.BackendMetastore do
   ## Attributes
 
   *   `metastoreType` (*type:* `String.t`, *default:* `nil`) - The type of the backend metastore.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the metastore that is being federated. The formats of the relative resource names for the currently supported metastores are listed below: Dataplex: projects/{project_id}/locations/{location}/lakes/{lake_id} BigQuery: projects/{project_id} Dataproc Metastore: projects/{project_id}/locations/{location}/services/{service_id}
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the metastore that is being federated. The formats of the relative resource names for the currently supported metastores are listed below: BigQuery projects/{project_id} Dataproc Metastore projects/{project_id}/locations/{location}/services/{service_id}
   """
 
   use GoogleApi.Gax.ModelBase

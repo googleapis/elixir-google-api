@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.DataCatalogConfig do
 
   ## Attributes
 
-  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Defines whether the metastore metadata should be synced to Data Catalog. The default value is to disable syncing metastore metadata to Data Catalog.
+  *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines whether the metastore metadata should be synced to Data Catalog. The default value is to disable syncing metastore metadata to Data Catalog.
   """
 
   use GoogleApi.Gax.ModelBase

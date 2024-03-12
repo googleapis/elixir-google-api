@@ -21,11 +21,16 @@ defmodule GoogleApi.Metastore.V1beta.Model.RemoveIamPolicyRequest do
 
   ## Attributes
 
+  *   `asynchronous` (*type:* `boolean()`, *default:* `nil`) - Optional. Removes IAM policy attached to database or table asynchronously when it is set. The default is false.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :asynchronous => boolean() | nil
+        }
+
+  field(:asynchronous)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Metastore.V1beta.Model.RemoveIamPolicyRequest do
