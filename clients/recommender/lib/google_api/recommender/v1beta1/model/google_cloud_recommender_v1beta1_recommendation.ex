@@ -32,6 +32,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   *   `priority` (*type:* `String.t`, *default:* `nil`) - Recommendation's priority.
   *   `recommenderSubtype` (*type:* `String.t`, *default:* `nil`) - Contains an identifier for a subtype of recommendations produced for the same recommender. Subtype is a function of content and impact, meaning a new subtype might be added when significant changes to `content` or `primary_impact.category` are introduced. See the Recommenders section to see a list of subtypes for a given Recommender. Examples: For recommender = "google.iam.policy.Recommender", recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationStateInfo.t`, *default:* `nil`) - Information for state. Contains state and metadata.
+  *   `targetResources` (*type:* `list(String.t)`, *default:* `nil`) - Fully qualified resource names that this recommendation is targeting.
   *   `xorGroupId` (*type:* `String.t`, *default:* `nil`) - Corresponds to a mutually exclusive group ID within a recommender. A non-empty ID indicates that the recommendation belongs to a mutually exclusive group. This means that only one recommendation within the group is suggested to be applied.
   """
 
@@ -60,6 +61,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
           :stateInfo =>
             GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationStateInfo.t()
             | nil,
+          :targetResources => list(String.t()) | nil,
           :xorGroupId => String.t() | nil
         }
 
@@ -94,6 +96,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
     as: GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1RecommendationStateInfo
   )
 
+  field(:targetResources, type: :list)
   field(:xorGroupId)
 end
 
