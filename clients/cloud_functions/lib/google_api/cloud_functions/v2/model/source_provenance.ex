@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.SourceProvenance do
 
   ## Attributes
 
+  *   `gitUri` (*type:* `String.t`, *default:* `nil`) - A copy of the build's `source.git_uri`, if exists, with any commits resolved.
   *   `resolvedRepoSource` (*type:* `GoogleApi.CloudFunctions.V2.Model.RepoSource.t`, *default:* `nil`) - A copy of the build's `source.repo_source`, if exists, with any revisions resolved.
   *   `resolvedStorageSource` (*type:* `GoogleApi.CloudFunctions.V2.Model.StorageSource.t`, *default:* `nil`) - A copy of the build's `source.storage_source`, if exists, with any generations resolved.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.CloudFunctions.V2.Model.SourceProvenance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :gitUri => String.t() | nil,
           :resolvedRepoSource => GoogleApi.CloudFunctions.V2.Model.RepoSource.t() | nil,
           :resolvedStorageSource => GoogleApi.CloudFunctions.V2.Model.StorageSource.t() | nil
         }
 
+  field(:gitUri)
   field(:resolvedRepoSource, as: GoogleApi.CloudFunctions.V2.Model.RepoSource)
   field(:resolvedStorageSource, as: GoogleApi.CloudFunctions.V2.Model.StorageSource)
 end

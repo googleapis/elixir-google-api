@@ -21,6 +21,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Runtime do
 
   ## Attributes
 
+  *   `decommissionDate` (*type:* `GoogleApi.CloudFunctions.V2.Model.Date.t`, *default:* `nil`) - Decommission date for the runtime.
+  *   `deprecationDate` (*type:* `GoogleApi.CloudFunctions.V2.Model.Date.t`, *default:* `nil`) - Deprecation date for the runtime.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user facing name, eg 'Go 1.13', 'Node.js 12', etc.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - The environment for the runtime.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the runtime, e.g., 'go113', 'nodejs12', etc.
@@ -31,6 +33,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Runtime do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :decommissionDate => GoogleApi.CloudFunctions.V2.Model.Date.t() | nil,
+          :deprecationDate => GoogleApi.CloudFunctions.V2.Model.Date.t() | nil,
           :displayName => String.t() | nil,
           :environment => String.t() | nil,
           :name => String.t() | nil,
@@ -38,6 +42,8 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Runtime do
           :warnings => list(String.t()) | nil
         }
 
+  field(:decommissionDate, as: GoogleApi.CloudFunctions.V2.Model.Date)
+  field(:deprecationDate, as: GoogleApi.CloudFunctions.V2.Model.Date)
   field(:displayName)
   field(:environment)
   field(:name)

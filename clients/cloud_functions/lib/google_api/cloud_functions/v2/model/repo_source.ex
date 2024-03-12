@@ -24,7 +24,6 @@ defmodule GoogleApi.CloudFunctions.V2.Model.RepoSource do
   *   `branchName` (*type:* `String.t`, *default:* `nil`) - Regex matching branches to build. The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
   *   `commitSha` (*type:* `String.t`, *default:* `nil`) - Explicit commit SHA to build.
   *   `dir` (*type:* `String.t`, *default:* `nil`) - Directory, relative to the source root, in which to run the build. This must be a relative path. If a step's `dir` is specified and is an absolute path, this value is ignored for that step's execution. eg. helloworld (no leading slash allowed)
-  *   `invertRegex` (*type:* `boolean()`, *default:* `nil`) - Only trigger a build if the revision regex does NOT match the revision regex.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - ID of the project that owns the Cloud Source Repository. If omitted, the project ID requesting the build is assumed.
   *   `repoName` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Source Repository.
   *   `tagName` (*type:* `String.t`, *default:* `nil`) - Regex matching tags to build. The syntax of the regular expressions accepted is the syntax accepted by RE2 and described at https://github.com/google/re2/wiki/Syntax
@@ -36,7 +35,6 @@ defmodule GoogleApi.CloudFunctions.V2.Model.RepoSource do
           :branchName => String.t() | nil,
           :commitSha => String.t() | nil,
           :dir => String.t() | nil,
-          :invertRegex => boolean() | nil,
           :projectId => String.t() | nil,
           :repoName => String.t() | nil,
           :tagName => String.t() | nil
@@ -45,7 +43,6 @@ defmodule GoogleApi.CloudFunctions.V2.Model.RepoSource do
   field(:branchName)
   field(:commitSha)
   field(:dir)
-  field(:invertRegex)
   field(:projectId)
   field(:repoName)
   field(:tagName)
