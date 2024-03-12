@@ -506,7 +506,9 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:action` (*type:* `String.t`) - The intented insert action. The usage of this field is governed by certain policies which are being developed & tested currently. Hence, these might not work as intended. Once this is fully tested & available to consume, we will share more information about its usage, limitations and policy documentation.
       *   `:customerAuthToken` (*type:* `String.t`) - The `customerAuthToken` query string is required when creating a resold account that transfers a direct customer's subscription or transfers another reseller customer's subscription to your reseller management. This is a hexadecimal authentication token needed to complete the subscription transfer. For more information, see the administrator help center.
+      *   `:sourceSkuId` (*type:* `String.t`) - The sku_id of the existing subscription to be upgraded or downgraded. This is required when action is SWITCH. The usage of this field is governed by certain policies which are being developed & tested currently. Hence, these might not work as intended. Once this is fully tested & available to consume, we will share more information about its usage, limitations and policy documentation.
       *   `:body` (*type:* `GoogleApi.Reseller.V1.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -533,7 +535,9 @@ defmodule GoogleApi.Reseller.V1.Api.Subscriptions do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :action => :query,
       :customerAuthToken => :query,
+      :sourceSkuId => :query,
       :body => :body
     }
 
