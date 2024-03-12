@@ -21,7 +21,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressFrom do
 
   ## Attributes
 
-  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through this ingress policy. Should be in the format of email address. The email address should represent individual user or service account only.
+  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through this ingress policy, in the format of `user:{email_id}` or `serviceAccount:{email_id}`.
   *   `identityType` (*type:* `String.t`, *default:* `nil`) - Specifies the type of identities that are allowed access from outside the perimeter. If left unspecified, then members of `identities` field will be allowed access.
   *   `sources` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.IngressSource.t)`, *default:* `nil`) - Sources that this IngressPolicy authorizes access from.
   """

@@ -48,7 +48,7 @@ defmodule GoogleApi.AccessContextManager.Mixfile do
 
   defp description() do
     """
-    Access Context Manager API client library. An API for setting attribute based access control to requests to GCP services.
+    Access Context Manager API client library.
     """
   end
 
