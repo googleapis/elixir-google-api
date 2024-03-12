@@ -22,7 +22,7 @@ defmodule GoogleApi.Classroom.V1.Model.Course do
   ## Attributes
 
   *   `alternateLink` (*type:* `String.t`, *default:* `nil`) - Absolute link to this course in the Classroom web UI. Read-only.
-  *   `calendarId` (*type:* `String.t`, *default:* `nil`) - The Calendar ID for a calendar that all course members can see, to which Classroom adds events for course work and announcements in the course. Read-only.
+  *   `calendarId` (*type:* `String.t`, *default:* `nil`) - The Calendar ID for a calendar that all course members can see, to which Classroom adds events for course work and announcements in the course. The Calendar for a course is created asynchronously when the course is set to `CourseState.ACTIVE` for the first time (at creation time or when it is updated to `ACTIVE` through the UI or the API). The Calendar ID will not be populated until the creation process is completed. Read-only.
   *   `courseGroupEmail` (*type:* `String.t`, *default:* `nil`) - The email address of a Google group containing all members of the course. This group does not accept email and can only be used for permissions. Read-only.
   *   `courseMaterialSets` (*type:* `list(GoogleApi.Classroom.V1.Model.CourseMaterialSet.t)`, *default:* `nil`) - Sets of materials that appear on the "about" page of this course. Read-only.
   *   `courseState` (*type:* `String.t`, *default:* `nil`) - State of the course. If unspecified, the default state is `PROVISIONED`.
