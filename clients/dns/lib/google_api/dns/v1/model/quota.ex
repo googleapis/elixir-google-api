@@ -30,6 +30,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
   *   `managedZonesPerGkeCluster` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a GKE cluster.
   *   `managedZonesPerNetwork` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones which can be attached to a network.
+  *   `nameserversPerDelegation` (*type:* `integer()`, *default:* `nil`) - Maximum number of nameservers per delegation, meant to prevent abuse
   *   `networksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks to which a privately scoped zone can be attached.
   *   `networksPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per policy.
   *   `networksPerResponsePolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of networks per response policy.
@@ -59,6 +60,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
           :managedZones => integer() | nil,
           :managedZonesPerGkeCluster => integer() | nil,
           :managedZonesPerNetwork => integer() | nil,
+          :nameserversPerDelegation => integer() | nil,
           :networksPerManagedZone => integer() | nil,
           :networksPerPolicy => integer() | nil,
           :networksPerResponsePolicy => integer() | nil,
@@ -85,6 +87,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   field(:managedZones)
   field(:managedZonesPerGkeCluster)
   field(:managedZonesPerNetwork)
+  field(:nameserversPerDelegation)
   field(:networksPerManagedZone)
   field(:networksPerPolicy)
   field(:networksPerResponsePolicy)
