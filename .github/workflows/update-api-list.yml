@@ -8,15 +8,16 @@ on:
 jobs:
   update-api-list:
     if: ${{ github.repository_owner == 'googleapis' }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Install Elixir
-        uses: actions/setup-elixir@v1
+        uses: actions/setup-beam@v1
         with:
-          otp-version: "23.0.3"
-          elixir-version: "1.10.4"
+          otp-version: "23.3.4.19"
+          elixir-version: "1.12.3-otp-23"
+          version-type: strict
       - name: Compile
         run: |
           mix do deps.get, compile
