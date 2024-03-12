@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.StandardSqlStructType do
   @moduledoc """
-
+  The representation of a SQL STRUCT type.
 
   ## Attributes
 
-  *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - 
+  *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.StandardSqlField.t)`, *default:* `nil`) - Fields within the struct.
   """
 
   use GoogleApi.Gax.ModelBase

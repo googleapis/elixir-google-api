@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics do
   @moduledoc """
-
+  Statistics for row-level security.
 
   ## Attributes
 
-  *   `rowLevelSecurityApplied` (*type:* `boolean()`, *default:* `nil`) - [Output-only] [Preview] Whether any accessed data was protected by row access policies.
+  *   `rowLevelSecurityApplied` (*type:* `boolean()`, *default:* `nil`) - Whether any accessed data was protected by row access policies.
   """
 
   use GoogleApi.Gax.ModelBase

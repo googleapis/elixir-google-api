@@ -17,28 +17,28 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.IndexUnusedReason do
   @moduledoc """
-
+  Reason about why no search index was used in the search query (or sub-query).
 
   ## Attributes
 
-  *   `base_table` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Output-only] Specifies the base table involved in the reason that no search index was used.
-  *   `code` (*type:* `String.t`, *default:* `$(reason.code)`) - [Output-only] Specifies the high-level reason for the scenario when no search index was used.
-  *   `index_name` (*type:* `String.t`, *default:* `$(reason.index_name)`) - [Output-only] Specifies the name of the unused search index, if available.
-  *   `message` (*type:* `String.t`, *default:* `$(reason.message)`) - [Output-only] Free form human-readable reason for the scenario when no search index was used.
+  *   `baseTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Specifies the base table involved in the reason that no search index was used.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Specifies the high-level reason for the scenario when no search index was used.
+  *   `indexName` (*type:* `String.t`, *default:* `nil`) - Specifies the name of the unused search index, if available.
+  *   `message` (*type:* `String.t`, *default:* `nil`) - Free form human-readable reason for the scenario when no search index was used.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :base_table => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
+          :baseTable => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :code => String.t() | nil,
-          :index_name => String.t() | nil,
+          :indexName => String.t() | nil,
           :message => String.t() | nil
         }
 
-  field(:base_table, as: GoogleApi.BigQuery.V2.Model.TableReference)
+  field(:baseTable, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:code)
-  field(:index_name)
+  field(:indexName)
   field(:message)
 end
 

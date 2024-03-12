@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ListRoutinesResponse do
   @moduledoc """
-
+  Describes the format of a single result page when listing routines.
 
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
-  *   `routines` (*type:* `list(GoogleApi.BigQuery.V2.Model.Routine.t)`, *default:* `nil`) - Routines in the requested dataset. Unless read_mask is set in the request, only the following fields are populated: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, and language.
+  *   `routines` (*type:* `list(GoogleApi.BigQuery.V2.Model.Routine.t)`, *default:* `nil`) - Routines in the requested dataset. Unless read_mask is set in the request, only the following fields are populated: etag, project_id, dataset_id, routine_id, routine_type, creation_time, last_modified_time, language, and remote_function_options.
   """
 
   use GoogleApi.Gax.ModelBase

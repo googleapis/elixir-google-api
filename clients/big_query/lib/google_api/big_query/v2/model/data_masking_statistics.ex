@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DataMaskingStatistics do
   @moduledoc """
-
+  Statistics for data-masking.
 
   ## Attributes
 
-  *   `dataMaskingApplied` (*type:* `boolean()`, *default:* `false`) - [Output-only] [Preview] Whether any accessed data was protected by data masking. The actual evaluation is done by accessStats.masked_field_count > 0. Since this is only used for the discovery_doc generation purpose, as long as the type (boolean) matches, client library can leverage this. The actual evaluation of the variable is done else-where.
+  *   `dataMaskingApplied` (*type:* `boolean()`, *default:* `nil`) - Whether any accessed data was protected by the data masking.
   """
 
   use GoogleApi.Gax.ModelBase

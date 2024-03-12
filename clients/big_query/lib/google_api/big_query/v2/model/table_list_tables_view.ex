@@ -17,19 +17,22 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TableListTablesView do
   @moduledoc """
-  Additional details for a view.
+  Information about a logical view.
 
   ## Attributes
 
-  *   `useLegacySql` (*type:* `boolean()`, *default:* `nil`) - True if view is defined in legacy SQL dialect, false if in standard SQL.
+  *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Specifices the privacy policy for the view.
+  *   `useLegacySql` (*type:* `boolean()`, *default:* `nil`) - True if view is defined in legacy SQL dialect, false if in GoogleSQL.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :privacyPolicy => GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t() | nil,
           :useLegacySql => boolean() | nil
         }
 
+  field(:privacyPolicy, as: GoogleApi.BigQuery.V2.Model.PrivacyPolicy)
   field(:useLegacySql)
 end
 

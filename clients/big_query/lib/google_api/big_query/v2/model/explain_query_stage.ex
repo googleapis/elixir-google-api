@@ -17,20 +17,21 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   @moduledoc """
-
+  A single stage of query execution.
 
   ## Attributes
 
   *   `completedParallelInputs` (*type:* `String.t`, *default:* `nil`) - Number of parallel input segments completed.
+  *   `computeMode` (*type:* `String.t`, *default:* `nil`) - Output only. Compute mode for this stage.
   *   `computeMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent on CPU-bound tasks.
   *   `computeMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent on CPU-bound tasks.
   *   `computeRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent on CPU-bound tasks.
   *   `computeRatioMax` (*type:* `float()`, *default:* `nil`) - Relative amount of time the slowest shard spent on CPU-bound tasks.
-  *   `endMs` (*type:* `String.t`, *default:* `nil`) - Stage end time represented as milliseconds since epoch.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID for stage within plan.
+  *   `endMs` (*type:* `String.t`, *default:* `nil`) - Stage end time represented as milliseconds since the epoch.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Unique ID for the stage within the plan.
   *   `inputStages` (*type:* `list(String.t)`, *default:* `nil`) - IDs for stages that are inputs to this stage.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Human-readable name for stage.
-  *   `parallelInputs` (*type:* `String.t`, *default:* `nil`) - Number of parallel input segments to be processed.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Human-readable name for the stage.
+  *   `parallelInputs` (*type:* `String.t`, *default:* `nil`) - Number of parallel input segments to be processed
   *   `readMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent reading input.
   *   `readMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent reading input.
   *   `readRatioAvg` (*type:* `float()`, *default:* `nil`) - Relative amount of time the average shard spent reading input.
@@ -40,8 +41,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
   *   `shuffleOutputBytes` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle.
   *   `shuffleOutputBytesSpilled` (*type:* `String.t`, *default:* `nil`) - Total number of bytes written to shuffle and spilled to disk.
   *   `slotMs` (*type:* `String.t`, *default:* `nil`) - Slot-milliseconds used by the stage.
-  *   `startMs` (*type:* `String.t`, *default:* `nil`) - Stage start time represented as milliseconds since epoch.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Current status for the stage.
+  *   `startMs` (*type:* `String.t`, *default:* `nil`) - Stage start time represented as milliseconds since the epoch.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Current status for this stage.
   *   `steps` (*type:* `list(GoogleApi.BigQuery.V2.Model.ExplainQueryStep.t)`, *default:* `nil`) - List of operations within the stage in dependency order (approximately chronological).
   *   `waitMsAvg` (*type:* `String.t`, *default:* `nil`) - Milliseconds the average shard spent waiting to be scheduled.
   *   `waitMsMax` (*type:* `String.t`, *default:* `nil`) - Milliseconds the slowest shard spent waiting to be scheduled.
@@ -57,6 +58,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
 
   @type t :: %__MODULE__{
           :completedParallelInputs => String.t() | nil,
+          :computeMode => String.t() | nil,
           :computeMsAvg => String.t() | nil,
           :computeMsMax => String.t() | nil,
           :computeRatioAvg => float() | nil,
@@ -89,6 +91,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStage do
         }
 
   field(:completedParallelInputs)
+  field(:computeMode)
   field(:computeMsAvg)
   field(:computeMsMax)
   field(:computeRatioAvg)

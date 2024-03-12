@@ -17,15 +17,16 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
   @moduledoc """
-
+  Statistics for a load job.
 
   ## Attributes
 
-  *   `badRecords` (*type:* `String.t`, *default:* `nil`) - [Output-only] The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data.
-  *   `inputFileBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of bytes of source data in a load job.
-  *   `inputFiles` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of source files in a load job.
-  *   `outputBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change.
-  *   `outputRows` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of rows imported in a load job. Note that while an import job is in the running state, this value may change.
+  *   `badRecords` (*type:* `String.t`, *default:* `nil`) - Output only. The number of bad records encountered. Note that if the job has failed because of more bad records encountered than the maximum allowed in the load job configuration, then this number can be less than the total number of bad records present in the input data.
+  *   `inputFileBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of bytes of source data in a load job.
+  *   `inputFiles` (*type:* `String.t`, *default:* `nil`) - Output only. Number of source files in a load job.
+  *   `outputBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Size of the loaded data in bytes. Note that while a load job is in the running state, this value may change.
+  *   `outputRows` (*type:* `String.t`, *default:* `nil`) - Output only. Number of rows imported in a load job. Note that while an import job is in the running state, this value may change.
+  *   `timeline` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t)`, *default:* `nil`) - Output only. Describes a timeline of job execution.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
           :inputFileBytes => String.t() | nil,
           :inputFiles => String.t() | nil,
           :outputBytes => String.t() | nil,
-          :outputRows => String.t() | nil
+          :outputRows => String.t() | nil,
+          :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()) | nil
         }
 
   field(:badRecords)
@@ -43,6 +45,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics3 do
   field(:inputFiles)
   field(:outputBytes)
   field(:outputRows)
+  field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics3 do

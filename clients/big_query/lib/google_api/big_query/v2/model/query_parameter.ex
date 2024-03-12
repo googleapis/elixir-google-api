@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameter do
   @moduledoc """
-
+  A parameter given to a query.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Optional] If unset, this is a positional parameter. Otherwise, should be unique within a query.
-  *   `parameterType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Required] The type of this parameter.
-  *   `parameterValue` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterValue.t`, *default:* `nil`) - [Required] The value of this parameter.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. If unset, this is a positional parameter. Otherwise, should be unique within a query.
+  *   `parameterType` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - Required. The type of this parameter.
+  *   `parameterValue` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterValue.t`, *default:* `nil`) - Required. The value of this parameter.
   """
 
   use GoogleApi.Gax.ModelBase

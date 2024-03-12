@@ -31,17 +31,21 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the table to delete
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the table to delete
-  *   `table_id` (*type:* `String.t`) - Table ID of the table to delete
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the table to delete
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the table to delete
+  *   `table_id` (*type:* `String.t`) - Required. Table ID of the table to delete
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -66,23 +70,30 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query
+      :uploadType => :query,
+      :upload_protocol => :query
     }
 
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -97,19 +108,23 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the requested table
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the requested table
-  *   `table_id` (*type:* `String.t`) - Table ID of the requested table
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the requested table
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the requested table
+  *   `table_id` (*type:* `String.t`) - Required. Table ID of the requested table
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:selectedFields` (*type:* `String.t`) - List of fields to return (comma-separated). If unspecified, all fields are returned
-      *   `:view` (*type:* `String.t`) - Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:selectedFields` (*type:* `String.t`) - List of table schema fields to return (comma-separated). If unspecified, all fields are returned. A fieldMask cannot be used here because the fields will automatically be converted from camelCase to snake_case and the conversion will fail if there are underscores. Since these are fields in BigQuery table schemas, underscores are allowed.
+      *   `:view` (*type:* `String.t`) - Optional. Specifies the view that determines which table information is returned. By default, basic table information and storage statistics (STORAGE_STATS) are returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -138,13 +153,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :selectedFields => :query,
       :view => :query
     }
@@ -152,11 +171,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -173,13 +195,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.GetIamPolicyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -195,13 +221,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           | {:error, any()}
   def bigquery_tables_get_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -225,16 +255,20 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the new table
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the new table
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the new table
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the new table
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Table.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -256,20 +290,24 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
@@ -287,17 +325,21 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the tables to list
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the tables to list
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the tables to list
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the tables to list
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
       *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -313,13 +355,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           | {:error, any()}
   def bigquery_tables_list(connection, project_id, dataset_id, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :maxResults => :query,
       :pageToken => :query
     }
@@ -327,7 +373,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables", %{
+      |> Request.url("/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables", %{
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
         "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1)
       })
@@ -340,23 +386,27 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   end
 
   @doc """
-  Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports patch semantics.
+  Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource. This method supports RFC5789 patch semantics.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the table to update
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the table to update
-  *   `table_id` (*type:* `String.t`) - Table ID of the table to update
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the table to update
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the table to update
+  *   `table_id` (*type:* `String.t`) - Required. Table ID of the table to update
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:autodetect_schema` (*type:* `boolean()`) - When true will autodetect schema, else will keep original schema
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:autodetect_schema` (*type:* `boolean()`) - Optional.  When true will autodetect schema, else will keep original schema
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Table.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -386,13 +436,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :autodetect_schema => :query,
       :body => :body
     }
@@ -400,11 +454,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -421,13 +478,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.SetIamPolicyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -443,13 +504,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
           | {:error, any()}
   def bigquery_tables_set_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -475,13 +540,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
   *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.TestIamPermissionsRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -502,13 +571,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -529,23 +602,27 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
   end
 
   @doc """
-  Updates information in an existing table. The update method replaces the entire table resource, whereas the patch method only replaces fields that are provided in the submitted table resource.
+  Updates information in an existing table. The update method replaces the entire Table resource, whereas the patch method only replaces fields that are provided in the submitted Table resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the table to update
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the table to update
-  *   `table_id` (*type:* `String.t`) - Table ID of the table to update
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the table to update
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the table to update
+  *   `table_id` (*type:* `String.t`) - Required. Table ID of the table to update
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:autodetect_schema` (*type:* `boolean()`) - When true will autodetect schema, else will keep original schema
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:autodetect_schema` (*type:* `boolean()`) - Optional.  When true will autodetect schema, else will keep original schema
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.Table.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -575,13 +652,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :autodetect_schema => :query,
       :body => :body
     }
@@ -589,11 +670,14 @@ defmodule GoogleApi.BigQuery.V2.Api.Tables do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}", %{
-        "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-        "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
-        "tableId" => URI.encode(table_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-      })
+      |> Request.url(
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}",
+        %{
+          "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
+          "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
+          "tableId" => URI.encode(table_id, &URI.char_unreserved?/1)
+        }
+      )
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

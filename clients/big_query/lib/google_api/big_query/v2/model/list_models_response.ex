@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ListModelsResponse do
   @moduledoc """
-
+  Response format for a single page when listing BigQuery ML models.
 
   ## Attributes
 

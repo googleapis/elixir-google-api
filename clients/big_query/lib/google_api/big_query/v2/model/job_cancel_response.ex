@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobCancelResponse do
   @moduledoc """
-
+  Describes format of a jobs cancellation response.
 
   ## Attributes
 

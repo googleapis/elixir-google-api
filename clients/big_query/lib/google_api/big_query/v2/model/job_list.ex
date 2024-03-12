@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobList do
   @moduledoc """
-
+  JobList is the response format for a jobs.list call.
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobList do
   *   `jobs` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobListJobs.t)`, *default:* `nil`) - List of jobs that were requested.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#jobList`) - The resource type of the response.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to request the next page of results.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - A list of skipped locations that were unreachable. For more information about BigQuery locations, see: https://cloud.google.com/bigquery/docs/locations. Example: "europe-west5"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.BigQuery.V2.Model.JobList do
           :etag => String.t() | nil,
           :jobs => list(GoogleApi.BigQuery.V2.Model.JobListJobs.t()) | nil,
           :kind => String.t() | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:etag)
   field(:jobs, as: GoogleApi.BigQuery.V2.Model.JobListJobs, type: :list)
   field(:kind)
   field(:nextPageToken)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobList do

@@ -17,23 +17,23 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.SparkLoggingInfo do
   @moduledoc """
-
+  Spark job logs can be filtered by these fields in Cloud Logging.
 
   ## Attributes
 
-  *   `project_id` (*type:* `String.t`, *default:* `nil`) - [Output-only] Project ID used for logging
-  *   `resource_type` (*type:* `String.t`, *default:* `nil`) - [Output-only] Resource type used for logging
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Project ID where the Spark logs were written.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Output only. Resource type used for logging.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :project_id => String.t() | nil,
-          :resource_type => String.t() | nil
+          :projectId => String.t() | nil,
+          :resourceType => String.t() | nil
         }
 
-  field(:project_id)
-  field(:resource_type)
+  field(:projectId)
+  field(:resourceType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.SparkLoggingInfo do

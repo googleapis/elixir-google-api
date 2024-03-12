@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ProjectReference do
   @moduledoc """
-
+  A unique reference to a project.
 
   ## Attributes
 
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - [Required] ID of the project. Can be either the numeric ID or the assigned ID of the project.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the project. Can be either the numeric ID or the assigned ID of the project.
   """
 
   use GoogleApi.Gax.ModelBase

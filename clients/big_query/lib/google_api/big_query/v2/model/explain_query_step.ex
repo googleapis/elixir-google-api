@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ExplainQueryStep do
   @moduledoc """
-
+  An operation within a stage.
 
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Machine-readable operation type.
-  *   `substeps` (*type:* `list(String.t)`, *default:* `nil`) - Human-readable stage descriptions.
+  *   `substeps` (*type:* `list(String.t)`, *default:* `nil`) - Human-readable description of the step(s).
   """
 
   use GoogleApi.Gax.ModelBase

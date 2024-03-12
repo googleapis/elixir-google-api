@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DmlStatistics do
   @moduledoc """
-
+  Detailed statistics for DML statements
 
   ## Attributes
 
-  *   `deletedRowCount` (*type:* `String.t`, *default:* `nil`) - Number of deleted Rows. populated by DML DELETE, MERGE and TRUNCATE statements.
-  *   `insertedRowCount` (*type:* `String.t`, *default:* `nil`) - Number of inserted Rows. Populated by DML INSERT and MERGE statements.
-  *   `updatedRowCount` (*type:* `String.t`, *default:* `nil`) - Number of updated Rows. Populated by DML UPDATE and MERGE statements.
+  *   `deletedRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of deleted Rows. populated by DML DELETE, MERGE and TRUNCATE statements.
+  *   `insertedRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of inserted Rows. Populated by DML INSERT and MERGE statements
+  *   `updatedRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of updated Rows. Populated by DML UPDATE and MERGE statements.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,30 +17,31 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   @moduledoc """
-
+  Statistics for a single job execution.
 
   ## Attributes
 
-  *   `completionRatio` (*type:* `float()`, *default:* `nil`) - [TrustedTester] [Output-only] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
-  *   `copy` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics5.t`, *default:* `nil`) - [Output-only] Statistics for a copy job.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.
-  *   `dataMaskingStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t`, *default:* `nil`) - [Output-only] Statistics for data masking. Present only for query and extract jobs.
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state.
-  *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics4.t`, *default:* `nil`) - [Output-only] Statistics for an extract job.
-  *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics3.t`, *default:* `nil`) - [Output-only] Statistics for a load job.
-  *   `numChildJobs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of child jobs executed.
-  *   `parentJobId` (*type:* `String.t`, *default:* `nil`) - [Output-only] If this is a child job, the id of the parent.
-  *   `query` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics2.t`, *default:* `nil`) - [Output-only] Statistics for a query job.
-  *   `quotaDeferments` (*type:* `list(String.t)`, *default:* `nil`) - [Output-only] Quotas which delayed this job's start time.
-  *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t)`, *default:* `nil`) - [Output-only] Job resource usage breakdown by reservation.
-  *   `reservation_id` (*type:* `String.t`, *default:* `nil`) - [Output-only] Name of the primary reservation assigned to this job. Note that this could be different than reservations reported in the reservation usage field if parent reservations were used to execute this job.
-  *   `rowLevelSecurityStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics.t`, *default:* `nil`) - [Output-only] [Preview] Statistics for row-level security. Present only for query and extract jobs.
-  *   `scriptStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.ScriptStatistics.t`, *default:* `nil`) - [Output-only] Statistics for a child job of a script.
-  *   `sessionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.SessionInfo.t`, *default:* `nil`) - [Output-only] [Preview] Information of the session if this job is part of one.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.
-  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - [Output-only] [Deprecated] Use the bytes processed in the query statistics instead.
-  *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - [Output-only] Slot-milliseconds for the job.
-  *   `transactionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.TransactionInfo.t`, *default:* `nil`) - [Output-only] [Alpha] Information of the multi-statement transaction if this job is part of one.
+  *   `completionRatio` (*type:* `float()`, *default:* `nil`) - Output only. [TrustedTester] Job progress (0.0 -> 1.0) for LOAD and EXTRACT jobs.
+  *   `copy` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics5.t`, *default:* `nil`) - Output only. Statistics for a copy job.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.
+  *   `dataMaskingStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t`, *default:* `nil`) - Output only. Statistics for data-masking. Present only for query and extract jobs.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - Output only. End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state.
+  *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics4.t`, *default:* `nil`) - Output only. Statistics for an extract job.
+  *   `finalExecutionDurationMs` (*type:* `String.t`, *default:* `nil`) - Output only. The duration in milliseconds of the execution of the final attempt of this job, as BigQuery may internally re-attempt to execute the job.
+  *   `load` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics3.t`, *default:* `nil`) - Output only. Statistics for a load job.
+  *   `numChildJobs` (*type:* `String.t`, *default:* `nil`) - Output only. Number of child jobs executed.
+  *   `parentJobId` (*type:* `String.t`, *default:* `nil`) - Output only. If this is a child job, specifies the job ID of the parent.
+  *   `query` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics2.t`, *default:* `nil`) - Output only. Statistics for a query job.
+  *   `quotaDeferments` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Quotas which delayed this job's start time.
+  *   `reservationUsage` (*type:* `list(GoogleApi.BigQuery.V2.Model.JobStatisticsReservationUsage.t)`, *default:* `nil`) - Output only. Job resource usage breakdown by reservation. This field reported misleading information and will no longer be populated.
+  *   `reservation_id` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the primary reservation assigned to this job. Note that this could be different than reservations reported in the reservation usage field if parent reservations were used to execute this job.
+  *   `rowLevelSecurityStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.RowLevelSecurityStatistics.t`, *default:* `nil`) - Output only. Statistics for row-level security. Present only for query and extract jobs.
+  *   `scriptStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.ScriptStatistics.t`, *default:* `nil`) - Output only. If this a child job of a script, specifies information about the context of this job within the script.
+  *   `sessionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.SessionInfo.t`, *default:* `nil`) - Output only. Information of the session if this job is part of one.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Output only. Start time of this job, in milliseconds since the epoch. This field will be present when the job transitions from the PENDING state to either RUNNING or DONE.
+  *   `totalBytesProcessed` (*type:* `String.t`, *default:* `nil`) - Output only. Total bytes processed for the job.
+  *   `totalSlotMs` (*type:* `String.t`, *default:* `nil`) - Output only. Slot-milliseconds for the job.
+  *   `transactionInfo` (*type:* `GoogleApi.BigQuery.V2.Model.TransactionInfo.t`, *default:* `nil`) - Output only. [Alpha] Information of the multi-statement transaction if this job is part of one. This property is only expected on a child job or a job that is in a session. A script parent job is not part of the transaction started in the script.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,6 +53,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :dataMaskingStatistics => GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t() | nil,
           :endTime => String.t() | nil,
           :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t() | nil,
+          :finalExecutionDurationMs => String.t() | nil,
           :load => GoogleApi.BigQuery.V2.Model.JobStatistics3.t() | nil,
           :numChildJobs => String.t() | nil,
           :parentJobId => String.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:dataMaskingStatistics, as: GoogleApi.BigQuery.V2.Model.DataMaskingStatistics)
   field(:endTime)
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobStatistics4)
+  field(:finalExecutionDurationMs)
   field(:load, as: GoogleApi.BigQuery.V2.Model.JobStatistics3)
   field(:numChildJobs)
   field(:parentJobId)

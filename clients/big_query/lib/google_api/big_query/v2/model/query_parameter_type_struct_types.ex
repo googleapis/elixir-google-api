@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.QueryParameterTypeStructTypes do
   @moduledoc """
-
+  The type of a struct parameter.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] Human-oriented description of the field.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - [Optional] The name of this field.
-  *   `type` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - [Required] The type of this field.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Human-oriented description of the field.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of this field.
+  *   `type` (*type:* `GoogleApi.BigQuery.V2.Model.QueryParameterType.t`, *default:* `nil`) - Required. The type of this field.
   """
 
   use GoogleApi.Gax.ModelBase

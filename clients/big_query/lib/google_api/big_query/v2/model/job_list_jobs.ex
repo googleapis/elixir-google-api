@@ -17,18 +17,19 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
   @moduledoc """
-
+  ListFormatJob is a partial projection of job information returned as part of a jobs.list response.
 
   ## Attributes
 
-  *   `configuration` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfiguration.t`, *default:* `nil`) - [Full-projection-only] Specifies the job configuration.
+  *   `configuration` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfiguration.t`, *default:* `nil`) - Required. Describes the job configuration.
   *   `errorResult` (*type:* `GoogleApi.BigQuery.V2.Model.ErrorProto.t`, *default:* `nil`) - A result object that will be present only if the job has failed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique opaque ID of the job.
-  *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Job reference uniquely identifying the job.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#job`) - The resource type.
+  *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Unique opaque ID of the job.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - The resource type.
+  *   `principal_subject` (*type:* `String.t`, *default:* `nil`) - [Full-projection-only] String representation of identity of requesting party. Populated for both first- and third-party identities. Only present for APIs that support third-party identities.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Running state of the job. When the state is DONE, errorResult can be checked to determine whether the job succeeded or failed.
-  *   `statistics` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics.t`, *default:* `nil`) - [Output-only] Information about the job, including starting time and ending time of the job.
-  *   `status` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatus.t`, *default:* `nil`) - [Full-projection-only] Describes the state of the job.
+  *   `statistics` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics.t`, *default:* `nil`) - Output only. Information about the job, including starting time and ending time of the job.
+  *   `status` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatus.t`, *default:* `nil`) - [Full-projection-only] Describes the status of this job.
   *   `user_email` (*type:* `String.t`, *default:* `nil`) - [Full-projection-only] Email address of the user who ran the job.
   """
 
@@ -40,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
           :id => String.t() | nil,
           :jobReference => GoogleApi.BigQuery.V2.Model.JobReference.t() | nil,
           :kind => String.t() | nil,
+          :principal_subject => String.t() | nil,
           :state => String.t() | nil,
           :statistics => GoogleApi.BigQuery.V2.Model.JobStatistics.t() | nil,
           :status => GoogleApi.BigQuery.V2.Model.JobStatus.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobListJobs do
   field(:id)
   field(:jobReference, as: GoogleApi.BigQuery.V2.Model.JobReference)
   field(:kind)
+  field(:principal_subject)
   field(:state)
   field(:statistics, as: GoogleApi.BigQuery.V2.Model.JobStatistics)
   field(:status, as: GoogleApi.BigQuery.V2.Model.JobStatus)

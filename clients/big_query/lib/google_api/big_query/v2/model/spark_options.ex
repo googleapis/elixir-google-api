@@ -26,8 +26,9 @@ defmodule GoogleApi.BigQuery.V2.Model.SparkOptions do
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - Custom container image for the runtime environment.
   *   `fileUris` (*type:* `list(String.t)`, *default:* `nil`) - Files to be placed in the working directory of each executor. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html).
   *   `jarUris` (*type:* `list(String.t)`, *default:* `nil`) - JARs to include on the driver and executor CLASSPATH. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html).
-  *   `mainFileUri` (*type:* `String.t`, *default:* `nil`) - The main file URI of the Spark application. Exactly one of the definition_body field and the main_file_uri field must be set.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Configuration properties as a set of key/value pairs, which will be passed on to the Spark application. For more information, see [Apache Spark](https://spark.apache.org/docs/latest/index.html).
+  *   `mainClass` (*type:* `String.t`, *default:* `nil`) - The fully qualified name of a class in jar_uris, for example, com.example.wordcount. Exactly one of main_class and main_jar_uri field should be set for Java/Scala language type.
+  *   `mainFileUri` (*type:* `String.t`, *default:* `nil`) - The main file/jar URI of the Spark application. Exactly one of the definition_body field and the main_file_uri field must be set for Python. Exactly one of main_class and main_file_uri field should be set for Java/Scala language type.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Configuration properties as a set of key/value pairs, which will be passed on to the Spark application. For more information, see [Apache Spark](https://spark.apache.org/docs/latest/index.html) and the [procedure option list](https://cloud.google.com/bigquery/docs/reference/standard-sql/data-definition-language#procedure_option_list).
   *   `pyFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Python files to be placed on the PYTHONPATH for PySpark application. Supported file types: `.py`, `.egg`, and `.zip`. For more information about Apache Spark, see [Apache Spark](https://spark.apache.org/docs/latest/index.html).
   *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Runtime version. If not specified, the default runtime version is used.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.BigQuery.V2.Model.SparkOptions do
           :containerImage => String.t() | nil,
           :fileUris => list(String.t()) | nil,
           :jarUris => list(String.t()) | nil,
+          :mainClass => String.t() | nil,
           :mainFileUri => String.t() | nil,
           :properties => map() | nil,
           :pyFileUris => list(String.t()) | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.BigQuery.V2.Model.SparkOptions do
   field(:containerImage)
   field(:fileUris, type: :list)
   field(:jarUris, type: :list)
+  field(:mainClass)
   field(:mainFileUri)
   field(:properties, type: :map)
   field(:pyFileUris, type: :list)

@@ -26,22 +26,26 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Streams data into BigQuery one record at a time without needing to run a load job. Requires the WRITER dataset role.
+  Streams data into BigQuery one record at a time without needing to run a load job.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the destination table.
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the destination table.
-  *   `table_id` (*type:* `String.t`) - Table ID of the destination table.
+  *   `project_id` (*type:* `String.t`) - Required. Project ID of the destination.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset ID of the destination.
+  *   `table_id` (*type:* `String.t`) - Required. Table ID of the destination.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:body` (*type:* `GoogleApi.BigQuery.V2.Model.TableDataInsertAllRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -71,13 +75,17 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
       :body => :body
     }
 
@@ -85,7 +93,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}/insertAll",
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/insertAll",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),
@@ -103,26 +111,31 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
   end
 
   @doc """
-  Retrieves table data from a specified set of rows. Requires the READER dataset role.
+  List the content of a table in rows.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigQuery.V2.Connection.t`) - Connection to server
-  *   `project_id` (*type:* `String.t`) - Project ID of the table to read
-  *   `dataset_id` (*type:* `String.t`) - Dataset ID of the table to read
-  *   `table_id` (*type:* `String.t`) - Table ID of the table to read
+  *   `project_id` (*type:* `String.t`) - Required. Project id of the table to list.
+  *   `dataset_id` (*type:* `String.t`) - Required. Dataset id of the table to list.
+  *   `table_id` (*type:* `String.t`) - Required. Table id of the table to list.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
       *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
       *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
       *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
-      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return
-      *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, identifying the result set
-      *   `:selectedFields` (*type:* `String.t`) - List of fields to return (comma-separated). If unspecified, all fields are returned
-      *   `:startIndex` (*type:* `String.t`) - Zero-based index of the starting row to read
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"formatOptions.useInt64Timestamp"` (*type:* `boolean()`) - Optional. Output timestamp as usec int64. Default is false.
+      *   `:maxResults` (*type:* `integer()`) - Row limit of the table.
+      *   `:pageToken` (*type:* `String.t`) - To retrieve the next page of table data, set this field to the string provided in the pageToken field of the response body from your previous call to tabledata.list.
+      *   `:selectedFields` (*type:* `String.t`) - Subset of fields to return, supports select into sub fields. Example: selected_fields = "a,e.d.f";
+      *   `:startIndex` (*type:* `String.t`) - Start row index of the table.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -151,13 +164,18 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
         opts \\ []
       ) do
     optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
       :alt => :query,
+      :callback => :query,
       :fields => :query,
       :key => :query,
       :oauth_token => :query,
       :prettyPrint => :query,
       :quotaUser => :query,
-      :userIp => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :"formatOptions.useInt64Timestamp" => :query,
       :maxResults => :query,
       :pageToken => :query,
       :selectedFields => :query,
@@ -168,7 +186,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Tabledata do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/bigquery/v2/projects/{projectId}/datasets/{datasetId}/tables/{tableId}/data",
+        "/bigquery/v2/projects/{+projectId}/datasets/{+datasetId}/tables/{+tableId}/data",
         %{
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
           "datasetId" => URI.encode(dataset_id, &URI.char_unreserved?/1),

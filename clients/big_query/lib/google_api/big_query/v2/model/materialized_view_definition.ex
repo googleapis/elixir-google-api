@@ -17,20 +17,22 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
   @moduledoc """
-
+  Definition and configuration of a materialized view.
 
   ## Attributes
 
-  *   `enableRefresh` (*type:* `boolean()`, *default:* `nil`) - [Optional] [TrustedTester] Enable automatic refresh of the materialized view when the base table is updated. The default value is "true".
-  *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] [TrustedTester] The time when this materialized view was last modified, in milliseconds since the epoch.
+  *   `allowNonIncrementalDefinition` (*type:* `boolean()`, *default:* `nil`) - Optional. This option declares authors intention to construct a materialized view that will not be refreshed incrementally.
+  *   `enableRefresh` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable automatic refresh of the materialized view when the base table is updated. The default value is "true".
+  *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this materialized view was last refreshed, in milliseconds since the epoch.
   *   `maxStaleness` (*type:* `String.t`, *default:* `nil`) - [Optional] Max staleness of data that could be returned when materizlized view is queried (formatted as Google SQL Interval type).
-  *   `query` (*type:* `String.t`, *default:* `nil`) - [Required] A query whose result is persisted.
-  *   `refreshIntervalMs` (*type:* `String.t`, *default:* `nil`) - [Optional] [TrustedTester] The maximum frequency at which this materialized view will be refreshed. The default value is "1800000" (30 minutes).
+  *   `query` (*type:* `String.t`, *default:* `nil`) - Required. A query whose results are persisted.
+  *   `refreshIntervalMs` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum frequency at which this materialized view will be refreshed. The default value is "1800000" (30 minutes).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowNonIncrementalDefinition => boolean() | nil,
           :enableRefresh => boolean() | nil,
           :lastRefreshTime => String.t() | nil,
           :maxStaleness => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
           :refreshIntervalMs => String.t() | nil
         }
 
+  field(:allowNonIncrementalDefinition)
   field(:enableRefresh)
   field(:lastRefreshTime)
   field(:maxStaleness)

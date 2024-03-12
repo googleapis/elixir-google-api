@@ -23,6 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Argument do
 
   *   `argumentKind` (*type:* `String.t`, *default:* `nil`) - Optional. Defaults to FIXED_TYPE.
   *   `dataType` (*type:* `GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t`, *default:* `nil`) - Required unless argument_kind = ANY_TYPE.
+  *   `isAggregate` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the argument is an aggregate function parameter. Must be Unset for routine types other than AGGREGATE_FUNCTION. For AGGREGATE_FUNCTION, if set to false, it is equivalent to adding "NOT AGGREGATE" clause in DDL; Otherwise, it is equivalent to omitting "NOT AGGREGATE" clause in DDL.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether the argument is input or output. Can be set for procedures only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The name of this argument. Can be absent for function return argument.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.BigQuery.V2.Model.Argument do
   @type t :: %__MODULE__{
           :argumentKind => String.t() | nil,
           :dataType => GoogleApi.BigQuery.V2.Model.StandardSqlDataType.t() | nil,
+          :isAggregate => boolean() | nil,
           :mode => String.t() | nil,
           :name => String.t() | nil
         }
 
   field(:argumentKind)
   field(:dataType, as: GoogleApi.BigQuery.V2.Model.StandardSqlDataType)
+  field(:isAggregate)
   field(:mode)
   field(:name)
 end

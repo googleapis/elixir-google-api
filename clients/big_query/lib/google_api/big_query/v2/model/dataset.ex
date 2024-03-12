@@ -21,27 +21,33 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
 
   ## Attributes
 
-  *   `access` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t)`, *default:* `nil`) - [Optional] An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER;
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The time when this dataset was created, in milliseconds since the epoch.
-  *   `datasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - [Required] A reference that identifies the dataset.
-  *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - [Output-only] The default collation of the dataset.
-  *   `defaultEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - 
-  *   `defaultPartitionExpirationMs` (*type:* `String.t`, *default:* `nil`) - [Optional] The default partition expiration for all partitioned tables in the dataset, in milliseconds. Once this property is set, all newly-created partitioned tables in the dataset will have an expirationMs property in the timePartitioning settings set to this value, and changing the value will only affect new tables, not existing ones. The storage in a partition will have an expiration time of its partition time plus this value. Setting this property overrides the use of defaultTableExpirationMs for partitioned tables: only one of defaultTableExpirationMs and defaultPartitionExpirationMs will be used for any new partitioned table. If you provide an explicit timePartitioning.expirationMs when creating or updating a partitioned table, that value takes precedence over the default partition expiration time indicated by this property.
-  *   `defaultTableExpirationMs` (*type:* `String.t`, *default:* `nil`) - [Optional] The default lifetime of all tables in the dataset, in milliseconds. The minimum value is 3600000 milliseconds (one hour). Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table's expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] A user-friendly description of the dataset.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - [Output-only] A hash of the resource.
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] A descriptive name for the dataset.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output-only] The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.
-  *   `isCaseInsensitive` (*type:* `boolean()`, *default:* `nil`) - [Optional] Indicates if table names are case insensitive in the dataset.
-  *   `kind` (*type:* `String.t`, *default:* `bigquery#dataset`) - [Output-only] The resource type.
+  *   `access` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetAccess.t)`, *default:* `nil`) - Optional. An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER;
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this dataset was created, in milliseconds since the epoch.
+  *   `datasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.DatasetReference.t`, *default:* `nil`) - Required. A reference that identifies the dataset.
+  *   `defaultCollation` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the default collation specification of future tables created in the dataset. If a table is created in this dataset without table-level default collation, then the table inherits the dataset default collation, which is applied to the string fields that do not have explicit collation specified. A change to this field affects only tables created afterwards, and does not alter the existing tables. The following values are supported: * 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to case-sensitive behavior.
+  *   `defaultEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - The default encryption key for all tables in the dataset. Once this property is set, all newly-created partitioned tables in the dataset will have encryption key set to this value, unless table creation request (or query) overrides the key.
+  *   `defaultPartitionExpirationMs` (*type:* `String.t`, *default:* `nil`) - This default partition expiration, expressed in milliseconds. When new time-partitioned tables are created in a dataset where this property is set, the table will inherit this value, propagated as the `TimePartitioning.expirationMs` property on the new table. If you set `TimePartitioning.expirationMs` explicitly when creating a table, the `defaultPartitionExpirationMs` of the containing dataset is ignored. When creating a partitioned table, if `defaultPartitionExpirationMs` is set, the `defaultTableExpirationMs` value is ignored and the table will not be inherit a table expiration deadline.
+  *   `defaultRoundingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the default rounding mode specification of new tables created within this dataset. During table creation, if this field is specified, the table within this dataset will inherit the default rounding mode of the dataset. Setting the default rounding mode on a table overrides this option. Existing tables in the dataset are unaffected. If columns are defined during that table creation, they will immediately inherit the table's default rounding mode, unless otherwise specified.
+  *   `defaultTableExpirationMs` (*type:* `String.t`, *default:* `nil`) - Optional. The default lifetime of all tables in the dataset, in milliseconds. The minimum lifetime value is 3600000 milliseconds (one hour). To clear an existing default expiration with a PATCH request, set to 0. Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table's expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of the dataset.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of the resource.
+  *   `externalDatasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalDatasetReference.t`, *default:* `nil`) - Optional. Reference to a read-only external dataset defined in data catalogs outside of BigQuery. Filled out when the dataset type is EXTERNAL.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive name for the dataset.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.
+  *   `isCaseInsensitive` (*type:* `boolean()`, *default:* `nil`) - Optional. TRUE if the dataset and its table names are case-insensitive, otherwise FALSE. By default, this is FALSE, which means the dataset and its table names are case-sensitive. This field does not affect routine references.
+  *   `kind` (*type:* `String.t`, *default:* `bigquery#dataset`) - Output only. The resource type.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See Creating and Updating Dataset Labels for more information.
-  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - [Output-only] The date when this dataset or any of its tables was last modified, in milliseconds since the epoch.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset should reside. The default value is US. See details at https://cloud.google.com/bigquery/docs/locations.
-  *   `maxTimeTravelHours` (*type:* `String.t`, *default:* `nil`) - [Optional] Number of hours for the max time travel for all tables in the dataset.
-  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output-only] Reserved for future use.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output-only] A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
-  *   `storageBillingModel` (*type:* `String.t`, *default:* `nil`) - [Optional] Storage billing model to be used for all tables in the dataset. Can be set to PHYSICAL. Default is LOGICAL.
-  *   `tags` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetTags.t)`, *default:* `nil`) - [Optional]The tags associated with this dataset. Tag keys are globally unique.
+  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The date when this dataset was last modified, in milliseconds since the epoch.
+  *   `linkedDatasetMetadata` (*type:* `GoogleApi.BigQuery.V2.Model.LinkedDatasetMetadata.t`, *default:* `nil`) - Output only. Metadata about the LinkedDataset. Filled out when the dataset type is LINKED.
+  *   `linkedDatasetSource` (*type:* `GoogleApi.BigQuery.V2.Model.LinkedDatasetSource.t`, *default:* `nil`) - Optional. The source dataset reference when the dataset is of type LINKED. For all other dataset types it is not set. This field cannot be updated once it is set. Any attempt to update this field using Update and Patch API Operations will be ignored.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations.
+  *   `maxTimeTravelHours` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the time travel window in hours. The value can be from 48 to 168 hours (2 to 7 days). The default value is 168 hours if this is not set.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
+  *   `storageBillingModel` (*type:* `String.t`, *default:* `nil`) - Optional. Updates storage_billing_model for the dataset.
+  *   `tags` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetTags.t)`, *default:* `nil`) - Output only. Tags for the Dataset.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Same as `type` in `ListFormatDataset`. The type of the dataset, one of: * DEFAULT - only accessible by owner and authorized accounts, * PUBLIC - accessible by everyone, * LINKED - linked dataset, * EXTERNAL - dataset with definition in external metadata catalog. -- *BIGLAKE_METASTORE - dataset that references a database created in BigLakeMetastore service. --
   """
 
   use GoogleApi.Gax.ModelBase
@@ -54,21 +60,28 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :defaultEncryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil,
           :defaultPartitionExpirationMs => String.t() | nil,
+          :defaultRoundingMode => String.t() | nil,
           :defaultTableExpirationMs => String.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
+          :externalDatasetReference =>
+            GoogleApi.BigQuery.V2.Model.ExternalDatasetReference.t() | nil,
           :friendlyName => String.t() | nil,
           :id => String.t() | nil,
           :isCaseInsensitive => boolean() | nil,
           :kind => String.t() | nil,
           :labels => map() | nil,
           :lastModifiedTime => String.t() | nil,
+          :linkedDatasetMetadata => GoogleApi.BigQuery.V2.Model.LinkedDatasetMetadata.t() | nil,
+          :linkedDatasetSource => GoogleApi.BigQuery.V2.Model.LinkedDatasetSource.t() | nil,
           :location => String.t() | nil,
           :maxTimeTravelHours => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
           :storageBillingModel => String.t() | nil,
-          :tags => list(GoogleApi.BigQuery.V2.Model.DatasetTags.t()) | nil
+          :tags => list(GoogleApi.BigQuery.V2.Model.DatasetTags.t()) | nil,
+          :type => String.t() | nil
         }
 
   field(:access, as: GoogleApi.BigQuery.V2.Model.DatasetAccess, type: :list)
@@ -77,21 +90,27 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:defaultCollation)
   field(:defaultEncryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
   field(:defaultPartitionExpirationMs)
+  field(:defaultRoundingMode)
   field(:defaultTableExpirationMs)
   field(:description)
   field(:etag)
+  field(:externalDatasetReference, as: GoogleApi.BigQuery.V2.Model.ExternalDatasetReference)
   field(:friendlyName)
   field(:id)
   field(:isCaseInsensitive)
   field(:kind)
   field(:labels, type: :map)
   field(:lastModifiedTime)
+  field(:linkedDatasetMetadata, as: GoogleApi.BigQuery.V2.Model.LinkedDatasetMetadata)
+  field(:linkedDatasetSource, as: GoogleApi.BigQuery.V2.Model.LinkedDatasetSource)
   field(:location)
   field(:maxTimeTravelHours)
+  field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:selfLink)
   field(:storageBillingModel)
   field(:tags, as: GoogleApi.BigQuery.V2.Model.DatasetTags, type: :list)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.Dataset do

@@ -22,34 +22,44 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   ## Attributes
 
   *   `cleanSpikesAndDips` (*type:* `boolean()`, *default:* `nil`) - If true, clean spikes and dips in the input time series.
-  *   `minTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - Set fast trend ARIMA_PLUS model minimum training length. Use in pair with time_series_length_fraction.
+  *   `minTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - The minimum number of time points in a time series that are used in modeling the trend component of the time series. If you use this option you must also set the `timeSeriesLengthFraction` option. This training option ensures that enough time points are available when you use `timeSeriesLengthFraction` in trend modeling. This is particularly important when forecasting multiple time series in a single query using `timeSeriesIdColumn`. If the total number of time points is less than the `minTimeSeriesLength` value, then the query uses all available time points.
   *   `subsample` (*type:* `float()`, *default:* `nil`) - Subsample fraction of the training data to grow tree to prevent overfitting for boosted tree models.
   *   `horizon` (*type:* `String.t`, *default:* `nil`) - The number of periods ahead that need to be forecasted.
-  *   `trendSmoothingWindowSize` (*type:* `String.t`, *default:* `nil`) - The smoothing window size for the trend component of the time series.
+  *   `budgetHours` (*type:* `float()`, *default:* `nil`) - Budget in hours for AutoML training.
+  *   `trendSmoothingWindowSize` (*type:* `String.t`, *default:* `nil`) - Smoothing window size for the trend component. When a positive value is specified, a center moving average smoothing is applied on the history trend. When the smoothing window is out of the boundary at the beginning or the end of the trend, the first element or the last element is padded to fill the smoothing window before the average is applied.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
+  *   `xgboostVersion` (*type:* `String.t`, *default:* `nil`) - User-selected XGBoost versions for training of XGBoost models.
   *   `boosterType` (*type:* `String.t`, *default:* `nil`) - Booster type for boosted tree models.
+  *   `vertexAiModelVersionAliases` (*type:* `list(String.t)`, *default:* `nil`) - The version aliases to apply in Vertex AI model registry. Always overwrite if the version aliases exists in a existing model.
+  *   `fitIntercept` (*type:* `boolean()`, *default:* `nil`) - Whether the model should include intercept during model training.
   *   `includeDrift` (*type:* `boolean()`, *default:* `nil`) - Include drift when fitting an ARIMA model.
   *   `autoArima` (*type:* `boolean()`, *default:* `nil`) - Whether to enable auto ARIMA or not.
   *   `learnRateStrategy` (*type:* `String.t`, *default:* `nil`) - The strategy to determine learn rate for the current iteration.
   *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the training data. Only applicable for classification models.
-  *   `maxTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - Get truncated length by last n points in time series. Use separately from time_series_length_fraction and min_time_series_length.
+  *   `autoClassWeights` (*type:* `boolean()`, *default:* `nil`) - Whether to calculate class weights automatically based on the popularity of each label.
+  *   `maxTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - The maximum number of time points in a time series that can be used in modeling the trend component of the time series. Don't use this option with the `timeSeriesLengthFraction` or `minTimeSeriesLength` options.
   *   `l2Regularization` (*type:* `float()`, *default:* `nil`) - L2 regularization coefficient.
   *   `dartNormalizeType` (*type:* `String.t`, *default:* `nil`) - Type of normalization algorithm for boosted tree models using dart booster.
   *   `userColumn` (*type:* `String.t`, *default:* `nil`) - User column specified for matrix factorization models.
   *   `integratedGradientsNumSteps` (*type:* `String.t`, *default:* `nil`) - Number of integral steps for the integrated gradients explain method.
   *   `lossType` (*type:* `String.t`, *default:* `nil`) - Type of loss function used during training run.
+  *   `tfVersion` (*type:* `String.t`, *default:* `nil`) - Based on the selected TF version, the corresponding docker image is used to train external models.
   *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
   *   `colorSpace` (*type:* `String.t`, *default:* `nil`) - Enums for color space, used for processing images in Object Table. See more details at https://www.tensorflow.org/io/tutorials/colorspace.
   *   `hiddenUnits` (*type:* `list(String.t)`, *default:* `nil`) - Hidden units for dnn models.
   *   `numFactors` (*type:* `String.t`, *default:* `nil`) - Num factors specified for matrix factorization models.
   *   `numParallelTree` (*type:* `String.t`, *default:* `nil`) - Number of parallel trees constructed during each iteration for boosted tree models.
+  *   `approxGlobalFeatureContrib` (*type:* `boolean()`, *default:* `nil`) - Whether to use approximate feature contribution method in XGBoost model explanation for global explain.
   *   `calculatePValues` (*type:* `boolean()`, *default:* `nil`) - Whether or not p-value test should be computed for this model. Only available for linear and logistic regression models.
   *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2.
   *   `colsampleBynode` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each node(split) for boosted tree models.
   *   `dataFrequency` (*type:* `String.t`, *default:* `nil`) - The data frequency of a time series.
   *   `dataSplitColumn` (*type:* `String.t`, *default:* `nil`) - The column to split data with. This column won't be used as a feature. 1. When data_split_method is CUSTOM, the corresponding column should be boolean. The rows with true value tag are eval data, and the false are training data. 2. When data_split_method is SEQ, the first DATA_SPLIT_EVAL_FRACTION rows (from smallest to largest) in the corresponding column are used as training data, and the rest are eval data. It respects the order in Orderable data types: https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types#data-type-properties
   *   `walsAlpha` (*type:* `float()`, *default:* `nil`) - Hyperparameter for matrix factoration when implicit feedback type is specified.
-  *   `autoArimaMaxOrder` (*type:* `String.t`, *default:* `nil`) - The max value of non-seasonal p and q.
+  *   `autoArimaMinOrder` (*type:* `String.t`, *default:* `nil`) - The min value of the sum of non-seasonal p and q.
+  *   `autoArimaMaxOrder` (*type:* `String.t`, *default:* `nil`) - The max value of the sum of non-seasonal p and q.
+  *   `instanceWeightColumn` (*type:* `String.t`, *default:* `nil`) - Name of the instance weight column for training data. This column isn't be used as a feature.
+  *   `modelRegistry` (*type:* `String.t`, *default:* `nil`) - The model registry.
   *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms.
   *   `dropout` (*type:* `float()`, *default:* `nil`) - Dropout probability for dnn models.
   *   `l1Regularization` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient.
@@ -62,17 +72,22 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `minRelativeProgress` (*type:* `float()`, *default:* `nil`) - When early_stop is true, stops training when accuracy improvement is less than 'min_relative_progress'. Used only for iterative training algorithms.
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `minSplitLoss` (*type:* `float()`, *default:* `nil`) - Minimum split loss for boosted tree models.
+  *   `pcaExplainedVarianceRatio` (*type:* `float()`, *default:* `nil`) - The minimum ratio of cumulative explained variance that needs to be given by the PCA model.
   *   `holidayRegion` (*type:* `String.t`, *default:* `nil`) - The geographical region based on which the holidays are considered in time series modeling. If a valid value is specified, then holiday effects modeling is enabled.
-  *   `timeSeriesLengthFraction` (*type:* `float()`, *default:* `nil`) - Get truncated length by fraction in time series.
+  *   `timeSeriesLengthFraction` (*type:* `float()`, *default:* `nil`) - The fraction of the interpolated length of the time series that's used to model the time series trend component. All of the time points of the time series are used to model the non-trend component. This training option accelerates modeling training without sacrificing much forecasting accuracy. You can use this option with `minTimeSeriesLength` but not with `maxTimeSeriesLength`.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
   *   `treeMethod` (*type:* `String.t`, *default:* `nil`) - Tree construction algorithm for boosted tree models.
   *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled Shapley explain method.
-  *   `preserveInputStructs` (*type:* `boolean()`, *default:* `nil`) - Whether to preserve the input structs in output feature names. Suppose there is a struct A with field b. When false (default), the output feature name is A_b. When true, the output feature name is A.b.
+  *   `pcaSolver` (*type:* `String.t`, *default:* `nil`) - The solver for PCA.
   *   `feedbackType` (*type:* `String.t`, *default:* `nil`) - Feedback type that specifies which algorithm to run for matrix factorization.
   *   `decomposeTimeSeries` (*type:* `boolean()`, *default:* `nil`) - If true, perform decompose time series and save the results.
+  *   `activationFn` (*type:* `String.t`, *default:* `nil`) - Activation function of the neural nets.
+  *   `optimizer` (*type:* `String.t`, *default:* `nil`) - Optimizer used for training the neural nets.
   *   `distanceType` (*type:* `String.t`, *default:* `nil`) - Distance type for clustering models.
+  *   `holidayRegions` (*type:* `list(String.t)`, *default:* `nil`) - A list of geographical regions that are used for time series modeling.
   *   `colsampleBytree` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns when constructing each tree for boosted tree models.
+  *   `numPrincipalComponents` (*type:* `String.t`, *default:* `nil`) - Number of principal components to keep in the PCA model. Must be <= the number of features.
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `inputLabelColumns` (*type:* `list(String.t)`, *default:* `nil`) - Name of input label columns in training data.
   *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The time series id column that was used during ARIMA model training.
@@ -83,11 +98,15 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
   *   `timeSeriesIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - The time series id columns that were used during ARIMA model training.
   *   `colsampleBylevel` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each level for boosted tree models.
+  *   `categoryEncodingMethod` (*type:* `String.t`, *default:* `nil`) - Categorical feature encoding method.
   *   `enableGlobalExplain` (*type:* `boolean()`, *default:* `nil`) - If true, enable global explanation during training.
   *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate strategy.
   *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - The maximum number of iterations in training. Used only for iterative training algorithms.
   *   `itemColumn` (*type:* `String.t`, *default:* `nil`) - Item column specified for matrix factorization models.
+  *   `l1RegActivation` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient to activations.
+  *   `standardizeFeatures` (*type:* `boolean()`, *default:* `nil`) - Whether to standardize numerical features. Default to true.
+  *   `scaleFeatures` (*type:* `boolean()`, *default:* `nil`) - If true, scale the feature values by dividing the feature standard deviation. Currently only apply to PCA.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -97,31 +116,41 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :minTimeSeriesLength => String.t() | nil,
           :subsample => float() | nil,
           :horizon => String.t() | nil,
+          :budgetHours => float() | nil,
           :trendSmoothingWindowSize => String.t() | nil,
           :modelUri => String.t() | nil,
+          :xgboostVersion => String.t() | nil,
           :boosterType => String.t() | nil,
+          :vertexAiModelVersionAliases => list(String.t()) | nil,
+          :fitIntercept => boolean() | nil,
           :includeDrift => boolean() | nil,
           :autoArima => boolean() | nil,
           :learnRateStrategy => String.t() | nil,
           :labelClassWeights => map() | nil,
+          :autoClassWeights => boolean() | nil,
           :maxTimeSeriesLength => String.t() | nil,
           :l2Regularization => float() | nil,
           :dartNormalizeType => String.t() | nil,
           :userColumn => String.t() | nil,
           :integratedGradientsNumSteps => String.t() | nil,
           :lossType => String.t() | nil,
+          :tfVersion => String.t() | nil,
           :learnRate => float() | nil,
           :colorSpace => String.t() | nil,
           :hiddenUnits => list(String.t()) | nil,
           :numFactors => String.t() | nil,
           :numParallelTree => String.t() | nil,
+          :approxGlobalFeatureContrib => boolean() | nil,
           :calculatePValues => boolean() | nil,
           :dataSplitEvalFraction => float() | nil,
           :colsampleBynode => float() | nil,
           :dataFrequency => String.t() | nil,
           :dataSplitColumn => String.t() | nil,
           :walsAlpha => float() | nil,
+          :autoArimaMinOrder => String.t() | nil,
           :autoArimaMaxOrder => String.t() | nil,
+          :instanceWeightColumn => String.t() | nil,
+          :modelRegistry => String.t() | nil,
           :earlyStop => boolean() | nil,
           :dropout => float() | nil,
           :l1Regularization => float() | nil,
@@ -134,17 +163,22 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :minRelativeProgress => float() | nil,
           :dataSplitMethod => String.t() | nil,
           :minSplitLoss => float() | nil,
+          :pcaExplainedVarianceRatio => float() | nil,
           :holidayRegion => String.t() | nil,
           :timeSeriesLengthFraction => float() | nil,
           :warmStart => boolean() | nil,
           :optimizationStrategy => String.t() | nil,
           :treeMethod => String.t() | nil,
           :sampledShapleyNumPaths => String.t() | nil,
-          :preserveInputStructs => boolean() | nil,
+          :pcaSolver => String.t() | nil,
           :feedbackType => String.t() | nil,
           :decomposeTimeSeries => boolean() | nil,
+          :activationFn => String.t() | nil,
+          :optimizer => String.t() | nil,
           :distanceType => String.t() | nil,
+          :holidayRegions => list(String.t()) | nil,
           :colsampleBytree => float() | nil,
+          :numPrincipalComponents => String.t() | nil,
           :maxTreeDepth => String.t() | nil,
           :inputLabelColumns => list(String.t()) | nil,
           :timeSeriesIdColumn => String.t() | nil,
@@ -155,42 +189,56 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :batchSize => String.t() | nil,
           :timeSeriesIdColumns => list(String.t()) | nil,
           :colsampleBylevel => float() | nil,
+          :categoryEncodingMethod => String.t() | nil,
           :enableGlobalExplain => boolean() | nil,
           :kmeansInitializationMethod => String.t() | nil,
           :initialLearnRate => float() | nil,
           :maxIterations => String.t() | nil,
-          :itemColumn => String.t() | nil
+          :itemColumn => String.t() | nil,
+          :l1RegActivation => float() | nil,
+          :standardizeFeatures => boolean() | nil,
+          :scaleFeatures => boolean() | nil
         }
 
   field(:cleanSpikesAndDips)
   field(:minTimeSeriesLength)
   field(:subsample)
   field(:horizon)
+  field(:budgetHours)
   field(:trendSmoothingWindowSize)
   field(:modelUri)
+  field(:xgboostVersion)
   field(:boosterType)
+  field(:vertexAiModelVersionAliases, type: :list)
+  field(:fitIntercept)
   field(:includeDrift)
   field(:autoArima)
   field(:learnRateStrategy)
   field(:labelClassWeights, type: :map)
+  field(:autoClassWeights)
   field(:maxTimeSeriesLength)
   field(:l2Regularization)
   field(:dartNormalizeType)
   field(:userColumn)
   field(:integratedGradientsNumSteps)
   field(:lossType)
+  field(:tfVersion)
   field(:learnRate)
   field(:colorSpace)
   field(:hiddenUnits, type: :list)
   field(:numFactors)
   field(:numParallelTree)
+  field(:approxGlobalFeatureContrib)
   field(:calculatePValues)
   field(:dataSplitEvalFraction)
   field(:colsampleBynode)
   field(:dataFrequency)
   field(:dataSplitColumn)
   field(:walsAlpha)
+  field(:autoArimaMinOrder)
   field(:autoArimaMaxOrder)
+  field(:instanceWeightColumn)
+  field(:modelRegistry)
   field(:earlyStop)
   field(:dropout)
   field(:l1Regularization)
@@ -203,17 +251,22 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:minRelativeProgress)
   field(:dataSplitMethod)
   field(:minSplitLoss)
+  field(:pcaExplainedVarianceRatio)
   field(:holidayRegion)
   field(:timeSeriesLengthFraction)
   field(:warmStart)
   field(:optimizationStrategy)
   field(:treeMethod)
   field(:sampledShapleyNumPaths)
-  field(:preserveInputStructs)
+  field(:pcaSolver)
   field(:feedbackType)
   field(:decomposeTimeSeries)
+  field(:activationFn)
+  field(:optimizer)
   field(:distanceType)
+  field(:holidayRegions, type: :list)
   field(:colsampleBytree)
+  field(:numPrincipalComponents)
   field(:maxTreeDepth)
   field(:inputLabelColumns, type: :list)
   field(:timeSeriesIdColumn)
@@ -224,11 +277,15 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:batchSize)
   field(:timeSeriesIdColumns, type: :list)
   field(:colsampleBylevel)
+  field(:categoryEncodingMethod)
   field(:enableGlobalExplain)
   field(:kmeansInitializationMethod)
   field(:initialLearnRate)
   field(:maxIterations)
   field(:itemColumn)
+  field(:l1RegActivation)
+  field(:standardizeFeatures)
+  field(:scaleFeatures)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TrainingOptions do

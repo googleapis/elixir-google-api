@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.TransactionInfo do
   @moduledoc """
-
+  [Alpha] Information of a multi-statement transaction.
 
   ## Attributes
 
-  *   `transactionId` (*type:* `String.t`, *default:* `nil`) - [Output-only] // [Alpha] Id of the transaction.
+  *   `transactionId` (*type:* `String.t`, *default:* `nil`) - Output only. [Alpha] Id of the transaction.
   """
 
   use GoogleApi.Gax.ModelBase

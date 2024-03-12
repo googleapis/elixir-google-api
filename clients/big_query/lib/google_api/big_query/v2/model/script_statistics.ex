@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.ScriptStatistics do
   @moduledoc """
-
+  Job statistics specific to the child job of a script.
 
   ## Attributes
 
-  *   `evaluationKind` (*type:* `String.t`, *default:* `nil`) - [Output-only] Whether this child job was a statement or expression.
+  *   `evaluationKind` (*type:* `String.t`, *default:* `nil`) - Whether this child job was a statement or expression.
   *   `stackFrames` (*type:* `list(GoogleApi.BigQuery.V2.Model.ScriptStackFrame.t)`, *default:* `nil`) - Stack trace showing the line/column/procedure name of each frame on the stack at the point where the current evaluation happened. The leaf frame is first, the primary script is last. Never empty.
   """
 

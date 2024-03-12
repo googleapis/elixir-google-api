@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DestinationTableProperties do
   @moduledoc """
-
+  Properties for the destination table.
 
   ## Attributes
 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - [Optional] The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail.
-  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - [Internal] This field is for Google internal use only.
-  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - [Optional] The friendly name for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current friendly name is provided, the job will fail.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - [Optional] The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description for the destination table. This will only be used if the destination table is newly created. If the table already exists and a value different than the current description is provided, the job will fail.
+  *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Internal use only.
+  *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. Friendly name for the destination table. If the table already exists, it should be same as the existing friendly name.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels associated with this table. You can use these to organize and group your tables. This will only be used if the destination table is newly created. If the table already exists and labels are different than the current labels are provided, the job will fail.
   """
 
   use GoogleApi.Gax.ModelBase

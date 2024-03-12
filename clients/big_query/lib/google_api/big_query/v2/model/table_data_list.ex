@@ -25,7 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableDataList do
   *   `kind` (*type:* `String.t`, *default:* `bigquery#tableDataList`) - The resource type of the response.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - A token used for paging results. Providing this token instead of the startIndex parameter can help you retrieve stable results when an underlying table is changing.
   *   `rows` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableRow.t)`, *default:* `nil`) - Rows of results.
-  *   `totalRows` (*type:* `String.t`, *default:* `nil`) - The total number of rows in the complete table.
+  *   `totalRows` (*type:* `String.t`, *default:* `nil`) - Total rows of the entire table. In order to show default value 0 we have to present it as string.
   """
 
   use GoogleApi.Gax.ModelBase

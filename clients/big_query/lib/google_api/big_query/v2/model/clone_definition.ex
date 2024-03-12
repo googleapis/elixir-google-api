@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.CloneDefinition do
   @moduledoc """
-
+  Information about base table and clone time of a table clone.
 
   ## Attributes
 
-  *   `baseTableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - [Required] Reference describing the ID of the table that was cloned.
-  *   `cloneTime` (*type:* `DateTime.t`, *default:* `nil`) - [Required] The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format.
+  *   `baseTableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Required. Reference describing the ID of the table that was cloned.
+  *   `cloneTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The time at which the base table was cloned. This value is reported in the JSON response using RFC3339 format.
   """
 
   use GoogleApi.Gax.ModelBase

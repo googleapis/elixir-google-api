@@ -17,23 +17,26 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.JobStatistics4 do
   @moduledoc """
-
+  Statistics for an extract job.
 
   ## Attributes
 
-  *   `destinationUriFileCounts` (*type:* `list(String.t)`, *default:* `nil`) - [Output-only] Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the 'destinationUris' field.
-  *   `inputBytes` (*type:* `String.t`, *default:* `nil`) - [Output-only] Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes.
+  *   `destinationUriFileCounts` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Number of files per destination URI or URI pattern specified in the extract configuration. These values will be in the same order as the URIs specified in the 'destinationUris' field.
+  *   `inputBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of user bytes extracted into the result. This is the byte count as computed by BigQuery for billing purposes and doesn't have any relationship with the number of actual result bytes extracted in the desired format.
+  *   `timeline` (*type:* `list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t)`, *default:* `nil`) - Output only. Describes a timeline of job execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :destinationUriFileCounts => list(String.t()) | nil,
-          :inputBytes => String.t() | nil
+          :inputBytes => String.t() | nil,
+          :timeline => list(GoogleApi.BigQuery.V2.Model.QueryTimelineSample.t()) | nil
         }
 
   field(:destinationUriFileCounts, type: :list)
   field(:inputBytes)
+  field(:timeline, as: GoogleApi.BigQuery.V2.Model.QueryTimelineSample, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.JobStatistics4 do
