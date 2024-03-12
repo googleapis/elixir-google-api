@@ -27,6 +27,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.DnsAuthorization do
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. A domain that is being authorized. A DnsAuthorization resource covers a single domain and its wildcard, e.g. authorization for `example.com` can be used to issue certificates for `example.com` and `*.example.com`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a DnsAuthorization.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the dns authorization. DnsAuthorization names must be unique globally and match pattern `projects/*/locations/*/dnsAuthorizations/*`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location global: FIXED_RECORD.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a DnsAuthorization.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.DnsAuthorization do
           :domain => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :type => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.DnsAuthorization do
   field(:domain)
   field(:labels, type: :map)
   field(:name)
+  field(:type)
   field(:updateTime, as: DateTime)
 end
 
