@@ -45,6 +45,7 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:useTrash` (*type:* `boolean()`) - Move to Trash if possible
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -66,7 +67,8 @@ defmodule GoogleApi.Blogger.V3.Api.Pages do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :useTrash => :query
     }
 
     request =
