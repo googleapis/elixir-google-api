@@ -18,7 +18,7 @@
 defmodule GoogleApi.MyBusinessQAndA.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.MyBusinessQAndA.Mixfile do
 
   defp description() do
     """
-    My Business Q&A API client library. The My Business Q&A API allows questions and answers to be posted for specific listings.
+    My Business Q&A API client library. The My Business Q&A API allows questions and answers to be posted for specific listings. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 

@@ -2,7 +2,7 @@
 
 My Business Q&A API client library.
 
-The My Business Q&A API allows questions and answers to be posted for specific listings.
+The My Business Q&A API allows questions and answers to be posted for specific listings. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
 
 ## Installation
 
