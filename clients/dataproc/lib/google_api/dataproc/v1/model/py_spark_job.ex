@@ -27,7 +27,7 @@ defmodule GoogleApi.Dataproc.V1.Model.PySparkJob do
   *   `jarFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of jar files to add to the CLASSPATHs of the Python driver and tasks.
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
   *   `mainPythonFileUri` (*type:* `String.t`, *default:* `nil`) - Required. The HCFS URI of the main Python file to use as the driver. Must be a .py file.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure PySpark. Properties that conflict with values set by the Dataproc API might be overwritten. Can include properties set in /etc/spark/conf/spark-defaults.conf and classes in user code.
   *   `pythonFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS file URIs of Python files to pass to the PySpark framework. Supported file types: .py, .egg, and .zip.
   """
 

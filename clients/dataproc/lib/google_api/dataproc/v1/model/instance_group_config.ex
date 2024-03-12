@@ -23,15 +23,18 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
 
   *   `accelerators` (*type:* `list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - Optional. The Compute Engine accelerator configuration for these instances.
   *   `diskConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DiskConfig.t`, *default:* `nil`) - Optional. Disk option config settings.
-  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples: https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/[image-id] projects/[project_id]/global/images/[image-id] image-idImage family examples. Dataproc will use the most recent image from the family: https://www.googleapis.com/compute/beta/projects/[project_id]/global/images/family/[custom-image-family-name] projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
+  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine image resource used for cluster instances.The URI can represent an image or image family.Image examples: https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/[image-id] projects/[project_id]/global/images/[image-id] image-idImage family examples. Dataproc will use the most recent image from the family: https://www.googleapis.com/compute/v1/projects/[project_id]/global/images/family/[custom-image-family-name] projects/[project_id]/global/images/family/[custom-image-family-name]If the URI is unspecified, it will be inferred from SoftwareConfig.image_version or the system default.
+  *   `instanceFlexibilityPolicy` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy.t`, *default:* `nil`) - Optional. Instance flexibility Policy allowing a mixture of VM shapes and provisioning models.
   *   `instanceNames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of instance names. Dataproc derives the names from cluster_name, num_instances, and the instance group.
   *   `instanceReferences` (*type:* `list(GoogleApi.Dataproc.V1.Model.InstanceReference.t)`, *default:* `nil`) - Output only. List of references to Compute Engine instances.
   *   `isPreemptible` (*type:* `boolean()`, *default:* `nil`) - Output only. Specifies that this instance group contains preemptible instances.
-  *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 projects/[project_id]/zones/us-east1-a/machineTypes/n1-standard-2 n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
+  *   `machineTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Compute Engine machine type used for cluster instances.A full URL, partial URI, or short name are valid. Examples: https://www.googleapis.com/compute/v1/projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2 projects/[project_id]/zones/[zone]/machineTypes/n1-standard-2 n1-standard-2Auto Zone Exception: If you are using the Dataproc Auto Zone Placement (https://cloud.google.com/dataproc/docs/concepts/configuring-clusters/auto-zone#using_auto_zone_placement) feature, you must use the short name of the machine type resource, for example, n1-standard-2.
   *   `managedGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t`, *default:* `nil`) - Output only. The config for Compute Engine Instance Group Manager that manages this group. This is only used for preemptible instance groups.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the minimum cpu platform for the Instance Group. See Dataproc -> Minimum CPU Platform (https://cloud.google.com/dataproc/docs/concepts/compute/dataproc-min-cpu).
+  *   `minNumInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The minimum number of primary worker instances to create. If min_num_instances is set, cluster creation will succeed if the number of primary workers created is at least equal to the min_num_instances number.Example: Cluster creation request with num_instances = 5 and min_num_instances = 3: If 4 VMs are created and 1 instance fails, the failed VM is deleted. The cluster is resized to 4 instances and placed in a RUNNING state. If 2 instances are created and 3 instances fail, the cluster in placed in an ERROR state. The failed VMs are not deleted.
   *   `numInstances` (*type:* `integer()`, *default:* `nil`) - Optional. The number of VM instances in the instance group. For HA cluster master_config groups, must be set to 3. For standard cluster master_config groups, must be set to 1.
   *   `preemptibility` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the preemptibility of the instance group.The default value for master and worker groups is NON_PREEMPTIBLE. This default cannot be changed.The default value for secondary instances is PREEMPTIBLE.
+  *   `startupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.StartupConfig.t`, *default:* `nil`) - Optional. Configuration to handle the startup of instances during cluster create and update process.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,27 +43,34 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do
           :accelerators => list(GoogleApi.Dataproc.V1.Model.AcceleratorConfig.t()) | nil,
           :diskConfig => GoogleApi.Dataproc.V1.Model.DiskConfig.t() | nil,
           :imageUri => String.t() | nil,
+          :instanceFlexibilityPolicy =>
+            GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy.t() | nil,
           :instanceNames => list(String.t()) | nil,
           :instanceReferences => list(GoogleApi.Dataproc.V1.Model.InstanceReference.t()) | nil,
           :isPreemptible => boolean() | nil,
           :machineTypeUri => String.t() | nil,
           :managedGroupConfig => GoogleApi.Dataproc.V1.Model.ManagedGroupConfig.t() | nil,
           :minCpuPlatform => String.t() | nil,
+          :minNumInstances => integer() | nil,
           :numInstances => integer() | nil,
-          :preemptibility => String.t() | nil
+          :preemptibility => String.t() | nil,
+          :startupConfig => GoogleApi.Dataproc.V1.Model.StartupConfig.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Dataproc.V1.Model.AcceleratorConfig, type: :list)
   field(:diskConfig, as: GoogleApi.Dataproc.V1.Model.DiskConfig)
   field(:imageUri)
+  field(:instanceFlexibilityPolicy, as: GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy)
   field(:instanceNames, type: :list)
   field(:instanceReferences, as: GoogleApi.Dataproc.V1.Model.InstanceReference, type: :list)
   field(:isPreemptible)
   field(:machineTypeUri)
   field(:managedGroupConfig, as: GoogleApi.Dataproc.V1.Model.ManagedGroupConfig)
   field(:minCpuPlatform)
+  field(:minNumInstances)
   field(:numInstances)
   field(:preemptibility)
+  field(:startupConfig, as: GoogleApi.Dataproc.V1.Model.StartupConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceGroupConfig do

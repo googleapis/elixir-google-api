@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.HiveJob do
 
   *   `continueOnFailure` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to continue executing queries if a query fails. The default value is false. Setting to true can be useful when executing independent parallel queries.
   *   `jarFileUris` (*type:* `list(String.t)`, *default:* `nil`) - Optional. HCFS URIs of jar files to add to the CLASSPATH of the Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes and UDFs.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API may be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names and values, used to configure Hive. Properties that conflict with values set by the Dataproc API might be overwritten. Can include properties set in /etc/hadoop/conf/*-site.xml, /etc/hive/conf/hive-site.xml, and classes in user code.
   *   `queryFileUri` (*type:* `String.t`, *default:* `nil`) - The HCFS URI of the script that contains Hive queries.
   *   `queryList` (*type:* `GoogleApi.Dataproc.V1.Model.QueryList.t`, *default:* `nil`) - A list of queries.
   *   `scriptVariables` (*type:* `map()`, *default:* `nil`) - Optional. Mapping of query variable names to values (equivalent to the Hive command: SET name="value";).

@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
 
   ## Attributes
 
+  *   `flinkJob` (*type:* `GoogleApi.Dataproc.V1.Model.FlinkJob.t`, *default:* `nil`) - Optional. Job is a Flink job.
   *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - Optional. Job is a Hadoop job.
   *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - Optional. Job is a Hive job.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this job.Label keys must be between 1 and 63 characters long, and must conform to the following regular expression: \\p{Ll}\\p{Lo}{0,62}Label values must be between 1 and 63 characters long, and must conform to the following regular expression: \\p{Ll}\\p{Lo}\\p{N}_-{0,63}No more than 32 labels can be associated with a given job.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :flinkJob => GoogleApi.Dataproc.V1.Model.FlinkJob.t() | nil,
           :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t() | nil,
           :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t() | nil,
           :labels => map() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Dataproc.V1.Model.OrderedJob do
           :trinoJob => GoogleApi.Dataproc.V1.Model.TrinoJob.t() | nil
         }
 
+  field(:flinkJob, as: GoogleApi.Dataproc.V1.Model.FlinkJob)
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)
   field(:hiveJob, as: GoogleApi.Dataproc.V1.Model.HiveJob)
   field(:labels, type: :map)

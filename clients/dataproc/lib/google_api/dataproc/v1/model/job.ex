@@ -22,12 +22,14 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   ## Attributes
 
   *   `done` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the job is completed. If the value is false, the job is still in progress. If true, the job is completed, and status.state field will indicate if it was successful, failed, or cancelled.
-  *   `driverControlFilesUri` (*type:* `String.t`, *default:* `nil`) - Output only. If present, the location of miscellaneous control files which may be used as part of job setup and handling. If not present, control files may be placed in the same location as driver_output_uri.
+  *   `driverControlFilesUri` (*type:* `String.t`, *default:* `nil`) - Output only. If present, the location of miscellaneous control files which can be used as part of job setup and handling. If not present, control files might be placed in the same location as driver_output_uri.
   *   `driverOutputResourceUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout of the job's driver program.
+  *   `driverSchedulingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.DriverSchedulingConfig.t`, *default:* `nil`) - Optional. Driver scheduling configuration.
+  *   `flinkJob` (*type:* `GoogleApi.Dataproc.V1.Model.FlinkJob.t`, *default:* `nil`) - Optional. Job is a Flink job.
   *   `hadoopJob` (*type:* `GoogleApi.Dataproc.V1.Model.HadoopJob.t`, *default:* `nil`) - Optional. Job is a Hadoop job.
   *   `hiveJob` (*type:* `GoogleApi.Dataproc.V1.Model.HiveJob.t`, *default:* `nil`) - Optional. Job is a Hive job.
-  *   `jobUuid` (*type:* `String.t`, *default:* `nil`) - Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that may be reused over time.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job.
+  *   `jobUuid` (*type:* `String.t`, *default:* `nil`) - Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that might be reused over time.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job.
   *   `pigJob` (*type:* `GoogleApi.Dataproc.V1.Model.PigJob.t`, *default:* `nil`) - Optional. Job is a Pig job.
   *   `placement` (*type:* `GoogleApi.Dataproc.V1.Model.JobPlacement.t`, *default:* `nil`) - Required. Job information, including how, when, and where to run the job.
   *   `prestoJob` (*type:* `GoogleApi.Dataproc.V1.Model.PrestoJob.t`, *default:* `nil`) - Optional. Job is a Presto job.
@@ -37,10 +39,10 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   *   `sparkJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkJob.t`, *default:* `nil`) - Optional. Job is a Spark job.
   *   `sparkRJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkRJob.t`, *default:* `nil`) - Optional. Job is a SparkR job.
   *   `sparkSqlJob` (*type:* `GoogleApi.Dataproc.V1.Model.SparkSqlJob.t`, *default:* `nil`) - Optional. Job is a SparkSql job.
-  *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information may be contained in the type_job and yarn_applications fields.
+  *   `status` (*type:* `GoogleApi.Dataproc.V1.Model.JobStatus.t`, *default:* `nil`) - Output only. The job status. Additional application-specific status information might be contained in the type_job and yarn_applications fields.
   *   `statusHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.JobStatus.t)`, *default:* `nil`) - Output only. The previous job status.
   *   `trinoJob` (*type:* `GoogleApi.Dataproc.V1.Model.TrinoJob.t`, *default:* `nil`) - Optional. Job is a Trino job.
-  *   `yarnApplications` (*type:* `list(GoogleApi.Dataproc.V1.Model.YarnApplication.t)`, *default:* `nil`) - Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It may be changed before final release.
+  *   `yarnApplications` (*type:* `list(GoogleApi.Dataproc.V1.Model.YarnApplication.t)`, *default:* `nil`) - Output only. The collection of YARN applications spun up by this job.Beta Feature: This report is available for testing purposes only. It might be changed before final release.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,6 +51,8 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
           :done => boolean() | nil,
           :driverControlFilesUri => String.t() | nil,
           :driverOutputResourceUri => String.t() | nil,
+          :driverSchedulingConfig => GoogleApi.Dataproc.V1.Model.DriverSchedulingConfig.t() | nil,
+          :flinkJob => GoogleApi.Dataproc.V1.Model.FlinkJob.t() | nil,
           :hadoopJob => GoogleApi.Dataproc.V1.Model.HadoopJob.t() | nil,
           :hiveJob => GoogleApi.Dataproc.V1.Model.HiveJob.t() | nil,
           :jobUuid => String.t() | nil,
@@ -71,6 +75,8 @@ defmodule GoogleApi.Dataproc.V1.Model.Job do
   field(:done)
   field(:driverControlFilesUri)
   field(:driverOutputResourceUri)
+  field(:driverSchedulingConfig, as: GoogleApi.Dataproc.V1.Model.DriverSchedulingConfig)
+  field(:flinkJob, as: GoogleApi.Dataproc.V1.Model.FlinkJob)
   field(:hadoopJob, as: GoogleApi.Dataproc.V1.Model.HadoopJob)
   field(:hiveJob, as: GoogleApi.Dataproc.V1.Model.HiveJob)
   field(:jobUuid)

@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
   ## Attributes
 
   *   `instanceGroupManagerName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Instance Group Manager for this group.
+  *   `instanceGroupManagerUri` (*type:* `String.t`, *default:* `nil`) - Output only. The partial URI to the instance group manager for this group. E.g. projects/my-project/regions/us-central1/instanceGroupManagers/my-igm.
   *   `instanceTemplateName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Instance Template used for the Managed Instance Group.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Dataproc.V1.Model.ManagedGroupConfig do
 
   @type t :: %__MODULE__{
           :instanceGroupManagerName => String.t() | nil,
+          :instanceGroupManagerUri => String.t() | nil,
           :instanceTemplateName => String.t() | nil
         }
 
   field(:instanceGroupManagerName)
+  field(:instanceGroupManagerUri)
   field(:instanceTemplateName)
 end
 

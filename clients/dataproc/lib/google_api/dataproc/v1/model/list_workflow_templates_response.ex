@@ -23,17 +23,20 @@ defmodule GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse do
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Output only. This token is included in the response if there are more results to fetch. To fetch additional results, provide this value as the page_token in a subsequent ListWorkflowTemplatesRequest.
   *   `templates` (*type:* `list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t)`, *default:* `nil`) - Output only. WorkflowTemplates list.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of workflow templates that could not be included in the response. Attempting to get one of these resources may indicate why it was not included in the list response.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :nextPageToken => String.t() | nil,
-          :templates => list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()) | nil
+          :templates => list(GoogleApi.Dataproc.V1.Model.WorkflowTemplate.t()) | nil,
+          :unreachable => list(String.t()) | nil
         }
 
   field(:nextPageToken)
   field(:templates, as: GoogleApi.Dataproc.V1.Model.WorkflowTemplate, type: :list)
+  field(:unreachable, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.ListWorkflowTemplatesResponse do

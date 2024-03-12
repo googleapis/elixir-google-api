@@ -21,7 +21,8 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeInfo do
 
   ## Attributes
 
-  *   `approximateUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageMetrics.t`, *default:* `nil`) - Output only. Approximate workload resource usage calculated after workload finishes (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).
+  *   `approximateUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageMetrics.t`, *default:* `nil`) - Output only. Approximate workload resource usage, calculated when the workload completes (see Dataproc Serverless pricing (https://cloud.google.com/dataproc-serverless/pricing)).Note: This metric calculation may change in the future, for example, to capture cumulative workload resource consumption during workload execution (see the Dataproc Serverless release notes (https://cloud.google.com/dataproc-serverless/docs/release-notes) for announcements, changes, fixes and other Dataproc developments).
+  *   `currentUsage` (*type:* `GoogleApi.Dataproc.V1.Model.UsageSnapshot.t`, *default:* `nil`) - Output only. Snapshot of current workload resource usage.
   *   `diagnosticOutputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the diagnostics tarball.
   *   `endpoints` (*type:* `map()`, *default:* `nil`) - Output only. Map of remote access endpoints (such as web interfaces and APIs) to their URIs.
   *   `outputUri` (*type:* `String.t`, *default:* `nil`) - Output only. A URI pointing to the location of the stdout and stderr of the workload.
@@ -31,12 +32,14 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeInfo do
 
   @type t :: %__MODULE__{
           :approximateUsage => GoogleApi.Dataproc.V1.Model.UsageMetrics.t() | nil,
+          :currentUsage => GoogleApi.Dataproc.V1.Model.UsageSnapshot.t() | nil,
           :diagnosticOutputUri => String.t() | nil,
           :endpoints => map() | nil,
           :outputUri => String.t() | nil
         }
 
   field(:approximateUsage, as: GoogleApi.Dataproc.V1.Model.UsageMetrics)
+  field(:currentUsage, as: GoogleApi.Dataproc.V1.Model.UsageSnapshot)
   field(:diagnosticOutputUri)
   field(:endpoints, type: :map)
   field(:outputUri)

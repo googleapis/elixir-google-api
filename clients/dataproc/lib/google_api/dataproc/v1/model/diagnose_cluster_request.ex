@@ -21,11 +21,34 @@ defmodule GoogleApi.Dataproc.V1.Model.DiagnoseClusterRequest do
 
   ## Attributes
 
+  *   `diagnosisInterval` (*type:* `GoogleApi.Dataproc.V1.Model.Interval.t`, *default:* `nil`) - Optional. Time interval in which diagnosis should be carried out on the cluster.
+  *   `job` (*type:* `String.t`, *default:* `nil`) - Optional. DEPRECATED Specifies the job on which diagnosis is to be performed. Format: projects/{project}/regions/{region}/jobs/{job}
+  *   `jobs` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies a list of jobs on which diagnosis is to be performed. Format: projects/{project}/regions/{region}/jobs/{job}
+  *   `tarballAccess` (*type:* `String.t`, *default:* `nil`) - Optional. (Optional) The access type to the diagnostic tarball. If not specified, falls back to default access of the bucket
+  *   `tarballGcsDir` (*type:* `String.t`, *default:* `nil`) - Optional. (Optional) The output Cloud Storage directory for the diagnostic tarball. If not specified, a task-specific directory in the cluster's staging bucket will be used.
+  *   `yarnApplicationId` (*type:* `String.t`, *default:* `nil`) - Optional. DEPRECATED Specifies the yarn application on which diagnosis is to be performed.
+  *   `yarnApplicationIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies a list of yarn applications on which diagnosis is to be performed.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :diagnosisInterval => GoogleApi.Dataproc.V1.Model.Interval.t() | nil,
+          :job => String.t() | nil,
+          :jobs => list(String.t()) | nil,
+          :tarballAccess => String.t() | nil,
+          :tarballGcsDir => String.t() | nil,
+          :yarnApplicationId => String.t() | nil,
+          :yarnApplicationIds => list(String.t()) | nil
+        }
+
+  field(:diagnosisInterval, as: GoogleApi.Dataproc.V1.Model.Interval)
+  field(:job)
+  field(:jobs, type: :list)
+  field(:tarballAccess)
+  field(:tarballGcsDir)
+  field(:yarnApplicationId)
+  field(:yarnApplicationIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.DiagnoseClusterRequest do
