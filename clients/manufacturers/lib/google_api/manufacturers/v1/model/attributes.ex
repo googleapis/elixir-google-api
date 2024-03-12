@@ -21,6 +21,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
 
   ## Attributes
 
+  *   `certification` (*type:* `list(GoogleApi.Manufacturers.V1.Model.GoogleShoppingManufacturersV1ProductCertification.t)`, *default:* `nil`) - Optional. List of certifications claimed by this product.
   *   `productType` (*type:* `list(String.t)`, *default:* `nil`) - The type or category of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#producttype.
   *   `includedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of included destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#color.
@@ -58,6 +59,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `count` (*type:* `GoogleApi.Manufacturers.V1.Model.Count.t`, *default:* `nil`) - The count of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#count.
   *   `disclosureDate` (*type:* `String.t`, *default:* `nil`) - The disclosure date of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#disclosure.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#title.
+  *   `virtualModelLink` (*type:* `String.t`, *default:* `nil`) - Virtual Model (3d) asset link.
   *   `nutrition` (*type:* `GoogleApi.Manufacturers.V1.Model.Nutrition.t`, *default:* `nil`) - Nutrition Attributes. See more at https://support.google.com/manufacturers/answer/12098458#food-servings.
   *   `excludedDestination` (*type:* `list(String.t)`, *default:* `nil`) - A list of excluded destinations such as "ClientExport", "ClientShoppingCatalog" or "PartnerShoppingCatalog". For more information, see https://support.google.com/manufacturers/answer/7443550
   """
@@ -65,6 +67,11 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :certification =>
+            list(
+              GoogleApi.Manufacturers.V1.Model.GoogleShoppingManufacturersV1ProductCertification.t()
+            )
+            | nil,
           :productType => list(String.t()) | nil,
           :includedDestination => list(String.t()) | nil,
           :color => String.t() | nil,
@@ -103,9 +110,15 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :count => GoogleApi.Manufacturers.V1.Model.Count.t() | nil,
           :disclosureDate => String.t() | nil,
           :title => String.t() | nil,
+          :virtualModelLink => String.t() | nil,
           :nutrition => GoogleApi.Manufacturers.V1.Model.Nutrition.t() | nil,
           :excludedDestination => list(String.t()) | nil
         }
+
+  field(:certification,
+    as: GoogleApi.Manufacturers.V1.Model.GoogleShoppingManufacturersV1ProductCertification,
+    type: :list
+  )
 
   field(:productType, type: :list)
   field(:includedDestination, type: :list)
@@ -144,6 +157,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:count, as: GoogleApi.Manufacturers.V1.Model.Count)
   field(:disclosureDate)
   field(:title)
+  field(:virtualModelLink)
   field(:nutrition, as: GoogleApi.Manufacturers.V1.Model.Nutrition)
   field(:excludedDestination, type: :list)
 end
