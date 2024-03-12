@@ -22,13 +22,14 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   ## Attributes
 
   *   `account` (*type:* `GoogleApi.Testing.V1.Model.Account.t`, *default:* `nil`) - The device will be logged in on this account for the duration of the test.
-  *   `additionalApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - APKs to install in addition to those being directly tested. Currently capped at 100.
+  *   `additionalApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - APKs to install in addition to those being directly tested. These will be installed after the app under test. Currently capped at 100.
   *   `directoriesToPull` (*type:* `list(String.t)`, *default:* `nil`) - List of directories on the device to upload to GCS at the end of the test; they must be absolute paths under /sdcard, /storage or /data/local/tmp. Path names are restricted to characters a-z A-Z 0-9 _ - . + and / Note: The paths /sdcard and /data will be made available and treated as implicit path substitutions. E.g. if /sdcard on a particular device does not map to external storage, the system will replace it with the external storage path prefix for that device.
   *   `dontAutograntPermissions` (*type:* `boolean()`, *default:* `nil`) - Whether to prevent all runtime permissions to be granted at app install
   *   `environmentVariables` (*type:* `list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t)`, *default:* `nil`) - Environment variables to set for the test (only applicable for instrumentation tests).
   *   `filesToPush` (*type:* `list(GoogleApi.Testing.V1.Model.DeviceFile.t)`, *default:* `nil`) - List of files to push to the device before starting the test.
+  *   `initialSetupApks` (*type:* `list(GoogleApi.Testing.V1.Model.Apk.t)`, *default:* `nil`) - Optional. Initial setup APKs to install before the app under test is installed. Currently capped at 100.
   *   `networkProfile` (*type:* `String.t`, *default:* `nil`) - The network traffic profile used for running the test. Available network profiles can be queried by using the NETWORK_CONFIGURATION environment type when calling TestEnvironmentDiscoveryService.GetTestEnvironmentCatalog.
-  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Deprecated: Systrace uses Python 2 which has been sunset 2020-01-01. Support of Systrace may stop at any time, at which point no Systrace file will be provided in the results. Systrace configuration for the run. If set a systrace will be taken, starting on test start and lasting for the configured duration. The systrace file thus obtained is put in the results bucket together with the other artifacts from the run.
+  *   `systrace` (*type:* `GoogleApi.Testing.V1.Model.SystraceSetup.t`, *default:* `nil`) - Systrace configuration for the run. Deprecated: Systrace used Python 2 which was sunsetted on 2020-01-01. Systrace is no longer supported in the Cloud Testing API, and no Systrace file will be provided in the results.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,6 +41,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
           :dontAutograntPermissions => boolean() | nil,
           :environmentVariables => list(GoogleApi.Testing.V1.Model.EnvironmentVariable.t()) | nil,
           :filesToPush => list(GoogleApi.Testing.V1.Model.DeviceFile.t()) | nil,
+          :initialSetupApks => list(GoogleApi.Testing.V1.Model.Apk.t()) | nil,
           :networkProfile => String.t() | nil,
           :systrace => GoogleApi.Testing.V1.Model.SystraceSetup.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.Testing.V1.Model.TestSetup do
   field(:dontAutograntPermissions)
   field(:environmentVariables, as: GoogleApi.Testing.V1.Model.EnvironmentVariable, type: :list)
   field(:filesToPush, as: GoogleApi.Testing.V1.Model.DeviceFile, type: :list)
+  field(:initialSetupApks, as: GoogleApi.Testing.V1.Model.Apk, type: :list)
   field(:networkProfile)
   field(:systrace, as: GoogleApi.Testing.V1.Model.SystraceSetup)
 end

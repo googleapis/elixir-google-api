@@ -22,6 +22,7 @@ defmodule GoogleApi.Testing.V1.Model.ShardingOption do
   ## Attributes
 
   *   `manualSharding` (*type:* `GoogleApi.Testing.V1.Model.ManualSharding.t`, *default:* `nil`) - Shards test cases into the specified groups of packages, classes, and/or methods.
+  *   `smartSharding` (*type:* `GoogleApi.Testing.V1.Model.SmartSharding.t`, *default:* `nil`) - Shards test based on previous test case timing records.
   *   `uniformSharding` (*type:* `GoogleApi.Testing.V1.Model.UniformSharding.t`, *default:* `nil`) - Uniformly shards test cases given a total number of shards.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Testing.V1.Model.ShardingOption do
 
   @type t :: %__MODULE__{
           :manualSharding => GoogleApi.Testing.V1.Model.ManualSharding.t() | nil,
+          :smartSharding => GoogleApi.Testing.V1.Model.SmartSharding.t() | nil,
           :uniformSharding => GoogleApi.Testing.V1.Model.UniformSharding.t() | nil
         }
 
   field(:manualSharding, as: GoogleApi.Testing.V1.Model.ManualSharding)
+  field(:smartSharding, as: GoogleApi.Testing.V1.Model.SmartSharding)
   field(:uniformSharding, as: GoogleApi.Testing.V1.Model.UniformSharding)
 end
 

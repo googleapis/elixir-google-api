@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Testing.V1.Model.ApkDetail do
   @moduledoc """
-  Android application details based on application manifest and apk archive contents.
+  Android application details based on application manifest and archive contents.
 
   ## Attributes
 
