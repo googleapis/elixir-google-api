@@ -26,7 +26,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.UserList do
   *   `membershipDurationDays` (*type:* `String.t`, *default:* `nil`) - Required. The number of days a user's cookie stays on the user list. The field must be between 0 and 540 inclusive.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the user list that must follow the pattern `buyers/{buyer}/userLists/{user_list}`, where `{buyer}` represents the account ID of the buyer who owns the user list. For a bidder accessing user lists on behalf of a child seat buyer, `{buyer}` represents the account ID of the child seat buyer. `{user_list}` is an int64 identifier assigned by Google to uniquely identify a user list.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The status of the user list. A new user list starts out as open.
-  *   `urlRestriction` (*type:* `GoogleApi.RealTimeBidding.V1.Model.UrlRestriction.t`, *default:* `nil`) - Required. The URL restriction for the user list.
+  *   `urlRestriction` (*type:* `GoogleApi.RealTimeBidding.V1.Model.UrlRestriction.t`, *default:* `nil`) - Required. Deprecated. This will be removed in October 2023. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api The URL restriction for the user list.
   """
 
   use GoogleApi.Gax.ModelBase

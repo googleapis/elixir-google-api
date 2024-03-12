@@ -86,12 +86,12 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Gets remarketing tag for a buyer. A remarketing tag is a piece of JavaScript code that can be placed on a web page. When a user visits a page containing a remarketing tag, Google adds the user to a user list.
+  This has been sunset as of October 2023, and will return an error response if called. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Gets remarketing tag for a buyer. A remarketing tag is a piece of JavaScript code that can be placed on a web page. When a user visits a page containing a remarketing tag, Google adds the user to a user list.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RealTimeBidding.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. To fetch remarketing tag for an account, name must follow the pattern `buyers/{accountId}` where `{accountId}` represents ID of a buyer that owns the remarketing tag. For a bidder accessing remarketing tag on behalf of a child seat buyer, `{accountId}` should represent the ID of the child seat buyer. To fetch remarketing tag for a specific user list, name must follow the pattern `buyers/{accountId}/userLists/{userListId}`. See UserList.name.
+  *   `name` (*type:* `String.t`) - Required. To fetch the remarketing tag for an account, the name must follow the pattern `buyers/{accountId}`, where `{accountId}` represents the ID of the buyer that owns the remarketing tag. For a bidder accessing the remarketing tag on behalf of a child seat buyer, `{accountId}` should represent the ID of the child seat buyer. To fetch the remarketing tag for a specific user list, the name must follow the pattern `buyers/{accountId}/userLists/{userListId}`. See UserList.name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -497,7 +497,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Change the status of a user list to CLOSED. This prevents new users from being added to the user list.
+  Changes the status of a user list to CLOSED. This prevents new users from being added to the user list.
 
   ## Parameters
 
@@ -564,12 +564,12 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Create a new user list.
+  Creates a new user list.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RealTimeBidding.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the parent buyer of the user list to be retrieved that must follow the pattern `buyers/{buyerAccountId}`, where `{buyerAccountId}` represents the account ID of the buyer who owns user lists. For a bidder accessing user lists on behalf of a child seat buyer , `{buyerAccountId}` should represent the account ID of the child seat buyer.
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent buyer of the user list to be retrieved, which must follow the pattern `buyers/{buyerAccountId}`, where `{buyerAccountId}` represents the account ID of the buyer who owns the user list. For a bidder accessing user lists on behalf of a child seat buyer, `{buyerAccountId}` should represent the account ID of the child seat buyer.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -701,12 +701,12 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Gets remarketing tag for a buyer. A remarketing tag is a piece of JavaScript code that can be placed on a web page. When a user visits a page containing a remarketing tag, Google adds the user to a user list.
+  This has been sunset as of October 2023, and will return an error response if called. For more information, see the release notes: https://developers.google.com/authorized-buyers/apis/relnotes#real-time-bidding-api Gets remarketing tag for a buyer. A remarketing tag is a piece of JavaScript code that can be placed on a web page. When a user visits a page containing a remarketing tag, Google adds the user to a user list.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RealTimeBidding.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. To fetch remarketing tag for an account, name must follow the pattern `buyers/{accountId}` where `{accountId}` represents ID of a buyer that owns the remarketing tag. For a bidder accessing remarketing tag on behalf of a child seat buyer, `{accountId}` should represent the ID of the child seat buyer. To fetch remarketing tag for a specific user list, name must follow the pattern `buyers/{accountId}/userLists/{userListId}`. See UserList.name.
+  *   `name` (*type:* `String.t`) - Required. To fetch the remarketing tag for an account, the name must follow the pattern `buyers/{accountId}`, where `{accountId}` represents the ID of the buyer that owns the remarketing tag. For a bidder accessing the remarketing tag on behalf of a child seat buyer, `{accountId}` should represent the ID of the child seat buyer. To fetch the remarketing tag for a specific user list, the name must follow the pattern `buyers/{accountId}/userLists/{userListId}`. See UserList.name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -792,7 +792,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The number of results to return per page.
-      *   `:pageToken` (*type:* `String.t`) - Continuation page token (as received from a previous response).
+      *   `:pageToken` (*type:* `String.t`) - Continuation page token as received from a previous response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -849,7 +849,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Change the status of a user list to OPEN. This allows new users to be added to the user list.
+  Changes the status of a user list to OPEN. This allows new users to be added to the user list.
 
   ## Parameters
 
@@ -916,7 +916,7 @@ defmodule GoogleApi.RealTimeBidding.V1.Api.Buyers do
   end
 
   @doc """
-  Update the given user list. Only user lists with URLRestrictions can be updated.
+  Updates the given user list. Only user lists with URLRestrictions can be updated.
 
   ## Parameters
 
