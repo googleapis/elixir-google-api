@@ -23,8 +23,10 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
 
   *   `commitmentEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end of the current commitment period. It is applicable only for ACTIVE capacity commitments.
   *   `commitmentStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start of the current commitment period. It is applicable only for ACTIVE capacity commitments.
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - Edition of the capacity commitment.
   *   `failureStatus` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Status.t`, *default:* `nil`) - Output only. For FAILED commitment plan, provides the reason of failure.
-  *   `multiRegionAuxiliary` (*type:* `boolean()`, *default:* `nil`) - Applicable only for commitments located within one of the BigQuery multi-regions (US or EU). If set to true, this commitment is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this commitment is placed in the organization's default region.
+  *   `isFlatRate` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, the commitment is a flat-rate commitment, otherwise, it's an edition commitment.
+  *   `multiRegionAuxiliary` (*type:* `boolean()`, *default:* `nil`) - Applicable only for commitments located within one of the BigQuery multi-regions (US or EU). If set to true, this commitment is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this commitment is placed in the organization's default region. NOTE: this is a preview feature. Project must be allow-listed in order to set this field.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123` The commitment_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
   *   `plan` (*type:* `String.t`, *default:* `nil`) - Capacity commitment commitment plan.
   *   `renewalPlan` (*type:* `String.t`, *default:* `nil`) - The plan this capacity commitment is converted to after commitment_end_time passes. Once the plan is changed, committed period is extended according to commitment plan. Only applicable for ANNUAL and TRIAL commitments.
@@ -37,7 +39,9 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
   @type t :: %__MODULE__{
           :commitmentEndTime => DateTime.t() | nil,
           :commitmentStartTime => DateTime.t() | nil,
+          :edition => String.t() | nil,
           :failureStatus => GoogleApi.BigQueryReservation.V1.Model.Status.t() | nil,
+          :isFlatRate => boolean() | nil,
           :multiRegionAuxiliary => boolean() | nil,
           :name => String.t() | nil,
           :plan => String.t() | nil,
@@ -48,7 +52,9 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
 
   field(:commitmentEndTime, as: DateTime)
   field(:commitmentStartTime, as: DateTime)
+  field(:edition)
   field(:failureStatus, as: GoogleApi.BigQueryReservation.V1.Model.Status)
+  field(:isFlatRate)
   field(:multiRegionAuxiliary)
   field(:name)
   field(:plan)
