@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Looku
 
   ## Attributes
 
-  *   `customer` (*type:* `String.t`, *default:* `nil`) - The obfuscated customer Id that may be passed back to other Devices API methods such as List, Get, etc.
+  *   `customer` (*type:* `String.t`, *default:* `nil`) - The customer resource name that may be passed back to other Devices API methods such as List, Get, etc.
   *   `names` (*type:* `list(String.t)`, *default:* `nil`) - [Resource names](https://cloud.google.com/apis/design/resource_names) of the DeviceUsers in the format: `devices/{device}/deviceUsers/{user_resource}`, where device is the unique ID assigned to a Device and user_resource is the unique user ID
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results. Empty if there are no more results.
   """
