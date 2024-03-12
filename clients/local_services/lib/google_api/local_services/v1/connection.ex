@@ -24,7 +24,7 @@ defmodule GoogleApi.LocalServices.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage your AdWords campaigns
+      # See, edit, create, and delete your Google Ads accounts and data.
       "https://www.googleapis.com/auth/adwords"
     ],
     otp_app: :google_api_local_services,
