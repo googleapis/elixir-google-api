@@ -23,7 +23,8 @@ defmodule GoogleApi.NetworkServices.V1.Model.Mesh do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
-  *   `interceptionPort` (*type:* `integer()`, *default:* `nil`) - Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This will is applicable only for sidecar proxy deployments.
+  *   `envoyHeaders` (*type:* `String.t`, *default:* `nil`) - Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
+  *   `interceptionPort` (*type:* `integer()`, *default:* `nil`) - Optional. If set to a valid TCP port (1-65535), instructs the SIDECAR proxy to listen on the specified port of localhost (127.0.0.1) address. The SIDECAR proxy will expect all traffic to be redirected to this port regardless of its actual ip:port destination. If unset, a port '15001' is used as the interception port. This is applicable only for sidecar proxy deployments.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the Mesh resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Mesh resource. It matches pattern `projects/*/locations/global/meshes/`.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL of this resource
@@ -35,6 +36,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.Mesh do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :envoyHeaders => String.t() | nil,
           :interceptionPort => integer() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.Mesh do
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:envoyHeaders)
   field(:interceptionPort)
   field(:labels, type: :map)
   field(:name)

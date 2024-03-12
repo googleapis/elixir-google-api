@@ -23,7 +23,9 @@ defmodule GoogleApi.NetworkServices.V1.Model.GrpcRouteRouteAction do
 
   *   `destinations` (*type:* `list(GoogleApi.NetworkServices.V1.Model.GrpcRouteDestination.t)`, *default:* `nil`) - Optional. The destination services to which traffic should be forwarded. If multiple destinations are specified, traffic will be split between Backend Service(s) according to the weight field of these destinations.
   *   `faultInjectionPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.GrpcRouteFaultInjectionPolicy.t`, *default:* `nil`) - Optional. The specification for fault injection introduced into traffic to test the resiliency of clients to destination service failure. As part of fault injection, when clients send requests to a destination, delays can be introduced on a percentage of requests before sending those requests to the destination service. Similarly requests from clients can be aborted by for a percentage of requests. timeout and retry_policy will be ignored by clients that are configured with a fault_injection_policy
+  *   `idleTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the idle timeout for the selected route. The idle timeout is defined as the period in which there are no bytes sent or received on either the upstream or downstream connection. If not set, the default idle timeout is 1 hour. If set to 0s, the timeout will be disabled.
   *   `retryPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.GrpcRouteRetryPolicy.t`, *default:* `nil`) - Optional. Specifies the retry policy associated with this route.
+  *   `statefulSessionAffinity` (*type:* `GoogleApi.NetworkServices.V1.Model.GrpcRouteStatefulSessionAffinityPolicy.t`, *default:* `nil`) - Optional. Specifies cookie-based stateful session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the timeout for selected route. Timeout is computed from the time the request has been fully processed (i.e. end of stream) up until the response has been completely processed. Timeout includes all retries.
   """
 
@@ -34,7 +36,10 @@ defmodule GoogleApi.NetworkServices.V1.Model.GrpcRouteRouteAction do
             list(GoogleApi.NetworkServices.V1.Model.GrpcRouteDestination.t()) | nil,
           :faultInjectionPolicy =>
             GoogleApi.NetworkServices.V1.Model.GrpcRouteFaultInjectionPolicy.t() | nil,
+          :idleTimeout => String.t() | nil,
           :retryPolicy => GoogleApi.NetworkServices.V1.Model.GrpcRouteRetryPolicy.t() | nil,
+          :statefulSessionAffinity =>
+            GoogleApi.NetworkServices.V1.Model.GrpcRouteStatefulSessionAffinityPolicy.t() | nil,
           :timeout => String.t() | nil
         }
 
@@ -44,7 +49,13 @@ defmodule GoogleApi.NetworkServices.V1.Model.GrpcRouteRouteAction do
     as: GoogleApi.NetworkServices.V1.Model.GrpcRouteFaultInjectionPolicy
   )
 
+  field(:idleTimeout)
   field(:retryPolicy, as: GoogleApi.NetworkServices.V1.Model.GrpcRouteRetryPolicy)
+
+  field(:statefulSessionAffinity,
+    as: GoogleApi.NetworkServices.V1.Model.GrpcRouteStatefulSessionAffinityPolicy
+  )
+
   field(:timeout)
 end
 

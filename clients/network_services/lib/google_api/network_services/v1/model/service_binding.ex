@@ -26,6 +26,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ServiceBinding do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the ServiceBinding resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the ServiceBinding resource. It matches pattern `projects/*/locations/global/serviceBindings/service_binding_name`.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Required. The full Service Directory Service name of the format projects/*/locations/*/namespaces/*/services/*
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the Service Directory Service against which the Service Binding resource is validated. This is populated when the Service Binding resource is used in another resource (like Backend Service). This is of the UUID4 format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
 
@@ -37,6 +38,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ServiceBinding do
           :labels => map() | nil,
           :name => String.t() | nil,
           :service => String.t() | nil,
+          :serviceId => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -45,6 +47,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ServiceBinding do
   field(:labels, type: :map)
   field(:name)
   field(:service)
+  field(:serviceId)
   field(:updateTime, as: DateTime)
 end
 
