@@ -2,7 +2,7 @@
 
 Business Profile Performance API client library.
 
-The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google.
+The Business Profile Performance API allows merchants to fetch performance reports about their business profile on Google. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
 
 ## Installation
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_business_profile_performance, "~> 0.2"}]
+  [{:google_api_business_profile_performance, "~> 0.3"}]
 end
 ```
 

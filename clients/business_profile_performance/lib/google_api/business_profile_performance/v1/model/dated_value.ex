@@ -22,7 +22,7 @@ defmodule GoogleApi.BusinessProfilePerformance.V1.Model.DatedValue do
   ## Attributes
 
   *   `date` (*type:* `GoogleApi.BusinessProfilePerformance.V1.Model.Date.t`, *default:* `nil`) - The date that the datapoint corresponds to. This represents a month value if the day field is not set.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the datapoint.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value of the datapoint. This will not be present when the value is zero.
   """
 
   use GoogleApi.Gax.ModelBase
