@@ -23,7 +23,10 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Connection do
   @type t :: Tesla.Env.client()
 
   use GoogleApi.Gax.Connection,
-    scopes: [],
+    scopes: [
+      # Associate you with your personal info on Google
+      "openid"
+    ],
     otp_app: :google_api_payments_reseller_subscription,
     base_url: "https://paymentsresellersubscription.googleapis.com/"
 end

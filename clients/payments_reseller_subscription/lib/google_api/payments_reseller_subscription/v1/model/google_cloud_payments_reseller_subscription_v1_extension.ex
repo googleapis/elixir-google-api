@@ -21,7 +21,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `duration` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t`, *default:* `nil`) - Specifies the period of access the subscription should grant.
+  *   `duration` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t`, *default:* `nil`) - Required. Specifies the period of access the subscription should grant.
   *   `partnerUserToken` (*type:* `String.t`, *default:* `nil`) - Required. Identifier of the end-user in partner’s system.
   """
 

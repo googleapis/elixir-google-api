@@ -21,8 +21,11 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Response only. Resource name of the product. It will have the format of "partners/{partner_id}/products/{product_id}"
+  *   `bundleDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.ProductBundleDetails.t`, *default:* `nil`) - Output only. Output Only. Specifies the details for a bundle product.
+  *   `finiteBillingCycleDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails.t`, *default:* `nil`) - Optional. Details for a subscription line item with finite billing cycles. If unset, the line item will be charged indefinitely.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Response only. Resource name of the product. It will have the format of "partners/{partner_id}/products/{product_id}"
   *   `priceConfigs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig.t)`, *default:* `nil`) - Output only. Price configs for the product in the available regions.
+  *   `productType` (*type:* `String.t`, *default:* `nil`) - Output only. Output Only. Specifies the type of the product.
   *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. 2-letter ISO region code where the product is available in. Ex. "US" Please refers to: https://en.wikipedia.org/wiki/ISO_3166-1
   *   `subscriptionBillingCycleDuration` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t`, *default:* `nil`) - Output only. Specifies the length of the billing cycle of the subscription.
   *   `titles` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleTypeLocalizedText.t)`, *default:* `nil`) - Output only. Localized human readable name of the product.
@@ -31,12 +34,18 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bundleDetails =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.ProductBundleDetails.t() | nil,
+          :finiteBillingCycleDetails =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails.t()
+            | nil,
           :name => String.t() | nil,
           :priceConfigs =>
             list(
               GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPriceConfig.t()
             )
             | nil,
+          :productType => String.t() | nil,
           :regionCodes => list(String.t()) | nil,
           :subscriptionBillingCycleDuration =>
             GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Duration.t()
@@ -46,6 +55,13 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
             | nil
         }
 
+  field(:bundleDetails, as: GoogleApi.PaymentsResellerSubscription.V1.Model.ProductBundleDetails)
+
+  field(:finiteBillingCycleDetails,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails
+  )
+
   field(:name)
 
   field(:priceConfigs,
@@ -54,6 +70,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
     type: :list
   )
 
+  field(:productType)
   field(:regionCodes, type: :list)
 
   field(:subscriptionBillingCycleDuration,

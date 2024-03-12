@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1CancelSubscriptionResponse do
   @moduledoc """
-
+  Response that contains the cancelled subscription resource.
 
   ## Attributes
 

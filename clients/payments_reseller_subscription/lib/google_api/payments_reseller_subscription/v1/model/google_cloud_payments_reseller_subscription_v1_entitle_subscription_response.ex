@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1EntitleSubscriptionResponse do
   @moduledoc """
-
+  Response that contains the entitled subscription resource.
 
   ## Attributes
 

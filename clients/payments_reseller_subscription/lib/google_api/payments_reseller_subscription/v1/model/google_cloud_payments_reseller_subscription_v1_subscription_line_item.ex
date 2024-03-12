@@ -17,15 +17,20 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItem do
   @moduledoc """
-  Individual line item definition of a subscription. Next id: 9
+  Individual line item definition of a subscription.
 
   ## Attributes
 
+  *   `amount` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Amount.t`, *default:* `nil`) - Output only. The price of the product/service in this line item. The amount could be the wholesale price, or it can include a cost of sale based on the contract.
+  *   `bundleDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.SubscriptionLineItemBundleDetails.t`, *default:* `nil`) - Output only. The bundle details for the line item. Only populated if the line item corresponds to a hard bundle.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description of this line item.
-  *   `lineItemFreeTrialEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. It is set only if the line item has its own free trial applied. End time of the line item free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified.
+  *   `finiteBillingCycleDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails.t`, *default:* `nil`) - Optional. Details for a subscription line item with finite billing cycles. If unset, the line item will be charged indefinitely. Used only with LINE_ITEM_RECURRENCE_TYPE_PERIODIC.
+  *   `lineItemFreeTrialEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The free trial end time will be populated after the line item is successfully processed. End time of the line item free trial period, in ISO 8061 format. For example, "2019-08-31T17:28:54.564Z". It will be set the same as createTime if no free trial promotion is specified.
+  *   `lineItemIndex` (*type:* `integer()`, *default:* `nil`) - Output only. A unique index of the subscription line item.
   *   `lineItemPromotionSpecs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec.t)`, *default:* `nil`) - Optional. The promotions applied on the line item. It can be: - a free trial promotion, which overrides the subscription-level free trial promotion. - an introductory pricing promotion. When used as input in Create or Provision API, specify its resource name only.
   *   `oneTimeRecurrenceDetails` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails.t`, *default:* `nil`) - Output only. Details only set for a ONE_TIME recurrence line item.
   *   `product` (*type:* `String.t`, *default:* `nil`) - Required. Product resource name that identifies one the line item The format is 'partners/{partner_id}/products/{product_id}'.
+  *   `productPayload` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPayload.t`, *default:* `nil`) - Optional. Product specific payload for this line item.
   *   `recurrenceType` (*type:* `String.t`, *default:* `nil`) - Output only. The recurrence type of the line item.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the line item.
   """
@@ -33,8 +38,18 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :amount =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Amount.t()
+            | nil,
+          :bundleDetails =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.SubscriptionLineItemBundleDetails.t()
+            | nil,
           :description => String.t() | nil,
+          :finiteBillingCycleDetails =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails.t()
+            | nil,
           :lineItemFreeTrialEndTime => DateTime.t() | nil,
+          :lineItemIndex => integer() | nil,
           :lineItemPromotionSpecs =>
             list(
               GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec.t()
@@ -44,12 +59,31 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
             GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionLineItemOneTimeRecurrenceDetails.t()
             | nil,
           :product => String.t() | nil,
+          :productPayload =>
+            GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPayload.t()
+            | nil,
           :recurrenceType => String.t() | nil,
           :state => String.t() | nil
         }
 
+  field(:amount,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Amount
+  )
+
+  field(:bundleDetails,
+    as: GoogleApi.PaymentsResellerSubscription.V1.Model.SubscriptionLineItemBundleDetails
+  )
+
   field(:description)
+
+  field(:finiteBillingCycleDetails,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1FiniteBillingCycleDetails
+  )
+
   field(:lineItemFreeTrialEndTime, as: DateTime)
+  field(:lineItemIndex)
 
   field(:lineItemPromotionSpecs,
     as:
@@ -63,6 +97,12 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   )
 
   field(:product)
+
+  field(:productPayload,
+    as:
+      GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ProductPayload
+  )
+
   field(:recurrenceType)
   field(:state)
 end

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1ListProductsResponse do
   @moduledoc """
-
+  Response that contains the products.
 
   ## Attributes
 
