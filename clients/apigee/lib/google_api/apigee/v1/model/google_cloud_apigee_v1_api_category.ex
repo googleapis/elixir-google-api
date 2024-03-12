@@ -17,32 +17,29 @@
 
 defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategory do
   @moduledoc """
-  the Api category resource wrapped with response status, error_code etc.
+  `ApiCategory` represents an API category. [Catalog items](/apigee/docs/reference/apis/apigee/rest/v1/organizations.sites.apidocs) can be tagged with API categories; users viewing the API catalog in the portal will have the option to browse the catalog by category.
 
   ## Attributes
 
-  *   `data` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t`, *default:* `nil`) - Details of category.
-  *   `errorCode` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find errors in the log files.
-  *   `message` (*type:* `String.t`, *default:* `nil`) - Description of the operation.
-  *   `requestId` (*type:* `String.t`, *default:* `nil`) - ID that can be used to find request details in the log files.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the operation.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the category (a UUID).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the category.
+  *   `siteId` (*type:* `String.t`, *default:* `nil`) - Name of the portal.
+  *   `updateTime` (*type:* `String.t`, *default:* `nil`) - Time the category was last modified in milliseconds since epoch.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :data => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData.t() | nil,
-          :errorCode => String.t() | nil,
-          :message => String.t() | nil,
-          :requestId => String.t() | nil,
-          :status => String.t() | nil
+          :id => String.t() | nil,
+          :name => String.t() | nil,
+          :siteId => String.t() | nil,
+          :updateTime => String.t() | nil
         }
 
-  field(:data, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategoryData)
-  field(:errorCode)
-  field(:message)
-  field(:requestId)
-  field(:status)
+  field(:id)
+  field(:name)
+  field(:siteId)
+  field(:updateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiCategory do

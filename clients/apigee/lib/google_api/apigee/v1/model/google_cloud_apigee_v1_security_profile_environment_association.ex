@@ -22,8 +22,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityProfileEnvironmen
   ## Attributes
 
   *   `attachTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when environment was attached to the security profile.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the profile-environment association resource. Format: organizations/{org}/securityProfiles/{profile}/environments/{env}
-  *   `securityProfileRevisionId` (*type:* `String.t`, *default:* `nil`) - Revision ID of the security profile.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the environment that the profile is attached to.
+  *   `securityProfileRevisionId` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: DO NOT USE Revision ID of the security profile.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -29,6 +29,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxyRevision do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the API proxy revision.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of the API proxy.
   *   `entityMetaDataAsProperties` (*type:* `map()`, *default:* `nil`) - Metadata describing the API proxy revision as a key-value map.
+  *   `hasExtensiblePolicy` (*type:* `boolean()`, *default:* `nil`) - Output only. This field will be marked as true if revision contains any policies marked as extensible.
   *   `integrationEndpoints` (*type:* `list(String.t)`, *default:* `nil`) - List of IntegrationEndpoints in the '/integration-endpoints' directory of the API proxy. This is a 'manifest' setting designed to provide visibility into the contents of the API proxy.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Time that the API proxy revision was last modified in milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the API proxy.
@@ -59,6 +60,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxyRevision do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :entityMetaDataAsProperties => map() | nil,
+          :hasExtensiblePolicy => boolean() | nil,
           :integrationEndpoints => list(String.t()) | nil,
           :lastModifiedAt => String.t() | nil,
           :name => String.t() | nil,
@@ -85,6 +87,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProxyRevision do
   field(:description)
   field(:displayName)
   field(:entityMetaDataAsProperties, type: :map)
+  field(:hasExtensiblePolicy)
   field(:integrationEndpoints, type: :list)
   field(:lastModifiedAt)
   field(:name)

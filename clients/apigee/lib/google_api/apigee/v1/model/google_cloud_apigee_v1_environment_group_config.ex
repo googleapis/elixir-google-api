@@ -21,7 +21,9 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig do
 
   ## Attributes
 
+  *   `endpointChainingRules` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointChainingRule.t)`, *default:* `nil`) - A list of proxies in each deployment group for proxy chaining calls.
   *   `hostnames` (*type:* `list(String.t)`, *default:* `nil`) - Host names for the environment group.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - When this message appears in the top-level IngressConfig, this field will be populated in lieu of the inlined routing_rules and hostnames fields. Some URL for downloading the full EnvironmentGroupConfig for this group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the environment group in the following format: `organizations/{org}/envgroups/{envgroup}`.
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Revision id that defines the ordering of the EnvironmentGroupConfig resource. The higher the revision, the more recently the configuration was deployed.
   *   `routingRules` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule.t)`, *default:* `nil`) - Ordered list of routing rules defining how traffic to this environment group's hostnames should be routed to different environments.
@@ -31,7 +33,10 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :endpointChainingRules =>
+            list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointChainingRule.t()) | nil,
           :hostnames => list(String.t()) | nil,
+          :location => String.t() | nil,
           :name => String.t() | nil,
           :revisionId => String.t() | nil,
           :routingRules =>
@@ -39,7 +44,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EnvironmentGroupConfig do
           :uid => String.t() | nil
         }
 
+  field(:endpointChainingRules,
+    as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1EndpointChainingRule,
+    type: :list
+  )
+
   field(:hostnames, type: :list)
+  field(:location)
   field(:name)
   field(:revisionId)
   field(:routingRules, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1RoutingRule, type: :list)

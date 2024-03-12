@@ -22,15 +22,21 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListAppsResponse do
   ## Attributes
 
   *   `app` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App.t)`, *default:* `nil`) - 
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token that can be sent as `next_page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - Total count of Apps.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :app => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App.t()) | nil
+          :app => list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App.t()) | nil,
+          :nextPageToken => String.t() | nil,
+          :totalSize => integer() | nil
         }
 
   field(:app, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1App, type: :list)
+  field(:nextPageToken)
+  field(:totalSize)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ListAppsResponse do

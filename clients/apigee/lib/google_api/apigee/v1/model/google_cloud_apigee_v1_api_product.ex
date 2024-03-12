@@ -29,6 +29,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name displayed in the UI or developer portal to developers registering for API access.
   *   `environments` (*type:* `list(String.t)`, *default:* `nil`) - Comma-separated list of environment names to which the API product is bound. Requests to environments that are not listed are rejected. By specifying one or more environments, you can bind the resources listed in the API product to a specific environment, preventing developers from accessing those resources through API proxies deployed in another environment. This setting is used, for example, to prevent resources associated with API proxies in `prod` from being accessed by API proxies deployed in `test`.
   *   `graphqlOperationGroup` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperationGroup.t`, *default:* `nil`) - Configuration used to group Apigee proxies or remote services with graphQL operation name, graphQL operation type and quotas. This grouping allows us to precisely set quota for a particular combination of graphQL name and operation type for a particular proxy request. If graphQL name is not set, this would imply quota will be applied on all graphQL requests matching the operation type.
+  *   `grpcOperationGroup` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GrpcOperationGroup.t`, *default:* `nil`) - Optional. Configuration used to group Apigee proxies with gRPC services and method names. This grouping allows us to set quota for a particular proxy with the gRPC service name and method. If a method name is not set, this implies quota and authorization are applied to all gRPC methods implemented by that proxy for that particular gRPC service.
   *   `lastModifiedAt` (*type:* `String.t`, *default:* `nil`) - Response only. Modified time of this environment as milliseconds since epoch.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Internal name of the API product. Characters you can use in the name are restricted to: `A-Z0-9._\\-$ %`. **Note:** The internal name cannot be edited when updating the API product.
   *   `operationGroup` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup.t`, *default:* `nil`) - Configuration used to group Apigee proxies or remote services with resources, method types, and quotas. The resource refers to the resource URI (excluding the base path). With this grouping, the API product creator is able to fine-tune and give precise control over which REST methods have access to specific resources and how many calls can be made (using the `quota` setting). **Note:** The `api_resources` setting cannot be specified for both the API product and operation group; otherwise the call will fail.
@@ -52,6 +53,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
           :environments => list(String.t()) | nil,
           :graphqlOperationGroup =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperationGroup.t() | nil,
+          :grpcOperationGroup =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GrpcOperationGroup.t() | nil,
           :lastModifiedAt => String.t() | nil,
           :name => String.t() | nil,
           :operationGroup =>
@@ -76,6 +79,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiProduct do
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GraphQLOperationGroup
   )
 
+  field(:grpcOperationGroup, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1GrpcOperationGroup)
   field(:lastModifiedAt)
   field(:name)
   field(:operationGroup, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OperationGroup)

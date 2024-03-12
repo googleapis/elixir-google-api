@@ -23,7 +23,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1OrganizationProjectMappin
 
   *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The Google Cloud region where control plane data is located. For more information, see https://cloud.google.com/about/locations/.
   *   `organization` (*type:* `String.t`, *default:* `nil`) - Name of the Apigee organization.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - GCP project associated with the Apigee organization
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Google Cloud project associated with the Apigee organization
   *   `projectIds` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Use `project_id`. An Apigee Organization is mapped to a single project.
   """
 
