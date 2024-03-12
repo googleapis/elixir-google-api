@@ -23,6 +23,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogRe
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token that can be used in subsequent calls to retrieve the next page of results.
   *   `results` (*type:* `list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogResult.t)`, *default:* `nil`) - Search results.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The approximate total number of entries matched by the query.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable locations. Search results don't include data from those locations. To get additional information on an error, repeat the search request and restrict it to specific locations by setting the `SearchCatalogRequest.scope.restricted_locations` parameter.
   """
 
@@ -33,6 +34,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogRe
           :results =>
             list(GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogResult.t())
             | nil,
+          :totalSize => integer() | nil,
           :unreachable => list(String.t()) | nil
         }
 
@@ -43,6 +45,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SearchCatalogRe
     type: :list
   )
 
+  field(:totalSize)
   field(:unreachable, type: :list)
 end
 

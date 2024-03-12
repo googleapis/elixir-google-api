@@ -24,23 +24,30 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
   *   `bigqueryDateShardedSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryDateShardedSpec.t`, *default:* `nil`) - Output only. Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
   *   `bigqueryTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryTableSpec.t`, *default:* `nil`) - Output only. Specification that applies to a BigQuery table. Valid only for entries with the `TABLE` type.
   *   `businessContext` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BusinessContext.t`, *default:* `nil`) - Business Context of the entry. Not supported for BigQuery datasets
+  *   `cloudBigtableSystemSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1CloudBigtableSystemSpec.t`, *default:* `nil`) - Specification that applies to Cloud Bigtable system. Only settable when `integrated_system` is equal to `CLOUD_BIGTABLE`
   *   `dataSource` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource.t`, *default:* `nil`) - Output only. Physical location of the entry.
   *   `dataSourceConnectionSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSourceConnectionSpec.t`, *default:* `nil`) - Specification that applies to a data source connection. Valid only for entries with the `DATA_SOURCE_CONNECTION` type.
-  *   `databaseTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec.t`, *default:* `nil`) - Specification that applies to a table resource. Valid only for entries with the `TABLE` type.
+  *   `databaseTableSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec.t`, *default:* `nil`) - Specification that applies to a table resource. Valid only for entries with the `TABLE` or `EXPLORE` type.
+  *   `datasetSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatasetSpec.t`, *default:* `nil`) - Specification that applies to a dataset.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Entry description that can consist of several sentences or paragraphs that describe entry contents. The description must not contain Unicode non-characters as well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). The maximum size is 2000 bytes when encoded in UTF-8. Default value is an empty string.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of an entry. The name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), and can't start or end with spaces. The maximum size is 200 bytes when encoded in UTF-8. Default value is an empty string.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name of an entry. The maximum size is 500 bytes when encoded in UTF-8. Default value is an empty string.
+  *   `featureOnlineStoreSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FeatureOnlineStoreSpec.t`, *default:* `nil`) - FeatureonlineStore spec for Vertex AI Feature Store.
   *   `filesetSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec.t`, *default:* `nil`) - Specification that applies to a fileset resource. Valid only for entries with the `FILESET` type.
-  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Fully qualified name (FQN) of the resource. Set automatically for entries representing resources from synced systems. Settable only during creation and read-only afterwards. Can be used for search and lookup of the entries. FQNs take two forms: * For non-regionalized resources: `{SYSTEM}:{PROJECT}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` * For regionalized resources: `{SYSTEM}:{PROJECT}.{LOCATION_ID}.{PATH_TO_RESOURCE_SEPARATED_WITH_DOTS}` Example for a DPMS table: `dataproc_metastore:{PROJECT_ID}.{LOCATION_ID}.{INSTANCE_ID}.{DATABASE_ID}.{TABLE_ID}`
+  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - [Fully Qualified Name (FQN)](https://cloud.google.com//data-catalog/docs/fully-qualified-names) of the resource. Set automatically for entries representing resources from synced systems. Settable only during creation, and read-only later. Can be used for search and lookup of the entries. 
   *   `gcsFilesetSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1GcsFilesetSpec.t`, *default:* `nil`) - Specification that applies to a Cloud Storage fileset. Valid only for entries with the `FILESET` type.
   *   `integratedSystem` (*type:* `String.t`, *default:* `nil`) - Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Cloud labels attached to the entry. In Data Catalog, you can create and modify labels attached only to custom entries. Synced entries have unmodifiable labels that come from the source system.
   *   `linkedResource` (*type:* `String.t`, *default:* `nil`) - The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8.
+  *   `lookerSystemSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1LookerSystemSpec.t`, *default:* `nil`) - Specification that applies to Looker sysstem. Only settable when `user_specified_system` is equal to `LOOKER`
+  *   `modelSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ModelSpec.t`, *default:* `nil`) - Model specification.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.
   *   `personalDetails` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1PersonalDetails.t`, *default:* `nil`) - Output only. Additional information related to the entry. Private to the current user.
   *   `routineSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1RoutineSpec.t`, *default:* `nil`) - Specification that applies to a user-defined function or procedure. Valid only for entries with the `ROUTINE` type.
   *   `schema` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Schema.t`, *default:* `nil`) - Schema of the entry. An entry might not have any schema attached to it.
+  *   `serviceSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ServiceSpec.t`, *default:* `nil`) - Specification that applies to a Service resource.
   *   `sourceSystemTimestamps` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t`, *default:* `nil`) - Timestamps from the underlying resource, not from the Data Catalog entry. Output only when the entry has a system listed in the `IntegratedSystem` enum. For entries with `user_specified_system`, this field is optional and defaults to an empty timestamp.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entry. Only used for entries with types listed in the `EntryType` enum. Currently, only `FILESET` enum value is allowed. All other entries created in Data Catalog must use the `user_specified_type`.
+  *   `sqlDatabaseSystemSpec` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SqlDatabaseSystemSpec.t`, *default:* `nil`) - Specification that applies to a relational database system. Only settable when `user_specified_system` is equal to `SQL_DATABASE`
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the entry. For details, see [`EntryType`](#entrytype).
   *   `usageSignal` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageSignal.t`, *default:* `nil`) - Resource usage statistics.
   *   `userSpecifiedSystem` (*type:* `String.t`, *default:* `nil`) - Indicates the entry's source system that Data Catalog doesn't automatically integrate with. The `user_specified_system` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long.
   *   `userSpecifiedType` (*type:* `String.t`, *default:* `nil`) - Custom entry type that doesn't match any of the values allowed for input and listed in the `EntryType` enum. When creating an entry, first check the type values in the enum. If there are no appropriate types for the new entry, provide a custom value, for example, `my_special_type`. The `user_specified_type` string has the following limitations: * Is case insensitive. * Must begin with a letter or underscore. * Can only contain letters, numbers, and underscores. * Must be at least 1 character and at most 64 characters long.
@@ -56,6 +63,9 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BigQueryTableSpec.t() | nil,
           :businessContext =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BusinessContext.t() | nil,
+          :cloudBigtableSystemSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1CloudBigtableSystemSpec.t()
+            | nil,
           :dataSource =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource.t() | nil,
           :dataSourceConnectionSpec =>
@@ -63,8 +73,13 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
             | nil,
           :databaseTableSpec =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec.t() | nil,
+          :datasetSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatasetSpec.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :featureOnlineStoreSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FeatureOnlineStoreSpec.t()
+            | nil,
           :filesetSpec =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec.t() | nil,
           :fullyQualifiedName => String.t() | nil,
@@ -73,14 +88,22 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
           :integratedSystem => String.t() | nil,
           :labels => map() | nil,
           :linkedResource => String.t() | nil,
+          :lookerSystemSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1LookerSystemSpec.t() | nil,
+          :modelSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ModelSpec.t() | nil,
           :name => String.t() | nil,
           :personalDetails =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1PersonalDetails.t() | nil,
           :routineSpec =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1RoutineSpec.t() | nil,
           :schema => GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Schema.t() | nil,
+          :serviceSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ServiceSpec.t() | nil,
           :sourceSystemTimestamps =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t() | nil,
+          :sqlDatabaseSystemSpec =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SqlDatabaseSystemSpec.t() | nil,
           :type => String.t() | nil,
           :usageSignal =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1UsageSignal.t() | nil,
@@ -100,6 +123,10 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
     as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1BusinessContext
   )
 
+  field(:cloudBigtableSystemSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1CloudBigtableSystemSpec
+  )
+
   field(:dataSource, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DataSource)
 
   field(:dataSourceConnectionSpec,
@@ -110,8 +137,14 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
     as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatabaseTableSpec
   )
 
+  field(:datasetSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1DatasetSpec)
   field(:description)
   field(:displayName)
+
+  field(:featureOnlineStoreSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FeatureOnlineStoreSpec
+  )
+
   field(:filesetSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1FilesetSpec)
   field(:fullyQualifiedName)
 
@@ -120,6 +153,12 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
   field(:integratedSystem)
   field(:labels, type: :map)
   field(:linkedResource)
+
+  field(:lookerSystemSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1LookerSystemSpec
+  )
+
+  field(:modelSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ModelSpec)
   field(:name)
 
   field(:personalDetails,
@@ -128,9 +167,14 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Entry do
 
   field(:routineSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1RoutineSpec)
   field(:schema, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Schema)
+  field(:serviceSpec, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1ServiceSpec)
 
   field(:sourceSystemTimestamps,
     as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps
+  )
+
+  field(:sqlDatabaseSystemSpec,
+    as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SqlDatabaseSystemSpec
   )
 
   field(:type)

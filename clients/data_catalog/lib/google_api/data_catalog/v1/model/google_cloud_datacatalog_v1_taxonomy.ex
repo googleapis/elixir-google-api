@@ -24,8 +24,9 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Taxonomy do
   *   `activatedPolicyTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of policy types that are activated for this taxonomy. If not set, defaults to an empty list.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of this taxonomy. If not set, defaults to empty. The description must contain only Unicode characters, tabs, newlines, carriage returns, and page breaks, and be at most 2000 bytes long when encoded in UTF-8.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User-defined name of this taxonomy. The name can't start or end with spaces, must contain only Unicode letters, numbers, underscores, dashes, and spaces, and be at most 200 bytes long when encoded in UTF-8. The taxonomy display name must be unique within an organization.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs.
   *   `policyTagCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of policy tags in this taxonomy.
+  *   `service` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1TaxonomyService.t`, *default:* `nil`) - Output only. Identity of the service which owns the Taxonomy. This field is only populated when the taxonomy is created by a Google Cloud service. Currently only 'DATAPLEX' is supported.
   *   `taxonomyTimestamps` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t`, *default:* `nil`) - Output only. Creation and modification timestamps of this taxonomy.
   """
 
@@ -37,6 +38,8 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Taxonomy do
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :policyTagCount => integer() | nil,
+          :service =>
+            GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1TaxonomyService.t() | nil,
           :taxonomyTimestamps =>
             GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t() | nil
         }
@@ -46,6 +49,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1Taxonomy do
   field(:displayName)
   field(:name)
   field(:policyTagCount)
+  field(:service, as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1TaxonomyService)
 
   field(:taxonomyTimestamps,
     as: GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps

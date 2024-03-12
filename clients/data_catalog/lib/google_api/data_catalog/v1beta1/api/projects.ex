@@ -3619,6 +3619,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Supported field for filter is 'service' and value is 'dataplex'. Eg: service=dataplex.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of items to return. Must be a value between 1 and 1000. If not set, defaults to 50.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any. If not set, defaults to an empty string.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3659,6 +3660,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -3690,7 +3692,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `taxonomy.name`. Output only. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `taxonomy.name`. Identifier. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
   *   `locations_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4384,7 +4386,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `policyTag.name`. Output only. Resource name of this policy tag, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
+  *   `projects_id` (*type:* `String.t`) - Part of `policyTag.name`. Identifier. Resource name of this policy tag, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
   *   `locations_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
   *   `taxonomies_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
   *   `policy_tags_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.

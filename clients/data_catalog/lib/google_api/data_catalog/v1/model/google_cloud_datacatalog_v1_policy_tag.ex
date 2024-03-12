@@ -24,7 +24,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1PolicyTag do
   *   `childPolicyTags` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Resource names of child policy tags of this policy tag.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this policy tag. If not set, defaults to empty. The description must contain only Unicode characters, tabs, newlines, carriage returns and page breaks, and be at most 2000 bytes long when encoded in UTF-8.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. User-defined name of this policy tag. The name can't start or end with spaces and must be unique within the parent taxonomy, contain only Unicode letters, numbers, underscores, dashes and spaces, and be at most 200 bytes long when encoded in UTF-8.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this policy tag in the URL format. The policy tag manager generates unique taxonomy IDs and policy tag IDs.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of this policy tag in the URL format. The policy tag manager generates unique taxonomy IDs and policy tag IDs.
   *   `parentPolicyTag` (*type:* `String.t`, *default:* `nil`) - Resource name of this policy tag's parent policy tag. If empty, this is a top level tag. If not set, defaults to an empty string. For example, for the "LatLong" policy tag in the example above, this field contains the resource name of the "Geolocation" policy tag, and, for "Geolocation", this field is empty.
   """
 
