@@ -23,17 +23,20 @@ defmodule GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite do
 
   *   `region` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided region where the Cloud Run service is hosted. Defaults to `us-central1` if not supplied.
   *   `serviceId` (*type:* `String.t`, *default:* `nil`) - Required. User-defined ID of the Cloud Run service.
+  *   `tag` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided TrafficConfig tag to send traffic to. When omitted, traffic is sent to the service-wide URI
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :region => String.t() | nil,
-          :serviceId => String.t() | nil
+          :serviceId => String.t() | nil,
+          :tag => String.t() | nil
         }
 
   field(:region)
   field(:serviceId)
+  field(:tag)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.FirebaseHosting.V1beta1.Model.CloudRunRewrite do
