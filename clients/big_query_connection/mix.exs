@@ -59,7 +59,7 @@ defmodule GoogleApi.BigQueryConnection.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/big_query_connection",
-        "Homepage" => "https://cloud.google.com/bigquery/"
+        "Homepage" => "https://cloud.google.com/bigquery/docs/connections-api-intro"
       }
     ]
   end
