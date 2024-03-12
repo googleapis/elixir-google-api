@@ -25,6 +25,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The globally unique, Firebase-assigned identifier for the `WebApp`. This identifier should be treated as an opaque token, as the data format is not specified.
   *   `appUrls` (*type:* `list(String.t)`, *default:* `nil`) - The URLs where the `WebApp` is hosted.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-assigned display name for the `WebApp`.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google's [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of when the App will be considered expired and cannot be undeleted. This value is only provided if the App is in the `DELETED` state.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the WebApp, in the format: projects/PROJECT_IDENTIFIER /webApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.webApps#WebApp.FIELDS.app_id)).
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `WebApp`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the App.
@@ -38,6 +40,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
           :appId => String.t() | nil,
           :appUrls => list(String.t()) | nil,
           :displayName => String.t() | nil,
+          :etag => String.t() | nil,
+          :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :projectId => String.t() | nil,
           :state => String.t() | nil,
@@ -48,6 +52,8 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebApp do
   field(:appId)
   field(:appUrls, type: :list)
   field(:displayName)
+  field(:etag)
+  field(:expireTime, as: DateTime)
   field(:name)
   field(:projectId)
   field(:state)
