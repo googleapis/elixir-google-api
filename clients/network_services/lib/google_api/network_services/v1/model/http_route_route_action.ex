@@ -23,12 +23,15 @@ defmodule GoogleApi.NetworkServices.V1.Model.HttpRouteRouteAction do
 
   *   `corsPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteCorsPolicy.t`, *default:* `nil`) - The specification for allowing client side cross-origin requests.
   *   `destinations` (*type:* `list(GoogleApi.NetworkServices.V1.Model.HttpRouteDestination.t)`, *default:* `nil`) - The destination to which traffic should be forwarded.
+  *   `directResponse` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteHttpDirectResponse.t`, *default:* `nil`) - Optional. Static HTTP Response object to be returned regardless of the request.
   *   `faultInjectionPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteFaultInjectionPolicy.t`, *default:* `nil`) - The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced on a percentage of requests before sending those requests to the backend service. Similarly requests from clients can be aborted for a percentage of requests. timeout and retry_policy will be ignored by clients that are configured with a fault_injection_policy
+  *   `idleTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the idle timeout for the selected route. The idle timeout is defined as the period in which there are no bytes sent or received on either the upstream or downstream connection. If not set, the default idle timeout is 1 hour. If set to 0s, the timeout will be disabled.
   *   `redirect` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteRedirect.t`, *default:* `nil`) - If set, the request is directed as configured by this field.
-  *   `requestHeaderModifier` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t`, *default:* `nil`) - The specification for modifying the headers of a matching request prior to delivery of the request to the destination.
+  *   `requestHeaderModifier` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t`, *default:* `nil`) - The specification for modifying the headers of a matching request prior to delivery of the request to the destination. If HeaderModifiers are set on both the Destination and the RouteAction, they will be merged. Conflicts between the two will not be resolved on the configuration.
   *   `requestMirrorPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteRequestMirrorPolicy.t`, *default:* `nil`) - Specifies the policy on how requests intended for the routes destination are shadowed to a separate mirrored destination. Proxy will not wait for the shadow destination to respond before returning the response. Prior to sending traffic to the shadow service, the host/authority header is suffixed with -shadow.
-  *   `responseHeaderModifier` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t`, *default:* `nil`) - The specification for modifying the headers of a response prior to sending the response back to the client.
+  *   `responseHeaderModifier` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t`, *default:* `nil`) - The specification for modifying the headers of a response prior to sending the response back to the client. If HeaderModifiers are set on both the Destination and the RouteAction, they will be merged. Conflicts between the two will not be resolved on the configuration.
   *   `retryPolicy` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteRetryPolicy.t`, *default:* `nil`) - Specifies the retry policy associated with this route.
+  *   `statefulSessionAffinity` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteStatefulSessionAffinityPolicy.t`, *default:* `nil`) - Optional. Specifies cookie-based stateful session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Specifies the timeout for selected route. Timeout is computed from the time the request has been fully processed (i.e. end of stream) up until the response has been completely processed. Timeout includes all retries.
   *   `urlRewrite` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteURLRewrite.t`, *default:* `nil`) - The specification for rewrite URL before forwarding requests to the destination.
   """
@@ -39,8 +42,11 @@ defmodule GoogleApi.NetworkServices.V1.Model.HttpRouteRouteAction do
           :corsPolicy => GoogleApi.NetworkServices.V1.Model.HttpRouteCorsPolicy.t() | nil,
           :destinations =>
             list(GoogleApi.NetworkServices.V1.Model.HttpRouteDestination.t()) | nil,
+          :directResponse =>
+            GoogleApi.NetworkServices.V1.Model.HttpRouteHttpDirectResponse.t() | nil,
           :faultInjectionPolicy =>
             GoogleApi.NetworkServices.V1.Model.HttpRouteFaultInjectionPolicy.t() | nil,
+          :idleTimeout => String.t() | nil,
           :redirect => GoogleApi.NetworkServices.V1.Model.HttpRouteRedirect.t() | nil,
           :requestHeaderModifier =>
             GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t() | nil,
@@ -49,22 +55,31 @@ defmodule GoogleApi.NetworkServices.V1.Model.HttpRouteRouteAction do
           :responseHeaderModifier =>
             GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier.t() | nil,
           :retryPolicy => GoogleApi.NetworkServices.V1.Model.HttpRouteRetryPolicy.t() | nil,
+          :statefulSessionAffinity =>
+            GoogleApi.NetworkServices.V1.Model.HttpRouteStatefulSessionAffinityPolicy.t() | nil,
           :timeout => String.t() | nil,
           :urlRewrite => GoogleApi.NetworkServices.V1.Model.HttpRouteURLRewrite.t() | nil
         }
 
   field(:corsPolicy, as: GoogleApi.NetworkServices.V1.Model.HttpRouteCorsPolicy)
   field(:destinations, as: GoogleApi.NetworkServices.V1.Model.HttpRouteDestination, type: :list)
+  field(:directResponse, as: GoogleApi.NetworkServices.V1.Model.HttpRouteHttpDirectResponse)
 
   field(:faultInjectionPolicy,
     as: GoogleApi.NetworkServices.V1.Model.HttpRouteFaultInjectionPolicy
   )
 
+  field(:idleTimeout)
   field(:redirect, as: GoogleApi.NetworkServices.V1.Model.HttpRouteRedirect)
   field(:requestHeaderModifier, as: GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier)
   field(:requestMirrorPolicy, as: GoogleApi.NetworkServices.V1.Model.HttpRouteRequestMirrorPolicy)
   field(:responseHeaderModifier, as: GoogleApi.NetworkServices.V1.Model.HttpRouteHeaderModifier)
   field(:retryPolicy, as: GoogleApi.NetworkServices.V1.Model.HttpRouteRetryPolicy)
+
+  field(:statefulSessionAffinity,
+    as: GoogleApi.NetworkServices.V1.Model.HttpRouteStatefulSessionAffinityPolicy
+  )
+
   field(:timeout)
   field(:urlRewrite, as: GoogleApi.NetworkServices.V1.Model.HttpRouteURLRewrite)
 end

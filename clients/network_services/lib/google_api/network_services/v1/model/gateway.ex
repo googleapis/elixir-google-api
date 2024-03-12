@@ -17,18 +17,25 @@
 
 defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
   @moduledoc """
-  Gateway represents the configuration for a proxy, typically a load balancer. It captures the ip:port over which the services are exposed by the proxy, along with any policy configurations. Routes have reference to to Gateways to dictate how requests should be routed by this Gateway.
+  Gateway represents the configuration for a proxy, typically a load balancer. It captures the ip:port over which the services are exposed by the proxy, along with any policy configurations. Routes have reference to to Gateways to dictate how requests should be routed by this Gateway. Next id: 32
 
   ## Attributes
 
+  *   `addresses` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Zero or one IPv4 or IPv6 address on which the Gateway will receive the traffic. When no address is provided, an IP from the subnetwork is allocated This field only applies to gateways of type 'SECURE_WEB_GATEWAY'. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6.
+  *   `certificateUrls` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection. This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
+  *   `envoyHeaders` (*type:* `String.t`, *default:* `nil`) - Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
+  *   `gatewaySecurityPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A fully-qualified GatewaySecurityPolicy URL reference. Defines how a server should apply security policy to inbound (VM to Proxy) initiated connections. For example: `projects/*/locations/*/gatewaySecurityPolicies/swg-policy`. This policy is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+  *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The IP Version that will be used by this gateway. Valid options are IPV4 or IPV6. Default is IPV4.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the Gateway resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Gateway resource. It matches pattern `projects/*/locations/*/gateways/`.
-  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Required. One or more port numbers (1-65535), on which the Gateway will receive traffic. The proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 and support multiple ports.
-  *   `scope` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single coniguration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
+  *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The relative resource name identifying the VPC network that is using this configuration. For example: `projects/*/global/networks/network-1`. Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
+  *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Required. One or more port numbers (1-65535), on which the Gateway will receive traffic. The proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and support multiple ports.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Optional. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single coniguration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL of this resource
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The relative resource name identifying the subnetwork in which this SWG is allocated. For example: `projects/*/regions/us-central1/subnetworks/network-1` Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
   *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. The type of the customer managed gateway. This field is required. If unspecified, an error is returned.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
@@ -36,26 +43,40 @@ defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :addresses => list(String.t()) | nil,
+          :certificateUrls => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :envoyHeaders => String.t() | nil,
+          :gatewaySecurityPolicy => String.t() | nil,
+          :ipVersion => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :network => String.t() | nil,
           :ports => list(integer()) | nil,
           :scope => String.t() | nil,
           :selfLink => String.t() | nil,
           :serverTlsPolicy => String.t() | nil,
+          :subnetwork => String.t() | nil,
           :type => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:addresses, type: :list)
+  field(:certificateUrls, type: :list)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:envoyHeaders)
+  field(:gatewaySecurityPolicy)
+  field(:ipVersion)
   field(:labels, type: :map)
   field(:name)
+  field(:network)
   field(:ports, type: :list)
   field(:scope)
   field(:selfLink)
   field(:serverTlsPolicy)
+  field(:subnetwork)
   field(:type)
   field(:updateTime, as: DateTime)
 end

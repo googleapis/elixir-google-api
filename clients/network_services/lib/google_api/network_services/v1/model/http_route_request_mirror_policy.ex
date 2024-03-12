@@ -22,15 +22,18 @@ defmodule GoogleApi.NetworkServices.V1.Model.HttpRouteRequestMirrorPolicy do
   ## Attributes
 
   *   `destination` (*type:* `GoogleApi.NetworkServices.V1.Model.HttpRouteDestination.t`, *default:* `nil`) - The destination the requests will be mirrored to. The weight of the destination will be ignored.
+  *   `mirrorPercent` (*type:* `number()`, *default:* `nil`) - Optional. The percentage of requests to get mirrored to the desired destination.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destination => GoogleApi.NetworkServices.V1.Model.HttpRouteDestination.t() | nil
+          :destination => GoogleApi.NetworkServices.V1.Model.HttpRouteDestination.t() | nil,
+          :mirrorPercent => number() | nil
         }
 
   field(:destination, as: GoogleApi.NetworkServices.V1.Model.HttpRouteDestination)
+  field(:mirrorPercent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.HttpRouteRequestMirrorPolicy do

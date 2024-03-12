@@ -22,19 +22,23 @@ defmodule GoogleApi.NetworkServices.V1.Model.TlsRouteRouteAction do
   ## Attributes
 
   *   `destinations` (*type:* `list(GoogleApi.NetworkServices.V1.Model.TlsRouteRouteDestination.t)`, *default:* `nil`) - Required. The destination services to which traffic should be forwarded. At least one destination service is required.
+  *   `idleTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the idle timeout for the selected route. The idle timeout is defined as the period in which there are no bytes sent or received on either the upstream or downstream connection. If not set, the default idle timeout is 1 hour. If set to 0s, the timeout will be disabled.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :destinations =>
-            list(GoogleApi.NetworkServices.V1.Model.TlsRouteRouteDestination.t()) | nil
+            list(GoogleApi.NetworkServices.V1.Model.TlsRouteRouteDestination.t()) | nil,
+          :idleTimeout => String.t() | nil
         }
 
   field(:destinations,
     as: GoogleApi.NetworkServices.V1.Model.TlsRouteRouteDestination,
     type: :list
   )
+
+  field(:idleTimeout)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkServices.V1.Model.TlsRouteRouteAction do
