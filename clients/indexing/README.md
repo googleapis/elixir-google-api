@@ -1,8 +1,8 @@
 # GoogleApi.Indexing
 
-Indexing API client library.
+Web Search Indexing API client library.
 
-Notifies Google when your web pages change.
+Notifies Google Web Search when your web pages change.
 
 ## Installation
 

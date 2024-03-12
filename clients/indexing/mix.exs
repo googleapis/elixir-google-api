@@ -18,7 +18,7 @@
 defmodule GoogleApi.Indexing.Mixfile do
   use Mix.Project
 
-  @version "0.10.0"
+  @version "0.10.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Indexing.Mixfile do
 
   defp description() do
     """
-    Indexing API client library. Notifies Google when your web pages change.
+    Web Search Indexing API client library. Notifies Google Web Search when your web pages change.
     """
   end
 
