@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudTrace.V2.Model.Attributes do
 
   ## Attributes
 
-  *   `attributeMap` (*type:* `%{optional(String.t) => GoogleApi.CloudTrace.V2.Model.AttributeValue.t}`, *default:* `nil`) - A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: "/instance_id": { "string_value": { "value": "my-instance" } } "/http/request_bytes": { "int_value": 300 } "abc.com/myattribute": { "bool_value": false }
+  *   `attributeMap` (*type:* `%{optional(String.t) => GoogleApi.CloudTrace.V2.Model.AttributeValue.t}`, *default:* `nil`) - A set of attributes. Each attribute's key can be up to 128 bytes long. The value can be a string up to 256 bytes, a signed 64-bit integer, or the boolean values `true` or `false`. For example: "/instance_id": { "string_value": { "value": "my-instance" } } "/http/request_bytes": { "int_value": 300 } "example.com/myattribute": { "bool_value": false }
   *   `droppedAttributesCount` (*type:* `integer()`, *default:* `nil`) - The number of attributes that were discarded. Attributes can be discarded because their keys are too long or because there are too many attributes. If this value is 0 then all attributes are valid.
   """
 
