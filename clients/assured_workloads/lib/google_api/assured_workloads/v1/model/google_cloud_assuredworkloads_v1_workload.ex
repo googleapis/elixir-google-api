@@ -24,9 +24,10 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   *   `billingAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
   *   `complianceRegime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Compliance Regime associated with this workload.
   *   `complianceStatus` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadComplianceStatus.t`, *default:* `nil`) - Output only. Count of active Violations in the Workload.
-  *   `compliantButDisallowedServices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment."
+  *   `compliantButDisallowedServices` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Immutable. The Workload creation timestamp.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
+  *   `ekmProvisioningResponse` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponse.t`, *default:* `nil`) - Output only. Represents the Ekm Provisioning State of the given workload.
   *   `enableSovereignControls` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates the sovereignty status of the given workload. Currently meant to be used by Europe/Canada customers.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations.
   *   `kajEnrollmentState` (*type:* `String.t`, *default:* `nil`) - Output only. Represents the KAJ enrollment state of the given workload.
@@ -34,10 +35,13 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels applied to the workload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the workload. Format: organizations/{organization}/locations/{location}/workloads/{workload} Read-only.
   *   `partner` (*type:* `String.t`, *default:* `nil`) - Optional. Partner regime associated with this workload.
+  *   `partnerPermissions` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions.t`, *default:* `nil`) - Optional. Permissions granted to the AW Partner SA account for the customer workload
   *   `provisionedResourcesParent` (*type:* `String.t`, *default:* `nil`) - Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
+  *   `resourceMonitoringEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload.
   *   `resourceSettings` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceSettings.t)`, *default:* `nil`) - Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
   *   `resources` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t)`, *default:* `nil`) - Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
   *   `saaEnrollmentResponse` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t`, *default:* `nil`) - Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page.
+  *   `violationNotificationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -51,6 +55,9 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
           :compliantButDisallowedServices => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :ekmProvisioningResponse =>
+            GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponse.t()
+            | nil,
           :enableSovereignControls => boolean() | nil,
           :etag => String.t() | nil,
           :kajEnrollmentState => String.t() | nil,
@@ -60,7 +67,11 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
           :labels => map() | nil,
           :name => String.t() | nil,
           :partner => String.t() | nil,
+          :partnerPermissions =>
+            GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions.t()
+            | nil,
           :provisionedResourcesParent => String.t() | nil,
+          :resourceMonitoringEnabled => boolean() | nil,
           :resourceSettings =>
             list(
               GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceSettings.t()
@@ -73,7 +84,8 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
             | nil,
           :saaEnrollmentResponse =>
             GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t()
-            | nil
+            | nil,
+          :violationNotificationsEnabled => boolean() | nil
         }
 
   field(:billingAccount)
@@ -86,6 +98,12 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   field(:compliantButDisallowedServices, type: :list)
   field(:createTime, as: DateTime)
   field(:displayName)
+
+  field(:ekmProvisioningResponse,
+    as:
+      GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadEkmProvisioningResponse
+  )
+
   field(:enableSovereignControls)
   field(:etag)
   field(:kajEnrollmentState)
@@ -97,7 +115,14 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   field(:labels, type: :map)
   field(:name)
   field(:partner)
+
+  field(:partnerPermissions,
+    as:
+      GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadPartnerPermissions
+  )
+
   field(:provisionedResourcesParent)
+  field(:resourceMonitoringEnabled)
 
   field(:resourceSettings,
     as: GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceSettings,
@@ -113,6 +138,8 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
     as:
       GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse
   )
+
+  field(:violationNotificationsEnabled)
 end
 
 defimpl Poison.Decoder,
