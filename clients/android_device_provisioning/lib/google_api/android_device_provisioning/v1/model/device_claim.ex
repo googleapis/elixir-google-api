@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceClaim do
 
   *   `additionalService` (*type:* `String.t`, *default:* `nil`) - The Additional service registered for the device.
   *   `googleWorkspaceCustomerId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Workspace account that owns the Chrome OS device.
-  *   `ownerCompanyId` (*type:* `String.t`, *default:* `nil`) - The ID of the Customer that purchased the Android device.
+  *   `ownerCompanyId` (*type:* `String.t`, *default:* `nil`) - The ID of the Customer that purchased the device.
   *   `resellerId` (*type:* `String.t`, *default:* `nil`) - The ID of the reseller that claimed the device.
   *   `sectionType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of claim made on the device.
   *   `vacationModeExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the device will exit ‘vacation mode’. This value is present iff the device is in 'vacation mode'.
