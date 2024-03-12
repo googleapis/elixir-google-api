@@ -2,7 +2,7 @@
 
 Cloud Asset API client library.
 
-The cloud asset API manages the history and inventory of cloud resources.
+The Cloud Asset API manages the history and inventory of Google Cloud resources.
 
 ## Installation
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.ConditionEvaluation do
   @moduledoc """
-  The Condition evaluation.
+  The condition evaluation.
 
   ## Attributes
 

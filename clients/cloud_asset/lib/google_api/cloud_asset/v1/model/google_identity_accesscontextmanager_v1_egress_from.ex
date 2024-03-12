@@ -21,19 +21,33 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Egre
 
   ## Attributes
 
-  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through this [EgressPolicy]. Should be in the format of email address. The email address should represent individual user or service account only.
+  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through this [EgressPolicy], in the format of `user:{email_id}` or `serviceAccount:{email_id}`.
   *   `identityType` (*type:* `String.t`, *default:* `nil`) - Specifies the type of identities that are allowed access to outside the perimeter. If left unspecified, then members of `identities` field will be allowed access.
+  *   `sourceRestriction` (*type:* `String.t`, *default:* `nil`) - Whether to enforce traffic restrictions based on `sources` field. If the `sources` fields is non-empty, then this field must be set to `SOURCE_RESTRICTION_ENABLED`.
+  *   `sources` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressSource.t)`, *default:* `nil`) - Sources that this EgressPolicy authorizes access from. If this field is not empty, then `source_restriction` must be set to `SOURCE_RESTRICTION_ENABLED`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :identities => list(String.t()) | nil,
-          :identityType => String.t() | nil
+          :identityType => String.t() | nil,
+          :sourceRestriction => String.t() | nil,
+          :sources =>
+            list(
+              GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressSource.t()
+            )
+            | nil
         }
 
   field(:identities, type: :list)
   field(:identityType)
+  field(:sourceRestriction)
+
+  field(:sources,
+    as: GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1EgressSource,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

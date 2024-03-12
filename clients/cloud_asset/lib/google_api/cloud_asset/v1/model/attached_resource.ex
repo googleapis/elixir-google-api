@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.AttachedResource do
 
   ## Attributes
 
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of this attached resource. Example: `osconfig.googleapis.com/Inventory` You can find the supported attached asset types of each resource in this table: `https://cloud.google.com/asset-inventory/docs/supported-asset-types#searchable_asset_types`
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The type of this attached resource. Example: `osconfig.googleapis.com/Inventory` You can find the supported attached asset types of each resource in this table: `https://cloud.google.com/asset-inventory/docs/supported-asset-types`
   *   `versionedResources` (*type:* `list(GoogleApi.CloudAsset.V1.Model.VersionedResource.t)`, *default:* `nil`) - Versioned resource representations of this attached resource. This is repeated because there could be multiple versions of the attached resource representations during version migration.
   """
 

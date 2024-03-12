@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1ListConstraint do
   @moduledoc """
-  A `Constraint` that allows or disallows a list of string values, which are configured by an Organization's policy administrator with a `Policy`.
+  A `Constraint` that allows or disallows a list of string values, which are configured by an organization's policy administrator with a `Policy`.
 
   ## Attributes
 

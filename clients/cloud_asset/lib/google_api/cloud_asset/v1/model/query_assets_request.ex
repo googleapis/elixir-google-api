@@ -27,7 +27,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.QueryAssetsRequest do
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. A page token received from previous `QueryAssets`. The field will be ignored when [output_config] is specified.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Queries cloud assets as they appeared at the specified point in time.
   *   `readTimeWindow` (*type:* `GoogleApi.CloudAsset.V1.Model.TimeWindow.t`, *default:* `nil`) - Optional. [start_time] is required. [start_time] must be less than [end_time] Defaults [end_time] to now if [start_time] is set and [end_time] isn't. Maximum permitted time range is 7 days.
-  *   `statement` (*type:* `String.t`, *default:* `nil`) - Optional. A SQL statement that's compatible with [BigQuery Standard SQL](http://cloud/bigquery/docs/reference/standard-sql/enabling-standard-sql).
+  *   `statement` (*type:* `String.t`, *default:* `nil`) - Optional. A SQL statement that's compatible with [BigQuery SQL](https://cloud.google.com/bigquery/docs/introduction-sql).
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the maximum amount of time that the client is willing to wait for the query to complete. By default, this limit is 5 min for the first query, and 1 minute for the following queries. If the query is complete, the `done` field in the `QueryAssetsResponse` is true, otherwise false. Like BigQuery [jobs.query API](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query#queryrequest) The call is not guaranteed to wait for the specified timeout; it typically returns after around 200 seconds (200,000 milliseconds), even if the query is not complete. The field will be ignored when [output_config] is specified.
   """
 

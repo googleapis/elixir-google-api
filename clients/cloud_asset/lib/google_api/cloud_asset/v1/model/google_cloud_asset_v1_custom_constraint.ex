@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1CustomConstraint do
   ## Attributes
 
   *   `actionType` (*type:* `String.t`, *default:* `nil`) - Allow or deny type.
-  *   `condition` (*type:* `String.t`, *default:* `nil`) - Organization policy condition/expression. For example: `resource.instanceName.matches("[production|test]_.*_(\\d)+")'` or, `resource.management.auto_upgrade == true`
+  *   `condition` (*type:* `String.t`, *default:* `nil`) - Organization Policy condition/expression. For example: `resource.instanceName.matches("[production|test]_.*_(\\d)+")'` or, `resource.management.auto_upgrade == true`
   *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed information about this custom policy constraint.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - One line display name for the UI.
   *   `methodTypes` (*type:* `list(String.t)`, *default:* `nil`) - All the operations being applied for this constraint.

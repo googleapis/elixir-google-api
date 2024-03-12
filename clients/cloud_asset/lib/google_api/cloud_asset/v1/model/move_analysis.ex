@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.MoveAnalysis do
   ## Attributes
 
   *   `analysis` (*type:* `GoogleApi.CloudAsset.V1.Model.MoveAnalysisResult.t`, *default:* `nil`) - Analysis result of moving the target resource.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user friendly display name of the analysis. E.g. IAM, Organization Policy etc.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user friendly display name of the analysis. E.g. IAM, organization policy etc.
   *   `error` (*type:* `GoogleApi.CloudAsset.V1.Model.Status.t`, *default:* `nil`) - Description of error encountered when performing the analysis.
   """
 
