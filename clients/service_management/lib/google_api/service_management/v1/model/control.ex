@@ -17,20 +17,23 @@
 
 defmodule GoogleApi.ServiceManagement.V1.Model.Control do
   @moduledoc """
-  Selects and configures the service controller used by the service. The service controller handles two things: - **What is allowed:** for each API request, Chemist checks the project status, activation status, abuse status, billing status, service status, location restrictions, VPC Service Controls, SuperQuota, and other policies. - **What has happened:** for each API response, Chemist reports the telemetry data to analytics, auditing, billing, eventing, logging, monitoring, sawmill, and tracing. Chemist also accepts telemetry data not associated with API traffic, such as billing metrics. Example: control: environment: servicecontrol.googleapis.com
+  Selects and configures the service controller used by the service. Example: control: environment: servicecontrol.googleapis.com
 
   ## Attributes
 
   *   `environment` (*type:* `String.t`, *default:* `nil`) - The service controller environment to use. If empty, no control plane feature (like quota and billing) will be enabled. The recommended value for most services is servicecontrol.googleapis.com
+  *   `methodPolicies` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.MethodPolicy.t)`, *default:* `nil`) - Defines policies applying to the API methods of the service.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :environment => String.t() | nil
+          :environment => String.t() | nil,
+          :methodPolicies => list(GoogleApi.ServiceManagement.V1.Model.MethodPolicy.t()) | nil
         }
 
   field(:environment)
+  field(:methodPolicies, as: GoogleApi.ServiceManagement.V1.Model.MethodPolicy, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.Control do

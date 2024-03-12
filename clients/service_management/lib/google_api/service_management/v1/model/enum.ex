@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Enum do
 
   ## Attributes
 
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - The source edition string, only valid when syntax is SYNTAX_EDITIONS.
   *   `enumvalue` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.EnumValue.t)`, *default:* `nil`) - Enum value definitions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Enum type name.
   *   `options` (*type:* `list(GoogleApi.ServiceManagement.V1.Model.Option.t)`, *default:* `nil`) - Protocol buffer options.
@@ -31,6 +32,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Enum do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :edition => String.t() | nil,
           :enumvalue => list(GoogleApi.ServiceManagement.V1.Model.EnumValue.t()) | nil,
           :name => String.t() | nil,
           :options => list(GoogleApi.ServiceManagement.V1.Model.Option.t()) | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.ServiceManagement.V1.Model.Enum do
           :syntax => String.t() | nil
         }
 
+  field(:edition)
   field(:enumvalue, as: GoogleApi.ServiceManagement.V1.Model.EnumValue, type: :list)
   field(:name)
   field(:options, as: GoogleApi.ServiceManagement.V1.Model.Option, type: :list)
