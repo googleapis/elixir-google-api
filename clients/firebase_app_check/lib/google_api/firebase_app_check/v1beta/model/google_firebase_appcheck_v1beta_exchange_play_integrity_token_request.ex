@@ -21,15 +21,18 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
 
   ## Attributes
 
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   *   `playIntegrityToken` (*type:* `String.t`, *default:* `nil`) - Required. The [integrity verdict response token from Play Integrity](https://developer.android.com/google/play/integrity/verdict#decrypt-verify) issued to your app.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :limitedUse => boolean() | nil,
           :playIntegrityToken => String.t() | nil
         }
 
+  field(:limitedUse)
   field(:playIntegrityToken)
 end
 

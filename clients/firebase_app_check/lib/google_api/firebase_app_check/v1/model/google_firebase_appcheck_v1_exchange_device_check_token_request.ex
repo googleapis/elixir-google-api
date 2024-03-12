@@ -22,15 +22,18 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1ExchangeDe
   ## Attributes
 
   *   `deviceToken` (*type:* `String.t`, *default:* `nil`) - Required. The `device_token` as returned by Apple's client-side [DeviceCheck API](https://developer.apple.com/documentation/devicecheck/dcdevice). This is the base64 encoded `Data` (Swift) or `NSData` (ObjC) object.
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deviceToken => String.t() | nil
+          :deviceToken => String.t() | nil,
+          :limitedUse => boolean() | nil
         }
 
   field(:deviceToken)
+  field(:limitedUse)
 end
 
 defimpl Poison.Decoder,

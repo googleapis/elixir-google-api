@@ -21,15 +21,18 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
 
   ## Attributes
 
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   *   `recaptchaEnterpriseToken` (*type:* `String.t`, *default:* `nil`) - Required. The reCAPTCHA token as returned by the [reCAPTCHA Enterprise JavaScript API](https://cloud.google.com/recaptcha-enterprise/docs/instrument-web-pages).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :limitedUse => boolean() | nil,
           :recaptchaEnterpriseToken => String.t() | nil
         }
 
+  field(:limitedUse)
   field(:recaptchaEnterpriseToken)
 end
 

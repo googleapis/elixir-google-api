@@ -24,6 +24,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
   *   `artifact` (*type:* `String.t`, *default:* `nil`) - Required. The artifact returned by a previous call to ExchangeAppAttestAttestation.
   *   `assertion` (*type:* `String.t`, *default:* `nil`) - Required. The CBOR-encoded assertion returned by the client-side App Attest API.
   *   `challenge` (*type:* `String.t`, *default:* `nil`) - Required. A one-time challenge returned by an immediately prior call to GenerateAppAttestChallenge.
+  *   `limitedUse` (*type:* `boolean()`, *default:* `nil`) - Specifies whether this attestation is for use in a *limited use* (`true`) or *session based* (`false`) context. To enable this attestation to be used with the *replay protection* feature, set this to `true`. The default value is `false`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaEx
   @type t :: %__MODULE__{
           :artifact => String.t() | nil,
           :assertion => String.t() | nil,
-          :challenge => String.t() | nil
+          :challenge => String.t() | nil,
+          :limitedUse => boolean() | nil
         }
 
   field(:artifact)
   field(:assertion)
   field(:challenge)
+  field(:limitedUse)
 end
 
 defimpl Poison.Decoder,

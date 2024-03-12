@@ -22,18 +22,24 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaSe
   ## Attributes
 
   *   `enforcementMode` (*type:* `String.t`, *default:* `nil`) - Required. The App Check enforcement mode for this service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative resource name of the service configuration object, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore)
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. This etag is strongly validated as defined by RFC 7232.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative resource name of the service configuration object, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `identitytoolkit.googleapis.com` (Firebase Authentication with Identity Platform)
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this service configuration object was most recently updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enforcementMode => String.t() | nil,
-          :name => String.t() | nil
+          :etag => String.t() | nil,
+          :name => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:enforcementMode)
+  field(:etag)
   field(:name)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder,

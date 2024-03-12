@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaUp
 
   ## Attributes
 
-  *   `service` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaService.t`, *default:* `nil`) - Required. The Service to update. The Service's `name` field is used to identify the Service to be updated, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore)
+  *   `service` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaService.t`, *default:* `nil`) - Required. The Service to update. The Service's `name` field is used to identify the Service to be updated, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `identitytoolkit.googleapis.com` (Firebase Authentication with Identity Platform) For Firebase Authentication to work with App Check, you must first upgrade to [Firebase Authentication with Identity Platform](https://firebase.google.com/docs/auth#identity-platform).
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. A comma-separated list of names of fields in the Service to update. Example: `enforcement_mode`.
   """
 
