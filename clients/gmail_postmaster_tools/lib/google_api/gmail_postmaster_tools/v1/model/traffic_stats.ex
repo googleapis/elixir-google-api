@@ -31,7 +31,9 @@ defmodule GoogleApi.GmailPostmasterTools.V1.Model.TrafficStats do
   *   `outboundEncryptionRatio` (*type:* `float()`, *default:* `nil`) - The ratio of outgoing mail (from Gmail) that was accepted over secure transport (TLS).
   *   `spammyFeedbackLoops` (*type:* `list(GoogleApi.GmailPostmasterTools.V1.Model.FeedbackLoop.t)`, *default:* `nil`) - Spammy [Feedback loop identifiers] (https://support.google.com/mail/answer/6254652) with their individual spam rates. This metric only pertains to traffic that is authenticated by [DKIM](http://www.dkim.org/).
   *   `spfSuccessRatio` (*type:* `float()`, *default:* `nil`) - The ratio of mail that successfully authenticated with SPF vs. all mail that attempted to authenticate with [SPF](http://www.openspf.org/). Spoofed mail is excluded.
-  *   `userReportedSpamRatio` (*type:* `float()`, *default:* `nil`) - The ratio of user-report spam vs. email that was sent to the inbox. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+  *   `userReportedSpamRatio` (*type:* `float()`, *default:* `nil`) - The ratio of user-report spam vs. email that was sent to the inbox. This is potentially inexact -- users may want to refer to the description of the interval fields userReportedSpamRatioLowerBound and userReportedSpamRatioUpperBound for more explicit accuracy guarantees. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+  *   `userReportedSpamRatioLowerBound` (*type:* `float()`, *default:* `nil`) - The lower bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this lower bound and the corresponding upper bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
+  *   `userReportedSpamRatioUpperBound` (*type:* `float()`, *default:* `nil`) - The upper bound of the confidence interval for the user reported spam ratio. If this field is set, then the value of userReportedSpamRatio is set to the midpoint of this interval and is thus inexact. However, the true ratio is guaranteed to be in between this upper bound and the corresponding lower bound 95% of the time. This metric only pertains to emails authenticated by [DKIM](http://www.dkim.org/).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +51,9 @@ defmodule GoogleApi.GmailPostmasterTools.V1.Model.TrafficStats do
           :spammyFeedbackLoops =>
             list(GoogleApi.GmailPostmasterTools.V1.Model.FeedbackLoop.t()) | nil,
           :spfSuccessRatio => float() | nil,
-          :userReportedSpamRatio => float() | nil
+          :userReportedSpamRatio => float() | nil,
+          :userReportedSpamRatioLowerBound => float() | nil,
+          :userReportedSpamRatioUpperBound => float() | nil
         }
 
   field(:deliveryErrors, as: GoogleApi.GmailPostmasterTools.V1.Model.DeliveryError, type: :list)
@@ -68,6 +72,8 @@ defmodule GoogleApi.GmailPostmasterTools.V1.Model.TrafficStats do
 
   field(:spfSuccessRatio)
   field(:userReportedSpamRatio)
+  field(:userReportedSpamRatioLowerBound)
+  field(:userReportedSpamRatioUpperBound)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GmailPostmasterTools.V1.Model.TrafficStats do
