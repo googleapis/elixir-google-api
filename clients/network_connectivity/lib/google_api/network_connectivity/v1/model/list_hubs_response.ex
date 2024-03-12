@@ -22,7 +22,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ListHubsResponse do
   ## Attributes
 
   *   `hubs` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.Hub.t)`, *default:* `nil`) - The requested hubs.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The next pagination token in the List response. It should be used as page_token for the following request. An empty value means no more result.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token for the next page of the response. To see more results, use this value as the page_token for your next request. If this value is empty, there are no more results.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
   """
 
