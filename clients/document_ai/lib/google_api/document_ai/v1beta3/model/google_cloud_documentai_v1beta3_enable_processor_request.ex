@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EnableProcessorRequest do
   @moduledoc """
-  Request message for the enable processor method.
+  Request message for the EnableProcessor method.
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1UndeployProcessorVersionRequest do
   @moduledoc """
-  Request message for the undeploy processor version method.
+  Request message for the UndeployProcessorVersion method.
 
   ## Attributes
 

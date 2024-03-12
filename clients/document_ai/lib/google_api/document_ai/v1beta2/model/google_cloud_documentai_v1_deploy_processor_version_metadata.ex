@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1DeployProcessorVersionMetadata do
   @moduledoc """
-  The long running operation metadata for deploy processor version method.
+  The long-running operation metadata for the DeployProcessorVersion method.
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   """
 
   use GoogleApi.Gax.ModelBase

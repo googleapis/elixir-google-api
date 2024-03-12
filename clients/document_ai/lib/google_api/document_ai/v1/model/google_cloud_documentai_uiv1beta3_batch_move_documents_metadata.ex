@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveD
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   *   `destDatasetType` (*type:* `String.t`, *default:* `nil`) - The destination dataset split type.
   *   `destSplitType` (*type:* `String.t`, *default:* `nil`) - The destination dataset split type.
   *   `individualBatchMoveStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataIndividualBatchMoveStatus.t)`, *default:* `nil`) - The list of response details of each document.

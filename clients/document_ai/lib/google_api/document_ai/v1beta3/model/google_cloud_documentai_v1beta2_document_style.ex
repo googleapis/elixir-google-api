@@ -25,10 +25,10 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2Documen
   *   `color` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeColor.t`, *default:* `nil`) - Text color.
   *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - Font family such as `Arial`, `Times New Roman`. https://www.w3schools.com/cssref/pr_font_font-family.asp
   *   `fontSize` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentStyleFontSize.t`, *default:* `nil`) - Font size.
-  *   `fontWeight` (*type:* `String.t`, *default:* `nil`) - Font weight. Possible values are normal, bold, bolder, and lighter. https://www.w3schools.com/cssref/pr_font_weight.asp
+  *   `fontWeight` (*type:* `String.t`, *default:* `nil`) - [Font weight](https://www.w3schools.com/cssref/pr_font_weight.asp). Possible values are `normal`, `bold`, `bolder`, and `lighter`.
   *   `textAnchor` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta2DocumentTextAnchor.t`, *default:* `nil`) - Text anchor indexing into the Document.text.
-  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - Text decoration. Follows CSS standard. https://www.w3schools.com/cssref/pr_text_text-decoration.asp
-  *   `textStyle` (*type:* `String.t`, *default:* `nil`) - Text style. Possible values are normal, italic, and oblique. https://www.w3schools.com/cssref/pr_font_font-style.asp
+  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - [Text decoration](https://www.w3schools.com/cssref/pr_text_text-decoration.asp). Follows CSS standard. 
+  *   `textStyle` (*type:* `String.t`, *default:* `nil`) - [Text style](https://www.w3schools.com/cssref/pr_font_font-style.asp). Possible values are `normal`, `italic`, and `oblique`.
   """
 
   use GoogleApi.Gax.ModelBase

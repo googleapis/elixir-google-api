@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
   ## Attributes
 
   *   `gcsSource` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage location as the source of the document.
-  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Mimetype of the input. If the input is a raw document, the supported mimetypes are application/pdf, image/tiff, and image/gif. If the input is a [Document] proto, the type should be application/json.
+  *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA published [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) of the input. If the input is a raw document, refer to [supported file types](https://cloud.google.com/document-ai/docs/file-types) for the list of media types. If the input is a Document, the type should be `application/json`.
   """
 
   use GoogleApi.Gax.ModelBase

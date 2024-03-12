@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionResponse do
   @moduledoc """
-  The response for the TrainProcessorVersion method.
+  The response for TrainProcessorVersion.
 
   ## Attributes
 

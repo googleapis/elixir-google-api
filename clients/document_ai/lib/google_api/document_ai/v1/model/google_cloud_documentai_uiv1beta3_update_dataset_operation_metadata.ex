@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3UpdateData
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   """
 
   use GoogleApi.Gax.ModelBase

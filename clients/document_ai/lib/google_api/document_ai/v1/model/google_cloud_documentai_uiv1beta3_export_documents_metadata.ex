@@ -21,7 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ExportDocu
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   *   `individualExportStatuses` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataIndividualExportStatus.t)`, *default:* `nil`) - The list of response details of each document.
   *   `splitExportStats` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStat.t)`, *default:* `nil`) - The list of statistics for each dataset split type.
   """

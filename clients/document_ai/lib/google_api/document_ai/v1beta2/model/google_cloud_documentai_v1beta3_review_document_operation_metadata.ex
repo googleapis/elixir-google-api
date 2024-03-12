@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3ReviewDocumentOperationMetadata do
   @moduledoc """
-  The long running operation metadata for review document method.
+  The long-running operation metadata for the ReviewDocument method.
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiV1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the operation.
   *   `questionId` (*type:* `String.t`, *default:* `nil`) - The Crowd Compute question ID.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Used only when Operation.done is false.

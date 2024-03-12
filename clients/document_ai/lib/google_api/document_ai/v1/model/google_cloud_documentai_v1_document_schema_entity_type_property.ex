@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchemaEnt
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - User defined name for the property.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. Follows the same guidelines as the EntityType name.
   *   `occurrenceType` (*type:* `String.t`, *default:* `nil`) - Occurrence type limits the number of instances an entity type appears in the document.
   *   `valueType` (*type:* `String.t`, *default:* `nil`) - A reference to the value type of the property. This type is subject to the same conventions as the `Entity.base_types` field.
@@ -29,11 +30,13 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchemaEnt
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :name => String.t() | nil,
           :occurrenceType => String.t() | nil,
           :valueType => String.t() | nil
         }
 
+  field(:displayName)
   field(:name)
   field(:occurrenceType)
   field(:valueType)

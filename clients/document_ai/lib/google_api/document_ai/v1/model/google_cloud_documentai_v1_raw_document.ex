@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument do
   ## Attributes
 
   *   `content` (*type:* `String.t`, *default:* `nil`) - Inline document content.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the document, it supports all Unicode characters except the following: `*`, `?`, `[`, `]`, `%`, `{`, `}`,`'`, `\\"`, `,` `~`, `=` and `:` are reserved. If not specified, a default ID is generated.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - An IANA MIME type (RFC6838) indicating the nature and format of the content.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1RawDocument do
 
   @type t :: %__MODULE__{
           :content => String.t() | nil,
+          :displayName => String.t() | nil,
           :mimeType => String.t() | nil
         }
 
   field(:content)
+  field(:displayName)
   field(:mimeType)
 end
 

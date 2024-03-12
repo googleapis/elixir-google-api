@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessResponse do
   @moduledoc """
-  Response message for the process document method.
+  Response message for the ProcessDocument method.
 
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Document.t`, *default:* `nil`) - The document payload, will populate fields based on the processor's behavior.
-  *   `humanReviewOperation` (*type:* `String.t`, *default:* `nil`) - The name of the operation triggered by the processed document. If the human review process is not triggered, this field will be empty. It has the same response type and metadata as the long running operation returned by ReviewDocument method.
+  *   `humanReviewOperation` (*type:* `String.t`, *default:* `nil`) - The name of the operation triggered by the processed document. If the human review process isn't triggered, this field is empty. It has the same response type and metadata as the long-running operation returned by ReviewDocument.
   *   `humanReviewStatus` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3HumanReviewStatus.t`, *default:* `nil`) - The status of human review on the processed document.
   """
 

@@ -28,7 +28,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   *   `floatValue` (*type:* `number()`, *default:* `nil`) - Float value.
   *   `integerValue` (*type:* `integer()`, *default:* `nil`) - Integer value.
   *   `moneyValue` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleTypeMoney.t`, *default:* `nil`) - Money value. See also: https://github.com/googleapis/googleapis/blob/master/google/type/money.proto
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate float or int normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format.
   """
 
   use GoogleApi.Gax.ModelBase

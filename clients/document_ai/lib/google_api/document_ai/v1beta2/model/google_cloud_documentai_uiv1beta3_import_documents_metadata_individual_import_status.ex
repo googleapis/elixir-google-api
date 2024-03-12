@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Impor
   ## Attributes
 
   *   `inputGcsSource` (*type:* `String.t`, *default:* `nil`) - The source Cloud Storage URI of the document.
+  *   `outputDocumentId` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3DocumentId.t`, *default:* `nil`) - The document id of imported document if it was successful, otherwise empty.
   *   `outputGcsDestination` (*type:* `String.t`, *default:* `nil`) - The output_gcs_destination of the processed document if it was successful, otherwise empty.
   *   `status` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status of the importing of the document.
   """
@@ -30,11 +31,18 @@ defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3Impor
 
   @type t :: %__MODULE__{
           :inputGcsSource => String.t() | nil,
+          :outputDocumentId =>
+            GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3DocumentId.t() | nil,
           :outputGcsDestination => String.t() | nil,
           :status => GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus.t() | nil
         }
 
   field(:inputGcsSource)
+
+  field(:outputDocumentId,
+    as: GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3DocumentId
+  )
+
   field(:outputGcsDestination)
   field(:status, as: GoogleApi.DocumentAI.V1beta2.Model.GoogleRpcStatus)
 end

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessMetadata do
   @moduledoc """
-  The long running operation metadata for batch process method.
+  The long-running operation metadata for BatchProcessDocuments.
 
   ## Attributes
 

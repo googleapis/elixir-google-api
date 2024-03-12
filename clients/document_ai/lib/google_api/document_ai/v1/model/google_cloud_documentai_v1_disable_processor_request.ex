@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DisableProcessorRequest do
   @moduledoc """
-  Request message for the disable processor method.
+  Request message for the DisableProcessor method.
 
   ## Attributes
 

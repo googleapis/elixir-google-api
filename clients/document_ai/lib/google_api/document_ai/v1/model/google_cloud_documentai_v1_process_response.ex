@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessResponse do
   @moduledoc """
-  Response message for the process document method.
+  Response message for the ProcessDocument method.
 
   ## Attributes
 

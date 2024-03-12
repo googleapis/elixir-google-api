@@ -25,6 +25,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageToken
   *   `detectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages together with confidence.
   *   `layout` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout.t`, *default:* `nil`) - Layout for Token.
   *   `provenance` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t`, *default:* `nil`) - The history of this annotation.
+  *   `styleInfo` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo.t`, *default:* `nil`) - Text style attributes.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,10 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageToken
           :layout =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout.t() | nil,
           :provenance =>
-            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t() | nil
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance.t() | nil,
+          :styleInfo =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo.t()
+            | nil
         }
 
   field(:detectedBreak,
@@ -55,6 +59,10 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageToken
 
   field(:layout, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageLayout)
   field(:provenance, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentProvenance)
+
+  field(:styleInfo,
+    as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentPageTokenStyleInfo
+  )
 end
 
 defimpl Poison.Decoder,

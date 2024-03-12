@@ -17,15 +17,17 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequest do
   @moduledoc """
-  Request message for batch process document method.
+  Request message for BatchProcessDocuments.
 
   ## Attributes
 
-  *   `documentOutputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t`, *default:* `nil`) - The overall output config for batch process.
+  *   `documentOutputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentOutputConfig.t`, *default:* `nil`) - The output configuration for the BatchProcessDocuments method.
   *   `inputConfigs` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchInputConfig.t)`, *default:* `nil`) - The input config for each single document in the batch process.
-  *   `inputDocuments` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig.t`, *default:* `nil`) - The input documents for batch process.
+  *   `inputDocuments` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig.t`, *default:* `nil`) - The input documents for the BatchProcessDocuments method.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
   *   `outputConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t`, *default:* `nil`) - The overall output config for batch process.
-  *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether Human Review feature should be skipped for this request. Default to false.
+  *   `processOptions` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions.t`, *default:* `nil`) - Inference-time options for the process API
+  *   `skipHumanReview` (*type:* `boolean()`, *default:* `nil`) - Whether human review should be skipped for this request. Default to `false`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,8 +44,12 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
           :inputDocuments =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig.t()
             | nil,
+          :labels => map() | nil,
           :outputConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig.t()
+            | nil,
+          :processOptions =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions.t()
             | nil,
           :skipHumanReview => boolean() | nil
         }
@@ -62,9 +68,15 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchPr
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchDocumentsInputConfig
   )
 
+  field(:labels, type: :map)
+
   field(:outputConfig,
     as:
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3BatchProcessRequestBatchOutputConfig
+  )
+
+  field(:processOptions,
+    as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessOptions
   )
 
   field(:skipHumanReview)

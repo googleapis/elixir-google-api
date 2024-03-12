@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3TrainProcessorVersionRequestInputData do
   @moduledoc """
-  The input data used to train a new `ProcessorVersion`.
+  The input data used to train a new ProcessorVersion.
 
   ## Attributes
 

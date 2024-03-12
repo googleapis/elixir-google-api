@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   ## Attributes
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Confidence of detected language. Range `[0, 1]`.
-  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+  *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ListEvaluationsResponse do
   @moduledoc """
-  The response from ListEvaluations.
+  The response from `ListEvaluations`.
 
   ## Attributes
 

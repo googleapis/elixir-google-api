@@ -28,7 +28,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta1DocumentPage
   *   `nameDetectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages for name together with confidence.
   *   `provenance` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta1DocumentProvenance.t`, *default:* `nil`) - The history of this annotation.
   *   `valueDetectedLanguages` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage.t)`, *default:* `nil`) - A list of detected languages for value together with confidence.
-  *   `valueType` (*type:* `String.t`, *default:* `nil`) - If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the field_value is normal text) - "unfilled_checkbox" - "filled_checkbox"
+  *   `valueType` (*type:* `String.t`, *default:* `nil`) - If the value is non-textual, this field represents the type. Current valid values are: - blank (this indicates the `field_value` is normal text) - `unfilled_checkbox` - `filled_checkbox`
   """
 
   use GoogleApi.Gax.ModelBase

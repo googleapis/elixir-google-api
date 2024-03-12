@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ListProcessorsResponse do
   @moduledoc """
-  Response message for list processors.
+  Response message for the ListProcessors method.
 
   ## Attributes
 

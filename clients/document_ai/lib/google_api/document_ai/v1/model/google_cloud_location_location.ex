@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudLocationLocation do
   @moduledoc """
-  A resource that represents Google Cloud Platform location.
+  A resource that represents a Google Cloud location.
 
   ## Attributes
 

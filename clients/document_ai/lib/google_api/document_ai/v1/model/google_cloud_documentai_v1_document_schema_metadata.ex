@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchemaMet
   ## Attributes
 
   *   `documentAllowMultipleLabels` (*type:* `boolean()`, *default:* `nil`) - If true, on a given page, there can be multiple `document` annotations covering it.
-  *   `documentSplitter` (*type:* `boolean()`, *default:* `nil`) - If true, a `document` entity type can be applied to subdocument ( splitting). Otherwise, it can only be applied to the entire document (classification).
+  *   `documentSplitter` (*type:* `boolean()`, *default:* `nil`) - If true, a `document` entity type can be applied to subdocument (splitting). Otherwise, it can only be applied to the entire document (classification).
   *   `prefixedNamingOnProperties` (*type:* `boolean()`, *default:* `nil`) - If set, all the nested entities must be prefixed with the parents.
   *   `skipNamingValidation` (*type:* `boolean()`, *default:* `nil`) - If set, we will skip the naming format validation in the schema. So the string values in `DocumentSchema.EntityType.name` and `DocumentSchema.EntityType.Property.name` will not be checked.
   """

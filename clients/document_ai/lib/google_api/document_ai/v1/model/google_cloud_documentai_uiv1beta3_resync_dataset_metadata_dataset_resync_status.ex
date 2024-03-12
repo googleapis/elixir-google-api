@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiUiv1beta3ResyncData
   ## Attributes
 
   *   `datasetInconsistencyType` (*type:* `String.t`, *default:* `nil`) - The type of the inconsistency of the dataset.
-  *   `status` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status of resyncing the dataset with regards to the detected inconsistency. Empty if `validate_only` is true in the request.
+  *   `status` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status of resyncing the dataset with regards to the detected inconsistency. Empty if ResyncDatasetRequest.validate_only is `true`.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3UpdateLabelerPoolOperationMetadata do
   @moduledoc """
-  The long running operation metadata for UpdateLabelerPool.
+  The long-running operation metadata for UpdateLabelerPool.
 
   ## Attributes
 
-  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long running operation.
+  *   `commonMetadata` (*type:* `GoogleApi.DocumentAI.V1beta2.Model.GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata.t`, *default:* `nil`) - The basic metadata of the long-running operation.
   """
 
   use GoogleApi.Gax.ModelBase

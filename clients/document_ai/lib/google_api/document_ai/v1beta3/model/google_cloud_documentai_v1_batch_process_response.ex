@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1BatchProcessResponse do
   @moduledoc """
-  Response message for batch process document method.
+  Response message for BatchProcessDocuments.
 
   ## Attributes
 

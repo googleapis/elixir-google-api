@@ -21,11 +21,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1Documen
 
   ## Attributes
 
-  *   `boundingPoly` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1BoundingPoly.t`, *default:* `nil`) - Optional. Identifies the bounding polygon of a layout element on the page.
+  *   `boundingPoly` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta1BoundingPoly.t`, *default:* `nil`) - Optional. Identifies the bounding polygon of a layout element on the page. If `layout_type` is set, the bounding polygon must be exactly the same to the layout element it's referring to.
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
   *   `layoutId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated. Use PageRef.bounding_poly instead.
   *   `layoutType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the layout element that is being referenced if any.
-  *   `page` (*type:* `String.t`, *default:* `nil`) - Required. Index into the Document.pages element, for example using Document.pages to locate the related page element. This field is skipped when its value is the default 0. See https://developers.google.com/protocol-buffers/docs/proto3#json.
+  *   `page` (*type:* `String.t`, *default:* `nil`) - Required. Index into the Document.pages element, for example using `Document.pages` to locate the related page element. This field is skipped when its value is the default `0`. See https://developers.google.com/protocol-buffers/docs/proto3#json.
   """
 
   use GoogleApi.Gax.ModelBase

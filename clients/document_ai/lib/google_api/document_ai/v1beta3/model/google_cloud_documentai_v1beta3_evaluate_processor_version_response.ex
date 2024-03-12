@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EvaluateProcessorVersionResponse do
   @moduledoc """
-  Metadata of the EvaluateProcessorVersion method.
+  Response of the EvaluateProcessorVersion method.
 
   ## Attributes
 

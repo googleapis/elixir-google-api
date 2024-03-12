@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1FetchProcessorTypesResponse do
   @moduledoc """
-  Response message for fetch processor types.
+  Response message for the FetchProcessorTypes method.
 
   ## Attributes
 
