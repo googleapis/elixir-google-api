@@ -21,9 +21,11 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Artifact do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations attach non-identifying metadata to resources. Annotation keys and values are less restricted than those of labels, but should be generally used for small values of broad interest. Larger, topic- specific metadata should be stored in Artifacts.
   *   `contents` (*type:* `String.t`, *default:* `nil`) - Input only. The contents of the artifact. Provided by API callers when artifacts are created or replaced. To access the contents of an artifact, use GetArtifactContents.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp.
   *   `hash` (*type:* `String.t`, *default:* `nil`) - Output only. A SHA-256 hash of the artifact's contents. If the artifact is gzipped, this is the hash of the uncompressed artifact.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels attach identifying metadata to resources. Identifying metadata can be used to filter list operations. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one resource (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "registry.googleapis.com/" and cannot be changed.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - A content type specifier for the artifact. Content type specifiers are Media Types (https://en.wikipedia.org/wiki/Media_type) with a possible "schema" parameter that specifies a schema for the stored information. Content types can specify compression. Currently only GZip compression is supported (indicated with "+gzip").
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name.
   *   `sizeBytes` (*type:* `integer()`, *default:* `nil`) - Output only. The size of the artifact in bytes. If the artifact is gzipped, this is the size of the uncompressed artifact.
@@ -33,18 +35,22 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.Artifact do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :contents => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :hash => String.t() | nil,
+          :labels => map() | nil,
           :mimeType => String.t() | nil,
           :name => String.t() | nil,
           :sizeBytes => integer() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:contents)
   field(:createTime, as: DateTime)
   field(:hash)
+  field(:labels, type: :map)
   field(:mimeType)
   field(:name)
   field(:sizeBytes)

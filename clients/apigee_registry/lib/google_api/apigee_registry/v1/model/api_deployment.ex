@@ -23,7 +23,7 @@ defmodule GoogleApi.ApigeeRegistry.V1.Model.ApiDeployment do
 
   *   `accessGuidance` (*type:* `String.t`, *default:* `nil`) - Text briefly describing how to access the endpoint. Changes to this value will not affect the revision.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations attach non-identifying metadata to resources. Annotation keys and values are less restricted than those of labels, but should be generally used for small values of broad interest. Larger, topic- specific metadata should be stored in Artifacts.
-  *   `apiSpecRevision` (*type:* `String.t`, *default:* `nil`) - The full resource name (including revision ID) of the spec of the API being served by the deployment. Changes to this value will update the revision. Format: `apis/{api}/deployments/{deployment}`
+  *   `apiSpecRevision` (*type:* `String.t`, *default:* `nil`) - The full resource name (including revision ID) of the spec of the API being served by the deployment. Changes to this value will update the revision. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec@revision}`
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation timestamp; when the deployment resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A detailed description.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-meaningful name.
