@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyLongrunningMetadata do
   @moduledoc """
-  Represents the metadata of the longrunning operation for the AnalyzeIamPolicyLongrunning rpc.
+  Represents the metadata of the longrunning operation for the AnalyzeIamPolicyLongrunning RPC.
 
   ## Attributes
 

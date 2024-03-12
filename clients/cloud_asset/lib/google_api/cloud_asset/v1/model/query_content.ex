@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.QueryContent do
 
   ## Attributes
 
-  *   `iamPolicyAnalysisQuery` (*type:* `GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t`, *default:* `nil`) - An IAM Policy Analysis query, which could be used in the AssetService.AnalyzeIamPolicy rpc or the AssetService.AnalyzeIamPolicyLongrunning rpc.
+  *   `iamPolicyAnalysisQuery` (*type:* `GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisQuery.t`, *default:* `nil`) - An IAM Policy Analysis query, which could be used in the AssetService.AnalyzeIamPolicy RPC or the AssetService.AnalyzeIamPolicyLongrunning RPC.
   """
 
   use GoogleApi.Gax.ModelBase

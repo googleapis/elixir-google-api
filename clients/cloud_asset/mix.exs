@@ -48,7 +48,7 @@ defmodule GoogleApi.CloudAsset.Mixfile do
 
   defp description() do
     """
-    Cloud Asset API client library. The cloud asset API manages the history and inventory of cloud resources.
+    Cloud Asset API client library. The Cloud Asset API manages the history and inventory of Google Cloud resources.
     """
   end
 

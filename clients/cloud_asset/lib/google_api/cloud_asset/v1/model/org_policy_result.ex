@@ -22,18 +22,27 @@ defmodule GoogleApi.CloudAsset.V1.Model.OrgPolicyResult do
   ## Attributes
 
   *   `consolidatedPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t`, *default:* `nil`) - The consolidated organization policy for the analyzed resource. The consolidated organization policy is computed by merging and evaluating AnalyzeOrgPoliciesResponse.policy_bundle. The evaluation will respect the organization policy [hierarchy rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
+  *   `folders` (*type:* `list(String.t)`, *default:* `nil`) - The folder(s) that this consolidated policy belongs to, in the format of folders/{FOLDER_NUMBER}. This field is available when the consolidated policy belongs (directly or cascadingly) to one or more folders.
+  *   `organization` (*type:* `String.t`, *default:* `nil`) - The organization that this consolidated policy belongs to, in the format of organizations/{ORGANIZATION_NUMBER}. This field is available when the consolidated policy belongs (directly or cascadingly) to an organization.
   *   `policyBundle` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t)`, *default:* `nil`) - The ordered list of all organization policies from the AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource. to the scope specified in the request. If the constraint is defined with default policy, it will also appear in the list.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this consolidated policy belongs to, in the format of projects/{PROJECT_NUMBER}. This field is available when the consolidated policy belongs to a project.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :consolidatedPolicy => GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t() | nil,
-          :policyBundle => list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t()) | nil
+          :folders => list(String.t()) | nil,
+          :organization => String.t() | nil,
+          :policyBundle => list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t()) | nil,
+          :project => String.t() | nil
         }
 
   field(:consolidatedPolicy, as: GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy)
+  field(:folders, type: :list)
+  field(:organization)
   field(:policyBundle, as: GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy, type: :list)
+  field(:project)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudAsset.V1.Model.OrgPolicyResult do

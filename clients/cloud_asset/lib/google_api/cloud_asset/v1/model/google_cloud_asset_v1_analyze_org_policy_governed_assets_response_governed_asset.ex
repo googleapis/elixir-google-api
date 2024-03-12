@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedAsset do
   @moduledoc """
-  Represents a GCP asset(resource or IAM policy) governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
+  Represents a Google Cloud asset(resource or IAM policy) governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
 
   ## Attributes
 
   *   `consolidatedPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t`, *default:* `nil`) - The consolidated policy for the analyzed asset. The consolidated policy is computed by merging and evaluating AnalyzeOrgPolicyGovernedAssetsResponse.GovernedAsset.policy_bundle. The evaluation will respect the organization policy [hierarchy rules](https://cloud.google.com/resource-manager/docs/organization-policy/understanding-hierarchy).
   *   `governedIamPolicy` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedIamPolicy.t`, *default:* `nil`) - An IAM policy governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
-  *   `governedResource` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource.t`, *default:* `nil`) - A GCP resource governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
+  *   `governedResource` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovernedAssetsResponseGovernedResource.t`, *default:* `nil`) - A Google Cloud resource governed by the organization policies of the AnalyzeOrgPolicyGovernedAssetsRequest.constraint.
   *   `policyBundle` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy.t)`, *default:* `nil`) - The ordered list of all organization policies from the AnalyzeOrgPoliciesResponse.OrgPolicyResult.consolidated_policy.attached_resource to the scope specified in the request. If the constraint is defined with default policy, it will also appear in the list.
   """
 

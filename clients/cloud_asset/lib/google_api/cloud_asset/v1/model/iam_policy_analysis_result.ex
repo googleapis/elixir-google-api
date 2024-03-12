@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisResult do
   *   `accessControlLists` (*type:* `list(GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AccessControlList.t)`, *default:* `nil`) - The access control lists derived from the iam_binding that match or potentially match resource and access selectors specified in the request.
   *   `attachedResourceFullName` (*type:* `String.t`, *default:* `nil`) - The [full resource name](https://cloud.google.com/asset-inventory/docs/resource-name-format) of the resource to which the iam_binding policy attaches.
   *   `fullyExplored` (*type:* `boolean()`, *default:* `nil`) - Represents whether all analyses on the iam_binding have successfully finished.
-  *   `iamBinding` (*type:* `GoogleApi.CloudAsset.V1.Model.Binding.t`, *default:* `nil`) - The Cloud IAM policy binding under analysis.
+  *   `iamBinding` (*type:* `GoogleApi.CloudAsset.V1.Model.Binding.t`, *default:* `nil`) - The IAM policy binding under analysis.
   *   `identityList` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1IdentityList.t`, *default:* `nil`) - The identity list derived from members of the iam_binding that match or potentially match identity selector specified in the request.
   """
 

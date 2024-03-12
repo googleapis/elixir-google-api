@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.AnalyzeMoveResponse do
 
   ## Attributes
 
-  *   `moveAnalysis` (*type:* `list(GoogleApi.CloudAsset.V1.Model.MoveAnalysis.t)`, *default:* `nil`) - The list of analyses returned from performing the intended resource move analysis. The analysis is grouped by different Cloud services.
+  *   `moveAnalysis` (*type:* `list(GoogleApi.CloudAsset.V1.Model.MoveAnalysis.t)`, *default:* `nil`) - The list of analyses returned from performing the intended resource move analysis. The analysis is grouped by different Google Cloud services.
   """
 
   use GoogleApi.Gax.ModelBase

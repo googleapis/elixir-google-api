@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1Identity do
   ## Attributes
 
   *   `analysisState` (*type:* `GoogleApi.CloudAsset.V1.Model.IamPolicyAnalysisState.t`, *default:* `nil`) - The analysis state of this identity.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The identity name in any form of members appear in [IAM policy binding](https://cloud.google.com/iam/reference/rest/v1/Binding), such as: - user:foo@google.com - group:group1@google.com - serviceAccount:s1@prj1.iam.gserviceaccount.com - projectOwner:some_project_id - domain:google.com - allUsers - etc.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The identity of members, formatted as appear in an [IAM policy binding](https://cloud.google.com/iam/reference/rest/v1/Binding). For example, they might be formatted like the following: - user:foo@google.com - group:group1@google.com - serviceAccount:s1@prj1.iam.gserviceaccount.com - projectOwner:some_project_id - domain:google.com - allUsers
   """
 
   use GoogleApi.Gax.ModelBase

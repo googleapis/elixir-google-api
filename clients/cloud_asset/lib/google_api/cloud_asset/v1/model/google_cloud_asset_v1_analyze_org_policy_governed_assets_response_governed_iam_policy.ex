@@ -21,16 +21,18 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovern
 
   ## Attributes
 
-  *   `attachedResource` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource associated with this IAM policy. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`. See [Cloud Asset Inventory Resource Name Format](https://cloud.google.com/asset-inventory/docs/resource-name-format) for more information.
-  *   `folders` (*type:* `list(String.t)`, *default:* `nil`) - The folder(s) that this IAM policy belongs to, in the form of folders/{FOLDER_NUMBER}. This field is available when the IAM policy belongs(directly or cascadingly) to one or more folders.
-  *   `organization` (*type:* `String.t`, *default:* `nil`) - The organization that this IAM policy belongs to, in the form of organizations/{ORGANIZATION_NUMBER}. This field is available when the IAM policy belongs(directly or cascadingly) to an organization.
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - The asset type of the AnalyzeOrgPolicyGovernedAssetsResponse.GovernedIamPolicy.attached_resource. Example: `cloudresourcemanager.googleapis.com/Project` See [Cloud Asset Inventory Supported Asset Types](https://cloud.google.com/asset-inventory/docs/supported-asset-types) for all supported asset types.
+  *   `attachedResource` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource on which this IAM policy is set. Example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`. See [Cloud Asset Inventory Resource Name Format](https://cloud.google.com/asset-inventory/docs/resource-name-format) for more information.
+  *   `folders` (*type:* `list(String.t)`, *default:* `nil`) - The folder(s) that this IAM policy belongs to, in the format of folders/{FOLDER_NUMBER}. This field is available when the IAM policy belongs (directly or cascadingly) to one or more folders.
+  *   `organization` (*type:* `String.t`, *default:* `nil`) - The organization that this IAM policy belongs to, in the format of organizations/{ORGANIZATION_NUMBER}. This field is available when the IAM policy belongs (directly or cascadingly) to an organization.
   *   `policy` (*type:* `GoogleApi.CloudAsset.V1.Model.Policy.t`, *default:* `nil`) - The IAM policy directly set on the given resource.
-  *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this IAM policy belongs to, in the form of projects/{PROJECT_NUMBER}. This field is available when the IAM policy belongs to a project.
+  *   `project` (*type:* `String.t`, *default:* `nil`) - The project that this IAM policy belongs to, in the format of projects/{PROJECT_NUMBER}. This field is available when the IAM policy belongs to a project.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :assetType => String.t() | nil,
           :attachedResource => String.t() | nil,
           :folders => list(String.t()) | nil,
           :organization => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleCloudAssetV1AnalyzeOrgPolicyGovern
           :project => String.t() | nil
         }
 
+  field(:assetType)
   field(:attachedResource)
   field(:folders, type: :list)
   field(:organization)

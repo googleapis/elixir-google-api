@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.SearchAllIamPoliciesResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Set if there are more results than those appearing in this response; to get the next set of results, call this method again, using this value as the `page_token`.
-  *   `results` (*type:* `list(GoogleApi.CloudAsset.V1.Model.IamPolicySearchResult.t)`, *default:* `nil`) - A list of IamPolicy that match the search query. Related information such as the associated resource is returned along with the policy.
+  *   `results` (*type:* `list(GoogleApi.CloudAsset.V1.Model.IamPolicySearchResult.t)`, *default:* `nil`) - A list of IAM policies that match the search query. Related information such as the associated resource is returned along with the policy.
   """
 
   use GoogleApi.Gax.ModelBase

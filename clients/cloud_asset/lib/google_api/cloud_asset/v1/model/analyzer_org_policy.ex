@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudAsset.V1.Model.AnalyzerOrgPolicy do
   @moduledoc """
-  This organization policy message is a modified version of the one defined in the OrgPolicy system. This message contains several fields defined in the original organization policy with some new fields for analysis purpose.
+  This organization policy message is a modified version of the one defined in the Organization Policy system. This message contains several fields defined in the original organization policy with some new fields for analysis purpose.
 
   ## Attributes
 
