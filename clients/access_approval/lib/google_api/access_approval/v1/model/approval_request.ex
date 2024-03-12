@@ -25,7 +25,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
   *   `dismiss` (*type:* `GoogleApi.AccessApproval.V1.Model.DismissDecision.t`, *default:* `nil`) - The request was dismissed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}".
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which approval was requested.
-  *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The requested expiration for the approval. If the request is approved, access will be granted from the time of approval until the expiration time.
+  *   `requestedDuration` (*type:* `String.t`, *default:* `nil`) - The requested access duration.
+  *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The original requested expiration for the approval. Calculated by adding the requested_duration to the request_time.
   *   `requestedLocations` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessLocations.t`, *default:* `nil`) - The locations for which approval is being requested.
   *   `requestedReason` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessReason.t`, *default:* `nil`) - The justification for which approval is being requested.
   *   `requestedResourceName` (*type:* `String.t`, *default:* `nil`) - The resource for which approval is being requested. The format of the resource name is defined at https://cloud.google.com/apis/design/resource_names. The resource name here may either be a "full" resource name (e.g. "//library.googleapis.com/shelves/shelf1/books/book2") or a "relative" resource name (e.g. "shelves/shelf1/books/book2") as described in the resource name specification.
@@ -39,6 +40,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
           :dismiss => GoogleApi.AccessApproval.V1.Model.DismissDecision.t() | nil,
           :name => String.t() | nil,
           :requestTime => DateTime.t() | nil,
+          :requestedDuration => String.t() | nil,
           :requestedExpiration => DateTime.t() | nil,
           :requestedLocations => GoogleApi.AccessApproval.V1.Model.AccessLocations.t() | nil,
           :requestedReason => GoogleApi.AccessApproval.V1.Model.AccessReason.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
   field(:dismiss, as: GoogleApi.AccessApproval.V1.Model.DismissDecision)
   field(:name)
   field(:requestTime, as: DateTime)
+  field(:requestedDuration)
   field(:requestedExpiration, as: DateTime)
   field(:requestedLocations, as: GoogleApi.AccessApproval.V1.Model.AccessLocations)
   field(:requestedReason, as: GoogleApi.AccessApproval.V1.Model.AccessReason)

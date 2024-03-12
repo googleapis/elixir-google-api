@@ -22,7 +22,9 @@ defmodule GoogleApi.AccessApproval.V1.Model.SignatureInfo do
   ## Attributes
 
   *   `customerKmsKeyVersion` (*type:* `String.t`, *default:* `nil`) - The resource name of the customer CryptoKeyVersion used for signing.
+  *   `googleKeyAlgorithm` (*type:* `String.t`, *default:* `nil`) - The hashing algorithm used for signature verification. It will only be present in the case of Google managed keys.
   *   `googlePublicKeyPem` (*type:* `String.t`, *default:* `nil`) - The public key for the Google default signing, encoded in PEM format. The signature was created using a private key which may be verified using this public key.
+  *   `serializedApprovalRequest` (*type:* `String.t`, *default:* `nil`) - The ApprovalRequest that is serialized without the SignatureInfo message field. This data is used with the hashing algorithm to generate the digital signature, and it can be used for signature verification.
   *   `signature` (*type:* `String.t`, *default:* `nil`) - The digital signature.
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.AccessApproval.V1.Model.SignatureInfo do
 
   @type t :: %__MODULE__{
           :customerKmsKeyVersion => String.t() | nil,
+          :googleKeyAlgorithm => String.t() | nil,
           :googlePublicKeyPem => String.t() | nil,
+          :serializedApprovalRequest => String.t() | nil,
           :signature => String.t() | nil
         }
 
   field(:customerKmsKeyVersion)
+  field(:googleKeyAlgorithm)
   field(:googlePublicKeyPem)
+  field(:serializedApprovalRequest)
   field(:signature)
 end
 

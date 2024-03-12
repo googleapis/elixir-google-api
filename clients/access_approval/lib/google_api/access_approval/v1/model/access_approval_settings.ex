@@ -28,6 +28,9 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
   *   `invalidKeyVersion` (*type:* `boolean()`, *default:* `nil`) - Output only. This field is read only (not settable via UpdateAccessApprovalSettings method). If the field is true, that indicates that there is some configuration issue with the active_key_version configured at this level in the resource hierarchy (e.g. it doesn't exist or the Access Approval service account doesn't have the correct permissions on it, etc.) This key version is not necessarily the effective key version at this level, as key versions are inherited top-down.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the settings. Format is one of: * "projects/{project}/accessApprovalSettings" * "folders/{folder}/accessApprovalSettings" * "organizations/{organization}/accessApprovalSettings"
   *   `notificationEmails` (*type:* `list(String.t)`, *default:* `nil`) - A list of email addresses to which notifications relating to approval requests should be sent. Notifications relating to a resource will be sent to all emails in the settings of ancestor resources of that resource. A maximum of 50 email addresses are allowed.
+  *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Optional. A pubsub topic to which notifications relating to approval requests should be sent.
+  *   `preferNoBroadApprovalRequests` (*type:* `boolean()`, *default:* `nil`) - This preference is communicated to Google personnel when sending an approval request but can be overridden if necessary.
+  *   `preferredRequestExpirationDays` (*type:* `integer()`, *default:* `nil`) - This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +42,10 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
           :enrolledServices => list(GoogleApi.AccessApproval.V1.Model.EnrolledService.t()) | nil,
           :invalidKeyVersion => boolean() | nil,
           :name => String.t() | nil,
-          :notificationEmails => list(String.t()) | nil
+          :notificationEmails => list(String.t()) | nil,
+          :notificationPubsubTopic => String.t() | nil,
+          :preferNoBroadApprovalRequests => boolean() | nil,
+          :preferredRequestExpirationDays => integer() | nil
         }
 
   field(:activeKeyVersion)
@@ -49,6 +55,9 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
   field(:invalidKeyVersion)
   field(:name)
   field(:notificationEmails, type: :list)
+  field(:notificationPubsubTopic)
+  field(:preferNoBroadApprovalRequests)
+  field(:preferredRequestExpirationDays)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
