@@ -18,7 +18,7 @@
 defmodule GoogleApi.MyBusinessNotifications.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.MyBusinessNotifications.Mixfile do
 
   defp description() do
     """
-    My Business Notifications API client library. The My Business Notification Settings API enables managing notification settings for business accounts.
+    My Business Notifications API client library. The My Business Notification Settings API enables managing notification settings for business accounts. Note - If you have a quota of 0 after enabling the API, please request for GBP API access.
     """
   end
 
