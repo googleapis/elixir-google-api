@@ -26,6 +26,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   *   `principalSubject` (*type:* `String.t`, *default:* `nil`) - String representation of identity of requesting party. Populated for both first and third party identities.
   *   `serviceAccountDelegationInfo` (*type:* `list(GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo.t)`, *default:* `nil`) - Identity delegation history of an authenticated service account that makes the request. It contains information on the real authorities that try to access GCP resources by delegating on a service account. When multiple authorities present, they are guaranteed to be sorted based on the original ordering of the identity delegation events.
   *   `serviceAccountKeyName` (*type:* `String.t`, *default:* `nil`) - The name of the service account key used to create or exchange credentials for authenticating the service account making the request. This is a scheme-less URI full resource name. For example: "//iam.googleapis.com/projects/{PROJECT_ID}/serviceAccounts/{ACCOUNT}/keys/{key}"
+  *   `serviceDelegationHistory` (*type:* `GoogleApi.ServiceControl.V1.Model.ServiceDelegationHistory.t`, *default:* `nil`) - Records the history of delegated resource access across Google services.
   *   `thirdPartyPrincipal` (*type:* `map()`, *default:* `nil`) - The third party identification (if any) of the authenticated user making the request. When the JSON object represented here has a proto equivalent, the proto name will be indicated in the `@type` property.
   """
 
@@ -38,6 +39,8 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
           :serviceAccountDelegationInfo =>
             list(GoogleApi.ServiceControl.V1.Model.ServiceAccountDelegationInfo.t()) | nil,
           :serviceAccountKeyName => String.t() | nil,
+          :serviceDelegationHistory =>
+            GoogleApi.ServiceControl.V1.Model.ServiceDelegationHistory.t() | nil,
           :thirdPartyPrincipal => map() | nil
         }
 
@@ -51,6 +54,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.AuthenticationInfo do
   )
 
   field(:serviceAccountKeyName)
+  field(:serviceDelegationHistory, as: GoogleApi.ServiceControl.V1.Model.ServiceDelegationHistory)
   field(:thirdPartyPrincipal, type: :map)
 end
 

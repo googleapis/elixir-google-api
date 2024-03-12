@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.Resource do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was created. This may be either the time creation was initiated or when it was completed.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was deleted. If the resource is not deleted, this must be empty.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Mutable. The display name set by clients. Must be <= 63 characters.
