@@ -29,9 +29,10 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - Currency code.
   *   `disputeStatus` (*type:* `String.t`, *default:* `nil`) - Dispute status related to the lead.
   *   `geo` (*type:* `String.t`, *default:* `nil`) - Location of the associated account's home city.
+  *   `googleAdsLeadId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of a Detailed Lead Report.
   *   `leadCategory` (*type:* `String.t`, *default:* `nil`) - Lead category (e.g. hvac, plumber)
   *   `leadCreationTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of when the lead was created.
-  *   `leadId` (*type:* `String.t`, *default:* `nil`) - Unique identifier of a Detailed Lead Report.
+  *   `leadId` (*type:* `String.t`, *default:* `nil`) - Deprecated in favor of google_ads_lead_id. Unique identifier of a Detailed Lead Report.
   *   `leadPrice` (*type:* `float()`, *default:* `nil`) - Price of the lead (available only after it has been charged).
   *   `leadType` (*type:* `String.t`, *default:* `nil`) - Lead type.
   *   `messageLead` (*type:* `GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1MessageLead.t`, *default:* `nil`) - More information associated to only message leads.
@@ -54,6 +55,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
           :currencyCode => String.t() | nil,
           :disputeStatus => String.t() | nil,
           :geo => String.t() | nil,
+          :googleAdsLeadId => String.t() | nil,
           :leadCategory => String.t() | nil,
           :leadCreationTimestamp => DateTime.t() | nil,
           :leadId => String.t() | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.LocalServices.V1.Model.GoogleAdsHomeservicesLocalservicesV1D
   field(:currencyCode)
   field(:disputeStatus)
   field(:geo)
+  field(:googleAdsLeadId)
   field(:leadCategory)
   field(:leadCreationTimestamp, as: DateTime)
   field(:leadId)
