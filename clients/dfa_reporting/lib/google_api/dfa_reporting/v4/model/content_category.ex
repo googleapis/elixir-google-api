@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DFAReporting.V4.Model.ContentCategory do
   @moduledoc """
-  Organizes placements according to the contents of their associated webpages.
+
 
   ## Attributes
 

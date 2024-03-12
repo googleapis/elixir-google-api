@@ -27,7 +27,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.FloodlightConfiguration do
   *   `analyticsDataSharingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether advertiser data is shared with Google Analytics.
   *   `customViewabilityMetric` (*type:* `GoogleApi.DFAReporting.V4.Model.CustomViewabilityMetric.t`, *default:* `nil`) - Custom Viewability metric for the floodlight configuration.
   *   `exposureToConversionEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the exposure-to-conversion report is enabled. This report shows detailed pathway information on up to 10 of the most recent ad exposures seen by a user before converting.
-  *   `firstDayOfWeek` (*type:* `String.t`, *default:* `nil`) - Day that will be counted as the first day of the week in reports. This is a required field.
+  *   `firstDayOfWeek` (*type:* `String.t`, *default:* `nil`) - 
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of this floodlight configuration. This is a read-only, auto-generated field.
   *   `idDimensionValue` (*type:* `GoogleApi.DFAReporting.V4.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of this floodlight configuration. This is a read-only, auto-generated field.
   *   `inAppAttributionTrackingEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether in-app attribution tracking is enabled.

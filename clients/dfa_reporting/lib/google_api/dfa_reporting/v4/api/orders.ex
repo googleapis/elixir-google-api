@@ -91,11 +91,11 @@ defmodule GoogleApi.DFAReporting.V4.Api.Orders do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/projects/{projectId}/orders/{id}",
+        "/dfareporting/v4/userprofiles/{+profileId}/projects/{projectId}/orders/{+id}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "projectId" => URI.encode(project_id, &URI.char_unreserved?/1),
-          "id" => URI.encode(id, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "id" => URI.encode(id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -176,7 +176,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Orders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/projects/{projectId}/orders", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/projects/{projectId}/orders", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
         "projectId" => URI.encode(project_id, &URI.char_unreserved?/1)
       })

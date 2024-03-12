@@ -90,7 +90,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.CampaignCreativeAssociations do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/campaigns/{campaignId}/campaignCreativeAssociations",
+        "/dfareporting/v4/userprofiles/{+profileId}/campaigns/{+campaignId}/campaignCreativeAssociations",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "campaignId" => URI.encode(campaign_id, &URI.char_unreserved?/1)
@@ -175,7 +175,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.CampaignCreativeAssociations do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/campaigns/{campaignId}/campaignCreativeAssociations",
+        "/dfareporting/v4/userprofiles/{+profileId}/campaigns/{+campaignId}/campaignCreativeAssociations",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "campaignId" => URI.encode(campaign_id, &URI.char_unreserved?/1)

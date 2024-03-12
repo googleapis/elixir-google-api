@@ -33,8 +33,8 @@ defmodule GoogleApi.DFAReporting.V4.Api.DynamicTargetingKeys do
   *   `connection` (*type:* `GoogleApi.DFAReporting.V4.Connection.t`) - Connection to server
   *   `profile_id` (*type:* `String.t`) - User profile ID associated with this request.
   *   `object_id` (*type:* `String.t`) - ID of the object of this dynamic targeting key. This is a required field.
-  *   `name` (*type:* `String.t`) - Name of this dynamic targeting key. This is a required field. Must be less than 256 characters long and cannot contain commas. All characters are converted to lowercase.
-  *   `object_type` (*type:* `String.t`) - Type of the object of this dynamic targeting key. This is a required field.
+  *   `name` (*type:* `String.t`) - Required. Name of this dynamic targeting key. This is a required field. Must be less than 256 characters long and cannot contain commas. All characters are converted to lowercase.
+  *   `object_type` (*type:* `String.t`) - Required. Type of the object of this dynamic targeting key. This is a required field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -90,10 +90,10 @@ defmodule GoogleApi.DFAReporting.V4.Api.DynamicTargetingKeys do
       Request.new()
       |> Request.method(:delete)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/dynamicTargetingKeys/{objectId}",
+        "/dfareporting/v4/userprofiles/{+profileId}/dynamicTargetingKeys/{+objectId}",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
-          "objectId" => URI.encode(object_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+          "objectId" => URI.encode(object_id, &URI.char_unreserved?/1)
         }
       )
       |> Request.add_param(:query, :name, name)
@@ -167,7 +167,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.DynamicTargetingKeys do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/dynamicTargetingKeys", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/dynamicTargetingKeys", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -245,7 +245,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.DynamicTargetingKeys do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/dynamicTargetingKeys", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/dynamicTargetingKeys", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

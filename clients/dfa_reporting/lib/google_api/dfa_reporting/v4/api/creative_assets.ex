@@ -90,7 +90,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.CreativeAssets do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/creativeAssets/{advertiserId}/creativeAssets",
+        "/dfareporting/v4/userprofiles/{+profileId}/creativeAssets/{+advertiserId}/creativeAssets",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1)
@@ -176,7 +176,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.CreativeAssets do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/upload/dfareporting/v4/userprofiles/{profileId}/creativeAssets/{advertiserId}/creativeAssets",
+        "/upload/dfareporting/v4/userprofiles/{+profileId}/creativeAssets/{+advertiserId}/creativeAssets",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1)
@@ -265,7 +265,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.CreativeAssets do
       Request.new()
       |> Request.method(:post)
       |> Request.url(
-        "/upload/dfareporting/v4/userprofiles/{profileId}/creativeAssets/{advertiserId}/creativeAssets",
+        "/upload/dfareporting/v4/userprofiles/{+profileId}/creativeAssets/{+advertiserId}/creativeAssets",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1)

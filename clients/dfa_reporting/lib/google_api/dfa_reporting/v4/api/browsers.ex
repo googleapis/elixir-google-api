@@ -74,7 +74,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Browsers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/dfareporting/v4/userprofiles/{profileId}/browsers", %{
+      |> Request.url("/dfareporting/v4/userprofiles/{+profileId}/browsers", %{
         "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)

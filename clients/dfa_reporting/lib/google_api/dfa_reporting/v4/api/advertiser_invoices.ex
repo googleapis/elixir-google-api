@@ -94,7 +94,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.AdvertiserInvoices do
       Request.new()
       |> Request.method(:get)
       |> Request.url(
-        "/dfareporting/v4/userprofiles/{profileId}/advertisers/{advertiserId}/invoices",
+        "/dfareporting/v4/userprofiles/{+profileId}/advertisers/{+advertiserId}/invoices",
         %{
           "profileId" => URI.encode(profile_id, &URI.char_unreserved?/1),
           "advertiserId" => URI.encode(advertiser_id, &URI.char_unreserved?/1)

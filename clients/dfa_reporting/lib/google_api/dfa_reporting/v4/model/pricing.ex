@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DFAReporting.V4.Model.Pricing do
   @moduledoc """
-  Pricing Information
+
 
   ## Attributes
 

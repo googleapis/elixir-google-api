@@ -22,7 +22,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Metric do
   ## Attributes
 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#metric.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The metric name, e.g. dfa:impressions
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The metric name, e.g. impressions
   """
 
   use GoogleApi.Gax.ModelBase

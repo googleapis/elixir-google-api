@@ -23,7 +23,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.PricingSchedulePricingPeriod do
 
   *   `endDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `pricingComment` (*type:* `String.t`, *default:* `nil`) - Comments for this pricing period.
-  *   `rateOrCostNanos` (*type:* `String.t`, *default:* `nil`) - Rate or cost of this pricing period in nanos (i.e., multipled by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.
+  *   `rateOrCostNanos` (*type:* `String.t`, *default:* `nil`) - Rate or cost of this pricing period in nanos (i.e., multiplied by 1000000000). Acceptable values are 0 to 1000000000000000000, inclusive.
   *   `startDate` (*type:* `Date.t`, *default:* `nil`) - 
   *   `units` (*type:* `String.t`, *default:* `nil`) - Units of this pricing period. Acceptable values are 0 to 10000000000, inclusive.
   """

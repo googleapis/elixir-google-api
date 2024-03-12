@@ -20,7 +20,7 @@ defmodule GoogleApi.DFAReporting.V35 do
   API client metadata for GoogleApi.DFAReporting.V35.
   """
 
-  @discovery_revision "20220920"
+  @discovery_revision "20240201"
 
   def discovery_revision(), do: @discovery_revision
 end
