@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Domains.V1.Model.TransferParameters do
   @moduledoc """
-  Parameters required to transfer a domain from another registrar.
+  Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). Parameters required to transfer a domain from another registrar.
 
   ## Attributes
 

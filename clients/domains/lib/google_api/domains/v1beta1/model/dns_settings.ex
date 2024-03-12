@@ -23,7 +23,7 @@ defmodule GoogleApi.Domains.V1beta1.Model.DnsSettings do
 
   *   `customDns` (*type:* `GoogleApi.Domains.V1beta1.Model.CustomDns.t`, *default:* `nil`) - An arbitrary DNS provider identified by its name servers.
   *   `glueRecords` (*type:* `list(GoogleApi.Domains.V1beta1.Model.GlueRecord.t)`, *default:* `nil`) - The list of glue records for this `Registration`. Commonly empty.
-  *   `googleDomainsDns` (*type:* `GoogleApi.Domains.V1beta1.Model.GoogleDomainsDns.t`, *default:* `nil`) - The free DNS zone provided by [Google Domains](https://domains.google/).
+  *   `googleDomainsDns` (*type:* `GoogleApi.Domains.V1beta1.Model.GoogleDomainsDns.t`, *default:* `nil`) - Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). The free DNS zone provided by [Google Domains](https://domains.google/).
   """
 
   use GoogleApi.Gax.ModelBase

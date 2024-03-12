@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Domains.V1.Model.ExportRegistrationRequest do
   @moduledoc """
-  Request for the `ExportRegistration` method.
+  Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). Request for the `ExportRegistration` method.
 
   ## Attributes
 
