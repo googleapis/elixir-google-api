@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
   ## Attributes
 
   *   `isProduction` (*type:* `boolean()`, *default:* `nil`) - True if this version is a production APK.
+  *   `targetSdkVersion` (*type:* `integer()`, *default:* `nil`) - The SDK version this app targets, as specified in the manifest of the APK. See http://developer.android.com/guide/topics/manifest/uses-sdk-element.html
   *   `track` (*type:* `String.t`, *default:* `nil`) - Deprecated, use trackId instead.
   *   `trackId` (*type:* `list(String.t)`, *default:* `nil`) - Track ids that the app version is published in. Replaces the track field (deprecated), but doesn't include the production track (see isProduction instead).
   *   `versionCode` (*type:* `integer()`, *default:* `nil`) - Unique increasing identifier for the app version.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
 
   @type t :: %__MODULE__{
           :isProduction => boolean() | nil,
+          :targetSdkVersion => integer() | nil,
           :track => String.t() | nil,
           :trackId => list(String.t()) | nil,
           :versionCode => integer() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Model.AppVersion do
         }
 
   field(:isProduction)
+  field(:targetSdkVersion)
   field(:track)
   field(:trackId, type: :list)
   field(:versionCode)

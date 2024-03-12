@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Installs do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Requests to remove an app from a device. A call to get or list will still show the app as installed on the device until it is actually removed.
+  Requests to remove an app from a device. A call to get or list will still show the app as installed on the device until it is actually removed. A successful response indicates that a removal request has been sent to the device. The call will be considered successful even if the app is not present on the device (e.g. it was never installed, or was removed by the user).
 
   ## Parameters
 
