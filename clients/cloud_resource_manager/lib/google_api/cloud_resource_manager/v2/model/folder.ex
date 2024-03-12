@@ -26,6 +26,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.Folder do
   *   `lifecycleState` (*type:* `String.t`, *default:* `nil`) - Output only. The lifecycle state of the folder. Updates to the lifecycle_state must be performed via DeleteFolder and UndeleteFolder.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Folder. Its format is `folders/{folder_id}`, for example: "folders/1234".
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The Folder's parent's resource name. Updates to the folder's parent must be performed via MoveFolder.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this folder. Each item in the map must be expressed as " : ". For example: "123/environment" : "production", "123/costCenter" : "marketing" Note: Currently this field is in Preview.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +36,8 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.Folder do
           :displayName => String.t() | nil,
           :lifecycleState => String.t() | nil,
           :name => String.t() | nil,
-          :parent => String.t() | nil
+          :parent => String.t() | nil,
+          :tags => map() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -43,6 +45,7 @@ defmodule GoogleApi.CloudResourceManager.V2.Model.Folder do
   field(:lifecycleState)
   field(:name)
   field(:parent)
+  field(:tags, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudResourceManager.V2.Model.Folder do
