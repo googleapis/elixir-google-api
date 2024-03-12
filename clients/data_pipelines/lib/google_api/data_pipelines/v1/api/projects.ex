@@ -26,163 +26,6 @@ defmodule GoogleApi.DataPipelines.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Computes the schema for the transform. Computation from `raw_schema` will always occur if it is set. This requires that the transform supports that encoding. If no raw schema is provided and if the transform is for an IO, then this will attempt to connect to the resource using the details provided in `config` and infer the schema from that. If the transform is not an IO, is a sink that doesn't exist yet, or is a sink with no schema requirement, then this will fall back to basing the schema off the one provided in `input_schemas`. The computed schema will be validated.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataPipelines.V1.Connection.t`) - Connection to server
-  *   `location` (*type:* `String.t`) - Required. The full location formatted as "projects/{your-project}/locations/{google-cloud-region}". If attempting to infer the schema from an existing Google Cloud resource, the default Data Pipelines service account for this project will be used in making requests for the resource. If the region given for "{google-cloud-region}" is different than the region where the resource is stored, then the data will be transferred to and processed in the region specified here, but it will not be persistently stored in this region.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ComputeSchemaRequest.t`) - 
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1Schema{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datapipelines_projects_locations_compute_schema(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok, GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1Schema.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def datapipelines_projects_locations_compute_schema(
-        connection,
-        location,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :body => :body
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:post)
-      |> Request.url("/v1/{+location}:computeSchema", %{
-        "location" => URI.encode(location, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++ [struct: %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1Schema{}]
-    )
-  end
-
-  @doc """
-  Lists pipelines. Returns a "FORBIDDEN" error if the caller doesn't have permission to access it.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataPipelines.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. If unspecified, all pipelines will be returned. Multiple filters can be applied and must be comma separated. Fields eligible for filtering are: + `type`: The type of the pipeline (streaming or batch). Allowed values are `ALL`, `BATCH`, and `STREAMING`. + `status`: The activity status of the pipeline. Allowed values are `ALL`, `ACTIVE`, `ARCHIVED`, and `PAUSED`. For example, to limit results to active batch processing pipelines: type:BATCH,status:ACTIVE
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of entities to return. The service may return fewer than this value, even if there are additional pages. If unspecified, the max limit is yet to be determined by the backend implementation.
-      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListPipelines` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPipelines` must match the call that provided the page token.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datapipelines_projects_locations_list_pipelines(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok,
-           GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def datapipelines_projects_locations_list_pipelines(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :filter => :query,
-      :pageSize => :query,
-      :pageToken => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+parent}", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse{}
-        ]
-    )
-  end
-
-  @doc """
   Creates a pipeline. For a batch pipeline, you can pass scheduler information. Data Pipelines uses the scheduler information to create an internal scheduler that runs jobs periodically. If the internal scheduler is not configured, you can use RunPipeline to run jobs.
 
   ## Parameters
@@ -395,6 +238,89 @@ defmodule GoogleApi.DataPipelines.V1.Api.Projects do
     |> Connection.execute(request)
     |> Response.decode(
       opts ++ [struct: %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1Pipeline{}]
+    )
+  end
+
+  @doc """
+  Lists pipelines. Returns a "FORBIDDEN" error if the caller doesn't have permission to access it.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.DataPipelines.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The location name. For example: `projects/PROJECT_ID/locations/LOCATION_ID`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. If unspecified, all pipelines will be returned. Multiple filters can be applied and must be comma separated. Fields eligible for filtering are: + `type`: The type of the pipeline (streaming or batch). Allowed values are `ALL`, `BATCH`, and `STREAMING`. + `status`: The activity status of the pipeline. Allowed values are `ALL`, `ACTIVE`, `ARCHIVED`, and `PAUSED`. For example, to limit results to active batch processing pipelines: type:BATCH,status:ACTIVE
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of entities to return. The service may return fewer than this value, even if there are additional pages. If unspecified, the max limit is yet to be determined by the backend implementation.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListPipelines` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListPipelines` must match the call that provided the page token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec datapipelines_projects_locations_pipelines_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok,
+           GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def datapipelines_projects_locations_pipelines_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/pipelines", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++
+        [
+          struct:
+            %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListPipelinesResponse{}
+        ]
     )
   end
 
@@ -701,162 +627,6 @@ defmodule GoogleApi.DataPipelines.V1.Api.Projects do
     |> Response.decode(
       opts ++
         [struct: %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1ListJobsResponse{}]
-    )
-  end
-
-  @doc """
-  Gets transform descriptions in a batch, associated with a list of provided uniform resource names.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataPipelines.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project and location shared by all transform descriptions being retrieved, formatted as "projects/{project}/locations/{location}".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:names` (*type:* `list(String.t)`) - Optional. The names of the transform descriptions being retrieved, formatted as "projects/{project}/locations/{location}/transformdescriptions/{transform_description}". If no name is provided, all of the transform descriptions will be returned.
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1BatchGetTransformDescriptionsResponse{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datapipelines_projects_locations_transform_descriptions_batch_get(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok,
-           GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1BatchGetTransformDescriptionsResponse.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def datapipelines_projects_locations_transform_descriptions_batch_get(
-        connection,
-        parent,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query,
-      :names => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+parent}/transformDescriptions:batchGet", %{
-        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1BatchGetTransformDescriptionsResponse{}
-        ]
-    )
-  end
-
-  @doc """
-  Gets the transform description associated with the provided uniform resource name.
-
-  ## Parameters
-
-  *   `connection` (*type:* `GoogleApi.DataPipelines.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The full name formatted as "projects/{your-project}/locations/{google-cloud-region}/transformdescriptions/{uniform-resource-name}".
-  *   `optional_params` (*type:* `keyword()`) - Optional parameters
-      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
-      *   `:access_token` (*type:* `String.t`) - OAuth access token.
-      *   `:alt` (*type:* `String.t`) - Data format for response.
-      *   `:callback` (*type:* `String.t`) - JSONP
-      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
-      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
-      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
-      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
-      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
-      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
-      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-  *   `opts` (*type:* `keyword()`) - Call options
-
-  ## Returns
-
-  *   `{:ok, %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1TransformDescription{}}` on success
-  *   `{:error, info}` on failure
-  """
-  @spec datapipelines_projects_locations_transform_descriptions_get(
-          Tesla.Env.client(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
-          {:ok,
-           GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1TransformDescription.t()}
-          | {:ok, Tesla.Env.t()}
-          | {:ok, list()}
-          | {:error, any()}
-  def datapipelines_projects_locations_transform_descriptions_get(
-        connection,
-        name,
-        optional_params \\ [],
-        opts \\ []
-      ) do
-    optional_params_config = %{
-      :"$.xgafv" => :query,
-      :access_token => :query,
-      :alt => :query,
-      :callback => :query,
-      :fields => :query,
-      :key => :query,
-      :oauth_token => :query,
-      :prettyPrint => :query,
-      :quotaUser => :query,
-      :uploadType => :query,
-      :upload_protocol => :query
-    }
-
-    request =
-      Request.new()
-      |> Request.method(:get)
-      |> Request.url("/v1/{+name}", %{
-        "name" => URI.encode(name, &URI.char_unreserved?/1)
-      })
-      |> Request.add_optional_params(optional_params_config, optional_params)
-      |> Request.library_version(@library_version)
-
-    connection
-    |> Connection.execute(request)
-    |> Response.decode(
-      opts ++
-        [
-          struct:
-            %GoogleApi.DataPipelines.V1.Model.GoogleCloudDatapipelinesV1TransformDescription{}
-        ]
     )
   end
 end
