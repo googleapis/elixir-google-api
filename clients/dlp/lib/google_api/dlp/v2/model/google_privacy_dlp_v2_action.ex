@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Action do
   @moduledoc """
-  A task to execute on the completion of a job. See https://cloud.google.com/dlp/docs/concepts-actions to learn more.
+  A task to execute on the completion of a job. See https://cloud.google.com/sensitive-data-protection/docs/concepts-actions to learn more.
 
   ## Attributes
 

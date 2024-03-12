@@ -24,13 +24,14 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `configSnapshot` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot.t`, *default:* `nil`) - The snapshot of the configurations used to generate the profile.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the table was created.
   *   `dataRiskLevel` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel.t`, *default:* `nil`) - The data risk level of this table.
-  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery dataset ID.
-  *   `datasetLocation` (*type:* `String.t`, *default:* `nil`) - The BigQuery location where the dataset's data is stored. See https://cloud.google.com/bigquery/docs/locations for supported locations.
-  *   `datasetProjectId` (*type:* `String.t`, *default:* `nil`) - The GCP project ID that owns the BigQuery dataset.
+  *   `dataSourceType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataSourceType.t`, *default:* `nil`) - The resource type that was profiled.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - If the resource is BigQuery, the dataset ID.
+  *   `datasetLocation` (*type:* `String.t`, *default:* `nil`) - If supported, the location where the dataset's data is stored. See https://cloud.google.com/bigquery/docs/locations for supported locations.
+  *   `datasetProjectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID that owns the resource.
   *   `encryptionStatus` (*type:* `String.t`, *default:* `nil`) - How the table is encrypted.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when this table expires.
   *   `failedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns skipped in the table because of an error.
-  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the table. https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this table was last modified
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the profile.
   *   `otherInfoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherInfoTypeSummary.t)`, *default:* `nil`) - Other infoTypes found in this table's data.
@@ -44,7 +45,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `scannedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns profiled in the table.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this table.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - The BigQuery table ID.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - If the resource is BigQuery, the BigQuery table ID.
   *   `tableSizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the table when the profile was generated.
   """
 
@@ -55,6 +56,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot.t() | nil,
           :createTime => DateTime.t() | nil,
           :dataRiskLevel => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel.t() | nil,
+          :dataSourceType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataSourceType.t() | nil,
           :datasetId => String.t() | nil,
           :datasetLocation => String.t() | nil,
           :datasetProjectId => String.t() | nil,
@@ -85,6 +87,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   field(:configSnapshot, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileConfigSnapshot)
   field(:createTime, as: DateTime)
   field(:dataRiskLevel, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel)
+  field(:dataSourceType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataSourceType)
   field(:datasetId)
   field(:datasetLocation)
   field(:datasetProjectId)

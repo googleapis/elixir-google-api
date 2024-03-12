@@ -22,7 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ListJobTriggersResponse do
   ## Attributes
 
   *   `jobTriggers` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2JobTrigger.t)`, *default:* `nil`) - List of triggeredJobs, up to page_size in ListJobTriggersRequest.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then the next page token to be used in following ListJobTriggers request.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - If the next page is available then this value is the next page token to be used in the following ListJobTriggers request.
   """
 
   use GoogleApi.Gax.ModelBase

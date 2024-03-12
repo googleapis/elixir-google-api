@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ContentItem do
   @moduledoc """
-
+  Type of content to inspect.
 
   ## Attributes
 
   *   `byteItem` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ByteContentItem.t`, *default:* `nil`) - Content data to inspect or redact. Replaces `type` and `data`.
-  *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table.t`, *default:* `nil`) - Structured content for inspection. See https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to learn more.
+  *   `table` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Table.t`, *default:* `nil`) - Structured content for inspection. See https://cloud.google.com/sensitive-data-protection/docs/inspecting-text#inspecting_a_table to learn more.
   *   `value` (*type:* `String.t`, *default:* `nil`) - String data to inspect or redact.
   """
 

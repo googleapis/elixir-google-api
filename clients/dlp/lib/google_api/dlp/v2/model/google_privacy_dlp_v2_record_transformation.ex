@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2RecordTransformation do
   @moduledoc """
-
+  The field in a record to transform.
 
   ## Attributes
 

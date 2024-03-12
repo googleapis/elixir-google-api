@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherInfoTypeSummary do
   ## Attributes
 
   *   `estimatedPrevalence` (*type:* `integer()`, *default:* `nil`) - Approximate percentage of non-null rows that contained data detected by this infotype.
+  *   `excludedFromAnalysis` (*type:* `boolean()`, *default:* `nil`) - Whether this infoType was excluded from sensitivity and risk analysis due to factors such as low prevalence (subject to change).
   *   `infoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t`, *default:* `nil`) - The other infoType.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherInfoTypeSummary do
 
   @type t :: %__MODULE__{
           :estimatedPrevalence => integer() | nil,
+          :excludedFromAnalysis => boolean() | nil,
           :infoType => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType.t() | nil
         }
 
   field(:estimatedPrevalence)
+  field(:excludedFromAnalysis)
   field(:infoType, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoType)
 end
 

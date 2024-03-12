@@ -48,7 +48,7 @@ defmodule GoogleApi.DLP.Mixfile do
 
   defp description() do
     """
-    Cloud Data Loss Prevention (DLP) API client library. Provides methods for detection, risk analysis, and de-identification of privacy-sensitive fragments in text, images, and Google Cloud Platform storage repositories.
+    Sensitive Data Protection (DLP) client library. Discover and protect your sensitive data. A fully managed service designed to help you discover, classify, and protect your valuable data assets with ease.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.DLP.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/dlp",
-        "Homepage" => "https://cloud.google.com/dlp/docs/"
+        "Homepage" => "https://cloud.google.com/sensitive-data-protection/docs/"
       }
     ]
   end

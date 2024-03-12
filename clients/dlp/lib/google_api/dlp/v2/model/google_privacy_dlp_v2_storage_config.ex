@@ -25,7 +25,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2StorageConfig do
   *   `cloudStorageOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageOptions.t`, *default:* `nil`) - Cloud Storage options.
   *   `datastoreOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatastoreOptions.t`, *default:* `nil`) - Google Cloud Datastore options.
   *   `hybridOptions` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2HybridOptions.t`, *default:* `nil`) - Hybrid inspection options.
-  *   `timespanConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t`, *default:* `nil`) - 
+  *   `timespanConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TimespanConfig.t`, *default:* `nil`) - Configuration of the timespan of the items to include in scanning.
   """
 
   use GoogleApi.Gax.ModelBase

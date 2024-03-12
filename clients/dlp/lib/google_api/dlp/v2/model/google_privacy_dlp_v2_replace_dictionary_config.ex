@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ReplaceDictionaryConfig do
 
   ## Attributes
 
-  *   `wordList` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList.t`, *default:* `nil`) - A list of words to select from for random replacement. The [limits](https://cloud.google.com/dlp/limits) page contains details about the size limits of dictionaries.
+  *   `wordList` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2WordList.t`, *default:* `nil`) - A list of words to select from for random replacement. The [limits](https://cloud.google.com/sensitive-data-protection/limits) page contains details about the size limits of dictionaries.
   """
 
   use GoogleApi.Gax.ModelBase

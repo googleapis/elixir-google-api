@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStoragePath do
 
   ## Attributes
 
-  *   `path` (*type:* `String.t`, *default:* `nil`) - A url representing a file or path (no wildcards) in Cloud Storage. Example: gs://[BUCKET_NAME]/dictionary.txt
+  *   `path` (*type:* `String.t`, *default:* `nil`) - A URL representing a file or path (no wildcards) in Cloud Storage. Example: `gs://[BUCKET_NAME]/dictionary.txt`
   """
 
   use GoogleApi.Gax.ModelBase

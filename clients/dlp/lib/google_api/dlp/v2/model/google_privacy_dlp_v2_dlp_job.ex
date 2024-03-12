@@ -21,11 +21,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
 
   ## Attributes
 
+  *   `actionDetails` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ActionDetails.t)`, *default:* `nil`) - Events that should occur after the job has completed.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job finished.
   *   `errors` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t)`, *default:* `nil`) - A stream of errors encountered running the job.
   *   `inspectDetails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t`, *default:* `nil`) - Results from inspecting a data source.
   *   `jobTriggerName` (*type:* `String.t`, *default:* `nil`) - If created by a job trigger, the resource name of the trigger that instantiated the job.
+  *   `lastModified` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job was last modified by the system.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name.
   *   `riskDetails` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails.t`, *default:* `nil`) - Results from analyzing risk of a data source.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Time when the job started.
@@ -36,12 +38,15 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :actionDetails =>
+            list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ActionDetails.t()) | nil,
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
           :errors => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t()) | nil,
           :inspectDetails =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails.t() | nil,
           :jobTriggerName => String.t() | nil,
+          :lastModified => DateTime.t() | nil,
           :name => String.t() | nil,
           :riskDetails =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails.t() | nil,
@@ -50,11 +55,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DlpJob do
           :type => String.t() | nil
         }
 
+  field(:actionDetails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ActionDetails, type: :list)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)
   field(:errors, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error, type: :list)
   field(:inspectDetails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InspectDataSourceDetails)
   field(:jobTriggerName)
+  field(:lastModified, as: DateTime)
   field(:name)
   field(:riskDetails, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AnalyzeDataSourceRiskDetails)
   field(:startTime, as: DateTime)
