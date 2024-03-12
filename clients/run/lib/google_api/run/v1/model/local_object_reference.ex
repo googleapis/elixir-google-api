@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V1.Model.LocalObjectReference do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the referent.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.Run.V1.Model.VolumeMount do
 
   *   `mountPath` (*type:* `String.t`, *default:* `nil`) - Required. Path within the container at which the volume should be mounted. Must not contain ':'.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the volume. There must be a corresponding Volume with the same name.
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Only true is accepted for Secret Volumes. Defaults to true for Secrets Volumes.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - Sets the mount to be read-only or read-write. Not used by Cloud Run.
   *   `subPath` (*type:* `String.t`, *default:* `nil`) - Path within the volume from which the container's volume should be mounted. Defaults to "" (volume's root).
   """
 

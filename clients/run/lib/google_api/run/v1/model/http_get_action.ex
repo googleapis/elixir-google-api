@@ -24,6 +24,7 @@ defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
   *   `host` (*type:* `String.t`, *default:* `nil`) - Not supported by Cloud Run.
   *   `httpHeaders` (*type:* `list(GoogleApi.Run.V1.Model.HTTPHeader.t)`, *default:* `nil`) - Custom headers to set in the request. HTTP allows repeated headers.
   *   `path` (*type:* `String.t`, *default:* `nil`) - Path to access on the HTTP server.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number to access on the container. Number must be in the range 1 to 65535.
   *   `scheme` (*type:* `String.t`, *default:* `nil`) - Not supported by Cloud Run.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.Run.V1.Model.HTTPGetAction do
           :host => String.t() | nil,
           :httpHeaders => list(GoogleApi.Run.V1.Model.HTTPHeader.t()) | nil,
           :path => String.t() | nil,
+          :port => integer() | nil,
           :scheme => String.t() | nil
         }
 
   field(:host)
   field(:httpHeaders, as: GoogleApi.Run.V1.Model.HTTPHeader, type: :list)
   field(:path)
+  field(:port)
   field(:scheme)
 end
 

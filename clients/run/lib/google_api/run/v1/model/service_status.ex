@@ -25,9 +25,9 @@ defmodule GoogleApi.Run.V1.Model.ServiceStatus do
   *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Conditions communicate information about ongoing/complete reconciliation processes that bring the `spec` inline with the observed state of the world. Service-specific conditions include: * `ConfigurationsReady`: `True` when the underlying Configuration is ready. * `RoutesReady`: `True` when the underlying Route is ready. * `Ready`: `True` when all underlying resources are ready.
   *   `latestCreatedRevisionName` (*type:* `String.t`, *default:* `nil`) - Name of the last revision that was created from this Service's Configuration. It might not be ready yet, for that use LatestReadyRevisionName.
   *   `latestReadyRevisionName` (*type:* `String.t`, *default:* `nil`) - Name of the latest Revision from this Service's Configuration that has had its `Ready` condition become `True`.
-  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Returns the generation last fully processed by the system. This will only match metadata.generation when reconciliation is complete. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+  *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - Returns the generation last seen by the system. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
   *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - URL that will distribute traffic over the provided traffic targets. It generally has the form https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL that will distribute traffic over the provided traffic targets. It generally has the form `https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app`
   """
 
   use GoogleApi.Gax.ModelBase

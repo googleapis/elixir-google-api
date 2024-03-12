@@ -763,12 +763,99 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
+  Cancels an Execution.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Execution to cancel. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2CancelExecutionRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Run.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_jobs_executions_cancel(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Run.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def run_projects_locations_jobs_executions_cancel(
+        connection,
+        projects_id,
+        locations_id,
+        jobs_id,
+        executions_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v2/projects/{projectsId}/locations/{locationsId}/jobs/{jobsId}/executions/{executionsId}:cancel",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1),
+          "executionsId" => URI.encode(executions_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Run.V2.Model.GoogleLongrunningOperation{}])
+  end
+
+  @doc """
   Deletes an Execution.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Execution to delete. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project} can be project id or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Execution to delete. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -857,7 +944,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Execution. Format: projects/{project}/locations/{location}/jobs/{job}/executions/{execution}, where {project} can be project id or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The full name of the Execution. Format: `projects/{project}/locations/{location}/jobs/{job}/executions/{execution}`, where `{project}` can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
   *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
@@ -942,7 +1029,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The Execution from which the Executions should be listed. To list all Executions across Jobs, use "-" instead of Job name. Format: projects/{project}/locations/{location}/jobs/{job}, where {project} can be project id or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The Execution from which the Executions should be listed. To list all Executions across Jobs, use "-" instead of Job name. Format: `projects/{project}/locations/{location}/jobs/{job}`, where `{project}` can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `jobs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1370,7 +1457,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   end
 
   @doc """
-  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`. NOTE: the `name` binding allows API services to override the binding to use different resource name schemes, such as `users/*/operations`. To override the binding, API services can add a binding such as `"/v1/{name=users/*}/operations"` to their service configuration. For backwards compatibility, the default name includes the operations collection id, however overriding users must ensure the name binding is the parent resource, without the operations collection id.
+  Lists operations that match the specified filter in the request. If the server doesn't support this method, it returns `UNIMPLEMENTED`.
 
   ## Parameters
 
@@ -1449,6 +1536,89 @@ defmodule GoogleApi.Run.V2.Api.Projects do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.Run.V2.Model.GoogleLongrunningListOperationsResponse{}]
     )
+  end
+
+  @doc """
+  Waits until the specified long-running operation is done or reaches at most a specified timeout, returning the latest state. If the operation is already done, the latest state is immediately returned. If the timeout specified is greater than the default HTTP/RPC timeout, the HTTP/RPC timeout is used. If the server does not support this method, it returns `google.rpc.Code.UNIMPLEMENTED`. Note that this method is on a best-effort basis. It may return the latest state before the specified timeout (including immediately), meaning even an immediate response is no guarantee that the operation is done.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
+  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to wait on.
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleLongrunningWaitOperationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Run.V2.Model.GoogleLongrunningOperation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec run_projects_locations_operations_wait(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Run.V2.Model.GoogleLongrunningOperation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def run_projects_locations_operations_wait(
+        connection,
+        projects_id,
+        locations_id,
+        operations_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url(
+        "/v2/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:wait",
+        %{
+          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
+          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
+          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+        }
+      )
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Run.V2.Model.GoogleLongrunningOperation{}])
   end
 
   @doc """
@@ -1780,7 +1950,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid GCP region, and cannot be the "-" wildcard. Format: projects/{project}/locations/{location}, where {project} can be project id or number.
+  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The location and project to list resources on. Location must be a valid Google Cloud region, and cannot be the "-" wildcard. Format: projects/{project}/locations/{location}, where {project} can be project id or number.
   *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1877,7 +2047,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and if the Service does not exist, it will create a new one. Caller must have both create and update permissions for this call if this is set to true.
+      *   `:allowMissing` (*type:* `boolean()`) - If set to true, and if the Service does not exist, it will create a new one. The caller must have 'run.services.create' permissions if this is set to true and the Service does not exist.
       *   `:validateOnly` (*type:* `boolean()`) - Indicates that the request should be validated and default values populated, without persisting the request or updating any resources.
       *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options

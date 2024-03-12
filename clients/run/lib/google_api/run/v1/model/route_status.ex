@@ -25,7 +25,7 @@ defmodule GoogleApi.Run.V1.Model.RouteStatus do
   *   `conditions` (*type:* `list(GoogleApi.Run.V1.Model.GoogleCloudRunV1Condition.t)`, *default:* `nil`) - Conditions communicates information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world.
   *   `observedGeneration` (*type:* `integer()`, *default:* `nil`) - ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new "latest ready" revisions from the Configuration are processed without an update to the Route's spec.
   *   `traffic` (*type:* `list(GoogleApi.Run.V1.Model.TrafficTarget.t)`, *default:* `nil`) - Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that was last observed.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - URL holds the url that will distribute traffic over the provided traffic targets. It generally has the form: https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app
+  *   `url` (*type:* `String.t`, *default:* `nil`) - URL holds the url that will distribute traffic over the provided traffic targets. It generally has the form: `https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app`
   """
 
   use GoogleApi.Gax.ModelBase

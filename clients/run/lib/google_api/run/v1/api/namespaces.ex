@@ -265,7 +265,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -334,7 +334,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -420,7 +420,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -498,7 +498,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -672,7 +672,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:apiVersion` (*type:* `String.t`) - Optional. Cloud Run currently ignores this parameter.
       *   `:kind` (*type:* `String.t`) - Optional. Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/workloads/controllers/garbage-collection/ for more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Optional. Specifies the propagation policy of delete. Cloud Run currently ignores this setting.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1337,7 +1337,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
       *   `:apiVersion` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
       *   `:dryRun` (*type:* `String.t`) - Indicates that the server should validate the request and populate default values without persisting the request. Supported values: `all`
       *   `:kind` (*type:* `String.t`) - Cloud Run currently ignores this parameter.
-      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background. Please see https://kubernetes.io/docs/concepts/architecture/garbage-collection/ for more information.
+      *   `:propagationPolicy` (*type:* `String.t`) - Specifies the propagation policy of delete. Cloud Run currently ignores this setting, and deletes in the background.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1771,7 +1771,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1856,7 +1856,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2007,7 +2007,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
+  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.

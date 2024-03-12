@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2TCPSocketAction do
 
   ## Attributes
 
-  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number to access on the container. Must be in the range 1 to 65535. If not specified, defaults to 8080.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Port number to access on the container. Must be in the range 1 to 65535. If not specified, defaults to the exposed port of the container, which is the value of container.ports[0].containerPort.
   """
 
   use GoogleApi.Gax.ModelBase

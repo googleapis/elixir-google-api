@@ -21,26 +21,31 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - KRM-style annotations for the resource.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Output only. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
   *   `conditions` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t)`, *default:* `nil`) - Output only. The Condition of this Revision, containing its readiness status, and detailed error information in case it did not reach a serving state.
   *   `containers` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t)`, *default:* `nil`) - Holds the single container that defines the unit of execution for this Revision.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. For a deleted resource, the deletion time. It is only populated as a response to a Delete request.
   *   `encryptionKey` (*type:* `String.t`, *default:* `nil`) - A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek
+  *   `encryptionKeyRevocationAction` (*type:* `String.t`, *default:* `nil`) - The action to take if the encryption key is revoked.
+  *   `encryptionKeyShutdownDuration` (*type:* `String.t`, *default:* `nil`) - If encryption_key_revocation_action is SHUTDOWN, the duration before shutting down all instances. The minimum increment is 1 hour.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
   *   `executionEnvironment` (*type:* `String.t`, *default:* `nil`) - The execution environment being used to host this Revision.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. For a deleted resource, the time after which it will be permamently deleted. It is only populated as a response to a Delete request.
   *   `generation` (*type:* `String.t`, *default:* `nil`) - Output only. A number that monotonically increases every time the user modifies the desired state.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - KRM-style labels for the resource. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels Cloud Run will populate some labels with 'run.googleapis.com' or 'serving.knative.dev' namespaces. Those labels are read-only, and user changes will not be preserved.
-  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Set the launch stage to a preview stage on write to allow use of preview features in that stage. On read, describes whether the resource uses preview features. Launch Stages are defined at [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages).
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels.
+  *   `launchStage` (*type:* `String.t`, *default:* `nil`) - The least stable launch stage needed to create this resource, as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. Note that this value might not be what was used as input. For example, if ALPHA was provided as input in the parent resource, but only BETA and GA-level features are were, this field will be BETA.
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Output only. The Google Console URI to obtain logs for the Revision.
   *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Sets the maximum number of requests that each serving instance can receive.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique name of this Revision.
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Revision currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the resource's reconciliation is still in progress. See comments in `Service.reconciling` for additional information on reconciliation process in Cloud Run.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `scaling` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t`, *default:* `nil`) - Scaling settings for this revision.
+  *   `scalingStatus` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus.t`, *default:* `nil`) - Output only. The current effective scaling settings for the revision.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the parent service.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has.
+  *   `sessionAffinity` (*type:* `boolean()`, *default:* `nil`) - Enable session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Max allowed time for an instance to respond to a request.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the Revision. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
@@ -57,6 +62,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
           :createTime => DateTime.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :encryptionKey => String.t() | nil,
+          :encryptionKeyRevocationAction => String.t() | nil,
+          :encryptionKeyShutdownDuration => String.t() | nil,
           :etag => String.t() | nil,
           :executionEnvironment => String.t() | nil,
           :expireTime => DateTime.t() | nil,
@@ -68,9 +75,13 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
           :name => String.t() | nil,
           :observedGeneration => String.t() | nil,
           :reconciling => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :scaling => GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t() | nil,
+          :scalingStatus =>
+            GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus.t() | nil,
           :service => String.t() | nil,
           :serviceAccount => String.t() | nil,
+          :sessionAffinity => boolean() | nil,
           :timeout => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -84,6 +95,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   field(:createTime, as: DateTime)
   field(:deleteTime, as: DateTime)
   field(:encryptionKey)
+  field(:encryptionKeyRevocationAction)
+  field(:encryptionKeyShutdownDuration)
   field(:etag)
   field(:executionEnvironment)
   field(:expireTime, as: DateTime)
@@ -95,9 +108,12 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   field(:name)
   field(:observedGeneration)
   field(:reconciling)
+  field(:satisfiesPzs)
   field(:scaling, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling)
+  field(:scalingStatus, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus)
   field(:service)
   field(:serviceAccount)
+  field(:sessionAffinity)
   field(:timeout)
   field(:uid)
   field(:updateTime, as: DateTime)

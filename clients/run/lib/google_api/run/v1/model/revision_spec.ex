@@ -22,7 +22,7 @@ defmodule GoogleApi.Run.V1.Model.RevisionSpec do
   ## Attributes
 
   *   `containerConcurrency` (*type:* `integer()`, *default:* `nil`) - ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80.
-  *   `containers` (*type:* `list(GoogleApi.Run.V1.Model.Container.t)`, *default:* `nil`) - Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided. The runtime contract is documented here: https://github.com/knative/specs/blob/main/specs/serving/runtime-contract.md
+  *   `containers` (*type:* `list(GoogleApi.Run.V1.Model.Container.t)`, *default:* `nil`) - Required. Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided.
   *   `enableServiceLinks` (*type:* `boolean()`, *default:* `nil`) - Not supported by Cloud Run.
   *   `imagePullSecrets` (*type:* `list(GoogleApi.Run.V1.Model.LocalObjectReference.t)`, *default:* `nil`) - Not supported by Cloud Run.
   *   `serviceAccountName` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
