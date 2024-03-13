@@ -30,6 +30,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredPrivateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - The desired private cluster configuration.
   *   `desiredNodeVersion` (*type:* `String.t`, *default:* `nil`) - The Kubernetes version to change the nodes to (typically an upgrade). Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "-": picks the Kubernetes master version
+  *   `desiredEnableMultiNetworking` (*type:* `boolean()`, *default:* `nil`) - Enable/Disable Multi-Networking for the cluster
   *   `desiredMeshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
   *   `desiredNodePoolAutoConfigNetworkTags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
   *   `additionalPodRangesConfig` (*type:* `GoogleApi.Container.V1.Model.AdditionalPodRangesConfig.t`, *default:* `nil`) - The additional pod ranges to be added to the cluster. These pod ranges can be used by node pools to allocate pod IPs.
@@ -91,6 +92,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredPrivateClusterConfig =>
             GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
           :desiredNodeVersion => String.t() | nil,
+          :desiredEnableMultiNetworking => boolean() | nil,
           :desiredMeshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
           :desiredNodePoolAutoConfigNetworkTags =>
             GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
@@ -172,6 +174,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
 
   field(:desiredPrivateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
   field(:desiredNodeVersion)
+  field(:desiredEnableMultiNetworking)
   field(:desiredMeshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
   field(:desiredNodePoolAutoConfigNetworkTags, as: GoogleApi.Container.V1.Model.NetworkTags)
   field(:additionalPodRangesConfig, as: GoogleApi.Container.V1.Model.AdditionalPodRangesConfig)
