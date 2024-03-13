@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_safe_browsing, "~> 0.24"}]
+  [{:google_api_safe_browsing, "~> 0.25"}]
 end
 ```
 
