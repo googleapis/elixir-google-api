@@ -20,6 +20,11 @@
     "name": "AccessContextManager"
   },
   {
+    "version": "v1",
+    "url": "https://acmedns.googleapis.com/$discovery/rest?version=v1",
+    "name": "AcmeDNS"
+  },
+  {
     "version": "v2beta1",
     "url": "https://adexchangebuyer.googleapis.com/$discovery/rest?version=v2beta1",
     "name": "AdExchangeBuyer"
@@ -60,9 +65,24 @@
     "name": "AdSenseHost"
   },
   {
+    "version": "v1",
+    "url": "https://advisorynotifications.googleapis.com/$discovery/rest?version=v1",
+    "name": "AdvisoryNotifications"
+  },
+  {
+    "version": "v1",
+    "url": "https://aiplatform.googleapis.com/$discovery/rest?version=v1",
+    "name": "AIPlatform"
+  },
+  {
     "version": "v1beta1",
     "url": "https://alertcenter.googleapis.com/$discovery/rest?version=v1beta1",
     "name": "AlertCenter"
+  },
+  {
+    "version": "v1",
+    "url": "https://alloydb.googleapis.com/$discovery/rest?version=v1",
+    "name": "AlloyDB"
   },
   {
     "version": "v3",
@@ -76,8 +96,18 @@
   },
   {
     "version": "v1beta",
+    "url": "https://analyticsadmin.googleapis.com/$discovery/rest?version=v1beta",
+    "name": "AnalyticsAdmin"
+  },
+  {
+    "version": "v1beta",
     "url": "https://analyticsdata.googleapis.com/$discovery/rest?version=v1beta",
     "name": "AnalyticsData"
+  },
+  {
+    "version": "v1",
+    "url": "https://analyticshub.googleapis.com/$discovery/rest?version=v1",
+    "name": "AnalyticsHub"
   },
   {
     "version": "v1beta1",
@@ -140,6 +170,11 @@
     "name": "AppEngine"
   },
   {
+    "version": "v1",
+    "url": "https://apphub.googleapis.com/$discovery/rest?version=v1",
+    "name": "AppHub"
+  },
+  {
     "version": "v1alpha1",
     "url": "https://area120tables.googleapis.com/$discovery/rest?version=v1alpha1",
     "name": "Area120Tables"
@@ -166,8 +201,8 @@
   },
   {
     "version": "v1",
-    "url": "https://baremetalsolution.googleapis.com/$discovery/rest?version=v1",
-    "name": "BareMetalSolution"
+    "url": "https://backupdr.googleapis.com/$discovery/rest?version=v1",
+    "name": "BackupDR"
   },
   {
     "version": "v2",
@@ -176,8 +211,18 @@
   },
   {
     "version": "v1",
+    "url": "https://batch.googleapis.com/$discovery/rest?version=v1",
+    "name": "Batch"
+  },
+  {
+    "version": "v1",
     "url": "https://beyondcorp.googleapis.com/$discovery/rest?version=v1",
     "name": "BeyondCorp"
+  },
+  {
+    "version": "v1",
+    "url": "https://biglake.googleapis.com/$discovery/rest?version=v1",
+    "name": "BigLake"
   },
   {
     "version": "v2",
@@ -185,9 +230,19 @@
     "name": "BigQuery"
   },
   {
+    "version": "v1",
+    "url": "https://bigqueryconnection.googleapis.com/$discovery/rest?version=v1",
+    "name": "BigQueryConnection"
+  },
+  {
     "version": "v1beta1",
     "url": "https://bigqueryconnection.googleapis.com/$discovery/rest?version=v1beta1",
     "name": "BigQueryConnection"
+  },
+  {
+    "version": "v1",
+    "url": "https://bigquerydatapolicy.googleapis.com/$discovery/rest?version=v1",
+    "name": "BigQueryDataPolicy"
   },
   {
     "version": "v1",
@@ -220,6 +275,11 @@
     "name": "BinaryAuthorization"
   },
   {
+    "version": "v1",
+    "url": "https://blockchainnodeengine.googleapis.com/$discovery/rest?version=v1",
+    "name": "BlockchainNodeEngine"
+  },
+  {
     "version": "v3",
     "url": "https://blogger.googleapis.com/$discovery/rest?version=v3",
     "name": "Blogger"
@@ -248,6 +308,11 @@
     "version": "v1",
     "url": "https://chat.googleapis.com/$discovery/rest?version=v1",
     "name": "Chat"
+  },
+  {
+    "version": "v1alpha",
+    "url": "https://checks.googleapis.com/$discovery/rest?version=v1alpha",
+    "name": "Checks"
   },
   {
     "version": "v1",
@@ -290,14 +355,14 @@
     "name": "CloudBuild"
   },
   {
+    "version": "v2",
+    "url": "https://cloudbuild.googleapis.com/$discovery/rest?version=v2",
+    "name": "CloudBuild"
+  },
+  {
     "version": "v1",
     "url": "https://cloudchannel.googleapis.com/$discovery/rest?version=v1",
     "name": "CloudChannel"
-  },
-  {
-    "version": "v2",
-    "url": "https://clouddebugger.googleapis.com/$discovery/rest?version=v2",
-    "name": "CloudDebugger"
   },
   {
     "version": "v1",
@@ -326,11 +391,6 @@
   },
   {
     "version": "v1",
-    "url": "https://cloudiot.googleapis.com/$discovery/rest?version=v1",
-    "name": "CloudIot"
-  },
-  {
-    "version": "v1",
     "url": "https://cloudkms.googleapis.com/$discovery/rest?version=v1",
     "name": "CloudKMS"
   },
@@ -355,11 +415,6 @@
     "name": "CloudResourceManager"
   },
   {
-    "version": "v1alpha1",
-    "url": "https://run.googleapis.com/$discovery/rest?version=v1alpha1",
-    "name": "CloudRun"
-  },
-  {
     "version": "v1",
     "url": "https://cloudscheduler.googleapis.com/$discovery/rest?version=v1",
     "name": "CloudScheduler"
@@ -373,6 +428,11 @@
     "version": "v1",
     "url": "https://cloudshell.googleapis.com/$discovery/rest?version=v1",
     "name": "CloudShell"
+  },
+  {
+    "version": "v2",
+    "url": "https://cloudsupport.googleapis.com/$discovery/rest?version=v2",
+    "name": "CloudSupport"
   },
   {
     "version": "v2beta",
@@ -420,6 +480,16 @@
     "name": "Connectors"
   },
   {
+    "version": "v2",
+    "url": "https://connectors.googleapis.com/$discovery/rest?version=v2",
+    "name": "Connectors"
+  },
+  {
+    "version": "v1alpha1",
+    "url": "https://contactcenteraiplatform.googleapis.com/$discovery/rest?version=v1alpha1",
+    "name": "ContactCenterAIPlatform"
+  },
+  {
     "version": "v1",
     "url": "https://contactcenterinsights.googleapis.com/$discovery/rest?version=v1",
     "name": "ContactCenterInsights"
@@ -451,6 +521,11 @@
   },
   {
     "version": "v1",
+    "url": "https://contentwarehouse.googleapis.com/$discovery/rest?version=v1",
+    "name": "ContentWarehouse"
+  },
+  {
+    "version": "v1",
     "url": "https://customsearch.googleapis.com/$discovery/rest?version=v1",
     "name": "CustomSearch"
   },
@@ -470,6 +545,11 @@
     "name": "Dataflow"
   },
   {
+    "version": "v1beta1",
+    "url": "https://dataform.googleapis.com/$discovery/rest?version=v1beta1",
+    "name": "Dataform"
+  },
+  {
     "version": "v1",
     "url": "https://datafusion.googleapis.com/$discovery/rest?version=v1",
     "name": "DataFusion"
@@ -483,6 +563,11 @@
     "version": "v1beta1",
     "url": "https://datalabeling.googleapis.com/$discovery/rest?version=v1beta1",
     "name": "DataLabeling"
+  },
+  {
+    "version": "v1",
+    "url": "https://datalineage.googleapis.com/$discovery/rest?version=v1",
+    "name": "DataLineage"
   },
   {
     "version": "v1",
@@ -503,6 +588,11 @@
     "version": "v1",
     "url": "https://dataplex.googleapis.com/$discovery/rest?version=v1",
     "name": "Dataplex"
+  },
+  {
+    "version": "v1",
+    "url": "https://dataportability.googleapis.com/$discovery/rest?version=v1",
+    "name": "DataPortability"
   },
   {
     "version": "v1",
@@ -555,8 +645,13 @@
     "name": "Discovery"
   },
   {
-    "version": "v1",
-    "url": "https://displayvideo.googleapis.com/$discovery/rest?version=v1",
+    "version": "v1beta",
+    "url": "https://discoveryengine.googleapis.com/$discovery/rest?version=v1beta",
+    "name": "DiscoveryEngine"
+  },
+  {
+    "version": "v3",
+    "url": "https://displayvideo.googleapis.com/$discovery/rest?version=v3",
     "name": "DisplayVideo"
   },
   {
@@ -610,11 +705,6 @@
     "name": "DomainsRDAP"
   },
   {
-    "version": "v1.1",
-    "url": "https://doubleclickbidmanager.googleapis.com/$discovery/rest?version=v1.1",
-    "name": "DoubleClickBidManager"
-  },
-  {
     "version": "v2",
     "url": "https://doubleclickbidmanager.googleapis.com/$discovery/rest?version=v2",
     "name": "DoubleClickBidManager"
@@ -633,6 +723,11 @@
     "version": "v2",
     "url": "https://driveactivity.googleapis.com/$discovery/rest?version=v2",
     "name": "DriveActivity"
+  },
+  {
+    "version": "v2",
+    "url": "https://drivelabels.googleapis.com/$discovery/rest?version=v2",
+    "name": "DriveLabels"
   },
   {
     "version": "v1",
@@ -683,6 +778,11 @@
     "version": "v1beta",
     "url": "https://firebaseappcheck.googleapis.com/$discovery/rest?version=v1beta",
     "name": "FirebaseAppCheck"
+  },
+  {
+    "version": "v1",
+    "url": "https://firebaseappdistribution.googleapis.com/$discovery/rest?version=v1",
+    "name": "FirebaseAppDistribution"
   },
   {
     "version": "v1beta",
@@ -755,24 +855,9 @@
     "name": "GamesConfiguration"
   },
   {
-    "version": "v1",
-    "url": "https://gameservices.googleapis.com/$discovery/rest?version=v1",
-    "name": "GameServices"
-  },
-  {
-    "version": "v1beta",
-    "url": "https://gameservices.googleapis.com/$discovery/rest?version=v1beta",
-    "name": "GameServices"
-  },
-  {
     "version": "v1management",
     "url": "https://gamesmanagement.googleapis.com/$discovery/rest?version=v1management",
     "name": "GamesManagement"
-  },
-  {
-    "version": "v2alpha1",
-    "url": "https://genomics.googleapis.com/$discovery/rest?version=v2alpha1",
-    "name": "Genomics"
   },
   {
     "version": "v1",
@@ -783,6 +868,11 @@
     "version": "v1",
     "url": "https://gkehub.googleapis.com/$discovery/rest?version=v1",
     "name": "GKEHub"
+  },
+  {
+    "version": "v1",
+    "url": "https://gkeonprem.googleapis.com/$discovery/rest?version=v1",
+    "name": "GKEOnPrem"
   },
   {
     "version": "v1",
@@ -830,6 +920,11 @@
     "name": "IAM"
   },
   {
+    "version": "v2",
+    "url": "https://iam.googleapis.com/$discovery/rest?version=v2",
+    "name": "IAM"
+  },
+  {
     "version": "v1",
     "url": "https://iamcredentials.googleapis.com/$discovery/rest?version=v1",
     "name": "IAMCredentials"
@@ -838,11 +933,6 @@
     "version": "v1",
     "url": "https://iap.googleapis.com/$discovery/rest?version=v1",
     "name": "IAP"
-  },
-  {
-    "version": "v1beta",
-    "url": "https://ideahub.googleapis.com/$discovery/rest?version=v1beta",
-    "name": "IdeaHub"
   },
   {
     "version": "v3",
@@ -858,6 +948,11 @@
     "version": "v3",
     "url": "https://indexing.googleapis.com/$discovery/rest?version=v3",
     "name": "Indexing"
+  },
+  {
+    "version": "v1alpha",
+    "url": "https://integrations.googleapis.com/$discovery/rest?version=v1alpha",
+    "name": "Integrations"
   },
   {
     "version": "v3",
@@ -876,12 +971,22 @@
   },
   {
     "version": "v1",
+    "url": "https://kmsinventory.googleapis.com/$discovery/rest?version=v1",
+    "name": "KMSInventory"
+  },
+  {
+    "version": "v1",
     "url": "https://kgsearch.googleapis.com/$discovery/rest?version=v1",
     "name": "KnowledgeGraphSearch"
   },
   {
     "version": "v1",
     "url": "https://language.googleapis.com/$discovery/rest?version=v1",
+    "name": "Language"
+  },
+  {
+    "version": "v2",
+    "url": "https://language.googleapis.com/$discovery/rest?version=v2",
     "name": "Language"
   },
   {
@@ -911,6 +1016,11 @@
   },
   {
     "version": "v1",
+    "url": "https://looker.googleapis.com/$discovery/rest?version=v1",
+    "name": "Looker"
+  },
+  {
+    "version": "v1",
     "url": "https://ml.googleapis.com/$discovery/rest?version=v1",
     "name": "MachineLearning"
   },
@@ -925,6 +1035,11 @@
     "name": "Manufacturers"
   },
   {
+    "version": "v1alpha",
+    "url": "https://marketingplatformadmin.googleapis.com/$discovery/rest?version=v1alpha",
+    "name": "MarketingPlatformAdmin"
+  },
+  {
     "version": "v1",
     "url": "https://memcache.googleapis.com/$discovery/rest?version=v1",
     "name": "Memcache"
@@ -935,9 +1050,19 @@
     "name": "Memcache"
   },
   {
+    "version": "v1",
+    "url": "https://metastore.googleapis.com/$discovery/rest?version=v1",
+    "name": "Metastore"
+  },
+  {
     "version": "v1beta",
     "url": "https://metastore.googleapis.com/$discovery/rest?version=v1beta",
     "name": "Metastore"
+  },
+  {
+    "version": "v1",
+    "url": "https://migrationcenter.googleapis.com/$discovery/rest?version=v1",
+    "name": "MigrationCenter"
   },
   {
     "version": "v3",
@@ -948,11 +1073,6 @@
     "version": "v1",
     "url": "https://mybusinessaccountmanagement.googleapis.com/$discovery/rest?version=v1",
     "name": "MyBusinessAccountManagement"
-  },
-  {
-    "version": "v1",
-    "url": "https://mybusinessbusinesscalls.googleapis.com/$discovery/rest?version=v1",
-    "name": "MyBusinessBusinessCalls"
   },
   {
     "version": "v1",
@@ -1016,6 +1136,11 @@
   },
   {
     "version": "v2",
+    "url": "https://notebooks.googleapis.com/$discovery/rest?version=v2",
+    "name": "Notebooks"
+  },
+  {
+    "version": "v2",
     "url": "https://www.googleapis.com/discovery/v1/apis/oauth2/v2/rest",
     "name": "OAuth2"
   },
@@ -1061,6 +1186,11 @@
   },
   {
     "version": "v1",
+    "url": "https://places.googleapis.com/$discovery/rest?version=v1",
+    "name": "Places"
+  },
+  {
+    "version": "v1",
     "url": "https://playcustomapp.googleapis.com/$discovery/rest?version=v1",
     "name": "PlayCustomApp"
   },
@@ -1068,6 +1198,11 @@
     "version": "v1beta1",
     "url": "https://playdeveloperreporting.googleapis.com/$discovery/rest?version=v1beta1",
     "name": "PlayDeveloperReporting"
+  },
+  {
+    "version": "v1alpha1",
+    "url": "https://playgrouping.googleapis.com/$discovery/rest?version=v1alpha1",
+    "name": "PlayGrouping"
   },
   {
     "version": "v1",
@@ -1111,6 +1246,11 @@
   },
   {
     "version": "v1",
+    "url": "https://publicca.googleapis.com/$discovery/rest?version=v1",
+    "name": "PublicCA"
+  },
+  {
+    "version": "v1",
     "url": "https://pubsub.googleapis.com/$discovery/rest?version=v1",
     "name": "PubSub"
   },
@@ -1118,6 +1258,16 @@
     "version": "v1",
     "url": "https://pubsublite.googleapis.com/$discovery/rest?version=v1",
     "name": "PubSubLite"
+  },
+  {
+    "version": "v1",
+    "url": "https://rapidmigrationassessment.googleapis.com/$discovery/rest?version=v1",
+    "name": "RapidMigrationAssessment"
+  },
+  {
+    "version": "v1",
+    "url": "https://readerrevenuesubscriptionlinking.googleapis.com/$discovery/rest?version=v1",
+    "name": "ReaderRevenueSubscriptionLinking"
   },
   {
     "version": "v1",
@@ -1190,6 +1340,11 @@
     "name": "SafeBrowsing"
   },
   {
+    "version": "v5",
+    "url": "https://safebrowsing.googleapis.com/$discovery/rest?version=v5",
+    "name": "SafeBrowsing"
+  },
+  {
     "version": "v1alpha1",
     "url": "https://sasportal.googleapis.com/$discovery/rest?version=v1alpha1",
     "name": "SASPortal"
@@ -1198,6 +1353,11 @@
     "version": "v1",
     "url": "https://script.googleapis.com/$discovery/rest?version=v1",
     "name": "Script"
+  },
+  {
+    "version": "v0",
+    "url": "https://searchads360.googleapis.com/$discovery/rest?version=v0",
+    "name": "SearchAds360"
   },
   {
     "version": "v1",
@@ -1360,6 +1520,16 @@
     "name": "TPU"
   },
   {
+    "version": "v2",
+    "url": "https://tpu.googleapis.com/$discovery/rest?version=v2",
+    "name": "TPU"
+  },
+  {
+    "version": "v3",
+    "url": "https://trafficdirector.googleapis.com/$discovery/rest?version=v3",
+    "name": "TrafficDirector"
+  },
+  {
     "version": "v1",
     "url": "https://transcoder.googleapis.com/$discovery/rest?version=v1",
     "name": "Transcoder"
@@ -1373,6 +1543,11 @@
     "version": "v3",
     "url": "https://translation.googleapis.com/$discovery/rest?version=v3",
     "name": "Translate"
+  },
+  {
+    "version": "v1",
+    "url": "https://travelimpactmodel.googleapis.com/$discovery/rest?version=v1",
+    "name": "TravelImpactModel"
   },
   {
     "version": "v1",
@@ -1408,6 +1583,21 @@
     "version": "v1",
     "url": "https://vmmigration.googleapis.com/$discovery/rest?version=v1",
     "name": "VMMigration"
+  },
+  {
+    "version": "v1",
+    "url": "https://vmwareengine.googleapis.com/$discovery/rest?version=v1",
+    "name": "VMwareEngine"
+  },
+  {
+    "version": "v1",
+    "url": "https://vpcaccess.googleapis.com/$discovery/rest?version=v1",
+    "name": "VPCAccess"
+  },
+  {
+    "version": "v1",
+    "url": "https://walletobjects.googleapis.com/$discovery/rest?version=v1",
+    "name": "WalletObjects"
   },
   {
     "version": "v1",
@@ -1448,6 +1638,21 @@
     "version": "v1beta",
     "url": "https://workflows.googleapis.com/$discovery/rest?version=v1beta",
     "name": "Workflows"
+  },
+  {
+    "version": "v1",
+    "url": "https://workloadmanager.googleapis.com/$discovery/rest?version=v1",
+    "name": "WorkloadManager"
+  },
+  {
+    "version": "v1",
+    "url": "https://workspaceevents.googleapis.com/$discovery/rest?version=v1",
+    "name": "WorkspaceEvents"
+  },
+  {
+    "version": "v1",
+    "url": "https://workstations.googleapis.com/$discovery/rest?version=v1",
+    "name": "Workstations"
   },
   {
     "version": "v3",
