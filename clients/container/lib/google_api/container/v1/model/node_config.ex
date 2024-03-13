@@ -26,6 +26,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Whether the nodes are created as preemptible VM instances. See: https://cloud.google.com/compute/docs/instances/preemptible for more information about preemptible VM instances.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster or node pool creation. Each tag within the list must comply with RFC1035.
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
+  *   `secondaryBootDiskUpdateStrategy` (*type:* `GoogleApi.Container.V1.Model.SecondaryBootDiskUpdateStrategy.t`, *default:* `nil`) - Secondary boot disk update strategy.
   *   `localSsdCount` (*type:* `integer()`, *default:* `nil`) - The number of local SSD disks to be attached to the node. The limit for this value is dependent upon the maximum number of disks available on a machine per zone. See: https://cloud.google.com/compute/docs/disks/local-ssd for more information.
   *   `soleTenantConfig` (*type:* `GoogleApi.Container.V1.Model.SoleTenantConfig.t`, *default:* `nil`) - Parameters for node pools to be backed by shared sole tenant node groups.
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
@@ -69,6 +70,8 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :preemptible => boolean() | nil,
           :tags => list(String.t()) | nil,
           :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
+          :secondaryBootDiskUpdateStrategy =>
+            GoogleApi.Container.V1.Model.SecondaryBootDiskUpdateStrategy.t() | nil,
           :localSsdCount => integer() | nil,
           :soleTenantConfig => GoogleApi.Container.V1.Model.SoleTenantConfig.t() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
@@ -112,6 +115,11 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:preemptible)
   field(:tags, type: :list)
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
+
+  field(:secondaryBootDiskUpdateStrategy,
+    as: GoogleApi.Container.V1.Model.SecondaryBootDiskUpdateStrategy
+  )
+
   field(:localSsdCount)
   field(:soleTenantConfig, as: GoogleApi.Container.V1.Model.SoleTenantConfig)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
