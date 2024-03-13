@@ -45,7 +45,7 @@ jobs:
         with:
           github-token: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
           script: |
-            const existing = await github.pulls.list({
+            const existing = await github.rest.pulls.list({
               owner: context.repo.owner,
               repo: context.repo.repo,
               state: "open",
@@ -53,7 +53,7 @@ jobs:
             });
             if (existing.data.length == 0) {
               core.info("No existing PR found.");
-              const result = await github.pulls.create({
+              const result = await github.rest.pulls.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 title: "chore: Automatic update of apis.json",
@@ -66,7 +66,7 @@ jobs:
             } else {
               const prNumber = existing.data[0].number;
               core.info("Found existing PR number " + prNumber);
-              await github.issues.createComment({
+              await github.rest.issues.createComment({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
                 issue_number: prNumber,
