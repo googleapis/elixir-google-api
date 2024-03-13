@@ -9,68 +9,27 @@ jobs:
   update-api-list:
     if: ${{ github.repository_owner == 'googleapis' }}
     runs-on: ubuntu-20.04
+    env:
+      GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
+      - name: Install Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3"
       - name: Install Elixir
         uses: erlef/setup-beam@v1
         with:
           otp-version: "23.3.4.19"
           elixir-version: "1.12.3-otp-23"
           version-type: strict
+      - name: Install tools
+        run: |
+          gem install --no-document toys
       - name: Compile
         run: |
           mix do deps.get, compile
-      - name: Find apis.json updates
+      - name: Discover updates
         run: |
-          mix google_apis.discover_update apis.json
-          if [ -n "$(git diff)" ]; then
-            echo "FOUND_CHANGES=true" >> "$GITHUB_ENV"
-            echo "Changes were made to apis.json"
-          else
-            echo "FOUND_CHANGES=false" >> "$GITHUB_ENV"
-            echo "No changes were made to apis.json"
-          fi
-      - name: Push changes to branch
-        if: ${{ env.FOUND_CHANGES == 'true' }}
-        run: |
-          git config --global user.email "yoshi-automation@google.com"
-          git config --global user.name "Yoshi Automation Bot"
-          git checkout -b action/auto-update-api-list
-          git commit -a -m "chore: Automatic update of apis.json"
-          git push -f origin action/auto-update-api-list
-      - name: Open PR
-        if: ${{ env.FOUND_CHANGES == 'true' }}
-        uses: actions/github-script@v7
-        with:
-          github-token: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-          script: |
-            const existing = await github.rest.pulls.list({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              state: "open",
-              head: context.repo.owner + ":action/auto-update-api-list"
-            });
-            if (existing.data.length == 0) {
-              core.info("No existing PR found.");
-              const result = await github.rest.pulls.create({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                title: "chore: Automatic update of apis.json",
-                head: context.repo.owner + ":action/auto-update-api-list",
-                base: "main",
-                maintainer_can_modify: true,
-                body: "Created by the update-api-list workflow.\n\nBe sure to review and edit CHECKME entries before merging."
-              });
-              core.info("Created PR number " + result.data.number);
-            } else {
-              const prNumber = existing.data[0].number;
-              core.info("Found existing PR number " + prNumber);
-              await github.rest.issues.createComment({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                issue_number: prNumber,
-                body: "Updated by the update-api-list workflow"
-              });
-              core.info("Added comment to existing PR.")
-            }
+          toys update-api-list -v --fork
