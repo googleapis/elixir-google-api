@@ -23,10 +23,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
 
   *   `allowedCaCerts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Specifies a list of allowed custom CA certificates (in DER format) for HTTPS verification. This overrides the default SSL trust store. If this is empty or unspecified, Dialogflow will use Google's default trust store to verify certificates. N.B. Make sure the HTTPS server certificates are signed with "subject alt name". For instance a certificate can be self-signed using the following command, ``` openssl x509 -req -days 200 -in example.com.csr \\ -signkey example.com.key \\ -out example.com.crt \\ -extfile <(printf "\\nsubjectAltName='DNS:www.example.com'") ```
   *   `httpMethod` (*type:* `String.t`, *default:* `nil`) - Optional. HTTP method for the flexible webhook calls. Standard webhook always uses POST.
+  *   `oauthConfig` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig.t`, *default:* `nil`) - Optional. The OAuth configuration of the webhook. If specified, Dialogflow will initiate the OAuth client credential flow to exchange an access token from the 3rd party platform and put it in the auth header.
   *   `parameterMapping` (*type:* `map()`, *default:* `nil`) - Optional. Maps the values extracted from specific fields of the flexible webhook response into session parameters. - Key: session parameter name - Value: field path in the webhook response
   *   `password` (*type:* `String.t`, *default:* `nil`) - The password for HTTP Basic authentication.
   *   `requestBody` (*type:* `String.t`, *default:* `nil`) - Optional. Defines a custom JSON object as request body to send to flexible webhook.
   *   `requestHeaders` (*type:* `map()`, *default:* `nil`) - The HTTP request headers to send together with webhook requests.
+  *   `serviceAgentAuth` (*type:* `String.t`, *default:* `nil`) - Optional. Indicate the auth token type generated from the [Diglogflow service agent](https://cloud.google.com/iam/docs/service-agents#dialogflow-service-agent). The generated token is sent in the Authorization header.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The webhook URI for receiving POST requests. It must use https protocol.
   *   `username` (*type:* `String.t`, *default:* `nil`) - The user name for HTTP Basic authentication.
   *   `webhookType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of the webhook.
@@ -37,10 +39,14 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
   @type t :: %__MODULE__{
           :allowedCaCerts => list(String.t()) | nil,
           :httpMethod => String.t() | nil,
+          :oauthConfig =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig.t()
+            | nil,
           :parameterMapping => map() | nil,
           :password => String.t() | nil,
           :requestBody => String.t() | nil,
           :requestHeaders => map() | nil,
+          :serviceAgentAuth => String.t() | nil,
           :uri => String.t() | nil,
           :username => String.t() | nil,
           :webhookType => String.t() | nil
@@ -48,10 +54,17 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGen
 
   field(:allowedCaCerts, type: :list)
   field(:httpMethod)
+
+  field(:oauthConfig,
+    as:
+      GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1WebhookGenericWebServiceOAuthConfig
+  )
+
   field(:parameterMapping, type: :map)
   field(:password)
   field(:requestBody)
   field(:requestHeaders, type: :map)
+  field(:serviceAgentAuth)
   field(:uri)
   field(:username)
   field(:webhookType)

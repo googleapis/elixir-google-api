@@ -30,6 +30,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters
   *   `geoLocation` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleTypeLatLng.t`, *default:* `nil`) - The geo location of this conversational query.
   *   `parameters` (*type:* `map()`, *default:* `nil`) - Additional parameters to be put into session parameters. To remove a parameter from the session, clients should explicitly set the parameter value to null. You can reference the session parameters in the agent with the following format: $session.params.parameter-id. Depending on your protocol or client library language, this is a map, associative array, symbol table, dictionary, or JSON object composed of a collection of (MapKey, MapValue) pairs: * MapKey type: string * MapKey value: parameter name * MapValue type: If parameter's entity type is a composite entity then use map, otherwise, depending on the parameter value type, it could be one of string, number, boolean, null, list or map. * MapValue value: If parameter's entity type is a composite entity then use map from composite entity property names to property values, otherwise, use parameter value.
   *   `payload` (*type:* `map()`, *default:* `nil`) - This field can be used to pass custom data into the webhook associated with the agent. Arbitrary JSON objects are supported. Some integrations that query a Dialogflow agent may provide additional information in the payload. In particular, for the Dialogflow Phone Gateway integration, this field has the form: ``` { "telephony": { "caller_id": "+18558363987" } } ```
+  *   `populateDataStoreConnectionSignals` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true and data stores are involved in serving the request then DetectIntentResponse.query_result.data_store_connection_signals will be filled with data that can help evaluations.
   *   `searchConfig` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SearchConfig.t`, *default:* `nil`) - Optional. Search configuration for UCS search queries.
   *   `sessionEntityTypes` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SessionEntityType.t)`, *default:* `nil`) - Additional session entity types to replace or extend developer entity types with. The entity synonyms apply to all languages and persist for the session of this query.
   *   `sessionTtl` (*type:* `String.t`, *default:* `nil`) - Optional. Configure lifetime of the Dialogflow session. By default, a Dialogflow session remains active and its data is stored for 30 minutes after the last request is sent for the session. This value should be no longer than 1 day.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters
           :geoLocation => GoogleApi.Dialogflow.V3.Model.GoogleTypeLatLng.t() | nil,
           :parameters => map() | nil,
           :payload => map() | nil,
+          :populateDataStoreConnectionSignals => boolean() | nil,
           :searchConfig =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SearchConfig.t() | nil,
           :sessionEntityTypes =>
@@ -68,6 +70,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryParameters
   field(:geoLocation, as: GoogleApi.Dialogflow.V3.Model.GoogleTypeLatLng)
   field(:parameters, type: :map)
   field(:payload, type: :map)
+  field(:populateDataStoreConnectionSignals)
   field(:searchConfig, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SearchConfig)
 
   field(:sessionEntityTypes,

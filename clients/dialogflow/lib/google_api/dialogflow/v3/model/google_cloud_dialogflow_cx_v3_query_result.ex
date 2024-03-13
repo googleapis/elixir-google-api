@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
   *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Returns the current advanced settings including IVR settings. Even though the operations configured by these settings are performed by Dialogflow, the client may need to perform special logic at the moment. For example, if Dialogflow exports audio to Google Cloud Storage, then the client may need to wait for the resulting object to appear in the bucket before proceeding.
   *   `allowAnswerFeedback` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the Thumbs up/Thumbs down rating controls are need to be shown for the response in the Dialogflow Messenger widget.
   *   `currentPage` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page.t`, *default:* `nil`) - The current Page. Some, not all fields are filled in this message, including but not limited to `name` and `display_name`.
+  *   `dataStoreConnectionSignals` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DataStoreConnectionSignals.t`, *default:* `nil`) - Optional. Data store connection feature output signals. Filled only when data stores are involved in serving the query and DetectIntentRequest.populate data_store_connection_quality_signals is set to true in the request.
   *   `diagnosticInfo` (*type:* `map()`, *default:* `nil`) - The free-form diagnostic info. For example, this field could contain webhook call latency. The fields of this data can change without notice, so you should not write code that depends on its structure. One of the fields is called "Alternative Matched Intents", which may aid with debugging. The following describes these intent results: - The list is empty if no intent was matched to end-user input. - Only intents that are referenced in the currently active flow are included. - The matched intent is included. - Other intents that could have matched end-user input, but did not match because they are referenced by intent routes that are out of [scope](https://cloud.google.com/dialogflow/cx/docs/concept/handler#scope), are included. - Other intents referenced by intent routes in scope that matched end-user input, but had a lower confidence score.
   *   `dtmf` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput.t`, *default:* `nil`) - If a DTMF was provided as input, this field will contain a copy of the DtmfInput.
   *   `intent` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Intent.t`, *default:* `nil`) - The Intent that matched the conversational query. Some, not all fields are filled in this message, including but not limited to: `name` and `display_name`. This field is deprecated, please use QueryResult.match instead.
@@ -48,6 +49,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t() | nil,
           :allowAnswerFeedback => boolean() | nil,
           :currentPage => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page.t() | nil,
+          :dataStoreConnectionSignals =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DataStoreConnectionSignals.t()
+            | nil,
           :diagnosticInfo => map() | nil,
           :dtmf => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput.t() | nil,
           :intent => GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Intent.t() | nil,
@@ -74,6 +78,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3QueryResult do
 
   field(:allowAnswerFeedback)
   field(:currentPage, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Page)
+
+  field(:dataStoreConnectionSignals,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DataStoreConnectionSignals
+  )
+
   field(:diagnosticInfo, type: :map)
   field(:dtmf, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DtmfInput)
   field(:intent, as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Intent)
