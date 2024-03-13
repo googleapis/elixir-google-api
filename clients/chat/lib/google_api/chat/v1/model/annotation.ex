@@ -22,6 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
   ## Attributes
 
   *   `length` (*type:* `integer()`, *default:* `nil`) - Length of the substring in the plain-text message body this annotation corresponds to.
+  *   `richLinkMetadata` (*type:* `GoogleApi.Chat.V1.Model.RichLinkMetadata.t`, *default:* `nil`) - The metadata for a rich link.
   *   `slashCommand` (*type:* `GoogleApi.Chat.V1.Model.SlashCommandMetadata.t`, *default:* `nil`) - The metadata for a slash command.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Start index (0-based, inclusive) in the plain-text message body this annotation corresponds to.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this annotation.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
 
   @type t :: %__MODULE__{
           :length => integer() | nil,
+          :richLinkMetadata => GoogleApi.Chat.V1.Model.RichLinkMetadata.t() | nil,
           :slashCommand => GoogleApi.Chat.V1.Model.SlashCommandMetadata.t() | nil,
           :startIndex => integer() | nil,
           :type => String.t() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.Chat.V1.Model.Annotation do
         }
 
   field(:length)
+  field(:richLinkMetadata, as: GoogleApi.Chat.V1.Model.RichLinkMetadata)
   field(:slashCommand, as: GoogleApi.Chat.V1.Model.SlashCommandMetadata)
   field(:startIndex)
   field(:type)
