@@ -37,6 +37,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
   *   `updationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the resource was updated and recorded at partner service.
+  *   `userLabelSet` (*type:* `GoogleApi.Redis.V1beta1.Model.UserLabels.t`, *default:* `nil`) - User-provided labels associated with the resource
   *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-provided labels, represented as a dictionary where each label is a single key value pair.
   """
 
@@ -60,6 +61,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
           :resourceContainer => String.t() | nil,
           :resourceName => String.t() | nil,
           :updationTime => DateTime.t() | nil,
+          :userLabelSet => GoogleApi.Redis.V1beta1.Model.UserLabels.t() | nil,
           :userLabels => map() | nil
         }
 
@@ -79,6 +81,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   field(:resourceContainer)
   field(:resourceName)
   field(:updationTime, as: DateTime)
+  field(:userLabelSet, as: GoogleApi.Redis.V1beta1.Model.UserLabels)
   field(:userLabels, type: :map)
 end
 
