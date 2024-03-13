@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ListBackupsResponse
 
   ## Attributes
 
-  *   `backups` (*type:* `list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Backup.t)`, *default:* `nil`) - List of all backups for the project. Ordered by `location ASC, create_time DESC, name ASC`.
+  *   `backups` (*type:* `list(GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Backup.t)`, *default:* `nil`) - List of all backups for the project.
   *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - List of locations that existing backups were not able to be fetched from. Instead of failing the entire requests when a single location is unreachable, this response returns a partial result set and list of locations unable to be reached here. The request can be retried against a single location to get a concrete error.
   """
 

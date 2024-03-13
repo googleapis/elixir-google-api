@@ -22,6 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   ## Attributes
 
   *   `appEngineIntegrationMode` (*type:* `String.t`, *default:* `nil`) - The App Engine integration mode to use for this database.
+  *   `cmekConfig` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1CmekConfig.t`, *default:* `nil`) - Optional. Presence indicates CMEK is enabled for this database.
   *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - The concurrency control mode to use for this database.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this database was created. Databases created before 2016 do not populate create_time.
   *   `deleteProtectionState` (*type:* `String.t`, *default:* `nil`) - State of delete protection for the database.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
 
   @type t :: %__MODULE__{
           :appEngineIntegrationMode => String.t() | nil,
+          :cmekConfig => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1CmekConfig.t() | nil,
           :concurrencyMode => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :deleteProtectionState => String.t() | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
         }
 
   field(:appEngineIntegrationMode)
+  field(:cmekConfig, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1CmekConfig)
   field(:concurrencyMode)
   field(:createTime, as: DateTime)
   field(:deleteProtectionState)
