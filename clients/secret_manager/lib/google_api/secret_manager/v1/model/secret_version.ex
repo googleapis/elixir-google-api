@@ -23,10 +23,12 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
 
   *   `clientSpecifiedPayloadChecksum` (*type:* `boolean()`, *default:* `nil`) - Output only. True if payload checksum specified in SecretPayload object has been received by SecretManagerService on SecretManagerService.AddSecretVersion.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the SecretVersion was created.
+  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t`, *default:* `nil`) - Output only. The customer-managed encryption status of the SecretVersion. Only populated if customer-managed encryption is used and Secret is a Regionalised Secret.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. Etag of the currently stored SecretVersion.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. SecretVersion IDs in a Secret start at 1 and are incremented for each subsequent version of the secret.
   *   `replicationStatus` (*type:* `GoogleApi.SecretManager.V1.Model.ReplicationStatus.t`, *default:* `nil`) - The replication status of the SecretVersion.
+  *   `scheduledDestroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Output only. Scheduled destroy time for secret version. This is a part of the Delayed secret version destroy feature. For a Secret with a valid version destroy TTL, when a secert version is destroyed, version is moved to disabled state and it is scheduled for destruction Version is destroyed only after the scheduled_destroy_time.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the SecretVersion.
   """
 
@@ -35,19 +37,28 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
   @type t :: %__MODULE__{
           :clientSpecifiedPayloadChecksum => boolean() | nil,
           :createTime => DateTime.t() | nil,
+          :customerManagedEncryption =>
+            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t() | nil,
           :destroyTime => DateTime.t() | nil,
           :etag => String.t() | nil,
           :name => String.t() | nil,
           :replicationStatus => GoogleApi.SecretManager.V1.Model.ReplicationStatus.t() | nil,
+          :scheduledDestroyTime => DateTime.t() | nil,
           :state => String.t() | nil
         }
 
   field(:clientSpecifiedPayloadChecksum)
   field(:createTime, as: DateTime)
+
+  field(:customerManagedEncryption,
+    as: GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus
+  )
+
   field(:destroyTime, as: DateTime)
   field(:etag)
   field(:name)
   field(:replicationStatus, as: GoogleApi.SecretManager.V1.Model.ReplicationStatus)
+  field(:scheduledDestroyTime, as: DateTime)
   field(:state)
 end
 

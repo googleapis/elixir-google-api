@@ -23,6 +23,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and alphanumerics in between these symbols. The total size of annotation keys and values must be less than 16KiB.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the Secret was created.
+  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t`, *default:* `nil`) - Optional. The customer-managed encryption configuration of the Regionalised Secrets. If no configuration is provided, Google-managed default encryption is used. Updates to the Secret encryption configuration only apply to SecretVersions added afterwards. They do not apply retroactively to existing SecretVersions.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag of the currently stored Secret.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Timestamp in UTC when the Secret is scheduled to expire. This is always provided on output, regardless of what was sent on input.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\\p{Ll}\\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\\p{Ll}\\p{Lo}\\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
@@ -32,6 +33,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   *   `topics` (*type:* `list(GoogleApi.SecretManager.V1.Model.Topic.t)`, *default:* `nil`) - Optional. A list of up to 10 Pub/Sub topics to which messages are published when control plane operations are called on the secret or its versions.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - Input only. The TTL for the Secret.
   *   `versionAliases` (*type:* `map()`, *default:* `nil`) - Optional. Mapping from version alias to version name. A version alias is a string with a maximum length of 63 characters and can contain uppercase and lowercase letters, numerals, and the hyphen (`-`) and underscore ('_') characters. An alias string must start with a letter and cannot be the string 'latest' or 'NEW'. No more than 50 aliases can be assigned to a given secret. Version-Alias pairs will be viewable via GetSecret and modifiable via UpdateSecret. Access by alias is only be supported on GetSecretVersion and AccessSecretVersion.
+  *   `versionDestroyTtl` (*type:* `String.t`, *default:* `nil`) - Optional. Secret Version TTL after destruction request This is a part of the Delayed secret version destroy feature. For secret with TTL>0, version destruction doesn't happen immediately on calling destroy instead the version goes to a disabled state and destruction happens after the TTL expires.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,6 +41,8 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   @type t :: %__MODULE__{
           :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
+          :customerManagedEncryption =>
+            GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption.t() | nil,
           :etag => String.t() | nil,
           :expireTime => DateTime.t() | nil,
           :labels => map() | nil,
@@ -47,11 +51,15 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
           :rotation => GoogleApi.SecretManager.V1.Model.Rotation.t() | nil,
           :topics => list(GoogleApi.SecretManager.V1.Model.Topic.t()) | nil,
           :ttl => String.t() | nil,
-          :versionAliases => map() | nil
+          :versionAliases => map() | nil,
+          :versionDestroyTtl => String.t() | nil
         }
 
   field(:annotations, type: :map)
   field(:createTime, as: DateTime)
+
+  field(:customerManagedEncryption, as: GoogleApi.SecretManager.V1.Model.CustomerManagedEncryption)
+
   field(:etag)
   field(:expireTime, as: DateTime)
   field(:labels, type: :map)
@@ -61,6 +69,7 @@ defmodule GoogleApi.SecretManager.V1.Model.Secret do
   field(:topics, as: GoogleApi.SecretManager.V1.Model.Topic, type: :list)
   field(:ttl)
   field(:versionAliases, type: :map)
+  field(:versionDestroyTtl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecretManager.V1.Model.Secret do
