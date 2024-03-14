@@ -21,27 +21,29 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Doc
 
   ## Attributes
 
-  *   `digitalParsingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DigitalParsingConfig.t`, *default:* `nil`) - Configurations applied to digital parser.
-  *   `ocrParsingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1OcrParsingConfig.t`, *default:* `nil`) - Configurations applied to OCR parser. Currently it only applies to PDFs.
+  *   `digitalParsingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig.t`, *default:* `nil`) - Configurations applied to digital parser.
+  *   `ocrParsingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig.t`, *default:* `nil`) - Configurations applied to OCR parser. Currently it only applies to PDFs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :digitalParsingConfig =>
-            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DigitalParsingConfig.t()
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig.t()
             | nil,
           :ocrParsingConfig =>
-            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1OcrParsingConfig.t()
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig.t()
             | nil
         }
 
   field(:digitalParsingConfig,
-    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DigitalParsingConfig
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigDigitalParsingConfig
   )
 
   field(:ocrParsingConfig,
-    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1OcrParsingConfig
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfigParsingConfigOcrParsingConfig
   )
 end
 
