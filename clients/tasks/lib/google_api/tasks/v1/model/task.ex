@@ -36,6 +36,7 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the task. This is either "needsAction" or "completed".
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task.
   *   `updated` (*type:* `String.t`, *default:* `nil`) - Last modification time of the task (as a RFC 3339 timestamp).
+  *   `webViewLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to the task in the Google Tasks Web UI. This field is read-only.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -55,7 +56,8 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
           :selfLink => String.t() | nil,
           :status => String.t() | nil,
           :title => String.t() | nil,
-          :updated => String.t() | nil
+          :updated => String.t() | nil,
+          :webViewLink => String.t() | nil
         }
 
   field(:completed)
@@ -73,6 +75,7 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
   field(:status)
   field(:title)
   field(:updated)
+  field(:webViewLink)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Tasks.V1.Model.Task do
