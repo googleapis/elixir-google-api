@@ -25,6 +25,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the Channel Group. Max length of 80 characters.
   *   `groupingRule` (*type:* `list(GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaGroupingRule.t)`, *default:* `nil`) - Required. The grouping rules of channels. Maximum number of rules is 50.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this Channel Group resource. Format: properties/{property}/channelGroups/{channel_group}
+  *   `primary` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, this channel group will be used as the default channel group for reports. Only one channel group can be set as `primary` at any time. If the `primary` field gets set on a channel group, it will get unset on the previous primary channel group. The Google Analytics predefined channel group is the primary by default.
   *   `systemDefined` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, then this channel group is the Default Channel Group predefined by Google Analytics. Display name and grouping rules cannot be updated for this channel group.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
             )
             | nil,
           :name => String.t() | nil,
+          :primary => boolean() | nil,
           :systemDefined => boolean() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaChan
   )
 
   field(:name)
+  field(:primary)
   field(:systemDefined)
 end
 
