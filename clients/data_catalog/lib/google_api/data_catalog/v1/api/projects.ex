@@ -447,7 +447,7 @@ defmodule GoogleApi.DataCatalog.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. The resource name of the entry group in URL format. Note: The entry group itself and its child resources might not be stored in the location specified in its name.
+  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. Identifier. The resource name of the entry group in URL format. Note: The entry group itself and its child resources might not be stored in the location specified in its name.
   *   `locations_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1399,7 +1399,7 @@ defmodule GoogleApi.DataCatalog.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. Output only. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.
+  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. Output only. Identifier. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.
   *   `locations_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
@@ -2028,7 +2028,7 @@ defmodule GoogleApi.DataCatalog.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format where tag ID is a system-generated identifier. Note: The tag itself might not be stored in the location specified in its name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. Identifier. The resource name of the tag in URL format where tag ID is a system-generated identifier. Note: The tag itself might not be stored in the location specified in its name.
   *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entries_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
@@ -2467,7 +2467,7 @@ defmodule GoogleApi.DataCatalog.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. The resource name of the tag in URL format where tag ID is a system-generated identifier. Note: The tag itself might not be stored in the location specified in its name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. Identifier. The resource name of the tag in URL format where tag ID is a system-generated identifier. Note: The tag itself might not be stored in the location specified in its name.
   *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
   *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
@@ -3212,7 +3212,7 @@ defmodule GoogleApi.DataCatalog.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tagTemplate.name`. The resource name of the tag template in URL format. Note: The tag template itself and its child resources might not be stored in the location specified in its name.
+  *   `projects_id` (*type:* `String.t`) - Part of `tagTemplate.name`. Identifier. The resource name of the tag template in URL format. Note: The tag template itself and its child resources might not be stored in the location specified in its name.
   *   `locations_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
   *   `tag_templates_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters

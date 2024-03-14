@@ -24,7 +24,7 @@ defmodule GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1EntryGroup do
   *   `dataCatalogTimestamps` (*type:* `GoogleApi.DataCatalog.V1.Model.GoogleCloudDatacatalogV1SystemTimestamps.t`, *default:* `nil`) - Output only. Timestamps of the entry group. Default value is empty.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Entry group description. Can consist of several sentences or paragraphs that describe the entry group contents. Default value is an empty string.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short name to identify the entry group, for example, "analytics data - jan 2011". Default value is an empty string.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the entry group in URL format. Note: The entry group itself and its child resources might not be stored in the location specified in its name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the entry group in URL format. Note: The entry group itself and its child resources might not be stored in the location specified in its name.
   """
 
   use GoogleApi.Gax.ModelBase
