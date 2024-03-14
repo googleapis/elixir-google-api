@@ -22,7 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ImportP
   ## Attributes
 
   *   `externalProcessorVersionSource` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ImportProcessorVersionRequestExternalProcessorVersionSource.t`, *default:* `nil`) - The source processor version to import from. It can be from a different environment and region than the destination processor.
-  *   `processorVersionSource` (*type:* `String.t`, *default:* `nil`) - The source processor version to import from. The source processor version and destination processor need to be in the same environment and region.
+  *   `processorVersionSource` (*type:* `String.t`, *default:* `nil`) - The source processor version to import from. The source processor version and destination processor need to be in the same environment and region. Note that ProcessorVersions with `model_type` `MODEL_TYPE_LLM` are not supported.
   """
 
   use GoogleApi.Gax.ModelBase
