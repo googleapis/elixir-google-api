@@ -31,6 +31,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   *   `name` (*type:* `String.t`, *default:* `nil`) - A unique name (within the transfer project) assigned when the job is created. If this field is empty in a CreateTransferJobRequest, Storage Transfer Service assigns a unique name. Otherwise, the specified name is used as the unique name for this job. If the specified name is in use by a job, the creation request fails with an ALREADY_EXISTS error. This name must start with `"transferJobs/"` prefix and end with a letter or a number, and should be no more than 128 characters. For transfers involving PosixFilesystem, this name must start with `transferJobs/OPI` specifically. For all other transfer types, this name must not start with `transferJobs/OPI`. Non-PosixFilesystem example: `"transferJobs/^(?!OPI)[A-Za-z0-9-._~]*[A-Za-z0-9]$"` PosixFilesystem example: `"transferJobs/OPI^[A-Za-z0-9-._~]*[A-Za-z0-9]$"` Applications must not rely on the enforcement of naming requirements involving OPI. Invalid job names fail with an INVALID_ARGUMENT error.
   *   `notificationConfig` (*type:* `GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration. This is not supported for transfers involving PosixFilesystem.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud project that owns the job.
+  *   `replicationSpec` (*type:* `GoogleApi.StorageTransfer.V1.Model.ReplicationSpec.t`, *default:* `nil`) - Replication specification.
   *   `schedule` (*type:* `GoogleApi.StorageTransfer.V1.Model.Schedule.t`, *default:* `nil`) - Specifies schedule for the transfer job. This is an optional field. When the field is not set, the job never executes a transfer, unless you invoke RunTransferJob or update the job to have a non-empty schedule.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the job. This value MUST be specified for `CreateTransferJobRequests`. **Note:** The effect of the new job status takes place during a subsequent job run. For example, if you change the job status from ENABLED to DISABLED, and an operation spawned by the transfer is running, the status change would not affect the current operation.
   *   `transferSpec` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferSpec.t`, *default:* `nil`) - Transfer specification.
@@ -49,6 +50,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
           :name => String.t() | nil,
           :notificationConfig => GoogleApi.StorageTransfer.V1.Model.NotificationConfig.t() | nil,
           :projectId => String.t() | nil,
+          :replicationSpec => GoogleApi.StorageTransfer.V1.Model.ReplicationSpec.t() | nil,
           :schedule => GoogleApi.StorageTransfer.V1.Model.Schedule.t() | nil,
           :status => String.t() | nil,
           :transferSpec => GoogleApi.StorageTransfer.V1.Model.TransferSpec.t() | nil
@@ -64,6 +66,7 @@ defmodule GoogleApi.StorageTransfer.V1.Model.TransferJob do
   field(:name)
   field(:notificationConfig, as: GoogleApi.StorageTransfer.V1.Model.NotificationConfig)
   field(:projectId)
+  field(:replicationSpec, as: GoogleApi.StorageTransfer.V1.Model.ReplicationSpec)
   field(:schedule, as: GoogleApi.StorageTransfer.V1.Model.Schedule)
   field(:status)
   field(:transferSpec, as: GoogleApi.StorageTransfer.V1.Model.TransferSpec)
