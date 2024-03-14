@@ -24,7 +24,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description for this field. Defaults to an empty string.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name for this field. Defaults to an empty string.
   *   `isRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this is a required field. Defaults to false.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the tag template field in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field} Note that this TagTemplateField may not actually be stored in the location in this name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the tag template field in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template}/fields/{field} Note that this TagTemplateField may not actually be stored in the location in this name.
   *   `order` (*type:* `integer()`, *default:* `nil`) - The order of this field with respect to other fields in this tag template. A higher value indicates a more important field. The value can be negative. Multiple fields can have the same order, and field orders within a tag do not have to be sequential.
   *   `type` (*type:* `GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1FieldType.t`, *default:* `nil`) - Required. The type of value this tag field can contain.
   """
