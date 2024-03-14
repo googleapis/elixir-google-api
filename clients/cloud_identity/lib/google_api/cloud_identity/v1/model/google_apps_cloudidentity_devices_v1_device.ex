@@ -34,6 +34,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `enabledDeveloperOptions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether developer options is enabled on device.
   *   `enabledUsbDebugging` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether USB debugging is enabled on device.
   *   `encryptionState` (*type:* `String.t`, *default:* `nil`) - Output only. Device encryption state.
+  *   `endpointVerificationSpecificAttributes` (*type:* `GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes.t`, *default:* `nil`) - Output only. Attributes specific to [Endpoint Verification](https://cloud.google.com/endpoint-verification/docs/overview) devices.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Host name of the device.
   *   `imei` (*type:* `String.t`, *default:* `nil`) - Output only. IMEI number of device if GSM device; empty otherwise.
   *   `kernelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Kernel version of the device.
@@ -71,6 +72,9 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
           :enabledDeveloperOptions => boolean() | nil,
           :enabledUsbDebugging => boolean() | nil,
           :encryptionState => String.t() | nil,
+          :endpointVerificationSpecificAttributes =>
+            GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes.t()
+            | nil,
           :hostname => String.t() | nil,
           :imei => String.t() | nil,
           :kernelVersion => String.t() | nil,
@@ -106,6 +110,12 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   field(:enabledDeveloperOptions)
   field(:enabledUsbDebugging)
   field(:encryptionState)
+
+  field(:endpointVerificationSpecificAttributes,
+    as:
+      GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1EndpointVerificationSpecificAttributes
+  )
+
   field(:hostname)
   field(:imei)
   field(:kernelVersion)
