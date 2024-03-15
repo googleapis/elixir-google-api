@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.TaskLogsRetentionConfig do
 
   ## Attributes
 
-  *   `storageMode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode of storage for Airflow workers task logs. For details, see go/composer-store-task-logs-in-cloud-logging-only-design-doc
+  *   `storageMode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode of storage for Airflow workers task logs.
   """
 
   use GoogleApi.Gax.ModelBase
