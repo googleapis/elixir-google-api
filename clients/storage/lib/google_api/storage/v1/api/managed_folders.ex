@@ -42,6 +42,7 @@ defmodule GoogleApi.Storage.V1.Api.ManagedFolders do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:allowNonEmpty` (*type:* `boolean()`) - Allows the deletion of a managed folder even if it is not empty. A managed folder is empty if there are no objects or managed folders that it applies to. Callers must have storage.managedFolders.setIamPolicy permission.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - If set, only deletes the managed folder if its metageneration matches this value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - If set, only deletes the managed folder if its metageneration does not match this value.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -74,6 +75,7 @@ defmodule GoogleApi.Storage.V1.Api.ManagedFolders do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
+      :allowNonEmpty => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query
     }
