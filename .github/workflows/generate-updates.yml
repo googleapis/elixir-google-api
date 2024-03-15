@@ -23,8 +23,8 @@ jobs:
       - name: Install Elixir
         uses: erlef/setup-beam@v1
         with:
-          otp-version: "23.3.4.19"
-          elixir-version: "1.12.3-otp-23"
+          otp-version: "26.2.3"
+          elixir-version: "1.14.5-otp-26"
           version-type: strict
       - name: Install tools
         run: "gem install --no-document toys"
