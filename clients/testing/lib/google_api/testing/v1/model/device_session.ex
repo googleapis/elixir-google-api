@@ -30,7 +30,7 @@ defmodule GoogleApi.Testing.V1.Model.DeviceSession do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the DeviceSession, e.g. "projects/{project_id}/deviceSessions/{session_id}"
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the DeviceSession.
   *   `stateHistories` (*type:* `list(GoogleApi.Testing.V1.Model.SessionStateEvent.t)`, *default:* `nil`) - Output only. The historical state transitions of the session_state message including the current session state.
-  *   `ttl` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of time that a device will be initially allocated for. This can eventually be extended with the UpdateDeviceSession RPC. Default: 30 minutes.
+  *   `ttl` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of time that a device will be initially allocated for. This can eventually be extended with the UpdateDeviceSession RPC. Default: 15 minutes.
   """
 
   use GoogleApi.Gax.ModelBase
