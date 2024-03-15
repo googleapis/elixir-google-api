@@ -20,7 +20,7 @@ defmodule GoogleApi.DisplayVideo.V3 do
   API client metadata for GoogleApi.DisplayVideo.V3.
   """
 
-  @discovery_revision "20240307"
+  @discovery_revision "20240314"
 
   def discovery_revision(), do: @discovery_revision
 end
