@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Composer.V1.Model.DagProcessorResource do
   @moduledoc """
-  Configuration for resources used by Airflow DAG processors.
+  Configuration for resources used by Airflow DAG processors. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer.
 
   ## Attributes
 
