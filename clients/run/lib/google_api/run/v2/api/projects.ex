@@ -2048,6 +2048,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - If set to true, and if the Service does not exist, it will create a new one. The caller must have 'run.services.create' permissions if this is set to true and the Service does not exist.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The list of fields to be updated.
       *   `:validateOnly` (*type:* `boolean()`) - Indicates that the request should be validated and default values populated, without persisting the request or updating any resources.
       *   `:body` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Service.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2090,6 +2091,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :allowMissing => :query,
+      :updateMask => :query,
       :validateOnly => :query,
       :body => :body
     }
