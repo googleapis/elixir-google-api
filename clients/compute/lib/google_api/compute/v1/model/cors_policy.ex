@@ -24,9 +24,9 @@ defmodule GoogleApi.Compute.V1.Model.CorsPolicy do
   *   `allowCredentials` (*type:* `boolean()`, *default:* `nil`) - In response to a preflight request, setting this to true indicates that the actual request can include user credentials. This field translates to the Access-Control-Allow-Credentials header. Default is false.
   *   `allowHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Headers header.
   *   `allowMethods` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Allow-Methods header.
-  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies a regular expression that matches allowed origins. For more information about the regular expression syntax, see Syntax. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
+  *   `allowOriginRegexes` (*type:* `list(String.t)`, *default:* `nil`) - Specifies a regular expression that matches allowed origins. For more information, see regular expression syntax . An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes. Regular expressions can only be used when the loadBalancingScheme is set to INTERNAL_SELF_MANAGED.
   *   `allowOrigins` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the list of origins that is allowed to do CORS requests. An origin is allowed if it matches either an item in allowOrigins or an item in allowOriginRegexes.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, the setting specifies the CORS policy is disabled. The default value of false, which indicates that the CORS policy is in effect.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If true, disables the CORS policy. The default value is false, which indicates that the CORS policy is in effect.
   *   `exposeHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the content for the Access-Control-Expose-Headers header.
   *   `maxAge` (*type:* `integer()`, *default:* `nil`) - Specifies how long results of a preflight request can be cached in seconds. This field translates to the Access-Control-Max-Age header.
   """
