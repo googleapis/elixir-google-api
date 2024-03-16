@@ -1038,7 +1038,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataform.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The repository's name.
+  *   `name` (*type:* `String.t`) - Identifier. The repository's name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

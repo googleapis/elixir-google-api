@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Workspace do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The workspace's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workspace's name.
   """
 
   use GoogleApi.Gax.ModelBase
