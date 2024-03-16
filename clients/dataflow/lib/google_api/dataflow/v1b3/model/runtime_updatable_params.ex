@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeUpdatableParams do
 
   *   `maxNumWorkers` (*type:* `integer()`, *default:* `nil`) - The maximum number of workers to cap autoscaling at. This field is currently only supported for Streaming Engine jobs.
   *   `minNumWorkers` (*type:* `integer()`, *default:* `nil`) - The minimum number of workers to scale down to. This field is currently only supported for Streaming Engine jobs.
-  *   `workerUtilizationHint` (*type:* `float()`, *default:* `nil`) - Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog.
+  *   `workerUtilizationHint` (*type:* `float()`, *default:* `nil`) - Target worker utilization, compared against the aggregate utilization of the worker pool by autoscaler, to determine upscaling and downscaling when absent other constraints such as backlog. For more information, see [Update an existing pipeline](https://cloud.google.com/dataflow/docs/guides/updating-a-pipeline).
   """
 
   use GoogleApi.Gax.ModelBase
