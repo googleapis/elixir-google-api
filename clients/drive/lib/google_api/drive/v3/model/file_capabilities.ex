@@ -21,136 +21,136 @@ defmodule GoogleApi.Drive.V3.Model.FileCapabilities do
 
   ## Attributes
 
-  *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use `canDeleteChildren` or `canTrashChildren` instead.
-  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read.
-  *   `canModifyContent` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the content of this file.
   *   `canAddMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add a parent for the item without removing an existing parent in the same request. Not populated for shared drive files.
-  *   `canModifyEditorContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add or modify content restrictions on the file which are editor restricted.
-  *   `canMoveItemOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this item outside of this drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added.
-  *   `canMoveItemOutOfTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemOutOfDrive` instead.
+  *   `canModifyOwnerContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add or modify content restrictions which are owner restricted.
+  *   `canMoveItemWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this item within this drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added and the parent that is being removed.
+  *   `canChangeSecurityUpdateEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the securityUpdateEnabled field on link share metadata.
+  *   `canMoveItemWithinTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemWithinDrive` instead.
+  *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the sharing settings for this file.
+  *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can comment on this file.
+  *   `canModifyContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use one of `canModifyEditorContentRestriction`, `canModifyOwnerContentRestriction` or `canRemoveContentRestriction`.
+  *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add children to this folder. This is always false when the item is not a folder.
+  *   `canMoveChildrenOutOfTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveChildrenOutOfDrive` instead.
   *   `canTrashChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can trash children of this folder. This is false when the item is not a folder. Only populated for items in shared drives.
+  *   `canUntrash` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can restore this file from trash.
+  *   `canModifyContent` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the content of this file.
+  *   `canDownload` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can download this file.
+  *   `canReadLabels` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the labels on the file.
+  *   `canChangeViewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only.
+  *   `canMoveItemOutOfTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemOutOfDrive` instead.
+  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can edit this file. Other factors may limit the type of changes a user can make to a file. For example, see `canChangeCopyRequiresWriterPermission` or `canModifyContent`.
+  *   `canMoveItemIntoTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemOutOfDrive` instead.
+  *   `canMoveTeamDriveItem` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemWithinDrive` or `canMoveItemOutOfDrive` instead.
+  *   `canMoveItemOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this item outside of this drive by changing its parent. Note that a request to change the parent of the item may still fail depending on the new parent that is being added.
+  *   `canMoveChildrenWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move children of this folder within this drive. This is false when the item is not a folder. Note that a request to move the child may still fail depending on the current user's access to the child and to the destination folder.
+  *   `canMoveChildrenOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
+  *   `canMoveChildrenWithinTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveChildrenWithinDrive` instead.
+  *   `canTrash` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this file to trash.
+  *   `canRemoveMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files.
+  *   `canRemoveContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether there is a content restriction on the file that can be removed by the current user.
+  *   `canAcceptOwnership` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user is the pending owner of the file. Not populated for shared drive files.
+  *   `canModifyEditorContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add or modify content restrictions on the file which are editor restricted.
+  *   `canModifyLabels` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the labels on the file.
+  *   `canRemoveChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can remove children from this folder. This is always false when the item is not a folder. For a folder in a shared drive, use `canDeleteChildren` or `canTrashChildren` instead.
+  *   `canAddFolderFromAnotherDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add a folder from another drive (different shared drive or My Drive) to this folder. This is false when the item is not a folder. Only populated for items in shared drives.
+  *   `canDelete` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can delete this file.
+  *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder.
+  *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can rename this file.
+  *   `canReadRevisions` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the revisions resource of this file. For a shared drive item, whether revisions of non-folder descendants of this item, or this item itself if it is not a folder, can be read.
+  *   `canReadTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canReadDrive` instead.
   *   `canListChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can list the children of this folder. This is always false when the item is not a folder.
   *   `canDeleteChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can delete children of this folder. This is false when the item is not a folder. Only populated for items in shared drives.
-  *   `canAcceptOwnership` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user is the pending owner of the file. Not populated for shared drive files.
-  *   `canModifyOwnerContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add or modify content restrictions which are owner restricted.
-  *   `canModifyContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use one of `canModifyEditorContentRestriction`, `canModifyOwnerContentRestriction` or `canRemoveContentRestriction`.
-  *   `canCopy` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can copy this file. For an item in a shared drive, whether the current user can copy non-folder descendants of this item, or this item itself if it is not a folder.
-  *   `canTrash` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this file to trash.
-  *   `canChangeSecurityUpdateEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the securityUpdateEnabled field on link share metadata.
-  *   `canUntrash` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can restore this file from trash.
-  *   `canAddChildren` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add children to this folder. This is always false when the item is not a folder.
-  *   `canShare` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the sharing settings for this file.
-  *   `canAddFolderFromAnotherDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can add a folder from another drive (different shared drive or My Drive) to this folder. This is false when the item is not a folder. Only populated for items in shared drives.
-  *   `canChangeCopyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `copyRequiresWriterPermission` restriction of this file.
-  *   `canReadLabels` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the labels on the file.
-  *   `canModifyLabels` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can modify the labels on the file.
-  *   `canRemoveContentRestriction` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether there is a content restriction on the file that can be removed by the current user.
-  *   `canMoveItemWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move this item within this drive. Note that a request to change the parent of the item may still fail depending on the new parent that is being added and the parent that is being removed.
   *   `canReadDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can read the shared drive to which this file belongs. Only populated for items in shared drives.
-  *   `canRemoveMyDriveParent` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can remove a parent from the item without adding another parent in the same request. Not populated for shared drive files.
-  *   `canChangeViewersCanCopyContent` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only.
-  *   `canDownload` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can download this file.
-  *   `canMoveItemIntoTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemOutOfDrive` instead.
-  *   `canMoveChildrenOutOfDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move children of this folder outside of the shared drive. This is false when the item is not a folder. Only populated for items in shared drives.
-  *   `canMoveTeamDriveItem` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemWithinDrive` or `canMoveItemOutOfDrive` instead.
-  *   `canMoveChildrenWithinDrive` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can move children of this folder within this drive. This is false when the item is not a folder. Note that a request to move the child may still fail depending on the current user's access to the child and to the destination folder.
-  *   `canRename` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can rename this file.
-  *   `canDelete` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can delete this file.
-  *   `canEdit` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can edit this file. Other factors may limit the type of changes a user can make to a file. For example, see `canChangeCopyRequiresWriterPermission` or `canModifyContent`.
-  *   `canMoveChildrenWithinTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveChildrenWithinDrive` instead.
-  *   `canMoveItemWithinTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveItemWithinDrive` instead.
-  *   `canReadTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canReadDrive` instead.
-  *   `canComment` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can comment on this file.
-  *   `canMoveChildrenOutOfTeamDrive` (*type:* `boolean()`, *default:* `nil`) - Deprecated: Output only. Use `canMoveChildrenOutOfDrive` instead.
+  *   `canChangeCopyRequiresWriterPermission` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the current user can change the `copyRequiresWriterPermission` restriction of this file.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :canRemoveChildren => boolean() | nil,
-          :canReadRevisions => boolean() | nil,
-          :canModifyContent => boolean() | nil,
           :canAddMyDriveParent => boolean() | nil,
-          :canModifyEditorContentRestriction => boolean() | nil,
-          :canMoveItemOutOfDrive => boolean() | nil,
-          :canMoveItemOutOfTeamDrive => boolean() | nil,
+          :canModifyOwnerContentRestriction => boolean() | nil,
+          :canMoveItemWithinDrive => boolean() | nil,
+          :canChangeSecurityUpdateEnabled => boolean() | nil,
+          :canMoveItemWithinTeamDrive => boolean() | nil,
+          :canShare => boolean() | nil,
+          :canComment => boolean() | nil,
+          :canModifyContentRestriction => boolean() | nil,
+          :canAddChildren => boolean() | nil,
+          :canMoveChildrenOutOfTeamDrive => boolean() | nil,
           :canTrashChildren => boolean() | nil,
+          :canUntrash => boolean() | nil,
+          :canModifyContent => boolean() | nil,
+          :canDownload => boolean() | nil,
+          :canReadLabels => boolean() | nil,
+          :canChangeViewersCanCopyContent => boolean() | nil,
+          :canMoveItemOutOfTeamDrive => boolean() | nil,
+          :canEdit => boolean() | nil,
+          :canMoveItemIntoTeamDrive => boolean() | nil,
+          :canMoveTeamDriveItem => boolean() | nil,
+          :canMoveItemOutOfDrive => boolean() | nil,
+          :canMoveChildrenWithinDrive => boolean() | nil,
+          :canMoveChildrenOutOfDrive => boolean() | nil,
+          :canMoveChildrenWithinTeamDrive => boolean() | nil,
+          :canTrash => boolean() | nil,
+          :canRemoveMyDriveParent => boolean() | nil,
+          :canRemoveContentRestriction => boolean() | nil,
+          :canAcceptOwnership => boolean() | nil,
+          :canModifyEditorContentRestriction => boolean() | nil,
+          :canModifyLabels => boolean() | nil,
+          :canRemoveChildren => boolean() | nil,
+          :canAddFolderFromAnotherDrive => boolean() | nil,
+          :canDelete => boolean() | nil,
+          :canCopy => boolean() | nil,
+          :canRename => boolean() | nil,
+          :canReadRevisions => boolean() | nil,
+          :canReadTeamDrive => boolean() | nil,
           :canListChildren => boolean() | nil,
           :canDeleteChildren => boolean() | nil,
-          :canAcceptOwnership => boolean() | nil,
-          :canModifyOwnerContentRestriction => boolean() | nil,
-          :canModifyContentRestriction => boolean() | nil,
-          :canCopy => boolean() | nil,
-          :canTrash => boolean() | nil,
-          :canChangeSecurityUpdateEnabled => boolean() | nil,
-          :canUntrash => boolean() | nil,
-          :canAddChildren => boolean() | nil,
-          :canShare => boolean() | nil,
-          :canAddFolderFromAnotherDrive => boolean() | nil,
-          :canChangeCopyRequiresWriterPermission => boolean() | nil,
-          :canReadLabels => boolean() | nil,
-          :canModifyLabels => boolean() | nil,
-          :canRemoveContentRestriction => boolean() | nil,
-          :canMoveItemWithinDrive => boolean() | nil,
           :canReadDrive => boolean() | nil,
-          :canRemoveMyDriveParent => boolean() | nil,
-          :canChangeViewersCanCopyContent => boolean() | nil,
-          :canDownload => boolean() | nil,
-          :canMoveItemIntoTeamDrive => boolean() | nil,
-          :canMoveChildrenOutOfDrive => boolean() | nil,
-          :canMoveTeamDriveItem => boolean() | nil,
-          :canMoveChildrenWithinDrive => boolean() | nil,
-          :canRename => boolean() | nil,
-          :canDelete => boolean() | nil,
-          :canEdit => boolean() | nil,
-          :canMoveChildrenWithinTeamDrive => boolean() | nil,
-          :canMoveItemWithinTeamDrive => boolean() | nil,
-          :canReadTeamDrive => boolean() | nil,
-          :canComment => boolean() | nil,
-          :canMoveChildrenOutOfTeamDrive => boolean() | nil
+          :canChangeCopyRequiresWriterPermission => boolean() | nil
         }
 
-  field(:canRemoveChildren)
-  field(:canReadRevisions)
-  field(:canModifyContent)
   field(:canAddMyDriveParent)
-  field(:canModifyEditorContentRestriction)
-  field(:canMoveItemOutOfDrive)
-  field(:canMoveItemOutOfTeamDrive)
+  field(:canModifyOwnerContentRestriction)
+  field(:canMoveItemWithinDrive)
+  field(:canChangeSecurityUpdateEnabled)
+  field(:canMoveItemWithinTeamDrive)
+  field(:canShare)
+  field(:canComment)
+  field(:canModifyContentRestriction)
+  field(:canAddChildren)
+  field(:canMoveChildrenOutOfTeamDrive)
   field(:canTrashChildren)
+  field(:canUntrash)
+  field(:canModifyContent)
+  field(:canDownload)
+  field(:canReadLabels)
+  field(:canChangeViewersCanCopyContent)
+  field(:canMoveItemOutOfTeamDrive)
+  field(:canEdit)
+  field(:canMoveItemIntoTeamDrive)
+  field(:canMoveTeamDriveItem)
+  field(:canMoveItemOutOfDrive)
+  field(:canMoveChildrenWithinDrive)
+  field(:canMoveChildrenOutOfDrive)
+  field(:canMoveChildrenWithinTeamDrive)
+  field(:canTrash)
+  field(:canRemoveMyDriveParent)
+  field(:canRemoveContentRestriction)
+  field(:canAcceptOwnership)
+  field(:canModifyEditorContentRestriction)
+  field(:canModifyLabels)
+  field(:canRemoveChildren)
+  field(:canAddFolderFromAnotherDrive)
+  field(:canDelete)
+  field(:canCopy)
+  field(:canRename)
+  field(:canReadRevisions)
+  field(:canReadTeamDrive)
   field(:canListChildren)
   field(:canDeleteChildren)
-  field(:canAcceptOwnership)
-  field(:canModifyOwnerContentRestriction)
-  field(:canModifyContentRestriction)
-  field(:canCopy)
-  field(:canTrash)
-  field(:canChangeSecurityUpdateEnabled)
-  field(:canUntrash)
-  field(:canAddChildren)
-  field(:canShare)
-  field(:canAddFolderFromAnotherDrive)
-  field(:canChangeCopyRequiresWriterPermission)
-  field(:canReadLabels)
-  field(:canModifyLabels)
-  field(:canRemoveContentRestriction)
-  field(:canMoveItemWithinDrive)
   field(:canReadDrive)
-  field(:canRemoveMyDriveParent)
-  field(:canChangeViewersCanCopyContent)
-  field(:canDownload)
-  field(:canMoveItemIntoTeamDrive)
-  field(:canMoveChildrenOutOfDrive)
-  field(:canMoveTeamDriveItem)
-  field(:canMoveChildrenWithinDrive)
-  field(:canRename)
-  field(:canDelete)
-  field(:canEdit)
-  field(:canMoveChildrenWithinTeamDrive)
-  field(:canMoveItemWithinTeamDrive)
-  field(:canReadTeamDrive)
-  field(:canComment)
-  field(:canMoveChildrenOutOfTeamDrive)
+  field(:canChangeCopyRequiresWriterPermission)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Drive.V3.Model.FileCapabilities do
