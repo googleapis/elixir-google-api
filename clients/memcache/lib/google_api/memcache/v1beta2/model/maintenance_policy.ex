@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Memcache.V1beta2.Model.MaintenancePolicy do
   @moduledoc """
-  LINT.IfChange Defines policies to service maintenance events.
+  Defines policies to service maintenance events.
 
   ## Attributes
 
