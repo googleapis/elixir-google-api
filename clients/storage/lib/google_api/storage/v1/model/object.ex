@@ -21,118 +21,118 @@ defmodule GoogleApi.Storage.V1.Model.Object do
 
   ## Attributes
 
-  *   `eventBasedHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the object.
-  *   `hardDeleteTime` (*type:* `DateTime.t`, *default:* `nil`) - This is the time (in the future) when the soft-deleted object will no longer be restorable. It is equal to the soft delete time plus the current soft delete retention duration of the bucket.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The link to this object.
+  *   `customTime` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp in RFC 3339 format specified by the user for an object.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the object. Required if not specified by URL parameter.
+  *   `timeStorageClassUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated.
+  *   `temporaryHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under temporary hold. While this flag is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Note that unlike event-based hold, temporary hold does not impact retention expiration time of an object.
+  *   `timeDeleted` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object became noncurrent in RFC 3339 format. Will be returned if and only if this version of the object has been deleted.
+  *   `retention` (*type:* `GoogleApi.Storage.V1.Model.ObjectRetention.t`, *default:* `nil`) - A collection of object level retention parameters.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - User-provided metadata, in key/value pairs.
+  *   `kind` (*type:* `String.t`, *default:* `storage#object`) - The kind of item this is. For objects, this is always storage#object.
+  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Content-Language of the object data.
+  *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Access controls on the object.
+  *   `contentType` (*type:* `String.t`, *default:* `nil`) - Content-Type of the object data. If an object is stored without a Content-Type, it is served as application/octet-stream.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the object metadata in RFC 3339 format. Set initially to object creation time and then updated whenever any metadata of the object changes. This includes changes made by a requester, such as modifying custom metadata, as well as changes made by Cloud Storage on behalf of a requester, such as changing the storage class based on an Object Lifecycle Configuration.
   *   `size` (*type:* `String.t`, *default:* `nil`) - Content-Length of the data in bytes.
   *   `contentEncoding` (*type:* `String.t`, *default:* `nil`) - Content-Encoding of the object data.
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the object in RFC 3339 format.
+  *   `customerEncryption` (*type:* `GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t`, *default:* `nil`) - Metadata of customer-supplied encryption key, if the object is encrypted by such a key.
+  *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - MD5 hash of the data; encoded using base64. For more information about using the MD5 hash, see Hashes and ETags: Best Practices.
+  *   `metageneration` (*type:* `String.t`, *default:* `nil`) - The version of the metadata for this object at this generation. Used for preconditions and for detecting changes in metadata. A metageneration number is only meaningful in the context of a particular generation of a particular object.
+  *   `retentionExpirationTime` (*type:* `DateTime.t`, *default:* `nil`) - A server-determined value that specifies the earliest time that the object's retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold).
   *   `mediaLink` (*type:* `String.t`, *default:* `nil`) - Media download link.
-  *   `temporaryHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under temporary hold. While this flag is set to true, the object is protected against deletion and overwrites. A common use case of this flag is regulatory investigations where objects need to be retained while the investigation is ongoing. Note that unlike event-based hold, temporary hold does not impact retention expiration time of an object.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - User-provided metadata, in key/value pairs.
-  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Storage class of the object.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.
+  *   `softDeleteTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object became soft-deleted in RFC 3339 format.
   *   `generation` (*type:* `String.t`, *default:* `nil`) - The content generation of this object. Used for object versioning.
-  *   `kind` (*type:* `String.t`, *default:* `storage#object`) - The kind of item this is. For objects, this is always storage#object.
   *   `componentCount` (*type:* `integer()`, *default:* `nil`) - Number of underlying components that make up this object. Components are accumulated by compose operations.
+  *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Storage class of the object.
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - The name of the bucket containing this object.
   *   `cacheControl` (*type:* `String.t`, *default:* `nil`) - Cache-Control directive for the object data. If omitted, and the object is accessible to all anonymous users, the default will be public, max-age=3600.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the object. Required if not specified by URL parameter.
+  *   `hardDeleteTime` (*type:* `DateTime.t`, *default:* `nil`) - This is the time (in the future) when the soft-deleted object will no longer be restorable. It is equal to the soft delete time plus the current soft delete retention duration of the bucket.
+  *   `crc32c` (*type:* `String.t`, *default:* `nil`) - CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see Hashes and ETags: Best Practices.
+  *   `eventBasedHold` (*type:* `boolean()`, *default:* `nil`) - Whether an object is under event-based hold. Event-based hold is a way to retain objects until an event occurs, which is signified by the hold's release (i.e. this value is set to false). After being released (set to false), such objects will be subject to bucket-level retention (if any). One sample use case of this flag is for banks to hold loan documents for at least 3 years after loan is paid in full. Here, bucket-level retention is 3 years and the event is the loan being paid in full. In this example, these objects will be held intact for any number of years until the event has occurred (event-based hold on the object is released) and then 3 more years after that. That means retention duration of the objects begins from the moment event-based hold transitioned from true to false.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the object.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the object, including the bucket name, object name, and generation number.
   *   `contentDisposition` (*type:* `String.t`, *default:* `nil`) - Content-Disposition of the object data.
   *   `owner` (*type:* `GoogleApi.Storage.V1.Model.ObjectOwner.t`, *default:* `nil`) - The owner of the object. This will always be the uploader of the object.
-  *   `softDeleteTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object became soft-deleted in RFC 3339 format.
-  *   `contentType` (*type:* `String.t`, *default:* `nil`) - Content-Type of the object data. If an object is stored without a Content-Type, it is served as application/octet-stream.
-  *   `timeStorageClassUpdated` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object's storage class was last changed. When the object is initially created, it will be set to timeCreated.
-  *   `timeDeleted` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the object became noncurrent in RFC 3339 format. Will be returned if and only if this version of the object has been deleted.
-  *   `acl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Access controls on the object.
-  *   `retentionExpirationTime` (*type:* `DateTime.t`, *default:* `nil`) - A server-determined value that specifies the earliest time that the object's retention period expires. This value is in RFC 3339 format. Note 1: This field is not provided for objects with an active event-based hold, since retention expiration is unknown until the hold is removed. Note 2: This value can be provided even when temporary hold is set (so that the user can reason about policy without having to first unset the temporary hold).
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - The name of the bucket containing this object.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the object, including the bucket name, object name, and generation number.
-  *   `customTime` (*type:* `DateTime.t`, *default:* `nil`) - A timestamp in RFC 3339 format specified by the user for an object.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - The modification time of the object metadata in RFC 3339 format. Set initially to object creation time and then updated whenever any metadata of the object changes. This includes changes made by a requester, such as modifying custom metadata, as well as changes made by Cloud Storage on behalf of a requester, such as changing the storage class based on an Object Lifecycle Configuration.
-  *   `md5Hash` (*type:* `String.t`, *default:* `nil`) - MD5 hash of the data; encoded using base64. For more information about using the MD5 hash, see Hashes and ETags: Best Practices.
-  *   `crc32c` (*type:* `String.t`, *default:* `nil`) - CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see Hashes and ETags: Best Practices.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The link to this object.
-  *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - Content-Language of the object data.
-  *   `customerEncryption` (*type:* `GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t`, *default:* `nil`) - Metadata of customer-supplied encryption key, if the object is encrypted by such a key.
-  *   `metageneration` (*type:* `String.t`, *default:* `nil`) - The version of the metadata for this object at this generation. Used for preconditions and for detecting changes in metadata. A metageneration number is only meaningful in the context of a particular generation of a particular object.
-  *   `retention` (*type:* `GoogleApi.Storage.V1.Model.ObjectRetention.t`, *default:* `nil`) - A collection of object level retention parameters.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Not currently supported. Specifying the parameter causes the request to fail with status code 400 - Bad Request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventBasedHold => boolean() | nil,
-          :etag => String.t() | nil,
-          :hardDeleteTime => DateTime.t() | nil,
+          :selfLink => String.t() | nil,
+          :customTime => DateTime.t() | nil,
+          :name => String.t() | nil,
+          :timeStorageClassUpdated => DateTime.t() | nil,
+          :temporaryHold => boolean() | nil,
+          :timeDeleted => DateTime.t() | nil,
+          :retention => GoogleApi.Storage.V1.Model.ObjectRetention.t() | nil,
+          :metadata => map() | nil,
+          :kind => String.t() | nil,
+          :contentLanguage => String.t() | nil,
+          :acl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
+          :contentType => String.t() | nil,
+          :updated => DateTime.t() | nil,
           :size => String.t() | nil,
           :contentEncoding => String.t() | nil,
           :timeCreated => DateTime.t() | nil,
-          :mediaLink => String.t() | nil,
-          :temporaryHold => boolean() | nil,
-          :metadata => map() | nil,
-          :storageClass => String.t() | nil,
-          :generation => String.t() | nil,
-          :kind => String.t() | nil,
-          :componentCount => integer() | nil,
-          :cacheControl => String.t() | nil,
-          :name => String.t() | nil,
-          :contentDisposition => String.t() | nil,
-          :owner => GoogleApi.Storage.V1.Model.ObjectOwner.t() | nil,
-          :softDeleteTime => DateTime.t() | nil,
-          :contentType => String.t() | nil,
-          :timeStorageClassUpdated => DateTime.t() | nil,
-          :timeDeleted => DateTime.t() | nil,
-          :acl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
-          :retentionExpirationTime => DateTime.t() | nil,
-          :bucket => String.t() | nil,
-          :id => String.t() | nil,
-          :customTime => DateTime.t() | nil,
-          :updated => DateTime.t() | nil,
-          :md5Hash => String.t() | nil,
-          :crc32c => String.t() | nil,
-          :selfLink => String.t() | nil,
-          :contentLanguage => String.t() | nil,
           :customerEncryption => GoogleApi.Storage.V1.Model.ObjectCustomerEncryption.t() | nil,
+          :md5Hash => String.t() | nil,
           :metageneration => String.t() | nil,
-          :retention => GoogleApi.Storage.V1.Model.ObjectRetention.t() | nil,
-          :kmsKeyName => String.t() | nil
+          :retentionExpirationTime => DateTime.t() | nil,
+          :mediaLink => String.t() | nil,
+          :kmsKeyName => String.t() | nil,
+          :softDeleteTime => DateTime.t() | nil,
+          :generation => String.t() | nil,
+          :componentCount => integer() | nil,
+          :storageClass => String.t() | nil,
+          :bucket => String.t() | nil,
+          :cacheControl => String.t() | nil,
+          :hardDeleteTime => DateTime.t() | nil,
+          :crc32c => String.t() | nil,
+          :eventBasedHold => boolean() | nil,
+          :etag => String.t() | nil,
+          :id => String.t() | nil,
+          :contentDisposition => String.t() | nil,
+          :owner => GoogleApi.Storage.V1.Model.ObjectOwner.t() | nil
         }
 
-  field(:eventBasedHold)
-  field(:etag)
-  field(:hardDeleteTime, as: DateTime)
+  field(:selfLink)
+  field(:customTime, as: DateTime)
+  field(:name)
+  field(:timeStorageClassUpdated, as: DateTime)
+  field(:temporaryHold)
+  field(:timeDeleted, as: DateTime)
+  field(:retention, as: GoogleApi.Storage.V1.Model.ObjectRetention)
+  field(:metadata, type: :map)
+  field(:kind)
+  field(:contentLanguage)
+  field(:acl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
+  field(:contentType)
+  field(:updated, as: DateTime)
   field(:size)
   field(:contentEncoding)
   field(:timeCreated, as: DateTime)
+  field(:customerEncryption, as: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption)
+  field(:md5Hash)
+  field(:metageneration)
+  field(:retentionExpirationTime, as: DateTime)
   field(:mediaLink)
-  field(:temporaryHold)
-  field(:metadata, type: :map)
-  field(:storageClass)
+  field(:kmsKeyName)
+  field(:softDeleteTime, as: DateTime)
   field(:generation)
-  field(:kind)
   field(:componentCount)
+  field(:storageClass)
+  field(:bucket)
   field(:cacheControl)
-  field(:name)
+  field(:hardDeleteTime, as: DateTime)
+  field(:crc32c)
+  field(:eventBasedHold)
+  field(:etag)
+  field(:id)
   field(:contentDisposition)
   field(:owner, as: GoogleApi.Storage.V1.Model.ObjectOwner)
-  field(:softDeleteTime, as: DateTime)
-  field(:contentType)
-  field(:timeStorageClassUpdated, as: DateTime)
-  field(:timeDeleted, as: DateTime)
-  field(:acl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
-  field(:retentionExpirationTime, as: DateTime)
-  field(:bucket)
-  field(:id)
-  field(:customTime, as: DateTime)
-  field(:updated, as: DateTime)
-  field(:md5Hash)
-  field(:crc32c)
-  field(:selfLink)
-  field(:contentLanguage)
-  field(:customerEncryption, as: GoogleApi.Storage.V1.Model.ObjectCustomerEncryption)
-  field(:metageneration)
-  field(:retention, as: GoogleApi.Storage.V1.Model.ObjectRetention)
-  field(:kmsKeyName)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.Object do
