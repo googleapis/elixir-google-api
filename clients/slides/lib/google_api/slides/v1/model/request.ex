@@ -21,183 +21,184 @@ defmodule GoogleApi.Slides.V1.Model.Request do
 
   ## Attributes
 
-  *   `deleteObject` (*type:* `GoogleApi.Slides.V1.Model.DeleteObjectRequest.t`, *default:* `nil`) - Deletes a page or page element from the presentation.
-  *   `insertTableColumns` (*type:* `GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t`, *default:* `nil`) - Inserts columns into a table.
-  *   `deleteParagraphBullets` (*type:* `GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t`, *default:* `nil`) - Deletes bullets from paragraphs.
-  *   `deleteTableColumn` (*type:* `GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t`, *default:* `nil`) - Deletes a column from a table.
-  *   `updateTableBorderProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t`, *default:* `nil`) - Updates the properties of the table borders in a Table.
+  *   `mergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t`, *default:* `nil`) - Merges cells in a Table.
+  *   `replaceAllShapesWithImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t`, *default:* `nil`) - Replaces all shapes matching some criteria with an image.
+  *   `updateSlidesPosition` (*type:* `GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest.t`, *default:* `nil`) - Updates the position of a set of slides in the presentation.
   *   `updatePageProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Page.
-  *   `groupObjects` (*type:* `GoogleApi.Slides.V1.Model.GroupObjectsRequest.t`, *default:* `nil`) - Groups objects, such as page elements.
+  *   `replaceAllShapesWithSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t`, *default:* `nil`) - Replaces all shapes matching some criteria with a Google Sheets chart.
+  *   `createImage` (*type:* `GoogleApi.Slides.V1.Model.CreateImageRequest.t`, *default:* `nil`) - Creates an image.
+  *   `updateTableBorderProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t`, *default:* `nil`) - Updates the properties of the table borders in a Table.
+  *   `duplicateObject` (*type:* `GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t`, *default:* `nil`) - Duplicates a slide or page element.
   *   `updateTableCellProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a TableCell.
-  *   `updateShapeProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Shape.
+  *   `refreshSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t`, *default:* `nil`) - Refreshes a Google Sheets chart.
+  *   `deleteParagraphBullets` (*type:* `GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t`, *default:* `nil`) - Deletes bullets from paragraphs.
+  *   `insertTableRows` (*type:* `GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t`, *default:* `nil`) - Inserts rows into a table.
+  *   `createLine` (*type:* `GoogleApi.Slides.V1.Model.CreateLineRequest.t`, *default:* `nil`) - Creates a line.
+  *   `updateLineCategory` (*type:* `GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t`, *default:* `nil`) - Updates the category of a line.
+  *   `updateTextStyle` (*type:* `GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t`, *default:* `nil`) - Updates the styling of text within a Shape or Table.
+  *   `replaceAllText` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t`, *default:* `nil`) - Replaces all instances of specified text.
+  *   `createShape` (*type:* `GoogleApi.Slides.V1.Model.CreateShapeRequest.t`, *default:* `nil`) - Creates a new shape.
   *   `deleteText` (*type:* `GoogleApi.Slides.V1.Model.DeleteTextRequest.t`, *default:* `nil`) - Deletes text from a shape or a table cell.
+  *   `rerouteLine` (*type:* `GoogleApi.Slides.V1.Model.RerouteLineRequest.t`, *default:* `nil`) - Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.
+  *   `updatePageElementAltText` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t`, *default:* `nil`) - Updates the alt text title and/or description of a page element.
+  *   `updateVideoProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Video.
+  *   `updateShapeProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Shape.
+  *   `deleteObject` (*type:* `GoogleApi.Slides.V1.Model.DeleteObjectRequest.t`, *default:* `nil`) - Deletes a page or page element from the presentation.
+  *   `unmergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a Table.
+  *   `updatePageElementTransform` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t`, *default:* `nil`) - Updates the transform of a page element.
+  *   `updateLineProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Line.
+  *   `deleteTableRow` (*type:* `GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
+  *   `createSlide` (*type:* `GoogleApi.Slides.V1.Model.CreateSlideRequest.t`, *default:* `nil`) - Creates a new slide.
+  *   `deleteTableColumn` (*type:* `GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t`, *default:* `nil`) - Deletes a column from a table.
+  *   `createTable` (*type:* `GoogleApi.Slides.V1.Model.CreateTableRequest.t`, *default:* `nil`) - Creates a new table.
+  *   `ungroupObjects` (*type:* `GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t`, *default:* `nil`) - Ungroups objects, such as groups.
+  *   `groupObjects` (*type:* `GoogleApi.Slides.V1.Model.GroupObjectsRequest.t`, *default:* `nil`) - Groups objects, such as page elements.
+  *   `updateImageProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t`, *default:* `nil`) - Updates the properties of an Image.
+  *   `insertText` (*type:* `GoogleApi.Slides.V1.Model.InsertTextRequest.t`, *default:* `nil`) - Inserts text into a shape or table cell.
+  *   `updatePageElementsZOrder` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t`, *default:* `nil`) - Updates the Z-order of page elements.
   *   `createSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.CreateSheetsChartRequest.t`, *default:* `nil`) - Creates an embedded Google Sheets chart.
   *   `replaceImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceImageRequest.t`, *default:* `nil`) - Replaces an existing image with a new image.
-  *   `createSlide` (*type:* `GoogleApi.Slides.V1.Model.CreateSlideRequest.t`, *default:* `nil`) - Creates a new slide.
-  *   `createTable` (*type:* `GoogleApi.Slides.V1.Model.CreateTableRequest.t`, *default:* `nil`) - Creates a new table.
   *   `updateTableColumnProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Table column.
-  *   `createVideo` (*type:* `GoogleApi.Slides.V1.Model.CreateVideoRequest.t`, *default:* `nil`) - Creates a video.
-  *   `createLine` (*type:* `GoogleApi.Slides.V1.Model.CreateLineRequest.t`, *default:* `nil`) - Creates a line.
-  *   `deleteTableRow` (*type:* `GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t`, *default:* `nil`) - Deletes a row from a table.
-  *   `ungroupObjects` (*type:* `GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t`, *default:* `nil`) - Ungroups objects, such as groups.
-  *   `rerouteLine` (*type:* `GoogleApi.Slides.V1.Model.RerouteLineRequest.t`, *default:* `nil`) - Reroutes a line such that it's connected at the two closest connection sites on the connected page elements.
+  *   `insertTableColumns` (*type:* `GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t`, *default:* `nil`) - Inserts columns into a table.
   *   `updateTableRowProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Table row.
-  *   `updateTextStyle` (*type:* `GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t`, *default:* `nil`) - Updates the styling of text within a Shape or Table.
-  *   `updateImageProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t`, *default:* `nil`) - Updates the properties of an Image.
-  *   `insertTableRows` (*type:* `GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t`, *default:* `nil`) - Inserts rows into a table.
-  *   `createImage` (*type:* `GoogleApi.Slides.V1.Model.CreateImageRequest.t`, *default:* `nil`) - Creates an image.
-  *   `replaceAllShapesWithImage` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t`, *default:* `nil`) - Replaces all shapes matching some criteria with an image.
-  *   `updatePageElementAltText` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t`, *default:* `nil`) - Updates the alt text title and/or description of a page element.
-  *   `duplicateObject` (*type:* `GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t`, *default:* `nil`) - Duplicates a slide or page element.
-  *   `replaceAllText` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t`, *default:* `nil`) - Replaces all instances of specified text.
-  *   `updateVideoProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Video.
-  *   `replaceAllShapesWithSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t`, *default:* `nil`) - Replaces all shapes matching some criteria with a Google Sheets chart.
-  *   `updatePageElementsZOrder` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t`, *default:* `nil`) - Updates the Z-order of page elements.
-  *   `updatePageElementTransform` (*type:* `GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t`, *default:* `nil`) - Updates the transform of a page element.
-  *   `updateSlidesPosition` (*type:* `GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest.t`, *default:* `nil`) - Updates the position of a set of slides in the presentation.
-  *   `insertText` (*type:* `GoogleApi.Slides.V1.Model.InsertTextRequest.t`, *default:* `nil`) - Inserts text into a shape or table cell.
-  *   `createShape` (*type:* `GoogleApi.Slides.V1.Model.CreateShapeRequest.t`, *default:* `nil`) - Creates a new shape.
-  *   `createParagraphBullets` (*type:* `GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
-  *   `updateLineProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Line.
-  *   `mergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t`, *default:* `nil`) - Merges cells in a Table.
-  *   `unmergeTableCells` (*type:* `GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t`, *default:* `nil`) - Unmerges cells in a Table.
-  *   `refreshSheetsChart` (*type:* `GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t`, *default:* `nil`) - Refreshes a Google Sheets chart.
   *   `updateSlideProperties` (*type:* `GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest.t`, *default:* `nil`) - Updates the properties of a Slide
-  *   `updateLineCategory` (*type:* `GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t`, *default:* `nil`) - Updates the category of a line.
   *   `updateParagraphStyle` (*type:* `GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t`, *default:* `nil`) - Updates the styling of paragraphs within a Shape or Table.
+  *   `createParagraphBullets` (*type:* `GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t`, *default:* `nil`) - Creates bullets for paragraphs.
+  *   `createVideo` (*type:* `GoogleApi.Slides.V1.Model.CreateVideoRequest.t`, *default:* `nil`) - Creates a video.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :deleteObject => GoogleApi.Slides.V1.Model.DeleteObjectRequest.t() | nil,
-          :insertTableColumns => GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t() | nil,
-          :deleteParagraphBullets =>
-            GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t() | nil,
-          :deleteTableColumn => GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t() | nil,
-          :updateTableBorderProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t() | nil,
-          :updatePageProperties =>
-            GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t() | nil,
-          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsRequest.t() | nil,
-          :updateTableCellProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest.t() | nil,
-          :updateShapeProperties =>
-            GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t() | nil,
-          :deleteText => GoogleApi.Slides.V1.Model.DeleteTextRequest.t() | nil,
-          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartRequest.t() | nil,
-          :replaceImage => GoogleApi.Slides.V1.Model.ReplaceImageRequest.t() | nil,
-          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideRequest.t() | nil,
-          :createTable => GoogleApi.Slides.V1.Model.CreateTableRequest.t() | nil,
-          :updateTableColumnProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t() | nil,
-          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoRequest.t() | nil,
-          :createLine => GoogleApi.Slides.V1.Model.CreateLineRequest.t() | nil,
-          :deleteTableRow => GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t() | nil,
-          :ungroupObjects => GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t() | nil,
-          :rerouteLine => GoogleApi.Slides.V1.Model.RerouteLineRequest.t() | nil,
-          :updateTableRowProperties =>
-            GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t() | nil,
-          :updateTextStyle => GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t() | nil,
-          :updateImageProperties =>
-            GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t() | nil,
-          :insertTableRows => GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t() | nil,
-          :createImage => GoogleApi.Slides.V1.Model.CreateImageRequest.t() | nil,
+          :mergeTableCells => GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t() | nil,
           :replaceAllShapesWithImage =>
             GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest.t() | nil,
-          :updatePageElementAltText =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t() | nil,
-          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t() | nil,
-          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t() | nil,
-          :updateVideoProperties =>
-            GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t() | nil,
-          :replaceAllShapesWithSheetsChart =>
-            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t() | nil,
-          :updatePageElementsZOrder =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t() | nil,
-          :updatePageElementTransform =>
-            GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t() | nil,
           :updateSlidesPosition =>
             GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest.t() | nil,
-          :insertText => GoogleApi.Slides.V1.Model.InsertTextRequest.t() | nil,
+          :updatePageProperties =>
+            GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest.t() | nil,
+          :replaceAllShapesWithSheetsChart =>
+            GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest.t() | nil,
+          :createImage => GoogleApi.Slides.V1.Model.CreateImageRequest.t() | nil,
+          :updateTableBorderProperties =>
+            GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest.t() | nil,
+          :duplicateObject => GoogleApi.Slides.V1.Model.DuplicateObjectRequest.t() | nil,
+          :updateTableCellProperties =>
+            GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest.t() | nil,
+          :refreshSheetsChart => GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t() | nil,
+          :deleteParagraphBullets =>
+            GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest.t() | nil,
+          :insertTableRows => GoogleApi.Slides.V1.Model.InsertTableRowsRequest.t() | nil,
+          :createLine => GoogleApi.Slides.V1.Model.CreateLineRequest.t() | nil,
+          :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t() | nil,
+          :updateTextStyle => GoogleApi.Slides.V1.Model.UpdateTextStyleRequest.t() | nil,
+          :replaceAllText => GoogleApi.Slides.V1.Model.ReplaceAllTextRequest.t() | nil,
           :createShape => GoogleApi.Slides.V1.Model.CreateShapeRequest.t() | nil,
-          :createParagraphBullets =>
-            GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t() | nil,
+          :deleteText => GoogleApi.Slides.V1.Model.DeleteTextRequest.t() | nil,
+          :rerouteLine => GoogleApi.Slides.V1.Model.RerouteLineRequest.t() | nil,
+          :updatePageElementAltText =>
+            GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest.t() | nil,
+          :updateVideoProperties =>
+            GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest.t() | nil,
+          :updateShapeProperties =>
+            GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest.t() | nil,
+          :deleteObject => GoogleApi.Slides.V1.Model.DeleteObjectRequest.t() | nil,
+          :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t() | nil,
+          :updatePageElementTransform =>
+            GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest.t() | nil,
           :updateLineProperties =>
             GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest.t() | nil,
-          :mergeTableCells => GoogleApi.Slides.V1.Model.MergeTableCellsRequest.t() | nil,
-          :unmergeTableCells => GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest.t() | nil,
-          :refreshSheetsChart => GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest.t() | nil,
+          :deleteTableRow => GoogleApi.Slides.V1.Model.DeleteTableRowRequest.t() | nil,
+          :createSlide => GoogleApi.Slides.V1.Model.CreateSlideRequest.t() | nil,
+          :deleteTableColumn => GoogleApi.Slides.V1.Model.DeleteTableColumnRequest.t() | nil,
+          :createTable => GoogleApi.Slides.V1.Model.CreateTableRequest.t() | nil,
+          :ungroupObjects => GoogleApi.Slides.V1.Model.UngroupObjectsRequest.t() | nil,
+          :groupObjects => GoogleApi.Slides.V1.Model.GroupObjectsRequest.t() | nil,
+          :updateImageProperties =>
+            GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest.t() | nil,
+          :insertText => GoogleApi.Slides.V1.Model.InsertTextRequest.t() | nil,
+          :updatePageElementsZOrder =>
+            GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest.t() | nil,
+          :createSheetsChart => GoogleApi.Slides.V1.Model.CreateSheetsChartRequest.t() | nil,
+          :replaceImage => GoogleApi.Slides.V1.Model.ReplaceImageRequest.t() | nil,
+          :updateTableColumnProperties =>
+            GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest.t() | nil,
+          :insertTableColumns => GoogleApi.Slides.V1.Model.InsertTableColumnsRequest.t() | nil,
+          :updateTableRowProperties =>
+            GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest.t() | nil,
           :updateSlideProperties =>
             GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest.t() | nil,
-          :updateLineCategory => GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest.t() | nil,
-          :updateParagraphStyle => GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t() | nil
+          :updateParagraphStyle =>
+            GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest.t() | nil,
+          :createParagraphBullets =>
+            GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest.t() | nil,
+          :createVideo => GoogleApi.Slides.V1.Model.CreateVideoRequest.t() | nil
         }
 
-  field(:deleteObject, as: GoogleApi.Slides.V1.Model.DeleteObjectRequest)
-  field(:insertTableColumns, as: GoogleApi.Slides.V1.Model.InsertTableColumnsRequest)
-  field(:deleteParagraphBullets, as: GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest)
-  field(:deleteTableColumn, as: GoogleApi.Slides.V1.Model.DeleteTableColumnRequest)
-
-  field(:updateTableBorderProperties,
-    as: GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest
-  )
-
-  field(:updatePageProperties, as: GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest)
-  field(:groupObjects, as: GoogleApi.Slides.V1.Model.GroupObjectsRequest)
-
-  field(:updateTableCellProperties, as: GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest)
-
-  field(:updateShapeProperties, as: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest)
-  field(:deleteText, as: GoogleApi.Slides.V1.Model.DeleteTextRequest)
-  field(:createSheetsChart, as: GoogleApi.Slides.V1.Model.CreateSheetsChartRequest)
-  field(:replaceImage, as: GoogleApi.Slides.V1.Model.ReplaceImageRequest)
-  field(:createSlide, as: GoogleApi.Slides.V1.Model.CreateSlideRequest)
-  field(:createTable, as: GoogleApi.Slides.V1.Model.CreateTableRequest)
-
-  field(:updateTableColumnProperties,
-    as: GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest
-  )
-
-  field(:createVideo, as: GoogleApi.Slides.V1.Model.CreateVideoRequest)
-  field(:createLine, as: GoogleApi.Slides.V1.Model.CreateLineRequest)
-  field(:deleteTableRow, as: GoogleApi.Slides.V1.Model.DeleteTableRowRequest)
-  field(:ungroupObjects, as: GoogleApi.Slides.V1.Model.UngroupObjectsRequest)
-  field(:rerouteLine, as: GoogleApi.Slides.V1.Model.RerouteLineRequest)
-  field(:updateTableRowProperties, as: GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest)
-  field(:updateTextStyle, as: GoogleApi.Slides.V1.Model.UpdateTextStyleRequest)
-  field(:updateImageProperties, as: GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest)
-  field(:insertTableRows, as: GoogleApi.Slides.V1.Model.InsertTableRowsRequest)
-  field(:createImage, as: GoogleApi.Slides.V1.Model.CreateImageRequest)
+  field(:mergeTableCells, as: GoogleApi.Slides.V1.Model.MergeTableCellsRequest)
 
   field(:replaceAllShapesWithImage, as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithImageRequest)
 
-  field(:updatePageElementAltText, as: GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest)
-  field(:duplicateObject, as: GoogleApi.Slides.V1.Model.DuplicateObjectRequest)
-  field(:replaceAllText, as: GoogleApi.Slides.V1.Model.ReplaceAllTextRequest)
-  field(:updateVideoProperties, as: GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest)
+  field(:updateSlidesPosition, as: GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest)
+  field(:updatePageProperties, as: GoogleApi.Slides.V1.Model.UpdatePagePropertiesRequest)
 
   field(:replaceAllShapesWithSheetsChart,
     as: GoogleApi.Slides.V1.Model.ReplaceAllShapesWithSheetsChartRequest
   )
 
-  field(:updatePageElementsZOrder, as: GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest)
+  field(:createImage, as: GoogleApi.Slides.V1.Model.CreateImageRequest)
+
+  field(:updateTableBorderProperties,
+    as: GoogleApi.Slides.V1.Model.UpdateTableBorderPropertiesRequest
+  )
+
+  field(:duplicateObject, as: GoogleApi.Slides.V1.Model.DuplicateObjectRequest)
+
+  field(:updateTableCellProperties, as: GoogleApi.Slides.V1.Model.UpdateTableCellPropertiesRequest)
+
+  field(:refreshSheetsChart, as: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest)
+  field(:deleteParagraphBullets, as: GoogleApi.Slides.V1.Model.DeleteParagraphBulletsRequest)
+  field(:insertTableRows, as: GoogleApi.Slides.V1.Model.InsertTableRowsRequest)
+  field(:createLine, as: GoogleApi.Slides.V1.Model.CreateLineRequest)
+  field(:updateLineCategory, as: GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest)
+  field(:updateTextStyle, as: GoogleApi.Slides.V1.Model.UpdateTextStyleRequest)
+  field(:replaceAllText, as: GoogleApi.Slides.V1.Model.ReplaceAllTextRequest)
+  field(:createShape, as: GoogleApi.Slides.V1.Model.CreateShapeRequest)
+  field(:deleteText, as: GoogleApi.Slides.V1.Model.DeleteTextRequest)
+  field(:rerouteLine, as: GoogleApi.Slides.V1.Model.RerouteLineRequest)
+  field(:updatePageElementAltText, as: GoogleApi.Slides.V1.Model.UpdatePageElementAltTextRequest)
+  field(:updateVideoProperties, as: GoogleApi.Slides.V1.Model.UpdateVideoPropertiesRequest)
+  field(:updateShapeProperties, as: GoogleApi.Slides.V1.Model.UpdateShapePropertiesRequest)
+  field(:deleteObject, as: GoogleApi.Slides.V1.Model.DeleteObjectRequest)
+  field(:unmergeTableCells, as: GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest)
 
   field(:updatePageElementTransform,
     as: GoogleApi.Slides.V1.Model.UpdatePageElementTransformRequest
   )
 
-  field(:updateSlidesPosition, as: GoogleApi.Slides.V1.Model.UpdateSlidesPositionRequest)
-  field(:insertText, as: GoogleApi.Slides.V1.Model.InsertTextRequest)
-  field(:createShape, as: GoogleApi.Slides.V1.Model.CreateShapeRequest)
-  field(:createParagraphBullets, as: GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest)
   field(:updateLineProperties, as: GoogleApi.Slides.V1.Model.UpdateLinePropertiesRequest)
-  field(:mergeTableCells, as: GoogleApi.Slides.V1.Model.MergeTableCellsRequest)
-  field(:unmergeTableCells, as: GoogleApi.Slides.V1.Model.UnmergeTableCellsRequest)
-  field(:refreshSheetsChart, as: GoogleApi.Slides.V1.Model.RefreshSheetsChartRequest)
+  field(:deleteTableRow, as: GoogleApi.Slides.V1.Model.DeleteTableRowRequest)
+  field(:createSlide, as: GoogleApi.Slides.V1.Model.CreateSlideRequest)
+  field(:deleteTableColumn, as: GoogleApi.Slides.V1.Model.DeleteTableColumnRequest)
+  field(:createTable, as: GoogleApi.Slides.V1.Model.CreateTableRequest)
+  field(:ungroupObjects, as: GoogleApi.Slides.V1.Model.UngroupObjectsRequest)
+  field(:groupObjects, as: GoogleApi.Slides.V1.Model.GroupObjectsRequest)
+  field(:updateImageProperties, as: GoogleApi.Slides.V1.Model.UpdateImagePropertiesRequest)
+  field(:insertText, as: GoogleApi.Slides.V1.Model.InsertTextRequest)
+  field(:updatePageElementsZOrder, as: GoogleApi.Slides.V1.Model.UpdatePageElementsZOrderRequest)
+  field(:createSheetsChart, as: GoogleApi.Slides.V1.Model.CreateSheetsChartRequest)
+  field(:replaceImage, as: GoogleApi.Slides.V1.Model.ReplaceImageRequest)
+
+  field(:updateTableColumnProperties,
+    as: GoogleApi.Slides.V1.Model.UpdateTableColumnPropertiesRequest
+  )
+
+  field(:insertTableColumns, as: GoogleApi.Slides.V1.Model.InsertTableColumnsRequest)
+  field(:updateTableRowProperties, as: GoogleApi.Slides.V1.Model.UpdateTableRowPropertiesRequest)
   field(:updateSlideProperties, as: GoogleApi.Slides.V1.Model.UpdateSlidePropertiesRequest)
-  field(:updateLineCategory, as: GoogleApi.Slides.V1.Model.UpdateLineCategoryRequest)
   field(:updateParagraphStyle, as: GoogleApi.Slides.V1.Model.UpdateParagraphStyleRequest)
+  field(:createParagraphBullets, as: GoogleApi.Slides.V1.Model.CreateParagraphBulletsRequest)
+  field(:createVideo, as: GoogleApi.Slides.V1.Model.CreateVideoRequest)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Slides.V1.Model.Request do
