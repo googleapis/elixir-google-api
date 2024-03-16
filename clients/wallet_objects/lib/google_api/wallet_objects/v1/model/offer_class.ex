@@ -21,133 +21,133 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferClass do
 
   ## Attributes
 
-  *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
-  *   `homepageUri` (*type:* `GoogleApi.WalletObjects.V1.Model.Uri.t`, *default:* `nil`) - The URI of your application's home page. Populating the URI in this field results in the exact same behavior as populating an URI in linksModuleData (when an object is rendered, a link to the homepage is shown in what would usually be thought of as the linksModuleData section of the object).
-  *   `wordMark` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Deprecated.
-  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
-  *   `classTemplateInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t`, *default:* `nil`) - Template information about how the class should be displayed. If unset, Google will fallback to a default set of fields to display.
-  *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the object, both will be displayed.
-  *   `localizedFinePrint` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the fine_print.
-  *   `provider` (*type:* `String.t`, *default:* `nil`) - Required. The offer provider (either the aggregator name or merchant name). Recommended maximum length is 12 characters to ensure full string is displayed on smaller screens.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string `"walletobjects#offerClass"`.
-  *   `finePrint` (*type:* `String.t`, *default:* `nil`) - The fine print or terms of the offer, such as "20% off any t-shirt at Adam's Apparel."
-  *   `details` (*type:* `String.t`, *default:* `nil`) - The details of the offer.
-  *   `localizedIssuerName` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the issuer_name. Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
-  *   `multipleDevicesAndHoldersAllowedStatus` (*type:* `String.t`, *default:* `nil`) - Identifies whether multiple users and devices will save the same object referencing this class.
-  *   `issuerName` (*type:* `String.t`, *default:* `nil`) - Required. The issuer name. Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
-  *   `hexBackgroundColor` (*type:* `String.t`, *default:* `nil`) - The background color for the card. If not set the dominant color of the hero image is used, and if no hero image is set, the dominant color of the logo is used. The format is #rrggbb where rrggbb is a hex RGB triplet, such as `#ffcc00`. You can also use the shorthand version of the RGB triplet which is #rgb, such as `#fc0`.
+  *   `redemptionIssuers` (*type:* `list(String.t)`, *default:* `nil`) - Identifies which redemption issuers can redeem the pass over Smart Tap. Redemption issuers are identified by their issuer ID. Redemption issuers must have at least one Smart Tap key configured. The `enableSmartTap` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
   *   `securityAnimation` (*type:* `GoogleApi.WalletObjects.V1.Model.SecurityAnimation.t`, *default:* `nil`) - Optional information about the security animation. If this is set a security animation will be rendered on pass details.
-  *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
-  *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the offer.
-  *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
+  *   `finePrint` (*type:* `String.t`, *default:* `nil`) - The fine print or terms of the offer, such as "20% off any t-shirt at Adam's Apparel."
+  *   `redemptionChannel` (*type:* `String.t`, *default:* `nil`) - Required. The redemption channels applicable to this offer.
+  *   `localizedTitle` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the title. Recommended maximum length is 60 characters to ensure full string is displayed on smaller screens.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string `"walletobjects#offerClass"`.
+  *   `hexBackgroundColor` (*type:* `String.t`, *default:* `nil`) - The background color for the card. If not set the dominant color of the hero image is used, and if no hero image is set, the dominant color of the logo is used. The format is #rrggbb where rrggbb is a hex RGB triplet, such as `#ffcc00`. You can also use the shorthand version of the RGB triplet which is #rgb, such as `#fc0`.
+  *   `infoModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.InfoModuleData.t`, *default:* `nil`) - Deprecated. Use textModulesData instead.
+  *   `localizedDetails` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the details.
+  *   `review` (*type:* `GoogleApi.WalletObjects.V1.Model.Review.t`, *default:* `nil`) - The review comments set by the platform when a class is marked `approved` or `rejected`.
   *   `localizedShortTitle` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the short title. Recommended maximum length is 20 characters.
+  *   `localizedIssuerName` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the issuer_name. Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
+  *   `shortTitle` (*type:* `String.t`, *default:* `nil`) - A shortened version of the title of the offer, such as "20% off," shown to users as a quick reference to the offer contents. Recommended maximum length is 20 characters.
+  *   `wordMark` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Deprecated.
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - Required. The offer provider (either the aggregator name or merchant name). Recommended maximum length is 12 characters to ensure full string is displayed on smaller screens.
+  *   `localizedFinePrint` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the fine_print.
+  *   `details` (*type:* `String.t`, *default:* `nil`) - The details of the offer.
+  *   `issuerName` (*type:* `String.t`, *default:* `nil`) - Required. The issuer name. Recommended maximum length is 20 characters to ensure full string is displayed on smaller screens.
+  *   `allowMultipleUsersPerObject` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Use `multipleDevicesAndHoldersAllowedStatus` instead.
+  *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   *   `helpUri` (*type:* `GoogleApi.WalletObjects.V1.Model.Uri.t`, *default:* `nil`) - The help link for the offer, such as `http://myownpersonaldomain.com/help`
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
-  *   `infoModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.InfoModuleData.t`, *default:* `nil`) - Deprecated. Use textModulesData instead.
-  *   `heroImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional banner image displayed on the front of the card. If none is present, nothing will be displayed. The image will display at 100% width.
-  *   `shortTitle` (*type:* `String.t`, *default:* `nil`) - A shortened version of the title of the offer, such as "20% off," shown to users as a quick reference to the offer contents. Recommended maximum length is 20 characters.
+  *   `homepageUri` (*type:* `GoogleApi.WalletObjects.V1.Model.Uri.t`, *default:* `nil`) - The URI of your application's home page. Populating the URI in this field results in the exact same behavior as populating an URI in linksModuleData (when an object is rendered, a link to the homepage is shown in what would usually be thought of as the linksModuleData section of the object).
+  *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
+  *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the object, both will be displayed.
   *   `wideTitleImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The wide title image of the offer. When provided, this will be used in place of the title image in the top left of the card view.
-  *   `localizedProvider` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the provider. Recommended maximum length is 12 characters to ensure full string is displayed on smaller screens.
-  *   `titleImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The title image of the offer. This image is displayed in both the details and list views of the app.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for a class. This ID must be unique across all classes from an issuer. This value should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you. Your unique identifier should only include alphanumeric characters, '.', '_', or '-'.
-  *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
-  *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
-  *   `localizedDetails` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the details.
+  *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
   *   `reviewStatus` (*type:* `String.t`, *default:* `nil`) - Required. The status of the class. This field can be set to `draft` or The status of the class. This field can be set to `draft` or `underReview` using the insert, patch, or update API calls. Once the review state is changed from `draft` it may not be changed back to `draft`. You should keep this field to `draft` when the class is under development. A `draft` class cannot be used to create any object. You should set this field to `underReview` when you believe the class is ready for use. The platform will automatically set this field to `approved` and it can be immediately used to create or migrate objects. When updating an already `approved` class you should keep setting this field to `underReview`.
-  *   `redemptionChannel` (*type:* `String.t`, *default:* `nil`) - Required. The redemption channels applicable to this offer.
-  *   `allowMultipleUsersPerObject` (*type:* `boolean()`, *default:* `nil`) - Deprecated. Use `multipleDevicesAndHoldersAllowedStatus` instead.
-  *   `review` (*type:* `GoogleApi.WalletObjects.V1.Model.Review.t`, *default:* `nil`) - The review comments set by the platform when a class is marked `approved` or `rejected`.
+  *   `multipleDevicesAndHoldersAllowedStatus` (*type:* `String.t`, *default:* `nil`) - Identifies whether multiple users and devices will save the same object referencing this class.
+  *   `heroImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional banner image displayed on the front of the card. If none is present, nothing will be displayed. The image will display at 100% width.
+  *   `classTemplateInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t`, *default:* `nil`) - Template information about how the class should be displayed. If unset, Google will fallback to a default set of fields to display.
+  *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
+  *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
+  *   `localizedProvider` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the provider. Recommended maximum length is 12 characters to ensure full string is displayed on smaller screens.
+  *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
+  *   `titleImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The title image of the offer. This image is displayed in both the details and list views of the app.
+  *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the offer.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for a class. This ID must be unique across all classes from an issuer. This value should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you. Your unique identifier should only include alphanumeric characters, '.', '_', or '-'.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Required. The title of the offer, such as "20% off any t-shirt." Recommended maximum length is 60 characters to ensure full string is displayed on smaller screens.
-  *   `localizedTitle` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the title. Recommended maximum length is 60 characters to ensure full string is displayed on smaller screens.
-  *   `redemptionIssuers` (*type:* `list(String.t)`, *default:* `nil`) - Identifies which redemption issuers can redeem the pass over Smart Tap. Redemption issuers are identified by their issuer ID. Redemption issuers must have at least one Smart Tap key configured. The `enableSmartTap` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
-          :homepageUri => GoogleApi.WalletObjects.V1.Model.Uri.t() | nil,
-          :wordMark => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
-          :countryCode => String.t() | nil,
-          :classTemplateInfo => GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t() | nil,
-          :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
-          :localizedFinePrint => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
-          :provider => String.t() | nil,
-          :kind => String.t() | nil,
-          :finePrint => String.t() | nil,
-          :details => String.t() | nil,
-          :localizedIssuerName => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
-          :multipleDevicesAndHoldersAllowedStatus => String.t() | nil,
-          :issuerName => String.t() | nil,
-          :hexBackgroundColor => String.t() | nil,
+          :redemptionIssuers => list(String.t()) | nil,
           :securityAnimation => GoogleApi.WalletObjects.V1.Model.SecurityAnimation.t() | nil,
-          :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
-          :version => String.t() | nil,
-          :viewUnlockRequirement => String.t() | nil,
-          :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
+          :finePrint => String.t() | nil,
+          :redemptionChannel => String.t() | nil,
+          :localizedTitle => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :kind => String.t() | nil,
+          :hexBackgroundColor => String.t() | nil,
+          :infoModuleData => GoogleApi.WalletObjects.V1.Model.InfoModuleData.t() | nil,
+          :localizedDetails => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :review => GoogleApi.WalletObjects.V1.Model.Review.t() | nil,
           :localizedShortTitle => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :localizedIssuerName => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :shortTitle => String.t() | nil,
+          :wordMark => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
+          :provider => String.t() | nil,
+          :localizedFinePrint => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :details => String.t() | nil,
+          :issuerName => String.t() | nil,
+          :allowMultipleUsersPerObject => boolean() | nil,
+          :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
+          :version => String.t() | nil,
           :helpUri => GoogleApi.WalletObjects.V1.Model.Uri.t() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
-          :infoModuleData => GoogleApi.WalletObjects.V1.Model.InfoModuleData.t() | nil,
-          :heroImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
-          :shortTitle => String.t() | nil,
+          :homepageUri => GoogleApi.WalletObjects.V1.Model.Uri.t() | nil,
+          :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
+          :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
           :wideTitleImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
-          :localizedProvider => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
-          :titleImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
-          :id => String.t() | nil,
-          :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
-          :enableSmartTap => boolean() | nil,
-          :localizedDetails => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
           :reviewStatus => String.t() | nil,
-          :redemptionChannel => String.t() | nil,
-          :allowMultipleUsersPerObject => boolean() | nil,
-          :review => GoogleApi.WalletObjects.V1.Model.Review.t() | nil,
-          :title => String.t() | nil,
-          :localizedTitle => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
-          :redemptionIssuers => list(String.t()) | nil
+          :multipleDevicesAndHoldersAllowedStatus => String.t() | nil,
+          :heroImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
+          :classTemplateInfo => GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t() | nil,
+          :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
+          :enableSmartTap => boolean() | nil,
+          :localizedProvider => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :countryCode => String.t() | nil,
+          :titleImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
+          :viewUnlockRequirement => String.t() | nil,
+          :id => String.t() | nil,
+          :title => String.t() | nil
         }
 
-  field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
-  field(:homepageUri, as: GoogleApi.WalletObjects.V1.Model.Uri)
-  field(:wordMark, as: GoogleApi.WalletObjects.V1.Model.Image)
-  field(:countryCode)
-  field(:classTemplateInfo, as: GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo)
-  field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
-  field(:localizedFinePrint, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
-  field(:provider)
-  field(:kind)
-  field(:finePrint)
-  field(:details)
-  field(:localizedIssuerName, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
-  field(:multipleDevicesAndHoldersAllowedStatus)
-  field(:issuerName)
-  field(:hexBackgroundColor)
+  field(:redemptionIssuers, type: :list)
   field(:securityAnimation, as: GoogleApi.WalletObjects.V1.Model.SecurityAnimation)
-  field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
-  field(:version)
-  field(:viewUnlockRequirement)
-  field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
+  field(:finePrint)
+  field(:redemptionChannel)
+  field(:localizedTitle, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:kind)
+  field(:hexBackgroundColor)
+  field(:infoModuleData, as: GoogleApi.WalletObjects.V1.Model.InfoModuleData)
+  field(:localizedDetails, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:review, as: GoogleApi.WalletObjects.V1.Model.Review)
   field(:localizedShortTitle, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:localizedIssuerName, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:shortTitle)
+  field(:wordMark, as: GoogleApi.WalletObjects.V1.Model.Image)
+  field(:provider)
+  field(:localizedFinePrint, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:details)
+  field(:issuerName)
+  field(:allowMultipleUsersPerObject)
+  field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
+  field(:version)
   field(:helpUri, as: GoogleApi.WalletObjects.V1.Model.Uri)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
-  field(:infoModuleData, as: GoogleApi.WalletObjects.V1.Model.InfoModuleData)
-  field(:heroImage, as: GoogleApi.WalletObjects.V1.Model.Image)
-  field(:shortTitle)
+  field(:homepageUri, as: GoogleApi.WalletObjects.V1.Model.Uri)
+  field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
+  field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
   field(:wideTitleImage, as: GoogleApi.WalletObjects.V1.Model.Image)
-  field(:localizedProvider, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
-  field(:titleImage, as: GoogleApi.WalletObjects.V1.Model.Image)
-  field(:id)
-  field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
-  field(:enableSmartTap)
-  field(:localizedDetails, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
   field(:reviewStatus)
-  field(:redemptionChannel)
-  field(:allowMultipleUsersPerObject)
-  field(:review, as: GoogleApi.WalletObjects.V1.Model.Review)
+  field(:multipleDevicesAndHoldersAllowedStatus)
+  field(:heroImage, as: GoogleApi.WalletObjects.V1.Model.Image)
+  field(:classTemplateInfo, as: GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo)
+  field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
+  field(:enableSmartTap)
+  field(:localizedProvider, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:countryCode)
+  field(:titleImage, as: GoogleApi.WalletObjects.V1.Model.Image)
+  field(:viewUnlockRequirement)
+  field(:id)
   field(:title)
-  field(:localizedTitle, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
-  field(:redemptionIssuers, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WalletObjects.V1.Model.OfferClass do
