@@ -21,195 +21,195 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
 
   ## Attributes
 
-  *   `systemRamTotal` (*type:* `String.t`, *default:* `nil`) - Total RAM on the device [in bytes] (Read-only)
-  *   `macAddress` (*type:* `String.t`, *default:* `nil`) - The device's wireless MAC address. If the device does not have this information, it is not included in the response.
-  *   `annotatedLocation` (*type:* `String.t`, *default:* `nil`) - The address or location of the device as noted by the administrator. Maximum length is `200` characters. Empty values are allowed.
-  *   `deviceFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles.t)`, *default:* `nil`) - A list of device files to download (Read-only)
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
-  *   `platformVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's platform version.
-  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
-  *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
-  *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
+  *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - The Mobile Equipment Identifier (MEID) or the International Mobile Equipment Identity (IMEI) for the 3G mobile card in a mobile device. A MEID/IMEI is typically used when adding a device to a wireless carrier's post-pay service plan. If the device does not have this information, this property is not included in the response. For more information on how to export a MEID/IMEI list, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices.html#export_meid).
   *   `osUpdateStatus` (*type:* `GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus.t`, *default:* `nil`) - The status of the OS updates for the device.
-  *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - A list of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
-  *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
-  *   `deviceLicenseType` (*type:* `String.t`, *default:* `nil`) - Output only. Device license type.
-  *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
-  *   `deprovisionReason` (*type:* `String.t`, *default:* `nil`) - (Read-only) Deprovision reason.
-  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - A list of recent device users, in descending order, by last login time.
-  *   `backlightInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t)`, *default:* `nil`) - Output only. Contains backlight information for the device.
   *   `supportEndDate` (*type:* `DateTime.t`, *default:* `nil`) - Final date the device will be supported (Read-only)
   *   `lastSync` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last synchronized with the policy settings in the G Suite administrator control panel (Read-only)
-  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
+  *   `platformVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's platform version.
+  *   `kind` (*type:* `String.t`, *default:* `admin#directory#chromeosdevice`) - The type of resource. For the Chromeosdevices resource, the value is `admin#directory#chromeosdevice`.
+  *   `annotatedUser` (*type:* `String.t`, *default:* `nil`) - The user of the device as noted by the administrator. Maximum length is 100 characters. Empty values are allowed.
+  *   `deviceLicenseType` (*type:* `String.t`, *default:* `nil`) - Output only. Device license type.
   *   `manufactureDate` (*type:* `String.t`, *default:* `nil`) - (Read-only) The date the device was manufactured in yyyy-mm-dd format.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the device.
-  *   `orderNumber` (*type:* `String.t`, *default:* `nil`) - The device's order number. Only devices directly purchased from Google have an order number.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - The device's model information. If the device does not have this information, this property is not included in the response.
-  *   `ethernetMacAddress0` (*type:* `String.t`, *default:* `nil`) - (Read-only) MAC address used by the Chromebook’s internal ethernet port, and for onboard network (ethernet) interface. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The Chrome device serial number entered when the device was enabled. This value is the same as the Admin console's *Serial Number* in the *Chrome OS Devices* tab.
-  *   `meid` (*type:* `String.t`, *default:* `nil`) - The Mobile Equipment Identifier (MEID) or the International Mobile Equipment Identity (IMEI) for the 3G mobile card in a mobile device. A MEID/IMEI is typically used when adding a device to a wireless carrier's post-pay service plan. If the device does not have this information, this property is not included in the response. For more information on how to export a MEID/IMEI list, see the [Developer's Guide](/admin-sdk/directory/v1/guides/manage-chrome-devices.html#export_meid).
-  *   `tpmVersionInfo` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t`, *default:* `nil`) - Trusted Platform Module (TPM) (Read-only)
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this device added by the administrator. This property can be [searched](https://support.google.com/chrome/a/answer/1698333) with the [list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method's `query` parameter. Maximum length is 500 characters. Empty values are allowed.
+  *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
+  *   `macAddress` (*type:* `String.t`, *default:* `nil`) - The device's wireless MAC address. If the device does not have this information, it is not included in the response.
+  *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
+  *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Determines if the device will auto renew its support after the support end date. This is a read-only property.
+  *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
+  *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
   *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - A list of active time ranges (Read-only).
-  *   `cpuInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t)`, *default:* `nil`) - Information regarding CPU specs in the device.
+  *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
+  *   `ethernetMacAddress0` (*type:* `String.t`, *default:* `nil`) - (Read-only) MAC address used by the Chromebook’s internal ethernet port, and for onboard network (ethernet) interface. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
+  *   `orderNumber` (*type:* `String.t`, *default:* `nil`) - The device's order number. Only devices directly purchased from Google have an order number.
+  *   `backlightInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t)`, *default:* `nil`) - Output only. Contains backlight information for the device.
+  *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - A list of recent device users, in descending order, by last login time.
   *   `firstEnrollmentTime` (*type:* `String.t`, *default:* `nil`) - Date and time for the first time the device was enrolled.
+  *   `deviceFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles.t)`, *default:* `nil`) - A list of device files to download (Read-only)
+  *   `screenshotFiles` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t)`, *default:* `nil`) - A list of screenshot files to download. Type is always "SCREENSHOT_FILE". (Read-only)
+  *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
+  *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - The asset identifier as noted by an administrator or specified during enrollment.
+  *   `diskVolumeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t)`, *default:* `nil`) - Reports of disk space and other info about mounted/connected volumes.
+  *   `systemRamTotal` (*type:* `String.t`, *default:* `nil`) - Total RAM on the device [in bytes] (Read-only)
+  *   `tpmVersionInfo` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t`, *default:* `nil`) - Trusted Platform Module (TPM) (Read-only)
+  *   `annotatedLocation` (*type:* `String.t`, *default:* `nil`) - The address or location of the device as noted by the administrator. Maximum length is `200` characters. Empty values are allowed.
+  *   `lastDeprovisionTimestamp` (*type:* `String.t`, *default:* `nil`) - (Read-only) Date and time for the last deprovision of the device.
+  *   `cpuInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t)`, *default:* `nil`) - Information regarding CPU specs in the device.
   *   `bootMode` (*type:* `String.t`, *default:* `nil`) - The boot mode for the device. The possible values are: * `Verified`: The device is running a valid version of the Chrome OS. * `Dev`: The devices's developer hardware switch is enabled. When booted, the device has a command line shell. For an example of a developer switch, see the [Chromebook developer information](https://www.chromium.org/chromium-os/developer-information-for-chrome-os-devices/samsung-series-5-chromebook#TOC-Developer-switch).
   *   `ethernetMacAddress` (*type:* `String.t`, *default:* `nil`) - The device's MAC address on the ethernet network interface.
-  *   `lastEnrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - Date and time the device was last enrolled (Read-only)
-  *   `diskVolumeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t)`, *default:* `nil`) - Reports of disk space and other info about mounted/connected volumes.
-  *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
   *   `orgUnitId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the organizational unit. orgUnitPath is the human readable version of orgUnitId. While orgUnitPath may change by renaming an organizational unit within the path, orgUnitId is unchangeable for one organizational unit. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
-  *   `annotatedAssetId` (*type:* `String.t`, *default:* `nil`) - The asset identifier as noted by an administrator or specified during enrollment.
-  *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
-  *   `dockMacAddress` (*type:* `String.t`, *default:* `nil`) - (Read-only) Built-in MAC address for the docking station that the device connected to. Factory sets Media access control address (MAC address) assigned for use by a dock. It is reserved specifically for MAC pass through device policy. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
-  *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this device added by the administrator. This property can be [searched](https://support.google.com/chrome/a/answer/1698333) with the [list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method's `query` parameter. Maximum length is 500 characters. Empty values are allowed.
-  *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Determines if the device will auto renew its support after the support end date. This is a read-only property.
-  *   `lastDeprovisionTimestamp` (*type:* `String.t`, *default:* `nil`) - (Read-only) Date and time for the last deprovision of the device.
-  *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
+  *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's operating system version.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the device.
+  *   `systemRamFreeReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t)`, *default:* `nil`) - Reports of amounts of available RAM memory (Read-only)
+  *   `deprovisionReason` (*type:* `String.t`, *default:* `nil`) - (Read-only) Deprovision reason.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - The device's model information. If the device does not have this information, this property is not included in the response.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :systemRamTotal => String.t() | nil,
-          :macAddress => String.t() | nil,
-          :annotatedLocation => String.t() | nil,
-          :deviceFiles =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles.t()) | nil,
-          :etag => String.t() | nil,
-          :platformVersion => String.t() | nil,
-          :osVersion => String.t() | nil,
-          :orgUnitPath => String.t() | nil,
-          :firmwareVersion => String.t() | nil,
+          :lastEnrollmentTime => DateTime.t() | nil,
+          :meid => String.t() | nil,
           :osUpdateStatus => GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus.t() | nil,
-          :screenshotFiles =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
-          :annotatedUser => String.t() | nil,
-          :deviceLicenseType => String.t() | nil,
-          :kind => String.t() | nil,
-          :deprovisionReason => String.t() | nil,
-          :recentUsers =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()) | nil,
-          :backlightInfo => list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t()) | nil,
           :supportEndDate => DateTime.t() | nil,
           :lastSync => DateTime.t() | nil,
-          :deviceId => String.t() | nil,
+          :platformVersion => String.t() | nil,
+          :kind => String.t() | nil,
+          :annotatedUser => String.t() | nil,
+          :deviceLicenseType => String.t() | nil,
           :manufactureDate => String.t() | nil,
-          :status => String.t() | nil,
-          :orderNumber => String.t() | nil,
-          :model => String.t() | nil,
-          :ethernetMacAddress0 => String.t() | nil,
           :serialNumber => String.t() | nil,
-          :meid => String.t() | nil,
-          :tpmVersionInfo =>
-            GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t() | nil,
+          :notes => String.t() | nil,
+          :orgUnitPath => String.t() | nil,
+          :macAddress => String.t() | nil,
+          :autoUpdateExpiration => String.t() | nil,
+          :willAutoRenew => boolean() | nil,
+          :lastKnownNetwork =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t()) | nil,
+          :deviceId => String.t() | nil,
+          :firmwareVersion => String.t() | nil,
           :activeTimeRanges =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t()) | nil,
-          :cpuInfo => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t()) | nil,
-          :firstEnrollmentTime => String.t() | nil,
-          :bootMode => String.t() | nil,
-          :ethernetMacAddress => String.t() | nil,
-          :lastEnrollmentTime => DateTime.t() | nil,
-          :diskVolumeReports =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t()) | nil,
-          :systemRamFreeReports =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t()) | nil,
-          :orgUnitId => String.t() | nil,
-          :annotatedAssetId => String.t() | nil,
           :cpuStatusReports =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t()) | nil,
+          :ethernetMacAddress0 => String.t() | nil,
+          :orderNumber => String.t() | nil,
+          :backlightInfo => list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t()) | nil,
+          :recentUsers =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()) | nil,
+          :firstEnrollmentTime => String.t() | nil,
+          :deviceFiles =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles.t()) | nil,
+          :screenshotFiles =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles.t()) | nil,
           :dockMacAddress => String.t() | nil,
-          :autoUpdateExpiration => String.t() | nil,
-          :notes => String.t() | nil,
-          :willAutoRenew => boolean() | nil,
+          :annotatedAssetId => String.t() | nil,
+          :diskVolumeReports =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports.t()) | nil,
+          :systemRamTotal => String.t() | nil,
+          :tpmVersionInfo =>
+            GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo.t() | nil,
+          :annotatedLocation => String.t() | nil,
           :lastDeprovisionTimestamp => String.t() | nil,
-          :lastKnownNetwork =>
-            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t()) | nil
+          :cpuInfo => list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo.t()) | nil,
+          :bootMode => String.t() | nil,
+          :ethernetMacAddress => String.t() | nil,
+          :orgUnitId => String.t() | nil,
+          :osVersion => String.t() | nil,
+          :etag => String.t() | nil,
+          :status => String.t() | nil,
+          :systemRamFreeReports =>
+            list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports.t()) | nil,
+          :deprovisionReason => String.t() | nil,
+          :model => String.t() | nil
         }
 
-  field(:systemRamTotal)
-  field(:macAddress)
-  field(:annotatedLocation)
-
-  field(:deviceFiles,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles,
-    type: :list
-  )
-
-  field(:etag)
-  field(:platformVersion)
-  field(:osVersion)
-  field(:orgUnitPath)
-  field(:firmwareVersion)
+  field(:lastEnrollmentTime, as: DateTime)
+  field(:meid)
   field(:osUpdateStatus, as: GoogleApi.Admin.Directory_v1.Model.OsUpdateStatus)
-
-  field(:screenshotFiles,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles,
-    type: :list
-  )
-
-  field(:annotatedUser)
-  field(:deviceLicenseType)
-  field(:kind)
-  field(:deprovisionReason)
-
-  field(:recentUsers,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers,
-    type: :list
-  )
-
-  field(:backlightInfo, as: GoogleApi.Admin.Directory_v1.Model.BacklightInfo, type: :list)
   field(:supportEndDate, as: DateTime)
   field(:lastSync, as: DateTime)
-  field(:deviceId)
+  field(:platformVersion)
+  field(:kind)
+  field(:annotatedUser)
+  field(:deviceLicenseType)
   field(:manufactureDate)
-  field(:status)
-  field(:orderNumber)
-  field(:model)
-  field(:ethernetMacAddress0)
   field(:serialNumber)
-  field(:meid)
-  field(:tpmVersionInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo)
+  field(:notes)
+  field(:orgUnitPath)
+  field(:macAddress)
+  field(:autoUpdateExpiration)
+  field(:willAutoRenew)
+
+  field(:lastKnownNetwork,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork,
+    type: :list
+  )
+
+  field(:deviceId)
+  field(:firmwareVersion)
 
   field(:activeTimeRanges,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges,
     type: :list
   )
 
-  field(:cpuInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo, type: :list)
+  field(:cpuStatusReports,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports,
+    type: :list
+  )
+
+  field(:ethernetMacAddress0)
+  field(:orderNumber)
+  field(:backlightInfo, as: GoogleApi.Admin.Directory_v1.Model.BacklightInfo, type: :list)
+
+  field(:recentUsers,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers,
+    type: :list
+  )
+
   field(:firstEnrollmentTime)
-  field(:bootMode)
-  field(:ethernetMacAddress)
-  field(:lastEnrollmentTime, as: DateTime)
+
+  field(:deviceFiles,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDeviceFiles,
+    type: :list
+  )
+
+  field(:screenshotFiles,
+    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceScreenshotFiles,
+    type: :list
+  )
+
+  field(:dockMacAddress)
+  field(:annotatedAssetId)
 
   field(:diskVolumeReports,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceDiskVolumeReports,
     type: :list
   )
 
+  field(:systemRamTotal)
+  field(:tpmVersionInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceTpmVersionInfo)
+  field(:annotatedLocation)
+  field(:lastDeprovisionTimestamp)
+  field(:cpuInfo, as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuInfo, type: :list)
+  field(:bootMode)
+  field(:ethernetMacAddress)
+  field(:orgUnitId)
+  field(:osVersion)
+  field(:etag)
+  field(:status)
+
   field(:systemRamFreeReports,
     as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceSystemRamFreeReports,
     type: :list
   )
 
-  field(:orgUnitId)
-  field(:annotatedAssetId)
-
-  field(:cpuStatusReports,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports,
-    type: :list
-  )
-
-  field(:dockMacAddress)
-  field(:autoUpdateExpiration)
-  field(:notes)
-  field(:willAutoRenew)
-  field(:lastDeprovisionTimestamp)
-
-  field(:lastKnownNetwork,
-    as: GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork,
-    type: :list
-  )
+  field(:deprovisionReason)
+  field(:model)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
