@@ -21,309 +21,352 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaScaleSet do
 
   ## Attributes
 
-  *   `sentenceTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenPosPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
   *   `entityTypePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentParagraphsPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `entityNamePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `document` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument.t)`, *default:* `nil`) - 
-  *   `mentionBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `characterParagraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `languageSpan` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaLanguageSpan.t)`, *default:* `nil`) - 
-  *   `entityMidPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `characterPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `byte` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaByte.t)`, *default:* `nil`) - 
-  *   `documentTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionKindPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `languageSpanLanguageCodePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenSentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `sentenceCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `byteDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - Metadata for which layer (scale) fields are present. WARNING: CURRENT USAGE IS AD HOC, DO NOT RELY ON THESE BEING POPULATED CORRECTLY. This should improve in v2.
-  *   `documentMentionsPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `languageSpanCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentUrlPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `characterTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `sentenceDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `sentence` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence.t)`, *default:* `nil`) - 
-  *   `documentAuthorPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphSentencesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentSentencesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `bytePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - Metadata for which layers (scales) are present. WARNING: CURRENT USAGE IS AD HOC, DO NOT RELY ON THESE BEING POPULATED CORRECTLY. This should improve in v2.
-  *   `character` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter.t)`, *default:* `nil`) - 
-  *   `sentenceTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `token` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken.t)`, *default:* `nil`) - 
-  *   `characterDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenDependencyLabelPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `entity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity.t)`, *default:* `nil`) - 
-  *   `mention` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention.t)`, *default:* `nil`) - 
-  *   `entityPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `paragraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `documentLanguageCodePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `languageSpanDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenParagraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `languageSpanPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
   *   `sentenceParagraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `sentenceBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `sentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `mentionPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
-  *   `tokenDependencyHeadPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `languageSpanBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraph` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph.t)`, *default:* `nil`) - 
-  *   `tokenDependencyPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `entityMidPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
   *   `entityGenderPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `characterTokenPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `paragraphBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `documentLanguageSpansPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `tokenTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionEntityPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionTypePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `mentionTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
-  *   `characterSentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `entityPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `languageSpanDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `entityNamePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `paragraphDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `entity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity.t)`, *default:* `nil`) - 
+  *   `bytePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - Metadata for which layers (scales) are present. WARNING: CURRENT USAGE IS AD HOC, DO NOT RELY ON THESE BEING POPULATED CORRECTLY. This should improve in v2.
+  *   `tokenDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenSentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `character` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter.t)`, *default:* `nil`) - 
+  *   `documentLanguageCodePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `token` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken.t)`, *default:* `nil`) - 
+  *   `tokenParagraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
   *   `documentIdPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentenceCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `languageSpanPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `paragraph` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph.t)`, *default:* `nil`) - 
+  *   `mentionDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenDependencyPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `mention` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention.t)`, *default:* `nil`) - 
+  *   `paragraphCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentParagraphsPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionEntityPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `tokenPosPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentenceBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenDependencyHeadPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `languageSpanLanguageCodePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentenceTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentMentionsPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentUrlPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `paragraphTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterParagraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentence` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence.t)`, *default:* `nil`) - 
+  *   `mentionTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `paragraphBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterTokenPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterSentencePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `byteDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - Metadata for which layer (scale) fields are present. WARNING: CURRENT USAGE IS AD HOC, DO NOT RELY ON THESE BEING POPULATED CORRECTLY. This should improve in v2.
+  *   `paragraphPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `languageSpan` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaLanguageSpan.t)`, *default:* `nil`) - 
+  *   `languageSpanBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionTypePresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenBytesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `byte` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaByte.t)`, *default:* `nil`) - 
+  *   `tokenCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentTokensPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `characterDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentenceDocumentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentSentencesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `languageSpanCharactersPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `tokenDependencyLabelPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `paragraphTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `sentenceTextPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t`, *default:* `nil`) - 
+  *   `documentAuthorPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `document` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument.t)`, *default:* `nil`) - 
+  *   `paragraphSentencesPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `mentionKindPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
+  *   `documentLanguageSpansPresence` (*type:* `GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :sentenceTokensPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenPosPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :mentionDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphCharactersPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
           :entityTypePresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentParagraphsPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenBytesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :entityNamePresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :document => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument.t()) | nil,
-          :mentionBytesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :characterParagraphPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :languageSpan =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaLanguageSpan.t()) | nil,
-          :entityMidPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :characterPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :byte => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaByte.t()) | nil,
-          :documentTextPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenCharactersPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentBytesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :mentionKindPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :languageSpanLanguageCodePresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenSentencePresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :sentenceCharactersPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :byteDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentMentionsPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :languageSpanCharactersPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentCharactersPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentUrlPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :characterTextPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :sentenceDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphTextPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :sentence => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence.t()) | nil,
-          :documentAuthorPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphSentencesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentSentencesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphTokensPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :bytePresence => GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :character =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter.t()) | nil,
-          :sentenceTextPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :token => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken.t()) | nil,
-          :characterDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenDependencyLabelPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenPresence => GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :entity => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity.t()) | nil,
-          :mention => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention.t()) | nil,
-          :entityPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :paragraphPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :documentLanguageCodePresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :languageSpanDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :mentionTokensPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenParagraphPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphDocumentPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :languageSpanPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
           :sentenceParagraphPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :sentenceBytesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :sentencePresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :mentionPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
-          :tokenDependencyHeadPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :languageSpanBytesPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraph =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph.t()) | nil,
-          :tokenDependencyPresence =>
-            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentTokensPresence =>
+          :entityMidPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
           :entityGenderPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :characterTokenPresence =>
+          :mentionBytesPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :paragraphBytesPresence =>
+          :entityPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :languageSpanDocumentPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentLanguageSpansPresence =>
+          :entityNamePresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :tokenTextPresence =>
+          :paragraphDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentencePresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :entity => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity.t()) | nil,
+          :bytePresence => GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :tokenDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentCharactersPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenSentencePresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :character =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter.t()) | nil,
+          :documentLanguageCodePresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :token => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken.t()) | nil,
+          :tokenParagraphPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentIdPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentenceCharactersPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :languageSpanPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :paragraph =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph.t()) | nil,
+          :mentionDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenDependencyPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenPresence => GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :mention => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention.t()) | nil,
+          :paragraphCharactersPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentParagraphsPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
           :mentionEntityPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :mentionTypePresence =>
+          :mentionPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :tokenPosPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentenceBytesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenDependencyHeadPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :languageSpanLanguageCodePresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentenceTokensPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentTextPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentMentionsPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentUrlPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :paragraphTokensPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :characterParagraphPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentence => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence.t()) | nil,
+          :mentionTokensPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :paragraphBytesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentBytesPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
           :mentionTextPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :characterTextPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :characterTokenPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
           :characterSentencePresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
-          :documentIdPresence =>
+          :characterPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :byteDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :paragraphPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :languageSpan =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaLanguageSpan.t()) | nil,
+          :languageSpanBytesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenTextPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :mentionTypePresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenBytesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :byte => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaByte.t()) | nil,
+          :tokenCharactersPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentTokensPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :characterDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentenceDocumentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentSentencesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :languageSpanCharactersPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :tokenDependencyLabelPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :paragraphTextPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :sentenceTextPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence.t() | nil,
+          :documentAuthorPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :document => list(GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument.t()) | nil,
+          :paragraphSentencesPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :mentionKindPresence =>
+            GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil,
+          :documentLanguageSpansPresence =>
             GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence.t() | nil
         }
 
-  field(:sentenceTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:tokenPosPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:entityTypePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:sentenceParagraphPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:entityMidPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:entityGenderPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:entityPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+
+  field(:languageSpanDocumentPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:entityNamePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:paragraphDocumentPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:sentencePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:entity, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity, type: :list)
+  field(:bytePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:tokenDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:documentCharactersPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:tokenSentencePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:character, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter, type: :list)
+
+  field(:documentLanguageCodePresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:token, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken, type: :list)
+  field(:tokenParagraphPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:documentIdPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:sentenceCharactersPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:languageSpanPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:paragraph, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph, type: :list)
   field(:mentionDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:tokenDependencyPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:tokenPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:mention, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention, type: :list)
 
   field(:paragraphCharactersPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
-  field(:entityTypePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
   field(:documentParagraphsPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
-  field(:tokenBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:entityNamePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:document, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument, type: :list)
-  field(:mentionBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionEntityPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:tokenPosPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:sentenceBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:tokenDependencyHeadPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:languageSpanLanguageCodePresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:sentenceTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:documentTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:documentMentionsPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:documentUrlPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:paragraphTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
 
   field(:characterParagraphPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
+
+  field(:sentence, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence, type: :list)
+  field(:mentionTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:paragraphBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:documentBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:characterTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:characterTokenPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+
+  field(:characterSentencePresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:characterPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:byteDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:paragraphPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
 
   field(:languageSpan,
     as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaLanguageSpan,
     type: :list
   )
 
-  field(:entityMidPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:characterPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:languageSpanBytesPresence,
+    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
+  )
+
+  field(:tokenTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionTypePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:tokenBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
   field(:byte, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaByte, type: :list)
-  field(:documentTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
   field(:tokenCharactersPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:tokenDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:documentBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:mentionKindPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:documentTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
 
-  field(:languageSpanLanguageCodePresence,
+  field(:characterDocumentPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
-
-  field(:tokenSentencePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:sentenceCharactersPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:byteDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:documentMentionsPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:documentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-
-  field(:languageSpanCharactersPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:documentCharactersPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:documentUrlPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:characterTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
 
   field(:sentenceDocumentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:paragraphTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:sentence, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaSentence, type: :list)
-  field(:documentAuthorPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:paragraphSentencesPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
 
   field(:documentSentencesPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
-  field(:paragraphTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:bytePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-  field(:character, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaCharacter, type: :list)
-  field(:sentenceTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:token, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaToken, type: :list)
-
-  field(:characterDocumentPresence,
+  field(:languageSpanCharactersPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
@@ -331,66 +374,21 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaScaleSet do
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
-  field(:tokenPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-  field(:entity, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaEntity, type: :list)
-  field(:mention, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaMention, type: :list)
-  field(:entityPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-  field(:paragraphPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:paragraphTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:sentenceTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:documentPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
+  field(:documentAuthorPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:document, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaDocument, type: :list)
 
-  field(:documentLanguageCodePresence,
+  field(:paragraphSentencesPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
 
-  field(:languageSpanDocumentPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:mentionTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:tokenParagraphPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:paragraphDocumentPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:languageSpanPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-
-  field(:sentenceParagraphPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:sentenceBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:sentencePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-  field(:mentionPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleLayerPresence)
-
-  field(:tokenDependencyHeadPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:languageSpanBytesPresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:paragraph, as: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaParagraph, type: :list)
-  field(:tokenDependencyPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:documentTokensPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:entityGenderPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:characterTokenPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:paragraphBytesPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
+  field(:mentionKindPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
 
   field(:documentLanguageSpansPresence,
     as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
   )
-
-  field(:tokenTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:mentionEntityPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:mentionTypePresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-  field(:mentionTextPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
-
-  field(:characterSentencePresence,
-    as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence
-  )
-
-  field(:documentIdPresence, as: GoogleApi.ContentWarehouse.V1.Model.MultiscaleFieldPresence)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.NlxDataSchemaScaleSet do

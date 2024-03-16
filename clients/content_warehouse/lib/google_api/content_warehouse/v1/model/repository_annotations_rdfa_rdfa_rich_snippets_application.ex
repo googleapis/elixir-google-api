@@ -21,206 +21,188 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichS
 
   ## Attributes
 
-  *   `popularScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `extractedIconColor` (*type:* `integer()`, *default:* `nil`) - Top 1 of extracted icon colors. We keep this field for backward compatibility.
-  *   `filteringTag` (*type:* `list(String.t)`, *default:* `nil`) - Tags to be indexed for filtering, e.g. "ft_popular_score_gt_1m".
-  *   `size` (*type:* `String.t`, *default:* `nil`) - bytes or numeric with MB or GB
-  *   `localizedTrustedGenome` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome.t`, *default:* `nil`) - 
-  *   `isDefaultLangLocale` (*type:* `boolean()`, *default:* `nil`) - Indicates if the localized data comes from default locale. This is needed because the default localized data does not specify its locale. If this is true, lang_locale may not be the correct locale and should be ignored.
-  *   `totalRating` (*type:* `number()`, *default:* `nil`) - 
-  *   `optionalResult` (*type:* `boolean()`, *default:* `nil`) - Whether this App is optional result for Grid UI.
-  *   `applicationUrl` (*type:* `String.t`, *default:* `nil`) - Fields for internal use
-  *   `appTypeData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData.t`, *default:* `nil`) - 
-  *   `description` (*type:* `String.t`, *default:* `nil`) - 
-  *   `countriesSupported` (*type:* `list(String.t)`, *default:* `nil`) - These are currently used only for Google Play.
-  *   `vendorCanonicalUrl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `breadcrumbs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs.t`, *default:* `nil`) - 
-  *   `extractedIconColors` (*type:* `list(integer())`, *default:* `nil`) - Top 10 of extracted icon colors. r = (rgb >> 16) & 0xff; g = (rgb >> 8) & 0xff; b = rgb & 0xff;
-  *   `physicalDeviceTags` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `releaseDate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `iconUrlThumbnail` (*type:* `String.t`, *default:* `nil`) - 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - 
-  *   `lastUpdated` (*type:* `String.t`, *default:* `nil`) - 
-  *   `supportsAndroidTv` (*type:* `boolean()`, *default:* `nil`) - Whether this App supports Android TV. Note that some App supports more than one platforms. So we would use boolean for a platform.
-  *   `marketplace` (*type:* `String.t`, *default:* `nil`) - Market Android or itunes
-  *   `version` (*type:* `String.t`, *default:* `nil`) - 
-  *   `hasEditorsChoiceBadge` (*type:* `boolean()`, *default:* `nil`) - Whether the app has editors choice tag
-  *   `numDownloads` (*type:* `String.t`, *default:* `nil`) - 
-  *   `operatingSystems` (*type:* `list(String.t)`, *default:* `nil`) - See google3/quality/richsnippets/schema/data/operating_systems_rules.txt for possible values.
-  *   `reviewCount` (*type:* `String.t`, *default:* `nil`) - 
-  *   `vendorUrl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `originalRating` (*type:* `String.t`, *default:* `nil`) - 
-  *   `trustedGenomeData` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.VendingConsumerProtoTrustedGenomeAnnotation.t}`, *default:* `nil`) - Trusted Genome data with categorical app information key: locale (e.g. en, en_US)
-  *   `subcategory` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `inAppPurchase` (*type:* `boolean()`, *default:* `nil`) - Whether the app offers in-app purchase.
-  *   `reviewAuthor` (*type:* `String.t`, *default:* `nil`) - 
-  *   `ratingCount` (*type:* `String.t`, *default:* `nil`) - 
-  *   `liveOpDetails` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalAuLiveOpsDetailInfo.t`, *default:* `nil`) - Unified proto for android LiveOps and iOS LiveEvents.
-  *   `price` (*type:* `String.t`, *default:* `nil`) - Price
-  *   `rankData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationRankData.t`, *default:* `nil`) - 
-  *   `vendor` (*type:* `String.t`, *default:* `nil`) - Vendor
-  *   `currency` (*type:* `String.t`, *default:* `nil`) - 
-  *   `screenUrlThumbnail` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `screenUrlHref` (*type:* `list(String.t)`, *default:* `nil`) - TODO(b/260128276) deprecate this field in favor of image_data.
-  *   `platformTags` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `supportsChromecast` (*type:* `boolean()`, *default:* `nil`) - Whether this App supports Google Cast.
-  *   `devConsoleId` (*type:* `String.t`, *default:* `nil`) - Developer console ID of the app if it exists. The ID is available for an app registered to Google Developers Console, not Play Developer Console.
-  *   `countryPrices` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationCountryPrice.t)`, *default:* `nil`) - 
-  *   `genre` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `iconUrlHref` (*type:* `String.t`, *default:* `nil`) - Icon and Screenshots
   *   `rating` (*type:* `String.t`, *default:* `nil`) - Ratings and reviews Either for this version only or for all versions to be displayed.
+  *   `operatingSystems` (*type:* `list(String.t)`, *default:* `nil`) - See google3/quality/richsnippets/schema/data/operating_systems_rules.txt for possible values.
+  *   `inAppPurchase` (*type:* `boolean()`, *default:* `nil`) - Whether the app offers in-app purchase.
+  *   `screenUrlThumbnail` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `rankData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationRankData.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - 
+  *   `iconUrlHref` (*type:* `String.t`, *default:* `nil`) - Icon and Screenshots
+  *   `totalRating` (*type:* `number()`, *default:* `nil`) - 
+  *   `trustedGenomeData` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.VendingConsumerProtoTrustedGenomeAnnotation.t}`, *default:* `nil`) - Trusted Genome data with categorical app information key: locale (e.g. en, en_US)
+  *   `liveOpDetails` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalAuLiveOpsDetailInfo.t`, *default:* `nil`) - Unified proto for android LiveOps and iOS LiveEvents.
+  *   `popularScore` (*type:* `number()`, *default:* `nil`) - 
+  *   `applicationUrl` (*type:* `String.t`, *default:* `nil`) - Fields for internal use
   *   `langLocale` (*type:* `String.t`, *default:* `nil`) - locale for the localized data, such as name, description and screenshots
-  *   `category` (*type:* `list(String.t)`, *default:* `nil`) - Application information.
-  *   `totalRatingCount` (*type:* `integer()`, *default:* `nil`) - Rating_count including all versions of this application.
+  *   `vendorUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `platformTags` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `extractedIconColors` (*type:* `list(integer())`, *default:* `nil`) - Top 10 of extracted icon colors. r = (rgb >> 16) & 0xff; g = (rgb >> 8) & 0xff; b = rgb & 0xff;
+  *   `isDefaultLangLocale` (*type:* `boolean()`, *default:* `nil`) - Indicates if the localized data comes from default locale. This is needed because the default localized data does not specify its locale. If this is true, lang_locale may not be the correct locale and should be ignored.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - 
+  *   `extractedIconColor` (*type:* `integer()`, *default:* `nil`) - Top 1 of extracted icon colors. We keep this field for backward compatibility.
+  *   `reviewCount` (*type:* `String.t`, *default:* `nil`) - 
+  *   `supportsChromecast` (*type:* `boolean()`, *default:* `nil`) - Whether this App supports Google Cast.
+  *   `reviewAuthor` (*type:* `String.t`, *default:* `nil`) - 
+  *   `physicalDeviceTags` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `screenUrlHref` (*type:* `list(String.t)`, *default:* `nil`) - TODO(b/260128276) deprecate this field in favor of image_data.
+  *   `size` (*type:* `String.t`, *default:* `nil`) - bytes or numeric with MB or GB
+  *   `price` (*type:* `String.t`, *default:* `nil`) - Price
+  *   `numDownloads` (*type:* `String.t`, *default:* `nil`) - 
+  *   `supportsAndroidTv` (*type:* `boolean()`, *default:* `nil`) - Whether this App supports Android TV. Note that some App supports more than one platforms. So we would use boolean for a platform.
+  *   `hasEditorsChoiceBadge` (*type:* `boolean()`, *default:* `nil`) - Whether the app has editors choice tag
+  *   `vendorCanonicalUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `version` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countriesSupported` (*type:* `list(String.t)`, *default:* `nil`) - These are currently used only for Google Play.
   *   `imageData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData.t`, *default:* `nil`) - Copied from google3/contentads/shared/boulder/mobile-app-data-image-data.proto.
+  *   `genre` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `vendor` (*type:* `String.t`, *default:* `nil`) - Vendor
+  *   `optionalResult` (*type:* `boolean()`, *default:* `nil`) - Whether this App is optional result for Grid UI.
+  *   `currency` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ratingCount` (*type:* `String.t`, *default:* `nil`) - 
+  *   `iconUrlThumbnail` (*type:* `String.t`, *default:* `nil`) - 
+  *   `countryPrices` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationCountryPrice.t)`, *default:* `nil`) - 
+  *   `subcategory` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `appTypeData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData.t`, *default:* `nil`) - 
+  *   `marketplace` (*type:* `String.t`, *default:* `nil`) - Market Android or itunes
+  *   `devConsoleId` (*type:* `String.t`, *default:* `nil`) - Developer console ID of the app if it exists. The ID is available for an app registered to Google Developers Console, not Play Developer Console.
+  *   `lastUpdated` (*type:* `String.t`, *default:* `nil`) - 
+  *   `category` (*type:* `list(String.t)`, *default:* `nil`) - Application information.
+  *   `releaseDate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `originalRating` (*type:* `String.t`, *default:* `nil`) - 
+  *   `localizedTrustedGenome` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome.t`, *default:* `nil`) - 
+  *   `totalRatingCount` (*type:* `integer()`, *default:* `nil`) - Rating_count including all versions of this application.
+  *   `breadcrumbs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs.t`, *default:* `nil`) - 
+  *   `filteringTag` (*type:* `list(String.t)`, *default:* `nil`) - Tags to be indexed for filtering, e.g. "ft_popular_score_gt_1m".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :popularScore => number() | nil,
-          :extractedIconColor => integer() | nil,
-          :filteringTag => list(String.t()) | nil,
-          :size => String.t() | nil,
-          :localizedTrustedGenome =>
-            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome.t()
-            | nil,
-          :isDefaultLangLocale => boolean() | nil,
-          :totalRating => number() | nil,
-          :optionalResult => boolean() | nil,
-          :applicationUrl => String.t() | nil,
-          :appTypeData =>
-            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData.t()
-            | nil,
-          :description => String.t() | nil,
-          :countriesSupported => list(String.t()) | nil,
-          :vendorCanonicalUrl => String.t() | nil,
-          :breadcrumbs =>
-            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs.t() | nil,
-          :extractedIconColors => list(integer()) | nil,
-          :physicalDeviceTags => list(String.t()) | nil,
-          :releaseDate => String.t() | nil,
-          :iconUrlThumbnail => String.t() | nil,
-          :name => String.t() | nil,
-          :lastUpdated => String.t() | nil,
-          :supportsAndroidTv => boolean() | nil,
-          :marketplace => String.t() | nil,
-          :version => String.t() | nil,
-          :hasEditorsChoiceBadge => boolean() | nil,
-          :numDownloads => String.t() | nil,
+          :rating => String.t() | nil,
           :operatingSystems => list(String.t()) | nil,
-          :reviewCount => String.t() | nil,
-          :vendorUrl => String.t() | nil,
-          :originalRating => String.t() | nil,
+          :inAppPurchase => boolean() | nil,
+          :screenUrlThumbnail => list(String.t()) | nil,
+          :rankData =>
+            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationRankData.t()
+            | nil,
+          :name => String.t() | nil,
+          :iconUrlHref => String.t() | nil,
+          :totalRating => number() | nil,
           :trustedGenomeData =>
             %{
               optional(String.t()) =>
                 GoogleApi.ContentWarehouse.V1.Model.VendingConsumerProtoTrustedGenomeAnnotation.t()
             }
             | nil,
-          :subcategory => list(String.t()) | nil,
-          :inAppPurchase => boolean() | nil,
-          :reviewAuthor => String.t() | nil,
-          :ratingCount => String.t() | nil,
           :liveOpDetails =>
             GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalAuLiveOpsDetailInfo.t()
             | nil,
-          :price => String.t() | nil,
-          :rankData =>
-            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationRankData.t()
-            | nil,
-          :vendor => String.t() | nil,
-          :currency => String.t() | nil,
-          :screenUrlThumbnail => list(String.t()) | nil,
-          :screenUrlHref => list(String.t()) | nil,
+          :popularScore => number() | nil,
+          :applicationUrl => String.t() | nil,
+          :langLocale => String.t() | nil,
+          :vendorUrl => String.t() | nil,
           :platformTags => list(String.t()) | nil,
+          :extractedIconColors => list(integer()) | nil,
+          :isDefaultLangLocale => boolean() | nil,
+          :description => String.t() | nil,
+          :extractedIconColor => integer() | nil,
+          :reviewCount => String.t() | nil,
           :supportsChromecast => boolean() | nil,
-          :devConsoleId => String.t() | nil,
+          :reviewAuthor => String.t() | nil,
+          :physicalDeviceTags => list(String.t()) | nil,
+          :screenUrlHref => list(String.t()) | nil,
+          :size => String.t() | nil,
+          :price => String.t() | nil,
+          :numDownloads => String.t() | nil,
+          :supportsAndroidTv => boolean() | nil,
+          :hasEditorsChoiceBadge => boolean() | nil,
+          :vendorCanonicalUrl => String.t() | nil,
+          :version => String.t() | nil,
+          :countriesSupported => list(String.t()) | nil,
+          :imageData =>
+            GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData.t() | nil,
+          :genre => list(String.t()) | nil,
+          :vendor => String.t() | nil,
+          :optionalResult => boolean() | nil,
+          :currency => String.t() | nil,
+          :ratingCount => String.t() | nil,
+          :iconUrlThumbnail => String.t() | nil,
           :countryPrices =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationCountryPrice.t()
             )
             | nil,
-          :genre => list(String.t()) | nil,
-          :iconUrlHref => String.t() | nil,
-          :rating => String.t() | nil,
-          :langLocale => String.t() | nil,
+          :subcategory => list(String.t()) | nil,
+          :appTypeData =>
+            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData.t()
+            | nil,
+          :marketplace => String.t() | nil,
+          :devConsoleId => String.t() | nil,
+          :lastUpdated => String.t() | nil,
           :category => list(String.t()) | nil,
+          :releaseDate => String.t() | nil,
+          :originalRating => String.t() | nil,
+          :localizedTrustedGenome =>
+            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome.t()
+            | nil,
           :totalRatingCount => integer() | nil,
-          :imageData =>
-            GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData.t() | nil
+          :breadcrumbs =>
+            GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs.t() | nil,
+          :filteringTag => list(String.t()) | nil
         }
 
-  field(:popularScore)
-  field(:extractedIconColor)
-  field(:filteringTag, type: :list)
-  field(:size)
-
-  field(:localizedTrustedGenome,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome
-  )
-
-  field(:isDefaultLangLocale)
-  field(:totalRating)
-  field(:optionalResult)
-  field(:applicationUrl)
-
-  field(:appTypeData,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData
-  )
-
-  field(:description)
-  field(:countriesSupported, type: :list)
-  field(:vendorCanonicalUrl)
-
-  field(:breadcrumbs, as: GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs)
-
-  field(:extractedIconColors, type: :list)
-  field(:physicalDeviceTags, type: :list)
-  field(:releaseDate)
-  field(:iconUrlThumbnail)
-  field(:name)
-  field(:lastUpdated)
-  field(:supportsAndroidTv)
-  field(:marketplace)
-  field(:version)
-  field(:hasEditorsChoiceBadge)
-  field(:numDownloads)
+  field(:rating)
   field(:operatingSystems, type: :list)
-  field(:reviewCount)
-  field(:vendorUrl)
-  field(:originalRating)
-
-  field(:trustedGenomeData,
-    as: GoogleApi.ContentWarehouse.V1.Model.VendingConsumerProtoTrustedGenomeAnnotation,
-    type: :map
-  )
-
-  field(:subcategory, type: :list)
   field(:inAppPurchase)
-  field(:reviewAuthor)
-  field(:ratingCount)
-
-  field(:liveOpDetails,
-    as: GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalAuLiveOpsDetailInfo
-  )
-
-  field(:price)
+  field(:screenUrlThumbnail, type: :list)
 
   field(:rankData,
     as:
       GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationRankData
   )
 
-  field(:vendor)
-  field(:currency)
-  field(:screenUrlThumbnail, type: :list)
-  field(:screenUrlHref, type: :list)
+  field(:name)
+  field(:iconUrlHref)
+  field(:totalRating)
+
+  field(:trustedGenomeData,
+    as: GoogleApi.ContentWarehouse.V1.Model.VendingConsumerProtoTrustedGenomeAnnotation,
+    type: :map
+  )
+
+  field(:liveOpDetails,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalAuLiveOpsDetailInfo
+  )
+
+  field(:popularScore)
+  field(:applicationUrl)
+  field(:langLocale)
+  field(:vendorUrl)
   field(:platformTags, type: :list)
+  field(:extractedIconColors, type: :list)
+  field(:isDefaultLangLocale)
+  field(:description)
+  field(:extractedIconColor)
+  field(:reviewCount)
   field(:supportsChromecast)
-  field(:devConsoleId)
+  field(:reviewAuthor)
+  field(:physicalDeviceTags, type: :list)
+  field(:screenUrlHref, type: :list)
+  field(:size)
+  field(:price)
+  field(:numDownloads)
+  field(:supportsAndroidTv)
+  field(:hasEditorsChoiceBadge)
+  field(:vendorCanonicalUrl)
+  field(:version)
+  field(:countriesSupported, type: :list)
+  field(:imageData, as: GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData)
+  field(:genre, type: :list)
+  field(:vendor)
+  field(:optionalResult)
+  field(:currency)
+  field(:ratingCount)
+  field(:iconUrlThumbnail)
 
   field(:countryPrices,
     as:
@@ -228,13 +210,30 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichS
     type: :list
   )
 
-  field(:genre, type: :list)
-  field(:iconUrlHref)
-  field(:rating)
-  field(:langLocale)
+  field(:subcategory, type: :list)
+
+  field(:appTypeData,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationAppTypeData
+  )
+
+  field(:marketplace)
+  field(:devConsoleId)
+  field(:lastUpdated)
   field(:category, type: :list)
+  field(:releaseDate)
+  field(:originalRating)
+
+  field(:localizedTrustedGenome,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplicationLocalizedTrustedGenome
+  )
+
   field(:totalRatingCount)
-  field(:imageData, as: GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData)
+
+  field(:breadcrumbs, as: GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaBreadcrumbs)
+
+  field(:filteringTag, type: :list)
 end
 
 defimpl Poison.Decoder,

@@ -21,383 +21,384 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ScienceCitation do
 
   ## Attributes
 
-  *   `subject` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject.t)`, *default:* `nil`) - 
-  *   `Volume` (*type:* `integer()`, *default:* `nil`) - 
-  *   `DblpId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `OnlineYear` (*type:* `integer()`, *default:* `nil`) - 
-  *   `UnmatchedInstitution` (*type:* `list(String.t)`, *default:* `nil`) - Author affiliations found in the document that we weren't able to match up to specific authors.
-  *   `AuthorListHasEtAl` (*type:* `boolean()`, *default:* `nil`) - whether this citation had an "et al" in the author list
-  *   `PatentNumber` (*type:* `String.t`, *default:* `nil`) - number according to USPTO/EPO/JPO scheme.
-  *   `NumGoodEmbeddedRefs` (*type:* `integer()`, *default:* `nil`) - good embedded refs
-  *   `IncrementalExpected` (*type:* `boolean()`, *default:* `nil`) - Is this article expected to have been indexed in the incremental?
-  *   `PubvenueID` (*type:* `String.t`, *default:* `nil`) - local journal number
-  *   `AuthorMetatagLeftOver` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PublisherAddress` (*type:* `String.t`, *default:* `nil`) - address from bibtex
-  *   `funding` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding.t)`, *default:* `nil`) - 
-  *   `VersionID` (*type:* `String.t`, *default:* `nil`) - Document version identifier - fingerprint of an id computed from the url, or of bibliographic data from a publisher. Different urls for the same article from the same source have the same version id (e.g., abstract, pdf version, and html version).
-  *   `TitleHtml` (*type:* `String.t`, *default:* `nil`) - Version of title for display. Contains unsanitized HTML/XML.
-  *   `PatentApplicationNumber` (*type:* `String.t`, *default:* `nil`) - Note that an issued patent has a PatentNumber and can also have a PatentApplicationNumber, whereas a patent application has a PatentApplicationNumber and can also have a PatentPublicationNumber.
-  *   `Chapter` (*type:* `String.t`, *default:* `nil`) - 
-  *   `Editor` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `PMID` (*type:* `String.t`, *default:* `nil`) - Pubmed ID
-  *   `BorrowedAuthors` (*type:* `integer()`, *default:* `nil`) - one bit per author
-  *   `PublisherId` (*type:* `String.t`, *default:* `nil`) - 
-  *   `CitationSourceUrl` (*type:* `String.t`, *default:* `nil`) - url where record came from
-  *   `AbstractText` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PublisherOrg` (*type:* `String.t`, *default:* `nil`) - subsumes organization, school and institution from bibtex
-  *   `ISSN` (*type:* `String.t`, *default:* `nil`) - 
-  *   `TranslatedAuthorListHasEtAl` (*type:* `boolean()`, *default:* `nil`) - etal marker for the translated author list - just in case
-  *   `CitationSource` (*type:* `integer()`, *default:* `nil`) - citation src: dblp/crossref/paper etc
-  *   `DspaceID` (*type:* `String.t`, *default:* `nil`) - Dspace uses handle.net handles
-  *   `DOI` (*type:* `String.t`, *default:* `nil`) - Digital Object Identifier
-  *   `ClusterDiscoveryDate` (*type:* `String.t`, *default:* `nil`) - Used for logging, recommendations, and sort-by-date. Contains the earliest discovery date of the cluster, adjusted for earlier publication dates. Stored in Universal time scale (100 ns ticks since 0001 AD) because Unix timestamp would lead to negative dates for pre-1970 docs.
-  *   `downloadurl` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL.t)`, *default:* `nil`) - 
-  *   `alternateabstract` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract.t)`, *default:* `nil`) - 
-  *   `NumBackwardLinksInWoS` (*type:* `integer()`, *default:* `nil`) - numcited in WoS
-  *   `FileCreationYear` (*type:* `integer()`, *default:* `nil`) - date of creation of the pdf/doc
-  *   `author` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor.t)`, *default:* `nil`) - 
-  *   `NumHostedPages` (*type:* `integer()`, *default:* `nil`) - If set, then we host this many pages of this citation's content. Note that this field may be set to 0, in which case we should be hosting this content but have failed. DEPRECATED, moved to DownloadURL
-  *   `AbstractDisplay` (*type:* `String.t`, *default:* `nil`) - 
-  *   `Keywords` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `NumVersions` (*type:* `integer()`, *default:* `nil`) - for display in gws
-  *   `AbstractCitationSource` (*type:* `integer()`, *default:* `nil`) - The source of abstract text that is chosen by science docid assigner.
-  *   `PublicationYear` (*type:* `integer()`, *default:* `nil`) - year from bibtext full year
-  *   `TitleHtmlLeftOver` (*type:* `String.t`, *default:* `nil`) - Leftovers from TitleHtml. These are usually unrecognized xml/html entities or xml/html tags
-  *   `WorldViewable` (*type:* `boolean()`, *default:* `nil`) - Is this version of the article world viewable?
-  *   `AbstractSource` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PublicationVenue` (*type:* `String.t`, *default:* `nil`) - where published - subsumes booktitle, howpublished and journal from bibtex
-  *   `WOSID` (*type:* `String.t`, *default:* `nil`) - Web of Science ID
-  *   `AbstractTypeFromSource` (*type:* `String.t`, *default:* `nil`) - The original (unnormalized) type of an abstract. AbstractDisplay holds a normalized type deduced from things like tagnames, tag-attributes, keywords in documents or the placement of the abstract in the document. This field is meant for the type of the abstract identified explicitly by the source document. E.g., the value of the 'abstract-type' attribute from a tag in XML ('primary abstract', 'summary', 'highlights' etc.).
-  *   `ReviewTypeReason` (*type:* `integer()`, *default:* `nil`) - bitmap of ReviewArticleTypeReasons
-  *   `BaseLocalID` (*type:* `String.t`, *default:* `nil`) - Set when building an incremental index. Whereas BaseGlobalID is the ID of the corresponding base cluster, the local ID is the ID of an individual citation within that base cluster that corresponds to this reparse.
-  *   `translatedauthor` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor.t)`, *default:* `nil`) - 
-  *   `OtherID` (*type:* `String.t`, *default:* `nil`) - eg ERIC doc number or TR number
-  *   `DEPRECATEDPublisherDisplayName` (*type:* `String.t`, *default:* `nil`) - these fields moved to DownloadURL where they belong
-  *   `BaseGlobalID` (*type:* `String.t`, *default:* `nil`) - Global document identifier - only available when building increments over a known base index. This id is from the base index.
-  *   `NumRelated2` (*type:* `integer()`, *default:* `nil`) - for experiments
-  *   `AbstractHtml` (*type:* `String.t`, *default:* `nil`) - Version of abstract field for display. Contains unsanitized XML/HTML.
-  *   `SICI` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PatentOffice` (*type:* `integer()`, *default:* `nil`) - one of the above
   *   `PatentPublicationNumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `CitationSourceCrawlTimestamp` (*type:* `String.t`, *default:* `nil`) - Seconds since the epoch, should be consistent with CitationSourceUrl.
-  *   `NumBackwardLinksFromLegal` (*type:* `integer()`, *default:* `nil`) - hack for legal rollout
   *   `ISBNVariant` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `BorrowedFields` (*type:* `integer()`, *default:* `nil`) - OR of FieldType
-  *   `LevelOfDiscussion` (*type:* `integer()`, *default:* `nil`) - If this is a target reference, the level of discussion of this reference.
-  *   `Anchors` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAnchor.t)`, *default:* `nil`) - All the anchor text (before, after, formal, etc) for this citation in the referring page.
-  *   `NumKeyQuotes` (*type:* `integer()`, *default:* `nil`) - for display in gws
-  *   `NumBackwardLinks` (*type:* `integer()`, *default:* `nil`) - for display in gws
-  *   `OnlineMonth` (*type:* `integer()`, *default:* `nil`) - OnlineMonth is a zero-indexed field (0 is January).
-  *   `ClearedReason` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PublicationDay` (*type:* `integer()`, *default:* `nil`) - for patents, publicationD/M/Y is the date of issue, not application
-  *   `AbstractLanguage` (*type:* `String.t`, *default:* `nil`) - 
-  *   `PMCID` (*type:* `String.t`, *default:* `nil`) - 
-  *   `referencediscussion` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion.t)`, *default:* `nil`) - 
-  *   `AbstractHtmlLeftOver` (*type:* `String.t`, *default:* `nil`) - Leftovers from AbstractHtml. These are usually unrecognized xml/html entities or xml/html tags
-  *   `UnmatchedEmailAddr` (*type:* `list(String.t)`, *default:* `nil`) - Email addresses found in the document that we weren't able to match
-  *   `DocumentID` (*type:* `String.t`, *default:* `nil`) - Local document identifier - url fingerprint if we know the url, or fingerprint of all fields if we don't. Different urls have different local docids.
-  *   `NumRelated` (*type:* `integer()`, *default:* `nil`) - for display in gws
-  *   `ParseSource` (*type:* `integer()`, *default:* `nil`) - 
-  *   `unioncatalog` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationUnionCatalog.t)`, *default:* `nil`) - 
+  *   `OnlineYear` (*type:* `integer()`, *default:* `nil`) - 
   *   `Number` (*type:* `String.t`, *default:* `nil`) - can be 1-3
-  *   `Edition` (*type:* `String.t`, *default:* `nil`) - 
-  *   `JOI` (*type:* `String.t`, *default:* `nil`) - 
-  *   `CitationSrc` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: use CitationSource
-  *   `NumForwardLinks` (*type:* `integer()`, *default:* `nil`) - for display in gws
-  *   `PublicationVenueVariant` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `Pages` (*type:* `String.t`, *default:* `nil`) - Using string to handle all kinds of page specifications. Internal structure is not really needed.
-  *   `LCCN` (*type:* `String.t`, *default:* `nil`) - library of congress call number
-  *   `Note` (*type:* `String.t`, *default:* `nil`) - random string data - unparsed
-  *   `accessurl` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAccessURL.t)`, *default:* `nil`) - 
-  *   `FileCreationMonth` (*type:* `integer()`, *default:* `nil`) - zero-indexed field
-  *   `Title` (*type:* `String.t`, *default:* `nil`) - 
-  *   `Series` (*type:* `String.t`, *default:* `nil`) - 
+  *   `Anchors` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAnchor.t)`, *default:* `nil`) - All the anchor text (before, after, formal, etc) for this citation in the referring page.
+  *   `PMID` (*type:* `String.t`, *default:* `nil`) - Pubmed ID
   *   `PatentCountry` (*type:* `list(String.t)`, *default:* `nil`) - 2-letter country code where patent was issued, see ocean/metadata/patent_record.proto::Patent_Record::country_code for EPO one patent pertains to a list of countries.
-  *   `ArxivSection` (*type:* `String.t`, *default:* `nil`) - e.g. hep-ph
-  *   `FileCreationDay` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ISBN` (*type:* `String.t`, *default:* `nil`) - 
-  *   `CrawledDocid` (*type:* `String.t`, *default:* `nil`) - If a citation is merged from a crawled version and a metadata version, keep the normal docid fp of the crawled version for clustering FP of normal docid of crawl version
-  *   `ISSNVariant` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `Type` (*type:* `integer()`, *default:* `nil`) - ArticleType
-  *   `ConferenceNumber` (*type:* `integer()`, *default:* `nil`) - 27 in the "27th conference on magical realism"
-  *   `PublicationMonth` (*type:* `integer()`, *default:* `nil`) - month from bibtex PublicationMonth is a zero-indexed field (0 is January).
-  *   `OnlineDay` (*type:* `integer()`, *default:* `nil`) - 
-  *   `NumSectionRefs` (*type:* `integer()`, *default:* `nil`) - refs in marked section
-  *   `category` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory.t)`, *default:* `nil`) - 
-  *   `alternatetitle` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateTitle.t)`, *default:* `nil`) - 
-  *   `PatentClassification` (*type:* `list(String.t)`, *default:* `nil`) - patent classification e.g., "B24B 3100"
-  *   `ConferenceId` (*type:* `String.t`, *default:* `nil`) - Identifier for conference series - issn-lite
-  *   `Language` (*type:* `String.t`, *default:* `nil`) - 
   *   `LegalCitation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.LegalCitation.t`, *default:* `nil`) - The ScienceCitation is how metadata passes through the scholar system. For legal, we use the normal ScienceCitation for the metadata/citation of legal journals. For court/government documents (like opinions or statues), we wrap it in the following embedded message
-  *   `NumRelated3` (*type:* `integer()`, *default:* `nil`) - for experiments
-  *   `DEPRECATEDMetadataSourceFile` (*type:* `String.t`, *default:* `nil`) - 
+  *   `PublicationDay` (*type:* `integer()`, *default:* `nil`) - for patents, publicationD/M/Y is the date of issue, not application
+  *   `Title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `FileCreationYear` (*type:* `integer()`, *default:* `nil`) - date of creation of the pdf/doc
+  *   `funding` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding.t)`, *default:* `nil`) - 
+  *   `AuthorMetatagLeftOver` (*type:* `String.t`, *default:* `nil`) - 
+  *   `AbstractLanguage` (*type:* `String.t`, *default:* `nil`) - 
+  *   `NumBackwardLinks` (*type:* `integer()`, *default:* `nil`) - for display in gws
+  *   `FileCreationMonth` (*type:* `integer()`, *default:* `nil`) - zero-indexed field
+  *   `ParseSource` (*type:* `integer()`, *default:* `nil`) - 
+  *   `PublisherAddress` (*type:* `String.t`, *default:* `nil`) - address from bibtex
+  *   `AbstractSource` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ISSN` (*type:* `String.t`, *default:* `nil`) - 
+  *   `VersionID` (*type:* `String.t`, *default:* `nil`) - Document version identifier - fingerprint of an id computed from the url, or of bibliographic data from a publisher. Different urls for the same article from the same source have the same version id (e.g., abstract, pdf version, and html version).
+  *   `unioncatalog` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationUnionCatalog.t)`, *default:* `nil`) - 
+  *   `PMCID` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ConferenceNumber` (*type:* `integer()`, *default:* `nil`) - 27 in the "27th conference on magical realism"
+  *   `WorldViewable` (*type:* `boolean()`, *default:* `nil`) - Is this version of the article world viewable?
+  *   `OnlineDay` (*type:* `integer()`, *default:* `nil`) - 
+  *   `NumGoodEmbeddedRefs` (*type:* `integer()`, *default:* `nil`) - good embedded refs
+  *   `downloadurl` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL.t)`, *default:* `nil`) - 
+  *   `Series` (*type:* `String.t`, *default:* `nil`) - 
+  *   `NumSectionRefs` (*type:* `integer()`, *default:* `nil`) - refs in marked section
+  *   `NumKeyQuotes` (*type:* `integer()`, *default:* `nil`) - for display in gws
+  *   `AbstractCitationSource` (*type:* `integer()`, *default:* `nil`) - The source of abstract text that is chosen by science docid assigner.
+  *   `CitationSourceUrl` (*type:* `String.t`, *default:* `nil`) - url where record came from
+  *   `Editor` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `Language` (*type:* `String.t`, *default:* `nil`) - 
+  *   `Chapter` (*type:* `String.t`, *default:* `nil`) - 
+  *   `alternateabstract` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract.t)`, *default:* `nil`) - 
+  *   `PublicationVenue` (*type:* `String.t`, *default:* `nil`) - where published - subsumes booktitle, howpublished and journal from bibtex
+  *   `NumBackwardLinksFromLegal` (*type:* `integer()`, *default:* `nil`) - hack for legal rollout
+  *   `Keywords` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `CrawledDocid` (*type:* `String.t`, *default:* `nil`) - If a citation is merged from a crawled version and a metadata version, keep the normal docid fp of the crawled version for clustering FP of normal docid of crawl version
+  *   `AbstractHtmlLeftOver` (*type:* `String.t`, *default:* `nil`) - Leftovers from AbstractHtml. These are usually unrecognized xml/html entities or xml/html tags
+  *   `NumForwardLinks` (*type:* `integer()`, *default:* `nil`) - for display in gws
+  *   `BorrowedFields` (*type:* `integer()`, *default:* `nil`) - OR of FieldType
+  *   `FileCreationDay` (*type:* `integer()`, *default:* `nil`) - 
+  *   `AbstractText` (*type:* `String.t`, *default:* `nil`) - 
+  *   `PatentApplicationNumber` (*type:* `String.t`, *default:* `nil`) - Note that an issued patent has a PatentNumber and can also have a PatentApplicationNumber, whereas a patent application has a PatentApplicationNumber and can also have a PatentPublicationNumber.
+  *   `TitleHtml` (*type:* `String.t`, *default:* `nil`) - Version of title for display. Contains unsanitized HTML/XML.
+  *   `accessurl` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAccessURL.t)`, *default:* `nil`) - 
+  *   `ClusterDiscoveryDate` (*type:* `String.t`, *default:* `nil`) - Used for logging, recommendations, and sort-by-date. Contains the earliest discovery date of the cluster, adjusted for earlier publication dates. Stored in Universal time scale (100 ns ticks since 0001 AD) because Unix timestamp would lead to negative dates for pre-1970 docs.
+  *   `PublicationMonth` (*type:* `integer()`, *default:* `nil`) - month from bibtex PublicationMonth is a zero-indexed field (0 is January).
+  *   `CitationSrc` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: use CitationSource
+  *   `TranslatedAuthorListHasEtAl` (*type:* `boolean()`, *default:* `nil`) - etal marker for the translated author list - just in case
+  *   `alternatetitle` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateTitle.t)`, *default:* `nil`) - 
+  *   `subject` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject.t)`, *default:* `nil`) - 
+  *   `JOI` (*type:* `String.t`, *default:* `nil`) - 
+  *   `OtherID` (*type:* `String.t`, *default:* `nil`) - eg ERIC doc number or TR number
+  *   `CitationSource` (*type:* `integer()`, *default:* `nil`) - citation src: dblp/crossref/paper etc
+  *   `WOSID` (*type:* `String.t`, *default:* `nil`) - Web of Science ID
+  *   `NumBackwardLinksInWoS` (*type:* `integer()`, *default:* `nil`) - numcited in WoS
+  *   `NumRelated` (*type:* `integer()`, *default:* `nil`) - for display in gws
+  *   `PublicationVenueVariant` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `BaseLocalID` (*type:* `String.t`, *default:* `nil`) - Set when building an incremental index. Whereas BaseGlobalID is the ID of the corresponding base cluster, the local ID is the ID of an individual citation within that base cluster that corresponds to this reparse.
+  *   `CitationSourceCrawlTimestamp` (*type:* `String.t`, *default:* `nil`) - Seconds since the epoch, should be consistent with CitationSourceUrl.
+  *   `PublisherId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `SICI` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ArxivSection` (*type:* `String.t`, *default:* `nil`) - e.g. hep-ph
+  *   `author` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor.t)`, *default:* `nil`) - 
+  *   `OnlineMonth` (*type:* `integer()`, *default:* `nil`) - OnlineMonth is a zero-indexed field (0 is January).
+  *   `PublisherOrg` (*type:* `String.t`, *default:* `nil`) - subsumes organization, school and institution from bibtex
+  *   `AbstractHtml` (*type:* `String.t`, *default:* `nil`) - Version of abstract field for display. Contains unsanitized XML/HTML.
+  *   `PatentClassification` (*type:* `list(String.t)`, *default:* `nil`) - patent classification e.g., "B24B 3100"
+  *   `Type` (*type:* `integer()`, *default:* `nil`) - ArticleType
+  *   `DEPRECATEDPublisherDisplayName` (*type:* `String.t`, *default:* `nil`) - these fields moved to DownloadURL where they belong
+  *   `PatentNumber` (*type:* `String.t`, *default:* `nil`) - number according to USPTO/EPO/JPO scheme.
+  *   `PubvenueID` (*type:* `String.t`, *default:* `nil`) - local journal number
+  *   `AbstractDisplay` (*type:* `String.t`, *default:* `nil`) - 
+  *   `NumHostedPages` (*type:* `integer()`, *default:* `nil`) - If set, then we host this many pages of this citation's content. Note that this field may be set to 0, in which case we should be hosting this content but have failed. DEPRECATED, moved to DownloadURL
+  *   `Volume` (*type:* `integer()`, *default:* `nil`) - 
+  *   `Edition` (*type:* `String.t`, *default:* `nil`) - 
+  *   `NumRelated2` (*type:* `integer()`, *default:* `nil`) - for experiments
+  *   `ISBN` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DocumentID` (*type:* `String.t`, *default:* `nil`) - Local document identifier - url fingerprint if we know the url, or fingerprint of all fields if we don't. Different urls have different local docids.
   *   `AlternateVersionID` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the URL after applying crawl and aggregate rewrites. Different citations with the same AlternateVersionID must have the same VersionID, but not necessarily vice versa. Omitted when identical to the VersionID.
+  *   `category` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory.t)`, *default:* `nil`) - 
+  *   `PatentOffice` (*type:* `integer()`, *default:* `nil`) - one of the above
+  *   `ReviewTypeReason` (*type:* `integer()`, *default:* `nil`) - bitmap of ReviewArticleTypeReasons
+  *   `DspaceID` (*type:* `String.t`, *default:* `nil`) - Dspace uses handle.net handles
+  *   `AbstractTypeFromSource` (*type:* `String.t`, *default:* `nil`) - The original (unnormalized) type of an abstract. AbstractDisplay holds a normalized type deduced from things like tagnames, tag-attributes, keywords in documents or the placement of the abstract in the document. This field is meant for the type of the abstract identified explicitly by the source document. E.g., the value of the 'abstract-type' attribute from a tag in XML ('primary abstract', 'summary', 'highlights' etc.).
+  *   `UnmatchedInstitution` (*type:* `list(String.t)`, *default:* `nil`) - Author affiliations found in the document that we weren't able to match up to specific authors.
+  *   `NumVersions` (*type:* `integer()`, *default:* `nil`) - for display in gws
+  *   `PublicationYear` (*type:* `integer()`, *default:* `nil`) - year from bibtext full year
+  *   `DOI` (*type:* `String.t`, *default:* `nil`) - Digital Object Identifier
+  *   `referencediscussion` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion.t)`, *default:* `nil`) - 
+  *   `TitleHtmlLeftOver` (*type:* `String.t`, *default:* `nil`) - Leftovers from TitleHtml. These are usually unrecognized xml/html entities or xml/html tags
+  *   `translatedauthor` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor.t)`, *default:* `nil`) - 
+  *   `BorrowedAuthors` (*type:* `integer()`, *default:* `nil`) - one bit per author
+  *   `ISSNVariant` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `IncrementalExpected` (*type:* `boolean()`, *default:* `nil`) - Is this article expected to have been indexed in the incremental?
+  *   `DblpId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `BaseGlobalID` (*type:* `String.t`, *default:* `nil`) - Global document identifier - only available when building increments over a known base index. This id is from the base index.
+  *   `ConferenceId` (*type:* `String.t`, *default:* `nil`) - Identifier for conference series - issn-lite
+  *   `LCCN` (*type:* `String.t`, *default:* `nil`) - library of congress call number
+  *   `DEPRECATEDMetadataSourceFile` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ClearedReason` (*type:* `String.t`, *default:* `nil`) - 
+  *   `LevelOfDiscussion` (*type:* `integer()`, *default:* `nil`) - If this is a target reference, the level of discussion of this reference.
+  *   `AuthorListHasEtAl` (*type:* `boolean()`, *default:* `nil`) - whether this citation had an "et al" in the author list
+  *   `NumRelated3` (*type:* `integer()`, *default:* `nil`) - for experiments
+  *   `Note` (*type:* `String.t`, *default:* `nil`) - random string data - unparsed
+  *   `UnmatchedEmailAddr` (*type:* `list(String.t)`, *default:* `nil`) - Email addresses found in the document that we weren't able to match
+  *   `Pages` (*type:* `String.t`, *default:* `nil`) - Using string to handle all kinds of page specifications. Internal structure is not really needed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :subject => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject.t()) | nil,
-          :Volume => integer() | nil,
-          :DblpId => String.t() | nil,
-          :OnlineYear => integer() | nil,
-          :UnmatchedInstitution => list(String.t()) | nil,
-          :AuthorListHasEtAl => boolean() | nil,
-          :PatentNumber => String.t() | nil,
-          :NumGoodEmbeddedRefs => integer() | nil,
-          :IncrementalExpected => boolean() | nil,
-          :PubvenueID => String.t() | nil,
-          :AuthorMetatagLeftOver => String.t() | nil,
-          :PublisherAddress => String.t() | nil,
-          :funding => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding.t()) | nil,
-          :VersionID => String.t() | nil,
-          :TitleHtml => String.t() | nil,
-          :PatentApplicationNumber => String.t() | nil,
-          :Chapter => String.t() | nil,
-          :Editor => list(String.t()) | nil,
-          :PMID => String.t() | nil,
-          :BorrowedAuthors => integer() | nil,
-          :PublisherId => String.t() | nil,
-          :CitationSourceUrl => String.t() | nil,
-          :AbstractText => String.t() | nil,
-          :PublisherOrg => String.t() | nil,
-          :ISSN => String.t() | nil,
-          :TranslatedAuthorListHasEtAl => boolean() | nil,
-          :CitationSource => integer() | nil,
-          :DspaceID => String.t() | nil,
-          :DOI => String.t() | nil,
-          :ClusterDiscoveryDate => String.t() | nil,
-          :downloadurl =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL.t()) | nil,
-          :alternateabstract =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract.t()) | nil,
-          :NumBackwardLinksInWoS => integer() | nil,
-          :FileCreationYear => integer() | nil,
-          :author => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor.t()) | nil,
-          :NumHostedPages => integer() | nil,
-          :AbstractDisplay => String.t() | nil,
-          :Keywords => list(String.t()) | nil,
-          :NumVersions => integer() | nil,
-          :AbstractCitationSource => integer() | nil,
-          :PublicationYear => integer() | nil,
-          :TitleHtmlLeftOver => String.t() | nil,
-          :WorldViewable => boolean() | nil,
-          :AbstractSource => String.t() | nil,
-          :PublicationVenue => String.t() | nil,
-          :WOSID => String.t() | nil,
-          :AbstractTypeFromSource => String.t() | nil,
-          :ReviewTypeReason => integer() | nil,
-          :BaseLocalID => String.t() | nil,
-          :translatedauthor =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor.t()) | nil,
-          :OtherID => String.t() | nil,
-          :DEPRECATEDPublisherDisplayName => String.t() | nil,
-          :BaseGlobalID => String.t() | nil,
-          :NumRelated2 => integer() | nil,
-          :AbstractHtml => String.t() | nil,
-          :SICI => String.t() | nil,
-          :PatentOffice => integer() | nil,
           :PatentPublicationNumber => String.t() | nil,
-          :CitationSourceCrawlTimestamp => String.t() | nil,
-          :NumBackwardLinksFromLegal => integer() | nil,
           :ISBNVariant => list(String.t()) | nil,
-          :BorrowedFields => integer() | nil,
-          :LevelOfDiscussion => integer() | nil,
+          :OnlineYear => integer() | nil,
+          :Number => String.t() | nil,
           :Anchors => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAnchor.t()) | nil,
-          :NumKeyQuotes => integer() | nil,
-          :NumBackwardLinks => integer() | nil,
-          :OnlineMonth => integer() | nil,
-          :ClearedReason => String.t() | nil,
+          :PMID => String.t() | nil,
+          :PatentCountry => list(String.t()) | nil,
+          :LegalCitation => GoogleApi.ContentWarehouse.V1.Model.LegalCitation.t() | nil,
           :PublicationDay => integer() | nil,
+          :Title => String.t() | nil,
+          :FileCreationYear => integer() | nil,
+          :funding => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding.t()) | nil,
+          :AuthorMetatagLeftOver => String.t() | nil,
           :AbstractLanguage => String.t() | nil,
-          :PMCID => String.t() | nil,
-          :referencediscussion =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion.t()) | nil,
-          :AbstractHtmlLeftOver => String.t() | nil,
-          :UnmatchedEmailAddr => list(String.t()) | nil,
-          :DocumentID => String.t() | nil,
-          :NumRelated => integer() | nil,
+          :NumBackwardLinks => integer() | nil,
+          :FileCreationMonth => integer() | nil,
           :ParseSource => integer() | nil,
+          :PublisherAddress => String.t() | nil,
+          :AbstractSource => String.t() | nil,
+          :ISSN => String.t() | nil,
+          :VersionID => String.t() | nil,
           :unioncatalog =>
             list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationUnionCatalog.t()) | nil,
-          :Number => String.t() | nil,
-          :Edition => String.t() | nil,
-          :JOI => String.t() | nil,
-          :CitationSrc => String.t() | nil,
+          :PMCID => String.t() | nil,
+          :ConferenceNumber => integer() | nil,
+          :WorldViewable => boolean() | nil,
+          :OnlineDay => integer() | nil,
+          :NumGoodEmbeddedRefs => integer() | nil,
+          :downloadurl =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL.t()) | nil,
+          :Series => String.t() | nil,
+          :NumSectionRefs => integer() | nil,
+          :NumKeyQuotes => integer() | nil,
+          :AbstractCitationSource => integer() | nil,
+          :CitationSourceUrl => String.t() | nil,
+          :Editor => list(String.t()) | nil,
+          :Language => String.t() | nil,
+          :Chapter => String.t() | nil,
+          :alternateabstract =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract.t()) | nil,
+          :PublicationVenue => String.t() | nil,
+          :NumBackwardLinksFromLegal => integer() | nil,
+          :Keywords => list(String.t()) | nil,
+          :CrawledDocid => String.t() | nil,
+          :AbstractHtmlLeftOver => String.t() | nil,
           :NumForwardLinks => integer() | nil,
-          :PublicationVenueVariant => list(String.t()) | nil,
-          :Pages => String.t() | nil,
-          :LCCN => String.t() | nil,
-          :Note => String.t() | nil,
+          :BorrowedFields => integer() | nil,
+          :FileCreationDay => integer() | nil,
+          :AbstractText => String.t() | nil,
+          :PatentApplicationNumber => String.t() | nil,
+          :TitleHtml => String.t() | nil,
           :accessurl =>
             list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAccessURL.t()) | nil,
-          :FileCreationMonth => integer() | nil,
-          :Title => String.t() | nil,
-          :Series => String.t() | nil,
-          :PatentCountry => list(String.t()) | nil,
-          :ArxivSection => String.t() | nil,
-          :FileCreationDay => integer() | nil,
-          :ISBN => String.t() | nil,
-          :CrawledDocid => String.t() | nil,
-          :ISSNVariant => list(String.t()) | nil,
-          :Type => integer() | nil,
-          :ConferenceNumber => integer() | nil,
+          :ClusterDiscoveryDate => String.t() | nil,
           :PublicationMonth => integer() | nil,
-          :OnlineDay => integer() | nil,
-          :NumSectionRefs => integer() | nil,
-          :category =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory.t()) | nil,
+          :CitationSrc => String.t() | nil,
+          :TranslatedAuthorListHasEtAl => boolean() | nil,
           :alternatetitle =>
             list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateTitle.t()) | nil,
+          :subject => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject.t()) | nil,
+          :JOI => String.t() | nil,
+          :OtherID => String.t() | nil,
+          :CitationSource => integer() | nil,
+          :WOSID => String.t() | nil,
+          :NumBackwardLinksInWoS => integer() | nil,
+          :NumRelated => integer() | nil,
+          :PublicationVenueVariant => list(String.t()) | nil,
+          :BaseLocalID => String.t() | nil,
+          :CitationSourceCrawlTimestamp => String.t() | nil,
+          :PublisherId => String.t() | nil,
+          :SICI => String.t() | nil,
+          :ArxivSection => String.t() | nil,
+          :author => list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor.t()) | nil,
+          :OnlineMonth => integer() | nil,
+          :PublisherOrg => String.t() | nil,
+          :AbstractHtml => String.t() | nil,
           :PatentClassification => list(String.t()) | nil,
+          :Type => integer() | nil,
+          :DEPRECATEDPublisherDisplayName => String.t() | nil,
+          :PatentNumber => String.t() | nil,
+          :PubvenueID => String.t() | nil,
+          :AbstractDisplay => String.t() | nil,
+          :NumHostedPages => integer() | nil,
+          :Volume => integer() | nil,
+          :Edition => String.t() | nil,
+          :NumRelated2 => integer() | nil,
+          :ISBN => String.t() | nil,
+          :DocumentID => String.t() | nil,
+          :AlternateVersionID => String.t() | nil,
+          :category =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory.t()) | nil,
+          :PatentOffice => integer() | nil,
+          :ReviewTypeReason => integer() | nil,
+          :DspaceID => String.t() | nil,
+          :AbstractTypeFromSource => String.t() | nil,
+          :UnmatchedInstitution => list(String.t()) | nil,
+          :NumVersions => integer() | nil,
+          :PublicationYear => integer() | nil,
+          :DOI => String.t() | nil,
+          :referencediscussion =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion.t()) | nil,
+          :TitleHtmlLeftOver => String.t() | nil,
+          :translatedauthor =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor.t()) | nil,
+          :BorrowedAuthors => integer() | nil,
+          :ISSNVariant => list(String.t()) | nil,
+          :IncrementalExpected => boolean() | nil,
+          :DblpId => String.t() | nil,
+          :BaseGlobalID => String.t() | nil,
           :ConferenceId => String.t() | nil,
-          :Language => String.t() | nil,
-          :LegalCitation => GoogleApi.ContentWarehouse.V1.Model.LegalCitation.t() | nil,
-          :NumRelated3 => integer() | nil,
+          :LCCN => String.t() | nil,
           :DEPRECATEDMetadataSourceFile => String.t() | nil,
-          :AlternateVersionID => String.t() | nil
+          :ClearedReason => String.t() | nil,
+          :LevelOfDiscussion => integer() | nil,
+          :AuthorListHasEtAl => boolean() | nil,
+          :NumRelated3 => integer() | nil,
+          :Note => String.t() | nil,
+          :UnmatchedEmailAddr => list(String.t()) | nil,
+          :Pages => String.t() | nil
         }
 
-  field(:subject, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject, type: :list)
-  field(:Volume)
-  field(:DblpId)
-  field(:OnlineYear)
-  field(:UnmatchedInstitution, type: :list)
-  field(:AuthorListHasEtAl)
-  field(:PatentNumber)
-  field(:NumGoodEmbeddedRefs)
-  field(:IncrementalExpected)
-  field(:PubvenueID)
-  field(:AuthorMetatagLeftOver)
-  field(:PublisherAddress)
-  field(:funding, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding, type: :list)
-  field(:VersionID)
-  field(:TitleHtml)
-  field(:PatentApplicationNumber)
-  field(:Chapter)
-  field(:Editor, type: :list)
-  field(:PMID)
-  field(:BorrowedAuthors)
-  field(:PublisherId)
-  field(:CitationSourceUrl)
-  field(:AbstractText)
-  field(:PublisherOrg)
-  field(:ISSN)
-  field(:TranslatedAuthorListHasEtAl)
-  field(:CitationSource)
-  field(:DspaceID)
-  field(:DOI)
-  field(:ClusterDiscoveryDate)
-
-  field(:downloadurl,
-    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL,
-    type: :list
-  )
-
-  field(:alternateabstract,
-    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract,
-    type: :list
-  )
-
-  field(:NumBackwardLinksInWoS)
-  field(:FileCreationYear)
-  field(:author, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor, type: :list)
-  field(:NumHostedPages)
-  field(:AbstractDisplay)
-  field(:Keywords, type: :list)
-  field(:NumVersions)
-  field(:AbstractCitationSource)
-  field(:PublicationYear)
-  field(:TitleHtmlLeftOver)
-  field(:WorldViewable)
-  field(:AbstractSource)
-  field(:PublicationVenue)
-  field(:WOSID)
-  field(:AbstractTypeFromSource)
-  field(:ReviewTypeReason)
-  field(:BaseLocalID)
-
-  field(:translatedauthor,
-    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor,
-    type: :list
-  )
-
-  field(:OtherID)
-  field(:DEPRECATEDPublisherDisplayName)
-  field(:BaseGlobalID)
-  field(:NumRelated2)
-  field(:AbstractHtml)
-  field(:SICI)
-  field(:PatentOffice)
   field(:PatentPublicationNumber)
-  field(:CitationSourceCrawlTimestamp)
-  field(:NumBackwardLinksFromLegal)
   field(:ISBNVariant, type: :list)
-  field(:BorrowedFields)
-  field(:LevelOfDiscussion)
+  field(:OnlineYear)
+  field(:Number)
   field(:Anchors, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAnchor, type: :list)
-  field(:NumKeyQuotes)
-  field(:NumBackwardLinks)
-  field(:OnlineMonth)
-  field(:ClearedReason)
+  field(:PMID)
+  field(:PatentCountry, type: :list)
+  field(:LegalCitation, as: GoogleApi.ContentWarehouse.V1.Model.LegalCitation)
   field(:PublicationDay)
+  field(:Title)
+  field(:FileCreationYear)
+  field(:funding, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationFunding, type: :list)
+  field(:AuthorMetatagLeftOver)
   field(:AbstractLanguage)
-  field(:PMCID)
-
-  field(:referencediscussion,
-    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion,
-    type: :list
-  )
-
-  field(:AbstractHtmlLeftOver)
-  field(:UnmatchedEmailAddr, type: :list)
-  field(:DocumentID)
-  field(:NumRelated)
+  field(:NumBackwardLinks)
+  field(:FileCreationMonth)
   field(:ParseSource)
+  field(:PublisherAddress)
+  field(:AbstractSource)
+  field(:ISSN)
+  field(:VersionID)
 
   field(:unioncatalog,
     as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationUnionCatalog,
     type: :list
   )
 
-  field(:Number)
-  field(:Edition)
-  field(:JOI)
-  field(:CitationSrc)
-  field(:NumForwardLinks)
-  field(:PublicationVenueVariant, type: :list)
-  field(:Pages)
-  field(:LCCN)
-  field(:Note)
-  field(:accessurl, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAccessURL, type: :list)
-  field(:FileCreationMonth)
-  field(:Title)
-  field(:Series)
-  field(:PatentCountry, type: :list)
-  field(:ArxivSection)
-  field(:FileCreationDay)
-  field(:ISBN)
-  field(:CrawledDocid)
-  field(:ISSNVariant, type: :list)
-  field(:Type)
+  field(:PMCID)
   field(:ConferenceNumber)
-  field(:PublicationMonth)
+  field(:WorldViewable)
   field(:OnlineDay)
+  field(:NumGoodEmbeddedRefs)
+
+  field(:downloadurl,
+    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL,
+    type: :list
+  )
+
+  field(:Series)
   field(:NumSectionRefs)
-  field(:category, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory, type: :list)
+  field(:NumKeyQuotes)
+  field(:AbstractCitationSource)
+  field(:CitationSourceUrl)
+  field(:Editor, type: :list)
+  field(:Language)
+  field(:Chapter)
+
+  field(:alternateabstract,
+    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateAbstract,
+    type: :list
+  )
+
+  field(:PublicationVenue)
+  field(:NumBackwardLinksFromLegal)
+  field(:Keywords, type: :list)
+  field(:CrawledDocid)
+  field(:AbstractHtmlLeftOver)
+  field(:NumForwardLinks)
+  field(:BorrowedFields)
+  field(:FileCreationDay)
+  field(:AbstractText)
+  field(:PatentApplicationNumber)
+  field(:TitleHtml)
+  field(:accessurl, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAccessURL, type: :list)
+  field(:ClusterDiscoveryDate)
+  field(:PublicationMonth)
+  field(:CitationSrc)
+  field(:TranslatedAuthorListHasEtAl)
 
   field(:alternatetitle,
     as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAlternateTitle,
     type: :list
   )
 
+  field(:subject, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationSubject, type: :list)
+  field(:JOI)
+  field(:OtherID)
+  field(:CitationSource)
+  field(:WOSID)
+  field(:NumBackwardLinksInWoS)
+  field(:NumRelated)
+  field(:PublicationVenueVariant, type: :list)
+  field(:BaseLocalID)
+  field(:CitationSourceCrawlTimestamp)
+  field(:PublisherId)
+  field(:SICI)
+  field(:ArxivSection)
+  field(:author, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationAuthor, type: :list)
+  field(:OnlineMonth)
+  field(:PublisherOrg)
+  field(:AbstractHtml)
   field(:PatentClassification, type: :list)
-  field(:ConferenceId)
-  field(:Language)
-  field(:LegalCitation, as: GoogleApi.ContentWarehouse.V1.Model.LegalCitation)
-  field(:NumRelated3)
-  field(:DEPRECATEDMetadataSourceFile)
+  field(:Type)
+  field(:DEPRECATEDPublisherDisplayName)
+  field(:PatentNumber)
+  field(:PubvenueID)
+  field(:AbstractDisplay)
+  field(:NumHostedPages)
+  field(:Volume)
+  field(:Edition)
+  field(:NumRelated2)
+  field(:ISBN)
+  field(:DocumentID)
   field(:AlternateVersionID)
+  field(:category, as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationCategory, type: :list)
+  field(:PatentOffice)
+  field(:ReviewTypeReason)
+  field(:DspaceID)
+  field(:AbstractTypeFromSource)
+  field(:UnmatchedInstitution, type: :list)
+  field(:NumVersions)
+  field(:PublicationYear)
+  field(:DOI)
+
+  field(:referencediscussion,
+    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationReferenceDiscussion,
+    type: :list
+  )
+
+  field(:TitleHtmlLeftOver)
+
+  field(:translatedauthor,
+    as: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationTranslatedAuthor,
+    type: :list
+  )
+
+  field(:BorrowedAuthors)
+  field(:ISSNVariant, type: :list)
+  field(:IncrementalExpected)
+  field(:DblpId)
+  field(:BaseGlobalID)
+  field(:ConferenceId)
+  field(:LCCN)
+  field(:DEPRECATEDMetadataSourceFile)
+  field(:ClearedReason)
+  field(:LevelOfDiscussion)
+  field(:AuthorListHasEtAl)
+  field(:NumRelated3)
+  field(:Note)
+  field(:UnmatchedEmailAddr, type: :list)
+  field(:Pages)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.ScienceCitation do

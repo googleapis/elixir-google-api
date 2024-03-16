@@ -21,196 +21,196 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation d
 
   ## Attributes
 
-  *   `confidenceScore` (*type:* `float()`, *default:* `nil`) - The confidence (in [0, 1]) of the entity being correctly annotated.
-  *   `otherMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - Metadata to be passed through from the AnnotationContext API.
-  *   `oysterId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The geo oyster_id of the entity, relevant only for locations. Only included if the QRefAnnotator is initialised with include_oyster_id.
-  *   `sourceTypeList` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t`, *default:* `nil`) - If the annotation was created by using personal data, we record the provenance for that data here.
-  *   `isNimbleAnnotation` (*type:* `boolean()`, *default:* `nil`) - Whether this annotation originates from nimble. (go/nimble-annotator)
-  *   `deprecatedMdvcSupportingMid` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Higher level id's that support the given id. This field has been deprecated in favor of related_entity. b/27363861
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Copy the display info. This can be used by annotators to give grammars a canonical name for an entity. For instance, the media grammar could use it to output the same canonical name for "rock music" and "rock".
-  *   `lowConfidence` (*type:* `boolean()`, *default:* `nil`) - Whether this entity is low confidence. Not used. Currently whitelisted entities below min_confidence threshold are marked as low confidence and maybe not trusted by downstreams.
-  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - The ID of the cluster (set entity) this entity belongs to.
-  *   `freebaseMid` (*type:* `String.t`, *default:* `nil`) - The mid of the entity in freebase associated with this span.
-  *   `relatedEntity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity.t)`, *default:* `nil`) - Mids related to the given entity
-  *   `mdvcVerticals` (*type:* `list(String.t)`, *default:* `nil`) - The set of verticals this summary node belongs to.
-  *   `gaiaId` (*type:* `String.t`, *default:* `nil`) - The Gaia ID for this entity. This is populated generally for people and businesses.
-  *   `isMdvcDimension` (*type:* `boolean()`, *default:* `nil`) - True if this entity is an mdvc dimension of some other annotated entity. Only included if the QRefAnnotator is initialised with include_annotated_relationships.
-  *   `personalSummaryNodeChild` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - Personal summary nodes are compound entities made up of entities and their attributes, where the entities can be compound too. E.g., "my father's mother" can have a summary node annotation of "Mother(Father(Myself))".
-  *   `matchedLightweightToken` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken.t)`, *default:* `nil`) - 
-  *   `location` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t`, *default:* `nil`) - The center point of this location. This is either directly provided by the FeatureProto.center field or the centroid using the points of the polygon in the FeatureProto.
-  *   `subCluster` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationSubCluster.t)`, *default:* `nil`) - 
-  *   `addedByCloseAnswers` (*type:* `boolean()`, *default:* `nil`) - Whether this qref annotation was created by CloseAnswers on Postref. Annotations of this type don't correspond to a particular mention of the entity on the query but rather to an interpretation of the full query.
-  *   `referenceScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation is reference that implies another entity. (eg "my hotel" in "navigate to my hotel" is reference to explicit hotel from user hotel reservation).
   *   `globalProductClusterId` (*type:* `list(String.t)`, *default:* `nil`) - The shopping global product cluster id(s) of the annotated entity (in KG, the key(s) of type /business/variant_cluster).
-  *   `mdvcChild` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - Nested annotations that represent subparts of the given mdvc full annotation. An MDVC full annotation is outputted as the summary node as the root node, and all the children of it as leaves (mdvc_child). QRef outputs a graph of relationships between the mdvc enties, and for mdvc full the aquatator nests the relevant children inside the summary node's proto.
-  *   `clusterSiblingMid` (*type:* `list(String.t)`, *default:* `nil`) - The set of mids that are members of the same cluster.
-  *   `clusterSetScore` (*type:* `float()`, *default:* `nil`) - Cluster set qref confidence score.
-  *   `resolutionScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation was created on an implicit mention (eg my hotel) as opposed to an explicit mention (eg: the westin copley square)
-  *   `merlotCategory` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData.t)`, *default:* `nil`) - 
-  *   `locationType` (*type:* `integer()`, *default:* `nil`) - The location type of the entity, as an int32 representing a TypeCategory enum value. For example, this could be TYPE_LOCALITY (37) or TYPE_COUNTRY (33). We store this type as an int because including FeatureProto would cause java/com/google/ads/adh/pipeline/bigquery:ProtoCatalog to become too large, resulting in OOM errors.
-  *   `interpretationNumber` (*type:* `integer()`, *default:* `nil`) - The index of the QueryJoin interpretation from which this annotation was obtained. This field is not used for entities coming from low-confidence annotations, since such entities are not included in any interpretation.
-  *   `attributeId` (*type:* `String.t`, *default:* `nil`) - Attribute ID of a personal_summary_node_child.
-  *   `deprecatedEquivalentMids` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Equivalent ids (e.g. de-duped mids) for this entity.
-  *   `collectionMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationCollectionMembership.t)`, *default:* `nil`) - 
-  *   `entityNumber` (*type:* `integer()`, *default:* `nil`) - The index of the entity from which this annotation is obtained, within the WebrefEntities message in the interpretation defined by interpretation_number, above.
-  *   `annotatedSpan` (*type:* `String.t`, *default:* `nil`) - A copy of the span of canonical (raw) parser input text corresponding to this annotation.
-  *   `entityRelationship` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship.t)`, *default:* `nil`) - The relationship information from QRef. Only included if the QRefAnnotator is initialised with include_annotated_relationships.
-  *   `mergedImpliedEntity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - A list of any implied entities merged into this annotation during parsing. Order is derivation-dependent.
+  *   `gaiaId` (*type:* `String.t`, *default:* `nil`) - The Gaia ID for this entity. This is populated generally for people and businesses.
+  *   `sourceTypeList` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t`, *default:* `nil`) - If the annotation was created by using personal data, we record the provenance for that data here.
+  *   `confidenceScore` (*type:* `float()`, *default:* `nil`) - The confidence (in [0, 1]) of the entity being correctly annotated.
+  *   `subCluster` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationSubCluster.t)`, *default:* `nil`) - 
+  *   `referenceScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation is reference that implies another entity. (eg "my hotel" in "navigate to my hotel" is reference to explicit hotel from user hotel reservation).
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Copy the display info. This can be used by annotators to give grammars a canonical name for an entity. For instance, the media grammar could use it to output the same canonical name for "rock music" and "rock".
   *   `entitySourceData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingEntitySourceData.t`, *default:* `nil`) - Holds information about the backends which contributed to this entity.
+  *   `mdvcVerticals` (*type:* `list(String.t)`, *default:* `nil`) - The set of verticals this summary node belongs to.
+  *   `deprecatedEquivalentMids` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Equivalent ids (e.g. de-duped mids) for this entity.
+  *   `clusterId` (*type:* `String.t`, *default:* `nil`) - The ID of the cluster (set entity) this entity belongs to.
+  *   `deprecatedMdvcSupportingMid` (*type:* `list(String.t)`, *default:* `nil`) - DEPRECATED: Higher level id's that support the given id. This field has been deprecated in favor of related_entity. b/27363861
   *   `productLineId` (*type:* `list(String.t)`, *default:* `nil`) - The shopping product line id(s) of the annotated /business/shopping_product_line entity.
+  *   `locationType` (*type:* `integer()`, *default:* `nil`) - The location type of the entity, as an int32 representing a TypeCategory enum value. For example, this could be TYPE_LOCALITY (37) or TYPE_COUNTRY (33). We store this type as an int because including FeatureProto would cause java/com/google/ads/adh/pipeline/bigquery:ProtoCatalog to become too large, resulting in OOM errors.
+  *   `mergedImpliedEntity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - A list of any implied entities merged into this annotation during parsing. Order is derivation-dependent.
+  *   `isMdvcDimension` (*type:* `boolean()`, *default:* `nil`) - True if this entity is an mdvc dimension of some other annotated entity. Only included if the QRefAnnotator is initialised with include_annotated_relationships.
+  *   `clusterSiblingMid` (*type:* `list(String.t)`, *default:* `nil`) - The set of mids that are members of the same cluster.
+  *   `relatedEntity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity.t)`, *default:* `nil`) - Mids related to the given entity
+  *   `lowConfidence` (*type:* `boolean()`, *default:* `nil`) - Whether this entity is low confidence. Not used. Currently whitelisted entities below min_confidence threshold are marked as low confidence and maybe not trusted by downstreams.
+  *   `addedByCloseAnswers` (*type:* `boolean()`, *default:* `nil`) - Whether this qref annotation was created by CloseAnswers on Postref. Annotations of this type don't correspond to a particular mention of the entity on the query but rather to an interpretation of the full query.
+  *   `location` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t`, *default:* `nil`) - The center point of this location. This is either directly provided by the FeatureProto.center field or the centroid using the points of the polygon in the FeatureProto.
+  *   `collectionMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationCollectionMembership.t)`, *default:* `nil`) - 
+  *   `otherMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - Metadata to be passed through from the AnnotationContext API.
+  *   `merlotCategory` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData.t)`, *default:* `nil`) - 
+  *   `resolutionScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation was created on an implicit mention (eg my hotel) as opposed to an explicit mention (eg: the westin copley square)
+  *   `isNimbleAnnotation` (*type:* `boolean()`, *default:* `nil`) - Whether this annotation originates from nimble. (go/nimble-annotator)
+  *   `entityNumber` (*type:* `integer()`, *default:* `nil`) - The index of the entity from which this annotation is obtained, within the WebrefEntities message in the interpretation defined by interpretation_number, above.
+  *   `personalSummaryNodeChild` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - Personal summary nodes are compound entities made up of entities and their attributes, where the entities can be compound too. E.g., "my father's mother" can have a summary node annotation of "Mother(Father(Myself))".
+  *   `mdvcChild` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t)`, *default:* `nil`) - Nested annotations that represent subparts of the given mdvc full annotation. An MDVC full annotation is outputted as the summary node as the root node, and all the children of it as leaves (mdvc_child). QRef outputs a graph of relationships between the mdvc enties, and for mdvc full the aquatator nests the relevant children inside the summary node's proto.
+  *   `entityRelationship` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship.t)`, *default:* `nil`) - The relationship information from QRef. Only included if the QRefAnnotator is initialised with include_annotated_relationships.
+  *   `annotatedSpan` (*type:* `String.t`, *default:* `nil`) - A copy of the span of canonical (raw) parser input text corresponding to this annotation.
+  *   `interpretationNumber` (*type:* `integer()`, *default:* `nil`) - The index of the QueryJoin interpretation from which this annotation was obtained. This field is not used for entities coming from low-confidence annotations, since such entities are not included in any interpretation.
+  *   `freebaseMid` (*type:* `String.t`, *default:* `nil`) - The mid of the entity in freebase associated with this span.
+  *   `attributeId` (*type:* `String.t`, *default:* `nil`) - Attribute ID of a personal_summary_node_child.
+  *   `clusterSetScore` (*type:* `float()`, *default:* `nil`) - Cluster set qref confidence score.
+  *   `oysterId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The geo oyster_id of the entity, relevant only for locations. Only included if the QRefAnnotator is initialised with include_oyster_id.
+  *   `matchedLightweightToken` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :confidenceScore => float() | nil,
-          :otherMetadata => GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t() | nil,
-          :oysterId => GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t() | nil,
-          :sourceTypeList => GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t() | nil,
-          :isNimbleAnnotation => boolean() | nil,
-          :deprecatedMdvcSupportingMid => list(String.t()) | nil,
-          :displayName => String.t() | nil,
-          :lowConfidence => boolean() | nil,
-          :clusterId => String.t() | nil,
-          :freebaseMid => String.t() | nil,
-          :relatedEntity =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity.t()) | nil,
-          :mdvcVerticals => list(String.t()) | nil,
+          :globalProductClusterId => list(String.t()) | nil,
           :gaiaId => String.t() | nil,
-          :isMdvcDimension => boolean() | nil,
-          :personalSummaryNodeChild =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
-          :matchedLightweightToken =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken.t()
-            )
-            | nil,
-          :location => GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t() | nil,
+          :sourceTypeList => GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t() | nil,
+          :confidenceScore => float() | nil,
           :subCluster =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationSubCluster.t()
             )
             | nil,
-          :addedByCloseAnswers => boolean() | nil,
           :referenceScore => number() | nil,
-          :globalProductClusterId => list(String.t()) | nil,
-          :mdvcChild =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
-          :clusterSiblingMid => list(String.t()) | nil,
-          :clusterSetScore => float() | nil,
-          :resolutionScore => number() | nil,
-          :merlotCategory =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData.t()
-            )
-            | nil,
-          :locationType => integer() | nil,
-          :interpretationNumber => integer() | nil,
-          :attributeId => String.t() | nil,
+          :displayName => String.t() | nil,
+          :entitySourceData =>
+            GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingEntitySourceData.t() | nil,
+          :mdvcVerticals => list(String.t()) | nil,
           :deprecatedEquivalentMids => list(String.t()) | nil,
+          :clusterId => String.t() | nil,
+          :deprecatedMdvcSupportingMid => list(String.t()) | nil,
+          :productLineId => list(String.t()) | nil,
+          :locationType => integer() | nil,
+          :mergedImpliedEntity =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
+          :isMdvcDimension => boolean() | nil,
+          :clusterSiblingMid => list(String.t()) | nil,
+          :relatedEntity =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity.t()) | nil,
+          :lowConfidence => boolean() | nil,
+          :addedByCloseAnswers => boolean() | nil,
+          :location => GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t() | nil,
           :collectionMembership =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationCollectionMembership.t()
             )
             | nil,
+          :otherMetadata => GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t() | nil,
+          :merlotCategory =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData.t()
+            )
+            | nil,
+          :resolutionScore => number() | nil,
+          :isNimbleAnnotation => boolean() | nil,
           :entityNumber => integer() | nil,
-          :annotatedSpan => String.t() | nil,
+          :personalSummaryNodeChild =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
+          :mdvcChild =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
           :entityRelationship =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship.t()
             )
             | nil,
-          :mergedImpliedEntity =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation.t()) | nil,
-          :entitySourceData =>
-            GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingEntitySourceData.t() | nil,
-          :productLineId => list(String.t()) | nil
+          :annotatedSpan => String.t() | nil,
+          :interpretationNumber => integer() | nil,
+          :freebaseMid => String.t() | nil,
+          :attributeId => String.t() | nil,
+          :clusterSetScore => float() | nil,
+          :oysterId => GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t() | nil,
+          :matchedLightweightToken =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken.t()
+            )
+            | nil
         }
 
-  field(:confidenceScore)
-  field(:otherMetadata, as: GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet)
-  field(:oysterId, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
-  field(:sourceTypeList, as: GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList)
-  field(:isNimbleAnnotation)
-  field(:deprecatedMdvcSupportingMid, type: :list)
-  field(:displayName)
-  field(:lowConfidence)
-  field(:clusterId)
-  field(:freebaseMid)
-
-  field(:relatedEntity,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity,
-    type: :list
-  )
-
-  field(:mdvcVerticals, type: :list)
+  field(:globalProductClusterId, type: :list)
   field(:gaiaId)
-  field(:isMdvcDimension)
-
-  field(:personalSummaryNodeChild,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation,
-    type: :list
-  )
-
-  field(:matchedLightweightToken,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken,
-    type: :list
-  )
-
-  field(:location, as: GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto)
+  field(:sourceTypeList, as: GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList)
+  field(:confidenceScore)
 
   field(:subCluster,
     as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationSubCluster,
     type: :list
   )
 
-  field(:addedByCloseAnswers)
   field(:referenceScore)
-  field(:globalProductClusterId, type: :list)
+  field(:displayName)
 
-  field(:mdvcChild,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation,
-    type: :list
+  field(:entitySourceData,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingEntitySourceData
   )
 
-  field(:clusterSiblingMid, type: :list)
-  field(:clusterSetScore)
-  field(:resolutionScore)
-
-  field(:merlotCategory,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData,
-    type: :list
-  )
-
-  field(:locationType)
-  field(:interpretationNumber)
-  field(:attributeId)
+  field(:mdvcVerticals, type: :list)
   field(:deprecatedEquivalentMids, type: :list)
-
-  field(:collectionMembership,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationCollectionMembership,
-    type: :list
-  )
-
-  field(:entityNumber)
-  field(:annotatedSpan)
-
-  field(:entityRelationship,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship,
-    type: :list
-  )
+  field(:clusterId)
+  field(:deprecatedMdvcSupportingMid, type: :list)
+  field(:productLineId, type: :list)
+  field(:locationType)
 
   field(:mergedImpliedEntity,
     as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation,
     type: :list
   )
 
-  field(:entitySourceData,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingEntitySourceData
+  field(:isMdvcDimension)
+  field(:clusterSiblingMid, type: :list)
+
+  field(:relatedEntity,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingRelatedEntity,
+    type: :list
   )
 
-  field(:productLineId, type: :list)
+  field(:lowConfidence)
+  field(:addedByCloseAnswers)
+  field(:location, as: GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto)
+
+  field(:collectionMembership,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationCollectionMembership,
+    type: :list
+  )
+
+  field(:otherMetadata, as: GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet)
+
+  field(:merlotCategory,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationMerlotCategoryData,
+    type: :list
+  )
+
+  field(:resolutionScore)
+  field(:isNimbleAnnotation)
+  field(:entityNumber)
+
+  field(:personalSummaryNodeChild,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation,
+    type: :list
+  )
+
+  field(:mdvcChild,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation,
+    type: :list
+  )
+
+  field(:entityRelationship,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship,
+    type: :list
+  )
+
+  field(:annotatedSpan)
+  field(:interpretationNumber)
+  field(:freebaseMid)
+  field(:attributeId)
+  field(:clusterSetScore)
+  field(:oysterId, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
+
+  field(:matchedLightweightToken,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefLightweightTokensMatchedLightweightToken,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotation do

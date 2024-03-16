@@ -21,141 +21,207 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMe
 
   ## Attributes
 
-  *   `speechProperties` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto.t`, *default:* `nil`) - 
-  *   `languageIdentification` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults.t`, *default:* `nil`) - 
-  *   `truncationInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo.t`, *default:* `nil`) - Data about whether or not the video was truncated.
+  *   `aresClassificationRequestTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the last successful Ares classification request.
   *   `videoPreviewBytes` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVideoPreviewsVideoPreview.t)`, *default:* `nil`) - video_preview_bytes is only exported as virtual dataset by IE VideoUnderstanding and should not be persisted. It will be used by downstream IE functions to push for serving.
-  *   `unwantedContent` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent.t`, *default:* `nil`) - If set, video has been deleted using the deletion service (MediaDeletionService).
+  *   `loudnessData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData.t`, *default:* `nil`) - When Transcode itag 140 is requested, MediaAnalyzer (as the part of Viper graph) generates audio info including loudness_data, which is then published to Streamer. For Audio news client, we extract this loudness data from Streamer to this field.
+  *   `cloudSpeechSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t`, *default:* `nil`) - Transcript generated from Cloud Speech API
+  *   `featureSetData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t`, *default:* `nil`) - Video Understanding Golden features. (go/amarna-video-signals#golden-signals) Note: Golden6 features (names matching "video_*") are DEPRECATED. Please migrate to Golden7 ("VideoFeatures.*"). For more context, see go/golden7/migrating-from-golden6 and go/amarna-golden-feature-tracker. Signals popluated in Raffia cdoc.doc_videos are configured in cs/symbol:AMARNA_EXPORTED_GOLDEN7_FEATURES.
+  *   `videoPornScoreV4` (*type:* `number()`, *default:* `nil`) - The video porn confidence score extracted from WhisperV4 featureSet: "VideoFeatures.whisper_v4_labels", with CR2 label: "/tns/porn".
+  *   `transcriptAsr` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData.t`, *default:* `nil`) - Speech related metadata The transcript_asr field is generated from the YT caption's SPEECH_RECOGNIZER asset.
+  *   `lmsPreviewFramePerdocs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t`, *default:* `nil`) - LMS preview frame perdocs. Timestamps of the frame perdocs are from the original video, not from the preview.
+  *   `signalsBlob` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t`, *default:* `nil`) - Amarna signals blob that contains large-size signals like VCA frame-level signals.
+  *   `s3LanguageIdentification` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t`, *default:* `nil`) - 
+  *   `golden7SoapboxTracksBlobInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t`, *default:* `nil`) - Information on frame-level people feature blob. (go/vpf-frame-features)
+  *   `videoStreamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData.t`, *default:* `nil`) - Deprecated, please use media_info.
+  *   `thumbnailerData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData.t`, *default:* `nil`) - 
+  *   `transcodeMetadata` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata.t)`, *default:* `nil`) - Metadata about each transcode requested.
+  *   `truncationInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo.t`, *default:* `nil`) - Data about whether or not the video was truncated.
+  *   `speechProperties` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto.t`, *default:* `nil`) - 
+  *   `mediaInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo.t`, *default:* `nil`) - Information about the media file, such as duration, resolution, and detail about each audio/video stream. Note that it contains no PII.
+  *   `venomId` (*type:* `String.t`, *default:* `nil`) - The video id in the venom pipeline for STAMP purposes. DEPRECATED: Use transcode_metadata or venom_processing_info instead, which includes the ID and contains information for all clients.
+  *   `s3Asr` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t`, *default:* `nil`) - Trnascript generated through AMARNA_CLOUD_SPEECH asset in Venom. Note that AMARNA_CLOUD_SPEECH uses S3 as the speech engine backend, similar to YT caption's SPEECH_RECOGNIZER asset. However, they may use different S3 models.
+  *   `venomProcessingInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo.t`, *default:* `nil`) - Information about the video's status in Venom, including IDs and processing times.
+  *   `safesearchVideoContentSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals.t`, *default:* `nil`) - Contains SafeSearch video classification outputs which are vertical_name/float pairs.
+  *   `videoPornScore` (*type:* `number()`, *default:* `nil`) - The video porn confidence score extracted from Whisper featureSet: "video_labels:whisper_v3", with CR2 label: "/cr2/1".
+  *   `thumbnailQualityScore` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore.t`, *default:* `nil`) - Thumbnail quality score predict how visual pleasing a thumbnail is, based on the model trained with deep neural networks.(go/thumb_features_dd) Note the signal currently only available for Youtube videos.
+  *   `languageIdentification` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults.t`, *default:* `nil`) - 
+  *   `representativeFrameData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageData.t`, *default:* `nil`) - 
+  *   `videoDurationSec` (*type:* `float()`, *default:* `nil`) - Set from the video header if truncated, or is the verified length if completely crawled.
+  *   `inlinePlayback` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata.t`, *default:* `nil`) - Metadata related to Inline playback on the Interest Feed. This field is filled by Hamilton.
+  *   `signalsBlobInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t`, *default:* `nil`) - Information for the amarna signals blob.
+  *   `audioOnly` (*type:* `boolean()`, *default:* `nil`) - Both audio- and audio-video-files are treated as videos during indexing (whether they share a container format, like .mp4, or not, like .mp3). This bool indicates that there's no video track, just an audio track.
   *   `golden7SoapboxSummary` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t`, *default:* `nil`) - Golden7 video-level people features. (go/ypf-video-features)
-  *   `videoTranscriptAnnotations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations.t`, *default:* `nil`) - VideoTranscriptAnnotations holds sentence segmented text and timing information to be used for VideoAnswers (go/video-answers). Note that only punctuated_transcript, timing_info, and lang field are filled, and other fields will be filled in the later stage.
+  *   `videoAnchorSet` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets.t`, *default:* `nil`) - Video anchor sets hold set of anchors with multiple anchor types and sequence of VideoAnchor which contains metadata about the anchor, such as thumbnail, perdoc data.
+  *   `amarnaDocid` (*type:* `String.t`, *default:* `nil`) - A hash of the video bytes used as a key to Amarna's video_metadata table.
   *   `multiThumbnailsFramePerdocs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t`, *default:* `nil`) - multi_thumbnails_frame_perdocs contains perdocs(go/vss-signals#perdoc) for all frame thumbnails generated by multiple frames per minutes. See more details in go/multiple-thumbnails-per-minutes.
   *   `videoPreviews` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ImageBaseVideoPreviewMetadata.t)`, *default:* `nil`) - video_previews contain the preview metadata but no bytes. It exits for IE and non-IE cases.
-  *   `s3Asr` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t`, *default:* `nil`) - Trnascript generated through AMARNA_CLOUD_SPEECH asset in Venom. Note that AMARNA_CLOUD_SPEECH uses S3 as the speech engine backend, similar to YT caption's SPEECH_RECOGNIZER asset. However, they may use different S3 models.
-  *   `golden7SoapboxTracksBlobInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t`, *default:* `nil`) - Information on frame-level people feature blob. (go/vpf-frame-features)
-  *   `mediaInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo.t`, *default:* `nil`) - Information about the media file, such as duration, resolution, and detail about each audio/video stream. Note that it contains no PII.
-  *   `representativeFrameData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageData.t`, *default:* `nil`) - 
-  *   `safesearchVideoContentSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals.t`, *default:* `nil`) - Contains SafeSearch video classification outputs which are vertical_name/float pairs.
-  *   `amarnaDocid` (*type:* `String.t`, *default:* `nil`) - A hash of the video bytes used as a key to Amarna's video_metadata table.
-  *   `venomId` (*type:* `String.t`, *default:* `nil`) - The video id in the venom pipeline for STAMP purposes. DEPRECATED: Use transcode_metadata or venom_processing_info instead, which includes the ID and contains information for all clients.
-  *   `transcodeMetadata` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata.t)`, *default:* `nil`) - Metadata about each transcode requested.
-  *   `videoPornScoreV4` (*type:* `number()`, *default:* `nil`) - The video porn confidence score extracted from WhisperV4 featureSet: "VideoFeatures.whisper_v4_labels", with CR2 label: "/tns/porn".
-  *   `featureSetData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t`, *default:* `nil`) - Video Understanding Golden features. (go/amarna-video-signals#golden-signals) Note: Golden6 features (names matching "video_*") are DEPRECATED. Please migrate to Golden7 ("VideoFeatures.*"). For more context, see go/golden7/migrating-from-golden6 and go/amarna-golden-feature-tracker. Signals popluated in Raffia cdoc.doc_videos are configured in cs/symbol:AMARNA_EXPORTED_GOLDEN7_FEATURES.
-  *   `thumbnailerData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData.t`, *default:* `nil`) - 
-  *   `youtubeProcessingFilter` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryYoutubeProcessingFilter.t`, *default:* `nil`) - Contains lists of reasons why YT videos were filtered from specific processing.
-  *   `loudnessData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData.t`, *default:* `nil`) - When Transcode itag 140 is requested, MediaAnalyzer (as the part of Viper graph) generates audio info including loudness_data, which is then published to Streamer. For Audio news client, we extract this loudness data from Streamer to this field.
-  *   `audioOnly` (*type:* `boolean()`, *default:* `nil`) - Both audio- and audio-video-files are treated as videos during indexing (whether they share a container format, like .mp4, or not, like .mp3). This bool indicates that there's no video track, just an audio track.
-  *   `videoStreamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData.t`, *default:* `nil`) - Deprecated, please use media_info.
-  *   `videoDurationSec` (*type:* `float()`, *default:* `nil`) - Set from the video header if truncated, or is the verified length if completely crawled.
-  *   `signalsBlob` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t`, *default:* `nil`) - Amarna signals blob that contains large-size signals like VCA frame-level signals.
-  *   `signalsBlobInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t`, *default:* `nil`) - Information for the amarna signals blob.
-  *   `cloudSpeechSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t`, *default:* `nil`) - Transcript generated from Cloud Speech API
-  *   `inlinePlayback` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata.t`, *default:* `nil`) - Metadata related to Inline playback on the Interest Feed. This field is filled by Hamilton.
-  *   `thumbnailQualityScore` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore.t`, *default:* `nil`) - Thumbnail quality score predict how visual pleasing a thumbnail is, based on the model trained with deep neural networks.(go/thumb_features_dd) Note the signal currently only available for Youtube videos.
-  *   `aresClassificationRequestTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the last successful Ares classification request.
-  *   `transcriptAsr` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData.t`, *default:* `nil`) - Speech related metadata The transcript_asr field is generated from the YT caption's SPEECH_RECOGNIZER asset.
-  *   `venomProcessingInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo.t`, *default:* `nil`) - Information about the video's status in Venom, including IDs and processing times.
-  *   `lmsPreviewFramePerdocs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t`, *default:* `nil`) - LMS preview frame perdocs. Timestamps of the frame perdocs are from the original video, not from the preview.
-  *   `videoAnchorSet` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets.t`, *default:* `nil`) - Video anchor sets hold set of anchors with multiple anchor types and sequence of VideoAnchor which contains metadata about the anchor, such as thumbnail, perdoc data.
   *   `legosAnnotationData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoLegosLegosAnnotationsSets.t`, *default:* `nil`) - Legos results
+  *   `youtubeProcessingFilter` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryYoutubeProcessingFilter.t`, *default:* `nil`) - Contains lists of reasons why YT videos were filtered from specific processing.
+  *   `unwantedContent` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent.t`, *default:* `nil`) - If set, video has been deleted using the deletion service (MediaDeletionService).
   *   `searchDocid` (*type:* `String.t`, *default:* `nil`) - 64 bit docid used for retrieving video previews.
-  *   `s3LanguageIdentification` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t`, *default:* `nil`) - 
-  *   `videoPornScore` (*type:* `number()`, *default:* `nil`) - The video porn confidence score extracted from Whisper featureSet: "video_labels:whisper_v3", with CR2 label: "/cr2/1".
+  *   `videoTranscriptAnnotations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations.t`, *default:* `nil`) - VideoTranscriptAnnotations holds sentence segmented text and timing information to be used for VideoAnswers (go/video-answers). Note that only punctuated_transcript, timing_info, and lang field are filled, and other fields will be filled in the later stage.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :speechProperties =>
-            GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto.t() | nil,
-          :languageIdentification =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults.t() | nil,
-          :truncationInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo.t() | nil,
+          :aresClassificationRequestTimestamp => DateTime.t() | nil,
           :videoPreviewBytes =>
             list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVideoPreviewsVideoPreview.t())
             | nil,
-          :unwantedContent =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent.t() | nil,
+          :loudnessData => GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData.t() | nil,
+          :cloudSpeechSignals =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t() | nil,
+          :featureSetData => GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t() | nil,
+          :videoPornScoreV4 => number() | nil,
+          :transcriptAsr => GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData.t() | nil,
+          :lmsPreviewFramePerdocs =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t() | nil,
+          :signalsBlob =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t() | nil,
+          :s3LanguageIdentification =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t() | nil,
+          :golden7SoapboxTracksBlobInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t() | nil,
+          :videoStreamInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData.t() | nil,
+          :thumbnailerData =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData.t() | nil,
+          :transcodeMetadata =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata.t())
+            | nil,
+          :truncationInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo.t() | nil,
+          :speechProperties =>
+            GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto.t() | nil,
+          :mediaInfo => GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo.t() | nil,
+          :venomId => String.t() | nil,
+          :s3Asr =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t() | nil,
+          :venomProcessingInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo.t() | nil,
+          :safesearchVideoContentSignals =>
+            GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals.t() | nil,
+          :videoPornScore => number() | nil,
+          :thumbnailQualityScore =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore.t() | nil,
+          :languageIdentification =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults.t() | nil,
+          :representativeFrameData => GoogleApi.ContentWarehouse.V1.Model.ImageData.t() | nil,
+          :videoDurationSec => float() | nil,
+          :inlinePlayback =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata.t() | nil,
+          :signalsBlobInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t() | nil,
+          :audioOnly => boolean() | nil,
           :golden7SoapboxSummary =>
             GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t() | nil,
-          :videoTranscriptAnnotations =>
-            GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations.t()
-            | nil,
+          :videoAnchorSet =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets.t() | nil,
+          :amarnaDocid => String.t() | nil,
           :multiThumbnailsFramePerdocs =>
             GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t() | nil,
           :videoPreviews =>
             list(GoogleApi.ContentWarehouse.V1.Model.ImageBaseVideoPreviewMetadata.t()) | nil,
-          :s3Asr =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t() | nil,
-          :golden7SoapboxTracksBlobInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t() | nil,
-          :mediaInfo => GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo.t() | nil,
-          :representativeFrameData => GoogleApi.ContentWarehouse.V1.Model.ImageData.t() | nil,
-          :safesearchVideoContentSignals =>
-            GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals.t() | nil,
-          :amarnaDocid => String.t() | nil,
-          :venomId => String.t() | nil,
-          :transcodeMetadata =>
-            list(GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata.t())
-            | nil,
-          :videoPornScoreV4 => number() | nil,
-          :featureSetData => GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData.t() | nil,
-          :thumbnailerData =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData.t() | nil,
-          :youtubeProcessingFilter =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryYoutubeProcessingFilter.t() | nil,
-          :loudnessData => GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData.t() | nil,
-          :audioOnly => boolean() | nil,
-          :videoStreamInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData.t() | nil,
-          :videoDurationSec => float() | nil,
-          :signalsBlob =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t() | nil,
-          :signalsBlobInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t() | nil,
-          :cloudSpeechSignals =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals.t() | nil,
-          :inlinePlayback =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata.t() | nil,
-          :thumbnailQualityScore =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore.t() | nil,
-          :aresClassificationRequestTimestamp => DateTime.t() | nil,
-          :transcriptAsr => GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData.t() | nil,
-          :venomProcessingInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo.t() | nil,
-          :lmsPreviewFramePerdocs =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t() | nil,
-          :videoAnchorSet =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets.t() | nil,
           :legosAnnotationData =>
             GoogleApi.ContentWarehouse.V1.Model.VideoLegosLegosAnnotationsSets.t() | nil,
+          :youtubeProcessingFilter =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryYoutubeProcessingFilter.t() | nil,
+          :unwantedContent =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent.t() | nil,
           :searchDocid => String.t() | nil,
-          :s3LanguageIdentification =>
-            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t() | nil,
-          :videoPornScore => number() | nil
+          :videoTranscriptAnnotations =>
+            GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations.t()
+            | nil
         }
 
-  field(:speechProperties,
-    as: GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto
-  )
-
-  field(:languageIdentification,
-    as: GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults
-  )
-
-  field(:truncationInfo, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo)
+  field(:aresClassificationRequestTimestamp, as: DateTime)
 
   field(:videoPreviewBytes,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVideoPreviewsVideoPreview,
     type: :list
   )
 
-  field(:unwantedContent, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent)
+  field(:loudnessData, as: GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData)
+
+  field(:cloudSpeechSignals,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals
+  )
+
+  field(:featureSetData, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData)
+  field(:videoPornScoreV4)
+  field(:transcriptAsr, as: GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData)
+
+  field(:lmsPreviewFramePerdocs,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs
+  )
+
+  field(:signalsBlob, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob)
+
+  field(:s3LanguageIdentification,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals
+  )
+
+  field(:golden7SoapboxTracksBlobInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo
+  )
+
+  field(:videoStreamInfo, as: GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData)
+
+  field(:thumbnailerData,
+    as: GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData
+  )
+
+  field(:transcodeMetadata,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata,
+    type: :list
+  )
+
+  field(:truncationInfo, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFileTruncationInfo)
+
+  field(:speechProperties,
+    as: GoogleApi.ContentWarehouse.V1.Model.IndexingSpeechSpeechPropertiesProto
+  )
+
+  field(:mediaInfo, as: GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo)
+  field(:venomId)
+  field(:s3Asr, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals)
+
+  field(:venomProcessingInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo
+  )
+
+  field(:safesearchVideoContentSignals,
+    as: GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals
+  )
+
+  field(:videoPornScore)
+
+  field(:thumbnailQualityScore,
+    as: GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore
+  )
+
+  field(:languageIdentification,
+    as: GoogleApi.ContentWarehouse.V1.Model.VideoTimedtextS4ALIResults
+  )
+
+  field(:representativeFrameData, as: GoogleApi.ContentWarehouse.V1.Model.ImageData)
+  field(:videoDurationSec)
+
+  field(:inlinePlayback,
+    as: GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata
+  )
+
+  field(:signalsBlobInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo
+  )
+
+  field(:audioOnly)
   field(:golden7SoapboxSummary, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData)
 
-  field(:videoTranscriptAnnotations,
-    as: GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations
-  )
+  field(:videoAnchorSet, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets)
+
+  field(:amarnaDocid)
 
   field(:multiThumbnailsFramePerdocs,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs
@@ -166,84 +232,20 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMe
     type: :list
   )
 
-  field(:s3Asr, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals)
-
-  field(:golden7SoapboxTracksBlobInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo
-  )
-
-  field(:mediaInfo, as: GoogleApi.ContentWarehouse.V1.Model.VideoMediaInfo)
-  field(:representativeFrameData, as: GoogleApi.ContentWarehouse.V1.Model.ImageData)
-
-  field(:safesearchVideoContentSignals,
-    as: GoogleApi.ContentWarehouse.V1.Model.SafesearchVideoContentSignals
-  )
-
-  field(:amarnaDocid)
-  field(:venomId)
-
-  field(:transcodeMetadata,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryApiItagSpecificMetadata,
-    type: :list
-  )
-
-  field(:videoPornScoreV4)
-  field(:featureSetData, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetData)
-
-  field(:thumbnailerData,
-    as: GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData
+  field(:legosAnnotationData,
+    as: GoogleApi.ContentWarehouse.V1.Model.VideoLegosLegosAnnotationsSets
   )
 
   field(:youtubeProcessingFilter,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryYoutubeProcessingFilter
   )
 
-  field(:loudnessData, as: GoogleApi.ContentWarehouse.V1.Model.VideoStorageLoudnessData)
-  field(:audioOnly)
-  field(:videoStreamInfo, as: GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData)
-  field(:videoDurationSec)
-  field(:signalsBlob, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob)
-
-  field(:signalsBlobInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo
-  )
-
-  field(:cloudSpeechSignals,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaCloudSpeechSignals
-  )
-
-  field(:inlinePlayback,
-    as: GoogleApi.ContentWarehouse.V1.Model.VideoCrawlVideoInlinePlaybackMetadata
-  )
-
-  field(:thumbnailQualityScore,
-    as: GoogleApi.ContentWarehouse.V1.Model.VideoThumbnailsThumbnailScore
-  )
-
-  field(:aresClassificationRequestTimestamp, as: DateTime)
-  field(:transcriptAsr, as: GoogleApi.ContentWarehouse.V1.Model.PseudoVideoData)
-
-  field(:venomProcessingInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryVenomProcessingInfo
-  )
-
-  field(:lmsPreviewFramePerdocs,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs
-  )
-
-  field(:videoAnchorSet, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchVideoAnchorSets)
-
-  field(:legosAnnotationData,
-    as: GoogleApi.ContentWarehouse.V1.Model.VideoLegosLegosAnnotationsSets
-  )
-
+  field(:unwantedContent, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryUnwantedContent)
   field(:searchDocid)
 
-  field(:s3LanguageIdentification,
-    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals
+  field(:videoTranscriptAnnotations,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityWebanswersVideoTranscriptAnnotations
   )
-
-  field(:videoPornScore)
 end
 
 defimpl Poison.Decoder,

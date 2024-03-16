@@ -21,154 +21,154 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingLocalHotelType d
 
   ## Attributes
 
-  *   `japaneseInn` (*type:* `boolean()`, *default:* `nil`) - Japanese accommodation types.
-  *   `cottage` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `villa` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `pension` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `capsuleHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `resort` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `seasideResort` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `cabin` (*type:* `boolean()`, *default:* `nil`) - Other accommodation types.
-  *   `mountainHut` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `businessHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `guesthouse` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `golfResort` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `extendedStayHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `vacationApartment` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `casinoAccommodation` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `lodging` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `loveHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `gite` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `japaneseInnWithHotSpring` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `condoHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `lodge` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `boutiqueHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `chalet` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `campsite` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `bedAndBreakfast` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `castleHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `safariLodge` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `conventionHotel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `farmstay` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `other` (*type:* `boolean()`, *default:* `nil`) - Any other lodging related type.
   *   `hotel` (*type:* `boolean()`, *default:* `nil`) - Basic accommodation types.
-  *   `allInclusiveResort` (*type:* `boolean()`, *default:* `nil`) - Basic accommodation types variations.
-  *   `youthHostel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `servicedApartment` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `guestRanch` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `seasideResort` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `extendedStayHotel` (*type:* `boolean()`, *default:* `nil`) - 
   *   `suite` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `wellnessAndSpaAccommodation` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `vacationApartment` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `resort` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `guesthouse` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `villa` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `vacationHouse` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `beachResort` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `campsite` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `other` (*type:* `boolean()`, *default:* `nil`) - Any other lodging related type.
+  *   `japaneseInnWithHotSpring` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `cabin` (*type:* `boolean()`, *default:* `nil`) - Other accommodation types.
+  *   `ecoHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `inn` (*type:* `boolean()`, *default:* `nil`) - 
   *   `skiResort` (*type:* `boolean()`, *default:* `nil`) - 
   *   `commonLodgingHouse` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `inn` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `beachResort` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `motel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `golfResort` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `loveHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `capsuleHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `chalet` (*type:* `boolean()`, *default:* `nil`) - 
   *   `hostel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `castleHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `bedAndBreakfast` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `motel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `guestRanch` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `wellnessAndSpaAccommodation` (*type:* `boolean()`, *default:* `nil`) - 
   *   `vacationRental` (*type:* `boolean()`, *default:* `nil`) - Vacation rental accommodation types.
-  *   `vacationHouse` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `safariLodge` (*type:* `boolean()`, *default:* `nil`) - 
   *   `houseboat` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `ecoHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `youthHostel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `japaneseInn` (*type:* `boolean()`, *default:* `nil`) - Japanese accommodation types.
+  *   `lodging` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `businessHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `cottage` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `servicedApartment` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `pension` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `gite` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `boutiqueHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `condoHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `conventionHotel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `casinoAccommodation` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `lodge` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `allInclusiveResort` (*type:* `boolean()`, *default:* `nil`) - Basic accommodation types variations.
+  *   `farmstay` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `mountainHut` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :japaneseInn => boolean() | nil,
-          :cottage => boolean() | nil,
-          :villa => boolean() | nil,
-          :pension => boolean() | nil,
-          :capsuleHotel => boolean() | nil,
-          :resort => boolean() | nil,
-          :seasideResort => boolean() | nil,
-          :cabin => boolean() | nil,
-          :mountainHut => boolean() | nil,
-          :businessHotel => boolean() | nil,
-          :guesthouse => boolean() | nil,
-          :golfResort => boolean() | nil,
-          :extendedStayHotel => boolean() | nil,
-          :vacationApartment => boolean() | nil,
-          :casinoAccommodation => boolean() | nil,
-          :lodging => boolean() | nil,
-          :loveHotel => boolean() | nil,
-          :gite => boolean() | nil,
-          :japaneseInnWithHotSpring => boolean() | nil,
-          :condoHotel => boolean() | nil,
-          :lodge => boolean() | nil,
-          :boutiqueHotel => boolean() | nil,
-          :chalet => boolean() | nil,
-          :campsite => boolean() | nil,
-          :bedAndBreakfast => boolean() | nil,
-          :castleHotel => boolean() | nil,
-          :safariLodge => boolean() | nil,
-          :conventionHotel => boolean() | nil,
-          :farmstay => boolean() | nil,
-          :other => boolean() | nil,
           :hotel => boolean() | nil,
-          :allInclusiveResort => boolean() | nil,
-          :youthHostel => boolean() | nil,
-          :servicedApartment => boolean() | nil,
-          :guestRanch => boolean() | nil,
+          :seasideResort => boolean() | nil,
+          :extendedStayHotel => boolean() | nil,
           :suite => boolean() | nil,
-          :wellnessAndSpaAccommodation => boolean() | nil,
+          :vacationApartment => boolean() | nil,
+          :resort => boolean() | nil,
+          :guesthouse => boolean() | nil,
+          :villa => boolean() | nil,
+          :vacationHouse => boolean() | nil,
+          :beachResort => boolean() | nil,
+          :campsite => boolean() | nil,
+          :other => boolean() | nil,
+          :japaneseInnWithHotSpring => boolean() | nil,
+          :cabin => boolean() | nil,
+          :ecoHotel => boolean() | nil,
+          :inn => boolean() | nil,
           :skiResort => boolean() | nil,
           :commonLodgingHouse => boolean() | nil,
-          :inn => boolean() | nil,
-          :beachResort => boolean() | nil,
-          :motel => boolean() | nil,
+          :golfResort => boolean() | nil,
+          :loveHotel => boolean() | nil,
+          :capsuleHotel => boolean() | nil,
+          :chalet => boolean() | nil,
           :hostel => boolean() | nil,
+          :castleHotel => boolean() | nil,
+          :bedAndBreakfast => boolean() | nil,
+          :motel => boolean() | nil,
+          :guestRanch => boolean() | nil,
+          :wellnessAndSpaAccommodation => boolean() | nil,
           :vacationRental => boolean() | nil,
-          :vacationHouse => boolean() | nil,
+          :safariLodge => boolean() | nil,
           :houseboat => boolean() | nil,
-          :ecoHotel => boolean() | nil
+          :youthHostel => boolean() | nil,
+          :japaneseInn => boolean() | nil,
+          :lodging => boolean() | nil,
+          :businessHotel => boolean() | nil,
+          :cottage => boolean() | nil,
+          :servicedApartment => boolean() | nil,
+          :pension => boolean() | nil,
+          :gite => boolean() | nil,
+          :boutiqueHotel => boolean() | nil,
+          :condoHotel => boolean() | nil,
+          :conventionHotel => boolean() | nil,
+          :casinoAccommodation => boolean() | nil,
+          :lodge => boolean() | nil,
+          :allInclusiveResort => boolean() | nil,
+          :farmstay => boolean() | nil,
+          :mountainHut => boolean() | nil
         }
 
-  field(:japaneseInn)
-  field(:cottage)
-  field(:villa)
-  field(:pension)
-  field(:capsuleHotel)
-  field(:resort)
-  field(:seasideResort)
-  field(:cabin)
-  field(:mountainHut)
-  field(:businessHotel)
-  field(:guesthouse)
-  field(:golfResort)
-  field(:extendedStayHotel)
-  field(:vacationApartment)
-  field(:casinoAccommodation)
-  field(:lodging)
-  field(:loveHotel)
-  field(:gite)
-  field(:japaneseInnWithHotSpring)
-  field(:condoHotel)
-  field(:lodge)
-  field(:boutiqueHotel)
-  field(:chalet)
-  field(:campsite)
-  field(:bedAndBreakfast)
-  field(:castleHotel)
-  field(:safariLodge)
-  field(:conventionHotel)
-  field(:farmstay)
-  field(:other)
   field(:hotel)
-  field(:allInclusiveResort)
-  field(:youthHostel)
-  field(:servicedApartment)
-  field(:guestRanch)
+  field(:seasideResort)
+  field(:extendedStayHotel)
   field(:suite)
-  field(:wellnessAndSpaAccommodation)
+  field(:vacationApartment)
+  field(:resort)
+  field(:guesthouse)
+  field(:villa)
+  field(:vacationHouse)
+  field(:beachResort)
+  field(:campsite)
+  field(:other)
+  field(:japaneseInnWithHotSpring)
+  field(:cabin)
+  field(:ecoHotel)
+  field(:inn)
   field(:skiResort)
   field(:commonLodgingHouse)
-  field(:inn)
-  field(:beachResort)
-  field(:motel)
+  field(:golfResort)
+  field(:loveHotel)
+  field(:capsuleHotel)
+  field(:chalet)
   field(:hostel)
+  field(:castleHotel)
+  field(:bedAndBreakfast)
+  field(:motel)
+  field(:guestRanch)
+  field(:wellnessAndSpaAccommodation)
   field(:vacationRental)
-  field(:vacationHouse)
+  field(:safariLodge)
   field(:houseboat)
-  field(:ecoHotel)
+  field(:youthHostel)
+  field(:japaneseInn)
+  field(:lodging)
+  field(:businessHotel)
+  field(:cottage)
+  field(:servicedApartment)
+  field(:pension)
+  field(:gite)
+  field(:boutiqueHotel)
+  field(:condoHotel)
+  field(:conventionHotel)
+  field(:casinoAccommodation)
+  field(:lodge)
+  field(:allInclusiveResort)
+  field(:farmstay)
+  field(:mountainHut)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingLocalHotelType do

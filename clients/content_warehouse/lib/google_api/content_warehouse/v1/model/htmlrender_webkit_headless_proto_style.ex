@@ -21,207 +21,209 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoStyle
 
   ## Attributes
 
-  *   `overflowY` (*type:* `String.t`, *default:* `nil`) - 
-  *   `borderPixelWidthRight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `fontWeight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `marginTop` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Margin
+  *   `marginLeft` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `listStyleType` (*type:* `String.t`, *default:* `nil`) - 
+  *   `referencedResourceIndex` (*type:* `list(integer())`, *default:* `nil`) - List of referenced resource indexes for any resources that this style references. (e.g. background images.) (see document.proto)
+  *   `borderPixelWidthLeft` (*type:* `integer()`, *default:* `nil`) - 
+  *   `display` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderPixelWidthBottom` (*type:* `integer()`, *default:* `nil`) - 
+  *   `textAlign` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fontSize` (*type:* `integer()`, *default:* `nil`) - 
   *   `borderColorArgbTop` (*type:* `integer()`, *default:* `nil`) - 
-  *   `backgroundAttachment` (*type:* `String.t`, *default:* `nil`) - 
-  *   `direction` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundGradientColorStopArgb` (*type:* `list(integer())`, *default:* `nil`) - 
+  *   `backgroundImageYPos` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - `font_family` is the `font-family` computed style, not necessarily the actual font. https://developer.mozilla.org/en-US/docs/Web/CSS/font-family. Note that it may contain multiple font families, not just one.
+  *   `overflowX` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderColorArgbLeft` (*type:* `integer()`, *default:* `nil`) - 
+  *   `textShadowColorArgb` (*type:* `integer()`, *default:* `nil`) - 
+  *   `backgroundGradientRepeat` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `foregroundColorArgb` (*type:* `integer()`, *default:* `nil`) - Foreground color encoded as ARGB
+  *   `borderPixelWidthRight` (*type:* `integer()`, *default:* `nil`) - 
   *   `position` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderStyleLeft` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderPixelWidthTop` (*type:* `integer()`, *default:* `nil`) - 
+  *   `backgroundSize` (*type:* `String.t`, *default:* `nil`) - 
+  *   `backgroundImageUrl` (*type:* `String.t`, *default:* `nil`) - The url of the background image in the first layer.
+  *   `clip` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle.t`, *default:* `nil`) - Default value for clip is "auto", which is represented here as !has_clip().
+  *   `fontWeight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `backgroundGradientColorStopArgb` (*type:* `list(integer())`, *default:* `nil`) - 
+  *   `backgroundSizeWidth` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Only present (but may be missing) if background_size == SIZE_LENGTH.
+  *   `paddingTop` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Padding
+  *   `visibility` (*type:* `String.t`, *default:* `nil`) - 
+  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - 
+  *   `marginBottom` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `marginRight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `borderStyleRight` (*type:* `String.t`, *default:* `nil`) - 
+  *   `backgroundAttachment` (*type:* `String.t`, *default:* `nil`) - 
+  *   `overflowY` (*type:* `String.t`, *default:* `nil`) - 
+  *   `direction` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderStyleBottom` (*type:* `String.t`, *default:* `nil`) - 
+  *   `borderColorArgbBottom` (*type:* `integer()`, *default:* `nil`) - 
+  *   `paddingLeft` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `hasBackground` (*type:* `boolean()`, *default:* `nil`) - Starting from Chromium, has_background is set when there is a non-empty specification for background_image, whether it be a url, gradient or other cases, such as cross-fade. Besides setting this field, We additionally parse url and gradient cases and populate some of the following background fields.
+  *   `backgroundImageXPos` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Background image position (x, y).
+  *   `borderStyleTop` (*type:* `String.t`, *default:* `nil`) - 
+  *   `backgroundSizeHeight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `backgroundColorArgb` (*type:* `integer()`, *default:* `nil`) - Background color encoded as ARGB
+  *   `paddingRight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
+  *   `borderColorArgbRight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `listStyleImageUrl` (*type:* `String.t`, *default:* `nil`) - 
   *   `backgroundGradientType` (*type:* `String.t`, *default:* `nil`) - 
   *   `backgroundImageRepeat` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundSize` (*type:* `String.t`, *default:* `nil`) - 
-  *   `fontFamily` (*type:* `String.t`, *default:* `nil`) - `font_family` is the `font-family` computed style, not necessarily the actual font. https://developer.mozilla.org/en-US/docs/Web/CSS/font-family. Note that it may contain multiple font families, not just one.
-  *   `paddingRight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `backgroundSizeHeight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `borderStyleTop` (*type:* `String.t`, *default:* `nil`) - 
-  *   `paddingTop` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Padding
-  *   `borderPixelWidthBottom` (*type:* `integer()`, *default:* `nil`) - 
-  *   `visibility` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundColorArgb` (*type:* `integer()`, *default:* `nil`) - Background color encoded as ARGB
-  *   `paddingLeft` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `clip` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle.t`, *default:* `nil`) - Default value for clip is "auto", which is represented here as !has_clip().
-  *   `borderStyleBottom` (*type:* `String.t`, *default:* `nil`) - 
-  *   `borderPixelWidthLeft` (*type:* `integer()`, *default:* `nil`) - 
   *   `opacity` (*type:* `number()`, *default:* `nil`) - 
-  *   `fontSize` (*type:* `integer()`, *default:* `nil`) - 
-  *   `listStyleType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `hasBackground` (*type:* `boolean()`, *default:* `nil`) - Starting from Chromium, has_background is set when there is a non-empty specification for background_image, whether it be a url, gradient or other cases, such as cross-fade. Besides setting this field, We additionally parse url and gradient cases and populate some of the following background fields.
-  *   `backgroundImageUrl` (*type:* `String.t`, *default:* `nil`) - The url of the background image in the first layer.
-  *   `borderColorArgbRight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `textDecoration` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundImageYPos` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `marginLeft` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `borderStyleLeft` (*type:* `String.t`, *default:* `nil`) - 
   *   `fontStyle` (*type:* `String.t`, *default:* `nil`) - 
-  *   `marginTop` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Margin
-  *   `marginRight` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `listStyleImageUrl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `borderColorArgbLeft` (*type:* `integer()`, *default:* `nil`) - 
-  *   `zIndex` (*type:* `integer()`, *default:* `nil`) - Default value for z-index is "auto" which means "inherit from parent".
-  *   `textShadowColorArgb` (*type:* `integer()`, *default:* `nil`) - 
-  *   `textAlign` (*type:* `String.t`, *default:* `nil`) - 
   *   `paddingBottom` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `display` (*type:* `String.t`, *default:* `nil`) - 
-  *   `borderStyleRight` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundSizeWidth` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Only present (but may be missing) if background_size == SIZE_LENGTH.
-  *   `overflowX` (*type:* `String.t`, *default:* `nil`) - 
-  *   `backgroundGradientRepeat` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `backgroundImageXPos` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - Background image position (x, y).
-  *   `marginBottom` (*type:* `GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t`, *default:* `nil`) - 
-  *   `borderColorArgbBottom` (*type:* `integer()`, *default:* `nil`) - 
-  *   `foregroundColorArgb` (*type:* `integer()`, *default:* `nil`) - Foreground color encoded as ARGB
-  *   `borderPixelWidthTop` (*type:* `integer()`, *default:* `nil`) - 
-  *   `referencedResourceIndex` (*type:* `list(integer())`, *default:* `nil`) - List of referenced resource indexes for any resources that this style references. (e.g. background images.) (see document.proto)
+  *   `zIndex` (*type:* `integer()`, *default:* `nil`) - Default value for z-index is "auto" which means "inherit from parent".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :overflowY => String.t() | nil,
-          :borderPixelWidthRight => integer() | nil,
-          :fontWeight => integer() | nil,
-          :borderColorArgbTop => integer() | nil,
-          :backgroundAttachment => String.t() | nil,
-          :direction => String.t() | nil,
-          :backgroundGradientColorStopArgb => list(integer()) | nil,
-          :position => String.t() | nil,
-          :backgroundGradientType => String.t() | nil,
-          :backgroundImageRepeat => String.t() | nil,
-          :backgroundSize => String.t() | nil,
-          :fontFamily => String.t() | nil,
-          :paddingRight =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :backgroundSizeHeight =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :borderStyleTop => String.t() | nil,
-          :paddingTop =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :borderPixelWidthBottom => integer() | nil,
-          :visibility => String.t() | nil,
-          :backgroundColorArgb => integer() | nil,
-          :paddingLeft =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :clip =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle.t() | nil,
-          :borderStyleBottom => String.t() | nil,
-          :borderPixelWidthLeft => integer() | nil,
-          :opacity => number() | nil,
-          :fontSize => integer() | nil,
-          :listStyleType => String.t() | nil,
-          :hasBackground => boolean() | nil,
-          :backgroundImageUrl => String.t() | nil,
-          :borderColorArgbRight => integer() | nil,
-          :textDecoration => String.t() | nil,
-          :backgroundImageYPos =>
+          :marginTop =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
           :marginLeft =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :listStyleType => String.t() | nil,
+          :referencedResourceIndex => list(integer()) | nil,
+          :borderPixelWidthLeft => integer() | nil,
+          :display => String.t() | nil,
+          :borderPixelWidthBottom => integer() | nil,
+          :textAlign => String.t() | nil,
+          :fontSize => integer() | nil,
+          :borderColorArgbTop => integer() | nil,
+          :backgroundImageYPos =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :fontFamily => String.t() | nil,
+          :overflowX => String.t() | nil,
+          :borderColorArgbLeft => integer() | nil,
+          :textShadowColorArgb => integer() | nil,
+          :backgroundGradientRepeat => boolean() | nil,
+          :foregroundColorArgb => integer() | nil,
+          :borderPixelWidthRight => integer() | nil,
+          :position => String.t() | nil,
           :borderStyleLeft => String.t() | nil,
-          :fontStyle => String.t() | nil,
-          :marginTop =>
+          :borderPixelWidthTop => integer() | nil,
+          :backgroundSize => String.t() | nil,
+          :backgroundImageUrl => String.t() | nil,
+          :clip =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle.t() | nil,
+          :fontWeight => integer() | nil,
+          :backgroundGradientColorStopArgb => list(integer()) | nil,
+          :backgroundSizeWidth =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :paddingTop =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :visibility => String.t() | nil,
+          :textDecoration => String.t() | nil,
+          :marginBottom =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
           :marginRight =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :listStyleImageUrl => String.t() | nil,
-          :borderColorArgbLeft => integer() | nil,
-          :zIndex => integer() | nil,
-          :textShadowColorArgb => integer() | nil,
-          :textAlign => String.t() | nil,
-          :paddingBottom =>
-            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :display => String.t() | nil,
           :borderStyleRight => String.t() | nil,
-          :backgroundSizeWidth =>
+          :backgroundAttachment => String.t() | nil,
+          :overflowY => String.t() | nil,
+          :direction => String.t() | nil,
+          :borderStyleBottom => String.t() | nil,
+          :borderColorArgbBottom => integer() | nil,
+          :paddingLeft =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :overflowX => String.t() | nil,
-          :backgroundGradientRepeat => boolean() | nil,
+          :hasBackground => boolean() | nil,
           :backgroundImageXPos =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :marginBottom =>
+          :borderStyleTop => String.t() | nil,
+          :backgroundSizeHeight =>
             GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
-          :borderColorArgbBottom => integer() | nil,
-          :foregroundColorArgb => integer() | nil,
-          :borderPixelWidthTop => integer() | nil,
-          :referencedResourceIndex => list(integer()) | nil
+          :backgroundColorArgb => integer() | nil,
+          :paddingRight =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :borderColorArgbRight => integer() | nil,
+          :listStyleImageUrl => String.t() | nil,
+          :backgroundGradientType => String.t() | nil,
+          :backgroundImageRepeat => String.t() | nil,
+          :opacity => number() | nil,
+          :fontStyle => String.t() | nil,
+          :paddingBottom =>
+            GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset.t() | nil,
+          :zIndex => integer() | nil
         }
 
-  field(:overflowY)
-  field(:borderPixelWidthRight)
-  field(:fontWeight)
-  field(:borderColorArgbTop)
-  field(:backgroundAttachment)
-  field(:direction)
-  field(:backgroundGradientColorStopArgb, type: :list)
-  field(:position)
-  field(:backgroundGradientType)
-  field(:backgroundImageRepeat)
-  field(:backgroundSize)
-  field(:fontFamily)
-
-  field(:paddingRight, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-
-  field(:backgroundSizeHeight,
-    as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
-  )
-
-  field(:borderStyleTop)
-  field(:paddingTop, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-  field(:borderPixelWidthBottom)
-  field(:visibility)
-  field(:backgroundColorArgb)
-  field(:paddingLeft, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-  field(:clip, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle)
-  field(:borderStyleBottom)
-  field(:borderPixelWidthLeft)
-  field(:opacity)
-  field(:fontSize)
+  field(:marginTop, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+  field(:marginLeft, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
   field(:listStyleType)
-  field(:hasBackground)
-  field(:backgroundImageUrl)
-  field(:borderColorArgbRight)
-  field(:textDecoration)
+  field(:referencedResourceIndex, type: :list)
+  field(:borderPixelWidthLeft)
+  field(:display)
+  field(:borderPixelWidthBottom)
+  field(:textAlign)
+  field(:fontSize)
+  field(:borderColorArgbTop)
 
   field(:backgroundImageYPos,
     as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
   )
 
-  field(:marginLeft, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-  field(:borderStyleLeft)
-  field(:fontStyle)
-  field(:marginTop, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-  field(:marginRight, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
-  field(:listStyleImageUrl)
+  field(:fontFamily)
+  field(:overflowX)
   field(:borderColorArgbLeft)
-  field(:zIndex)
   field(:textShadowColorArgb)
-  field(:textAlign)
-
-  field(:paddingBottom,
-    as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
-  )
-
-  field(:display)
-  field(:borderStyleRight)
+  field(:backgroundGradientRepeat)
+  field(:foregroundColorArgb)
+  field(:borderPixelWidthRight)
+  field(:position)
+  field(:borderStyleLeft)
+  field(:borderPixelWidthTop)
+  field(:backgroundSize)
+  field(:backgroundImageUrl)
+  field(:clip, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRectangle)
+  field(:fontWeight)
+  field(:backgroundGradientColorStopArgb, type: :list)
 
   field(:backgroundSizeWidth,
     as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
   )
 
-  field(:overflowX)
-  field(:backgroundGradientRepeat)
+  field(:paddingTop, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+  field(:visibility)
+  field(:textDecoration)
+
+  field(:marginBottom, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+
+  field(:marginRight, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+  field(:borderStyleRight)
+  field(:backgroundAttachment)
+  field(:overflowY)
+  field(:direction)
+  field(:borderStyleBottom)
+  field(:borderColorArgbBottom)
+  field(:paddingLeft, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+  field(:hasBackground)
 
   field(:backgroundImageXPos,
     as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
   )
 
-  field(:marginBottom, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+  field(:borderStyleTop)
 
-  field(:borderColorArgbBottom)
-  field(:foregroundColorArgb)
-  field(:borderPixelWidthTop)
-  field(:referencedResourceIndex, type: :list)
+  field(:backgroundSizeHeight,
+    as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
+  )
+
+  field(:backgroundColorArgb)
+
+  field(:paddingRight, as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset)
+
+  field(:borderColorArgbRight)
+  field(:listStyleImageUrl)
+  field(:backgroundGradientType)
+  field(:backgroundImageRepeat)
+  field(:opacity)
+  field(:fontStyle)
+
+  field(:paddingBottom,
+    as: GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoOffset
+  )
+
+  field(:zIndex)
 end
 
 defimpl Poison.Decoder,

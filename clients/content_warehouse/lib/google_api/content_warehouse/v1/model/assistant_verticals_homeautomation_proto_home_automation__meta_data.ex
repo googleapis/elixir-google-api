@@ -21,121 +21,93 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationPr
 
   ## Attributes
 
-  *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes data as provided from SYNC. This gets used in mutation and execution and in some potential cases, in biasing.
-  *   `gcmExecutionAddress` (*type:* `String.t`, *default:* `nil`) - GCM address for cloud execution across google cloud messaging rather than 3p cloud.
-  *   `smartHomeFeatures` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures.t`, *default:* `nil`) - SmartHome feature flags that may be enabled per-item.
-  *   `parentNode` (*type:* `list(String.t)`, *default:* `nil`) - LINT.IfChange(home_graph_single_parent) At the moment, we just have a single string. In future this will expand with additional metadata from client or cloud execution data store. In today's 'tree' HomeGraph each object has a single parent. In the future this may have a mesh for complex cases -- zones, doors, etc -- so we make this a repeated element today. LINT.ThenChange(//depot/google3/assistant/assistant_server/settings/user_defined_actions/footprints/footprint_accessor.cc:home_graph_single_parent)
   *   `supportedStructureFeatures` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSupportedStructureFeatures.t`, *default:* `nil`) - The features that are available for a structure. Will only be populated if the item_type == STRUCTURE.
-  *   `matterUniqueId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId.t`, *default:* `nil`) - Matter Unique ID. Contains VID/PID information
-  *   `assistantDeviceId` (*type:* `String.t`, *default:* `nil`) - Device ID that matches the ID passed from the device to discourse_context when a user issues a query to an Assistant-enabled device that is registered with Cast (via CCS (see go/castservers)), or some other service.
-  *   `parentType` (*type:* `list(String.t)`, *default:* `nil`) - The type of the parent. Currently only set for devices, to distinguish between structure and room parents. Items currently have only one parent, and entries after the first parent_type are ignored.
-  *   `plural` (*type:* `list(String.t)`, *default:* `nil`) - We use this to determine if the synonyms matched in the aqua interpretation is plural. Then we will return disambiguate dialog or execute commands with all the targets.
-  *   `modelName` (*type:* `String.t`, *default:* `nil`) - Model name from HomeGraph, populated from model_manifest.model_name. See b/200087451.
   *   `traitRoutingHints` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonTraitRoutingHints.t)`, *default:* `nil`) - For SHED devices, some traits can only be executed on 3P cloud, e.g. "action.devices.traits.MediaInitiation", "action.devices.traits.Channel" go/shed-per-trait-routing
-  *   `operationalNodeId` (*type:* `String.t`, *default:* `nil`) - Operational CHIP Node ID that combines the fabric ID and node id in format of . (Hex format without 0x prefix, for example, 0F001234FA67AA39.1234ABCD1111DDDD).
-  *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the device is capable of sending notifications. This field will be set by the agent (partner) on an incoming SYNC. If a device is not capable of generating notifications, the partner should set this flag to false. If a partner is not capable of calling ReportStateAndNotification to send notifications to Google, the partner should set this flag to false. If there is a user setting in the partner app to enable notifications and it is turned off, the partner should set this flag to false.
-  *   `deviceModelId` (*type:* `String.t`, *default:* `nil`) - See note in home_graph.proto; loaded into DE now to avoid having to double-read assistant settings records as per go/smarthome-removing-assistant-settings
-  *   `tdssUpdateTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp at which the TDSS map was last updated. This information is used to help determine which hub would be preferred if multiple hubs report the same reach-ability for a device.
-  *   `groupIds` (*type:* `list(String.t)`, *default:* `nil`) - List of parent group IDs, if the device is added to one or multiple device groups (see go/home-groups). Will be consumed by Smart Home APIs and (in the future) Assistant CTF to populate the group member list of device groups.
-  *   `supportedTraitsByAgent` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits.t}`, *default:* `nil`) - Map from agent ID to supported traits. Some devices (e.g. Newman) have multiple agents, with each agent being associated with a specific set of traits. This could alternatively have been formatted as map as {trait, agent} pairs instead of the {agent, list of trait} pairs, but we retain this format to be consistent with HomeGraph's representation. In practice, a trait should only be paired with a single agent (i.e. we should not have two agents with the same trait in their value list). This field is optional and should only be provided if the item has multiple agents.
-  *   `hashValue` (*type:* `String.t`, *default:* `nil`) - The hash value from go/de-consistency-check
-  *   `creatorGaiaId` (*type:* `String.t`, *default:* `nil`) - See Device.creator_gaia_ids in //home/graph/proto/service/types.proto. If empty, the GAIA ID from the request EUC is assumed to be the creator. We only need at most one creator_gaia_id.
-  *   `traitRoutingTable` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable.t}`, *default:* `nil`) - Map from traits to routing table. Metadata includes preferred execution path per trait and, when Matter is preferred, which endpoint should be used for the trait.
-  *   `smartDeviceManagementData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartDeviceManagementData.t`, *default:* `nil`) - Data needed for SDM (fleet management). See go/enterprise-id-in-assistant.
-  *   `derivedType` (*type:* `list(String.t)`, *default:* `nil`) - Any types that are not the given item type, but derived later. For example, if an item has type action.devices.types.OUTLET but is named "floor lamp" we can derive that it also has type action.devices.types.LIGHT. Also considered along with |type| when triggering type-based actions.
-  *   `saftDocument` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t`, *default:* `nil`) - SAFT Document with linguistic annotations for the primary device name.
-  *   `reportStateStatus` (*type:* `String.t`, *default:* `nil`) - Whether device report state is out of sync with Query response.
-  *   `otherDeviceSources` (*type:* `list(String.t)`, *default:* `nil`) - Additional device sources. This can be the result of the device being merged with other devices with a different source.
-  *   `targetDeviceSignalStrengths` (*type:* `map()`, *default:* `nil`) - Only present for an AoGH device. HGS Device ID of a target device and the signal strength (RSSI in dB, higher is better) between that target device and the AoGH device. If this map is empty, there are no target devices reachable by this AoGH device.
-  *   `lanscanOptedIn` (*type:* `boolean()`, *default:* `nil`) - Whether local home platform should discover new devices via LAN for the structure.
-  *   `physicalLocation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation.t`, *default:* `nil`) - Stores the location for the STRUCTURE type.
-  *   `routableViaGcm` (*type:* `boolean()`, *default:* `nil`) - Only present for a target device. Indicates this target device is reachable by a local (AoGH) path via an AoGH device.
-  *   `userDefinedDeviceType` (*type:* `String.t`, *default:* `nil`) - The priority order of speech targeting: 1. user_defined_device_type 2. derived_device_type 3. device_type
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The item type, such as "action.devices.types.VACUUM" - to be used in triggering type-based actions, e.g. "start vacuuming": go/smarthome-type-based-actions.
-  *   `opaqueCustomData` (*type:* `String.t`, *default:* `nil`) - Store custom data for agent calls here. This will likely be short-lived -- we will replace this with calls to HGS. (Note: This may end up not temporary if we only need it for a couple partners -- more efficient to have it on a few users than require HGS reads for all users.
-  *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - This device will report state; we can query realtime state from local HGS rather than slow QUERY intent to the 3p cloud.
-  *   `supportsDirectResponse` (*type:* `boolean()`, *default:* `nil`) - This device supports direct response -- if the device itself is issuing the query (which means it's also an assistant surface) we can return its payload directly rather than via cloud.
-  *   `roleInformation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoRoleInformation.t`, *default:* `nil`) - User's role information for this device. This will be used in Home Automation server to decide if user has authority to fulfill its request.
-  *   `primaryName` (*type:* `String.t`, *default:* `nil`) - Which of the values was the original, user-provided name -- or our disambiguated, cleaned-up version of it. This is what we use in TTS when we need to identify an object that wasn't just spoken uniquely by the user -- in disambiguation dialogue, or in response to a collective interrogative (e.g. "what lights are on in the kitchen?")
-  *   `agentInformation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation.t`, *default:* `nil`) - Agent details.
-  *   `otherDeviceIds` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId.t)`, *default:* `nil`) - Other agent id + foreign id pairs associated with the device. This can be used to represent a group of devices (e.g. Sonos' bonded zone) as a single device, or a device that comes in through different sync flows (e.g. Newman with a Nest camera).
-  *   `traitToAttributeProtos` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAttributes.t}`, *default:* `nil`) - Map of trait to a proto representing the attribute. This is different from the attributes field above which is represented as a struct. The attributes here are represented as protos and will require specific support per trait.
-  *   `notificationEnabledByUser` (*type:* `boolean()`, *default:* `nil`) - Indicates whether notifications have been enabled by a user and will be announced for this device. This is set by the user within the Google app settings, and Google will announce the device notification only if both notification_supported_by_agent and notification_enabled_by_user are true.
+  *   `parentNode` (*type:* `list(String.t)`, *default:* `nil`) - LINT.IfChange(home_graph_single_parent) At the moment, we just have a single string. In future this will expand with additional metadata from client or cloud execution data store. In today's 'tree' HomeGraph each object has a single parent. In the future this may have a mesh for complex cases -- zones, doors, etc -- so we make this a repeated element today. LINT.ThenChange(//depot/google3/assistant/assistant_server/settings/user_defined_actions/footprints/footprint_accessor.cc:home_graph_single_parent)
   *   `actionProjectConfigs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoActionProjectConfig.t)`, *default:* `nil`) - Custom actions that this item supports.
-  *   `personalizedNicknames` (*type:* `list(String.t)`, *default:* `nil`) - User-given nicknames for an entity (e.g. "My house"). These nicknames are unique to the gaia user. Nickname in DeviceInfo is per-entity level nickname, while personalized_nicknames is per-user per-entity.
   *   `zoneNameSaftDocument` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t`, *default:* `nil`) - SAFT Document with linguistic annotations for the zone name, if applicable.
+  *   `operationalNodeId` (*type:* `String.t`, *default:* `nil`) - Operational CHIP Node ID that combines the fabric ID and node id in format of . (Hex format without 0x prefix, for example, 0F001234FA67AA39.1234ABCD1111DDDD).
+  *   `saftDocument` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t`, *default:* `nil`) - SAFT Document with linguistic annotations for the primary device name.
+  *   `opaqueCustomData` (*type:* `String.t`, *default:* `nil`) - Store custom data for agent calls here. This will likely be short-lived -- we will replace this with calls to HGS. (Note: This may end up not temporary if we only need it for a couple partners -- more efficient to have it on a few users than require HGS reads for all users.
+  *   `lanscanOptedIn` (*type:* `boolean()`, *default:* `nil`) - Whether local home platform should discover new devices via LAN for the structure.
+  *   `plural` (*type:* `list(String.t)`, *default:* `nil`) - We use this to determine if the synonyms matched in the aqua interpretation is plural. Then we will return disambiguate dialog or execute commands with all the targets.
+  *   `deviceModelId` (*type:* `String.t`, *default:* `nil`) - See note in home_graph.proto; loaded into DE now to avoid having to double-read assistant settings records as per go/smarthome-removing-assistant-settings
+  *   `notificationSupportedByAgent` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the device is capable of sending notifications. This field will be set by the agent (partner) on an incoming SYNC. If a device is not capable of generating notifications, the partner should set this flag to false. If a partner is not capable of calling ReportStateAndNotification to send notifications to Google, the partner should set this flag to false. If there is a user setting in the partner app to enable notifications and it is turned off, the partner should set this flag to false.
+  *   `parentType` (*type:* `list(String.t)`, *default:* `nil`) - The type of the parent. Currently only set for devices, to distinguish between structure and room parents. Items currently have only one parent, and entries after the first parent_type are ignored.
+  *   `gcmExecutionAddress` (*type:* `String.t`, *default:* `nil`) - GCM address for cloud execution across google cloud messaging rather than 3p cloud.
+  *   `smartDeviceManagementData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartDeviceManagementData.t`, *default:* `nil`) - Data needed for SDM (fleet management). See go/enterprise-id-in-assistant.
   *   `voiceMatchRequired` (*type:* `String.t`, *default:* `nil`) - Set to which level of voice match is needed. Enum based on string input from the partner in json sync. Values accepted: "none" (but in this case partners won't set it), "owner" [requires matching one of the creator gaia IDs], or "member" [any recognized voice 'enrolled' on the device]. This may expand; only "owner" is in use for first partner, Tile.
+  *   `personalizedNicknames` (*type:* `list(String.t)`, *default:* `nil`) - User-given nicknames for an entity (e.g. "My house"). These nicknames are unique to the gaia user. Nickname in DeviceInfo is per-entity level nickname, while personalized_nicknames is per-user per-entity.
+  *   `primaryName` (*type:* `String.t`, *default:* `nil`) - Which of the values was the original, user-provided name -- or our disambiguated, cleaned-up version of it. This is what we use in TTS when we need to identify an object that wasn't just spoken uniquely by the user -- in disambiguation dialogue, or in response to a collective interrogative (e.g. "what lights are on in the kitchen?")
+  *   `attributes` (*type:* `map()`, *default:* `nil`) - Attributes data as provided from SYNC. This gets used in mutation and execution and in some potential cases, in biasing.
+  *   `hashValue` (*type:* `String.t`, *default:* `nil`) - The hash value from go/de-consistency-check
+  *   `willReportState` (*type:* `boolean()`, *default:* `nil`) - This device will report state; we can query realtime state from local HGS rather than slow QUERY intent to the 3p cloud.
+  *   `matterUniqueId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId.t`, *default:* `nil`) - Matter Unique ID. Contains VID/PID information
+  *   `userDefinedDeviceType` (*type:* `String.t`, *default:* `nil`) - The priority order of speech targeting: 1. user_defined_device_type 2. derived_device_type 3. device_type
+  *   `supportsDirectResponse` (*type:* `boolean()`, *default:* `nil`) - This device supports direct response -- if the device itself is issuing the query (which means it's also an assistant surface) we can return its payload directly rather than via cloud.
+  *   `targetDeviceSignalStrengths` (*type:* `map()`, *default:* `nil`) - Only present for an AoGH device. HGS Device ID of a target device and the signal strength (RSSI in dB, higher is better) between that target device and the AoGH device. If this map is empty, there are no target devices reachable by this AoGH device.
+  *   `roleInformation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoRoleInformation.t`, *default:* `nil`) - User's role information for this device. This will be used in Home Automation server to decide if user has authority to fulfill its request.
+  *   `traitToAttributeProtos` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAttributes.t}`, *default:* `nil`) - Map of trait to a proto representing the attribute. This is different from the attributes field above which is represented as a struct. The attributes here are represented as protos and will require specific support per trait.
+  *   `traitRoutingTable` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable.t}`, *default:* `nil`) - Map from traits to routing table. Metadata includes preferred execution path per trait and, when Matter is preferred, which endpoint should be used for the trait.
+  *   `assistantDeviceId` (*type:* `String.t`, *default:* `nil`) - Device ID that matches the ID passed from the device to discourse_context when a user issues a query to an Assistant-enabled device that is registered with Cast (via CCS (see go/castservers)), or some other service.
+  *   `derivedType` (*type:* `list(String.t)`, *default:* `nil`) - Any types that are not the given item type, but derived later. For example, if an item has type action.devices.types.OUTLET but is named "floor lamp" we can derive that it also has type action.devices.types.LIGHT. Also considered along with |type| when triggering type-based actions.
+  *   `modelName` (*type:* `String.t`, *default:* `nil`) - Model name from HomeGraph, populated from model_manifest.model_name. See b/200087451.
+  *   `notificationEnabledByUser` (*type:* `boolean()`, *default:* `nil`) - Indicates whether notifications have been enabled by a user and will be announced for this device. This is set by the user within the Google app settings, and Google will announce the device notification only if both notification_supported_by_agent and notification_enabled_by_user are true.
+  *   `otherDeviceIds` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId.t)`, *default:* `nil`) - Other agent id + foreign id pairs associated with the device. This can be used to represent a group of devices (e.g. Sonos' bonded zone) as a single device, or a device that comes in through different sync flows (e.g. Newman with a Nest camera).
+  *   `smartHomeFeatures` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures.t`, *default:* `nil`) - SmartHome feature flags that may be enabled per-item.
+  *   `supportedTraitsByAgent` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits.t}`, *default:* `nil`) - Map from agent ID to supported traits. Some devices (e.g. Newman) have multiple agents, with each agent being associated with a specific set of traits. This could alternatively have been formatted as map as {trait, agent} pairs instead of the {agent, list of trait} pairs, but we retain this format to be consistent with HomeGraph's representation. In practice, a trait should only be paired with a single agent (i.e. we should not have two agents with the same trait in their value list). This field is optional and should only be provided if the item has multiple agents.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The item type, such as "action.devices.types.VACUUM" - to be used in triggering type-based actions, e.g. "start vacuuming": go/smarthome-type-based-actions.
+  *   `tdssUpdateTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp at which the TDSS map was last updated. This information is used to help determine which hub would be preferred if multiple hubs report the same reach-ability for a device.
+  *   `creatorGaiaId` (*type:* `String.t`, *default:* `nil`) - See Device.creator_gaia_ids in //home/graph/proto/service/types.proto. If empty, the GAIA ID from the request EUC is assumed to be the creator. We only need at most one creator_gaia_id.
+  *   `reportStateStatus` (*type:* `String.t`, *default:* `nil`) - Whether device report state is out of sync with Query response.
+  *   `routableViaGcm` (*type:* `boolean()`, *default:* `nil`) - Only present for a target device. Indicates this target device is reachable by a local (AoGH) path via an AoGH device.
+  *   `groupIds` (*type:* `list(String.t)`, *default:* `nil`) - List of parent group IDs, if the device is added to one or multiple device groups (see go/home-groups). Will be consumed by Smart Home APIs and (in the future) Assistant CTF to populate the group member list of device groups.
+  *   `physicalLocation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation.t`, *default:* `nil`) - Stores the location for the STRUCTURE type.
+  *   `otherDeviceSources` (*type:* `list(String.t)`, *default:* `nil`) - Additional device sources. This can be the result of the device being merged with other devices with a different source.
+  *   `agentInformation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation.t`, *default:* `nil`) - Agent details.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :attributes => map() | nil,
-          :gcmExecutionAddress => String.t() | nil,
-          :smartHomeFeatures =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures.t()
-            | nil,
-          :parentNode => list(String.t()) | nil,
           :supportedStructureFeatures =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSupportedStructureFeatures.t()
             | nil,
-          :matterUniqueId =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId.t()
-            | nil,
-          :assistantDeviceId => String.t() | nil,
-          :parentType => list(String.t()) | nil,
-          :plural => list(String.t()) | nil,
-          :modelName => String.t() | nil,
           :traitRoutingHints =>
             list(GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonTraitRoutingHints.t()) | nil,
+          :parentNode => list(String.t()) | nil,
+          :actionProjectConfigs =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoActionProjectConfig.t()
+            )
+            | nil,
+          :zoneNameSaftDocument => GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t() | nil,
           :operationalNodeId => String.t() | nil,
-          :notificationSupportedByAgent => boolean() | nil,
+          :saftDocument => GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t() | nil,
+          :opaqueCustomData => String.t() | nil,
+          :lanscanOptedIn => boolean() | nil,
+          :plural => list(String.t()) | nil,
           :deviceModelId => String.t() | nil,
-          :tdssUpdateTimestamp => DateTime.t() | nil,
-          :groupIds => list(String.t()) | nil,
-          :supportedTraitsByAgent =>
-            %{
-              optional(String.t()) =>
-                GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits.t()
-            }
-            | nil,
-          :hashValue => String.t() | nil,
-          :creatorGaiaId => String.t() | nil,
-          :traitRoutingTable =>
-            %{
-              optional(String.t()) =>
-                GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable.t()
-            }
-            | nil,
+          :notificationSupportedByAgent => boolean() | nil,
+          :parentType => list(String.t()) | nil,
+          :gcmExecutionAddress => String.t() | nil,
           :smartDeviceManagementData =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartDeviceManagementData.t()
             | nil,
-          :derivedType => list(String.t()) | nil,
-          :saftDocument => GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t() | nil,
-          :reportStateStatus => String.t() | nil,
-          :otherDeviceSources => list(String.t()) | nil,
-          :targetDeviceSignalStrengths => map() | nil,
-          :lanscanOptedIn => boolean() | nil,
-          :physicalLocation =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation.t()
-            | nil,
-          :routableViaGcm => boolean() | nil,
-          :userDefinedDeviceType => String.t() | nil,
-          :type => String.t() | nil,
-          :opaqueCustomData => String.t() | nil,
+          :voiceMatchRequired => String.t() | nil,
+          :personalizedNicknames => list(String.t()) | nil,
+          :primaryName => String.t() | nil,
+          :attributes => map() | nil,
+          :hashValue => String.t() | nil,
           :willReportState => boolean() | nil,
+          :matterUniqueId =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId.t()
+            | nil,
+          :userDefinedDeviceType => String.t() | nil,
           :supportsDirectResponse => boolean() | nil,
+          :targetDeviceSignalStrengths => map() | nil,
           :roleInformation =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoRoleInformation.t()
-            | nil,
-          :primaryName => String.t() | nil,
-          :agentInformation =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation.t()
-            | nil,
-          :otherDeviceIds =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId.t()
-            )
             | nil,
           :traitToAttributeProtos =>
             %{
@@ -143,109 +115,56 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationPr
                 GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAttributes.t()
             }
             | nil,
+          :traitRoutingTable =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable.t()
+            }
+            | nil,
+          :assistantDeviceId => String.t() | nil,
+          :derivedType => list(String.t()) | nil,
+          :modelName => String.t() | nil,
           :notificationEnabledByUser => boolean() | nil,
-          :actionProjectConfigs =>
+          :otherDeviceIds =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoActionProjectConfig.t()
+              GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId.t()
             )
             | nil,
-          :personalizedNicknames => list(String.t()) | nil,
-          :zoneNameSaftDocument => GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t() | nil,
-          :voiceMatchRequired => String.t() | nil
+          :smartHomeFeatures =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures.t()
+            | nil,
+          :supportedTraitsByAgent =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits.t()
+            }
+            | nil,
+          :type => String.t() | nil,
+          :tdssUpdateTimestamp => DateTime.t() | nil,
+          :creatorGaiaId => String.t() | nil,
+          :reportStateStatus => String.t() | nil,
+          :routableViaGcm => boolean() | nil,
+          :groupIds => list(String.t()) | nil,
+          :physicalLocation =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation.t()
+            | nil,
+          :otherDeviceSources => list(String.t()) | nil,
+          :agentInformation =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation.t()
+            | nil
         }
-
-  field(:attributes, type: :map)
-  field(:gcmExecutionAddress)
-
-  field(:smartHomeFeatures,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures
-  )
-
-  field(:parentNode, type: :list)
 
   field(:supportedStructureFeatures,
     as:
       GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSupportedStructureFeatures
   )
 
-  field(:matterUniqueId,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId
-  )
-
-  field(:assistantDeviceId)
-  field(:parentType, type: :list)
-  field(:plural, type: :list)
-  field(:modelName)
-
   field(:traitRoutingHints,
     as: GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonTraitRoutingHints,
     type: :list
   )
 
-  field(:operationalNodeId)
-  field(:notificationSupportedByAgent)
-  field(:deviceModelId)
-  field(:tdssUpdateTimestamp, as: DateTime)
-  field(:groupIds, type: :list)
-
-  field(:supportedTraitsByAgent,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits,
-    type: :map
-  )
-
-  field(:hashValue)
-  field(:creatorGaiaId)
-
-  field(:traitRoutingTable,
-    as: GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable,
-    type: :map
-  )
-
-  field(:smartDeviceManagementData,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartDeviceManagementData
-  )
-
-  field(:derivedType, type: :list)
-  field(:saftDocument, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument)
-  field(:reportStateStatus)
-  field(:otherDeviceSources, type: :list)
-  field(:targetDeviceSignalStrengths, type: :map)
-  field(:lanscanOptedIn)
-
-  field(:physicalLocation,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation
-  )
-
-  field(:routableViaGcm)
-  field(:userDefinedDeviceType)
-  field(:type)
-  field(:opaqueCustomData)
-  field(:willReportState)
-  field(:supportsDirectResponse)
-
-  field(:roleInformation,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoRoleInformation
-  )
-
-  field(:primaryName)
-
-  field(:agentInformation,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation
-  )
-
-  field(:otherDeviceIds,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId,
-    type: :list
-  )
-
-  field(:traitToAttributeProtos,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAttributes,
-    type: :map
-  )
-
-  field(:notificationEnabledByUser)
+  field(:parentNode, type: :list)
 
   field(:actionProjectConfigs,
     as:
@@ -253,9 +172,87 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationPr
     type: :list
   )
 
-  field(:personalizedNicknames, type: :list)
   field(:zoneNameSaftDocument, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument)
+  field(:operationalNodeId)
+  field(:saftDocument, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument)
+  field(:opaqueCustomData)
+  field(:lanscanOptedIn)
+  field(:plural, type: :list)
+  field(:deviceModelId)
+  field(:notificationSupportedByAgent)
+  field(:parentType, type: :list)
+  field(:gcmExecutionAddress)
+
+  field(:smartDeviceManagementData,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartDeviceManagementData
+  )
+
   field(:voiceMatchRequired)
+  field(:personalizedNicknames, type: :list)
+  field(:primaryName)
+  field(:attributes, type: :map)
+  field(:hashValue)
+  field(:willReportState)
+
+  field(:matterUniqueId,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoMatterUniqueId
+  )
+
+  field(:userDefinedDeviceType)
+  field(:supportsDirectResponse)
+  field(:targetDeviceSignalStrengths, type: :map)
+
+  field(:roleInformation,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoRoleInformation
+  )
+
+  field(:traitToAttributeProtos,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAttributes,
+    type: :map
+  )
+
+  field(:traitRoutingTable,
+    as: GoogleApi.ContentWarehouse.V1.Model.HomeGraphCommonRoutingTable,
+    type: :map
+  )
+
+  field(:assistantDeviceId)
+  field(:derivedType, type: :list)
+  field(:modelName)
+  field(:notificationEnabledByUser)
+
+  field(:otherDeviceIds,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentDeviceId,
+    type: :list
+  )
+
+  field(:smartHomeFeatures,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoSmartHomeFeatures
+  )
+
+  field(:supportedTraitsByAgent,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoHomeAutomation_MetaDataSupportedTraits,
+    type: :map
+  )
+
+  field(:type)
+  field(:tdssUpdateTimestamp, as: DateTime)
+  field(:creatorGaiaId)
+  field(:reportStateStatus)
+  field(:routableViaGcm)
+  field(:groupIds, type: :list)
+
+  field(:physicalLocation,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoPhysicalLocation
+  )
+
+  field(:otherDeviceSources, type: :list)
+
+  field(:agentInformation,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantVerticalsHomeautomationProtoAgentInformation
+  )
 end
 
 defimpl Poison.Decoder,

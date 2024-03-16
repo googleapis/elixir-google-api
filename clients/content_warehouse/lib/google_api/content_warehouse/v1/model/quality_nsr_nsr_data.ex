@@ -21,197 +21,197 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
 
   ## Attributes
 
-  *   `tofu` (*type:* `number()`, *default:* `nil`) - Site-level tofu score: site quality predictor based on content.
-  *   `healthScore` (*type:* `number()`, *default:* `nil`) - Categorical signals.
-  *   `siteAutopilotScore` (*type:* `number()`, *default:* `nil`) - Aggregated value of url autopilot scores for this sitechunk.
-  *   `clutterScore` (*type:* `number()`, *default:* `nil`) - Delta site-level signal in Q* penalizing sites with a large number of distracting/annoying resources loaded by the site (see go/clutter-v0).
-  *   `sitePr` (*type:* `number()`, *default:* `nil`) - 
-  *   `nsrOverrideBid` (*type:* `number()`, *default:* `nil`) - This signal is used to unconditionally override NSR as a bid in Q*. Should only be used in case of emergency (see go/nsr-override-bid). To have any effect, the value should be present and greater than 0.001.
-  *   `clusterUplift` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t`, *default:* `nil`) - 
-  *   `ymylNewsV2Score` (*type:* `number()`, *default:* `nil`) - 
-  *   `smallPersonalSite` (*type:* `number()`, *default:* `nil`) - Score of small personal site promotion go/promoting-personal-blogs-v1
-  *   `articleScoreV2` (*type:* `number()`, *default:* `nil`) - 
-  *   `pnav` (*type:* `number()`, *default:* `nil`) - Fractional signals.
-  *   `versionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t)`, *default:* `nil`) - Versioned map of NSR values for experimenting with the next release.
-  *   `localityScore` (*type:* `number()`, *default:* `nil`) - Locality score of the site, i.e. the locality component of the LocalAuthority signal (see go/pq-localauthority).
-  *   `pnavClicks` (*type:* `number()`, *default:* `nil`) - denominator for the pnav computation
-  *   `shoppingScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `chardVariance` (*type:* `number()`, *default:* `nil`) - 
-  *   `clusterId` (*type:* `integer()`, *default:* `nil`) - An id for defining clusters of sites. Used in ecosystem experiments (project Tundra).
-  *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t`, *default:* `nil`) - 
-  *   `language` (*type:* `integer()`, *default:* `nil`) - 
-  *   `url` (*type:* `String.t`, *default:* `nil`) - 
-  *   `chardEncoded` (*type:* `integer()`, *default:* `nil`) - Site-level chard score: site quality predictor based on content.
-  *   `nsrdataFromFallbackPatternKey` (*type:* `boolean()`, *default:* `nil`) - If true indicates that we do not have NSR data computed for the chunk, and instead the data is coming from an average of other host chunks.
-  *   `i18nBucket` (*type:* `integer()`, *default:* `nil`) - Currently corresponds to i18n_g42_bucket.
-  *   `chromeInTotal` (*type:* `number()`, *default:* `nil`) - Site-level Chrome views.
-  *   `directFrac` (*type:* `number()`, *default:* `nil`) - 
-  *   `siteQualityStddevs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
-  *   `host` (*type:* `String.t`, *default:* `nil`) - 
-  *   `spambrainLavcScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
-  *   `vlqNsr` (*type:* `number()`, *default:* `nil`) - NSR from a headroom model targeting low-quality video sites.
-  *   `isCovidLocalAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the local authority covid signal, as computed by go/covid-local-authority
-  *   `largeOrgId` (*type:* `integer()`, *default:* `nil`) - 
-  *   `siteChunk` (*type:* `String.t`, *default:* `nil`) - Primary NSR sitechunk. In most of the cases it's same as HOST_LEVEL_V3 sitechunked canonical url of the document. In rare, but important cases it's based on page markup (see quality/nsr/util/sitechunker.h for details).
-  *   `isElectionAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the election authority signal, as computed by go/election-authority
-  *   `isVideoFocusedSite` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has mostly video content, but is not hosted on any known video-hosting domains. Site is considered to be video-focused, if it has > 50% of the URLs with watch pages (with smoothing prior). ariane/4045246
-  *   `clutterScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
-  *   `impressions` (*type:* `number()`, *default:* `nil`) - Site-level impressions.
-  *   `newNsr` (*type:* `number()`, *default:* `nil`) - This field used as a temporary field for clean transitions when we need to roll out Q* and NSR changes simultaneously.
-  *   `siteLinkOut` (*type:* `number()`, *default:* `nil`) - Aggregated value of url link out scores for this sitechunk.
-  *   `siteQualityStddev` (*type:* `number()`, *default:* `nil`) - Estimate of site's PQ rating stddev--spread of the page-level PQ ratings of a site. Note this is different from nsr_variance which predicts error of NSR itself from the aggregated site-level rating.
-  *   `vlq` (*type:* `number()`, *default:* `nil`) - Score of the Video LQ model.
-  *   `nsrVariance` (*type:* `number()`, *default:* `nil`) - NSR variance logodds [0, infinity).
-  *   `priorAdjustedNsr` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - NSR - prior. Estimate of whether the site is above/below average NSR in its slice.
-  *   `siteLinkIn` (*type:* `number()`, *default:* `nil`) - Average value of the site_link_in for pages in the sitechunk.
-  *   `nsr` (*type:* `number()`, *default:* `nil`) - 
-  *   `nsrEpoch` (*type:* `String.t`, *default:* `nil`) - The epoch from which this NSR value is coming from.
   *   `ugcScore` (*type:* `number()`, *default:* `nil`) - 
+  *   `spambrainLavcScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
+  *   `smallPersonalSite` (*type:* `number()`, *default:* `nil`) - Score of small personal site promotion go/promoting-personal-blogs-v1
+  *   `pnavClicks` (*type:* `number()`, *default:* `nil`) - denominator for the pnav computation
   *   `siteChunkSource` (*type:* `String.t`, *default:* `nil`) - These are only annotated in the Goldmine NSR annotator.
-  *   `secondarySiteChunk` (*type:* `String.t`, *default:* `nil`) - Secondary NSR sitechunk. When present, it provides more granular chunking than primary sitechunks (see quality/nsr/util/sitechunker.h for details).
+  *   `clusterUplift` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t`, *default:* `nil`) - 
+  *   `newNsr` (*type:* `number()`, *default:* `nil`) - This field used as a temporary field for clean transitions when we need to roll out Q* and NSR changes simultaneously.
+  *   `siteAutopilotScore` (*type:* `number()`, *default:* `nil`) - Aggregated value of url autopilot scores for this sitechunk.
+  *   `isVideoFocusedSite` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has mostly video content, but is not hosted on any known video-hosting domains. Site is considered to be video-focused, if it has > 50% of the URLs with watch pages (with smoothing prior). ariane/4045246
+  *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t`, *default:* `nil`) - 
+  *   `chromeInTotal` (*type:* `number()`, *default:* `nil`) - Site-level Chrome views.
+  *   `chardVariance` (*type:* `number()`, *default:* `nil`) - 
+  *   `largeOrgId` (*type:* `integer()`, *default:* `nil`) - 
+  *   `nsrdataFromFallbackPatternKey` (*type:* `boolean()`, *default:* `nil`) - If true indicates that we do not have NSR data computed for the chunk, and instead the data is coming from an average of other host chunks.
+  *   `siteQualityStddevs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
+  *   `clusterId` (*type:* `integer()`, *default:* `nil`) - An id for defining clusters of sites. Used in ecosystem experiments (project Tundra).
   *   `videoScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `articleScore` (*type:* `number()`, *default:* `nil`) - Score from article classification of the site.
+  *   `shoppingScore` (*type:* `number()`, *default:* `nil`) - 
+  *   `nsr` (*type:* `number()`, *default:* `nil`) - 
+  *   `localityScore` (*type:* `number()`, *default:* `nil`) - Locality score of the site, i.e. the locality component of the LocalAuthority signal (see go/pq-localauthority).
+  *   `siteChunk` (*type:* `String.t`, *default:* `nil`) - Primary NSR sitechunk. In most of the cases it's same as HOST_LEVEL_V3 sitechunked canonical url of the document. In rare, but important cases it's based on page markup (see quality/nsr/util/sitechunker.h for details).
+  *   `i18nBucket` (*type:* `integer()`, *default:* `nil`) - Currently corresponds to i18n_g42_bucket.
+  *   `chardEncoded` (*type:* `integer()`, *default:* `nil`) - Site-level chard score: site quality predictor based on content.
+  *   `articleScoreV2` (*type:* `number()`, *default:* `nil`) - 
+  *   `nsrEpoch` (*type:* `String.t`, *default:* `nil`) - The epoch from which this NSR value is coming from.
+  *   `tofu` (*type:* `number()`, *default:* `nil`) - Site-level tofu score: site quality predictor based on content.
+  *   `siteLinkOut` (*type:* `number()`, *default:* `nil`) - Aggregated value of url link out scores for this sitechunk.
+  *   `nsrOverrideBid` (*type:* `number()`, *default:* `nil`) - This signal is used to unconditionally override NSR as a bid in Q*. Should only be used in case of emergency (see go/nsr-override-bid). To have any effect, the value should be present and greater than 0.001.
+  *   `language` (*type:* `integer()`, *default:* `nil`) - 
+  *   `clutterScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
+  *   `host` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isCovidLocalAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the local authority covid signal, as computed by go/covid-local-authority
+  *   `pnav` (*type:* `number()`, *default:* `nil`) - Fractional signals.
+  *   `siteQualityStddev` (*type:* `number()`, *default:* `nil`) - Estimate of site's PQ rating stddev--spread of the page-level PQ ratings of a site. Note this is different from nsr_variance which predicts error of NSR itself from the aggregated site-level rating.
+  *   `impressions` (*type:* `number()`, *default:* `nil`) - Site-level impressions.
+  *   `directFrac` (*type:* `number()`, *default:* `nil`) - 
+  *   `vlq` (*type:* `number()`, *default:* `nil`) - Score of the Video LQ model.
   *   `spambrainLavcScore` (*type:* `number()`, *default:* `nil`) - The SpamBrain LAVC score, as of July 2022. See more information at go/cloverfield-lavc-deck.
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
+  *   `secondarySiteChunk` (*type:* `String.t`, *default:* `nil`) - Secondary NSR sitechunk. When present, it provides more granular chunking than primary sitechunks (see quality/nsr/util/sitechunker.h for details).
+  *   `articleScore` (*type:* `number()`, *default:* `nil`) - Score from article classification of the site.
+  *   `versionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t)`, *default:* `nil`) - Versioned map of NSR values for experimenting with the next release.
+  *   `siteLinkIn` (*type:* `number()`, *default:* `nil`) - Average value of the site_link_in for pages in the sitechunk.
+  *   `ymylNewsV2Score` (*type:* `number()`, *default:* `nil`) - 
+  *   `isElectionAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the election authority signal, as computed by go/election-authority
+  *   `sitePr` (*type:* `number()`, *default:* `nil`) - 
+  *   `priorAdjustedNsr` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - NSR - prior. Estimate of whether the site is above/below average NSR in its slice.
+  *   `healthScore` (*type:* `number()`, *default:* `nil`) - Categorical signals.
+  *   `clutterScore` (*type:* `number()`, *default:* `nil`) - Delta site-level signal in Q* penalizing sites with a large number of distracting/annoying resources loaded by the site (see go/clutter-v0).
+  *   `vlqNsr` (*type:* `number()`, *default:* `nil`) - NSR from a headroom model targeting low-quality video sites.
+  *   `nsrVariance` (*type:* `number()`, *default:* `nil`) - NSR variance logodds [0, infinity).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :tofu => number() | nil,
-          :healthScore => number() | nil,
-          :siteAutopilotScore => number() | nil,
-          :clutterScore => number() | nil,
-          :sitePr => number() | nil,
-          :nsrOverrideBid => number() | nil,
-          :clusterUplift =>
-            GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t() | nil,
-          :ymylNewsV2Score => number() | nil,
-          :smallPersonalSite => number() | nil,
-          :articleScoreV2 => number() | nil,
-          :pnav => number() | nil,
-          :versionedData =>
-            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t()) | nil,
-          :localityScore => number() | nil,
-          :pnavClicks => number() | nil,
-          :shoppingScore => number() | nil,
-          :chardVariance => number() | nil,
-          :clusterId => integer() | nil,
-          :metadata => GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t() | nil,
-          :language => integer() | nil,
-          :url => String.t() | nil,
-          :chardEncoded => integer() | nil,
-          :nsrdataFromFallbackPatternKey => boolean() | nil,
-          :i18nBucket => integer() | nil,
-          :chromeInTotal => number() | nil,
-          :directFrac => number() | nil,
-          :siteQualityStddevs =>
-            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
-          :host => String.t() | nil,
+          :ugcScore => number() | nil,
           :spambrainLavcScores =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
-          :vlqNsr => number() | nil,
-          :isCovidLocalAuthority => boolean() | nil,
-          :largeOrgId => integer() | nil,
-          :siteChunk => String.t() | nil,
-          :isElectionAuthority => boolean() | nil,
+          :smallPersonalSite => number() | nil,
+          :pnavClicks => number() | nil,
+          :siteChunkSource => String.t() | nil,
+          :clusterUplift =>
+            GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t() | nil,
+          :newNsr => number() | nil,
+          :siteAutopilotScore => number() | nil,
           :isVideoFocusedSite => boolean() | nil,
+          :metadata => GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t() | nil,
+          :chromeInTotal => number() | nil,
+          :chardVariance => number() | nil,
+          :largeOrgId => integer() | nil,
+          :nsrdataFromFallbackPatternKey => boolean() | nil,
+          :siteQualityStddevs =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
+          :clusterId => integer() | nil,
+          :videoScore => number() | nil,
+          :shoppingScore => number() | nil,
+          :nsr => number() | nil,
+          :localityScore => number() | nil,
+          :siteChunk => String.t() | nil,
+          :i18nBucket => integer() | nil,
+          :chardEncoded => integer() | nil,
+          :articleScoreV2 => number() | nil,
+          :nsrEpoch => String.t() | nil,
+          :tofu => number() | nil,
+          :siteLinkOut => number() | nil,
+          :nsrOverrideBid => number() | nil,
+          :language => integer() | nil,
           :clutterScores =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
-          :impressions => number() | nil,
-          :newNsr => number() | nil,
-          :siteLinkOut => number() | nil,
+          :host => String.t() | nil,
+          :isCovidLocalAuthority => boolean() | nil,
+          :pnav => number() | nil,
           :siteQualityStddev => number() | nil,
+          :impressions => number() | nil,
+          :directFrac => number() | nil,
           :vlq => number() | nil,
-          :nsrVariance => number() | nil,
+          :spambrainLavcScore => number() | nil,
+          :url => String.t() | nil,
+          :secondarySiteChunk => String.t() | nil,
+          :articleScore => number() | nil,
+          :versionedData =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t()) | nil,
+          :siteLinkIn => number() | nil,
+          :ymylNewsV2Score => number() | nil,
+          :isElectionAuthority => boolean() | nil,
+          :sitePr => number() | nil,
           :priorAdjustedNsr =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
-          :siteLinkIn => number() | nil,
-          :nsr => number() | nil,
-          :nsrEpoch => String.t() | nil,
-          :ugcScore => number() | nil,
-          :siteChunkSource => String.t() | nil,
-          :secondarySiteChunk => String.t() | nil,
-          :videoScore => number() | nil,
-          :articleScore => number() | nil,
-          :spambrainLavcScore => number() | nil
+          :healthScore => number() | nil,
+          :clutterScore => number() | nil,
+          :vlqNsr => number() | nil,
+          :nsrVariance => number() | nil
         }
 
-  field(:tofu)
-  field(:healthScore)
-  field(:siteAutopilotScore)
-  field(:clutterScore)
-  field(:sitePr)
-  field(:nsrOverrideBid)
-  field(:clusterUplift, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift)
-  field(:ymylNewsV2Score)
-  field(:smallPersonalSite)
-  field(:articleScoreV2)
-  field(:pnav)
-
-  field(:versionedData,
-    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData,
-    type: :list
-  )
-
-  field(:localityScore)
-  field(:pnavClicks)
-  field(:shoppingScore)
-  field(:chardVariance)
-  field(:clusterId)
-  field(:metadata, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata)
-  field(:language)
-  field(:url)
-  field(:chardEncoded)
-  field(:nsrdataFromFallbackPatternKey)
-  field(:i18nBucket)
-  field(:chromeInTotal)
-  field(:directFrac)
-
-  field(:siteQualityStddevs,
-    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
-    type: :list
-  )
-
-  field(:host)
+  field(:ugcScore)
 
   field(:spambrainLavcScores,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
     type: :list
   )
 
-  field(:vlqNsr)
-  field(:isCovidLocalAuthority)
-  field(:largeOrgId)
-  field(:siteChunk)
-  field(:isElectionAuthority)
+  field(:smallPersonalSite)
+  field(:pnavClicks)
+  field(:siteChunkSource)
+  field(:clusterUplift, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift)
+  field(:newNsr)
+  field(:siteAutopilotScore)
   field(:isVideoFocusedSite)
+  field(:metadata, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata)
+  field(:chromeInTotal)
+  field(:chardVariance)
+  field(:largeOrgId)
+  field(:nsrdataFromFallbackPatternKey)
+
+  field(:siteQualityStddevs,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
+  field(:clusterId)
+  field(:videoScore)
+  field(:shoppingScore)
+  field(:nsr)
+  field(:localityScore)
+  field(:siteChunk)
+  field(:i18nBucket)
+  field(:chardEncoded)
+  field(:articleScoreV2)
+  field(:nsrEpoch)
+  field(:tofu)
+  field(:siteLinkOut)
+  field(:nsrOverrideBid)
+  field(:language)
 
   field(:clutterScores,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
     type: :list
   )
 
-  field(:impressions)
-  field(:newNsr)
-  field(:siteLinkOut)
+  field(:host)
+  field(:isCovidLocalAuthority)
+  field(:pnav)
   field(:siteQualityStddev)
+  field(:impressions)
+  field(:directFrac)
   field(:vlq)
-  field(:nsrVariance)
+  field(:spambrainLavcScore)
+  field(:url)
+  field(:secondarySiteChunk)
+  field(:articleScore)
+
+  field(:versionedData,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData,
+    type: :list
+  )
+
+  field(:siteLinkIn)
+  field(:ymylNewsV2Score)
+  field(:isElectionAuthority)
+  field(:sitePr)
 
   field(:priorAdjustedNsr,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
     type: :list
   )
 
-  field(:siteLinkIn)
-  field(:nsr)
-  field(:nsrEpoch)
-  field(:ugcScore)
-  field(:siteChunkSource)
-  field(:secondarySiteChunk)
-  field(:videoScore)
-  field(:articleScore)
-  field(:spambrainLavcScore)
+  field(:healthScore)
+  field(:clutterScore)
+  field(:vlqNsr)
+  field(:nsrVariance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do

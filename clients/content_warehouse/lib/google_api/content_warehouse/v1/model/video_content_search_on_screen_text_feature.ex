@@ -21,143 +21,143 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOnScreenTextFeat
 
   ## Attributes
 
-  *   `foregroundBlue` (*type:* `number()`, *default:* `nil`) - 
-  *   `foregroundGray` (*type:* `number()`, *default:* `nil`) - Color information, normalized to [0-1]. This color information is extracted from the largest word in the line entities of PageLayout message. See goodoc::PageLayoutEntity::Colors for details.
-  *   `handwrittenTextRatio` (*type:* `number()`, *default:* `nil`) - # of LINE entities that are recognized as handwritten texts over # of merged LINE entities.
-  *   `averageFontsize` (*type:* `number()`, *default:* `nil`) - Font size or weight information. This is extracted from internal message, so may not be available in future.
-  *   `backgroundBlue` (*type:* `number()`, *default:* `nil`) - 
-  *   `averageHeightRatio` (*type:* `number()`, *default:* `nil`) - 
-  *   `isCountingNumberOoo` (*type:* `boolean()`, *default:* `nil`) - Whether or not the counting number in this anchor's label is out-of-order. If no counting number is detected, this will be empty.
-  *   `occurrenceCount` (*type:* `number()`, *default:* `nil`) - The number of OCR texts that have the same text among temporally-merged OCR texts.
-  *   `countingNumberPrefix` (*type:* `String.t`, *default:* `nil`) - Prefix for counting number in this anchor's label. If no counting number is detected, this will be empty.
-  *   `ocrAsrFeature` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature.t`, *default:* `nil`) - Features for the overlap between OCR and ASR.
-  *   `countingNumberSuffix` (*type:* `String.t`, *default:* `nil`) - Suffix for counting number in this anchor's label. If no counting number is detected, this will be empty.
-  *   `backgroundGreen` (*type:* `number()`, *default:* `nil`) - 
-  *   `durationMs` (*type:* `integer()`, *default:* `nil`) - Duration time in millisec.
-  *   `centerHorizontalPositionRatio` (*type:* `number()`, *default:* `nil`) - Horizontal position of the center of this text, by ratio [0.0, 1.0].
-  *   `averageAngle` (*type:* `number()`, *default:* `nil`) - The average of rotation angles (degree) of texts.
-  *   `boxWidthRatio` (*type:* `number()`, *default:* `nil`) - Box width and height ratio, against to the frame size, so the value range is [0, 1]. If this text feature consists of multiple text boxes, the box width / height is a union of each text box.
-  *   `backgroundRed` (*type:* `number()`, *default:* `nil`) - 
-  *   `medianClusteringDistance` (*type:* `number()`, *default:* `nil`) - The median distance between this anchor and other anchors in the cluster. The way the distance is calculated will vary depending on the clustering method.
-  *   `backgroundGray` (*type:* `number()`, *default:* `nil`) - 
-  *   `languages` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoodocLanguageCombinationLanguage.t)`, *default:* `nil`) - Languages predicted by OCR. "repeated" is employed for this field because LINE entities of PageLayout message are sometimes annotated with multiple languages, and also two VideoAnchor that are annotated with different languages can be merged into one VideoAnchor. When two VideoAnchor are merged into one, the weight field values of the new VideoAnchor will be the average of weight field values weighted by merged_line_count.
-  *   `foregroundGreen` (*type:* `number()`, *default:* `nil`) - 
-  *   `relativeShotTimeMsPosteriorToEndTime` (*type:* `integer()`, *default:* `nil`) - 
-  *   `topPositionRatio` (*type:* `number()`, *default:* `nil`) - Note that top-left position is (0, 0) for position values. Top position of this text, by ratio [0, 1].
-  *   `foregroundRed` (*type:* `number()`, *default:* `nil`) - 
-  *   `hadUrlInLabel` (*type:* `boolean()`, *default:* `nil`) - Whether or not this anchor had URL in its label before the label fixing step.
-  *   `countingNumber` (*type:* `integer()`, *default:* `nil`) - Counting number in this anchor's original label.
-  *   `leftPositionRatio` (*type:* `number()`, *default:* `nil`) - Left position of this text, by ratio [0, 1].
-  *   `occurrenceRatio` (*type:* `number()`, *default:* `nil`) - occurrence_count over the number of anchors merged to this anchor.
-  *   `topOcrLanguage` (*type:* `String.t`, *default:* `nil`) - OCR language that has the highest weight.
   *   `shotInfoCountDuringText` (*type:* `integer()`, *default:* `nil`) - 
-  *   `mergedLineCount` (*type:* `integer()`, *default:* `nil`) - The number of LINE entities used for this text.
-  *   `relativeShotTimeMsPriorToEndTime` (*type:* `integer()`, *default:* `nil`) - 
-  *   `averageConfidence` (*type:* `number()`, *default:* `nil`) - Average value of confidence.
-  *   `boxHeightRatio` (*type:* `number()`, *default:* `nil`) - 
-  *   `originalLabel` (*type:* `String.t`, *default:* `nil`) - The label this VideoAnchor originally had before label clearning steps.
-  *   `nTextsInSameFrame` (*type:* `integer()`, *default:* `nil`) - # of OCR texts that appear in the same frame. If duration of this OCR text is not zero, the maximum number among multiple frames where this OCR text appears is set to this field.
-  *   `relativeShotTimeMsPriorToStartTime` (*type:* `integer()`, *default:* `nil`) - Shot boundary time nearest to OnScreenText's start and end time. The time is relative to each OnScreenText's start / end time (ex. -1 means shot time exists prior to the start / end time). If shot time and start/end time is the same, 0 is set in 'prior' field. If no shot info is available, the below fields are not set.
   *   `averageFontweight` (*type:* `number()`, *default:* `nil`) - 
+  *   `countingNumber` (*type:* `integer()`, *default:* `nil`) - Counting number in this anchor's original label.
+  *   `backgroundBlue` (*type:* `number()`, *default:* `nil`) - 
+  *   `relativeShotTimeMsPriorToEndTime` (*type:* `integer()`, *default:* `nil`) - 
+  *   `topOcrLanguage` (*type:* `String.t`, *default:* `nil`) - OCR language that has the highest weight.
+  *   `relativeShotTimeMsPosteriorToStartTime` (*type:* `integer()`, *default:* `nil`) - 
+  *   `averageAngle` (*type:* `number()`, *default:* `nil`) - The average of rotation angles (degree) of texts.
+  *   `durationMs` (*type:* `integer()`, *default:* `nil`) - Duration time in millisec.
   *   `centerVerticalPositionRatio` (*type:* `number()`, *default:* `nil`) - Vertical position of the center of this text, by ratio [0.0, 1.0].
   *   `countingNumberOooRatio` (*type:* `number()`, *default:* `nil`) - # of numbered anchors that are not out-of-order / # of all the numbered anchors. If no counting number is detected, this will be empty.
-  *   `relativeShotTimeMsPosteriorToStartTime` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianClusteringDistance` (*type:* `number()`, *default:* `nil`) - The median distance between this anchor and other anchors in the cluster. The way the distance is calculated will vary depending on the clustering method.
+  *   `foregroundRed` (*type:* `number()`, *default:* `nil`) - 
+  *   `handwrittenTextRatio` (*type:* `number()`, *default:* `nil`) - # of LINE entities that are recognized as handwritten texts over # of merged LINE entities.
+  *   `averageFontsize` (*type:* `number()`, *default:* `nil`) - Font size or weight information. This is extracted from internal message, so may not be available in future.
+  *   `backgroundGreen` (*type:* `number()`, *default:* `nil`) - 
+  *   `averageHeightRatio` (*type:* `number()`, *default:* `nil`) - 
+  *   `occurrenceRatio` (*type:* `number()`, *default:* `nil`) - occurrence_count over the number of anchors merged to this anchor.
+  *   `backgroundRed` (*type:* `number()`, *default:* `nil`) - 
+  *   `nTextsInSameFrame` (*type:* `integer()`, *default:* `nil`) - # of OCR texts that appear in the same frame. If duration of this OCR text is not zero, the maximum number among multiple frames where this OCR text appears is set to this field.
+  *   `relativeShotTimeMsPriorToStartTime` (*type:* `integer()`, *default:* `nil`) - Shot boundary time nearest to OnScreenText's start and end time. The time is relative to each OnScreenText's start / end time (ex. -1 means shot time exists prior to the start / end time). If shot time and start/end time is the same, 0 is set in 'prior' field. If no shot info is available, the below fields are not set.
+  *   `originalLabel` (*type:* `String.t`, *default:* `nil`) - The label this VideoAnchor originally had before label clearning steps.
+  *   `countingNumberPrefix` (*type:* `String.t`, *default:* `nil`) - Prefix for counting number in this anchor's label. If no counting number is detected, this will be empty.
+  *   `relativeShotTimeMsPosteriorToEndTime` (*type:* `integer()`, *default:* `nil`) - 
+  *   `centerHorizontalPositionRatio` (*type:* `number()`, *default:* `nil`) - Horizontal position of the center of this text, by ratio [0.0, 1.0].
+  *   `averageConfidence` (*type:* `number()`, *default:* `nil`) - Average value of confidence.
+  *   `occurrenceCount` (*type:* `number()`, *default:* `nil`) - The number of OCR texts that have the same text among temporally-merged OCR texts.
+  *   `mergedLineCount` (*type:* `integer()`, *default:* `nil`) - The number of LINE entities used for this text.
+  *   `boxHeightRatio` (*type:* `number()`, *default:* `nil`) - 
+  *   `ocrAsrFeature` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature.t`, *default:* `nil`) - Features for the overlap between OCR and ASR.
+  *   `hadUrlInLabel` (*type:* `boolean()`, *default:* `nil`) - Whether or not this anchor had URL in its label before the label fixing step.
+  *   `leftPositionRatio` (*type:* `number()`, *default:* `nil`) - Left position of this text, by ratio [0, 1].
+  *   `backgroundGray` (*type:* `number()`, *default:* `nil`) - 
+  *   `isCountingNumberOoo` (*type:* `boolean()`, *default:* `nil`) - Whether or not the counting number in this anchor's label is out-of-order. If no counting number is detected, this will be empty.
+  *   `topPositionRatio` (*type:* `number()`, *default:* `nil`) - Note that top-left position is (0, 0) for position values. Top position of this text, by ratio [0, 1].
+  *   `foregroundGray` (*type:* `number()`, *default:* `nil`) - Color information, normalized to [0-1]. This color information is extracted from the largest word in the line entities of PageLayout message. See goodoc::PageLayoutEntity::Colors for details.
+  *   `foregroundGreen` (*type:* `number()`, *default:* `nil`) - 
+  *   `languages` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoodocLanguageCombinationLanguage.t)`, *default:* `nil`) - Languages predicted by OCR. "repeated" is employed for this field because LINE entities of PageLayout message are sometimes annotated with multiple languages, and also two VideoAnchor that are annotated with different languages can be merged into one VideoAnchor. When two VideoAnchor are merged into one, the weight field values of the new VideoAnchor will be the average of weight field values weighted by merged_line_count.
+  *   `foregroundBlue` (*type:* `number()`, *default:* `nil`) - 
+  *   `countingNumberSuffix` (*type:* `String.t`, *default:* `nil`) - Suffix for counting number in this anchor's label. If no counting number is detected, this will be empty.
+  *   `boxWidthRatio` (*type:* `number()`, *default:* `nil`) - Box width and height ratio, against to the frame size, so the value range is [0, 1]. If this text feature consists of multiple text boxes, the box width / height is a union of each text box.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :foregroundBlue => number() | nil,
-          :foregroundGray => number() | nil,
-          :handwrittenTextRatio => number() | nil,
-          :averageFontsize => number() | nil,
-          :backgroundBlue => number() | nil,
-          :averageHeightRatio => number() | nil,
-          :isCountingNumberOoo => boolean() | nil,
-          :occurrenceCount => number() | nil,
-          :countingNumberPrefix => String.t() | nil,
-          :ocrAsrFeature =>
-            GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature.t() | nil,
-          :countingNumberSuffix => String.t() | nil,
-          :backgroundGreen => number() | nil,
-          :durationMs => integer() | nil,
-          :centerHorizontalPositionRatio => number() | nil,
-          :averageAngle => number() | nil,
-          :boxWidthRatio => number() | nil,
-          :backgroundRed => number() | nil,
-          :medianClusteringDistance => number() | nil,
-          :backgroundGray => number() | nil,
-          :languages =>
-            list(GoogleApi.ContentWarehouse.V1.Model.GoodocLanguageCombinationLanguage.t()) | nil,
-          :foregroundGreen => number() | nil,
-          :relativeShotTimeMsPosteriorToEndTime => integer() | nil,
-          :topPositionRatio => number() | nil,
-          :foregroundRed => number() | nil,
-          :hadUrlInLabel => boolean() | nil,
-          :countingNumber => integer() | nil,
-          :leftPositionRatio => number() | nil,
-          :occurrenceRatio => number() | nil,
-          :topOcrLanguage => String.t() | nil,
           :shotInfoCountDuringText => integer() | nil,
-          :mergedLineCount => integer() | nil,
-          :relativeShotTimeMsPriorToEndTime => integer() | nil,
-          :averageConfidence => number() | nil,
-          :boxHeightRatio => number() | nil,
-          :originalLabel => String.t() | nil,
-          :nTextsInSameFrame => integer() | nil,
-          :relativeShotTimeMsPriorToStartTime => integer() | nil,
           :averageFontweight => number() | nil,
+          :countingNumber => integer() | nil,
+          :backgroundBlue => number() | nil,
+          :relativeShotTimeMsPriorToEndTime => integer() | nil,
+          :topOcrLanguage => String.t() | nil,
+          :relativeShotTimeMsPosteriorToStartTime => integer() | nil,
+          :averageAngle => number() | nil,
+          :durationMs => integer() | nil,
           :centerVerticalPositionRatio => number() | nil,
           :countingNumberOooRatio => number() | nil,
-          :relativeShotTimeMsPosteriorToStartTime => integer() | nil
+          :medianClusteringDistance => number() | nil,
+          :foregroundRed => number() | nil,
+          :handwrittenTextRatio => number() | nil,
+          :averageFontsize => number() | nil,
+          :backgroundGreen => number() | nil,
+          :averageHeightRatio => number() | nil,
+          :occurrenceRatio => number() | nil,
+          :backgroundRed => number() | nil,
+          :nTextsInSameFrame => integer() | nil,
+          :relativeShotTimeMsPriorToStartTime => integer() | nil,
+          :originalLabel => String.t() | nil,
+          :countingNumberPrefix => String.t() | nil,
+          :relativeShotTimeMsPosteriorToEndTime => integer() | nil,
+          :centerHorizontalPositionRatio => number() | nil,
+          :averageConfidence => number() | nil,
+          :occurrenceCount => number() | nil,
+          :mergedLineCount => integer() | nil,
+          :boxHeightRatio => number() | nil,
+          :ocrAsrFeature =>
+            GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature.t() | nil,
+          :hadUrlInLabel => boolean() | nil,
+          :leftPositionRatio => number() | nil,
+          :backgroundGray => number() | nil,
+          :isCountingNumberOoo => boolean() | nil,
+          :topPositionRatio => number() | nil,
+          :foregroundGray => number() | nil,
+          :foregroundGreen => number() | nil,
+          :languages =>
+            list(GoogleApi.ContentWarehouse.V1.Model.GoodocLanguageCombinationLanguage.t()) | nil,
+          :foregroundBlue => number() | nil,
+          :countingNumberSuffix => String.t() | nil,
+          :boxWidthRatio => number() | nil
         }
 
-  field(:foregroundBlue)
-  field(:foregroundGray)
+  field(:shotInfoCountDuringText)
+  field(:averageFontweight)
+  field(:countingNumber)
+  field(:backgroundBlue)
+  field(:relativeShotTimeMsPriorToEndTime)
+  field(:topOcrLanguage)
+  field(:relativeShotTimeMsPosteriorToStartTime)
+  field(:averageAngle)
+  field(:durationMs)
+  field(:centerVerticalPositionRatio)
+  field(:countingNumberOooRatio)
+  field(:medianClusteringDistance)
+  field(:foregroundRed)
   field(:handwrittenTextRatio)
   field(:averageFontsize)
-  field(:backgroundBlue)
-  field(:averageHeightRatio)
-  field(:isCountingNumberOoo)
-  field(:occurrenceCount)
-  field(:countingNumberPrefix)
-  field(:ocrAsrFeature, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature)
-  field(:countingNumberSuffix)
   field(:backgroundGreen)
-  field(:durationMs)
-  field(:centerHorizontalPositionRatio)
-  field(:averageAngle)
-  field(:boxWidthRatio)
+  field(:averageHeightRatio)
+  field(:occurrenceRatio)
   field(:backgroundRed)
-  field(:medianClusteringDistance)
+  field(:nTextsInSameFrame)
+  field(:relativeShotTimeMsPriorToStartTime)
+  field(:originalLabel)
+  field(:countingNumberPrefix)
+  field(:relativeShotTimeMsPosteriorToEndTime)
+  field(:centerHorizontalPositionRatio)
+  field(:averageConfidence)
+  field(:occurrenceCount)
+  field(:mergedLineCount)
+  field(:boxHeightRatio)
+  field(:ocrAsrFeature, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchOcrAsrFeature)
+  field(:hadUrlInLabel)
+  field(:leftPositionRatio)
   field(:backgroundGray)
+  field(:isCountingNumberOoo)
+  field(:topPositionRatio)
+  field(:foregroundGray)
+  field(:foregroundGreen)
 
   field(:languages,
     as: GoogleApi.ContentWarehouse.V1.Model.GoodocLanguageCombinationLanguage,
     type: :list
   )
 
-  field(:foregroundGreen)
-  field(:relativeShotTimeMsPosteriorToEndTime)
-  field(:topPositionRatio)
-  field(:foregroundRed)
-  field(:hadUrlInLabel)
-  field(:countingNumber)
-  field(:leftPositionRatio)
-  field(:occurrenceRatio)
-  field(:topOcrLanguage)
-  field(:shotInfoCountDuringText)
-  field(:mergedLineCount)
-  field(:relativeShotTimeMsPriorToEndTime)
-  field(:averageConfidence)
-  field(:boxHeightRatio)
-  field(:originalLabel)
-  field(:nTextsInSameFrame)
-  field(:relativeShotTimeMsPriorToStartTime)
-  field(:averageFontweight)
-  field(:centerVerticalPositionRatio)
-  field(:countingNumberOooRatio)
-  field(:relativeShotTimeMsPosteriorToStartTime)
+  field(:foregroundBlue)
+  field(:countingNumberSuffix)
+  field(:boxWidthRatio)
 end
 
 defimpl Poison.Decoder,
