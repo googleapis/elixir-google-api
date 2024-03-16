@@ -21,130 +21,130 @@ defmodule GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse do
 
   ## Attributes
 
-  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. If the "providerId" param is set to OpenID OP identifer other than the whilte listed IdPs the OP identifier is returned. If the "identifier" param is federated ID in the createAuthUri request. The domain part of the federated ID is returned.
-  *   `oauthExpireIn` (*type:* `integer()`, *default:* `nil`) - The lifetime in seconds of the OAuth2 access token.
-  *   `oauthRequestToken` (*type:* `String.t`, *default:* `nil`) - The user approved request token for the OpenID OAuth extension.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the user.
-  *   `needEmail` (*type:* `boolean()`, *default:* `nil`) - Whether need client to supply email to complete the federated login flow.
-  *   `localId` (*type:* `String.t`, *default:* `nil`) - The RP local ID if it's already been mapped to the IdP account identified by the federated ID.
-  *   `language` (*type:* `String.t`, *default:* `nil`) - The language preference of the user.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email returned by the IdP. NOTE: The federated login user may not own the email.
-  *   `oauthScope` (*type:* `String.t`, *default:* `nil`) - The scope for the OpenID OAuth extension.
-  *   `context` (*type:* `String.t`, *default:* `nil`) - The opaque value used by the client to maintain context info between the authentication request and the IDP callback.
-  *   `appInstallationUrl` (*type:* `String.t`, *default:* `nil`) - URL for OTA app installation.
-  *   `firstName` (*type:* `String.t`, *default:* `nil`) - The first name of the user.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The timezone of the user.
-  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#VerifyAssertionResponse`) - The fixed string "identitytoolkit#VerifyAssertionResponse".
-  *   `inputEmail` (*type:* `String.t`, *default:* `nil`) - It's the identifier param in the createAuthUri request if the identifier is an email. It can be used to check whether the user input email is different from the asserted email.
-  *   `appScheme` (*type:* `String.t`, *default:* `nil`) - The custom scheme used by mobile app.
-  *   `dateOfBirth` (*type:* `String.t`, *default:* `nil`) - The birth date of the IdP account.
-  *   `oauthTokenSecret` (*type:* `String.t`, *default:* `nil`) - The OAuth1 access token secret.
   *   `emailRecycled` (*type:* `boolean()`, *default:* `nil`) - It's true if the email is recycled.
-  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
-  *   `screenName` (*type:* `String.t`, *default:* `nil`) - The screen_name of a Twitter user or the login name at Github.
-  *   `verifiedProvider` (*type:* `list(String.t)`, *default:* `nil`) - When action is 'map', contains the idps which can be used for confirmation.
-  *   `needConfirmation` (*type:* `boolean()`, *default:* `nil`) - Whether the assertion is from a non-trusted IDP and need account linking confirmation.
-  *   `nickName` (*type:* `String.t`, *default:* `nil`) - The nick name of the user.
-  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Client error code.
+  *   `inputEmail` (*type:* `String.t`, *default:* `nil`) - It's the identifier param in the createAuthUri request if the identifier is an email. It can be used to check whether the user input email is different from the asserted email.
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The full name of the user.
   *   `oauthAuthorizationCode` (*type:* `String.t`, *default:* `nil`) - The OAuth2 authorization code.
-  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The URI of the public accessible profiel picture.
-  *   `oauthIdToken` (*type:* `String.t`, *default:* `nil`) - The OIDC id token.
+  *   `appInstallationUrl` (*type:* `String.t`, *default:* `nil`) - URL for OTA app installation.
+  *   `kind` (*type:* `String.t`, *default:* `identitytoolkit#VerifyAssertionResponse`) - The fixed string "identitytoolkit#VerifyAssertionResponse".
+  *   `needConfirmation` (*type:* `boolean()`, *default:* `nil`) - Whether the assertion is from a non-trusted IDP and need account linking confirmation.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email returned by the IdP. NOTE: The federated login user may not own the email.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the user.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Client error code.
   *   `emailVerified` (*type:* `boolean()`, *default:* `nil`) - The value is true if the IDP is also the email provider. It means the user owns the email.
-  *   `federatedId` (*type:* `String.t`, *default:* `nil`) - The unique ID identifies the IdP account.
+  *   `appScheme` (*type:* `String.t`, *default:* `nil`) - The custom scheme used by mobile app.
+  *   `isNewUser` (*type:* `boolean()`, *default:* `nil`) - True if it's a new user sign-in, false if it's a returning user.
+  *   `nickName` (*type:* `String.t`, *default:* `nil`) - The nick name of the user.
+  *   `providerId` (*type:* `String.t`, *default:* `nil`) - The IdP ID. For white listed IdPs it's a short domain name e.g. google.com, aol.com, live.net and yahoo.com. If the "providerId" param is set to OpenID OP identifer other than the whilte listed IdPs the OP identifier is returned. If the "identifier" param is federated ID in the createAuthUri request. The domain part of the federated ID is returned.
   *   `idToken` (*type:* `String.t`, *default:* `nil`) - The ID token.
-  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
+  *   `oauthExpireIn` (*type:* `integer()`, *default:* `nil`) - The lifetime in seconds of the OAuth2 access token.
+  *   `firstName` (*type:* `String.t`, *default:* `nil`) - The first name of the user.
   *   `originalEmail` (*type:* `String.t`, *default:* `nil`) - The original email stored in the mapping storage. It's returned when the federated ID is associated to a different email.
   *   `lastName` (*type:* `String.t`, *default:* `nil`) - The last name of the user.
-  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The full name of the user.
+  *   `oauthTokenSecret` (*type:* `String.t`, *default:* `nil`) - The OAuth1 access token secret.
   *   `oauthAccessToken` (*type:* `String.t`, *default:* `nil`) - The OAuth2 access token.
+  *   `dateOfBirth` (*type:* `String.t`, *default:* `nil`) - The birth date of the IdP account.
+  *   `screenName` (*type:* `String.t`, *default:* `nil`) - The screen_name of a Twitter user or the login name at Github.
+  *   `photoUrl` (*type:* `String.t`, *default:* `nil`) - The URI of the public accessible profiel picture.
+  *   `language` (*type:* `String.t`, *default:* `nil`) - The language preference of the user.
+  *   `oauthRequestToken` (*type:* `String.t`, *default:* `nil`) - The user approved request token for the OpenID OAuth extension.
+  *   `refreshToken` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be refresh token.
+  *   `localId` (*type:* `String.t`, *default:* `nil`) - The RP local ID if it's already been mapped to the IdP account identified by the federated ID.
+  *   `needEmail` (*type:* `boolean()`, *default:* `nil`) - Whether need client to supply email to complete the federated login flow.
   *   `action` (*type:* `String.t`, *default:* `nil`) - The action code.
+  *   `expiresIn` (*type:* `String.t`, *default:* `nil`) - If idToken is STS id token, then this field will be expiration time of STS id token in seconds.
+  *   `verifiedProvider` (*type:* `list(String.t)`, *default:* `nil`) - When action is 'map', contains the idps which can be used for confirmation.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The timezone of the user.
+  *   `context` (*type:* `String.t`, *default:* `nil`) - The opaque value used by the client to maintain context info between the authentication request and the IDP callback.
   *   `rawUserInfo` (*type:* `String.t`, *default:* `nil`) - Raw IDP-returned user info.
-  *   `isNewUser` (*type:* `boolean()`, *default:* `nil`) - True if it's a new user sign-in, false if it's a returning user.
+  *   `oauthScope` (*type:* `String.t`, *default:* `nil`) - The scope for the OpenID OAuth extension.
+  *   `oauthIdToken` (*type:* `String.t`, *default:* `nil`) - The OIDC id token.
+  *   `federatedId` (*type:* `String.t`, *default:* `nil`) - The unique ID identifies the IdP account.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :providerId => String.t() | nil,
-          :oauthExpireIn => integer() | nil,
-          :oauthRequestToken => String.t() | nil,
-          :displayName => String.t() | nil,
-          :needEmail => boolean() | nil,
-          :localId => String.t() | nil,
-          :language => String.t() | nil,
-          :email => String.t() | nil,
-          :oauthScope => String.t() | nil,
-          :context => String.t() | nil,
-          :appInstallationUrl => String.t() | nil,
-          :firstName => String.t() | nil,
-          :timeZone => String.t() | nil,
-          :kind => String.t() | nil,
-          :inputEmail => String.t() | nil,
-          :appScheme => String.t() | nil,
-          :dateOfBirth => String.t() | nil,
-          :oauthTokenSecret => String.t() | nil,
           :emailRecycled => boolean() | nil,
-          :expiresIn => String.t() | nil,
-          :screenName => String.t() | nil,
-          :verifiedProvider => list(String.t()) | nil,
-          :needConfirmation => boolean() | nil,
-          :nickName => String.t() | nil,
-          :errorMessage => String.t() | nil,
+          :inputEmail => String.t() | nil,
+          :fullName => String.t() | nil,
           :oauthAuthorizationCode => String.t() | nil,
-          :photoUrl => String.t() | nil,
-          :oauthIdToken => String.t() | nil,
+          :appInstallationUrl => String.t() | nil,
+          :kind => String.t() | nil,
+          :needConfirmation => boolean() | nil,
+          :email => String.t() | nil,
+          :displayName => String.t() | nil,
+          :errorMessage => String.t() | nil,
           :emailVerified => boolean() | nil,
-          :federatedId => String.t() | nil,
+          :appScheme => String.t() | nil,
+          :isNewUser => boolean() | nil,
+          :nickName => String.t() | nil,
+          :providerId => String.t() | nil,
           :idToken => String.t() | nil,
-          :refreshToken => String.t() | nil,
+          :oauthExpireIn => integer() | nil,
+          :firstName => String.t() | nil,
           :originalEmail => String.t() | nil,
           :lastName => String.t() | nil,
-          :fullName => String.t() | nil,
+          :oauthTokenSecret => String.t() | nil,
           :oauthAccessToken => String.t() | nil,
+          :dateOfBirth => String.t() | nil,
+          :screenName => String.t() | nil,
+          :photoUrl => String.t() | nil,
+          :language => String.t() | nil,
+          :oauthRequestToken => String.t() | nil,
+          :refreshToken => String.t() | nil,
+          :localId => String.t() | nil,
+          :needEmail => boolean() | nil,
           :action => String.t() | nil,
+          :expiresIn => String.t() | nil,
+          :verifiedProvider => list(String.t()) | nil,
+          :timeZone => String.t() | nil,
+          :context => String.t() | nil,
           :rawUserInfo => String.t() | nil,
-          :isNewUser => boolean() | nil
+          :oauthScope => String.t() | nil,
+          :oauthIdToken => String.t() | nil,
+          :federatedId => String.t() | nil
         }
 
-  field(:providerId)
-  field(:oauthExpireIn)
-  field(:oauthRequestToken)
-  field(:displayName)
-  field(:needEmail)
-  field(:localId)
-  field(:language)
-  field(:email)
-  field(:oauthScope)
-  field(:context)
-  field(:appInstallationUrl)
-  field(:firstName)
-  field(:timeZone)
-  field(:kind)
-  field(:inputEmail)
-  field(:appScheme)
-  field(:dateOfBirth)
-  field(:oauthTokenSecret)
   field(:emailRecycled)
-  field(:expiresIn)
-  field(:screenName)
-  field(:verifiedProvider, type: :list)
-  field(:needConfirmation)
-  field(:nickName)
-  field(:errorMessage)
+  field(:inputEmail)
+  field(:fullName)
   field(:oauthAuthorizationCode)
-  field(:photoUrl)
-  field(:oauthIdToken)
+  field(:appInstallationUrl)
+  field(:kind)
+  field(:needConfirmation)
+  field(:email)
+  field(:displayName)
+  field(:errorMessage)
   field(:emailVerified)
-  field(:federatedId)
+  field(:appScheme)
+  field(:isNewUser)
+  field(:nickName)
+  field(:providerId)
   field(:idToken)
-  field(:refreshToken)
+  field(:oauthExpireIn)
+  field(:firstName)
   field(:originalEmail)
   field(:lastName)
-  field(:fullName)
+  field(:oauthTokenSecret)
   field(:oauthAccessToken)
+  field(:dateOfBirth)
+  field(:screenName)
+  field(:photoUrl)
+  field(:language)
+  field(:oauthRequestToken)
+  field(:refreshToken)
+  field(:localId)
+  field(:needEmail)
   field(:action)
+  field(:expiresIn)
+  field(:verifiedProvider, type: :list)
+  field(:timeZone)
+  field(:context)
   field(:rawUserInfo)
-  field(:isNewUser)
+  field(:oauthScope)
+  field(:oauthIdToken)
+  field(:federatedId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IdentityToolkit.V3.Model.VerifyAssertionResponse do
