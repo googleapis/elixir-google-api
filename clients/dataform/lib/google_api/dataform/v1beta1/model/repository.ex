@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The repository's user-friendly name.
   *   `gitRemoteSettings` (*type:* `GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings.t`, *default:* `nil`) - Optional. If set, configures this repository to be linked to a Git remote.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Repository user labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The repository's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The repository's name.
   *   `npmrcEnvironmentVariablesSecretVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format `projects/*/secrets/*/versions/*`. The file itself must be in a JSON format.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The service account to run workflow invocations under.
   *   `setAuthenticatedUserAdmin` (*type:* `boolean()`, *default:* `nil`) - Optional. Input only. If set to true, the authenticated user will be granted the roles/dataform.admin role on the created repository. To modify access to the created repository later apply setIamPolicy from https://cloud.google.com/dataform/reference/rest#rest-resource:-v1beta1.projects.locations.repositories
