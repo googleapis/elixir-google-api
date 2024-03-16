@@ -21,226 +21,226 @@ defmodule GoogleApi.YouTube.V3.Model.ContentRating do
 
   ## Attributes
 
-  *   `rteRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Ireland's Raidió Teilifís Éireann.
-  *   `agcomRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Italy's Autorità per le Garanzie nelle Comunicazioni (AGCOM).
-  *   `acbRating` (*type:* `String.t`, *default:* `nil`) - The video's Australian Classification Board (ACB) or Australian Communications and Media Authority (ACMA) rating. ACMA ratings are used to classify children's television programming.
-  *   `mcstRating` (*type:* `String.t`, *default:* `nil`) - The video's rating system for Vietnam - MCST
-  *   `russiaRating` (*type:* `String.t`, *default:* `nil`) - The video's National Film Registry of the Russian Federation (MKRF - Russia) rating.
-  *   `chfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Switzerland.
   *   `djctqRatingReasons` (*type:* `list(String.t)`, *default:* `nil`) - Reasons that explain why the video received its DJCQT (Brazil) rating.
+  *   `mcstRating` (*type:* `String.t`, *default:* `nil`) - The video's rating system for Vietnam - MCST
   *   `lsfRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Indonesia's Lembaga Sensor Film.
-  *   `cscfRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Luxembourg's Commission de surveillance de la classification des films (CSCF).
-  *   `csaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from France's Conseil supérieur de l’audiovisuel, which rates broadcast content.
-  *   `smsaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Statens medieråd (Sweden's National Media Council).
-  *   `nbcplRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Poland.
-  *   `mpaatRating` (*type:* `String.t`, *default:* `nil`) - The rating system for trailer, DVD, and Ad in the US. See http://movielabs.com/md/ratings/v2.3/html/US_MPAAT_Ratings.html.
-  *   `cccRating` (*type:* `String.t`, *default:* `nil`) - The video's Consejo de Calificación Cinematográfica (Chile) rating.
-  *   `grfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Greece.
-  *   `fcbmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Malaysia's Film Censorship Board.
-  *   `ifcoRating` (*type:* `String.t`, *default:* `nil`) - The video's Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information.
-  *   `ilfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Israel.
-  *   `cicfRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Commission de Contrôle des Films (Belgium).
-  *   `rtcRating` (*type:* `String.t`, *default:* `nil`) - The video's General Directorate of Radio, Television and Cinematography (Mexico) rating.
-  *   `resorteviolenciaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Venezuela.
-  *   `cnaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Romania's CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA).
-  *   `rcnofRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National Office of Film.
-  *   `medietilsynetRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Medietilsynet, the Norwegian Media Authority.
-  *   `kijkwijzerRating` (*type:* `String.t`, *default:* `nil`) - The video's NICAM/Kijkwijzer rating from the Nederlands Instituut voor de Classificatie van Audiovisuele Media (Netherlands).
-  *   `fcoRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Hong Kong's Office for Film, Newspaper and Article Administration.
-  *   `fpbRatingReasons` (*type:* `list(String.t)`, *default:* `nil`) - Reasons that explain why the video received its FPB (South Africa) rating.
-  *   `mibacRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy).
+  *   `russiaRating` (*type:* `String.t`, *default:* `nil`) - The video's National Film Registry of the Russian Federation (MKRF - Russia) rating.
   *   `chvrsRating` (*type:* `String.t`, *default:* `nil`) - The video's Canadian Home Video Rating System (CHVRS) rating.
-  *   `mdaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Singapore's Media Development Authority (MDA) and, specifically, it's Board of Film Censors (BFC).
-  *   `catvRating` (*type:* `String.t`, *default:* `nil`) - Rating system for Canadian TV - Canadian TV Classification System The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts. For more information, see the Canadian Broadcast Standards Council website.
-  *   `cbfcRating` (*type:* `String.t`, *default:* `nil`) - The video's Central Board of Film Certification (CBFC - India) rating.
-  *   `nkclvRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Nacionãlais Kino centrs (National Film Centre of Latvia).
-  *   `kfcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Kenya Film Classification Board.
-  *   `nbcRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Maldives National Bureau of Classification.
   *   `nfrcRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Bulgarian National Film Center.
-  *   `cncRating` (*type:* `String.t`, *default:* `nil`) - Rating system in France - Commission de classification cinematographique
-  *   `ytRating` (*type:* `String.t`, *default:* `nil`) - A rating that YouTube uses to identify age-restricted content.
-  *   `moctwRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Taiwan's Ministry of Culture (文化部).
-  *   `catvfrRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council website.
   *   `bbfcRating` (*type:* `String.t`, *default:* `nil`) - The video's British Board of Film Classification (BBFC) rating.
-  *   `anatelRating` (*type:* `String.t`, *default:* `nil`) - The video's Anatel (Asociación Nacional de Televisión) rating for Chilean television.
-  *   `fskRating` (*type:* `String.t`, *default:* `nil`) - The video's Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating.
-  *   `ecbmctRating` (*type:* `String.t`, *default:* `nil`) - Rating system in Turkey - Evaluation and Classification Board of the Ministry of Culture and Tourism
-  *   `djctqRating` (*type:* `String.t`, *default:* `nil`) - The video's Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating.
-  *   `eirinRating` (*type:* `String.t`, *default:* `nil`) - The video's Eirin (映倫) rating. Eirin is the Japanese rating system.
-  *   `eefilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Estonia.
-  *   `bfvcRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Thailand's Board of Film and Video Censors.
-  *   `cceRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Portugal's Comissão de Classificação de Espect´culos.
-  *   `bmukkRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Austrian Board of Media Classification (Bundesministerium für Unterricht, Kunst und Kultur).
+  *   `kfcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Kenya Film Classification Board.
   *   `mccypRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Danish Film Institute's (Det Danske Filminstitut) Media Council for Children and Young People.
-  *   `mocRating` (*type:* `String.t`, *default:* `nil`) - The video's Ministerio de Cultura (Colombia) rating.
-  *   `mekuRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Finland's Kansallinen Audiovisuaalinen Instituutti (National Audiovisual Institute).
-  *   `mpaaRating` (*type:* `String.t`, *default:* `nil`) - The video's Motion Picture Association of America (MPAA) rating.
+  *   `catvRating` (*type:* `String.t`, *default:* `nil`) - Rating system for Canadian TV - Canadian TV Classification System The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian English-language broadcasts. For more information, see the Canadian Broadcast Standards Council website.
+  *   `acbRating` (*type:* `String.t`, *default:* `nil`) - The video's Australian Classification Board (ACB) or Australian Communications and Media Authority (ACMA) rating. ACMA ratings are used to classify children's television programming.
+  *   `pefilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Peru.
+  *   `agcomRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Italy's Autorità per le Garanzie nelle Comunicazioni (AGCOM).
+  *   `nmcRating` (*type:* `String.t`, *default:* `nil`) - The National Media Council ratings system for United Arab Emirates.
+  *   `cnaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Romania's CONSILIUL NATIONAL AL AUDIOVIZUALULUI (CNA).
+  *   `mtrcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Movie and Television Review and Classification Board (Philippines).
+  *   `incaaRating` (*type:* `String.t`, *default:* `nil`) - The video's INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating.
+  *   `ytRating` (*type:* `String.t`, *default:* `nil`) - A rating that YouTube uses to identify age-restricted content.
+  *   `bmukkRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Austrian Board of Media Classification (Bundesministerium für Unterricht, Kunst und Kultur).
+  *   `nkclvRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Nacionãlais Kino centrs (National Film Centre of Latvia).
   *   `kmrbRating` (*type:* `String.t`, *default:* `nil`) - The video's Korea Media Rating Board (영상물등급위원회) rating. The KMRB rates videos in South Korea.
   *   `egfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Egypt.
-  *   `icaaRating` (*type:* `String.t`, *default:* `nil`) - The video's Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain) rating.
-  *   `pefilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Peru.
-  *   `czfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in the Czech Republic.
-  *   `skfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Slovakia.
+  *   `medietilsynetRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Medietilsynet, the Norwegian Media Authority.
+  *   `eirinRating` (*type:* `String.t`, *default:* `nil`) - The video's Eirin (映倫) rating. Eirin is the Japanese rating system.
   *   `smaisRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Iceland.
-  *   `nfvcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Nigeria's National Film and Video Censors Board.
-  *   `mtrcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Movie and Television Review and Classification Board (Philippines).
-  *   `oflcRating` (*type:* `String.t`, *default:* `nil`) - The video's Office of Film and Literature Classification (OFLC - New Zealand) rating.
-  *   `fpbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from South Africa's Film and Publication Board.
+  *   `mibacRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Ministero dei Beni e delle Attività Culturali e del Turismo (Italy).
+  *   `anatelRating` (*type:* `String.t`, *default:* `nil`) - The video's Anatel (Asociación Nacional de Televisión) rating for Chilean television.
+  *   `chfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Switzerland.
+  *   `djctqRating` (*type:* `String.t`, *default:* `nil`) - The video's Departamento de Justiça, Classificação, Qualificação e Títulos (DJCQT - Brazil) rating.
+  *   `mekuRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Finland's Kansallinen Audiovisuaalinen Instituutti (National Audiovisual Institute).
+  *   `fpbRatingReasons` (*type:* `list(String.t)`, *default:* `nil`) - Reasons that explain why the video received its FPB (South Africa) rating.
+  *   `catvfrRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Canadian Radio-Television and Telecommunications Commission (CRTC) for Canadian French-language broadcasts. For more information, see the Canadian Broadcast Standards Council website.
+  *   `cceRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Portugal's Comissão de Classificação de Espect´culos.
+  *   `cbfcRating` (*type:* `String.t`, *default:* `nil`) - The video's Central Board of Film Certification (CBFC - India) rating.
+  *   `cncRating` (*type:* `String.t`, *default:* `nil`) - Rating system in France - Commission de classification cinematographique
   *   `fmocRating` (*type:* `String.t`, *default:* `nil`) - This property has been deprecated. Use the contentDetails.contentRating.cncRating instead.
-  *   `mccaaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Malta's Film Age-Classification Board.
-  *   `nmcRating` (*type:* `String.t`, *default:* `nil`) - The National Media Council ratings system for United Arab Emirates.
+  *   `oflcRating` (*type:* `String.t`, *default:* `nil`) - The video's Office of Film and Literature Classification (OFLC - New Zealand) rating.
+  *   `smsaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Statens medieråd (Sweden's National Media Council).
+  *   `mpaatRating` (*type:* `String.t`, *default:* `nil`) - The rating system for trailer, DVD, and Ad in the US. See http://movielabs.com/md/ratings/v2.3/html/US_MPAAT_Ratings.html.
+  *   `cscfRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Luxembourg's Commission de surveillance de la classification des films (CSCF).
+  *   `nbcRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Maldives National Bureau of Classification.
+  *   `ifcoRating` (*type:* `String.t`, *default:* `nil`) - The video's Irish Film Classification Office (IFCO - Ireland) rating. See the IFCO website for more information.
+  *   `kijkwijzerRating` (*type:* `String.t`, *default:* `nil`) - The video's NICAM/Kijkwijzer rating from the Nederlands Instituut voor de Classificatie van Audiovisuele Media (Netherlands).
+  *   `moctwRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Taiwan's Ministry of Culture (文化部).
+  *   `fpbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from South Africa's Film and Publication Board.
+  *   `rtcRating` (*type:* `String.t`, *default:* `nil`) - The video's General Directorate of Radio, Television and Cinematography (Mexico) rating.
+  *   `czfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in the Czech Republic.
+  *   `fcbmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Malaysia's Film Censorship Board.
+  *   `mocRating` (*type:* `String.t`, *default:* `nil`) - The video's Ministerio de Cultura (Colombia) rating.
+  *   `mdaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Singapore's Media Development Authority (MDA) and, specifically, it's Board of Film Censors (BFC).
+  *   `fskRating` (*type:* `String.t`, *default:* `nil`) - The video's Freiwillige Selbstkontrolle der Filmwirtschaft (FSK - Germany) rating.
+  *   `cicfRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Commission de Contrôle des Films (Belgium).
+  *   `csaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from France's Conseil supérieur de l’audiovisuel, which rates broadcast content.
+  *   `icaaRating` (*type:* `String.t`, *default:* `nil`) - The video's Instituto de la Cinematografía y de las Artes Audiovisuales (ICAA - Spain) rating.
+  *   `nbcplRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Poland.
   *   `menaMpaaRating` (*type:* `String.t`, *default:* `nil`) - The rating system for MENA countries, a clone of MPAA. It is needed to prevent titles go live w/o additional QC check, since some of them can be inappropriate for the countries at all. See b/33408548 for more details.
   *   `tvpgRating` (*type:* `String.t`, *default:* `nil`) - The video's TV Parental Guidelines (TVPG) rating.
-  *   `incaaRating` (*type:* `String.t`, *default:* `nil`) - The video's INCAA (Instituto Nacional de Cine y Artes Audiovisuales - Argentina) rating.
+  *   `rcnofRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from the Hungarian Nemzeti Filmiroda, the Rating Committee of the National Office of Film.
+  *   `resorteviolenciaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Venezuela.
+  *   `mccaaRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Malta's Film Age-Classification Board.
+  *   `cccRating` (*type:* `String.t`, *default:* `nil`) - The video's Consejo de Calificación Cinematográfica (Chile) rating.
+  *   `bfvcRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Thailand's Board of Film and Video Censors.
+  *   `ilfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Israel.
+  *   `rteRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Ireland's Raidió Teilifís Éireann.
+  *   `nfvcbRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Nigeria's National Film and Video Censors Board.
+  *   `grfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Greece.
+  *   `eefilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Estonia.
+  *   `fcoRating` (*type:* `String.t`, *default:* `nil`) - The video's rating from Hong Kong's Office for Film, Newspaper and Article Administration.
+  *   `skfilmRating` (*type:* `String.t`, *default:* `nil`) - The video's rating in Slovakia.
+  *   `ecbmctRating` (*type:* `String.t`, *default:* `nil`) - Rating system in Turkey - Evaluation and Classification Board of the Ministry of Culture and Tourism
+  *   `mpaaRating` (*type:* `String.t`, *default:* `nil`) - The video's Motion Picture Association of America (MPAA) rating.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :rteRating => String.t() | nil,
-          :agcomRating => String.t() | nil,
-          :acbRating => String.t() | nil,
-          :mcstRating => String.t() | nil,
-          :russiaRating => String.t() | nil,
-          :chfilmRating => String.t() | nil,
           :djctqRatingReasons => list(String.t()) | nil,
+          :mcstRating => String.t() | nil,
           :lsfRating => String.t() | nil,
-          :cscfRating => String.t() | nil,
-          :csaRating => String.t() | nil,
-          :smsaRating => String.t() | nil,
-          :nbcplRating => String.t() | nil,
-          :mpaatRating => String.t() | nil,
-          :cccRating => String.t() | nil,
-          :grfilmRating => String.t() | nil,
-          :fcbmRating => String.t() | nil,
-          :ifcoRating => String.t() | nil,
-          :ilfilmRating => String.t() | nil,
-          :cicfRating => String.t() | nil,
-          :rtcRating => String.t() | nil,
-          :resorteviolenciaRating => String.t() | nil,
-          :cnaRating => String.t() | nil,
-          :rcnofRating => String.t() | nil,
-          :medietilsynetRating => String.t() | nil,
-          :kijkwijzerRating => String.t() | nil,
-          :fcoRating => String.t() | nil,
-          :fpbRatingReasons => list(String.t()) | nil,
-          :mibacRating => String.t() | nil,
+          :russiaRating => String.t() | nil,
           :chvrsRating => String.t() | nil,
-          :mdaRating => String.t() | nil,
-          :catvRating => String.t() | nil,
-          :cbfcRating => String.t() | nil,
-          :nkclvRating => String.t() | nil,
-          :kfcbRating => String.t() | nil,
-          :nbcRating => String.t() | nil,
           :nfrcRating => String.t() | nil,
-          :cncRating => String.t() | nil,
-          :ytRating => String.t() | nil,
-          :moctwRating => String.t() | nil,
-          :catvfrRating => String.t() | nil,
           :bbfcRating => String.t() | nil,
-          :anatelRating => String.t() | nil,
-          :fskRating => String.t() | nil,
-          :ecbmctRating => String.t() | nil,
-          :djctqRating => String.t() | nil,
-          :eirinRating => String.t() | nil,
-          :eefilmRating => String.t() | nil,
-          :bfvcRating => String.t() | nil,
-          :cceRating => String.t() | nil,
-          :bmukkRating => String.t() | nil,
+          :kfcbRating => String.t() | nil,
           :mccypRating => String.t() | nil,
-          :mocRating => String.t() | nil,
-          :mekuRating => String.t() | nil,
-          :mpaaRating => String.t() | nil,
+          :catvRating => String.t() | nil,
+          :acbRating => String.t() | nil,
+          :pefilmRating => String.t() | nil,
+          :agcomRating => String.t() | nil,
+          :nmcRating => String.t() | nil,
+          :cnaRating => String.t() | nil,
+          :mtrcbRating => String.t() | nil,
+          :incaaRating => String.t() | nil,
+          :ytRating => String.t() | nil,
+          :bmukkRating => String.t() | nil,
+          :nkclvRating => String.t() | nil,
           :kmrbRating => String.t() | nil,
           :egfilmRating => String.t() | nil,
-          :icaaRating => String.t() | nil,
-          :pefilmRating => String.t() | nil,
-          :czfilmRating => String.t() | nil,
-          :skfilmRating => String.t() | nil,
+          :medietilsynetRating => String.t() | nil,
+          :eirinRating => String.t() | nil,
           :smaisRating => String.t() | nil,
-          :nfvcbRating => String.t() | nil,
-          :mtrcbRating => String.t() | nil,
-          :oflcRating => String.t() | nil,
-          :fpbRating => String.t() | nil,
+          :mibacRating => String.t() | nil,
+          :anatelRating => String.t() | nil,
+          :chfilmRating => String.t() | nil,
+          :djctqRating => String.t() | nil,
+          :mekuRating => String.t() | nil,
+          :fpbRatingReasons => list(String.t()) | nil,
+          :catvfrRating => String.t() | nil,
+          :cceRating => String.t() | nil,
+          :cbfcRating => String.t() | nil,
+          :cncRating => String.t() | nil,
           :fmocRating => String.t() | nil,
-          :mccaaRating => String.t() | nil,
-          :nmcRating => String.t() | nil,
+          :oflcRating => String.t() | nil,
+          :smsaRating => String.t() | nil,
+          :mpaatRating => String.t() | nil,
+          :cscfRating => String.t() | nil,
+          :nbcRating => String.t() | nil,
+          :ifcoRating => String.t() | nil,
+          :kijkwijzerRating => String.t() | nil,
+          :moctwRating => String.t() | nil,
+          :fpbRating => String.t() | nil,
+          :rtcRating => String.t() | nil,
+          :czfilmRating => String.t() | nil,
+          :fcbmRating => String.t() | nil,
+          :mocRating => String.t() | nil,
+          :mdaRating => String.t() | nil,
+          :fskRating => String.t() | nil,
+          :cicfRating => String.t() | nil,
+          :csaRating => String.t() | nil,
+          :icaaRating => String.t() | nil,
+          :nbcplRating => String.t() | nil,
           :menaMpaaRating => String.t() | nil,
           :tvpgRating => String.t() | nil,
-          :incaaRating => String.t() | nil
+          :rcnofRating => String.t() | nil,
+          :resorteviolenciaRating => String.t() | nil,
+          :mccaaRating => String.t() | nil,
+          :cccRating => String.t() | nil,
+          :bfvcRating => String.t() | nil,
+          :ilfilmRating => String.t() | nil,
+          :rteRating => String.t() | nil,
+          :nfvcbRating => String.t() | nil,
+          :grfilmRating => String.t() | nil,
+          :eefilmRating => String.t() | nil,
+          :fcoRating => String.t() | nil,
+          :skfilmRating => String.t() | nil,
+          :ecbmctRating => String.t() | nil,
+          :mpaaRating => String.t() | nil
         }
 
-  field(:rteRating)
-  field(:agcomRating)
-  field(:acbRating)
-  field(:mcstRating)
-  field(:russiaRating)
-  field(:chfilmRating)
   field(:djctqRatingReasons, type: :list)
+  field(:mcstRating)
   field(:lsfRating)
-  field(:cscfRating)
-  field(:csaRating)
-  field(:smsaRating)
-  field(:nbcplRating)
-  field(:mpaatRating)
-  field(:cccRating)
-  field(:grfilmRating)
-  field(:fcbmRating)
-  field(:ifcoRating)
-  field(:ilfilmRating)
-  field(:cicfRating)
-  field(:rtcRating)
-  field(:resorteviolenciaRating)
-  field(:cnaRating)
-  field(:rcnofRating)
-  field(:medietilsynetRating)
-  field(:kijkwijzerRating)
-  field(:fcoRating)
-  field(:fpbRatingReasons, type: :list)
-  field(:mibacRating)
+  field(:russiaRating)
   field(:chvrsRating)
-  field(:mdaRating)
-  field(:catvRating)
-  field(:cbfcRating)
-  field(:nkclvRating)
-  field(:kfcbRating)
-  field(:nbcRating)
   field(:nfrcRating)
-  field(:cncRating)
-  field(:ytRating)
-  field(:moctwRating)
-  field(:catvfrRating)
   field(:bbfcRating)
-  field(:anatelRating)
-  field(:fskRating)
-  field(:ecbmctRating)
-  field(:djctqRating)
-  field(:eirinRating)
-  field(:eefilmRating)
-  field(:bfvcRating)
-  field(:cceRating)
-  field(:bmukkRating)
+  field(:kfcbRating)
   field(:mccypRating)
-  field(:mocRating)
-  field(:mekuRating)
-  field(:mpaaRating)
+  field(:catvRating)
+  field(:acbRating)
+  field(:pefilmRating)
+  field(:agcomRating)
+  field(:nmcRating)
+  field(:cnaRating)
+  field(:mtrcbRating)
+  field(:incaaRating)
+  field(:ytRating)
+  field(:bmukkRating)
+  field(:nkclvRating)
   field(:kmrbRating)
   field(:egfilmRating)
-  field(:icaaRating)
-  field(:pefilmRating)
-  field(:czfilmRating)
-  field(:skfilmRating)
+  field(:medietilsynetRating)
+  field(:eirinRating)
   field(:smaisRating)
-  field(:nfvcbRating)
-  field(:mtrcbRating)
-  field(:oflcRating)
-  field(:fpbRating)
+  field(:mibacRating)
+  field(:anatelRating)
+  field(:chfilmRating)
+  field(:djctqRating)
+  field(:mekuRating)
+  field(:fpbRatingReasons, type: :list)
+  field(:catvfrRating)
+  field(:cceRating)
+  field(:cbfcRating)
+  field(:cncRating)
   field(:fmocRating)
-  field(:mccaaRating)
-  field(:nmcRating)
+  field(:oflcRating)
+  field(:smsaRating)
+  field(:mpaatRating)
+  field(:cscfRating)
+  field(:nbcRating)
+  field(:ifcoRating)
+  field(:kijkwijzerRating)
+  field(:moctwRating)
+  field(:fpbRating)
+  field(:rtcRating)
+  field(:czfilmRating)
+  field(:fcbmRating)
+  field(:mocRating)
+  field(:mdaRating)
+  field(:fskRating)
+  field(:cicfRating)
+  field(:csaRating)
+  field(:icaaRating)
+  field(:nbcplRating)
   field(:menaMpaaRating)
   field(:tvpgRating)
-  field(:incaaRating)
+  field(:rcnofRating)
+  field(:resorteviolenciaRating)
+  field(:mccaaRating)
+  field(:cccRating)
+  field(:bfvcRating)
+  field(:ilfilmRating)
+  field(:rteRating)
+  field(:nfvcbRating)
+  field(:grfilmRating)
+  field(:eefilmRating)
+  field(:fcoRating)
+  field(:skfilmRating)
+  field(:ecbmctRating)
+  field(:mpaaRating)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.YouTube.V3.Model.ContentRating do
