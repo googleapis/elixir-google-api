@@ -21,952 +21,952 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
 
   ## Attributes
 
-  *   `gpssatellites` (*type:* `String.t`, *default:* `nil`) - 
-  *   `DEPRECATEDLargestvalidinteriorrectleft` (*type:* `integer()`, *default:* `nil`) - 
-  *   `initialverticalfovdegrees` (*type:* `number()`, *default:* `nil`) - 
-  *   `referencedate` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `dynamicDepthMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata.t`, *default:* `nil`) - DynamicDepth (go/dynamic-depth) metadata is described in the metadata of sub-images in the container. The presence of this field can be used to determine that an image is in the dynamic depth format.
-  *   `interoperabilityindex` (*type:* `String.t`, *default:* `nil`) - 
-  *   `freebytecounts` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameraburstprimary` (*type:* `integer()`, *default:* `nil`) - A value of 1 indicates that this was the primary (“best shot”) at capture time. Within Photos we should only treat this image as the best shot if the user hasn’t made an explicit choice. Defining the initial primary allows consistency between OEMs, Photos clients, and the Photos backend. This value is optional, cameras are not required to set it on any photo in a burst. Clients will default to the 0th frame, but may run an algorithm to pick a better default.
-  *   `hasAlpha` (*type:* `boolean()`, *default:* `nil`) - The image has an alpha channel (potential transparency). If the image is decoded, this will be updated to indicate whether there is any active transparency. Formats supporting alpha: png, webp, gif, heif.
-  *   `destination` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `headline` (*type:* `String.t`, *default:* `nil`) - 
-  *   `mode` (*type:* `integer()`, *default:* `nil`) - 
-  *   `yresolution` (*type:* `number()`, *default:* `nil`) - 
-  *   `customrendered` (*type:* `integer()`, *default:* `nil`) - 
-  *   `thumbnailerBuildCl` (*type:* `integer()`, *default:* `nil`) - The build CL for the version of thumbnailer that built this image.
-  *   `redeyemode` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `imagetype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsdatestamp` (*type:* `String.t`, *default:* `nil`) - This is in UTC time. Format is YYYY:mm:dd.
-  *   `exposurebias` (*type:* `number()`, *default:* `nil`) - 
-  *   `referenceblackwhite` (*type:* `number()`, *default:* `nil`) - 
-  *   `whitebalance` (*type:* `integer()`, *default:* `nil`) - 
-  *   `hostcomputer` (*type:* `String.t`, *default:* `nil`) - 
-  *   `usageterms` (*type:* `String.t`, *default:* `nil`) - 
-  *   `cvterm` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `flashenergy` (*type:* `number()`, *default:* `nil`) - 
-  *   `animationMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosAnimationMetadata.t`, *default:* `nil`) - 
-  *   `photometricinterpretation` (*type:* `integer()`, *default:* `nil`) - 
-  *   `digitalsourcetype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramotionphotoversion` (*type:* `integer()`, *default:* `nil`) - Indicates the Motion Photo version of the spec (initially 1).
-  *   `gpsdestdistanceref` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subjectdistancerange` (*type:* `integer()`, *default:* `nil`) - 
-  *   `cellwidth` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gcameraspecialtypeid` (*type:* `String.t`, *default:* `nil`) - Camera creations metadata. The opaque id string created by the OEM. For bursts, this field should not be present. Instead, the two properties below will allow Photos to identify and provide special treatment for bursts.
-  *   `gpsdestbearing` (*type:* `number()`, *default:* `nil`) - 
-  *   `software` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramicrovideooffset` (*type:* `integer()`, *default:* `nil`) - The offset in bytes from the end of the file to the point where the appended mp4 begins (equivalent to the length of the compressed mp4). This field might be provided in the original MicroVideo from client, but it might become invalid when the image component is edited, so it is expected that the thumbnailer will validate it and find the correct value (by scanning through the JPEG) if it is invalid. In other words, only a valid offset should be returned by thumbnailer.
-  *   `poserolldegrees` (*type:* `number()`, *default:* `nil`) - 
-  *   `ciemailwork` (*type:* `String.t`, *default:* `nil`) - 
-  *   `samplesperpixel` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ciadrctry` (*type:* `String.t`, *default:* `nil`) - 
-  *   `resolutionunit` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ccdwidth` (*type:* `number()`, *default:* `nil`) - 
-  *   `sensorheight` (*type:* `number()`, *default:* `nil`) - 
-  *   `releasetime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `planarconfiguration` (*type:* `integer()`, *default:* `nil`) - 
-  *   `maxaperturevalue` (*type:* `number()`, *default:* `nil`) - 
-  *   `ycbcrsubsampling` (*type:* `integer()`, *default:* `nil`) - 
-  *   `compressedbitsperpixel` (*type:* `number()`, *default:* `nil`) - 
-  *   `fixtureidentifier` (*type:* `String.t`, *default:* `nil`) - 
-  *   `initialhorizontalfovdegrees` (*type:* `number()`, *default:* `nil`) - 
-  *   `poseheadingdegrees` (*type:* `number()`, *default:* `nil`) - 
-  *   `publisher` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `audiosamplingrate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `personinimage` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `scenecapturetype` (*type:* `integer()`, *default:* `nil`) - 
-  *   `offsettimedigitized` (*type:* `String.t`, *default:* `nil`) - 
-  *   `lens` (*type:* `String.t`, *default:* `nil`) - 
-  *   `offsettime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `sublocation` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramicrovideopresentationtimestampus` (*type:* `integer()`, *default:* `nil`) - The presentation timestamp in microseconds of the video frame corresponding to the image still. Value may be -1 to denote unset/unspecified.
-  *   `captionwriter` (*type:* `String.t`, *default:* `nil`) - 
-  *   `width` (*type:* `integer()`, *default:* `nil`) - width and height are before any rotation (including EXIF orientation).
-  *   `contentlocationname` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `serialnumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `latitude` (*type:* `float()`, *default:* `nil`) - GPS Info: +/- 90 inclusive
-  *   `languageidentifier` (*type:* `String.t`, *default:* `nil`) - 
-  *   `exposureindex` (*type:* `number()`, *default:* `nil`) - 
-  *   `language` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `destinationLongitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
-  *   `envelopepriority` (*type:* `String.t`, *default:* `nil`) - 
-  *   `propertyreleasestatus` (*type:* `String.t`, *default:* `nil`) - 
-  *   `motionphotovideodataboxheader` (*type:* `String.t`, *default:* `nil`) - The Motion Photo Video Data (MPVD) box header of a HEIF motion photo. It is used for reconstructing the original moton photo bytes. See go/photos-be-heic-motion-photos for more details.
-  *   `uniqueid` (*type:* `String.t`, *default:* `nil`) - For unique hash:
-  *   `cameramodel` (*type:* `String.t`, *default:* `nil`) - Exif camera model
-  *   `serviceidentifier` (*type:* `String.t`, *default:* `nil`) - 
-  *   `contentlocationcode` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `celllength` (*type:* `integer()`, *default:* `nil`) - 
-  *   `firmware` (*type:* `String.t`, *default:* `nil`) - 
-  *   `organisationinimagecode` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `gcreationscameraburstid` (*type:* `String.t`, *default:* `nil`) - 
-  *   `timezoneoffset` (*type:* `list(integer())`, *default:* `nil`) - The elements in the timezone and daylight savings field arrays correspond to the following date/time fields: 0) datecreated (ie. DateTimeOriginal) 1) datetime (ie. DateTime or last modified date) 2) datetimedigitized (ie. DateTimeDigitized) If the field does not exist, then there is no valid time zone information for that date/time field. Offset in hours.
-  *   `url` (*type:* `String.t`, *default:* `nil`) - 
-  *   `isoequivalent` (*type:* `integer()`, *default:* `nil`) - 
-  *   `destinationLatitude` (*type:* `float()`, *default:* `nil`) - +/- 90 inclusive
-  *   `croppedarealeftpixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `date` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subsectimeoriginal` (*type:* `String.t`, *default:* `nil`) - 
-  *   `relatedsoundfile` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsspeedref` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramotionphotopresentationtimestampus` (*type:* `integer()`, *default:* `nil`) - The presentation timestamp in microseconds of the video frame corresponding to the image still. Value may be -1 to denote unset/unspecified.
-  *   `label` (*type:* `String.t`, *default:* `nil`) - 
-  *   `city` (*type:* `String.t`, *default:* `nil`) - 
-  *   `minormodelagedisclosure` (*type:* `String.t`, *default:* `nil`) - 
-  *   `flashreturn` (*type:* `integer()`, *default:* `nil`) - 
-  *   `croppedareaimagewidthpixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `exposuretime` (*type:* `number()`, *default:* `nil`) - 
-  *   `subsectime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subjectlocation` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpsmapdatum` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsmeasuremode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramicrovideoversion` (*type:* `integer()`, *default:* `nil`) - Indicates the file format version of the MicroVideo (initially 1).
-  *   `initialviewpitchdegrees` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ismpformat` (*type:* `boolean()`, *default:* `nil`) - The image is a Multi-Picture Object.
-  *   `longitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
-  *   `audiosamplingresolution` (*type:* `String.t`, *default:* `nil`) - 
-  *   `uno` (*type:* `String.t`, *default:* `nil`) - 
-  *   `colorspace` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpstime` (*type:* `list(number())`, *default:* `nil`) - This is in UTC Time. Contains three floats: hour, minute and second. Supports subsecond resolution.
-  *   `DEPRECATEDLargestvalidinteriorrectwidth` (*type:* `integer()`, *default:* `nil`) - 
-  *   `relatedimagewidth` (*type:* `String.t`, *default:* `nil`) - 
-  *   `microvideooriginaloffset` (*type:* `integer()`, *default:* `nil`) - This is similar to gcameramicrovideooffset, except it stores the unverified value that was provided in the motion photo file. This field is not part of the XMP or spec. It is used to ensure we preserve data from the original file when offset is modified.
-  *   `timesent` (*type:* `String.t`, *default:* `nil`) - 
-  *   `whitepoint` (*type:* `number()`, *default:* `nil`) - 
-  *   `ycbcrcoefficients` (*type:* `number()`, *default:* `nil`) - 
-  *   `spectralsensitivity` (*type:* `String.t`, *default:* `nil`) - 
-  *   `fullpanowidthpixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `author` (*type:* `String.t`, *default:* `nil`) - 
-  *   `contact` (*type:* `String.t`, *default:* `nil`) - 
-  *   `aperturefnumber` (*type:* `number()`, *default:* `nil`) - 
-  *   `keyword` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `rowsperstrip` (*type:* `String.t`, *default:* `nil`) - 
-  *   `DEPRECATEDLargestvalidinteriorrectheight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `citelwork` (*type:* `String.t`, *default:* `nil`) - 
-  *   `digitalzoomratio` (*type:* `number()`, *default:* `nil`) - 
-  *   `distance` (*type:* `number()`, *default:* `nil`) - 
-  *   `exposureprogram` (*type:* `integer()`, *default:* `nil`) - 
-  *   `hdrMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata.t`, *default:* `nil`) - Indicates that the image has some form of HDR present or available to it.
-  *   `identifier` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `audiooutcue` (*type:* `String.t`, *default:* `nil`) - 
-  *   `createdate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `credits` (*type:* `String.t`, *default:* `nil`) - 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsstatus` (*type:* `String.t`, *default:* `nil`) - 
-  *   `chromasubsampling` (*type:* `String.t`, *default:* `nil`) - A typed representation that translates the values from ycbcrsubsampling.
-  *   `maxavailheight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `fillorder` (*type:* `integer()`, *default:* `nil`) - 
-  *   `xmp4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 
-  *   `stitchingsoftware` (*type:* `String.t`, *default:* `nil`) - 
-  *   `colormap` (*type:* `integer()`, *default:* `nil`) - 
-  *   `initialviewrolldegrees` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpstrackref` (*type:* `String.t`, *default:* `nil`) - 
-  *   `aperturevalue` (*type:* `number()`, *default:* `nil`) - 
-  *   `referencenumber` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `DEPRECATEDIscolor` (*type:* `integer()`, *default:* `nil`) - 
-  *   `metadatadate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `originatingprogram` (*type:* `String.t`, *default:* `nil`) - 
-  *   `event` (*type:* `String.t`, *default:* `nil`) - 
-  *   `exifTimeUtcSource` (*type:* `String.t`, *default:* `nil`) - The exif_time_utc_source indicates the source from which the exif_time_utc field is calculated.
-  *   `exposurelockused` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `location` (*type:* `String.t`, *default:* `nil`) - 
-  *   `instructions` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subjectarea` (*type:* `integer()`, *default:* `nil`) - 
-  *   `urgency` (*type:* `String.t`, *default:* `nil`) - 
-  *   `version` (*type:* `String.t`, *default:* `nil`) - 
-  *   `DEPRECATEDGpstimestamp` (*type:* `number()`, *default:* `nil`) - This field was originally marked incorrectly as optional (rather than repeated). In order to fix it, the first field has been marked as deprecated and replaced with a field with a new name and tag number.
-  *   `gpsdop` (*type:* `number()`, *default:* `nil`) - 
-  *   `timezoneminutes` (*type:* `list(integer())`, *default:* `nil`) - Remaining minutes of offset.
-  *   `digitalsourcefiletype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subsectimedigitized` (*type:* `String.t`, *default:* `nil`) - 
-  *   `sensingmethod` (*type:* `integer()`, *default:* `nil`) - 
-  *   `autoenhance` (*type:* `boolean()`, *default:* `nil`) - Indicates whether auto-enhance has been applied to the image.
-  *   `ciadrpcode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsdestlongitude` (*type:* `number()`, *default:* `nil`) - 
-  *   `gpsdifferential` (*type:* `integer()`, *default:* `nil`) - 
-  *   `audiotype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `imagenumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `owner` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `authorposition` (*type:* `String.t`, *default:* `nil`) - 
-  *   `focallength` (*type:* `number()`, *default:* `nil`) - 
-  *   `audioduration` (*type:* `String.t`, *default:* `nil`) - 
-  *   `ycbcrpositioning` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ciadrcity` (*type:* `String.t`, *default:* `nil`) - 
-  *   `brightnessvalue` (*type:* `number()`, *default:* `nil`) - 
-  *   `height` (*type:* `integer()`, *default:* `nil`) - 
-  *   `caption` (*type:* `String.t`, *default:* `nil`) - Caption embedded in IPTC
-  *   `releasedate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `exifTimeUtc` (*type:* `String.t`, *default:* `nil`) - The exif_time_utc field is a UTC-based alternative to the exif_time field, which is in local time, rather than UTC. If they were not separate, clients would be unable to distinguish if the source were UTC- or local-based.
-  *   `gcameramicrovideo` (*type:* `integer()`, *default:* `nil`) - The following XMP metadata are used specifically for MicroVideo. More information about MicroVideo format can be found at go/photos-microvideo-format A value of 1 indicates that this file was a MicroVideo at capture time. Otherwise, this is not a MicroVideo (not set or 0).
-  *   `contrast` (*type:* `integer()`, *default:* `nil`) - 
-  *   `relatedimagefileformat` (*type:* `String.t`, *default:* `nil`) - 
-  *   `contributor` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `posepitchdegrees` (*type:* `number()`, *default:* `nil`) - 
-  *   `supplementalcategory` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `digimageguid` (*type:* `String.t`, *default:* `nil`) - 
-  *   `offsettimeoriginal` (*type:* `String.t`, *default:* `nil`) - 
-  *   `countrycode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsimgdirection` (*type:* `number()`, *default:* `nil`) - 
-  *   `transmissionreference` (*type:* `String.t`, *default:* `nil`) - 
-  *   `ciurlwork` (*type:* `String.t`, *default:* `nil`) - 
-  *   `webstatement` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsspeed` (*type:* `number()`, *default:* `nil`) - 
-  *   `type` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `function` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `imageorientation` (*type:* `String.t`, *default:* `nil`) - 
-  *   `capturesoftware` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsdestdistance` (*type:* `number()`, *default:* `nil`) - 
-  *   `compressionlevel` (*type:* `integer()`, *default:* `nil`) - 
-  *   `nickname` (*type:* `String.t`, *default:* `nil`) - 
-  *   `scene` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `datesent` (*type:* `String.t`, *default:* `nil`) - 
-  *   `baseurl` (*type:* `String.t`, *default:* `nil`) - 
-  *   `maxavailwidth` (*type:* `integer()`, *default:* `nil`) - 
-  *   `focallengthin35mmfilm` (*type:* `integer()`, *default:* `nil`) - 
-  *   `lensid` (*type:* `String.t`, *default:* `nil`) - 
-  *   `maxsamplevalue` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gaincontrol` (*type:* `integer()`, *default:* `nil`) - 
-  *   `exposuremode` (*type:* `integer()`, *default:* `nil`) - 
-  *   `flashcompensation` (*type:* `number()`, *default:* `nil`) - 
-  *   `croppedareaimageheightpixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `intellectualgenre` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameradisableautocreation` (*type:* `list(String.t)`, *default:* `nil`) - The possible values are: “Animation”, “Collage”, “Pano”, “Movies”. Photos will avoid creating the listed types using the containing image or video. The property is optional. The property can be included multiple times to disable creation of multiple different types.
-  *   `DEPRECATEDBlendingtype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `stripoffsets` (*type:* `String.t`, *default:* `nil`) - 
   *   `relation` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `colorprofile` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not the source image had an embedded color profile.
-  *   `bitDepth` (*type:* `integer()`, *default:* `nil`) - The number of bits per pixel used to express a color. Most images have 8-bit depth and Photos/thumbnailer currently do not support more than 8 bits (except RAW).
-  *   `fullpanoheightpixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `marked` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `artworkorobject` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `thresholding` (*type:* `integer()`, *default:* `nil`) - 
-  *   `iptc4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 
+  *   `freebytecounts` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exposureindex` (*type:* `number()`, *default:* `nil`) - 
   *   `gdepthMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosGDepthMetadata.t`, *default:* `nil`) - 
-  *   `subjectreference` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `country` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsdestlongituderef` (*type:* `String.t`, *default:* `nil`) - 
-  *   `modelreleaseid` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `cameraid` (*type:* `String.t`, *default:* `nil`) - 
-  *   `modelage` (*type:* `list(integer())`, *default:* `nil`) - 
-  *   `cameramake` (*type:* `String.t`, *default:* `nil`) - Exif camera make
-  *   `iptclastedited` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpstrack` (*type:* `number()`, *default:* `nil`) - 
-  *   `minsamplevalue` (*type:* `integer()`, *default:* `nil`) - 
-  *   `orientation` (*type:* `integer()`, *default:* `nil`) - Exif camera orientation. "1" means "no rotation".
-  *   `flashused` (*type:* `integer()`, *default:* `nil`) - 
-  *   `croppedareatoppixels` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpsimgdirectionref` (*type:* `String.t`, *default:* `nil`) - 
-  *   `certificate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `copyrightnotice` (*type:* `String.t`, *default:* `nil`) - 
-  *   `initialviewheadingdegrees` (*type:* `integer()`, *default:* `nil`) - 
-  *   `programversion` (*type:* `String.t`, *default:* `nil`) - 
-  *   `daylightsavings` (*type:* `list(integer())`, *default:* `nil`) - 0 = no daylight savings, 1 = daylight savings enabled. Note that this field only represents whether the setting in the camera was turned on or off. It must not be used to modify the timestamp of the photo. That is, the capture time is already completely determined by exif_time, timezoneoffset and timezoneminutes.
-  *   `envelopenumber` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gaudiomime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `exif4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 4C metadata (caption, copyright, creator, credit) specific to each of the three metadata segments (EXIF, XMP, IPTC). These are used to keep separate the 4C data from each segment so that we can properly preserve the per-segment 4C data on write (when PreserveLevel is set appropriately).
-  *   `organisationinimagename` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `rating` (*type:* `number()`, *default:* `nil`) - 
-  *   `ciadrextadr` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `shutterspeedvalue` (*type:* `number()`, *default:* `nil`) - 
-  *   `lightsource` (*type:* `integer()`, *default:* `nil`) - 
-  *   `relatedimageheight` (*type:* `String.t`, *default:* `nil`) - 
-  *   `ciadrregion` (*type:* `String.t`, *default:* `nil`) - 
-  *   `objectcycle` (*type:* `String.t`, *default:* `nil`) - 
-  *   `exifTime` (*type:* `String.t`, *default:* `nil`) - Timestamp embedded in the image. The value comes from the first valid date-time field extracted from the metadata in the order: 1) datecreated (ie. DateTimeOriginal) 2) datetimedigitized (ie. DateTimeDigitized) 3) datetime (ie. DateTime or last modified date) The type of this field is equivalent to a time_t (ie. number of seconds since the epoch - 00:00 hours, Jan 1, 1970) except that it is an int64 rather than an int.
-  *   `DEPRECATEDProcess` (*type:* `integer()`, *default:* `nil`) - 
-  *   `xresolution` (*type:* `number()`, *default:* `nil`) - 
-  *   `productid` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `propertyreleaseid` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `expirationdate` (*type:* `String.t`, *default:* `nil`) - 
   *   `addlmodelinfo` (*type:* `String.t`, *default:* `nil`) - 
-  *   `format` (*type:* `String.t`, *default:* `nil`) - 
-  *   `panoramaMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosPanoramaMetadata.t`, *default:* `nil`) - 
-  *   `burstuuid` (*type:* `String.t`, *default:* `nil`) - 
-  *   `saturation` (*type:* `integer()`, *default:* `nil`) - 
-  *   `actionadvised` (*type:* `String.t`, *default:* `nil`) - 
-  *   `DEPRECATEDLargestvalidinteriorrecttop` (*type:* `integer()`, *default:* `nil`) - 
-  *   `altitude` (*type:* `float()`, *default:* `nil`) - 
-  *   `primarychromaticities` (*type:* `number()`, *default:* `nil`) - 
-  *   `datetimedigitized` (*type:* `String.t`, *default:* `nil`) - 
-  *   `usepanoramaviewer` (*type:* `boolean()`, *default:* `nil`) - GPano-related fields. A handful of these have been deprecated due to a change in the spec since its initial design.
-  *   `firstphotodate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `projectiontype` (*type:* `String.t`, *default:* `nil`) - 
-  *   `meteringmode` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpsdestlatitude` (*type:* `number()`, *default:* `nil`) - 
-  *   `gcameraburstid` (*type:* `String.t`, *default:* `nil`) - A unique String. The property should be present and identical for all images that make up a burst. It should be unique across devices (UUID recommended). Unlike GCreations:CameraBurstId, we should use images with this property to create auto collages and animations.
-  *   `freeoffsets` (*type:* `integer()`, *default:* `nil`) - 
-  *   `focalplaneunits` (*type:* `number()`, *default:* `nil`) - 
-  *   `mimeType` (*type:* `integer()`, *default:* `nil`) - Mime type of image
-  *   `extrasamples` (*type:* `integer()`, *default:* `nil`) - 
-  *   `editorialupdate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gpsdestlatituderef` (*type:* `String.t`, *default:* `nil`) - 
-  *   `modifydate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `advisory` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `rotate` (*type:* `integer()`, *default:* `nil`) - This field is deprecated. Rotation is now accomplished via ImageInfo.exif_orientation and ImageInfo.edit_list. WARNING: the presence of rotate is used by FIFE to identify older images. Setting this (even to the correct number of degrees) on newer images can cause incorrectly rotated thumbnails. This was the cause of omg/58543 Number of degrees (0, 90, 180, 270)
-  *   `ownername` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subjectcode` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `editstatus` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcameramotionphoto` (*type:* `integer()`, *default:* `nil`) - An indication that this item should be treated as a Motion Photo. 0 -> Not Motion Photo, 1 -> Motion Photo, everything else is undefined per the spec. If it's a motion photo, the previous gcamera fields should be ignored.
-  *   `referenceservice` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `redeyemode` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `captionwriter` (*type:* `String.t`, *default:* `nil`) - 
+  *   `organisationinimagename` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `productid` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `rating` (*type:* `number()`, *default:* `nil`) - 
+  *   `colormap` (*type:* `integer()`, *default:* `nil`) - 
+  *   `countrycode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `stitchingsoftware` (*type:* `String.t`, *default:* `nil`) - 
+  *   `croppedareaimageheightpixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - 
+  *   `usageterms` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DEPRECATEDLargestvalidinteriorrectheight` (*type:* `integer()`, *default:* `nil`) - 
   *   `lensinfo` (*type:* `String.t`, *default:* `nil`) - 
-  *   `sourcephotoscount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `coverage` (*type:* `String.t`, *default:* `nil`) - 
-  *   `objecttypereference` (*type:* `String.t`, *default:* `nil`) - 
-  *   `category` (*type:* `String.t`, *default:* `nil`) - 
-  *   `modelreleasestatus` (*type:* `String.t`, *default:* `nil`) - 
-  *   `title` (*type:* `String.t`, *default:* `nil`) - 
-  *   `focalplanexres` (*type:* `number()`, *default:* `nil`) - 
-  *   `gpsdestbearingref` (*type:* `String.t`, *default:* `nil`) - 
-  *   `lastphotodate` (*type:* `String.t`, *default:* `nil`) - 
-  *   `sharpness` (*type:* `integer()`, *default:* `nil`) - 
-  *   `expirationtime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `grayresponseunit` (*type:* `integer()`, *default:* `nil`) - 
-  *   `stripbytecounts` (*type:* `String.t`, *default:* `nil`) - 
-  *   `objectattributereference` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `locationshown` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `datetime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `source` (*type:* `String.t`, *default:* `nil`) - 
-  *   `gcreationstype` (*type:* `String.t`, *default:* `nil`) - String representation of creation type. Should be one of {"GCameraCollage", "GCameraAnimation", "GCameraGroupSmiles", "GPhotosCollage", "GPhotosAnimation"}.
-  *   `sensorwidth` (*type:* `number()`, *default:* `nil`) - 
+  *   `modelreleaseid` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `referencedate` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `expirationdate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdestdistanceref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `webstatement` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subjectarea` (*type:* `integer()`, *default:* `nil`) - 
+  *   `headline` (*type:* `String.t`, *default:* `nil`) - 
+  *   `relatedsoundfile` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsmeasuremode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `xresolution` (*type:* `number()`, *default:* `nil`) - 
+  *   `function` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `advisory` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `format` (*type:* `String.t`, *default:* `nil`) - 
+  *   `caption` (*type:* `String.t`, *default:* `nil`) - Caption embedded in IPTC
   *   `gimagemime` (*type:* `String.t`, *default:* `nil`) - 
-  *   `datecreated` (*type:* `String.t`, *default:* `nil`) - 
-  *   `grayresponsecurve` (*type:* `integer()`, *default:* `nil`) - 
+  *   `customrendered` (*type:* `integer()`, *default:* `nil`) - 
+  *   `relatedimagefileformat` (*type:* `String.t`, *default:* `nil`) - 
+  *   `maxavailwidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `chromasubsampling` (*type:* `String.t`, *default:* `nil`) - A typed representation that translates the values from ycbcrsubsampling.
+  *   `gpsdestdistance` (*type:* `number()`, *default:* `nil`) - 
+  *   `propertyreleaseid` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `date` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sensorheight` (*type:* `number()`, *default:* `nil`) - 
+  *   `initialviewheadingdegrees` (*type:* `integer()`, *default:* `nil`) - 
+  *   `yresolution` (*type:* `number()`, *default:* `nil`) - 
   *   `bitspersample` (*type:* `integer()`, *default:* `nil`) - Start of reflected fields. These do not duplicate the above fields.
+  *   `gcameraspecialtypeid` (*type:* `String.t`, *default:* `nil`) - Camera creations metadata. The opaque id string created by the OEM. For bursts, this field should not be present. Instead, the two properties below will allow Photos to identify and provide special treatment for bursts.
+  *   `rotate` (*type:* `integer()`, *default:* `nil`) - This field is deprecated. Rotation is now accomplished via ImageInfo.exif_orientation and ImageInfo.edit_list. WARNING: the presence of rotate is used by FIFE to identify older images. Setting this (even to the correct number of degrees) on newer images can cause incorrectly rotated thumbnails. This was the cause of omg/58543 Number of degrees (0, 90, 180, 270)
+  *   `ciadrpcode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `microvideooriginaloffset` (*type:* `integer()`, *default:* `nil`) - This is similar to gcameramicrovideooffset, except it stores the unverified value that was provided in the motion photo file. This field is not part of the XMP or spec. It is used to ensure we preserve data from the original file when offset is modified.
+  *   `mimeType` (*type:* `integer()`, *default:* `nil`) - Mime type of image
+  *   `posepitchdegrees` (*type:* `number()`, *default:* `nil`) - 
+  *   `minsamplevalue` (*type:* `integer()`, *default:* `nil`) - 
+  *   `iptclastedited` (*type:* `String.t`, *default:* `nil`) - 
+  *   `maxaperturevalue` (*type:* `number()`, *default:* `nil`) - 
+  *   `motionphotovideodataboxheader` (*type:* `String.t`, *default:* `nil`) - The Motion Photo Video Data (MPVD) box header of a HEIF motion photo. It is used for reconstructing the original moton photo bytes. See go/photos-be-heic-motion-photos for more details.
+  *   `ciadrregion` (*type:* `String.t`, *default:* `nil`) - 
+  *   `envelopenumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subjectlocation` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gpsdop` (*type:* `number()`, *default:* `nil`) - 
+  *   `sensingmethod` (*type:* `integer()`, *default:* `nil`) - 
+  *   `width` (*type:* `integer()`, *default:* `nil`) - width and height are before any rotation (including EXIF orientation).
+  *   `ownername` (*type:* `String.t`, *default:* `nil`) - 
+  *   `stripbytecounts` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameramicrovideo` (*type:* `integer()`, *default:* `nil`) - The following XMP metadata are used specifically for MicroVideo. More information about MicroVideo format can be found at go/photos-microvideo-format A value of 1 indicates that this file was a MicroVideo at capture time. Otherwise, this is not a MicroVideo (not set or 0).
+  *   `orientation` (*type:* `integer()`, *default:* `nil`) - Exif camera orientation. "1" means "no rotation".
+  *   `height` (*type:* `integer()`, *default:* `nil`) - 
+  *   `subjectcode` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `DEPRECATEDLargestvalidinteriorrecttop` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gpsstatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `timesent` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdatestamp` (*type:* `String.t`, *default:* `nil`) - This is in UTC time. Format is YYYY:mm:dd.
+  *   `ciurlwork` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DEPRECATEDGpstimestamp` (*type:* `number()`, *default:* `nil`) - This field was originally marked incorrectly as optional (rather than repeated). In order to fix it, the first field has been marked as deprecated and replaced with a field with a new name and tag number.
+  *   `photometricinterpretation` (*type:* `integer()`, *default:* `nil`) - 
+  *   `relatedimagewidth` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameramotionphoto` (*type:* `integer()`, *default:* `nil`) - An indication that this item should be treated as a Motion Photo. 0 -> Not Motion Photo, 1 -> Motion Photo, everything else is undefined per the spec. If it's a motion photo, the previous gcamera fields should be ignored.
+  *   `projectiontype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `aperturevalue` (*type:* `number()`, *default:* `nil`) - 
+  *   `ycbcrsubsampling` (*type:* `integer()`, *default:* `nil`) - 
+  *   `marked` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `keyword` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `contributor` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `country` (*type:* `String.t`, *default:* `nil`) - 
+  *   `dynamicDepthMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata.t`, *default:* `nil`) - DynamicDepth (go/dynamic-depth) metadata is described in the metadata of sub-images in the container. The presence of this field can be used to determine that an image is in the dynamic depth format.
+  *   `croppedareaimagewidthpixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `lightsource` (*type:* `integer()`, *default:* `nil`) - 
+  *   `brightnessvalue` (*type:* `number()`, *default:* `nil`) - 
+  *   `sublocation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DEPRECATEDLargestvalidinteriorrectwidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `exposuremode` (*type:* `integer()`, *default:* `nil`) - 
+  *   `DEPRECATEDLargestvalidinteriorrectleft` (*type:* `integer()`, *default:* `nil`) - 
+  *   `imagetype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
+  *   `gpstrack` (*type:* `number()`, *default:* `nil`) - 
+  *   `gpstrackref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `focalplanexres` (*type:* `number()`, *default:* `nil`) - 
+  *   `exposuretime` (*type:* `number()`, *default:* `nil`) - 
+  *   `compressedbitsperpixel` (*type:* `number()`, *default:* `nil`) - 
+  *   `urgency` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subjectdistancerange` (*type:* `integer()`, *default:* `nil`) - 
+  *   `baseurl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `objectattributereference` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `meteringmode` (*type:* `integer()`, *default:* `nil`) - 
+  *   `compressionlevel` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gpsdestlongituderef` (*type:* `String.t`, *default:* `nil`) - 
+  *   `focalplaneunits` (*type:* `number()`, *default:* `nil`) - 
+  *   `audioduration` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imageorientation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exposurebias` (*type:* `number()`, *default:* `nil`) - 
+  *   `citelwork` (*type:* `String.t`, *default:* `nil`) - 
+  *   `maxavailheight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `audiosamplingresolution` (*type:* `String.t`, *default:* `nil`) - 
+  *   `xmp4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 
+  *   `gpsimgdirection` (*type:* `number()`, *default:* `nil`) - 
+  *   `distance` (*type:* `number()`, *default:* `nil`) - 
+  *   `animationMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosAnimationMetadata.t`, *default:* `nil`) - 
+  *   `altitude` (*type:* `float()`, *default:* `nil`) - 
+  *   `cameraid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `whitebalance` (*type:* `integer()`, *default:* `nil`) - 
+  *   `flashreturn` (*type:* `integer()`, *default:* `nil`) - 
+  *   `expirationtime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `envelopepriority` (*type:* `String.t`, *default:* `nil`) - 
+  *   `bitDepth` (*type:* `integer()`, *default:* `nil`) - The number of bits per pixel used to express a color. Most images have 8-bit depth and Photos/thumbnailer currently do not support more than 8 bits (except RAW).
+  *   `gcameramotionphotoversion` (*type:* `integer()`, *default:* `nil`) - Indicates the Motion Photo version of the spec (initially 1).
+  *   `organisationinimagecode` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `lensid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdestbearingref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `locationshown` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `originatingprogram` (*type:* `String.t`, *default:* `nil`) - 
+  *   `minormodelagedisclosure` (*type:* `String.t`, *default:* `nil`) - 
+  *   `releasedate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `mode` (*type:* `integer()`, *default:* `nil`) - 
+  *   `maxsamplevalue` (*type:* `integer()`, *default:* `nil`) - 
+  *   `fullpanowidthpixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `focallength` (*type:* `number()`, *default:* `nil`) - 
+  *   `hdrMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata.t`, *default:* `nil`) - Indicates that the image has some form of HDR present or available to it.
+  *   `panoramaMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosPanoramaMetadata.t`, *default:* `nil`) - 
+  *   `gpsspeedref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `thumbnailerBuildCl` (*type:* `integer()`, *default:* `nil`) - The build CL for the version of thumbnailer that built this image.
+  *   `lastphotodate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `capturesoftware` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameraburstprimary` (*type:* `integer()`, *default:* `nil`) - A value of 1 indicates that this was the primary (“best shot”) at capture time. Within Photos we should only treat this image as the best shot if the user hasn’t made an explicit choice. Defining the initial primary allows consistency between OEMs, Photos clients, and the Photos backend. This value is optional, cameras are not required to set it on any photo in a burst. Clients will default to the 0th frame, but may run an algorithm to pick a better default.
+  *   `scenecapturetype` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gaincontrol` (*type:* `integer()`, *default:* `nil`) - 
+  *   `cellwidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gpsimgdirectionref` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DEPRECATEDIscolor` (*type:* `integer()`, *default:* `nil`) - 
+  *   `flashcompensation` (*type:* `number()`, *default:* `nil`) - 
+  *   `coverage` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isoequivalent` (*type:* `integer()`, *default:* `nil`) - 
+  *   `DEPRECATEDBlendingtype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `offsettimeoriginal` (*type:* `String.t`, *default:* `nil`) - 
+  *   `programversion` (*type:* `String.t`, *default:* `nil`) - 
+  *   `releasetime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `datesent` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsspeed` (*type:* `number()`, *default:* `nil`) - 
+  *   `fullpanoheightpixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `datecreated` (*type:* `String.t`, *default:* `nil`) - 
+  *   `offsettimedigitized` (*type:* `String.t`, *default:* `nil`) - 
+  *   `location` (*type:* `String.t`, *default:* `nil`) - 
+  *   `daylightsavings` (*type:* `list(integer())`, *default:* `nil`) - 0 = no daylight savings, 1 = daylight savings enabled. Note that this field only represents whether the setting in the camera was turned on or off. It must not be used to modify the timestamp of the photo. That is, the capture time is already completely determined by exif_time, timezoneoffset and timezoneminutes.
+  *   `gpsdestlatituderef` (*type:* `String.t`, *default:* `nil`) - 
+  *   `personinimage` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `version` (*type:* `String.t`, *default:* `nil`) - 
+  *   `DEPRECATEDProcess` (*type:* `integer()`, *default:* `nil`) - 
+  *   `ciadrctry` (*type:* `String.t`, *default:* `nil`) - 
+  *   `intellectualgenre` (*type:* `String.t`, *default:* `nil`) - 
+  *   `referenceblackwhite` (*type:* `number()`, *default:* `nil`) - 
+  *   `referencenumber` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `language` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `contact` (*type:* `String.t`, *default:* `nil`) - 
+  *   `digitalzoomratio` (*type:* `number()`, *default:* `nil`) - 
+  *   `hasAlpha` (*type:* `boolean()`, *default:* `nil`) - The image has an alpha channel (potential transparency). If the image is decoded, this will be updated to indicate whether there is any active transparency. Formats supporting alpha: png, webp, gif, heif.
+  *   `usepanoramaviewer` (*type:* `boolean()`, *default:* `nil`) - GPano-related fields. A handful of these have been deprecated due to a change in the spec since its initial design.
+  *   `firmware` (*type:* `String.t`, *default:* `nil`) - 
+  *   `resolutionunit` (*type:* `integer()`, *default:* `nil`) - 
+  *   `initialviewpitchdegrees` (*type:* `integer()`, *default:* `nil`) - 
+  *   `spectralsensitivity` (*type:* `String.t`, *default:* `nil`) - 
+  *   `contentlocationname` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `digitalsourcetype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `whitepoint` (*type:* `number()`, *default:* `nil`) - 
+  *   `timezoneoffset` (*type:* `list(integer())`, *default:* `nil`) - The elements in the timezone and daylight savings field arrays correspond to the following date/time fields: 0) datecreated (ie. DateTimeOriginal) 1) datetime (ie. DateTime or last modified date) 2) datetimedigitized (ie. DateTimeDigitized) If the field does not exist, then there is no valid time zone information for that date/time field. Offset in hours.
+  *   `source` (*type:* `String.t`, *default:* `nil`) - 
+  *   `audiooutcue` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subjectreference` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `flashused` (*type:* `integer()`, *default:* `nil`) - 
+  *   `propertyreleasestatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `datetimedigitized` (*type:* `String.t`, *default:* `nil`) - 
+  *   `extrasamples` (*type:* `integer()`, *default:* `nil`) - 
+  *   `certificate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `digimageguid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subsectimedigitized` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exposurelockused` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `interoperabilityindex` (*type:* `String.t`, *default:* `nil`) - 
+  *   `event` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdestlongitude` (*type:* `number()`, *default:* `nil`) - 
+  *   `gaudiomime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exifTime` (*type:* `String.t`, *default:* `nil`) - Timestamp embedded in the image. The value comes from the first valid date-time field extracted from the metadata in the order: 1) datecreated (ie. DateTimeOriginal) 2) datetimedigitized (ie. DateTimeDigitized) 3) datetime (ie. DateTime or last modified date) The type of this field is equivalent to a time_t (ie. number of seconds since the epoch - 00:00 hours, Jan 1, 1970) except that it is an int64 rather than an int.
+  *   `focallengthin35mmfilm` (*type:* `integer()`, *default:* `nil`) - 
+  *   `serviceidentifier` (*type:* `String.t`, *default:* `nil`) - 
+  *   `rowsperstrip` (*type:* `String.t`, *default:* `nil`) - 
+  *   `author` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shutterspeedvalue` (*type:* `number()`, *default:* `nil`) - 
+  *   `exposureprogram` (*type:* `integer()`, *default:* `nil`) - 
+  *   `poseheadingdegrees` (*type:* `number()`, *default:* `nil`) - 
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - GPS Info: +/- 90 inclusive
+  *   `freeoffsets` (*type:* `integer()`, *default:* `nil`) - 
+  *   `burstuuid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subsectime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameramotionphotopresentationtimestampus` (*type:* `integer()`, *default:* `nil`) - The presentation timestamp in microseconds of the video frame corresponding to the image still. Value may be -1 to denote unset/unspecified.
+  *   `celllength` (*type:* `integer()`, *default:* `nil`) - 
+  *   `primarychromaticities` (*type:* `number()`, *default:* `nil`) - 
+  *   `languageidentifier` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdifferential` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gpsdestlatitude` (*type:* `number()`, *default:* `nil`) - 
+  *   `city` (*type:* `String.t`, *default:* `nil`) - 
+  *   `modelage` (*type:* `list(integer())`, *default:* `nil`) - 
+  *   `thresholding` (*type:* `integer()`, *default:* `nil`) - 
+  *   `ccdwidth` (*type:* `number()`, *default:* `nil`) - 
+  *   `sensorwidth` (*type:* `number()`, *default:* `nil`) - 
+  *   `datetime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `createdate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `objecttypereference` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ycbcrcoefficients` (*type:* `number()`, *default:* `nil`) - 
+  *   `offsettime` (*type:* `String.t`, *default:* `nil`) - 
+  *   `samplesperpixel` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gcameramicrovideooffset` (*type:* `integer()`, *default:* `nil`) - The offset in bytes from the end of the file to the point where the appended mp4 begins (equivalent to the length of the compressed mp4). This field might be provided in the original MicroVideo from client, but it might become invalid when the image component is edited, so it is expected that the thumbnailer will validate it and find the correct value (by scanning through the JPEG) if it is invalid. In other words, only a valid offset should be returned by thumbnailer.
+  *   `stripoffsets` (*type:* `String.t`, *default:* `nil`) - 
+  *   `software` (*type:* `String.t`, *default:* `nil`) - 
+  *   `exif4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 4C metadata (caption, copyright, creator, credit) specific to each of the three metadata segments (EXIF, XMP, IPTC). These are used to keep separate the 4C data from each segment so that we can properly preserve the per-segment 4C data on write (when PreserveLevel is set appropriately).
+  *   `identifier` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `cameramodel` (*type:* `String.t`, *default:* `nil`) - Exif camera model
+  *   `gpssatellites` (*type:* `String.t`, *default:* `nil`) - 
+  *   `audiosamplingrate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameramicrovideopresentationtimestampus` (*type:* `integer()`, *default:* `nil`) - The presentation timestamp in microseconds of the video frame corresponding to the image still. Value may be -1 to denote unset/unspecified.
+  *   `credits` (*type:* `String.t`, *default:* `nil`) - 
+  *   `autoenhance` (*type:* `boolean()`, *default:* `nil`) - Indicates whether auto-enhance has been applied to the image.
+  *   `firstphotodate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `croppedareatoppixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `exifTimeUtcSource` (*type:* `String.t`, *default:* `nil`) - The exif_time_utc_source indicates the source from which the exif_time_utc field is calculated.
+  *   `destination` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `hostcomputer` (*type:* `String.t`, *default:* `nil`) - 
+  *   `url` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcreationscameraburstid` (*type:* `String.t`, *default:* `nil`) - 
+  *   `initialverticalfovdegrees` (*type:* `number()`, *default:* `nil`) - 
+  *   `objectcycle` (*type:* `String.t`, *default:* `nil`) - 
+  *   `modifydate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcameraburstid` (*type:* `String.t`, *default:* `nil`) - A unique String. The property should be present and identical for all images that make up a burst. It should be unique across devices (UUID recommended). Unlike GCreations:CameraBurstId, we should use images with this property to create auto collages and animations.
+  *   `nickname` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ycbcrpositioning` (*type:* `integer()`, *default:* `nil`) - 
+  *   `saturation` (*type:* `integer()`, *default:* `nil`) - 
+  *   `type` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `copyrightnotice` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsmapdatum` (*type:* `String.t`, *default:* `nil`) - 
+  *   `modelreleasestatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `uno` (*type:* `String.t`, *default:* `nil`) - 
+  *   `digitalsourcefiletype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `instructions` (*type:* `String.t`, *default:* `nil`) - 
+  *   `category` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ciadrcity` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gpsdestbearing` (*type:* `number()`, *default:* `nil`) - 
+  *   `ciemailwork` (*type:* `String.t`, *default:* `nil`) - 
+  *   `editorialupdate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `transmissionreference` (*type:* `String.t`, *default:* `nil`) - 
+  *   `referenceservice` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `ismpformat` (*type:* `boolean()`, *default:* `nil`) - The image is a Multi-Picture Object.
+  *   `relatedimageheight` (*type:* `String.t`, *default:* `nil`) - 
+  *   `aperturefnumber` (*type:* `number()`, *default:* `nil`) - 
+  *   `ciadrextadr` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `gpstime` (*type:* `list(number())`, *default:* `nil`) - This is in UTC Time. Contains three floats: hour, minute and second. Supports subsecond resolution.
+  *   `gcameramicrovideoversion` (*type:* `integer()`, *default:* `nil`) - Indicates the file format version of the MicroVideo (initially 1).
+  *   `destinationLatitude` (*type:* `float()`, *default:* `nil`) - +/- 90 inclusive
+  *   `artworkorobject` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `destinationLongitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
+  *   `exifTimeUtc` (*type:* `String.t`, *default:* `nil`) - The exif_time_utc field is a UTC-based alternative to the exif_time field, which is in local time, rather than UTC. If they were not separate, clients would be unable to distinguish if the source were UTC- or local-based.
+  *   `planarconfiguration` (*type:* `integer()`, *default:* `nil`) - 
+  *   `fillorder` (*type:* `integer()`, *default:* `nil`) - 
+  *   `editstatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `grayresponseunit` (*type:* `integer()`, *default:* `nil`) - 
+  *   `timezoneminutes` (*type:* `list(integer())`, *default:* `nil`) - Remaining minutes of offset.
+  *   `contentlocationcode` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `initialviewrolldegrees` (*type:* `integer()`, *default:* `nil`) - 
+  *   `poserolldegrees` (*type:* `number()`, *default:* `nil`) - 
+  *   `gcameradisableautocreation` (*type:* `list(String.t)`, *default:* `nil`) - The possible values are: “Animation”, “Collage”, “Pano”, “Movies”. Photos will avoid creating the listed types using the containing image or video. The property is optional. The property can be included multiple times to disable creation of multiple different types.
+  *   `cvterm` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `metadatadate` (*type:* `String.t`, *default:* `nil`) - 
+  *   `subsectimeoriginal` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lens` (*type:* `String.t`, *default:* `nil`) - 
+  *   `fixtureidentifier` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sourcephotoscount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `actionadvised` (*type:* `String.t`, *default:* `nil`) - 
+  *   `authorposition` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imagenumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `cameramake` (*type:* `String.t`, *default:* `nil`) - Exif camera make
+  *   `scene` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `supplementalcategory` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `contrast` (*type:* `integer()`, *default:* `nil`) - 
+  *   `uniqueid` (*type:* `String.t`, *default:* `nil`) - For unique hash:
+  *   `audiotype` (*type:* `String.t`, *default:* `nil`) - 
+  *   `serialnumber` (*type:* `String.t`, *default:* `nil`) - 
+  *   `croppedarealeftpixels` (*type:* `integer()`, *default:* `nil`) - 
+  *   `colorspace` (*type:* `integer()`, *default:* `nil`) - 
+  *   `colorprofile` (*type:* `boolean()`, *default:* `nil`) - Indicates whether or not the source image had an embedded color profile.
+  *   `initialhorizontalfovdegrees` (*type:* `number()`, *default:* `nil`) - 
+  *   `title` (*type:* `String.t`, *default:* `nil`) - 
+  *   `gcreationstype` (*type:* `String.t`, *default:* `nil`) - String representation of creation type. Should be one of {"GCameraCollage", "GCameraAnimation", "GCameraGroupSmiles", "GPhotosCollage", "GPhotosAnimation"}.
+  *   `label` (*type:* `String.t`, *default:* `nil`) - 
+  *   `owner` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `flashenergy` (*type:* `number()`, *default:* `nil`) - 
+  *   `publisher` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `iptc4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 
+  *   `sharpness` (*type:* `integer()`, *default:* `nil`) - 
+  *   `grayresponsecurve` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :gpssatellites => String.t() | nil,
-          :DEPRECATEDLargestvalidinteriorrectleft => integer() | nil,
-          :initialverticalfovdegrees => number() | nil,
+          :relation => list(String.t()) | nil,
+          :freebytecounts => String.t() | nil,
+          :exposureindex => number() | nil,
+          :gdepthMetadata => GoogleApi.ContentWarehouse.V1.Model.PhotosGDepthMetadata.t() | nil,
+          :addlmodelinfo => String.t() | nil,
+          :redeyemode => boolean() | nil,
+          :captionwriter => String.t() | nil,
+          :organisationinimagename => list(String.t()) | nil,
+          :productid => list(String.t()) | nil,
+          :rating => number() | nil,
+          :colormap => integer() | nil,
+          :countrycode => String.t() | nil,
+          :stitchingsoftware => String.t() | nil,
+          :croppedareaimageheightpixels => integer() | nil,
+          :state => String.t() | nil,
+          :usageterms => String.t() | nil,
+          :DEPRECATEDLargestvalidinteriorrectheight => integer() | nil,
+          :lensinfo => String.t() | nil,
+          :modelreleaseid => list(String.t()) | nil,
           :referencedate => list(String.t()) | nil,
+          :expirationdate => String.t() | nil,
+          :gpsdestdistanceref => String.t() | nil,
+          :webstatement => String.t() | nil,
+          :subjectarea => integer() | nil,
+          :headline => String.t() | nil,
+          :relatedsoundfile => String.t() | nil,
+          :gpsmeasuremode => String.t() | nil,
+          :xresolution => number() | nil,
+          :function => boolean() | nil,
+          :advisory => list(String.t()) | nil,
+          :format => String.t() | nil,
+          :caption => String.t() | nil,
+          :gimagemime => String.t() | nil,
+          :customrendered => integer() | nil,
+          :relatedimagefileformat => String.t() | nil,
+          :maxavailwidth => integer() | nil,
+          :chromasubsampling => String.t() | nil,
+          :gpsdestdistance => number() | nil,
+          :propertyreleaseid => list(String.t()) | nil,
+          :date => String.t() | nil,
+          :sensorheight => number() | nil,
+          :initialviewheadingdegrees => integer() | nil,
+          :yresolution => number() | nil,
+          :bitspersample => integer() | nil,
+          :gcameraspecialtypeid => String.t() | nil,
+          :rotate => integer() | nil,
+          :ciadrpcode => String.t() | nil,
+          :microvideooriginaloffset => integer() | nil,
+          :mimeType => integer() | nil,
+          :posepitchdegrees => number() | nil,
+          :minsamplevalue => integer() | nil,
+          :iptclastedited => String.t() | nil,
+          :maxaperturevalue => number() | nil,
+          :motionphotovideodataboxheader => String.t() | nil,
+          :ciadrregion => String.t() | nil,
+          :envelopenumber => String.t() | nil,
+          :subjectlocation => integer() | nil,
+          :gpsdop => number() | nil,
+          :sensingmethod => integer() | nil,
+          :width => integer() | nil,
+          :ownername => String.t() | nil,
+          :stripbytecounts => String.t() | nil,
+          :gcameramicrovideo => integer() | nil,
+          :orientation => integer() | nil,
+          :height => integer() | nil,
+          :subjectcode => list(String.t()) | nil,
+          :DEPRECATEDLargestvalidinteriorrecttop => integer() | nil,
+          :gpsstatus => String.t() | nil,
+          :timesent => String.t() | nil,
+          :gpsdatestamp => String.t() | nil,
+          :ciurlwork => String.t() | nil,
+          :DEPRECATEDGpstimestamp => number() | nil,
+          :photometricinterpretation => integer() | nil,
+          :relatedimagewidth => String.t() | nil,
+          :gcameramotionphoto => integer() | nil,
+          :projectiontype => String.t() | nil,
+          :aperturevalue => number() | nil,
+          :ycbcrsubsampling => integer() | nil,
+          :marked => boolean() | nil,
+          :keyword => list(String.t()) | nil,
+          :contributor => list(String.t()) | nil,
+          :country => String.t() | nil,
           :dynamicDepthMetadata =>
             GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata.t() | nil,
-          :interoperabilityindex => String.t() | nil,
-          :freebytecounts => String.t() | nil,
-          :gcameraburstprimary => integer() | nil,
-          :hasAlpha => boolean() | nil,
-          :destination => list(String.t()) | nil,
-          :headline => String.t() | nil,
-          :mode => integer() | nil,
-          :yresolution => number() | nil,
-          :customrendered => integer() | nil,
-          :thumbnailerBuildCl => integer() | nil,
-          :redeyemode => boolean() | nil,
+          :croppedareaimagewidthpixels => integer() | nil,
+          :lightsource => integer() | nil,
+          :brightnessvalue => number() | nil,
+          :sublocation => String.t() | nil,
+          :DEPRECATEDLargestvalidinteriorrectwidth => integer() | nil,
+          :exposuremode => integer() | nil,
+          :DEPRECATEDLargestvalidinteriorrectleft => integer() | nil,
           :imagetype => String.t() | nil,
-          :gpsdatestamp => String.t() | nil,
+          :longitude => float() | nil,
+          :gpstrack => number() | nil,
+          :gpstrackref => String.t() | nil,
+          :focalplanexres => number() | nil,
+          :exposuretime => number() | nil,
+          :compressedbitsperpixel => number() | nil,
+          :urgency => String.t() | nil,
+          :subjectdistancerange => integer() | nil,
+          :baseurl => String.t() | nil,
+          :objectattributereference => list(String.t()) | nil,
+          :meteringmode => integer() | nil,
+          :compressionlevel => integer() | nil,
+          :gpsdestlongituderef => String.t() | nil,
+          :focalplaneunits => number() | nil,
+          :audioduration => String.t() | nil,
+          :imageorientation => String.t() | nil,
           :exposurebias => number() | nil,
-          :referenceblackwhite => number() | nil,
-          :whitebalance => integer() | nil,
-          :hostcomputer => String.t() | nil,
-          :usageterms => String.t() | nil,
-          :cvterm => list(String.t()) | nil,
-          :flashenergy => number() | nil,
+          :citelwork => String.t() | nil,
+          :maxavailheight => integer() | nil,
+          :audiosamplingresolution => String.t() | nil,
+          :xmp4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
+          :gpsimgdirection => number() | nil,
+          :distance => number() | nil,
           :animationMetadata =>
             GoogleApi.ContentWarehouse.V1.Model.PhotosAnimationMetadata.t() | nil,
-          :photometricinterpretation => integer() | nil,
-          :digitalsourcetype => String.t() | nil,
-          :gcameramotionphotoversion => integer() | nil,
-          :gpsdestdistanceref => String.t() | nil,
-          :subjectdistancerange => integer() | nil,
-          :cellwidth => integer() | nil,
-          :gcameraspecialtypeid => String.t() | nil,
-          :gpsdestbearing => number() | nil,
-          :software => String.t() | nil,
-          :gcameramicrovideooffset => integer() | nil,
-          :poserolldegrees => number() | nil,
-          :ciemailwork => String.t() | nil,
-          :samplesperpixel => integer() | nil,
-          :ciadrctry => String.t() | nil,
-          :resolutionunit => integer() | nil,
-          :ccdwidth => number() | nil,
-          :sensorheight => number() | nil,
-          :releasetime => String.t() | nil,
-          :planarconfiguration => integer() | nil,
-          :maxaperturevalue => number() | nil,
-          :ycbcrsubsampling => integer() | nil,
-          :compressedbitsperpixel => number() | nil,
-          :fixtureidentifier => String.t() | nil,
-          :initialhorizontalfovdegrees => number() | nil,
-          :poseheadingdegrees => number() | nil,
-          :publisher => list(String.t()) | nil,
-          :audiosamplingrate => String.t() | nil,
-          :personinimage => list(String.t()) | nil,
-          :scenecapturetype => integer() | nil,
-          :offsettimedigitized => String.t() | nil,
-          :lens => String.t() | nil,
-          :offsettime => String.t() | nil,
-          :sublocation => String.t() | nil,
-          :gcameramicrovideopresentationtimestampus => integer() | nil,
-          :captionwriter => String.t() | nil,
-          :width => integer() | nil,
-          :contentlocationname => list(String.t()) | nil,
-          :serialnumber => String.t() | nil,
-          :latitude => float() | nil,
-          :languageidentifier => String.t() | nil,
-          :exposureindex => number() | nil,
-          :language => list(String.t()) | nil,
-          :destinationLongitude => float() | nil,
-          :envelopepriority => String.t() | nil,
-          :propertyreleasestatus => String.t() | nil,
-          :motionphotovideodataboxheader => String.t() | nil,
-          :uniqueid => String.t() | nil,
-          :cameramodel => String.t() | nil,
-          :serviceidentifier => String.t() | nil,
-          :contentlocationcode => list(String.t()) | nil,
-          :celllength => integer() | nil,
-          :firmware => String.t() | nil,
-          :organisationinimagecode => list(String.t()) | nil,
-          :gcreationscameraburstid => String.t() | nil,
-          :timezoneoffset => list(integer()) | nil,
-          :url => String.t() | nil,
-          :isoequivalent => integer() | nil,
-          :destinationLatitude => float() | nil,
-          :croppedarealeftpixels => integer() | nil,
-          :date => String.t() | nil,
-          :subsectimeoriginal => String.t() | nil,
-          :relatedsoundfile => String.t() | nil,
-          :gpsspeedref => String.t() | nil,
-          :gcameramotionphotopresentationtimestampus => integer() | nil,
-          :label => String.t() | nil,
-          :city => String.t() | nil,
-          :minormodelagedisclosure => String.t() | nil,
-          :flashreturn => integer() | nil,
-          :croppedareaimagewidthpixels => integer() | nil,
-          :exposuretime => number() | nil,
-          :subsectime => String.t() | nil,
-          :subjectlocation => integer() | nil,
-          :gpsmapdatum => String.t() | nil,
-          :gpsmeasuremode => String.t() | nil,
-          :gcameramicrovideoversion => integer() | nil,
-          :initialviewpitchdegrees => integer() | nil,
-          :ismpformat => boolean() | nil,
-          :longitude => float() | nil,
-          :audiosamplingresolution => String.t() | nil,
-          :uno => String.t() | nil,
-          :colorspace => integer() | nil,
-          :gpstime => list(number()) | nil,
-          :DEPRECATEDLargestvalidinteriorrectwidth => integer() | nil,
-          :relatedimagewidth => String.t() | nil,
-          :microvideooriginaloffset => integer() | nil,
-          :timesent => String.t() | nil,
-          :whitepoint => number() | nil,
-          :ycbcrcoefficients => number() | nil,
-          :spectralsensitivity => String.t() | nil,
-          :fullpanowidthpixels => integer() | nil,
-          :author => String.t() | nil,
-          :contact => String.t() | nil,
-          :aperturefnumber => number() | nil,
-          :keyword => list(String.t()) | nil,
-          :rowsperstrip => String.t() | nil,
-          :DEPRECATEDLargestvalidinteriorrectheight => integer() | nil,
-          :citelwork => String.t() | nil,
-          :digitalzoomratio => number() | nil,
-          :distance => number() | nil,
-          :exposureprogram => integer() | nil,
-          :hdrMetadata => GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata.t() | nil,
-          :identifier => list(String.t()) | nil,
-          :audiooutcue => String.t() | nil,
-          :createdate => String.t() | nil,
-          :credits => String.t() | nil,
-          :state => String.t() | nil,
-          :gpsstatus => String.t() | nil,
-          :chromasubsampling => String.t() | nil,
-          :maxavailheight => integer() | nil,
-          :fillorder => integer() | nil,
-          :xmp4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
-          :stitchingsoftware => String.t() | nil,
-          :colormap => integer() | nil,
-          :initialviewrolldegrees => integer() | nil,
-          :gpstrackref => String.t() | nil,
-          :aperturevalue => number() | nil,
-          :referencenumber => list(String.t()) | nil,
-          :DEPRECATEDIscolor => integer() | nil,
-          :metadatadate => String.t() | nil,
-          :originatingprogram => String.t() | nil,
-          :event => String.t() | nil,
-          :exifTimeUtcSource => String.t() | nil,
-          :exposurelockused => boolean() | nil,
-          :location => String.t() | nil,
-          :instructions => String.t() | nil,
-          :subjectarea => integer() | nil,
-          :urgency => String.t() | nil,
-          :version => String.t() | nil,
-          :DEPRECATEDGpstimestamp => number() | nil,
-          :gpsdop => number() | nil,
-          :timezoneminutes => list(integer()) | nil,
-          :digitalsourcefiletype => String.t() | nil,
-          :subsectimedigitized => String.t() | nil,
-          :sensingmethod => integer() | nil,
-          :autoenhance => boolean() | nil,
-          :ciadrpcode => String.t() | nil,
-          :gpsdestlongitude => number() | nil,
-          :gpsdifferential => integer() | nil,
-          :audiotype => String.t() | nil,
-          :imagenumber => String.t() | nil,
-          :owner => list(String.t()) | nil,
-          :authorposition => String.t() | nil,
-          :focallength => number() | nil,
-          :audioduration => String.t() | nil,
-          :ycbcrpositioning => integer() | nil,
-          :ciadrcity => String.t() | nil,
-          :brightnessvalue => number() | nil,
-          :height => integer() | nil,
-          :caption => String.t() | nil,
-          :releasedate => String.t() | nil,
-          :exifTimeUtc => String.t() | nil,
-          :gcameramicrovideo => integer() | nil,
-          :contrast => integer() | nil,
-          :relatedimagefileformat => String.t() | nil,
-          :contributor => list(String.t()) | nil,
-          :posepitchdegrees => number() | nil,
-          :supplementalcategory => list(String.t()) | nil,
-          :digimageguid => String.t() | nil,
-          :offsettimeoriginal => String.t() | nil,
-          :countrycode => String.t() | nil,
-          :gpsimgdirection => number() | nil,
-          :transmissionreference => String.t() | nil,
-          :ciurlwork => String.t() | nil,
-          :webstatement => String.t() | nil,
-          :gpsspeed => number() | nil,
-          :type => list(String.t()) | nil,
-          :function => boolean() | nil,
-          :imageorientation => String.t() | nil,
-          :capturesoftware => String.t() | nil,
-          :gpsdestdistance => number() | nil,
-          :compressionlevel => integer() | nil,
-          :nickname => String.t() | nil,
-          :scene => list(String.t()) | nil,
-          :datesent => String.t() | nil,
-          :baseurl => String.t() | nil,
-          :maxavailwidth => integer() | nil,
-          :focallengthin35mmfilm => integer() | nil,
-          :lensid => String.t() | nil,
-          :maxsamplevalue => integer() | nil,
-          :gaincontrol => integer() | nil,
-          :exposuremode => integer() | nil,
-          :flashcompensation => number() | nil,
-          :croppedareaimageheightpixels => integer() | nil,
-          :intellectualgenre => String.t() | nil,
-          :gcameradisableautocreation => list(String.t()) | nil,
-          :DEPRECATEDBlendingtype => String.t() | nil,
-          :stripoffsets => String.t() | nil,
-          :relation => list(String.t()) | nil,
-          :colorprofile => boolean() | nil,
-          :bitDepth => integer() | nil,
-          :fullpanoheightpixels => integer() | nil,
-          :marked => boolean() | nil,
-          :artworkorobject => list(String.t()) | nil,
-          :thresholding => integer() | nil,
-          :iptc4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
-          :gdepthMetadata => GoogleApi.ContentWarehouse.V1.Model.PhotosGDepthMetadata.t() | nil,
-          :subjectreference => list(String.t()) | nil,
-          :country => String.t() | nil,
-          :gpsdestlongituderef => String.t() | nil,
-          :modelreleaseid => list(String.t()) | nil,
+          :altitude => float() | nil,
           :cameraid => String.t() | nil,
-          :modelage => list(integer()) | nil,
-          :cameramake => String.t() | nil,
-          :iptclastedited => String.t() | nil,
-          :gpstrack => number() | nil,
-          :minsamplevalue => integer() | nil,
-          :orientation => integer() | nil,
-          :flashused => integer() | nil,
-          :croppedareatoppixels => integer() | nil,
-          :gpsimgdirectionref => String.t() | nil,
-          :certificate => String.t() | nil,
-          :copyrightnotice => String.t() | nil,
-          :initialviewheadingdegrees => integer() | nil,
-          :programversion => String.t() | nil,
-          :daylightsavings => list(integer()) | nil,
-          :envelopenumber => String.t() | nil,
-          :gaudiomime => String.t() | nil,
-          :exif4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
-          :organisationinimagename => list(String.t()) | nil,
-          :rating => number() | nil,
-          :ciadrextadr => list(String.t()) | nil,
-          :shutterspeedvalue => number() | nil,
-          :lightsource => integer() | nil,
-          :relatedimageheight => String.t() | nil,
-          :ciadrregion => String.t() | nil,
-          :objectcycle => String.t() | nil,
-          :exifTime => String.t() | nil,
-          :DEPRECATEDProcess => integer() | nil,
-          :xresolution => number() | nil,
-          :productid => list(String.t()) | nil,
-          :propertyreleaseid => list(String.t()) | nil,
-          :expirationdate => String.t() | nil,
-          :addlmodelinfo => String.t() | nil,
-          :format => String.t() | nil,
+          :whitebalance => integer() | nil,
+          :flashreturn => integer() | nil,
+          :expirationtime => String.t() | nil,
+          :envelopepriority => String.t() | nil,
+          :bitDepth => integer() | nil,
+          :gcameramotionphotoversion => integer() | nil,
+          :organisationinimagecode => list(String.t()) | nil,
+          :lensid => String.t() | nil,
+          :gpsdestbearingref => String.t() | nil,
+          :locationshown => list(String.t()) | nil,
+          :originatingprogram => String.t() | nil,
+          :minormodelagedisclosure => String.t() | nil,
+          :releasedate => String.t() | nil,
+          :mode => integer() | nil,
+          :maxsamplevalue => integer() | nil,
+          :fullpanowidthpixels => integer() | nil,
+          :focallength => number() | nil,
+          :hdrMetadata => GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata.t() | nil,
           :panoramaMetadata =>
             GoogleApi.ContentWarehouse.V1.Model.PhotosPanoramaMetadata.t() | nil,
-          :burstuuid => String.t() | nil,
-          :saturation => integer() | nil,
-          :actionadvised => String.t() | nil,
-          :DEPRECATEDLargestvalidinteriorrecttop => integer() | nil,
-          :altitude => float() | nil,
-          :primarychromaticities => number() | nil,
-          :datetimedigitized => String.t() | nil,
-          :usepanoramaviewer => boolean() | nil,
-          :firstphotodate => String.t() | nil,
-          :projectiontype => String.t() | nil,
-          :meteringmode => integer() | nil,
-          :gpsdestlatitude => number() | nil,
-          :gcameraburstid => String.t() | nil,
-          :freeoffsets => integer() | nil,
-          :focalplaneunits => number() | nil,
-          :mimeType => integer() | nil,
-          :extrasamples => integer() | nil,
-          :editorialupdate => String.t() | nil,
-          :gpsdestlatituderef => String.t() | nil,
-          :modifydate => String.t() | nil,
-          :advisory => list(String.t()) | nil,
-          :rotate => integer() | nil,
-          :ownername => String.t() | nil,
-          :subjectcode => list(String.t()) | nil,
-          :editstatus => String.t() | nil,
-          :gcameramotionphoto => integer() | nil,
-          :referenceservice => list(String.t()) | nil,
-          :lensinfo => String.t() | nil,
-          :sourcephotoscount => integer() | nil,
-          :coverage => String.t() | nil,
-          :objecttypereference => String.t() | nil,
-          :category => String.t() | nil,
-          :modelreleasestatus => String.t() | nil,
-          :title => String.t() | nil,
-          :focalplanexres => number() | nil,
-          :gpsdestbearingref => String.t() | nil,
+          :gpsspeedref => String.t() | nil,
+          :thumbnailerBuildCl => integer() | nil,
           :lastphotodate => String.t() | nil,
-          :sharpness => integer() | nil,
-          :expirationtime => String.t() | nil,
-          :grayresponseunit => integer() | nil,
-          :stripbytecounts => String.t() | nil,
-          :objectattributereference => list(String.t()) | nil,
-          :locationshown => list(String.t()) | nil,
-          :datetime => String.t() | nil,
-          :source => String.t() | nil,
-          :gcreationstype => String.t() | nil,
-          :sensorwidth => number() | nil,
-          :gimagemime => String.t() | nil,
+          :capturesoftware => String.t() | nil,
+          :gcameraburstprimary => integer() | nil,
+          :scenecapturetype => integer() | nil,
+          :gaincontrol => integer() | nil,
+          :cellwidth => integer() | nil,
+          :gpsimgdirectionref => String.t() | nil,
+          :DEPRECATEDIscolor => integer() | nil,
+          :flashcompensation => number() | nil,
+          :coverage => String.t() | nil,
+          :isoequivalent => integer() | nil,
+          :DEPRECATEDBlendingtype => String.t() | nil,
+          :offsettimeoriginal => String.t() | nil,
+          :programversion => String.t() | nil,
+          :releasetime => String.t() | nil,
+          :datesent => String.t() | nil,
+          :gpsspeed => number() | nil,
+          :fullpanoheightpixels => integer() | nil,
           :datecreated => String.t() | nil,
-          :grayresponsecurve => integer() | nil,
-          :bitspersample => integer() | nil
+          :offsettimedigitized => String.t() | nil,
+          :location => String.t() | nil,
+          :daylightsavings => list(integer()) | nil,
+          :gpsdestlatituderef => String.t() | nil,
+          :personinimage => list(String.t()) | nil,
+          :version => String.t() | nil,
+          :DEPRECATEDProcess => integer() | nil,
+          :ciadrctry => String.t() | nil,
+          :intellectualgenre => String.t() | nil,
+          :referenceblackwhite => number() | nil,
+          :referencenumber => list(String.t()) | nil,
+          :language => list(String.t()) | nil,
+          :contact => String.t() | nil,
+          :digitalzoomratio => number() | nil,
+          :hasAlpha => boolean() | nil,
+          :usepanoramaviewer => boolean() | nil,
+          :firmware => String.t() | nil,
+          :resolutionunit => integer() | nil,
+          :initialviewpitchdegrees => integer() | nil,
+          :spectralsensitivity => String.t() | nil,
+          :contentlocationname => list(String.t()) | nil,
+          :digitalsourcetype => String.t() | nil,
+          :whitepoint => number() | nil,
+          :timezoneoffset => list(integer()) | nil,
+          :source => String.t() | nil,
+          :audiooutcue => String.t() | nil,
+          :subjectreference => list(String.t()) | nil,
+          :flashused => integer() | nil,
+          :propertyreleasestatus => String.t() | nil,
+          :datetimedigitized => String.t() | nil,
+          :extrasamples => integer() | nil,
+          :certificate => String.t() | nil,
+          :digimageguid => String.t() | nil,
+          :subsectimedigitized => String.t() | nil,
+          :exposurelockused => boolean() | nil,
+          :interoperabilityindex => String.t() | nil,
+          :event => String.t() | nil,
+          :gpsdestlongitude => number() | nil,
+          :gaudiomime => String.t() | nil,
+          :exifTime => String.t() | nil,
+          :focallengthin35mmfilm => integer() | nil,
+          :serviceidentifier => String.t() | nil,
+          :rowsperstrip => String.t() | nil,
+          :author => String.t() | nil,
+          :shutterspeedvalue => number() | nil,
+          :exposureprogram => integer() | nil,
+          :poseheadingdegrees => number() | nil,
+          :latitude => float() | nil,
+          :freeoffsets => integer() | nil,
+          :burstuuid => String.t() | nil,
+          :subsectime => String.t() | nil,
+          :gcameramotionphotopresentationtimestampus => integer() | nil,
+          :celllength => integer() | nil,
+          :primarychromaticities => number() | nil,
+          :languageidentifier => String.t() | nil,
+          :gpsdifferential => integer() | nil,
+          :gpsdestlatitude => number() | nil,
+          :city => String.t() | nil,
+          :modelage => list(integer()) | nil,
+          :thresholding => integer() | nil,
+          :ccdwidth => number() | nil,
+          :sensorwidth => number() | nil,
+          :datetime => String.t() | nil,
+          :createdate => String.t() | nil,
+          :objecttypereference => String.t() | nil,
+          :ycbcrcoefficients => number() | nil,
+          :offsettime => String.t() | nil,
+          :samplesperpixel => integer() | nil,
+          :gcameramicrovideooffset => integer() | nil,
+          :stripoffsets => String.t() | nil,
+          :software => String.t() | nil,
+          :exif4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
+          :identifier => list(String.t()) | nil,
+          :cameramodel => String.t() | nil,
+          :gpssatellites => String.t() | nil,
+          :audiosamplingrate => String.t() | nil,
+          :gcameramicrovideopresentationtimestampus => integer() | nil,
+          :credits => String.t() | nil,
+          :autoenhance => boolean() | nil,
+          :firstphotodate => String.t() | nil,
+          :croppedareatoppixels => integer() | nil,
+          :exifTimeUtcSource => String.t() | nil,
+          :destination => list(String.t()) | nil,
+          :hostcomputer => String.t() | nil,
+          :url => String.t() | nil,
+          :gcreationscameraburstid => String.t() | nil,
+          :initialverticalfovdegrees => number() | nil,
+          :objectcycle => String.t() | nil,
+          :modifydate => String.t() | nil,
+          :gcameraburstid => String.t() | nil,
+          :nickname => String.t() | nil,
+          :ycbcrpositioning => integer() | nil,
+          :saturation => integer() | nil,
+          :type => list(String.t()) | nil,
+          :copyrightnotice => String.t() | nil,
+          :gpsmapdatum => String.t() | nil,
+          :modelreleasestatus => String.t() | nil,
+          :uno => String.t() | nil,
+          :digitalsourcefiletype => String.t() | nil,
+          :instructions => String.t() | nil,
+          :category => String.t() | nil,
+          :ciadrcity => String.t() | nil,
+          :gpsdestbearing => number() | nil,
+          :ciemailwork => String.t() | nil,
+          :editorialupdate => String.t() | nil,
+          :transmissionreference => String.t() | nil,
+          :referenceservice => list(String.t()) | nil,
+          :ismpformat => boolean() | nil,
+          :relatedimageheight => String.t() | nil,
+          :aperturefnumber => number() | nil,
+          :ciadrextadr => list(String.t()) | nil,
+          :gpstime => list(number()) | nil,
+          :gcameramicrovideoversion => integer() | nil,
+          :destinationLatitude => float() | nil,
+          :artworkorobject => list(String.t()) | nil,
+          :destinationLongitude => float() | nil,
+          :exifTimeUtc => String.t() | nil,
+          :planarconfiguration => integer() | nil,
+          :fillorder => integer() | nil,
+          :editstatus => String.t() | nil,
+          :grayresponseunit => integer() | nil,
+          :timezoneminutes => list(integer()) | nil,
+          :contentlocationcode => list(String.t()) | nil,
+          :initialviewrolldegrees => integer() | nil,
+          :poserolldegrees => number() | nil,
+          :gcameradisableautocreation => list(String.t()) | nil,
+          :cvterm => list(String.t()) | nil,
+          :metadatadate => String.t() | nil,
+          :subsectimeoriginal => String.t() | nil,
+          :lens => String.t() | nil,
+          :fixtureidentifier => String.t() | nil,
+          :sourcephotoscount => integer() | nil,
+          :actionadvised => String.t() | nil,
+          :authorposition => String.t() | nil,
+          :imagenumber => String.t() | nil,
+          :cameramake => String.t() | nil,
+          :scene => list(String.t()) | nil,
+          :supplementalcategory => list(String.t()) | nil,
+          :contrast => integer() | nil,
+          :uniqueid => String.t() | nil,
+          :audiotype => String.t() | nil,
+          :serialnumber => String.t() | nil,
+          :croppedarealeftpixels => integer() | nil,
+          :colorspace => integer() | nil,
+          :colorprofile => boolean() | nil,
+          :initialhorizontalfovdegrees => number() | nil,
+          :title => String.t() | nil,
+          :gcreationstype => String.t() | nil,
+          :label => String.t() | nil,
+          :owner => list(String.t()) | nil,
+          :flashenergy => number() | nil,
+          :publisher => list(String.t()) | nil,
+          :iptc4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
+          :sharpness => integer() | nil,
+          :grayresponsecurve => integer() | nil
         }
 
-  field(:gpssatellites)
-  field(:DEPRECATEDLargestvalidinteriorrectleft)
-  field(:initialverticalfovdegrees)
-  field(:referencedate, type: :list)
-  field(:dynamicDepthMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata)
-  field(:interoperabilityindex)
-  field(:freebytecounts)
-  field(:gcameraburstprimary)
-  field(:hasAlpha)
-  field(:destination, type: :list)
-  field(:headline)
-  field(:mode)
-  field(:yresolution)
-  field(:customrendered)
-  field(:thumbnailerBuildCl)
-  field(:redeyemode)
-  field(:imagetype)
-  field(:gpsdatestamp)
-  field(:exposurebias)
-  field(:referenceblackwhite)
-  field(:whitebalance)
-  field(:hostcomputer)
-  field(:usageterms)
-  field(:cvterm, type: :list)
-  field(:flashenergy)
-  field(:animationMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosAnimationMetadata)
-  field(:photometricinterpretation)
-  field(:digitalsourcetype)
-  field(:gcameramotionphotoversion)
-  field(:gpsdestdistanceref)
-  field(:subjectdistancerange)
-  field(:cellwidth)
-  field(:gcameraspecialtypeid)
-  field(:gpsdestbearing)
-  field(:software)
-  field(:gcameramicrovideooffset)
-  field(:poserolldegrees)
-  field(:ciemailwork)
-  field(:samplesperpixel)
-  field(:ciadrctry)
-  field(:resolutionunit)
-  field(:ccdwidth)
-  field(:sensorheight)
-  field(:releasetime)
-  field(:planarconfiguration)
-  field(:maxaperturevalue)
-  field(:ycbcrsubsampling)
-  field(:compressedbitsperpixel)
-  field(:fixtureidentifier)
-  field(:initialhorizontalfovdegrees)
-  field(:poseheadingdegrees)
-  field(:publisher, type: :list)
-  field(:audiosamplingrate)
-  field(:personinimage, type: :list)
-  field(:scenecapturetype)
-  field(:offsettimedigitized)
-  field(:lens)
-  field(:offsettime)
-  field(:sublocation)
-  field(:gcameramicrovideopresentationtimestampus)
-  field(:captionwriter)
-  field(:width)
-  field(:contentlocationname, type: :list)
-  field(:serialnumber)
-  field(:latitude)
-  field(:languageidentifier)
-  field(:exposureindex)
-  field(:language, type: :list)
-  field(:destinationLongitude)
-  field(:envelopepriority)
-  field(:propertyreleasestatus)
-  field(:motionphotovideodataboxheader)
-  field(:uniqueid)
-  field(:cameramodel)
-  field(:serviceidentifier)
-  field(:contentlocationcode, type: :list)
-  field(:celllength)
-  field(:firmware)
-  field(:organisationinimagecode, type: :list)
-  field(:gcreationscameraburstid)
-  field(:timezoneoffset, type: :list)
-  field(:url)
-  field(:isoequivalent)
-  field(:destinationLatitude)
-  field(:croppedarealeftpixels)
-  field(:date)
-  field(:subsectimeoriginal)
-  field(:relatedsoundfile)
-  field(:gpsspeedref)
-  field(:gcameramotionphotopresentationtimestampus)
-  field(:label)
-  field(:city)
-  field(:minormodelagedisclosure)
-  field(:flashreturn)
-  field(:croppedareaimagewidthpixels)
-  field(:exposuretime)
-  field(:subsectime)
-  field(:subjectlocation)
-  field(:gpsmapdatum)
-  field(:gpsmeasuremode)
-  field(:gcameramicrovideoversion)
-  field(:initialviewpitchdegrees)
-  field(:ismpformat)
-  field(:longitude)
-  field(:audiosamplingresolution)
-  field(:uno)
-  field(:colorspace)
-  field(:gpstime, type: :list)
-  field(:DEPRECATEDLargestvalidinteriorrectwidth)
-  field(:relatedimagewidth)
-  field(:microvideooriginaloffset)
-  field(:timesent)
-  field(:whitepoint)
-  field(:ycbcrcoefficients)
-  field(:spectralsensitivity)
-  field(:fullpanowidthpixels)
-  field(:author)
-  field(:contact)
-  field(:aperturefnumber)
-  field(:keyword, type: :list)
-  field(:rowsperstrip)
-  field(:DEPRECATEDLargestvalidinteriorrectheight)
-  field(:citelwork)
-  field(:digitalzoomratio)
-  field(:distance)
-  field(:exposureprogram)
-  field(:hdrMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata)
-  field(:identifier, type: :list)
-  field(:audiooutcue)
-  field(:createdate)
-  field(:credits)
-  field(:state)
-  field(:gpsstatus)
-  field(:chromasubsampling)
-  field(:maxavailheight)
-  field(:fillorder)
-  field(:xmp4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
-  field(:stitchingsoftware)
-  field(:colormap)
-  field(:initialviewrolldegrees)
-  field(:gpstrackref)
-  field(:aperturevalue)
-  field(:referencenumber, type: :list)
-  field(:DEPRECATEDIscolor)
-  field(:metadatadate)
-  field(:originatingprogram)
-  field(:event)
-  field(:exifTimeUtcSource)
-  field(:exposurelockused)
-  field(:location)
-  field(:instructions)
-  field(:subjectarea)
-  field(:urgency)
-  field(:version)
-  field(:DEPRECATEDGpstimestamp)
-  field(:gpsdop)
-  field(:timezoneminutes, type: :list)
-  field(:digitalsourcefiletype)
-  field(:subsectimedigitized)
-  field(:sensingmethod)
-  field(:autoenhance)
-  field(:ciadrpcode)
-  field(:gpsdestlongitude)
-  field(:gpsdifferential)
-  field(:audiotype)
-  field(:imagenumber)
-  field(:owner, type: :list)
-  field(:authorposition)
-  field(:focallength)
-  field(:audioduration)
-  field(:ycbcrpositioning)
-  field(:ciadrcity)
-  field(:brightnessvalue)
-  field(:height)
-  field(:caption)
-  field(:releasedate)
-  field(:exifTimeUtc)
-  field(:gcameramicrovideo)
-  field(:contrast)
-  field(:relatedimagefileformat)
-  field(:contributor, type: :list)
-  field(:posepitchdegrees)
-  field(:supplementalcategory, type: :list)
-  field(:digimageguid)
-  field(:offsettimeoriginal)
-  field(:countrycode)
-  field(:gpsimgdirection)
-  field(:transmissionreference)
-  field(:ciurlwork)
-  field(:webstatement)
-  field(:gpsspeed)
-  field(:type, type: :list)
-  field(:function)
-  field(:imageorientation)
-  field(:capturesoftware)
-  field(:gpsdestdistance)
-  field(:compressionlevel)
-  field(:nickname)
-  field(:scene, type: :list)
-  field(:datesent)
-  field(:baseurl)
-  field(:maxavailwidth)
-  field(:focallengthin35mmfilm)
-  field(:lensid)
-  field(:maxsamplevalue)
-  field(:gaincontrol)
-  field(:exposuremode)
-  field(:flashcompensation)
-  field(:croppedareaimageheightpixels)
-  field(:intellectualgenre)
-  field(:gcameradisableautocreation, type: :list)
-  field(:DEPRECATEDBlendingtype)
-  field(:stripoffsets)
   field(:relation, type: :list)
-  field(:colorprofile)
-  field(:bitDepth)
-  field(:fullpanoheightpixels)
-  field(:marked)
-  field(:artworkorobject, type: :list)
-  field(:thresholding)
-  field(:iptc4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
+  field(:freebytecounts)
+  field(:exposureindex)
   field(:gdepthMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosGDepthMetadata)
-  field(:subjectreference, type: :list)
-  field(:country)
-  field(:gpsdestlongituderef)
-  field(:modelreleaseid, type: :list)
-  field(:cameraid)
-  field(:modelage, type: :list)
-  field(:cameramake)
-  field(:iptclastedited)
-  field(:gpstrack)
-  field(:minsamplevalue)
-  field(:orientation)
-  field(:flashused)
-  field(:croppedareatoppixels)
-  field(:gpsimgdirectionref)
-  field(:certificate)
-  field(:copyrightnotice)
-  field(:initialviewheadingdegrees)
-  field(:programversion)
-  field(:daylightsavings, type: :list)
-  field(:envelopenumber)
-  field(:gaudiomime)
-  field(:exif4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
-  field(:organisationinimagename, type: :list)
-  field(:rating)
-  field(:ciadrextadr, type: :list)
-  field(:shutterspeedvalue)
-  field(:lightsource)
-  field(:relatedimageheight)
-  field(:ciadrregion)
-  field(:objectcycle)
-  field(:exifTime)
-  field(:DEPRECATEDProcess)
-  field(:xresolution)
-  field(:productid, type: :list)
-  field(:propertyreleaseid, type: :list)
-  field(:expirationdate)
   field(:addlmodelinfo)
-  field(:format)
-  field(:panoramaMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosPanoramaMetadata)
-  field(:burstuuid)
-  field(:saturation)
-  field(:actionadvised)
-  field(:DEPRECATEDLargestvalidinteriorrecttop)
-  field(:altitude)
-  field(:primarychromaticities)
-  field(:datetimedigitized)
-  field(:usepanoramaviewer)
-  field(:firstphotodate)
-  field(:projectiontype)
-  field(:meteringmode)
-  field(:gpsdestlatitude)
-  field(:gcameraburstid)
-  field(:freeoffsets)
-  field(:focalplaneunits)
-  field(:mimeType)
-  field(:extrasamples)
-  field(:editorialupdate)
-  field(:gpsdestlatituderef)
-  field(:modifydate)
-  field(:advisory, type: :list)
-  field(:rotate)
-  field(:ownername)
-  field(:subjectcode, type: :list)
-  field(:editstatus)
-  field(:gcameramotionphoto)
-  field(:referenceservice, type: :list)
+  field(:redeyemode)
+  field(:captionwriter)
+  field(:organisationinimagename, type: :list)
+  field(:productid, type: :list)
+  field(:rating)
+  field(:colormap)
+  field(:countrycode)
+  field(:stitchingsoftware)
+  field(:croppedareaimageheightpixels)
+  field(:state)
+  field(:usageterms)
+  field(:DEPRECATEDLargestvalidinteriorrectheight)
   field(:lensinfo)
-  field(:sourcephotoscount)
-  field(:coverage)
-  field(:objecttypereference)
-  field(:category)
-  field(:modelreleasestatus)
-  field(:title)
-  field(:focalplanexres)
-  field(:gpsdestbearingref)
-  field(:lastphotodate)
-  field(:sharpness)
-  field(:expirationtime)
-  field(:grayresponseunit)
-  field(:stripbytecounts)
-  field(:objectattributereference, type: :list)
-  field(:locationshown, type: :list)
-  field(:datetime)
-  field(:source)
-  field(:gcreationstype)
-  field(:sensorwidth)
+  field(:modelreleaseid, type: :list)
+  field(:referencedate, type: :list)
+  field(:expirationdate)
+  field(:gpsdestdistanceref)
+  field(:webstatement)
+  field(:subjectarea)
+  field(:headline)
+  field(:relatedsoundfile)
+  field(:gpsmeasuremode)
+  field(:xresolution)
+  field(:function)
+  field(:advisory, type: :list)
+  field(:format)
+  field(:caption)
   field(:gimagemime)
-  field(:datecreated)
-  field(:grayresponsecurve)
+  field(:customrendered)
+  field(:relatedimagefileformat)
+  field(:maxavailwidth)
+  field(:chromasubsampling)
+  field(:gpsdestdistance)
+  field(:propertyreleaseid, type: :list)
+  field(:date)
+  field(:sensorheight)
+  field(:initialviewheadingdegrees)
+  field(:yresolution)
   field(:bitspersample)
+  field(:gcameraspecialtypeid)
+  field(:rotate)
+  field(:ciadrpcode)
+  field(:microvideooriginaloffset)
+  field(:mimeType)
+  field(:posepitchdegrees)
+  field(:minsamplevalue)
+  field(:iptclastedited)
+  field(:maxaperturevalue)
+  field(:motionphotovideodataboxheader)
+  field(:ciadrregion)
+  field(:envelopenumber)
+  field(:subjectlocation)
+  field(:gpsdop)
+  field(:sensingmethod)
+  field(:width)
+  field(:ownername)
+  field(:stripbytecounts)
+  field(:gcameramicrovideo)
+  field(:orientation)
+  field(:height)
+  field(:subjectcode, type: :list)
+  field(:DEPRECATEDLargestvalidinteriorrecttop)
+  field(:gpsstatus)
+  field(:timesent)
+  field(:gpsdatestamp)
+  field(:ciurlwork)
+  field(:DEPRECATEDGpstimestamp)
+  field(:photometricinterpretation)
+  field(:relatedimagewidth)
+  field(:gcameramotionphoto)
+  field(:projectiontype)
+  field(:aperturevalue)
+  field(:ycbcrsubsampling)
+  field(:marked)
+  field(:keyword, type: :list)
+  field(:contributor, type: :list)
+  field(:country)
+  field(:dynamicDepthMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata)
+  field(:croppedareaimagewidthpixels)
+  field(:lightsource)
+  field(:brightnessvalue)
+  field(:sublocation)
+  field(:DEPRECATEDLargestvalidinteriorrectwidth)
+  field(:exposuremode)
+  field(:DEPRECATEDLargestvalidinteriorrectleft)
+  field(:imagetype)
+  field(:longitude)
+  field(:gpstrack)
+  field(:gpstrackref)
+  field(:focalplanexres)
+  field(:exposuretime)
+  field(:compressedbitsperpixel)
+  field(:urgency)
+  field(:subjectdistancerange)
+  field(:baseurl)
+  field(:objectattributereference, type: :list)
+  field(:meteringmode)
+  field(:compressionlevel)
+  field(:gpsdestlongituderef)
+  field(:focalplaneunits)
+  field(:audioduration)
+  field(:imageorientation)
+  field(:exposurebias)
+  field(:citelwork)
+  field(:maxavailheight)
+  field(:audiosamplingresolution)
+  field(:xmp4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
+  field(:gpsimgdirection)
+  field(:distance)
+  field(:animationMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosAnimationMetadata)
+  field(:altitude)
+  field(:cameraid)
+  field(:whitebalance)
+  field(:flashreturn)
+  field(:expirationtime)
+  field(:envelopepriority)
+  field(:bitDepth)
+  field(:gcameramotionphotoversion)
+  field(:organisationinimagecode, type: :list)
+  field(:lensid)
+  field(:gpsdestbearingref)
+  field(:locationshown, type: :list)
+  field(:originatingprogram)
+  field(:minormodelagedisclosure)
+  field(:releasedate)
+  field(:mode)
+  field(:maxsamplevalue)
+  field(:fullpanowidthpixels)
+  field(:focallength)
+  field(:hdrMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata)
+  field(:panoramaMetadata, as: GoogleApi.ContentWarehouse.V1.Model.PhotosPanoramaMetadata)
+  field(:gpsspeedref)
+  field(:thumbnailerBuildCl)
+  field(:lastphotodate)
+  field(:capturesoftware)
+  field(:gcameraburstprimary)
+  field(:scenecapturetype)
+  field(:gaincontrol)
+  field(:cellwidth)
+  field(:gpsimgdirectionref)
+  field(:DEPRECATEDIscolor)
+  field(:flashcompensation)
+  field(:coverage)
+  field(:isoequivalent)
+  field(:DEPRECATEDBlendingtype)
+  field(:offsettimeoriginal)
+  field(:programversion)
+  field(:releasetime)
+  field(:datesent)
+  field(:gpsspeed)
+  field(:fullpanoheightpixels)
+  field(:datecreated)
+  field(:offsettimedigitized)
+  field(:location)
+  field(:daylightsavings, type: :list)
+  field(:gpsdestlatituderef)
+  field(:personinimage, type: :list)
+  field(:version)
+  field(:DEPRECATEDProcess)
+  field(:ciadrctry)
+  field(:intellectualgenre)
+  field(:referenceblackwhite)
+  field(:referencenumber, type: :list)
+  field(:language, type: :list)
+  field(:contact)
+  field(:digitalzoomratio)
+  field(:hasAlpha)
+  field(:usepanoramaviewer)
+  field(:firmware)
+  field(:resolutionunit)
+  field(:initialviewpitchdegrees)
+  field(:spectralsensitivity)
+  field(:contentlocationname, type: :list)
+  field(:digitalsourcetype)
+  field(:whitepoint)
+  field(:timezoneoffset, type: :list)
+  field(:source)
+  field(:audiooutcue)
+  field(:subjectreference, type: :list)
+  field(:flashused)
+  field(:propertyreleasestatus)
+  field(:datetimedigitized)
+  field(:extrasamples)
+  field(:certificate)
+  field(:digimageguid)
+  field(:subsectimedigitized)
+  field(:exposurelockused)
+  field(:interoperabilityindex)
+  field(:event)
+  field(:gpsdestlongitude)
+  field(:gaudiomime)
+  field(:exifTime)
+  field(:focallengthin35mmfilm)
+  field(:serviceidentifier)
+  field(:rowsperstrip)
+  field(:author)
+  field(:shutterspeedvalue)
+  field(:exposureprogram)
+  field(:poseheadingdegrees)
+  field(:latitude)
+  field(:freeoffsets)
+  field(:burstuuid)
+  field(:subsectime)
+  field(:gcameramotionphotopresentationtimestampus)
+  field(:celllength)
+  field(:primarychromaticities)
+  field(:languageidentifier)
+  field(:gpsdifferential)
+  field(:gpsdestlatitude)
+  field(:city)
+  field(:modelage, type: :list)
+  field(:thresholding)
+  field(:ccdwidth)
+  field(:sensorwidth)
+  field(:datetime)
+  field(:createdate)
+  field(:objecttypereference)
+  field(:ycbcrcoefficients)
+  field(:offsettime)
+  field(:samplesperpixel)
+  field(:gcameramicrovideooffset)
+  field(:stripoffsets)
+  field(:software)
+  field(:exif4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
+  field(:identifier, type: :list)
+  field(:cameramodel)
+  field(:gpssatellites)
+  field(:audiosamplingrate)
+  field(:gcameramicrovideopresentationtimestampus)
+  field(:credits)
+  field(:autoenhance)
+  field(:firstphotodate)
+  field(:croppedareatoppixels)
+  field(:exifTimeUtcSource)
+  field(:destination, type: :list)
+  field(:hostcomputer)
+  field(:url)
+  field(:gcreationscameraburstid)
+  field(:initialverticalfovdegrees)
+  field(:objectcycle)
+  field(:modifydate)
+  field(:gcameraburstid)
+  field(:nickname)
+  field(:ycbcrpositioning)
+  field(:saturation)
+  field(:type, type: :list)
+  field(:copyrightnotice)
+  field(:gpsmapdatum)
+  field(:modelreleasestatus)
+  field(:uno)
+  field(:digitalsourcefiletype)
+  field(:instructions)
+  field(:category)
+  field(:ciadrcity)
+  field(:gpsdestbearing)
+  field(:ciemailwork)
+  field(:editorialupdate)
+  field(:transmissionreference)
+  field(:referenceservice, type: :list)
+  field(:ismpformat)
+  field(:relatedimageheight)
+  field(:aperturefnumber)
+  field(:ciadrextadr, type: :list)
+  field(:gpstime, type: :list)
+  field(:gcameramicrovideoversion)
+  field(:destinationLatitude)
+  field(:artworkorobject, type: :list)
+  field(:destinationLongitude)
+  field(:exifTimeUtc)
+  field(:planarconfiguration)
+  field(:fillorder)
+  field(:editstatus)
+  field(:grayresponseunit)
+  field(:timezoneminutes, type: :list)
+  field(:contentlocationcode, type: :list)
+  field(:initialviewrolldegrees)
+  field(:poserolldegrees)
+  field(:gcameradisableautocreation, type: :list)
+  field(:cvterm, type: :list)
+  field(:metadatadate)
+  field(:subsectimeoriginal)
+  field(:lens)
+  field(:fixtureidentifier)
+  field(:sourcephotoscount)
+  field(:actionadvised)
+  field(:authorposition)
+  field(:imagenumber)
+  field(:cameramake)
+  field(:scene, type: :list)
+  field(:supplementalcategory, type: :list)
+  field(:contrast)
+  field(:uniqueid)
+  field(:audiotype)
+  field(:serialnumber)
+  field(:croppedarealeftpixels)
+  field(:colorspace)
+  field(:colorprofile)
+  field(:initialhorizontalfovdegrees)
+  field(:title)
+  field(:gcreationstype)
+  field(:label)
+  field(:owner, type: :list)
+  field(:flashenergy)
+  field(:publisher, type: :list)
+  field(:iptc4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)
+  field(:sharpness)
+  field(:grayresponsecurve)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do

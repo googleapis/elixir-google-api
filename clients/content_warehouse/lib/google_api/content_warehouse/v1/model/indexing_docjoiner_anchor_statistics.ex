@@ -21,166 +21,137 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatistics 
 
   ## Attributes
 
-  *   `lowCorpusOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `redundantanchorinfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo.t)`, *default:* `nil`) - 
-  *   `topPrOnsiteAnchorCount` (*type:* `integer()`, *default:* `nil`) - According to anchor quality bucket, anchor with pagrank > 51000 is the best anchor. anchors with pagerank < 47000 are all same.
-  *   `baseAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `mediumCorpusAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `offdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `baseOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `skippedOrReusedReason` (*type:* `String.t`, *default:* `nil`) - Reason to skip accumulate, when skipped, or Reason for reprocessing when not skipped.
-  *   `forwardedAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `droppedRedundantAnchorCount` (*type:* `integer()`, *default:* `nil`) - Sum of anchors_dropped in the repeated group RedundantAnchorInfo, but can go higher if the latter reaches the cap of kMaxRecordsToKeep. (indexing/docjoiner/anchors/anchor-loader.cc), currently 10,000
-  *   `totalDomainsSeen` (*type:* `integer()`, *default:* `nil`) - Number of domains seen in total.
-  *   `mediumCorpusOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `minHostHomePageLocalOutdegree` (*type:* `integer()`, *default:* `nil`) - Minimum local outdegree of all anchor sources that are host home pages as well as on the same host as the current target URL.
-  *   `minDomainHomePageLocalOutdegree` (*type:* `integer()`, *default:* `nil`) - Minimum local outdegree of all anchor sources that are domain home pages as well as on the same domain as the current target URL.
-  *   `anchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `anchorsWithDedupedImprovanchors` (*type:* `integer()`, *default:* `nil`) - The number of anchors for which some ImprovAnchors phrases have been removed due to duplication within source org.
-  *   `pageMismatchTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - 
-  *   `lowCorpusAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `totalDomainPhrasePairsAboveLimit` (*type:* `integer()`, *default:* `nil`) - The following should be equal to the size of the following repeated group, except that it can go higher than 10,000.
-  *   `scannedAnchorCount` (*type:* `integer()`, *default:* `nil`) - The total number of anchors being scanned from storage.
-  *   `phraseAnchorSpamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo.t`, *default:* `nil`) - Following signals identify spike of spammy anchor phrases. Anchors created during the spike are tagged with LINK_SPAM_PHRASE_SPIKE.
-  *   `redundantAnchorForPhraseCapCount` (*type:* `integer()`, *default:* `nil`) - Total anchor dropped due to exceed per domain phrase cap. Equals to sum of anchors_dropped in the repeated group RedundantAnchorInfoForPhraseCap, but can go higher if the latter reaches the cap of kMaxDomainsToKeepForPhraseCap (indexing/docjoiner/anchors/anchor-loader.h), currently 1000.
-  *   `onsiteAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `globalAnchorDelta` (*type:* `integer()`, *default:* `nil`) - Metric of number of changed global anchors computed as, size(union(previous, new) - intersection(previous, new)).
-  *   `droppedHomepageAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `topPrOndomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `localAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `timestamp` (*type:* `integer()`, *default:* `nil`) - Walltime of when anchors were accumulated last.
-  *   `pageFromExpiredTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - Set in SignalPenalizer::FillInAnchorStatistics.
-  *   `badbacklinksPenalized` (*type:* `boolean()`, *default:* `nil`) - Whether this doc is penalized by BadBackLinks, in which case we should not use improvanchor score in mustang ascorer.
-  *   `redundantanchorinfoforphrasecap` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfoForPhraseCap.t)`, *default:* `nil`) - 
-  *   `penguinEarlyAnchorProtected` (*type:* `boolean()`, *default:* `nil`) - Doc is protected by goodness of early anchors.
-  *   `linkBeforeSitechangeTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - 
-  *   `anchorPhraseCount` (*type:* `integer()`, *default:* `nil`) - The number of unique anchor phrases. Capped by the constant kMaxAnchorPhraseCountInStats (=5000) defined in indexing/docjoiner/anchors/anchor-manager.cc.
-  *   `penguinTooManySources` (*type:* `boolean()`, *default:* `nil`) - Doc not scored because it has too many anchor sources. END: Penguin related fields.
-  *   `skippedAccumulate` (*type:* `integer()`, *default:* `nil`) - A count of the number of times anchor accumulation has been skipped for this document. Note: Only used when canonical.
-  *   `droppedNonLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `nonLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `perdupstats` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsPerDupStats.t)`, *default:* `nil`) - 
-  *   `penguinPenalty` (*type:* `number()`, *default:* `nil`) - Page-level penguin penalty (0 = good, 1 = bad).
-  *   `fakeAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `anchorSpamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorSpamInfo.t`, *default:* `nil`) - This structure contains signals and penalties of AnchorSpamPenalizer. It replaces phrase_anchor_spam_info above, that is deprecated.
-  *   `totalDomainPhrasePairsSeenApprox` (*type:* `integer()`, *default:* `nil`) - Number of domain/phrase pairs in total -- i.e. how many anchors we would have if the domain/phrase cutoff was set to 1 instead of 200. This is "approx" for large anchor clusters because there can be double counting when the LRU cache forgets about rare domain/phrase pairs.
   *   `penguinLastUpdate` (*type:* `integer()`, *default:* `nil`) - BEGIN: Penguin related fields. Timestamp when penguin scores were last updated. Measured in days since Jan. 1st 1995.
-  *   `droppedLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `ondomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
-  *   `spamLog10Odds` (*type:* `number()`, *default:* `nil`) - The log base 10 odds that this set of anchors exhibits spammy behavior. Computed in the AnchorLocalizer.
-  *   `totalDomainsAbovePhraseCap` (*type:* `integer()`, *default:* `nil`) - Number of domains above per domain phrase cap. We see too many phrases in the domains.
-  *   `topPrOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `anchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `badbacklinksPenalized` (*type:* `boolean()`, *default:* `nil`) - Whether this doc is penalized by BadBackLinks, in which case we should not use improvanchor score in mustang ascorer.
+  *   `penguinPenalty` (*type:* `number()`, *default:* `nil`) - Page-level penguin penalty (0 = good, 1 = bad).
+  *   `minHostHomePageLocalOutdegree` (*type:* `integer()`, *default:* `nil`) - Minimum local outdegree of all anchor sources that are host home pages as well as on the same host as the current target URL.
+  *   `droppedRedundantAnchorCount` (*type:* `integer()`, *default:* `nil`) - Sum of anchors_dropped in the repeated group RedundantAnchorInfo, but can go higher if the latter reaches the cap of kMaxRecordsToKeep. (indexing/docjoiner/anchors/anchor-loader.cc), currently 10,000
+  *   `nonLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `mediumCorpusAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `penguinEarlyAnchorProtected` (*type:* `boolean()`, *default:* `nil`) - Doc is protected by goodness of early anchors.
+  *   `droppedHomepageAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `redundantanchorinfoforphrasecap` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfoForPhraseCap.t)`, *default:* `nil`) - 
   *   `forwardedOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `droppedNonLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `perdupstats` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsPerDupStats.t)`, *default:* `nil`) - 
+  *   `onsiteAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `droppedLocalAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `penguinTooManySources` (*type:* `boolean()`, *default:* `nil`) - Doc not scored because it has too many anchor sources. END: Penguin related fields.
+  *   `forwardedAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `anchorSpamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorSpamInfo.t`, *default:* `nil`) - This structure contains signals and penalties of AnchorSpamPenalizer. It replaces phrase_anchor_spam_info above, that is deprecated.
+  *   `lowCorpusAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `lowCorpusOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `baseAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `minDomainHomePageLocalOutdegree` (*type:* `integer()`, *default:* `nil`) - Minimum local outdegree of all anchor sources that are domain home pages as well as on the same domain as the current target URL.
+  *   `skippedAccumulate` (*type:* `integer()`, *default:* `nil`) - A count of the number of times anchor accumulation has been skipped for this document. Note: Only used when canonical.
+  *   `topPrOnsiteAnchorCount` (*type:* `integer()`, *default:* `nil`) - According to anchor quality bucket, anchor with pagrank > 51000 is the best anchor. anchors with pagerank < 47000 are all same.
+  *   `pageMismatchTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - 
+  *   `spamLog10Odds` (*type:* `number()`, *default:* `nil`) - The log base 10 odds that this set of anchors exhibits spammy behavior. Computed in the AnchorLocalizer.
+  *   `redundantanchorinfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo.t)`, *default:* `nil`) - 
+  *   `pageFromExpiredTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - Set in SignalPenalizer::FillInAnchorStatistics.
+  *   `baseOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `phraseAnchorSpamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo.t`, *default:* `nil`) - Following signals identify spike of spammy anchor phrases. Anchors created during the spike are tagged with LINK_SPAM_PHRASE_SPIKE.
+  *   `anchorPhraseCount` (*type:* `integer()`, *default:* `nil`) - The number of unique anchor phrases. Capped by the constant kMaxAnchorPhraseCountInStats (=5000) defined in indexing/docjoiner/anchors/anchor-manager.cc.
+  *   `ondomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `totalDomainsAbovePhraseCap` (*type:* `integer()`, *default:* `nil`) - Number of domains above per domain phrase cap. We see too many phrases in the domains.
+  *   `totalDomainsSeen` (*type:* `integer()`, *default:* `nil`) - Number of domains seen in total.
+  *   `topPrOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `scannedAnchorCount` (*type:* `integer()`, *default:* `nil`) - The total number of anchors being scanned from storage.
+  *   `localAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `linkBeforeSitechangeTaggedAnchors` (*type:* `integer()`, *default:* `nil`) - 
+  *   `globalAnchorDelta` (*type:* `integer()`, *default:* `nil`) - Metric of number of changed global anchors computed as, size(union(previous, new) - intersection(previous, new)).
+  *   `topPrOndomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `mediumCorpusOffdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `offdomainAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `totalDomainPhrasePairsSeenApprox` (*type:* `integer()`, *default:* `nil`) - Number of domain/phrase pairs in total -- i.e. how many anchors we would have if the domain/phrase cutoff was set to 1 instead of 200. This is "approx" for large anchor clusters because there can be double counting when the LRU cache forgets about rare domain/phrase pairs.
+  *   `skippedOrReusedReason` (*type:* `String.t`, *default:* `nil`) - Reason to skip accumulate, when skipped, or Reason for reprocessing when not skipped.
+  *   `anchorsWithDedupedImprovanchors` (*type:* `integer()`, *default:* `nil`) - The number of anchors for which some ImprovAnchors phrases have been removed due to duplication within source org.
+  *   `fakeAnchorCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `redundantAnchorForPhraseCapCount` (*type:* `integer()`, *default:* `nil`) - Total anchor dropped due to exceed per domain phrase cap. Equals to sum of anchors_dropped in the repeated group RedundantAnchorInfoForPhraseCap, but can go higher if the latter reaches the cap of kMaxDomainsToKeepForPhraseCap (indexing/docjoiner/anchors/anchor-loader.h), currently 1000.
+  *   `totalDomainPhrasePairsAboveLimit` (*type:* `integer()`, *default:* `nil`) - The following should be equal to the size of the following repeated group, except that it can go higher than 10,000.
+  *   `timestamp` (*type:* `integer()`, *default:* `nil`) - Walltime of when anchors were accumulated last.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :lowCorpusOffdomainAnchorCount => integer() | nil,
-          :redundantanchorinfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo.t()
-            )
-            | nil,
-          :topPrOnsiteAnchorCount => integer() | nil,
-          :baseAnchorCount => integer() | nil,
-          :mediumCorpusAnchorCount => integer() | nil,
-          :offdomainAnchorCount => integer() | nil,
-          :baseOffdomainAnchorCount => integer() | nil,
-          :skippedOrReusedReason => String.t() | nil,
-          :forwardedAnchorCount => integer() | nil,
-          :droppedRedundantAnchorCount => integer() | nil,
-          :totalDomainsSeen => integer() | nil,
-          :mediumCorpusOffdomainAnchorCount => integer() | nil,
-          :minHostHomePageLocalOutdegree => integer() | nil,
-          :minDomainHomePageLocalOutdegree => integer() | nil,
+          :penguinLastUpdate => integer() | nil,
           :anchorCount => integer() | nil,
-          :anchorsWithDedupedImprovanchors => integer() | nil,
-          :pageMismatchTaggedAnchors => integer() | nil,
-          :lowCorpusAnchorCount => integer() | nil,
-          :totalDomainPhrasePairsAboveLimit => integer() | nil,
-          :scannedAnchorCount => integer() | nil,
-          :phraseAnchorSpamInfo =>
-            GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo.t() | nil,
-          :redundantAnchorForPhraseCapCount => integer() | nil,
-          :onsiteAnchorCount => integer() | nil,
-          :globalAnchorDelta => integer() | nil,
-          :droppedHomepageAnchorCount => integer() | nil,
-          :topPrOndomainAnchorCount => integer() | nil,
-          :localAnchorCount => integer() | nil,
-          :timestamp => integer() | nil,
-          :pageFromExpiredTaggedAnchors => integer() | nil,
           :badbacklinksPenalized => boolean() | nil,
+          :penguinPenalty => number() | nil,
+          :minHostHomePageLocalOutdegree => integer() | nil,
+          :droppedRedundantAnchorCount => integer() | nil,
+          :nonLocalAnchorCount => integer() | nil,
+          :mediumCorpusAnchorCount => integer() | nil,
+          :penguinEarlyAnchorProtected => boolean() | nil,
+          :droppedHomepageAnchorCount => integer() | nil,
           :redundantanchorinfoforphrasecap =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfoForPhraseCap.t()
             )
             | nil,
-          :penguinEarlyAnchorProtected => boolean() | nil,
-          :linkBeforeSitechangeTaggedAnchors => integer() | nil,
-          :anchorPhraseCount => integer() | nil,
-          :penguinTooManySources => boolean() | nil,
-          :skippedAccumulate => integer() | nil,
+          :forwardedOffdomainAnchorCount => integer() | nil,
           :droppedNonLocalAnchorCount => integer() | nil,
-          :nonLocalAnchorCount => integer() | nil,
           :perdupstats =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsPerDupStats.t()
             )
             | nil,
-          :penguinPenalty => number() | nil,
-          :fakeAnchorCount => integer() | nil,
+          :onsiteAnchorCount => integer() | nil,
+          :droppedLocalAnchorCount => integer() | nil,
+          :penguinTooManySources => boolean() | nil,
+          :forwardedAnchorCount => integer() | nil,
           :anchorSpamInfo =>
             GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorSpamInfo.t() | nil,
-          :totalDomainPhrasePairsSeenApprox => integer() | nil,
-          :penguinLastUpdate => integer() | nil,
-          :droppedLocalAnchorCount => integer() | nil,
-          :ondomainAnchorCount => integer() | nil,
+          :lowCorpusAnchorCount => integer() | nil,
+          :lowCorpusOffdomainAnchorCount => integer() | nil,
+          :baseAnchorCount => integer() | nil,
+          :minDomainHomePageLocalOutdegree => integer() | nil,
+          :skippedAccumulate => integer() | nil,
+          :topPrOnsiteAnchorCount => integer() | nil,
+          :pageMismatchTaggedAnchors => integer() | nil,
           :spamLog10Odds => number() | nil,
+          :redundantanchorinfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo.t()
+            )
+            | nil,
+          :pageFromExpiredTaggedAnchors => integer() | nil,
+          :baseOffdomainAnchorCount => integer() | nil,
+          :phraseAnchorSpamInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo.t() | nil,
+          :anchorPhraseCount => integer() | nil,
+          :ondomainAnchorCount => integer() | nil,
           :totalDomainsAbovePhraseCap => integer() | nil,
+          :totalDomainsSeen => integer() | nil,
           :topPrOffdomainAnchorCount => integer() | nil,
-          :forwardedOffdomainAnchorCount => integer() | nil
+          :scannedAnchorCount => integer() | nil,
+          :localAnchorCount => integer() | nil,
+          :linkBeforeSitechangeTaggedAnchors => integer() | nil,
+          :globalAnchorDelta => integer() | nil,
+          :topPrOndomainAnchorCount => integer() | nil,
+          :mediumCorpusOffdomainAnchorCount => integer() | nil,
+          :offdomainAnchorCount => integer() | nil,
+          :totalDomainPhrasePairsSeenApprox => integer() | nil,
+          :skippedOrReusedReason => String.t() | nil,
+          :anchorsWithDedupedImprovanchors => integer() | nil,
+          :fakeAnchorCount => integer() | nil,
+          :redundantAnchorForPhraseCapCount => integer() | nil,
+          :totalDomainPhrasePairsAboveLimit => integer() | nil,
+          :timestamp => integer() | nil
         }
 
-  field(:lowCorpusOffdomainAnchorCount)
-
-  field(:redundantanchorinfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo,
-    type: :list
-  )
-
-  field(:topPrOnsiteAnchorCount)
-  field(:baseAnchorCount)
-  field(:mediumCorpusAnchorCount)
-  field(:offdomainAnchorCount)
-  field(:baseOffdomainAnchorCount)
-  field(:skippedOrReusedReason)
-  field(:forwardedAnchorCount)
-  field(:droppedRedundantAnchorCount)
-  field(:totalDomainsSeen)
-  field(:mediumCorpusOffdomainAnchorCount)
-  field(:minHostHomePageLocalOutdegree)
-  field(:minDomainHomePageLocalOutdegree)
+  field(:penguinLastUpdate)
   field(:anchorCount)
-  field(:anchorsWithDedupedImprovanchors)
-  field(:pageMismatchTaggedAnchors)
-  field(:lowCorpusAnchorCount)
-  field(:totalDomainPhrasePairsAboveLimit)
-  field(:scannedAnchorCount)
-
-  field(:phraseAnchorSpamInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo
-  )
-
-  field(:redundantAnchorForPhraseCapCount)
-  field(:onsiteAnchorCount)
-  field(:globalAnchorDelta)
-  field(:droppedHomepageAnchorCount)
-  field(:topPrOndomainAnchorCount)
-  field(:localAnchorCount)
-  field(:timestamp)
-  field(:pageFromExpiredTaggedAnchors)
   field(:badbacklinksPenalized)
+  field(:penguinPenalty)
+  field(:minHostHomePageLocalOutdegree)
+  field(:droppedRedundantAnchorCount)
+  field(:nonLocalAnchorCount)
+  field(:mediumCorpusAnchorCount)
+  field(:penguinEarlyAnchorProtected)
+  field(:droppedHomepageAnchorCount)
 
   field(:redundantanchorinfoforphrasecap,
     as:
@@ -188,30 +159,59 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatistics 
     type: :list
   )
 
-  field(:penguinEarlyAnchorProtected)
-  field(:linkBeforeSitechangeTaggedAnchors)
-  field(:anchorPhraseCount)
-  field(:penguinTooManySources)
-  field(:skippedAccumulate)
+  field(:forwardedOffdomainAnchorCount)
   field(:droppedNonLocalAnchorCount)
-  field(:nonLocalAnchorCount)
 
   field(:perdupstats,
     as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsPerDupStats,
     type: :list
   )
 
-  field(:penguinPenalty)
-  field(:fakeAnchorCount)
-  field(:anchorSpamInfo, as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorSpamInfo)
-  field(:totalDomainPhrasePairsSeenApprox)
-  field(:penguinLastUpdate)
+  field(:onsiteAnchorCount)
   field(:droppedLocalAnchorCount)
-  field(:ondomainAnchorCount)
+  field(:penguinTooManySources)
+  field(:forwardedAnchorCount)
+  field(:anchorSpamInfo, as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorSpamInfo)
+  field(:lowCorpusAnchorCount)
+  field(:lowCorpusOffdomainAnchorCount)
+  field(:baseAnchorCount)
+  field(:minDomainHomePageLocalOutdegree)
+  field(:skippedAccumulate)
+  field(:topPrOnsiteAnchorCount)
+  field(:pageMismatchTaggedAnchors)
   field(:spamLog10Odds)
+
+  field(:redundantanchorinfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatisticsRedundantAnchorInfo,
+    type: :list
+  )
+
+  field(:pageFromExpiredTaggedAnchors)
+  field(:baseOffdomainAnchorCount)
+
+  field(:phraseAnchorSpamInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorPhraseSpamInfo
+  )
+
+  field(:anchorPhraseCount)
+  field(:ondomainAnchorCount)
   field(:totalDomainsAbovePhraseCap)
+  field(:totalDomainsSeen)
   field(:topPrOffdomainAnchorCount)
-  field(:forwardedOffdomainAnchorCount)
+  field(:scannedAnchorCount)
+  field(:localAnchorCount)
+  field(:linkBeforeSitechangeTaggedAnchors)
+  field(:globalAnchorDelta)
+  field(:topPrOndomainAnchorCount)
+  field(:mediumCorpusOffdomainAnchorCount)
+  field(:offdomainAnchorCount)
+  field(:totalDomainPhrasePairsSeenApprox)
+  field(:skippedOrReusedReason)
+  field(:anchorsWithDedupedImprovanchors)
+  field(:fakeAnchorCount)
+  field(:redundantAnchorForPhraseCapCount)
+  field(:totalDomainPhrasePairsAboveLimit)
+  field(:timestamp)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerAnchorStatistics do

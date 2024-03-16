@@ -21,112 +21,112 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchShoppingOpinions
 
   ## Attributes
 
-  *   `snippetSubSegmentWordCount` (*type:* `integer()`, *default:* `nil`) - The number of words in the ASR for the best matched sub segment.
-  *   `luminScore` (*type:* `number()`, *default:* `nil`) - The Lumin model score for the anchor label against the segment.
+  *   `asrForProConExtraction` (*type:* `String.t`, *default:* `nil`) - The asr with sentence break that was used for pro/con extraction.
+  *   `snippetWordCount` (*type:* `integer()`, *default:* `nil`) - The number of words in the ASR for the selected segment window.
+  *   `snippetQaScore` (*type:* `number()`, *default:* `nil`) - The QA model score for the selected segment window against the question.
   *   `anchorLabelSentiment` (*type:* `number()`, *default:* `nil`) - The sentiment score of the anchor label, with range: [-1, 1]. If using Lumin Pro/Con tags as the anchor labels, the "Pro" Lumin tag will have a score of 1 and Con Lumin tag will have a score of -1.
+  *   `productNameFromTitle` (*type:* `String.t`, *default:* `nil`) - The product name from title extracted by the grampus model.
+  *   `snippetSubSegmentQaScore` (*type:* `number()`, *default:* `nil`) - The QA model score for the best sub segment against the question.
+  *   `anchorLabelFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The first anchor_label mention position (word index, 0-based). It is computed from the snippet_sub_segment if exists. Otherwise it is computed from the snippet. It is not populated if there is no such mention.
+  *   `babelSimilarityScore` (*type:* `number()`, *default:* `nil`) - The Babel similarity score between the snippet and the anchor label.
+  *   `conScore` (*type:* `number()`, *default:* `nil`) - The classification score of the anchor being a con opinion.
+  *   `isPro` (*type:* `boolean()`, *default:* `nil`) - Whether the anchor is classified as a pro opinion.
   *   `luminAspectWordsMentions` (*type:* `integer()`, *default:* `nil`) - The number of times words in Lumin aspect (that is not a stopword) being mentioned in the snippet.
   *   `mumScore` (*type:* `number()`, *default:* `nil`) - The score from the MUM model if the pro/con anchor is extracted by MUM.
-  *   `anchorLabel` (*type:* `String.t`, *default:* `nil`) - The anchor label.
-  *   `isCon` (*type:* `boolean()`, *default:* `nil`) - Whether the anchor is classified as a con opinion.
-  *   `proScore` (*type:* `number()`, *default:* `nil`) - The classification score of the anchor being a pro opinion.
-  *   `conScore` (*type:* `number()`, *default:* `nil`) - The classification score of the anchor being a con opinion.
+  *   `grampusScore` (*type:* `number()`, *default:* `nil`) - The score from the Grampus model if the pro/con is extracted by Grampus.
   *   `snippetSubSegment` (*type:* `String.t`, *default:* `nil`) - The ASR for the best matched sub segment inside the selected segment.
-  *   `snippetSubSegmentQaScore` (*type:* `number()`, *default:* `nil`) - The QA model score for the best sub segment against the question.
-  *   `productNameFromTitle` (*type:* `String.t`, *default:* `nil`) - The product name from title extracted by the grampus model.
-  *   `isProConWhenExtractedFromMum` (*type:* `boolean()`, *default:* `nil`) - True if the anchor is considered as pro or con when extracted from MUM.
-  *   `anchorOrAspectWordsMentions` (*type:* `integer()`, *default:* `nil`) - The number of times words in anchor label or Lumin aspect (that is not a stopword) being mentioned in the snippet. If a word exists in both anchor label and Lumin aspect, it shall be only counted once for a mention in the snippet.
-  *   `snippetSubSegmentSentimentScore` (*type:* `number()`, *default:* `nil`) - The go/scarlett sentiment score of the best matched sub segment. Positive score represents positive sentiment. Negative score represents negative sentiment.
-  *   `anchorOrAspectFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The smaller number of anchor_label_first_mention_pos and lumin_aspect_first_mention_pos.
-  *   `anchorLabelFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The first anchor_label mention position (word index, 0-based). It is computed from the snippet_sub_segment if exists. Otherwise it is computed from the snippet. It is not populated if there is no such mention.
-  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The ASR for the selected segment window.
-  *   `aspect` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect.t`, *default:* `nil`) - Product aspect being discussed by this Shopping Opinions.
-  *   `opinionsDolphinDescriptivenessScore` (*type:* `number()`, *default:* `nil`) - Scores from Opinions Dolphin scorer. Opinions Dolphin scorer is built by finetuning the Dolphin-based Video Anchor Unified Scorer V2 on the Opinions anchors ratings. It outputs two scores, which are optimized for descriptiveness and usefulness ratings respectively. 'descriptiveness_score' measures how well the anchor label describes the video section. 'usefulness_score' measures how useful the anchor label is for jumping to an important section in the video. go/vs-opinions-migration-report
-  *   `isPro` (*type:* `boolean()`, *default:* `nil`) - Whether the anchor is classified as a pro opinion.
-  *   `opinionsDolphinUsefulnessScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `snippetWordCount` (*type:* `integer()`, *default:* `nil`) - The number of words in the ASR for the selected segment window.
-  *   `babelSimilarityScore` (*type:* `number()`, *default:* `nil`) - The Babel similarity score between the snippet and the anchor label.
-  *   `luminAspectFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The first Lumin aspect mention position (word index, 0-based). It is computed from the snippet_sub_segment if exists. Otherwise it is computed from the snippet. It is not populated if there is no such mention.
-  *   `snippetQaScore` (*type:* `number()`, *default:* `nil`) - The QA model score for the selected segment window against the question.
-  *   `anchorLabelWordsMentions` (*type:* `integer()`, *default:* `nil`) - The number of times words in anchor label (that is not a stopword) being mentioned in the snippet.
-  *   `mumProductAspect` (*type:* `String.t`, *default:* `nil`) - The product aspect of the pro/con generated using the MUM model.
-  *   `asrForProConExtraction` (*type:* `String.t`, *default:* `nil`) - The asr with sentence break that was used for pro/con extraction.
   *   `snippetSentimentScore` (*type:* `number()`, *default:* `nil`) - The go/scarlett sentiment score of the selected segment window. Positive score represents positive sentiment. Negative score represents negative sentiment.
   *   `luminAspect` (*type:* `String.t`, *default:* `nil`) - The lumin aspect of the Pro/Con Lumin tag. e.g. "weight".
-  *   `grampusScore` (*type:* `number()`, *default:* `nil`) - The score from the Grampus model if the pro/con is extracted by Grampus.
   *   `question` (*type:* `String.t`, *default:* `nil`) - The question used to score this video segment.
+  *   `snippetSubSegmentSentimentScore` (*type:* `number()`, *default:* `nil`) - The go/scarlett sentiment score of the best matched sub segment. Positive score represents positive sentiment. Negative score represents negative sentiment.
+  *   `opinionsDolphinUsefulnessScore` (*type:* `number()`, *default:* `nil`) - 
+  *   `snippetSubSegmentWordCount` (*type:* `integer()`, *default:* `nil`) - The number of words in the ASR for the best matched sub segment.
+  *   `mumProductAspect` (*type:* `String.t`, *default:* `nil`) - The product aspect of the pro/con generated using the MUM model.
+  *   `luminScore` (*type:* `number()`, *default:* `nil`) - The Lumin model score for the anchor label against the segment.
+  *   `isCon` (*type:* `boolean()`, *default:* `nil`) - Whether the anchor is classified as a con opinion.
+  *   `anchorOrAspectWordsMentions` (*type:* `integer()`, *default:* `nil`) - The number of times words in anchor label or Lumin aspect (that is not a stopword) being mentioned in the snippet. If a word exists in both anchor label and Lumin aspect, it shall be only counted once for a mention in the snippet.
+  *   `aspect` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect.t`, *default:* `nil`) - Product aspect being discussed by this Shopping Opinions.
+  *   `proScore` (*type:* `number()`, *default:* `nil`) - The classification score of the anchor being a pro opinion.
+  *   `snippet` (*type:* `String.t`, *default:* `nil`) - The ASR for the selected segment window.
+  *   `anchorOrAspectFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The smaller number of anchor_label_first_mention_pos and lumin_aspect_first_mention_pos.
+  *   `isProConWhenExtractedFromMum` (*type:* `boolean()`, *default:* `nil`) - True if the anchor is considered as pro or con when extracted from MUM.
+  *   `luminAspectFirstMentionPos` (*type:* `integer()`, *default:* `nil`) - The first Lumin aspect mention position (word index, 0-based). It is computed from the snippet_sub_segment if exists. Otherwise it is computed from the snippet. It is not populated if there is no such mention.
+  *   `opinionsDolphinDescriptivenessScore` (*type:* `number()`, *default:* `nil`) - Scores from Opinions Dolphin scorer. Opinions Dolphin scorer is built by finetuning the Dolphin-based Video Anchor Unified Scorer V2 on the Opinions anchors ratings. It outputs two scores, which are optimized for descriptiveness and usefulness ratings respectively. 'descriptiveness_score' measures how well the anchor label describes the video section. 'usefulness_score' measures how useful the anchor label is for jumping to an important section in the video. go/vs-opinions-migration-report
+  *   `anchorLabel` (*type:* `String.t`, *default:* `nil`) - The anchor label.
+  *   `anchorLabelWordsMentions` (*type:* `integer()`, *default:* `nil`) - The number of times words in anchor label (that is not a stopword) being mentioned in the snippet.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :snippetSubSegmentWordCount => integer() | nil,
-          :luminScore => number() | nil,
+          :asrForProConExtraction => String.t() | nil,
+          :snippetWordCount => integer() | nil,
+          :snippetQaScore => number() | nil,
           :anchorLabelSentiment => number() | nil,
+          :productNameFromTitle => String.t() | nil,
+          :snippetSubSegmentQaScore => number() | nil,
+          :anchorLabelFirstMentionPos => integer() | nil,
+          :babelSimilarityScore => number() | nil,
+          :conScore => number() | nil,
+          :isPro => boolean() | nil,
           :luminAspectWordsMentions => integer() | nil,
           :mumScore => number() | nil,
-          :anchorLabel => String.t() | nil,
-          :isCon => boolean() | nil,
-          :proScore => number() | nil,
-          :conScore => number() | nil,
+          :grampusScore => number() | nil,
           :snippetSubSegment => String.t() | nil,
-          :snippetSubSegmentQaScore => number() | nil,
-          :productNameFromTitle => String.t() | nil,
-          :isProConWhenExtractedFromMum => boolean() | nil,
-          :anchorOrAspectWordsMentions => integer() | nil,
-          :snippetSubSegmentSentimentScore => number() | nil,
-          :anchorOrAspectFirstMentionPos => integer() | nil,
-          :anchorLabelFirstMentionPos => integer() | nil,
-          :snippet => String.t() | nil,
-          :aspect => GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect.t() | nil,
-          :opinionsDolphinDescriptivenessScore => number() | nil,
-          :isPro => boolean() | nil,
-          :opinionsDolphinUsefulnessScore => number() | nil,
-          :snippetWordCount => integer() | nil,
-          :babelSimilarityScore => number() | nil,
-          :luminAspectFirstMentionPos => integer() | nil,
-          :snippetQaScore => number() | nil,
-          :anchorLabelWordsMentions => integer() | nil,
-          :mumProductAspect => String.t() | nil,
-          :asrForProConExtraction => String.t() | nil,
           :snippetSentimentScore => number() | nil,
           :luminAspect => String.t() | nil,
-          :grampusScore => number() | nil,
-          :question => String.t() | nil
+          :question => String.t() | nil,
+          :snippetSubSegmentSentimentScore => number() | nil,
+          :opinionsDolphinUsefulnessScore => number() | nil,
+          :snippetSubSegmentWordCount => integer() | nil,
+          :mumProductAspect => String.t() | nil,
+          :luminScore => number() | nil,
+          :isCon => boolean() | nil,
+          :anchorOrAspectWordsMentions => integer() | nil,
+          :aspect => GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect.t() | nil,
+          :proScore => number() | nil,
+          :snippet => String.t() | nil,
+          :anchorOrAspectFirstMentionPos => integer() | nil,
+          :isProConWhenExtractedFromMum => boolean() | nil,
+          :luminAspectFirstMentionPos => integer() | nil,
+          :opinionsDolphinDescriptivenessScore => number() | nil,
+          :anchorLabel => String.t() | nil,
+          :anchorLabelWordsMentions => integer() | nil
         }
 
-  field(:snippetSubSegmentWordCount)
-  field(:luminScore)
+  field(:asrForProConExtraction)
+  field(:snippetWordCount)
+  field(:snippetQaScore)
   field(:anchorLabelSentiment)
+  field(:productNameFromTitle)
+  field(:snippetSubSegmentQaScore)
+  field(:anchorLabelFirstMentionPos)
+  field(:babelSimilarityScore)
+  field(:conScore)
+  field(:isPro)
   field(:luminAspectWordsMentions)
   field(:mumScore)
-  field(:anchorLabel)
-  field(:isCon)
-  field(:proScore)
-  field(:conScore)
+  field(:grampusScore)
   field(:snippetSubSegment)
-  field(:snippetSubSegmentQaScore)
-  field(:productNameFromTitle)
-  field(:isProConWhenExtractedFromMum)
-  field(:anchorOrAspectWordsMentions)
-  field(:snippetSubSegmentSentimentScore)
-  field(:anchorOrAspectFirstMentionPos)
-  field(:anchorLabelFirstMentionPos)
-  field(:snippet)
-  field(:aspect, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect)
-  field(:opinionsDolphinDescriptivenessScore)
-  field(:isPro)
-  field(:opinionsDolphinUsefulnessScore)
-  field(:snippetWordCount)
-  field(:babelSimilarityScore)
-  field(:luminAspectFirstMentionPos)
-  field(:snippetQaScore)
-  field(:anchorLabelWordsMentions)
-  field(:mumProductAspect)
-  field(:asrForProConExtraction)
   field(:snippetSentimentScore)
   field(:luminAspect)
-  field(:grampusScore)
   field(:question)
+  field(:snippetSubSegmentSentimentScore)
+  field(:opinionsDolphinUsefulnessScore)
+  field(:snippetSubSegmentWordCount)
+  field(:mumProductAspect)
+  field(:luminScore)
+  field(:isCon)
+  field(:anchorOrAspectWordsMentions)
+  field(:aspect, as: GoogleApi.ContentWarehouse.V1.Model.VideoContentSearchAspect)
+  field(:proScore)
+  field(:snippet)
+  field(:anchorOrAspectFirstMentionPos)
+  field(:isProConWhenExtractedFromMum)
+  field(:luminAspectFirstMentionPos)
+  field(:opinionsDolphinDescriptivenessScore)
+  field(:anchorLabel)
+  field(:anchorLabelWordsMentions)
 end
 
 defimpl Poison.Decoder,

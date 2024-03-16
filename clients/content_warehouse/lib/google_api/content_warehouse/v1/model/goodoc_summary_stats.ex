@@ -21,149 +21,149 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GoodocSummaryStats do
 
   ## Attributes
 
-  *   `numNonGraphicBlocks` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianLineSpan` (*type:* `integer()`, *default:* `nil`) - top to next top in para
-  *   `meanWordsPerLine` (*type:* `integer()`, *default:* `nil`) - 
-  *   `meanSymbolsPerLine` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianWidth` (*type:* `integer()`, *default:* `nil`) - 
-  *   `numWords` (*type:* `integer()`, *default:* `nil`) - ------ Word stats
-  *   `medianSymbolsPerLine` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - Each median*_printed_box excludes page header/footer and all graphic blocks
-  *   `numSymbols` (*type:* `integer()`, *default:* `nil`) - ------ Symbol stats
-  *   `numLineSpaces` (*type:* `integer()`, *default:* `nil`) - Lines (out of num_lines) that have a successor line within their para
-  *   `numBlockSpaces` (*type:* `integer()`, *default:* `nil`) - blocks that have a successor block within their flow on their page
-  *   `numParagraphSpaces` (*type:* `integer()`, *default:* `nil`) - paras that have a successor para within their block
-  *   `medianSymbolsPerWord` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianHorizontalDpi` (*type:* `integer()`, *default:* `nil`) - 
-  *   `meanSymbolsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianFullPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - Each median_full*_printed_box includes page header/footer but still excludes all graphic blocks
-  *   `numLines` (*type:* `integer()`, *default:* `nil`) - ------ Line stats "top" corresponds to the highest ascender and "bottom" to the lowest descender.
-  *   `medianBlockSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in flow on page
-  *   `medianFullOddPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 
-  *   `medianParagraphSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in block
-  *   `meanSymbolsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianWordsPerLine` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianLineHeight` (*type:* `integer()`, *default:* `nil`) - top to bottom
-  *   `medianHeight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianSymbolsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianSymbolsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianWordsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
-  *   `medianLineSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in para
-  *   `fontSizeHistogram` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoodocFontSizeStats.t)`, *default:* `nil`) - Symbol counts (and other attributes) for each distinct CharLabel.FontId and FontSize; histogram is in decreasing order of symbol count
-  *   `medianFullEvenPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 
   *   `numParagraphs` (*type:* `integer()`, *default:* `nil`) - ------ Paragraph stats Median symbols and words omit junk, header and footer blocks; they are intended to be a measure of the typical "content" paragraph. There can still be substantial differences between means and medians, particularly if a table is present (every cell is a paragraph).
-  *   `meanWordsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
-  *   `numBlocks` (*type:* `integer()`, *default:* `nil`) - ------ Block stats Median symbols and words omit junk, header and footer blocks; they are intended to be a measure of the typical "content" block. There can still be substantial differences between means and medians; however, block values will generally exceed paragraph values (not the case when headers and footers are included).
+  *   `medianSymbolsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
+  *   `estimatedFontSizes` (*type:* `boolean()`, *default:* `nil`) - This flag is set if the histogram above has been derived by estimating font sizes from CharLabel.CharacterHeight; that happens if the FontSize field is constant, as has happened with Abbyy 9.
+  *   `numLineSpaces` (*type:* `integer()`, *default:* `nil`) - Lines (out of num_lines) that have a successor line within their para
+  *   `medianSymbolsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
+  *   `numWords` (*type:* `integer()`, *default:* `nil`) - ------ Word stats
+  *   `medianSymbolsPerWord` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meanSymbolsPerWord` (*type:* `integer()`, *default:* `nil`) - 
+  *   `numNonGraphicBlocks` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianFullOddPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 
+  *   `medianWordsPerLine` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianLineSpan` (*type:* `integer()`, *default:* `nil`) - top to next top in para
+  *   `medianWidth` (*type:* `integer()`, *default:* `nil`) - 
   *   `medianWordsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meanWordsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
   *   `medianParagraphIndent` (*type:* `integer()`, *default:* `nil`) - leading space on first line
   *   `medianOddPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 1,3,5..
-  *   `medianVerticalDpi` (*type:* `integer()`, *default:* `nil`) - 
-  *   `estimatedFontSizes` (*type:* `boolean()`, *default:* `nil`) - This flag is set if the histogram above has been derived by estimating font sizes from CharLabel.CharacterHeight; that happens if the FontSize field is constant, as has happened with Abbyy 9.
-  *   `medianEvenPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 0,2,4..
-  *   `meanSymbolsPerWord` (*type:* `integer()`, *default:* `nil`) - 
-  *   `meanWordsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianSymbolsPerLine` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meanSymbolsPerLine` (*type:* `integer()`, *default:* `nil`) - 
+  *   `numLines` (*type:* `integer()`, *default:* `nil`) - ------ Line stats "top" corresponds to the highest ascender and "bottom" to the lowest descender.
+  *   `medianParagraphSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in block
+  *   `numParagraphSpaces` (*type:* `integer()`, *default:* `nil`) - paras that have a successor para within their block
+  *   `medianPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - Each median*_printed_box excludes page header/footer and all graphic blocks
   *   `numPages` (*type:* `integer()`, *default:* `nil`) - ------ Page stats.
+  *   `medianHorizontalDpi` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meanSymbolsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianVerticalDpi` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianFullPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - Each median_full*_printed_box includes page header/footer but still excludes all graphic blocks
+  *   `fontSizeHistogram` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoodocFontSizeStats.t)`, *default:* `nil`) - Symbol counts (and other attributes) for each distinct CharLabel.FontId and FontSize; histogram is in decreasing order of symbol count
+  *   `medianBlockSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in flow on page
+  *   `medianLineHeight` (*type:* `integer()`, *default:* `nil`) - top to bottom
+  *   `medianHeight` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianFullEvenPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 
+  *   `meanWordsPerParagraph` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meanWordsPerLine` (*type:* `integer()`, *default:* `nil`) - 
+  *   `medianEvenPrintedBox` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t`, *default:* `nil`) - 0,2,4..
+  *   `medianLineSpace` (*type:* `integer()`, *default:* `nil`) - bottom to next top in para
+  *   `numSymbols` (*type:* `integer()`, *default:* `nil`) - ------ Symbol stats
+  *   `numBlocks` (*type:* `integer()`, *default:* `nil`) - ------ Block stats Median symbols and words omit junk, header and footer blocks; they are intended to be a measure of the typical "content" block. There can still be substantial differences between means and medians; however, block values will generally exceed paragraph values (not the case when headers and footers are included).
+  *   `medianWordsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
+  *   `numBlockSpaces` (*type:* `integer()`, *default:* `nil`) - blocks that have a successor block within their flow on their page
+  *   `meanSymbolsPerBlock` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :numNonGraphicBlocks => integer() | nil,
-          :medianLineSpan => integer() | nil,
-          :meanWordsPerLine => integer() | nil,
-          :meanSymbolsPerLine => integer() | nil,
-          :medianWidth => integer() | nil,
-          :numWords => integer() | nil,
-          :medianSymbolsPerLine => integer() | nil,
-          :medianPrintedBox => GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
-          :numSymbols => integer() | nil,
+          :numParagraphs => integer() | nil,
+          :medianSymbolsPerParagraph => integer() | nil,
+          :estimatedFontSizes => boolean() | nil,
           :numLineSpaces => integer() | nil,
-          :numBlockSpaces => integer() | nil,
-          :numParagraphSpaces => integer() | nil,
+          :medianSymbolsPerBlock => integer() | nil,
+          :numWords => integer() | nil,
           :medianSymbolsPerWord => integer() | nil,
-          :medianHorizontalDpi => integer() | nil,
-          :meanSymbolsPerParagraph => integer() | nil,
-          :medianFullPrintedBox =>
-            GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
-          :numLines => integer() | nil,
-          :medianBlockSpace => integer() | nil,
+          :meanSymbolsPerWord => integer() | nil,
+          :numNonGraphicBlocks => integer() | nil,
           :medianFullOddPrintedBox =>
             GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
-          :medianParagraphSpace => integer() | nil,
-          :meanSymbolsPerBlock => integer() | nil,
           :medianWordsPerLine => integer() | nil,
-          :medianLineHeight => integer() | nil,
-          :medianHeight => integer() | nil,
-          :medianSymbolsPerBlock => integer() | nil,
-          :medianSymbolsPerParagraph => integer() | nil,
-          :medianWordsPerBlock => integer() | nil,
-          :medianLineSpace => integer() | nil,
-          :fontSizeHistogram =>
-            list(GoogleApi.ContentWarehouse.V1.Model.GoodocFontSizeStats.t()) | nil,
-          :medianFullEvenPrintedBox =>
-            GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
-          :numParagraphs => integer() | nil,
-          :meanWordsPerBlock => integer() | nil,
-          :numBlocks => integer() | nil,
+          :medianLineSpan => integer() | nil,
+          :medianWidth => integer() | nil,
           :medianWordsPerParagraph => integer() | nil,
+          :meanWordsPerBlock => integer() | nil,
           :medianParagraphIndent => integer() | nil,
           :medianOddPrintedBox => GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
+          :medianSymbolsPerLine => integer() | nil,
+          :meanSymbolsPerLine => integer() | nil,
+          :numLines => integer() | nil,
+          :medianParagraphSpace => integer() | nil,
+          :numParagraphSpaces => integer() | nil,
+          :medianPrintedBox => GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
+          :numPages => integer() | nil,
+          :medianHorizontalDpi => integer() | nil,
+          :meanSymbolsPerParagraph => integer() | nil,
           :medianVerticalDpi => integer() | nil,
-          :estimatedFontSizes => boolean() | nil,
+          :medianFullPrintedBox =>
+            GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
+          :fontSizeHistogram =>
+            list(GoogleApi.ContentWarehouse.V1.Model.GoodocFontSizeStats.t()) | nil,
+          :medianBlockSpace => integer() | nil,
+          :medianLineHeight => integer() | nil,
+          :medianHeight => integer() | nil,
+          :medianFullEvenPrintedBox =>
+            GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
+          :meanWordsPerParagraph => integer() | nil,
+          :meanWordsPerLine => integer() | nil,
           :medianEvenPrintedBox =>
             GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox.t() | nil,
-          :meanSymbolsPerWord => integer() | nil,
-          :meanWordsPerParagraph => integer() | nil,
-          :numPages => integer() | nil
+          :medianLineSpace => integer() | nil,
+          :numSymbols => integer() | nil,
+          :numBlocks => integer() | nil,
+          :medianWordsPerBlock => integer() | nil,
+          :numBlockSpaces => integer() | nil,
+          :meanSymbolsPerBlock => integer() | nil
         }
 
-  field(:numNonGraphicBlocks)
-  field(:medianLineSpan)
-  field(:meanWordsPerLine)
-  field(:meanSymbolsPerLine)
-  field(:medianWidth)
-  field(:numWords)
-  field(:medianSymbolsPerLine)
-  field(:medianPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:numSymbols)
+  field(:numParagraphs)
+  field(:medianSymbolsPerParagraph)
+  field(:estimatedFontSizes)
   field(:numLineSpaces)
-  field(:numBlockSpaces)
-  field(:numParagraphSpaces)
+  field(:medianSymbolsPerBlock)
+  field(:numWords)
   field(:medianSymbolsPerWord)
+  field(:meanSymbolsPerWord)
+  field(:numNonGraphicBlocks)
+  field(:medianFullOddPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
+  field(:medianWordsPerLine)
+  field(:medianLineSpan)
+  field(:medianWidth)
+  field(:medianWordsPerParagraph)
+  field(:meanWordsPerBlock)
+  field(:medianParagraphIndent)
+  field(:medianOddPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
+  field(:medianSymbolsPerLine)
+  field(:meanSymbolsPerLine)
+  field(:numLines)
+  field(:medianParagraphSpace)
+  field(:numParagraphSpaces)
+  field(:medianPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
+  field(:numPages)
   field(:medianHorizontalDpi)
   field(:meanSymbolsPerParagraph)
+  field(:medianVerticalDpi)
   field(:medianFullPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:numLines)
-  field(:medianBlockSpace)
-  field(:medianFullOddPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:medianParagraphSpace)
-  field(:meanSymbolsPerBlock)
-  field(:medianWordsPerLine)
-  field(:medianLineHeight)
-  field(:medianHeight)
-  field(:medianSymbolsPerBlock)
-  field(:medianSymbolsPerParagraph)
-  field(:medianWordsPerBlock)
-  field(:medianLineSpace)
 
   field(:fontSizeHistogram,
     as: GoogleApi.ContentWarehouse.V1.Model.GoodocFontSizeStats,
     type: :list
   )
 
+  field(:medianBlockSpace)
+  field(:medianLineHeight)
+  field(:medianHeight)
   field(:medianFullEvenPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:numParagraphs)
-  field(:meanWordsPerBlock)
-  field(:numBlocks)
-  field(:medianWordsPerParagraph)
-  field(:medianParagraphIndent)
-  field(:medianOddPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:medianVerticalDpi)
-  field(:estimatedFontSizes)
-  field(:medianEvenPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
-  field(:meanSymbolsPerWord)
   field(:meanWordsPerParagraph)
-  field(:numPages)
+  field(:meanWordsPerLine)
+  field(:medianEvenPrintedBox, as: GoogleApi.ContentWarehouse.V1.Model.GoodocBoundingBox)
+  field(:medianLineSpace)
+  field(:numSymbols)
+  field(:numBlocks)
+  field(:medianWordsPerBlock)
+  field(:numBlockSpaces)
+  field(:meanSymbolsPerBlock)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.GoodocSummaryStats do

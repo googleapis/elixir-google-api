@@ -21,140 +21,139 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CountryCountryAttachment do
 
   ## Attributes
 
-  *   `clickDistribution` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution.t`, *default:* `nil`) - Store weighted click distribution for page level country-id classification.
-  *   `isValidForCountryRestrict` (*type:* `boolean()`, *default:* `nil`) - Set to true if the local_countries field can be used for country restricts as well.
-  *   `fromSgDomains` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `metroLocationId` (*type:* `list(String.t)`, *default:* `nil`) - Metro level data. metro_location_id stores geotokens for metro restricts.
-  *   `documentLocationSource` (*type:* `String.t`, *default:* `nil`) - Specifies the origin of `geo_locations`. Right now, it can either come from deprecated Docloc system or the new Brainloc system when Docloc doesn't have sufficient evidence.
-  *   `metroIdList` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t)`, *default:* `nil`) - Metro locations: list of NavBoost feature V2 associated with a doc, along with the enclosing province. Metro locations with new tags.
-  *   `fromRestricts` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `geoLocations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations.t`, *default:* `nil`) - New MetroID: Now called GeoLocations since the locations could be sublocalities, cities or states. GeoLocations are always more fine grained than country. TODO (jayeshv): Once new MetroID/GeoLocations is launched everywhere, deleted old MetroID related fields.
-  *   `sitename` (*type:* `String.t`, *default:* `nil`) - Domain name of keys in filtering metro reducer class, used only by the intermediate mapreduces to produce filtered data.
   *   `debug` (*type:* `String.t`, *default:* `nil`) - A non critical field to store debug info for a country attachment. Used in experiments and for debugging.
-  *   `fromUgc` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `countryidFromUgc` (*type:* `boolean()`, *default:* `nil`) - Is true if the country attachment was computed through the UGC pipeline.
-  *   `fromWmx` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `fromTld` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `global` (*type:* `boolean()`, *default:* `nil`) - 
   *   `salientCountrySet` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualitySalientCountriesSalientCountrySet.t`, *default:* `nil`) - 
-  *   `localCountryCodes` (*type:* `list(integer())`, *default:* `nil`) - Fields that actually store the country id in docjoins. The format of this data is defined in //i18n/identifiers/stableinternalregionconverter.cc. Converter defined there can be used to convert it to RegionCode format.
-  *   `urlPatternBasedCountry` (*type:* `integer()`, *default:* `nil`) - 
-  *   `existNextLevel` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `superGlobal` (*type:* `boolean()`, *default:* `nil`) - Super global pages get lesser demotion than global pages. A document can only be either global or super_global but not both.
   *   `provinceGeotokenList` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountryProvinceGeotoken.t)`, *default:* `nil`) - 
-  *   `wmxCountry` (*type:* `String.t`, *default:* `nil`) - Country specified for a web-site through webmaster console.
-  *   `userVisibleLocalCountry` (*type:* `integer()`, *default:* `nil`) - This is the country id we show to users on the result page. This is kept different from country demotion country id because we dont want to expose our backoff and url based detection algorithm - also we want to be ultra conservative in showing this.
-  *   `salientCountries` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountrySalientCountry.t)`, *default:* `nil`) - [Experimental]: Top salient countries for a doc. If a country can not be found on this field it can be considered that this doc is not relevant to it.
-  *   `userVisibleCountryFromLogs` (*type:* `String.t`, *default:* `nil`) - This is used to store the visible country id computed from logs data
-  *   `restrictCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of two-letter(lower-case) countrycodes(e.g. us) valid for restricts. Typically cloned out of local_countries if is_valid_for_country_restrict is set to true.
-  *   `fromLanguageFallback` (*type:* `boolean()`, *default:* `nil`) - Booleans to keep track of where the country-id of the page came from. These are used for debugging and/or unittests, and cleared in production.
+  *   `countryidFromUgc` (*type:* `boolean()`, *default:* `nil`) - Is true if the country attachment was computed through the UGC pipeline.
   *   `fromUrlPattern` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `metroNavboost` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t)`, *default:* `nil`) - Metro navboost: list of (NavBoost feature V2, navboost float) pairs.
-  *   `relatedCountries` (*type:* `list(String.t)`, *default:* `nil`) - two-letter(lower-case) countrycode, e.g. us countries that is related to, but not local to
-  *   `debugSourceUrl` (*type:* `list(String.t)`, *default:* `nil`) - Set to the signal source URLs when merging country signals in Alexandria during sitemoves. Essentially if sites A and B move to C, and we merge A and B's signal to C, in the countryattachment signal C will have URL A and B as source_url. Only used for debugging and it doesn't show up in docjoins.
-  *   `localCountries` (*type:* `list(String.t)`, *default:* `nil`) - two-letter(lower-case) countrycode, e.g. us countries that is local to
-  *   `relatedCountryCodes` (*type:* `list(integer())`, *default:* `nil`) - 
   *   `weightAboveIdealForLocalness` (*type:* `float()`, *default:* `nil`) - If result is global, store weight above ideal, as a confidence signal. Used in query localness, cleared in production CountryAttachment.
+  *   `existNextLevel` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `global` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `urlPatternBasedCountry` (*type:* `integer()`, *default:* `nil`) - 
+  *   `fromLanguageFallback` (*type:* `boolean()`, *default:* `nil`) - Booleans to keep track of where the country-id of the page came from. These are used for debugging and/or unittests, and cleared in production.
+  *   `salientCountries` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountrySalientCountry.t)`, *default:* `nil`) - [Experimental]: Top salient countries for a doc. If a country can not be found on this field it can be considered that this doc is not relevant to it.
+  *   `fromRestricts` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `relatedCountries` (*type:* `list(String.t)`, *default:* `nil`) - two-letter(lower-case) countrycode, e.g. us countries that is related to, but not local to
+  *   `relatedCountryCodes` (*type:* `list(integer())`, *default:* `nil`) - 
+  *   `sitename` (*type:* `String.t`, *default:* `nil`) - Domain name of keys in filtering metro reducer class, used only by the intermediate mapreduces to produce filtered data.
+  *   `fromUgc` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `localCountryCodes` (*type:* `list(integer())`, *default:* `nil`) - Fields that actually store the country id in docjoins. The format of this data is defined in //i18n/identifiers/stableinternalregionconverter.cc. Converter defined there can be used to convert it to RegionCode format.
+  *   `clickDistribution` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution.t`, *default:* `nil`) - Store weighted click distribution for page level country-id classification.
+  *   `localCountries` (*type:* `list(String.t)`, *default:* `nil`) - two-letter(lower-case) countrycode, e.g. us countries that is local to
+  *   `geoLocations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations.t`, *default:* `nil`) - New MetroID: Now called GeoLocations since the locations could be sublocalities, cities or states. GeoLocations are always more fine grained than country. TODO (jayeshv): Once new MetroID/GeoLocations is launched everywhere, deleted old MetroID related fields.
+  *   `superGlobal` (*type:* `boolean()`, *default:* `nil`) - Super global pages get lesser demotion than global pages. A document can only be either global or super_global but not both.
+  *   `isValidForCountryRestrict` (*type:* `boolean()`, *default:* `nil`) - Set to true if the local_countries field can be used for country restricts as well.
+  *   `documentLocationSource` (*type:* `String.t`, *default:* `nil`) - Specifies the origin of `geo_locations`. Right now, it can either come from deprecated Docloc system or the new Brainloc system when Docloc doesn't have sufficient evidence.
+  *   `fromSgDomains` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `fromWmx` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `userVisibleCountryFromLogs` (*type:* `String.t`, *default:* `nil`) - This is used to store the visible country id computed from logs data
+  *   `fromTld` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `metroIdList` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t)`, *default:* `nil`) - Metro locations: list of NavBoost feature V2 associated with a doc, along with the enclosing province. Metro locations with new tags.
+  *   `restrictCountries` (*type:* `list(String.t)`, *default:* `nil`) - List of two-letter(lower-case) countrycodes(e.g. us) valid for restricts. Typically cloned out of local_countries if is_valid_for_country_restrict is set to true.
+  *   `debugSourceUrl` (*type:* `list(String.t)`, *default:* `nil`) - Set to the signal source URLs when merging country signals in Alexandria during sitemoves. Essentially if sites A and B move to C, and we merge A and B's signal to C, in the countryattachment signal C will have URL A and B as source_url. Only used for debugging and it doesn't show up in docjoins.
+  *   `wmxCountry` (*type:* `String.t`, *default:* `nil`) - Country specified for a web-site through webmaster console.
+  *   `metroNavboost` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t)`, *default:* `nil`) - Metro navboost: list of (NavBoost feature V2, navboost float) pairs.
   *   `urlPatternBasedLanguage` (*type:* `integer()`, *default:* `nil`) - Language and country extracted using the URL pattern map.
+  *   `metroLocationId` (*type:* `list(String.t)`, *default:* `nil`) - Metro level data. metro_location_id stores geotokens for metro restricts.
+  *   `userVisibleLocalCountry` (*type:* `integer()`, *default:* `nil`) - This is the country id we show to users on the result page. This is kept different from country demotion country id because we dont want to expose our backoff and url based detection algorithm - also we want to be ultra conservative in showing this.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clickDistribution =>
-            GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution.t() | nil,
-          :isValidForCountryRestrict => boolean() | nil,
-          :fromSgDomains => boolean() | nil,
-          :metroLocationId => list(String.t()) | nil,
-          :documentLocationSource => String.t() | nil,
-          :metroIdList =>
-            list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t()) | nil,
-          :fromRestricts => boolean() | nil,
-          :geoLocations => GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations.t() | nil,
-          :sitename => String.t() | nil,
           :debug => String.t() | nil,
-          :fromUgc => boolean() | nil,
-          :countryidFromUgc => boolean() | nil,
-          :fromWmx => boolean() | nil,
-          :fromTld => boolean() | nil,
-          :global => boolean() | nil,
           :salientCountrySet =>
             GoogleApi.ContentWarehouse.V1.Model.QualitySalientCountriesSalientCountrySet.t() | nil,
-          :localCountryCodes => list(integer()) | nil,
-          :urlPatternBasedCountry => integer() | nil,
-          :existNextLevel => boolean() | nil,
-          :superGlobal => boolean() | nil,
           :provinceGeotokenList =>
             list(GoogleApi.ContentWarehouse.V1.Model.CountryProvinceGeotoken.t()) | nil,
-          :wmxCountry => String.t() | nil,
-          :userVisibleLocalCountry => integer() | nil,
+          :countryidFromUgc => boolean() | nil,
+          :fromUrlPattern => boolean() | nil,
+          :weightAboveIdealForLocalness => float() | nil,
+          :existNextLevel => boolean() | nil,
+          :global => boolean() | nil,
+          :urlPatternBasedCountry => integer() | nil,
+          :fromLanguageFallback => boolean() | nil,
           :salientCountries =>
             list(GoogleApi.ContentWarehouse.V1.Model.CountrySalientCountry.t()) | nil,
+          :fromRestricts => boolean() | nil,
+          :relatedCountries => list(String.t()) | nil,
+          :relatedCountryCodes => list(integer()) | nil,
+          :sitename => String.t() | nil,
+          :fromUgc => boolean() | nil,
+          :localCountryCodes => list(integer()) | nil,
+          :clickDistribution =>
+            GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution.t() | nil,
+          :localCountries => list(String.t()) | nil,
+          :geoLocations => GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations.t() | nil,
+          :superGlobal => boolean() | nil,
+          :isValidForCountryRestrict => boolean() | nil,
+          :documentLocationSource => String.t() | nil,
+          :fromSgDomains => boolean() | nil,
+          :fromWmx => boolean() | nil,
           :userVisibleCountryFromLogs => String.t() | nil,
+          :fromTld => boolean() | nil,
+          :metroIdList =>
+            list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t()) | nil,
           :restrictCountries => list(String.t()) | nil,
-          :fromLanguageFallback => boolean() | nil,
-          :fromUrlPattern => boolean() | nil,
+          :debugSourceUrl => list(String.t()) | nil,
+          :wmxCountry => String.t() | nil,
           :metroNavboost =>
             list(GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature.t()) | nil,
-          :relatedCountries => list(String.t()) | nil,
-          :debugSourceUrl => list(String.t()) | nil,
-          :localCountries => list(String.t()) | nil,
-          :relatedCountryCodes => list(integer()) | nil,
-          :weightAboveIdealForLocalness => float() | nil,
-          :urlPatternBasedLanguage => integer() | nil
+          :urlPatternBasedLanguage => integer() | nil,
+          :metroLocationId => list(String.t()) | nil,
+          :userVisibleLocalCountry => integer() | nil
         }
 
-  field(:clickDistribution, as: GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution)
-  field(:isValidForCountryRestrict)
-  field(:fromSgDomains)
-  field(:metroLocationId, type: :list)
-  field(:documentLocationSource)
-  field(:metroIdList, as: GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature, type: :list)
-  field(:fromRestricts)
-  field(:geoLocations, as: GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations)
-  field(:sitename)
   field(:debug)
-  field(:fromUgc)
-  field(:countryidFromUgc)
-  field(:fromWmx)
-  field(:fromTld)
-  field(:global)
 
   field(:salientCountrySet,
     as: GoogleApi.ContentWarehouse.V1.Model.QualitySalientCountriesSalientCountrySet
   )
-
-  field(:localCountryCodes, type: :list)
-  field(:urlPatternBasedCountry)
-  field(:existNextLevel)
-  field(:superGlobal)
 
   field(:provinceGeotokenList,
     as: GoogleApi.ContentWarehouse.V1.Model.CountryProvinceGeotoken,
     type: :list
   )
 
-  field(:wmxCountry)
-  field(:userVisibleLocalCountry)
+  field(:countryidFromUgc)
+  field(:fromUrlPattern)
+  field(:weightAboveIdealForLocalness)
+  field(:existNextLevel)
+  field(:global)
+  field(:urlPatternBasedCountry)
+  field(:fromLanguageFallback)
 
   field(:salientCountries,
     as: GoogleApi.ContentWarehouse.V1.Model.CountrySalientCountry,
     type: :list
   )
 
+  field(:fromRestricts)
+  field(:relatedCountries, type: :list)
+  field(:relatedCountryCodes, type: :list)
+  field(:sitename)
+  field(:fromUgc)
+  field(:localCountryCodes, type: :list)
+  field(:clickDistribution, as: GoogleApi.ContentWarehouse.V1.Model.CountryClickDistribution)
+  field(:localCountries, type: :list)
+  field(:geoLocations, as: GoogleApi.ContentWarehouse.V1.Model.CountryGeoLocations)
+  field(:superGlobal)
+  field(:isValidForCountryRestrict)
+  field(:documentLocationSource)
+  field(:fromSgDomains)
+  field(:fromWmx)
   field(:userVisibleCountryFromLogs)
+  field(:fromTld)
+  field(:metroIdList, as: GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature, type: :list)
   field(:restrictCountries, type: :list)
-  field(:fromLanguageFallback)
-  field(:fromUrlPattern)
+  field(:debugSourceUrl, type: :list)
+  field(:wmxCountry)
 
   field(:metroNavboost, as: GoogleApi.ContentWarehouse.V1.Model.CountryMetroNBFeature, type: :list)
 
-  field(:relatedCountries, type: :list)
-  field(:debugSourceUrl, type: :list)
-  field(:localCountries, type: :list)
-  field(:relatedCountryCodes, type: :list)
-  field(:weightAboveIdealForLocalness)
   field(:urlPatternBasedLanguage)
+  field(:metroLocationId, type: :list)
+  field(:userVisibleLocalCountry)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.CountryCountryAttachment do

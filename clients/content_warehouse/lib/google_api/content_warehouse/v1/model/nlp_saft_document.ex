@@ -21,126 +21,127 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument do
 
   ## Attributes
 
-  *   `constituencyRoot` (*type:* `list(integer())`, *default:* `nil`) - The root node of the constituency tree for each sentence. If non-empty, the list of roots will be aligned with the sentences in the document. Note that some sentences may not have been parsed for various reasons; these sentences will be annotated with placeholder "stub parses". For details, see //nlp/saft/components/constituents/util/stub-parse.h.
-  *   `constituencyNode` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode.t)`, *default:* `nil`) - Constituency parse tree nodes for the sentences in this document.
-  *   `annotatedPhrase` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftAnnotatedPhrase.t)`, *default:* `nil`) - Annotated phrases in the document that are not semantically well-defined mentions of entities.
-  *   `entityLabel` (*type:* `list(String.t)`, *default:* `nil`) - Entity labels used in this document. This field is used to define labels for the Entity::entity_type_probability field, which contains corresponding probabilities. WARNING: This field is deprecated. go/saft-replace-deprecated-entity-type
-  *   `subsection` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t)`, *default:* `nil`) - Sub-sections for document for dividing a document into volumes, parts, chapters, sections, etc.
-  *   `language` (*type:* `integer()`, *default:* `nil`) - Document language (default is English). This field's value maps cleanly to the i18n.languages.Language proto enum (i18n::languages::Language in C++).
-  *   `url` (*type:* `String.t`, *default:* `nil`) - Source document URL.
-  *   `date` (*type:* `String.t`, *default:* `nil`) - Document anchor date in YYYYMMDDhhmmss format.
-  *   `golden` (*type:* `boolean()`, *default:* `nil`) - Flag for indicating that the document is a gold-standard document. This can be used for putting additional weight on human-labeled documents in contrast to automatically labeled annotations.
-  *   `lastSignificantUpdate` (*type:* `String.t`, *default:* `nil`) - Last significant update of the page content, in the same format as the contentage field, and also derived from ContentAge.last_significant_update in quality/historical/shingle/signals/contentage.proto.
-  *   `contentage` (*type:* `String.t`, *default:* `nil`) - Age of the content of the document. For details, see: quality/historical/shingle/signals/contentage.proto The format has been translated to a canonical timestamp (seconds since epoch).
-  *   `labeledSpans` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans.t}`, *default:* `nil`) - Generic labeled spans (produced by the span labeling framework, go/saft-span-labeling). The map key identifies spans of the same type. By convention, it should be of the form "team_name/span_type_name".
-  *   `author` (*type:* `list(String.t)`, *default:* `nil`) - Document author(s).
-  *   `topic` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic.t)`, *default:* `nil`) - 
-  *   `trace` (*type:* `boolean()`, *default:* `nil`) - Whether to enable component tracing during analysis of this document. See http://go/saft-tracing for details.
-  *   `contentType` (*type:* `integer()`, *default:* `nil`) - Optional document content_type (from webutil/http/content-type.proto). Used for setting the content_type when converting the SAFT Document to a CompositeDoc. Will be inferred if not given here.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Raw text contents of document. (In docjoin attachments from the SAFT goldmine annotator this field will be empty.)
-  *   `privacySensitive` (*type:* `boolean()`, *default:* `nil`) - True if this document contains privacy sensitive data. When the document is transferred in RPC calls the RPC should use SSL_PRIVACY_AND_INTEGRITY security level.
-  *   `rpcError` (*type:* `boolean()`, *default:* `nil`) - True if some RPC which touched this document had an error.
-  *   `token` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken.t)`, *default:* `nil`) - Tokenization of the document.
-  *   `syntacticDate` (*type:* `String.t`, *default:* `nil`) - Document's syntactic date (e.g. date explicitly mentioned in the URL of the document or in the document title). It is stored as the number of seconds since epoch. See quality/timebased/syntacticdate/proto/syntactic-date.proto
   *   `relation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftRelation.t)`, *default:* `nil`) - Relations between entities in the document.
-  *   `focusEntity` (*type:* `integer()`, *default:* `nil`) - Focus entity. For lexicon articles, like Wikipedia pages, a document is often about a certain entity. This is the local entity id of the focus entity for the document.
+  *   `annotations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - Generic annotations.
+  *   `contentage` (*type:* `String.t`, *default:* `nil`) - Age of the content of the document. For details, see: quality/historical/shingle/signals/contentage.proto The format has been translated to a canonical timestamp (seconds since epoch).
+  *   `bylineDate` (*type:* `String.t`, *default:* `nil`) - Document's byline date, if available: this is the date that will be shown in the snippets in web search results. It is stored as the number of seconds since epoch. See segindexer/compositedoc.proto
+  *   `date` (*type:* `String.t`, *default:* `nil`) - Document anchor date in YYYYMMDDhhmmss format.
   *   `entity` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftEntity.t)`, *default:* `nil`) - Entities in the document.
   *   `semanticNode` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftSemanticNode.t)`, *default:* `nil`) - The semantic nodes for the document represent arbitrary types of higher-level abstractions beyond entity mention coreference and binary relations between entities. These may include: n-ary relations, semantic frames or events. The semantic nodes for a document are the nodes in a directed acyclic graph, with an adjacency list representation.
-  *   `docid` (*type:* `String.t`, *default:* `nil`) - Identifier for document.
+  *   `lastSignificantUpdate` (*type:* `String.t`, *default:* `nil`) - Last significant update of the page content, in the same format as the contentage field, and also derived from ContentAge.last_significant_update in quality/historical/shingle/signals/contentage.proto.
+  *   `token` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken.t)`, *default:* `nil`) - Tokenization of the document.
   *   `measure` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftMeasure.t)`, *default:* `nil`) - Measures in the documents. This covers both time expressions as well as physical quantities.
   *   `hyperlink` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftHyperlink.t)`, *default:* `nil`) - The hyperlinks in the document. Multiple hyperlinks are sorted in left-to-right order.
-  *   `bylineDate` (*type:* `String.t`, *default:* `nil`) - Document's byline date, if available: this is the date that will be shown in the snippets in web search results. It is stored as the number of seconds since epoch. See segindexer/compositedoc.proto
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional document title.
+  *   `annotatedPhrase` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftAnnotatedPhrase.t)`, *default:* `nil`) - Annotated phrases in the document that are not semantically well-defined mentions of entities.
   *   `contentFirstseen` (*type:* `String.t`, *default:* `nil`) - Stores minimum of first time google successfully crawled a document, or indexed the document with contents (i.e, not roboted). It is stored as the number of seconds since epoch. See quality/historical/signals/firstseen/firstseen.proto
+  *   `contentType` (*type:* `integer()`, *default:* `nil`) - Optional document content_type (from webutil/http/content-type.proto). Used for setting the content_type when converting the SAFT Document to a CompositeDoc. Will be inferred if not given here.
+  *   `entityLabel` (*type:* `list(String.t)`, *default:* `nil`) - Entity labels used in this document. This field is used to define labels for the Entity::entity_type_probability field, which contains corresponding probabilities. WARNING: This field is deprecated. go/saft-replace-deprecated-entity-type
   *   `httpHeaders` (*type:* `String.t`, *default:* `nil`) - HTTP header for document. If the HTTP headers field is set it should be the complete header including the HTTP status line and the trailing cr/nl. HTTP headers are not required to be valid UTF-8. Per the HTTP/1.1 Syntax (RFC7230) standard, non-ASCII octets should be treated as opaque data.
-  *   `annotations` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - Generic annotations.
+  *   `topic` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic.t)`, *default:* `nil`) - 
+  *   `docid` (*type:* `String.t`, *default:* `nil`) - Identifier for document.
+  *   `language` (*type:* `integer()`, *default:* `nil`) - Document language (default is English). This field's value maps cleanly to the i18n.languages.Language proto enum (i18n::languages::Language in C++).
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Raw text contents of document. (In docjoin attachments from the SAFT goldmine annotator this field will be empty.)
+  *   `trace` (*type:* `boolean()`, *default:* `nil`) - Whether to enable component tracing during analysis of this document. See http://go/saft-tracing for details.
+  *   `labeledSpans` (*type:* `%{optional(String.t) => GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans.t}`, *default:* `nil`) - Generic labeled spans (produced by the span labeling framework, go/saft-span-labeling). The map key identifies spans of the same type. By convention, it should be of the form "team_name/span_type_name".
+  *   `golden` (*type:* `boolean()`, *default:* `nil`) - Flag for indicating that the document is a gold-standard document. This can be used for putting additional weight on human-labeled documents in contrast to automatically labeled annotations.
+  *   `focusEntity` (*type:* `integer()`, *default:* `nil`) - Focus entity. For lexicon articles, like Wikipedia pages, a document is often about a certain entity. This is the local entity id of the focus entity for the document.
+  *   `constituencyRoot` (*type:* `list(integer())`, *default:* `nil`) - The root node of the constituency tree for each sentence. If non-empty, the list of roots will be aligned with the sentences in the document. Note that some sentences may not have been parsed for various reasons; these sentences will be annotated with placeholder "stub parses". For details, see //nlp/saft/components/constituents/util/stub-parse.h.
+  *   `author` (*type:* `list(String.t)`, *default:* `nil`) - Document author(s).
+  *   `syntacticDate` (*type:* `String.t`, *default:* `nil`) - Document's syntactic date (e.g. date explicitly mentioned in the URL of the document or in the document title). It is stored as the number of seconds since epoch. See quality/timebased/syntacticdate/proto/syntactic-date.proto
+  *   `url` (*type:* `String.t`, *default:* `nil`) - Source document URL.
+  *   `privacySensitive` (*type:* `boolean()`, *default:* `nil`) - True if this document contains privacy sensitive data. When the document is transferred in RPC calls the RPC should use SSL_PRIVACY_AND_INTEGRITY security level.
+  *   `subsection` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t)`, *default:* `nil`) - Sub-sections for document for dividing a document into volumes, parts, chapters, sections, etc.
+  *   `constituencyNode` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode.t)`, *default:* `nil`) - Constituency parse tree nodes for the sentences in this document.
+  *   `rpcError` (*type:* `boolean()`, *default:* `nil`) - True if some RPC which touched this document had an error.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional document title.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :constituencyRoot => list(integer()) | nil,
-          :constituencyNode =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode.t()) | nil,
-          :annotatedPhrase =>
-            list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftAnnotatedPhrase.t()) | nil,
-          :entityLabel => list(String.t()) | nil,
-          :subsection => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t()) | nil,
-          :language => integer() | nil,
-          :url => String.t() | nil,
-          :date => String.t() | nil,
-          :golden => boolean() | nil,
-          :lastSignificantUpdate => String.t() | nil,
-          :contentage => String.t() | nil,
-          :labeledSpans =>
-            %{optional(String.t()) => GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans.t()}
-            | nil,
-          :author => list(String.t()) | nil,
-          :topic => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic.t()) | nil,
-          :trace => boolean() | nil,
-          :contentType => integer() | nil,
-          :text => String.t() | nil,
-          :privacySensitive => boolean() | nil,
-          :rpcError => boolean() | nil,
-          :token => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken.t()) | nil,
-          :syntacticDate => String.t() | nil,
           :relation => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftRelation.t()) | nil,
-          :focusEntity => integer() | nil,
+          :annotations => GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t() | nil,
+          :contentage => String.t() | nil,
+          :bylineDate => String.t() | nil,
+          :date => String.t() | nil,
           :entity => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftEntity.t()) | nil,
           :semanticNode =>
             list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftSemanticNode.t()) | nil,
-          :docid => String.t() | nil,
+          :lastSignificantUpdate => String.t() | nil,
+          :token => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken.t()) | nil,
           :measure => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftMeasure.t()) | nil,
           :hyperlink => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftHyperlink.t()) | nil,
-          :bylineDate => String.t() | nil,
-          :title => String.t() | nil,
+          :annotatedPhrase =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftAnnotatedPhrase.t()) | nil,
           :contentFirstseen => String.t() | nil,
+          :contentType => integer() | nil,
+          :entityLabel => list(String.t()) | nil,
           :httpHeaders => String.t() | nil,
-          :annotations => GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t() | nil
+          :topic => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic.t()) | nil,
+          :docid => String.t() | nil,
+          :language => integer() | nil,
+          :text => String.t() | nil,
+          :trace => boolean() | nil,
+          :labeledSpans =>
+            %{optional(String.t()) => GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans.t()}
+            | nil,
+          :golden => boolean() | nil,
+          :focusEntity => integer() | nil,
+          :constituencyRoot => list(integer()) | nil,
+          :author => list(String.t()) | nil,
+          :syntacticDate => String.t() | nil,
+          :url => String.t() | nil,
+          :privacySensitive => boolean() | nil,
+          :subsection => list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument.t()) | nil,
+          :constituencyNode =>
+            list(GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode.t()) | nil,
+          :rpcError => boolean() | nil,
+          :title => String.t() | nil
         }
 
-  field(:constituencyRoot, type: :list)
-
-  field(:constituencyNode,
-    as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode,
-    type: :list
-  )
+  field(:relation, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftRelation, type: :list)
+  field(:annotations, as: GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet)
+  field(:contentage)
+  field(:bylineDate)
+  field(:date)
+  field(:entity, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftEntity, type: :list)
+  field(:semanticNode, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftSemanticNode, type: :list)
+  field(:lastSignificantUpdate)
+  field(:token, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken, type: :list)
+  field(:measure, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftMeasure, type: :list)
+  field(:hyperlink, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftHyperlink, type: :list)
 
   field(:annotatedPhrase,
     as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftAnnotatedPhrase,
     type: :list
   )
 
-  field(:entityLabel, type: :list)
-  field(:subsection, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument, type: :list)
-  field(:language)
-  field(:url)
-  field(:date)
-  field(:golden)
-  field(:lastSignificantUpdate)
-  field(:contentage)
-  field(:labeledSpans, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans, type: :map)
-  field(:author, type: :list)
-  field(:topic, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic, type: :list)
-  field(:trace)
-  field(:contentType)
-  field(:text)
-  field(:privacySensitive)
-  field(:rpcError)
-  field(:token, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftToken, type: :list)
-  field(:syntacticDate)
-  field(:relation, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftRelation, type: :list)
-  field(:focusEntity)
-  field(:entity, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftEntity, type: :list)
-  field(:semanticNode, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftSemanticNode, type: :list)
-  field(:docid)
-  field(:measure, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftMeasure, type: :list)
-  field(:hyperlink, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftHyperlink, type: :list)
-  field(:bylineDate)
-  field(:title)
   field(:contentFirstseen)
+  field(:contentType)
+  field(:entityLabel, type: :list)
   field(:httpHeaders)
-  field(:annotations, as: GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet)
+  field(:topic, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocumentTopic, type: :list)
+  field(:docid)
+  field(:language)
+  field(:text)
+  field(:trace)
+  field(:labeledSpans, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftLabeledSpans, type: :map)
+  field(:golden)
+  field(:focusEntity)
+  field(:constituencyRoot, type: :list)
+  field(:author, type: :list)
+  field(:syntacticDate)
+  field(:url)
+  field(:privacySensitive)
+  field(:subsection, as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument, type: :list)
+
+  field(:constituencyNode,
+    as: GoogleApi.ContentWarehouse.V1.Model.NlpSaftConstituencyNode,
+    type: :list
+  )
+
+  field(:rpcError)
+  field(:title)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.NlpSaftDocument do

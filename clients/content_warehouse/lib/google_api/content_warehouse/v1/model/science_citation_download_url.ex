@@ -21,139 +21,139 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL do
 
   ## Attributes
 
-  *   `DownloadYear` (*type:* `integer()`, *default:* `nil`) - no abbrv
-  *   `DisplayOrg` (*type:* `String.t`, *default:* `nil`) - publisher display name
-  *   `BrokenLandingPage` (*type:* `boolean()`, *default:* `nil`) - set if we know the landing page is broken
-  *   `LegalMustInclude` (*type:* `boolean()`, *default:* `nil`) - e.g., in law_articles.pat
-  *   `InPrevIndex` (*type:* `boolean()`, *default:* `nil`) - is url included in a previous index
-  *   `ReferencesInPrevIndex` (*type:* `boolean()`, *default:* `nil`) - were references parsed in a previous index
-  *   `WordCount` (*type:* `integer()`, *default:* `nil`) - number of words in content/body
-  *   `LikelyNoIndex` (*type:* `boolean()`, *default:* `nil`) - badurls_noreturngws at indexing time
-  *   `NoArchive` (*type:* `boolean()`, *default:* `nil`) - metatag: don't show cached version
-  *   `DisplayPriority` (*type:* `integer()`, *default:* `nil`) - display preference score
-  *   `IndexPriority` (*type:* `integer()`, *default:* `nil`) - indexing preference score
-  *   `LikelyDifferentMetricsVenue` (*type:* `boolean()`, *default:* `nil`) - In the context of a given venue in Scholar Metrics, whether this URL likely does not link to the current venue.
-  *   `MustInclude` (*type:* `boolean()`, *default:* `nil`) - e.g., in science_articles.pat
-  *   `HtmlTitle` (*type:* `String.t`, *default:* `nil`) - html title of the page
-  *   `LikelyWorldViewable` (*type:* `boolean()`, *default:* `nil`) - Likely to be free-to-read for everyone, after accounting for library links etc.
-  *   `CanonicalUrlfp` (*type:* `String.t`, *default:* `nil`) - 
   *   `DownloadDay` (*type:* `integer()`, *default:* `nil`) - 
-  *   `WorldViewable` (*type:* `boolean()`, *default:* `nil`) - metatag: is viewable by world
+  *   `LegalMustInclude` (*type:* `boolean()`, *default:* `nil`) - e.g., in law_articles.pat
+  *   `DisplayPriority` (*type:* `integer()`, *default:* `nil`) - display preference score
+  *   `PageCount` (*type:* `integer()`, *default:* `nil`) - Number of pages in the pdf2html conversion output. Only set for PDFs. For a partitioned PDF, this is the page count of the entire volume.
+  *   `LikelyWorldViewable` (*type:* `boolean()`, *default:* `nil`) - Likely to be free-to-read for everyone, after accounting for library links etc.
   *   `MetadataUrl` (*type:* `String.t`, *default:* `nil`) - url of publisher metadata file
-  *   `LongChunkCount` (*type:* `integer()`, *default:* `nil`) - number of long paragraphs
+  *   `NoIndex` (*type:* `boolean()`, *default:* `nil`) - metatag: don't display this url
+  *   `ReferencesInPrevIndex` (*type:* `boolean()`, *default:* `nil`) - were references parsed in a previous index
+  *   `CanonicalUrlfp` (*type:* `String.t`, *default:* `nil`) - 
+  *   `NoSnippet` (*type:* `boolean()`, *default:* `nil`) - metatag: don't show snippet
+  *   `BrokenLandingPage` (*type:* `boolean()`, *default:* `nil`) - set if we know the landing page is broken
+  *   `DownloadYear` (*type:* `integer()`, *default:* `nil`) - no abbrv
+  *   `WorldViewable` (*type:* `boolean()`, *default:* `nil`) - metatag: is viewable by world
+  *   `UrlAfterRedirects` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ContentChecksum` (*type:* `String.t`, *default:* `nil`) - checksum of the page
+  *   `ExcerptDebugLabel` (*type:* `String.t`, *default:* `nil`) - label for excerpt (abstract, summary, ..)
   *   `ContentType` (*type:* `integer()`, *default:* `nil`) - makes gws display nicer :)
-  *   `HostedNumPages` (*type:* `integer()`, *default:* `nil`) - explicit zero means hosting failed
-  *   `ExcerptContent` (*type:* `String.t`, *default:* `nil`) - first few lines of abstract'ish excerpt
+  *   `LongChunkCount` (*type:* `integer()`, *default:* `nil`) - number of long paragraphs
+  *   `MustInclude` (*type:* `boolean()`, *default:* `nil`) - e.g., in science_articles.pat
+  *   `FirstDiscovered` (*type:* `String.t`, *default:* `nil`) - seconds since the epoch
+  *   `IndexPriority` (*type:* `integer()`, *default:* `nil`) - indexing preference score
+  *   `HtmlTitle` (*type:* `String.t`, *default:* `nil`) - html title of the page
+  *   `NoArchive` (*type:* `boolean()`, *default:* `nil`) - metatag: don't show cached version
   *   `DownloadMonth` (*type:* `integer()`, *default:* `nil`) - DownloadMonth is a zero-indexed field (0 is January).
+  *   `CrawlTimestamp` (*type:* `String.t`, *default:* `nil`) - seconds since the epoch
+  *   `LikelyDifferentMetricsVenue` (*type:* `boolean()`, *default:* `nil`) - In the context of a given venue in Scholar Metrics, whether this URL likely does not link to the current venue.
+  *   `UrlStr` (*type:* `String.t`, *default:* `nil`) - 
+  *   `HostedStartPage` (*type:* `integer()`, *default:* `nil`) - 
+  *   `OutLinkCount` (*type:* `integer()`, *default:* `nil`) - number of external URLs (in PDF).
+  *   `LikelyNoCache` (*type:* `boolean()`, *default:* `nil`) - badurls_nocache at indexing time
+  *   `LikelyLegalJournal` (*type:* `boolean()`, *default:* `nil`) - e.g., in legal_journals.pat
+  *   `Type` (*type:* `integer()`, *default:* `nil`) - ArticleType for this particular url
   *   `MaybeNoIndexReparse` (*type:* `boolean()`, *default:* `nil`) - Incremental only: mark as NoIndexed if this is a reparse and the base version is NoIndexed.
   *   `LikelyAheadPrint` (*type:* `boolean()`, *default:* `nil`) - Whether this is likely the URL for an ahead print, at indexing time.
-  *   `NoIndex` (*type:* `boolean()`, *default:* `nil`) - metatag: don't display this url
-  *   `HostedStartPage` (*type:* `integer()`, *default:* `nil`) - 
+  *   `InPrevIndex` (*type:* `boolean()`, *default:* `nil`) - is url included in a previous index
+  *   `DisplayOrg` (*type:* `String.t`, *default:* `nil`) - publisher display name
+  *   `WordCount` (*type:* `integer()`, *default:* `nil`) - number of words in content/body
   *   `OceanView` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ScienceOceanView.t`, *default:* `nil`) - describes whether url is viewable in ocean
-  *   `ContentChecksum` (*type:* `String.t`, *default:* `nil`) - checksum of the page
-  *   `LikelyNoCache` (*type:* `boolean()`, *default:* `nil`) - badurls_nocache at indexing time
-  *   `PageCount` (*type:* `integer()`, *default:* `nil`) - Number of pages in the pdf2html conversion output. Only set for PDFs. For a partitioned PDF, this is the page count of the entire volume.
   *   `DMCANotice` (*type:* `String.t`, *default:* `nil`) - metatag: URL; result was taken down
-  *   `UrlStr` (*type:* `String.t`, *default:* `nil`) - 
-  *   `FirstDiscovered` (*type:* `String.t`, *default:* `nil`) - seconds since the epoch
-  *   `LikelyLegalJournal` (*type:* `boolean()`, *default:* `nil`) - e.g., in legal_journals.pat
-  *   `OutLinkCount` (*type:* `integer()`, *default:* `nil`) - number of external URLs (in PDF).
-  *   `CrawlTimestamp` (*type:* `String.t`, *default:* `nil`) - seconds since the epoch
-  *   `ExcerptDebugLabel` (*type:* `String.t`, *default:* `nil`) - label for excerpt (abstract, summary, ..)
-  *   `Type` (*type:* `integer()`, *default:* `nil`) - ArticleType for this particular url
-  *   `NoSnippet` (*type:* `boolean()`, *default:* `nil`) - metatag: don't show snippet
-  *   `UrlAfterRedirects` (*type:* `String.t`, *default:* `nil`) - 
+  *   `LikelyNoIndex` (*type:* `boolean()`, *default:* `nil`) - badurls_noreturngws at indexing time
+  *   `ExcerptContent` (*type:* `String.t`, *default:* `nil`) - first few lines of abstract'ish excerpt
+  *   `HostedNumPages` (*type:* `integer()`, *default:* `nil`) - explicit zero means hosting failed
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :DownloadYear => integer() | nil,
-          :DisplayOrg => String.t() | nil,
-          :BrokenLandingPage => boolean() | nil,
-          :LegalMustInclude => boolean() | nil,
-          :InPrevIndex => boolean() | nil,
-          :ReferencesInPrevIndex => boolean() | nil,
-          :WordCount => integer() | nil,
-          :LikelyNoIndex => boolean() | nil,
-          :NoArchive => boolean() | nil,
-          :DisplayPriority => integer() | nil,
-          :IndexPriority => integer() | nil,
-          :LikelyDifferentMetricsVenue => boolean() | nil,
-          :MustInclude => boolean() | nil,
-          :HtmlTitle => String.t() | nil,
-          :LikelyWorldViewable => boolean() | nil,
-          :CanonicalUrlfp => String.t() | nil,
           :DownloadDay => integer() | nil,
-          :WorldViewable => boolean() | nil,
+          :LegalMustInclude => boolean() | nil,
+          :DisplayPriority => integer() | nil,
+          :PageCount => integer() | nil,
+          :LikelyWorldViewable => boolean() | nil,
           :MetadataUrl => String.t() | nil,
-          :LongChunkCount => integer() | nil,
+          :NoIndex => boolean() | nil,
+          :ReferencesInPrevIndex => boolean() | nil,
+          :CanonicalUrlfp => String.t() | nil,
+          :NoSnippet => boolean() | nil,
+          :BrokenLandingPage => boolean() | nil,
+          :DownloadYear => integer() | nil,
+          :WorldViewable => boolean() | nil,
+          :UrlAfterRedirects => String.t() | nil,
+          :ContentChecksum => String.t() | nil,
+          :ExcerptDebugLabel => String.t() | nil,
           :ContentType => integer() | nil,
-          :HostedNumPages => integer() | nil,
-          :ExcerptContent => String.t() | nil,
+          :LongChunkCount => integer() | nil,
+          :MustInclude => boolean() | nil,
+          :FirstDiscovered => String.t() | nil,
+          :IndexPriority => integer() | nil,
+          :HtmlTitle => String.t() | nil,
+          :NoArchive => boolean() | nil,
           :DownloadMonth => integer() | nil,
+          :CrawlTimestamp => String.t() | nil,
+          :LikelyDifferentMetricsVenue => boolean() | nil,
+          :UrlStr => String.t() | nil,
+          :HostedStartPage => integer() | nil,
+          :OutLinkCount => integer() | nil,
+          :LikelyNoCache => boolean() | nil,
+          :LikelyLegalJournal => boolean() | nil,
+          :Type => integer() | nil,
           :MaybeNoIndexReparse => boolean() | nil,
           :LikelyAheadPrint => boolean() | nil,
-          :NoIndex => boolean() | nil,
-          :HostedStartPage => integer() | nil,
+          :InPrevIndex => boolean() | nil,
+          :DisplayOrg => String.t() | nil,
+          :WordCount => integer() | nil,
           :OceanView => GoogleApi.ContentWarehouse.V1.Model.ScienceOceanView.t() | nil,
-          :ContentChecksum => String.t() | nil,
-          :LikelyNoCache => boolean() | nil,
-          :PageCount => integer() | nil,
           :DMCANotice => String.t() | nil,
-          :UrlStr => String.t() | nil,
-          :FirstDiscovered => String.t() | nil,
-          :LikelyLegalJournal => boolean() | nil,
-          :OutLinkCount => integer() | nil,
-          :CrawlTimestamp => String.t() | nil,
-          :ExcerptDebugLabel => String.t() | nil,
-          :Type => integer() | nil,
-          :NoSnippet => boolean() | nil,
-          :UrlAfterRedirects => String.t() | nil
+          :LikelyNoIndex => boolean() | nil,
+          :ExcerptContent => String.t() | nil,
+          :HostedNumPages => integer() | nil
         }
 
-  field(:DownloadYear)
-  field(:DisplayOrg)
-  field(:BrokenLandingPage)
-  field(:LegalMustInclude)
-  field(:InPrevIndex)
-  field(:ReferencesInPrevIndex)
-  field(:WordCount)
-  field(:LikelyNoIndex)
-  field(:NoArchive)
-  field(:DisplayPriority)
-  field(:IndexPriority)
-  field(:LikelyDifferentMetricsVenue)
-  field(:MustInclude)
-  field(:HtmlTitle)
-  field(:LikelyWorldViewable)
-  field(:CanonicalUrlfp)
   field(:DownloadDay)
-  field(:WorldViewable)
+  field(:LegalMustInclude)
+  field(:DisplayPriority)
+  field(:PageCount)
+  field(:LikelyWorldViewable)
   field(:MetadataUrl)
-  field(:LongChunkCount)
+  field(:NoIndex)
+  field(:ReferencesInPrevIndex)
+  field(:CanonicalUrlfp)
+  field(:NoSnippet)
+  field(:BrokenLandingPage)
+  field(:DownloadYear)
+  field(:WorldViewable)
+  field(:UrlAfterRedirects)
+  field(:ContentChecksum)
+  field(:ExcerptDebugLabel)
   field(:ContentType)
-  field(:HostedNumPages)
-  field(:ExcerptContent)
+  field(:LongChunkCount)
+  field(:MustInclude)
+  field(:FirstDiscovered)
+  field(:IndexPriority)
+  field(:HtmlTitle)
+  field(:NoArchive)
   field(:DownloadMonth)
+  field(:CrawlTimestamp)
+  field(:LikelyDifferentMetricsVenue)
+  field(:UrlStr)
+  field(:HostedStartPage)
+  field(:OutLinkCount)
+  field(:LikelyNoCache)
+  field(:LikelyLegalJournal)
+  field(:Type)
   field(:MaybeNoIndexReparse)
   field(:LikelyAheadPrint)
-  field(:NoIndex)
-  field(:HostedStartPage)
+  field(:InPrevIndex)
+  field(:DisplayOrg)
+  field(:WordCount)
   field(:OceanView, as: GoogleApi.ContentWarehouse.V1.Model.ScienceOceanView)
-  field(:ContentChecksum)
-  field(:LikelyNoCache)
-  field(:PageCount)
   field(:DMCANotice)
-  field(:UrlStr)
-  field(:FirstDiscovered)
-  field(:LikelyLegalJournal)
-  field(:OutLinkCount)
-  field(:CrawlTimestamp)
-  field(:ExcerptDebugLabel)
-  field(:Type)
-  field(:NoSnippet)
-  field(:UrlAfterRedirects)
+  field(:LikelyNoIndex)
+  field(:ExcerptContent)
+  field(:HostedNumPages)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.ScienceCitationDownloadURL do

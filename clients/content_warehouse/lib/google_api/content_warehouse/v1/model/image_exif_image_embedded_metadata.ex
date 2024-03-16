@@ -21,205 +21,205 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageExifImageEmbeddedMetadata do
 
   ## Attributes
 
-  *   `focusMode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `subject` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_SUBJECT
   *   `iso` (*type:* `integer()`, *default:* `nil`) - 
-  *   `lensMaker` (*type:* `String.t`, *default:* `nil`) - 
-  *   `destLatitude` (*type:* `float()`, *default:* `nil`) - GPS location of destination point.
-  *   `xResolution` (*type:* `number()`, *default:* `nil`) - pixels per inch
-  *   `imageHeight` (*type:* `integer()`, *default:* `nil`) - 
-  *   `iptc` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata.t`, *default:* `nil`) - 
-  *   `software` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_SOFTWARE
-  *   `focalLength35mm` (*type:* `number()`, *default:* `nil`) - convert to match 35mm film camera
-  *   `continousDriveMode` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `author2` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_AUTHOR
-  *   `subjectLocationX` (*type:* `integer()`, *default:* `nil`) - 
-  *   `destBearing` (*type:* `float()`, *default:* `nil`) - 
-  *   `destDistance` (*type:* `float()`, *default:* `nil`) - 
-  *   `aperture` (*type:* `number()`, *default:* `nil`) - 
-  *   `lightSource` (*type:* `integer()`, *default:* `nil`) - 
-  *   `latitude` (*type:* `float()`, *default:* `nil`) - GPS location +/- 90 inclusive
-  *   `description` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_IMAGE_DESCRIPTION
-  *   `keywords` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_KEYWORDS
-  *   `colorSpace` (*type:* `integer()`, *default:* `nil`) - 
-  *   `deprecatedCity` (*type:* `String.t`, *default:* `nil`) - Location from IPTC @deprecated: Use iptc.location instead.
-  *   `destLongitude` (*type:* `float()`, *default:* `nil`) - 
-  *   `exposureProgram` (*type:* `integer()`, *default:* `nil`) - 1-8, see EXIF definition
-  *   `gpsMeasureMode` (*type:* `String.t`, *default:* `nil`) - 
-  *   `cameraMaker` (*type:* `String.t`, *default:* `nil`) - Device - Camera raw text without normalization
-  *   `longitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
+  *   `modificationTime` (*type:* `String.t`, *default:* `nil`) - in time_t
+  *   `subjectLocationY` (*type:* `integer()`, *default:* `nil`) - 
+  *   `meteringMode` (*type:* `integer()`, *default:* `nil`) - 1-6, see EXIF definition
   *   `subjectDistance` (*type:* `number()`, *default:* `nil`) - 
-  *   `hPositioningError` (*type:* `float()`, *default:* `nil`) - in meters
-  *   `author` (*type:* `String.t`, *default:* `nil`) - Text fields EXIF_TAG_ARTIST
-  *   `longFocal` (*type:* `integer()`, *default:* `nil`) - 
-  *   `gpsDop` (*type:* `float()`, *default:* `nil`) - Dilution of precision. HDOP/PDOP depends on measure mode. Find out more at http://en.wikipedia.org/wiki/Dilution_of_precision_(GPS)
-  *   `digitalZoomRatio` (*type:* `number()`, *default:* `nil`) - 
-  *   `comments` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_USER_COMMENT
-  *   `copyright` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_COPYRIGHT
-  *   `deprecatedState` (*type:* `String.t`, *default:* `nil`) - 
-  *   `shortFocal` (*type:* `integer()`, *default:* `nil`) - 
-  *   `yResolution` (*type:* `number()`, *default:* `nil`) - pixels per inch
-  *   `exposureTime` (*type:* `number()`, *default:* `nil`) - 
-  *   `cameraModel` (*type:* `String.t`, *default:* `nil`) - raw text without normalization
   *   `flashUsed` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `imageWidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `focalLength35mm` (*type:* `number()`, *default:* `nil`) - convert to match 35mm film camera
+  *   `lensMaker` (*type:* `String.t`, *default:* `nil`) - 
+  *   `lightSource` (*type:* `integer()`, *default:* `nil`) - 
+  *   `subjectLocationX` (*type:* `integer()`, *default:* `nil`) - 
+  *   `deprecatedState` (*type:* `String.t`, *default:* `nil`) - 
+  *   `copyright` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_COPYRIGHT
+  *   `orientation` (*type:* `String.t`, *default:* `nil`) - 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_IMAGE_DESCRIPTION
+  *   `xResolution` (*type:* `number()`, *default:* `nil`) - pixels per inch
+  *   `cameraMaker` (*type:* `String.t`, *default:* `nil`) - Device - Camera raw text without normalization
+  *   `lensId` (*type:* `String.t`, *default:* `nil`) - Device - Lens We use this extended id to identify a lens uniquely. Canon: "%d %d %d"=.. Nikon: "%.2X %.2X %.2X %.2X %.2X %.2X %.2X %.2X" Don't change the format of the internal lens id because we use them to look up the lens names.
+  *   `keywords` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_KEYWORDS
+  *   `cameraModel` (*type:* `String.t`, *default:* `nil`) - raw text without normalization
+  *   `destDistance` (*type:* `float()`, *default:* `nil`) - 
+  *   `destBearing` (*type:* `float()`, *default:* `nil`) - 
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - +/- 180 inclusive
+  *   `gpsStatus` (*type:* `String.t`, *default:* `nil`) - 
+  *   `focalPlaneXres` (*type:* `number()`, *default:* `nil`) - 
+  *   `comments2` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_COMMENT
+  *   `altitude` (*type:* `float()`, *default:* `nil`) - 
+  *   `hPositioningError` (*type:* `float()`, *default:* `nil`) - in meters
+  *   `maxApertureAtShortFocal` (*type:* `number()`, *default:* `nil`) - 
+  *   `imageHeight` (*type:* `integer()`, *default:* `nil`) - 
   *   `brightness` (*type:* `number()`, *default:* `nil`) - 
+  *   `focusMode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `imgDirection` (*type:* `float()`, *default:* `nil`) - GPS Heading 0.00 to 359.99 degrees
+  *   `destLongitude` (*type:* `float()`, *default:* `nil`) - 
+  *   `exposureBias` (*type:* `number()`, *default:* `nil`) - 
+  *   `gpsMeasureMode` (*type:* `String.t`, *default:* `nil`) - 
+  *   `shortFocal` (*type:* `integer()`, *default:* `nil`) - 
+  *   `exposureProgram` (*type:* `integer()`, *default:* `nil`) - 1-8, see EXIF definition
+  *   `maxApertureAtLongFocal` (*type:* `number()`, *default:* `nil`) - 
+  *   `subject` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_SUBJECT
+  *   `author2` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_AUTHOR
+  *   `imgDirectionRef` (*type:* `String.t`, *default:* `nil`) - 
+  *   `aperture` (*type:* `number()`, *default:* `nil`) - 
+  *   `destLatitude` (*type:* `float()`, *default:* `nil`) - GPS location of destination point.
+  *   `iptc` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata.t`, *default:* `nil`) - 
+  *   `author` (*type:* `String.t`, *default:* `nil`) - Text fields EXIF_TAG_ARTIST
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - GPS location +/- 90 inclusive
+  *   `longFocal` (*type:* `integer()`, *default:* `nil`) - 
+  *   `digitalZoomRatio` (*type:* `number()`, *default:* `nil`) - 
+  *   `gpsDop` (*type:* `float()`, *default:* `nil`) - Dilution of precision. HDOP/PDOP depends on measure mode. Find out more at http://en.wikipedia.org/wiki/Dilution_of_precision_(GPS)
+  *   `imageWidth` (*type:* `integer()`, *default:* `nil`) - 
+  *   `software` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_SOFTWARE
+  *   `deprecatedCity` (*type:* `String.t`, *default:* `nil`) - Location from IPTC @deprecated: Use iptc.location instead.
+  *   `focalLength` (*type:* `number()`, *default:* `nil`) - 
   *   `focalPlaneResUnit` (*type:* `integer()`, *default:* `nil`) - 
   *   `cameraSerialNumber` (*type:* `String.t`, *default:* `nil`) - This is the extracted serial number from EXIF (the source depends on camera, most of the cameras store it in makers note tag).
-  *   `modificationTime` (*type:* `String.t`, *default:* `nil`) - in time_t
   *   `destBearingRef` (*type:* `float()`, *default:* `nil`) - Bearing and distance to destination point.
-  *   `imgDirection` (*type:* `float()`, *default:* `nil`) - GPS Heading 0.00 to 359.99 degrees
-  *   `exposureBias` (*type:* `number()`, *default:* `nil`) - 
-  *   `orientation` (*type:* `String.t`, *default:* `nil`) - 
-  *   `maxApertureAtLongFocal` (*type:* `number()`, *default:* `nil`) - 
+  *   `yResolution` (*type:* `number()`, *default:* `nil`) - pixels per inch
+  *   `colorSpace` (*type:* `integer()`, *default:* `nil`) - 
   *   `captureTime` (*type:* `String.t`, *default:* `nil`) - Capturing settings in time_t
-  *   `maxApertureAtShortFocal` (*type:* `number()`, *default:* `nil`) - 
-  *   `comments2` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_COMMENT
-  *   `lensId` (*type:* `String.t`, *default:* `nil`) - Device - Lens We use this extended id to identify a lens uniquely. Canon: "%d %d %d"=.. Nikon: "%.2X %.2X %.2X %.2X %.2X %.2X %.2X %.2X" Don't change the format of the internal lens id because we use them to look up the lens names.
-  *   `focalPlaneXres` (*type:* `number()`, *default:* `nil`) - 
   *   `deprecatedCountry` (*type:* `String.t`, *default:* `nil`) - 
-  *   `altitude` (*type:* `float()`, *default:* `nil`) - 
-  *   `gpsStatus` (*type:* `String.t`, *default:* `nil`) - 
-  *   `meteringMode` (*type:* `integer()`, *default:* `nil`) - 1-6, see EXIF definition
-  *   `subjectLocationY` (*type:* `integer()`, *default:* `nil`) - 
+  *   `comments` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_USER_COMMENT
+  *   `exposureTime` (*type:* `number()`, *default:* `nil`) - 
   *   `title` (*type:* `String.t`, *default:* `nil`) - EXIF_TAG_XP_TITLE
-  *   `imgDirectionRef` (*type:* `String.t`, *default:* `nil`) - 
-  *   `focalLength` (*type:* `number()`, *default:* `nil`) - 
+  *   `continousDriveMode` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :focusMode => String.t() | nil,
-          :subject => String.t() | nil,
           :iso => integer() | nil,
-          :lensMaker => String.t() | nil,
-          :destLatitude => float() | nil,
-          :xResolution => number() | nil,
-          :imageHeight => integer() | nil,
-          :iptc => GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata.t() | nil,
-          :software => String.t() | nil,
-          :focalLength35mm => number() | nil,
-          :continousDriveMode => boolean() | nil,
-          :author2 => String.t() | nil,
-          :subjectLocationX => integer() | nil,
-          :destBearing => float() | nil,
-          :destDistance => float() | nil,
-          :aperture => number() | nil,
-          :lightSource => integer() | nil,
-          :latitude => float() | nil,
-          :description => String.t() | nil,
-          :keywords => String.t() | nil,
-          :colorSpace => integer() | nil,
-          :deprecatedCity => String.t() | nil,
-          :destLongitude => float() | nil,
-          :exposureProgram => integer() | nil,
-          :gpsMeasureMode => String.t() | nil,
-          :cameraMaker => String.t() | nil,
-          :longitude => float() | nil,
+          :modificationTime => String.t() | nil,
+          :subjectLocationY => integer() | nil,
+          :meteringMode => integer() | nil,
           :subjectDistance => number() | nil,
-          :hPositioningError => float() | nil,
-          :author => String.t() | nil,
-          :longFocal => integer() | nil,
-          :gpsDop => float() | nil,
-          :digitalZoomRatio => number() | nil,
-          :comments => String.t() | nil,
-          :copyright => String.t() | nil,
-          :deprecatedState => String.t() | nil,
-          :shortFocal => integer() | nil,
-          :yResolution => number() | nil,
-          :exposureTime => number() | nil,
-          :cameraModel => String.t() | nil,
           :flashUsed => boolean() | nil,
-          :imageWidth => integer() | nil,
+          :focalLength35mm => number() | nil,
+          :lensMaker => String.t() | nil,
+          :lightSource => integer() | nil,
+          :subjectLocationX => integer() | nil,
+          :deprecatedState => String.t() | nil,
+          :copyright => String.t() | nil,
+          :orientation => String.t() | nil,
+          :description => String.t() | nil,
+          :xResolution => number() | nil,
+          :cameraMaker => String.t() | nil,
+          :lensId => String.t() | nil,
+          :keywords => String.t() | nil,
+          :cameraModel => String.t() | nil,
+          :destDistance => float() | nil,
+          :destBearing => float() | nil,
+          :longitude => float() | nil,
+          :gpsStatus => String.t() | nil,
+          :focalPlaneXres => number() | nil,
+          :comments2 => String.t() | nil,
+          :altitude => float() | nil,
+          :hPositioningError => float() | nil,
+          :maxApertureAtShortFocal => number() | nil,
+          :imageHeight => integer() | nil,
           :brightness => number() | nil,
+          :focusMode => String.t() | nil,
+          :imgDirection => float() | nil,
+          :destLongitude => float() | nil,
+          :exposureBias => number() | nil,
+          :gpsMeasureMode => String.t() | nil,
+          :shortFocal => integer() | nil,
+          :exposureProgram => integer() | nil,
+          :maxApertureAtLongFocal => number() | nil,
+          :subject => String.t() | nil,
+          :author2 => String.t() | nil,
+          :imgDirectionRef => String.t() | nil,
+          :aperture => number() | nil,
+          :destLatitude => float() | nil,
+          :iptc => GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata.t() | nil,
+          :author => String.t() | nil,
+          :latitude => float() | nil,
+          :longFocal => integer() | nil,
+          :digitalZoomRatio => number() | nil,
+          :gpsDop => float() | nil,
+          :imageWidth => integer() | nil,
+          :software => String.t() | nil,
+          :deprecatedCity => String.t() | nil,
+          :focalLength => number() | nil,
           :focalPlaneResUnit => integer() | nil,
           :cameraSerialNumber => String.t() | nil,
-          :modificationTime => String.t() | nil,
           :destBearingRef => float() | nil,
-          :imgDirection => float() | nil,
-          :exposureBias => number() | nil,
-          :orientation => String.t() | nil,
-          :maxApertureAtLongFocal => number() | nil,
+          :yResolution => number() | nil,
+          :colorSpace => integer() | nil,
           :captureTime => String.t() | nil,
-          :maxApertureAtShortFocal => number() | nil,
-          :comments2 => String.t() | nil,
-          :lensId => String.t() | nil,
-          :focalPlaneXres => number() | nil,
           :deprecatedCountry => String.t() | nil,
-          :altitude => float() | nil,
-          :gpsStatus => String.t() | nil,
-          :meteringMode => integer() | nil,
-          :subjectLocationY => integer() | nil,
+          :comments => String.t() | nil,
+          :exposureTime => number() | nil,
           :title => String.t() | nil,
-          :imgDirectionRef => String.t() | nil,
-          :focalLength => number() | nil
+          :continousDriveMode => boolean() | nil
         }
 
-  field(:focusMode)
-  field(:subject)
   field(:iso)
-  field(:lensMaker)
-  field(:destLatitude)
-  field(:xResolution)
-  field(:imageHeight)
-  field(:iptc, as: GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata)
-  field(:software)
-  field(:focalLength35mm)
-  field(:continousDriveMode)
-  field(:author2)
-  field(:subjectLocationX)
-  field(:destBearing)
-  field(:destDistance)
-  field(:aperture)
-  field(:lightSource)
-  field(:latitude)
-  field(:description)
-  field(:keywords)
-  field(:colorSpace)
-  field(:deprecatedCity)
-  field(:destLongitude)
-  field(:exposureProgram)
-  field(:gpsMeasureMode)
-  field(:cameraMaker)
-  field(:longitude)
+  field(:modificationTime)
+  field(:subjectLocationY)
+  field(:meteringMode)
   field(:subjectDistance)
-  field(:hPositioningError)
-  field(:author)
-  field(:longFocal)
-  field(:gpsDop)
-  field(:digitalZoomRatio)
-  field(:comments)
-  field(:copyright)
-  field(:deprecatedState)
-  field(:shortFocal)
-  field(:yResolution)
-  field(:exposureTime)
-  field(:cameraModel)
   field(:flashUsed)
-  field(:imageWidth)
+  field(:focalLength35mm)
+  field(:lensMaker)
+  field(:lightSource)
+  field(:subjectLocationX)
+  field(:deprecatedState)
+  field(:copyright)
+  field(:orientation)
+  field(:description)
+  field(:xResolution)
+  field(:cameraMaker)
+  field(:lensId)
+  field(:keywords)
+  field(:cameraModel)
+  field(:destDistance)
+  field(:destBearing)
+  field(:longitude)
+  field(:gpsStatus)
+  field(:focalPlaneXres)
+  field(:comments2)
+  field(:altitude)
+  field(:hPositioningError)
+  field(:maxApertureAtShortFocal)
+  field(:imageHeight)
   field(:brightness)
+  field(:focusMode)
+  field(:imgDirection)
+  field(:destLongitude)
+  field(:exposureBias)
+  field(:gpsMeasureMode)
+  field(:shortFocal)
+  field(:exposureProgram)
+  field(:maxApertureAtLongFocal)
+  field(:subject)
+  field(:author2)
+  field(:imgDirectionRef)
+  field(:aperture)
+  field(:destLatitude)
+  field(:iptc, as: GoogleApi.ContentWarehouse.V1.Model.ImageExifIPTCMetadata)
+  field(:author)
+  field(:latitude)
+  field(:longFocal)
+  field(:digitalZoomRatio)
+  field(:gpsDop)
+  field(:imageWidth)
+  field(:software)
+  field(:deprecatedCity)
+  field(:focalLength)
   field(:focalPlaneResUnit)
   field(:cameraSerialNumber)
-  field(:modificationTime)
   field(:destBearingRef)
-  field(:imgDirection)
-  field(:exposureBias)
-  field(:orientation)
-  field(:maxApertureAtLongFocal)
+  field(:yResolution)
+  field(:colorSpace)
   field(:captureTime)
-  field(:maxApertureAtShortFocal)
-  field(:comments2)
-  field(:lensId)
-  field(:focalPlaneXres)
   field(:deprecatedCountry)
-  field(:altitude)
-  field(:gpsStatus)
-  field(:meteringMode)
-  field(:subjectLocationY)
+  field(:comments)
+  field(:exposureTime)
   field(:title)
-  field(:imgDirectionRef)
-  field(:focalLength)
+  field(:continousDriveMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.ImageExifImageEmbeddedMetadata do

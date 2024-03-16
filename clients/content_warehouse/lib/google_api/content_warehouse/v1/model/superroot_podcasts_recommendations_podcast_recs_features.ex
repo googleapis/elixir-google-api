@@ -21,224 +21,198 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPo
 
   ## Attributes
 
-  *   `userInterestsSalientSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user interest mids and episode salient entities. in a 0.0 to 1.0 range.
-  *   `medicalScore` (*type:* `float()`, *default:* `nil`) - Score of medical safe search score go/safesearch
-  *   `ulpLanguage` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t)`, *default:* `nil`) - Inferred language preferences of the user with their probabilities.
-  *   `subscribedShowListeningAffinity` (*type:* `number()`, *default:* `nil`) - This captures the fraction of total listening time accounted for by this subscribed show.
-  *   `csaiScore` (*type:* `float()`, *default:* `nil`) - Score of csai safe search score go/safesearch
-  *   `kmeansShowLevelRank` (*type:* `String.t`, *default:* `nil`) - Ranks are integral values starting with 1 for the highest affinity show.
-  *   `peFractionTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `ulpLanguageMatch` (*type:* `number()`, *default:* `nil`) - How much of ulp match the language of this episode
+  *   `averageFractionShow` (*type:* `float()`, *default:* `nil`) - Average fraction of podcast listened per show. Ignores duration < 10s. Computed offline
+  *   `inClusterProb` (*type:* `float()`, *default:* `nil`) - Probability of a random user from this cluster listening to this podcast randomly (K-means specific feature)
   *   `surface` (*type:* `String.t`, *default:* `nil`) - 
-  *   `clusterFeedMinutes` (*type:* `String.t`, *default:* `nil`) - The total minutes listened to this podcast show by users in this cluster
-  *   `episodeImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - Number of episode impressions during the past week.
-  *   `peDurationTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `popularLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to -3
-  *   `showPopularRank` (*type:* `String.t`, *default:* `nil`) - Expresses the absolute popularity rank within all documents.
-  *   `peFractionScoreShow` (*type:* `number()`, *default:* `nil`) - 
-  *   `showBaseQuality` (*type:* `float()`, *default:* `nil`) - Base quality of the document, used as a multiplier for the query-specific score. Should be in [0, 1] range. See: http://g3doc/indexing/moonshine/generic/g3doc/doc/scoring
-  *   `longUserListeningWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user listening mids and episode webref entities, where the listening can have happened at any time in the past. Values are in a 0.0 to 1.0 range.
-  *   `numSubscribersShow` (*type:* `String.t`, *default:* `nil`) - From: indexing/speech/proto/colisten-matrix.proto The number of subscribers for this podcast series.
-  *   `listenedShowLevelRank` (*type:* `String.t`, *default:* `nil`) - The rank of the show in the top listened shows candidate generator. Ranks are integral values starting with 1 for the highest affinity show.
-  *   `finalReactionBoostScore` (*type:* `number()`, *default:* `nil`) - final reaction boost score computed from positive_reaction_boost_score and negative_reaction_boost_score. The score will be applied as a multiplier on the ranking score to adjust the ranking.
-  *   `showOnlyImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - 
-  *   `vulgarScore` (*type:* `float()`, *default:* `nil`) - Score of vulgar safe search score go/safesearch
-  *   `listenTimeMin` (*type:* `integer()`, *default:* `nil`) - Number of minutes of podcasts listened by the user
   *   `userLanguage` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t)`, *default:* `nil`) - Language of shows in user history and how much they listened to each.
-  *   `peListenScoreShow` (*type:* `number()`, *default:* `nil`) - Anima User Embedding based features. Dot product of Anima User Embedding and podcast embeddings from UserEmbeddingBasedSignals (podcasts/quality/proto/ranking_signals.proto)
-  *   `secondsSincePublication` (*type:* `String.t`, *default:* `nil`) - A reranking feature showing the age of the episode that is being recommended. This is computed as (current time - publication_time) publication_time of the episode is defined: (http://shortn/_S46Ouk5ZWW) publication_time is specified as seconds since Unix Epoch.
-  *   `peDurationScoreShow` (*type:* `number()`, *default:* `nil`) - 
-  *   `recentUserListeningWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user listening mids and episode webref entities, where the listening is limited to recent activity. Values are in a 0.0 to 1.0 range.
-  *   `showOnlyImpressions` (*type:* `String.t`, *default:* `nil`) - Show only impressions. Doesn't include shows of episode impressions.
-  *   `dnnV2aScoreSigmoid` (*type:* `number()`, *default:* `nil`) - Sigmoid of the score obtained by dot product of user embedding and show embedding. See https://b.corp.google.com/issues/158602034#comment2 for intuition.
-  *   `isCanonical` (*type:* `boolean()`, *default:* `nil`) - A binary value based on whether this is a canonical source for a cluster.
-  *   `peListenScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `numListenersToShowInKmeansCluster` (*type:* `String.t`, *default:* `nil`) - The number of users in the k-means cluster who have listened to this feed.
-  *   `peDurationTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
-  *   `spoofScore` (*type:* `float()`, *default:* `nil`) - Score of spoof safe search score go/safesearch
-  *   `peDurationScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `languageMatch` (*type:* `float()`, *default:* `nil`) - How much of user listening history match the language of this episode
-  *   `episodeDurationSec` (*type:* `String.t`, *default:* `nil`) - The duration of a single episode, in seconds. - For show documents, this is a duration of a typical recent episode, or an approximation thereof. - For episode documents, this is the duration of the episode itself.
-  *   `offensiveScore` (*type:* `float()`, *default:* `nil`) - Score of offensive safe search score go/safesearch
-  *   `peListenTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
-  *   `userClusterDistance` (*type:* `number()`, *default:* `nil`) - The distance between user's Anima embedding and the centroid of the cluster in k-means.
-  *   `violenceScore` (*type:* `float()`, *default:* `nil`) - Score of violence safe search score go/safesearch
-  *   `subscriptionShowLevelRank` (*type:* `String.t`, *default:* `nil`) - The rank of the show in the subscription candidate generator. Ranks are integral values starting with 1 for the highest subscribed affinity show.
+  *   `durationTotalSecondsEpisode` (*type:* `String.t`, *default:* `nil`) - Total duration listened for this episode by all users. Ignores duration < 10s. Computed offline
+  *   `nicheLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to +2
+  *   `negativeReactionBoostScore` (*type:* `number()`, *default:* `nil`) - boost score from the similarity between the candidate and the shows with user negative feedback, currently the score will be applied directly to the final ranking score: go/podcast-reaction-reranking-v1, but can be used as reranker model feature in the future.
+  *   `trendingScorePercent` (*type:* `String.t`, *default:* `nil`) - Show level trending score percent from Wernicke corpus.
+  *   `feedPagerank` (*type:* `float()`, *default:* `nil`) - Scaled pagerank score for the feed url in [0..1]. Not to be confused with pagerank above, which measures the pagerank for the feed's homepage.
   *   `episodesPublishedPerMonth` (*type:* `String.t`, *default:* `nil`) - How frequently are podcasts published by this show. To see publishing frequency calculation go here: http://shortn/_6zzfyEpBRq
-  *   `durationTotalSecondsShow` (*type:* `String.t`, *default:* `nil`) - Total duration listened for this show by all users. Ignores duration < 10s. Computed offline
-  *   `balancedLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to 0.4
+  *   `fractionTotalShow` (*type:* `float()`, *default:* `nil`) - Some of all fraction of this show listened by users. Ignores duration < 10s. Computed offline
+  *   `linkOwnershipVerified` (*type:* `boolean()`, *default:* `nil`) - Ownership verification status for the episode page URL.
+  *   `colistenedShowColistenAffinity` (*type:* `number()`, *default:* `nil`) - This captures the probability that this show could have been listened by the user in lieu of what they have subscribed or listened to.
+  *   `listenedShowListeningAffinity` (*type:* `number()`, *default:* `nil`) - This captures the fraction of total listening time accounted for by this show.
+  *   `csaiScore` (*type:* `float()`, *default:* `nil`) - Score of csai safe search score go/safesearch
+  *   `categoryMatch` (*type:* `float()`, *default:* `nil`) - category_match is a 0 to 1 score depicting how much of the user's listening history matches the categories of this podcast recommendation.
+  *   `peFractionScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `popularLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to -3
   *   `mediumUserListeningWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user listening mids and episode webref entities, where the listening is limited to last two mohths activity. Values are in a 0.0 to 1.0 range.
   *   `convAiToxicitySevereScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `rank` (*type:* `String.t`, *default:* `nil`) - The index in the list of most popular podcasts.
-  *   `peListenTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `peFractionTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
-  *   `averageDurationSecondsShow` (*type:* `String.t`, *default:* `nil`) - Average duration listened per show. Ignores duration < 10s. Computed offline
-  *   `fractionTotalShow` (*type:* `float()`, *default:* `nil`) - Some of all fraction of this show listened by users. Ignores duration < 10s. Computed offline
-  *   `showImpressions` (*type:* `String.t`, *default:* `nil`) - Number of show episode impressions.
-  *   `nicheLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to +2
-  *   `fringeScore` (*type:* `float()`, *default:* `nil`) - Score of fringe safe search score go/safesearch
-  *   `trendingScorePercent` (*type:* `String.t`, *default:* `nil`) - Show level trending score percent from Wernicke corpus.
-  *   `showLanguage` (*type:* `String.t`, *default:* `nil`) - Language of the show from show data.
-  *   `dnnV2aScore` (*type:* `number()`, *default:* `nil`) - Dot product of user embedding and podcast show embedding from the two tower model v2a
-  *   `explicitShow` (*type:* `String.t`, *default:* `nil`) - Whether the show is marked as explicit by the authors
+  *   `subscribedShowListeningAffinity` (*type:* `number()`, *default:* `nil`) - This captures the fraction of total listening time accounted for by this subscribed show.
   *   `dnnShowLevelRank` (*type:* `String.t`, *default:* `nil`) - Ordinal rank features like this have been found to be useful in Hermione Recipes, where the top ranked items from a candidate generator is always retained. Ranks are integral values starting with 1 for the highest affinity show.
-  *   `userInterestsWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user interest mids and episode webref entities. in a 0.0 to 1.0 range.
-  *   `showImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - Number of show impressions during the past week.
-  *   `queryLanguage` (*type:* `String.t`, *default:* `nil`) - This is the language extracted from the query_language.
+  *   `finalReactionBoostScore` (*type:* `number()`, *default:* `nil`) - final reaction boost score computed from positive_reaction_boost_score and negative_reaction_boost_score. The score will be applied as a multiplier on the ranking score to adjust the ranking.
   *   `numUniqueListenersShow` (*type:* `String.t`, *default:* `nil`) - From: indexing/speech/proto/colisten-matrix.proto Absolute number of unique listeners during the past month.
-  *   `averageFractionShow` (*type:* `float()`, *default:* `nil`) - Average fraction of podcast listened per show. Ignores duration < 10s. Computed offline
-  *   `feedPagerank` (*type:* `float()`, *default:* `nil`) - Scaled pagerank score for the feed url in [0..1]. Not to be confused with pagerank above, which measures the pagerank for the feed's homepage.
-  *   `colistenedShowColistenAffinity` (*type:* `number()`, *default:* `nil`) - This captures the probability that this show could have been listened by the user in lieu of what they have subscribed or listened to.
-  *   `linkOwnershipVerified` (*type:* `boolean()`, *default:* `nil`) - Ownership verification status for the episode page URL.
-  *   `negativeReactionBoostScore` (*type:* `number()`, *default:* `nil`) - boost score from the similarity between the candidate and the shows with user negative feedback, currently the score will be applied directly to the final ranking score: go/podcast-reaction-reranking-v1, but can be used as reranker model feature in the future.
-  *   `peFractionScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
-  *   `episodeImpressions` (*type:* `String.t`, *default:* `nil`) - Number of all episode impressions.
-  *   `fractionTotalEpisode` (*type:* `float()`, *default:* `nil`) - Some of all fraction of this listened by users. Ignores duration < 10s. Computed offline
-  *   `numListens` (*type:* `integer()`, *default:* `nil`) - Number of podcasts listened by the user
-  *   `durationTotalSecondsEpisode` (*type:* `String.t`, *default:* `nil`) - Total duration listened for this episode by all users. Ignores duration < 10s. Computed offline
-  *   `averageDurationSecondsEpisode` (*type:* `String.t`, *default:* `nil`) - Average duration listened per episode. Ignores duration < 10s. Computed offline
-  *   `numListenersInKmeansCluster` (*type:* `String.t`, *default:* `nil`) - The number of users in this k-means cluster.
-  *   `categoryMatch` (*type:* `float()`, *default:* `nil`) - category_match is a 0 to 1 score depicting how much of the user's listening history matches the categories of this podcast recommendation.
-  *   `inClusterProb` (*type:* `float()`, *default:* `nil`) - Probability of a random user from this cluster listening to this podcast randomly (K-means specific feature)
-  *   `averageFractionEpisode` (*type:* `float()`, *default:* `nil`) - Average fraction of podcast listened per episode. Ignores duration < 10s. Computed offline
-  *   `pornScore` (*type:* `float()`, *default:* `nil`) - Score of porn safe search score go/safesearch
-  *   `locationFeatureId` (*type:* `String.t`, *default:* `nil`) - Feature ID of a location. For more info, see go/feature-id.
-  *   `listenedShowListeningAffinity` (*type:* `number()`, *default:* `nil`) - This captures the fraction of total listening time accounted for by this show.
-  *   `rankPercentContrib` (*type:* `float()`, *default:* `nil`) - rank_percent_contrib = 100 / ( 1 + rank_percent ) Here rank_percent was derived from show level data in Wernicke corpus So if rank_percent of a feed was 3, then the feature value would be: 100 / (1 + 3) = 25. This indicator falls off quickly from 100 to almost 1 as we go from rank_percent 0 to 100.
+  *   `vulgarScore` (*type:* `float()`, *default:* `nil`) - Score of vulgar safe search score go/safesearch
   *   `globalProb` (*type:* `float()`, *default:* `nil`) - Probability of a random user listening to this podcast randomly
-  *   `colistenedShowLevelRank` (*type:* `String.t`, *default:* `nil`) - This captures the rank of the podcast show in the colisten candidate generator.
+  *   `userClusterDistance` (*type:* `number()`, *default:* `nil`) - The distance between user's Anima embedding and the centroid of the cluster in k-means.
+  *   `showOnlyImpressions` (*type:* `String.t`, *default:* `nil`) - Show only impressions. Doesn't include shows of episode impressions.
+  *   `peListenScoreShow` (*type:* `number()`, *default:* `nil`) - Anima User Embedding based features. Dot product of Anima User Embedding and podcast embeddings from UserEmbeddingBasedSignals (podcasts/quality/proto/ranking_signals.proto)
+  *   `kmeansShowLevelRank` (*type:* `String.t`, *default:* `nil`) - Ranks are integral values starting with 1 for the highest affinity show.
+  *   `listenTimeMin` (*type:* `integer()`, *default:* `nil`) - Number of minutes of podcasts listened by the user
+  *   `showImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - Number of show impressions during the past week.
+  *   `episodeImpressions` (*type:* `String.t`, *default:* `nil`) - Number of all episode impressions.
+  *   `showBaseQuality` (*type:* `float()`, *default:* `nil`) - Base quality of the document, used as a multiplier for the query-specific score. Should be in [0, 1] range. See: http://g3doc/indexing/moonshine/generic/g3doc/doc/scoring
+  *   `pornScore` (*type:* `float()`, *default:* `nil`) - Score of porn safe search score go/safesearch
+  *   `isCanonical` (*type:* `boolean()`, *default:* `nil`) - A binary value based on whether this is a canonical source for a cluster.
+  *   `averageDurationSecondsEpisode` (*type:* `String.t`, *default:* `nil`) - Average duration listened per episode. Ignores duration < 10s. Computed offline
+  *   `peListenTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
+  *   `fractionTotalEpisode` (*type:* `float()`, *default:* `nil`) - Some of all fraction of this listened by users. Ignores duration < 10s. Computed offline
+  *   `showPopularRank` (*type:* `String.t`, *default:* `nil`) - Expresses the absolute popularity rank within all documents.
+  *   `durationTotalSecondsShow` (*type:* `String.t`, *default:* `nil`) - Total duration listened for this show by all users. Ignores duration < 10s. Computed offline
+  *   `subscriptionShowLevelRank` (*type:* `String.t`, *default:* `nil`) - The rank of the show in the subscription candidate generator. Ranks are integral values starting with 1 for the highest subscribed affinity show.
+  *   `peDurationScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `longUserListeningWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user listening mids and episode webref entities, where the listening can have happened at any time in the past. Values are in a 0.0 to 1.0 range.
+  *   `spoofScore` (*type:* `float()`, *default:* `nil`) - Score of spoof safe search score go/safesearch
+  *   `fringeScore` (*type:* `float()`, *default:* `nil`) - Score of fringe safe search score go/safesearch
+  *   `clusterFeedMinutes` (*type:* `String.t`, *default:* `nil`) - The total minutes listened to this podcast show by users in this cluster
+  *   `peListenScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `locationFeatureId` (*type:* `String.t`, *default:* `nil`) - Feature ID of a location. For more info, see go/feature-id.
+  *   `dnnV2aScore` (*type:* `number()`, *default:* `nil`) - Dot product of user embedding and podcast show embedding from the two tower model v2a
+  *   `numListens` (*type:* `integer()`, *default:* `nil`) - Number of podcasts listened by the user
+  *   `balancedLift` (*type:* `float()`, *default:* `nil`) - Per cluster lift where the lift_squashing_factor is set to 0.4
+  *   `peDurationScoreShow` (*type:* `number()`, *default:* `nil`) - 
+  *   `rankPercentContrib` (*type:* `float()`, *default:* `nil`) - rank_percent_contrib = 100 / ( 1 + rank_percent ) Here rank_percent was derived from show level data in Wernicke corpus So if rank_percent of a feed was 3, then the feature value would be: 100 / (1 + 3) = 25. This indicator falls off quickly from 100 to almost 1 as we go from rank_percent 0 to 100.
+  *   `showImpressions` (*type:* `String.t`, *default:* `nil`) - Number of show episode impressions.
+  *   `secondsSincePublication` (*type:* `String.t`, *default:* `nil`) - A reranking feature showing the age of the episode that is being recommended. This is computed as (current time - publication_time) publication_time of the episode is defined: (http://shortn/_S46Ouk5ZWW) publication_time is specified as seconds since Unix Epoch.
+  *   `showLanguage` (*type:* `String.t`, *default:* `nil`) - Language of the show from show data.
+  *   `userInterestsSalientSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user interest mids and episode salient entities. in a 0.0 to 1.0 range.
   *   `positiveReactionBoostScore` (*type:* `number()`, *default:* `nil`) - boost score from the similarity between the candidate and the shows with user positive feedback, currently the score will be applied directly to the final ranking score: go/podcast-reaction-reranking-v1, but can be used as reranker model feature in the future.
+  *   `peFractionScoreShow` (*type:* `number()`, *default:* `nil`) - 
+  *   `recentUserListeningWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user listening mids and episode webref entities, where the listening is limited to recent activity. Values are in a 0.0 to 1.0 range.
+  *   `numListenersInKmeansCluster` (*type:* `String.t`, *default:* `nil`) - The number of users in this k-means cluster.
+  *   `ulpLanguage` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t)`, *default:* `nil`) - Inferred language preferences of the user with their probabilities.
+  *   `episodeDurationSec` (*type:* `String.t`, *default:* `nil`) - The duration of a single episode, in seconds. - For show documents, this is a duration of a typical recent episode, or an approximation thereof. - For episode documents, this is the duration of the episode itself.
+  *   `medicalScore` (*type:* `float()`, *default:* `nil`) - Score of medical safe search score go/safesearch
+  *   `peFractionTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `explicitShow` (*type:* `String.t`, *default:* `nil`) - Whether the show is marked as explicit by the authors
+  *   `averageFractionEpisode` (*type:* `float()`, *default:* `nil`) - Average fraction of podcast listened per episode. Ignores duration < 10s. Computed offline
+  *   `showOnlyImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - 
+  *   `queryLanguage` (*type:* `String.t`, *default:* `nil`) - This is the language extracted from the query_language.
+  *   `peDurationTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `peDurationTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
+  *   `listenedShowLevelRank` (*type:* `String.t`, *default:* `nil`) - The rank of the show in the top listened shows candidate generator. Ranks are integral values starting with 1 for the highest affinity show.
+  *   `peListenTotalScoreEpisode` (*type:* `number()`, *default:* `nil`) - 
+  *   `numListenersToShowInKmeansCluster` (*type:* `String.t`, *default:* `nil`) - The number of users in the k-means cluster who have listened to this feed.
+  *   `episodeImpressionsPastWeek` (*type:* `String.t`, *default:* `nil`) - Number of episode impressions during the past week.
+  *   `languageMatch` (*type:* `float()`, *default:* `nil`) - How much of user listening history match the language of this episode
+  *   `rank` (*type:* `String.t`, *default:* `nil`) - The index in the list of most popular podcasts.
+  *   `ulpLanguageMatch` (*type:* `number()`, *default:* `nil`) - How much of ulp match the language of this episode
+  *   `numSubscribersShow` (*type:* `String.t`, *default:* `nil`) - From: indexing/speech/proto/colisten-matrix.proto The number of subscribers for this podcast series.
+  *   `peFractionTotalScoreShow` (*type:* `number()`, *default:* `nil`) - 
+  *   `userInterestsWebrefSimilarity` (*type:* `float()`, *default:* `nil`) - Match score between user interest mids and episode webref entities. in a 0.0 to 1.0 range.
+  *   `colistenedShowLevelRank` (*type:* `String.t`, *default:* `nil`) - This captures the rank of the podcast show in the colisten candidate generator.
+  *   `averageDurationSecondsShow` (*type:* `String.t`, *default:* `nil`) - Average duration listened per show. Ignores duration < 10s. Computed offline
+  *   `violenceScore` (*type:* `float()`, *default:* `nil`) - Score of violence safe search score go/safesearch
+  *   `dnnV2aScoreSigmoid` (*type:* `number()`, *default:* `nil`) - Sigmoid of the score obtained by dot product of user embedding and show embedding. See https://b.corp.google.com/issues/158602034#comment2 for intuition.
+  *   `offensiveScore` (*type:* `float()`, *default:* `nil`) - Score of offensive safe search score go/safesearch
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :userInterestsSalientSimilarity => float() | nil,
-          :medicalScore => float() | nil,
-          :ulpLanguage =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t()
-            )
-            | nil,
-          :subscribedShowListeningAffinity => number() | nil,
-          :csaiScore => float() | nil,
-          :kmeansShowLevelRank => String.t() | nil,
-          :peFractionTotalScoreEpisode => number() | nil,
-          :ulpLanguageMatch => number() | nil,
+          :averageFractionShow => float() | nil,
+          :inClusterProb => float() | nil,
           :surface => String.t() | nil,
-          :clusterFeedMinutes => String.t() | nil,
-          :episodeImpressionsPastWeek => String.t() | nil,
-          :peDurationTotalScoreEpisode => number() | nil,
-          :popularLift => float() | nil,
-          :showPopularRank => String.t() | nil,
-          :peFractionScoreShow => number() | nil,
-          :showBaseQuality => float() | nil,
-          :longUserListeningWebrefSimilarity => float() | nil,
-          :numSubscribersShow => String.t() | nil,
-          :listenedShowLevelRank => String.t() | nil,
-          :finalReactionBoostScore => number() | nil,
-          :showOnlyImpressionsPastWeek => String.t() | nil,
-          :vulgarScore => float() | nil,
-          :listenTimeMin => integer() | nil,
           :userLanguage =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t()
             )
             | nil,
-          :peListenScoreShow => number() | nil,
-          :secondsSincePublication => String.t() | nil,
-          :peDurationScoreShow => number() | nil,
-          :recentUserListeningWebrefSimilarity => float() | nil,
-          :showOnlyImpressions => String.t() | nil,
-          :dnnV2aScoreSigmoid => number() | nil,
-          :isCanonical => boolean() | nil,
-          :peListenScoreEpisode => number() | nil,
-          :numListenersToShowInKmeansCluster => String.t() | nil,
-          :peDurationTotalScoreShow => number() | nil,
-          :spoofScore => float() | nil,
-          :peDurationScoreEpisode => number() | nil,
-          :languageMatch => float() | nil,
-          :episodeDurationSec => String.t() | nil,
-          :offensiveScore => float() | nil,
-          :peListenTotalScoreShow => number() | nil,
-          :userClusterDistance => number() | nil,
-          :violenceScore => float() | nil,
-          :subscriptionShowLevelRank => String.t() | nil,
+          :durationTotalSecondsEpisode => String.t() | nil,
+          :nicheLift => float() | nil,
+          :negativeReactionBoostScore => number() | nil,
+          :trendingScorePercent => String.t() | nil,
+          :feedPagerank => float() | nil,
           :episodesPublishedPerMonth => String.t() | nil,
-          :durationTotalSecondsShow => String.t() | nil,
-          :balancedLift => float() | nil,
+          :fractionTotalShow => float() | nil,
+          :linkOwnershipVerified => boolean() | nil,
+          :colistenedShowColistenAffinity => number() | nil,
+          :listenedShowListeningAffinity => number() | nil,
+          :csaiScore => float() | nil,
+          :categoryMatch => float() | nil,
+          :peFractionScoreEpisode => number() | nil,
+          :popularLift => float() | nil,
           :mediumUserListeningWebrefSimilarity => float() | nil,
           :convAiToxicitySevereScore => number() | nil,
-          :rank => String.t() | nil,
-          :peListenTotalScoreEpisode => number() | nil,
-          :peFractionTotalScoreShow => number() | nil,
-          :averageDurationSecondsShow => String.t() | nil,
-          :fractionTotalShow => float() | nil,
-          :showImpressions => String.t() | nil,
-          :nicheLift => float() | nil,
-          :fringeScore => float() | nil,
-          :trendingScorePercent => String.t() | nil,
-          :showLanguage => String.t() | nil,
-          :dnnV2aScore => number() | nil,
-          :explicitShow => String.t() | nil,
+          :subscribedShowListeningAffinity => number() | nil,
           :dnnShowLevelRank => String.t() | nil,
-          :userInterestsWebrefSimilarity => float() | nil,
-          :showImpressionsPastWeek => String.t() | nil,
-          :queryLanguage => String.t() | nil,
+          :finalReactionBoostScore => number() | nil,
           :numUniqueListenersShow => String.t() | nil,
-          :averageFractionShow => float() | nil,
-          :feedPagerank => float() | nil,
-          :colistenedShowColistenAffinity => number() | nil,
-          :linkOwnershipVerified => boolean() | nil,
-          :negativeReactionBoostScore => number() | nil,
-          :peFractionScoreEpisode => number() | nil,
-          :episodeImpressions => String.t() | nil,
-          :fractionTotalEpisode => float() | nil,
-          :numListens => integer() | nil,
-          :durationTotalSecondsEpisode => String.t() | nil,
-          :averageDurationSecondsEpisode => String.t() | nil,
-          :numListenersInKmeansCluster => String.t() | nil,
-          :categoryMatch => float() | nil,
-          :inClusterProb => float() | nil,
-          :averageFractionEpisode => float() | nil,
-          :pornScore => float() | nil,
-          :locationFeatureId => String.t() | nil,
-          :listenedShowListeningAffinity => number() | nil,
-          :rankPercentContrib => float() | nil,
+          :vulgarScore => float() | nil,
           :globalProb => float() | nil,
+          :userClusterDistance => number() | nil,
+          :showOnlyImpressions => String.t() | nil,
+          :peListenScoreShow => number() | nil,
+          :kmeansShowLevelRank => String.t() | nil,
+          :listenTimeMin => integer() | nil,
+          :showImpressionsPastWeek => String.t() | nil,
+          :episodeImpressions => String.t() | nil,
+          :showBaseQuality => float() | nil,
+          :pornScore => float() | nil,
+          :isCanonical => boolean() | nil,
+          :averageDurationSecondsEpisode => String.t() | nil,
+          :peListenTotalScoreShow => number() | nil,
+          :fractionTotalEpisode => float() | nil,
+          :showPopularRank => String.t() | nil,
+          :durationTotalSecondsShow => String.t() | nil,
+          :subscriptionShowLevelRank => String.t() | nil,
+          :peDurationScoreEpisode => number() | nil,
+          :longUserListeningWebrefSimilarity => float() | nil,
+          :spoofScore => float() | nil,
+          :fringeScore => float() | nil,
+          :clusterFeedMinutes => String.t() | nil,
+          :peListenScoreEpisode => number() | nil,
+          :locationFeatureId => String.t() | nil,
+          :dnnV2aScore => number() | nil,
+          :numListens => integer() | nil,
+          :balancedLift => float() | nil,
+          :peDurationScoreShow => number() | nil,
+          :rankPercentContrib => float() | nil,
+          :showImpressions => String.t() | nil,
+          :secondsSincePublication => String.t() | nil,
+          :showLanguage => String.t() | nil,
+          :userInterestsSalientSimilarity => float() | nil,
+          :positiveReactionBoostScore => number() | nil,
+          :peFractionScoreShow => number() | nil,
+          :recentUserListeningWebrefSimilarity => float() | nil,
+          :numListenersInKmeansCluster => String.t() | nil,
+          :ulpLanguage =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage.t()
+            )
+            | nil,
+          :episodeDurationSec => String.t() | nil,
+          :medicalScore => float() | nil,
+          :peFractionTotalScoreEpisode => number() | nil,
+          :explicitShow => String.t() | nil,
+          :averageFractionEpisode => float() | nil,
+          :showOnlyImpressionsPastWeek => String.t() | nil,
+          :queryLanguage => String.t() | nil,
+          :peDurationTotalScoreEpisode => number() | nil,
+          :peDurationTotalScoreShow => number() | nil,
+          :listenedShowLevelRank => String.t() | nil,
+          :peListenTotalScoreEpisode => number() | nil,
+          :numListenersToShowInKmeansCluster => String.t() | nil,
+          :episodeImpressionsPastWeek => String.t() | nil,
+          :languageMatch => float() | nil,
+          :rank => String.t() | nil,
+          :ulpLanguageMatch => number() | nil,
+          :numSubscribersShow => String.t() | nil,
+          :peFractionTotalScoreShow => number() | nil,
+          :userInterestsWebrefSimilarity => float() | nil,
           :colistenedShowLevelRank => String.t() | nil,
-          :positiveReactionBoostScore => number() | nil
+          :averageDurationSecondsShow => String.t() | nil,
+          :violenceScore => float() | nil,
+          :dnnV2aScoreSigmoid => number() | nil,
+          :offensiveScore => float() | nil
         }
 
-  field(:userInterestsSalientSimilarity)
-  field(:medicalScore)
-
-  field(:ulpLanguage,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage,
-    type: :list
-  )
-
-  field(:subscribedShowListeningAffinity)
-  field(:csaiScore)
-  field(:kmeansShowLevelRank)
-  field(:peFractionTotalScoreEpisode)
-  field(:ulpLanguageMatch)
+  field(:averageFractionShow)
+  field(:inClusterProb)
   field(:surface)
-  field(:clusterFeedMinutes)
-  field(:episodeImpressionsPastWeek)
-  field(:peDurationTotalScoreEpisode)
-  field(:popularLift)
-  field(:showPopularRank)
-  field(:peFractionScoreShow)
-  field(:showBaseQuality)
-  field(:longUserListeningWebrefSimilarity)
-  field(:numSubscribersShow)
-  field(:listenedShowLevelRank)
-  field(:finalReactionBoostScore)
-  field(:showOnlyImpressionsPastWeek)
-  field(:vulgarScore)
-  field(:listenTimeMin)
 
   field(:userLanguage,
     as:
@@ -246,69 +220,95 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPo
     type: :list
   )
 
-  field(:peListenScoreShow)
-  field(:secondsSincePublication)
-  field(:peDurationScoreShow)
-  field(:recentUserListeningWebrefSimilarity)
-  field(:showOnlyImpressions)
-  field(:dnnV2aScoreSigmoid)
-  field(:isCanonical)
-  field(:peListenScoreEpisode)
-  field(:numListenersToShowInKmeansCluster)
-  field(:peDurationTotalScoreShow)
-  field(:spoofScore)
-  field(:peDurationScoreEpisode)
-  field(:languageMatch)
-  field(:episodeDurationSec)
-  field(:offensiveScore)
-  field(:peListenTotalScoreShow)
-  field(:userClusterDistance)
-  field(:violenceScore)
-  field(:subscriptionShowLevelRank)
+  field(:durationTotalSecondsEpisode)
+  field(:nicheLift)
+  field(:negativeReactionBoostScore)
+  field(:trendingScorePercent)
+  field(:feedPagerank)
   field(:episodesPublishedPerMonth)
-  field(:durationTotalSecondsShow)
-  field(:balancedLift)
+  field(:fractionTotalShow)
+  field(:linkOwnershipVerified)
+  field(:colistenedShowColistenAffinity)
+  field(:listenedShowListeningAffinity)
+  field(:csaiScore)
+  field(:categoryMatch)
+  field(:peFractionScoreEpisode)
+  field(:popularLift)
   field(:mediumUserListeningWebrefSimilarity)
   field(:convAiToxicitySevereScore)
-  field(:rank)
-  field(:peListenTotalScoreEpisode)
-  field(:peFractionTotalScoreShow)
-  field(:averageDurationSecondsShow)
-  field(:fractionTotalShow)
-  field(:showImpressions)
-  field(:nicheLift)
-  field(:fringeScore)
-  field(:trendingScorePercent)
-  field(:showLanguage)
-  field(:dnnV2aScore)
-  field(:explicitShow)
+  field(:subscribedShowListeningAffinity)
   field(:dnnShowLevelRank)
-  field(:userInterestsWebrefSimilarity)
-  field(:showImpressionsPastWeek)
-  field(:queryLanguage)
+  field(:finalReactionBoostScore)
   field(:numUniqueListenersShow)
-  field(:averageFractionShow)
-  field(:feedPagerank)
-  field(:colistenedShowColistenAffinity)
-  field(:linkOwnershipVerified)
-  field(:negativeReactionBoostScore)
-  field(:peFractionScoreEpisode)
-  field(:episodeImpressions)
-  field(:fractionTotalEpisode)
-  field(:numListens)
-  field(:durationTotalSecondsEpisode)
-  field(:averageDurationSecondsEpisode)
-  field(:numListenersInKmeansCluster)
-  field(:categoryMatch)
-  field(:inClusterProb)
-  field(:averageFractionEpisode)
-  field(:pornScore)
-  field(:locationFeatureId)
-  field(:listenedShowListeningAffinity)
-  field(:rankPercentContrib)
+  field(:vulgarScore)
   field(:globalProb)
-  field(:colistenedShowLevelRank)
+  field(:userClusterDistance)
+  field(:showOnlyImpressions)
+  field(:peListenScoreShow)
+  field(:kmeansShowLevelRank)
+  field(:listenTimeMin)
+  field(:showImpressionsPastWeek)
+  field(:episodeImpressions)
+  field(:showBaseQuality)
+  field(:pornScore)
+  field(:isCanonical)
+  field(:averageDurationSecondsEpisode)
+  field(:peListenTotalScoreShow)
+  field(:fractionTotalEpisode)
+  field(:showPopularRank)
+  field(:durationTotalSecondsShow)
+  field(:subscriptionShowLevelRank)
+  field(:peDurationScoreEpisode)
+  field(:longUserListeningWebrefSimilarity)
+  field(:spoofScore)
+  field(:fringeScore)
+  field(:clusterFeedMinutes)
+  field(:peListenScoreEpisode)
+  field(:locationFeatureId)
+  field(:dnnV2aScore)
+  field(:numListens)
+  field(:balancedLift)
+  field(:peDurationScoreShow)
+  field(:rankPercentContrib)
+  field(:showImpressions)
+  field(:secondsSincePublication)
+  field(:showLanguage)
+  field(:userInterestsSalientSimilarity)
   field(:positiveReactionBoostScore)
+  field(:peFractionScoreShow)
+  field(:recentUserListeningWebrefSimilarity)
+  field(:numListenersInKmeansCluster)
+
+  field(:ulpLanguage,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.SuperrootPodcastsRecommendationsPodcastRecsFeaturesUserLanguage,
+    type: :list
+  )
+
+  field(:episodeDurationSec)
+  field(:medicalScore)
+  field(:peFractionTotalScoreEpisode)
+  field(:explicitShow)
+  field(:averageFractionEpisode)
+  field(:showOnlyImpressionsPastWeek)
+  field(:queryLanguage)
+  field(:peDurationTotalScoreEpisode)
+  field(:peDurationTotalScoreShow)
+  field(:listenedShowLevelRank)
+  field(:peListenTotalScoreEpisode)
+  field(:numListenersToShowInKmeansCluster)
+  field(:episodeImpressionsPastWeek)
+  field(:languageMatch)
+  field(:rank)
+  field(:ulpLanguageMatch)
+  field(:numSubscribersShow)
+  field(:peFractionTotalScoreShow)
+  field(:userInterestsWebrefSimilarity)
+  field(:colistenedShowLevelRank)
+  field(:averageDurationSecondsShow)
+  field(:violenceScore)
+  field(:dnnV2aScoreSigmoid)
+  field(:offensiveScore)
 end
 
 defimpl Poison.Decoder,

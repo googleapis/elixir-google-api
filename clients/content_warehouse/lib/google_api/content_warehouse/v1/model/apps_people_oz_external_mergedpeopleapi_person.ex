@@ -21,160 +21,103 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
 
   ## Attributes
 
-  *   `birthday` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday.t)`, *default:* `nil`) - 
-  *   `sshPublicKey` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey.t)`, *default:* `nil`) - 
-  *   `circleMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t)`, *default:* `nil`) - Circles that this person is a member of.
-  *   `externalId` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId.t)`, *default:* `nil`) - 
-  *   `fileAs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs.t)`, *default:* `nil`) - 
-  *   `certifiedBornBefore` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore.t)`, *default:* `nil`) - 
-  *   `emergencyInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo.t)`, *default:* `nil`) - Emergency information. See go/emergency-trusted-contacts-papi.
-  *   `contactStateInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo.t)`, *default:* `nil`) - Contact state and related metadata. See go/fbs-contacts-trash. If this field was requested but is not set on the Person then the contact is in the DEFAULT contact state. This field is read-only, and should not be set on a mutate (e.g. UpdatePerson) call. Clients must call the explicit APIs (e.g. UntrashPerson) to change contact state.
-  *   `rosterDetails` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails.t)`, *default:* `nil`) - Data specific to rosters (such as Google Groups and Chat Rooms). Data which also applies to contacts and profiles such as name, email, and photo, etc are returned in the corresponding Person fields.
-  *   `plusPageInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo.t)`, *default:* `nil`) - DEPRECATED. Info about plus pages in the person.
-  *   `pronoun` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun.t)`, *default:* `nil`) - Pronouns are not supported for consumer profiles. See go/pronouns-in-people-system-prd for more details.
-  *   `linkedPerson` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t)`, *default:* `nil`) - Other person resources linked indirectly by an edge. The full person or just the IDs may be populated depending on request parameters. We consider linked people distinct people, but they share information. Example: A contact with two outgoing edges. The two edges are considered separate, but linked people.
-  *   `posixAccount` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount.t)`, *default:* `nil`) - 
-  *   `contactCreateContextInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo.t)`, *default:* `nil`) - ContactCreateContextInfo has a timestamp timestamp and additional metadata (e.g. the source of the creation) for when the contact was created. See also `ContactEditContextInfo`.
-  *   `otherKeyword` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword.t)`, *default:* `nil`) - Legacy arbitrary key value fields
-  *   `customSchemaField` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCustomSchemaField.t)`, *default:* `nil`) - 
-  *   `gender` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender.t)`, *default:* `nil`) - 
-  *   `sortKeys` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys.t`, *default:* `nil`) - 
-  *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata.t`, *default:* `nil`) - 
-  *   `language` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage.t)`, *default:* `nil`) - 
-  *   `email` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail.t)`, *default:* `nil`) - 
-  *   `rightOfPublicityState` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState.t)`, *default:* `nil`) - 
-  *   `website` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite.t)`, *default:* `nil`) - 
-  *   `managementUpchain` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain.t)`, *default:* `nil`) - 
-  *   `connectionReminder` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder.t)`, *default:* `nil`) - Reminder to connect with a Contact (part of go/people-prompts). Also contains contact-level prompts settings. Each Contact can have a single `connection_reminder` (but can have multiple Prompts inside of it). Field is repeated per PeopleAPI data model go/people-api-concepts#repeated. Only supported for CONTACT container.
-  *   `peopleInCommon` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t)`, *default:* `nil`) - DEPRECATED. This feature was stubbed, but never implemented. This field will not be populated with any results.
-  *   `coverPhoto` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCoverPhoto.t)`, *default:* `nil`) - DEPRECATED. Now always returns a default cover photo. See go/sunset-cover-photo.
-  *   `clientData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData.t)`, *default:* `nil`) - 
-  *   `skills` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills.t)`, *default:* `nil`) - 
-  *   `mapsProfile` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile.t)`, *default:* `nil`) - MapsProfile, see go/product-profiles-backend-api
-  *   `inAppNotificationTarget` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget.t)`, *default:* `nil`) - Ways to send in-app notifications to this person. See go/reachability. This field is read-only and ignored for mutates.
-  *   `im` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm.t)`, *default:* `nil`) - 
-  *   `name` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiName.t)`, *default:* `nil`) - See go/people-api-howto:names for details about names in PeopleAPI.
-  *   `profileUrl` (*type:* `String.t`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore. (go/people-api-concepts#repeated): Use person.profile_url_repeated instead. Access to this field is restricted to a set of legacy clients. This is a Google+-only field. See go/fbs-g+-deprecation. NOTE: `Person.profile_url` is only populated for profile-centric person.
-  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - A fingerprint that can be used to reliably determine if a resource has changed. Externally it is used as part of the etag.
-  *   `event` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent.t)`, *default:* `nil`) - Event is currently in use by contacts.
-  *   `location` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation.t)`, *default:* `nil`) - 
-  *   `legacyFields` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields.t`, *default:* `nil`) - DEPRECATED. This field was only for backwards compatibility with legacy GData callers, and should not be used by new clients. Legacy fields used for mobile clients.
-  *   `personId` (*type:* `String.t`, *default:* `nil`) - The ID of the person. This is determined by the backend, is unstable, and may not be the same as a user_id. Internally referred as 'personKey' to distinguish from the common PersonId pojo. See go/people-api-concepts#person-id
-  *   `inAppReachability` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppReachability.t)`, *default:* `nil`) - Used only by profile service, deprecated for PeopleAPI and Sharpen. If you aren't sure, contact people-api-users@ and profile-service-eng@.
-  *   `placeDetails` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails.t)`, *default:* `nil`) - Data specific to places. Data which also applies to contacts and profiles such as name, phone, photo, etc. are returned in the corresponding Person fields.
-  *   `searchProfile` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile.t)`, *default:* `nil`) - Profile for Janata and Search. go/janata-profile-in-sgbe
-  *   `extendedData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData.t`, *default:* `nil`) - Data added by extensions that are not specific to a particular field.
+  *   `relation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation.t)`, *default:* `nil`) - See go/relation-vs-relationship for relation vs relationship explanation.
+  *   `photo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto.t)`, *default:* `nil`) - See go/people-api-concepts/photos for usage details
+  *   `organization` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization.t)`, *default:* `nil`) - 
   *   `mission` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMission.t)`, *default:* `nil`) - 
-  *   `profileUrlRepeated` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore. This is a Google+-only field. See go/fbs-g+-deprecation.
-  *   `interest` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest.t)`, *default:* `nil`) - 
-  *   `address` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress.t)`, *default:* `nil`) - 
-  *   `nickname` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname.t)`, *default:* `nil`) - 
+  *   `customSchemaField` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCustomSchemaField.t)`, *default:* `nil`) - 
+  *   `coverPhoto` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCoverPhoto.t)`, *default:* `nil`) - DEPRECATED. Now always returns a default cover photo. See go/sunset-cover-photo.
+  *   `linkedPerson` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t)`, *default:* `nil`) - Other person resources linked indirectly by an edge. The full person or just the IDs may be populated depending on request parameters. We consider linked people distinct people, but they share information. Example: A contact with two outgoing edges. The two edges are considered separate, but linked people.
+  *   `name` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiName.t)`, *default:* `nil`) - See go/people-api-howto:names for details about names in PeopleAPI.
+  *   `sortKeys` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys.t`, *default:* `nil`) - 
+  *   `sipAddress` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress.t)`, *default:* `nil`) - SipAddress is currently in use by contacts.
+  *   `inAppReachability` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppReachability.t)`, *default:* `nil`) - Used only by profile service, deprecated for PeopleAPI and Sharpen. If you aren't sure, contact people-api-users@ and profile-service-eng@.
   *   `calendar` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCalendar.t)`, *default:* `nil`) - b/145671020: Deprecated for Profiles, but not for Contacts.
   *   `socialConnection` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSocialConnection.t)`, *default:* `nil`) - NOTE: this is used by go/starlight, but not actually used or returned in PeopleAPI. See b/27281119 for context. Please reach out to people-api-eng@ if you have questions.
-  *   `photo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto.t)`, *default:* `nil`) - See go/people-api-concepts/photos for usage details
-  *   `relation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation.t)`, *default:* `nil`) - See go/relation-vs-relationship for relation vs relationship explanation.
-  *   `braggingRights` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights.t)`, *default:* `nil`) - Used only by contacts, no data will be returned for profiles.
-  *   `teamsExtendedData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData.t`, *default:* `nil`) - DEPRECATED. *UNSUPPORTED*. This field is never populated.
-  *   `relationshipInterest` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore.
-  *   `occupation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation.t)`, *default:* `nil`) - 
-  *   `contactGroupMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership.t)`, *default:* `nil`) - Contact groups that this person is a member of.
-  *   `relationshipStatus` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore.
-  *   `userDefined` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined.t)`, *default:* `nil`) - UserDefined is currently in use by contacts.
-  *   `limitedProfileSettings` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField.t)`, *default:* `nil`) - Settings for the limited profile. See go/limited-profiles-api.
-  *   `contactEditContextInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo.t)`, *default:* `nil`) - ContactEditContextInfo is a timestamp and additional metadata (e.g. the source of the edit) for the last 'human initiated edit'. See also `ContactCreateContextInfo`.
-  *   `contactPromptSettingsInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo.t)`, *default:* `nil`) - 
-  *   `about` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout.t)`, *default:* `nil`) - 
-  *   `communicationEmail` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail.t)`, *default:* `nil`) - 
-  *   `readOnlyProfileInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo.t)`, *default:* `nil`) - Information about the profiles that are a part of this Person. This is only applicable to PROFILE and DOMAIN_PROFILE containers.
+  *   `plusPageInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo.t)`, *default:* `nil`) - DEPRECATED. Info about plus pages in the person.
+  *   `externalId` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId.t)`, *default:* `nil`) - 
+  *   `mapsProfile` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile.t)`, *default:* `nil`) - MapsProfile, see go/product-profiles-backend-api
   *   `tagline` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTagline.t)`, *default:* `nil`) - Only supported for PLACE container results, no data will be returned for profiles.
-  *   `organization` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization.t)`, *default:* `nil`) - 
-  *   `ageRangeRepeated` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType.t)`, *default:* `nil`) - Data on the person's age range, adult status, and age of consent. NOTE: Please read go/people-api-howto:age on how to correctly get age data.
-  *   `sipAddress` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress.t)`, *default:* `nil`) - SipAddress is currently in use by contacts.
-  *   `phone` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone.t)`, *default:* `nil`) - 
-  *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Deprecated. If age is needed use `person.age_range_repeated` instead. Please see go/people-api-howto:age on how to correctly get age data.
-  *   `personAttribute` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute.t)`, *default:* `nil`) - In order to request this field, the client must set desired PersonAttributeKey in the dedicated RequestMask field `person_attribute`. Unlike other person fields, this field cannot be requested in the `include_field` field mask.
   *   `interactionSettings` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInteractionSettings.t)`, *default:* `nil`) - DEPRECATED. This field isn't populated in people.list.
-  *   `visibleToGuests` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests.t)`, *default:* `nil`) - Add annotation_id and metadata (product_source) for visible to guests contacts go/visible-to-guests.
+  *   `peopleInCommon` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t)`, *default:* `nil`) - DEPRECATED. This feature was stubbed, but never implemented. This field will not be populated with any results.
+  *   `connectionReminder` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder.t)`, *default:* `nil`) - Reminder to connect with a Contact (part of go/people-prompts). Also contains contact-level prompts settings. Each Contact can have a single `connection_reminder` (but can have multiple Prompts inside of it). Field is repeated per PeopleAPI data model go/people-api-concepts#repeated. Only supported for CONTACT container.
+  *   `limitedProfileSettings` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField.t)`, *default:* `nil`) - Settings for the limited profile. See go/limited-profiles-api.
+  *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata.t`, *default:* `nil`) - 
+  *   `birthday` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday.t)`, *default:* `nil`) - 
+  *   `email` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail.t)`, *default:* `nil`) - 
+  *   `otherKeyword` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword.t)`, *default:* `nil`) - Legacy arbitrary key value fields
+  *   `inAppNotificationTarget` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget.t)`, *default:* `nil`) - Ways to send in-app notifications to this person. See go/reachability. This field is read-only and ignored for mutates.
+  *   `placeDetails` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails.t)`, *default:* `nil`) - Data specific to places. Data which also applies to contacts and profiles such as name, phone, photo, etc. are returned in the corresponding Person fields.
+  *   `rightOfPublicityState` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState.t)`, *default:* `nil`) - 
+  *   `im` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm.t)`, *default:* `nil`) - 
+  *   `legacyFields` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields.t`, *default:* `nil`) - DEPRECATED. This field was only for backwards compatibility with legacy GData callers, and should not be used by new clients. Legacy fields used for mobile clients.
+  *   `occupation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation.t)`, *default:* `nil`) - 
+  *   `sshPublicKey` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey.t)`, *default:* `nil`) - 
   *   `namePronunciationAudioMetadataInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNamePronunciationAudioMetadataInfo.t)`, *default:* `nil`) - Metadata info for a user's name pronunciation audio. See go/name-pronunication-backend.
+  *   `relationshipInterest` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore.
+  *   `skills` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills.t)`, *default:* `nil`) - 
+  *   `contactPromptSettingsInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo.t)`, *default:* `nil`) - 
+  *   `profileUrl` (*type:* `String.t`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore. (go/people-api-concepts#repeated): Use person.profile_url_repeated instead. Access to this field is restricted to a set of legacy clients. This is a Google+-only field. See go/fbs-g+-deprecation. NOTE: `Person.profile_url` is only populated for profile-centric person.
+  *   `managementUpchain` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain.t)`, *default:* `nil`) - 
+  *   `contactEditContextInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo.t)`, *default:* `nil`) - ContactEditContextInfo is a timestamp and additional metadata (e.g. the source of the edit) for the last 'human initiated edit'. See also `ContactCreateContextInfo`.
+  *   `website` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite.t)`, *default:* `nil`) - 
+  *   `phone` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone.t)`, *default:* `nil`) - 
+  *   `teamsExtendedData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData.t`, *default:* `nil`) - DEPRECATED. *UNSUPPORTED*. This field is never populated.
+  *   `contactCreateContextInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo.t)`, *default:* `nil`) - ContactCreateContextInfo has a timestamp timestamp and additional metadata (e.g. the source of the creation) for when the contact was created. See also `ContactEditContextInfo`.
+  *   `personAttribute` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute.t)`, *default:* `nil`) - In order to request this field, the client must set desired PersonAttributeKey in the dedicated RequestMask field `person_attribute`. Unlike other person fields, this field cannot be requested in the `include_field` field mask.
+  *   `location` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation.t)`, *default:* `nil`) - 
+  *   `pronoun` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun.t)`, *default:* `nil`) - Pronouns are not supported for consumer profiles. See go/pronouns-in-people-system-prd for more details.
+  *   `ageRangeRepeated` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType.t)`, *default:* `nil`) - Data on the person's age range, adult status, and age of consent. NOTE: Please read go/people-api-howto:age on how to correctly get age data.
+  *   `posixAccount` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount.t)`, *default:* `nil`) - 
+  *   `language` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage.t)`, *default:* `nil`) - 
+  *   `profileUrlRepeated` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore. This is a Google+-only field. See go/fbs-g+-deprecation.
+  *   `userDefined` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined.t)`, *default:* `nil`) - UserDefined is currently in use by contacts.
+  *   `event` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent.t)`, *default:* `nil`) - Event is currently in use by contacts.
+  *   `rosterDetails` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails.t)`, *default:* `nil`) - Data specific to rosters (such as Google Groups and Chat Rooms). Data which also applies to contacts and profiles such as name, email, and photo, etc are returned in the corresponding Person fields.
+  *   `emergencyInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo.t)`, *default:* `nil`) - Emergency information. See go/emergency-trusted-contacts-papi.
+  *   `visibleToGuests` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests.t)`, *default:* `nil`) - Add annotation_id and metadata (product_source) for visible to guests contacts go/visible-to-guests.
+  *   `ageRange` (*type:* `String.t`, *default:* `nil`) - Deprecated. If age is needed use `person.age_range_repeated` instead. Please see go/people-api-howto:age on how to correctly get age data.
+  *   `searchProfile` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile.t)`, *default:* `nil`) - Profile for Janata and Search. go/janata-profile-in-sgbe
+  *   `contactStateInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo.t)`, *default:* `nil`) - Contact state and related metadata. See go/fbs-contacts-trash. If this field was requested but is not set on the Person then the contact is in the DEFAULT contact state. This field is read-only, and should not be set on a mutate (e.g. UpdatePerson) call. Clients must call the explicit APIs (e.g. UntrashPerson) to change contact state.
+  *   `extendedData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData.t`, *default:* `nil`) - Data added by extensions that are not specific to a particular field.
+  *   `nickname` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname.t)`, *default:* `nil`) - 
+  *   `about` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout.t)`, *default:* `nil`) - 
+  *   `personId` (*type:* `String.t`, *default:* `nil`) - The ID of the person. This is determined by the backend, is unstable, and may not be the same as a user_id. Internally referred as 'personKey' to distinguish from the common PersonId pojo. See go/people-api-concepts#person-id
+  *   `fileAs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs.t)`, *default:* `nil`) - 
+  *   `readOnlyProfileInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo.t)`, *default:* `nil`) - Information about the profiles that are a part of this Person. This is only applicable to PROFILE and DOMAIN_PROFILE containers.
+  *   `relationshipStatus` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore.
+  *   `interest` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest.t)`, *default:* `nil`) - 
+  *   `contactGroupMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership.t)`, *default:* `nil`) - Contact groups that this person is a member of.
+  *   `address` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress.t)`, *default:* `nil`) - 
+  *   `circleMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t)`, *default:* `nil`) - Circles that this person is a member of.
+  *   `certifiedBornBefore` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore.t)`, *default:* `nil`) - 
+  *   `braggingRights` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights.t)`, *default:* `nil`) - Used only by contacts, no data will be returned for profiles.
+  *   `gender` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender.t)`, *default:* `nil`) - 
+  *   `fingerprint` (*type:* `String.t`, *default:* `nil`) - A fingerprint that can be used to reliably determine if a resource has changed. Externally it is used as part of the etag.
   *   `membership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMembership.t)`, *default:* `nil`) - DEPRECATED. Please use `circle_membership` or `contact_group_membership` instead. Contact-groups and circles that this person is a member of.
+  *   `communicationEmail` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail.t)`, *default:* `nil`) - 
+  *   `clientData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :birthday =>
+          :relation =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation.t()
             )
             | nil,
-          :sshPublicKey =>
+          :photo =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto.t())
+            | nil,
+          :organization =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization.t()
             )
             | nil,
-          :circleMembership =>
+          :mission =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t()
-            )
-            | nil,
-          :externalId =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId.t()
-            )
-            | nil,
-          :fileAs =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs.t()
-            )
-            | nil,
-          :certifiedBornBefore =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore.t()
-            )
-            | nil,
-          :emergencyInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo.t()
-            )
-            | nil,
-          :contactStateInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo.t()
-            )
-            | nil,
-          :rosterDetails =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails.t()
-            )
-            | nil,
-          :plusPageInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo.t()
-            )
-            | nil,
-          :pronoun =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun.t()
-            )
-            | nil,
-          :linkedPerson =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t()
-            )
-            | nil,
-          :posixAccount =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount.t()
-            )
-            | nil,
-          :contactCreateContextInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo.t()
-            )
-            | nil,
-          :otherKeyword =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMission.t()
             )
             | nil,
           :customSchemaField =>
@@ -182,136 +125,30 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCustomSchemaField.t()
             )
             | nil,
-          :gender =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender.t()
-            )
-            | nil,
-          :sortKeys =>
-            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys.t()
-            | nil,
-          :metadata =>
-            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata.t()
-            | nil,
-          :language =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage.t()
-            )
-            | nil,
-          :email =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail.t())
-            | nil,
-          :rightOfPublicityState =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState.t()
-            )
-            | nil,
-          :website =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite.t()
-            )
-            | nil,
-          :managementUpchain =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain.t()
-            )
-            | nil,
-          :connectionReminder =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder.t()
-            )
-            | nil,
-          :peopleInCommon =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t()
-            )
-            | nil,
           :coverPhoto =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCoverPhoto.t()
             )
             | nil,
-          :clientData =>
+          :linkedPerson =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t()
             )
-            | nil,
-          :skills =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills.t()
-            )
-            | nil,
-          :mapsProfile =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile.t()
-            )
-            | nil,
-          :inAppNotificationTarget =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget.t()
-            )
-            | nil,
-          :im =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm.t())
             | nil,
           :name =>
             list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiName.t())
             | nil,
-          :profileUrl => String.t() | nil,
-          :fingerprint => String.t() | nil,
-          :event =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent.t())
+          :sortKeys =>
+            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys.t()
             | nil,
-          :location =>
+          :sipAddress =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress.t()
             )
             | nil,
-          :legacyFields =>
-            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields.t()
-            | nil,
-          :personId => String.t() | nil,
           :inAppReachability =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppReachability.t()
-            )
-            | nil,
-          :placeDetails =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails.t()
-            )
-            | nil,
-          :searchProfile =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile.t()
-            )
-            | nil,
-          :extendedData =>
-            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData.t()
-            | nil,
-          :mission =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMission.t()
-            )
-            | nil,
-          :profileUrlRepeated =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl.t()
-            )
-            | nil,
-          :interest =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest.t()
-            )
-            | nil,
-          :address =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress.t()
-            )
-            | nil,
-          :nickname =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname.t()
             )
             | nil,
           :calendar =>
@@ -324,73 +161,19 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSocialConnection.t()
             )
             | nil,
-          :photo =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto.t())
-            | nil,
-          :relation =>
+          :plusPageInfo =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo.t()
             )
             | nil,
-          :braggingRights =>
+          :externalId =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId.t()
             )
             | nil,
-          :teamsExtendedData =>
-            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData.t()
-            | nil,
-          :relationshipInterest =>
+          :mapsProfile =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest.t()
-            )
-            | nil,
-          :occupation =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation.t()
-            )
-            | nil,
-          :contactGroupMembership =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership.t()
-            )
-            | nil,
-          :relationshipStatus =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus.t()
-            )
-            | nil,
-          :userDefined =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined.t()
-            )
-            | nil,
-          :limitedProfileSettings =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField.t()
-            )
-            | nil,
-          :contactEditContextInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo.t()
-            )
-            | nil,
-          :contactPromptSettingsInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo.t()
-            )
-            | nil,
-          :about =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout.t())
-            | nil,
-          :communicationEmail =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail.t()
-            )
-            | nil,
-          :readOnlyProfileInfo =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile.t()
             )
             | nil,
           :tagline =>
@@ -398,38 +181,71 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTagline.t()
             )
             | nil,
-          :organization =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization.t()
-            )
-            | nil,
-          :ageRangeRepeated =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType.t()
-            )
-            | nil,
-          :sipAddress =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress.t()
-            )
-            | nil,
-          :phone =>
-            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone.t())
-            | nil,
-          :ageRange => String.t() | nil,
-          :personAttribute =>
-            list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute.t()
-            )
-            | nil,
           :interactionSettings =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInteractionSettings.t()
             )
             | nil,
-          :visibleToGuests =>
+          :peopleInCommon =>
             list(
-              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests.t()
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson.t()
+            )
+            | nil,
+          :connectionReminder =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder.t()
+            )
+            | nil,
+          :limitedProfileSettings =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField.t()
+            )
+            | nil,
+          :metadata =>
+            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata.t()
+            | nil,
+          :birthday =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday.t()
+            )
+            | nil,
+          :email =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail.t())
+            | nil,
+          :otherKeyword =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword.t()
+            )
+            | nil,
+          :inAppNotificationTarget =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget.t()
+            )
+            | nil,
+          :placeDetails =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails.t()
+            )
+            | nil,
+          :rightOfPublicityState =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState.t()
+            )
+            | nil,
+          :im =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm.t())
+            | nil,
+          :legacyFields =>
+            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields.t()
+            | nil,
+          :occupation =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation.t()
+            )
+            | nil,
+          :sshPublicKey =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey.t()
             )
             | nil,
           :namePronunciationAudioMetadataInfo =>
@@ -437,87 +253,214 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNamePronunciationAudioMetadataInfo.t()
             )
             | nil,
+          :relationshipInterest =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest.t()
+            )
+            | nil,
+          :skills =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills.t()
+            )
+            | nil,
+          :contactPromptSettingsInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo.t()
+            )
+            | nil,
+          :profileUrl => String.t() | nil,
+          :managementUpchain =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain.t()
+            )
+            | nil,
+          :contactEditContextInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo.t()
+            )
+            | nil,
+          :website =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite.t()
+            )
+            | nil,
+          :phone =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone.t())
+            | nil,
+          :teamsExtendedData =>
+            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData.t()
+            | nil,
+          :contactCreateContextInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo.t()
+            )
+            | nil,
+          :personAttribute =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute.t()
+            )
+            | nil,
+          :location =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation.t()
+            )
+            | nil,
+          :pronoun =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun.t()
+            )
+            | nil,
+          :ageRangeRepeated =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType.t()
+            )
+            | nil,
+          :posixAccount =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount.t()
+            )
+            | nil,
+          :language =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage.t()
+            )
+            | nil,
+          :profileUrlRepeated =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl.t()
+            )
+            | nil,
+          :userDefined =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined.t()
+            )
+            | nil,
+          :event =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent.t())
+            | nil,
+          :rosterDetails =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails.t()
+            )
+            | nil,
+          :emergencyInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo.t()
+            )
+            | nil,
+          :visibleToGuests =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests.t()
+            )
+            | nil,
+          :ageRange => String.t() | nil,
+          :searchProfile =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile.t()
+            )
+            | nil,
+          :contactStateInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo.t()
+            )
+            | nil,
+          :extendedData =>
+            GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData.t()
+            | nil,
+          :nickname =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname.t()
+            )
+            | nil,
+          :about =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout.t())
+            | nil,
+          :personId => String.t() | nil,
+          :fileAs =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs.t()
+            )
+            | nil,
+          :readOnlyProfileInfo =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo.t()
+            )
+            | nil,
+          :relationshipStatus =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus.t()
+            )
+            | nil,
+          :interest =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest.t()
+            )
+            | nil,
+          :contactGroupMembership =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership.t()
+            )
+            | nil,
+          :address =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress.t()
+            )
+            | nil,
+          :circleMembership =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t()
+            )
+            | nil,
+          :certifiedBornBefore =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore.t()
+            )
+            | nil,
+          :braggingRights =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights.t()
+            )
+            | nil,
+          :gender =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender.t()
+            )
+            | nil,
+          :fingerprint => String.t() | nil,
           :membership =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMembership.t()
             )
+            | nil,
+          :communicationEmail =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail.t()
+            )
+            | nil,
+          :clientData =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData.t()
+            )
             | nil
         }
 
-  field(:birthday,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday,
+  field(:relation,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation,
     type: :list
   )
 
-  field(:sshPublicKey,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey,
+  field(:photo,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto,
     type: :list
   )
 
-  field(:circleMembership,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership,
+  field(:organization,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization,
     type: :list
   )
 
-  field(:externalId,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId,
-    type: :list
-  )
-
-  field(:fileAs,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs,
-    type: :list
-  )
-
-  field(:certifiedBornBefore,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore,
-    type: :list
-  )
-
-  field(:emergencyInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo,
-    type: :list
-  )
-
-  field(:contactStateInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo,
-    type: :list
-  )
-
-  field(:rosterDetails,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails,
-    type: :list
-  )
-
-  field(:plusPageInfo,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo,
-    type: :list
-  )
-
-  field(:pronoun,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun,
-    type: :list
-  )
-
-  field(:linkedPerson,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson,
-    type: :list
-  )
-
-  field(:posixAccount,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount,
-    type: :list
-  )
-
-  field(:contactCreateContextInfo,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo,
-    type: :list
-  )
-
-  field(:otherKeyword,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword,
+  field(:mission,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMission,
     type: :list
   )
 
@@ -526,83 +469,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
     type: :list
   )
 
-  field(:gender,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender,
-    type: :list
-  )
-
-  field(:sortKeys,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys
-  )
-
-  field(:metadata,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata
-  )
-
-  field(:language,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage,
-    type: :list
-  )
-
-  field(:email,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail,
-    type: :list
-  )
-
-  field(:rightOfPublicityState,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState,
-    type: :list
-  )
-
-  field(:website,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite,
-    type: :list
-  )
-
-  field(:managementUpchain,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain,
-    type: :list
-  )
-
-  field(:connectionReminder,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder,
-    type: :list
-  )
-
-  field(:peopleInCommon,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson,
-    type: :list
-  )
-
   field(:coverPhoto,
     as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCoverPhoto,
     type: :list
   )
 
-  field(:clientData,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData,
-    type: :list
-  )
-
-  field(:skills,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills,
-    type: :list
-  )
-
-  field(:mapsProfile,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile,
-    type: :list
-  )
-
-  field(:inAppNotificationTarget,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget,
-    type: :list
-  )
-
-  field(:im,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm,
+  field(:linkedPerson,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson,
     type: :list
   )
 
@@ -611,66 +484,17 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
     type: :list
   )
 
-  field(:profileUrl)
-  field(:fingerprint)
+  field(:sortKeys,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSortKeys
+  )
 
-  field(:event,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent,
+  field(:sipAddress,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress,
     type: :list
   )
-
-  field(:location,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation,
-    type: :list
-  )
-
-  field(:legacyFields,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields
-  )
-
-  field(:personId)
 
   field(:inAppReachability,
     as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppReachability,
-    type: :list
-  )
-
-  field(:placeDetails,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails,
-    type: :list
-  )
-
-  field(:searchProfile,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile,
-    type: :list
-  )
-
-  field(:extendedData,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData
-  )
-
-  field(:mission,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMission,
-    type: :list
-  )
-
-  field(:profileUrlRepeated,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl,
-    type: :list
-  )
-
-  field(:interest,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest,
-    type: :list
-  )
-
-  field(:address,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress,
-    type: :list
-  )
-
-  field(:nickname,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname,
     type: :list
   )
 
@@ -684,115 +508,23 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
     type: :list
   )
 
-  field(:photo,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhoto,
+  field(:plusPageInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlusPageInfo,
     type: :list
   )
 
-  field(:relation,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelation,
+  field(:externalId,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiExternalId,
     type: :list
   )
 
-  field(:braggingRights,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights,
-    type: :list
-  )
-
-  field(:teamsExtendedData,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData
-  )
-
-  field(:relationshipInterest,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest,
-    type: :list
-  )
-
-  field(:occupation,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation,
-    type: :list
-  )
-
-  field(:contactGroupMembership,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership,
-    type: :list
-  )
-
-  field(:relationshipStatus,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus,
-    type: :list
-  )
-
-  field(:userDefined,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined,
-    type: :list
-  )
-
-  field(:limitedProfileSettings,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField,
-    type: :list
-  )
-
-  field(:contactEditContextInfo,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo,
-    type: :list
-  )
-
-  field(:contactPromptSettingsInfo,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo,
-    type: :list
-  )
-
-  field(:about,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout,
-    type: :list
-  )
-
-  field(:communicationEmail,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail,
-    type: :list
-  )
-
-  field(:readOnlyProfileInfo,
-    as:
-      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo,
+  field(:mapsProfile,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMapsProfile,
     type: :list
   )
 
   field(:tagline,
     as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTagline,
-    type: :list
-  )
-
-  field(:organization,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOrganization,
-    type: :list
-  )
-
-  field(:ageRangeRepeated,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType,
-    type: :list
-  )
-
-  field(:sipAddress,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSipAddress,
-    type: :list
-  )
-
-  field(:phone,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone,
-    type: :list
-  )
-
-  field(:ageRange)
-
-  field(:personAttribute,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute,
     type: :list
   )
 
@@ -802,8 +534,74 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
     type: :list
   )
 
-  field(:visibleToGuests,
-    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests,
+  field(:peopleInCommon,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPerson,
+    type: :list
+  )
+
+  field(:connectionReminder,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiConnectionReminder,
+    type: :list
+  )
+
+  field(:limitedProfileSettings,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLimitedProfileSettingsField,
+    type: :list
+  )
+
+  field(:metadata,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonMetadata
+  )
+
+  field(:birthday,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBirthday,
+    type: :list
+  )
+
+  field(:email,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmail,
+    type: :list
+  )
+
+  field(:otherKeyword,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOtherKeyword,
+    type: :list
+  )
+
+  field(:inAppNotificationTarget,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInAppNotificationTarget,
+    type: :list
+  )
+
+  field(:placeDetails,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPlaceDetails,
+    type: :list
+  )
+
+  field(:rightOfPublicityState,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRightOfPublicityState,
+    type: :list
+  )
+
+  field(:im,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiIm,
+    type: :list
+  )
+
+  field(:legacyFields,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLegacyFields
+  )
+
+  field(:occupation,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiOccupation,
+    type: :list
+  )
+
+  field(:sshPublicKey,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSshPublicKey,
     type: :list
   )
 
@@ -813,8 +611,211 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
     type: :list
   )
 
+  field(:relationshipInterest,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipInterest,
+    type: :list
+  )
+
+  field(:skills,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSkills,
+    type: :list
+  )
+
+  field(:contactPromptSettingsInfo,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactPromptSettingsInfo,
+    type: :list
+  )
+
+  field(:profileUrl)
+
+  field(:managementUpchain,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiManagementUpchain,
+    type: :list
+  )
+
+  field(:contactEditContextInfo,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactEditContextInfo,
+    type: :list
+  )
+
+  field(:website,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiWebsite,
+    type: :list
+  )
+
+  field(:phone,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPhone,
+    type: :list
+  )
+
+  field(:teamsExtendedData,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiTeamsExtendedData
+  )
+
+  field(:contactCreateContextInfo,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactCreateContextInfo,
+    type: :list
+  )
+
+  field(:personAttribute,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonAttribute,
+    type: :list
+  )
+
+  field(:location,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLocation,
+    type: :list
+  )
+
+  field(:pronoun,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPronoun,
+    type: :list
+  )
+
+  field(:ageRangeRepeated,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAgeRangeType,
+    type: :list
+  )
+
+  field(:posixAccount,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPosixAccount,
+    type: :list
+  )
+
+  field(:language,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiLanguage,
+    type: :list
+  )
+
+  field(:profileUrlRepeated,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiProfileUrl,
+    type: :list
+  )
+
+  field(:userDefined,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiUserDefined,
+    type: :list
+  )
+
+  field(:event,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEvent,
+    type: :list
+  )
+
+  field(:rosterDetails,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRosterDetails,
+    type: :list
+  )
+
+  field(:emergencyInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiEmergencyInfo,
+    type: :list
+  )
+
+  field(:visibleToGuests,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiVisibleToGuests,
+    type: :list
+  )
+
+  field(:ageRange)
+
+  field(:searchProfile,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiSearchProfile,
+    type: :list
+  )
+
+  field(:contactStateInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactStateInfo,
+    type: :list
+  )
+
+  field(:extendedData,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonExtendedData
+  )
+
+  field(:nickname,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiNickname,
+    type: :list
+  )
+
+  field(:about,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAbout,
+    type: :list
+  )
+
+  field(:personId)
+
+  field(:fileAs,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiFileAs,
+    type: :list
+  )
+
+  field(:readOnlyProfileInfo,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiReadOnlyProfileInfo,
+    type: :list
+  )
+
+  field(:relationshipStatus,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiRelationshipStatus,
+    type: :list
+  )
+
+  field(:interest,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest,
+    type: :list
+  )
+
+  field(:contactGroupMembership,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership,
+    type: :list
+  )
+
+  field(:address,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress,
+    type: :list
+  )
+
+  field(:circleMembership,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership,
+    type: :list
+  )
+
+  field(:certifiedBornBefore,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore,
+    type: :list
+  )
+
+  field(:braggingRights,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights,
+    type: :list
+  )
+
+  field(:gender,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender,
+    type: :list
+  )
+
+  field(:fingerprint)
+
   field(:membership,
     as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiMembership,
+    type: :list
+  )
+
+  field(:communicationEmail,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCommunicationEmail,
+    type: :list
+  )
+
+  field(:clientData,
+    as: GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiClientData,
     type: :list
   )
 end

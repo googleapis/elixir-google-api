@@ -21,193 +21,193 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
 
   ## Attributes
 
-  *   `goldmineTrustFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `forcedExperimentScore` (*type:* `integer()`, *default:* `nil`) - A score assigned for candidates forced by experiments.
-  *   `widthFraction` (*type:* `number()`, *default:* `nil`) - A rendered width of this title divided by the max allowed width for title. Takes values in [0, 1].
-  *   `goldmineOtherBoostFeatureCount` (*type:* `integer()`, *default:* `nil`) - The number of BoostFeatures present in AlternativeTitlesGeneator but not populated above.
-  *   `goldmineUrlMatchFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `queryMatch` (*type:* `integer()`, *default:* `nil`) - The number of (different) terms with a query match. It may include the match with any SQuery node (e.g., synonyms).
-  *   `docLang` (*type:* `String.t`, *default:* `nil`) - Document language for this title. It is used for model inference and hence flattened into RanklabTitle instead of RanklabDoc.
-  *   `goldmineIsTitleTag` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineHeaderIsH1` (*type:* `number()`, *default:* `nil`) - 
-  *   `sourceGeometry` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `docRelevance` (*type:* `number()`, *default:* `nil`) - 
-  *   `sourceHeadingTag` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `perTypeRank` (*type:* `integer()`, *default:* `nil`) - Rank of this title among titles of the same `data_source_type`.
   *   `goldmineLocationFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `baseRank` (*type:* `integer()`, *default:* `nil`) - The ranking index of this candidate (starting from 0) in base.
-  *   `goldmineAdjustedScore` (*type:* `number()`, *default:* `nil`) - The score for `text` computed in Goldmine (AlternativeTitlesAnnotator) with additional scoring adjustments applied. Currently includes Blockbert scoring.
-  *   `goldminePageScore` (*type:* `number()`, *default:* `nil`) - The score for the `text` computed in Goldmine (AlternativeTitlesAnnotator). 
-  *   `goldmineSalientTermFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `isTruncated` (*type:* `boolean()`, *default:* `nil`) - Whether this title candidate is truncated or not.
-  *   `goldmineIsTruncated` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineAnchorSupportOnly` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceGeneratedTitle` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `sourceOffdomainAnchor` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `goldmineReadabilityScore` (*type:* `number()`, *default:* `nil`) - 
+  *   `queryMatch` (*type:* `integer()`, *default:* `nil`) - The number of (different) terms with a query match. It may include the match with any SQuery node (e.g., synonyms).
+  *   `goldmineUrlMatchFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `percentBodyTitleTokensCovered` (*type:* `number()`, *default:* `nil`) - Numbers of body title tokens covered by this title, in range of [0, 1]. Not set if body title is considered "bad".
+  *   `goldmineGeometryFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineOnPageDemotionFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineOtherBoostFeatureCount` (*type:* `integer()`, *default:* `nil`) - The number of BoostFeatures present in AlternativeTitlesGeneator but not populated above.
   *   `percentTokensCoveredByBodyTitle` (*type:* `number()`, *default:* `nil`) - Numbers of tokens covered by body title, in range of [0, 1]. Not set if body title is considered "bad".
   *   `hasSiteInfo` (*type:* `boolean()`, *default:* `nil`) - Whether a title contains site information.
-  *   `goldmineIsBadTitle` (*type:* `number()`, *default:* `nil`) - 
-  *   `sourceOnsiteAnchor` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `goldmineHasTitleNgram` (*type:* `number()`, *default:* `nil`) - 
-  *   `sourceTitleTag` (*type:* `boolean()`, *default:* `nil`) - =============================================================== Title candidate's original source information. They are populated only for non-production environment for debugging purposes.
-  *   `goldmineLocalTitleFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineAnchorFactor` (*type:* `number()`, *default:* `nil`) - =============================================================== Internal boost feature signals used to compute `goldmine_page_score`. They are exposed only for debugging purpose.
-  *   `sourceTransliteratedTitle` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `goldmineBlockbertFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineBodyFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineHasBoilerplateInTitle` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineIsHeadingTag` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineSitenameFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `sourceOndomainAnchor` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Title text to display. Populated for debugging purpose only, and won't be used for model inferences. This represetns the exact display text in SERP, with modifications like truncations or site-title appending involved.
-  *   `goldmineOnPageDemotionFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `isValid` (*type:* `boolean()`, *default:* `nil`) - Whether a title is valid (i.e., not empty).
-  *   `goldmineReadabilityScore` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineGeometryFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineTitleTagFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `baseGoldmineFinalScore` (*type:* `number()`, *default:* `nil`) - `goldmine_final_score` value in base.
-  *   `testRank` (*type:* `integer()`, *default:* `nil`) - The ranking index of this candidate (starting from 0) in test.
+  *   `goldmineHeadingFactor` (*type:* `number()`, *default:* `nil`) - 
   *   `goldmineSubHeading` (*type:* `number()`, *default:* `nil`) - 
-  *   `queryMatchFraction` (*type:* `number()`, *default:* `nil`) - A number of matched query terms divided by the number of all terms in query. Synonyms or other terms that appear in squery but not in the raw query are excluded. Takes values in [0, 1].
-  *   `dupTokens` (*type:* `integer()`, *default:* `nil`) - Numbers of duplicated tokens. For example, duplicated tokens for a title "dog cat cat cat" is 2 (for 2 extra "cat").
-  *   `dataSourceType` (*type:* `String.t`, *default:* `nil`) - Title source type.
-  *   `perTypeQuality` (*type:* `String.t`, *default:* `nil`) - How good or bad this title is as a `data_source_type` title type.
-  *   `testGoldmineFinalScore` (*type:* `number()`, *default:* `nil`) - `goldmine_final_score` value in test.
-  *   `sourceOffdomainAnchor` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `perTypeRank` (*type:* `integer()`, *default:* `nil`) - Rank of this title among titles of the same `data_source_type`.
-  *   `sourceGeneratedTitle` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `sourceLocalTitle` (*type:* `boolean()`, *default:* `nil`) - 
   *   `goldmineFinalScore` (*type:* `number()`, *default:* `nil`) - Deprecated: use `goldmine_page_score` instead.
-  *   `percentBodyTitleTokensCovered` (*type:* `number()`, *default:* `nil`) - Numbers of body title tokens covered by this title, in range of [0, 1]. Not set if body title is considered "bad".
-  *   `goldmineForeign` (*type:* `number()`, *default:* `nil`) - 
+  *   `testRank` (*type:* `integer()`, *default:* `nil`) - The ranking index of this candidate (starting from 0) in test.
+  *   `goldmineHeaderIsH1` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineSitenameFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineHasBoilerplateInTitle` (*type:* `number()`, *default:* `nil`) - 
+  *   `isValid` (*type:* `boolean()`, *default:* `nil`) - Whether a title is valid (i.e., not empty).
+  *   `goldmineTitleTagFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineTrustFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceHeadingTag` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `sourceTransliteratedTitle` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `dupTokens` (*type:* `integer()`, *default:* `nil`) - Numbers of duplicated tokens. For example, duplicated tokens for a title "dog cat cat cat" is 2 (for 2 extra "cat").
+  *   `text` (*type:* `String.t`, *default:* `nil`) - Title text to display. Populated for debugging purpose only, and won't be used for model inferences. This represetns the exact display text in SERP, with modifications like truncations or site-title appending involved.
+  *   `goldmineSalientTermFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineAnchorSupportOnly` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceGeometry` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `forcedExperimentScore` (*type:* `integer()`, *default:* `nil`) - A score assigned for candidates forced by experiments.
+  *   `baseRank` (*type:* `integer()`, *default:* `nil`) - The ranking index of this candidate (starting from 0) in base.
+  *   `baseGoldmineFinalScore` (*type:* `number()`, *default:* `nil`) - `goldmine_final_score` value in base.
+  *   `goldmineIsBadTitle` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineIsTruncated` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceLocalTitle` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `goldmineHasTitleNgram` (*type:* `number()`, *default:* `nil`) - 
+  *   `isTruncated` (*type:* `boolean()`, *default:* `nil`) - Whether this title candidate is truncated or not.
+  *   `docLang` (*type:* `String.t`, *default:* `nil`) - Document language for this title. It is used for model inference and hence flattened into RanklabTitle instead of RanklabDoc.
+  *   `testGoldmineFinalScore` (*type:* `number()`, *default:* `nil`) - `goldmine_final_score` value in test.
   *   `queryRelevance` (*type:* `number()`, *default:* `nil`) - Deprecated experimental features.
   *   `goldmineOgTitleFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceTitleTag` (*type:* `boolean()`, *default:* `nil`) - =============================================================== Title candidate's original source information. They are populated only for non-production environment for debugging purposes.
+  *   `sourceOndomainAnchor` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `goldmineIsHeadingTag` (*type:* `number()`, *default:* `nil`) - 
+  *   `queryMatchFraction` (*type:* `number()`, *default:* `nil`) - A number of matched query terms divided by the number of all terms in query. Synonyms or other terms that appear in squery but not in the raw query are excluded. Takes values in [0, 1].
+  *   `perTypeQuality` (*type:* `String.t`, *default:* `nil`) - How good or bad this title is as a `data_source_type` title type.
+  *   `goldmineAnchorFactor` (*type:* `number()`, *default:* `nil`) - =============================================================== Internal boost feature signals used to compute `goldmine_page_score`. They are exposed only for debugging purpose.
   *   `goldmineNavboostFactor` (*type:* `number()`, *default:* `nil`) - 
-  *   `goldmineHeadingFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `sourceOnsiteAnchor` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `goldmineBodyFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineIsTitleTag` (*type:* `number()`, *default:* `nil`) - 
+  *   `widthFraction` (*type:* `number()`, *default:* `nil`) - A rendered width of this title divided by the max allowed width for title. Takes values in [0, 1].
+  *   `dataSourceType` (*type:* `String.t`, *default:* `nil`) - Title source type.
+  *   `goldmineLocalTitleFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `docRelevance` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineForeign` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldminePageScore` (*type:* `number()`, *default:* `nil`) - The score for the `text` computed in Goldmine (AlternativeTitlesAnnotator). 
+  *   `goldmineAdjustedScore` (*type:* `number()`, *default:* `nil`) - The score for `text` computed in Goldmine (AlternativeTitlesAnnotator) with additional scoring adjustments applied. Currently includes Blockbert scoring.
+  *   `goldmineBlockbertFactor` (*type:* `number()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :goldmineTrustFactor => number() | nil,
-          :forcedExperimentScore => integer() | nil,
-          :widthFraction => number() | nil,
-          :goldmineOtherBoostFeatureCount => integer() | nil,
-          :goldmineUrlMatchFactor => number() | nil,
-          :queryMatch => integer() | nil,
-          :docLang => String.t() | nil,
-          :goldmineIsTitleTag => number() | nil,
-          :goldmineHeaderIsH1 => number() | nil,
-          :sourceGeometry => boolean() | nil,
-          :docRelevance => number() | nil,
-          :sourceHeadingTag => boolean() | nil,
+          :perTypeRank => integer() | nil,
           :goldmineLocationFactor => number() | nil,
-          :baseRank => integer() | nil,
-          :goldmineAdjustedScore => number() | nil,
-          :goldminePageScore => number() | nil,
-          :goldmineSalientTermFactor => number() | nil,
-          :isTruncated => boolean() | nil,
-          :goldmineIsTruncated => number() | nil,
-          :goldmineAnchorSupportOnly => number() | nil,
+          :sourceGeneratedTitle => boolean() | nil,
+          :sourceOffdomainAnchor => boolean() | nil,
+          :goldmineReadabilityScore => number() | nil,
+          :queryMatch => integer() | nil,
+          :goldmineUrlMatchFactor => number() | nil,
+          :percentBodyTitleTokensCovered => number() | nil,
+          :goldmineGeometryFactor => number() | nil,
+          :goldmineOnPageDemotionFactor => number() | nil,
+          :goldmineOtherBoostFeatureCount => integer() | nil,
           :percentTokensCoveredByBodyTitle => number() | nil,
           :hasSiteInfo => boolean() | nil,
-          :goldmineIsBadTitle => number() | nil,
-          :sourceOnsiteAnchor => boolean() | nil,
-          :goldmineHasTitleNgram => number() | nil,
-          :sourceTitleTag => boolean() | nil,
-          :goldmineLocalTitleFactor => number() | nil,
-          :goldmineAnchorFactor => number() | nil,
-          :sourceTransliteratedTitle => boolean() | nil,
-          :goldmineBlockbertFactor => number() | nil,
-          :goldmineBodyFactor => number() | nil,
-          :goldmineHasBoilerplateInTitle => number() | nil,
-          :goldmineIsHeadingTag => number() | nil,
-          :goldmineSitenameFactor => number() | nil,
-          :sourceOndomainAnchor => boolean() | nil,
-          :text => String.t() | nil,
-          :goldmineOnPageDemotionFactor => number() | nil,
-          :isValid => boolean() | nil,
-          :goldmineReadabilityScore => number() | nil,
-          :goldmineGeometryFactor => number() | nil,
-          :goldmineTitleTagFactor => number() | nil,
-          :baseGoldmineFinalScore => number() | nil,
-          :testRank => integer() | nil,
+          :goldmineHeadingFactor => number() | nil,
           :goldmineSubHeading => number() | nil,
-          :queryMatchFraction => number() | nil,
-          :dupTokens => integer() | nil,
-          :dataSourceType => String.t() | nil,
-          :perTypeQuality => String.t() | nil,
-          :testGoldmineFinalScore => number() | nil,
-          :sourceOffdomainAnchor => boolean() | nil,
-          :perTypeRank => integer() | nil,
-          :sourceGeneratedTitle => boolean() | nil,
-          :sourceLocalTitle => boolean() | nil,
           :goldmineFinalScore => number() | nil,
-          :percentBodyTitleTokensCovered => number() | nil,
-          :goldmineForeign => number() | nil,
+          :testRank => integer() | nil,
+          :goldmineHeaderIsH1 => number() | nil,
+          :goldmineSitenameFactor => number() | nil,
+          :goldmineHasBoilerplateInTitle => number() | nil,
+          :isValid => boolean() | nil,
+          :goldmineTitleTagFactor => number() | nil,
+          :goldmineTrustFactor => number() | nil,
+          :sourceHeadingTag => boolean() | nil,
+          :sourceTransliteratedTitle => boolean() | nil,
+          :dupTokens => integer() | nil,
+          :text => String.t() | nil,
+          :goldmineSalientTermFactor => number() | nil,
+          :goldmineAnchorSupportOnly => number() | nil,
+          :sourceGeometry => boolean() | nil,
+          :forcedExperimentScore => integer() | nil,
+          :baseRank => integer() | nil,
+          :baseGoldmineFinalScore => number() | nil,
+          :goldmineIsBadTitle => number() | nil,
+          :goldmineIsTruncated => number() | nil,
+          :sourceLocalTitle => boolean() | nil,
+          :goldmineHasTitleNgram => number() | nil,
+          :isTruncated => boolean() | nil,
+          :docLang => String.t() | nil,
+          :testGoldmineFinalScore => number() | nil,
           :queryRelevance => number() | nil,
           :goldmineOgTitleFactor => number() | nil,
+          :sourceTitleTag => boolean() | nil,
+          :sourceOndomainAnchor => boolean() | nil,
+          :goldmineIsHeadingTag => number() | nil,
+          :queryMatchFraction => number() | nil,
+          :perTypeQuality => String.t() | nil,
+          :goldmineAnchorFactor => number() | nil,
           :goldmineNavboostFactor => number() | nil,
-          :goldmineHeadingFactor => number() | nil
+          :sourceOnsiteAnchor => boolean() | nil,
+          :goldmineBodyFactor => number() | nil,
+          :goldmineIsTitleTag => number() | nil,
+          :widthFraction => number() | nil,
+          :dataSourceType => String.t() | nil,
+          :goldmineLocalTitleFactor => number() | nil,
+          :docRelevance => number() | nil,
+          :goldmineForeign => number() | nil,
+          :goldminePageScore => number() | nil,
+          :goldmineAdjustedScore => number() | nil,
+          :goldmineBlockbertFactor => number() | nil
         }
 
-  field(:goldmineTrustFactor)
-  field(:forcedExperimentScore)
-  field(:widthFraction)
-  field(:goldmineOtherBoostFeatureCount)
-  field(:goldmineUrlMatchFactor)
-  field(:queryMatch)
-  field(:docLang)
-  field(:goldmineIsTitleTag)
-  field(:goldmineHeaderIsH1)
-  field(:sourceGeometry)
-  field(:docRelevance)
-  field(:sourceHeadingTag)
+  field(:perTypeRank)
   field(:goldmineLocationFactor)
-  field(:baseRank)
-  field(:goldmineAdjustedScore)
-  field(:goldminePageScore)
-  field(:goldmineSalientTermFactor)
-  field(:isTruncated)
-  field(:goldmineIsTruncated)
-  field(:goldmineAnchorSupportOnly)
+  field(:sourceGeneratedTitle)
+  field(:sourceOffdomainAnchor)
+  field(:goldmineReadabilityScore)
+  field(:queryMatch)
+  field(:goldmineUrlMatchFactor)
+  field(:percentBodyTitleTokensCovered)
+  field(:goldmineGeometryFactor)
+  field(:goldmineOnPageDemotionFactor)
+  field(:goldmineOtherBoostFeatureCount)
   field(:percentTokensCoveredByBodyTitle)
   field(:hasSiteInfo)
-  field(:goldmineIsBadTitle)
-  field(:sourceOnsiteAnchor)
-  field(:goldmineHasTitleNgram)
-  field(:sourceTitleTag)
-  field(:goldmineLocalTitleFactor)
-  field(:goldmineAnchorFactor)
-  field(:sourceTransliteratedTitle)
-  field(:goldmineBlockbertFactor)
-  field(:goldmineBodyFactor)
-  field(:goldmineHasBoilerplateInTitle)
-  field(:goldmineIsHeadingTag)
-  field(:goldmineSitenameFactor)
-  field(:sourceOndomainAnchor)
-  field(:text)
-  field(:goldmineOnPageDemotionFactor)
-  field(:isValid)
-  field(:goldmineReadabilityScore)
-  field(:goldmineGeometryFactor)
-  field(:goldmineTitleTagFactor)
-  field(:baseGoldmineFinalScore)
-  field(:testRank)
+  field(:goldmineHeadingFactor)
   field(:goldmineSubHeading)
-  field(:queryMatchFraction)
-  field(:dupTokens)
-  field(:dataSourceType)
-  field(:perTypeQuality)
-  field(:testGoldmineFinalScore)
-  field(:sourceOffdomainAnchor)
-  field(:perTypeRank)
-  field(:sourceGeneratedTitle)
-  field(:sourceLocalTitle)
   field(:goldmineFinalScore)
-  field(:percentBodyTitleTokensCovered)
-  field(:goldmineForeign)
+  field(:testRank)
+  field(:goldmineHeaderIsH1)
+  field(:goldmineSitenameFactor)
+  field(:goldmineHasBoilerplateInTitle)
+  field(:isValid)
+  field(:goldmineTitleTagFactor)
+  field(:goldmineTrustFactor)
+  field(:sourceHeadingTag)
+  field(:sourceTransliteratedTitle)
+  field(:dupTokens)
+  field(:text)
+  field(:goldmineSalientTermFactor)
+  field(:goldmineAnchorSupportOnly)
+  field(:sourceGeometry)
+  field(:forcedExperimentScore)
+  field(:baseRank)
+  field(:baseGoldmineFinalScore)
+  field(:goldmineIsBadTitle)
+  field(:goldmineIsTruncated)
+  field(:sourceLocalTitle)
+  field(:goldmineHasTitleNgram)
+  field(:isTruncated)
+  field(:docLang)
+  field(:testGoldmineFinalScore)
   field(:queryRelevance)
   field(:goldmineOgTitleFactor)
+  field(:sourceTitleTag)
+  field(:sourceOndomainAnchor)
+  field(:goldmineIsHeadingTag)
+  field(:queryMatchFraction)
+  field(:perTypeQuality)
+  field(:goldmineAnchorFactor)
   field(:goldmineNavboostFactor)
-  field(:goldmineHeadingFactor)
+  field(:sourceOnsiteAnchor)
+  field(:goldmineBodyFactor)
+  field(:goldmineIsTitleTag)
+  field(:widthFraction)
+  field(:dataSourceType)
+  field(:goldmineLocalTitleFactor)
+  field(:docRelevance)
+  field(:goldmineForeign)
+  field(:goldminePageScore)
+  field(:goldmineAdjustedScore)
+  field(:goldmineBlockbertFactor)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do

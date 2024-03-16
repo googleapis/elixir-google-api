@@ -21,185 +21,189 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiDeviceCapabilities do
 
   ## Attributes
 
-  *   `thirdPartyCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities.t`, *default:* `nil`) - Capabilities related to third party integration.
-  *   `dataValidateCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities.t`, *default:* `nil`) - 
-  *   `supportedLocale` (*type:* `list(String.t)`, *default:* `nil`) - Locales supported by assistant settings for speaking and display. This is independent from device language that is defined in device setting. New locales are added based on rollout, whitelist and app version releases because older versions does not have model support. Currently supported locale list differs by surface type.
-  *   `cast` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the cast abilities of this device.
-  *   `notificationCapabilities` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: Use SystemNotificationRestrictions instead. Specifies whether the surface is able to display notifications. This field is superficially similar to ProactiveNotificationOutput, but unlike that field which tracks a per-user preference on the OPA side, this field captures whether the surface is capable of displaying notifications.
-  *   `software` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the software available on the device as well as the set of supported Assistant features.
-  *   `lensPerceptionCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLensPerceptionCapabilities.t`, *default:* `nil`) - Capabilities related to Lens Perception, i.e. image understanding. See go/lens-perception-sdk.
-  *   `outputRestrictions` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions.t`, *default:* `nil`) - These are user configured restrictions indicating what the device is allowed to output from the privacy point of view.
-  *   `notificationOutputRestrictions` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiNotificationOutputRestrictions.t`, *default:* `nil`) - Settings, that reflect whether a specific notification type is allowed for current device, e.g. if the user opted out from notification category or category group. This settings are server-side stored and evaluated unlike SystemNotificationRestrictions field.
-  *   `surfaceTypeString` (*type:* `String.t`, *default:* `nil`) - DEPRECATED. surface_identity field below already contains this information. The device's surface type. This is the string version of the assistant.api.core_types.SurfaceType enum. The server should not use this field, rather it should use the SurfaceType value derived from this string.
   *   `movement` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiMovementCapabilities.t`, *default:* `nil`) - These capabilities are scoped to abilities of the device to move around.
-  *   `sodaCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities.t`, *default:* `nil`) - Capabilities related to SODA (Speech On-Device API).
   *   `surfaceIdentity` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesSurfaceIdentity.t`, *default:* `nil`) - The set of information that helps the server identify the surface.
-  *   `deviceId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId.t`, *default:* `nil`) - This is the same device id that is specified in the conversation protocol and should be unique to each device/user/model combination. For example, if a request is coming from a watch through AGSA the watch and AGSA should have different device_ids. Note: this field should only be used to determine which device the capabilities belong to and not to access the id of the device. Instead DeviceProperties should be used and accessed through ParamsAccessor.
-  *   `callCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities.t`, *default:* `nil`) - The call capabilities of this device. go/call-capabilities
-  *   `jwnCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities.t`, *default:* `nil`) - Indicates if the client supports Javascript Whatsnext (go/jwn). Also contains the Jwn libraries present on the client along with their versions.
-  *   `location` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the location abilities of this device.
-  *   `safetyRestrictions` (*type:* `String.t`, *default:* `nil`) - Indicates if the client has safety related restriction.
   *   `screen` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiScreenCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the ability to see and interact with the Assistant through a screen. If the device has no screen it should send an empty ScreenCapabilities. Sending no ScreenCapabilities will cause this to be overridden with the surface default.
-  *   `communicationUiCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities.t`, *default:* `nil`) - 
-  *   `deviceUxMode` (*type:* `String.t`, *default:* `nil`) - Capabilities related to Android tablet UX experience.
-  *   `audioInput` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput.t`, *default:* `nil`) - These capabilities are scoped to the ability to gather audio. It includes information like the type of audio that can be gathered (e.g. public, private).
-  *   `carUxRestrictions` (*type:* `list(String.t)`, *default:* `nil`) - UX restrictions for Auto.
-  *   `contactLookupCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities.t`, *default:* `nil`) - 
-  *   `androidIntentCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAndroidIntentCapabilities.t`, *default:* `nil`) - Capabilites related to Android intent support.
-  *   `speechCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities.t`, *default:* `nil`) - DEPRECATED Capabilities related to speech detection on devices.
-  *   `popOnLockscreenCapability` (*type:* `String.t`, *default:* `nil`) - Capability to support Pop on lockscreen.
-  *   `bluetoothCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiBluetoothCapabilities.t`, *default:* `nil`) - Bluetooth capabilities related to usage of a feature.
-  *   `camera` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the camera abilities of this device.
-  *   `hasVoiceTelephony` (*type:* `boolean()`, *default:* `nil`) - Indicates that the device has connection to cellular network that allows it to make voice calls. This is distinct from device just being capable of voice telephony, because the device can be capable yet miss the suitable SIM card (for example, it could miss SIM card altogether, or have data-only SIM card).
-  *   `messageCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageCapabilities.t`, *default:* `nil`) - 
-  *   `loggingOnlyData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLoggingOnlyData.t`, *default:* `nil`) - Data which is produced for logging and debugging. Servers MUST NOT use this for any other purposes, such as branching on it.
-  *   `assistantCapability` (*type:* `String.t`, *default:* `nil`) - Capabilities if surface supports Google Assistant.
-  *   `audioOutput` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioOutput.t`, *default:* `nil`) - These capabilities are scoped to the ability to play audio. It includes information like the type of audio that can be played (e.g. public, private).
+  *   `callCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities.t`, *default:* `nil`) - The call capabilities of this device. go/call-capabilities
   *   `systemNotificationRestrictions` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSystemNotificationRestrictions.t`, *default:* `nil`) - Restrictions related to system-level notifications. This field is superficially similar to ProactiveNotificationOutput, but unlike that field which tracks a per-user preference on the OPA side, this field captures system level notifications restrictions. This field is not stored and is merged to capabilities from conversation params. It exists mostly for logging purposes of android channel state and global app-level notification opt out.
+  *   `sodaCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities.t`, *default:* `nil`) - Capabilities related to SODA (Speech On-Device API).
+  *   `hasVoiceTelephony` (*type:* `boolean()`, *default:* `nil`) - Indicates that the device has connection to cellular network that allows it to make voice calls. This is distinct from device just being capable of voice telephony, because the device can be capable yet miss the suitable SIM card (for example, it could miss SIM card altogether, or have data-only SIM card).
+  *   `lensPerceptionCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLensPerceptionCapabilities.t`, *default:* `nil`) - Capabilities related to Lens Perception, i.e. image understanding. See go/lens-perception-sdk.
+  *   `cast` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the cast abilities of this device.
+  *   `deviceId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId.t`, *default:* `nil`) - This is the same device id that is specified in the conversation protocol and should be unique to each device/user/model combination. For example, if a request is coming from a watch through AGSA the watch and AGSA should have different device_ids. Note: this field should only be used to determine which device the capabilities belong to and not to access the id of the device. Instead DeviceProperties should be used and accessed through ParamsAccessor.
+  *   `thirdPartyCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities.t`, *default:* `nil`) - Capabilities related to third party integration.
+  *   `androidIntentCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAndroidIntentCapabilities.t`, *default:* `nil`) - Capabilites related to Android intent support.
+  *   `camera` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the camera abilities of this device.
+  *   `deviceUxMode` (*type:* `String.t`, *default:* `nil`) - Capabilities related to Android tablet UX experience.
+  *   `assistantCapability` (*type:* `String.t`, *default:* `nil`) - Capabilities if surface supports Google Assistant.
+  *   `bluetoothCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiBluetoothCapabilities.t`, *default:* `nil`) - Bluetooth capabilities related to usage of a feature.
+  *   `location` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the location abilities of this device.
+  *   `notificationOutputRestrictions` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiNotificationOutputRestrictions.t`, *default:* `nil`) - Settings, that reflect whether a specific notification type is allowed for current device, e.g. if the user opted out from notification category or category group. This settings are server-side stored and evaluated unlike SystemNotificationRestrictions field.
+  *   `loggingOnlyData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiLoggingOnlyData.t`, *default:* `nil`) - Data which is produced for logging and debugging. Servers MUST NOT use this for any other purposes, such as branching on it.
+  *   `notificationCapabilities` (*type:* `String.t`, *default:* `nil`) - DEPRECATED: Use SystemNotificationRestrictions instead. Specifies whether the surface is able to display notifications. This field is superficially similar to ProactiveNotificationOutput, but unlike that field which tracks a per-user preference on the OPA side, this field captures whether the surface is capable of displaying notifications.
+  *   `messageCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageCapabilities.t`, *default:* `nil`) - 
+  *   `audioInput` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput.t`, *default:* `nil`) - These capabilities are scoped to the ability to gather audio. It includes information like the type of audio that can be gathered (e.g. public, private).
+  *   `contactLookupCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities.t`, *default:* `nil`) - 
+  *   `outputRestrictions` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions.t`, *default:* `nil`) - These are user configured restrictions indicating what the device is allowed to output from the privacy point of view.
+  *   `software` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities.t`, *default:* `nil`) - These capabilities are scoped to the software available on the device as well as the set of supported Assistant features.
+  *   `communicationUiCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities.t`, *default:* `nil`) - 
+  *   `carUxRestrictions` (*type:* `list(String.t)`, *default:* `nil`) - UX restrictions for Auto.
+  *   `audioOutput` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioOutput.t`, *default:* `nil`) - These capabilities are scoped to the ability to play audio. It includes information like the type of audio that can be played (e.g. public, private).
+  *   `popOnLockscreenCapability` (*type:* `String.t`, *default:* `nil`) - Capability to support Pop on lockscreen.
+  *   `dataValidateCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities.t`, *default:* `nil`) - 
+  *   `surfaceTypeString` (*type:* `String.t`, *default:* `nil`) - DEPRECATED. surface_identity field below already contains this information. The device's surface type. This is the string version of the assistant.api.core_types.SurfaceType enum. The server should not use this field, rather it should use the SurfaceType value derived from this string.
+  *   `jwnCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities.t`, *default:* `nil`) - Indicates if the client supports Javascript Whatsnext (go/jwn). Also contains the Jwn libraries present on the client along with their versions.
+  *   `safetyRestrictions` (*type:* `String.t`, *default:* `nil`) - Indicates if the client has safety related restriction.
+  *   `supportedLocale` (*type:* `list(String.t)`, *default:* `nil`) - Locales supported by assistant settings for speaking and display. This is independent from device language that is defined in device setting. New locales are added based on rollout, whitelist and app version releases because older versions does not have model support. Currently supported locale list differs by surface type.
+  *   `speechCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities.t`, *default:* `nil`) - DEPRECATED Capabilities related to speech detection on devices.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :thirdPartyCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities.t() | nil,
-          :dataValidateCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities.t() | nil,
-          :supportedLocale => list(String.t()) | nil,
-          :cast => GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities.t() | nil,
-          :notificationCapabilities => String.t() | nil,
-          :software =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities.t() | nil,
+          :movement =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiMovementCapabilities.t() | nil,
+          :surfaceIdentity =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesSurfaceIdentity.t() | nil,
+          :screen => GoogleApi.ContentWarehouse.V1.Model.AssistantApiScreenCapabilities.t() | nil,
+          :callCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities.t() | nil,
+          :systemNotificationRestrictions =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSystemNotificationRestrictions.t()
+            | nil,
+          :sodaCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities.t() | nil,
+          :hasVoiceTelephony => boolean() | nil,
           :lensPerceptionCapabilities =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiLensPerceptionCapabilities.t() | nil,
-          :outputRestrictions =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions.t() | nil,
+          :cast => GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities.t() | nil,
+          :deviceId =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId.t() | nil,
+          :thirdPartyCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities.t() | nil,
+          :androidIntentCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiAndroidIntentCapabilities.t() | nil,
+          :camera => GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities.t() | nil,
+          :deviceUxMode => String.t() | nil,
+          :assistantCapability => String.t() | nil,
+          :bluetoothCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiBluetoothCapabilities.t() | nil,
+          :location =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities.t() | nil,
           :notificationOutputRestrictions =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiNotificationOutputRestrictions.t()
             | nil,
-          :surfaceTypeString => String.t() | nil,
-          :movement =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiMovementCapabilities.t() | nil,
-          :sodaCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities.t() | nil,
-          :surfaceIdentity =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesSurfaceIdentity.t() | nil,
-          :deviceId =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId.t() | nil,
-          :callCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities.t() | nil,
-          :jwnCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities.t() | nil,
-          :location =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities.t() | nil,
-          :safetyRestrictions => String.t() | nil,
-          :screen => GoogleApi.ContentWarehouse.V1.Model.AssistantApiScreenCapabilities.t() | nil,
-          :communicationUiCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities.t() | nil,
-          :deviceUxMode => String.t() | nil,
-          :audioInput => GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput.t() | nil,
-          :carUxRestrictions => list(String.t()) | nil,
-          :contactLookupCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities.t() | nil,
-          :androidIntentCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiAndroidIntentCapabilities.t() | nil,
-          :speechCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities.t() | nil,
-          :popOnLockscreenCapability => String.t() | nil,
-          :bluetoothCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiBluetoothCapabilities.t() | nil,
-          :camera => GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities.t() | nil,
-          :hasVoiceTelephony => boolean() | nil,
-          :messageCapabilities =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageCapabilities.t() | nil,
           :loggingOnlyData =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiLoggingOnlyData.t() | nil,
-          :assistantCapability => String.t() | nil,
+          :notificationCapabilities => String.t() | nil,
+          :messageCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageCapabilities.t() | nil,
+          :audioInput => GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput.t() | nil,
+          :contactLookupCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities.t() | nil,
+          :outputRestrictions =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions.t() | nil,
+          :software =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities.t() | nil,
+          :communicationUiCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities.t() | nil,
+          :carUxRestrictions => list(String.t()) | nil,
           :audioOutput => GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioOutput.t() | nil,
-          :systemNotificationRestrictions =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSystemNotificationRestrictions.t()
-            | nil
+          :popOnLockscreenCapability => String.t() | nil,
+          :dataValidateCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities.t() | nil,
+          :surfaceTypeString => String.t() | nil,
+          :jwnCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities.t() | nil,
+          :safetyRestrictions => String.t() | nil,
+          :supportedLocale => list(String.t()) | nil,
+          :speechCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities.t() | nil
         }
 
-  field(:thirdPartyCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities
-  )
-
-  field(:dataValidateCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities
-  )
-
-  field(:supportedLocale, type: :list)
-  field(:cast, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities)
-  field(:notificationCapabilities)
-  field(:software, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities)
-
-  field(:lensPerceptionCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLensPerceptionCapabilities
-  )
-
-  field(:outputRestrictions,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions
-  )
-
-  field(:notificationOutputRestrictions,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiNotificationOutputRestrictions
-  )
-
-  field(:surfaceTypeString)
   field(:movement, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiMovementCapabilities)
-  field(:sodaCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities)
 
   field(:surfaceIdentity,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesSurfaceIdentity
   )
 
-  field(:deviceId, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId)
-  field(:callCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities)
-  field(:jwnCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities)
-  field(:location, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities)
-  field(:safetyRestrictions)
   field(:screen, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiScreenCapabilities)
+  field(:callCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCallCapabilities)
 
-  field(:communicationUiCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities
+  field(:systemNotificationRestrictions,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSystemNotificationRestrictions
   )
 
-  field(:deviceUxMode)
-  field(:audioInput, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput)
-  field(:carUxRestrictions, type: :list)
+  field(:sodaCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSodaCapabilities)
+  field(:hasVoiceTelephony)
 
-  field(:contactLookupCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities
+  field(:lensPerceptionCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLensPerceptionCapabilities
+  )
+
+  field(:cast, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCastCapabilities)
+  field(:deviceId, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceId)
+
+  field(:thirdPartyCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiThirdPartyCapabilities
   )
 
   field(:androidIntentCapabilities,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAndroidIntentCapabilities
   )
 
-  field(:speechCapabilities,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities
-  )
-
-  field(:popOnLockscreenCapability)
+  field(:camera, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities)
+  field(:deviceUxMode)
+  field(:assistantCapability)
 
   field(:bluetoothCapabilities,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiBluetoothCapabilities
   )
 
-  field(:camera, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCameraCapabilities)
-  field(:hasVoiceTelephony)
+  field(:location, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLocationCapabilities)
+
+  field(:notificationOutputRestrictions,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiNotificationOutputRestrictions
+  )
+
+  field(:loggingOnlyData, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLoggingOnlyData)
+  field(:notificationCapabilities)
 
   field(:messageCapabilities,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageCapabilities
   )
 
-  field(:loggingOnlyData, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLoggingOnlyData)
-  field(:assistantCapability)
-  field(:audioOutput, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioOutput)
+  field(:audioInput, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioInput)
 
-  field(:systemNotificationRestrictions,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSystemNotificationRestrictions
+  field(:contactLookupCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiContactLookupCapabilities
+  )
+
+  field(:outputRestrictions,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiOutputRestrictions
+  )
+
+  field(:software, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities)
+
+  field(:communicationUiCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCommunicationUiCapabilities
+  )
+
+  field(:carUxRestrictions, type: :list)
+  field(:audioOutput, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAudioOutput)
+  field(:popOnLockscreenCapability)
+
+  field(:dataValidateCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiDataValidateCapabilities
+  )
+
+  field(:surfaceTypeString)
+  field(:jwnCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiJwnCapabilities)
+  field(:safetyRestrictions)
+  field(:supportedLocale, type: :list)
+
+  field(:speechCapabilities,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSpeechCapabilities
   )
 end
 
