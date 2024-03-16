@@ -21,6 +21,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob do
 
   ## Attributes
 
+  *   `dataDocumentationResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationResult.t`, *default:* `nil`) - Output only. The result of the data documentation scan.
+  *   `dataDocumentationSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationSpec.t`, *default:* `nil`) - Output only. DataDocumentationScan related setting.
   *   `dataProfileResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t`, *default:* `nil`) - Output only. The result of the data profile scan.
   *   `dataProfileSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileSpec.t`, *default:* `nil`) - Output only. DataProfileScan related setting.
   *   `dataQualityResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityResult.t`, *default:* `nil`) - Output only. The result of the data quality scan.
@@ -37,6 +39,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataDocumentationResult =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationResult.t() | nil,
+          :dataDocumentationSpec =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationSpec.t() | nil,
           :dataProfileResult =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult.t() | nil,
           :dataProfileSpec =>
@@ -53,6 +59,14 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanJob do
           :type => String.t() | nil,
           :uid => String.t() | nil
         }
+
+  field(:dataDocumentationResult,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationResult
+  )
+
+  field(:dataDocumentationSpec,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataDocumentationSpec
+  )
 
   field(:dataProfileResult, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResult)
 
