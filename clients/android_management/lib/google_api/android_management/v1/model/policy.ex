@@ -21,342 +21,341 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
 
   ## Attributes
 
-  *   `keyguardDisabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Disabled keyguard customizations, such as widgets.
-  *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - If camera_access is set to any value other than CAMERA_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether cameras are disabled: If true, all cameras are disabled, otherwise they are available. For fully managed devices this field applies for all apps on the device. For work profiles, this field applies only to apps in the work profile, and the camera access of apps outside the work profile is unaffected.
-  *   `wifiConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring Wi-Fi networks is disabled. Supported on fully managed devices and work profiles on company-owned devices. For fully managed devices, setting this to true removes all configured networks and retains only the networks configured using openNetworkConfiguration. For work profiles on company-owned devices, existing configured networks are not affected and the user is not allowed to add, remove, or modify Wi-Fi networks. If configureWifi is set to anything other than CONFIGURE_WIFI_UNSPECIFIED, this setting is ignored. Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled).
-  *   `personalUsagePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t`, *default:* `nil`) - Policies managing personal usage on a company-owned device.
-  *   `skipFirstUseHintsEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag to skip hints on the first use. Enterprise admin can enable the system recommendation for apps to skip their user tutorial and other introductory hints on first start-up.
-  *   `stayOnPluggedModes` (*type:* `list(String.t)`, *default:* `nil`) - The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn't lock itself while it stays on.
-  *   `autoTimeRequired` (*type:* `boolean()`, *default:* `nil`) - Whether auto time is required, which prevents the user from manually setting the date and time. If autoDateAndTimeZone is set, this field is ignored.
-  *   `playStoreMode` (*type:* `String.t`, *default:* `nil`) - This mode controls which apps are available to the user in the Play Store and the behavior on the device when apps are removed from the policy.
-  *   `removeUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether removing other users is disabled.
-  *   `shortSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the settings screen wherever functionality has been disabled by the admin. If the message is longer than 200 characters it may be truncated.
-  *   `credentialsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring user credentials is disabled.
-  *   `oncCertificateProviders` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t)`, *default:* `nil`) - This feature is not generally available.
-  *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default permission policy for runtime permission requests.
   *   `addUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding new users and profiles is disabled.
-  *   `setupActions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t)`, *default:* `nil`) - Action to take during the setup process. At most one action may be specified.
-  *   `statusReportingSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings.t`, *default:* `nil`) - Status reporting settings
-  *   `tetheringConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring tethering and portable hotspots is disabled. If tetheringSettings is set to anything other than TETHERING_SETTINGS_UNSPECIFIED, this setting is ignored.
-  *   `outgoingBeamDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether using NFC to beam data from apps is disabled.
-  *   `usageLog` (*type:* `GoogleApi.AndroidManagement.V1.Model.UsageLog.t`, *default:* `nil`) - Configuration of device activity logging.
-  *   `permittedInputMethods` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - If present, only the input methods provided by packages in this list are permitted. If this field is present, but the list is empty, then only system input methods are permitted.
-  *   `outgoingCallsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether outgoing calls are disabled.
-  *   `persistentPreferredActivities` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t)`, *default:* `nil`) - Default intent handler activities.
-  *   `mountPhysicalMediaDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user mounting physical external media is disabled.
-  *   `locationMode` (*type:* `String.t`, *default:* `nil`) - The degree of location detection enabled.
-  *   `choosePrivateKeyRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule.t)`, *default:* `nil`) - Rules for determining apps' access to private keys. See ChoosePrivateKeyRule for details. This must be empty if any application has CERT_SELECTION delegation scope.
-  *   `complianceRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ComplianceRule.t)`, *default:* `nil`) - Rules declaring which mitigating actions to take when a device is not compliant with its policy. When the conditions for multiple rules are satisfied, all of the mitigating actions for the rules are taken. There is a maximum limit of 100 rules. Use policy enforcement rules instead.
-  *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether screen capture is disabled.
-  *   `alwaysOnVpnPackage` (*type:* `GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t`, *default:* `nil`) - Configuration for an always-on VPN connection. Use with vpn_config_disabled to prevent modification of this setting.
-  *   `longSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the device administators settings screen.
-  *   `androidDevicePolicyTracks` (*type:* `list(String.t)`, *default:* `nil`) - This setting is not supported. Any value is ignored.
-  *   `crossProfilePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t`, *default:* `nil`) - Cross-profile policies applied on the device.
-  *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED - Use wifi_config_disabled.
-  *   `deviceConnectivityManagement` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement.t`, *default:* `nil`) - Covers controls for device connectivity such as Wi-Fi, USB data access, keyboard/mouse connections, and more.
-  *   `minimumApiLevel` (*type:* `integer()`, *default:* `nil`) - The minimum allowed Android API level.
-  *   `installUnknownSourcesAllowed` (*type:* `boolean()`, *default:* `nil`) - This field has no effect.
-  *   `smsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether sending and receiving SMS messages is disabled.
-  *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
-  *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
-  *   `kioskCustomization` (*type:* `GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t`, *default:* `nil`) - Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.
-  *   `microphoneAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices.
-  *   `dataRoamingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether roaming data services are disabled.
-  *   `encryptionPolicy` (*type:* `String.t`, *default:* `nil`) - Whether encryption is enabled
-  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the policy. This is a read-only field. The version is incremented each time the policy is updated.
-  *   `debuggingFeaturesAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to enable debugging features.
-  *   `funDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to have fun. Controls whether the Easter egg game in Settings is disabled.
-  *   `deviceOwnerLockScreenInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The device owner information to be shown on the lock screen.
-  *   `setWallpaperDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the wallpaper is disabled.
-  *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, this disables the Lock Screen (https://source.android.com/docs/core/display/multi_display/lock-screen) for primary and/or secondary displays.
-  *   `autoDateAndTimeZone` (*type:* `String.t`, *default:* `nil`) - Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
-  *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled. Also mutes the device.
-  *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled. This is supported only on company-owned devices.
-  *   `bluetoothContactSharingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth contact sharing is disabled.
-  *   `factoryResetDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether factory resetting from settings is disabled.
-  *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
-  *   `usbMassStorageEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether USB storage is enabled. Deprecated.
-  *   `ensureVerifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app verification is force-enabled.
-  *   `advancedSecurityOverrides` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t`, *default:* `nil`) - Advanced security settings. In most cases, setting these is not needed.
-  *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
-  *   `policyEnforcementRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t)`, *default:* `nil`) - Rules that define the behavior when a particular policy can not be applied on device
-  *   `vpnConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring VPN is disabled.
-  *   `bluetoothConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring bluetooth is disabled.
-  *   `installAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user installation of apps is disabled.
-  *   `uninstallAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user uninstallation of applications is disabled. This prevents apps from being uninstalled, even those removed using applications
-  *   `openNetworkConfiguration` (*type:* `map()`, *default:* `nil`) - Network configuration for the device. See configure networks for more information.
-  *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.
-  *   `appAutoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
-  *   `cameraAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the camera and whether the user has access to the camera access toggle.
-  *   `permissionGrants` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t)`, *default:* `nil`) - Explicit permission or group grants or denials for all apps. These values override the default_permission_policy.
-  *   `deviceRadioState` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceRadioState.t`, *default:* `nil`) - Covers controls for radio state such as Wi-Fi, bluetooth, and more.
   *   `applications` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t)`, *default:* `nil`) - Policy applied to apps. This can have at most 3,000 elements.
-  *   `statusBarDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the status bar is disabled. This disables notifications, quick settings, and other screen overlays that allow escape from full-screen mode. DEPRECATED. To disable the status bar on a kiosk device, use InstallType KIOSK or kioskCustomLauncherEnabled.
-  *   `credentialProviderPolicyDefault` (*type:* `String.t`, *default:* `nil`) - Controls which apps are allowed to act as credential providers on Android 14 and above. These apps store credentials, see this (https://developer.android.com/training/sign-in/passkeys) and this (https://developer.android.com/reference/androidx/credentials/CredentialManager) for details. See also credentialProviderPolicy.
-  *   `kioskCustomLauncherEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the kiosk custom launcher is enabled. This replaces the home screen with a launcher that locks down the device to the apps installed via the applications setting. Apps appear on a single page in alphabetical order. Use kioskCustomization to further configure the kiosk device behavior.
-  *   `preferentialNetworkService` (*type:* `String.t`, *default:* `nil`) - Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices.
-  *   `passwordPolicies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t)`, *default:* `nil`) - Password requirement policies. Different policies can be set for work profile or fully managed devices by setting the password_scope field in the policy.
-  *   `cellBroadcastsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring cell broadcast is disabled.
-  *   `unmuteMicrophoneDisabled` (*type:* `boolean()`, *default:* `nil`) - If microphone_access is set to any value other than MICROPHONE_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether microphones are disabled: If true, all microphones are disabled, otherwise they are available. This is available only on fully managed devices.
-  *   `printingPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether printing is allowed. This is supported on devices running Android 9 and above. .
-  *   `frpAdminEmails` (*type:* `list(String.t)`, *default:* `nil`) - Email addresses of device administrators for factory reset protection. When the device is factory reset, it will require one of these admins to log in with the Google account email and password to unlock the device. If no admins are specified, the device won't provide factory reset protection.
-  *   `networkEscapeHatchEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details. Setting configureWifi to DISALLOW_CONFIGURING_WIFI will override this setting under specific circumstances. Please see DISALLOW_CONFIGURING_WIFI for further details.
-  *   `recommendedGlobalProxy` (*type:* `GoogleApi.AndroidManagement.V1.Model.ProxyInfo.t`, *default:* `nil`) - The network-independent global HTTP proxy. Typically proxies should be configured per-network in open_network_configuration. However for unusual configurations like general internal filtering a global HTTP proxy may be useful. If the proxy is not accessible, network access may break. The global proxy is only a recommendation and some apps may ignore it.
   *   `safeBootDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether rebooting the device into safe boot is disabled.
-  *   `blockApplicationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether applications other than the ones configured in applications are blocked from being installed. When set, applications that were installed under a previous policy but no longer appear in the policy are automatically uninstalled.
-  *   `privateKeySelectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable. This value will have no effect if any application has CERT_SELECTION delegation scope.
-  *   `mobileNetworksConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring mobile networks is disabled.
-  *   `permittedAccessibilityServices` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile.
-  *   `modifyAccountsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding or removing accounts is disabled.
-  *   `shareLocationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether location sharing is disabled. share_location_disabled is supported for both fully managed devices and personally owned work profiles.
-  *   `passwordRequirements` (*type:* `GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t`, *default:* `nil`) - Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here. unified_lock_settings cannot be used here.
+  *   `usageLog` (*type:* `GoogleApi.AndroidManagement.V1.Model.UsageLog.t`, *default:* `nil`) - Configuration of device activity logging.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the policy in the form enterprises/{enterpriseId}/policies/{policyId}.
+  *   `bluetoothContactSharingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth contact sharing is disabled.
+  *   `statusReportingSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings.t`, *default:* `nil`) - Status reporting settings
+  *   `uninstallAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user uninstallation of applications is disabled. This prevents apps from being uninstalled, even those removed using applications
+  *   `stayOnPluggedModes` (*type:* `list(String.t)`, *default:* `nil`) - The battery plugged in modes for which the device stays on. When using this setting, it is recommended to clear maximum_time_to_lock so that the device doesn't lock itself while it stays on.
+  *   `openNetworkConfiguration` (*type:* `map()`, *default:* `nil`) - Network configuration for the device. See configure networks for more information.
+  *   `minimumApiLevel` (*type:* `integer()`, *default:* `nil`) - The minimum allowed Android API level.
   *   `networkResetDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether resetting network settings is disabled.
+  *   `installUnknownSourcesAllowed` (*type:* `boolean()`, *default:* `nil`) - This field has no effect.
+  *   `modifyAccountsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adding or removing accounts is disabled.
+  *   `encryptionPolicy` (*type:* `String.t`, *default:* `nil`) - Whether encryption is enabled
+  *   `vpnConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring VPN is disabled.
+  *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default permission policy for runtime permission requests.
+  *   `unmuteMicrophoneDisabled` (*type:* `boolean()`, *default:* `nil`) - If microphone_access is set to any value other than MICROPHONE_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether microphones are disabled: If true, all microphones are disabled, otherwise they are available. This is available only on fully managed devices.
+  *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
+  *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
+  *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
+  *   `passwordRequirements` (*type:* `GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t`, *default:* `nil`) - Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here. unified_lock_settings cannot be used here.
+  *   `credentialsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring user credentials is disabled.
+  *   `alwaysOnVpnPackage` (*type:* `GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t`, *default:* `nil`) - Configuration for an always-on VPN connection. Use with vpn_config_disabled to prevent modification of this setting.
+  *   `mountPhysicalMediaDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user mounting physical external media is disabled.
+  *   `autoTimeRequired` (*type:* `boolean()`, *default:* `nil`) - Whether auto time is required, which prevents the user from manually setting the date and time. If autoDateAndTimeZone is set, this field is ignored.
+  *   `setWallpaperDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the wallpaper is disabled.
+  *   `personalUsagePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t`, *default:* `nil`) - Policies managing personal usage on a company-owned device.
+  *   `keyguardDisabledFeatures` (*type:* `list(String.t)`, *default:* `nil`) - Disabled keyguard customizations, such as widgets.
+  *   `tetheringConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring tethering and portable hotspots is disabled. If tetheringSettings is set to anything other than TETHERING_SETTINGS_UNSPECIFIED, this setting is ignored.
+  *   `preferentialNetworkService` (*type:* `String.t`, *default:* `nil`) - Controls whether preferential network service is enabled on the work profile. For example, an organization may have an agreement with a carrier that all of the work data from its employees' devices will be sent via a network service dedicated for enterprise use. An example of a supported preferential network service is the enterprise slice on 5G networks. This has no effect on fully managed devices.
+  *   `statusBarDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the status bar is disabled. This disables notifications, quick settings, and other screen overlays that allow escape from full-screen mode. DEPRECATED. To disable the status bar on a kiosk device, use InstallType KIOSK or kioskCustomLauncherEnabled.
+  *   `choosePrivateKeyRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule.t)`, *default:* `nil`) - Rules for determining apps' access to private keys. See ChoosePrivateKeyRule for details. This must be empty if any application has CERT_SELECTION delegation scope.
+  *   `androidDevicePolicyTracks` (*type:* `list(String.t)`, *default:* `nil`) - This setting is not supported. Any value is ignored.
+  *   `mobileNetworksConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring mobile networks is disabled.
+  *   `accountTypesWithManagementDisabled` (*type:* `list(String.t)`, *default:* `nil`) - Account types that can't be managed by the user.
+  *   `funDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to have fun. Controls whether the Easter egg game in Settings is disabled.
+  *   `wifiConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring Wi-Fi networks is disabled. Supported on fully managed devices and work profiles on company-owned devices. For fully managed devices, setting this to true removes all configured networks and retains only the networks configured using openNetworkConfiguration. For work profiles on company-owned devices, existing configured networks are not affected and the user is not allowed to add, remove, or modify Wi-Fi networks. If configureWifi is set to anything other than CONFIGURE_WIFI_UNSPECIFIED, this setting is ignored. Note: If a network connection can't be made at boot time and configuring Wi-Fi is disabled then network escape hatch will be shown in order to refresh the device policy (see networkEscapeHatchEnabled).
+  *   `networkEscapeHatchEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details. Setting configureWifi to DISALLOW_CONFIGURING_WIFI will override this setting under specific circumstances. Please see DISALLOW_CONFIGURING_WIFI for further details.
+  *   `dataRoamingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether roaming data services are disabled.
+  *   `crossProfilePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t`, *default:* `nil`) - Cross-profile policies applied on the device.
+  *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.
+  *   `policyEnforcementRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t)`, *default:* `nil`) - Rules that define the behavior when a particular policy can not be applied on device
+  *   `frpAdminEmails` (*type:* `list(String.t)`, *default:* `nil`) - Email addresses of device administrators for factory reset protection. When the device is factory reset, it will require one of these admins to log in with the Google account email and password to unlock the device. If no admins are specified, the device won't provide factory reset protection.
+  *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled. Also mutes the device.
+  *   `removeUserDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether removing other users is disabled.
+  *   `advancedSecurityOverrides` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t`, *default:* `nil`) - Advanced security settings. In most cases, setting these is not needed.
+  *   `playStoreMode` (*type:* `String.t`, *default:* `nil`) - This mode controls which apps are available to the user in the Play Store and the behavior on the device when apps are removed from the policy.
+  *   `autoDateAndTimeZone` (*type:* `String.t`, *default:* `nil`) - Whether auto date, time, and time zone are enabled on a company-owned device. If this is set, then autoTimeRequired is ignored.
+  *   `factoryResetDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether factory resetting from settings is disabled.
+  *   `appAutoUpdatePolicy` (*type:* `String.t`, *default:* `nil`) - Recommended alternative: autoUpdateMode which is set per app, provides greater flexibility around update frequency.When autoUpdateMode is set to AUTO_UPDATE_POSTPONED or AUTO_UPDATE_HIGH_PRIORITY, this field has no effect.The app auto update policy, which controls when automatic app updates can be applied.
+  *   `bluetoothConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring bluetooth is disabled.
+  *   `usbMassStorageEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether USB storage is enabled. Deprecated.
+  *   `persistentPreferredActivities` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t)`, *default:* `nil`) - Default intent handler activities.
+  *   `kioskCustomLauncherEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the kiosk custom launcher is enabled. This replaces the home screen with a launcher that locks down the device to the apps installed via the applications setting. Apps appear on a single page in alphabetical order. Use kioskCustomization to further configure the kiosk device behavior.
+  *   `keyguardDisabled` (*type:* `boolean()`, *default:* `nil`) - If true, this disables the Lock Screen (https://source.android.com/docs/core/display/multi_display/lock-screen) for primary and/or secondary displays.
+  *   `ensureVerifyAppsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app verification is force-enabled.
+  *   `setupActions` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t)`, *default:* `nil`) - Action to take during the setup process. At most one action may be specified.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - The version of the policy. This is a read-only field. The version is incremented each time the policy is updated.
+  *   `permittedAccessibilityServices` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - Specifies permitted accessibility services. If the field is not set, any accessibility service can be used. If the field is set, only the accessibility services in this list and the system's built-in accessibility service can be used. In particular, if the field is set to empty, only the system's built-in accessibility servicess can be used. This can be set on fully managed devices and on work profiles. When applied to a work profile, this affects both the personal profile and the work profile.
+  *   `oncCertificateProviders` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t)`, *default:* `nil`) - This feature is not generally available.
+  *   `installAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user installation of apps is disabled.
+  *   `printingPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether printing is allowed. This is supported on devices running Android 9 and above. .
+  *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED - Use wifi_config_disabled.
+  *   `shareLocationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether location sharing is disabled. share_location_disabled is supported for both fully managed devices and personally owned work profiles.
+  *   `smsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether sending and receiving SMS messages is disabled.
+  *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled. This is supported only on company-owned devices.
+  *   `cameraAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the camera and whether the user has access to the camera access toggle.
+  *   `deviceRadioState` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceRadioState.t`, *default:* `nil`) - Covers controls for radio state such as Wi-Fi, bluetooth, and more.
+  *   `outgoingBeamDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether using NFC to beam data from apps is disabled.
+  *   `debuggingFeaturesAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether the user is allowed to enable debugging features.
+  *   `locationMode` (*type:* `String.t`, *default:* `nil`) - The degree of location detection enabled.
+  *   `shortSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the settings screen wherever functionality has been disabled by the admin. If the message is longer than 200 characters it may be truncated.
+  *   `kioskCustomization` (*type:* `GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t`, *default:* `nil`) - Settings controlling the behavior of a device in kiosk mode. To enable kiosk mode, set kioskCustomLauncherEnabled to true or specify an app in the policy with installType KIOSK.
+  *   `cameraDisabled` (*type:* `boolean()`, *default:* `nil`) - If camera_access is set to any value other than CAMERA_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether cameras are disabled: If true, all cameras are disabled, otherwise they are available. For fully managed devices this field applies for all apps on the device. For work profiles, this field applies only to apps in the work profile, and the camera access of apps outside the work profile is unaffected.
+  *   `microphoneAccess` (*type:* `String.t`, *default:* `nil`) - Controls the use of the microphone and whether the user has access to the microphone access toggle. This applies only on fully managed devices.
+  *   `skipFirstUseHintsEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag to skip hints on the first use. Enterprise admin can enable the system recommendation for apps to skip their user tutorial and other introductory hints on first start-up.
+  *   `deviceConnectivityManagement` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement.t`, *default:* `nil`) - Covers controls for device connectivity such as Wi-Fi, USB data access, keyboard/mouse connections, and more.
+  *   `screenCaptureDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether screen capture is disabled.
+  *   `deviceOwnerLockScreenInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The device owner information to be shown on the lock screen.
+  *   `passwordPolicies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t)`, *default:* `nil`) - Password requirement policies. Different policies can be set for work profile or fully managed devices by setting the password_scope field in the policy.
+  *   `complianceRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ComplianceRule.t)`, *default:* `nil`) - Rules declaring which mitigating actions to take when a device is not compliant with its policy. When the conditions for multiple rules are satisfied, all of the mitigating actions for the rules are taken. There is a maximum limit of 100 rules. Use policy enforcement rules instead.
+  *   `privateKeySelectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Allows showing UI on a device for a user to choose a private key alias if there are no matching rules in ChoosePrivateKeyRules. For devices below Android P, setting this may leave enterprise keys vulnerable. This value will have no effect if any application has CERT_SELECTION delegation scope.
+  *   `longSupportMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - A message displayed to the user in the device administators settings screen.
+  *   `recommendedGlobalProxy` (*type:* `GoogleApi.AndroidManagement.V1.Model.ProxyInfo.t`, *default:* `nil`) - The network-independent global HTTP proxy. Typically proxies should be configured per-network in open_network_configuration. However for unusual configurations like general internal filtering a global HTTP proxy may be useful. If the proxy is not accessible, network access may break. The global proxy is only a recommendation and some apps may ignore it.
+  *   `permissionGrants` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t)`, *default:* `nil`) - Explicit permission or group grants or denials for all apps. These values override the default_permission_policy.
+  *   `blockApplicationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether applications other than the ones configured in applications are blocked from being installed. When set, applications that were installed under a previous policy but no longer appear in the policy are automatically uninstalled.
   *   `maximumTimeToLock` (*type:* `String.t`, *default:* `nil`) - Maximum time in milliseconds for user activity until the device locks. A value of 0 means there is no restriction.
+  *   `outgoingCallsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether outgoing calls are disabled.
+  *   `credentialProviderPolicyDefault` (*type:* `String.t`, *default:* `nil`) - Controls which apps are allowed to act as credential providers on Android 14 and above. These apps store credentials, see this (https://developer.android.com/training/sign-in/passkeys) and this (https://developer.android.com/reference/androidx/credentials/CredentialManager) for details. See also credentialProviderPolicy.
+  *   `cellBroadcastsConfigDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether configuring cell broadcast is disabled.
+  *   `permittedInputMethods` (*type:* `GoogleApi.AndroidManagement.V1.Model.PackageNameList.t`, *default:* `nil`) - If present, only the input methods provided by packages in this list are permitted. If this field is present, but the list is empty, then only system input methods are permitted.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyguardDisabledFeatures => list(String.t()) | nil,
-          :cameraDisabled => boolean() | nil,
-          :wifiConfigDisabled => boolean() | nil,
-          :personalUsagePolicies =>
-            GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t() | nil,
-          :skipFirstUseHintsEnabled => boolean() | nil,
-          :stayOnPluggedModes => list(String.t()) | nil,
-          :autoTimeRequired => boolean() | nil,
-          :playStoreMode => String.t() | nil,
-          :removeUserDisabled => boolean() | nil,
-          :shortSupportMessage =>
-            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
-          :credentialsConfigDisabled => boolean() | nil,
-          :oncCertificateProviders =>
-            list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t()) | nil,
-          :defaultPermissionPolicy => String.t() | nil,
           :addUserDisabled => boolean() | nil,
-          :setupActions => list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t()) | nil,
+          :applications => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t()) | nil,
+          :safeBootDisabled => boolean() | nil,
+          :usageLog => GoogleApi.AndroidManagement.V1.Model.UsageLog.t() | nil,
+          :name => String.t() | nil,
+          :bluetoothContactSharingDisabled => boolean() | nil,
           :statusReportingSettings =>
             GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings.t() | nil,
-          :tetheringConfigDisabled => boolean() | nil,
-          :outgoingBeamDisabled => boolean() | nil,
-          :usageLog => GoogleApi.AndroidManagement.V1.Model.UsageLog.t() | nil,
-          :permittedInputMethods =>
-            GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil,
-          :outgoingCallsDisabled => boolean() | nil,
-          :persistentPreferredActivities =>
-            list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t()) | nil,
-          :mountPhysicalMediaDisabled => boolean() | nil,
-          :locationMode => String.t() | nil,
-          :choosePrivateKeyRules =>
-            list(GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule.t()) | nil,
-          :complianceRules => list(GoogleApi.AndroidManagement.V1.Model.ComplianceRule.t()) | nil,
-          :screenCaptureDisabled => boolean() | nil,
-          :alwaysOnVpnPackage =>
-            GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t() | nil,
-          :longSupportMessage => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
-          :androidDevicePolicyTracks => list(String.t()) | nil,
-          :crossProfilePolicies =>
-            GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t() | nil,
-          :wifiConfigsLockdownEnabled => boolean() | nil,
-          :deviceConnectivityManagement =>
-            GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement.t() | nil,
-          :minimumApiLevel => integer() | nil,
-          :installUnknownSourcesAllowed => boolean() | nil,
-          :smsDisabled => boolean() | nil,
-          :createWindowsDisabled => boolean() | nil,
-          :name => String.t() | nil,
-          :accountTypesWithManagementDisabled => list(String.t()) | nil,
-          :kioskCustomization =>
-            GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t() | nil,
-          :microphoneAccess => String.t() | nil,
-          :dataRoamingDisabled => boolean() | nil,
-          :encryptionPolicy => String.t() | nil,
-          :version => String.t() | nil,
-          :debuggingFeaturesAllowed => boolean() | nil,
-          :funDisabled => boolean() | nil,
-          :deviceOwnerLockScreenInfo =>
-            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
-          :setWallpaperDisabled => boolean() | nil,
-          :keyguardDisabled => boolean() | nil,
-          :autoDateAndTimeZone => String.t() | nil,
-          :adjustVolumeDisabled => boolean() | nil,
-          :usbFileTransferDisabled => boolean() | nil,
-          :bluetoothContactSharingDisabled => boolean() | nil,
-          :factoryResetDisabled => boolean() | nil,
-          :setUserIconDisabled => boolean() | nil,
-          :usbMassStorageEnabled => boolean() | nil,
-          :ensureVerifyAppsEnabled => boolean() | nil,
-          :advancedSecurityOverrides =>
-            GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t() | nil,
-          :bluetoothDisabled => boolean() | nil,
-          :policyEnforcementRules =>
-            list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t()) | nil,
-          :vpnConfigDisabled => boolean() | nil,
-          :bluetoothConfigDisabled => boolean() | nil,
-          :installAppsDisabled => boolean() | nil,
           :uninstallAppsDisabled => boolean() | nil,
+          :stayOnPluggedModes => list(String.t()) | nil,
           :openNetworkConfiguration => map() | nil,
-          :systemUpdate => GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t() | nil,
-          :appAutoUpdatePolicy => String.t() | nil,
-          :cameraAccess => String.t() | nil,
-          :permissionGrants =>
-            list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()) | nil,
-          :deviceRadioState => GoogleApi.AndroidManagement.V1.Model.DeviceRadioState.t() | nil,
-          :applications => list(GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy.t()) | nil,
-          :statusBarDisabled => boolean() | nil,
-          :credentialProviderPolicyDefault => String.t() | nil,
-          :kioskCustomLauncherEnabled => boolean() | nil,
-          :preferentialNetworkService => String.t() | nil,
-          :passwordPolicies =>
-            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()) | nil,
-          :cellBroadcastsConfigDisabled => boolean() | nil,
-          :unmuteMicrophoneDisabled => boolean() | nil,
-          :printingPolicy => String.t() | nil,
-          :frpAdminEmails => list(String.t()) | nil,
-          :networkEscapeHatchEnabled => boolean() | nil,
-          :recommendedGlobalProxy => GoogleApi.AndroidManagement.V1.Model.ProxyInfo.t() | nil,
-          :safeBootDisabled => boolean() | nil,
-          :blockApplicationsEnabled => boolean() | nil,
-          :privateKeySelectionEnabled => boolean() | nil,
-          :mobileNetworksConfigDisabled => boolean() | nil,
-          :permittedAccessibilityServices =>
-            GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil,
+          :minimumApiLevel => integer() | nil,
+          :networkResetDisabled => boolean() | nil,
+          :installUnknownSourcesAllowed => boolean() | nil,
           :modifyAccountsDisabled => boolean() | nil,
-          :shareLocationDisabled => boolean() | nil,
+          :encryptionPolicy => String.t() | nil,
+          :vpnConfigDisabled => boolean() | nil,
+          :defaultPermissionPolicy => String.t() | nil,
+          :unmuteMicrophoneDisabled => boolean() | nil,
+          :createWindowsDisabled => boolean() | nil,
+          :bluetoothDisabled => boolean() | nil,
+          :setUserIconDisabled => boolean() | nil,
           :passwordRequirements =>
             GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t() | nil,
-          :networkResetDisabled => boolean() | nil,
-          :maximumTimeToLock => String.t() | nil
+          :credentialsConfigDisabled => boolean() | nil,
+          :alwaysOnVpnPackage =>
+            GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage.t() | nil,
+          :mountPhysicalMediaDisabled => boolean() | nil,
+          :autoTimeRequired => boolean() | nil,
+          :setWallpaperDisabled => boolean() | nil,
+          :personalUsagePolicies =>
+            GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies.t() | nil,
+          :keyguardDisabledFeatures => list(String.t()) | nil,
+          :tetheringConfigDisabled => boolean() | nil,
+          :preferentialNetworkService => String.t() | nil,
+          :statusBarDisabled => boolean() | nil,
+          :choosePrivateKeyRules =>
+            list(GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule.t()) | nil,
+          :androidDevicePolicyTracks => list(String.t()) | nil,
+          :mobileNetworksConfigDisabled => boolean() | nil,
+          :accountTypesWithManagementDisabled => list(String.t()) | nil,
+          :funDisabled => boolean() | nil,
+          :wifiConfigDisabled => boolean() | nil,
+          :networkEscapeHatchEnabled => boolean() | nil,
+          :dataRoamingDisabled => boolean() | nil,
+          :crossProfilePolicies =>
+            GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t() | nil,
+          :systemUpdate => GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t() | nil,
+          :policyEnforcementRules =>
+            list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t()) | nil,
+          :frpAdminEmails => list(String.t()) | nil,
+          :adjustVolumeDisabled => boolean() | nil,
+          :removeUserDisabled => boolean() | nil,
+          :advancedSecurityOverrides =>
+            GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides.t() | nil,
+          :playStoreMode => String.t() | nil,
+          :autoDateAndTimeZone => String.t() | nil,
+          :factoryResetDisabled => boolean() | nil,
+          :appAutoUpdatePolicy => String.t() | nil,
+          :bluetoothConfigDisabled => boolean() | nil,
+          :usbMassStorageEnabled => boolean() | nil,
+          :persistentPreferredActivities =>
+            list(GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity.t()) | nil,
+          :kioskCustomLauncherEnabled => boolean() | nil,
+          :keyguardDisabled => boolean() | nil,
+          :ensureVerifyAppsEnabled => boolean() | nil,
+          :setupActions => list(GoogleApi.AndroidManagement.V1.Model.SetupAction.t()) | nil,
+          :version => String.t() | nil,
+          :permittedAccessibilityServices =>
+            GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil,
+          :oncCertificateProviders =>
+            list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t()) | nil,
+          :installAppsDisabled => boolean() | nil,
+          :printingPolicy => String.t() | nil,
+          :wifiConfigsLockdownEnabled => boolean() | nil,
+          :shareLocationDisabled => boolean() | nil,
+          :smsDisabled => boolean() | nil,
+          :usbFileTransferDisabled => boolean() | nil,
+          :cameraAccess => String.t() | nil,
+          :deviceRadioState => GoogleApi.AndroidManagement.V1.Model.DeviceRadioState.t() | nil,
+          :outgoingBeamDisabled => boolean() | nil,
+          :debuggingFeaturesAllowed => boolean() | nil,
+          :locationMode => String.t() | nil,
+          :shortSupportMessage =>
+            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
+          :kioskCustomization =>
+            GoogleApi.AndroidManagement.V1.Model.KioskCustomization.t() | nil,
+          :cameraDisabled => boolean() | nil,
+          :microphoneAccess => String.t() | nil,
+          :skipFirstUseHintsEnabled => boolean() | nil,
+          :deviceConnectivityManagement =>
+            GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement.t() | nil,
+          :screenCaptureDisabled => boolean() | nil,
+          :deviceOwnerLockScreenInfo =>
+            GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
+          :passwordPolicies =>
+            list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()) | nil,
+          :complianceRules => list(GoogleApi.AndroidManagement.V1.Model.ComplianceRule.t()) | nil,
+          :privateKeySelectionEnabled => boolean() | nil,
+          :longSupportMessage => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
+          :recommendedGlobalProxy => GoogleApi.AndroidManagement.V1.Model.ProxyInfo.t() | nil,
+          :permissionGrants =>
+            list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()) | nil,
+          :blockApplicationsEnabled => boolean() | nil,
+          :maximumTimeToLock => String.t() | nil,
+          :outgoingCallsDisabled => boolean() | nil,
+          :credentialProviderPolicyDefault => String.t() | nil,
+          :cellBroadcastsConfigDisabled => boolean() | nil,
+          :permittedInputMethods => GoogleApi.AndroidManagement.V1.Model.PackageNameList.t() | nil
         }
 
-  field(:keyguardDisabledFeatures, type: :list)
-  field(:cameraDisabled)
-  field(:wifiConfigDisabled)
-  field(:personalUsagePolicies, as: GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies)
-  field(:skipFirstUseHintsEnabled)
-  field(:stayOnPluggedModes, type: :list)
-  field(:autoTimeRequired)
-  field(:playStoreMode)
-  field(:removeUserDisabled)
-  field(:shortSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
-  field(:credentialsConfigDisabled)
-
-  field(:oncCertificateProviders,
-    as: GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider,
-    type: :list
-  )
-
-  field(:defaultPermissionPolicy)
   field(:addUserDisabled)
-  field(:setupActions, as: GoogleApi.AndroidManagement.V1.Model.SetupAction, type: :list)
+  field(:applications, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy, type: :list)
+  field(:safeBootDisabled)
+  field(:usageLog, as: GoogleApi.AndroidManagement.V1.Model.UsageLog)
+  field(:name)
+  field(:bluetoothContactSharingDisabled)
 
   field(:statusReportingSettings, as: GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings)
 
-  field(:tetheringConfigDisabled)
-  field(:outgoingBeamDisabled)
-  field(:usageLog, as: GoogleApi.AndroidManagement.V1.Model.UsageLog)
-  field(:permittedInputMethods, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
-  field(:outgoingCallsDisabled)
-
-  field(:persistentPreferredActivities,
-    as: GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity,
-    type: :list
-  )
-
+  field(:uninstallAppsDisabled)
+  field(:stayOnPluggedModes, type: :list)
+  field(:openNetworkConfiguration, type: :map)
+  field(:minimumApiLevel)
+  field(:networkResetDisabled)
+  field(:installUnknownSourcesAllowed)
+  field(:modifyAccountsDisabled)
+  field(:encryptionPolicy)
+  field(:vpnConfigDisabled)
+  field(:defaultPermissionPolicy)
+  field(:unmuteMicrophoneDisabled)
+  field(:createWindowsDisabled)
+  field(:bluetoothDisabled)
+  field(:setUserIconDisabled)
+  field(:passwordRequirements, as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements)
+  field(:credentialsConfigDisabled)
+  field(:alwaysOnVpnPackage, as: GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage)
   field(:mountPhysicalMediaDisabled)
-  field(:locationMode)
+  field(:autoTimeRequired)
+  field(:setWallpaperDisabled)
+  field(:personalUsagePolicies, as: GoogleApi.AndroidManagement.V1.Model.PersonalUsagePolicies)
+  field(:keyguardDisabledFeatures, type: :list)
+  field(:tetheringConfigDisabled)
+  field(:preferentialNetworkService)
+  field(:statusBarDisabled)
 
   field(:choosePrivateKeyRules,
     as: GoogleApi.AndroidManagement.V1.Model.ChoosePrivateKeyRule,
     type: :list
   )
 
-  field(:complianceRules, as: GoogleApi.AndroidManagement.V1.Model.ComplianceRule, type: :list)
-  field(:screenCaptureDisabled)
-  field(:alwaysOnVpnPackage, as: GoogleApi.AndroidManagement.V1.Model.AlwaysOnVpnPackage)
-  field(:longSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
   field(:androidDevicePolicyTracks, type: :list)
-  field(:crossProfilePolicies, as: GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies)
-  field(:wifiConfigsLockdownEnabled)
-
-  field(:deviceConnectivityManagement,
-    as: GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement
-  )
-
-  field(:minimumApiLevel)
-  field(:installUnknownSourcesAllowed)
-  field(:smsDisabled)
-  field(:createWindowsDisabled)
-  field(:name)
+  field(:mobileNetworksConfigDisabled)
   field(:accountTypesWithManagementDisabled, type: :list)
-  field(:kioskCustomization, as: GoogleApi.AndroidManagement.V1.Model.KioskCustomization)
-  field(:microphoneAccess)
-  field(:dataRoamingDisabled)
-  field(:encryptionPolicy)
-  field(:version)
-  field(:debuggingFeaturesAllowed)
   field(:funDisabled)
-  field(:deviceOwnerLockScreenInfo, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
-  field(:setWallpaperDisabled)
-  field(:keyguardDisabled)
-  field(:autoDateAndTimeZone)
-  field(:adjustVolumeDisabled)
-  field(:usbFileTransferDisabled)
-  field(:bluetoothContactSharingDisabled)
-  field(:factoryResetDisabled)
-  field(:setUserIconDisabled)
-  field(:usbMassStorageEnabled)
-  field(:ensureVerifyAppsEnabled)
-
-  field(:advancedSecurityOverrides,
-    as: GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides
-  )
-
-  field(:bluetoothDisabled)
+  field(:wifiConfigDisabled)
+  field(:networkEscapeHatchEnabled)
+  field(:dataRoamingDisabled)
+  field(:crossProfilePolicies, as: GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies)
+  field(:systemUpdate, as: GoogleApi.AndroidManagement.V1.Model.SystemUpdate)
 
   field(:policyEnforcementRules,
     as: GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule,
     type: :list
   )
 
-  field(:vpnConfigDisabled)
-  field(:bluetoothConfigDisabled)
-  field(:installAppsDisabled)
-  field(:uninstallAppsDisabled)
-  field(:openNetworkConfiguration, type: :map)
-  field(:systemUpdate, as: GoogleApi.AndroidManagement.V1.Model.SystemUpdate)
+  field(:frpAdminEmails, type: :list)
+  field(:adjustVolumeDisabled)
+  field(:removeUserDisabled)
+
+  field(:advancedSecurityOverrides,
+    as: GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides
+  )
+
+  field(:playStoreMode)
+  field(:autoDateAndTimeZone)
+  field(:factoryResetDisabled)
   field(:appAutoUpdatePolicy)
-  field(:cameraAccess)
-  field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
-  field(:deviceRadioState, as: GoogleApi.AndroidManagement.V1.Model.DeviceRadioState)
-  field(:applications, as: GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy, type: :list)
-  field(:statusBarDisabled)
-  field(:credentialProviderPolicyDefault)
+  field(:bluetoothConfigDisabled)
+  field(:usbMassStorageEnabled)
+
+  field(:persistentPreferredActivities,
+    as: GoogleApi.AndroidManagement.V1.Model.PersistentPreferredActivity,
+    type: :list
+  )
+
   field(:kioskCustomLauncherEnabled)
-  field(:preferentialNetworkService)
+  field(:keyguardDisabled)
+  field(:ensureVerifyAppsEnabled)
+  field(:setupActions, as: GoogleApi.AndroidManagement.V1.Model.SetupAction, type: :list)
+  field(:version)
+  field(:permittedAccessibilityServices, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
+
+  field(:oncCertificateProviders,
+    as: GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider,
+    type: :list
+  )
+
+  field(:installAppsDisabled)
+  field(:printingPolicy)
+  field(:wifiConfigsLockdownEnabled)
+  field(:shareLocationDisabled)
+  field(:smsDisabled)
+  field(:usbFileTransferDisabled)
+  field(:cameraAccess)
+  field(:deviceRadioState, as: GoogleApi.AndroidManagement.V1.Model.DeviceRadioState)
+  field(:outgoingBeamDisabled)
+  field(:debuggingFeaturesAllowed)
+  field(:locationMode)
+  field(:shortSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
+  field(:kioskCustomization, as: GoogleApi.AndroidManagement.V1.Model.KioskCustomization)
+  field(:cameraDisabled)
+  field(:microphoneAccess)
+  field(:skipFirstUseHintsEnabled)
+
+  field(:deviceConnectivityManagement,
+    as: GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement
+  )
+
+  field(:screenCaptureDisabled)
+  field(:deviceOwnerLockScreenInfo, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
 
   field(:passwordPolicies,
     as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements,
     type: :list
   )
 
-  field(:cellBroadcastsConfigDisabled)
-  field(:unmuteMicrophoneDisabled)
-  field(:printingPolicy)
-  field(:frpAdminEmails, type: :list)
-  field(:networkEscapeHatchEnabled)
-  field(:recommendedGlobalProxy, as: GoogleApi.AndroidManagement.V1.Model.ProxyInfo)
-  field(:safeBootDisabled)
-  field(:blockApplicationsEnabled)
+  field(:complianceRules, as: GoogleApi.AndroidManagement.V1.Model.ComplianceRule, type: :list)
   field(:privateKeySelectionEnabled)
-  field(:mobileNetworksConfigDisabled)
-  field(:permittedAccessibilityServices, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
-  field(:modifyAccountsDisabled)
-  field(:shareLocationDisabled)
-  field(:passwordRequirements, as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements)
-  field(:networkResetDisabled)
+  field(:longSupportMessage, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
+  field(:recommendedGlobalProxy, as: GoogleApi.AndroidManagement.V1.Model.ProxyInfo)
+  field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
+  field(:blockApplicationsEnabled)
   field(:maximumTimeToLock)
+  field(:outgoingCallsDisabled)
+  field(:credentialProviderPolicyDefault)
+  field(:cellBroadcastsConfigDisabled)
+  field(:permittedInputMethods, as: GoogleApi.AndroidManagement.V1.Model.PackageNameList)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Policy do

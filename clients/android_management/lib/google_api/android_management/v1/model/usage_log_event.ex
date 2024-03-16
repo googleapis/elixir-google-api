@@ -21,172 +21,171 @@ defmodule GoogleApi.AndroidManagement.V1.Model.UsageLogEvent do
 
   ## Attributes
 
-  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Device timestamp when the event was logged.
-  *   `keyguardSecuredEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent.t`, *default:* `nil`) - The device was locked either by user or timeout. Part of SECURITY_LOGS.
-  *   `mediaUnmountEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent.t`, *default:* `nil`) - Removable media was unmounted. Part of SECURITY_LOGS.
-  *   `certValidationFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent.t`, *default:* `nil`) - An X.509v3 certificate failed to validate, currently this validation is performed on the Wi-FI access point and failure may be due to a mismatch upon server certificate validation. However it may in the future include other validation events of an X.509v3 certificate. Part of SECURITY_LOGS.
-  *   `mediaMountEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.MediaMountEvent.t`, *default:* `nil`) - Removable media was mounted. Part of SECURITY_LOGS.
   *   `connectEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.ConnectEvent.t`, *default:* `nil`) - A TCP connect event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS.
-  *   `wipeFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t`, *default:* `nil`) - The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Part of SECURITY_LOGS.
-  *   `stopLostModeUserAttemptEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.StopLostModeUserAttemptEvent.t`, *default:* `nil`) - An attempt to take a device out of lost mode.
-  *   `certAuthorityInstalledEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent.t`, *default:* `nil`) - A new root certificate was installed into the system's trusted credential storage. Part of SECURITY_LOGS.
-  *   `cryptoSelfTestCompletedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent.t`, *default:* `nil`) - Validates whether Android’s built-in cryptographic library (BoringSSL) is valid. Should always succeed on device boot, if it fails, the device should be considered untrusted. Part of SECURITY_LOGS.
-  *   `loggingStartedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent.t`, *default:* `nil`) - usageLog policy has been enabled. Part of SECURITY_LOGS.
-  *   `keyIntegrityViolationEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. Part of SECURITY_LOGS.
-  *   `appProcessStartEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent.t`, *default:* `nil`) - An app process was started. Part of SECURITY_LOGS.
-  *   `loggingStoppedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LoggingStoppedEvent.t`, *default:* `nil`) - usageLog policy has been disabled. Part of SECURITY_LOGS.
-  *   `keyguardDismissAuthAttemptEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent.t`, *default:* `nil`) - An attempt was made to unlock the device. Part of SECURITY_LOGS.
-  *   `keyguardDismissedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent.t`, *default:* `nil`) - The keyguard was dismissed. Part of SECURITY_LOGS.
-  *   `enrollmentCompleteEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent.t`, *default:* `nil`) - Device has completed enrollment. Part of AMAPI_LOGS.
   *   `remoteLockEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.RemoteLockEvent.t`, *default:* `nil`) - The device or profile has been remotely locked via the LOCK command. Part of SECURITY_LOGS.
-  *   `osShutdownEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent.t`, *default:* `nil`) - Device was shutdown. Part of SECURITY_LOGS.
   *   `dnsEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.DnsEvent.t`, *default:* `nil`) - A DNS lookup event was initiated through the standard network stack. Part of NETWORK_ACTIVITY_LOGS.
   *   `keyDestructionEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyDestructionEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is removed from the device either by the user or management. Part of SECURITY_LOGS.
-  *   `osStartupEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsStartupEvent.t`, *default:* `nil`) - Device was started. Part of SECURITY_LOGS.
-  *   `adbShellCommandEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent.t`, *default:* `nil`) - A shell command was issued over ADB via “adb shell command”. Part of SECURITY_LOGS.
-  *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique id of the event.
   *   `keyImportEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyImportEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is imported on the device either by the user or management. Part of SECURITY_LOGS.
-  *   `keyGeneratedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management. Part of SECURITY_LOGS.
+  *   `certValidationFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent.t`, *default:* `nil`) - An X.509v3 certificate failed to validate, currently this validation is performed on the Wi-FI access point and failure may be due to a mismatch upon server certificate validation. However it may in the future include other validation events of an X.509v3 certificate. Part of SECURITY_LOGS.
+  *   `loggingStartedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent.t`, *default:* `nil`) - usageLog policy has been enabled. Part of SECURITY_LOGS.
+  *   `osShutdownEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent.t`, *default:* `nil`) - Device was shutdown. Part of SECURITY_LOGS.
   *   `lostModeLocationEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LostModeLocationEvent.t`, *default:* `nil`) - A lost mode location update when a device in lost mode.
-  *   `filePulledEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.FilePulledEvent.t`, *default:* `nil`) - A file was downloaded from the device. Part of SECURITY_LOGS.
-  *   `logBufferSizeCriticalEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LogBufferSizeCriticalEvent.t`, *default:* `nil`) - The audit log buffer has reached 90% of its capacity, therefore older events may be dropped. Part of SECURITY_LOGS.
+  *   `keyguardSecuredEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent.t`, *default:* `nil`) - The device was locked either by user or timeout. Part of SECURITY_LOGS.
+  *   `osStartupEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.OsStartupEvent.t`, *default:* `nil`) - Device was started. Part of SECURITY_LOGS.
+  *   `mediaMountEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.MediaMountEvent.t`, *default:* `nil`) - Removable media was mounted. Part of SECURITY_LOGS.
+  *   `enrollmentCompleteEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent.t`, *default:* `nil`) - Device has completed enrollment. Part of AMAPI_LOGS.
+  *   `appProcessStartEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent.t`, *default:* `nil`) - An app process was started. Part of SECURITY_LOGS.
+  *   `eventId` (*type:* `String.t`, *default:* `nil`) - Unique id of the event.
   *   `certAuthorityRemovedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertAuthorityRemovedEvent.t`, *default:* `nil`) - A root certificate was removed from the system's trusted credential storage. Part of SECURITY_LOGS.
+  *   `filePulledEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.FilePulledEvent.t`, *default:* `nil`) - A file was downloaded from the device. Part of SECURITY_LOGS.
   *   `filePushedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.FilePushedEvent.t`, *default:* `nil`) - A file was uploaded onto the device. Part of SECURITY_LOGS.
+  *   `keyGeneratedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is installed on the device either by the user or management. Part of SECURITY_LOGS.
+  *   `stopLostModeUserAttemptEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.StopLostModeUserAttemptEvent.t`, *default:* `nil`) - An attempt to take a device out of lost mode.
+  *   `wipeFailureEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t`, *default:* `nil`) - The work profile or company-owned device failed to wipe when requested. This could be user initiated or admin initiated e.g. delete was received. Part of SECURITY_LOGS.
+  *   `keyguardDismissedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent.t`, *default:* `nil`) - The keyguard was dismissed. Part of SECURITY_LOGS.
+  *   `keyguardDismissAuthAttemptEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent.t`, *default:* `nil`) - An attempt was made to unlock the device. Part of SECURITY_LOGS.
+  *   `adbShellCommandEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent.t`, *default:* `nil`) - A shell command was issued over ADB via “adb shell command”. Part of SECURITY_LOGS.
+  *   `mediaUnmountEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent.t`, *default:* `nil`) - Removable media was unmounted. Part of SECURITY_LOGS.
+  *   `keyIntegrityViolationEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent.t`, *default:* `nil`) - A cryptographic key including user installed, admin installed and system maintained private key is determined to be corrupted due to storage corruption, hardware failure or some OS issue. Part of SECURITY_LOGS.
   *   `adbShellInteractiveEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.AdbShellInteractiveEvent.t`, *default:* `nil`) - An ADB interactive shell was opened via “adb shell”. Part of SECURITY_LOGS.
+  *   `cryptoSelfTestCompletedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent.t`, *default:* `nil`) - Validates whether Android’s built-in cryptographic library (BoringSSL) is valid. Should always succeed on device boot, if it fails, the device should be considered untrusted. Part of SECURITY_LOGS.
   *   `lostModeOutgoingPhoneCallEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LostModeOutgoingPhoneCallEvent.t`, *default:* `nil`) - An outgoing phone call has been made when a device in lost mode.
+  *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - Device timestamp when the event was logged.
+  *   `loggingStoppedEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LoggingStoppedEvent.t`, *default:* `nil`) - usageLog policy has been disabled. Part of SECURITY_LOGS.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - The particular usage log event type that was reported on the device. Use this to determine which event field to access.
+  *   `logBufferSizeCriticalEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.LogBufferSizeCriticalEvent.t`, *default:* `nil`) - The audit log buffer has reached 90% of its capacity, therefore older events may be dropped. Part of SECURITY_LOGS.
+  *   `certAuthorityInstalledEvent` (*type:* `GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent.t`, *default:* `nil`) - A new root certificate was installed into the system's trusted credential storage. Part of SECURITY_LOGS.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :eventTime => DateTime.t() | nil,
-          :keyguardSecuredEvent =>
-            GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent.t() | nil,
-          :mediaUnmountEvent => GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent.t() | nil,
-          :certValidationFailureEvent =>
-            GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent.t() | nil,
-          :mediaMountEvent => GoogleApi.AndroidManagement.V1.Model.MediaMountEvent.t() | nil,
           :connectEvent => GoogleApi.AndroidManagement.V1.Model.ConnectEvent.t() | nil,
-          :wipeFailureEvent => GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t() | nil,
-          :stopLostModeUserAttemptEvent =>
-            GoogleApi.AndroidManagement.V1.Model.StopLostModeUserAttemptEvent.t() | nil,
-          :certAuthorityInstalledEvent =>
-            GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent.t() | nil,
-          :cryptoSelfTestCompletedEvent =>
-            GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent.t() | nil,
-          :loggingStartedEvent =>
-            GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent.t() | nil,
-          :keyIntegrityViolationEvent =>
-            GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent.t() | nil,
-          :appProcessStartEvent =>
-            GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent.t() | nil,
-          :loggingStoppedEvent =>
-            GoogleApi.AndroidManagement.V1.Model.LoggingStoppedEvent.t() | nil,
-          :keyguardDismissAuthAttemptEvent =>
-            GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent.t() | nil,
-          :keyguardDismissedEvent =>
-            GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent.t() | nil,
-          :enrollmentCompleteEvent =>
-            GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent.t() | nil,
           :remoteLockEvent => GoogleApi.AndroidManagement.V1.Model.RemoteLockEvent.t() | nil,
-          :osShutdownEvent => GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent.t() | nil,
           :dnsEvent => GoogleApi.AndroidManagement.V1.Model.DnsEvent.t() | nil,
           :keyDestructionEvent =>
             GoogleApi.AndroidManagement.V1.Model.KeyDestructionEvent.t() | nil,
-          :osStartupEvent => GoogleApi.AndroidManagement.V1.Model.OsStartupEvent.t() | nil,
-          :adbShellCommandEvent =>
-            GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent.t() | nil,
-          :eventId => String.t() | nil,
           :keyImportEvent => GoogleApi.AndroidManagement.V1.Model.KeyImportEvent.t() | nil,
-          :keyGeneratedEvent => GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent.t() | nil,
+          :certValidationFailureEvent =>
+            GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent.t() | nil,
+          :loggingStartedEvent =>
+            GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent.t() | nil,
+          :osShutdownEvent => GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent.t() | nil,
           :lostModeLocationEvent =>
             GoogleApi.AndroidManagement.V1.Model.LostModeLocationEvent.t() | nil,
-          :filePulledEvent => GoogleApi.AndroidManagement.V1.Model.FilePulledEvent.t() | nil,
-          :logBufferSizeCriticalEvent =>
-            GoogleApi.AndroidManagement.V1.Model.LogBufferSizeCriticalEvent.t() | nil,
+          :keyguardSecuredEvent =>
+            GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent.t() | nil,
+          :osStartupEvent => GoogleApi.AndroidManagement.V1.Model.OsStartupEvent.t() | nil,
+          :mediaMountEvent => GoogleApi.AndroidManagement.V1.Model.MediaMountEvent.t() | nil,
+          :enrollmentCompleteEvent =>
+            GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent.t() | nil,
+          :appProcessStartEvent =>
+            GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent.t() | nil,
+          :eventId => String.t() | nil,
           :certAuthorityRemovedEvent =>
             GoogleApi.AndroidManagement.V1.Model.CertAuthorityRemovedEvent.t() | nil,
+          :filePulledEvent => GoogleApi.AndroidManagement.V1.Model.FilePulledEvent.t() | nil,
           :filePushedEvent => GoogleApi.AndroidManagement.V1.Model.FilePushedEvent.t() | nil,
+          :keyGeneratedEvent => GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent.t() | nil,
+          :stopLostModeUserAttemptEvent =>
+            GoogleApi.AndroidManagement.V1.Model.StopLostModeUserAttemptEvent.t() | nil,
+          :wipeFailureEvent => GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent.t() | nil,
+          :keyguardDismissedEvent =>
+            GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent.t() | nil,
+          :keyguardDismissAuthAttemptEvent =>
+            GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent.t() | nil,
+          :adbShellCommandEvent =>
+            GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent.t() | nil,
+          :mediaUnmountEvent => GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent.t() | nil,
+          :keyIntegrityViolationEvent =>
+            GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent.t() | nil,
           :adbShellInteractiveEvent =>
             GoogleApi.AndroidManagement.V1.Model.AdbShellInteractiveEvent.t() | nil,
+          :cryptoSelfTestCompletedEvent =>
+            GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent.t() | nil,
           :lostModeOutgoingPhoneCallEvent =>
             GoogleApi.AndroidManagement.V1.Model.LostModeOutgoingPhoneCallEvent.t() | nil,
-          :eventType => String.t() | nil
+          :eventTime => DateTime.t() | nil,
+          :loggingStoppedEvent =>
+            GoogleApi.AndroidManagement.V1.Model.LoggingStoppedEvent.t() | nil,
+          :eventType => String.t() | nil,
+          :logBufferSizeCriticalEvent =>
+            GoogleApi.AndroidManagement.V1.Model.LogBufferSizeCriticalEvent.t() | nil,
+          :certAuthorityInstalledEvent =>
+            GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent.t() | nil
         }
 
-  field(:eventTime, as: DateTime)
-  field(:keyguardSecuredEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent)
-  field(:mediaUnmountEvent, as: GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent)
+  field(:connectEvent, as: GoogleApi.AndroidManagement.V1.Model.ConnectEvent)
+  field(:remoteLockEvent, as: GoogleApi.AndroidManagement.V1.Model.RemoteLockEvent)
+  field(:dnsEvent, as: GoogleApi.AndroidManagement.V1.Model.DnsEvent)
+  field(:keyDestructionEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyDestructionEvent)
+  field(:keyImportEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyImportEvent)
 
   field(:certValidationFailureEvent,
     as: GoogleApi.AndroidManagement.V1.Model.CertValidationFailureEvent
   )
 
+  field(:loggingStartedEvent, as: GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent)
+  field(:osShutdownEvent, as: GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent)
+  field(:lostModeLocationEvent, as: GoogleApi.AndroidManagement.V1.Model.LostModeLocationEvent)
+  field(:keyguardSecuredEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyguardSecuredEvent)
+  field(:osStartupEvent, as: GoogleApi.AndroidManagement.V1.Model.OsStartupEvent)
   field(:mediaMountEvent, as: GoogleApi.AndroidManagement.V1.Model.MediaMountEvent)
-  field(:connectEvent, as: GoogleApi.AndroidManagement.V1.Model.ConnectEvent)
-  field(:wipeFailureEvent, as: GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent)
+
+  field(:enrollmentCompleteEvent, as: GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent)
+
+  field(:appProcessStartEvent, as: GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent)
+  field(:eventId)
+
+  field(:certAuthorityRemovedEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.CertAuthorityRemovedEvent
+  )
+
+  field(:filePulledEvent, as: GoogleApi.AndroidManagement.V1.Model.FilePulledEvent)
+  field(:filePushedEvent, as: GoogleApi.AndroidManagement.V1.Model.FilePushedEvent)
+  field(:keyGeneratedEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent)
 
   field(:stopLostModeUserAttemptEvent,
     as: GoogleApi.AndroidManagement.V1.Model.StopLostModeUserAttemptEvent
   )
 
-  field(:certAuthorityInstalledEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent
+  field(:wipeFailureEvent, as: GoogleApi.AndroidManagement.V1.Model.WipeFailureEvent)
+  field(:keyguardDismissedEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent)
+
+  field(:keyguardDismissAuthAttemptEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent
+  )
+
+  field(:adbShellCommandEvent, as: GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent)
+  field(:mediaUnmountEvent, as: GoogleApi.AndroidManagement.V1.Model.MediaUnmountEvent)
+
+  field(:keyIntegrityViolationEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent
+  )
+
+  field(:adbShellInteractiveEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.AdbShellInteractiveEvent
   )
 
   field(:cryptoSelfTestCompletedEvent,
     as: GoogleApi.AndroidManagement.V1.Model.CryptoSelfTestCompletedEvent
   )
 
-  field(:loggingStartedEvent, as: GoogleApi.AndroidManagement.V1.Model.LoggingStartedEvent)
-
-  field(:keyIntegrityViolationEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.KeyIntegrityViolationEvent
+  field(:lostModeOutgoingPhoneCallEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.LostModeOutgoingPhoneCallEvent
   )
 
-  field(:appProcessStartEvent, as: GoogleApi.AndroidManagement.V1.Model.AppProcessStartEvent)
+  field(:eventTime, as: DateTime)
   field(:loggingStoppedEvent, as: GoogleApi.AndroidManagement.V1.Model.LoggingStoppedEvent)
-
-  field(:keyguardDismissAuthAttemptEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.KeyguardDismissAuthAttemptEvent
-  )
-
-  field(:keyguardDismissedEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyguardDismissedEvent)
-
-  field(:enrollmentCompleteEvent, as: GoogleApi.AndroidManagement.V1.Model.EnrollmentCompleteEvent)
-
-  field(:remoteLockEvent, as: GoogleApi.AndroidManagement.V1.Model.RemoteLockEvent)
-  field(:osShutdownEvent, as: GoogleApi.AndroidManagement.V1.Model.OsShutdownEvent)
-  field(:dnsEvent, as: GoogleApi.AndroidManagement.V1.Model.DnsEvent)
-  field(:keyDestructionEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyDestructionEvent)
-  field(:osStartupEvent, as: GoogleApi.AndroidManagement.V1.Model.OsStartupEvent)
-  field(:adbShellCommandEvent, as: GoogleApi.AndroidManagement.V1.Model.AdbShellCommandEvent)
-  field(:eventId)
-  field(:keyImportEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyImportEvent)
-  field(:keyGeneratedEvent, as: GoogleApi.AndroidManagement.V1.Model.KeyGeneratedEvent)
-  field(:lostModeLocationEvent, as: GoogleApi.AndroidManagement.V1.Model.LostModeLocationEvent)
-  field(:filePulledEvent, as: GoogleApi.AndroidManagement.V1.Model.FilePulledEvent)
+  field(:eventType)
 
   field(:logBufferSizeCriticalEvent,
     as: GoogleApi.AndroidManagement.V1.Model.LogBufferSizeCriticalEvent
   )
 
-  field(:certAuthorityRemovedEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.CertAuthorityRemovedEvent
+  field(:certAuthorityInstalledEvent,
+    as: GoogleApi.AndroidManagement.V1.Model.CertAuthorityInstalledEvent
   )
-
-  field(:filePushedEvent, as: GoogleApi.AndroidManagement.V1.Model.FilePushedEvent)
-
-  field(:adbShellInteractiveEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.AdbShellInteractiveEvent
-  )
-
-  field(:lostModeOutgoingPhoneCallEvent,
-    as: GoogleApi.AndroidManagement.V1.Model.LostModeOutgoingPhoneCallEvent
-  )
-
-  field(:eventType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.UsageLogEvent do
