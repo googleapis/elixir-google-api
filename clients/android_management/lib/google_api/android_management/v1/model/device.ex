@@ -21,141 +21,109 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
 
   ## Attributes
 
-  *   `appliedState` (*type:* `String.t`, *default:* `nil`) - The state currently applied to the device.
-  *   `managementMode` (*type:* `String.t`, *default:* `nil`) - The type of management mode Android Device Policy takes on the device. This influences which policy settings are supported.
-  *   `previousDeviceNames` (*type:* `list(String.t)`, *default:* `nil`) - If the same physical device has been enrolled multiple times, this field contains its previous device names. The serial number is used as the unique identifier to determine if the same physical device has enrolled previously. The names are in chronological order.
-  *   `hardwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.HardwareInfo.t`, *default:* `nil`) - Detailed information about the device hardware.
-  *   `enrollmentTokenData` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token with additional data provided, this field contains that data.
-  *   `memoryEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t)`, *default:* `nil`) - Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy.Events are retained for a certain period of time and old events are deleted.
-  *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
-  *   `memoryInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t`, *default:* `nil`) - Memory information: contains information about device memory and storage.
-  *   `policyCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether the device is compliant with its policy.
   *   `deviceSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.DeviceSettings.t`, *default:* `nil`) - Device settings information. This information is only available if deviceSettingsEnabled is true in the device's policy.
-  *   `lastPolicyComplianceReportTime` (*type:* `DateTime.t`, *default:* `nil`) - Deprecated.
-  *   `displays` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Display.t)`, *default:* `nil`) - Detailed information about displays on the device. This information is only available if displayInfoEnabled is true in the device's policy.
-  *   `disabledReason` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - If the device state is DISABLED, an optional message that is displayed on the device indicating the reason the device is disabled. This field can be modified by a patch request.
-  *   `lastStatusReportTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the device sent a status report.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete.
   *   `networkInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.NetworkInfo.t`, *default:* `nil`) - Device network information. This information is only available if networkInfoEnabled is true in the device's policy.
-  *   `hardwareStatusSamples` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.HardwareStatus.t)`, *default:* `nil`) - Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device's policy.
-  *   `powerManagementEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t)`, *default:* `nil`) - Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device's policy.
-  *   `appliedPolicyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy currently applied to the device.
-  *   `dpcMigrationInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t`, *default:* `nil`) - Output only. Information related to whether this device was migrated from being managed by another Device Policy Controller (DPC).
-  *   `applicationReports` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationReport.t)`, *default:* `nil`) - Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device's policy.
-  *   `userName` (*type:* `String.t`, *default:* `nil`) - The resource name of the user that owns this device in the form enterprises/{enterpriseId}/users/{userId}.
-  *   `nonComplianceDetails` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail.t)`, *default:* `nil`) - Details about policy settings that the device is not compliant with.
-  *   `lastPolicySyncTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the device fetched its policy.
-  *   `user` (*type:* `GoogleApi.AndroidManagement.V1.Model.User.t`, *default:* `nil`) - The user who owns the device.
-  *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy.
-  *   `commonCriteriaModeInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t`, *default:* `nil`) - Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state to be applied to the device. This field can be modified by a patch request. Note that when calling enterprises.devices.patch, ACTIVE and DISABLED are the only allowable values. To enter the device into a DELETED state, call enterprises.devices.delete.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the device in the form enterprises/{enterpriseId}/devices/{deviceId}.
   *   `enrollmentTime` (*type:* `DateTime.t`, *default:* `nil`) - The time of device enrollment.
-  *   `appliedPolicyVersion` (*type:* `String.t`, *default:* `nil`) - The version of the policy currently applied to the device.
   *   `policyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy applied to the device, in the form enterprises/{enterpriseId}/policies/{policyId}. If not specified, the policy_name for the device's user is applied. This field can be modified by a patch request. You can specify only the policyId when calling enterprises.devices.patch, as long as the policyId doesn’t contain any slashes. The rest of the policy name is inferred.
+  *   `userName` (*type:* `String.t`, *default:* `nil`) - The resource name of the user that owns this device in the form enterprises/{enterpriseId}/users/{userId}.
+  *   `lastPolicyComplianceReportTime` (*type:* `DateTime.t`, *default:* `nil`) - Deprecated.
+  *   `policyCompliant` (*type:* `boolean()`, *default:* `nil`) - Whether the device is compliant with its policy.
+  *   `managementMode` (*type:* `String.t`, *default:* `nil`) - The type of management mode Android Device Policy takes on the device. This influences which policy settings are supported.
+  *   `lastPolicySyncTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the device fetched its policy.
+  *   `applicationReports` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.ApplicationReport.t)`, *default:* `nil`) - Reports for apps installed on the device. This information is only available when application_reports_enabled is true in the device's policy.
+  *   `systemProperties` (*type:* `map()`, *default:* `nil`) - Map of selected system properties name and value related to the device. This information is only available if systemPropertiesEnabled is true in the device's policy.
   *   `apiLevel` (*type:* `integer()`, *default:* `nil`) - The API level of the Android platform version running on the device.
   *   `appliedPasswordPolicies` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t)`, *default:* `nil`) - The password requirements currently applied to the device. The applied requirements may be slightly different from those specified in passwordPolicies in some cases. fieldPath is set based on passwordPolicies.
+  *   `appliedPolicyName` (*type:* `String.t`, *default:* `nil`) - The name of the policy currently applied to the device.
+  *   `previousDeviceNames` (*type:* `list(String.t)`, *default:* `nil`) - If the same physical device has been enrolled multiple times, this field contains its previous device names. The serial number is used as the unique identifier to determine if the same physical device has enrolled previously. The names are in chronological order.
+  *   `securityPosture` (*type:* `GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t`, *default:* `nil`) - Device's security posture value that reflects how secure the device is.
   *   `enrollmentTokenName` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token, this field contains the name of the token.
-  *   `softwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t`, *default:* `nil`) - Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy.
+  *   `enrollmentTokenData` (*type:* `String.t`, *default:* `nil`) - If the device was enrolled with an enrollment token with additional data provided, this field contains that data.
+  *   `hardwareStatusSamples` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.HardwareStatus.t)`, *default:* `nil`) - Hardware status samples in chronological order. This information is only available if hardwareStatusEnabled is true in the device's policy.
+  *   `nonComplianceDetails` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail.t)`, *default:* `nil`) - Details about policy settings that the device is not compliant with.
+  *   `lastStatusReportTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the device sent a status report.
+  *   `hardwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.HardwareInfo.t`, *default:* `nil`) - Detailed information about the device hardware.
+  *   `memoryEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t)`, *default:* `nil`) - Events related to memory and storage measurements in chronological order. This information is only available if memoryInfoEnabled is true in the device's policy.Events are retained for a certain period of time and old events are deleted.
+  *   `commonCriteriaModeInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t`, *default:* `nil`) - Information about Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC).This information is only available if statusReportingSettings.commonCriteriaModeEnabled is true in the device's policy.
   *   `ownership` (*type:* `String.t`, *default:* `nil`) - Ownership of the managed device.
+  *   `powerManagementEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t)`, *default:* `nil`) - Power management events on the device in chronological order. This information is only available if powerManagementEventsEnabled is true in the device's policy.
+  *   `appliedPolicyVersion` (*type:* `String.t`, *default:* `nil`) - The version of the policy currently applied to the device.
+  *   `appliedState` (*type:* `String.t`, *default:* `nil`) - The state currently applied to the device.
+  *   `user` (*type:* `GoogleApi.AndroidManagement.V1.Model.User.t`, *default:* `nil`) - The user who owns the device.
+  *   `dpcMigrationInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t`, *default:* `nil`) - Output only. Information related to whether this device was migrated from being managed by another Device Policy Controller (DPC).
+  *   `displays` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.Display.t)`, *default:* `nil`) - Detailed information about displays on the device. This information is only available if displayInfoEnabled is true in the device's policy.
+  *   `disabledReason` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - If the device state is DISABLED, an optional message that is displayed on the device indicating the reason the device is disabled. This field can be modified by a patch request.
+  *   `softwareInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t`, *default:* `nil`) - Detailed information about the device software. This information is only available if softwareInfoEnabled is true in the device's policy.
+  *   `memoryInfo` (*type:* `GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t`, *default:* `nil`) - Memory information: contains information about device memory and storage.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :appliedState => String.t() | nil,
-          :managementMode => String.t() | nil,
-          :previousDeviceNames => list(String.t()) | nil,
-          :hardwareInfo => GoogleApi.AndroidManagement.V1.Model.HardwareInfo.t() | nil,
-          :enrollmentTokenData => String.t() | nil,
-          :memoryEvents => list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t()) | nil,
-          :securityPosture => GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t() | nil,
-          :memoryInfo => GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t() | nil,
-          :policyCompliant => boolean() | nil,
           :deviceSettings => GoogleApi.AndroidManagement.V1.Model.DeviceSettings.t() | nil,
-          :lastPolicyComplianceReportTime => DateTime.t() | nil,
-          :displays => list(GoogleApi.AndroidManagement.V1.Model.Display.t()) | nil,
-          :disabledReason => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
-          :lastStatusReportTime => DateTime.t() | nil,
-          :name => String.t() | nil,
-          :state => String.t() | nil,
           :networkInfo => GoogleApi.AndroidManagement.V1.Model.NetworkInfo.t() | nil,
-          :hardwareStatusSamples =>
-            list(GoogleApi.AndroidManagement.V1.Model.HardwareStatus.t()) | nil,
-          :powerManagementEvents =>
-            list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t()) | nil,
-          :appliedPolicyName => String.t() | nil,
-          :dpcMigrationInfo => GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t() | nil,
+          :state => String.t() | nil,
+          :name => String.t() | nil,
+          :enrollmentTime => DateTime.t() | nil,
+          :policyName => String.t() | nil,
+          :userName => String.t() | nil,
+          :lastPolicyComplianceReportTime => DateTime.t() | nil,
+          :policyCompliant => boolean() | nil,
+          :managementMode => String.t() | nil,
+          :lastPolicySyncTime => DateTime.t() | nil,
           :applicationReports =>
             list(GoogleApi.AndroidManagement.V1.Model.ApplicationReport.t()) | nil,
-          :userName => String.t() | nil,
-          :nonComplianceDetails =>
-            list(GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail.t()) | nil,
-          :lastPolicySyncTime => DateTime.t() | nil,
-          :user => GoogleApi.AndroidManagement.V1.Model.User.t() | nil,
           :systemProperties => map() | nil,
-          :commonCriteriaModeInfo =>
-            GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t() | nil,
-          :enrollmentTime => DateTime.t() | nil,
-          :appliedPolicyVersion => String.t() | nil,
-          :policyName => String.t() | nil,
           :apiLevel => integer() | nil,
           :appliedPasswordPolicies =>
             list(GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t()) | nil,
+          :appliedPolicyName => String.t() | nil,
+          :previousDeviceNames => list(String.t()) | nil,
+          :securityPosture => GoogleApi.AndroidManagement.V1.Model.SecurityPosture.t() | nil,
           :enrollmentTokenName => String.t() | nil,
+          :enrollmentTokenData => String.t() | nil,
+          :hardwareStatusSamples =>
+            list(GoogleApi.AndroidManagement.V1.Model.HardwareStatus.t()) | nil,
+          :nonComplianceDetails =>
+            list(GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail.t()) | nil,
+          :lastStatusReportTime => DateTime.t() | nil,
+          :hardwareInfo => GoogleApi.AndroidManagement.V1.Model.HardwareInfo.t() | nil,
+          :memoryEvents => list(GoogleApi.AndroidManagement.V1.Model.MemoryEvent.t()) | nil,
+          :commonCriteriaModeInfo =>
+            GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo.t() | nil,
+          :ownership => String.t() | nil,
+          :powerManagementEvents =>
+            list(GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent.t()) | nil,
+          :appliedPolicyVersion => String.t() | nil,
+          :appliedState => String.t() | nil,
+          :user => GoogleApi.AndroidManagement.V1.Model.User.t() | nil,
+          :dpcMigrationInfo => GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo.t() | nil,
+          :displays => list(GoogleApi.AndroidManagement.V1.Model.Display.t()) | nil,
+          :disabledReason => GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t() | nil,
           :softwareInfo => GoogleApi.AndroidManagement.V1.Model.SoftwareInfo.t() | nil,
-          :ownership => String.t() | nil
+          :memoryInfo => GoogleApi.AndroidManagement.V1.Model.MemoryInfo.t() | nil
         }
 
-  field(:appliedState)
-  field(:managementMode)
-  field(:previousDeviceNames, type: :list)
-  field(:hardwareInfo, as: GoogleApi.AndroidManagement.V1.Model.HardwareInfo)
-  field(:enrollmentTokenData)
-  field(:memoryEvents, as: GoogleApi.AndroidManagement.V1.Model.MemoryEvent, type: :list)
-  field(:securityPosture, as: GoogleApi.AndroidManagement.V1.Model.SecurityPosture)
-  field(:memoryInfo, as: GoogleApi.AndroidManagement.V1.Model.MemoryInfo)
-  field(:policyCompliant)
   field(:deviceSettings, as: GoogleApi.AndroidManagement.V1.Model.DeviceSettings)
-  field(:lastPolicyComplianceReportTime, as: DateTime)
-  field(:displays, as: GoogleApi.AndroidManagement.V1.Model.Display, type: :list)
-  field(:disabledReason, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
-  field(:lastStatusReportTime, as: DateTime)
-  field(:name)
-  field(:state)
   field(:networkInfo, as: GoogleApi.AndroidManagement.V1.Model.NetworkInfo)
-
-  field(:hardwareStatusSamples,
-    as: GoogleApi.AndroidManagement.V1.Model.HardwareStatus,
-    type: :list
-  )
-
-  field(:powerManagementEvents,
-    as: GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent,
-    type: :list
-  )
-
-  field(:appliedPolicyName)
-  field(:dpcMigrationInfo, as: GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo)
+  field(:state)
+  field(:name)
+  field(:enrollmentTime, as: DateTime)
+  field(:policyName)
+  field(:userName)
+  field(:lastPolicyComplianceReportTime, as: DateTime)
+  field(:policyCompliant)
+  field(:managementMode)
+  field(:lastPolicySyncTime, as: DateTime)
 
   field(:applicationReports,
     as: GoogleApi.AndroidManagement.V1.Model.ApplicationReport,
     type: :list
   )
 
-  field(:userName)
-
-  field(:nonComplianceDetails,
-    as: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail,
-    type: :list
-  )
-
-  field(:lastPolicySyncTime, as: DateTime)
-  field(:user, as: GoogleApi.AndroidManagement.V1.Model.User)
   field(:systemProperties, type: :map)
-  field(:commonCriteriaModeInfo, as: GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo)
-  field(:enrollmentTime, as: DateTime)
-  field(:appliedPolicyVersion)
-  field(:policyName)
   field(:apiLevel)
 
   field(:appliedPasswordPolicies,
@@ -163,9 +131,41 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Device do
     type: :list
   )
 
+  field(:appliedPolicyName)
+  field(:previousDeviceNames, type: :list)
+  field(:securityPosture, as: GoogleApi.AndroidManagement.V1.Model.SecurityPosture)
   field(:enrollmentTokenName)
-  field(:softwareInfo, as: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo)
+  field(:enrollmentTokenData)
+
+  field(:hardwareStatusSamples,
+    as: GoogleApi.AndroidManagement.V1.Model.HardwareStatus,
+    type: :list
+  )
+
+  field(:nonComplianceDetails,
+    as: GoogleApi.AndroidManagement.V1.Model.NonComplianceDetail,
+    type: :list
+  )
+
+  field(:lastStatusReportTime, as: DateTime)
+  field(:hardwareInfo, as: GoogleApi.AndroidManagement.V1.Model.HardwareInfo)
+  field(:memoryEvents, as: GoogleApi.AndroidManagement.V1.Model.MemoryEvent, type: :list)
+  field(:commonCriteriaModeInfo, as: GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo)
   field(:ownership)
+
+  field(:powerManagementEvents,
+    as: GoogleApi.AndroidManagement.V1.Model.PowerManagementEvent,
+    type: :list
+  )
+
+  field(:appliedPolicyVersion)
+  field(:appliedState)
+  field(:user, as: GoogleApi.AndroidManagement.V1.Model.User)
+  field(:dpcMigrationInfo, as: GoogleApi.AndroidManagement.V1.Model.DpcMigrationInfo)
+  field(:displays, as: GoogleApi.AndroidManagement.V1.Model.Display, type: :list)
+  field(:disabledReason, as: GoogleApi.AndroidManagement.V1.Model.UserFacingMessage)
+  field(:softwareInfo, as: GoogleApi.AndroidManagement.V1.Model.SoftwareInfo)
+  field(:memoryInfo, as: GoogleApi.AndroidManagement.V1.Model.MemoryInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.Device do
