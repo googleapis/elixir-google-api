@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
 
   ## Attributes
 
+  *   `bypassFirewallChecks` (*type:* `boolean()`, *default:* `nil`) - Whether the test should skip firewall checking. If not provided, we assume false.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the test was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-supplied description of the Connectivity Test. Maximum of 512 characters.
   *   `destination` (*type:* `GoogleApi.NetworkManagement.V1.Model.Endpoint.t`, *default:* `nil`) - Required. Destination specification of the Connectivity Test. You can use a combination of destination IP address, Compute Engine VM instance, or VPC network to uniquely identify the destination location. Even if the destination IP address is not unique, the source IP location is unique. Usually, the analysis can infer the destination endpoint from route information. If the destination you specify is a VM instance and the instance has multiple network interfaces, then you must also specify either a destination IP address or VPC network to identify the destination interface. A reachability analysis proceeds even if the destination location is ambiguous. However, the result can include endpoints that you don't intend to test.
@@ -38,6 +39,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bypassFirewallChecks => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :destination => GoogleApi.NetworkManagement.V1.Model.Endpoint.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ConnectivityTest do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:bypassFirewallChecks)
   field(:createTime, as: DateTime)
   field(:description)
   field(:destination, as: GoogleApi.NetworkManagement.V1.Model.Endpoint)
