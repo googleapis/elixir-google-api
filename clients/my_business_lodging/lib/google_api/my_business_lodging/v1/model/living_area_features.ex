@@ -21,133 +21,133 @@ defmodule GoogleApi.MyBusinessLodging.V1.Model.LivingAreaFeatures do
 
   ## Attributes
 
-  *   `ironingEquipmentException` (*type:* `String.t`, *default:* `nil`) - Ironing equipment exception.
-  *   `tv` (*type:* `boolean()`, *default:* `nil`) - TV. A television is available in the guestroom.
-  *   `payPerViewMoviesException` (*type:* `String.t`, *default:* `nil`) - Pay per view movies exception.
-  *   `toilet` (*type:* `boolean()`, *default:* `nil`) - Toilet. A fixed bathroom feature connected to a sewer or septic system and consisting of a water-flushed bowl with a seat, as well as a device that elicites the water-flushing action. Used for the process and disposal of human waste.
-  *   `payPerViewMovies` (*type:* `boolean()`, *default:* `nil`) - Pay per view movies. Televisions with channels that offer films that can be viewed for a fee, and have an interface to allow the viewer to accept the terms and approve payment.
-  *   `fireplace` (*type:* `boolean()`, *default:* `nil`) - Fireplace. A framed opening (aka hearth) at the base of a chimney in which logs or an electrical fire feature are burned to provide a relaxing ambiance or to heat the room. Often made of bricks or stone.
-  *   `bidetException` (*type:* `String.t`, *default:* `nil`) - Bidet exception.
-  *   `universalPowerAdaptersException` (*type:* `String.t`, *default:* `nil`) - Universal power adapters exception.
-  *   `bathtubException` (*type:* `String.t`, *default:* `nil`) - Bathtub exception.
   *   `heating` (*type:* `boolean()`, *default:* `nil`) - Heating. An electrical machine used to warm the temperature of the guestroom.
-  *   `privateBathroom` (*type:* `boolean()`, *default:* `nil`) - Private bathroom. A bathroom designated for the express use of the guests staying in a specific guestroom.
-  *   `hairdryerException` (*type:* `String.t`, *default:* `nil`) - Hairdryer exception.
-  *   `tvCastingException` (*type:* `String.t`, *default:* `nil`) - TV exception.
-  *   `bidet` (*type:* `boolean()`, *default:* `nil`) - Bidet. A plumbing fixture attached to a toilet or a low, fixed sink designed for the purpose of washing after toilet use.
-  *   `tvStreaming` (*type:* `boolean()`, *default:* `nil`) - TV streaming. Televisions that embed a range of web-based apps to allow for watching media from those apps.
-  *   `airConditioning` (*type:* `boolean()`, *default:* `nil`) - Air conditioning. An electrical machine used to cool the temperature of the guestroom.
-  *   `universalPowerAdapters` (*type:* `boolean()`, *default:* `nil`) - Universal power adapters. A power supply for electronic devices which plugs into a wall for the purpose of converting AC to a single DC voltage. Also know as AC adapter or charger.
-  *   `dryerException` (*type:* `String.t`, *default:* `nil`) - Dryer exception.
+  *   `hairdryer` (*type:* `boolean()`, *default:* `nil`) - Hairdryer. A handheld electric appliance that blows temperature-controlled air for the purpose of drying wet hair. Can be mounted to a bathroom wall or a freestanding device stored in the guestroom's bathroom or closet.
   *   `tvCasting` (*type:* `boolean()`, *default:* `nil`) - TV casting. A television equipped with a device through which the video entertainment accessed on a personal computer, phone or tablet can be wirelessly delivered to and viewed on the guestroom's television.
+  *   `payPerViewMovies` (*type:* `boolean()`, *default:* `nil`) - Pay per view movies. Televisions with channels that offer films that can be viewed for a fee, and have an interface to allow the viewer to accept the terms and approve payment.
+  *   `shower` (*type:* `boolean()`, *default:* `nil`) - Shower. A fixed plumbing fixture for standing bathing that features a tall spray spout or faucet through which water flows, a knob or knobs that control the water's temperature, and a drain in the floor.
+  *   `dryerException` (*type:* `String.t`, *default:* `nil`) - Dryer exception.
+  *   `fireplace` (*type:* `boolean()`, *default:* `nil`) - Fireplace. A framed opening (aka hearth) at the base of a chimney in which logs or an electrical fire feature are burned to provide a relaxing ambiance or to heat the room. Often made of bricks or stone.
   *   `ironingEquipment` (*type:* `boolean()`, *default:* `nil`) - Ironing equipment. A device, usually with a flat metal base, that is heated to smooth, finish, or press clothes and a flat, padded, cloth-covered surface on which the clothes are worked.
-  *   `inunitSafe` (*type:* `boolean()`, *default:* `nil`) - In-unit safe. A strong fireproof cabinet with a programmable lock, used for the protected storage of valuables in a guestroom. Often built into a closet.
+  *   `bathtubException` (*type:* `String.t`, *default:* `nil`) - Bathtub exception.
   *   `electronicRoomKey` (*type:* `boolean()`, *default:* `nil`) - Electronic room key. A card coded by the check-in computer that is read by the lock on the hotel guestroom door to allow for entry.
-  *   `inunitSafeException` (*type:* `String.t`, *default:* `nil`) - In-unit safe exception.
-  *   `fireplaceException` (*type:* `String.t`, *default:* `nil`) - Fireplace exception.
+  *   `tvStreaming` (*type:* `boolean()`, *default:* `nil`) - TV streaming. Televisions that embed a range of web-based apps to allow for watching media from those apps.
+  *   `tvCastingException` (*type:* `String.t`, *default:* `nil`) - TV exception.
+  *   `tv` (*type:* `boolean()`, *default:* `nil`) - TV. A television is available in the guestroom.
+  *   `toilet` (*type:* `boolean()`, *default:* `nil`) - Toilet. A fixed bathroom feature connected to a sewer or septic system and consisting of a water-flushed bowl with a seat, as well as a device that elicites the water-flushing action. Used for the process and disposal of human waste.
   *   `inunitWifiAvailable` (*type:* `boolean()`, *default:* `nil`) - In-unit Wifi available. Guests can wirelessly connect to the Internet in the guestroom. Can be free or for a fee.
   *   `showerException` (*type:* `String.t`, *default:* `nil`) - Shower exception.
-  *   `electronicRoomKeyException` (*type:* `String.t`, *default:* `nil`) - Electronic room key exception.
-  *   `washer` (*type:* `boolean()`, *default:* `nil`) - Washer. An electrical machine connected to a running water source designed to launder clothing.
-  *   `toiletException` (*type:* `String.t`, *default:* `nil`) - Toilet exception.
-  *   `airConditioningException` (*type:* `String.t`, *default:* `nil`) - Air conditioning exception.
-  *   `heatingException` (*type:* `String.t`, *default:* `nil`) - Heating exception.
-  *   `tvStreamingException` (*type:* `String.t`, *default:* `nil`) - TV streaming exception.
+  *   `privateBathroomException` (*type:* `String.t`, *default:* `nil`) - Private bathroom exception.
+  *   `inunitSafe` (*type:* `boolean()`, *default:* `nil`) - In-unit safe. A strong fireproof cabinet with a programmable lock, used for the protected storage of valuables in a guestroom. Often built into a closet.
+  *   `fireplaceException` (*type:* `String.t`, *default:* `nil`) - Fireplace exception.
   *   `dryer` (*type:* `boolean()`, *default:* `nil`) - Dryer. An electrical machine designed to dry clothing.
+  *   `airConditioningException` (*type:* `String.t`, *default:* `nil`) - Air conditioning exception.
+  *   `bidetException` (*type:* `String.t`, *default:* `nil`) - Bidet exception.
+  *   `toiletException` (*type:* `String.t`, *default:* `nil`) - Toilet exception.
+  *   `tvStreamingException` (*type:* `String.t`, *default:* `nil`) - TV streaming exception.
   *   `tvException` (*type:* `String.t`, *default:* `nil`) - TV exception.
   *   `bathtub` (*type:* `boolean()`, *default:* `nil`) - Bathtub. A fixed plumbing feature set on the floor and consisting of a large container that accommodates the body of an adult for the purpose of seated bathing. Includes knobs or fixtures to control the temperature of the water, a faucet through which the water flows, and a drain that can be closed for filling and opened for draining.
-  *   `hairdryer` (*type:* `boolean()`, *default:* `nil`) - Hairdryer. A handheld electric appliance that blows temperature-controlled air for the purpose of drying wet hair. Can be mounted to a bathroom wall or a freestanding device stored in the guestroom's bathroom or closet.
+  *   `washer` (*type:* `boolean()`, *default:* `nil`) - Washer. An electrical machine connected to a running water source designed to launder clothing.
+  *   `privateBathroom` (*type:* `boolean()`, *default:* `nil`) - Private bathroom. A bathroom designated for the express use of the guests staying in a specific guestroom.
+  *   `universalPowerAdapters` (*type:* `boolean()`, *default:* `nil`) - Universal power adapters. A power supply for electronic devices which plugs into a wall for the purpose of converting AC to a single DC voltage. Also know as AC adapter or charger.
+  *   `heatingException` (*type:* `String.t`, *default:* `nil`) - Heating exception.
+  *   `bidet` (*type:* `boolean()`, *default:* `nil`) - Bidet. A plumbing fixture attached to a toilet or a low, fixed sink designed for the purpose of washing after toilet use.
+  *   `universalPowerAdaptersException` (*type:* `String.t`, *default:* `nil`) - Universal power adapters exception.
+  *   `electronicRoomKeyException` (*type:* `String.t`, *default:* `nil`) - Electronic room key exception.
+  *   `ironingEquipmentException` (*type:* `String.t`, *default:* `nil`) - Ironing equipment exception.
+  *   `payPerViewMoviesException` (*type:* `String.t`, *default:* `nil`) - Pay per view movies exception.
+  *   `airConditioning` (*type:* `boolean()`, *default:* `nil`) - Air conditioning. An electrical machine used to cool the temperature of the guestroom.
   *   `inunitWifiAvailableException` (*type:* `String.t`, *default:* `nil`) - In-unit Wifi available exception.
-  *   `shower` (*type:* `boolean()`, *default:* `nil`) - Shower. A fixed plumbing fixture for standing bathing that features a tall spray spout or faucet through which water flows, a knob or knobs that control the water's temperature, and a drain in the floor.
-  *   `privateBathroomException` (*type:* `String.t`, *default:* `nil`) - Private bathroom exception.
   *   `washerException` (*type:* `String.t`, *default:* `nil`) - Washer exception.
+  *   `hairdryerException` (*type:* `String.t`, *default:* `nil`) - Hairdryer exception.
+  *   `inunitSafeException` (*type:* `String.t`, *default:* `nil`) - In-unit safe exception.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :ironingEquipmentException => String.t() | nil,
-          :tv => boolean() | nil,
-          :payPerViewMoviesException => String.t() | nil,
-          :toilet => boolean() | nil,
-          :payPerViewMovies => boolean() | nil,
-          :fireplace => boolean() | nil,
-          :bidetException => String.t() | nil,
-          :universalPowerAdaptersException => String.t() | nil,
-          :bathtubException => String.t() | nil,
           :heating => boolean() | nil,
-          :privateBathroom => boolean() | nil,
-          :hairdryerException => String.t() | nil,
-          :tvCastingException => String.t() | nil,
-          :bidet => boolean() | nil,
-          :tvStreaming => boolean() | nil,
-          :airConditioning => boolean() | nil,
-          :universalPowerAdapters => boolean() | nil,
-          :dryerException => String.t() | nil,
+          :hairdryer => boolean() | nil,
           :tvCasting => boolean() | nil,
+          :payPerViewMovies => boolean() | nil,
+          :shower => boolean() | nil,
+          :dryerException => String.t() | nil,
+          :fireplace => boolean() | nil,
           :ironingEquipment => boolean() | nil,
-          :inunitSafe => boolean() | nil,
+          :bathtubException => String.t() | nil,
           :electronicRoomKey => boolean() | nil,
-          :inunitSafeException => String.t() | nil,
-          :fireplaceException => String.t() | nil,
+          :tvStreaming => boolean() | nil,
+          :tvCastingException => String.t() | nil,
+          :tv => boolean() | nil,
+          :toilet => boolean() | nil,
           :inunitWifiAvailable => boolean() | nil,
           :showerException => String.t() | nil,
-          :electronicRoomKeyException => String.t() | nil,
-          :washer => boolean() | nil,
-          :toiletException => String.t() | nil,
-          :airConditioningException => String.t() | nil,
-          :heatingException => String.t() | nil,
-          :tvStreamingException => String.t() | nil,
+          :privateBathroomException => String.t() | nil,
+          :inunitSafe => boolean() | nil,
+          :fireplaceException => String.t() | nil,
           :dryer => boolean() | nil,
+          :airConditioningException => String.t() | nil,
+          :bidetException => String.t() | nil,
+          :toiletException => String.t() | nil,
+          :tvStreamingException => String.t() | nil,
           :tvException => String.t() | nil,
           :bathtub => boolean() | nil,
-          :hairdryer => boolean() | nil,
+          :washer => boolean() | nil,
+          :privateBathroom => boolean() | nil,
+          :universalPowerAdapters => boolean() | nil,
+          :heatingException => String.t() | nil,
+          :bidet => boolean() | nil,
+          :universalPowerAdaptersException => String.t() | nil,
+          :electronicRoomKeyException => String.t() | nil,
+          :ironingEquipmentException => String.t() | nil,
+          :payPerViewMoviesException => String.t() | nil,
+          :airConditioning => boolean() | nil,
           :inunitWifiAvailableException => String.t() | nil,
-          :shower => boolean() | nil,
-          :privateBathroomException => String.t() | nil,
-          :washerException => String.t() | nil
+          :washerException => String.t() | nil,
+          :hairdryerException => String.t() | nil,
+          :inunitSafeException => String.t() | nil
         }
 
-  field(:ironingEquipmentException)
-  field(:tv)
-  field(:payPerViewMoviesException)
-  field(:toilet)
-  field(:payPerViewMovies)
-  field(:fireplace)
-  field(:bidetException)
-  field(:universalPowerAdaptersException)
-  field(:bathtubException)
   field(:heating)
-  field(:privateBathroom)
-  field(:hairdryerException)
-  field(:tvCastingException)
-  field(:bidet)
-  field(:tvStreaming)
-  field(:airConditioning)
-  field(:universalPowerAdapters)
-  field(:dryerException)
+  field(:hairdryer)
   field(:tvCasting)
+  field(:payPerViewMovies)
+  field(:shower)
+  field(:dryerException)
+  field(:fireplace)
   field(:ironingEquipment)
-  field(:inunitSafe)
+  field(:bathtubException)
   field(:electronicRoomKey)
-  field(:inunitSafeException)
-  field(:fireplaceException)
+  field(:tvStreaming)
+  field(:tvCastingException)
+  field(:tv)
+  field(:toilet)
   field(:inunitWifiAvailable)
   field(:showerException)
-  field(:electronicRoomKeyException)
-  field(:washer)
-  field(:toiletException)
-  field(:airConditioningException)
-  field(:heatingException)
-  field(:tvStreamingException)
+  field(:privateBathroomException)
+  field(:inunitSafe)
+  field(:fireplaceException)
   field(:dryer)
+  field(:airConditioningException)
+  field(:bidetException)
+  field(:toiletException)
+  field(:tvStreamingException)
   field(:tvException)
   field(:bathtub)
-  field(:hairdryer)
+  field(:washer)
+  field(:privateBathroom)
+  field(:universalPowerAdapters)
+  field(:heatingException)
+  field(:bidet)
+  field(:universalPowerAdaptersException)
+  field(:electronicRoomKeyException)
+  field(:ironingEquipmentException)
+  field(:payPerViewMoviesException)
+  field(:airConditioning)
   field(:inunitWifiAvailableException)
-  field(:shower)
-  field(:privateBathroomException)
   field(:washerException)
+  field(:hairdryerException)
+  field(:inunitSafeException)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MyBusinessLodging.V1.Model.LivingAreaFeatures do
