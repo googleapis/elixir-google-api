@@ -21,140 +21,140 @@ defmodule GoogleApi.AppEngine.V1.Model.Version do
 
   ## Attributes
 
-  *   `manualScaling` (*type:* `GoogleApi.AppEngine.V1.Model.ManualScaling.t`, *default:* `nil`) - A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. Manually scaled versions are sometimes referred to as "backends".
-  *   `errorHandlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t)`, *default:* `nil`) - Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set.
-  *   `basicScaling` (*type:* `GoogleApi.AppEngine.V1.Model.BasicScaling.t`, *default:* `nil`) - A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.
-  *   `nobuildFilesRegex` (*type:* `String.t`, *default:* `nil`) - Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
-  *   `livenessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.LivenessCheck.t`, *default:* `nil`) - Configures liveness health checking for instances. Unhealthy instances are stopped and replaced with new instances
-  *   `apiConfig` (*type:* `GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t`, *default:* `nil`) - Serving configuration for Google Cloud Endpoints (https://cloud.google.com/endpoints).Only returned in GET requests if view=FULL is set.
-  *   `buildEnvVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the build environment.Only returned in GET requests if view=FULL is set.
-  *   `handlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.UrlMap.t)`, *default:* `nil`) - An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set.
-  *   `inboundServices` (*type:* `list(String.t)`, *default:* `nil`) - Before an application can receive email or XMPP messages, the application must be configured to enable the service.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Time that this version was created.@OutputOnly
-  *   `flexibleRuntimeSettings` (*type:* `GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings.t`, *default:* `nil`) - Settings for App Engine flexible runtimes.
-  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING.
-  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
   *   `libraries` (*type:* `list(GoogleApi.AppEngine.V1.Model.Library.t)`, *default:* `nil`) - Configuration for third-party Python runtime libraries that are required by the application.Only returned in GET requests if view=FULL is set.
+  *   `threadsafe` (*type:* `boolean()`, *default:* `nil`) - Whether multiple requests can be dispatched to this version at once.
+  *   `apiConfig` (*type:* `GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t`, *default:* `nil`) - Serving configuration for Google Cloud Endpoints (https://cloud.google.com/endpoints).Only returned in GET requests if view=FULL is set.
   *   `betaSettings` (*type:* `map()`, *default:* `nil`) - Metadata settings that are supplied to this version to enable beta runtime features.
+  *   `deployment` (*type:* `GoogleApi.AppEngine.V1.Model.Deployment.t`, *default:* `nil`) - Code and application artifacts that make up this version.Only returned in GET requests if view=FULL is set.
+  *   `endpointsApiService` (*type:* `GoogleApi.AppEngine.V1.Model.EndpointsApiService.t`, *default:* `nil`) - Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app.
+  *   `instanceClass` (*type:* `String.t`, *default:* `nil`) - Instance class that is used to run this version. Valid values are: AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
+  *   `versionUrl` (*type:* `String.t`, *default:* `nil`) - Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
+  *   `appEngineApis` (*type:* `boolean()`, *default:* `nil`) - Allows App Engine second generation runtimes to access the legacy bundled services.
   *   `vm` (*type:* `boolean()`, *default:* `nil`) - Whether to deploy this version in a container on a virtual machine.
   *   `runtimeMainExecutablePath` (*type:* `String.t`, *default:* `nil`) - The path or name of the app's main executable.
-  *   `envVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the application.Only returned in GET requests if view=FULL is set.
-  *   `instanceClass` (*type:* `String.t`, *default:* `nil`) - Instance class that is used to run this version. Valid values are: AutomaticScaling: F1, F2, F4, F4_1G ManualScaling or BasicScaling: B1, B2, B4, B8, B4_1GDefaults to F1 for AutomaticScaling and B1 for ManualScaling or BasicScaling.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
-  *   `runtimeChannel` (*type:* `String.t`, *default:* `nil`) - The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel.
+  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Current serving status of this version. Only the versions with a SERVING status create instances and can be billed.SERVING_STATUS_UNSPECIFIED is an invalid value. Defaults to SERVING.
   *   `resources` (*type:* `GoogleApi.AppEngine.V1.Model.Resources.t`, *default:* `nil`) - Machine resources for this version. Only applicable in the App Engine flexible environment.
-  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - Email address of the user who created this version.@OutputOnly
-  *   `network` (*type:* `GoogleApi.AppEngine.V1.Model.Network.t`, *default:* `nil`) - Extra network settings. Only applicable in the App Engine flexible environment.
-  *   `versionUrl` (*type:* `String.t`, *default:* `nil`) - Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
-  *   `endpointsApiService` (*type:* `GoogleApi.AppEngine.V1.Model.EndpointsApiService.t`, *default:* `nil`) - Cloud Endpoints configuration.If endpoints_api_service is set, the Cloud Endpoints Extensible Service Proxy will be provided to serve the API implemented by the app.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The identity that the deployed version will run as. Admin API will use the App Engine Appspot service account as default if this field is neither provided in app.yaml file nor through CLI flag.
-  *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
-  *   `appEngineApis` (*type:* `boolean()`, *default:* `nil`) - Allows App Engine second generation runtimes to access the legacy bundled services.
-  *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.
-  *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
-  *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref
-  *   `deployment` (*type:* `GoogleApi.AppEngine.V1.Model.Deployment.t`, *default:* `nil`) - Code and application artifacts that make up this version.Only returned in GET requests if view=FULL is set.
-  *   `entrypoint` (*type:* `GoogleApi.AppEngine.V1.Model.Entrypoint.t`, *default:* `nil`) - The entrypoint for the application.
-  *   `defaultExpiration` (*type:* `String.t`, *default:* `nil`) - Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: "default", "latest", and any name with the prefix "ah-".
-  *   `diskUsageBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
-  *   `threadsafe` (*type:* `boolean()`, *default:* `nil`) - Whether multiple requests can be dispatched to this version at once.
-  *   `runtime` (*type:* `String.t`, *default:* `nil`) - Desired runtime. Example: python27.
-  *   `automaticScaling` (*type:* `GoogleApi.AppEngine.V1.Model.AutomaticScaling.t`, *default:* `nil`) - Automatic scaling is based on request rate, response latencies, and other application metrics. Instances are dynamically created and destroyed as needed in order to handle traffic.
   *   `healthCheck` (*type:* `GoogleApi.AppEngine.V1.Model.HealthCheck.t`, *default:* `nil`) - Configures health checking for instances. Unhealthy instances are stopped and replaced with new instances. Only applicable in the App Engine flexible environment.
+  *   `defaultExpiration` (*type:* `String.t`, *default:* `nil`) - Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.
+  *   `runtimeChannel` (*type:* `String.t`, *default:* `nil`) - The channel of the runtime to use. Only available for some runtimes. Defaults to the default channel.
+  *   `errorHandlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t)`, *default:* `nil`) - Custom static error pages. Limited to 10KB per page.Only returned in GET requests if view=FULL is set.
+  *   `entrypoint` (*type:* `GoogleApi.AppEngine.V1.Model.Entrypoint.t`, *default:* `nil`) - The entrypoint for the application.
+  *   `nobuildFilesRegex` (*type:* `String.t`, *default:* `nil`) - Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
+  *   `inboundServices` (*type:* `list(String.t)`, *default:* `nil`) - Before an application can receive email or XMPP messages, the application must be configured to enable the service.
+  *   `automaticScaling` (*type:* `GoogleApi.AppEngine.V1.Model.AutomaticScaling.t`, *default:* `nil`) - Automatic scaling is based on request rate, response latencies, and other application metrics. Instances are dynamically created and destroyed as needed in order to handle traffic.
+  *   `runtime` (*type:* `String.t`, *default:* `nil`) - Desired runtime. Example: python27.
+  *   `readinessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.ReadinessCheck.t`, *default:* `nil`) - Configures readiness health checking for instances. Unhealthy instances are not put into the backend traffic rotation.
+  *   `manualScaling` (*type:* `GoogleApi.AppEngine.V1.Model.ManualScaling.t`, *default:* `nil`) - A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. Manually scaled versions are sometimes referred to as "backends".
   *   `generatedCustomerMetadata` (*type:* `map()`, *default:* `nil`) - Additional Google Generated Customer Metadata, this field won't be provided by default and can be requested by setting the IncludeExtraData field in GetVersionRequest
+  *   `livenessCheck` (*type:* `GoogleApi.AppEngine.V1.Model.LivenessCheck.t`, *default:* `nil`) - Configures liveness health checking for instances. Unhealthy instances are stopped and replaced with new instances
+  *   `network` (*type:* `GoogleApi.AppEngine.V1.Model.Network.t`, *default:* `nil`) - Extra network settings. Only applicable in the App Engine flexible environment.
+  *   `flexibleRuntimeSettings` (*type:* `GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings.t`, *default:* `nil`) - Settings for App Engine flexible runtimes.
+  *   `basicScaling` (*type:* `GoogleApi.AppEngine.V1.Model.BasicScaling.t`, *default:* `nil`) - A service with basic scaling will create an instance when the application receives a request. The instance will be turned down when the app becomes idle. Basic scaling is ideal for work that is intermittent or driven by user activity.
+  *   `diskUsageBytes` (*type:* `String.t`, *default:* `nil`) - Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
+  *   `handlers` (*type:* `list(GoogleApi.AppEngine.V1.Model.UrlMap.t)`, *default:* `nil`) - An ordered list of URL-matching patterns that should be applied to incoming requests. The first matching URL handles the request and other request handlers are not attempted.Only returned in GET requests if view=FULL is set.
+  *   `buildEnvVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the build environment.Only returned in GET requests if view=FULL is set.
+  *   `runtimeApiVersion` (*type:* `String.t`, *default:* `nil`) - The version of the API in the given runtime environment. Please see the app.yaml reference for valid values at https://cloud.google.com/appengine/docs/standard//config/appref
+  *   `createdBy` (*type:* `String.t`, *default:* `nil`) - Email address of the user who created this version.@OutputOnly
+  *   `env` (*type:* `String.t`, *default:* `nil`) - App Engine execution environment for this version.Defaults to standard.
+  *   `vpcAccessConnector` (*type:* `GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t`, *default:* `nil`) - Enables VPC connectivity for standard apps.
+  *   `envVariables` (*type:* `map()`, *default:* `nil`) - Environment variables available to the application.Only returned in GET requests if view=FULL is set.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Relative name of the version within the service. Example: v1. Version names can contain only lowercase letters, numbers, or hyphens. Reserved names: "default", "latest", and any name with the prefix "ah-".
+  *   `zones` (*type:* `list(String.t)`, *default:* `nil`) - The Google Compute Engine zones that are supported by this version in the App Engine flexible environment. Deprecated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :manualScaling => GoogleApi.AppEngine.V1.Model.ManualScaling.t() | nil,
-          :errorHandlers => list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t()) | nil,
-          :basicScaling => GoogleApi.AppEngine.V1.Model.BasicScaling.t() | nil,
-          :nobuildFilesRegex => String.t() | nil,
-          :livenessCheck => GoogleApi.AppEngine.V1.Model.LivenessCheck.t() | nil,
-          :apiConfig => GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t() | nil,
-          :buildEnvVariables => map() | nil,
-          :handlers => list(GoogleApi.AppEngine.V1.Model.UrlMap.t()) | nil,
-          :inboundServices => list(String.t()) | nil,
+          :serviceAccount => String.t() | nil,
           :createTime => DateTime.t() | nil,
-          :flexibleRuntimeSettings =>
-            GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings.t() | nil,
-          :servingStatus => String.t() | nil,
-          :zones => list(String.t()) | nil,
+          :name => String.t() | nil,
           :libraries => list(GoogleApi.AppEngine.V1.Model.Library.t()) | nil,
+          :threadsafe => boolean() | nil,
+          :apiConfig => GoogleApi.AppEngine.V1.Model.ApiConfigHandler.t() | nil,
           :betaSettings => map() | nil,
+          :deployment => GoogleApi.AppEngine.V1.Model.Deployment.t() | nil,
+          :endpointsApiService => GoogleApi.AppEngine.V1.Model.EndpointsApiService.t() | nil,
+          :instanceClass => String.t() | nil,
+          :versionUrl => String.t() | nil,
+          :appEngineApis => boolean() | nil,
           :vm => boolean() | nil,
           :runtimeMainExecutablePath => String.t() | nil,
-          :envVariables => map() | nil,
-          :instanceClass => String.t() | nil,
-          :name => String.t() | nil,
-          :runtimeChannel => String.t() | nil,
+          :servingStatus => String.t() | nil,
           :resources => GoogleApi.AppEngine.V1.Model.Resources.t() | nil,
-          :createdBy => String.t() | nil,
-          :network => GoogleApi.AppEngine.V1.Model.Network.t() | nil,
-          :versionUrl => String.t() | nil,
-          :endpointsApiService => GoogleApi.AppEngine.V1.Model.EndpointsApiService.t() | nil,
-          :serviceAccount => String.t() | nil,
-          :vpcAccessConnector => GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t() | nil,
-          :appEngineApis => boolean() | nil,
-          :readinessCheck => GoogleApi.AppEngine.V1.Model.ReadinessCheck.t() | nil,
-          :env => String.t() | nil,
-          :runtimeApiVersion => String.t() | nil,
-          :deployment => GoogleApi.AppEngine.V1.Model.Deployment.t() | nil,
-          :entrypoint => GoogleApi.AppEngine.V1.Model.Entrypoint.t() | nil,
-          :defaultExpiration => String.t() | nil,
-          :id => String.t() | nil,
-          :diskUsageBytes => String.t() | nil,
-          :threadsafe => boolean() | nil,
-          :runtime => String.t() | nil,
-          :automaticScaling => GoogleApi.AppEngine.V1.Model.AutomaticScaling.t() | nil,
           :healthCheck => GoogleApi.AppEngine.V1.Model.HealthCheck.t() | nil,
-          :generatedCustomerMetadata => map() | nil
+          :defaultExpiration => String.t() | nil,
+          :runtimeChannel => String.t() | nil,
+          :errorHandlers => list(GoogleApi.AppEngine.V1.Model.ErrorHandler.t()) | nil,
+          :entrypoint => GoogleApi.AppEngine.V1.Model.Entrypoint.t() | nil,
+          :nobuildFilesRegex => String.t() | nil,
+          :inboundServices => list(String.t()) | nil,
+          :automaticScaling => GoogleApi.AppEngine.V1.Model.AutomaticScaling.t() | nil,
+          :runtime => String.t() | nil,
+          :readinessCheck => GoogleApi.AppEngine.V1.Model.ReadinessCheck.t() | nil,
+          :manualScaling => GoogleApi.AppEngine.V1.Model.ManualScaling.t() | nil,
+          :generatedCustomerMetadata => map() | nil,
+          :livenessCheck => GoogleApi.AppEngine.V1.Model.LivenessCheck.t() | nil,
+          :network => GoogleApi.AppEngine.V1.Model.Network.t() | nil,
+          :flexibleRuntimeSettings =>
+            GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings.t() | nil,
+          :basicScaling => GoogleApi.AppEngine.V1.Model.BasicScaling.t() | nil,
+          :diskUsageBytes => String.t() | nil,
+          :handlers => list(GoogleApi.AppEngine.V1.Model.UrlMap.t()) | nil,
+          :buildEnvVariables => map() | nil,
+          :runtimeApiVersion => String.t() | nil,
+          :createdBy => String.t() | nil,
+          :env => String.t() | nil,
+          :vpcAccessConnector => GoogleApi.AppEngine.V1.Model.VpcAccessConnector.t() | nil,
+          :envVariables => map() | nil,
+          :id => String.t() | nil,
+          :zones => list(String.t()) | nil
         }
 
-  field(:manualScaling, as: GoogleApi.AppEngine.V1.Model.ManualScaling)
-  field(:errorHandlers, as: GoogleApi.AppEngine.V1.Model.ErrorHandler, type: :list)
-  field(:basicScaling, as: GoogleApi.AppEngine.V1.Model.BasicScaling)
-  field(:nobuildFilesRegex)
-  field(:livenessCheck, as: GoogleApi.AppEngine.V1.Model.LivenessCheck)
-  field(:apiConfig, as: GoogleApi.AppEngine.V1.Model.ApiConfigHandler)
-  field(:buildEnvVariables, type: :map)
-  field(:handlers, as: GoogleApi.AppEngine.V1.Model.UrlMap, type: :list)
-  field(:inboundServices, type: :list)
+  field(:serviceAccount)
   field(:createTime, as: DateTime)
-  field(:flexibleRuntimeSettings, as: GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings)
-  field(:servingStatus)
-  field(:zones, type: :list)
+  field(:name)
   field(:libraries, as: GoogleApi.AppEngine.V1.Model.Library, type: :list)
+  field(:threadsafe)
+  field(:apiConfig, as: GoogleApi.AppEngine.V1.Model.ApiConfigHandler)
   field(:betaSettings, type: :map)
+  field(:deployment, as: GoogleApi.AppEngine.V1.Model.Deployment)
+  field(:endpointsApiService, as: GoogleApi.AppEngine.V1.Model.EndpointsApiService)
+  field(:instanceClass)
+  field(:versionUrl)
+  field(:appEngineApis)
   field(:vm)
   field(:runtimeMainExecutablePath)
-  field(:envVariables, type: :map)
-  field(:instanceClass)
-  field(:name)
-  field(:runtimeChannel)
+  field(:servingStatus)
   field(:resources, as: GoogleApi.AppEngine.V1.Model.Resources)
-  field(:createdBy)
-  field(:network, as: GoogleApi.AppEngine.V1.Model.Network)
-  field(:versionUrl)
-  field(:endpointsApiService, as: GoogleApi.AppEngine.V1.Model.EndpointsApiService)
-  field(:serviceAccount)
-  field(:vpcAccessConnector, as: GoogleApi.AppEngine.V1.Model.VpcAccessConnector)
-  field(:appEngineApis)
-  field(:readinessCheck, as: GoogleApi.AppEngine.V1.Model.ReadinessCheck)
-  field(:env)
-  field(:runtimeApiVersion)
-  field(:deployment, as: GoogleApi.AppEngine.V1.Model.Deployment)
-  field(:entrypoint, as: GoogleApi.AppEngine.V1.Model.Entrypoint)
-  field(:defaultExpiration)
-  field(:id)
-  field(:diskUsageBytes)
-  field(:threadsafe)
-  field(:runtime)
-  field(:automaticScaling, as: GoogleApi.AppEngine.V1.Model.AutomaticScaling)
   field(:healthCheck, as: GoogleApi.AppEngine.V1.Model.HealthCheck)
+  field(:defaultExpiration)
+  field(:runtimeChannel)
+  field(:errorHandlers, as: GoogleApi.AppEngine.V1.Model.ErrorHandler, type: :list)
+  field(:entrypoint, as: GoogleApi.AppEngine.V1.Model.Entrypoint)
+  field(:nobuildFilesRegex)
+  field(:inboundServices, type: :list)
+  field(:automaticScaling, as: GoogleApi.AppEngine.V1.Model.AutomaticScaling)
+  field(:runtime)
+  field(:readinessCheck, as: GoogleApi.AppEngine.V1.Model.ReadinessCheck)
+  field(:manualScaling, as: GoogleApi.AppEngine.V1.Model.ManualScaling)
   field(:generatedCustomerMetadata, type: :map)
+  field(:livenessCheck, as: GoogleApi.AppEngine.V1.Model.LivenessCheck)
+  field(:network, as: GoogleApi.AppEngine.V1.Model.Network)
+  field(:flexibleRuntimeSettings, as: GoogleApi.AppEngine.V1.Model.FlexibleRuntimeSettings)
+  field(:basicScaling, as: GoogleApi.AppEngine.V1.Model.BasicScaling)
+  field(:diskUsageBytes)
+  field(:handlers, as: GoogleApi.AppEngine.V1.Model.UrlMap, type: :list)
+  field(:buildEnvVariables, type: :map)
+  field(:runtimeApiVersion)
+  field(:createdBy)
+  field(:env)
+  field(:vpcAccessConnector, as: GoogleApi.AppEngine.V1.Model.VpcAccessConnector)
+  field(:envVariables, type: :map)
+  field(:id)
+  field(:zones, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AppEngine.V1.Model.Version do
