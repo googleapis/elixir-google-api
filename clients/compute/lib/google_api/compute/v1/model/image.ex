@@ -21,117 +21,117 @@ defmodule GoogleApi.Compute.V1.Model.Image do
 
   ## Attributes
 
-  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the image. Valid values are ARM64 or X86_64.
-  *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
-  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the image (regional or multi-regional).
-  *   `imageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
-  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
-  *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
-  *   `sourceSnapshotEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this image. These can be later modified by the setLabels method.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
+  *   `guestOsFeatures` (*type:* `list(GoogleApi.Compute.V1.Model.GuestOsFeature.t)`, *default:* `nil`) - A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+  *   `sourceType` (*type:* `String.t`, *default:* `RAW`) - The type of the image used to create this disk. The default and only valid value is RAW.
   *   `kind` (*type:* `String.t`, *default:* `compute#image`) - [Output Only] Type of the resource. Always compute#image for images.
   *   `enableConfidentialCompute` (*type:* `boolean()`, *default:* `nil`) - Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
-  *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
-  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-  *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - Set the secure boot keys of shielded instance.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
-  *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - The deprecation status associated with this image.
-  *   `sourceImageId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
-  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Size of the image when restored onto a persistent disk (in GB).
-  *   `guestOsFeatures` (*type:* `list(GoogleApi.Compute.V1.Model.GuestOsFeature.t)`, *default:* `nil`) - A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see the guestOSfeatures[].type parameter.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
+  *   `storageLocations` (*type:* `list(String.t)`, *default:* `nil`) - Cloud Storage bucket storage location of the image (regional or multi-regional).
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `sourceSnapshotId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
-  *   `licenseCodes` (*type:* `list(String.t)`, *default:* `nil`) - Integer license codes indicating which licenses are attached to this image.
-  *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - Any applicable license URI.
-  *   `rawDisk` (*type:* `GoogleApi.Compute.V1.Model.ImageRawDisk.t`, *default:* `nil`) - The parameters of the raw disk image.
-  *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
-  *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-  *   `sourceType` (*type:* `String.t`, *default:* `RAW`) - The type of the image used to create this disk. The default and only valid value is RAW.
-  *   `sourceImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this image. These can be later modified by the setLabels method.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `sourceSnapshotEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source snapshot. Required if the source snapshot is protected by a customer-supplied encryption key.
+  *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL 
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL 
   *   `archiveSizeBytes` (*type:* `String.t`, *default:* `nil`) - Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
+  *   `imageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Encrypts the image using a customer-supplied encryption key. After you encrypt an image with a customer-supplied key, you must provide the same key if you use the image later (e.g. to create a disk from the image). Customer-supplied encryption keys do not protect access to metadata of the disk. If you do not provide an encryption key when creating the image, then the disk will be encrypted using an automatically generated key and you do not need to provide a key to use the image later.
+  *   `rawDisk` (*type:* `GoogleApi.Compute.V1.Model.ImageRawDisk.t`, *default:* `nil`) - The parameters of the raw disk image.
+  *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Size of the image when restored onto a persistent disk (in GB).
+  *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
+  *   `shieldedInstanceInitialState` (*type:* `GoogleApi.Compute.V1.Model.InitialStateConfig.t`, *default:* `nil`) - Set the secure boot keys of shielded instance.
+  *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example, centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
+  *   `sourceImageEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source image. Required if the source image is protected by a customer-supplied encryption key.
+  *   `architecture` (*type:* `String.t`, *default:* `nil`) - The architecture of the image. Valid values are ARM64 or X86_64.
+  *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
+  *   `deprecated` (*type:* `GoogleApi.Compute.V1.Model.DeprecationStatus.t`, *default:* `nil`) - The deprecation status associated with this image.
+  *   `sourceDiskId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
+  *   `licenses` (*type:* `list(String.t)`, *default:* `nil`) - Any applicable license URI.
   *   `sourceImage` (*type:* `String.t`, *default:* `nil`) - URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL 
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, or READY.
+  *   `licenseCodes` (*type:* `list(String.t)`, *default:* `nil`) - Integer license codes indicating which licenses are attached to this image.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+  *   `sourceImageId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
+  *   `sourceDiskEncryptionKey` (*type:* `GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - The customer-supplied encryption key of the source disk. Required if the source disk is protected by a customer-supplied encryption key.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :architecture => String.t() | nil,
-          :family => String.t() | nil,
-          :storageLocations => list(String.t()) | nil,
-          :imageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
-          :satisfiesPzs => boolean() | nil,
-          :description => String.t() | nil,
-          :sourceDiskId => String.t() | nil,
-          :sourceSnapshotEncryptionKey =>
-            GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :selfLink => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
+          :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()) | nil,
+          :sourceType => String.t() | nil,
           :kind => String.t() | nil,
           :enableConfidentialCompute => boolean() | nil,
-          :sourceDiskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
-          :sourceSnapshot => String.t() | nil,
-          :name => String.t() | nil,
-          :shieldedInstanceInitialState =>
-            GoogleApi.Compute.V1.Model.InitialStateConfig.t() | nil,
-          :status => String.t() | nil,
-          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
-          :sourceImageId => String.t() | nil,
-          :diskSizeGb => String.t() | nil,
-          :guestOsFeatures => list(GoogleApi.Compute.V1.Model.GuestOsFeature.t()) | nil,
+          :description => String.t() | nil,
+          :storageLocations => list(String.t()) | nil,
+          :satisfiesPzs => boolean() | nil,
           :sourceSnapshotId => String.t() | nil,
-          :licenseCodes => list(String.t()) | nil,
-          :licenses => list(String.t()) | nil,
-          :rawDisk => GoogleApi.Compute.V1.Model.ImageRawDisk.t() | nil,
-          :labelFingerprint => String.t() | nil,
-          :creationTimestamp => String.t() | nil,
-          :id => String.t() | nil,
-          :sourceType => String.t() | nil,
-          :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
-          :labels => map() | nil,
-          :selfLink => String.t() | nil,
-          :satisfiesPzi => boolean() | nil,
+          :sourceSnapshotEncryptionKey =>
+            GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :sourceSnapshot => String.t() | nil,
           :sourceDisk => String.t() | nil,
           :archiveSizeBytes => String.t() | nil,
-          :sourceImage => String.t() | nil
+          :imageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :rawDisk => GoogleApi.Compute.V1.Model.ImageRawDisk.t() | nil,
+          :diskSizeGb => String.t() | nil,
+          :creationTimestamp => String.t() | nil,
+          :shieldedInstanceInitialState =>
+            GoogleApi.Compute.V1.Model.InitialStateConfig.t() | nil,
+          :family => String.t() | nil,
+          :sourceImageEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :architecture => String.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :deprecated => GoogleApi.Compute.V1.Model.DeprecationStatus.t() | nil,
+          :sourceDiskId => String.t() | nil,
+          :licenses => list(String.t()) | nil,
+          :sourceImage => String.t() | nil,
+          :status => String.t() | nil,
+          :licenseCodes => list(String.t()) | nil,
+          :id => String.t() | nil,
+          :sourceImageId => String.t() | nil,
+          :sourceDiskEncryptionKey => GoogleApi.Compute.V1.Model.CustomerEncryptionKey.t() | nil,
+          :satisfiesPzi => boolean() | nil
         }
 
-  field(:architecture)
-  field(:family)
-  field(:storageLocations, type: :list)
-  field(:imageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
-  field(:satisfiesPzs)
-  field(:description)
-  field(:sourceDiskId)
-  field(:sourceSnapshotEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:selfLink)
+  field(:labels, type: :map)
+  field(:name)
+  field(:guestOsFeatures, as: GoogleApi.Compute.V1.Model.GuestOsFeature, type: :list)
+  field(:sourceType)
   field(:kind)
   field(:enableConfidentialCompute)
-  field(:sourceDiskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
-  field(:sourceSnapshot)
-  field(:name)
-  field(:shieldedInstanceInitialState, as: GoogleApi.Compute.V1.Model.InitialStateConfig)
-  field(:status)
-  field(:deprecated, as: GoogleApi.Compute.V1.Model.DeprecationStatus)
-  field(:sourceImageId)
-  field(:diskSizeGb)
-  field(:guestOsFeatures, as: GoogleApi.Compute.V1.Model.GuestOsFeature, type: :list)
+  field(:description)
+  field(:storageLocations, type: :list)
+  field(:satisfiesPzs)
   field(:sourceSnapshotId)
-  field(:licenseCodes, type: :list)
-  field(:licenses, type: :list)
-  field(:rawDisk, as: GoogleApi.Compute.V1.Model.ImageRawDisk)
-  field(:labelFingerprint)
-  field(:creationTimestamp)
-  field(:id)
-  field(:sourceType)
-  field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
-  field(:labels, type: :map)
-  field(:selfLink)
-  field(:satisfiesPzi)
+  field(:sourceSnapshotEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:sourceSnapshot)
   field(:sourceDisk)
   field(:archiveSizeBytes)
+  field(:imageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:rawDisk, as: GoogleApi.Compute.V1.Model.ImageRawDisk)
+  field(:diskSizeGb)
+  field(:creationTimestamp)
+  field(:shieldedInstanceInitialState, as: GoogleApi.Compute.V1.Model.InitialStateConfig)
+  field(:family)
+  field(:sourceImageEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:architecture)
+  field(:labelFingerprint)
+  field(:deprecated, as: GoogleApi.Compute.V1.Model.DeprecationStatus)
+  field(:sourceDiskId)
+  field(:licenses, type: :list)
   field(:sourceImage)
+  field(:status)
+  field(:licenseCodes, type: :list)
+  field(:id)
+  field(:sourceImageId)
+  field(:sourceDiskEncryptionKey, as: GoogleApi.Compute.V1.Model.CustomerEncryptionKey)
+  field(:satisfiesPzi)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Image do
