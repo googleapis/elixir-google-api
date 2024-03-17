@@ -21,133 +21,133 @@ defmodule GoogleApi.Notebooks.V1.Model.Instance do
 
   ## Attributes
 
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this instance.
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
-  *   `customGpuDriverPath` (*type:* `String.t`, *default:* `nil`) - Specify a custom Cloud Storage path where the GPU driver is stored. If not specified, we'll automatically choose from official GPU drivers.
-  *   `containerImage` (*type:* `GoogleApi.Notebooks.V1.Model.ContainerImage.t`, *default:* `nil`) - Use a container image to start the notebook instance.
-  *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.AcceleratorConfig.t`, *default:* `nil`) - The hardware accelerator used on this instance. If you use accelerators, make sure that your configuration has [enough vCPUs and memory to support the `machine_type` you have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
-  *   `noProxyAccess` (*type:* `boolean()`, *default:* `nil`) - If true, the notebook instance will not register with the proxy.
-  *   `postStartupScript` (*type:* `String.t`, *default:* `nil`) - Path to a Bash script that automatically runs after a notebook instance fully boots up. The path must be a URL or Cloud Storage path (`gs://path-to-file/file-name`).
-  *   `noPublicIp` (*type:* `boolean()`, *default:* `nil`) - If true, no external IP will be assigned to this instance.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Instance update time.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account on this instance, giving access to other Google Cloud services. You can use any service account within the same project, but you must have the service account user permission to use the instance. If not specified, the [Compute Engine default service account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Instance creation time.
-  *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - Input only. The size of the data disk in GB attached to this instance, up to a maximum of 64000 GB (64 TB). You can choose the size of the data disk based on how big your notebooks and data are. If not specified, this defaults to 100.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata to apply to this instance. For example, to specify a Cloud Storage bucket for automatic backup, you can use the `gcs-data-bucket` metadata tag. Format: `"--metadata=gcs-data-bucket=``BUCKET''"`.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this instance.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this instance. These can be later modified by the setLabels method.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded VM configuration. [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
   *   `diskEncryption` (*type:* `String.t`, *default:* `nil`) - Input only. Disk encryption method used on the boot and data disks, defaults to GMEK.
-  *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of entity that sent original CreateInstance request.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this instance.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the VPC that this instance is in. Format: `projects/{project_id}/global/networks/{network_id}`
-  *   `disks` (*type:* `list(GoogleApi.Notebooks.V1.Model.Disk.t)`, *default:* `nil`) - Output only. Attached disks to notebook instance.
-  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the boot disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
-  *   `instanceMigrationEligibility` (*type:* `GoogleApi.Notebooks.V1.Model.InstanceMigrationEligibility.t`, *default:* `nil`) - Output only. Checks how feasible a migration from UmN to WbI is.
-  *   `subnet` (*type:* `String.t`, *default:* `nil`) - The name of the subnet that this instance is in. Format: `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
-  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption is CMEK. Format: `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}` Learn more about [using your own encryption keys](/kms/docs/quickstart).
-  *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Whether the end user authorizes Google Cloud to install GPU driver on this instance. If this field is empty or set to false, the GPU driver won't be installed. Only applicable to instances with GPUs.
-  *   `upgradeHistory` (*type:* `list(GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry.t)`, *default:* `nil`) - The upgrade history of this instance.
-  *   `serviceAccountScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The URIs of service account scopes to be included in Compute Engine instances. If not specified, the following [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam) are defined: - https://www.googleapis.com/auth/cloud-platform - https://www.googleapis.com/auth/userinfo.email If not using default scopes, you need at least: https://www.googleapis.com/auth/compute
-  *   `migrated` (*type:* `boolean()`, *default:* `nil`) - Output only. Bool indicating whether this notebook has been migrated to a Workbench Instance
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account on this instance, giving access to other Google Cloud services. You can use any service account within the same project, but you must have the service account user permission to use the instance. If not specified, the [Compute Engine default service account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
-  *   `proxyUri` (*type:* `String.t`, *default:* `nil`) - Output only. The proxy endpoint that is used to access the Jupyter notebook.
   *   `vmImage` (*type:* `GoogleApi.Notebooks.V1.Model.VmImage.t`, *default:* `nil`) - Use a Compute Engine VM image to start the notebook instance.
-  *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
-  *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the data disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
-  *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to enable ip forwarding or not, default false/off. https://cloud.google.com/vpc/docs/using-routes#canipforward
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to this instance. These can be later modified by the setLabels method.
-  *   `noRemoveDataDisk` (*type:* `boolean()`, *default:* `nil`) - Input only. If true, the data disk will not be auto deleted when deleting the instance.
-  *   `bootDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - Input only. The size of the boot disk in GB attached to this instance, up to a maximum of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not specified, this defaults to 100.
+  *   `subnet` (*type:* `String.t`, *default:* `nil`) - The name of the subnet that this instance is in. Format: `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Custom metadata to apply to this instance. For example, to specify a Cloud Storage bucket for automatic backup, you can use the `gcs-data-bucket` metadata tag. Format: `"--metadata=gcs-data-bucket=BUCKET"`.
+  *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of entity that sent original CreateInstance request.
   *   `instanceOwners` (*type:* `list(String.t)`, *default:* `nil`) - Input only. The owner of this instance after creation. Format: `alias@example.com` Currently supports one owner only. If not specified, all of the service account users of your VM instance's service account can use the instance.
+  *   `serviceAccountScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The URIs of service account scopes to be included in Compute Engine instances. If not specified, the following [scopes](https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam) are defined: - https://www.googleapis.com/auth/cloud-platform - https://www.googleapis.com/auth/userinfo.email If not using default scopes, you need at least: https://www.googleapis.com/auth/compute
+  *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - Input only. The size of the data disk in GB attached to this instance, up to a maximum of 64000 GB (64 TB). You can choose the size of the data disk based on how big your notebooks and data are. If not specified, this defaults to 100.
+  *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Input only. The KMS key used to encrypt the disks, only applicable if disk_encryption is CMEK. Format: `projects/{project_id}/locations/{location}/keyRings/{key_ring_id}/cryptoKeys/{key_id}` Learn more about [using your own encryption keys](/kms/docs/quickstart).
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
+  *   `noRemoveDataDisk` (*type:* `boolean()`, *default:* `nil`) - Input only. If true, the data disk will not be auto deleted when deleting the instance.
+  *   `disks` (*type:* `list(GoogleApi.Notebooks.V1.Model.Disk.t)`, *default:* `nil`) - Output only. Attached disks to notebook instance.
+  *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the data disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Required. The [Compute Engine machine type](https://cloud.google.com/compute/docs/machine-types) of this instance.
+  *   `installGpuDriver` (*type:* `boolean()`, *default:* `nil`) - Whether the end user authorizes Google Cloud to install GPU driver on this instance. If this field is empty or set to false, the GPU driver won't be installed. Only applicable to instances with GPUs.
+  *   `acceleratorConfig` (*type:* `GoogleApi.Notebooks.V1.Model.AcceleratorConfig.t`, *default:* `nil`) - The hardware accelerator used on this instance. If you use accelerators, make sure that your configuration has [enough vCPUs and memory to support the `machine_type` you have selected](https://cloud.google.com/compute/docs/gpus/#gpus-list).
+  *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
+  *   `upgradeHistory` (*type:* `list(GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry.t)`, *default:* `nil`) - The upgrade history of this instance.
+  *   `proxyUri` (*type:* `String.t`, *default:* `nil`) - Output only. The proxy endpoint that is used to access the Jupyter notebook.
+  *   `customGpuDriverPath` (*type:* `String.t`, *default:* `nil`) - Specify a custom Cloud Storage path where the GPU driver is stored. If not specified, we'll automatically choose from official GPU drivers.
+  *   `canIpForward` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to enable ip forwarding or not, default false/off. https://cloud.google.com/vpc/docs/using-routes#canipforward
+  *   `containerImage` (*type:* `GoogleApi.Notebooks.V1.Model.ContainerImage.t`, *default:* `nil`) - Use a container image to start the notebook instance.
+  *   `migrated` (*type:* `boolean()`, *default:* `nil`) - Output only. Bool indicating whether this notebook has been migrated to a Workbench Instance
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the VPC that this instance is in. Format: `projects/{project_id}/global/networks/{network_id}`
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Instance update time.
+  *   `noPublicIp` (*type:* `boolean()`, *default:* `nil`) - If true, no external IP will be assigned to this instance.
+  *   `instanceMigrationEligibility` (*type:* `GoogleApi.Notebooks.V1.Model.InstanceMigrationEligibility.t`, *default:* `nil`) - Output only. Checks how feasible a migration from UmN to WbI is.
+  *   `bootDiskType` (*type:* `String.t`, *default:* `nil`) - Input only. The type of the boot disk attached to this instance, defaults to standard persistent disk (`PD_STANDARD`).
+  *   `postStartupScript` (*type:* `String.t`, *default:* `nil`) - Path to a Bash script that automatically runs after a notebook instance fully boots up. The path must be a URL or Cloud Storage path (`gs://path-to-file/file-name`).
   *   `reservationAffinity` (*type:* `GoogleApi.Notebooks.V1.Model.ReservationAffinity.t`, *default:* `nil`) - Optional. The optional reservation affinity. Setting this field will apply the specified [Zonal Compute Reservation](https://cloud.google.com/compute/docs/instances/reserving-zonal-resources) to this notebook instance.
+  *   `bootDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - Input only. The size of the boot disk in GB attached to this instance, up to a maximum of 64000 GB (64 TB). The minimum recommended value is 100 GB. If not specified, this defaults to 100.
+  *   `noProxyAccess` (*type:* `boolean()`, *default:* `nil`) - If true, the notebook instance will not register with the proxy.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :machineType => String.t() | nil,
-          :tags => list(String.t()) | nil,
-          :customGpuDriverPath => String.t() | nil,
-          :containerImage => GoogleApi.Notebooks.V1.Model.ContainerImage.t() | nil,
-          :acceleratorConfig => GoogleApi.Notebooks.V1.Model.AcceleratorConfig.t() | nil,
-          :noProxyAccess => boolean() | nil,
-          :postStartupScript => String.t() | nil,
-          :noPublicIp => boolean() | nil,
-          :updateTime => DateTime.t() | nil,
+          :serviceAccount => String.t() | nil,
           :createTime => DateTime.t() | nil,
-          :dataDiskSizeGb => String.t() | nil,
-          :metadata => map() | nil,
+          :state => String.t() | nil,
+          :labels => map() | nil,
+          :name => String.t() | nil,
           :shieldedInstanceConfig =>
             GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig.t() | nil,
           :diskEncryption => String.t() | nil,
+          :vmImage => GoogleApi.Notebooks.V1.Model.VmImage.t() | nil,
+          :subnet => String.t() | nil,
+          :metadata => map() | nil,
           :creator => String.t() | nil,
-          :name => String.t() | nil,
-          :state => String.t() | nil,
-          :network => String.t() | nil,
+          :instanceOwners => list(String.t()) | nil,
+          :serviceAccountScopes => list(String.t()) | nil,
+          :dataDiskSizeGb => String.t() | nil,
+          :kmsKey => String.t() | nil,
+          :tags => list(String.t()) | nil,
+          :noRemoveDataDisk => boolean() | nil,
           :disks => list(GoogleApi.Notebooks.V1.Model.Disk.t()) | nil,
-          :bootDiskType => String.t() | nil,
+          :dataDiskType => String.t() | nil,
+          :machineType => String.t() | nil,
+          :installGpuDriver => boolean() | nil,
+          :acceleratorConfig => GoogleApi.Notebooks.V1.Model.AcceleratorConfig.t() | nil,
+          :nicType => String.t() | nil,
+          :upgradeHistory => list(GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry.t()) | nil,
+          :proxyUri => String.t() | nil,
+          :customGpuDriverPath => String.t() | nil,
+          :canIpForward => boolean() | nil,
+          :containerImage => GoogleApi.Notebooks.V1.Model.ContainerImage.t() | nil,
+          :migrated => boolean() | nil,
+          :network => String.t() | nil,
+          :updateTime => DateTime.t() | nil,
+          :noPublicIp => boolean() | nil,
           :instanceMigrationEligibility =>
             GoogleApi.Notebooks.V1.Model.InstanceMigrationEligibility.t() | nil,
-          :subnet => String.t() | nil,
-          :kmsKey => String.t() | nil,
-          :installGpuDriver => boolean() | nil,
-          :upgradeHistory => list(GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry.t()) | nil,
-          :serviceAccountScopes => list(String.t()) | nil,
-          :migrated => boolean() | nil,
-          :serviceAccount => String.t() | nil,
-          :proxyUri => String.t() | nil,
-          :vmImage => GoogleApi.Notebooks.V1.Model.VmImage.t() | nil,
-          :nicType => String.t() | nil,
-          :dataDiskType => String.t() | nil,
-          :canIpForward => boolean() | nil,
-          :labels => map() | nil,
-          :noRemoveDataDisk => boolean() | nil,
+          :bootDiskType => String.t() | nil,
+          :postStartupScript => String.t() | nil,
+          :reservationAffinity => GoogleApi.Notebooks.V1.Model.ReservationAffinity.t() | nil,
           :bootDiskSizeGb => String.t() | nil,
-          :instanceOwners => list(String.t()) | nil,
-          :reservationAffinity => GoogleApi.Notebooks.V1.Model.ReservationAffinity.t() | nil
+          :noProxyAccess => boolean() | nil
         }
 
-  field(:machineType)
-  field(:tags, type: :list)
-  field(:customGpuDriverPath)
-  field(:containerImage, as: GoogleApi.Notebooks.V1.Model.ContainerImage)
-  field(:acceleratorConfig, as: GoogleApi.Notebooks.V1.Model.AcceleratorConfig)
-  field(:noProxyAccess)
-  field(:postStartupScript)
-  field(:noPublicIp)
-  field(:updateTime, as: DateTime)
+  field(:serviceAccount)
   field(:createTime, as: DateTime)
-  field(:dataDiskSizeGb)
-  field(:metadata, type: :map)
+  field(:state)
+  field(:labels, type: :map)
+  field(:name)
   field(:shieldedInstanceConfig, as: GoogleApi.Notebooks.V1.Model.ShieldedInstanceConfig)
   field(:diskEncryption)
+  field(:vmImage, as: GoogleApi.Notebooks.V1.Model.VmImage)
+  field(:subnet)
+  field(:metadata, type: :map)
   field(:creator)
-  field(:name)
-  field(:state)
-  field(:network)
+  field(:instanceOwners, type: :list)
+  field(:serviceAccountScopes, type: :list)
+  field(:dataDiskSizeGb)
+  field(:kmsKey)
+  field(:tags, type: :list)
+  field(:noRemoveDataDisk)
   field(:disks, as: GoogleApi.Notebooks.V1.Model.Disk, type: :list)
-  field(:bootDiskType)
+  field(:dataDiskType)
+  field(:machineType)
+  field(:installGpuDriver)
+  field(:acceleratorConfig, as: GoogleApi.Notebooks.V1.Model.AcceleratorConfig)
+  field(:nicType)
+  field(:upgradeHistory, as: GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry, type: :list)
+  field(:proxyUri)
+  field(:customGpuDriverPath)
+  field(:canIpForward)
+  field(:containerImage, as: GoogleApi.Notebooks.V1.Model.ContainerImage)
+  field(:migrated)
+  field(:network)
+  field(:updateTime, as: DateTime)
+  field(:noPublicIp)
 
   field(:instanceMigrationEligibility,
     as: GoogleApi.Notebooks.V1.Model.InstanceMigrationEligibility
   )
 
-  field(:subnet)
-  field(:kmsKey)
-  field(:installGpuDriver)
-  field(:upgradeHistory, as: GoogleApi.Notebooks.V1.Model.UpgradeHistoryEntry, type: :list)
-  field(:serviceAccountScopes, type: :list)
-  field(:migrated)
-  field(:serviceAccount)
-  field(:proxyUri)
-  field(:vmImage, as: GoogleApi.Notebooks.V1.Model.VmImage)
-  field(:nicType)
-  field(:dataDiskType)
-  field(:canIpForward)
-  field(:labels, type: :map)
-  field(:noRemoveDataDisk)
-  field(:bootDiskSizeGb)
-  field(:instanceOwners, type: :list)
+  field(:bootDiskType)
+  field(:postStartupScript)
   field(:reservationAffinity, as: GoogleApi.Notebooks.V1.Model.ReservationAffinity)
+  field(:bootDiskSizeGb)
+  field(:noProxyAccess)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Notebooks.V1.Model.Instance do
