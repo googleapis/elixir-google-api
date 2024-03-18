@@ -30,7 +30,7 @@ defmodule GoogleApi.Content.V21.Model.ReportRow do
   *   `productCluster` (*type:* `GoogleApi.Content.V21.Model.ProductCluster.t`, *default:* `nil`) - Product cluster fields requested by the merchant in the query. Field values are only set if the merchant queries `BestSellersProductClusterView`.
   *   `productView` (*type:* `GoogleApi.Content.V21.Model.ProductView.t`, *default:* `nil`) - Product fields requested by the merchant in the query. Field values are only set if the merchant queries `ProductView`.
   *   `segments` (*type:* `GoogleApi.Content.V21.Model.Segments.t`, *default:* `nil`) - Segmentation dimensions requested by the merchant in the query. Dimension values are only set for dimensions requested explicitly in the query.
-  *   `topicTrends` (*type:* `GoogleApi.Content.V21.Model.TopicTrends.t`, *default:* `nil`) - Topic trends fields requested by the merchant in the query. Field values are only set if the merchant queries `TopicTrendsView`. https://support.google.com/merchants/answer/13542370.
+  *   `topicTrends` (*type:* `GoogleApi.Content.V21.Model.TopicTrends.t`, *default:* `nil`) - [Topic trends](https://support.google.com/merchants/answer/13542370) fields requested by the merchant in the query. Field values are only set if the merchant queries `TopicTrendsView`.
   """
 
   use GoogleApi.Gax.ModelBase
