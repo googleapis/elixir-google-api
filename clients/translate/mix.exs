@@ -18,7 +18,7 @@
 defmodule GoogleApi.Translate.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -48,8 +48,7 @@ defmodule GoogleApi.Translate.Mixfile do
 
   defp description() do
     """
-    Google Cloud Translation API client library. The Google Cloud Translation API lets websites and programs integrate with
-    Google Translate programmatically.
+    Cloud Translation API client library. Integrates text translation into your website or application.
     """
   end
 
@@ -60,7 +59,7 @@ defmodule GoogleApi.Translate.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/translate",
-        "Homepage" => "https://code.google.com/apis/language/translate/v2/getting_started.html"
+        "Homepage" => "https://cloud.google.com/translate/docs/quickstarts"
       }
     ]
   end
