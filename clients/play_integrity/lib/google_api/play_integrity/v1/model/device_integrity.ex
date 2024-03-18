@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceIntegrity do
   @moduledoc """
-  Contains the device attestation information.
+  Contains the device attestation information. Next tag: 4
 
   ## Attributes
 
