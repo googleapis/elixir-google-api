@@ -44,7 +44,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Externaltransactions do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:externalTransactionId` (*type:* `String.t`) - Required. The id to use for the external transaction. Must be unique across all other transactions for the app. This value should be 1-63 characters and valid characters are /a-z0-9_-/. Do not use this field to store any Personally Identifiable Information (PII) such as emails. Attempting to store PII in this field may result in requests being blocked.
+      *   `:externalTransactionId` (*type:* `String.t`) - Required. The id to use for the external transaction. Must be unique across all other transactions for the app. This value should be 1-63 characters and valid characters are /a-zA-Z0-9_-/. Do not use this field to store any Personally Identifiable Information (PII) such as emails. Attempting to store PII in this field may result in requests being blocked.
       *   `:body` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
