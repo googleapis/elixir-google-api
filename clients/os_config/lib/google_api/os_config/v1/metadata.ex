@@ -20,7 +20,7 @@ defmodule GoogleApi.OSConfig.V1 do
   API client metadata for GoogleApi.OSConfig.V1.
   """
 
-  @discovery_revision "20240304"
+  @discovery_revision "20240314"
 
   def discovery_revision(), do: @discovery_revision
 end
