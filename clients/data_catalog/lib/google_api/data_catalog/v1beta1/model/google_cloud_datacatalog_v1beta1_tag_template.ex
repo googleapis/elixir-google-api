@@ -21,6 +21,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
 
   ## Attributes
 
+  *   `dataplexTransferStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Transfer status of the TagTemplate
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name for this template. Defaults to an empty string.
   *   `fields` (*type:* `%{optional(String.t) => GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTemplateField.t}`, *default:* `nil`) - Required. Map of tag template field IDs to the settings for the field. This map is an exhaustive list of the allowed fields. This map must contain at least one field and at most 500 fields. The keys to this map are tag template field IDs. Field IDs can contain letters (both uppercase and lowercase), numbers (0-9) and underscores (_). Field IDs must be at least 1 character long and at most 64 characters long. Field IDs must start with a letter or underscore.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the tag template in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id} Note that this TagTemplate and its child resources may not actually be stored in the location in this name.
@@ -29,6 +30,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataplexTransferStatus => String.t() | nil,
           :displayName => String.t() | nil,
           :fields =>
             %{
@@ -39,6 +41,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Model.GoogleCloudDatacatalogV1beta1TagTe
           :name => String.t() | nil
         }
 
+  field(:dataplexTransferStatus)
   field(:displayName)
 
   field(:fields,
