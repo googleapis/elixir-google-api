@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ListFirewallPoliciesResponse do
   @moduledoc """
-  Response to request to list firewall policies belonging to a key.
+  Response to request to list firewall policies belonging to a project.
 
   ## Attributes
 
