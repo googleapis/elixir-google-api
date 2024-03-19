@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting do
   ## Attributes
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - Required. Harm category.
+  *   `method` (*type:* `String.t`, *default:* `nil`) - Optional. Specify if the threshold is used for probability or severity score. If not specified, the threshold is used for probability score.
   *   `threshold` (*type:* `String.t`, *default:* `nil`) - Required. The harm block threshold.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting do
 
   @type t :: %__MODULE__{
           :category => String.t() | nil,
+          :method => String.t() | nil,
           :threshold => String.t() | nil
         }
 
   field(:category)
+  field(:method)
   field(:threshold)
 end
 

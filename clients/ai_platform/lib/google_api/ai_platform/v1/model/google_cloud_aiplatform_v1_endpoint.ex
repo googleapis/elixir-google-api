@@ -33,7 +33,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Endpoint.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the Endpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. Only one of the fields, network or enable_private_service_connect, can be set. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where `{project}` is a project number, as in `12345`, and `{network}` is network name.
   *   `predictRequestResponseLoggingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PredictRequestResponseLoggingConfig.t`, *default:* `nil`) - Configures the request-response logging for online prediction.
-  *   `privateServiceConnectConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig.t`, *default:* `nil`) - Optional. Configuration for private service connect. network and private_service_connect_config are mutually exclusive.
   *   `trafficSplit` (*type:* `map()`, *default:* `nil`) - A map from a DeployedModel's ID to the percentage of this Endpoint's traffic that should be forwarded to that DeployedModel. If a DeployedModel's ID is not listed in this map, then it receives no traffic. The traffic percentage values must add up to 100, or map must be empty if the Endpoint is to not accept any traffic at a moment.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Endpoint was last updated.
   """
@@ -56,9 +55,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
           :network => String.t() | nil,
           :predictRequestResponseLoggingConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PredictRequestResponseLoggingConfig.t()
-            | nil,
-          :privateServiceConnectConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig.t()
             | nil,
           :trafficSplit => map() | nil,
           :updateTime => DateTime.t() | nil
@@ -83,10 +79,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
 
   field(:predictRequestResponseLoggingConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PredictRequestResponseLoggingConfig
-  )
-
-  field(:privateServiceConnectConfig,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig
   )
 
   field(:trafficSplit, type: :map)
