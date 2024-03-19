@@ -920,6 +920,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:endTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the newest voided purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+      *   `:includeQuantityBasedPartialRefund` (*type:* `boolean()`) - Optional. Whether to include voided purchases of quantity-based partial refunds, which are applicable only to multi-quantity purchases. If true, additional voided purchases may be returned with voidedQuantity that indicates the refund quantity of a quantity-based partial refund. The default value is false.
       *   `:maxResults` (*type:* `integer()`) - Defines how many results the list operation should return. The default number depends on the resource collection.
       *   `:startIndex` (*type:* `integer()`) - Defines the index of the first element to return. This can only be used if indexed paging is enabled.
       *   `:startTime` (*type:* `String.t`) - The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
@@ -961,6 +962,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Purchases do
       :uploadType => :query,
       :upload_protocol => :query,
       :endTime => :query,
+      :includeQuantityBasedPartialRefund => :query,
       :maxResults => :query,
       :startIndex => :query,
       :startTime => :query,
