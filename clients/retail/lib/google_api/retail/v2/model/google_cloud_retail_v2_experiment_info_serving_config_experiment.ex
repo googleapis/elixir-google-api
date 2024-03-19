@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ExperimentInfoServingConf
 
   ## Attributes
 
-  *   `experimentServingConfig` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the serving config VariantArm.serving_config_id responsible for generating the search response. For example: `projects/*/locations/*/catalogs/*/servingConfigs/*`.
+  *   `experimentServingConfig` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the serving config Experiment.VariantArm.serving_config_id responsible for generating the search response. For example: `projects/*/locations/*/catalogs/*/servingConfigs/*`.
   *   `originalServingConfig` (*type:* `String.t`, *default:* `nil`) - The fully qualified resource name of the original SearchRequest.placement in the search request prior to reassignment by experiment API. For example: `projects/*/locations/*/catalogs/*/servingConfigs/*`.
   """
 
