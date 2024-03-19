@@ -25,6 +25,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon do
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - Display a custom icon hosted at an HTTPS URL. For example: ``` "iconUrl": "https://developers.google.com/chat/images/quickstart-app-avatar.png" ``` Supported file types include `.png` and `.jpg`.
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The crop style applied to the image. In some cases, applying a `CIRCLE` crop causes the image to be drawn larger than a built-in icon.
   *   `knownIcon` (*type:* `String.t`, *default:* `nil`) - Display one of the built-in icons provided by Google Workspace. For example, to display an airplane icon, specify `AIRPLANE`. For a bus, specify `BUS`. For a full list of supported icons, see [built-in icons](https://developers.google.com/chat/format-messages#builtinicons).
+  *   `materialIcon` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1MaterialIcon.t`, *default:* `nil`) - Display one of the [Google Material Icons](https://fonts.google.com/icons). For example, to display a [checkbox icon](https://fonts.google.com/icons?selected=Material%20Symbols%20Outlined%3Acheck_box%3AFILL%400%3Bwght%40400%3BGRAD%400%3Bopsz%4048), use "material_icon": { "name": "check_box" } Available for Chat apps and in [Developer Preview](https://developers.google.com/workspace/preview) for Google Workspace Add-ons.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon do
           :altText => String.t() | nil,
           :iconUrl => String.t() | nil,
           :imageType => String.t() | nil,
-          :knownIcon => String.t() | nil
+          :knownIcon => String.t() | nil,
+          :materialIcon => GoogleApi.Chat.V1.Model.GoogleAppsCardV1MaterialIcon.t() | nil
         }
 
   field(:altText)
   field(:iconUrl)
   field(:imageType)
   field(:knownIcon)
+  field(:materialIcon, as: GoogleApi.Chat.V1.Model.GoogleAppsCardV1MaterialIcon)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Chat.V1.Model.GoogleAppsCardV1Icon do
