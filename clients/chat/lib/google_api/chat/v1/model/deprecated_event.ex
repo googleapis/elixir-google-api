@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   @moduledoc """
-  A Google Chat app interaction event. To learn about interaction events, see [Receive and respond to interactions with your Google Chat app](https://developers.google.com/chat/api/guides/message-formats). To learn about event types and for example event payloads, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events).
+  A Google Chat app interaction event. To learn about interaction events, see [Receive and respond to interactions with your Google Chat app](https://developers.google.com/workspace/chat/api/guides/message-formats). To learn about event types and for example event payloads, see [Types of Google Chat app interaction events](https://developers.google.com/workspace/chat/events). In addition to receiving events from user interactions, Chat apps can receive events about changes to spaces, such as when a new member is added to a space. To learn about space events, see [Work with events from Google Chat](https://developers.google.com/workspace/chat/events-overview).
 
   ## Attributes
 
@@ -31,7 +31,7 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the interaction event occurred.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The Chat app-defined key for the thread related to the interaction event. See [`spaces.messages.thread.threadKey`](/chat/api/reference/rest/v1/spaces.messages#Thread.FIELDS.thread_key) for more information.
   *   `token` (*type:* `String.t`, *default:* `nil`) - A secret value that legacy Chat apps can use to verify if a request is from Google. Google randomly generates the token, and its value remains static. You can obtain, revoke, or regenerate the token from the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat) in the Google Cloud Console. Modern Chat apps don't use this field. It is absent from API responses and the [Chat API configuration page](https://console.cloud.google.com/apis/api/chat.googleapis.com/hangouts-chat).
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of interaction event. For details, see [Types of Google Chat app interaction events](https://developers.google.com/chat/api/guides/message-formats/events).
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of interaction event. For details, see [Types of Google Chat app interaction events](https://developers.google.com/workspace/chat/events).
   *   `user` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The user that triggered the interaction event.
   """
 
