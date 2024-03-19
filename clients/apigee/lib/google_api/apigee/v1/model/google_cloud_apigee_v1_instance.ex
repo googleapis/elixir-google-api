@@ -21,6 +21,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
 
   ## Attributes
 
+  *   `accessLoggingConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessLoggingConfig.t`, *default:* `nil`) - Optional. Access logging configuration enables the access logging feature at the instance. Apigee customers can enable access logging to ship the access logs to their own project's cloud logging.
   *   `consumerAcceptList` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Customer accept list represents the list of projects (id/number) on customer side that can privately connect to the service attachment. It is an optional field which the customers can provide during the instance creation. By default, the customer project associated with the Apigee organization will be included to the list.
   *   `createdAt` (*type:* `String.t`, *default:* `nil`) - Output only. Time the instance was created in milliseconds since epoch.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the instance.
@@ -41,6 +42,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessLoggingConfig =>
+            GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessLoggingConfig.t() | nil,
           :consumerAcceptList => list(String.t()) | nil,
           :createdAt => String.t() | nil,
           :description => String.t() | nil,
@@ -57,6 +60,8 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1Instance do
           :serviceAttachment => String.t() | nil,
           :state => String.t() | nil
         }
+
+  field(:accessLoggingConfig, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AccessLoggingConfig)
 
   field(:consumerAcceptList, type: :list)
   field(:createdAt)
