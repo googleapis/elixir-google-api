@@ -24,6 +24,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.ConnectionInfo do
   *   `instanceUid` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the Instance.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The private network IP address for the Instance. This is the default IP for the instance and is always created (even if enable_public_ip is set). This is the connection endpoint for an end-user application.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the ConnectionInfo singleton resource, e.g.: projects/{project}/locations/{location}/clusters/*/instances/*/connectionInfo This field currently has no semantic meaning.
+  *   `publicIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.AlloyDB.V1.Model.ConnectionInfo do
   @type t :: %__MODULE__{
           :instanceUid => String.t() | nil,
           :ipAddress => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :publicIpAddress => String.t() | nil
         }
 
   field(:instanceUid)
   field(:ipAddress)
   field(:name)
+  field(:publicIpAddress)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AlloyDB.V1.Model.ConnectionInfo do

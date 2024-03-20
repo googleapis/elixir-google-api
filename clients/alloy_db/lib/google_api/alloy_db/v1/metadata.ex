@@ -20,7 +20,7 @@ defmodule GoogleApi.AlloyDB.V1 do
   API client metadata for GoogleApi.AlloyDB.V1.
   """
 
-  @discovery_revision "20240306"
+  @discovery_revision "20240315"
 
   def discovery_revision(), do: @discovery_revision
 end

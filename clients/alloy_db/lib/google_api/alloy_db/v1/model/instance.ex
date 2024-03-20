@@ -35,7 +35,9 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `machineConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.MachineConfig.t`, *default:* `nil`) - Configurations for the machines that host the underlying database engine.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
+  *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t`, *default:* `nil`) - Optional. Instance level network configuration.
   *   `nodes` (*type:* `list(GoogleApi.AlloyDB.V1.Model.Node.t)`, *default:* `nil`) - Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance.
+  *   `publicIpAddress` (*type:* `String.t`, *default:* `nil`) - Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application.
   *   `queryInsightsConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.QueryInsightsInstanceConfig.t`, *default:* `nil`) - Configuration for query insights.
   *   `readPoolConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.ReadPoolConfig.t`, *default:* `nil`) - Read pool instance configuration. This is required if the value of instanceType is READ_POOL.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Instance does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
@@ -63,7 +65,9 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
           :labels => map() | nil,
           :machineConfig => GoogleApi.AlloyDB.V1.Model.MachineConfig.t() | nil,
           :name => String.t() | nil,
+          :networkConfig => GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t() | nil,
           :nodes => list(GoogleApi.AlloyDB.V1.Model.Node.t()) | nil,
+          :publicIpAddress => String.t() | nil,
           :queryInsightsConfig =>
             GoogleApi.AlloyDB.V1.Model.QueryInsightsInstanceConfig.t() | nil,
           :readPoolConfig => GoogleApi.AlloyDB.V1.Model.ReadPoolConfig.t() | nil,
@@ -89,7 +93,9 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
   field(:labels, type: :map)
   field(:machineConfig, as: GoogleApi.AlloyDB.V1.Model.MachineConfig)
   field(:name)
+  field(:networkConfig, as: GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig)
   field(:nodes, as: GoogleApi.AlloyDB.V1.Model.Node, type: :list)
+  field(:publicIpAddress)
   field(:queryInsightsConfig, as: GoogleApi.AlloyDB.V1.Model.QueryInsightsInstanceConfig)
   field(:readPoolConfig, as: GoogleApi.AlloyDB.V1.Model.ReadPoolConfig)
   field(:reconciling)
