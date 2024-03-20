@@ -21,7 +21,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateConfigKeyId do
 
   ## Attributes
 
-  *   `keyId` (*type:* `String.t`, *default:* `nil`) - Optional. The value of this KeyId encoded in lowercase hexadecimal. This is most likely the 160 bit SHA-1 hash of the public key.
+  *   `keyId` (*type:* `String.t`, *default:* `nil`) - Required. The value of this KeyId encoded in lowercase hexadecimal. This is most likely the 160 bit SHA-1 hash of the public key.
   """
 
   use GoogleApi.Gax.ModelBase
