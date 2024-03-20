@@ -21,225 +21,226 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
 
   ## Attributes
 
-  *   `authenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - Configuration controlling RBAC group membership information.
-  *   `meshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
-  *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
-  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use node_pools.instance_group_urls.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding.
-  *   `currentMasterVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] The current software version of the master endpoint.
-  *   `enableTpu` (*type:* `boolean()`, *default:* `nil`) - Enable the ability to use Cloud TPUs in this cluster.
-  *   `identityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - Configuration for Identity Service component.
-  *   `nodeIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
-  *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
-  *   `enableK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Beta APIs Config
-  *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated. Use conditions instead. Additional information about the current status of this cluster, if available.
-  *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-  *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes.
-  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
-  *   `conditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state.
-  *   `monitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics. Currently available options: * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
-  *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM policies.
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field is deprecated, use location instead.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this cluster.
-  *   `privateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Configuration for private cluster.
-  *   `enableKubernetesAlpha` (*type:* `boolean()`, *default:* `nil`) - Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation.
-  *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - Logging configuration for the cluster.
-  *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
-  *   `resourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - Configuration for exporting resource usages. Resource usage export is disabled when this config is unspecified.
-  *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint. The endpoint can be accessed from the internet at `https://username:password@endpoint/`. See the `masterAuth` property of this resource for username and password information.
-  *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead.
-  *   `networkConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkConfig.t`, *default:* `nil`) - Configuration for cluster networking.
-  *   `nodePoolAutoConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoConfig.t`, *default:* `nil`) - Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
-  *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The configuration options for master authorized networks feature.
-  *   `networkPolicy` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicy.t`, *default:* `nil`) - Configuration options for the NetworkPolicy feature.
-  *   `parentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The configuration of the parent product of the cluster. This field is used by Google internal products that are built on top of the GKE cluster and take the ownership of the cluster.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this cluster. The name must be unique within this project and location (e.g. zone or region), and can be up to 40 characters with the following restrictions: * Lowercase letters, numbers, and hyphens only. * Must start with a letter. * Must end with a number or a letter.
-  *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration. If left unspecified on cluster creation and a version is specified, the cluster is enrolled in the most mature release channel where the version is available (first checking STABLE, then REGULAR, and finally RAPID). Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version.
-  *   `masterAuth` (*type:* `GoogleApi.Container.V1.Model.MasterAuth.t`, *default:* `nil`) - The authentication information for accessing the master endpoint. If unspecified, the defaults are used: For clusters before v1.12, if master_auth is unspecified, `username` will be set to "admin", a random password will be generated, and a client certificate will be issued.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the cluster is connected.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The current status of this cluster.
-  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the `default` network will be used.
-  *   `fleet` (*type:* `GoogleApi.Container.V1.Model.Fleet.t`, *default:* `nil`) - Fleet information for the cluster.
-  *   `nodeConfig` (*type:* `GoogleApi.Container.V1.Model.NodeConfig.t`, *default:* `nil`) - Parameters used in creating the cluster's nodes. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "initial_node_count") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. For responses, this field will be populated with the node configuration of the first node pool. (For configuration of each node pool, see `node_pool.config`) If unspecified, the defaults are used. This field is deprecated, use node_pool.config instead.
-  *   `tpuIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Cloud TPUs in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`).
-  *   `ipAllocationPolicy` (*type:* `GoogleApi.Container.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Configuration for cluster IP allocation.
-  *   `addonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This field provides a default value if [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) are not specified during node pool creation. Warning: changing cluster locations will update the [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) of all node pools and will result in nodes being added and/or removed.
-  *   `autopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - Autopilot configuration for the cluster.
-  *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the cluster to use to annotate any related Google Compute Engine resources.
-  *   `enterpriseConfig` (*type:* `GoogleApi.Container.V1.Model.EnterpriseConfig.t`, *default:* `nil`) - GKE Enterprise Configuration.
-  *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the set of labels for this cluster.
-  *   `expireTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-  *   `currentNodeCount` (*type:* `integer()`, *default:* `nil`) - [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information.
-  *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
-  *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
-  *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
-  *   `monitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - Monitoring configuration for the cluster.
-  *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id for the cluster.
-  *   `nodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.NodePoolDefaults.t`, *default:* `nil`) - Default NodePool settings for the entire cluster. These settings are overridden if specified on the specific NodePool object.
-  *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
-  *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
-  *   `securityPostureConfig` (*type:* `GoogleApi.Container.V1.Model.SecurityPostureConfig.t`, *default:* `nil`) - Enable/Disable Security Posture API features for the cluster.
-  *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
-  *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
-  *   `costManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - Configuration for the fine-grained cost management feature.
+  *   `nodePools` (*type:* `list(GoogleApi.Container.V1.Model.NodePool.t)`, *default:* `nil`) - The node pools associated with this cluster. This field should not be set if "node_config" or "initial_node_count" are specified.
+  *   `createTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster was created, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `enableK8sBetaApis` (*type:* `GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t`, *default:* `nil`) - Beta APIs Config
+  *   `nodeConfig` (*type:* `GoogleApi.Container.V1.Model.NodeConfig.t`, *default:* `nil`) - Parameters used in creating the cluster's nodes. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "initial_node_count") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. For responses, this field will be populated with the node configuration of the first node pool. (For configuration of each node pool, see `node_pool.config`) If unspecified, the defaults are used. This field is deprecated, use node_pool.config instead.
+  *   `addonsConfig` (*type:* `GoogleApi.Container.V1.Model.AddonsConfig.t`, *default:* `nil`) - Configurations for the various addons available to run in the cluster.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this cluster. The name must be unique within this project and location (e.g. zone or region), and can be up to 40 characters with the following restrictions: * Lowercase letters, numbers, and hyphens only. * Must start with a letter. * Must end with a number or a letter.
+  *   `tpuIpv4CidrBlock` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Cloud TPUs in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`).
+  *   `enterpriseConfig` (*type:* `GoogleApi.Container.V1.Model.EnterpriseConfig.t`, *default:* `nil`) - GKE Enterprise Configuration.
+  *   `ipAllocationPolicy` (*type:* `GoogleApi.Container.V1.Model.IPAllocationPolicy.t`, *default:* `nil`) - Configuration for cluster IP allocation.
+  *   `networkPolicy` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicy.t`, *default:* `nil`) - Configuration options for the NetworkPolicy feature.
+  *   `monitoringService` (*type:* `String.t`, *default:* `nil`) - The monitoring service the cluster should use to write metrics. Currently available options: * "monitoring.googleapis.com/kubernetes" - The Cloud Monitoring service with a Kubernetes-native resource model * `monitoring.googleapis.com` - The legacy Cloud Monitoring service (no longer available as of GKE 1.15). * `none` - No metrics will be exported from the cluster. If left as an empty string,`monitoring.googleapis.com/kubernetes` will be used for GKE 1.14+ or `monitoring.googleapis.com` for earlier versions.
+  *   `monitoringConfig` (*type:* `GoogleApi.Container.V1.Model.MonitoringConfig.t`, *default:* `nil`) - Monitoring configuration for the cluster.
+  *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.LoggingConfig.t`, *default:* `nil`) - Logging configuration for the cluster.
   *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Configuration of Confidential Nodes. All the nodes in the cluster will be Confidential VM once enabled.
+  *   `databaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
+  *   `servicesIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address range of the Kubernetes services in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `1.2.3.4/29`). Service addresses are typically put in the last `/16` from the container CIDR.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this cluster.
+  *   `authenticatorGroupsConfig` (*type:* `GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t`, *default:* `nil`) - Configuration controlling RBAC group membership information.
+  *   `currentMasterVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] The current software version of the master endpoint.
+  *   `costManagementConfig` (*type:* `GoogleApi.Container.V1.Model.CostManagementConfig.t`, *default:* `nil`) - Configuration for the fine-grained cost management feature.
+  *   `identityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - Configuration for Identity Service component.
+  *   `currentNodeCount` (*type:* `integer()`, *default:* `nil`) - [Output only] The number of nodes currently in the cluster. Deprecated. Call Kubernetes API directly to retrieve node information.
+  *   `masterAuth` (*type:* `GoogleApi.Container.V1.Model.MasterAuth.t`, *default:* `nil`) - The authentication information for accessing the master endpoint. If unspecified, the defaults are used: For clusters before v1.12, if master_auth is unspecified, `username` will be set to "admin", a random password will be generated, and a client certificate will be issued.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated. Use conditions instead. Additional information about the current status of this cluster, if available.
+  *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
   *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
+  *   `nodePoolAutoConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoConfig.t`, *default:* `nil`) - Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
+  *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
+  *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
+  *   `expireTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the cluster is connected.
+  *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration. If left unspecified on cluster creation and a version is specified, the cluster is enrolled in the most mature release channel where the version is available (first checking STABLE, then REGULAR, and finally RAPID). Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version.
+  *   `parentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The configuration of the parent product of the cluster. This field is used by Google internal products that are built on top of the GKE cluster and take the ownership of the cluster.
+  *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the cluster to use to annotate any related Google Compute Engine resources.
+  *   `binaryAuthorization` (*type:* `GoogleApi.Container.V1.Model.BinaryAuthorization.t`, *default:* `nil`) - Configuration for Binary Authorization.
+  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated. Use node_pools.instance_group_urls.
+  *   `conditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
+  *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The number of nodes to create in this cluster. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota. For requests, this field should only be used in lieu of a "node_pool" object, since this configuration (along with the "node_config") will be used to create a "NodePool" object with an auto-generated name. Do not use this and a node_pool at the same time. This field is deprecated, use node_pool.initial_node_count instead.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the cluster's nodes should be located. This field provides a default value if [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) are not specified during node pool creation. Warning: changing cluster locations will update the [NodePool.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools#NodePool.FIELDS.locations) of all node pools and will result in nodes being added and/or removed.
+  *   `endpoint` (*type:* `String.t`, *default:* `nil`) - [Output only] The IP address of this cluster's master endpoint. The endpoint can be accessed from the internet at `https://username:password@endpoint/`. See the `masterAuth` property of this resource for username and password information.
+  *   `nodePoolDefaults` (*type:* `GoogleApi.Container.V1.Model.NodePoolDefaults.t`, *default:* `nil`) - Default NodePool settings for the entire cluster. These settings are overridden if specified on the specific NodePool object.
+  *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field is deprecated, use location instead.
+  *   `enableTpu` (*type:* `boolean()`, *default:* `nil`) - Enable the ability to use Cloud TPUs in this cluster.
+  *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The configuration options for master authorized networks feature.
+  *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM policies.
+  *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes.
+  *   `securityPostureConfig` (*type:* `GoogleApi.Container.V1.Model.SecurityPostureConfig.t`, *default:* `nil`) - Enable/Disable Security Posture API features for the cluster.
+  *   `loggingService` (*type:* `String.t`, *default:* `nil`) - The logging service the cluster should use to write logs. Currently available options: * `logging.googleapis.com/kubernetes` - The Cloud Logging service with a Kubernetes-native resource model * `logging.googleapis.com` - The legacy Cloud Logging service (no longer available as of GKE 1.15). * `none` - no logs will be exported from the cluster. If left as an empty string,`logging.googleapis.com/kubernetes` will be used for GKE 1.14+ or `logging.googleapis.com` for earlier versions.
+  *   `initialClusterVersion` (*type:* `String.t`, *default:* `nil`) - The initial Kubernetes version for this cluster. Valid versions are those found in validMasterVersions returned by getServerConfig. The version can be upgraded over time; such upgrades are reflected in currentMasterVersion and currentNodeVersion. Users may specify either explicit versions offered by Kubernetes Engine or version aliases, which have the following behavior: - "latest": picks the highest valid Kubernetes version - "1.X": picks the highest valid patch+gke.N patch in the 1.X version - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version - "1.X.Y-gke.N": picks an explicit Kubernetes version - "","-": picks the default Kubernetes version
+  *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the `default` network will be used.
+  *   `autopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - Autopilot configuration for the cluster.
+  *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
+  *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the set of labels for this cluster.
+  *   `enableKubernetesAlpha` (*type:* `boolean()`, *default:* `nil`) - Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation.
+  *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of cluster fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The current status of this cluster.
+  *   `nodeIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The size of the address space on each node for hosting containers. This is provisioned from within the `container_ipv4_cidr` range. This field will only be set when cluster is in route-based network mode.
+  *   `resourceUsageExportConfig` (*type:* `GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t`, *default:* `nil`) - Configuration for exporting resource usages. Resource usage export is disabled when this config is unspecified.
+  *   `meshCertificates` (*type:* `GoogleApi.Container.V1.Model.MeshCertificates.t`, *default:* `nil`) - Configuration for issuance of mTLS keys and certificates to Kubernetes pods.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique id for the cluster.
+  *   `fleet` (*type:* `GoogleApi.Container.V1.Model.Fleet.t`, *default:* `nil`) - Fleet information for the cluster.
+  *   `networkConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkConfig.t`, *default:* `nil`) - Configuration for cluster networking.
+  *   `privateClusterConfig` (*type:* `GoogleApi.Container.V1.Model.PrivateClusterConfig.t`, *default:* `nil`) - Configuration for private cluster.
+  *   `legacyAbac` (*type:* `GoogleApi.Container.V1.Model.LegacyAbac.t`, *default:* `nil`) - Configuration for the legacy ABAC authorization mode.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :selfLink => String.t() | nil,
+          :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil,
+          :createTime => String.t() | nil,
+          :enableK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
+          :nodeConfig => GoogleApi.Container.V1.Model.NodeConfig.t() | nil,
+          :addonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
+          :name => String.t() | nil,
+          :tpuIpv4CidrBlock => String.t() | nil,
+          :enterpriseConfig => GoogleApi.Container.V1.Model.EnterpriseConfig.t() | nil,
+          :ipAllocationPolicy => GoogleApi.Container.V1.Model.IPAllocationPolicy.t() | nil,
+          :networkPolicy => GoogleApi.Container.V1.Model.NetworkPolicy.t() | nil,
+          :monitoringService => String.t() | nil,
+          :monitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
+          :loggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
+          :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
+          :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
+          :servicesIpv4Cidr => String.t() | nil,
+          :description => String.t() | nil,
           :authenticatorGroupsConfig =>
             GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig.t() | nil,
-          :meshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
-          :clusterIpv4Cidr => String.t() | nil,
-          :instanceGroupUrls => list(String.t()) | nil,
-          :etag => String.t() | nil,
           :currentMasterVersion => String.t() | nil,
-          :enableTpu => boolean() | nil,
+          :costManagementConfig => GoogleApi.Container.V1.Model.CostManagementConfig.t() | nil,
           :identityServiceConfig => GoogleApi.Container.V1.Model.IdentityServiceConfig.t() | nil,
-          :nodeIpv4CidrSize => integer() | nil,
-          :legacyAbac => GoogleApi.Container.V1.Model.LegacyAbac.t() | nil,
-          :enableK8sBetaApis => GoogleApi.Container.V1.Model.K8sBetaAPIConfig.t() | nil,
-          :shieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
+          :currentNodeCount => integer() | nil,
+          :masterAuth => GoogleApi.Container.V1.Model.MasterAuth.t() | nil,
           :statusMessage => String.t() | nil,
-          :createTime => String.t() | nil,
-          :currentNodeVersion => String.t() | nil,
-          :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
-          :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
-          :monitoringService => String.t() | nil,
-          :workloadIdentityConfig =>
-            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t() | nil,
-          :zone => String.t() | nil,
-          :description => String.t() | nil,
-          :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
-          :enableKubernetesAlpha => boolean() | nil,
-          :loggingConfig => GoogleApi.Container.V1.Model.LoggingConfig.t() | nil,
-          :loggingService => String.t() | nil,
-          :resourceUsageExportConfig =>
-            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
-          :endpoint => String.t() | nil,
-          :initialNodeCount => integer() | nil,
-          :networkConfig => GoogleApi.Container.V1.Model.NetworkConfig.t() | nil,
+          :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t() | nil,
+          :verticalPodAutoscaling =>
+            GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil,
           :nodePoolAutoConfig => GoogleApi.Container.V1.Model.NodePoolAutoConfig.t() | nil,
+          :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
+          :clusterIpv4Cidr => String.t() | nil,
+          :expireTime => String.t() | nil,
+          :subnetwork => String.t() | nil,
+          :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
+          :parentProductConfig => GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
+          :resourceLabels => map() | nil,
+          :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
+          :instanceGroupUrls => list(String.t()) | nil,
+          :conditions => list(GoogleApi.Container.V1.Model.StatusCondition.t()) | nil,
+          :location => String.t() | nil,
+          :initialNodeCount => integer() | nil,
+          :locations => list(String.t()) | nil,
+          :endpoint => String.t() | nil,
+          :nodePoolDefaults => GoogleApi.Container.V1.Model.NodePoolDefaults.t() | nil,
+          :shieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
+          :zone => String.t() | nil,
+          :enableTpu => boolean() | nil,
           :masterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
-          :networkPolicy => GoogleApi.Container.V1.Model.NetworkPolicy.t() | nil,
-          :parentProductConfig => GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
-          :name => String.t() | nil,
-          :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
-          :masterAuth => GoogleApi.Container.V1.Model.MasterAuth.t() | nil,
-          :location => String.t() | nil,
-          :subnetwork => String.t() | nil,
-          :status => String.t() | nil,
-          :network => String.t() | nil,
-          :fleet => GoogleApi.Container.V1.Model.Fleet.t() | nil,
-          :nodeConfig => GoogleApi.Container.V1.Model.NodeConfig.t() | nil,
-          :tpuIpv4CidrBlock => String.t() | nil,
-          :ipAllocationPolicy => GoogleApi.Container.V1.Model.IPAllocationPolicy.t() | nil,
-          :addonsConfig => GoogleApi.Container.V1.Model.AddonsConfig.t() | nil,
-          :locations => list(String.t()) | nil,
-          :autopilot => GoogleApi.Container.V1.Model.Autopilot.t() | nil,
-          :resourceLabels => map() | nil,
-          :enterpriseConfig => GoogleApi.Container.V1.Model.EnterpriseConfig.t() | nil,
-          :labelFingerprint => String.t() | nil,
-          :expireTime => String.t() | nil,
-          :currentNodeCount => integer() | nil,
-          :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
-          :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
-          :binaryAuthorization => GoogleApi.Container.V1.Model.BinaryAuthorization.t() | nil,
-          :monitoringConfig => GoogleApi.Container.V1.Model.MonitoringConfig.t() | nil,
-          :initialClusterVersion => String.t() | nil,
-          :id => String.t() | nil,
-          :nodePoolDefaults => GoogleApi.Container.V1.Model.NodePoolDefaults.t() | nil,
-          :nodePools => list(GoogleApi.Container.V1.Model.NodePool.t()) | nil,
-          :selfLink => String.t() | nil,
-          :servicesIpv4Cidr => String.t() | nil,
+          :workloadIdentityConfig =>
+            GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t() | nil,
+          :currentNodeVersion => String.t() | nil,
           :securityPostureConfig => GoogleApi.Container.V1.Model.SecurityPostureConfig.t() | nil,
-          :databaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
-          :maintenancePolicy => GoogleApi.Container.V1.Model.MaintenancePolicy.t() | nil,
-          :costManagementConfig => GoogleApi.Container.V1.Model.CostManagementConfig.t() | nil,
-          :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
-          :verticalPodAutoscaling => GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil
+          :loggingService => String.t() | nil,
+          :initialClusterVersion => String.t() | nil,
+          :network => String.t() | nil,
+          :autopilot => GoogleApi.Container.V1.Model.Autopilot.t() | nil,
+          :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
+          :labelFingerprint => String.t() | nil,
+          :enableKubernetesAlpha => boolean() | nil,
+          :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
+          :etag => String.t() | nil,
+          :status => String.t() | nil,
+          :nodeIpv4CidrSize => integer() | nil,
+          :resourceUsageExportConfig =>
+            GoogleApi.Container.V1.Model.ResourceUsageExportConfig.t() | nil,
+          :meshCertificates => GoogleApi.Container.V1.Model.MeshCertificates.t() | nil,
+          :id => String.t() | nil,
+          :fleet => GoogleApi.Container.V1.Model.Fleet.t() | nil,
+          :networkConfig => GoogleApi.Container.V1.Model.NetworkConfig.t() | nil,
+          :privateClusterConfig => GoogleApi.Container.V1.Model.PrivateClusterConfig.t() | nil,
+          :legacyAbac => GoogleApi.Container.V1.Model.LegacyAbac.t() | nil
         }
 
-  field(:authenticatorGroupsConfig, as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig)
-  field(:meshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
-  field(:clusterIpv4Cidr)
-  field(:instanceGroupUrls, type: :list)
-  field(:etag)
-  field(:currentMasterVersion)
-  field(:enableTpu)
-  field(:identityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)
-  field(:nodeIpv4CidrSize)
-  field(:legacyAbac, as: GoogleApi.Container.V1.Model.LegacyAbac)
-  field(:enableK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
-  field(:shieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
-  field(:statusMessage)
+  field(:selfLink)
+  field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
   field(:createTime)
-  field(:currentNodeVersion)
-  field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
-  field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
+  field(:enableK8sBetaApis, as: GoogleApi.Container.V1.Model.K8sBetaAPIConfig)
+  field(:nodeConfig, as: GoogleApi.Container.V1.Model.NodeConfig)
+  field(:addonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
+  field(:name)
+  field(:tpuIpv4CidrBlock)
+  field(:enterpriseConfig, as: GoogleApi.Container.V1.Model.EnterpriseConfig)
+  field(:ipAllocationPolicy, as: GoogleApi.Container.V1.Model.IPAllocationPolicy)
+  field(:networkPolicy, as: GoogleApi.Container.V1.Model.NetworkPolicy)
   field(:monitoringService)
-  field(:workloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
-  field(:zone)
-  field(:description)
-  field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
-  field(:enableKubernetesAlpha)
+  field(:monitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
   field(:loggingConfig, as: GoogleApi.Container.V1.Model.LoggingConfig)
-  field(:loggingService)
-  field(:resourceUsageExportConfig, as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig)
-  field(:endpoint)
-  field(:initialNodeCount)
-  field(:networkConfig, as: GoogleApi.Container.V1.Model.NetworkConfig)
+  field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
+  field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
+  field(:servicesIpv4Cidr)
+  field(:description)
+  field(:authenticatorGroupsConfig, as: GoogleApi.Container.V1.Model.AuthenticatorGroupsConfig)
+  field(:currentMasterVersion)
+  field(:costManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
+  field(:identityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)
+  field(:currentNodeCount)
+  field(:masterAuth, as: GoogleApi.Container.V1.Model.MasterAuth)
+  field(:statusMessage)
+  field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
+  field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
   field(:nodePoolAutoConfig, as: GoogleApi.Container.V1.Model.NodePoolAutoConfig)
+  field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
+  field(:clusterIpv4Cidr)
+  field(:expireTime)
+  field(:subnetwork)
+  field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
+  field(:parentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
+  field(:resourceLabels, type: :map)
+  field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
+  field(:instanceGroupUrls, type: :list)
+  field(:conditions, as: GoogleApi.Container.V1.Model.StatusCondition, type: :list)
+  field(:location)
+  field(:initialNodeCount)
+  field(:locations, type: :list)
+  field(:endpoint)
+  field(:nodePoolDefaults, as: GoogleApi.Container.V1.Model.NodePoolDefaults)
+  field(:shieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
+  field(:zone)
+  field(:enableTpu)
 
   field(:masterAuthorizedNetworksConfig,
     as: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig
   )
 
-  field(:networkPolicy, as: GoogleApi.Container.V1.Model.NetworkPolicy)
-  field(:parentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
-  field(:name)
-  field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
-  field(:masterAuth, as: GoogleApi.Container.V1.Model.MasterAuth)
-  field(:location)
-  field(:subnetwork)
-  field(:status)
-  field(:network)
-  field(:fleet, as: GoogleApi.Container.V1.Model.Fleet)
-  field(:nodeConfig, as: GoogleApi.Container.V1.Model.NodeConfig)
-  field(:tpuIpv4CidrBlock)
-  field(:ipAllocationPolicy, as: GoogleApi.Container.V1.Model.IPAllocationPolicy)
-  field(:addonsConfig, as: GoogleApi.Container.V1.Model.AddonsConfig)
-  field(:locations, type: :list)
-  field(:autopilot, as: GoogleApi.Container.V1.Model.Autopilot)
-  field(:resourceLabels, type: :map)
-  field(:enterpriseConfig, as: GoogleApi.Container.V1.Model.EnterpriseConfig)
-  field(:labelFingerprint)
-  field(:expireTime)
-  field(:currentNodeCount)
-  field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
-  field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
-  field(:binaryAuthorization, as: GoogleApi.Container.V1.Model.BinaryAuthorization)
-  field(:monitoringConfig, as: GoogleApi.Container.V1.Model.MonitoringConfig)
-  field(:initialClusterVersion)
-  field(:id)
-  field(:nodePoolDefaults, as: GoogleApi.Container.V1.Model.NodePoolDefaults)
-  field(:nodePools, as: GoogleApi.Container.V1.Model.NodePool, type: :list)
-  field(:selfLink)
-  field(:servicesIpv4Cidr)
+  field(:workloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
+  field(:currentNodeVersion)
   field(:securityPostureConfig, as: GoogleApi.Container.V1.Model.SecurityPostureConfig)
-  field(:databaseEncryption, as: GoogleApi.Container.V1.Model.DatabaseEncryption)
-  field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
-  field(:costManagementConfig, as: GoogleApi.Container.V1.Model.CostManagementConfig)
-  field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
-  field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
+  field(:loggingService)
+  field(:initialClusterVersion)
+  field(:network)
+  field(:autopilot, as: GoogleApi.Container.V1.Model.Autopilot)
+  field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
+  field(:labelFingerprint)
+  field(:enableKubernetesAlpha)
+  field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)
+  field(:etag)
+  field(:status)
+  field(:nodeIpv4CidrSize)
+  field(:resourceUsageExportConfig, as: GoogleApi.Container.V1.Model.ResourceUsageExportConfig)
+  field(:meshCertificates, as: GoogleApi.Container.V1.Model.MeshCertificates)
+  field(:id)
+  field(:fleet, as: GoogleApi.Container.V1.Model.Fleet)
+  field(:networkConfig, as: GoogleApi.Container.V1.Model.NetworkConfig)
+  field(:privateClusterConfig, as: GoogleApi.Container.V1.Model.PrivateClusterConfig)
+  field(:legacyAbac, as: GoogleApi.Container.V1.Model.LegacyAbac)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.Cluster do
