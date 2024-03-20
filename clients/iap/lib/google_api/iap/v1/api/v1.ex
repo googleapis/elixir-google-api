@@ -336,7 +336,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   end
 
   @doc """
-  Validates a given CEL expression conforms to IAP restrictions.
+  Validates that a given CEL expression conforms to IAP restrictions.
 
   ## Parameters
 
@@ -354,7 +354,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:expression` (*type:* `String.t`) - Required. User input string expression. Should be of the form 'attributes.saml_attributes.filter(attribute, attribute.name in ['{attribute_name}', '{attribute_name}'])'
+      *   `:expression` (*type:* `String.t`) - Required. User input string expression. Should be of the form `attributes.saml_attributes.filter(attribute, attribute.name in ['{attribute_name}', '{attribute_name}'])`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
