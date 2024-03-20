@@ -1455,7 +1455,7 @@ defmodule GoogleApi.CloudBuild.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - Optional. Number of results to return in the list. Default to 100.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Number of results to return in the list. Default to 20.
       *   `:pageToken` (*type:* `String.t`) - Optional. Page start.
       *   `:refType` (*type:* `String.t`) - Type of refs to fetch
   *   `opts` (*type:* `keyword()`) - Call options
