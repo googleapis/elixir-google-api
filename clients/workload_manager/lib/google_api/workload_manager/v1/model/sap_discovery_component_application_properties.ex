@@ -24,6 +24,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentApplicationPro
   *   `abap` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether this is a Java or ABAP Netweaver instance. true means it is ABAP, false means it is Java.
   *   `applicationType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the application. Netweaver, etc.
   *   `ascsUri` (*type:* `String.t`, *default:* `nil`) - Optional. Resource URI of the recognized ASCS host of the application.
+  *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. Instance number of the SAP instance.
   *   `kernelVersion` (*type:* `String.t`, *default:* `nil`) - Optional. Kernel version for Netweaver running in the system.
   *   `nfsUri` (*type:* `String.t`, *default:* `nil`) - Optional. Resource URI of the recognized shared NFS of the application. May be empty if the application server has only a single node.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentApplicationPro
           :abap => boolean() | nil,
           :applicationType => String.t() | nil,
           :ascsUri => String.t() | nil,
+          :instanceNumber => String.t() | nil,
           :kernelVersion => String.t() | nil,
           :nfsUri => String.t() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentApplicationPro
   field(:abap)
   field(:applicationType)
   field(:ascsUri)
+  field(:instanceNumber)
   field(:kernelVersion)
   field(:nfsUri)
 end
