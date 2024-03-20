@@ -28,6 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `modelPromptSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelPromptSpec.t`, *default:* `nil`) - If specified, the spec will be used to modify the prompt provided to the LLM.
   *   `modelSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec.t`, *default:* `nil`) - If specified, the spec will be used to modify the model specification provided to the LLM.
   *   `summaryResultCount` (*type:* `integer()`, *default:* `nil`) - The number of top results to generate the summary from. If the number of results returned is less than `summaryResultCount`, the summary is generated from all of the results. At most 10 results can be used to generate a summary.
+  *   `useSemanticChunks` (*type:* `boolean()`, *default:* `nil`) - If true, answer will be generated from most relevant chunks from top search results. This feature will improve summary quality. Please note that with this feature enabled, not all top search results will be referenced and included in the reference list, so the citation source index only points to the search results listed in the reference list.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :modelSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpecModelSpec.t()
             | nil,
-          :summaryResultCount => integer() | nil
+          :summaryResultCount => integer() | nil,
+          :useSemanticChunks => boolean() | nil
         }
 
   field(:ignoreAdversarialQuery)
@@ -62,6 +64,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   )
 
   field(:summaryResultCount)
+  field(:useSemanticChunks)
 end
 
 defimpl Poison.Decoder,
