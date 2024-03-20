@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_testing, "~> 0.29"}]
+  [{:google_api_testing, "~> 0.30"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/cloud-test-lab/](https://developers.google.com/cloud-test-lab/).
+Product documentation is available at [https://firebase.google.com/docs/test-lab/](https://firebase.google.com/docs/test-lab/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_testing](https://hexdocs.pm/google_api_testing).
