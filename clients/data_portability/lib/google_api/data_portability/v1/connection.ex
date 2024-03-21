@@ -27,20 +27,44 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your public YouTube videos and information about them.
       "https://www.googleapis.com/auth/dataportability.youtube.public_videos",
 
+      # Move a copy of content you marked as not interested, saved by Discover.
+      "https://www.googleapis.com/auth/dataportability.discover.not_interested",
+
+      # Move a copy of your My Ad Center activity.
+      "https://www.googleapis.com/auth/dataportability.myactivity.myadcenter",
+
       # Move a copy of extensions you installed from the Chrome Web Store.
       "https://www.googleapis.com/auth/dataportability.chrome.extensions",
+
+      # Move a copy of information about your devices with Google Play Store installed.
+      "https://www.googleapis.com/auth/dataportability.play.devices",
+
+      # Move a copy of your Google Play Store redemption activities.
+      "https://www.googleapis.com/auth/dataportability.play.redemptions",
+
+      # Move a copy of information about the movies and TV shows you marked as watched on Google Search and Google TV.
+      "https://www.googleapis.com/auth/dataportability.search_ugc.media.watched",
 
       # Move a copy of your reviews and posts on Maps.
       "https://www.googleapis.com/auth/dataportability.maps.reviews",
 
+      # Move a copy of information about your Google Play Store promotions.
+      "https://www.googleapis.com/auth/dataportability.play.promotions",
+
       # Move a copy of your Google Search activity.
       "https://www.googleapis.com/auth/dataportability.myactivity.search",
+
+      # Move a copy of your Google Play Store Grouping tags created by app developers.
+      "https://www.googleapis.com/auth/dataportability.play.grouping",
 
       # Move a copy of your shipping information on Shopping.
       "https://www.googleapis.com/auth/dataportability.shopping.addresses",
 
       # Move a copy of pages you bookmarked in Chrome.
       "https://www.googleapis.com/auth/dataportability.chrome.bookmarks",
+
+      # Move a copy of feedback you gave after completing trips using Maps directions.
+      "https://www.googleapis.com/auth/dataportability.maps.post_trip_feedback",
 
       # Move a copy of your YouTube activity.
       "https://www.googleapis.com/auth/dataportability.myactivity.youtube",
@@ -54,8 +78,26 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your YouTube posts.
       "https://www.googleapis.com/auth/dataportability.youtube.posts",
 
+      # Move a copy of information about your Google Play Store Points.
+      "https://www.googleapis.com/auth/dataportability.play.playpoints",
+
+      # Move a copy of your Google Play Store subscriptions.
+      "https://www.googleapis.com/auth/dataportability.play.subscriptions",
+
       # Move a copy of the information you entered into online forms in Chrome.
       "https://www.googleapis.com/auth/dataportability.chrome.autofill",
+
+      # Move a copy of the places you labeled on Maps.
+      "https://www.googleapis.com/auth/dataportability.maps.aliased_places",
+
+      # Move a copy of your self-reported video streaming provider preferences from Google Search and Google TV.
+      "https://www.googleapis.com/auth/dataportability.search_ugc.media.streaming_video_providers",
+
+      # Move a copy of your Google Play Store user settings and preferences.
+      "https://www.googleapis.com/auth/dataportability.play.usersettings",
+
+      # Move a copy of searches and sites you follow, saved by Discover.
+      "https://www.googleapis.com/auth/dataportability.discover.follows",
 
       # Move a copy of your unlisted YouTube playlists.
       "https://www.googleapis.com/auth/dataportability.youtube.unlisted_playlists",
@@ -66,8 +108,20 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your settings in Chrome.
       "https://www.googleapis.com/auth/dataportability.chrome.settings",
 
+      # Move a copy of the corrections you made to places or map information on Maps.
+      "https://www.googleapis.com/auth/dataportability.maps.factual_contributions",
+
+      # Move a copy of your media reviews on Google Search.
+      "https://www.googleapis.com/auth/dataportability.search_ugc.media.reviews_and_stars",
+
+      # Move a copy of your Google Play Store purchases.
+      "https://www.googleapis.com/auth/dataportability.play.purchases",
+
       # Move a copy of pages you added to your reading list in Chrome.
       "https://www.googleapis.com/auth/dataportability.chrome.reading_list",
+
+      # Move a copy of the images and videos you uploaded to Street View.
+      "https://www.googleapis.com/auth/dataportability.streetview.imagery",
 
       # Move a copy of your Starred places list on Maps.
       "https://www.googleapis.com/auth/dataportability.maps.starred_places",
@@ -75,8 +129,17 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your Maps activity.
       "https://www.googleapis.com/auth/dataportability.myactivity.maps",
 
+      # Move a copy of your Google Play Store downloads, including books, games, and apps.
+      "https://www.googleapis.com/auth/dataportability.play.library",
+
       # Move a copy of your YouTube shopping wishlists, and wishlist items.
       "https://www.googleapis.com/auth/dataportability.youtube.shopping",
+
+      # Move a copy of your indicated thumbs up and thumbs down on media in Google Search and Google TV.
+      "https://www.googleapis.com/auth/dataportability.search_ugc.media.thumbs",
+
+      # Move a copy of links to your liked documents, saved by Discover.
+      "https://www.googleapis.com/auth/dataportability.discover.likes",
 
       # Move a copy of your private YouTube videos and information about them.
       "https://www.googleapis.com/auth/dataportability.youtube.private_videos",
@@ -105,6 +168,9 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your YouTube messages in live chat.
       "https://www.googleapis.com/auth/dataportability.youtube.live_chat",
 
+      # Move a copy of your notification settings on the Google Search app.
+      "https://www.googleapis.com/auth/dataportability.searchnotifications.settings",
+
       # Move a copy of messages between you and the businesses you have conversations with across Google services.
       "https://www.googleapis.com/auth/dataportability.businessmessaging.conversations",
 
@@ -114,20 +180,41 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of information about your YouTube channel.
       "https://www.googleapis.com/auth/dataportability.youtube.channel",
 
+      # Move a copy of your notification subscriptions on Google Search app.
+      "https://www.googleapis.com/auth/dataportability.searchnotifications.subscriptions",
+
+      # Move a copy of the maps you created in My Maps.
+      "https://www.googleapis.com/auth/dataportability.mymaps.maps",
+
       # Move a copy of your YouTube private playlists.
       "https://www.googleapis.com/auth/dataportability.youtube.private_playlists",
 
       # Move a copy of your YouTube channel subscriptions, even if they're private.
       "https://www.googleapis.com/auth/dataportability.youtube.subscriptions",
 
+      # Move a copy of your Google Play Store app installations.
+      "https://www.googleapis.com/auth/dataportability.play.installs",
+
       # Move a copy of your updates to places on Maps.
       "https://www.googleapis.com/auth/dataportability.maps.offering_contributions",
+
+      # Move a copy of your food purchase and reservation activity.
+      "https://www.googleapis.com/auth/dataportability.order_reserve.purchases_reservations",
 
       # Move a copy of your public YouTube playlists.
       "https://www.googleapis.com/auth/dataportability.youtube.public_playlists",
 
+      # Move a copy of the Google Alerts subscriptions you created.
+      "https://www.googleapis.com/auth/dataportability.alerts.subscriptions",
+
       # Move a copy of reviews you wrote about products or online stores on Google Search.
       "https://www.googleapis.com/auth/dataportability.shopping.reviews",
+
+      # Move a copy of your Google Play activity.
+      "https://www.googleapis.com/auth/dataportability.myactivity.play",
+
+      # Move a copy of the questions and answers you posted on Maps.
+      "https://www.googleapis.com/auth/dataportability.maps.questions_answers",
 
       # Move a copy of words you added to Chrome's dictionary.
       "https://www.googleapis.com/auth/dataportability.chrome.dictionary"
