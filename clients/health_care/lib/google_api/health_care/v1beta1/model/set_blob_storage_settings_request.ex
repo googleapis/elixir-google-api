@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.SetBlobStorageSettingsRequest do
   ## Attributes
 
   *   `blobStorageSettings` (*type:* `GoogleApi.HealthCare.V1beta1.Model.BlobStorageSettings.t`, *default:* `nil`) - The blob storage settings to update for the specified resources. Only fields listed in `update_mask` are applied.
-  *   `filterConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t`, *default:* `nil`) - Optional. A filter configuration. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
+  *   `filterConfig` (*type:* `GoogleApi.HealthCare.V1beta1.Model.DicomFilterConfig.t`, *default:* `nil`) - Optional. A filter configuration. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
   """
 
   use GoogleApi.Gax.ModelBase

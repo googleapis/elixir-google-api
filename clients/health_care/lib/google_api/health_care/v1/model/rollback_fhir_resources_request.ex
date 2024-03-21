@@ -25,7 +25,7 @@ defmodule GoogleApi.HealthCare.V1.Model.RollbackFhirResourcesRequest do
   *   `excludeRollbacks` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies whether to exclude earlier rollbacks.
   *   `filteringFields` (*type:* `GoogleApi.HealthCare.V1.Model.RollbackFhirResourceFilteringFields.t`, *default:* `nil`) - Optional. Parameters for filtering resources
   *   `force` (*type:* `boolean()`, *default:* `nil`) - Optional. When enabled, changes will be reverted without explicit confirmation
-  *   `inputGcsObject` (*type:* `String.t`, *default:* `nil`) - Optional. GCS object containing list of {resourceType}/{resourceId} lines, identifying resources to be reverted
+  *   `inputGcsObject` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage object containing list of {resourceType}/{resourceId} lines, identifying resources to be reverted
   *   `resultGcsBucket` (*type:* `String.t`, *default:* `nil`) - Required. Bucket to deposit result
   *   `rollbackTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Time point to rollback to.
   *   `type` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If specified, revert only resources of these types

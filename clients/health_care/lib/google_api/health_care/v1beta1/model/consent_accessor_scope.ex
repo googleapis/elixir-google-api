@@ -22,8 +22,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.ConsentAccessorScope do
   ## Attributes
 
   *   `actor` (*type:* `String.t`, *default:* `nil`) - An individual, group, or access role that identifies the accessor or a characteristic of the accessor. This can be a resource ID (such as `{resourceType}/{id}`) or an external URI. This value must be present.
-  *   `environment` (*type:* `String.t`, *default:* `nil`) - An abstract identifier that describes the environment or conditions under which the accessor is acting. Can be “*” if it applies to all environments.
-  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The intent of data use. Can be “*” if it applies to all purposes.
+  *   `environment` (*type:* `String.t`, *default:* `nil`) - An abstract identifier that describes the environment or conditions under which the accessor is acting. Can be "*" if it applies to all environments.
+  *   `purpose` (*type:* `String.t`, *default:* `nil`) - The intent of data use. Can be "*" if it applies to all purposes.
   """
 
   use GoogleApi.Gax.ModelBase

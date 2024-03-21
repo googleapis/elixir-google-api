@@ -22,7 +22,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.StorageInfo do
   ## Attributes
 
   *   `blobStorageInfo` (*type:* `GoogleApi.HealthCare.V1beta1.Model.BlobStorageInfo.t`, *default:* `nil`) - Info about the data stored in blob storage for the resource.
-  *   `referencedResource` (*type:* `String.t`, *default:* `nil`) - The resource whose storage info is returned. For example, to specify the resource path of a DICOM Instance: `projects/{projectid}/datasets/{datasetid}/dicomStores/{dicom_store_id}/dicomWeb/studi/{study_uid}/series/{series_uid}/instances/{instance_uid}`
+  *   `referencedResource` (*type:* `String.t`, *default:* `nil`) - The resource whose storage info is returned. For example, to specify the resource path of a DICOM Instance: `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicom_store_id}/dicomWeb/studi/{study_uid}/series/{series_uid}/instances/{instance_uid}`
   *   `structuredStorageInfo` (*type:* `GoogleApi.HealthCare.V1beta1.Model.StructuredStorageInfo.t`, *default:* `nil`) - Info about the data stored in structured storage for the resource.
   """
 
