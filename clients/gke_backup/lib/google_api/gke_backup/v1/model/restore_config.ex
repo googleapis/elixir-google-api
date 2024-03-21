@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.RestoreConfig do
   @moduledoc """
-  Configuration of a restore. Next id: 14
+  Configuration of a restore.
 
   ## Attributes
 

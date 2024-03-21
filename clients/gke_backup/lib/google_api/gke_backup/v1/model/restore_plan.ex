@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.RestorePlan do
   @moduledoc """
-  The configuration of a potential series of Restore operations to be performed against Backups belong to a particular BackupPlan. Next id: 13
+  The configuration of a potential series of Restore operations to be performed against Backups belong to a particular BackupPlan.
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.Backup do
   @moduledoc """
-  Represents a request to perform a single point-in-time capture of some portion of the state of a GKE cluster, the record of the backup operation itself, and an anchor for the underlying artifacts that comprise the Backup (the config backup and VolumeBackups). Next id: 29
+  Represents a request to perform a single point-in-time capture of some portion of the state of a GKE cluster, the record of the backup operation itself, and an anchor for the underlying artifacts that comprise the Backup (the config backup and VolumeBackups).
 
   ## Attributes
 
