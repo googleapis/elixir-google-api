@@ -23,6 +23,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
 
   *   `azureadConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig.t`, *default:* `nil`) - AzureAD specific Configuration.
   *   `googleConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t`, *default:* `nil`) - GoogleConfig specific configuration.
+  *   `ldapConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceLdapConfig.t`, *default:* `nil`) - LDAP specific configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier for auth config.
   *   `oidcConfig` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t`, *default:* `nil`) - OIDC specific configuration.
   *   `proxy` (*type:* `String.t`, *default:* `nil`) - Proxy server address to use for auth method.
@@ -34,6 +35,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
   @type t :: %__MODULE__{
           :azureadConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig.t() | nil,
           :googleConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig.t() | nil,
+          :ldapConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceLdapConfig.t() | nil,
           :name => String.t() | nil,
           :oidcConfig => GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig.t() | nil,
           :proxy => String.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod do
 
   field(:azureadConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceAzureADConfig)
   field(:googleConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceGoogleConfig)
+  field(:ldapConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceLdapConfig)
   field(:name)
   field(:oidcConfig, as: GoogleApi.GKEHub.V1.Model.IdentityServiceOidcConfig)
   field(:proxy)
