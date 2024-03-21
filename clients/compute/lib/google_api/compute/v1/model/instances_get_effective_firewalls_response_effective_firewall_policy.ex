@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the firewall policy.
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - The rules that apply to the network.
   *   `shortName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The short name of the firewall policy.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
   """
 
   use GoogleApi.Gax.ModelBase
