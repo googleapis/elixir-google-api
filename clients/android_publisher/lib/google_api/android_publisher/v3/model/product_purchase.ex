@@ -34,6 +34,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The purchase token generated to identify this purchase. May not be present.
   *   `purchaseType` (*type:* `integer()`, *default:* `nil`) - The type of purchase of the inapp product. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are: 0. Test (i.e. purchased from a license testing account) 1. Promo (i.e. purchased using a promo code) 2. Rewarded (i.e. from watching a video ad instead of paying)
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - The quantity associated with the purchase of the inapp product. If not present, the quantity is 1.
+  *   `refundableQuantity` (*type:* `integer()`, *default:* `nil`) - The quantity eligible for refund, i.e. quantity that hasn't been refunded. The value reflects quantity-based partial refunds and full refunds.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - ISO 3166-1 alpha-2 billing region code of the user at the time the product was granted.
   """
 
@@ -53,6 +54,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
           :purchaseToken => String.t() | nil,
           :purchaseType => integer() | nil,
           :quantity => integer() | nil,
+          :refundableQuantity => integer() | nil,
           :regionCode => String.t() | nil
         }
 
@@ -69,6 +71,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ProductPurchase do
   field(:purchaseToken)
   field(:purchaseType)
   field(:quantity)
+  field(:refundableQuantity)
   field(:regionCode)
 end
 
