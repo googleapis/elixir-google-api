@@ -6960,7 +6960,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -7399,7 +7399,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
@@ -7583,7 +7583,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource for which the storage info is requested (for exaxmple for a DICOM Instance: `projects/{projectid}/datasets/{datasetid}/dicomStores/{dicomStoreId}/dicomWeb/studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`)
+  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource for which the storage info is requested (for exaxmple for a DICOM Instance: `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreId}/dicomWeb/studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`)
   *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
   *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
