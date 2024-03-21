@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.VolumeBackup do
   @moduledoc """
-  Represents the backup of a specific persistent volume as a component of a Backup - both the record of the operation and a pointer to the underlying storage-specific artifacts. Next id: 14
+  Represents the backup of a specific persistent volume as a component of a Backup - both the record of the operation and a pointer to the underlying storage-specific artifacts.
 
   ## Attributes
 

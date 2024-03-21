@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEBackup.V1.Model.VolumeRestore do
   @moduledoc """
-  Represents the operation of restoring a volume from a VolumeBackup. Next id: 13
+  Represents the operation of restoring a volume from a VolumeBackup.
 
   ## Attributes
 
