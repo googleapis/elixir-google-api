@@ -23,6 +23,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
 
   *   `autoRecalc` (*type:* `String.t`, *default:* `nil`) - The amount of time to wait before volatile functions are recalculated.
   *   `defaultFormat` (*type:* `GoogleApi.Sheets.V4.Model.CellFormat.t`, *default:* `nil`) - The default format of all cells in the spreadsheet. CellData.effectiveFormat will not be set if the cell's format is equal to this default format. This field is read-only.
+  *   `importFunctionsExternalUrlAccessAllowed` (*type:* `boolean()`, *default:* `nil`) - Whether to allow external url access for image and import functions. Read only when true. When false, you can set to true.
   *   `iterativeCalculationSettings` (*type:* `GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t`, *default:* `nil`) - Determines whether and how circular references are resolved with iterative calculation. Absence of this field means that circular references result in calculation errors.
   *   `locale` (*type:* `String.t`, *default:* `nil`) - The locale of the spreadsheet in one of the following formats: * an ISO 639-1 language code such as `en` * an ISO 639-2 language code such as `fil`, if no 639-1 code exists * a combination of the ISO language code and country code, such as `en_US` Note: when updating this field, not all locales/languages are supported.
   *   `spreadsheetTheme` (*type:* `GoogleApi.Sheets.V4.Model.SpreadsheetTheme.t`, *default:* `nil`) - Theme applied to the spreadsheet.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
   @type t :: %__MODULE__{
           :autoRecalc => String.t() | nil,
           :defaultFormat => GoogleApi.Sheets.V4.Model.CellFormat.t() | nil,
+          :importFunctionsExternalUrlAccessAllowed => boolean() | nil,
           :iterativeCalculationSettings =>
             GoogleApi.Sheets.V4.Model.IterativeCalculationSettings.t() | nil,
           :locale => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.Sheets.V4.Model.SpreadsheetProperties do
 
   field(:autoRecalc)
   field(:defaultFormat, as: GoogleApi.Sheets.V4.Model.CellFormat)
+  field(:importFunctionsExternalUrlAccessAllowed)
   field(:iterativeCalculationSettings, as: GoogleApi.Sheets.V4.Model.IterativeCalculationSettings)
   field(:locale)
   field(:spreadsheetTheme, as: GoogleApi.Sheets.V4.Model.SpreadsheetTheme)
