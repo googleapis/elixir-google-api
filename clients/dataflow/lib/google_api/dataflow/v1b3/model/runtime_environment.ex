@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataflow.V1b3.Model.RuntimeEnvironment do
   @moduledoc """
-  The environment values to set at runtime.
+  The environment values to set at runtime. LINT.IfChange
 
   ## Attributes
 
