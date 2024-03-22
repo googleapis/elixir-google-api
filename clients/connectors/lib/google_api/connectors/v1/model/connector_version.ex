@@ -22,6 +22,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   ## Attributes
 
   *   `authConfigTemplates` (*type:* `list(GoogleApi.Connectors.V1.Model.AuthConfigTemplate.t)`, *default:* `nil`) - Output only. List of auth configs supported by the Connector Version.
+  *   `authOverrideEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Flag to mark the dynamic auth override.
   *   `configVariableTemplates` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t)`, *default:* `nil`) - Output only. List of config variables needed to create a connection.
   *   `connectorInfraConfig` (*type:* `GoogleApi.Connectors.V1.Model.ConnectorInfraConfig.t`, *default:* `nil`) - Output only. Infra configs supported by Connector.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   *   `releaseVersion` (*type:* `String.t`, *default:* `nil`) - Output only. ReleaseVersion of the connector, for example: "1.0.1-alpha".
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Output only. Role grant configuration for this config variable. It will be DEPRECATED soon.
   *   `roleGrants` (*type:* `list(GoogleApi.Connectors.V1.Model.RoleGrant.t)`, *default:* `nil`) - Output only. Role grant configurations for this connector version.
+  *   `schemaRefreshConfig` (*type:* `GoogleApi.Connectors.V1.Model.SchemaRefreshConfig.t`, *default:* `nil`) - Connection Schema Refresh Config
   *   `sslConfigTemplate` (*type:* `GoogleApi.Connectors.V1.Model.SslConfigTemplate.t`, *default:* `nil`) - Output only. Ssl configuration supported by the Connector.
   *   `supportedRuntimeFeatures` (*type:* `GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures.t`, *default:* `nil`) - Output only. Information about the runtime features supported by the Connector.
   *   `unsupportedConnectionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Unsupported connection types.
@@ -46,6 +48,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   @type t :: %__MODULE__{
           :authConfigTemplates =>
             list(GoogleApi.Connectors.V1.Model.AuthConfigTemplate.t()) | nil,
+          :authOverrideEnabled => boolean() | nil,
           :configVariableTemplates =>
             list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t()) | nil,
           :connectorInfraConfig => GoogleApi.Connectors.V1.Model.ConnectorInfraConfig.t() | nil,
@@ -62,6 +65,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
           :releaseVersion => String.t() | nil,
           :roleGrant => GoogleApi.Connectors.V1.Model.RoleGrant.t() | nil,
           :roleGrants => list(GoogleApi.Connectors.V1.Model.RoleGrant.t()) | nil,
+          :schemaRefreshConfig => GoogleApi.Connectors.V1.Model.SchemaRefreshConfig.t() | nil,
           :sslConfigTemplate => GoogleApi.Connectors.V1.Model.SslConfigTemplate.t() | nil,
           :supportedRuntimeFeatures =>
             GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures.t() | nil,
@@ -70,6 +74,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
         }
 
   field(:authConfigTemplates, as: GoogleApi.Connectors.V1.Model.AuthConfigTemplate, type: :list)
+  field(:authOverrideEnabled)
 
   field(:configVariableTemplates,
     as: GoogleApi.Connectors.V1.Model.ConfigVariableTemplate,
@@ -93,6 +98,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   field(:releaseVersion)
   field(:roleGrant, as: GoogleApi.Connectors.V1.Model.RoleGrant)
   field(:roleGrants, as: GoogleApi.Connectors.V1.Model.RoleGrant, type: :list)
+  field(:schemaRefreshConfig, as: GoogleApi.Connectors.V1.Model.SchemaRefreshConfig)
   field(:sslConfigTemplate, as: GoogleApi.Connectors.V1.Model.SslConfigTemplate)
   field(:supportedRuntimeFeatures, as: GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures)
   field(:unsupportedConnectionTypes, type: :list)

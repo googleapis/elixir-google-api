@@ -20,7 +20,7 @@ defmodule GoogleApi.Connectors.V1 do
   API client metadata for GoogleApi.Connectors.V1.
   """
 
-  @discovery_revision "20240305"
+  @discovery_revision "20240319"
 
   def discovery_revision(), do: @discovery_revision
 end
