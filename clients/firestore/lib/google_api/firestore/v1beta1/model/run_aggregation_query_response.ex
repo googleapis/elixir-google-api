@@ -21,6 +21,7 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RunAggregationQueryResponse do
 
   ## Attributes
 
+  *   `explainMetrics` (*type:* `GoogleApi.Firestore.V1beta1.Model.ExplainMetrics.t`, *default:* `nil`) - Query explain metrics. This is only present when the RunAggregationQueryRequest.explain_options is provided, and it is sent only once with the last response in the stream.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the aggregate result was computed. This is always monotonically increasing; in this case, the previous AggregationResult in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `result` will be sent, and this represents the time at which the query was run.
   *   `result` (*type:* `GoogleApi.Firestore.V1beta1.Model.AggregationResult.t`, *default:* `nil`) - A single aggregation result. Not present when reporting partial progress.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The transaction that was started as part of this request. Only present on the first response when the request requested to start a new transaction.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Firestore.V1beta1.Model.RunAggregationQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :explainMetrics => GoogleApi.Firestore.V1beta1.Model.ExplainMetrics.t() | nil,
           :readTime => DateTime.t() | nil,
           :result => GoogleApi.Firestore.V1beta1.Model.AggregationResult.t() | nil,
           :transaction => String.t() | nil
         }
 
+  field(:explainMetrics, as: GoogleApi.Firestore.V1beta1.Model.ExplainMetrics)
   field(:readTime, as: DateTime)
   field(:result, as: GoogleApi.Firestore.V1beta1.Model.AggregationResult)
   field(:transaction)

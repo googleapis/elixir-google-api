@@ -21,6 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryRequest do
 
   ## Attributes
 
+  *   `explainOptions` (*type:* `GoogleApi.Firestore.V1.Model.ExplainOptions.t`, *default:* `nil`) - Optional. Explain options for the query. If set, additional query statistics will be returned. If not, only query results will be returned.
   *   `newTransaction` (*type:* `GoogleApi.Firestore.V1.Model.TransactionOptions.t`, *default:* `nil`) - Starts a new transaction and reads the documents. Defaults to a read-only transaction. The new transaction ID will be returned as the first response in the stream.
   *   `readTime` (*type:* `DateTime.t`, *default:* `nil`) - Reads documents as they were at the given time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
   *   `structuredQuery` (*type:* `GoogleApi.Firestore.V1.Model.StructuredQuery.t`, *default:* `nil`) - A structured query.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Firestore.V1.Model.RunQueryRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :explainOptions => GoogleApi.Firestore.V1.Model.ExplainOptions.t() | nil,
           :newTransaction => GoogleApi.Firestore.V1.Model.TransactionOptions.t() | nil,
           :readTime => DateTime.t() | nil,
           :structuredQuery => GoogleApi.Firestore.V1.Model.StructuredQuery.t() | nil,
           :transaction => String.t() | nil
         }
 
+  field(:explainOptions, as: GoogleApi.Firestore.V1.Model.ExplainOptions)
   field(:newTransaction, as: GoogleApi.Firestore.V1.Model.TransactionOptions)
   field(:readTime, as: DateTime)
   field(:structuredQuery, as: GoogleApi.Firestore.V1.Model.StructuredQuery)
