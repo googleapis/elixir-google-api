@@ -21,7 +21,7 @@ defmodule GoogleApi.Composer.V1.Model.DataRetentionConfig do
 
   ## Attributes
 
-  *   `airflowMetadataRetentionConfig` (*type:* `GoogleApi.Composer.V1.Model.AirflowMetadataRetentionPolicyConfig.t`, *default:* `nil`) - Optional. The retention policy for airflow metadata database. Details: go/composer-database-retention-2
+  *   `airflowMetadataRetentionConfig` (*type:* `GoogleApi.Composer.V1.Model.AirflowMetadataRetentionPolicyConfig.t`, *default:* `nil`) - Optional. The retention policy for airflow metadata database.
   *   `taskLogsRetentionConfig` (*type:* `GoogleApi.Composer.V1.Model.TaskLogsRetentionConfig.t`, *default:* `nil`) - Optional. The configuration settings for task logs retention
   """
 
