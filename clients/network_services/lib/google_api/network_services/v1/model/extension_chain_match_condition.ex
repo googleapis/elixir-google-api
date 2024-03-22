@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.ExtensionChainMatchCondition do
 
   ## Attributes
 
-  *   `celExpression` (*type:* `String.t`, *default:* `nil`) - Required. A Common Expression Language (CEL) expression that is used to match requests for which the extension chain is executed. For more information, see [CEL matcher language reference](/service-extensions/docs/cel-matcher-language-reference).
+  *   `celExpression` (*type:* `String.t`, *default:* `nil`) - Required. A Common Expression Language (CEL) expression that is used to match requests for which the extension chain is executed. For more information, see [CEL matcher language reference](https://cloud.google.com/service-extensions/docs/cel-matcher-language-reference).
   """
 
   use GoogleApi.Gax.ModelBase
