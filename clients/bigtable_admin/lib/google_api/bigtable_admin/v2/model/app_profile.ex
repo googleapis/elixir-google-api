@@ -21,6 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
 
   ## Attributes
 
+  *   `dataBoostIsolationReadOnly` (*type:* `GoogleApi.BigtableAdmin.V2.Model.DataBoostIsolationReadOnly.t`, *default:* `nil`) - Specifies that this app profile is intended for read-only usage via the Data Boost feature.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Long form description of the use case for this AppProfile.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Strongly validated etag for optimistic concurrency control. Preserve the value returned from `GetAppProfile` when calling `UpdateAppProfile` to fail the request if there has been a modification in the mean time. The `update_mask` of the request need not include `etag` for this protection to apply. See [Wikipedia](https://en.wikipedia.org/wiki/HTTP_ETag) and [RFC 7232](https://tools.ietf.org/html/rfc7232#section-2.3) for more details.
   *   `multiClusterRoutingUseAny` (*type:* `GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny.t`, *default:* `nil`) - Use a multi-cluster routing policy.
@@ -33,6 +34,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataBoostIsolationReadOnly =>
+            GoogleApi.BigtableAdmin.V2.Model.DataBoostIsolationReadOnly.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
           :multiClusterRoutingUseAny =>
@@ -43,6 +46,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.AppProfile do
             GoogleApi.BigtableAdmin.V2.Model.SingleClusterRouting.t() | nil,
           :standardIsolation => GoogleApi.BigtableAdmin.V2.Model.StandardIsolation.t() | nil
         }
+
+  field(:dataBoostIsolationReadOnly,
+    as: GoogleApi.BigtableAdmin.V2.Model.DataBoostIsolationReadOnly
+  )
 
   field(:description)
   field(:etag)

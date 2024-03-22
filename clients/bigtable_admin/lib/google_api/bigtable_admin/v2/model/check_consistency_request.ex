@@ -22,15 +22,23 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyRequest do
   ## Attributes
 
   *   `consistencyToken` (*type:* `String.t`, *default:* `nil`) - Required. The token created using GenerateConsistencyToken for the Table.
+  *   `dataBoostReadLocalWrites` (*type:* `GoogleApi.BigtableAdmin.V2.Model.DataBoostReadLocalWrites.t`, *default:* `nil`) - Checks that reads using an app profile with `DataBoostIsolationReadOnly` can see all writes committed before the token was created, but only if the read and write target the same cluster.
+  *   `standardReadRemoteWrites` (*type:* `GoogleApi.BigtableAdmin.V2.Model.StandardReadRemoteWrites.t`, *default:* `nil`) - Checks that reads using an app profile with `StandardIsolation` can see all writes committed before the token was created, even if the read and write target different clusters.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :consistencyToken => String.t() | nil
+          :consistencyToken => String.t() | nil,
+          :dataBoostReadLocalWrites =>
+            GoogleApi.BigtableAdmin.V2.Model.DataBoostReadLocalWrites.t() | nil,
+          :standardReadRemoteWrites =>
+            GoogleApi.BigtableAdmin.V2.Model.StandardReadRemoteWrites.t() | nil
         }
 
   field(:consistencyToken)
+  field(:dataBoostReadLocalWrites, as: GoogleApi.BigtableAdmin.V2.Model.DataBoostReadLocalWrites)
+  field(:standardReadRemoteWrites, as: GoogleApi.BigtableAdmin.V2.Model.StandardReadRemoteWrites)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.CheckConsistencyRequest do
