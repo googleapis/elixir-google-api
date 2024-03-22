@@ -638,7 +638,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Firestore.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of backup schedule. Format `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
+  *   `name` (*type:* `String.t`) - Required. The name of the backup schedule. Format `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
