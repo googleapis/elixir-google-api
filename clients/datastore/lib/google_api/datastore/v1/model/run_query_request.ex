@@ -22,8 +22,10 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryRequest do
   ## Attributes
 
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
+  *   `explainOptions` (*type:* `GoogleApi.Datastore.V1.Model.ExplainOptions.t`, *default:* `nil`) - Optional. Explain options for the query. If set, additional query statistics will be returned. If not, only query results will be returned.
   *   `gqlQuery` (*type:* `GoogleApi.Datastore.V1.Model.GqlQuery.t`, *default:* `nil`) - The GQL query to run. This query must be a non-aggregation query.
   *   `partitionId` (*type:* `GoogleApi.Datastore.V1.Model.PartitionId.t`, *default:* `nil`) - Entities are partitioned into subsets, identified by a partition ID. Queries are scoped to a single partition. This partition ID is normalized with the standard default context partition ID.
+  *   `propertyMask` (*type:* `GoogleApi.Datastore.V1.Model.PropertyMask.t`, *default:* `nil`) - The properties to return. This field must not be set for a projection query. See LookupRequest.property_mask.
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.Query.t`, *default:* `nil`) - The query to run.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this query.
   """
@@ -32,15 +34,19 @@ defmodule GoogleApi.Datastore.V1.Model.RunQueryRequest do
 
   @type t :: %__MODULE__{
           :databaseId => String.t() | nil,
+          :explainOptions => GoogleApi.Datastore.V1.Model.ExplainOptions.t() | nil,
           :gqlQuery => GoogleApi.Datastore.V1.Model.GqlQuery.t() | nil,
           :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t() | nil,
+          :propertyMask => GoogleApi.Datastore.V1.Model.PropertyMask.t() | nil,
           :query => GoogleApi.Datastore.V1.Model.Query.t() | nil,
           :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
         }
 
   field(:databaseId)
+  field(:explainOptions, as: GoogleApi.Datastore.V1.Model.ExplainOptions)
   field(:gqlQuery, as: GoogleApi.Datastore.V1.Model.GqlQuery)
   field(:partitionId, as: GoogleApi.Datastore.V1.Model.PartitionId)
+  field(:propertyMask, as: GoogleApi.Datastore.V1.Model.PropertyMask)
   field(:query, as: GoogleApi.Datastore.V1.Model.Query)
   field(:readOptions, as: GoogleApi.Datastore.V1.Model.ReadOptions)
 end

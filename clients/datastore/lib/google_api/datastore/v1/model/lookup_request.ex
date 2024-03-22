@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
 
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
   *   `keys` (*type:* `list(GoogleApi.Datastore.V1.Model.Key.t)`, *default:* `nil`) - Required. Keys of entities to look up.
+  *   `propertyMask` (*type:* `GoogleApi.Datastore.V1.Model.PropertyMask.t`, *default:* `nil`) - The properties to return. Defaults to returning all properties. If this field is set and an entity has a property not referenced in the mask, it will be absent from LookupResponse.found.entity.properties. The entity's key is always returned.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this lookup request.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Datastore.V1.Model.LookupRequest do
   @type t :: %__MODULE__{
           :databaseId => String.t() | nil,
           :keys => list(GoogleApi.Datastore.V1.Model.Key.t()) | nil,
+          :propertyMask => GoogleApi.Datastore.V1.Model.PropertyMask.t() | nil,
           :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
         }
 
   field(:databaseId)
   field(:keys, as: GoogleApi.Datastore.V1.Model.Key, type: :list)
+  field(:propertyMask, as: GoogleApi.Datastore.V1.Model.PropertyMask)
   field(:readOptions, as: GoogleApi.Datastore.V1.Model.ReadOptions)
 end
 
