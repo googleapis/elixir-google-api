@@ -2,7 +2,7 @@
 
 Batch API client library.
 
-An API to manage the running of batch resources on Google Cloud Platform.
+An API to manage the running of Batch resources on Google Cloud Platform.
 
 ## Installation
 

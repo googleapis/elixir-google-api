@@ -22,7 +22,7 @@ defmodule GoogleApi.Batch.V1.Model.AgentTaskSpec do
   ## Attributes
 
   *   `environment` (*type:* `GoogleApi.Batch.V1.Model.AgentEnvironment.t`, *default:* `nil`) - Environment variables to set before running the Task.
-  *   `maxRunDuration` (*type:* `String.t`, *default:* `nil`) - Maximum duration the task should run. The task will be killed and marked as FAILED if over this limit.
+  *   `maxRunDuration` (*type:* `String.t`, *default:* `nil`) - Maximum duration the task should run. The task will be killed and marked as FAILED if over this limit. The valid value range for max_run_duration in seconds is [0, 315576000000.999999999],
   *   `runnables` (*type:* `list(GoogleApi.Batch.V1.Model.AgentTaskRunnable.t)`, *default:* `nil`) - AgentTaskRunnable is runanbles that will be executed on the agent.
   *   `userAccount` (*type:* `GoogleApi.Batch.V1.Model.AgentTaskUserAccount.t`, *default:* `nil`) - User account on the VM to run the runnables in the agentTaskSpec. If not set, the runnable will be run under root user.
   """

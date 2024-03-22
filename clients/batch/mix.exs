@@ -18,7 +18,7 @@
 defmodule GoogleApi.Batch.Mixfile do
   use Mix.Project
 
-  @version "0.2.0"
+  @version "0.2.1"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.Batch.Mixfile do
 
   defp description() do
     """
-    Batch API client library. An API to manage the running of batch resources on Google Cloud Platform.
+    Batch API client library. An API to manage the running of Batch resources on Google Cloud Platform.
     """
   end
 
