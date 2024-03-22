@@ -23,6 +23,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryRequest do
 
   *   `aggregationQuery` (*type:* `GoogleApi.Datastore.V1.Model.AggregationQuery.t`, *default:* `nil`) - The query to run.
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - The ID of the database against which to make the request. '(default)' is not allowed; please use empty string '' to refer the default database.
+  *   `explainOptions` (*type:* `GoogleApi.Datastore.V1.Model.ExplainOptions.t`, *default:* `nil`) - Optional. Explain options for the query. If set, additional query statistics will be returned. If not, only query results will be returned.
   *   `gqlQuery` (*type:* `GoogleApi.Datastore.V1.Model.GqlQuery.t`, *default:* `nil`) - The GQL query to run. This query must be an aggregation query.
   *   `partitionId` (*type:* `GoogleApi.Datastore.V1.Model.PartitionId.t`, *default:* `nil`) - Entities are partitioned into subsets, identified by a partition ID. Queries are scoped to a single partition. This partition ID is normalized with the standard default context partition ID.
   *   `readOptions` (*type:* `GoogleApi.Datastore.V1.Model.ReadOptions.t`, *default:* `nil`) - The options for this query.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryRequest do
   @type t :: %__MODULE__{
           :aggregationQuery => GoogleApi.Datastore.V1.Model.AggregationQuery.t() | nil,
           :databaseId => String.t() | nil,
+          :explainOptions => GoogleApi.Datastore.V1.Model.ExplainOptions.t() | nil,
           :gqlQuery => GoogleApi.Datastore.V1.Model.GqlQuery.t() | nil,
           :partitionId => GoogleApi.Datastore.V1.Model.PartitionId.t() | nil,
           :readOptions => GoogleApi.Datastore.V1.Model.ReadOptions.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryRequest do
 
   field(:aggregationQuery, as: GoogleApi.Datastore.V1.Model.AggregationQuery)
   field(:databaseId)
+  field(:explainOptions, as: GoogleApi.Datastore.V1.Model.ExplainOptions)
   field(:gqlQuery, as: GoogleApi.Datastore.V1.Model.GqlQuery)
   field(:partitionId, as: GoogleApi.Datastore.V1.Model.PartitionId)
   field(:readOptions, as: GoogleApi.Datastore.V1.Model.ReadOptions)

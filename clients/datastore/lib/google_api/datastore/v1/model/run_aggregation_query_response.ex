@@ -22,6 +22,7 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryResponse do
   ## Attributes
 
   *   `batch` (*type:* `GoogleApi.Datastore.V1.Model.AggregationResultBatch.t`, *default:* `nil`) - A batch of aggregation results. Always present.
+  *   `explainMetrics` (*type:* `GoogleApi.Datastore.V1.Model.ExplainMetrics.t`, *default:* `nil`) - Query explain metrics. This is only present when the RunAggregationQueryRequest.explain_options is provided, and it is sent only once with the last response in the stream.
   *   `query` (*type:* `GoogleApi.Datastore.V1.Model.AggregationQuery.t`, *default:* `nil`) - The parsed form of the `GqlQuery` from the request, if it was set.
   *   `transaction` (*type:* `String.t`, *default:* `nil`) - The identifier of the transaction that was started as part of this RunAggregationQuery request. Set only when ReadOptions.new_transaction was set in RunAggregationQueryRequest.read_options.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Datastore.V1.Model.RunAggregationQueryResponse do
 
   @type t :: %__MODULE__{
           :batch => GoogleApi.Datastore.V1.Model.AggregationResultBatch.t() | nil,
+          :explainMetrics => GoogleApi.Datastore.V1.Model.ExplainMetrics.t() | nil,
           :query => GoogleApi.Datastore.V1.Model.AggregationQuery.t() | nil,
           :transaction => String.t() | nil
         }
 
   field(:batch, as: GoogleApi.Datastore.V1.Model.AggregationResultBatch)
+  field(:explainMetrics, as: GoogleApi.Datastore.V1.Model.ExplainMetrics)
   field(:query, as: GoogleApi.Datastore.V1.Model.AggregationQuery)
   field(:transaction)
 end
