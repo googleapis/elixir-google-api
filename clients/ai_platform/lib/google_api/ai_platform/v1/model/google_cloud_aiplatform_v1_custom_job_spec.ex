@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
   *   `experimentRun` (*type:* `String.t`, *default:* `nil`) - Optional. The Experiment Run associated with this job. Format: `projects/{project}/locations/{location}/metadataStores/{metadataStores}/contexts/{experiment-name}-{experiment-run-name}`
   *   `models` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of the Model resources for which to generate a mapping to artifact URIs. Applicable only to some of the Google-provided custom jobs. Format: `projects/{project}/locations/{location}/models/{model}` In order to retrieve a specific version of the model, also provide the version ID or version alias. Example: `projects/{project}/locations/{location}/models/{model}@2` or `projects/{project}/locations/{location}/models/{model}@golden` If no version ID or alias is specified, the "default" version will be returned. The "default" version alias is created for the first version of the model, and can be moved to other versions later on. There will be exactly one default version.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the Job should be peered. For example, `projects/12345/global/networks/myVPC`. [Format](/compute/docs/reference/rest/v1/networks/insert) is of the form `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in `12345`, and {network} is a network name. To specify this field, you must have already [configured VPC Network Peering for Vertex AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering). If this field is left unspecified, the job is not peered with any network.
+  *   `persistentResourceId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the PersistentResource in the same Project and Location which to run If this is specified, the job will be run on existing machines held by the PersistentResource instead of on-demand short-live machines. The network and CMEK configs on the job should be consistent with those on the PersistentResource, otherwise, the job will be rejected.
   *   `protectedArtifactLocationId` (*type:* `String.t`, *default:* `nil`) - The ID of the location to store protected artifacts. e.g. us-central1. Populate only when the location is different than CustomJob location. List of supported locations: https://cloud.google.com/vertex-ai/docs/general/locations
   *   `reservedIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of names for the reserved ip ranges under the VPC network that can be used for this job. If set, we will deploy the job within the provided ip ranges. Otherwise, the job will be deployed to any ip ranges under the provided VPC network. Example: ['vertex-ai-ip-range'].
   *   `scheduling` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling.t`, *default:* `nil`) - Scheduling options for a CustomJob.
@@ -47,6 +48,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
           :experimentRun => String.t() | nil,
           :models => list(String.t()) | nil,
           :network => String.t() | nil,
+          :persistentResourceId => String.t() | nil,
           :protectedArtifactLocationId => String.t() | nil,
           :reservedIpRanges => list(String.t()) | nil,
           :scheduling =>
@@ -67,6 +69,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec do
   field(:experimentRun)
   field(:models, type: :list)
   field(:network)
+  field(:persistentResourceId)
   field(:protectedArtifactLocationId)
   field(:reservedIpRanges, type: :list)
   field(:scheduling, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Scheduling)

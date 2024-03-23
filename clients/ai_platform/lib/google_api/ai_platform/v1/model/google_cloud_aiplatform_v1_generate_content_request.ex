@@ -24,7 +24,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Required. The content of the current conversation with the model. For single-turn queries, this is a single instance. For multi-turn queries, this is a repeated field that contains conversation history + latest request.
   *   `generationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t`, *default:* `nil`) - Optional. Generation config.
   *   `safetySettings` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t)`, *default:* `nil`) - Optional. Per request settings for blocking unsafe content. Enforced on GenerateContentResponse.candidates.
-  *   `systemInstructions` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Optional. The user provided system instructions for the model.
   *   `tools` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t)`, *default:* `nil`) - Optional. A list of `Tools` the model may use to generate the next response. A `Tool` is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model.
   """
 
@@ -37,8 +36,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t() | nil,
           :safetySettings =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t()) | nil,
-          :systemInstructions =>
-            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
           :tools => list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t()) | nil
         }
 
@@ -50,11 +47,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
 
   field(:safetySettings,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting,
-    type: :list
-  )
-
-  field(:systemInstructions,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content,
     type: :list
   )
 

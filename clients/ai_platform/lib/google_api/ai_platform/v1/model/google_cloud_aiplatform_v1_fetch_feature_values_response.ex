@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FetchFeatureValue
 
   ## Attributes
 
+  *   `dataKey` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewDataKey.t`, *default:* `nil`) - The data key associated with this response. Will only be populated for FeatureOnlineStoreService.StreamingFetchFeatureValues RPCs.
   *   `keyValues` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList.t`, *default:* `nil`) - Feature values in KeyValue format.
   *   `protoStruct` (*type:* `map()`, *default:* `nil`) - Feature values in proto Struct format.
   """
@@ -28,11 +29,15 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FetchFeatureValue
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataKey =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewDataKey.t() | nil,
           :keyValues =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FetchFeatureValuesResponseFeatureNameValuePairList.t()
             | nil,
           :protoStruct => map() | nil
         }
+
+  field(:dataKey, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewDataKey)
 
   field(:keyValues,
     as:
