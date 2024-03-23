@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlInstancesVerifyExternalSyncSettingsRequ
 
   ## Attributes
 
+  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType decides if the migration is a physical file based migration or logical migration
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.MySqlSyncConfig.t`, *default:* `nil`) - Optional. MySQL-specific settings for start external sync.
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode
   *   `syncParallelLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Parallel level for initial data sync. Currently only applicable for PostgreSQL.
@@ -31,6 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlInstancesVerifyExternalSyncSettingsRequ
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :migrationType => String.t() | nil,
           :mysqlSyncConfig => GoogleApi.SQLAdmin.V1.Model.MySqlSyncConfig.t() | nil,
           :syncMode => String.t() | nil,
           :syncParallelLevel => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlInstancesVerifyExternalSyncSettingsRequ
           :verifyReplicationOnly => boolean() | nil
         }
 
+  field(:migrationType)
   field(:mysqlSyncConfig, as: GoogleApi.SQLAdmin.V1.Model.MySqlSyncConfig)
   field(:syncMode)
   field(:syncParallelLevel)
