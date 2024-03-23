@@ -21,6 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest 
 
   ## Attributes
 
+  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType decides if the migration is a physical file based migration or logical migration.
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t`, *default:* `nil`) - MySQL-specific settings for start external sync.
   *   `skipVerification` (*type:* `boolean()`, *default:* `nil`) - Whether to skip the verification step (VESS).
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode.
@@ -30,12 +31,14 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :migrationType => String.t() | nil,
           :mysqlSyncConfig => GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t() | nil,
           :skipVerification => boolean() | nil,
           :syncMode => String.t() | nil,
           :syncParallelLevel => String.t() | nil
         }
 
+  field(:migrationType)
   field(:mysqlSyncConfig, as: GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig)
   field(:skipVerification)
   field(:syncMode)
