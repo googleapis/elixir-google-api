@@ -21,26 +21,47 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
 
   ## Attributes
 
+  *   `default` (*type:* `any()`, *default:* `nil`) - Optional. Default value of the data.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the data.
   *   `enum` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Possible values of the element of Type.STRING with enum format. For example we can define an Enum Direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
   *   `example` (*type:* `any()`, *default:* `nil`) - Optional. Example of the object. Will only populated when the object is the root.
-  *   `format` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the data. Supported formats: for NUMBER type: float, double for INTEGER type: int32, int64
-  *   `items` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. Schema of the elements of Type.ARRAY.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - Optional. The format of the data. Supported formats: for NUMBER type: "float", "double" for INTEGER type: "int32", "int64" for STRING type: "email", "byte", etc
+  *   `items` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE ARRAY Schema of the elements of Type.ARRAY.
+  *   `maxItems` (*type:* `String.t`, *default:* `nil`) - Optional. Maximum number of the elements for Type.ARRAY.
+  *   `maxLength` (*type:* `String.t`, *default:* `nil`) - Optional. Maximum length of the Type.STRING
+  *   `maxProperties` (*type:* `String.t`, *default:* `nil`) - Optional. Maximum number of the properties for Type.OBJECT.
+  *   `maximum` (*type:* `float()`, *default:* `nil`) - Optional. Maximum value of the Type.INTEGER and Type.NUMBER
+  *   `minItems` (*type:* `String.t`, *default:* `nil`) - Optional. Minimum number of the elements for Type.ARRAY.
+  *   `minLength` (*type:* `String.t`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE STRING Minimum length of the Type.STRING
+  *   `minProperties` (*type:* `String.t`, *default:* `nil`) - Optional. Minimum number of the properties for Type.OBJECT.
+  *   `minimum` (*type:* `float()`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE INTEGER and NUMBER Minimum value of the Type.INTEGER and Type.NUMBER
   *   `nullable` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the value may be null.
-  *   `properties` (*type:* `%{optional(String.t) => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t}`, *default:* `nil`) - Optional. Properties of Type.OBJECT.
+  *   `pattern` (*type:* `String.t`, *default:* `nil`) - Optional. Pattern of the Type.STRING to restrict a string to a regular expression.
+  *   `properties` (*type:* `%{optional(String.t) => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t}`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE OBJECT Properties of Type.OBJECT.
   *   `required` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Required properties of Type.OBJECT.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. The title of the Schema.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the data.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :default => any() | nil,
           :description => String.t() | nil,
           :enum => list(String.t()) | nil,
           :example => any() | nil,
           :format => String.t() | nil,
           :items => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t() | nil,
+          :maxItems => String.t() | nil,
+          :maxLength => String.t() | nil,
+          :maxProperties => String.t() | nil,
+          :maximum => float() | nil,
+          :minItems => String.t() | nil,
+          :minLength => String.t() | nil,
+          :minProperties => String.t() | nil,
+          :minimum => float() | nil,
           :nullable => boolean() | nil,
+          :pattern => String.t() | nil,
           :properties =>
             %{
               optional(String.t()) =>
@@ -48,17 +69,29 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
             }
             | nil,
           :required => list(String.t()) | nil,
+          :title => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:default)
   field(:description)
   field(:enum, type: :list)
   field(:example)
   field(:format)
   field(:items, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema)
+  field(:maxItems)
+  field(:maxLength)
+  field(:maxProperties)
+  field(:maximum)
+  field(:minItems)
+  field(:minLength)
+  field(:minProperties)
+  field(:minimum)
   field(:nullable)
+  field(:pattern)
   field(:properties, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema, type: :map)
   field(:required, type: :list)
+  field(:title)
   field(:type)
 end
 

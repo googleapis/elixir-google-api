@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootGroundingMetadataCitati
 
   ## Attributes
 
-  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - Index in the prediction output where the citation ends (exclusive). Must be > start_index and < len(output).
+  *   `endIndex` (*type:* `integer()`, *default:* `nil`) - Index in the prediction output where the citation ends (exclusive). Must be > start_index and <= len(output).
   *   `factIndex` (*type:* `integer()`, *default:* `nil`) - Index of the fact supporting this claim. Should be within the range of the `world_facts` in the GenerateResponse.
   *   `score` (*type:* `float()`, *default:* `nil`) - Confidence score of this entailment. Value is [0,1] with 1 is the most confidence.
   *   `startIndex` (*type:* `integer()`, *default:* `nil`) - Index in the prediction output where the citation starts (inclusive). Must be >= 0 and < end_index.
