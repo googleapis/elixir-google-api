@@ -994,6 +994,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
   *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `generation` (*type:* `String.t`) - Selects a specific revision of this object.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
       *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
@@ -1017,12 +1018,26 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
   *   `{:ok, %GoogleApi.Storage.V1.Model.Object{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec storage_objects_restore(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec storage_objects_restore(
+          Tesla.Env.client(),
+          String.t(),
+          String.t(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok, GoogleApi.Storage.V1.Model.Object.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def storage_objects_restore(connection, bucket, object, optional_params \\ [], opts \\ []) do
+  def storage_objects_restore(
+        connection,
+        bucket,
+        object,
+        generation,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :alt => :query,
       :fields => :query,
@@ -1048,6 +1063,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
         "bucket" => URI.encode(bucket, &URI.char_unreserved?/1),
         "object" => URI.encode(object, &URI.char_unreserved?/1)
       })
+      |> Request.add_param(:query, :generation, generation)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
