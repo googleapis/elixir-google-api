@@ -18,7 +18,7 @@
 defmodule GoogleApi.BigQueryReservation.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
