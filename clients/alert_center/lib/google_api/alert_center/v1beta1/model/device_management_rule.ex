@@ -26,7 +26,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of the device.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user this alert was created for.
   *   `iosVendorId` (*type:* `String.t`, *default:* `nil`) - Required for iOS, empty for others.
+  *   `ownerId` (*type:* `String.t`, *default:* `nil`) - Obfuscated ID of the owner of the device
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The device resource ID.
+  *   `ruleAction` (*type:* `String.t`, *default:* `nil`) - Action taken as result of the rule
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The serial number of the device.
   """
 
@@ -38,7 +40,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
           :deviceType => String.t() | nil,
           :email => String.t() | nil,
           :iosVendorId => String.t() | nil,
+          :ownerId => String.t() | nil,
           :resourceId => String.t() | nil,
+          :ruleAction => String.t() | nil,
           :serialNumber => String.t() | nil
         }
 
@@ -47,7 +51,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
   field(:deviceType)
   field(:email)
   field(:iosVendorId)
+  field(:ownerId)
   field(:resourceId)
+  field(:ruleAction)
   field(:serialNumber)
 end
 
