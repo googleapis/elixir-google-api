@@ -29,12 +29,12 @@ defmodule GoogleApi.Tasks.V1.Model.Task do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Task identifier.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This is always "tasks#task".
   *   `links` (*type:* `list(GoogleApi.Tasks.V1.Model.TaskLinks.t)`, *default:* `nil`) - Collection of links. This collection is read-only.
-  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes describing the task. Optional.
+  *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes describing the task. Optional. Maximum length allowed: 8192 characters.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent task identifier. This field is omitted if it is a top-level task. This field is read-only. Use the "move" method to move the task under a different parent or to the top level.
   *   `position` (*type:* `String.t`, *default:* `nil`) - String indicating the position of the task among its sibling tasks under the same parent task or at the top level. If this string is greater than another task's corresponding position string according to lexicographical ordering, the task is positioned after the other task under the same parent task (or at the top level). This field is read-only. Use the "move" method to move the task to another position.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL pointing to this task. Used to retrieve, update, or delete this task.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the task. This is either "needsAction" or "completed".
-  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task.
+  *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task. Maximum length allowed: 1024 characters.
   *   `updated` (*type:* `String.t`, *default:* `nil`) - Last modification time of the task (as a RFC 3339 timestamp).
   *   `webViewLink` (*type:* `String.t`, *default:* `nil`) - An absolute link to the task in the Google Tasks Web UI. This field is read-only.
   """
