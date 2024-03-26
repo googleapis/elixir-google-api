@@ -21,11 +21,16 @@ defmodule GoogleApi.ServiceControl.V2.Model.ReportResponse do
 
   ## Attributes
 
+  *   `extensions` (*type:* `map()`, *default:* `nil`) - The extension field to store serialized OTel responses. e.g. ExportLogsServiceResponse, ExportMetricsServiceResponse.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :extensions => map() | nil
+        }
+
+  field(:extensions, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceControl.V2.Model.ReportResponse do
