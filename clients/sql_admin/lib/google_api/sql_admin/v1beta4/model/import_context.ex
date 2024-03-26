@@ -27,6 +27,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   *   `fileType` (*type:* `String.t`, *default:* `nil`) - The file type for the specified uri. * `SQL`: The file contains SQL statements. * `CSV`: The file contains CSV data. * `BAK`: The file contains backup data for a SQL Server instance.
   *   `importUser` (*type:* `String.t`, *default:* `nil`) - The PostgreSQL user for this import operation. PostgreSQL instances only.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#importContext`.
+  *   `sqlImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptions.t`, *default:* `nil`) - Optional. Options for importing data from SQL statements.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Path to the import file in Cloud Storage, in the form `gs://bucketName/fileName`. Compressed gzip files (.gz) are supported when `fileType` is `SQL`. The instance must have write permissions to the bucket and read access to the file.
   """
 
@@ -41,6 +42,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
           :fileType => String.t() | nil,
           :importUser => String.t() | nil,
           :kind => String.t() | nil,
+          :sqlImportOptions =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptions.t() | nil,
           :uri => String.t() | nil
         }
 
@@ -50,6 +53,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContext do
   field(:fileType)
   field(:importUser)
   field(:kind)
+  field(:sqlImportOptions, as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptions)
   field(:uri)
 end
 
