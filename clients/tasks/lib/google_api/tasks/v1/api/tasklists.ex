@@ -143,7 +143,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   end
 
   @doc """
-  Creates a new task list and adds it to the authenticated user's task lists.
+  Creates a new task list and adds it to the authenticated user's task lists. A user can have up to 2000 lists at a time.
 
   ## Parameters
 
@@ -202,7 +202,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   end
 
   @doc """
-  Returns all the authenticated user's task lists.
+  Returns all the authenticated user's task lists. A user can have up to 2000 lists at a time.
 
   ## Parameters
 
