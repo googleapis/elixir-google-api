@@ -21,6 +21,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
 
   ## Attributes
 
+  *   `databaseSid` (*type:* `String.t`, *default:* `nil`) - Optional. SID of the system database.
   *   `databaseType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the database. HANA, DB2, etc.
   *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The version of the database software running in the system.
   *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. Instance number of the SAP instance.
@@ -31,6 +32,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :databaseSid => String.t() | nil,
           :databaseType => String.t() | nil,
           :databaseVersion => String.t() | nil,
           :instanceNumber => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProper
           :sharedNfsUri => String.t() | nil
         }
 
+  field(:databaseSid)
   field(:databaseType)
   field(:databaseVersion)
   field(:instanceNumber)
