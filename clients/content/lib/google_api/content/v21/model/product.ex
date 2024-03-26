@@ -23,6 +23,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
 
   *   `productWidth` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The width of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
+  *   `autoPricingMinPrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - A safeguard in the [Automated Discounts](https://support.google.com/merchants/answer/10295759?hl=en) and [Dynamic Promotions](https://support.google.com/merchants/answer/13949249?hl=en) projects, ensuring that discounts on merchants' offers do not fall below this value, thereby preserving the offer's value and profitability.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
@@ -125,6 +126,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   @type t :: %__MODULE__{
           :productWidth => GoogleApi.Content.V21.Model.ProductDimension.t() | nil,
           :maxEnergyEfficiencyClass => String.t() | nil,
+          :autoPricingMinPrice => GoogleApi.Content.V21.Model.Price.t() | nil,
           :ageGroup => String.t() | nil,
           :color => String.t() | nil,
           :imageLink => String.t() | nil,
@@ -226,6 +228,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
 
   field(:productWidth, as: GoogleApi.Content.V21.Model.ProductDimension)
   field(:maxEnergyEfficiencyClass)
+  field(:autoPricingMinPrice, as: GoogleApi.Content.V21.Model.Price)
   field(:ageGroup)
   field(:color)
   field(:imageLink)
