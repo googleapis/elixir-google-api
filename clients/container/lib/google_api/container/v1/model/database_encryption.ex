@@ -21,18 +21,27 @@ defmodule GoogleApi.Container.V1.Model.DatabaseEncryption do
 
   ## Attributes
 
+  *   `currentState` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of etcd encryption.
+  *   `decryptionKeys` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Keys in use by the cluster for decrypting existing objects, in addition to the key in `key_name`. Each item is a CloudKMS key resource.
   *   `keyName` (*type:* `String.t`, *default:* `nil`) - Name of CloudKMS key to use for the encryption of secrets in etcd. Ex. projects/my-project/locations/global/keyRings/my-ring/cryptoKeys/my-key
+  *   `lastOperationErrors` (*type:* `list(GoogleApi.Container.V1.Model.OperationError.t)`, *default:* `nil`) - Output only. Records errors seen during DatabaseEncryption update operations.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The desired state of etcd encryption.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :currentState => String.t() | nil,
+          :decryptionKeys => list(String.t()) | nil,
           :keyName => String.t() | nil,
+          :lastOperationErrors => list(GoogleApi.Container.V1.Model.OperationError.t()) | nil,
           :state => String.t() | nil
         }
 
+  field(:currentState)
+  field(:decryptionKeys, type: :list)
   field(:keyName)
+  field(:lastOperationErrors, as: GoogleApi.Container.V1.Model.OperationError, type: :list)
   field(:state)
 end
 
