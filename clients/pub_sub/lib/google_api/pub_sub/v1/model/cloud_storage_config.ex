@@ -23,6 +23,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
 
   *   `avroConfig` (*type:* `GoogleApi.PubSub.V1.Model.AvroConfig.t`, *default:* `nil`) - Optional. If set, message data will be written to Cloud Storage in Avro format.
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Required. User-provided name for the Cloud Storage bucket. The bucket must be created by the user. The bucket name must be without any prefix like "gs://". See the [bucket naming requirements] (https://cloud.google.com/storage/docs/buckets#naming).
+  *   `filenameDatetimeFormat` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided format string specifying how to represent datetimes in Cloud Storage filenames. See the [datetime format guidance](https://cloud.google.com/pubsub/docs/create-cloudstorage-subscription#file_names).
   *   `filenamePrefix` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided prefix for Cloud Storage filename. See the [object naming requirements](https://cloud.google.com/storage/docs/objects#naming).
   *   `filenameSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided suffix for Cloud Storage filename. See the [object naming requirements](https://cloud.google.com/storage/docs/objects#naming). Must not end in "/".
   *   `maxBytes` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum bytes that can be written to a Cloud Storage file before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded in cases where messages are larger than the limit.
@@ -37,6 +38,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
   @type t :: %__MODULE__{
           :avroConfig => GoogleApi.PubSub.V1.Model.AvroConfig.t() | nil,
           :bucket => String.t() | nil,
+          :filenameDatetimeFormat => String.t() | nil,
           :filenamePrefix => String.t() | nil,
           :filenameSuffix => String.t() | nil,
           :maxBytes => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
 
   field(:avroConfig, as: GoogleApi.PubSub.V1.Model.AvroConfig)
   field(:bucket)
+  field(:filenameDatetimeFormat)
   field(:filenamePrefix)
   field(:filenameSuffix)
   field(:maxBytes)
