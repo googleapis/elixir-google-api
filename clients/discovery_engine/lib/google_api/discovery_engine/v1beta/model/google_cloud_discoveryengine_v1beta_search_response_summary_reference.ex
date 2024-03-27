@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `chunkContents` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryReferenceChunkContent.t)`, *default:* `nil`) - List of cited chunk contents derived from document content.
   *   `document` (*type:* `String.t`, *default:* `nil`) - Required. Document.name of the document. Full resource name of the referenced document, in the format `projects/*/locations/*/collections/*/dataStores/*/branches/*/documents/*`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the document.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage or HTTP uri for the document.
@@ -29,10 +30,21 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chunkContents =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryReferenceChunkContent.t()
+            )
+            | nil,
           :document => String.t() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
+
+  field(:chunkContents,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummaryReferenceChunkContent,
+    type: :list
+  )
 
   field(:document)
   field(:title)
