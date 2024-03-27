@@ -28,7 +28,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreRoadSignComponentProto do
   *   `routeDirection` (*type:* `String.t`, *default:* `nil`) - The direction of traffic for the referenced TYPE_ROUTE feature.
   *   `semanticType` (*type:* `String.t`, *default:* `nil`) - The semantic type of sign.
   *   `text` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreNameProto.t`, *default:* `nil`) - If this sign component is of type "TYPE_TEXT", this field contains the text of the component. A NameProto is used to allow language and flags to be associated with the text.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - This type of content represented by this sign component.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -40,8 +39,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreRoadSignComponentProto do
           :minorPosition => integer() | nil,
           :routeDirection => String.t() | nil,
           :semanticType => String.t() | nil,
-          :text => GoogleApi.ContentWarehouse.V1.Model.GeostoreNameProto.t() | nil,
-          :type => String.t() | nil
+          :text => GoogleApi.ContentWarehouse.V1.Model.GeostoreNameProto.t() | nil
         }
 
   field(:featureId, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
@@ -51,7 +49,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreRoadSignComponentProto do
   field(:routeDirection)
   field(:semanticType)
   field(:text, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreNameProto)
-  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.GeostoreRoadSignComponentProto do

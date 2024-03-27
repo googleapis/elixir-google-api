@@ -21,7 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.FreebaseValue do
 
   ## Attributes
 
-  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - key, uri, or datetime. Present when value is bool.
+  *   `boolValue` (*type:* `boolean()`, *default:* `nil`) - Present when value is bool.
   *   `citation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.FreebaseCitation.t`, *default:* `nil`) - Citation data for this value. See: http://go/kg-clap
   *   `compoundValue` (*type:* `GoogleApi.ContentWarehouse.V1.Model.FreebaseTopic.t`, *default:* `nil`) - Compound values are those that contain either a number of simple valued facets (such as a latitude/longitude pair), or "mediator" topics representing multi-dimensional relationships between topics. In both cases we represent them here with an embedded topic, although the topic's identity is somewhat secondary to the property/value pairs it contains. (The identity is still made available so that it can be used to perform updates to that mediator on the Knowledge Graph.)
   *   `deletionProvenance` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgTripleProvenance.t)`, *default:* `nil`) - Deletion provenance for this value.

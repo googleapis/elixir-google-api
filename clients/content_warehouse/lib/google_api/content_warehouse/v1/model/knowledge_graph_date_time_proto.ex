@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeGraphDateTimeProto do
   @moduledoc """
-  /////////// DATE //////////
+
 
   ## Attributes
 

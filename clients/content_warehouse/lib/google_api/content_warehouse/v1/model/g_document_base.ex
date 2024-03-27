@@ -32,7 +32,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GDocumentBase do
   *   `NoFollowReason` (*type:* `integer()`, *default:* `nil`) - 
   *   `NoImageIndexReason` (*type:* `integer()`, *default:* `nil`) - 
   *   `NoImageframeOverlayReason` (*type:* `integer()`, *default:* `nil`) - 
-  *   `NoIndexReason` (*type:* `integer()`, *default:* `nil`) - When these reasons are set to a non zero value, the document should not be indexed, or show a snippet, or show a cache, etc. These reasons are bit maps of indexing.converter.RobotsInfo.RobotedReasons enum values reflecting the places where the restriction was found.
+  *   `NoIndexReason` (*type:* `integer()`, *default:* `nil`) - When these reasons are set to a non zero value, the document should not be indexed, or show a snippet, or show a cache, etc. These reasons are bit maps of indexing.converter.RobotsInfo.RobotedReasons enum values reflecting the places where the restriction was found: //depot/google3/indexing/converter/proto/converter.proto
   *   `NoPreviewReason` (*type:* `integer()`, *default:* `nil`) - 
   *   `NoSnippetReason` (*type:* `integer()`, *default:* `nil`) - 
   *   `NoTranslateReason` (*type:* `integer()`, *default:* `nil`) - 

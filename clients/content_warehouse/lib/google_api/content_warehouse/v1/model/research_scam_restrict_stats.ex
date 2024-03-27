@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamRestrictStats do
   @moduledoc """
-  Structure to hold the number of active and total datapoints for a given dataset, as defined below. Last used: 2
+  TODO(qhliao) move this proto to research/scam/proto/restricts.proto Structure to hold the number of active and total datapoints for a given dataset, as defined below. Last used: 3
 
   ## Attributes
 
+  *   `evaluationInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ResearchScamRestrictEvaluationInfo.t`, *default:* `nil`) - Information about the evaluation of the restricts for this query. Could be used for production (e.g., custom restrict pass certain information to the downstream). copybara:strip_end
   *   `numActiveDatapoints` (*type:* `String.t`, *default:* `nil`) - The number of datapoints that are whitelisted by restricts specified for this query, across all shards for which the query executed successfully. In other words, this represents the number of datapoints that could potentially be returned if they were close enough to the query according to the selected distance measure. If restricts are disabled, this will be equal to num_total_datapoints.
   *   `numTotalDatapoints` (*type:* `String.t`, *default:* `nil`) - The number of total datapoints in all shards of this dataset for which the query executed successfully. This is returned for convenience so that a ratio can be easily computed, and so that num_active_datapoints can be put in perspective for partially successful queries, i.e. queries where only some shards were successful.
   """
@@ -28,9 +29,15 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamRestrictStats do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :evaluationInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.ResearchScamRestrictEvaluationInfo.t() | nil,
           :numActiveDatapoints => String.t() | nil,
           :numTotalDatapoints => String.t() | nil
         }
+
+  field(:evaluationInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.ResearchScamRestrictEvaluationInfo
+  )
 
   field(:numActiveDatapoints)
   field(:numTotalDatapoints)

@@ -25,6 +25,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgPolicyMetadata do
   *   `availabilityStartTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp before which data with this policy cannot be used. This value must be strictly smaller/earlier than availability_end_time, if both are set.
   *   `legalAllowedRegions` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.KeGovernanceTypedRegions.t)`, *default:* `nil`) - List of regions in which the data with this policy is allowed to be used, while the data need to be removed in all regions outside this list according to legal request. This field should be used when the data is only allowed in a few regions and it is inconvenient to enumerate all of the regions in `legal_removal_regions` field. `legal_allowed_regions` and `legal_removal_region` together should include all possible regions, setting one field implies the other. Please set only one of them so the other field's values are implied. See details: http://go/ke-allowed-countries-policy-1p WARNING: This field is for legal purposes only. Please do not populate it without consulting ke-data-governance@.
   *   `legalRemovalRegions` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.KeGovernanceTypedRegions.t)`, *default:* `nil`) - List of regions in which the data with this policy need to be removed according to legal request. WARNING: This field is for legal purposes only. Please do not populate it without consulting ke-data-governance@.
+  *   `llmPolicyMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgLlmPolicyMetadata.t`, *default:* `nil`) - Policy metadata fields for LLM related data usage restrictions. Only expected to be used by SCP internally -- please consult ke-data-governance@ before populating this field.
   *   `lmsPolicyMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgLmsPolicyMetadata.t`, *default:* `nil`) - Policy metadata fields for LMS data. Only expected to be used by LMS providers -- please consult ke-data-governance@ before populating this field.
   *   `policyDataScopeKeys` (*type:* `list(integer())`, *default:* `nil`) - This triple is protected by the policies with PolicyDataScope identified by these global unique ids.
   *   `policySourceType` (*type:* `String.t`, *default:* `nil`) - Policy metadata are VERTICAL by default. Vertical policy makers / providers does not need to set this field explicitly.
@@ -41,6 +42,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgPolicyMetadata do
             list(GoogleApi.ContentWarehouse.V1.Model.KeGovernanceTypedRegions.t()) | nil,
           :legalRemovalRegions =>
             list(GoogleApi.ContentWarehouse.V1.Model.KeGovernanceTypedRegions.t()) | nil,
+          :llmPolicyMetadata =>
+            GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgLlmPolicyMetadata.t() | nil,
           :lmsPolicyMetadata =>
             GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgLmsPolicyMetadata.t() | nil,
           :policyDataScopeKeys => list(integer()) | nil,
@@ -62,6 +65,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgPolicyMetadata do
   field(:legalRemovalRegions,
     as: GoogleApi.ContentWarehouse.V1.Model.KeGovernanceTypedRegions,
     type: :list
+  )
+
+  field(:llmPolicyMetadata,
+    as: GoogleApi.ContentWarehouse.V1.Model.StorageGraphBfgLlmPolicyMetadata
   )
 
   field(:lmsPolicyMetadata,

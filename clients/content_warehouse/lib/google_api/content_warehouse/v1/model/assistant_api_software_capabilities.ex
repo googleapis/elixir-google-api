@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities do
   @moduledoc """
-  These capabilities represent what software features the client supports. This should be determined based on the client's various software versions (OS, GSA version, etc). Next ID: 27
+  These capabilities represent what software features the client supports. This should be determined based on the client's various software versions (OS, GSA version, etc). Next ID: 28
 
   ## Attributes
 
@@ -37,6 +37,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities d
   *   `onDeviceStorageCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiOnDeviceStorageCapabilities.t`, *default:* `nil`) - Reflects the storage capabilities on the device.
   *   `operatingSystem` (*type:* `String.t`, *default:* `nil`) - The operating system of the device.
   *   `orderedLiveTvProviders` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantApiLiveTvProvider.t)`, *default:* `nil`) - An ordered list containing the live tv providers available in the client. The order of the providers reflects the ranking in the client and will be respected by server as well.
+  *   `robinCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiRobinCapabilities.t`, *default:* `nil`) - Capabilities of Robin client.
   *   `selinaCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSelinaCapabilites.t`, *default:* `nil`) - The Soli capabilities on Elaine. go/dingo-dc-software
   *   `settingsAppCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSettingsAppCapabilities.t`, *default:* `nil`) - 
   *   `supportedClientOp` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedClientOp.t)`, *default:* `nil`) - 
@@ -87,6 +88,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities d
           :operatingSystem => String.t() | nil,
           :orderedLiveTvProviders =>
             list(GoogleApi.ContentWarehouse.V1.Model.AssistantApiLiveTvProvider.t()) | nil,
+          :robinCapabilities =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiRobinCapabilities.t() | nil,
           :selinaCapabilities =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiSelinaCapabilites.t() | nil,
           :settingsAppCapabilities =>
@@ -159,6 +162,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSoftwareCapabilities d
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiLiveTvProvider,
     type: :list
   )
+
+  field(:robinCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiRobinCapabilities)
 
   field(:selinaCapabilities, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiSelinaCapabilites)
 

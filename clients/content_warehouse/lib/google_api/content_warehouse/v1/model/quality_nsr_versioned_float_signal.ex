@@ -17,19 +17,19 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal do
   @moduledoc """
-
+  A versioned float value. See VersionedFloatSignal functions in google3/quality/nsr/proto/proto_util.h
 
   ## Attributes
 
   *   `value` (*type:* `number()`, *default:* `nil`) - The corresponding float value.
-  *   `versionId` (*type:* `integer()`, *default:* `nil`) - Unique version id.
+  *   `versionId` (*type:* `String.t`, *default:* `nil`) - Unique version id.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :value => number() | nil,
-          :versionId => integer() | nil
+          :versionId => String.t() | nil
         }
 
   field(:value)

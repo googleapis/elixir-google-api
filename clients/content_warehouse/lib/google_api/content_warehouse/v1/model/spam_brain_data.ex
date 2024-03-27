@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.SpamBrainData do
   @moduledoc """
-  This holds SpamBrain values which will be populated to docjoins & muppet. Proto is copied from spam_brain::SpamBrainData and populated at sitechunked site level (as opposed to the spambrain page classifier score).
+  This holds SpamBrain values which are populated in docjoins. The data is populated at sitechunked host level and sitechunked domain level in the doc_attachments, and saved in Perdocdata in respective fields.
 
   ## Attributes
 

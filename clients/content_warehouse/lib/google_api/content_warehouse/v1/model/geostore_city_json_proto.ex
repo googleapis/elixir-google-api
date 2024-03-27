@@ -21,28 +21,33 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProto do
 
   ## Attributes
 
+  *   `appearance` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearance.t`, *default:* `nil`) - Additional information that can be used to describe the appearance of CityObjects in this CityJsonProto.
   *   `cityObjects` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObject.t)`, *default:* `nil`) - City objects associated with this CityJsonProto.
+  *   `flattenedVertices` (*type:* `list(integer())`, *default:* `nil`) - Vertices as local coordinates represented as a flattened list: [x1,y1,z1,x2,y2,z2,x3,y3,z3]. Vertices are relative to a local coordinate system and rounded to their nearest integer value. See `transform` for how vertices can be transformed from a local coordinate system into an Earth-centered, Earth-fixed coordinate system. Vertices are flattened for space efficiency, memory locality, and processing performance. To access the x,y,z coordinates of vertex N, read the values at indices 3N, 3N+1, and 3N+2.
   *   `transform` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoTransform.t`, *default:* `nil`) - Spec for converting vertices from a local coordinate system in arbitrary units to ECEF coordinates in meters (https://en.wikipedia.org/wiki/Earth-centered,_Earth-fixed_coordinate_system).
-  *   `vertexXyz` (*type:* `list(integer())`, *default:* `nil`) - Vertices as local coordinates represented as a flattened list: [x1,y1,z1,x2,y2,z2,x3,y3,z3]. Vertices are relative to a local coordinate system and rounded to their nearest integer value. See `transform` for how vertices can be transformed from a local coordinate system into an Earth-centered, Earth-fixed coordinate system. Vertices are flattened for space efficiency, memory locality, and processing performance. To access the x,y,z coordinates of vertex N, read the values at indices 3N, 3N+1, and 3N+2.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appearance =>
+            GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearance.t() | nil,
           :cityObjects =>
             list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObject.t()) | nil,
+          :flattenedVertices => list(integer()) | nil,
           :transform =>
-            GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoTransform.t() | nil,
-          :vertexXyz => list(integer()) | nil
+            GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoTransform.t() | nil
         }
+
+  field(:appearance, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearance)
 
   field(:cityObjects,
     as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObject,
     type: :list
   )
 
+  field(:flattenedVertices, type: :list)
   field(:transform, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoTransform)
-  field(:vertexXyz, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProto do

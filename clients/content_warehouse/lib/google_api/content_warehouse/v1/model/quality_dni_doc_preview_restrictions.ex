@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityDniDocPreviewRestrictions do
   @moduledoc """
-  Set of per-document markup restrictions based on go/eucd-indexing-design. Used for EUCD and global preview compliance. Next ID: 17
+  Set of per-document markup restrictions based on go/eucd-indexing-design. Used for EUCD and global preview compliance. Next ID: 20
 
   ## Attributes
 
@@ -37,6 +37,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityDniDocPreviewRestrictions d
   *   `maxVideoPreviewSecs` (*type:* `integer()`, *default:* `nil`) - The max seconds of video preview allowed. Based on document markup. No limit if value is less than 0, Google could show any seconds of video. Default value 0 is the strictest restriction, to avoid violating mistakenly If not set, there is no preview length policy to enforce. Features must first check has_max_video_preview_secs to avoid applying an overly strict policy.
   *   `maxVideoPreviewSecsFromPublisher` (*type:* `integer()`, *default:* `nil`) - 
   *   `maxVideoPreviewSecsPublisherDefault` (*type:* `integer()`, *default:* `nil`) - 
+  *   `snippetLengthSource` (*type:* `String.t`, *default:* `nil`) - Source of snippet length.
+  *   `thumbnailSizeSource` (*type:* `String.t`, *default:* `nil`) - Source of thumbnail size.
+  *   `videoPreviewSecsSource` (*type:* `String.t`, *default:* `nil`) - Source of video preview seconds.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,7 +61,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityDniDocPreviewRestrictions d
           :maxThumbnailSizePublisherDefault => integer() | nil,
           :maxVideoPreviewSecs => integer() | nil,
           :maxVideoPreviewSecsFromPublisher => integer() | nil,
-          :maxVideoPreviewSecsPublisherDefault => integer() | nil
+          :maxVideoPreviewSecsPublisherDefault => integer() | nil,
+          :snippetLengthSource => String.t() | nil,
+          :thumbnailSizeSource => String.t() | nil,
+          :videoPreviewSecsSource => String.t() | nil
         }
 
   field(:bylineDateSecs)
@@ -81,6 +87,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityDniDocPreviewRestrictions d
   field(:maxVideoPreviewSecs)
   field(:maxVideoPreviewSecsFromPublisher)
   field(:maxVideoPreviewSecsPublisherDefault)
+  field(:snippetLengthSource)
+  field(:thumbnailSizeSource)
+  field(:videoPreviewSecsSource)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.QualityDniDocPreviewRestrictions do

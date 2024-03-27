@@ -27,8 +27,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotatio
   *   `prominentOffensiveScore` (*type:* `number()`, *default:* `nil`) - Same as offensive_score, but weighted by prominence.
   *   `prominentVulgarScore` (*type:* `number()`, *default:* `nil`) - Same as vulgar_score, but weighted by prominence.
   *   `qbstOffensiveScore` (*type:* `number()`, *default:* `nil`) - The score produced by offensive salient terms model.
-  *   `vulgarI18nBit` (*type:* `boolean()`, *default:* `nil`) - Presence of i18n-recognized vulgar term in the OCR.
-  *   `vulgarScore` (*type:* `number()`, *default:* `nil`) - Image OCR vulgarity, computed by vulgar query classifier.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,9 +37,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotatio
           :pornScore => number() | nil,
           :prominentOffensiveScore => number() | nil,
           :prominentVulgarScore => number() | nil,
-          :qbstOffensiveScore => number() | nil,
-          :vulgarI18nBit => boolean() | nil,
-          :vulgarScore => number() | nil
+          :qbstOffensiveScore => number() | nil
         }
 
   field(:ocrAnnotationVersion)
@@ -50,8 +46,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotatio
   field(:prominentOffensiveScore)
   field(:prominentVulgarScore)
   field(:qbstOffensiveScore)
-  field(:vulgarI18nBit)
-  field(:vulgarScore)
 end
 
 defimpl Poison.Decoder,

@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceInfoLog do
   @moduledoc """
-  The information related to the device. Next ID: 18
+  The information related to the device. Next ID: 19
 
   ## Attributes
 
   *   `arbitrationDeviceId` (*type:* `String.t`, *default:* `nil`) - Device identifier string for the current device used in the arbitration service.
+  *   `availableDeviceAndCtfContextDiff` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDeviceAndCtfContextDiffLog.t`, *default:* `nil`) - A list of diffs for the device's context between AvailableDevice and CTF.
   *   `connectivity` (*type:* `String.t`, *default:* `nil`) - 
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The identification of the device. DeviceId (go/as-device-id) has multiple fields. To consloidate it to a single to make dremel easier, we use the string obtained by calling go/get-device-id.
   *   `deviceIdLog` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsSettingsDeviceIdLog.t`, *default:* `nil`) - The identification of the device. The logging version of the full DeviceId.
@@ -43,6 +44,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceInfoLog do
 
   @type t :: %__MODULE__{
           :arbitrationDeviceId => String.t() | nil,
+          :availableDeviceAndCtfContextDiff =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDeviceAndCtfContextDiffLog.t()
+            | nil,
           :connectivity => String.t() | nil,
           :deviceId => String.t() | nil,
           :deviceIdLog =>
@@ -64,6 +68,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceInfoLog do
         }
 
   field(:arbitrationDeviceId)
+
+  field(:availableDeviceAndCtfContextDiff,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDeviceAndCtfContextDiffLog
+  )
+
   field(:connectivity)
   field(:deviceId)
   field(:deviceIdLog, as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsSettingsDeviceIdLog)

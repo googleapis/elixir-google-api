@@ -21,7 +21,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsCrapsData do
 
   ## Attributes
 
-  *   `agingCounts` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsAgingData.t`, *default:* `nil`) - Contains counter for Aging signal (go/freshness-aging). It's used internally by Craps/Aging pipeline.
   *   `badClicks` (*type:* `float()`, *default:* `nil`) - 
   *   `clicks` (*type:* `float()`, *default:* `nil`) - 
   *   `country` (*type:* `String.t`, *default:* `nil`) - The two-letter uppercase country slice of the CrapsData. Examples: "US", "FR", "BR"
@@ -49,8 +48,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsCrapsData do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :agingCounts =>
-            GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsAgingData.t() | nil,
           :badClicks => float() | nil,
           :clicks => float() | nil,
           :country => String.t() | nil,
@@ -85,7 +82,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsCrapsData do
           :voterTokenCount => integer() | nil
         }
 
-  field(:agingCounts, as: GoogleApi.ContentWarehouse.V1.Model.QualityNavboostCrapsAgingData)
   field(:badClicks)
   field(:clicks)
   field(:country)

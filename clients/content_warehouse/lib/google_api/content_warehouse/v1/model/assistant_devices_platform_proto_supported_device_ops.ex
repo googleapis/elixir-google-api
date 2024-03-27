@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSupportedDeviceOps do
   @moduledoc """
-  This message will specify supports for fields in |assistant.embedded.v1.DeviceOp|, for a device model package. See go/easi-client-op2 for more info. Next ID: 17
+  This message will specify supports for fields in |assistant.embedded.v1.DeviceOp|, for a device model package. See go/easi-client-op2 for more info. Next ID: 19
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
   *   `deviceModifySetting` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoDeviceModifySettingCapability.t`, *default:* `nil`) - |device_modify_setting| specifies the support for device.MODIFY_SETTING client_op, and the corresponding device_modify_setting field in assistant.embedded.v1.DeviceOp.
   *   `deviceTakePhoto` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoDeviceTakePhotoCapability.t`, *default:* `nil`) - [device_take_photo] specifies the support for the device.TAKE_PHOTO clientop, and the corresponding device_take_photo field in assistant.embedded.v1.DeviceOp.
   *   `executionWait` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoExecutionWaitCapability.t`, *default:* `nil`) - |execution_wait| specifies the support for execution.WAIT client_op, and the corresponding execution_wait field in assistant.embedded.v1.DeviceOp.
+  *   `getHealthObservation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoGetHealthObservationCapability.t`, *default:* `nil`) - |get_health_observation| specifies the support for get_health_observation client_op, and the corresponding get_health_observation field in assistant.embedded.v1.DeviceOp.
   *   `mediaNext` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoMediaNextCapability.t`, *default:* `nil`) - 
   *   `mediaPause` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoMediaPauseCapability.t`, *default:* `nil`) - 
   *   `mediaPlayMedia` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoMediaPlayMediaCapability.t`, *default:* `nil`) - 
@@ -37,6 +38,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
   *   `providerFulfill` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoProviderFulfillCapability.t`, *default:* `nil`) - |provider_fulfill| specifies the support for provider.FULFILL client_op, and the corresponding provider_fulfill field in assistant.embedded.v1.DeviceOp.
   *   `providerOpen` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoProviderOpenCapability.t`, *default:* `nil`) - |provider_open| specifies the support for provider.OPEN client_op, and the corresponding provider_open field in assistant.embedded.v1.DeviceOp.
   *   `sendChatMessage` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSendChatMessageCapability.t`, *default:* `nil`) - |send_chat_message| specifies the support for the chat_message.SEND clientop, and the corresponding send_chat_message field in assistant.embedded.v1.DeviceOp.
+  *   `uiShowInterpreter` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoUiShowInterpreterCapability.t`, *default:* `nil`) - |ui_show_interpreter| specifies the support for ui.SHOW_INTERPRETER client_op, and the corresponding ui_show_interpreter field in assistant.embedded.v1.DeviceOp.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -59,6 +61,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
             | nil,
           :executionWait =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoExecutionWaitCapability.t()
+            | nil,
+          :getHealthObservation =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoGetHealthObservationCapability.t()
             | nil,
           :mediaNext =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoMediaNextCapability.t()
@@ -89,6 +94,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
             | nil,
           :sendChatMessage =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSendChatMessageCapability.t()
+            | nil,
+          :uiShowInterpreter =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoUiShowInterpreterCapability.t()
             | nil
         }
 
@@ -116,6 +124,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
 
   field(:executionWait,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoExecutionWaitCapability
+  )
+
+  field(:getHealthObservation,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoGetHealthObservationCapability
   )
 
   field(:mediaNext,
@@ -157,6 +170,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSuppo
 
   field(:sendChatMessage,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoSendChatMessageCapability
+  )
+
+  field(:uiShowInterpreter,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.AssistantDevicesPlatformProtoUiShowInterpreterCapability
   )
 end
 

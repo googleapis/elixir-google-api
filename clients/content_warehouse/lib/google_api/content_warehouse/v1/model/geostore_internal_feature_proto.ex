@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreInternalFeatureProto do
   @moduledoc """
-  Main proto for all internal fields to be stored at the feature level.
+  InternalFeatureProto represents fields for data that are more about other data within the FeatureProto than about the feature itself. This could be data that's set by editors directly(ish) (e.g. trust or rights data), or data set internally by MapFacts based on other data (e.g. polygon shape IDs).
 
   ## Attributes
 

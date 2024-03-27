@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumentSignals do
   @moduledoc """
-  A message representing the signals associated with an argument. NEXT ID TO USE: 62 For //depot/google3/logs/proto/knowledge/interpretation/intent_query.proto in the "ThenChange", fields under Argument.signals in the serving proto are stored directly under Argument on the logging side. For example, see http://google3/nlp/semantic_parsing/data_management/logs/web_logs/semantic_logging_converters/semantic_logging_request_argument_converter.cc?l=58&rcl=322925428. LINT.IfChange
+  A message representing the signals associated with an argument. NEXT ID TO USE: 66 For //depot/google3/logs/proto/knowledge/interpretation/intent_query.proto in the "ThenChange", fields under Argument.signals in the serving proto are stored directly under Argument on the logging side. For example, see http://google3/nlp/semantic_parsing/data_management/logs/web_logs/semantic_logging_converters/semantic_logging_request_argument_converter.cc?l=58&rcl=322925428. LINT.IfChange
 
   ## Attributes
 
@@ -49,6 +49,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   *   `addedByCloseAnswers` (*type:* `boolean()`, *default:* `nil`) - Whether this argument was added by CloseAnswers in Postref. This bit is used to mark the corresponding interpretation/intent query as such by setting is_close_interpretation bit.
   *   `location` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t`, *default:* `nil`) - Entity location information (latitude/longitude) from freebase.
   *   `groundingSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryGroundingSignals.t`, *default:* `nil`) - 
+  *   `personalQrefReferenceScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation is a reference that implies another entity (e.g., "my hotel" in "navigate to my hotel" is a reference to an explicit hotel from the user's hotel reservations).
   *   `mediaEntitySignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryMediaEntitySignals.t`, *default:* `nil`) - Signals about the media entity for this argument.
   *   `collectionMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryCollectionMembership.t)`, *default:* `nil`) - If the literal.obj_type of the argument value is ID (Entity), this represents the collection that the entity in this argument is a member of.
   *   `locationMarkersSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryLocationMarkersSignals.t`, *default:* `nil`) - The usual semantic role associated with the signal from lightweight tokens attached to this argument span.
@@ -61,9 +62,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   *   `webrefListSource` (*type:* `String.t`, *default:* `nil`) - This represents which list entities index refers to.
   *   `isDefaultValue` (*type:* `boolean()`, *default:* `nil`) - If true, the value of the argument is populated with the default value specified by the system if the value can't be inferred from the input query. In IntentConfig case, the default value is specified by using IntentConfig.slot.default_value.
   *   `parsedDueToExperiment` (*type:* `list(String.t)`, *default:* `nil`) - Experiment ID for experiments that were used to parse this FunctionCall. Empty indicates no experiments used.
+  *   `facet` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersFacetParsing.t`, *default:* `nil`) - If this slot was transformed from or could be transformed to a facet on a categorical, that information is stored here.
   *   `isNimbleAnnotation` (*type:* `boolean()`, *default:* `nil`) - Whether this argument was annotated by nimble (go/nimble-annotator)
   *   `fromSymbolAnnotation` (*type:* `boolean()`, *default:* `nil`) - Whether the argument entity comes from a graphic symbol annotation. This is later used as a heuristic for poor web result quality.
   *   `entityNumber` (*type:* `integer()`, *default:* `nil`) - Signals about what other entities this entity implies / is implied by. This is useful for grounding. Example: b/138388207: suppressing song intents if the artist entity doesn't link to the song title. This value specifies the order of annotations in a QRef annotation chain so they can refer to each other.
+  *   `copleySourceTypeList` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t`, *default:* `nil`) - Contains the source and type information related to a personal entity, for example if it is a hotel or a restaurant (type) and if it comes from Gmail, Calendar, etc. (source).
   *   `webrefEntitiesIndex` (*type:* `integer()`, *default:* `nil`) - Webref entity index for this argument, necessary for interpreting the relationship structure, and the list to index into. Specifically we need this to understand qref implications since they edges are represented with entity indexes.
   *   `entityRelationship` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingQRefAnnotationEntityRelationship.t)`, *default:* `nil`) - Signals about what other entities this entity implies / is implied by. This is useful for grounding. Example: b/138388207: suppressing song intents if the artist entity doesn't link to the song title.
   *   `muninSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryMuninSignals.t`, *default:* `nil`) - Signals derived from Munin Function call annotations.
@@ -72,6 +75,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   *   `contextResolution` (*type:* `String.t`, *default:* `nil`) - How this argument was resolved through context from a previous query. Examples: obama -> "he" is resolved from the Obama entity starbucks -> Q2 is resolved from the list of shops (Attentional Entities)
   *   `annotationLayerSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryAnnotationLayerSignals.t`, *default:* `nil`) - Signals to facilitate orchestration of TUIG annotations.
   *   `annotatedRelationship` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.LogsSemanticInterpretationIntentQueryWebrefEntityRelationship.t)`, *default:* `nil`) - Relationships between entities
+  *   `personalQrefResolutionScore` (*type:* `number()`, *default:* `nil`) - The confidence (in [0, 1]) that the annotation was created on an implicit mention (e.g., "my hotel") as opposed to an explicit mention (e.g., "the westin copley square").
   *   `resultSupport` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.UniversalsearchNewPackerKnowledgeResultSupport.t)`, *default:* `nil`) - The list of result supports for this Argument.
   *   `isAUngroundedTypeOf` (*type:* `String.t`, *default:* `nil`) - If the argument is entity, the ungrounded type the entity is. For example, the entity argument is /m/0p83l (Jasmine), the value of this field should be "Plant" if it is present.
   *   `oysterId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The oyster feature id. NOTE: As of Mar 2017, the cell ID field of the feature ID might not be set. See http://b/35447230#comment10
@@ -132,6 +136,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
           :groundingSignals =>
             GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryGroundingSignals.t()
             | nil,
+          :personalQrefReferenceScore => number() | nil,
           :mediaEntitySignals =>
             GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryMediaEntitySignals.t()
             | nil,
@@ -153,9 +158,12 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
           :webrefListSource => String.t() | nil,
           :isDefaultValue => boolean() | nil,
           :parsedDueToExperiment => list(String.t()) | nil,
+          :facet => GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersFacetParsing.t() | nil,
           :isNimbleAnnotation => boolean() | nil,
           :fromSymbolAnnotation => boolean() | nil,
           :entityNumber => integer() | nil,
+          :copleySourceTypeList =>
+            GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList.t() | nil,
           :webrefEntitiesIndex => integer() | nil,
           :entityRelationship =>
             list(
@@ -178,6 +186,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
               GoogleApi.ContentWarehouse.V1.Model.LogsSemanticInterpretationIntentQueryWebrefEntityRelationship.t()
             )
             | nil,
+          :personalQrefResolutionScore => number() | nil,
           :resultSupport =>
             list(
               GoogleApi.ContentWarehouse.V1.Model.UniversalsearchNewPackerKnowledgeResultSupport.t()
@@ -264,6 +273,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
     as: GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryGroundingSignals
   )
 
+  field(:personalQrefReferenceScore)
+
   field(:mediaEntitySignals,
     as: GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryMediaEntitySignals
   )
@@ -286,9 +297,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   field(:webrefListSource)
   field(:isDefaultValue)
   field(:parsedDueToExperiment, type: :list)
+  field(:facet, as: GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersFacetParsing)
   field(:isNimbleAnnotation)
   field(:fromSymbolAnnotation)
   field(:entityNumber)
+  field(:copleySourceTypeList, as: GoogleApi.ContentWarehouse.V1.Model.CopleySourceTypeList)
   field(:webrefEntitiesIndex)
 
   field(:entityRelationship,
@@ -320,6 +333,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
       GoogleApi.ContentWarehouse.V1.Model.LogsSemanticInterpretationIntentQueryWebrefEntityRelationship,
     type: :list
   )
+
+  field(:personalQrefResolutionScore)
 
   field(:resultSupport,
     as: GoogleApi.ContentWarehouse.V1.Model.UniversalsearchNewPackerKnowledgeResultSupport,

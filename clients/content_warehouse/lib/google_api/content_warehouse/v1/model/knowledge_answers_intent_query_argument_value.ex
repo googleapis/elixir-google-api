@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumentValue do
   @moduledoc """
-  A message representing the value of an argument. All types in the "value" oneof should have a corresponding field in the ValueType or OpaqueType protos defined in knowledge/answers/config/value.proto. This is specified by annotating each ArgumentValue type with options of the form (value_type_name) = A unit test ensure that this field is set and is valid for all types in ArgumentValue. A small number of special cases (such as funcall and simple_value) are allowed to omit the annotation. See intent_query_proto_test.cc for details. Note: If you are trying to add a new OpaqueType, stop; OpaqueType is deprecated, refer to go/opaque_type for details. If you think this is the only way to implement your feature, attend an office hours (go/meaning-help) and discuss with the MRF team. Next Id: 41
+  A message representing the value of an argument. All types in the "value" oneof should have a corresponding field in the ValueType or OpaqueType protos defined in knowledge/answers/config/value.proto. This is specified by annotating each ArgumentValue type with options of the form (value_type_name) = A unit test ensure that this field is set and is valid for all types in ArgumentValue. A small number of special cases (such as funcall and simple_value) are allowed to omit the annotation. See intent_query_proto_test.cc for details. Note: If you are trying to add a new OpaqueType, stop; OpaqueType is deprecated, refer to go/opaque_type for details. If you think this is the only way to implement your feature, attend an office hours (go/meaning-help) and discuss with the MRF team. Next Id: 42
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   *   `audio` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingModelsMediaAudio.t`, *default:* `nil`) - 
   *   `appAnnotation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingAppAnnotation.t`, *default:* `nil`) - Device actions custom types.
   *   `calendarReference` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityQrewriteCalendarReference.t`, *default:* `nil`) - 
+  *   `scalarValue` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryScalarValue.t`, *default:* `nil`) - A scalar value with optional unit; used ONLY for resolved values after grounding.
   *   `componentReference` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefComponentReference.t`, *default:* `nil`) - Component reference between WebrefEntity and Mention. This should only ever be set in argument values in WebrefEntities (e.g. in a QueryJoin). The processing expectation is that the value including the component reference is discarded altogether and replaced by reference target. Use QueryJoinToMeaningStructConverter to perform the replacement. An example value parallel to this reference may exist, but it's meant purely for human consumption and should not be used.
   *   `timer` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityActionsTimer.t`, *default:* `nil`) - Productivity custom types. Team: go/productivity-assistance.
   *   `money` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingModelsMoneyMoney.t`, *default:* `nil`) - Represents: money expressions (e.g. 25$). Annotated by: number subgrammar.
@@ -73,6 +74,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
             GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingAppAnnotation.t() | nil,
           :calendarReference =>
             GoogleApi.ContentWarehouse.V1.Model.QualityQrewriteCalendarReference.t() | nil,
+          :scalarValue =>
+            GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryScalarValue.t() | nil,
           :componentReference =>
             GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefComponentReference.t() | nil,
           :timer => GoogleApi.ContentWarehouse.V1.Model.QualityActionsTimer.t() | nil,
@@ -163,6 +166,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
 
   field(:calendarReference,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityQrewriteCalendarReference
+  )
+
+  field(:scalarValue,
+    as: GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryScalarValue
   )
 
   field(:componentReference,

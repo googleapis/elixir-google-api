@@ -29,6 +29,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetDataFeatureSetEle
   *   `quantizedByteDense` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiQuantizedByteDenseFeatureData.t`, *default:* `nil`) - 
   *   `quantizedByteIndexed` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiQuantizedByteIndexedFeatureData.t`, *default:* `nil`) - 
   *   `sparse` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiSparseFeatureData.t`, *default:* `nil`) - 
+  *   `token` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DrishtiDenseTokenData.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,7 +45,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetDataFeatureSetEle
             GoogleApi.ContentWarehouse.V1.Model.DrishtiQuantizedByteDenseFeatureData.t() | nil,
           :quantizedByteIndexed =>
             GoogleApi.ContentWarehouse.V1.Model.DrishtiQuantizedByteIndexedFeatureData.t() | nil,
-          :sparse => GoogleApi.ContentWarehouse.V1.Model.DrishtiSparseFeatureData.t() | nil
+          :sparse => GoogleApi.ContentWarehouse.V1.Model.DrishtiSparseFeatureData.t() | nil,
+          :token => GoogleApi.ContentWarehouse.V1.Model.DrishtiDenseTokenData.t() | nil
         }
 
   field(:compressed, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiCompressedFeature)
@@ -62,6 +64,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.DrishtiFeatureSetDataFeatureSetEle
   )
 
   field(:sparse, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiSparseFeatureData)
+  field(:token, as: GoogleApi.ContentWarehouse.V1.Model.DrishtiDenseTokenData)
 end
 
 defimpl Poison.Decoder,

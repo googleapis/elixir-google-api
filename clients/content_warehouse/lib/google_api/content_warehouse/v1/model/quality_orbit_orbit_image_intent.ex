@@ -23,6 +23,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntent do
 
   *   `imageIntent` (*type:* `String.t`, *default:* `nil`) - Intent of this proto instance.
   *   `missingInputs` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `reach` (*type:* `String.t`, *default:* `nil`) - 
+  *   `remove` (*type:* `boolean()`, *default:* `nil`) - Whether this intent should be removed when backfilling new classifications to the index. When backfilling a new version of a classifier to production we have cases where we actually want to *remove* an intent that was present in production because the new version might have moved the intent to below logging threshold. This bit should be used to signal this case so that merging logic can remove the intent for the image. This should *never* be set in a production callsite, it is only intended for backfilling operations.
   *   `score` (*type:* `number()`, *default:* `nil`) - Score of the intent.
   *   `trigger` (*type:* `boolean()`, *default:* `nil`) - Whether the intent triggered with the default threshold or not.
   """
@@ -32,12 +34,16 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntent do
   @type t :: %__MODULE__{
           :imageIntent => String.t() | nil,
           :missingInputs => list(String.t()) | nil,
+          :reach => String.t() | nil,
+          :remove => boolean() | nil,
           :score => number() | nil,
           :trigger => boolean() | nil
         }
 
   field(:imageIntent)
   field(:missingInputs, type: :list)
+  field(:reach)
+  field(:remove)
   field(:score)
   field(:trigger)
 end

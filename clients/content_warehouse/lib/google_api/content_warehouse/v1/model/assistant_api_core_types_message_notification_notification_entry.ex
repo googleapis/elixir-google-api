@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesMessageNotificationNotificationEntry do
   @moduledoc """
-  Structure of each notification in the MessageNotification Bundle. Attribute sender_name could be different in case of group messages. Next Id: 8
+  Structure of each notification in the MessageNotification Bundle. Attribute sender_name could be different in case of group messages. Next Id: 9
 
   ## Attributes
 
+  *   `audioDuration` (*type:* `String.t`, *default:* `nil`) - Duration of audio message.
   *   `charCount` (*type:* `integer()`, *default:* `nil`) - Count of characters in the message body in the notification.
   *   `dataUri` (*type:* `String.t`, *default:* `nil`) - Uri for the attachment (image, audio, video etc.).
   *   `messageBody` (*type:* `String.t`, *default:* `nil`) - Note that this is not present in production traffic. Content of the message body in the notification.
@@ -33,6 +34,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesMessageNotifi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :audioDuration => String.t() | nil,
           :charCount => integer() | nil,
           :dataUri => String.t() | nil,
           :messageBody => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesMessageNotifi
           :wordCount => integer() | nil
         }
 
+  field(:audioDuration)
   field(:charCount)
   field(:dataUri)
   field(:messageBody)

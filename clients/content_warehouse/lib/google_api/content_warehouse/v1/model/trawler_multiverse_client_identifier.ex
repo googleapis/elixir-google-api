@@ -21,6 +21,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerMultiverseClientIdentifier 
 
   ## Attributes
 
+  *   `crawlPolicyId` (*type:* `integer()`, *default:* `nil`) - 
+  *   `crawlPolicyName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `hyperdriveAppName` (*type:* `String.t`, *default:* `nil`) - Hyperdrive Analytics.
+  *   `hyperdriveTableName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `topicId` (*type:* `integer()`, *default:* `nil`) - Propagate the id instead of the string name to save storage resource. TODO (b/317133951) consider deprecate the two fields in string above.
   *   `topicName` (*type:* `String.t`, *default:* `nil`) - 
   *   `trafficType` (*type:* `String.t`, *default:* `nil`) - 
   """
@@ -28,10 +33,20 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerMultiverseClientIdentifier 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :crawlPolicyId => integer() | nil,
+          :crawlPolicyName => String.t() | nil,
+          :hyperdriveAppName => String.t() | nil,
+          :hyperdriveTableName => String.t() | nil,
+          :topicId => integer() | nil,
           :topicName => String.t() | nil,
           :trafficType => String.t() | nil
         }
 
+  field(:crawlPolicyId)
+  field(:crawlPolicyName)
+  field(:hyperdriveAppName)
+  field(:hyperdriveTableName)
+  field(:topicId)
   field(:topicName)
   field(:trafficType)
 end

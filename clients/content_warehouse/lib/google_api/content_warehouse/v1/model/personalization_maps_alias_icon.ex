@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.PersonalizationMapsAliasIcon do
   @moduledoc """
-  A subset of an Alias that is stored on kansas max. It is used in Search for alias resolution and in Maps to show icons quickly on basetiles.
+  A subset of an Alias that is stored on kansas max. It is used in Search for alias resolution and in Maps to show icons quickly on basetiles. Next ID: 18
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PersonalizationMapsAliasIcon do
   *   `featureName` (*type:* `String.t`, *default:* `nil`) - For non-address feature aliases (e.g. businesses), the name of the feature (formatted from the FeatureProto) when it was saved.
   *   `featureType` (*type:* `String.t`, *default:* `nil`) - The type of the feature associated with the alias.
   *   `formattedAddress` (*type:* `String.t`, *default:* `nil`) - One-line geocoded address that this lat/lng represents at the time this alias was created by the user.
+  *   `isAdsJoinCompliant` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this alias is Ads join compliant for use by 3p clients. See go/ios_address and go/aliased-locations-provenance for more details. Please contact oolong-team@ for additional questions regarding usage of this field.
   *   `nickname` (*type:* `String.t`, *default:* `nil`) - Free-text alias if alias type is NICKNAME. Otherwise unset. Limited to 40 characters.
   *   `point` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t`, *default:* `nil`) - lat/lng the icon is to be shown at.
   *   `ptoken` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PtokenPToken.t`, *default:* `nil`) - Encapsulates the privacy policy relevant signals for this event. See go/kansas-embedded-ptokens for additional details. Keep the type fully qualified in case (when) we decide to make proto compiler enforce '.ptoken.PToken' as the only allowed type for the field number 9099. Hence, don't remove the leading '.'. See go/protobuf-ptoken-field for details around the 9099 field number.
@@ -45,6 +46,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PersonalizationMapsAliasIcon do
           :featureName => String.t() | nil,
           :featureType => String.t() | nil,
           :formattedAddress => String.t() | nil,
+          :isAdsJoinCompliant => boolean() | nil,
           :nickname => String.t() | nil,
           :point => GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto.t() | nil,
           :ptoken => GoogleApi.ContentWarehouse.V1.Model.PtokenPToken.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PersonalizationMapsAliasIcon do
   field(:featureName)
   field(:featureType)
   field(:formattedAddress)
+  field(:isAdsJoinCompliant)
   field(:nickname)
   field(:point, as: GoogleApi.ContentWarehouse.V1.Model.GeostorePointProto)
   field(:ptoken, as: GoogleApi.ContentWarehouse.V1.Model.PtokenPToken)

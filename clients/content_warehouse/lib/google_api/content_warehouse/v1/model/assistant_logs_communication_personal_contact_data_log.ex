@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsCommunicationPersonalContactDataLog do
   @moduledoc """
-  Contact meta data. Next ID: 30
+  Contact meta data. Next ID: 31
 
   ## Attributes
 
@@ -29,6 +29,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsCommunicationPersonal
   *   `fuzzyNgramMatch` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantLogsCommunicationFuzzyNgramMatchLog.t)`, *default:* `nil`) - Populate only if ContactRecognitionAlternate.Source is 'FUZZY_CONTACT_MATCH'.
   *   `gaiaId` (*type:* `String.t`, *default:* `nil`) - Contact owner's gaia id from cs/symbol::symbol:quality_qrewrite.PersonalContactData.shared_contact_owner_gaia_id. Only populated for is_shared = true and non sign-out mode and user is not the owner of the contact(shared contact from other user). This field is not being logged in P2.
   *   `isContactFromSecondaryAccount` (*type:* `boolean()`, *default:* `nil`) - Boolean value indicating whether selected contact is from different account than the logged in account.
+  *   `isExactMatch` (*type:* `boolean()`, *default:* `nil`) - If the contact is matched exactly from the query name.
   *   `isShared` (*type:* `boolean()`, *default:* `nil`) - If this is a shared contact. This is true in 2 cases: - User is calling their own contacts that have been marked as shared. - User is calling shared contacts from some other user's contact list. This field is not being logged in P2.
   *   `isTransliteratedMatch` (*type:* `boolean()`, *default:* `nil`) - Indicate the contact matches the transliterated query.
   *   `isVanityContact` (*type:* `boolean()`, *default:* `nil`) - True if the contact is a vanity contact(has email = user's email address).
@@ -69,6 +70,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsCommunicationPersonal
             | nil,
           :gaiaId => String.t() | nil,
           :isContactFromSecondaryAccount => boolean() | nil,
+          :isExactMatch => boolean() | nil,
           :isShared => boolean() | nil,
           :isTransliteratedMatch => boolean() | nil,
           :isVanityContact => boolean() | nil,
@@ -114,6 +116,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsCommunicationPersonal
 
   field(:gaiaId)
   field(:isContactFromSecondaryAccount)
+  field(:isExactMatch)
   field(:isShared)
   field(:isTransliteratedMatch)
   field(:isVanityContact)

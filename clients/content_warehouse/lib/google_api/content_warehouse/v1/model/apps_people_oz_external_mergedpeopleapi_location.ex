@@ -30,7 +30,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Indicates the time this location was added or last edited.
   *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiPersonFieldMetadata.t`, *default:* `nil`) - 
   *   `source` (*type:* `String.t`, *default:* `nil`) - Value indicates the origin of this location information.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Describes the type of location. For e.g. Grew_up, Desk. Corresponds to FBS backend.proto Location.StandardTag
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Describes the type of location. E.g. Grew_up, Desk. Corresponds to FBS backend.proto Location.StandardTag
   *   `value` (*type:* `String.t`, *default:* `nil`) - 
   """
 

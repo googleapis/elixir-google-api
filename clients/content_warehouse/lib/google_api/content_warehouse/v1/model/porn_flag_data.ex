@@ -28,7 +28,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PornFlagData do
   *   `internalSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SafesearchInternalImageSignals.t`, *default:* `nil`) - A proto that stores SafeSearch internal signals that are not exported to clients. SafeSearch team does not provide any guarantees about the presence or the semantics of these signals in the future.
   *   `numberFaces` (*type:* `integer()`, *default:* `nil`) - number of faces
   *   `ocrAnnotation` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotation.t`, *default:* `nil`) - Information about image OCR text. For details see image/safesearch/content/public/ocr_annotation.proto.
-  *   `ocrVulgarScore` (*type:* `number()`, *default:* `nil`) - Vulgar score of the text found by OCR in the image.
   *   `offensiveSymbolDetection` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOffensiveSymbolDetection.t`, *default:* `nil`) - QuimbyCongas-based detection of offensive symbols in the image (currently swastika and Nazi yellow badge).
   *   `photodnaHash` (*type:* `String.t`, *default:* `nil`) - Binary version of the PhotoDNA hash (144 bytes long). If not set (has_photodna_hash() == false) it means that it was not computed, if empty (has_photodna_hash() == true && photodna_hash() == "") it means that the computation failed (cannot be computed for images smaller than 50 x 50).
   *   `pornWithHighConfidence` (*type:* `boolean()`, *default:* `nil`) - This field is set to true when we are pretty confident that the image is porn (with higher precision than the img_porn_moderate restrict). In particular, it means that the image might be demoted for non-porn queries when SafeSearch is Off.
@@ -54,7 +53,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PornFlagData do
           :numberFaces => integer() | nil,
           :ocrAnnotation =>
             GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotation.t() | nil,
-          :ocrVulgarScore => number() | nil,
           :offensiveSymbolDetection =>
             GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOffensiveSymbolDetection.t()
             | nil,
@@ -81,8 +79,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PornFlagData do
   field(:ocrAnnotation,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOCRAnnotation
   )
-
-  field(:ocrVulgarScore)
 
   field(:offensiveSymbolDetection,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageSafesearchContentOffensiveSymbolDetection

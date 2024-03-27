@@ -17,12 +17,13 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog do
   @moduledoc """
-  Contains information logged in target device selection. See go/improve-device-targeting-logging for details. Next Id: 22
+  Contains information logged in target device selection. See go/improve-device-targeting-logging for details. Next Id: 23
 
   ## Attributes
 
   *   `allDefaultDevices` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDefaultDeviceLog.t)`, *default:* `nil`) - Default settings of all nearby devices Deprecated, use default_devices_log instead.
   *   `allMediaStreamLog` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAllMediaStreamLog.t`, *default:* `nil`) - Logs all active media sessions.
+  *   `availableDevicesLog` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDevicesLog.t`, *default:* `nil`) - The list of `available_devices` as they appear in DeviceTargetingContext. This is very useful for debugging diffs between GB and CMP since they have different methods of populating the `available_devices` field.
   *   `counterfactualDeviceSelectionLog` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog.t`, *default:* `nil`) - DeviceSelectionLog for counterfactual logging.
   *   `defaultDevices` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDefaultDeviceLog.t`, *default:* `nil`) - Include default tv and default speaker Deprecated, use all_default_devices below.
   *   `defaultDevicesLog` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDefaultDevicesLog.t`, *default:* `nil`) - 
@@ -45,6 +46,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog do
             list(GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDefaultDeviceLog.t()) | nil,
           :allMediaStreamLog =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAllMediaStreamLog.t() | nil,
+          :availableDevicesLog =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDevicesLog.t() | nil,
           :counterfactualDeviceSelectionLog =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog.t() | nil,
           :defaultDevices =>
@@ -78,6 +81,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog do
   )
 
   field(:allMediaStreamLog, as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAllMediaStreamLog)
+
+  field(:availableDevicesLog,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsAvailableDevicesLog
+  )
 
   field(:counterfactualDeviceSelectionLog,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceSelectionLog

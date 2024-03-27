@@ -22,7 +22,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantRemindersAttachmentLink d
   ## Attributes
 
   *   `linkUrl` (*type:* `String.t`, *default:* `nil`) - REQUIRED. The link to surface to frontends (e.g., Hubpage, notifications.) This could also be a surface-specific deeplink (be sure to set `surface_type` accordingly.)
-  *   `notificationText` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantRemindersNlgTemplateKey.t`, *default:* `nil`) - REQUIRED. The text for the notification link button. Note: We cannot take nlp_generation.TemplateData yet due to cyclic dependency. The plan is to cut dependency from TemplateData to quality.actions.Reminder.
+  *   `notificationText` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantRemindersNlgTemplateKey.t`, *default:* `nil`) - REQUIRED. The text for the notification link button. Note: We cannot take nlp_generation.TemplateData yet due to cyclic dependency. The plan is to cut dependency from TemplateData to quality.actions.Reminder. DEPRECATED. No longer used as part of the notification flow.
   """
 
   use GoogleApi.Gax.ModelBase

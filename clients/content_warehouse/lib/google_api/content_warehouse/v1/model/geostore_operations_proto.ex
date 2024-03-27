@@ -21,7 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreOperationsProto do
 
   ## Attributes
 
-  *   `temporaryClosure` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreTemporaryClosureProto.t)`, *default:* `nil`) - Records temporary status change of the feature, such as remodel, vacation, etc.: the feature is temporarily (but not permanently) unavailable. This prevents users from going to the feature. Supports an arbitrary number of past, present, and future temporary closures, with the feature's data owner choosing which range of past and future closures to permit or guarantee to keep. All start and end dates must be unique from each other. If two consecutive dates are a start and an end of a TemporaryClosureProto, then the two dates must be from the same TemporaryClosureProto. Otherwise, exact dates may be missing so long as there exist a possible sequence of temporary closures with both exact start_date and end_date that keeps any known exact start_date and end_date. The earliest temporary closure must begin after whenever initial operations begin. Likewise, the latest temporary closure must end before whenever the permanent closure begins. NOTE: does *not* guarantee chronological order.
+  *   `temporaryClosure` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreTemporaryClosureProto.t)`, *default:* `nil`) - Records temporary status changes of the feature, such as remodel, vacation, etc.: the feature is temporarily (but not permanently) unavailable. See go/geo-schema-reference:operational-lifecycle#temporary-closure for guidance on interpreting this data and constraints on writing it. NOTE: Order of the TemporaryClosureProtos is *not* guaranteed to be chronological.
   """
 
   use GoogleApi.Gax.ModelBase

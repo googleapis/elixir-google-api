@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchSourceUrlDocjoinInfo do
   @moduledoc """
-  The proto containing all the information we extracted from docjoin, for the source_url of the dataset. NEXT TAG: 17
+  The proto containing all the information we extracted from docjoin, for the source_url of the dataset. NEXT TAG: 18
 
   ## Attributes
 
@@ -28,7 +28,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchSourceUrlDocj
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the document in the string representation of LanguageCode. Converts from Language Enum to LanguageCode through i18n/identifiers/langenclanguagecodeconverter.h Please use i18n/identifiers/languagecodeconverter.h for converting between LanguageCode and string representation.
   *   `latestPageUpdateDate` (*type:* `String.t`, *default:* `nil`) - The syntactic date of a dataset document that reflects the publication date of the content.
   *   `navboostQuery` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchNavboostQueryInfo.t)`, *default:* `nil`) - A sequence of Navboost queries for the dataset source_url.
-  *   `pagerank` (*type:* `integer()`, *default:* `nil`) - The page rank of the document. 
+  *   `pagerank` (*type:* `integer()`, *default:* `nil`) - The page rank of the document. DEPRECATED in favour of Pagerank_NS. Do not use as it is no longer maintained in docjoins and can break at any moment.
+  *   `pagerankNs` (*type:* `integer()`, *default:* `nil`) - The production pagerank value of the document. 
   *   `petacatInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.FatcatCompactDocClassification.t`, *default:* `nil`) - Petacat classifications for the web document. Normally the results from calling Petacat come in a PetacatResponse, which is very flexible and extensible. This proto takes most of the flexibility away - only rephil clusters, taxonomic classifications, and binary classifications, with discretized weights.
   *   `salientTerms` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualitySalientTermsSalientTermSet.t`, *default:* `nil`) - A set of salient terms extracted fromthe document. DEPRECATEAD. Moved to DatasetMetadata for performance reasons.
   *   `scholarInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ScienceIndexSignal.t`, *default:* `nil`) - Science per-doc data for inclusion in websearch. 
@@ -52,6 +53,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchSourceUrlDocj
             list(GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchNavboostQueryInfo.t())
             | nil,
           :pagerank => integer() | nil,
+          :pagerankNs => integer() | nil,
           :petacatInfo =>
             GoogleApi.ContentWarehouse.V1.Model.FatcatCompactDocClassification.t() | nil,
           :salientTerms =>
@@ -82,6 +84,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchSourceUrlDocj
   )
 
   field(:pagerank)
+  field(:pagerankNs)
   field(:petacatInfo, as: GoogleApi.ContentWarehouse.V1.Model.FatcatCompactDocClassification)
   field(:salientTerms, as: GoogleApi.ContentWarehouse.V1.Model.QualitySalientTermsSalientTermSet)
   field(:scholarInfo, as: GoogleApi.ContentWarehouse.V1.Model.ScienceIndexSignal)

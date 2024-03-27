@@ -29,7 +29,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefMdvcMetadataPerVer
   *   `isDimension` (*type:* `boolean()`, *default:* `nil`) - If true, the entity is a dimension for some entities in the vertical.
   *   `isGeneralization` (*type:* `boolean()`, *default:* `nil`) - If true, the entity is a generalization for some entities in the vertical.
   *   `resolutionPriority` (*type:* `integer()`, *default:* `nil`) - Resolution priority for this entity. If there are many possible resolutions to a MDVC understanding, only the ones with the highest priority are annotated.
-  *   `subVerticalFp` (*type:* `list(String.t)`, *default:* `nil`) - Fingerprints that identify the topic's sub-verticals, if any.
   *   `verticalName` (*type:* `String.t`, *default:* `nil`) - Name of the vertical this message is about.
   """
 
@@ -44,7 +43,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefMdvcMetadataPerVer
           :isDimension => boolean() | nil,
           :isGeneralization => boolean() | nil,
           :resolutionPriority => integer() | nil,
-          :subVerticalFp => list(String.t()) | nil,
           :verticalName => String.t() | nil
         }
 
@@ -56,7 +54,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefMdvcMetadataPerVer
   field(:isDimension)
   field(:isGeneralization)
   field(:resolutionPriority)
-  field(:subVerticalFp, type: :list)
   field(:verticalName)
 end
 

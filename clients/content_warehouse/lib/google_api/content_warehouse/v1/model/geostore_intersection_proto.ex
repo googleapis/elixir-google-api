@@ -24,7 +24,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreIntersectionProto do
   *   `intersectionGroup` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The artifact or logical intersection group to which this intersection belongs. If present, the intersection group must also refer back to the intersection. If an intersection is within both the artifact and logical group, then this reference should be to the artifact group.
   *   `outSegment` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t)`, *default:* `nil`) - RESERVED
   *   `segment` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t)`, *default:* `nil`) - The list of segments that terminate at this intersection, in any order. Note that all segments are directed towards the intersection, i.e. their endpoints indicate what sort of intersection this is. This should not be empty because an intersection with no associated segment is meaningless.
-  *   `tollClusterId` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The toll cluster to which this intersection belongs. If present, the toll cluster must also refer back to the intersection.
+  *   `tollCluster` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t`, *default:* `nil`) - The toll cluster to which this intersection belongs. If present, the toll cluster must also refer back to the intersection. To set this field, the intersection must be a gcid:toll_intersection feature.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,13 +35,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreIntersectionProto do
           :outSegment =>
             list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t()) | nil,
           :segment => list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t()) | nil,
-          :tollClusterId => GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t() | nil
+          :tollCluster => GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t() | nil
         }
 
   field(:intersectionGroup, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
   field(:outSegment, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto, type: :list)
   field(:segment, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto, type: :list)
-  field(:tollClusterId, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
+  field(:tollCluster, as: GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.GeostoreIntersectionProto do

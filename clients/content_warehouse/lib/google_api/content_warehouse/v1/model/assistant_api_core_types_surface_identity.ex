@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesSurfaceIdentity do
   @moduledoc """
-  The set of information that helps the server identify the surface. This replaces the User-Agent string within the Assistant Server. Note: The SurfaceIdentity proto should only be used to derive the capabilities of a surface. It should not be accessed outside of the CapabilityBuilder or CapabilityChecker. NEXT ID: 6 LINT.IfChange
+  The set of information that helps the server identify the surface. This replaces the User-Agent string within the Assistant Server. Note: The SurfaceIdentity proto should only be used to derive the capabilities of a surface. It should not be accessed outside of the CapabilityBuilder or CapabilityChecker. NEXT ID: 6
 
   ## Attributes
 

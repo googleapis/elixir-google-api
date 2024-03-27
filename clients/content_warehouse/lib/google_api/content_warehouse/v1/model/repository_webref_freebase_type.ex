@@ -24,7 +24,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefFreebaseType do
   *   `provenance` (*type:* `list(String.t)`, *default:* `nil`) - Optional - for inferred types the principal source of information.
   *   `score` (*type:* `number()`, *default:* `nil`) - Optional score. Not present in KG directly but e.g. in WPCat.
   *   `typeFprint` (*type:* `String.t`, *default:* `nil`) - Fingerprint of type hrid http://cs/google3/repository/webref/universal/base/kg-schema.h;rcl=543911652;l=51
-  *   `typeMid` (*type:* `String.t`, *default:* `nil`) - Mid of this type. Equivalent to type_name, but is more compact. When present, overrides type_name (which can be omitted in this case to save space). This field is deprecated and migrated to fprint.
   *   `typeName` (*type:* `String.t`, *default:* `nil`) - e.g.: "/business/industry", "/book/book_subject", "/people/person"... HRID of the type. May be missing for optimisation reasons in Refcon, but is present for Qref/Webref. At least one of type_name or type_fprint will be present at all times
   """
 
@@ -34,14 +33,12 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefFreebaseType do
           :provenance => list(String.t()) | nil,
           :score => number() | nil,
           :typeFprint => String.t() | nil,
-          :typeMid => String.t() | nil,
           :typeName => String.t() | nil
         }
 
   field(:provenance, type: :list)
   field(:score)
   field(:typeFprint)
-  field(:typeMid)
   field(:typeName)
 end
 

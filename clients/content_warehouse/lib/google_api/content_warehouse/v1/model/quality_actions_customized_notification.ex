@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityActionsCustomizedNotification do
   @moduledoc """
-
+  DEPRECATED. No longer supported after migration to Tasks.
 
   ## Attributes
 

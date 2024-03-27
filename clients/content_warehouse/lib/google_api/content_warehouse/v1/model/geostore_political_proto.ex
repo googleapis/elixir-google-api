@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.GeostorePoliticalProto do
   @moduledoc """
-  This protocol buffer is included from feature.proto as an optional message. Political features represent the different ways that people are divided into geographical regions.
+  This protocol buffer is included from feature.proto as an optional message. Political features represent the different ways that people are divided into geographical regions. This protocol buffer is applicable only to TYPE_POLITICAL features and is used to store political information from the feature's point of view.
 
   ## Attributes
 

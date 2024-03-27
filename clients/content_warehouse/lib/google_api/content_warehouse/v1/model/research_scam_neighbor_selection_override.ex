@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamNeighborSelectionOverride do
   @moduledoc """
-  Last used tag = 8
+  Last used tag = 13
 
   ## Attributes
 
@@ -28,6 +28,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamNeighborSelectionOverr
   *   `numSingleShardNeighbors` (*type:* `integer()`, *default:* `nil`) - If populated, this is the maximum number of neighbors that may be returned from a single shard. If not populated, up to num_neighbors neighbors are returned from each shard. Setting this to a smaller value than num_neighbors will increase speed at the expense of accuray by requiring cross-shard merging of fewer neighbors. If this value is set, num_neighbors must also be set and this value must be <= num_neighbors and >= num_neighbors / number of shards. If set, this value must always be > 0. 
   *   `perCrowdingAttributeNumNeighbors` (*type:* `integer()`, *default:* `nil`) - The maximum number of neighbors to return for a single value of the crowding attribute. The crowding attribute is specified per-datapoint in the GenericFeatureVector proto, or the Document proto for sparse logistic models. Crowding is described more thoroughly in research/scam/utils/crowding_top_n.h. NOTES: Crowding is effectivley enabled if this value is less than num_neighbors.
   *   `perCrowdingAttributePreReorderingNumNeighbors` (*type:* `integer()`, *default:* `nil`) - The maximum number of neighbors to return from the approximate portion of the nearest-neighbor search algorithm, within each shard, for a single value of the crowding attribute, before performing exact reordering. Ignored if exact reordering is disabled for this dataset.
+  *   `scoringExtensionMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ResearchScamScoringExtensionMetadata.t`, *default:* `nil`) - The scoring extension metadata overrides for single machine classical scam database.
+  *   `treeXHybridCentersToSearch` (*type:* `list(integer())`, *default:* `nil`) - Note: currently not implemented for all database shard subclasses! Contact ScaM before using. Provides prematched centers_to_search for tree-X hybrid searchers. Ignores any overwrites related to centroid matching since they are already matched. `tree_x_hybrid_centers_to_search` should match by size with `tree_x_hybrid_distances`.
+  *   `treeXHybridDistances` (*type:* `list(number())`, *default:* `nil`) - 
   *   `treeXHybridLeavesSearchedOverride` (*type:* `integer()`, *default:* `nil`) - Note: currently not implemented for all database shard subclasses! Contact ScaM before using. Overrides max_spill_centers for tree-X hybrid searchers configured with FIXED_NUMBER_OF_CENTERS spilling. The max_spill_centers in the ScaM config is used if this field isn't set. Only valid if: * Used on a tree-X hybrid ScaM config with FIXED_NUMBER_OF_CENTERS. * Value is greater than zero and at most equal to num_children.
   """
 
@@ -41,6 +44,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamNeighborSelectionOverr
           :numSingleShardNeighbors => integer() | nil,
           :perCrowdingAttributeNumNeighbors => integer() | nil,
           :perCrowdingAttributePreReorderingNumNeighbors => integer() | nil,
+          :scoringExtensionMetadata =>
+            GoogleApi.ContentWarehouse.V1.Model.ResearchScamScoringExtensionMetadata.t() | nil,
+          :treeXHybridCentersToSearch => list(integer()) | nil,
+          :treeXHybridDistances => list(number()) | nil,
           :treeXHybridLeavesSearchedOverride => integer() | nil
         }
 
@@ -51,6 +58,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamNeighborSelectionOverr
   field(:numSingleShardNeighbors)
   field(:perCrowdingAttributeNumNeighbors)
   field(:perCrowdingAttributePreReorderingNumNeighbors)
+
+  field(:scoringExtensionMetadata,
+    as: GoogleApi.ContentWarehouse.V1.Model.ResearchScamScoringExtensionMetadata
+  )
+
+  field(:treeXHybridCentersToSearch, type: :list)
+  field(:treeXHybridDistances, type: :list)
   field(:treeXHybridLeavesSearchedOverride)
 end
 
