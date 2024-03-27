@@ -17,23 +17,32 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamV3Restrict do
   @moduledoc """
-
+  //////////////////////////////////////////////////////////////////////////// Note that: * Your overall query is an AND across namespaces across types. * Namespaces names are independent across different restrict types (token, numeric and custom).
 
   ## Attributes
 
-  *   `namespaces` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace.t)`, *default:* `nil`) - //////////////////////////////////////////////////////////////////////////// NAMESPACES - a repeating field, where each entry specifies the set of tokens, within a single namespace, that apply to the query, or database point, on which this V3Restrict proto is defined. Note that: * Your overall query is an AND across namespaces. * Explicitly specifying a namespace with 0 tokens is identical to omitting that namespace. ie, "{ns:}" == "". * It is an error to specify the same namespace more than once per instance of the V3Restrict proto.
+  *   `customNamespaces` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamCustomRestrictNamespace.t)`, *default:* `nil`) - This field allows custom restrict extension. - It is up to the extension to decide whether OK to specify the same custom namespace more than once per instance of the V3Restrict proto. - Unrecorgniazed (in |V3RestrictsConfig.custom_restrict_namespace_configs|) and unregistered (in factory function registry) custom namespace name will fail dataset loading (instead of being ignored silently). See go/scam-restrict-plugin for more details.
+  *   `namespaces` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace.t)`, *default:* `nil`) - A repeating field, where each entry specifies the set of tokens, within a single namespace, that apply to the query, or database point, on which this V3Restrict proto is defined. * Explicitly specifying a namespace with 0 tokens is identical to omitting that namespace. ie, "{ns:}" == "". * It is an error to specify the same namespace more than once per instance of the V3Restrict proto.
   *   `numericNamespaces` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamNumericRestrictNamespace.t)`, *default:* `nil`) - This field allows restricts to be based on numeric comparisons rather than categorical tokens. HINT: To allow a range of values in a namespace (e.g. 42 <= x < 128), specify the same namespace twice in the query, e.g.: {namespace: "x" op: LESS value_int: 128 } {namespace: "x" op: GREATER_EQUAL value_int: 42 }
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customNamespaces =>
+            list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamCustomRestrictNamespace.t())
+            | nil,
           :namespaces =>
             list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace.t()) | nil,
           :numericNamespaces =>
             list(GoogleApi.ContentWarehouse.V1.Model.ResearchScamNumericRestrictNamespace.t())
             | nil
         }
+
+  field(:customNamespaces,
+    as: GoogleApi.ContentWarehouse.V1.Model.ResearchScamCustomRestrictNamespace,
+    type: :list
+  )
 
   field(:namespaces,
     as: GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace,

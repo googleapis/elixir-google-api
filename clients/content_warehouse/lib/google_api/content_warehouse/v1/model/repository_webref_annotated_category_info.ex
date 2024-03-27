@@ -21,18 +21,18 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefAnnotatedCategoryI
 
   ## Attributes
 
-  *   `debugString` (*type:* `String.t`, *default:* `nil`) - A debug string for the category.
+  *   `collectionHrid` (*type:* `String.t`, *default:* `nil`) - The collection hrid for the category.
   *   `mid` (*type:* `String.t`, *default:* `nil`) - The mid of the entity representing the category.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :debugString => String.t() | nil,
+          :collectionHrid => String.t() | nil,
           :mid => String.t() | nil
         }
 
-  field(:debugString)
+  field(:collectionHrid)
   field(:mid)
 end
 

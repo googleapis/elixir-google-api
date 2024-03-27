@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDocData do
   @moduledoc """
-  PerDocData for fringe-query-prior (built into the shards for eventual consumption at Fringe classification time). Not stored in DocJoins. NEXT ID: 13
+  PerDocData for fringe-query-prior (built into the shards for eventual consumption at Fringe classification time). Not stored in DocJoins. NEXT ID: 16
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
   *   `encodedChardXlqHoaxPrediction` (*type:* `integer()`, *default:* `nil`) - An encoding of the Chard XLQ-hoax prediction in [0,1].
   *   `encodedChardXlqTranslatedPrediction` (*type:* `integer()`, *default:* `nil`) - An encoding of the Chard XLQ prediction on translated content in [0,1].
   *   `encodedChardXlqYmylPrediction` (*type:* `integer()`, *default:* `nil`) - An encoding of the Chard XLQ-YMYL prediction in [0,1].
+  *   `encodedDaftScore` (*type:* `integer()`, *default:* `nil`) - An encoding of the Document About Fringe Topic (daft) score in [0, 1].
   *   `encodedDocumentFringeVulnerability` (*type:* `integer()`, *default:* `nil`) - An estimate of the vulnerability of this doc to show fringe content, based on the context around the document. Can be interpreted as a 'safe' QScore threshold to use (see go/doc-fringe-vulnerability for more info). Encoded for compactness and to restrict visibility. Please contact fringe-ranking@ to get access to quality_fringe::DocumentFringeVulnerabilityEncoding to decode this field.
   *   `encodedEntityPriorScore` (*type:* `integer()`, *default:* `nil`) - Highest entity prior seen for document's Headline and SingleTopic entities (see go/topicality-score for definitions of entity topicalities). Represents probability that a query is fringe, given that the entity is in the result set with topicality >= Headline. Scores scaled to integers between 0 and 1000 for compactness. Scores must be interpreted through FringeQueryPriorEncoding::Decode API.
   *   `encodedFringePriorScore` (*type:* `integer()`, *default:* `nil`) - Probability that a query is fringe, given this document is in the result set. Scores scaled to integers between 0 and 1000 for compactness. Scores must be interpreted through FringeQueryPriorEncoding::Decode API.
@@ -32,7 +33,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
   *   `encodedFringeSitePriorScoreForQfsTraining` (*type:* `integer()`, *default:* `nil`) - Probability that a query is fringe, given this document's site is in the result set. Does not use signals with a dependency on the QueryFringeScore of a document. Scores scaled to integers between 0 and 1000 for compactness. Scores must be interpreted through FringeQueryPriorEncoding::Decode API. Will NOT be present if the fringe_site_prior_score_for_qfs_training is not significantly different from the site_prior_score.
   *   `encodedPredictedXlqScoreAndConfidence` (*type:* `integer()`, *default:* `nil`) - A combined encoding of the pXLQ score in [0,1] and the confidence with which that score should be interpreted in [0,1].
   *   `encodedProximityScore` (*type:* `integer()`, *default:* `nil`) - A score in [0, 1] representing the similarity of this doc to known fringe-vulnerable 'seeds'. See go/fringe-proximity for more information. Encoded for compactness and to restrict visibility.
-  *   `sensitiveEntitiesIndices` (*type:* `list(integer())`, *default:* `nil`) - Indices on the repository_webref::WebrefEntities::entity field of entities that represent a person or a group of people (aka sensitive entities).
+  *   `encodedPseudoraterPxlqScore` (*type:* `integer()`, *default:* `nil`) - An encoding of the XLQ pseudorater severity score translated into pXLQ score space in [0,1]. The encoding includes the pseudorater version and confidence.
+  *   `sensitiveEntitiesIndices` (*type:* `list(integer())`, *default:* `nil`) - Indices on the repository_webref::WebrefEntities::entity field of entities that represent a person or a group of people (aka sensitive entities). Will be deprecated once sensitive_entities_mids is fully launched (see b/290268614).
+  *   `sensitiveEntitiesMids` (*type:* `list(String.t)`, *default:* `nil`) - MIDs of entities that represent a person or a group of people (aka sensitive entities). See b/290268614 for reference why this is needed in replacement to sensitive_entities_indices.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,6 +45,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
           :encodedChardXlqHoaxPrediction => integer() | nil,
           :encodedChardXlqTranslatedPrediction => integer() | nil,
           :encodedChardXlqYmylPrediction => integer() | nil,
+          :encodedDaftScore => integer() | nil,
           :encodedDocumentFringeVulnerability => integer() | nil,
           :encodedEntityPriorScore => integer() | nil,
           :encodedFringePriorScore => integer() | nil,
@@ -49,13 +53,16 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
           :encodedFringeSitePriorScoreForQfsTraining => integer() | nil,
           :encodedPredictedXlqScoreAndConfidence => integer() | nil,
           :encodedProximityScore => integer() | nil,
-          :sensitiveEntitiesIndices => list(integer()) | nil
+          :encodedPseudoraterPxlqScore => integer() | nil,
+          :sensitiveEntitiesIndices => list(integer()) | nil,
+          :sensitiveEntitiesMids => list(String.t()) | nil
         }
 
   field(:encodedCalibratedFringeSitePriorScore)
   field(:encodedChardXlqHoaxPrediction)
   field(:encodedChardXlqTranslatedPrediction)
   field(:encodedChardXlqYmylPrediction)
+  field(:encodedDaftScore)
   field(:encodedDocumentFringeVulnerability)
   field(:encodedEntityPriorScore)
   field(:encodedFringePriorScore)
@@ -63,7 +70,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
   field(:encodedFringeSitePriorScoreForQfsTraining)
   field(:encodedPredictedXlqScoreAndConfidence)
   field(:encodedProximityScore)
+  field(:encodedPseudoraterPxlqScore)
   field(:sensitiveEntitiesIndices, type: :list)
+  field(:sensitiveEntitiesMids, type: :list)
 end
 
 defimpl Poison.Decoder,

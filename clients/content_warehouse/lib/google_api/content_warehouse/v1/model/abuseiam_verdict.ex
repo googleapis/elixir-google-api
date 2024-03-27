@@ -28,7 +28,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AbuseiamVerdict do
   *   `evaluation` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamEvaluation.t)`, *default:* `nil`) - Evaluations relevant to this verdict. Every Verdict should contain at least one Evaluation.
   *   `hashes` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamHash.t)`, *default:* `nil`) - Details of all the hashes that can be computed on a message, such as simhash and attachment hash
   *   `isLegalIssued` (*type:* `boolean()`, *default:* `nil`) - Is this verdict issued by legal?
-  *   `miscScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamNameValuePair.t)`, *default:* `nil`) - This field is used to pass relevant / necessary scores to our clients. For eg: ASBE propogates these scores to moonshine.
+  *   `miscScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamNameValuePair.t)`, *default:* `nil`) - This field is used to pass relevant / necessary scores to our clients. For eg: ASBE propagates these scores to moonshine.
   *   `reasonCode` (*type:* `String.t`, *default:* `nil`) - A short description of the reason why the verdict decision is made.
   *   `region` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamRegion.t)`, *default:* `nil`) - The regions in which this verdict should be enforced. Absence of this field indicates that the verdict is applicable everywhere.
   *   `restriction` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AbuseiamVerdictRestriction.t)`, *default:* `nil`) - Restrictions on where this verdict applies. If any restriction is met, the verdict is applied there. If no restrictions are present, the verdict is considered global.

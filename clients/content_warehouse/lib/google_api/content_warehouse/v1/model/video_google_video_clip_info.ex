@@ -21,19 +21,28 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.VideoGoogleVideoClipInfo do
 
   ## Attributes
 
+  *   `aloudLoggingId` (*type:* `String.t`, *default:* `nil`) - Used to track videos produced via Aloud dubbing.
   *   `appVersion` (*type:* `String.t`, *default:* `nil`) - YT app version (ie. YT Create app version).
   *   `assetLoggingId` (*type:* `list(String.t)`, *default:* `nil`) - List of YT media asset logging ids.
+  *   `dubbingLoggingId` (*type:* `String.t`, *default:* `nil`) - Used to track videos produced via Universal Dubbing.
+  *   `productType` (*type:* `String.t`, *default:* `nil`) - Product used to create this video clip.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :aloudLoggingId => String.t() | nil,
           :appVersion => String.t() | nil,
-          :assetLoggingId => list(String.t()) | nil
+          :assetLoggingId => list(String.t()) | nil,
+          :dubbingLoggingId => String.t() | nil,
+          :productType => String.t() | nil
         }
 
+  field(:aloudLoggingId)
   field(:appVersion)
   field(:assetLoggingId, type: :list)
+  field(:dubbingLoggingId)
+  field(:productType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.VideoGoogleVideoClipInfo do

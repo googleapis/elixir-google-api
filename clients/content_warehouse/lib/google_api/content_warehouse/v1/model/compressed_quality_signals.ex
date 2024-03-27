@@ -17,34 +17,35 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
   @moduledoc """
-  A message containing per doc signals that are compressed and included in Mustang and TeraGoogle. For TeraGoogle, this message is included in perdocdata which means it can be used in preliminary scoring. CAREFUL: For TeraGoogle, this data resides in very limited serving memory (Flash storage) for a huge number of documents. Next id: 42
+  A message containing per doc signals that are compressed and included in Mustang and TeraGoogle. For TeraGoogle, this message is included in perdocdata which means it can be used in preliminary scoring. CAREFUL: For TeraGoogle, this data resides in very limited serving memory (Flash storage) for a huge number of documents. Next id: 43
 
   ## Attributes
 
+  *   `ugcDiscussionEffortScore` (*type:* `integer()`, *default:* `nil`) - UGC page quality signals. (Times 1000 and floored)
   *   `productReviewPPromotePage` (*type:* `integer()`, *default:* `nil`) - 
   *   `experimentalQstarDeltaSignal` (*type:* `number()`, *default:* `nil`) - This field is *not* propagated to shards. It is meant to be populated at serving time using one of the versions present in the `experimental_nsr_team_wsj_data` field above (using the `ExperimentalNsrTeamDataOverridesParams` opti to populate it; see http://source/search?q=ExperimentalNsrTeamDataOverridesParams%20file:ascorer.proto). The purpose of this field is to be read by an experimental Q* component, in order to quickly run LEs with new delta components. See go/0DayLEs for details.
   *   `productReviewPDemoteSite` (*type:* `integer()`, *default:* `nil`) - Product review demotion/promotion confidences. (Times 1000 and floored)
   *   `experimentalQstarSiteSignal` (*type:* `number()`, *default:* `nil`) - This field is *not* propagated to shards. It is meant to be populated at serving time using one of the versions present in the `experimental_nsr_team_wsj_data` field above (using the `ExperimentalNsrTeamDataOverridesParams` opti to populate it; see http://source/search?q=ExperimentalNsrTeamDataOverridesParams%20file:ascorer.proto). The purpose of this field is to be read by an experimental Q* component, in order to quickly run LEs with new site components. See go/0DayLEs for details.
   *   `exactMatchDomainDemotion` (*type:* `integer()`, *default:* `nil`) - Page quality signals converted from fields in proto QualityBoost in quality/q2/proto/quality-boost.proto. To save indexing space, we convert the float values in [0, 1] to integers in range [0, 1023] (use 10 bits). exact_match_domain_demotion: converted from QualityBoost.emd.boost.
-  *   `nsrVersionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NSRVersionedItem.t)`, *default:* `nil`) - Versioned NSR score to be used in continuous evaluation of the upcoming NSR version and assess quality impact on various slices.
-  *   `nsrConfidence` (*type:* `integer()`, *default:* `nil`) - NSR confidence score: converted from quality_nsr.NsrData.
+  *   `nsrVersionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.NSRVersionedItem.t)`, *default:* `nil`) - Versioned NSR score to be used in continuous evaluation of the upcoming NSR version and assess quality impact on various slices. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
+  *   `nsrConfidence` (*type:* `integer()`, *default:* `nil`) - NSR confidence score: converted from quality_nsr.NsrData. This field is deprecated - use nsr_variance inside nsr_data_proto instead.
   *   `lowQuality` (*type:* `integer()`, *default:* `nil`) - S2V low quality score: converted from quality_nsr.NsrData, applied in Qstar. See quality_nsr::util::ConvertNsrDataToLowQuality.
   *   `navDemotion` (*type:* `integer()`, *default:* `nil`) - nav_demotion: converted from QualityBoost.nav_demoted.boost.
   *   `pqData` (*type:* `integer()`, *default:* `nil`) - Encoded page-level PQ signals.
   *   `siteAuthority` (*type:* `integer()`, *default:* `nil`) - site_authority: converted from quality_nsr.SiteAuthority, applied in Qstar.
-  *   `crapsNewUrlSignals` (*type:* `String.t`, *default:* `nil`) - For craps_[url|pattern]_signals, please avoid accessing these fields directly, even in minor ways like checking has_craps_*. Instead, please use methods from quality/navboost/craps/craps-lossy-compression.h or talk to dice-team.
+  *   `crapsNewUrlSignals` (*type:* `String.t`, *default:* `nil`) - For craps_[url|pattern]_signals, please avoid accessing these fields directly, even in minor ways like checking has_craps_*. Instead, please use methods from quality/navboost/craps/craps-lossy-compression.h or talk to craps-team@.
   *   `babyPandaV2Demotion` (*type:* `integer()`, *default:* `nil`) - New BabyPanda demotion, applied on top of Panda. This is meant to replace |baby_panda_demotion|.
   *   `authorityPromotion` (*type:* `integer()`, *default:* `nil`) - authority promotion: converted from QualityBoost.authority.boost
   *   `productReviewPUhqPage` (*type:* `integer()`, *default:* `nil`) - The possibility of a page being a high quality review page.
   *   `crapsAbsoluteHostSignals` (*type:* `integer()`, *default:* `nil`) - Impressions, unsquashed, host level, not to be used with compressed ratios. Not to be used in Pattern Data.
   *   `productReviewPPromoteSite` (*type:* `integer()`, *default:* `nil`) - 
-  *   `nsrOverrideBid` (*type:* `number()`, *default:* `nil`) - NSR override bid, used in Q* for emergency overrides.
+  *   `nsrOverrideBid` (*type:* `number()`, *default:* `nil`) - NSR override bid, used in Q* for emergency overrides. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `babyPandaDemotion` (*type:* `integer()`, *default:* `nil`) - baby_panda_demotion: converted from QualityBoost.rendered.boost.
   *   `serpDemotion` (*type:* `integer()`, *default:* `nil`) - serp demotion: applied in Qstar.
   *   `anchorMismatchDemotion` (*type:* `integer()`, *default:* `nil`) - anchor_mismatch_demotion: converted from QualityBoost.mismatched.boost.
   *   `crapsNewHostSignals` (*type:* `String.t`, *default:* `nil`) - 
   *   `experimentalQstarSignal` (*type:* `number()`, *default:* `nil`) - This field is *not* propagated to shards. It is meant to be populated at serving time using one of the versions present in the `experimental_nsr_team_wsj_data` field above (using the `ExperimentalNsrTeamDataOverridesParams` opti to populate it; see http://source/search?q=ExperimentalNsrTeamDataOverridesParams%20file:ascorer.proto). The purpose of this field is to be read by an experimental Q* component, in order to quickly run LEs with new components. See go/0DayLEs for details.
-  *   `pairwiseqScoringData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PairwiseQScoringData.t`, *default:* `nil`) - PairwiseQ data for QTJ. This field is *not* propagated to shards, but is populated at serving time by go/web-signal-joins. See b/175762140
+  *   `pairwiseqScoringData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PairwiseQScoringData.t`, *default:* `nil`) - Deprecated and unused field.
   *   `topicEmbeddingsVersionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityAuthorityTopicEmbeddingsVersionedItem.t)`, *default:* `nil`) - Versioned TopicEmbeddings data to be populated later into superroot / used directly in scorers.
   *   `scamness` (*type:* `integer()`, *default:* `nil`) - Scam model score. Used as one of the web page quality qstar signals. Value range from 0 to 1023.
   *   `crapsUnscaledIpPriorBadFraction` (*type:* `integer()`, *default:* `nil`) - 
@@ -56,13 +57,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
   *   `pqDataProto` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData.t`, *default:* `nil`) - Stripped page-level signals, not present in the encoded field 'pq_data'.
   *   `pairwiseqVersionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.PairwiseQVersionedItem.t)`, *default:* `nil`) - Versioned PairwiseQ score to be used in continuous evaluation of the upcoming PairwiseQ versions and assess quality impact on various slices.
   *   `crapsNewPatternSignals` (*type:* `String.t`, *default:* `nil`) - 
-  *   `vlqNsr` (*type:* `integer()`, *default:* `nil`) - NSR for low-quality videos, converted from quality_nsr.NsrData.vlq_nsr.
+  *   `vlqNsr` (*type:* `integer()`, *default:* `nil`) - NSR for low-quality videos, converted from quality_nsr.NsrData.vlq_nsr. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `productReviewPDemotePage` (*type:* `integer()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :ugcDiscussionEffortScore => integer() | nil,
           :productReviewPPromotePage => integer() | nil,
           :experimentalQstarDeltaSignal => number() | nil,
           :productReviewPDemoteSite => integer() | nil,
@@ -112,6 +114,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
           :productReviewPDemotePage => integer() | nil
         }
 
+  field(:ugcDiscussionEffortScore)
   field(:productReviewPPromotePage)
   field(:experimentalQstarDeltaSignal)
   field(:productReviewPDemoteSite)

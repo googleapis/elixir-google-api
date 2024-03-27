@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   @moduledoc """
-  =========================================================================== # Make sure you read the comments in the bottom before you add any new field. NB: As noted in the comments, this protocol buffer is used in both indexing and serving. In mustang serving implementations we only decode perdocdata during the search phase, and so this protocol should only contain data used during search. See mustang/repos_www/attachments.proto:{MustangBasicInfo,MustangContentInfo} for protocols used during search and/or docinfo. Next available tag deprecated, use this (and look for commented out fields): blaze-bin/net/proto_compiler/protocol-compiler --freetags \\ indexer/perdocdata/perdocdata.proto Next tag: 223
+  =========================================================================== # Make sure you read the comments in the bottom before you add any new field. NB: As noted in the comments, this protocol buffer is used in both indexing and serving. In mustang serving implementations we only decode perdocdata during the search phase, and so this protocol should only contain data used during search. See mustang/repos_www/attachments.proto:{MustangBasicInfo,MustangContentInfo} for protocols used during search and/or docinfo. Next available tag deprecated, use this (and look for commented out fields): blaze-bin/net/proto_compiler/protocol-compiler --freetags \\ indexer/perdocdata/perdocdata.proto Next tag: 225
 
   ## Attributes
 
@@ -45,9 +45,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `ymylHealthScore` (*type:* `integer()`, *default:* `nil`) - Stores scores of ymyl health classifier as defined at go/ymyl-classifier-dd. To use this field, you MUST join g/pq-classifiers-announce and add your use case at http://shortn/_nfg9oAldou.
   *   `authorObfuscatedGaiaStr` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `lastSignificantUpdate` (*type:* `String.t`, *default:* `nil`) - Last significant update of the document. This is sourced from the quality_timebased.LastSignificantUpdate proto as computed by the LSUSelector from various signals. The value is a UNIX timestamp in seconds.
-  *   `spambrainData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SpamBrainData.t`, *default:* `nil`) - Site level scores coming from spambrain.
+  *   `spambrainData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SpamBrainData.t`, *default:* `nil`) - Host-v1 sitechunk level scores coming from spambrain.
   *   `DEPRECATEDQuarantineWhitelist` (*type:* `boolean()`, *default:* `nil`) - 
-  *   `tundraClusterId` (*type:* `integer()`, *default:* `nil`) - This field is propagated to shards. Stores clustering information on a site level for the Tundra project.
+  *   `tundraClusterId` (*type:* `integer()`, *default:* `nil`) - This field is propagated to shards. Stores clustering information on a site level for the Tundra project. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `bodyWordsToTokensRatioTotal` (*type:* `number()`, *default:* `nil`) - 
   *   `homepagePagerankNs` (*type:* `integer()`, *default:* `nil`) - The page-rank of the homepage of the site. Copied from the cdoc.doc().pagerank_ns() of the homepage.
   *   `topPetacatTaxId` (*type:* `integer()`, *default:* `nil`) - Top petacat of the site. Used in SiteboostTwiddler to determine result/query matching.
@@ -68,7 +68,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `imagedata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImagePerDocData.t`, *default:* `nil`) - 
   *   `videoCorpusDocid` (*type:* `String.t`, *default:* `nil`) - 
   *   `queriesForWhichOfficial` (*type:* `GoogleApi.ContentWarehouse.V1.Model.OfficialPagesQuerySet.t`, *default:* `nil`) - The set of (query, country, language) triples for which this document is considered to be the official page. For example, www.britneyspears.com would be official for ("britney spears", "us", 0) and others (0 is English).
-  *   `nsrIsCovidLocalAuthority` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. In addition, it is populated at serving time by go/web-signal-joins.
+  *   `nsrIsCovidLocalAuthority` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. In addition, it is populated at serving time by go/web-signal-joins. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `crawlerIdProto` (*type:* `GoogleApi.ContentWarehouse.V1.Model.LogsProtoIndexingCrawlerIdCrawlerIdProto.t`, *default:* `nil`) - For crawler-ID variations, the crawling context applied to the document. See go/url, and the description in google3/indexing/crawler_id
   *   `ScaledSpamScoreEric` (*type:* `integer()`, *default:* `nil`) - 
   *   `biasingdata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.BiasingPerDocData.t`, *default:* `nil`) - 
@@ -86,7 +86,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `pagerank1` (*type:* `number()`, *default:* `nil`) - 
   *   `spamCookbookAction` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SpamCookbookAction.t`, *default:* `nil`) - Actions based on Cookbook recipes that match the page.
   *   `compressedUrl` (*type:* `String.t`, *default:* `nil`) - Compressed URL string used for SETI.
-  *   `extraData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - This field is available only in the docjoins: it is cleared before building per-doc data in both Mustang and Teragoogle. (MessageSet is inefficient in space for serving data) Use this for all new fields that aren't needed during serving. Currently this field contains: * UrlSignals for the document level spam classifier (when the doclevelspamscore is set). * PerDocLangidData and realtimespam::ClassifierResult for the document level fresh spam classifier (when the doc-level fresh spam score is generated). * MicroblogDocQualitySignals for document-level microblog spam classifier. This only exists in Firebird for now. * spam_buckets::BucketsData for a document-structure hash
+  *   `extraData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - This field is available only in the docjoins: it is cleared before building per-doc data in both Mustang and Teragoogle. (MessageSet is inefficient in space for serving data) Use this for all new fields that aren't needed during serving. Currently this field contains: * UrlSignals for the document level spam classifier (when the doclevelspamscore is set). * PerDocLangidData and realtimespam::ClassifierResult for the document level fresh spam classifier (when the doc-level fresh spam score is generated). * MicroblogDocQualitySignals for document-level microblog spam classifier. This only exists in Firebird for now. * spam_buckets::BucketsData for a document-structure hash This field is non-personal since the personal fields in MessageSet are not populated in production.
   *   `socialgraphNodeNameFp` (*type:* `String.t`, *default:* `nil`) - For Social Search we store the fingerprint of the SG node name. This is used in one of the superroot's PRE_DOC twiddlers as a lookup key for the full Social Search data. PRE_DOC = twiddlers firing before the DocInfo request is sent to the mustang backend.
   *   `urlAfterRedirectsFp` (*type:* `String.t`, *default:* `nil`) - These two fingerprints are used for de-duping results in a twiddler. They should only be populated by freshdocs, and will only be present for documents that are chosen to be canonicals in a cluster whose previous canonical is also in the index. Additionally, url_after_redirects_fp is only present if it is different from a fingerprint of the URL.
   *   `localizedCluster` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDupsLocalizedLocalizedCluster.t`, *default:* `nil`) - Information on localized clusters, which is the relationship of translated and/or localized pages.
@@ -97,7 +97,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `scienceHoldingsIds` (*type:* `list(String.t)`, *default:* `nil`) - Deprecated 2016/01/14.
   *   `crawlPagerank` (*type:* `integer()`, *default:* `nil`) - This field is used internally by the docjoiner to forward the crawl pageranks from original canonicals to canonicals we actually chose; outside sources should not set it, and it should not be present in actual docjoins or the index.
   *   `BlogData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.BlogPerDocData.t`, *default:* `nil`) - 
-  *   `nsrIsVideoFocusedSite` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. It will also be populated at serving time by go/web-signal-joins (see b/170607253). Bit indicating whether this site is video-focused, but not hosted on any major known video hosting domains.
+  *   `nsrIsVideoFocusedSite` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. It will also be populated at serving time by go/web-signal-joins (see b/170607253). Bit indicating whether this site is video-focused, but not hosted on any major known video hosting domains. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `ScaledExptSpamScoreYoram` (*type:* `integer()`, *default:* `nil`) - 
   *   `spamrank` (*type:* `integer()`, *default:* `nil`) - The spamrank measures the likelihood that this document links to known spammers. Its value is between 0 and 65535.
   *   `compressedQualitySignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals.t`, *default:* `nil`) - 
@@ -122,7 +122,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `WhirlpoolDiscount` (*type:* `number()`, *default:* `nil`) - 
   *   `ScaledExptIndyRank3` (*type:* `integer()`, *default:* `nil`) - experimental
   *   `ToolBarData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ToolBarPerDocData.t`, *default:* `nil`) - 
-  *   `nsrIsElectionAuthority` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. It will also be populated at serving time by go/web-signal-joins (see b/168114815).
+  *   `nsrIsElectionAuthority` (*type:* `boolean()`, *default:* `nil`) - This field is propagated to shards. It will also be populated at serving time by go/web-signal-joins (see b/168114815). This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `onsiteProminence` (*type:* `integer()`, *default:* `nil`) - Onsite prominence measures the importance of the document within its site. It is computed by propagating simulated traffic from the homepage and high craps click pages. It is a 13-bit int.
   *   `travelGoodSitesInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityTravelGoodSitesData.t`, *default:* `nil`) - This field stores information about good travel sites.
   *   `IsAnchorBayesSpam` (*type:* `boolean()`, *default:* `nil`) - Is this document considered spam by the anchor bayes classifier?
@@ -139,7 +139,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `topPetacatWeight` (*type:* `number()`, *default:* `nil`) - 
   *   `fireflySiteSignal` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityCopiaFireflySiteSignal.t`, *default:* `nil`) - Contains Site signal information for Firefly ranking change. See http://ariane/313938 for more details.
   *   `titleHardTokenCountWithoutStopwords` (*type:* `integer()`, *default:* `nil`) - Number of hard tokens originally in title without counting the stopwords.
-  *   `hostNsr` (*type:* `integer()`, *default:* `nil`) - Site rank computed for host-level sitechunks. This value encodes nsr, site_pr and new_nsr. See quality_nsr::util::ConvertNsrDataToHostNsr and go/nsr.
+  *   `hostNsr` (*type:* `integer()`, *default:* `nil`) - Site rank computed for host-level sitechunks. This value encodes nsr, site_pr and new_nsr. See quality_nsr::util::ConvertNsrDataToHostNsr and go/nsr. This field is deprecated - used the equivalent field inside nsr_data_proto instead.
   *   `semanticDateInfo` (*type:* `integer()`, *default:* `nil`) - Info is encoded using a SemanticDate specific format. Contains confidence scores for day/month/year components as well as various meta data required by the freshness twiddlers.
   *   `languages` (*type:* `list(integer())`, *default:* `nil`) - Plausible languages in order of decreasing plausibility. Language values are small, IE < 127 so this should compress to one byte each.
   *   `GroupsData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GroupsPerDocData.t`, *default:* `nil`) - 16 bytes of groups2 data: used only in groups2 index
@@ -149,6 +149,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   *   `ScaledExptIndyRank` (*type:* `integer()`, *default:* `nil`) - DEPRECATED ---------------------------------------------------------------- Please do not use these fields in any new code. experimental
   *   `shingleInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ShingleInfoPerDocData.t`, *default:* `nil`) - 
   *   `productSitesInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityProductProductSiteData.t`, *default:* `nil`) - This field stores information about product sites.
+  *   `spambrainDomainSitechunkData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.SpamBrainData.t`, *default:* `nil`) - Domain sitechunk level scores coming from spambrain.
   *   `voltData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingMobileVoltVoltPerDocData.t`, *default:* `nil`) - Contains page UX signals for VOLT ranking change. See http://ariane/4025970 for more details.
   *   `timeSensitivity` (*type:* `integer()`, *default:* `nil`) - Encoded Document Time Sensitivity signal.
   *   `servingTimeClusterIds` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerServingTimeClusterIds.t`, *default:* `nil`) - A set of cluster ids which are generated in Alexandria and used to de-dup results at serving time.
@@ -314,6 +315,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
           :shingleInfo => GoogleApi.ContentWarehouse.V1.Model.ShingleInfoPerDocData.t() | nil,
           :productSitesInfo =>
             GoogleApi.ContentWarehouse.V1.Model.QualityProductProductSiteData.t() | nil,
+          :spambrainDomainSitechunkData =>
+            GoogleApi.ContentWarehouse.V1.Model.SpamBrainData.t() | nil,
           :voltData =>
             GoogleApi.ContentWarehouse.V1.Model.IndexingMobileVoltVoltPerDocData.t() | nil,
           :timeSensitivity => integer() | nil,
@@ -504,6 +507,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PerDocData do
   field(:ScaledExptIndyRank)
   field(:shingleInfo, as: GoogleApi.ContentWarehouse.V1.Model.ShingleInfoPerDocData)
   field(:productSitesInfo, as: GoogleApi.ContentWarehouse.V1.Model.QualityProductProductSiteData)
+  field(:spambrainDomainSitechunkData, as: GoogleApi.ContentWarehouse.V1.Model.SpamBrainData)
   field(:voltData, as: GoogleApi.ContentWarehouse.V1.Model.IndexingMobileVoltVoltPerDocData)
   field(:timeSensitivity)
 

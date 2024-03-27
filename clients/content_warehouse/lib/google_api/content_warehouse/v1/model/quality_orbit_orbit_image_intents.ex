@@ -22,7 +22,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntents do
   ## Attributes
 
   *   `intents` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntent.t)`, *default:* `nil`) - Intents with non-trivial scores.
-  *   `isPartial` (*type:* `boolean()`, *default:* `nil`) - Used to control merging behavior: partial protos will always be merged with current, while full protos will completely replace older versions.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Represents the version. Filled in Amarna (main version controller).
   """
 
@@ -31,7 +30,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntents do
   @type t :: %__MODULE__{
           :intents =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntent.t()) | nil,
-          :isPartial => boolean() | nil,
           :version => String.t() | nil
         }
 
@@ -40,7 +38,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityOrbitOrbitImageIntents do
     type: :list
   )
 
-  field(:isPartial)
   field(:version)
 end
 

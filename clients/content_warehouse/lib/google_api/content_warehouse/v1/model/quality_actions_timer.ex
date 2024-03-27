@@ -34,7 +34,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityActionsTimer do
   *   `remainingDuration` (*type:* `String.t`, *default:* `nil`) - When PAUSED: the remaining duration in milliseconds.
   *   `remainingTimerDuration` (*type:* `GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingDatetimeDuration.t`, *default:* `nil`) - The duration remained for the timer. This is needed because there is no expiration date for paused timer. The DateTimeModifier field is ignored. This field is currently only experimental until we switch the Dialog code and gramnar to the new format.
   *   `ringtone` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityActionsRingtone.t`, *default:* `nil`) - The ringtone will be played when the timer fires, it will replace the beep sound if it is not empty.
-  *   `ringtoneTaskMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedRingtoneTaskMetadata.t`, *default:* `nil`) - Ringtone Task Metadata information used to generate sound for firing the timer.
+  *   `ringtoneTaskMetadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesRingtoneTaskMetadata.t`, *default:* `nil`) - Ringtone Task Metadata information used to generate sound for firing the timer.
   *   `room` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityActionsRoom.t`, *default:* `nil`) - Contains info about the room the timer is in
   *   `status` (*type:* `String.t`, *default:* `nil`) - The current status of the timer.
   *   `vibrate` (*type:* `boolean()`, *default:* `nil`) - Whether or not the device will vibrate when the timer fires.
@@ -62,7 +62,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityActionsTimer do
             GoogleApi.ContentWarehouse.V1.Model.NlpSemanticParsingDatetimeDuration.t() | nil,
           :ringtone => GoogleApi.ContentWarehouse.V1.Model.QualityActionsRingtone.t() | nil,
           :ringtoneTaskMetadata =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedRingtoneTaskMetadata.t()
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesRingtoneTaskMetadata.t()
             | nil,
           :room => GoogleApi.ContentWarehouse.V1.Model.QualityActionsRoom.t() | nil,
           :status => String.t() | nil,
@@ -96,7 +96,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityActionsTimer do
   field(:ringtone, as: GoogleApi.ContentWarehouse.V1.Model.QualityActionsRingtone)
 
   field(:ringtoneTaskMetadata,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedRingtoneTaskMetadata
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesRingtoneTaskMetadata
   )
 
   field(:room, as: GoogleApi.ContentWarehouse.V1.Model.QualityActionsRoom)

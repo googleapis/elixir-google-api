@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesMessageNotification do
   @moduledoc """
-  LINT.IfChange(ungoverned_message_notification) This proto captures the contents of a messaging app notification that is typically part of a conversation thread. Next Id: 21
+  This proto captures the contents of a messaging app notification that is typically part of a conversation thread. Next Id: 21
 
   ## Attributes
 

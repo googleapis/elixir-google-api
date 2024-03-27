@@ -23,6 +23,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse do
 
   *   `debugInfo` (*type:* `list(String.t)`, *default:* `nil`) - Per-doc debug information.
   *   `info` (*type:* `GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t`, *default:* `nil`) - Servlet-specific response info.
+  *   `rankingSnippet` (*type:* `String.t`, *default:* `nil`) - The experimental ranking snippet field. This will be populated only when `fastwa_want_ranking_snippet` is set in the request.
   *   `snippet` (*type:* `list(String.t)`, *default:* `nil`) - Lines of the snippet HTML. Typically gws concatenates these and lets the browser wrap. The values include trailing spaces, so inserting additional spaces is not necessary. However, for very old browsers, gws may insert break tags after each snippet line. This field is confusing and poorly named; "snippet_line" would be better. In particular, note that this does not return multiple snippets for a result. Nor are these fields the individual tidbits of the snippet.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title HTML. It may contain tags to denote query term matches. It may be already truncated and "..." is put instead (note that truncation does not always happen at the very end of the title text). However the existence of "..." does not guarantee that the snippet generation algorithm truncated it; e.g. webmasters themselves can write "...".
   *   `wwwSnippetResponse` (*type:* `GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse.t`, *default:* `nil`) - Snippet-specific members (tag ids 16+, must be optional!) Example: optional NewContentResponse new_response;
@@ -33,6 +34,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse do
   @type t :: %__MODULE__{
           :debugInfo => list(String.t()) | nil,
           :info => GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet.t() | nil,
+          :rankingSnippet => String.t() | nil,
           :snippet => list(String.t()) | nil,
           :title => String.t() | nil,
           :wwwSnippetResponse => GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse do
 
   field(:debugInfo, type: :list)
   field(:info, as: GoogleApi.ContentWarehouse.V1.Model.Proto2BridgeMessageSet)
+  field(:rankingSnippet)
   field(:snippet, type: :list)
   field(:title)
   field(:wwwSnippetResponse, as: GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse)

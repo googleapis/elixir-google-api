@@ -25,6 +25,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDocPartialUpdateInfo do
   *   `imagesSignalNames` (*type:* `list(String.t)`, *default:* `nil`) - List of images signal updates present in the enclosing partial cdoc. Images signal name for a images signal is the unique name for the signal according to SignalSpec.
   *   `lastFullIndexingInfo` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.CompositeDocPartialUpdateInfoLastFullIndexingInfo.t)`, *default:* `nil`) - Contains last full indexing information for partial updates.
   *   `shouldLookupDocjoinsTier` (*type:* `integer()`, *default:* `nil`) - Which tier we should do cdoc lookup to merge partial cdocs. This uses the integer value of indexing.selection.CorpusId. NOT intended for other usage.
+  *   `shouldLookupDocjoinsVerticalCorpus` (*type:* `String.t`, *default:* `nil`) - Which vertical docjoin corpus we should do cdoc lookup to merge partial cdocs. This uses the string value of table name in google3/indexing/docjoins/spanner/schema/global_tables_data.sdl. For example, Voce and ShortVideo. NOT intended for other usage.
   *   `signalNames` (*type:* `list(String.t)`, *default:* `nil`) - List of signal updates present in the enclosing partial cdoc. Signal name for a signal is unique name for the signal according to SignalSpec.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDocPartialUpdateInfo do
             )
             | nil,
           :shouldLookupDocjoinsTier => integer() | nil,
+          :shouldLookupDocjoinsVerticalCorpus => String.t() | nil,
           :signalNames => list(String.t()) | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDocPartialUpdateInfo do
   )
 
   field(:shouldLookupDocjoinsTier)
+  field(:shouldLookupDocjoinsVerticalCorpus)
   field(:signalNames, type: :list)
 end
 

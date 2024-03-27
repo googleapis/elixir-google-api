@@ -17,23 +17,27 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
   @moduledoc """
-  Next id: 18
+  Next id: 22
 
   ## Attributes
 
   *   `chard` (*type:* `integer()`, *default:* `nil`) - URL-level chard prediction (encoded as an int).
+  *   `chardScoreEncoded` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal.t)`, *default:* `nil`) - URL-level Chard (encoded as an int).
+  *   `contentEffort` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - LLM-based effort estimation for article pages (see landspeeder/4311817).
   *   `deltaAutopilotScore` (*type:* `number()`, *default:* `nil`) - 
   *   `deltaLinkIncoming` (*type:* `number()`, *default:* `nil`) - 
   *   `deltaLinkOutgoing` (*type:* `number()`, *default:* `nil`) - 
-  *   `deltaPageQuality` (*type:* `number()`, *default:* `nil`) - The delta score of the URL-level quality predictor.
   *   `deltaSubchunkAdjustment` (*type:* `number()`, *default:* `nil`) - Total deltaNSR adjustment based on subchunks. This is a page-level adjustment (subchunks are retrieved based on the page classification).
   *   `keto` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Keto score.
   *   `linkIncoming` (*type:* `number()`, *default:* `nil`) - 
   *   `linkOutgoing` (*type:* `number()`, *default:* `nil`) - 
   *   `numOffdomainAnchors` (*type:* `number()`, *default:* `nil`) - The total number of offdomain anchors seen by the NSR pipeline for this page.
   *   `page2vecLq` (*type:* `number()`, *default:* `nil`) - 
+  *   `predictedDefaultNsr` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Predicted default NSR score computed in Goldmine via the NSR default predictor (go/default-nsr-predictor).
+  *   `rhubarb` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Site-URL delta signals based quality score computed in Goldmine via the Rhubarb model (go/rhubarb-dd).
   *   `subchunkData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQDataSubchunkData.t)`, *default:* `nil`) - 
   *   `tofu` (*type:* `number()`, *default:* `nil`) - URL-level tofu prediction.
+  *   `unversionedRhubarb` (*type:* `number()`, *default:* `nil`) - The delta score of the URL-level quality predictor.
   *   `urlAutopilotScore` (*type:* `number()`, *default:* `nil`) - 
   *   `vlq` (*type:* `number()`, *default:* `nil`) - URL-level score of the VLQ model.
   """
@@ -42,10 +46,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
 
   @type t :: %__MODULE__{
           :chard => integer() | nil,
+          :chardScoreEncoded =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal.t()) | nil,
+          :contentEffort =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
           :deltaAutopilotScore => number() | nil,
           :deltaLinkIncoming => number() | nil,
           :deltaLinkOutgoing => number() | nil,
-          :deltaPageQuality => number() | nil,
           :deltaSubchunkAdjustment => number() | nil,
           :keto =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
@@ -53,18 +60,33 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
           :linkOutgoing => number() | nil,
           :numOffdomainAnchors => number() | nil,
           :page2vecLq => number() | nil,
+          :predictedDefaultNsr =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
+          :rhubarb =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
           :subchunkData =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQDataSubchunkData.t()) | nil,
           :tofu => number() | nil,
+          :unversionedRhubarb => number() | nil,
           :urlAutopilotScore => number() | nil,
           :vlq => number() | nil
         }
 
   field(:chard)
+
+  field(:chardScoreEncoded,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal,
+    type: :list
+  )
+
+  field(:contentEffort,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
   field(:deltaAutopilotScore)
   field(:deltaLinkIncoming)
   field(:deltaLinkOutgoing)
-  field(:deltaPageQuality)
   field(:deltaSubchunkAdjustment)
 
   field(:keto, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal, type: :list)
@@ -74,12 +96,23 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
   field(:numOffdomainAnchors)
   field(:page2vecLq)
 
+  field(:predictedDefaultNsr,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
+  field(:rhubarb,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
   field(:subchunkData,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQDataSubchunkData,
     type: :list
   )
 
   field(:tofu)
+  field(:unversionedRhubarb)
   field(:urlAutopilotScore)
   field(:vlq)
 end

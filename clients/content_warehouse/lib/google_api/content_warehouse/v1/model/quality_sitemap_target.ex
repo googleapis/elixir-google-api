@@ -31,6 +31,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualitySitemapTarget do
   *   `sectionTexts` (*type:* `list(String.t)`, *default:* `nil`) - Section texts used for Page Anchors Preview (go/page-anchor-preview-dd).
   *   `snippetResponse` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse.t`, *default:* `nil`) - The snippet response for the target document for an empty query.
   *   `sourceAnchor` (*type:* `boolean()`, *default:* `nil`) - 
+  *   `sporcSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualitySitemapSporcSignals.t`, *default:* `nil`) - FIELD SHOULD ONLY BE POPULATED DURING ONLINE/SERVING TIME. Thus it should have no impact on cdoc/mdu.
   *   `title` (*type:* `String.t`, *default:* `nil`) - 
   *   `twoLevelScore` (*type:* `number()`, *default:* `nil`) - 
   *   `url` (*type:* `String.t`, *default:* `nil`) - 
@@ -52,6 +53,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualitySitemapTarget do
           :snippetResponse =>
             GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse.t() | nil,
           :sourceAnchor => boolean() | nil,
+          :sporcSignals =>
+            GoogleApi.ContentWarehouse.V1.Model.QualitySitemapSporcSignals.t() | nil,
           :title => String.t() | nil,
           :twoLevelScore => number() | nil,
           :url => String.t() | nil
@@ -67,6 +70,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualitySitemapTarget do
   field(:sectionTexts, type: :list)
   field(:snippetResponse, as: GoogleApi.ContentWarehouse.V1.Model.GenericSnippetResponse)
   field(:sourceAnchor)
+  field(:sporcSignals, as: GoogleApi.ContentWarehouse.V1.Model.QualitySitemapSporcSignals)
   field(:title)
   field(:twoLevelScore)
   field(:url)

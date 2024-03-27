@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerTrawlerPrivateFetchReplyData do
   @moduledoc """
-  This is an optional container of arbitrary data that can be added to a FetchReplyData. This data is meant to be logged, but not sent back in a fetch reply (it should be added *after* the reply is prepared). Use FetchResponsePreparatorImpl::AddTrawlerPrivateDataToFetchReplyData to add. See also the comment in fetch_response_preparator_impl.cc. Next Tag: 47
+  This is an optional container of arbitrary data that can be added to a FetchReplyData. This data is meant to be logged, but not sent back in a fetch reply (it should be added *after* the reply is prepared). Use FetchResponsePreparatorImpl::AddTrawlerPrivateDataToFetchReplyData to add. See also the comment in fetch_response_preparator_impl.cc. Next Tag: 49
 
   ## Attributes
 
@@ -54,12 +54,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerTrawlerPrivateFetchReplyDat
   *   `tier` (*type:* `String.t`, *default:* `nil`) - Service tier info will be used in traffic grapher for ploting per tier graph.
   *   `Is5xxHostId` (*type:* `boolean()`, *default:* `nil`) - Represents if the HostId belongs to HostId set in 5xx url patterns, it can work as a tag when emitting requestor minute summary, this helps us to aggregate traffic affected by 5xx patterns, and test if there are any fetching changes.
   *   `UserAgentSent` (*type:* `String.t`, *default:* `nil`) - The useragent string sent to the remote webserver. It corresponds to UserAgentToSend field in FetchParams.
+  *   `googleExtendedObeyWildcardRobotsStatus` (*type:* `integer()`, *default:* `nil`) - We check if Google-Extended is allowed to crawl this URL, wildcard rules are obeyed, this is for internal analysis. Check RobotsTxtClient::RobotsStatus for the meaning of number.
   *   `RobotsBody` (*type:* `String.t`, *default:* `nil`) - If this was a robots.txt fetch (IsRobotsFetch above), this may contain the robots.txt body. (It may not, for instance, 404s are omitted; current policy is URL_CRAWLED + partially crawled) This includes http headers + body.
   *   `UserAgentSentFp` (*type:* `String.t`, *default:* `nil`) - The fp2011 of useragent sent to the remote webserver, note it corresponds to UserAgentToSend field in FetchParams
   *   `prodRegion` (*type:* `String.t`, *default:* `nil`) - Log the prod region (only for regional harpoon requestor ids)
   *   `RpcEndDeadlineLeftMs` (*type:* `integer()`, *default:* `nil`) - RPC deadline left at the end of url control flow. Can be useful for debugging rpc deadline exceeded error received by clients, this field is only recorded if it's small enough.
   *   `isFromGrpcProxy` (*type:* `boolean()`, *default:* `nil`) - Whether or not this response is sent from gRPC proxy service.
   *   `ServerSignature` (*type:* `String.t`, *default:* `nil`) - An arbitrary string signature identifying the remote server type/version. In the case of HTTP, this would be the contents of the "Server:" header.
+  *   `googleExtendedRobotsStatus` (*type:* `integer()`, *default:* `nil`) - We check if Google-Extended is allowed to crawl this URL and store the result here, wildcard rules are not obeyed, this is for internal analysis. Check RobotsTxtClient::RobotsStatus for the meaning of number.
   *   `BotHostname` (*type:* `String.t`, *default:* `nil`) - This is the HOPE server that we sent the url to. We log the HOPE backend cell and hope server shard number (e.g., 'qf:6'). This allows us to understand how we are balancing our load to the HOPE servers.
   *   `subResourceBucket` (*type:* `String.t`, *default:* `nil`) - 
   *   `vpcDestination` (*type:* `GoogleApi.ContentWarehouse.V1.Model.TrawlerLoggedVPCDestination.t`, *default:* `nil`) - The following are vpc information that's only set if is_vpc_traffic is true.
@@ -107,12 +109,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerTrawlerPrivateFetchReplyDat
           :tier => String.t() | nil,
           :Is5xxHostId => boolean() | nil,
           :UserAgentSent => String.t() | nil,
+          :googleExtendedObeyWildcardRobotsStatus => integer() | nil,
           :RobotsBody => String.t() | nil,
           :UserAgentSentFp => String.t() | nil,
           :prodRegion => String.t() | nil,
           :RpcEndDeadlineLeftMs => integer() | nil,
           :isFromGrpcProxy => boolean() | nil,
           :ServerSignature => String.t() | nil,
+          :googleExtendedRobotsStatus => integer() | nil,
           :BotHostname => String.t() | nil,
           :subResourceBucket => String.t() | nil,
           :vpcDestination =>
@@ -162,12 +166,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.TrawlerTrawlerPrivateFetchReplyDat
   field(:tier)
   field(:Is5xxHostId)
   field(:UserAgentSent)
+  field(:googleExtendedObeyWildcardRobotsStatus)
   field(:RobotsBody)
   field(:UserAgentSentFp)
   field(:prodRegion)
   field(:RpcEndDeadlineLeftMs)
   field(:isFromGrpcProxy)
   field(:ServerSignature)
+  field(:googleExtendedRobotsStatus)
   field(:BotHostname)
   field(:subResourceBucket)
   field(:vpcDestination, as: GoogleApi.ContentWarehouse.V1.Model.TrawlerLoggedVPCDestination)

@@ -25,6 +25,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefEntityAnnotations 
   *   `debugInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefAnnotationDebugInfo.t`, *default:* `nil`) - 
   *   `detailedEntityScores` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefDetailedEntityScores.t`, *default:* `nil`) - Additional information about how the entity relates to the page, for example whether it is a business entity which published the page.
   *   `explainedRangeInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefExplainedRangeInfo.t`, *default:* `nil`) - All ranges explained by the entity or any other entity it implies. Used in the context of partial query interpretation (go/partial-understanding).
+  *   `imageMention` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefImageMention.t)`, *default:* `nil`) - This is an experimental output for go/multiref. Don't use it without consulting the Webref team
   *   `isImplicit` (*type:* `boolean()`, *default:* `nil`) - An entity is marked as implicit if there is no explicit mention of the entity in the content of the page. For instance, all mentions of the entity are in query, url and/or anchors; or the entity has only implicit content mentions.
   *   `isResolution` (*type:* `boolean()`, *default:* `nil`) - True if the entity is an MDVC summary entity, i.e. it might not be mentioned directly on the query, but it is the product of resolving a set of explicit annotations. E.g. "2014 FIFA World Cup" can be the summary for the query: [soccer world cup in brazil] even though none of the names of the entity is mentioned on the query. Summary nodes can also be synthetic, i.e. have a /t/ mid, as they represent the intersection between a set of regular annotations. For more information, see http://go/mdvc-output.
   *   `segmentMentions` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefSegmentMentions.t)`, *default:* `nil`) - All mentions of a given concept grouped by segments. For Webref, there are many different kinds of segment, such as content, title and anchors; while for QRef, there is only one segment called CONTENT. For QRef this field contains the primary output of the annotator, and for WebRef it together with topicality_score does.
@@ -42,6 +43,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefEntityAnnotations 
             GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefDetailedEntityScores.t() | nil,
           :explainedRangeInfo =>
             GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefExplainedRangeInfo.t() | nil,
+          :imageMention =>
+            list(GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefImageMention.t()) | nil,
           :isImplicit => boolean() | nil,
           :isResolution => boolean() | nil,
           :segmentMentions =>
@@ -59,6 +62,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefEntityAnnotations 
 
   field(:explainedRangeInfo,
     as: GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefExplainedRangeInfo
+  )
+
+  field(:imageMention,
+    as: GoogleApi.ContentWarehouse.V1.Model.RepositoryWebrefImageMention,
+    type: :list
   )
 
   field(:isImplicit)

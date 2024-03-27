@@ -23,6 +23,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsRoomAnnotationLog do
 
   *   `rawTextFromQuery` (*type:* `String.t`, *default:* `nil`) - The raw text mentioning a room from the query, such as "my living room".
   *   `roomCount` (*type:* `integer()`, *default:* `nil`) - The number of rooms annotated, if there are multiple structures. They are guaranteed to have the same text_from_query and name due to exact matching.
+  *   `roomId` (*type:* `list(String.t)`, *default:* `nil`) - The identification of the room.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The annotation type mentioned in the query.
   *   `userDefinedName` (*type:* `String.t`, *default:* `nil`) - 
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsRoomAnnotationLog do
   @type t :: %__MODULE__{
           :rawTextFromQuery => String.t() | nil,
           :roomCount => integer() | nil,
+          :roomId => list(String.t()) | nil,
           :type => String.t() | nil,
           :userDefinedName => String.t() | nil
         }
 
   field(:rawTextFromQuery)
   field(:roomCount)
+  field(:roomId, type: :list)
   field(:type)
   field(:userDefinedName)
 end

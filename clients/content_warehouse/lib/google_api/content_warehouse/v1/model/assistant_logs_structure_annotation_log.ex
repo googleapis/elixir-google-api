@@ -22,6 +22,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsStructureAnnotationLo
   ## Attributes
 
   *   `rawTextFromQuery` (*type:* `String.t`, *default:* `nil`) - The raw text mentioning a structure from the query, such as "my house".
+  *   `structureId` (*type:* `list(String.t)`, *default:* `nil`) - The identification of the structure.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The annotation type mentioned in the query.
   *   `userDefinedName` (*type:* `String.t`, *default:* `nil`) - 
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsStructureAnnotationLo
 
   @type t :: %__MODULE__{
           :rawTextFromQuery => String.t() | nil,
+          :structureId => list(String.t()) | nil,
           :type => String.t() | nil,
           :userDefinedName => String.t() | nil
         }
 
   field(:rawTextFromQuery)
+  field(:structureId, type: :list)
   field(:type)
   field(:userDefinedName)
 end

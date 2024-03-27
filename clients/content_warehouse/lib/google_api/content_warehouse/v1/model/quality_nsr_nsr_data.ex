@@ -17,23 +17,25 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   @moduledoc """
-  NOTE: When adding a new field to be propagated to Raffia check if NsrPatternSignalSpec needs to be updated. Next ID: 56
+  NOTE: When adding a new field to be propagated to Raffia check if NsrPatternSignalSpec needs to be updated. Next ID: 63
 
   ## Attributes
 
   *   `ugcScore` (*type:* `number()`, *default:* `nil`) - 
   *   `spambrainLavcScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
+  *   `titlematchScore` (*type:* `number()`, *default:* `nil`) - Titlematch score of the site, a signal that tells how well titles are matching user queries.
+  *   `site2vecEmbeddingEncoded` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEncodedEmbedding.t)`, *default:* `nil`) - Encoded site2vec embedding (to be used in superroot) since the full embeddings take too much space.
   *   `smallPersonalSite` (*type:* `number()`, *default:* `nil`) - Score of small personal site promotion go/promoting-personal-blogs-v1
   *   `pnavClicks` (*type:* `number()`, *default:* `nil`) - denominator for the pnav computation
   *   `siteChunkSource` (*type:* `String.t`, *default:* `nil`) - These are only annotated in the Goldmine NSR annotator.
   *   `clusterUplift` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t`, *default:* `nil`) - 
-  *   `newNsr` (*type:* `number()`, *default:* `nil`) - This field used as a temporary field for clean transitions when we need to roll out Q* and NSR changes simultaneously.
   *   `siteAutopilotScore` (*type:* `number()`, *default:* `nil`) - Aggregated value of url autopilot scores for this sitechunk.
   *   `isVideoFocusedSite` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has mostly video content, but is not hosted on any known video-hosting domains. Site is considered to be video-focused, if it has > 50% of the URLs with watch pages (with smoothing prior). ariane/4045246
   *   `metadata` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t`, *default:* `nil`) - 
   *   `chromeInTotal` (*type:* `number()`, *default:* `nil`) - Site-level Chrome views.
   *   `chardVariance` (*type:* `number()`, *default:* `nil`) - 
-  *   `largeOrgId` (*type:* `integer()`, *default:* `nil`) - 
+  *   `chardScoreVariance` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Site-level Chard Variance for all pages of a site.
+  *   `chardScoreEncoded` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal.t)`, *default:* `nil`) - Site-level Chard (encoded as an int).
   *   `nsrdataFromFallbackPatternKey` (*type:* `boolean()`, *default:* `nil`) - If true indicates that we do not have NSR data computed for the chunk, and instead the data is coming from an average of other host chunks.
   *   `siteQualityStddevs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
   *   `clusterId` (*type:* `integer()`, *default:* `nil`) - An id for defining clusters of sites. Used in ecosystem experiments (project Tundra).
@@ -58,12 +60,15 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   *   `impressions` (*type:* `number()`, *default:* `nil`) - Site-level impressions.
   *   `directFrac` (*type:* `number()`, *default:* `nil`) - 
   *   `vlq` (*type:* `number()`, *default:* `nil`) - Score of the Video LQ model.
+  *   `racterScores` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Site-level AGC classification score (see also go/project-racter-overview).
   *   `spambrainLavcScore` (*type:* `number()`, *default:* `nil`) - The SpamBrain LAVC score, as of July 2022. See more information at go/cloverfield-lavc-deck.
   *   `url` (*type:* `String.t`, *default:* `nil`) - 
   *   `secondarySiteChunk` (*type:* `String.t`, *default:* `nil`) - Secondary NSR sitechunk. When present, it provides more granular chunking than primary sitechunks (see quality/nsr/util/sitechunker.h for details).
   *   `articleScore` (*type:* `number()`, *default:* `nil`) - Score from article classification of the site.
+  *   `site2vecEmbedding` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEmbedding.t)`, *default:* `nil`) - Site2vec embeddings.
   *   `versionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t)`, *default:* `nil`) - Versioned map of NSR values for experimenting with the next release.
   *   `siteLinkIn` (*type:* `number()`, *default:* `nil`) - Average value of the site_link_in for pages in the sitechunk.
+  *   `ketoVersionedData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrKetoKetoVersionedData.t)`, *default:* `nil`) - Keto data.
   *   `ymylNewsV2Score` (*type:* `number()`, *default:* `nil`) - 
   *   `isElectionAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the election authority signal, as computed by go/election-authority
   *   `sitePr` (*type:* `number()`, *default:* `nil`) - 
@@ -71,7 +76,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   *   `healthScore` (*type:* `number()`, *default:* `nil`) - Categorical signals.
   *   `clutterScore` (*type:* `number()`, *default:* `nil`) - Delta site-level signal in Q* penalizing sites with a large number of distracting/annoying resources loaded by the site (see go/clutter-v0).
   *   `vlqNsr` (*type:* `number()`, *default:* `nil`) - NSR from a headroom model targeting low-quality video sites.
-  *   `nsrVariance` (*type:* `number()`, *default:* `nil`) - NSR variance logodds [0, infinity).
+  *   `nsrVariance` (*type:* `number()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -80,18 +85,23 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
           :ugcScore => number() | nil,
           :spambrainLavcScores =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
+          :titlematchScore => number() | nil,
+          :site2vecEmbeddingEncoded =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEncodedEmbedding.t()) | nil,
           :smallPersonalSite => number() | nil,
           :pnavClicks => number() | nil,
           :siteChunkSource => String.t() | nil,
           :clusterUplift =>
             GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift.t() | nil,
-          :newNsr => number() | nil,
           :siteAutopilotScore => number() | nil,
           :isVideoFocusedSite => boolean() | nil,
           :metadata => GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata.t() | nil,
           :chromeInTotal => number() | nil,
           :chardVariance => number() | nil,
-          :largeOrgId => integer() | nil,
+          :chardScoreVariance =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
+          :chardScoreEncoded =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal.t()) | nil,
           :nsrdataFromFallbackPatternKey => boolean() | nil,
           :siteQualityStddevs =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
@@ -118,13 +128,19 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
           :impressions => number() | nil,
           :directFrac => number() | nil,
           :vlq => number() | nil,
+          :racterScores =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t()) | nil,
           :spambrainLavcScore => number() | nil,
           :url => String.t() | nil,
           :secondarySiteChunk => String.t() | nil,
           :articleScore => number() | nil,
+          :site2vecEmbedding =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEmbedding.t()) | nil,
           :versionedData =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData.t()) | nil,
           :siteLinkIn => number() | nil,
+          :ketoVersionedData =>
+            list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrKetoKetoVersionedData.t()) | nil,
           :ymylNewsV2Score => number() | nil,
           :isElectionAuthority => boolean() | nil,
           :sitePr => number() | nil,
@@ -143,17 +159,33 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
     type: :list
   )
 
+  field(:titlematchScore)
+
+  field(:site2vecEmbeddingEncoded,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEncodedEmbedding,
+    type: :list
+  )
+
   field(:smallPersonalSite)
   field(:pnavClicks)
   field(:siteChunkSource)
   field(:clusterUplift, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataClusterUplift)
-  field(:newNsr)
   field(:siteAutopilotScore)
   field(:isVideoFocusedSite)
   field(:metadata, as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataMetadata)
   field(:chromeInTotal)
   field(:chardVariance)
-  field(:largeOrgId)
+
+  field(:chardScoreVariance,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
+  field(:chardScoreEncoded,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal,
+    type: :list
+  )
+
   field(:nsrdataFromFallbackPatternKey)
 
   field(:siteQualityStddevs,
@@ -188,10 +220,21 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   field(:impressions)
   field(:directFrac)
   field(:vlq)
+
+  field(:racterScores,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal,
+    type: :list
+  )
+
   field(:spambrainLavcScore)
   field(:url)
   field(:secondarySiteChunk)
   field(:articleScore)
+
+  field(:site2vecEmbedding,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrDataEmbedding,
+    type: :list
+  )
 
   field(:versionedData,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrNSRVersionedData,
@@ -199,6 +242,12 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   )
 
   field(:siteLinkIn)
+
+  field(:ketoVersionedData,
+    as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrKetoKetoVersionedData,
+    type: :list
+  )
+
   field(:ymylNewsV2Score)
   field(:isElectionAuthority)
   field(:sitePr)

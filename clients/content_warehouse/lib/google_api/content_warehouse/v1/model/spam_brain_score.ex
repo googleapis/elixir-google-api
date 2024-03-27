@@ -17,21 +17,24 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.SpamBrainScore do
   @moduledoc """
-  Message representing versioned scores
+
 
   ## Attributes
 
+  *   `modelName` (*type:* `String.t`, *default:* `nil`) - 
   *   `sbScore` (*type:* `number()`, *default:* `nil`) - The value corresponding to this version.
-  *   `versionId` (*type:* `integer()`, *default:* `nil`) - The version id.
+  *   `versionId` (*type:* `integer()`, *default:* `nil`) - The version id (derived from the epoch - larger number means newer score)
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :modelName => String.t() | nil,
           :sbScore => number() | nil,
           :versionId => integer() | nil
         }
 
+  field(:modelName)
   field(:sbScore)
   field(:versionId)
 end

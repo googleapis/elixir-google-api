@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProto do
   @moduledoc """
-
+  This protocol buffer is used to store geopolitical information about the feature that override the base state of the feature. For example, the name of the feature from different regions' POV. This protocol buffer can be used on any feature involved in a geopolitical situation and is not limited to TYPE_POLITICAL features.
 
   ## Attributes
 
   *   `conveysAttributionTo` (*type:* `String.t`, *default:* `nil`) - If present, some aspect of this feature (usually name or geometry) can signify ownership of the area by the region specified. The string, if present, will be a region code. E.g., suppose a TYPE_POSTAL_CODE feature has a Russian format in Crimea (which is disputed by Ukraine), then this field would be set to "RU".
-  *   `regionSpecificName` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto.t)`, *default:* `nil`) - Any specific handling of this feature's name from different regions' POVs.
+  *   `regionSpecificName` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto.t)`, *default:* `nil`) - Any specific handling of this feature's name from different regions' POVs. This field can only contain up to one name per region/language combination (each of which would be a separate RegionSpecificNameProto).
+  *   `regionalPolygonAdjustment` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonAdjustmentProto.t)`, *default:* `nil`) - Adjustments to the base polygon of this feature to construct a region-specific view. In general, this field is edited only by go/mf-triggers based on the data written to regional_polygon_composing_claims. This field should only be directly edited if there are region-specific adjustments that cannot be represented using the geometry of this feature's claims, but note that anything written to this field will be overwritten by go/mf-triggers if regional_polygon_composing_claims is ever edited. See go/geopolitical-geometry-schema for more information.
+  *   `regionalPolygonComposingClaims` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonComposingClaimsProto.t)`, *default:* `nil`) - Feature's claim(s) which compose the region-specific polygon. This composition will be used by go/mf-triggers to compose the specified region's view of this feature's geometry. The difference between that polygon and this feature's base polygon will be stored in regional_polygon_adjustment below. Edits to this field will overwrite anything already stored in regional_polygon_adjustment. See go/geopolitical-geometry-schema for more information.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,13 +32,35 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProto do
   @type t :: %__MODULE__{
           :conveysAttributionTo => String.t() | nil,
           :regionSpecificName =>
-            list(GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto.t()) | nil
+            list(GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto.t()) | nil,
+          :regionalPolygonAdjustment =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonAdjustmentProto.t()
+            )
+            | nil,
+          :regionalPolygonComposingClaims =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonComposingClaimsProto.t()
+            )
+            | nil
         }
 
   field(:conveysAttributionTo)
 
   field(:regionSpecificName,
     as: GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto,
+    type: :list
+  )
+
+  field(:regionalPolygonAdjustment,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonAdjustmentProto,
+    type: :list
+  )
+
+  field(:regionalPolygonComposingClaims,
+    as:
+      GoogleApi.ContentWarehouse.V1.Model.GeostoreGeopoliticalProtoRegionalPolygonComposingClaimsProto,
     type: :list
   )
 end

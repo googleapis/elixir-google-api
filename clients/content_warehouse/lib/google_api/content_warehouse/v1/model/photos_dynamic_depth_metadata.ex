@@ -21,11 +21,16 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata do
 
   ## Attributes
 
+  *   `version` (*type:* `integer()`, *default:* `nil`) - Currently there are two versions of DynamicDepth (go/ddv2). DynamicDepth photos without a set version should be assumed to be ddv1.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :version => integer() | nil
+        }
+
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.PhotosDynamicDepthMetadata do

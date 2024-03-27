@@ -32,7 +32,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityActionsReminder do
   *   `createTime` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiDateTime.t`, *default:* `nil`) - OPTIONAL. The create time of this reminder. This field is propagated only for the reminders fetched from backend. 
   *   `createTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - OPTIONAL. The create time of this reminder. This field is propagated only only for the reminders fetched from backend.
   *   `creator` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityActionsReminderPerson.t`, *default:* `nil`) - OPTIONAL. Creator of a reminder (owned by the current user). Used in shared reminder RUD operations.
-  *   `customizedNotificationCard` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityActionsCustomizedNotification.t)`, *default:* `nil`) - OPTIONAL. Contains fields needed to build the customized notification card 
+  *   `customizedNotificationCard` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityActionsCustomizedNotification.t)`, *default:* `nil`) - OPTIONAL. Contains fields needed to build the customized notification card DEPRECATED. No longer supported after migration to Tasks.
   *   `datetime` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiDateTime.t`, *default:* `nil`) - A representation of the Gregorian calendar date and timezone-relative time a reminder is scheduled for. This contains the date and time of either a single reminder or the upcoming instance of a recurring reminder.
   *   `description` (*type:* `String.t`, *default:* `nil`) - OPTIONAL. Full-length description of the reminder.
   *   `documentAssignmentSource` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityActionsReminderDocument.t`, *default:* `nil`) - 

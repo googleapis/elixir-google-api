@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDoc do
   @moduledoc """
-  Protocol record used for collecting together all information about a document. Please consult go/dj-explorer for two basic questions about `CompositeDoc`: - Where should I look up certain information (e.g: pagerank, language)? - What does each field in CompositeDoc mean and who should I contact if I have questions? To add a new field into CompositeDoc, or change existing field's size significantly, please file a ticket at go/dj-new-field, fill in necessary information and get approved by docjoin-access@ team. Next id: 193
+  Protocol record used for collecting together all information about a document. Please consult go/dj-explorer for two basic questions about `CompositeDoc`: - Where should I look up certain information (e.g: pagerank, language)? - What does each field in CompositeDoc mean and who should I contact if I have questions? To add a new field into CompositeDoc, or change existing field's size significantly, please file a ticket at go/dj-new-field, fill in necessary information and get approved by docjoin-access@ team. Next id: 194
 
   ## Attributes
 
@@ -57,6 +57,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDoc do
   *   `dataVersion` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerDataVersion.t`, *default:* `nil`) - Contains the tracking version of various data fields in CompositeDoc.
   *   `syntacticDate` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityTimebasedSyntacticDate.t`, *default:* `nil`) - 
   *   `url` (*type:* `String.t`, *default:* `nil`) - WARNING!!! "url" field in CompositeDoc is optional, and is usually missing: e.g., Docjoin CompositeDoc's don't have CompositeDoc::url. has_url() checking is often useful. So don't rely on CompositeDoc::url unless you're sure otherwise. Usually you want to use CompositeDoc::doc::url instead.
+  *   `docjoinsOnSpannerCommitTimestampMicros` (*type:* `String.t`, *default:* `nil`) - The commit timestamp of a CDoc update to Docjoins on Spanner.
   *   `ContentChecksum96` (*type:* `String.t`, *default:* `nil`) - Visible content checksum as computed by repository::parsehandler::checksum::Checksum96bitsParseHandler. The value is a Fprint96 in "key format" (i.e., by Fprint96::AsKey()).
   *   `liveexperimentinfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.CompositeDocLiveExperimentInfo.t`, *default:* `nil`) - 
   *   `labelData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityLabelsGoogleLabelData.t`, *default:* `nil`) - This field associates a document to particular labels and assigns confidence values to them.
@@ -124,6 +125,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDoc do
           :syntacticDate =>
             GoogleApi.ContentWarehouse.V1.Model.QualityTimebasedSyntacticDate.t() | nil,
           :url => String.t() | nil,
+          :docjoinsOnSpannerCommitTimestampMicros => String.t() | nil,
           :ContentChecksum96 => String.t() | nil,
           :liveexperimentinfo =>
             GoogleApi.ContentWarehouse.V1.Model.CompositeDocLiveExperimentInfo.t() | nil,
@@ -216,6 +218,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompositeDoc do
   field(:dataVersion, as: GoogleApi.ContentWarehouse.V1.Model.IndexingDocjoinerDataVersion)
   field(:syntacticDate, as: GoogleApi.ContentWarehouse.V1.Model.QualityTimebasedSyntacticDate)
   field(:url)
+  field(:docjoinsOnSpannerCommitTimestampMicros)
   field(:ContentChecksum96)
 
   field(:liveexperimentinfo,

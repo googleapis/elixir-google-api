@@ -21,6 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceAnnotationLog d
 
   ## Attributes
 
+  *   `deviceIdLog` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AssistantLogsSettingsDeviceIdLog.t)`, *default:* `nil`) - The identification of the device. The logging version of the full DeviceId.
   *   `rawTextFromQuery` (*type:* `String.t`, *default:* `nil`) - The raw text mentioning a device from the query, such as "any tv".
   *   `type` (*type:* `String.t`, *default:* `nil`) - The annotation type mentioned in the query.
   *   `userDefinedName` (*type:* `String.t`, *default:* `nil`) - The matched device name set by the user, such as "big screen tv".
@@ -29,10 +30,17 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantLogsDeviceAnnotationLog d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deviceIdLog =>
+            list(GoogleApi.ContentWarehouse.V1.Model.AssistantLogsSettingsDeviceIdLog.t()) | nil,
           :rawTextFromQuery => String.t() | nil,
           :type => String.t() | nil,
           :userDefinedName => String.t() | nil
         }
+
+  field(:deviceIdLog,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantLogsSettingsDeviceIdLog,
+    type: :list
+  )
 
   field(:rawTextFromQuery)
   field(:type)

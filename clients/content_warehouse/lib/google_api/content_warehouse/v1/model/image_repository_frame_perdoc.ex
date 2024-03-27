@@ -21,6 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdoc do
 
   ## Attributes
 
+  *   `errorStatus` (*type:* `GoogleApi.ContentWarehouse.V1.Model.UtilStatusProto.t`, *default:* `nil`) - Error, if any, while generating the frame perdoc. It is mutually exclusive to the perdoc, only set when perdoc is missing.
   *   `frameIdentifier` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameIdentifier.t`, *default:* `nil`) - 
   *   `perdoc` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageData.t`, *default:* `nil`) - 
   *   `timestampMsec` (*type:* `integer()`, *default:* `nil`) - Timestamp (in msec) of the frame from the original video DEPRECATED: Use the timestamp_ms field in frame_identifier instead.
@@ -29,12 +30,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdoc do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :errorStatus => GoogleApi.ContentWarehouse.V1.Model.UtilStatusProto.t() | nil,
           :frameIdentifier =>
             GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameIdentifier.t() | nil,
           :perdoc => GoogleApi.ContentWarehouse.V1.Model.ImageData.t() | nil,
           :timestampMsec => integer() | nil
         }
 
+  field(:errorStatus, as: GoogleApi.ContentWarehouse.V1.Model.UtilStatusProto)
   field(:frameIdentifier, as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameIdentifier)
   field(:perdoc, as: GoogleApi.ContentWarehouse.V1.Model.ImageData)
   field(:timestampMsec)

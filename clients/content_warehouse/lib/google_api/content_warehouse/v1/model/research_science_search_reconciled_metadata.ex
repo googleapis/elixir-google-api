@@ -41,7 +41,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchReconciledMet
   *   `dateCreated` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ResearchScienceSearchDate.t`, *default:* `nil`) - The date when the dataset was created.
   *   `topSalientTermLabel` (*type:* `list(String.t)`, *default:* `nil`) - Top salient term labels that describe the dataset document body.
   *   `keyword` (*type:* `list(String.t)`, *default:* `nil`) - Keywords describing the dataset.
-  *   `hasCroissantFormat` (*type:* `boolean()`, *default:* `nil`) - Indicates if the dataset has croissant format (https://github.com/mlcommons/croissant).
+  *   `hasCroissantFormat` (*type:* `boolean()`, *default:* `nil`) - Indicates if the dataset has croissant format (https://github.com/mlcommons/croissant). Use optional so that explicitly setting to false will ensure the value is passed along to the KG instead of being indistinguisable from being unset and thus not set in the KG.
   *   `denylistStatus` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `datasetClassificationScore` (*type:* `float()`, *default:* `nil`) - Probability that the entity is in fact a dataset (in contrast to spam or website labelled as dataset that does not describe a dataset).
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The 2-letter language code for the source page for the dataset. Same as the language code in source_url_docjoin_info. Populated only when generating output for indexing.

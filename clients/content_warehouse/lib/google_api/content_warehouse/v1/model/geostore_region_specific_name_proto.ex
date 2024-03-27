@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreRegionSpecificNameProto do
   @moduledoc """
-  This protocol buffer supports a name per region per language, allowing it to represent the name of a given feature in different regions and languages. For example, the Persian Gulf has different English names in UAE versus Lebanon.
+  This protocol buffer supports a name per region per language, allowing it to represent the name of a given feature in different regions and languages. For example, the Persian Gulf has different English names in UAE versus Lebanon; each would need to be represented as distinct RegionSpecificNameProtos.
 
   ## Attributes
 

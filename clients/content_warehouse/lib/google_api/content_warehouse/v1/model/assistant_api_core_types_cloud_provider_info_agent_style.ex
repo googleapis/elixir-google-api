@@ -21,40 +21,36 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesCloudProvider
 
   ## Attributes
 
-  *   `backgroundColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t`, *default:* `nil`) - The background color of the agent. Used if no background image is specified for the given display orientation, or if the provided background image does not fit.
+  *   `backgroundColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t`, *default:* `nil`) - The background color of the agent. Used if no background image is specified for the given display orientation, or if the provided background image does not fit.
   *   `headerTheme` (*type:* `String.t`, *default:* `nil`) - 
   *   `landscapeBackgroundImageUrl` (*type:* `String.t`, *default:* `nil`) - URL for the background image of the agent on landscape display.
   *   `logoUrl` (*type:* `String.t`, *default:* `nil`) - URL for the image containing the 3p logo. This can include logomark and logotype, or logotype only. If present, this can be used in place of the square logo contained in the top level logo_url field in CloudProviderInfo. See go/cards-logo-customization for details on applying this logo.
-  *   `maskColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t`, *default:* `nil`) - The color of the mask to apply to the background. See go/aog-cards-background-mask for details on applying this mask.
+  *   `maskColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t`, *default:* `nil`) - The color of the mask to apply to the background. See go/aog-cards-background-mask for details on applying this mask.
   *   `portraitBackgroundImageUrl` (*type:* `String.t`, *default:* `nil`) - URL for the background image of the agent on portrait display.
-  *   `primaryColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t`, *default:* `nil`) - The primary color of the agent. Used by the client to style the header and suggestion chips.
+  *   `primaryColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t`, *default:* `nil`) - The primary color of the agent. Used by the client to style the header and suggestion chips.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :backgroundColor =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t() | nil,
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t() | nil,
           :headerTheme => String.t() | nil,
           :landscapeBackgroundImageUrl => String.t() | nil,
           :logoUrl => String.t() | nil,
-          :maskColor =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t() | nil,
+          :maskColor => GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t() | nil,
           :portraitBackgroundImageUrl => String.t() | nil,
           :primaryColor =>
-            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor.t() | nil
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor.t() | nil
         }
 
-  field(:backgroundColor,
-    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor
-  )
-
+  field(:backgroundColor, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor)
   field(:headerTheme)
   field(:landscapeBackgroundImageUrl)
   field(:logoUrl)
-  field(:maskColor, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor)
+  field(:maskColor, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor)
   field(:portraitBackgroundImageUrl)
-  field(:primaryColor, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesGovernedColor)
+  field(:primaryColor, as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesColor)
 end
 
 defimpl Poison.Decoder,

@@ -21,7 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreTollClusterProto do
 
   ## Attributes
 
-  *   `intersection` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t)`, *default:* `nil`) - The list of TYPE_INTERSECTION features that are toll points and form this toll cluster. A toll cluster can consist of either a single or a group of intersection points called toll points at the end of various road segments in MapFacts that represent one or more lanes passing through a toll fixture that all go to the same routing destination. This relationship is reciprocal, as a toll point intersection also stores a reference to the toll cluster it belongs to. A toll cluster must have reference to one or more toll points i.e. toll_cluster.intersection should always be populated.
+  *   `intersection` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreFeatureIdProto.t)`, *default:* `nil`) - The list of gcid:toll_intersection features that this toll cluster. A toll cluster can consist of either a single or a group of intersection points called toll intersections at the end of various road segments in MapFacts that represent one or more lanes passing through a toll fixture that all go to the same routing destination. This relationship is reciprocal, as a toll intersection also stores a reference to the toll cluster it belongs to. A toll cluster must have a reference to one or more toll interections (i.e. toll_cluster.intersection should always be populated).
   """
 
   use GoogleApi.Gax.ModelBase

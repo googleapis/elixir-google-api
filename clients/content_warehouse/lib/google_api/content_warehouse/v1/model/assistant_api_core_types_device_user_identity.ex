@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesDeviceUserIdentity do
   @moduledoc """
-  LINT.IfChange
+  The set of information that helps Assistant identify a device-user pair. An example use of this proto is in broadcast reply, when after receiving a broadcast, we store a device-user pair in an attentional entity in order to later infer who initated the broadcast on which device.
 
   ## Attributes
 

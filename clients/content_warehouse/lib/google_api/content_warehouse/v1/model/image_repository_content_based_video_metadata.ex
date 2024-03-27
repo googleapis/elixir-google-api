@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMetadata do
   @moduledoc """
-  Next Tag: 51
+  Next Tag: 52
 
   ## Attributes
 
@@ -31,6 +31,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMe
   *   `lmsPreviewFramePerdocs` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFramePerdocs.t`, *default:* `nil`) - LMS preview frame perdocs. Timestamps of the frame perdocs are from the original video, not from the preview.
   *   `signalsBlob` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t`, *default:* `nil`) - Amarna signals blob that contains large-size signals like VCA frame-level signals.
   *   `s3LanguageIdentification` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t`, *default:* `nil`) - 
+  *   `frameLevelStarburstEmbeddings` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameLevelStarburstEmbeddings.t`, *default:* `nil`) - Frame-level Starburst embeddings. They are IE only signals for short videos initially and will be supported for all videos later. (go/frame-level-sbv5-on-ie)
   *   `golden7SoapboxTracksBlobInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t`, *default:* `nil`) - Information on frame-level people feature blob. (go/vpf-frame-features)
   *   `videoStreamInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperVSIColumnData.t`, *default:* `nil`) - Deprecated, please use media_info.
   *   `thumbnailerData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.VideoPipelineViperThumbnailerColumnData.t`, *default:* `nil`) - 
@@ -81,6 +82,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMe
             GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlob.t() | nil,
           :s3LanguageIdentification =>
             GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals.t() | nil,
+          :frameLevelStarburstEmbeddings =>
+            GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameLevelStarburstEmbeddings.t()
+            | nil,
           :golden7SoapboxTracksBlobInfo =>
             GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryAmarnaSignalsBlobInfo.t() | nil,
           :videoStreamInfo =>
@@ -160,6 +164,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryContentBasedVideoMe
 
   field(:s3LanguageIdentification,
     as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryS3LangIdSignals
+  )
+
+  field(:frameLevelStarburstEmbeddings,
+    as: GoogleApi.ContentWarehouse.V1.Model.ImageRepositoryFrameLevelStarburstEmbeddings
   )
 
   field(:golden7SoapboxTracksBlobInfo,

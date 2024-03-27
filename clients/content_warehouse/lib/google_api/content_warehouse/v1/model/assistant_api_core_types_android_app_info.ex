@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesAndroidAppInfo do
   @moduledoc """
-  The android app information of the provider. Like, Spotify. Next ID: 17 LINT.IfChange
+  The android app information of the provider. Like, Spotify. Next ID: 17
 
   ## Attributes
 

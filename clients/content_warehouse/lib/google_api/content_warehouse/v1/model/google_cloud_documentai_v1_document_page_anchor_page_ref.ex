@@ -21,7 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentPag
 
   ## Attributes
 
-  *   `boundingPoly` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1BoundingPoly.t`, *default:* `nil`) - Optional. Identifies the bounding polygon of a layout element on the page.
+  *   `boundingPoly` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1BoundingPoly.t`, *default:* `nil`) - Optional. Identifies the bounding polygon of a layout element on the page. If `layout_type` is set, the bounding polygon must be exactly the same to the layout element it's referring to.
   *   `confidence` (*type:* `number()`, *default:* `nil`) - Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
   *   `layoutId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated. Use PageRef.bounding_poly instead.
   *   `layoutType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the layout element that is being referenced if any.

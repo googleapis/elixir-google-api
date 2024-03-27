@@ -21,16 +21,19 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoChrom
 
   ## Attributes
 
-  *   `chromiumTrace` (*type:* `String.t`, *default:* `nil`) - 
+  *   `chromiumTrace` (*type:* `String.t`, *default:* `nil`) - Populated if Chromium traces are requested in JSON format.
+  *   `chromiumTraceProto` (*type:* `String.t`, *default:* `nil`) - Populated if Chromium traces are requested in PROTO format.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :chromiumTrace => String.t() | nil
+          :chromiumTrace => String.t() | nil,
+          :chromiumTraceProto => String.t() | nil
         }
 
   field(:chromiumTrace)
+  field(:chromiumTraceProto)
 end
 
 defimpl Poison.Decoder,

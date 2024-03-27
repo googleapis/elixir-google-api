@@ -26,7 +26,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse do
   *   `snippetPrefixCharCount` (*type:* `integer()`, *default:* `nil`) - Character counts of snippet prefix, if any. E.g. section heading, list summary, byline date.
   *   `obsoleteSitemap` (*type:* `String.t`, *default:* `nil`) - These fields were previously optional messages, but CL 2388905 moved them into the MessageSet. However, at this time, old Mustang binaries are still deployed in production and probably will be around for awhile. So, servers which need to talk to old binaries and need to use these fields need to check both the obsolete versions and the MessageSet version. Sitemap
   *   `extraInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ExtraSnippetInfoResponse.t`, *default:* `nil`) - If requested, the extra snippet info
-  *   `sectionHeadingText` (*type:* `String.t`, *default:* `nil`) - If requested, the snippet generator may take note of query items present in an entry in an on-page table-of-contents (i.e. a series of on-page links to named anchors.) If so, these two fields contain the formatted and highlighted entry and the name of the on-page anchor it links to, respectively. This may be used by GWS to show a direct link to that named anchor on the page.
   *   `docInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.WWWDocInfo.t`, *default:* `nil`) - 
   *   `matchesBitmapEncoded` (*type:* `String.t`, *default:* `nil`) - Bitmap representing matches to leaf query terms within document (body section and url). It gets populated if query_matches_info = true.
   *   `snippethash` (*type:* `String.t`, *default:* `nil`) - A hash for duplicate detection. Two results with the same content can return different snippets if, for example, one has an ODP entry and the other does not. Gws can use this value reliably to filter duplicates. It is a hash of body only tidbits.
@@ -40,7 +39,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse do
   *   `snippetBylineDate` (*type:* `String.t`, *default:* `nil`) - Byline date for time sensitive snippets. Most of the time it originates from quality_timebased::SyntacticDate and it is floored to PT midnight.
   *   `listSummary` (*type:* `String.t`, *default:* `nil`) - List summary phrase for list pages.
   *   `snippetRenderedToken` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.MustangSnippetsRenderedToken.t)`, *default:* `nil`) - How tokens are rendered in generating snippet.
-  *   `sectionHeadingAnchorName` (*type:* `String.t`, *default:* `nil`) - 
+  *   `sectionHeadingAnchorName` (*type:* `String.t`, *default:* `nil`) - If requested, the snippet generator may take note of query items present in an entry in an on-page table-of-contents (i.e. a series of on-page links to named anchors.) If so, these two fields contain the formatted and highlighted entry and the name of the on-page anchor it links to, respectively. This may be used by GWS to show a direct link to that named anchor on the page.
   *   `obsoleteManybox` (*type:* `String.t`, *default:* `nil`) - ManyboxData
   *   `orionEntities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.OrionDocEntitiesProto.t`, *default:* `nil`) - DEPRECATED If requested, the orion entities
   *   `sentimentSnippets` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsMustangSentimentSnippetAnnotations.t)`, *default:* `nil`) - DEPRECATED Sentiment snippets
@@ -78,7 +77,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse do
           :snippetPrefixCharCount => integer() | nil,
           :obsoleteSitemap => String.t() | nil,
           :extraInfo => GoogleApi.ContentWarehouse.V1.Model.ExtraSnippetInfoResponse.t() | nil,
-          :sectionHeadingText => String.t() | nil,
           :docInfo => GoogleApi.ContentWarehouse.V1.Model.WWWDocInfo.t() | nil,
           :matchesBitmapEncoded => String.t() | nil,
           :snippethash => String.t() | nil,
@@ -142,7 +140,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWSnippetResponse do
   field(:snippetPrefixCharCount)
   field(:obsoleteSitemap)
   field(:extraInfo, as: GoogleApi.ContentWarehouse.V1.Model.ExtraSnippetInfoResponse)
-  field(:sectionHeadingText)
   field(:docInfo, as: GoogleApi.ContentWarehouse.V1.Model.WWWDocInfo)
   field(:matchesBitmapEncoded)
   field(:snippethash)

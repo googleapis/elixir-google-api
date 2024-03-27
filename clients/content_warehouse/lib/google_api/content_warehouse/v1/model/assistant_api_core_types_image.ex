@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiCoreTypesImage do
   @moduledoc """
-  An image represents the data about an image or a photo. LINT.IfChange NextId: 13
+  An image represents the data about an image or a photo. NextId: 13
 
   ## Attributes
 

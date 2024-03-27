@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
   @moduledoc """
-  These are the set of features that are supported by the device. It's a part of the SoftwareCapabilities of the device. Next ID: 68
+  These are the set of features that are supported by the device. It's a part of the SoftwareCapabilities of the device. Next ID: 69
 
   ## Attributes
 
-  *   `readNotificationSummarizationSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports message summarization.
+  *   `readNotificationSummarizationSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports message summarization. Deprecated, use message_summary_support instead.
   *   `fitnessFeatureSupport` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiFitnessFeatureSupport.t`, *default:* `nil`) - Information about what support this device has for fitness.
   *   `masqueradeModeSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the device supports masquerade mode (go/masquerade).
   *   `appControlSupport` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAppControlSupport.t`, *default:* `nil`) - The client information for app control support. More details in: go/acaia.
@@ -52,6 +52,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
   *   `clientOpResultBatchingSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client can batch client op results before sending them to the server.
   *   `usesSeparateFullViewer` (*type:* `boolean()`, *default:* `nil`) - If set, it indicates that the client can open a separate HTML browser/webviewer (full viewer) to display certain visual results. These visual results usually require more memory to render (e.g. high resolution photos). Compared to the regular viewer that display all other Assistant result, the full viewer does not have memory limit. The field is copied from the device model. See http://google3/assistant/devices_platform/proto/device_model_capabilities.proto?l=225&rcl=312576471 Also see go/webassistant-full-card-viewer.
   *   `confirmationBeforeReadingMultipleMessagesSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports confirmation flow before announcement of multiple messages. If set to true the user will be prompted once and confirmation will be taken before all the messages are announced.
+  *   `messageSummarySupport` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageSummarySupport.t`, *default:* `nil`) - The client information for message summary. More details in: go/roadwayrecap-prd
   *   `acpSupport` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiAssistantContinuedPresenceSupport.t`, *default:* `nil`) - In what way is assistant continued presence supported. (go/opa-acp-prd)
   *   `viewReminderHubPageNotSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports viewing of reminder hub page or not. Default is supported. Set to true to disable returning reminder hub page url in reminder responses.
   *   `duoGroupCallingSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports Duo group calling.
@@ -68,7 +69,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
   *   `suggestionsSupport` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSuggestionsSupport.t`, *default:* `nil`) - Suggestion chips features, supported by the client.
   *   `crossDeviceBroadcastVersion` (*type:* `String.t`, *default:* `nil`) - The version of cross device broadcast (ie; broadcast on torus) which the client supports.
   *   `conversationalCareSupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client can render conversational care responses. go/conversational-care
-  *   `whatsNextSupported` (*type:* `boolean()`, *default:* `nil`) - Whether or not the client supports WhatsNext in the protocol.
   *   `assistantForKidsSupported` (*type:* `boolean()`, *default:* `nil`) - Whether Assistant for Kids (a.k.a. Designed for Family) features are supported.
   *   `isPairedPhoneNeededForComms` (*type:* `boolean()`, *default:* `nil`) - Whether a Bluetooth-paired phone is a core component of communications flows on the client.
   *   `csatVisualOverlaySupported` (*type:* `boolean()`, *default:* `nil`) - Whether the client supports csat visual overlay. (go/sd-od-csat)
@@ -128,6 +128,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
           :clientOpResultBatchingSupported => boolean() | nil,
           :usesSeparateFullViewer => boolean() | nil,
           :confirmationBeforeReadingMultipleMessagesSupported => boolean() | nil,
+          :messageSummarySupport =>
+            GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageSummarySupport.t() | nil,
           :acpSupport =>
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiAssistantContinuedPresenceSupport.t()
             | nil,
@@ -148,7 +150,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
             GoogleApi.ContentWarehouse.V1.Model.AssistantApiSuggestionsSupport.t() | nil,
           :crossDeviceBroadcastVersion => String.t() | nil,
           :conversationalCareSupported => boolean() | nil,
-          :whatsNextSupported => boolean() | nil,
           :assistantForKidsSupported => boolean() | nil,
           :isPairedPhoneNeededForComms => boolean() | nil,
           :csatVisualOverlaySupported => boolean() | nil,
@@ -220,6 +221,10 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
   field(:usesSeparateFullViewer)
   field(:confirmationBeforeReadingMultipleMessagesSupported)
 
+  field(:messageSummarySupport,
+    as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiMessageSummarySupport
+  )
+
   field(:acpSupport,
     as: GoogleApi.ContentWarehouse.V1.Model.AssistantApiAssistantContinuedPresenceSupport
   )
@@ -247,7 +252,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSupportedFeatures do
 
   field(:crossDeviceBroadcastVersion)
   field(:conversationalCareSupported)
-  field(:whatsNextSupported)
   field(:assistantForKidsSupported)
   field(:isPairedPhoneNeededForComms)
   field(:csatVisualOverlaySupported)

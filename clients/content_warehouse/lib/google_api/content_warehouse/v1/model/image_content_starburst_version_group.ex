@@ -22,10 +22,12 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageContentStarburstVersionGroup 
   ## Attributes
 
   *   `descriptorFloat` (*type:* `list(number())`, *default:* `nil`) - Raw dense float feature vector.
+  *   `descriptorFloatBeforeProjection` (*type:* `list(number())`, *default:* `nil`) - Raw dense float feature vector prior to embedding. Only for Starburst V6.
   *   `descriptorShort` (*type:* `String.t`, *default:* `nil`) - Short descriptor for image content features, e.g. compressed bytes. This is the compressed version of descriptor_float below. It can be can be decompressed to descriptor_float with a tiny bit of compression error (in most cases it should be totally fine).
   *   `enumVersion` (*type:* `String.t`, *default:* `nil`) - 
   *   `minorVersion` (*type:* `String.t`, *default:* `nil`) - 
   *   `starburstTokens` (*type:* `list(integer())`, *default:* `nil`) - Starburst tokens.
+  *   `starburstTokensDistances` (*type:* `list(number())`, *default:* `nil`) - Squared distance of the current embedding to each cluster center. Elements are aligned with starburst_tokens.
   *   `version` (*type:* `integer()`, *default:* `nil`) - The following integers are currently used: Starburst V1: 1 Starburst V2: 2 Starburst V3: 3 Starburst V4: 4 Starburst Visual V4: 1004 This field is deprecated. Please try to use the 'enum_version' in future.
   """
 
@@ -33,18 +35,22 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageContentStarburstVersionGroup 
 
   @type t :: %__MODULE__{
           :descriptorFloat => list(number()) | nil,
+          :descriptorFloatBeforeProjection => list(number()) | nil,
           :descriptorShort => String.t() | nil,
           :enumVersion => String.t() | nil,
           :minorVersion => String.t() | nil,
           :starburstTokens => list(integer()) | nil,
+          :starburstTokensDistances => list(number()) | nil,
           :version => integer() | nil
         }
 
   field(:descriptorFloat, type: :list)
+  field(:descriptorFloatBeforeProjection, type: :list)
   field(:descriptorShort)
   field(:enumVersion)
   field(:minorVersion)
   field(:starburstTokens, type: :list)
+  field(:starburstTokensDistances, type: :list)
   field(:version)
 end
 

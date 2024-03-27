@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
   @moduledoc """
-  Next tag value: 382.
+  Next tag value: 384.
 
   ## Attributes
 
@@ -197,6 +197,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
   *   `firmware` (*type:* `String.t`, *default:* `nil`) - 
   *   `resolutionunit` (*type:* `integer()`, *default:* `nil`) - 
   *   `initialviewpitchdegrees` (*type:* `integer()`, *default:* `nil`) - 
+  *   `gcameramotionphotocreator` (*type:* `String.t`, *default:* `nil`) - Indicates the creator of the Motion Photo. This will be set if the MotionPhoto was generated from a LivePhoto from the iOS to Android conversion tool.
   *   `spectralsensitivity` (*type:* `String.t`, *default:* `nil`) - 
   *   `contentlocationname` (*type:* `list(String.t)`, *default:* `nil`) - 
   *   `digitalsourcetype` (*type:* `String.t`, *default:* `nil`) - 
@@ -247,6 +248,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
   *   `offsettime` (*type:* `String.t`, *default:* `nil`) - 
   *   `samplesperpixel` (*type:* `integer()`, *default:* `nil`) - 
   *   `gcameramicrovideooffset` (*type:* `integer()`, *default:* `nil`) - The offset in bytes from the end of the file to the point where the appended mp4 begins (equivalent to the length of the compressed mp4). This field might be provided in the original MicroVideo from client, but it might become invalid when the image component is edited, so it is expected that the thumbnailer will validate it and find the correct value (by scanning through the JPEG) if it is invalid. In other words, only a valid offset should be returned by thumbnailer.
+  *   `gcameraisautoenhanced` (*type:* `boolean()`, *default:* `nil`) - Indicates that an OEM has applied auto enhance via Photos' API.
   *   `stripoffsets` (*type:* `String.t`, *default:* `nil`) - 
   *   `software` (*type:* `String.t`, *default:* `nil`) - 
   *   `exif4c` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t`, *default:* `nil`) - 4C metadata (caption, copyright, creator, credit) specific to each of the three metadata segments (EXIF, XMP, IPTC). These are used to keep separate the 4C data from each segment so that we can properly preserve the per-segment 4C data on write (when PreserveLevel is set appropriately).
@@ -517,6 +519,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
           :firmware => String.t() | nil,
           :resolutionunit => integer() | nil,
           :initialviewpitchdegrees => integer() | nil,
+          :gcameramotionphotocreator => String.t() | nil,
           :spectralsensitivity => String.t() | nil,
           :contentlocationname => list(String.t()) | nil,
           :digitalsourcetype => String.t() | nil,
@@ -567,6 +570,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
           :offsettime => String.t() | nil,
           :samplesperpixel => integer() | nil,
           :gcameramicrovideooffset => integer() | nil,
+          :gcameraisautoenhanced => boolean() | nil,
           :stripoffsets => String.t() | nil,
           :software => String.t() | nil,
           :exif4c => GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata.t() | nil,
@@ -831,6 +835,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
   field(:firmware)
   field(:resolutionunit)
   field(:initialviewpitchdegrees)
+  field(:gcameramotionphotocreator)
   field(:spectralsensitivity)
   field(:contentlocationname, type: :list)
   field(:digitalsourcetype)
@@ -881,6 +886,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosImageMetadata do
   field(:offsettime)
   field(:samplesperpixel)
   field(:gcameramicrovideooffset)
+  field(:gcameraisautoenhanced)
   field(:stripoffsets)
   field(:software)
   field(:exif4c, as: GoogleApi.ContentWarehouse.V1.Model.PhotosFourCMetadata)

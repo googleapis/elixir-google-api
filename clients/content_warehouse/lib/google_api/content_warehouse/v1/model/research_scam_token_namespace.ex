@@ -21,16 +21,20 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace do
 
   ## Attributes
 
+  *   `bytesBlocklistTokens` (*type:* `list(String.t)`, *default:* `nil`) - If present, override |string_blacklist_tokens|.
+  *   `bytesTokens` (*type:* `list(String.t)`, *default:* `nil`) - If present, override |string_tokens|
   *   `namespace` (*type:* `String.t`, *default:* `nil`) - //////////////////////////////////////////////////////////////////////////// NAMESPACE - the string name of the namespace that this proto is specifying, such as "color", "shape", "geo", or "tags". Recall that your overall query is an AND across namespaces.
-  *   `stringBlacklistTokens` (*type:* `list(String.t)`, *default:* `nil`) - //////////////////////////////////////////////////////////////////////////// BLACKLIST - Blacklisting can be used to implement more complex scenarios. The blacklist fields have exactly the same format as the token fields, but represents a negation. When a token is blacklisted, then matches will be excluded whenever the other datapoint has that token. For example, if a query specifies {color: red, blue, !purple}, then that query will match datapoints that are red or blue, but if those points are also purple, then they will be excluded even if they are red/blue. Note that, due to symmetry, if one of the database points is {red, !blue}, that point will be excluded from queries that specify blue. Lastly, note that namespaces with *only* blacklist tokens behave similar to empty namespaces, in that {color: !purple} would match blue or red datapoints, as long as those datapoints don't also have the purple token.
-  *   `stringTokens` (*type:* `list(String.t)`, *default:* `nil`) - //////////////////////////////////////////////////////////////////////////// TOKENS - Conceptually, each token names a set datapoints. The field(s) below are for declaring the tokens that name the datapoint that this TokenNamespace proto is attached to. For convenience, we support either string or uint64 tokens. Internally, the restricts system is based on uint64s, but for many applications, strings are the more natural format, and they should be preferred whenever this is the case. * When only uint64s are specified, they will be used as-is. * When only strings are specified, they will be converted to uint64s via Fingerprint2011. (See "Note on the safety of Fingerprint2011"). * ADVANCED: When both fields are specified, the uint64s are used as-is. Note that, when both fields are used, they *must* have the same number of entries, and the system will assume that your strings correspond 1:1 with the list of uint64 tokens. * EDGE CASE: All matching is done in the uint64 space, so, I'm not sure why you'd do this, but if, eg, your database uses strings, and your queries specify the Fingerprint2011 hashes of those strings, matching will work, and this is a specified behavior. Note on the safety of Fingerprint2011: Unless you have well over 1M+ unique string tokens, you can safely assume that every string will map to a unique 64-bit token. Internally, both Mustang and PSI use Fingerprint2011 to hash arbitrary strings into uint64 tokens, and assume, without validation, that each 64-bit token is unique. And the math backs up this assumption: If we are using a "perfect" hashing function (and Fingerprint2011 is close-enough for our purposes), and we then hash 1M unique tokens into a 64-bit space, there's still better than 99.9999% odds that all tokens are collision-free, nearly as good as the odds for the datacenter's continued existence. Scenarios for having both the string and uint64 token forms: * Probably none that matter to you. Just use the strings directly. * You could have uint64 enum values, yet want to include the string values for debugging purposes. Note that it *is* supported to use a proprietary string => uint64 mapping, assuming that it is consistent, and that you always specify the uint64 values. * The mixer-tier in a multi-shard deployment might convert the strings into uint64s to avoid redundant hashing overhead on the leaves, yet keep the string tokens to preserve proto-level debugging. * When strings are present, I reserve the right to use them for making logging "better", but, thusfar, there are 0 examples of this.
-  *   `uint64BlacklistTokens` (*type:* `list(String.t)`, *default:* `nil`) - 
+  *   `stringBlacklistTokens` (*type:* `list(String.t)`, *default:* `nil`) - New use cases should prefer |bytes_tokens|, go/fast/11#bytes-vs-string When migrate, need to be consistent in both dataset and query.
+  *   `stringTokens` (*type:* `list(String.t)`, *default:* `nil`) - New use cases should prefer |bytes_tokens|, go/fast/11#bytes-vs-string When migrate, need to be consistent in both dataset and query.
+  *   `uint64BlacklistTokens` (*type:* `list(String.t)`, *default:* `nil`) - TODO(qhliao) rename to |uint64_blocklist_tokens| eventually.
   *   `uint64Tokens` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bytesBlocklistTokens => list(String.t()) | nil,
+          :bytesTokens => list(String.t()) | nil,
           :namespace => String.t() | nil,
           :stringBlacklistTokens => list(String.t()) | nil,
           :stringTokens => list(String.t()) | nil,
@@ -38,6 +42,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ResearchScamTokenNamespace do
           :uint64Tokens => list(String.t()) | nil
         }
 
+  field(:bytesBlocklistTokens, type: :list)
+  field(:bytesTokens, type: :list)
   field(:namespace)
   field(:stringBlacklistTokens, type: :list)
   field(:stringTokens, type: :list)

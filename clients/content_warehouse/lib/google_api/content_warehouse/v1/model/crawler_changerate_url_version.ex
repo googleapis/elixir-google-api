@@ -25,15 +25,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CrawlerChangerateUrlVersion do
   *   `contentType` (*type:* `integer()`, *default:* `nil`) - The content type of the page.
   *   `isImsNotModified` (*type:* `boolean()`, *default:* `nil`) - Whether this is an IMS response (a 304, not modified).
   *   `lastModified` (*type:* `integer()`, *default:* `nil`) - The date from the LastModified header, if present.
-  *   `offDomainLinksChecksum` (*type:* `integer()`, *default:* `nil`) - The checksum of all the off-domain links on the page.
-  *   `offDomainLinksCount` (*type:* `integer()`, *default:* `nil`) - The count of all the off-domain links on the page.
-  *   `onDomainLinksCount` (*type:* `integer()`, *default:* `nil`) - The count of all the on-domain links on the page. We aren't worried about the contents themselves, since they might often change (e.g., session ids). We assume that a change in the number of links is significant, however.
   *   `shingleSimhash` (*type:* `GoogleApi.ContentWarehouse.V1.Model.IndexingConverterShingleFingerprint.t`, *default:* `nil`) - The simhash value obtained from shingles.
   *   `simhash` (*type:* `String.t`, *default:* `nil`) - The simhash-v1 value. The simhash-v1 is now deprecated and new UrlVersions should only populate simhash-v2. During migration phase from using simhash-v1 to simhash-v2, it is possible that previous UrlChange only contain simhash-v1 and the next UrlChange / UrlVersion could only contain simhash-v2. In this case, we skip that interval in our changerate computation. [go/changerate-simhash-v2-migration]
   *   `simhashIsTrusted` (*type:* `boolean()`, *default:* `nil`) - Whether the simhash-v1 should be trusted.
   *   `simhashV2` (*type:* `String.t`, *default:* `nil`) - The simhash-v2 value.
   *   `simhashV2IsTrusted` (*type:* `boolean()`, *default:* `nil`) - Whether the simhash-v2 value should be trusted.
-  *   `tile` (*type:* `list(integer())`, *default:* `nil`) - The tiles of the document body. We use int32s instead of int64s (the norm) in order to save space. Since rare inaccuracy doesn't really matter, we've decided this is an okay tradeoff.
   *   `timestamp` (*type:* `integer()`, *default:* `nil`) - The timestamp we crawled the page.
   """
 
@@ -44,16 +40,12 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CrawlerChangerateUrlVersion do
           :contentType => integer() | nil,
           :isImsNotModified => boolean() | nil,
           :lastModified => integer() | nil,
-          :offDomainLinksChecksum => integer() | nil,
-          :offDomainLinksCount => integer() | nil,
-          :onDomainLinksCount => integer() | nil,
           :shingleSimhash =>
             GoogleApi.ContentWarehouse.V1.Model.IndexingConverterShingleFingerprint.t() | nil,
           :simhash => String.t() | nil,
           :simhashIsTrusted => boolean() | nil,
           :simhashV2 => String.t() | nil,
           :simhashV2IsTrusted => boolean() | nil,
-          :tile => list(integer()) | nil,
           :timestamp => integer() | nil
         }
 
@@ -61,9 +53,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CrawlerChangerateUrlVersion do
   field(:contentType)
   field(:isImsNotModified)
   field(:lastModified)
-  field(:offDomainLinksChecksum)
-  field(:offDomainLinksCount)
-  field(:onDomainLinksCount)
 
   field(:shingleSimhash,
     as: GoogleApi.ContentWarehouse.V1.Model.IndexingConverterShingleFingerprint
@@ -73,7 +62,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CrawlerChangerateUrlVersion do
   field(:simhashIsTrusted)
   field(:simhashV2)
   field(:simhashV2IsTrusted)
-  field(:tile, type: :list)
   field(:timestamp)
 end
 

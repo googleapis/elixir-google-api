@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.ImageBaseThumbnailMetadata do
   @moduledoc """
-  Next ID: 15
+  Next ID: 16
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageBaseThumbnailMetadata do
   *   `deepCropPixels` (*type:* `GoogleApi.ContentWarehouse.V1.Model.DeepCropPixels.t`, *default:* `nil`) - DeepCrop signal in pixels, equivalent to deep_crop (above) but with pixels instead of percentages. By default, this field is not populated.
   *   `docid` (*type:* `String.t`, *default:* `nil`) - the Amarna docid of the thumbnail
   *   `encryptedDocid` (*type:* `String.t`, *default:* `nil`) - encrypted version of docid
+  *   `expirationTimestampMicros` (*type:* `String.t`, *default:* `nil`) - expiration timestamp of thumbnail
   *   `fprint` (*type:* `String.t`, *default:* `nil`) - the fprint of the thumbnail
   *   `height` (*type:* `integer()`, *default:* `nil`) - the height of the stored thumbnail
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The mime_type of the thumbnail ("image/jpeg", "image/png", etc.).
@@ -45,6 +46,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageBaseThumbnailMetadata do
           :deepCropPixels => GoogleApi.ContentWarehouse.V1.Model.DeepCropPixels.t() | nil,
           :docid => String.t() | nil,
           :encryptedDocid => String.t() | nil,
+          :expirationTimestampMicros => String.t() | nil,
           :fprint => String.t() | nil,
           :height => integer() | nil,
           :mimeType => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ImageBaseThumbnailMetadata do
   field(:deepCropPixels, as: GoogleApi.ContentWarehouse.V1.Model.DeepCropPixels)
   field(:docid)
   field(:encryptedDocid)
+  field(:expirationTimestampMicros)
   field(:fprint)
   field(:height)
   field(:mimeType)

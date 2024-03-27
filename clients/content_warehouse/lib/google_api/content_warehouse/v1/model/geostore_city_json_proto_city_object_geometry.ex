@@ -24,6 +24,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeo
   *   `lod` (*type:* `String.t`, *default:* `nil`) - Level-of-detail (LoD) indicates how intricate the geometric representation is. May be a single digit per CityGML standards or X.Y per TU Delft (visual depiction at https://3d.bk.tudelft.nl/lod/). `CityObject`s may have multiple geometries with the same LoD.
   *   `multipoint` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMultiPoint.t`, *default:* `nil`) - For geometries consisting of a single point, line, or loop.
   *   `multisurface` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMultiSurface.t`, *default:* `nil`) - For geometries consisting of a collection of surfaces.
+  *   `semantics` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometrySemantic.t)`, *default:* `nil`) - Predefined semantics that may be referenced from geometric primitives.
   *   `solid` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometrySolid.t`, *default:* `nil`) - For geometries consisting of a watertight 3D shape.
   """
 
@@ -36,6 +37,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeo
             | nil,
           :multisurface =>
             GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMultiSurface.t()
+            | nil,
+          :semantics =>
+            list(
+              GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometrySemantic.t()
+            )
             | nil,
           :solid =>
             GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometrySolid.t()
@@ -50,6 +56,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeo
 
   field(:multisurface,
     as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMultiSurface
+  )
+
+  field(:semantics,
+    as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometrySemantic,
+    type: :list
   )
 
   field(:solid,

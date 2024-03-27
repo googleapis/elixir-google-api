@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
   @moduledoc """
-  A collection of data corresponding to a single title candidate. This will be used as: - a collection of signals to score and select titles in production - an input for training title models NOTE: When adding a floating point value for Ranklab purposes, use float32 instead of float64, because some of the Ranklab library still does not fully support float64. Next ID: 68
+  A collection of data corresponding to a single title candidate. This will be used as: - a collection of signals to score and select titles in production - an input for training title models NOTE: When adding a floating point value for Ranklab purposes, use float32 instead of float64, because some of the Ranklab library still does not fully support float64. Next ID: 70
 
   ## Attributes
 
@@ -35,6 +35,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
   *   `percentTokensCoveredByBodyTitle` (*type:* `number()`, *default:* `nil`) - Numbers of tokens covered by body title, in range of [0, 1]. Not set if body title is considered "bad".
   *   `hasSiteInfo` (*type:* `boolean()`, *default:* `nil`) - Whether a title contains site information.
   *   `goldmineHeadingFactor` (*type:* `number()`, *default:* `nil`) - 
+  *   `goldmineSiteNameMarkupFactor` (*type:* `number()`, *default:* `nil`) - 
   *   `goldmineSubHeading` (*type:* `number()`, *default:* `nil`) - 
   *   `goldmineFinalScore` (*type:* `number()`, *default:* `nil`) - Deprecated: use `goldmine_page_score` instead.
   *   `testRank` (*type:* `integer()`, *default:* `nil`) - The ranking index of this candidate (starting from 0) in test.
@@ -48,6 +49,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
   *   `sourceTransliteratedTitle` (*type:* `boolean()`, *default:* `nil`) - 
   *   `dupTokens` (*type:* `integer()`, *default:* `nil`) - Numbers of duplicated tokens. For example, duplicated tokens for a title "dog cat cat cat" is 2 (for 2 extra "cat").
   *   `text` (*type:* `String.t`, *default:* `nil`) - Title text to display. Populated for debugging purpose only, and won't be used for model inferences. This represetns the exact display text in SERP, with modifications like truncations or site-title appending involved.
+  *   `goldmineSiteQueryFactor` (*type:* `number()`, *default:* `nil`) - 
   *   `goldmineSalientTermFactor` (*type:* `number()`, *default:* `nil`) - 
   *   `goldmineAnchorSupportOnly` (*type:* `number()`, *default:* `nil`) - 
   *   `sourceGeometry` (*type:* `boolean()`, *default:* `nil`) - 
@@ -100,6 +102,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
           :percentTokensCoveredByBodyTitle => number() | nil,
           :hasSiteInfo => boolean() | nil,
           :goldmineHeadingFactor => number() | nil,
+          :goldmineSiteNameMarkupFactor => number() | nil,
           :goldmineSubHeading => number() | nil,
           :goldmineFinalScore => number() | nil,
           :testRank => integer() | nil,
@@ -113,6 +116,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
           :sourceTransliteratedTitle => boolean() | nil,
           :dupTokens => integer() | nil,
           :text => String.t() | nil,
+          :goldmineSiteQueryFactor => number() | nil,
           :goldmineSalientTermFactor => number() | nil,
           :goldmineAnchorSupportOnly => number() | nil,
           :sourceGeometry => boolean() | nil,
@@ -162,6 +166,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
   field(:percentTokensCoveredByBodyTitle)
   field(:hasSiteInfo)
   field(:goldmineHeadingFactor)
+  field(:goldmineSiteNameMarkupFactor)
   field(:goldmineSubHeading)
   field(:goldmineFinalScore)
   field(:testRank)
@@ -175,6 +180,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityPreviewRanklabTitle do
   field(:sourceTransliteratedTitle)
   field(:dupTokens)
   field(:text)
+  field(:goldmineSiteQueryFactor)
   field(:goldmineSalientTermFactor)
   field(:goldmineAnchorSupportOnly)
   field(:sourceGeometry)
