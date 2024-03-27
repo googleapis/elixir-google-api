@@ -21,6 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
 
   ## Attributes
 
+  *   `accessoryWidgets` (*type:* `list(GoogleApi.Chat.V1.Model.AccessoryWidget.t)`, *default:* `nil`) - One or more interactive widgets that appear at the bottom of a message. You can add accessory widgets to messages that contain text, cards, or both text and cards. Not supported for messages that contain dialogs. For details, see [Add interactive widgets at the bottom of a message](https://developers.google.com/workspace/chat/create-messages#add-accessory-widgets). Creating a message with accessory widgets requires [app authentication] (https://developers.google.com/chat/api/guides/auth/service-accounts).
   *   `actionResponse` (*type:* `GoogleApi.Chat.V1.Model.ActionResponse.t`, *default:* `nil`) - Input only. Parameters that a Chat app can use to configure how its response is posted.
   *   `annotations` (*type:* `list(GoogleApi.Chat.V1.Model.Annotation.t)`, *default:* `nil`) - Output only. Annotations associated with the `text` in this message.
   *   `argumentText` (*type:* `String.t`, *default:* `nil`) - Output only. Plain-text body of the message with all Chat app mentions stripped out.
@@ -51,6 +52,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessoryWidgets => list(GoogleApi.Chat.V1.Model.AccessoryWidget.t()) | nil,
           :actionResponse => GoogleApi.Chat.V1.Model.ActionResponse.t() | nil,
           :annotations => list(GoogleApi.Chat.V1.Model.Annotation.t()) | nil,
           :argumentText => String.t() | nil,
@@ -78,6 +80,7 @@ defmodule GoogleApi.Chat.V1.Model.Message do
           :threadReply => boolean() | nil
         }
 
+  field(:accessoryWidgets, as: GoogleApi.Chat.V1.Model.AccessoryWidget, type: :list)
   field(:actionResponse, as: GoogleApi.Chat.V1.Model.ActionResponse)
   field(:annotations, as: GoogleApi.Chat.V1.Model.Annotation, type: :list)
   field(:argumentText)
