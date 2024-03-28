@@ -23,9 +23,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
 
   *   `bigtable` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreBigtable.t`, *default:* `nil`) - Contains settings for the Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureOnlineStore was created.
+  *   `dedicatedServingEndpoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint.t`, *default:* `nil`) - Optional. The dedicated serving endpoint for this FeatureOnlineStore, which is different from common Vertex service endpoint.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your FeatureOnlineStore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one FeatureOnlineStore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureOnlineStore. Format: `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
+  *   `optimized` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized.t`, *default:* `nil`) - Contains settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore. When choose Optimized storage type, need to set PrivateServiceConnectConfig.enable_private_service_connect to use private endpoint. Otherwise will use public endpoint by default.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the featureOnlineStore.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureOnlineStore was last updated.
   """
@@ -37,9 +39,15 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreBigtable.t()
             | nil,
           :createTime => DateTime.t() | nil,
+          :dedicatedServingEndpoint =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint.t()
+            | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :optimized =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized.t()
+            | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -49,9 +57,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
   )
 
   field(:createTime, as: DateTime)
+
+  field(:dedicatedServingEndpoint,
+    as:
+      GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint
+  )
+
   field(:etag)
   field(:labels, type: :map)
   field(:name)
+
+  field(:optimized,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized
+  )
+
   field(:state)
   field(:updateTime, as: DateTime)
 end

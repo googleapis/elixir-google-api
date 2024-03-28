@@ -23,17 +23,23 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootRoutingDecisionMetadata
 
   *   `computedInputTokenLength` (*type:* `integer()`, *default:* `nil`) - The length computed by backends using the formatter & tokenizer specific to the model
   *   `modelId` (*type:* `String.t`, *default:* `nil`) - 
+  *   `pickedAsFallback` (*type:* `boolean()`, *default:* `nil`) - If true, the model was selected as a fallback, since no model met requirements.
+  *   `selected` (*type:* `boolean()`, *default:* `nil`) - If true, the model was selected since it met the requriements.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :computedInputTokenLength => integer() | nil,
-          :modelId => String.t() | nil
+          :modelId => String.t() | nil,
+          :pickedAsFallback => boolean() | nil,
+          :selected => boolean() | nil
         }
 
   field(:computedInputTokenLength)
   field(:modelId)
+  field(:pickedAsFallback)
+  field(:selected)
 end
 
 defimpl Poison.Decoder,

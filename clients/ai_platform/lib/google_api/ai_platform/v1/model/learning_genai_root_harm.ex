@@ -26,6 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
   *   `fringe` (*type:* `boolean()`, *default:* `nil`) - 
   *   `grailImageHarmType` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmGrailImageHarmType.t`, *default:* `nil`) - 
   *   `grailTextHarmType` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmGrailTextHarmType.t`, *default:* `nil`) - 
+  *   `imageChild` (*type:* `boolean()`, *default:* `nil`) - 
   *   `imageCsam` (*type:* `boolean()`, *default:* `nil`) - 
   *   `imagePedo` (*type:* `boolean()`, *default:* `nil`) - 
   *   `imagePorn` (*type:* `boolean()`, *default:* `nil`) - Image signals
@@ -34,6 +35,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
   *   `safetycat` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSafetyCatCategories.t`, *default:* `nil`) - 
   *   `spii` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSpiiFilter.t`, *default:* `nil`) - Spii Filter uses buckets http://google3/google/privacy/dlp/v2/storage.proto;l=77;rcl=584719820 to classify the input. LMRoot converts the bucket into double score. For example the score for "POSSIBLE" is 3 / 5 = 0.6 .
   *   `threshold` (*type:* `float()`, *default:* `nil`) - 
+  *   `videoFrameChild` (*type:* `boolean()`, *default:* `nil`) - 
   *   `videoFrameCsam` (*type:* `boolean()`, *default:* `nil`) - 
   *   `videoFramePedo` (*type:* `boolean()`, *default:* `nil`) - 
   *   `videoFramePorn` (*type:* `boolean()`, *default:* `nil`) - Video frame signals
@@ -50,6 +52,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
             GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmGrailImageHarmType.t() | nil,
           :grailTextHarmType =>
             GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmGrailTextHarmType.t() | nil,
+          :imageChild => boolean() | nil,
           :imageCsam => boolean() | nil,
           :imagePedo => boolean() | nil,
           :imagePorn => boolean() | nil,
@@ -59,6 +62,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
             GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSafetyCatCategories.t() | nil,
           :spii => GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSpiiFilter.t() | nil,
           :threshold => float() | nil,
+          :videoFrameChild => boolean() | nil,
           :videoFrameCsam => boolean() | nil,
           :videoFramePedo => boolean() | nil,
           :videoFramePorn => boolean() | nil,
@@ -77,6 +81,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
     as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmGrailTextHarmType
   )
 
+  field(:imageChild)
   field(:imageCsam)
   field(:imagePedo)
   field(:imagePorn)
@@ -85,6 +90,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarm do
   field(:safetycat, as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSafetyCatCategories)
   field(:spii, as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootHarmSpiiFilter)
   field(:threshold)
+  field(:videoFrameChild)
   field(:videoFrameCsam)
   field(:videoFramePedo)
   field(:videoFramePorn)

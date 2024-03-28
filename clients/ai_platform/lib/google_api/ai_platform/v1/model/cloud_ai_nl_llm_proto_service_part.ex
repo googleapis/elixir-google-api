@@ -26,6 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePart do
   *   `functionCall` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceFunctionCall.t`, *default:* `nil`) - Function call data.
   *   `functionResponse` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceFunctionResponse.t`, *default:* `nil`) - Function response data.
   *   `inlineData` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartBlob.t`, *default:* `nil`) - Inline bytes data
+  *   `lmRootMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartLMRootMetadata.t`, *default:* `nil`) - Metadata provides extra info for building the LM Root request. Note: High enough tag number for internal only fields.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Text input.
   *   `videoMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartVideoMetadata.t`, *default:* `nil`) - Video metadata. The metadata should only be specified while the video data is presented in inline_data or file_data.
   """
@@ -42,6 +43,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePart do
           :functionResponse =>
             GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceFunctionResponse.t() | nil,
           :inlineData => GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartBlob.t() | nil,
+          :lmRootMetadata =>
+            GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartLMRootMetadata.t() | nil,
           :text => String.t() | nil,
           :videoMetadata =>
             GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartVideoMetadata.t() | nil
@@ -59,6 +62,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePart do
   )
 
   field(:inlineData, as: GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartBlob)
+
+  field(:lmRootMetadata,
+    as: GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServicePartLMRootMetadata
+  )
+
   field(:text)
 
   field(:videoMetadata,
