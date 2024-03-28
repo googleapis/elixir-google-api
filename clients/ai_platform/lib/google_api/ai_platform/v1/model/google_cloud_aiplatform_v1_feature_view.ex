@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureView was created.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `featureRegistrySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewFeatureRegistrySource.t`, *default:* `nil`) - Optional. Configures the features from a Feature Registry source that need to be loaded onto the FeatureOnlineStore.
+  *   `indexConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewIndexConfig.t`, *default:* `nil`) - Optional. Configuration for index preparation for vector search. It contains the required configurations to create an index from source data, so that approximate nearest neighbor (a.k.a ANN) algorithms search can be performed during online serving.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your FeatureViews. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one FeatureOnlineStore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureView. Format: `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}`
   *   `syncConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncConfig.t`, *default:* `nil`) - Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving.
@@ -42,6 +43,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
           :featureRegistrySource =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewFeatureRegistrySource.t()
             | nil,
+          :indexConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewIndexConfig.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :syncConfig =>
@@ -58,6 +61,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
 
   field(:featureRegistrySource,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewFeatureRegistrySource
+  )
+
+  field(:indexConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewIndexConfig
   )
 
   field(:labels, type: :map)

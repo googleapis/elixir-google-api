@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
   ## Attributes
 
   *   `groundingAttributions` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingAttribution.t)`, *default:* `nil`) - Optional. List of grounding attributions.
+  *   `retrievalQueries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Queries executed by the retrieval tools.
   *   `webSearchQueries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Web search queries for the following-up web search.
   """
 
@@ -31,6 +32,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
           :groundingAttributions =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingAttribution.t())
             | nil,
+          :retrievalQueries => list(String.t()) | nil,
           :webSearchQueries => list(String.t()) | nil
         }
 
@@ -39,6 +41,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
     type: :list
   )
 
+  field(:retrievalQueries, type: :list)
   field(:webSearchQueries, type: :list)
 end
 

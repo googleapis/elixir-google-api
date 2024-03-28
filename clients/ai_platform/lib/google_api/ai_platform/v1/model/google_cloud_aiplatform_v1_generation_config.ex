@@ -22,7 +22,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   ## Attributes
 
   *   `candidateCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of candidates to generate.
+  *   `frequencyPenalty` (*type:* `number()`, *default:* `nil`) - Optional. Frequency penalties.
   *   `maxOutputTokens` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of output tokens to generate per message.
+  *   `presencePenalty` (*type:* `number()`, *default:* `nil`) - Optional. Positive penalties.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Stop sequences.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Optional. Controls the randomness of predictions.
   *   `topK` (*type:* `number()`, *default:* `nil`) - Optional. If specified, top-k sampling will be used.
@@ -33,7 +35,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
 
   @type t :: %__MODULE__{
           :candidateCount => integer() | nil,
+          :frequencyPenalty => number() | nil,
           :maxOutputTokens => integer() | nil,
+          :presencePenalty => number() | nil,
           :stopSequences => list(String.t()) | nil,
           :temperature => number() | nil,
           :topK => number() | nil,
@@ -41,7 +45,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
         }
 
   field(:candidateCount)
+  field(:frequencyPenalty)
   field(:maxOutputTokens)
+  field(:presencePenalty)
   field(:stopSequences, type: :list)
   field(:temperature)
   field(:topK)
