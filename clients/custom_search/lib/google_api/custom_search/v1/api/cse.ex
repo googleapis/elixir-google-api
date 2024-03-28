@@ -72,7 +72,6 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
       *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
       *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
-      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. * Valid values are integers between 1 and 160, inclusive.
       *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -129,7 +128,6 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       :searchType => :query,
       :siteSearch => :query,
       :siteSearchFilter => :query,
-      :snippetLength => :query,
       :sort => :query,
       :start => :query
     }
@@ -193,7 +191,6 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
       *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
       *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
-      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. * Valid values are integers between 1 and 160, inclusive.
       *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -250,7 +247,6 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       :searchType => :query,
       :siteSearch => :query,
       :siteSearchFilter => :query,
-      :snippetLength => :query,
       :sort => :query,
       :start => :query
     }
