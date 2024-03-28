@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.OfferTag do
   @moduledoc """
-  Represents a custom tag specified for base plans and subscription offers.
+  Represents a custom tag specified for one-time products, purchase options, base plans and offers.
 
   ## Attributes
 
