@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2GCSVolumeSource do
   @moduledoc """
-  Represents a GCS Bucket mounted as a volume.
+  Represents a volume backed by a Cloud Storage bucket using Cloud Storage FUSE.
 
   ## Attributes
 
-  *   `bucket` (*type:* `String.t`, *default:* `nil`) - GCS Bucket name
-  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - If true, mount the GCS bucket as read-only
+  *   `bucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage Bucket name.
+  *   `readOnly` (*type:* `boolean()`, *default:* `nil`) - If true, the volume will be mounted as read only for all mounts.
   """
 
   use GoogleApi.Gax.ModelBase

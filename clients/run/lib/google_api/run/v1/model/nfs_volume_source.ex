@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Run.V1.Model.NFSVolumeSource do
   @moduledoc """
-  Represents a persistent volume that will be mounted using NFS. This volume will be shared between all instances of the Service and data will not be deleted when the instance is shut down.
+  Represents a persistent volume that will be mounted using NFS. This volume will be shared between all instances of the resource and data will not be deleted when the instance is shut down.
 
   ## Attributes
 
