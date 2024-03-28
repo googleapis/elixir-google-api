@@ -22,7 +22,9 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaInt
   ## Attributes
 
   *   `active` (*type:* `boolean()`, *default:* `nil`) - Required. If any integration version is published.
+  *   `creatorEmail` (*type:* `String.t`, *default:* `nil`) - Output only. The creator's email address. Generated based on the End User Credentials/LOAS role of the user making the call.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional.
+  *   `lastModifierEmail` (*type:* `String.t`, *default:* `nil`) - Required. The last modifier of this integration
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the integration.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Auto-generated.
   """
@@ -31,13 +33,17 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaInt
 
   @type t :: %__MODULE__{
           :active => boolean() | nil,
+          :creatorEmail => String.t() | nil,
           :description => String.t() | nil,
+          :lastModifierEmail => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:active)
+  field(:creatorEmail)
   field(:description)
+  field(:lastModifierEmail)
   field(:name)
   field(:updateTime, as: DateTime)
 end
