@@ -36,6 +36,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmFrontendsEventbusPro
   *   `producer` (*type:* `String.t`, *default:* `nil`) - 
   *   `protoDefName` (*type:* `String.t`, *default:* `nil`) - The name of the protobuf type if the parameter has a protobuf data type.
   *   `protoDefPath` (*type:* `String.t`, *default:* `nil`) - If the data type is of type proto or proto array, this field needs to be populated with the fully qualified proto name. This message, for example, would be "enterprise.crm.frontends.eventbus.proto.WorkflowParameterEntry".
+  *   `required` (*type:* `boolean()`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -64,7 +65,8 @@ defmodule GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmFrontendsEventbusPro
             | nil,
           :producer => String.t() | nil,
           :protoDefName => String.t() | nil,
-          :protoDefPath => String.t() | nil
+          :protoDefPath => String.t() | nil,
+          :required => boolean() | nil
         }
 
   field(:attributes, as: GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmEventbusProtoAttributes)
@@ -96,6 +98,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmFrontendsEventbusPro
   field(:producer)
   field(:protoDefName)
   field(:protoDefPath)
+  field(:required)
 end
 
 defimpl Poison.Decoder,
