@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterion do
   @moduledoc """
-  An ad group criterion.
+  An ad group criterion. The ad_group_criterion report only returns criteria that were explicitly added to the ad group.
 
   ## Attributes
 

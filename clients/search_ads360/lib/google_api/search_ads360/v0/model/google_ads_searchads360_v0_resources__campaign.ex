@@ -21,223 +21,169 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
 
   ## Attributes
 
-  *   `advertisingChannelType` (*type:* `String.t`, *default:* `nil`) - Immutable. The primary serving target for ads within the campaign. The targeting options can be refined in `network_settings`. This field is required and should not be empty when creating new campaigns. Can be set only when creating campaigns. After the campaign is created, the field can not be changed.
-  *   `selectiveOptimization` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization.t`, *default:* `nil`) - Selective optimization setting for this campaign, which includes a set of conversion actions to optimize this campaign towards. This feature only applies to app campaigns that use MULTI_CHANNEL as AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as AdvertisingChannelSubType.
-  *   `advertisingChannelSubType` (*type:* `String.t`, *default:* `nil`) - Immutable. Optional refinement to `advertising_channel_type`. Must be a valid sub-type of the parent channel type. Can be set only when creating campaigns. After campaign is created, the field can not be changed.
   *   `biddingStrategy` (*type:* `String.t`, *default:* `nil`) - Portfolio bidding strategy used by campaign.
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this campaign was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format. create_time will be deprecated in v1. Use creation_time instead.
-  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The ad serving status of the campaign.
-  *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the campaign in the external engine account. This field is for non-Google Ads account only, for example, Yahoo Japan, Microsoft, Baidu etc. For Google Ads entity, use "campaign.id" instead.
+  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of labels attached to this campaign.
+  *   `advertisingChannelType` (*type:* `String.t`, *default:* `nil`) - Immutable. The primary serving target for ads within the campaign. The targeting options can be refined in `network_settings`. This field is required and should not be empty when creating new campaigns. Can be set only when creating campaigns. After the campaign is created, the field can not be changed.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the campaign. This field is required and should not be empty when creating new campaigns. It must not contain any null (code point 0x0), NL line feed (code point 0xA) or carriage return (code point 0xD) characters.
+  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The datetime when this campaign was last modified. The datetime is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss.ssssss" format.
+  *   `geoTargetTypeSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_GeoTargetTypeSetting.t`, *default:* `nil`) - The setting for ads geotargeting.
+  *   `trackingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_TrackingSetting.t`, *default:* `nil`) - Output only. Campaign-level settings for tracking information.
   *   `manualCpm` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpm.t`, *default:* `nil`) - Standard Manual CPM bidding strategy. Manual impression-based bidding where user pays per thousand impressions.
+  *   `adServingOptimizationStatus` (*type:* `String.t`, *default:* `nil`) - The ad serving optimization status of the campaign.
+  *   `selectiveOptimization` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization.t`, *default:* `nil`) - Selective optimization setting for this campaign, which includes a set of conversion actions to optimize this campaign towards. This feature only applies to app campaigns that use MULTI_CHANNEL as AdvertisingChannelType and APP_CAMPAIGN or APP_CAMPAIGN_FOR_ENGAGEMENT as AdvertisingChannelSubType.
+  *   `percentCpc` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_PercentCpc.t`, *default:* `nil`) - Standard Percent Cpc bidding strategy where bids are a fraction of the advertised price for some good or service.
+  *   `servingStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The ad serving status of the campaign.
+  *   `manualCpa` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpa.t`, *default:* `nil`) - Standard Manual CPA bidding strategy. Manual bidding strategy that allows advertiser to set the bid per advertiser-specified action. Supported only for Local Services campaigns.
+  *   `maximizeConversionValue` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue.t`, *default:* `nil`) - Standard Maximize Conversion Value bidding strategy that automatically sets bids to maximize revenue while spending your budget.
+  *   `urlCustomParameters` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_CustomParameter.t)`, *default:* `nil`) - The list of mappings used to substitute custom parameter tags in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
+  *   `shoppingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting.t`, *default:* `nil`) - The setting for controlling Shopping campaigns.
+  *   `networkSettings` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_NetworkSettings.t`, *default:* `nil`) - The network settings for the campaign.
+  *   `advertisingChannelSubType` (*type:* `String.t`, *default:* `nil`) - Immutable. Optional refinement to `advertising_channel_type`. Must be a valid sub-type of the parent channel type. Can be set only when creating campaigns. After campaign is created, the field can not be changed.
+  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this campaign was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format.
+  *   `maximizeConversions` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversions.t`, *default:* `nil`) - Standard Maximize Conversions bidding strategy that automatically maximizes number of conversions while spending your budget.
+  *   `urlExpansionOptOut` (*type:* `boolean()`, *default:* `nil`) - Represents opting out of URL expansion to more targeted URLs. If opted out (true), only the final URLs in the asset group or URLs specified in the advertiser's Google Merchant Center or business data feeds are targeted. If opted in (false), the entire domain will be targeted. This field can only be set for Performance Max campaigns, where the default value is false.
+  *   `targetCpa` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa.t`, *default:* `nil`) - Standard Target CPA bidding strategy that automatically sets bids to help get as many conversions as possible at the target cost-per-acquisition (CPA) you set.
+  *   `realTimeBiddingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting.t`, *default:* `nil`) - Settings for Real-Time Bidding, a feature only available for campaigns targeting the Ad Exchange network.
   *   `dynamicSearchAdsSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_DynamicSearchAdsSetting.t`, *default:* `nil`) - The setting for controlling Dynamic Search Ads (DSA).
   *   `biddingStrategySystemStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The system status of the campaign's bidding strategy.
-  *   `trackingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_TrackingSetting.t`, *default:* `nil`) - Output only. Campaign-level settings for tracking information.
-  *   `maximizeConversionValue` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue.t`, *default:* `nil`) - Standard Maximize Conversion Value bidding strategy that automatically sets bids to maximize revenue while spending your budget.
-  *   `percentCpc` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_PercentCpc.t`, *default:* `nil`) - Standard Percent Cpc bidding strategy where bids are a fraction of the advertised price for some good or service.
-  *   `targetRoas` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas.t`, *default:* `nil`) - Standard Target ROAS bidding strategy that automatically maximizes revenue while averaging a specific target return on ad spend (ROAS).
-  *   `targetImpressionShare` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare.t`, *default:* `nil`) - Target Impression Share bidding strategy. An automated bidding strategy that sets bids to achieve a chosen percentage of impressions.
-  *   `realTimeBiddingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting.t`, *default:* `nil`) - Settings for Real-Time Bidding, a feature only available for campaigns targeting the Ad Exchange network.
-  *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The datetime when this campaign was last modified. The datetime is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss.ssssss" format.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the campaign. This field is required and should not be empty when creating new campaigns. It must not contain any null (code point 0x0), NL line feed (code point 0xA) or carriage return (code point 0xD) characters.
-  *   `targetCpa` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa.t`, *default:* `nil`) - Standard Target CPA bidding strategy that automatically sets bids to help get as many conversions as possible at the target cost-per-acquisition (CPA) you set.
-  *   `urlExpansionOptOut` (*type:* `boolean()`, *default:* `nil`) - Represents opting out of URL expansion to more targeted URLs. If opted out (true), only the final URLs in the asset group or URLs specified in the advertiser's Google Merchant Center or business data feeds are targeted. If opted in (false), the entire domain will be targeted. This field can only be set for Performance Max campaigns, where the default value is false.
-  *   `trackingUrlTemplate` (*type:* `String.t`, *default:* `nil`) - The URL template for constructing a tracking URL.
-  *   `geoTargetTypeSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_GeoTargetTypeSetting.t`, *default:* `nil`) - The setting for ads geotargeting.
-  *   `shoppingSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting.t`, *default:* `nil`) - The setting for controlling Shopping campaigns.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the campaign. When a new campaign is added, the status defaults to ENABLED.
-  *   `targetCpm` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm.t`, *default:* `nil`) - A bidding strategy that automatically optimizes cost per thousand impressions.
+  *   `manualCpc` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpc.t`, *default:* `nil`) - Standard Manual CPC bidding strategy. Manual click-based bidding where user pays per click.
   *   `optimizationGoalSetting` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_OptimizationGoalSetting.t`, *default:* `nil`) - Optimization goal setting for this campaign, which includes a set of optimization goal types.
-  *   `manualCpa` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpa.t`, *default:* `nil`) - Standard Manual CPA bidding strategy. Manual bidding strategy that allows advertiser to set the bid per advertiser-specified action. Supported only for Local Services campaigns.
-  *   `networkSettings` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_NetworkSettings.t`, *default:* `nil`) - The network settings for the campaign.
-  *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this campaign was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format.
+  *   `targetImpressionShare` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare.t`, *default:* `nil`) - Target Impression Share bidding strategy. An automated bidding strategy that sets bids to achieve a chosen percentage of impressions.
+  *   `targetRoas` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas.t`, *default:* `nil`) - Standard Target ROAS bidding strategy that automatically maximizes revenue while averaging a specific target return on ad spend (ROAS).
+  *   `targetCpm` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm.t`, *default:* `nil`) - A bidding strategy that automatically optimizes cost per thousand impressions.
+  *   `trackingUrlTemplate` (*type:* `String.t`, *default:* `nil`) - The URL template for constructing a tracking URL.
+  *   `finalUrlSuffix` (*type:* `String.t`, *default:* `nil`) - Suffix used to append query parameters to landing pages that are served with parallel tracking.
+  *   `targetSpend` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend.t`, *default:* `nil`) - Standard Target Spend bidding strategy that automatically sets your bids to help get as many clicks as possible within your budget.
+  *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the campaign in the external engine account. This field is for non-Google Ads account only, for example, Yahoo Japan, Microsoft, Baidu etc. For Google Ads entity, use "campaign.id" instead.
+  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the campaign. Campaign resource names have the form: `customers/{customer_id}/campaigns/{campaign_id}`
   *   `campaignBudget` (*type:* `String.t`, *default:* `nil`) - The budget of the campaign.
   *   `frequencyCaps` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_FrequencyCapEntry.t)`, *default:* `nil`) - A list that limits how often each user will see this campaign's ads.
-  *   `adServingOptimizationStatus` (*type:* `String.t`, *default:* `nil`) - The ad serving optimization status of the campaign.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the campaign. When a new campaign is added, the status defaults to ENABLED.
   *   `excludedParentAssetFieldTypes` (*type:* `list(String.t)`, *default:* `nil`) - The asset field types that should be excluded from this campaign. Asset links with these field types will not be inherited by this campaign from the upper level.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last day of the campaign in serving customer's timezone in YYYY-MM-DD format. On create, defaults to 2037-12-30, which means the campaign will run indefinitely. To set an existing campaign to run indefinitely, set this field to 2037-12-30.
   *   `biddingStrategyType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of bidding strategy. A bidding strategy can be created by setting either the bidding scheme to create a standard bidding strategy or the `bidding_strategy` field to create a portfolio bidding strategy. This field is read-only.
-  *   `targetSpend` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend.t`, *default:* `nil`) - Standard Target Spend bidding strategy that automatically sets your bids to help get as many clicks as possible within your budget.
-  *   `urlCustomParameters` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_CustomParameter.t)`, *default:* `nil`) - The list of mappings used to substitute custom parameter tags in a `tracking_url_template`, `final_urls`, or `mobile_final_urls`.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the campaign.
-  *   `maximizeConversions` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversions.t`, *default:* `nil`) - Standard Maximize Conversions bidding strategy that automatically maximizes number of conversions while spending your budget.
-  *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of labels attached to this campaign.
-  *   `manualCpc` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpc.t`, *default:* `nil`) - Standard Manual CPC bidding strategy. Manual click-based bidding where user pays per click.
-  *   `finalUrlSuffix` (*type:* `String.t`, *default:* `nil`) - Suffix used to append query parameters to landing pages that are served with parallel tracking.
-  *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the campaign. Campaign resource names have the form: `customers/{customer_id}/campaigns/{campaign_id}`
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - The date when campaign started in serving customer's timezone in YYYY-MM-DD format.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the campaign.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :advertisingChannelType => String.t() | nil,
-          :selectiveOptimization =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization.t()
-            | nil,
-          :advertisingChannelSubType => String.t() | nil,
           :biddingStrategy => String.t() | nil,
           :createTime => String.t() | nil,
-          :servingStatus => String.t() | nil,
-          :engineId => String.t() | nil,
-          :manualCpm =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpm.t() | nil,
-          :dynamicSearchAdsSetting =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_DynamicSearchAdsSetting.t()
+          :labels => list(String.t()) | nil,
+          :advertisingChannelType => String.t() | nil,
+          :name => String.t() | nil,
+          :lastModifiedTime => String.t() | nil,
+          :geoTargetTypeSetting =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_GeoTargetTypeSetting.t()
             | nil,
-          :biddingStrategySystemStatus => String.t() | nil,
           :trackingSetting =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_TrackingSetting.t()
             | nil,
-          :maximizeConversionValue =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue.t()
+          :manualCpm =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpm.t() | nil,
+          :adServingOptimizationStatus => String.t() | nil,
+          :selectiveOptimization =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization.t()
             | nil,
           :percentCpc =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_PercentCpc.t() | nil,
-          :targetRoas =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas.t() | nil,
-          :targetImpressionShare =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare.t()
+          :servingStatus => String.t() | nil,
+          :manualCpa =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpa.t() | nil,
+          :maximizeConversionValue =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue.t()
             | nil,
-          :realTimeBiddingSetting =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting.t()
-            | nil,
-          :lastModifiedTime => String.t() | nil,
-          :name => String.t() | nil,
-          :targetCpa =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa.t() | nil,
-          :urlExpansionOptOut => boolean() | nil,
-          :trackingUrlTemplate => String.t() | nil,
-          :geoTargetTypeSetting =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_GeoTargetTypeSetting.t()
+          :urlCustomParameters =>
+            list(
+              GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_CustomParameter.t()
+            )
             | nil,
           :shoppingSetting =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting.t()
             | nil,
-          :status => String.t() | nil,
-          :targetCpm =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm.t() | nil,
-          :optimizationGoalSetting =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_OptimizationGoalSetting.t()
-            | nil,
-          :manualCpa =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpa.t() | nil,
           :networkSettings =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_NetworkSettings.t()
             | nil,
+          :advertisingChannelSubType => String.t() | nil,
           :creationTime => String.t() | nil,
+          :maximizeConversions =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversions.t()
+            | nil,
+          :urlExpansionOptOut => boolean() | nil,
+          :targetCpa =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa.t() | nil,
+          :realTimeBiddingSetting =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting.t()
+            | nil,
+          :dynamicSearchAdsSetting =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_DynamicSearchAdsSetting.t()
+            | nil,
+          :biddingStrategySystemStatus => String.t() | nil,
+          :manualCpc =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpc.t() | nil,
+          :optimizationGoalSetting =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_OptimizationGoalSetting.t()
+            | nil,
+          :targetImpressionShare =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare.t()
+            | nil,
+          :targetRoas =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas.t() | nil,
+          :targetCpm =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm.t() | nil,
+          :trackingUrlTemplate => String.t() | nil,
+          :finalUrlSuffix => String.t() | nil,
+          :targetSpend =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend.t() | nil,
+          :engineId => String.t() | nil,
+          :resourceName => String.t() | nil,
           :campaignBudget => String.t() | nil,
           :frequencyCaps =>
             list(
               GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_FrequencyCapEntry.t()
             )
             | nil,
-          :adServingOptimizationStatus => String.t() | nil,
+          :status => String.t() | nil,
           :excludedParentAssetFieldTypes => list(String.t()) | nil,
           :endDate => String.t() | nil,
           :biddingStrategyType => String.t() | nil,
-          :targetSpend =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend.t() | nil,
-          :urlCustomParameters =>
-            list(
-              GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_CustomParameter.t()
-            )
-            | nil,
-          :id => String.t() | nil,
-          :maximizeConversions =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversions.t()
-            | nil,
-          :labels => list(String.t()) | nil,
-          :manualCpc =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpc.t() | nil,
-          :finalUrlSuffix => String.t() | nil,
-          :resourceName => String.t() | nil,
-          :startDate => String.t() | nil
+          :startDate => String.t() | nil,
+          :id => String.t() | nil
         }
 
-  field(:advertisingChannelType)
-
-  field(:selectiveOptimization,
-    as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization
-  )
-
-  field(:advertisingChannelSubType)
   field(:biddingStrategy)
   field(:createTime)
-  field(:servingStatus)
-  field(:engineId)
-  field(:manualCpm, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpm)
-
-  field(:dynamicSearchAdsSetting,
-    as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_DynamicSearchAdsSetting
-  )
-
-  field(:biddingStrategySystemStatus)
-
-  field(:trackingSetting,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_TrackingSetting
-  )
-
-  field(:maximizeConversionValue,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue
-  )
-
-  field(:percentCpc, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_PercentCpc)
-  field(:targetRoas, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas)
-
-  field(:targetImpressionShare,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare
-  )
-
-  field(:realTimeBiddingSetting,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting
-  )
-
-  field(:lastModifiedTime)
+  field(:labels, type: :list)
+  field(:advertisingChannelType)
   field(:name)
-  field(:targetCpa, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa)
-  field(:urlExpansionOptOut)
-  field(:trackingUrlTemplate)
+  field(:lastModifiedTime)
 
   field(:geoTargetTypeSetting,
     as:
       GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_GeoTargetTypeSetting
   )
 
-  field(:shoppingSetting,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting
+  field(:trackingSetting,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_TrackingSetting
   )
 
-  field(:status)
-  field(:targetCpm, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm)
+  field(:manualCpm, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpm)
+  field(:adServingOptimizationStatus)
 
-  field(:optimizationGoalSetting,
+  field(:selectiveOptimization,
     as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_OptimizationGoalSetting
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_SelectiveOptimization
   )
 
+  field(:percentCpc, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_PercentCpc)
+  field(:servingStatus)
   field(:manualCpa, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpa)
 
-  field(:networkSettings,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_NetworkSettings
-  )
-
-  field(:creationTime)
-  field(:campaignBudget)
-
-  field(:frequencyCaps,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_FrequencyCapEntry,
-    type: :list
-  )
-
-  field(:adServingOptimizationStatus)
-  field(:excludedParentAssetFieldTypes, type: :list)
-  field(:endDate)
-  field(:biddingStrategyType)
-
-  field(:targetSpend,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend
+  field(:maximizeConversionValue,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversionValue
   )
 
   field(:urlCustomParameters,
@@ -245,17 +191,69 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
     type: :list
   )
 
-  field(:id)
+  field(:shoppingSetting,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting
+  )
+
+  field(:networkSettings,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_NetworkSettings
+  )
+
+  field(:advertisingChannelSubType)
+  field(:creationTime)
 
   field(:maximizeConversions,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_MaximizeConversions
   )
 
-  field(:labels, type: :list)
+  field(:urlExpansionOptOut)
+  field(:targetCpa, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpa)
+
+  field(:realTimeBiddingSetting,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_RealTimeBiddingSetting
+  )
+
+  field(:dynamicSearchAdsSetting,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_DynamicSearchAdsSetting
+  )
+
+  field(:biddingStrategySystemStatus)
   field(:manualCpc, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_ManualCpc)
+
+  field(:optimizationGoalSetting,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign_OptimizationGoalSetting
+  )
+
+  field(:targetImpressionShare,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetImpressionShare
+  )
+
+  field(:targetRoas, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetRoas)
+  field(:targetCpm, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetCpm)
+  field(:trackingUrlTemplate)
   field(:finalUrlSuffix)
+
+  field(:targetSpend,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend
+  )
+
+  field(:engineId)
   field(:resourceName)
+  field(:campaignBudget)
+
+  field(:frequencyCaps,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_FrequencyCapEntry,
+    type: :list
+  )
+
+  field(:status)
+  field(:excludedParentAssetFieldTypes, type: :list)
+  field(:endDate)
+  field(:biddingStrategyType)
   field(:startDate)
+  field(:id)
 end
 
 defimpl Poison.Decoder,
