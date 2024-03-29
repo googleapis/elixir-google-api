@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView do
   @moduledoc """
-  A location view summarizes the performance of campaigns by Location criteria.
+  A location view summarizes the performance of campaigns by a Location criterion.
 
   ## Attributes
 

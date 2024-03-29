@@ -21,280 +21,280 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
 
   ## Attributes
 
-  *   `clientAccountCrossSellGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Client account cross-sell gross profit is the profit you made from products sold as a result of advertising a different product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the purchase is a sold product. If these products don't match then this is considered cross-sell. Cross-sell gross profit is the revenue you made from cross-sell attributed to your ads minus the cost of the goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The shirt is priced $20 and has a cost of goods sold value of $5. The cross-sell gross profit of this order is $15 = $20 - $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `clicks` (*type:* `String.t`, *default:* `nil`) - The number of clicks.
-  *   `conversionsValuePerCost` (*type:* `float()`, *default:* `nil`) - The value of biddable conversion divided by the total cost of conversion eligible interactions.
-  *   `leadRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `clientAccountConversions` (*type:* `float()`, *default:* `nil`) - The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
-  *   `searchRankLostAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad wasn't the very first ad above the organic search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `visits` (*type:* `float()`, *default:* `nil`) - Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page.
-  *   `searchBudgetLostAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad wasn't the very first ad above the organic search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `allConversionsFromStoreWebsite` (*type:* `float()`, *default:* `nil`) - The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only.
-  *   `allConversionsFromMenu` (*type:* `float()`, *default:* `nil`) - The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only.
-  *   `absoluteTopImpressionPercentage` (*type:* `float()`, *default:* `nil`) - The percent of your ad impressions that are shown as the very first ad above the organic search results.
-  *   `allConversionsFromOtherEngagement` (*type:* `float()`, *default:* `nil`) - The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only.
-  *   `invalidClicks` (*type:* `String.t`, *default:* `nil`) - Number of clicks Google considers illegitimate and doesn't charge you for.
-  *   `crossSellUnitsSold` (*type:* `float()`, *default:* `nil`) - Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
-  *   `conversions` (*type:* `float()`, *default:* `nil`) - The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
-  *   `conversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date.
   *   `allConversions` (*type:* `float()`, *default:* `nil`) - The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric.
-  *   `costMicros` (*type:* `String.t`, *default:* `nil`) - The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `searchClickShare` (*type:* `float()`, *default:* `nil`) - The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
-  *   `costPerCurrentModelAttributedConversion` (*type:* `float()`, *default:* `nil`) - The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
-  *   `allConversionsFromStoreVisit` (*type:* `float()`, *default:* `nil`) - Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only.
-  *   `ctr` (*type:* `float()`, *default:* `nil`) - The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).
-  *   `allConversionsFromOrder` (*type:* `float()`, *default:* `nil`) - The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only.
-  *   `searchTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received in the top location (anywhere above the organic search results) compared to the estimated number of impressions you were eligible to receive in the top location. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
-  *   `allConversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions.
-  *   `conversionsFromInteractionsValuePerInteraction` (*type:* `float()`, *default:* `nil`) - The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
-  *   `clientAccountLeadRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `leadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `historicalSearchPredictedCtr` (*type:* `String.t`, *default:* `nil`) - The historical search predicted click through rate (CTR).
-  *   `valuePerAllConversions` (*type:* `float()`, *default:* `nil`) - The value of all conversions divided by the number of all conversions.
-  *   `averageCpc` (*type:* `float()`, *default:* `nil`) - The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `allConversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
-  *   `valuePerConversion` (*type:* `float()`, *default:* `nil`) - The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth.
-  *   `interactionEventTypes` (*type:* `list(String.t)`, *default:* `nil`) - The types of payable and free interactions.
-  *   `crossSellGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell gross profit is the profit you made from products sold as a result of advertising a different product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the purchase is a sold product. If these products don't match then this is considered cross-sell. Cross-sell gross profit is the revenue you made from cross-sell attributed to your ads minus the cost of the goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The shirt is priced $20 and has a cost of goods sold value of $5. The cross-sell gross profit of this order is $15 = $20 - $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `clientAccountLeadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `crossSellRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `contentImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
-  *   `clientAccountViewThroughConversions` (*type:* `String.t`, *default:* `nil`) - The total number of view-through conversions. These happen when a customer sees an image or rich media ad, then later completes a conversion on your site without interacting with (for example, clicking on) another ad.
-  *   `crossSellCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `invalidClickRate` (*type:* `float()`, *default:* `nil`) - The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period.
-  *   `searchBudgetLostTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad didn't show anywhere above the organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `valuePerConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date.
-  *   `averageCpm` (*type:* `float()`, *default:* `nil`) - Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `allConversionsValuePerCost` (*type:* `float()`, *default:* `nil`) - The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads).
-  *   `clientAccountCrossSellRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Client account cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `allConversionsFromClickToCall` (*type:* `float()`, *default:* `nil`) - The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only.
-  *   `contentBudgetLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `historicalLandingPageQualityScore` (*type:* `String.t`, *default:* `nil`) - The quality of historical landing page experience.
-  *   `crossDeviceConversionsValue` (*type:* `float()`, *default:* `nil`) - The sum of the value of cross-device conversions.
-  *   `averageCost` (*type:* `float()`, *default:* `nil`) - The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions.
-  *   `allConversionsValue` (*type:* `float()`, *default:* `nil`) - The value of all conversions.
-  *   `historicalQualityScore` (*type:* `String.t`, *default:* `nil`) - The historical quality score.
-  *   `impressions` (*type:* `String.t`, *default:* `nil`) - Count of how often your ad has appeared on a search results page or website on the Google Network.
-  *   `historicalCreativeQualityScore` (*type:* `String.t`, *default:* `nil`) - The creative historical quality score.
   *   `valuePerAllConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The value of all conversions divided by the number of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
-  *   `clientAccountCrossSellUnitsSold` (*type:* `float()`, *default:* `nil`) - Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
-  *   `topImpressionPercentage` (*type:* `float()`, *default:* `nil`) - The percent of your ad impressions that are shown anywhere above the organic search results.
-  *   `allConversionsFromInteractionsValuePerInteraction` (*type:* `float()`, *default:* `nil`) - The value of all conversions from interactions divided by the total number of interactions.
-  *   `clientAccountLeadCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `interactionRate` (*type:* `float()`, *default:* `nil`) - How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown.
-  *   `searchAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999.
-  *   `allConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
-  *   `costPerConversion` (*type:* `float()`, *default:* `nil`) - Average conversion eligible cost per biddable conversion.
-  *   `leadUnitsSold` (*type:* `float()`, *default:* `nil`) - Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
-  *   `searchImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
-  *   `allConversionsFromDirections` (*type:* `float()`, *default:* `nil`) - The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only.
-  *   `conversionsValue` (*type:* `float()`, *default:* `nil`) - The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions.
+  *   `allConversionsFromStoreWebsite` (*type:* `float()`, *default:* `nil`) - The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only.
+  *   `averageCpm` (*type:* `float()`, *default:* `nil`) - Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `crossSellUnitsSold` (*type:* `float()`, *default:* `nil`) - Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+  *   `historicalQualityScore` (*type:* `String.t`, *default:* `nil`) - The historical quality score.
+  *   `searchBudgetLostAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad wasn't the very first ad among the top ads in the search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
   *   `conversionCustomMetrics` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The conversion custom metrics.
-  *   `conversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date.
-  *   `crossDeviceConversions` (*type:* `float()`, *default:* `nil`) - Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions.
-  *   `conversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion.
-  *   `interactions` (*type:* `String.t`, *default:* `nil`) - The number of interactions. An interaction is the main user action associated with an ad format-clicks for text and shopping ads, views for video ads, and so on.
-  *   `searchRankLostTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad didn't show anywhere above the organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `clientAccountLeadUnitsSold` (*type:* `float()`, *default:* `nil`) - Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
-  *   `rawEventConversionMetrics` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The raw event conversion metrics.
+  *   `clientAccountLeadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `conversions` (*type:* `float()`, *default:* `nil`) - The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
   *   `searchExactMatchImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
-  *   `clientAccountConversionsValue` (*type:* `float()`, *default:* `nil`) - The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
-  *   `mobileFriendlyClicksPercentage` (*type:* `float()`, *default:* `nil`) - The percentage of mobile clicks that go to a mobile-friendly page.
+  *   `crossSellRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
   *   `clientAccountCrossSellCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Client account cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
-  *   `searchBudgetLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `costPerAllConversions` (*type:* `float()`, *default:* `nil`) - The cost of ad interactions divided by all conversions.
+  *   `allConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+  *   `searchTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received among the top ads compared to the estimated number of impressions you were eligible to receive among the top ads. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. Top ads are generally above the top organic results, although they may show below the top organic results on certain queries.
+  *   `interactionEventTypes` (*type:* `list(String.t)`, *default:* `nil`) - The types of payable and free interactions.
+  *   `ctr` (*type:* `float()`, *default:* `nil`) - The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).
+  *   `leadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `clientAccountCrossSellUnitsSold` (*type:* `float()`, *default:* `nil`) - Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+  *   `allConversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+  *   `valuePerConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date.
+  *   `allConversionsFromOtherEngagement` (*type:* `float()`, *default:* `nil`) - The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only.
+  *   `conversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date.
   *   `searchRankLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percentage of impressions on the Search Network that your ads didn't receive due to poor Ad Rank. Note: Search rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
-  *   `leadCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `costPerAllConversions` (*type:* `float()`, *default:* `nil`) - The cost of ad interactions divided by all conversions.
+  *   `averageCost` (*type:* `float()`, *default:* `nil`) - The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions.
+  *   `searchBudgetLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `searchClickShare` (*type:* `float()`, *default:* `nil`) - The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+  *   `allConversionsValuePerCost` (*type:* `float()`, *default:* `nil`) - The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads).
+  *   `searchRankLostAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad wasn't the very first ad among the top ads in the search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `contentBudgetLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `leadUnitsSold` (*type:* `float()`, *default:* `nil`) - Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+  *   `visits` (*type:* `float()`, *default:* `nil`) - Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page.
+  *   `conversionsFromInteractionsValuePerInteraction` (*type:* `float()`, *default:* `nil`) - The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+  *   `clientAccountConversionsValue` (*type:* `float()`, *default:* `nil`) - The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+  *   `allConversionsFromStoreVisit` (*type:* `float()`, *default:* `nil`) - Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only.
   *   `contentRankLostImpressionShare` (*type:* `float()`, *default:* `nil`) - The estimated percentage of impressions on the Display Network that your ads didn't receive due to poor Ad Rank. Note: Content rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `interactions` (*type:* `String.t`, *default:* `nil`) - The number of interactions. An interaction is the main user action associated with an ad format-clicks for text and shopping ads, views for video ads, and so on.
+  *   `clientAccountCrossSellGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Client account cross-sell gross profit is the profit you made from products sold as a result of advertising a different product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the purchase is a sold product. If these products don't match then this is considered cross-sell. Cross-sell gross profit is the revenue you made from cross-sell attributed to your ads minus the cost of the goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The shirt is priced $20 and has a cost of goods sold value of $5. The cross-sell gross profit of this order is $15 = $20 - $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `conversionsValue` (*type:* `float()`, *default:* `nil`) - The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions.
+  *   `clientAccountConversions` (*type:* `float()`, *default:* `nil`) - The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+  *   `absoluteTopImpressionPercentage` (*type:* `float()`, *default:* `nil`) - Search absolute top impression share is the percentage of your Search ad impressions that are shown in the most prominent Search position.
+  *   `conversionsValuePerCost` (*type:* `float()`, *default:* `nil`) - The value of biddable conversion divided by the total cost of conversion eligible interactions.
+  *   `allConversionsFromDirections` (*type:* `float()`, *default:* `nil`) - The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only.
+  *   `topImpressionPercentage` (*type:* `float()`, *default:* `nil`) - The percent of your ad impressions that are shown adjacent to the top organic search results.
+  *   `invalidClicks` (*type:* `String.t`, *default:* `nil`) - Number of clicks Google considers illegitimate and doesn't charge you for.
+  *   `allConversionsFromClickToCall` (*type:* `float()`, *default:* `nil`) - The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only.
+  *   `historicalCreativeQualityScore` (*type:* `String.t`, *default:* `nil`) - The creative historical quality score.
+  *   `searchRankLostTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad didn't show adjacent to the top organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `valuePerAllConversions` (*type:* `float()`, *default:* `nil`) - The value of all conversions divided by the number of all conversions.
+  *   `historicalLandingPageQualityScore` (*type:* `String.t`, *default:* `nil`) - The quality of historical landing page experience.
+  *   `clientAccountCrossSellRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Client account cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `crossDeviceConversions` (*type:* `float()`, *default:* `nil`) - Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions.
+  *   `leadCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `clientAccountLeadUnitsSold` (*type:* `float()`, *default:* `nil`) - Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+  *   `searchImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+  *   `costPerCurrentModelAttributedConversion` (*type:* `float()`, *default:* `nil`) - The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+  *   `conversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date.
+  *   `allConversionsFromMenu` (*type:* `float()`, *default:* `nil`) - The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only.
+  *   `clientAccountLeadRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `contentImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+  *   `impressions` (*type:* `String.t`, *default:* `nil`) - Count of how often your ad has appeared on a search results page or website on the Google Network.
+  *   `historicalSearchPredictedCtr` (*type:* `String.t`, *default:* `nil`) - The historical search predicted click through rate (CTR).
+  *   `invalidClickRate` (*type:* `float()`, *default:* `nil`) - The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period.
+  *   `clientAccountViewThroughConversions` (*type:* `String.t`, *default:* `nil`) - The total number of view-through conversions. These happen when a customer sees an image or rich media ad, then later completes a conversion on your site without interacting with (for example, clicking on) another ad.
+  *   `averageCpc` (*type:* `float()`, *default:* `nil`) - The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `searchBudgetLostTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad didn't show adjacent to the top organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+  *   `crossSellGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell gross profit is the profit you made from products sold as a result of advertising a different product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the purchase is a sold product. If these products don't match then this is considered cross-sell. Cross-sell gross profit is the revenue you made from cross-sell attributed to your ads minus the cost of the goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The shirt is priced $20 and has a cost of goods sold value of $5. The cross-sell gross profit of this order is $15 = $20 - $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `crossDeviceConversionsValue` (*type:* `float()`, *default:* `nil`) - The sum of the value of cross-device conversions.
+  *   `clientAccountLeadCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `searchAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999.
+  *   `leadRevenueMicros` (*type:* `String.t`, *default:* `nil`) - Lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `crossSellCostOfGoodsSoldMicros` (*type:* `String.t`, *default:* `nil`) - Cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `allConversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions.
+  *   `costMicros` (*type:* `String.t`, *default:* `nil`) - The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `interactionRate` (*type:* `float()`, *default:* `nil`) - How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown.
+  *   `mobileFriendlyClicksPercentage` (*type:* `float()`, *default:* `nil`) - The percentage of mobile clicks that go to a mobile-friendly page.
+  *   `allConversionsValue` (*type:* `float()`, *default:* `nil`) - The value of all conversions.
+  *   `clicks` (*type:* `String.t`, *default:* `nil`) - The number of clicks.
+  *   `rawEventConversionMetrics` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The raw event conversion metrics.
+  *   `valuePerConversion` (*type:* `float()`, *default:* `nil`) - The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth.
+  *   `conversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion.
+  *   `allConversionsFromInteractionsValuePerInteraction` (*type:* `float()`, *default:* `nil`) - The value of all conversions from interactions divided by the total number of interactions.
+  *   `allConversionsFromOrder` (*type:* `float()`, *default:* `nil`) - The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only.
+  *   `costPerConversion` (*type:* `float()`, *default:* `nil`) - Average conversion eligible cost per biddable conversion.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clientAccountCrossSellGrossProfitMicros => String.t() | nil,
-          :clicks => String.t() | nil,
-          :conversionsValuePerCost => float() | nil,
-          :leadRevenueMicros => String.t() | nil,
-          :clientAccountConversions => float() | nil,
-          :searchRankLostAbsoluteTopImpressionShare => float() | nil,
-          :visits => float() | nil,
-          :searchBudgetLostAbsoluteTopImpressionShare => float() | nil,
-          :allConversionsFromStoreWebsite => float() | nil,
-          :allConversionsFromMenu => float() | nil,
-          :absoluteTopImpressionPercentage => float() | nil,
-          :allConversionsFromOtherEngagement => float() | nil,
-          :invalidClicks => String.t() | nil,
-          :crossSellUnitsSold => float() | nil,
-          :conversions => float() | nil,
-          :conversionsByConversionDate => float() | nil,
           :allConversions => float() | nil,
-          :costMicros => String.t() | nil,
-          :searchClickShare => float() | nil,
-          :costPerCurrentModelAttributedConversion => float() | nil,
-          :allConversionsFromStoreVisit => float() | nil,
-          :ctr => float() | nil,
-          :allConversionsFromOrder => float() | nil,
-          :searchTopImpressionShare => float() | nil,
-          :allConversionsFromInteractionsRate => float() | nil,
-          :conversionsFromInteractionsValuePerInteraction => float() | nil,
-          :clientAccountLeadRevenueMicros => String.t() | nil,
-          :leadGrossProfitMicros => String.t() | nil,
-          :historicalSearchPredictedCtr => String.t() | nil,
-          :valuePerAllConversions => float() | nil,
-          :averageCpc => float() | nil,
-          :allConversionsValueByConversionDate => float() | nil,
-          :valuePerConversion => float() | nil,
-          :interactionEventTypes => list(String.t()) | nil,
-          :crossSellGrossProfitMicros => String.t() | nil,
-          :clientAccountLeadGrossProfitMicros => String.t() | nil,
-          :crossSellRevenueMicros => String.t() | nil,
-          :contentImpressionShare => float() | nil,
-          :clientAccountViewThroughConversions => String.t() | nil,
-          :crossSellCostOfGoodsSoldMicros => String.t() | nil,
-          :invalidClickRate => float() | nil,
-          :searchBudgetLostTopImpressionShare => float() | nil,
-          :valuePerConversionsByConversionDate => float() | nil,
-          :averageCpm => float() | nil,
-          :allConversionsValuePerCost => float() | nil,
-          :clientAccountCrossSellRevenueMicros => String.t() | nil,
-          :allConversionsFromClickToCall => float() | nil,
-          :contentBudgetLostImpressionShare => float() | nil,
-          :historicalLandingPageQualityScore => String.t() | nil,
-          :crossDeviceConversionsValue => float() | nil,
-          :averageCost => float() | nil,
-          :allConversionsValue => float() | nil,
-          :historicalQualityScore => String.t() | nil,
-          :impressions => String.t() | nil,
-          :historicalCreativeQualityScore => String.t() | nil,
           :valuePerAllConversionsByConversionDate => float() | nil,
-          :clientAccountCrossSellUnitsSold => float() | nil,
-          :topImpressionPercentage => float() | nil,
-          :allConversionsFromInteractionsValuePerInteraction => float() | nil,
-          :clientAccountLeadCostOfGoodsSoldMicros => String.t() | nil,
-          :interactionRate => float() | nil,
-          :searchAbsoluteTopImpressionShare => float() | nil,
-          :allConversionsByConversionDate => float() | nil,
-          :costPerConversion => float() | nil,
-          :leadUnitsSold => float() | nil,
-          :searchImpressionShare => float() | nil,
-          :allConversionsFromDirections => float() | nil,
-          :conversionsValue => float() | nil,
+          :allConversionsFromStoreWebsite => float() | nil,
+          :averageCpm => float() | nil,
+          :crossSellUnitsSold => float() | nil,
+          :historicalQualityScore => String.t() | nil,
+          :searchBudgetLostAbsoluteTopImpressionShare => float() | nil,
           :conversionCustomMetrics =>
             list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
-          :conversionsValueByConversionDate => float() | nil,
-          :crossDeviceConversions => float() | nil,
-          :conversionsFromInteractionsRate => float() | nil,
+          :clientAccountLeadGrossProfitMicros => String.t() | nil,
+          :conversions => float() | nil,
+          :searchExactMatchImpressionShare => float() | nil,
+          :crossSellRevenueMicros => String.t() | nil,
+          :clientAccountCrossSellCostOfGoodsSoldMicros => String.t() | nil,
+          :allConversionsByConversionDate => float() | nil,
+          :searchTopImpressionShare => float() | nil,
+          :interactionEventTypes => list(String.t()) | nil,
+          :ctr => float() | nil,
+          :leadGrossProfitMicros => String.t() | nil,
+          :clientAccountCrossSellUnitsSold => float() | nil,
+          :allConversionsValueByConversionDate => float() | nil,
+          :valuePerConversionsByConversionDate => float() | nil,
+          :allConversionsFromOtherEngagement => float() | nil,
+          :conversionsByConversionDate => float() | nil,
+          :searchRankLostImpressionShare => float() | nil,
+          :costPerAllConversions => float() | nil,
+          :averageCost => float() | nil,
+          :searchBudgetLostImpressionShare => float() | nil,
+          :searchClickShare => float() | nil,
+          :allConversionsValuePerCost => float() | nil,
+          :searchRankLostAbsoluteTopImpressionShare => float() | nil,
+          :contentBudgetLostImpressionShare => float() | nil,
+          :leadUnitsSold => float() | nil,
+          :visits => float() | nil,
+          :conversionsFromInteractionsValuePerInteraction => float() | nil,
+          :clientAccountConversionsValue => float() | nil,
+          :allConversionsFromStoreVisit => float() | nil,
+          :contentRankLostImpressionShare => float() | nil,
           :interactions => String.t() | nil,
+          :clientAccountCrossSellGrossProfitMicros => String.t() | nil,
+          :conversionsValue => float() | nil,
+          :clientAccountConversions => float() | nil,
+          :absoluteTopImpressionPercentage => float() | nil,
+          :conversionsValuePerCost => float() | nil,
+          :allConversionsFromDirections => float() | nil,
+          :topImpressionPercentage => float() | nil,
+          :invalidClicks => String.t() | nil,
+          :allConversionsFromClickToCall => float() | nil,
+          :historicalCreativeQualityScore => String.t() | nil,
           :searchRankLostTopImpressionShare => float() | nil,
+          :valuePerAllConversions => float() | nil,
+          :historicalLandingPageQualityScore => String.t() | nil,
+          :clientAccountCrossSellRevenueMicros => String.t() | nil,
+          :crossDeviceConversions => float() | nil,
+          :leadCostOfGoodsSoldMicros => String.t() | nil,
           :clientAccountLeadUnitsSold => float() | nil,
+          :searchImpressionShare => float() | nil,
+          :costPerCurrentModelAttributedConversion => float() | nil,
+          :conversionsValueByConversionDate => float() | nil,
+          :allConversionsFromMenu => float() | nil,
+          :clientAccountLeadRevenueMicros => String.t() | nil,
+          :contentImpressionShare => float() | nil,
+          :impressions => String.t() | nil,
+          :historicalSearchPredictedCtr => String.t() | nil,
+          :invalidClickRate => float() | nil,
+          :clientAccountViewThroughConversions => String.t() | nil,
+          :averageCpc => float() | nil,
+          :searchBudgetLostTopImpressionShare => float() | nil,
+          :crossSellGrossProfitMicros => String.t() | nil,
+          :crossDeviceConversionsValue => float() | nil,
+          :clientAccountLeadCostOfGoodsSoldMicros => String.t() | nil,
+          :searchAbsoluteTopImpressionShare => float() | nil,
+          :leadRevenueMicros => String.t() | nil,
+          :crossSellCostOfGoodsSoldMicros => String.t() | nil,
+          :allConversionsFromInteractionsRate => float() | nil,
+          :costMicros => String.t() | nil,
+          :interactionRate => float() | nil,
+          :mobileFriendlyClicksPercentage => float() | nil,
+          :allConversionsValue => float() | nil,
+          :clicks => String.t() | nil,
           :rawEventConversionMetrics =>
             list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
-          :searchExactMatchImpressionShare => float() | nil,
-          :clientAccountConversionsValue => float() | nil,
-          :mobileFriendlyClicksPercentage => float() | nil,
-          :clientAccountCrossSellCostOfGoodsSoldMicros => String.t() | nil,
-          :searchBudgetLostImpressionShare => float() | nil,
-          :costPerAllConversions => float() | nil,
-          :searchRankLostImpressionShare => float() | nil,
-          :leadCostOfGoodsSoldMicros => String.t() | nil,
-          :contentRankLostImpressionShare => float() | nil
+          :valuePerConversion => float() | nil,
+          :conversionsFromInteractionsRate => float() | nil,
+          :allConversionsFromInteractionsValuePerInteraction => float() | nil,
+          :allConversionsFromOrder => float() | nil,
+          :costPerConversion => float() | nil
         }
 
-  field(:clientAccountCrossSellGrossProfitMicros)
-  field(:clicks)
-  field(:conversionsValuePerCost)
-  field(:leadRevenueMicros)
-  field(:clientAccountConversions)
-  field(:searchRankLostAbsoluteTopImpressionShare)
-  field(:visits)
-  field(:searchBudgetLostAbsoluteTopImpressionShare)
-  field(:allConversionsFromStoreWebsite)
-  field(:allConversionsFromMenu)
-  field(:absoluteTopImpressionPercentage)
-  field(:allConversionsFromOtherEngagement)
-  field(:invalidClicks)
-  field(:crossSellUnitsSold)
-  field(:conversions)
-  field(:conversionsByConversionDate)
   field(:allConversions)
-  field(:costMicros)
-  field(:searchClickShare)
-  field(:costPerCurrentModelAttributedConversion)
-  field(:allConversionsFromStoreVisit)
-  field(:ctr)
-  field(:allConversionsFromOrder)
-  field(:searchTopImpressionShare)
-  field(:allConversionsFromInteractionsRate)
-  field(:conversionsFromInteractionsValuePerInteraction)
-  field(:clientAccountLeadRevenueMicros)
-  field(:leadGrossProfitMicros)
-  field(:historicalSearchPredictedCtr)
-  field(:valuePerAllConversions)
-  field(:averageCpc)
-  field(:allConversionsValueByConversionDate)
-  field(:valuePerConversion)
-  field(:interactionEventTypes, type: :list)
-  field(:crossSellGrossProfitMicros)
-  field(:clientAccountLeadGrossProfitMicros)
-  field(:crossSellRevenueMicros)
-  field(:contentImpressionShare)
-  field(:clientAccountViewThroughConversions)
-  field(:crossSellCostOfGoodsSoldMicros)
-  field(:invalidClickRate)
-  field(:searchBudgetLostTopImpressionShare)
-  field(:valuePerConversionsByConversionDate)
-  field(:averageCpm)
-  field(:allConversionsValuePerCost)
-  field(:clientAccountCrossSellRevenueMicros)
-  field(:allConversionsFromClickToCall)
-  field(:contentBudgetLostImpressionShare)
-  field(:historicalLandingPageQualityScore)
-  field(:crossDeviceConversionsValue)
-  field(:averageCost)
-  field(:allConversionsValue)
-  field(:historicalQualityScore)
-  field(:impressions)
-  field(:historicalCreativeQualityScore)
   field(:valuePerAllConversionsByConversionDate)
-  field(:clientAccountCrossSellUnitsSold)
-  field(:topImpressionPercentage)
-  field(:allConversionsFromInteractionsValuePerInteraction)
-  field(:clientAccountLeadCostOfGoodsSoldMicros)
-  field(:interactionRate)
-  field(:searchAbsoluteTopImpressionShare)
-  field(:allConversionsByConversionDate)
-  field(:costPerConversion)
-  field(:leadUnitsSold)
-  field(:searchImpressionShare)
-  field(:allConversionsFromDirections)
-  field(:conversionsValue)
+  field(:allConversionsFromStoreWebsite)
+  field(:averageCpm)
+  field(:crossSellUnitsSold)
+  field(:historicalQualityScore)
+  field(:searchBudgetLostAbsoluteTopImpressionShare)
 
   field(:conversionCustomMetrics,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value,
     type: :list
   )
 
-  field(:conversionsValueByConversionDate)
-  field(:crossDeviceConversions)
-  field(:conversionsFromInteractionsRate)
+  field(:clientAccountLeadGrossProfitMicros)
+  field(:conversions)
+  field(:searchExactMatchImpressionShare)
+  field(:crossSellRevenueMicros)
+  field(:clientAccountCrossSellCostOfGoodsSoldMicros)
+  field(:allConversionsByConversionDate)
+  field(:searchTopImpressionShare)
+  field(:interactionEventTypes, type: :list)
+  field(:ctr)
+  field(:leadGrossProfitMicros)
+  field(:clientAccountCrossSellUnitsSold)
+  field(:allConversionsValueByConversionDate)
+  field(:valuePerConversionsByConversionDate)
+  field(:allConversionsFromOtherEngagement)
+  field(:conversionsByConversionDate)
+  field(:searchRankLostImpressionShare)
+  field(:costPerAllConversions)
+  field(:averageCost)
+  field(:searchBudgetLostImpressionShare)
+  field(:searchClickShare)
+  field(:allConversionsValuePerCost)
+  field(:searchRankLostAbsoluteTopImpressionShare)
+  field(:contentBudgetLostImpressionShare)
+  field(:leadUnitsSold)
+  field(:visits)
+  field(:conversionsFromInteractionsValuePerInteraction)
+  field(:clientAccountConversionsValue)
+  field(:allConversionsFromStoreVisit)
+  field(:contentRankLostImpressionShare)
   field(:interactions)
+  field(:clientAccountCrossSellGrossProfitMicros)
+  field(:conversionsValue)
+  field(:clientAccountConversions)
+  field(:absoluteTopImpressionPercentage)
+  field(:conversionsValuePerCost)
+  field(:allConversionsFromDirections)
+  field(:topImpressionPercentage)
+  field(:invalidClicks)
+  field(:allConversionsFromClickToCall)
+  field(:historicalCreativeQualityScore)
   field(:searchRankLostTopImpressionShare)
+  field(:valuePerAllConversions)
+  field(:historicalLandingPageQualityScore)
+  field(:clientAccountCrossSellRevenueMicros)
+  field(:crossDeviceConversions)
+  field(:leadCostOfGoodsSoldMicros)
   field(:clientAccountLeadUnitsSold)
+  field(:searchImpressionShare)
+  field(:costPerCurrentModelAttributedConversion)
+  field(:conversionsValueByConversionDate)
+  field(:allConversionsFromMenu)
+  field(:clientAccountLeadRevenueMicros)
+  field(:contentImpressionShare)
+  field(:impressions)
+  field(:historicalSearchPredictedCtr)
+  field(:invalidClickRate)
+  field(:clientAccountViewThroughConversions)
+  field(:averageCpc)
+  field(:searchBudgetLostTopImpressionShare)
+  field(:crossSellGrossProfitMicros)
+  field(:crossDeviceConversionsValue)
+  field(:clientAccountLeadCostOfGoodsSoldMicros)
+  field(:searchAbsoluteTopImpressionShare)
+  field(:leadRevenueMicros)
+  field(:crossSellCostOfGoodsSoldMicros)
+  field(:allConversionsFromInteractionsRate)
+  field(:costMicros)
+  field(:interactionRate)
+  field(:mobileFriendlyClicksPercentage)
+  field(:allConversionsValue)
+  field(:clicks)
 
   field(:rawEventConversionMetrics,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value,
     type: :list
   )
 
-  field(:searchExactMatchImpressionShare)
-  field(:clientAccountConversionsValue)
-  field(:mobileFriendlyClicksPercentage)
-  field(:clientAccountCrossSellCostOfGoodsSoldMicros)
-  field(:searchBudgetLostImpressionShare)
-  field(:costPerAllConversions)
-  field(:searchRankLostImpressionShare)
-  field(:leadCostOfGoodsSoldMicros)
-  field(:contentRankLostImpressionShare)
+  field(:valuePerConversion)
+  field(:conversionsFromInteractionsRate)
+  field(:allConversionsFromInteractionsValuePerInteraction)
+  field(:allConversionsFromOrder)
+  field(:costPerConversion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics do

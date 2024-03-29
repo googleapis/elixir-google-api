@@ -21,329 +21,247 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   ## Attributes
 
-  *   `adGroupCriterionLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t`, *default:* `nil`) - The ad group criterion label referenced in the query.
-  *   `geoTargetConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t`, *default:* `nil`) - The geo target constant referenced in the query.
-  *   `campaignAudienceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView.t`, *default:* `nil`) - The campaign audience view referenced in the query.
-  *   `adGroupLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel.t`, *default:* `nil`) - The ad group label referenced in the query.
-  *   `locationView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView.t`, *default:* `nil`) - The location view referenced in the query.
-  *   `assetGroupListingGroupFilter` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter.t`, *default:* `nil`) - The asset group listing group filter referenced in the query.
-  *   `customerAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset.t`, *default:* `nil`) - The customer asset referenced in the query.
-  *   `visit` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit.t`, *default:* `nil`) - The event level visit referenced in the query.
-  *   `metrics` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics.t`, *default:* `nil`) - The metrics.
-  *   `customerManagerLink` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink.t`, *default:* `nil`) - The CustomerManagerLink referenced in the query.
   *   `biddingStrategy` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_BiddingStrategy.t`, *default:* `nil`) - The bidding strategy referenced in the query.
-  *   `assetGroupSignal` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal.t`, *default:* `nil`) - The asset group signal referenced in the query.
-  *   `adGroupAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t`, *default:* `nil`) - The ad group asset set referenced in the query.
-  *   `asset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset.t`, *default:* `nil`) - The asset referenced in the query.
-  *   `languageConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t`, *default:* `nil`) - The language constant referenced in the query.
-  *   `shoppingPerformanceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t`, *default:* `nil`) - The shopping performance view referenced in the query.
-  *   `adGroup` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup.t`, *default:* `nil`) - The ad group referenced in the query.
-  *   `keywordView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView.t`, *default:* `nil`) - The keyword view referenced in the query.
-  *   `label` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t`, *default:* `nil`) - The label referenced in the query.
-  *   `campaignCriterion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion.t`, *default:* `nil`) - The campaign criterion referenced in the query.
-  *   `adGroupBidModifier` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t`, *default:* `nil`) - The bid modifier referenced in the query.
-  *   `cartDataSalesView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t`, *default:* `nil`) - The cart data sales view referenced in the query.
-  *   `ageRangeView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView.t`, *default:* `nil`) - The age range view referenced in the query.
-  *   `assetGroupAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset.t`, *default:* `nil`) - The asset group asset referenced in the query.
-  *   `conversionCustomVariable` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable.t`, *default:* `nil`) - The conversion custom variable referenced in the query.
-  *   `genderView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t`, *default:* `nil`) - The gender view referenced in the query.
-  *   `campaign` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign.t`, *default:* `nil`) - The campaign referenced in the query.
-  *   `conversionAction` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction.t`, *default:* `nil`) - The conversion action referenced in the query.
-  *   `campaignBudget` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget.t`, *default:* `nil`) - The campaign budget referenced in the query.
-  *   `customerAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet.t`, *default:* `nil`) - The customer asset set referenced in the query.
-  *   `campaignAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet.t`, *default:* `nil`) - The campaign asset set referenced in the query.
-  *   `productGroupView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t`, *default:* `nil`) - The product group view referenced in the query.
   *   `adGroupCriterion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterion.t`, *default:* `nil`) - The criterion referenced in the query.
-  *   `conversion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion.t`, *default:* `nil`) - The event level conversion referenced in the query.
-  *   `dynamicSearchAdsSearchTermView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_DynamicSearchAdsSearchTermView.t`, *default:* `nil`) - The dynamic search ads search term view referenced in the query.
-  *   `customerClient` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerClient.t`, *default:* `nil`) - The CustomerClient referenced in the query.
-  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t`, *default:* `nil`) - The user list referenced in the query.
+  *   `audience` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience.t`, *default:* `nil`) - The Audience referenced in the query.
+  *   `campaign` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign.t`, *default:* `nil`) - The campaign referenced in the query.
+  *   `locationView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView.t`, *default:* `nil`) - The location view referenced in the query.
   *   `assetGroup` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroup.t`, *default:* `nil`) - The asset group referenced in the query.
+  *   `conversionCustomVariable` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable.t`, *default:* `nil`) - The conversion custom variable referenced in the query.
+  *   `adGroupAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset.t`, *default:* `nil`) - The ad group asset referenced in the query.
+  *   `geoTargetConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t`, *default:* `nil`) - The geo target constant referenced in the query.
+  *   `adGroupAd` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t`, *default:* `nil`) - The ad referenced in the query.
+  *   `cartDataSalesView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t`, *default:* `nil`) - The cart data sales view referenced in the query.
+  *   `productBiddingCategoryConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t`, *default:* `nil`) - The Product Bidding Category referenced in the query.
+  *   `dynamicSearchAdsSearchTermView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_DynamicSearchAdsSearchTermView.t`, *default:* `nil`) - The dynamic search ads search term view referenced in the query.
+  *   `assetSetAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset.t`, *default:* `nil`) - The asset set asset referenced in the query.
+  *   `conversionAction` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction.t`, *default:* `nil`) - The conversion action referenced in the query.
+  *   `conversion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion.t`, *default:* `nil`) - The event level conversion referenced in the query.
+  *   `keywordView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView.t`, *default:* `nil`) - The keyword view referenced in the query.
+  *   `metrics` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics.t`, *default:* `nil`) - The metrics.
+  *   `customer` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer.t`, *default:* `nil`) - The customer referenced in the query.
+  *   `assetGroupListingGroupFilter` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter.t`, *default:* `nil`) - The asset group listing group filter referenced in the query.
+  *   `asset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset.t`, *default:* `nil`) - The asset referenced in the query.
+  *   `customerClient` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerClient.t`, *default:* `nil`) - The CustomerClient referenced in the query.
+  *   `ageRangeView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView.t`, *default:* `nil`) - The age range view referenced in the query.
   *   `webpageView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_WebpageView.t`, *default:* `nil`) - The webpage view referenced in the query.
+  *   `customColumns` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The custom columns.
+  *   `assetGroupTopCombinationView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView.t`, *default:* `nil`) - The asset group top combination view referenced in the query.
+  *   `campaignCriterion` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion.t`, *default:* `nil`) - The campaign criterion referenced in the query.
+  *   `assetGroupSignal` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal.t`, *default:* `nil`) - The asset group signal referenced in the query.
+  *   `languageConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t`, *default:* `nil`) - The language constant referenced in the query.
+  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t`, *default:* `nil`) - The user list referenced in the query.
+  *   `customerAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset.t`, *default:* `nil`) - The customer asset referenced in the query.
+  *   `campaignAudienceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView.t`, *default:* `nil`) - The campaign audience view referenced in the query.
+  *   `campaignAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet.t`, *default:* `nil`) - The campaign asset set referenced in the query.
+  *   `segments` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments.t`, *default:* `nil`) - The segments.
+  *   `adGroupAudienceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView.t`, *default:* `nil`) - The ad group audience view referenced in the query.
+  *   `adGroup` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup.t`, *default:* `nil`) - The ad group referenced in the query.
+  *   `assetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet.t`, *default:* `nil`) - The asset set referenced in the query.
+  *   `adGroupLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel.t`, *default:* `nil`) - The ad group label referenced in the query.
   *   `campaignLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignLabel.t`, *default:* `nil`) - The campaign label referenced in the query.
   *   `campaignAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAsset.t`, *default:* `nil`) - The campaign asset referenced in the query.
-  *   `customColumns` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The custom columns.
-  *   `adGroupAd` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t`, *default:* `nil`) - The ad referenced in the query.
-  *   `segments` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments.t`, *default:* `nil`) - The segments.
-  *   `adGroupAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset.t`, *default:* `nil`) - The ad group asset referenced in the query.
-  *   `adGroupAudienceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView.t`, *default:* `nil`) - The ad group audience view referenced in the query.
-  *   `assetGroupTopCombinationView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView.t`, *default:* `nil`) - The asset group top combination view referenced in the query.
-  *   `productBiddingCategoryConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t`, *default:* `nil`) - The Product Bidding Category referenced in the query.
-  *   `audience` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience.t`, *default:* `nil`) - The Audience referenced in the query.
-  *   `assetSetAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset.t`, *default:* `nil`) - The asset set asset referenced in the query.
-  *   `assetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet.t`, *default:* `nil`) - The asset set referenced in the query.
-  *   `customer` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer.t`, *default:* `nil`) - The customer referenced in the query.
+  *   `customerManagerLink` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink.t`, *default:* `nil`) - The CustomerManagerLink referenced in the query.
+  *   `visit` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit.t`, *default:* `nil`) - The event level visit referenced in the query.
   *   `adGroupAdLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdLabel.t`, *default:* `nil`) - The ad group ad label referenced in the query.
+  *   `assetGroupAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset.t`, *default:* `nil`) - The asset group asset referenced in the query.
+  *   `customerAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet.t`, *default:* `nil`) - The customer asset set referenced in the query.
+  *   `campaignBudget` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget.t`, *default:* `nil`) - The campaign budget referenced in the query.
+  *   `adGroupBidModifier` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t`, *default:* `nil`) - The bid modifier referenced in the query.
+  *   `genderView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t`, *default:* `nil`) - The gender view referenced in the query.
+  *   `adGroupAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t`, *default:* `nil`) - The ad group asset set referenced in the query.
+  *   `adGroupCriterionLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t`, *default:* `nil`) - The ad group criterion label referenced in the query.
+  *   `productGroupView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t`, *default:* `nil`) - The product group view referenced in the query.
+  *   `shoppingPerformanceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t`, *default:* `nil`) - The shopping performance view referenced in the query.
+  *   `label` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t`, *default:* `nil`) - The label referenced in the query.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :adGroupCriterionLabel =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t()
-            | nil,
-          :geoTargetConstant =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t()
-            | nil,
-          :campaignAudienceView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView.t()
-            | nil,
-          :adGroupLabel =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel.t()
-            | nil,
-          :locationView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView.t()
-            | nil,
-          :assetGroupListingGroupFilter =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter.t()
-            | nil,
-          :customerAsset =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset.t()
-            | nil,
-          :visit =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit.t() | nil,
-          :metrics =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics.t() | nil,
-          :customerManagerLink =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink.t()
-            | nil,
           :biddingStrategy =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_BiddingStrategy.t()
-            | nil,
-          :assetGroupSignal =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal.t()
-            | nil,
-          :adGroupAssetSet =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t()
-            | nil,
-          :asset =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset.t() | nil,
-          :languageConstant =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t()
-            | nil,
-          :shoppingPerformanceView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t()
-            | nil,
-          :adGroup =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup.t() | nil,
-          :keywordView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView.t() | nil,
-          :label =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t() | nil,
-          :campaignCriterion =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion.t()
-            | nil,
-          :adGroupBidModifier =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t()
-            | nil,
-          :cartDataSalesView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t()
-            | nil,
-          :ageRangeView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView.t()
-            | nil,
-          :assetGroupAsset =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset.t()
-            | nil,
-          :conversionCustomVariable =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable.t()
-            | nil,
-          :genderView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t() | nil,
-          :campaign =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign.t() | nil,
-          :conversionAction =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction.t()
-            | nil,
-          :campaignBudget =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget.t()
-            | nil,
-          :customerAssetSet =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet.t()
-            | nil,
-          :campaignAssetSet =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet.t()
-            | nil,
-          :productGroupView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t()
             | nil,
           :adGroupCriterion =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterion.t()
             | nil,
-          :conversion =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion.t() | nil,
+          :audience =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience.t() | nil,
+          :campaign =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign.t() | nil,
+          :locationView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView.t()
+            | nil,
+          :assetGroup =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroup.t() | nil,
+          :conversionCustomVariable =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable.t()
+            | nil,
+          :adGroupAsset =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset.t()
+            | nil,
+          :geoTargetConstant =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t()
+            | nil,
+          :adGroupAd =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t() | nil,
+          :cartDataSalesView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t()
+            | nil,
+          :productBiddingCategoryConstant =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t()
+            | nil,
           :dynamicSearchAdsSearchTermView =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_DynamicSearchAdsSearchTermView.t()
             | nil,
+          :assetSetAsset =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset.t()
+            | nil,
+          :conversionAction =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction.t()
+            | nil,
+          :conversion =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion.t() | nil,
+          :keywordView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView.t() | nil,
+          :metrics =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics.t() | nil,
+          :customer =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer.t() | nil,
+          :assetGroupListingGroupFilter =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter.t()
+            | nil,
+          :asset =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset.t() | nil,
           :customerClient =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerClient.t()
             | nil,
-          :userList =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t() | nil,
-          :assetGroup =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroup.t() | nil,
+          :ageRangeView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView.t()
+            | nil,
           :webpageView =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_WebpageView.t() | nil,
+          :customColumns =>
+            list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
+          :assetGroupTopCombinationView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView.t()
+            | nil,
+          :campaignCriterion =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion.t()
+            | nil,
+          :assetGroupSignal =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal.t()
+            | nil,
+          :languageConstant =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant.t()
+            | nil,
+          :userList =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList.t() | nil,
+          :customerAsset =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset.t()
+            | nil,
+          :campaignAudienceView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView.t()
+            | nil,
+          :campaignAssetSet =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet.t()
+            | nil,
+          :segments =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments.t() | nil,
+          :adGroupAudienceView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView.t()
+            | nil,
+          :adGroup =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup.t() | nil,
+          :assetSet =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet.t() | nil,
+          :adGroupLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel.t()
+            | nil,
           :campaignLabel =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignLabel.t()
             | nil,
           :campaignAsset =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAsset.t()
             | nil,
-          :customColumns =>
-            list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
-          :adGroupAd =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t() | nil,
-          :segments =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments.t() | nil,
-          :adGroupAsset =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset.t()
+          :customerManagerLink =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink.t()
             | nil,
-          :adGroupAudienceView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView.t()
-            | nil,
-          :assetGroupTopCombinationView =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView.t()
-            | nil,
-          :productBiddingCategoryConstant =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t()
-            | nil,
-          :audience =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience.t() | nil,
-          :assetSetAsset =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset.t()
-            | nil,
-          :assetSet =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet.t() | nil,
-          :customer =>
-            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer.t() | nil,
+          :visit =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit.t() | nil,
           :adGroupAdLabel =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdLabel.t()
-            | nil
+            | nil,
+          :assetGroupAsset =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset.t()
+            | nil,
+          :customerAssetSet =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet.t()
+            | nil,
+          :campaignBudget =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget.t()
+            | nil,
+          :adGroupBidModifier =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t()
+            | nil,
+          :genderView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t() | nil,
+          :adGroupAssetSet =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t()
+            | nil,
+          :adGroupCriterionLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t()
+            | nil,
+          :productGroupView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t()
+            | nil,
+          :shoppingPerformanceView =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t()
+            | nil,
+          :label =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t() | nil
         }
-
-  field(:adGroupCriterionLabel,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel
-  )
-
-  field(:geoTargetConstant,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant
-  )
-
-  field(:campaignAudienceView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView
-  )
-
-  field(:adGroupLabel,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel
-  )
-
-  field(:locationView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView
-  )
-
-  field(:assetGroupListingGroupFilter,
-    as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter
-  )
-
-  field(:customerAsset,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset
-  )
-
-  field(:visit, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit)
-  field(:metrics, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics)
-
-  field(:customerManagerLink,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink
-  )
 
   field(:biddingStrategy,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_BiddingStrategy
-  )
-
-  field(:assetGroupSignal,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal
-  )
-
-  field(:adGroupAssetSet,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet
-  )
-
-  field(:asset, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset)
-
-  field(:languageConstant,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant
-  )
-
-  field(:shoppingPerformanceView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView
-  )
-
-  field(:adGroup, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup)
-
-  field(:keywordView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView
-  )
-
-  field(:label, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label)
-
-  field(:campaignCriterion,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion
-  )
-
-  field(:adGroupBidModifier,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier
-  )
-
-  field(:cartDataSalesView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView
-  )
-
-  field(:ageRangeView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView
-  )
-
-  field(:assetGroupAsset,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset
-  )
-
-  field(:conversionCustomVariable,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable
-  )
-
-  field(:genderView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView
-  )
-
-  field(:campaign, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign)
-
-  field(:conversionAction,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction
-  )
-
-  field(:campaignBudget,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget
-  )
-
-  field(:customerAssetSet,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet
-  )
-
-  field(:campaignAssetSet,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet
-  )
-
-  field(:productGroupView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView
   )
 
   field(:adGroupCriterion,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterion
   )
 
-  field(:conversion,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion
+  field(:audience, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience)
+  field(:campaign, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campaign)
+
+  field(:locationView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LocationView
+  )
+
+  field(:assetGroup,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroup
+  )
+
+  field(:conversionCustomVariable,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionCustomVariable
+  )
+
+  field(:adGroupAsset,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset
+  )
+
+  field(:geoTargetConstant,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant
+  )
+
+  field(:adGroupAd, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd)
+
+  field(:cartDataSalesView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView
+  )
+
+  field(:productBiddingCategoryConstant,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant
   )
 
   field(:dynamicSearchAdsSearchTermView,
@@ -351,18 +269,91 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
       GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_DynamicSearchAdsSearchTermView
   )
 
+  field(:assetSetAsset,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset
+  )
+
+  field(:conversionAction,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ConversionAction
+  )
+
+  field(:conversion,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conversion
+  )
+
+  field(:keywordView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_KeywordView
+  )
+
+  field(:metrics, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics)
+  field(:customer, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer)
+
+  field(:assetGroupListingGroupFilter,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupListingGroupFilter
+  )
+
+  field(:asset, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Asset)
+
   field(:customerClient,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerClient
   )
 
-  field(:userList, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList)
-
-  field(:assetGroup,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroup
+  field(:ageRangeView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AgeRangeView
   )
 
   field(:webpageView,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_WebpageView
+  )
+
+  field(:customColumns,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value,
+    type: :list
+  )
+
+  field(:assetGroupTopCombinationView,
+    as:
+      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView
+  )
+
+  field(:campaignCriterion,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignCriterion
+  )
+
+  field(:assetGroupSignal,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupSignal
+  )
+
+  field(:languageConstant,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_LanguageConstant
+  )
+
+  field(:userList, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_UserList)
+
+  field(:customerAsset,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAsset
+  )
+
+  field(:campaignAudienceView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAudienceView
+  )
+
+  field(:campaignAssetSet,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAssetSet
+  )
+
+  field(:segments, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments)
+
+  field(:adGroupAudienceView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView
+  )
+
+  field(:adGroup, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroup)
+  field(:assetSet, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet)
+
+  field(:adGroupLabel,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupLabel
   )
 
   field(:campaignLabel,
@@ -373,45 +364,53 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignAsset
   )
 
-  field(:customColumns,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value,
-    type: :list
+  field(:customerManagerLink,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerManagerLink
   )
 
-  field(:adGroupAd, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd)
-
-  field(:segments, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments)
-
-  field(:adGroupAsset,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAsset
-  )
-
-  field(:adGroupAudienceView,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAudienceView
-  )
-
-  field(:assetGroupTopCombinationView,
-    as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupTopCombinationView
-  )
-
-  field(:productBiddingCategoryConstant,
-    as:
-      GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant
-  )
-
-  field(:audience, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Audience)
-
-  field(:assetSetAsset,
-    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset
-  )
-
-  field(:assetSet, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSet)
-  field(:customer, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Customer)
+  field(:visit, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Visit)
 
   field(:adGroupAdLabel,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAdLabel
   )
+
+  field(:assetGroupAsset,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetGroupAsset
+  )
+
+  field(:customerAssetSet,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CustomerAssetSet
+  )
+
+  field(:campaignBudget,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignBudget
+  )
+
+  field(:adGroupBidModifier,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier
+  )
+
+  field(:genderView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView
+  )
+
+  field(:adGroupAssetSet,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet
+  )
+
+  field(:adGroupCriterionLabel,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel
+  )
+
+  field(:productGroupView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView
+  )
+
+  field(:shoppingPerformanceView,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView
+  )
+
+  field(:label, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label)
 end
 
 defimpl Poison.Decoder,

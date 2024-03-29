@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView do
   @moduledoc """
-  A gender view.
+  A gender view. The gender_view resource reflects the effective serving state, rather than what criteria were added. An ad group without gender criteria by default shows to all genders, so all genders appear in gender_view with stats.
 
   ## Attributes
 
