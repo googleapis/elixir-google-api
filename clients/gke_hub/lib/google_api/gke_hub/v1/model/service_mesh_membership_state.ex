@@ -21,6 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState do
 
   ## Attributes
 
+  *   `conditions` (*type:* `list(GoogleApi.GKEHub.V1.Model.ServiceMeshCondition.t)`, *default:* `nil`) - Output only. List of condition reporting membership statues
   *   `controlPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t`, *default:* `nil`) - Output only. Status of control plane management
   *   `dataPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement.t`, *default:* `nil`) - Output only. Status of data plane management.
   """
@@ -28,12 +29,14 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :conditions => list(GoogleApi.GKEHub.V1.Model.ServiceMeshCondition.t()) | nil,
           :controlPlaneManagement =>
             GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t() | nil,
           :dataPlaneManagement =>
             GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement.t() | nil
         }
 
+  field(:conditions, as: GoogleApi.GKEHub.V1.Model.ServiceMeshCondition, type: :list)
   field(:controlPlaneManagement, as: GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement)
   field(:dataPlaneManagement, as: GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement)
 end
