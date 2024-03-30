@@ -22,9 +22,9 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1MaterialIcon do
   ## Attributes
 
   *   `fill` (*type:* `boolean()`, *default:* `nil`) - Whether the icon renders as filled. Default value is false. To preview different icon settings, go to [Google Font Icons](https://fonts.google.com/icons) and adjust the settings under **Customize**.
-  *   `grade` (*type:* `integer()`, *default:* `nil`) - Weight and grade affect a symbol’s thickness. Adjustments to grade are more granular than adjustments to weight and have a small impact on the size of the symbol. Choose from {-25, 0, 200}. If absent, default value is 0. If any other value is specified, a broken image icon is displayed. To preview different icon settings, go to [Google Font Icons](https://fonts.google.com/icons) and adjust the settings under **Customize**.
+  *   `grade` (*type:* `integer()`, *default:* `nil`) - Weight and grade affect a symbol’s thickness. Adjustments to grade are more granular than adjustments to weight and have a small impact on the size of the symbol. Choose from {-25, 0, 200}. If absent, default value is 0. If any other value is specified, the default value is used. To preview different icon settings, go to [Google Font Icons](https://fonts.google.com/icons) and adjust the settings under **Customize**.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The icon name defined in the [Google Material Icon](https://fonts.google.com/icons), for example, `check_box`. Any invalid names are abandoned and replaced with empty string and results in the icon failing to render.
-  *   `weight` (*type:* `integer()`, *default:* `nil`) - The stroke weight of the icon. Choose from {100, 200, 300, 400, 500, 600, 700}. If absent, default value is 400. If any other value is specified, a broken image icon is displayed. To preview different icon settings, go to [Google Font Icons](https://fonts.google.com/icons) and adjust the settings under **Customize**.
+  *   `weight` (*type:* `integer()`, *default:* `nil`) - The stroke weight of the icon. Choose from {100, 200, 300, 400, 500, 600, 700}. If absent, default value is 400. If any other value is specified, the default value is used. To preview different icon settings, go to [Google Font Icons](https://fonts.google.com/icons) and adjust the settings under **Customize**.
   """
 
   use GoogleApi.Gax.ModelBase
