@@ -20,7 +20,7 @@ defmodule GoogleApi.TrafficDirector.V3 do
   API client metadata for GoogleApi.TrafficDirector.V3.
   """
 
-  @discovery_revision "20240307"
+  @discovery_revision "20240322"
 
   def discovery_revision(), do: @discovery_revision
 end
