@@ -395,7 +395,7 @@ defmodule GoogleApi.Drive.V3.Api.Drives do
   end
 
   @doc """
-  Updates the metadate for a shared drive.
+  Updates the metadata for a shared drive.
 
   ## Parameters
 
