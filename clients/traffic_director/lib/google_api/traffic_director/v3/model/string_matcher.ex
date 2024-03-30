@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.TrafficDirector.V3.Model.StringMatcher do
   @moduledoc """
-  Specifies the way to match a string. [#next-free-field: 8]
+  Specifies the way to match a string. [#next-free-field: 9]
 
   ## Attributes
 
   *   `contains` (*type:* `String.t`, *default:* `nil`) - The input string must have the substring specified here. Note: empty contains match is not allowed, please use regex instead. Examples: * ``abc`` matches the value ``xyz.abc.def``
+  *   `custom` (*type:* `GoogleApi.TrafficDirector.V3.Model.TypedExtensionConfig.t`, *default:* `nil`) - Use an extension as the matcher type. [#extension-category: envoy.string_matcher]
   *   `exact` (*type:* `String.t`, *default:* `nil`) - The input string must match exactly the string specified here. Examples: * ``abc`` only matches the value ``abc``.
   *   `ignoreCase` (*type:* `boolean()`, *default:* `nil`) - If true, indicates the exact/prefix/suffix/contains matching should be case insensitive. This has no effect for the safe_regex match. For example, the matcher ``data`` will match both input string ``Data`` and ``data`` if set to true.
   *   `prefix` (*type:* `String.t`, *default:* `nil`) - The input string must have the prefix specified here. Note: empty prefix is not allowed, please use regex instead. Examples: * ``abc`` matches the value ``abc.xyz``
@@ -33,6 +34,7 @@ defmodule GoogleApi.TrafficDirector.V3.Model.StringMatcher do
 
   @type t :: %__MODULE__{
           :contains => String.t() | nil,
+          :custom => GoogleApi.TrafficDirector.V3.Model.TypedExtensionConfig.t() | nil,
           :exact => String.t() | nil,
           :ignoreCase => boolean() | nil,
           :prefix => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.TrafficDirector.V3.Model.StringMatcher do
         }
 
   field(:contains)
+  field(:custom, as: GoogleApi.TrafficDirector.V3.Model.TypedExtensionConfig)
   field(:exact)
   field(:ignoreCase)
   field(:prefix)
