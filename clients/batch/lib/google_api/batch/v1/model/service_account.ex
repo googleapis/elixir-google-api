@@ -21,8 +21,8 @@ defmodule GoogleApi.Batch.V1.Model.ServiceAccount do
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the service account. If not specified, the default Compute Engine service account for the project will be used. If instance template is being used, the service account has to be specified in the instance template and it has to match the email field here.
-  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to be enabled for this service account on the VM, in addition to the cloud-platform API scope that will be added by default.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email address of the service account.
+  *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - List of scopes to be enabled for this service account.
   """
 
   use GoogleApi.Gax.ModelBase
