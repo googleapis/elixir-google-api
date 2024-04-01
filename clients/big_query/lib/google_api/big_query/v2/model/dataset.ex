@@ -31,6 +31,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `defaultTableExpirationMs` (*type:* `String.t`, *default:* `nil`) - Optional. The default lifetime of all tables in the dataset, in milliseconds. The minimum lifetime value is 3600000 milliseconds (one hour). To clear an existing default expiration with a PATCH request, set to 0. Once this property is set, all newly-created tables in the dataset will have an expirationTime property set to the creation time plus the value in this property, and changing the value will only affect new tables, not existing ones. When the expirationTime for a given table is reached, that table will be deleted automatically. If a table's expirationTime is modified or removed before the table expires, or if you provide an explicit expirationTime when creating a table, that value takes precedence over the default expiration time indicated by this property.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A user-friendly description of the dataset.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of the resource.
+  *   `externalCatalogDatasetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalCatalogDatasetOptions.t`, *default:* `nil`) - Optional. Options defining open source compatible datasets living in the BigQuery catalog. Contains metadata of open source database, schema or namespace represented by the current dataset.
   *   `externalDatasetReference` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalDatasetReference.t`, *default:* `nil`) - Optional. Reference to a read-only external dataset defined in data catalogs outside of BigQuery. Filled out when the dataset type is EXTERNAL.
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - Optional. A descriptive name for the dataset.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.
@@ -64,6 +65,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :defaultTableExpirationMs => String.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
+          :externalCatalogDatasetOptions =>
+            GoogleApi.BigQuery.V2.Model.ExternalCatalogDatasetOptions.t() | nil,
           :externalDatasetReference =>
             GoogleApi.BigQuery.V2.Model.ExternalDatasetReference.t() | nil,
           :friendlyName => String.t() | nil,
@@ -94,6 +97,11 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:defaultTableExpirationMs)
   field(:description)
   field(:etag)
+
+  field(:externalCatalogDatasetOptions,
+    as: GoogleApi.BigQuery.V2.Model.ExternalCatalogDatasetOptions
+  )
+
   field(:externalDatasetReference, as: GoogleApi.BigQuery.V2.Model.ExternalDatasetReference)
   field(:friendlyName)
   field(:id)

@@ -22,16 +22,23 @@ defmodule GoogleApi.BigQuery.V2.Model.PrivacyPolicy do
   ## Attributes
 
   *   `aggregationThresholdPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.AggregationThresholdPolicy.t`, *default:* `nil`) - Optional. Policy used for aggregation thresholds.
+  *   `differentialPrivacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.DifferentialPrivacyPolicy.t`, *default:* `nil`) - Optional. Policy used for differential privacy.
+  *   `joinRestrictionPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.JoinRestrictionPolicy.t`, *default:* `nil`) - Optional. Join restriction policy is outside of the one of policies, since this policy can be set along with other policies. This policy gives data providers the ability to enforce joins on the 'join_allowed_columns' when data is queried from a privacy protected view.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :aggregationThresholdPolicy =>
-            GoogleApi.BigQuery.V2.Model.AggregationThresholdPolicy.t() | nil
+            GoogleApi.BigQuery.V2.Model.AggregationThresholdPolicy.t() | nil,
+          :differentialPrivacyPolicy =>
+            GoogleApi.BigQuery.V2.Model.DifferentialPrivacyPolicy.t() | nil,
+          :joinRestrictionPolicy => GoogleApi.BigQuery.V2.Model.JoinRestrictionPolicy.t() | nil
         }
 
   field(:aggregationThresholdPolicy, as: GoogleApi.BigQuery.V2.Model.AggregationThresholdPolicy)
+  field(:differentialPrivacyPolicy, as: GoogleApi.BigQuery.V2.Model.DifferentialPrivacyPolicy)
+  field(:joinRestrictionPolicy, as: GoogleApi.BigQuery.V2.Model.JoinRestrictionPolicy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.PrivacyPolicy do

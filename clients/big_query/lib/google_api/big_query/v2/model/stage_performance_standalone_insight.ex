@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StagePerformanceStandaloneInsight do
   *   `biEngineReasons` (*type:* `list(GoogleApi.BigQuery.V2.Model.BiEngineReason.t)`, *default:* `nil`) - Output only. If present, the stage had the following reasons for being disqualified from BI Engine execution.
   *   `highCardinalityJoins` (*type:* `list(GoogleApi.BigQuery.V2.Model.HighCardinalityJoin.t)`, *default:* `nil`) - Output only. High cardinality joins in the stage.
   *   `insufficientShuffleQuota` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the stage has insufficient shuffle quota.
+  *   `partitionSkew` (*type:* `GoogleApi.BigQuery.V2.Model.PartitionSkew.t`, *default:* `nil`) - Output only. Partition skew in the stage.
   *   `slotContention` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the stage has a slot contention issue.
   *   `stageId` (*type:* `String.t`, *default:* `nil`) - Output only. The stage id that the insight mapped to.
   """
@@ -35,6 +36,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StagePerformanceStandaloneInsight do
           :highCardinalityJoins =>
             list(GoogleApi.BigQuery.V2.Model.HighCardinalityJoin.t()) | nil,
           :insufficientShuffleQuota => boolean() | nil,
+          :partitionSkew => GoogleApi.BigQuery.V2.Model.PartitionSkew.t() | nil,
           :slotContention => boolean() | nil,
           :stageId => String.t() | nil
         }
@@ -42,6 +44,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StagePerformanceStandaloneInsight do
   field(:biEngineReasons, as: GoogleApi.BigQuery.V2.Model.BiEngineReason, type: :list)
   field(:highCardinalityJoins, as: GoogleApi.BigQuery.V2.Model.HighCardinalityJoin, type: :list)
   field(:insufficientShuffleQuota)
+  field(:partitionSkew, as: GoogleApi.BigQuery.V2.Model.PartitionSkew)
   field(:slotContention)
   field(:stageId)
 end

@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `tableConstraints` (*type:* `GoogleApi.BigQuery.V2.Model.TableConstraints.t`, *default:* `nil`) - Optional. Tables Primary Key and Foreign Key information
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. A URL that can be used to access this resource again.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
+  *   `externalCatalogTableOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ExternalCatalogTableOptions.t`, *default:* `nil`) - Optional. Options defining open source compatible table.
   *   `snapshotDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t`, *default:* `nil`) - Output only. Contains information about the snapshot. This value is set via snapshot creation.
   *   `cloneDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.CloneDefinition.t`, *default:* `nil`) - Output only. Contains information about the clone. This value is set via the clone operation.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this table was last modified, in milliseconds since the epoch.
@@ -77,6 +78,8 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :tableConstraints => GoogleApi.BigQuery.V2.Model.TableConstraints.t() | nil,
           :selfLink => String.t() | nil,
           :labels => map() | nil,
+          :externalCatalogTableOptions =>
+            GoogleApi.BigQuery.V2.Model.ExternalCatalogTableOptions.t() | nil,
           :snapshotDefinition => GoogleApi.BigQuery.V2.Model.SnapshotDefinition.t() | nil,
           :cloneDefinition => GoogleApi.BigQuery.V2.Model.CloneDefinition.t() | nil,
           :lastModifiedTime => String.t() | nil,
@@ -129,6 +132,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:tableConstraints, as: GoogleApi.BigQuery.V2.Model.TableConstraints)
   field(:selfLink)
   field(:labels, type: :map)
+  field(:externalCatalogTableOptions, as: GoogleApi.BigQuery.V2.Model.ExternalCatalogTableOptions)
   field(:snapshotDefinition, as: GoogleApi.BigQuery.V2.Model.SnapshotDefinition)
   field(:cloneDefinition, as: GoogleApi.BigQuery.V2.Model.CloneDefinition)
   field(:lastModifiedTime)
