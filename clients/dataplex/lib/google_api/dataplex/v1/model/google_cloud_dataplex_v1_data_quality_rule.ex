@@ -31,6 +31,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
   *   `regexExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRegexExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value matches a specified regex.
   *   `rowConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleRowConditionExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each row in a table passes the specified condition.
   *   `setExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExpectation.t`, *default:* `nil`) - Row-level rule which evaluates whether each column value is contained by a specified set.
+  *   `sqlAssertion` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSqlAssertion.t`, *default:* `nil`) - Aggregate rule which evaluates the number of rows returned for the provided statement.
   *   `statisticRangeExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation.t`, *default:* `nil`) - Aggregate rule which evaluates whether the column aggregate statistic lies between a specified range.
   *   `tableConditionExpectation` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation.t`, *default:* `nil`) - Aggregate rule which evaluates whether the provided expression is true for a table.
   *   `threshold` (*type:* `float()`, *default:* `nil`) - Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules.
@@ -60,6 +61,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
           :setExpectation =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExpectation.t()
             | nil,
+          :sqlAssertion =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSqlAssertion.t() | nil,
           :statisticRangeExpectation =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleStatisticRangeExpectation.t()
             | nil,
@@ -96,6 +99,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule do
 
   field(:setExpectation,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSetExpectation
+  )
+
+  field(:sqlAssertion,
+    as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleSqlAssertion
   )
 
   field(:statisticRangeExpectation,
