@@ -25,7 +25,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
+  *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
+  *   `preciseSizeGb` (*type:* `float()`, *default:* `nil`) - Output only. Precise value of redis memory size in GB for the entire cluster.
   *   `pscConfigs` (*type:* `list(GoogleApi.Redis.V1.Model.PscConfig.t)`, *default:* `nil`) - Required. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
   *   `pscConnections` (*type:* `list(GoogleApi.Redis.V1.Model.PscConnection.t)`, *default:* `nil`) - Output only. PSC connections for discovery of the cluster topology and accessing the cluster.
   *   `redisConfigs` (*type:* `map()`, *default:* `nil`) - Optional. Key/Value pairs of customer overrides for mutable Redis Configs
@@ -45,7 +47,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
           :createTime => DateTime.t() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t()) | nil,
           :name => String.t() | nil,
+          :nodeType => String.t() | nil,
           :persistenceConfig => GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t() | nil,
+          :preciseSizeGb => float() | nil,
           :pscConfigs => list(GoogleApi.Redis.V1.Model.PscConfig.t()) | nil,
           :pscConnections => list(GoogleApi.Redis.V1.Model.PscConnection.t()) | nil,
           :redisConfigs => map() | nil,
@@ -62,7 +66,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   field(:createTime, as: DateTime)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1.Model.DiscoveryEndpoint, type: :list)
   field(:name)
+  field(:nodeType)
   field(:persistenceConfig, as: GoogleApi.Redis.V1.Model.ClusterPersistenceConfig)
+  field(:preciseSizeGb)
   field(:pscConfigs, as: GoogleApi.Redis.V1.Model.PscConfig, type: :list)
   field(:pscConnections, as: GoogleApi.Redis.V1.Model.PscConnection, type: :list)
   field(:redisConfigs, type: :map)
