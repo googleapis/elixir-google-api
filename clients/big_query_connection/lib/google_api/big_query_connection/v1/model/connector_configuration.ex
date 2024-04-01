@@ -24,6 +24,7 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
   *   `authentication` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentication.t`, *default:* `nil`) - Client authentication.
   *   `connectorId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The ID of the Connector these parameters are configured for.
   *   `endpoint` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationEndpoint.t`, *default:* `nil`) - Specifies how to reach the remote system this connection is pointing to.
+  *   `network` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationNetwork.t`, *default:* `nil`) - Networking configuration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,7 +34,9 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
             GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentication.t() | nil,
           :connectorId => String.t() | nil,
           :endpoint =>
-            GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationEndpoint.t() | nil
+            GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationEndpoint.t() | nil,
+          :network =>
+            GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationNetwork.t() | nil
         }
 
   field(:authentication,
@@ -42,6 +45,7 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
 
   field(:connectorId)
   field(:endpoint, as: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationEndpoint)
+  field(:network, as: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationNetwork)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
