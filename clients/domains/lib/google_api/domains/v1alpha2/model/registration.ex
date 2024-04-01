@@ -31,6 +31,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   *   `managementSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.ManagementSettings.t`, *default:* `nil`) - Settings for management of the `Registration`, including renewal, billing, and transfer. You cannot update these with the `UpdateRegistration` method. To update these settings, use the `ConfigureManagementSettings` method.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `Registration` resource, in the format `projects/*/locations/*/registrations/`.
   *   `pendingContactSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.ContactSettings.t`, *default:* `nil`) - Output only. Pending contact settings for the `Registration`. Updates to the `contact_settings` field that change its `registrant_contact` or `privacy` fields require email confirmation by the `registrant_contact` before taking effect. This field is set only if there are pending updates to the `contact_settings` that have not been confirmed. To confirm the changes, the `registrant_contact` must follow the instructions in the email they receive.
+  *   `provider` (*type:* `String.t`, *default:* `nil`) - Output only. Current domain management provider.
   *   `registerFailureReason` (*type:* `String.t`, *default:* `nil`) - Output only. The reason the domain registration failed. Only set for domains in REGISTRATION_FAILED state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the `Registration`
   *   `supportedPrivacy` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Set of options for the `contact_settings.privacy` field that this `Registration` supports.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
           :managementSettings => GoogleApi.Domains.V1alpha2.Model.ManagementSettings.t() | nil,
           :name => String.t() | nil,
           :pendingContactSettings => GoogleApi.Domains.V1alpha2.Model.ContactSettings.t() | nil,
+          :provider => String.t() | nil,
           :registerFailureReason => String.t() | nil,
           :state => String.t() | nil,
           :supportedPrivacy => list(String.t()) | nil,
@@ -66,6 +68,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   field(:managementSettings, as: GoogleApi.Domains.V1alpha2.Model.ManagementSettings)
   field(:name)
   field(:pendingContactSettings, as: GoogleApi.Domains.V1alpha2.Model.ContactSettings)
+  field(:provider)
   field(:registerFailureReason)
   field(:state)
   field(:supportedPrivacy, type: :list)
