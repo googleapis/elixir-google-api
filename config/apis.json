@@ -366,6 +366,12 @@
   },
   {
     "version": "v1",
+    "url": "https://cloudcontrolspartner.googleapis.com/$discovery/rest?version=v1",
+    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
+    "name": "Cloudcontrolspartner"
+  },
+  {
+    "version": "v1",
     "url": "https://clouddeploy.googleapis.com/$discovery/rest?version=v1",
     "name": "CloudDeploy"
   },
@@ -1438,6 +1444,12 @@
     "version": "v1",
     "url": "https://smartdevicemanagement.googleapis.com/$discovery/rest?version=v1",
     "name": "SmartDeviceManagement"
+  },
+  {
+    "version": "v1",
+    "url": "https://solar.googleapis.com/$discovery/rest?version=v1",
+    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
+    "name": "Solar"
   },
   {
     "version": "v1",
