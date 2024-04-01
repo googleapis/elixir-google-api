@@ -23,7 +23,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
 
   *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
   *   `invocationConfig` (*type:* `GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t`, *default:* `nil`) - Optional. If left unset, a default InvocationConfig will be used.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The workflow config's name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workflow config's name.
   *   `recentScheduledExecutionRecords` (*type:* `list(GoogleApi.Dataform.V1beta1.Model.ScheduledExecutionRecord.t)`, *default:* `nil`) - Output only. Records of the 10 most recent scheduled execution attempts, ordered in in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule.
   *   `releaseConfig` (*type:* `String.t`, *default:* `nil`) - Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
