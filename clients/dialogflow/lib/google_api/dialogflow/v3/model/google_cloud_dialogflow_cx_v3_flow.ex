@@ -26,6 +26,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Flow do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the flow.
   *   `eventHandlers` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t)`, *default:* `nil`) - A flow's event handlers serve two purposes: * They are responsible for handling events (e.g. no match, webhook errors) in the flow. * They are inherited by every page's event handlers, which can be used to handle common events regardless of the current page. Event handlers defined in the page have higher priority than those defined in the flow. Unlike transition_routes, these handlers are evaluated on a first-match basis. The first one that matches the event get executed, with the rest being ignored.
   *   `knowledgeConnectorSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings.t`, *default:* `nil`) - Optional. Knowledge connector configuration.
+  *   `multiLanguageSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowMultiLanguageSettings.t`, *default:* `nil`) - Optional. Multi-lingual agent settings for this flow.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the flow. Format: `projects//locations//agents//flows/`.
   *   `nluSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3NluSettings.t`, *default:* `nil`) - NLU related settings of the flow.
   *   `transitionRouteGroups` (*type:* `list(String.t)`, *default:* `nil`) - A flow's transition route group serve two purposes: * They are responsible for matching the user's first utterances in the flow. * They are inherited by every page's transition route groups. Transition route groups defined in the page have higher priority than those defined in the flow. Format:`projects//locations//agents//flows//transitionRouteGroups/` or `projects//locations//agents//transitionRouteGroups/` for agent-level groups.
@@ -43,6 +44,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Flow do
             list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3EventHandler.t()) | nil,
           :knowledgeConnectorSettings =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings.t()
+            | nil,
+          :multiLanguageSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowMultiLanguageSettings.t()
             | nil,
           :name => String.t() | nil,
           :nluSettings =>
@@ -66,6 +70,10 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Flow do
 
   field(:knowledgeConnectorSettings,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3KnowledgeConnectorSettings
+  )
+
+  field(:multiLanguageSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3FlowMultiLanguageSettings
   )
 
   field(:name)
