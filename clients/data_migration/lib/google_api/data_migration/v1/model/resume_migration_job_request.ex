@@ -21,11 +21,16 @@ defmodule GoogleApi.DataMigration.V1.Model.ResumeMigrationJobRequest do
 
   ## Attributes
 
+  *   `skipValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Resume the migration job without running prior configuration verification. Defaults to `false`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :skipValidation => boolean() | nil
+        }
+
+  field(:skipValidation)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DataMigration.V1.Model.ResumeMigrationJobRequest do
