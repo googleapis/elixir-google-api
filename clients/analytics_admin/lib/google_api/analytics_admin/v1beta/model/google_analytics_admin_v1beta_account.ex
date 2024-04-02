@@ -24,6 +24,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Model.GoogleAnalyticsAdminV1betaAccoun
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this account was originally created.
   *   `deleted` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this Account is soft-deleted or not. Deleted accounts are excluded from List results unless specifically requested.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name for this account.
+  *   `gmpOrganization` (*type:* `String.t`, *default:* `nil`) - Output only. The URI for a Google Marketing Platform organization resource. Only set when this account is connected to a GMP organization. Format: marketingplatformadmin.googleapis.com/organizations/{org_id}
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this account. Format: accounts/{account} Example: "accounts/100"
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Country of business. Must be a Unicode CLDR region code.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when account payload fields were last updated.
@@ -35,6 +36,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Model.GoogleAnalyticsAdminV1betaAccoun
           :createTime => DateTime.t() | nil,
           :deleted => boolean() | nil,
           :displayName => String.t() | nil,
+          :gmpOrganization => String.t() | nil,
           :name => String.t() | nil,
           :regionCode => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -43,6 +45,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Model.GoogleAnalyticsAdminV1betaAccoun
   field(:createTime, as: DateTime)
   field(:deleted)
   field(:displayName)
+  field(:gmpOrganization)
   field(:name)
   field(:regionCode)
   field(:updateTime, as: DateTime)
