@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   *   `defaultLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The default language of the agent as a language tag. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes. This field cannot be set by the Agents.UpdateAgent method.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the agent. The maximum length is 500 characters. If exceeded, the request is rejected.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the agent, unique within the location.
+  *   `enableMultiLanguageTraining` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable training multi-lingual models for this agent. These models will be trained on all the languages supported by the agent.
   *   `enableSpellCorrection` (*type:* `boolean()`, *default:* `nil`) - Indicates if automatic spell correction is enabled in detect intent requests.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Indicates if stackdriver logging is enabled for the agent. Please use agent.advanced_settings instead.
   *   `genAppBuilderSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentGenAppBuilderSettings.t`, *default:* `nil`) - Gen App Builder-related agent-level settings.
@@ -54,6 +55,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
           :defaultLanguageCode => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :enableMultiLanguageTraining => boolean() | nil,
           :enableSpellCorrection => boolean() | nil,
           :enableStackdriverLogging => boolean() | nil,
           :genAppBuilderSettings =>
@@ -89,6 +91,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   field(:defaultLanguageCode)
   field(:description)
   field(:displayName)
+  field(:enableMultiLanguageTraining)
   field(:enableSpellCorrection)
   field(:enableStackdriverLogging)
 
