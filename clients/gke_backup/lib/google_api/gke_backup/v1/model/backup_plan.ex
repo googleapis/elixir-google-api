@@ -32,6 +32,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`
   *   `protectedPodCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
   *   `retentionPolicy` (*type:* `GoogleApi.GKEBackup.V1.Model.RetentionPolicy.t`, *default:* `nil`) - Optional. RetentionPolicy governs lifecycle of Backups created under this plan.
+  *   `rpoRiskLevel` (*type:* `integer()`, *default:* `nil`) - Output only. A number that represents the current risk level of this BackupPlan from RPO perspective with 1 being no risk and 5 being highest risk.
+  *   `rpoRiskReason` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable description of why the BackupPlan is in the current rpo_risk_level and action items if any.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update
   *   `stateReason` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable description of why BackupPlan is in the current `state`
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
@@ -52,6 +54,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
           :name => String.t() | nil,
           :protectedPodCount => integer() | nil,
           :retentionPolicy => GoogleApi.GKEBackup.V1.Model.RetentionPolicy.t() | nil,
+          :rpoRiskLevel => integer() | nil,
+          :rpoRiskReason => String.t() | nil,
           :state => String.t() | nil,
           :stateReason => String.t() | nil,
           :uid => String.t() | nil,
@@ -69,6 +73,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupPlan do
   field(:name)
   field(:protectedPodCount)
   field(:retentionPolicy, as: GoogleApi.GKEBackup.V1.Model.RetentionPolicy)
+  field(:rpoRiskLevel)
+  field(:rpoRiskReason)
   field(:state)
   field(:stateReason)
   field(:uid)

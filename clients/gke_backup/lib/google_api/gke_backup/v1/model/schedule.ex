@@ -22,18 +22,24 @@ defmodule GoogleApi.GKEBackup.V1.Model.Schedule do
   ## Attributes
 
   *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. A standard [cron](https://wikipedia.com/wiki/cron) string that defines a repeating schedule for creating Backups via this BackupPlan. This is mutually exclusive with the rpo_config field since at most one schedule can be defined for a BackupPlan. If this is defined, then backup_retain_days must also be defined. Default (empty): no automatic backup creation will occur.
+  *   `nextScheduledBackupTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Start time of next scheduled backup under this BackupPlan by either cron_schedule or rpo config.
   *   `paused` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag denotes whether automatic Backup creation is paused for this BackupPlan. Default: False
+  *   `rpoConfig` (*type:* `GoogleApi.GKEBackup.V1.Model.RpoConfig.t`, *default:* `nil`) - Optional. Defines the RPO schedule configuration for this BackupPlan. This is mutually exclusive with the cron_schedule field since at most one schedule can be defined for a BackupPLan. If this is defined, then backup_retain_days must also be defined. Default (empty): no automatic backup creation will occur.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cronSchedule => String.t() | nil,
-          :paused => boolean() | nil
+          :nextScheduledBackupTime => DateTime.t() | nil,
+          :paused => boolean() | nil,
+          :rpoConfig => GoogleApi.GKEBackup.V1.Model.RpoConfig.t() | nil
         }
 
   field(:cronSchedule)
+  field(:nextScheduledBackupTime, as: DateTime)
   field(:paused)
+  field(:rpoConfig, as: GoogleApi.GKEBackup.V1.Model.RpoConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEBackup.V1.Model.Schedule do
