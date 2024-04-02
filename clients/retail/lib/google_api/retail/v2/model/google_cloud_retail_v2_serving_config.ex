@@ -31,6 +31,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ServingConfig do
   *   `facetControlIds` (*type:* `list(String.t)`, *default:* `nil`) - Facet specifications for faceted search. If empty, no facets are returned. The ids refer to the ids of Control resources with only the Facet control set. These controls are assumed to be in the same Catalog as the ServingConfig. A maximum of 100 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned. Can only be set if solution_types is SOLUTION_TYPE_SEARCH.
   *   `filterControlIds` (*type:* `list(String.t)`, *default:* `nil`) - Condition filter specifications. If a product matches multiple conditions in the specifications, filters from these specifications are all applied and combined via the AND operator. Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH.
   *   `ignoreControlIds` (*type:* `list(String.t)`, *default:* `nil`) - Condition ignore specifications. If multiple ignore conditions match, all matching ignore controls in the list will execute. - Order does not matter. - Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH.
+  *   `ignoreRecsDenylist` (*type:* `boolean()`, *default:* `nil`) - When the flag is enabled, the products in the denylist will not be filtered out in the recommendation filtering results.
   *   `modelId` (*type:* `String.t`, *default:* `nil`) - The id of the model in the same Catalog to use at serving time. Currently only RecommendationModels are supported: https://cloud.google.com/retail/recommendations-ai/docs/create-models Can be changed but only to a compatible model (e.g. others-you-may-like CTR to others-you-may-like CVR). Required when solution_types is SOLUTION_TYPE_RECOMMENDATION.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/*/locations/global/catalogs/*/servingConfig/*`
   *   `onewaySynonymsControlIds` (*type:* `list(String.t)`, *default:* `nil`) - Condition oneway synonyms specifications. If multiple oneway synonyms conditions match, all matching oneway synonyms controls in the list will execute. Order of controls in the list will not matter. Maximum number of specifications is 100. Can only be set if solution_types is SOLUTION_TYPE_SEARCH.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ServingConfig do
           :facetControlIds => list(String.t()) | nil,
           :filterControlIds => list(String.t()) | nil,
           :ignoreControlIds => list(String.t()) | nil,
+          :ignoreRecsDenylist => boolean() | nil,
           :modelId => String.t() | nil,
           :name => String.t() | nil,
           :onewaySynonymsControlIds => list(String.t()) | nil,
@@ -83,6 +85,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ServingConfig do
   field(:facetControlIds, type: :list)
   field(:filterControlIds, type: :list)
   field(:ignoreControlIds, type: :list)
+  field(:ignoreRecsDenylist)
   field(:modelId)
   field(:name)
   field(:onewaySynonymsControlIds, type: :list)
