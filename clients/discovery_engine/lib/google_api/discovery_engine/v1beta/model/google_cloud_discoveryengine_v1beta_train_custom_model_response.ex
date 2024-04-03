@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaImportErrorConfig.t`, *default:* `nil`) - Echoes the destination for the complete errors in the request if set.
   *   `errorSamples` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while processing the data.
   *   `metrics` (*type:* `map()`, *default:* `nil`) - The metrics of the trained model.
-  *   `modelStatus` (*type:* `String.t`, *default:* `nil`) - The trained model status. Possible values are: * **bad-data**: The training data quality is bad. * **no-improvement**: Tuning didn't improve performance. Won't deploy. * **in-progress**: Model training is in progress. * **ready**: The model is ready for serving.
+  *   `modelStatus` (*type:* `String.t`, *default:* `nil`) - The trained model status. Possible values are: * **bad-data**: The training data quality is bad. * **no-improvement**: Tuning didn't improve performance. Won't deploy. * **in-progress**: Model training job creation is in progress. * **training**: Model is actively training. * **evaluating**: The model is evaluating trained metrics. * **indexing**: The model trained metrics are indexing. * **ready**: The model is ready for serving.
   """
 
   use GoogleApi.Gax.ModelBase

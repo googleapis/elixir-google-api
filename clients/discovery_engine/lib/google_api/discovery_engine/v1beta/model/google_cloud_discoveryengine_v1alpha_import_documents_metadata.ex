@@ -24,6 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
   *   `failureCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that encountered errors while processing.
   *   `successCount` (*type:* `String.t`, *default:* `nil`) - Count of entries that were processed successfully.
+  *   `totalCount` (*type:* `String.t`, *default:* `nil`) - Total count of entries that were processed.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation last update time. If the operation is done, this is also the finish time.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
           :createTime => DateTime.t() | nil,
           :failureCount => String.t() | nil,
           :successCount => String.t() | nil,
+          :totalCount => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
   field(:failureCount)
   field(:successCount)
+  field(:totalCount)
   field(:updateTime, as: DateTime)
 end
 

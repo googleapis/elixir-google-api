@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableOptionsBigtableColumnFamily do
   @moduledoc """
-
+  The column family of the Bigtable.
 
   ## Attributes
 
   *   `columns` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableOptionsBigtableColumn.t)`, *default:* `nil`) - The list of objects that contains column level information for each column. If a column is not present in this list it will be ignored.
-  *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The encoding mode of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. This can be overridden for a specific column by listing that column in 'columns' and specifying an encoding for it.
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field name to use for this column family in the UCS document. The name has to match a-zA-Z0-9* If not set, we will parse it from the family name with best effort. However, due to difference naming pattern, there could be field name collisions, where parsing behavior is undefined.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of values in this column family. The values are expected to be encoded using HBase Bytes.toBytes function when the encoding value is set to BINARY.
+  *   `encoding` (*type:* `String.t`, *default:* `nil`) - The encoding mode of the values when the type is not STRING. Acceptable encoding values are: * `TEXT`: indicates values are alphanumeric text strings. * `BINARY`: indicates values are encoded using `HBase Bytes.toBytes` family of functions. This can be overridden for a specific column by listing that column in `columns` and specifying an encoding for it.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field name to use for this column family in the document. The name has to match the pattern `a-zA-Z0-9*`. If not set, it is parsed from the family name with best effort. However, due to different naming patterns, field name collisions could happen, where parsing behavior is undefined.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of values in this column family. The values are expected to be encoded using `HBase Bytes.toBytes` function when the encoding value is set to `BINARY`.
   """
 
   use GoogleApi.Gax.ModelBase

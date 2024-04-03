@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableSource do
   @moduledoc """
-  The Cloud Bigtable source for importing data
+  The Cloud Bigtable source for importing data.
 
   ## Attributes
 
   *   `bigtableOptions` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableOptions.t`, *default:* `nil`) - Required. Bigtable options that contains information needed when parsing data into typed structures. For example, column type annotations.
-  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The instance ID of the Cloud Bigtable that needs to be exported.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID (can be project # or ID) that the Bigtable source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The table ID of the Cloud Bigtable that needs to be exported.
+  *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The instance ID of the Cloud Bigtable that needs to be imported.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that the Bigtable source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The table ID of the Cloud Bigtable that needs to be imported.
   """
 
   use GoogleApi.Gax.ModelBase

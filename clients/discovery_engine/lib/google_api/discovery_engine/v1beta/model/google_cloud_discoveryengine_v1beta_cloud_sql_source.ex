@@ -22,10 +22,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud SQL database to copy the data from with a length limit of 256 characters.
-  *   `gcsStagingDir` (*type:* `String.t`, *default:* `nil`) - Optional. Intermediate Cloud Storage directory used for the import with a length limit of 2,000 characters. Can be specified if one wants to have the Cloud SQL export to a specific Cloud Storage directory. Please ensure that the Cloud SQL service account has the necessary GCS Storage Admin permissions to access the specified GCS directory.
+  *   `gcsStagingDir` (*type:* `String.t`, *default:* `nil`) - Intermediate Cloud Storage directory used for the import with a length limit of 2,000 characters. Can be specified if one wants to have the Cloud SQL export to a specific Cloud Storage directory. Please ensure that the Cloud SQL service account has the necessary Cloud Storage Admin permissions to access the specified Cloud Storage directory.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud SQL instance to copy the data from with a length limit of 256 characters.
-  *   `offload` (*type:* `boolean()`, *default:* `nil`) - Optional. Option for serverless export. Enabling this option will incur additional cost. More info: https://cloud.google.com/sql/pricing#serverless
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Optional. The project ID (can be project # or ID) that the Cloud SQL source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `offload` (*type:* `boolean()`, *default:* `nil`) - Option for serverless export. Enabling this option will incur additional cost. More info can be found [here](https://cloud.google.com/sql/pricing#serverless).
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that the Cloud SQL source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud SQL table to copy the data from with a length limit of 256 characters.
   """
 

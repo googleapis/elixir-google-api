@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `families` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableOptionsBigtableColumnFamily.t}`, *default:* `nil`) - The mapping from family names to an object that contains column families level information for the given column family. If a family is not present in this map it will be ignored.
-  *   `keyFieldName` (*type:* `String.t`, *default:* `nil`) - The field name used for saving row key value in the UCS document. The name has to match a-zA-Z0-9*
+  *   `keyFieldName` (*type:* `String.t`, *default:* `nil`) - The field name used for saving row key value in the document. The name has to match the pattern `a-zA-Z0-9*`.
   """
 
   use GoogleApi.Gax.ModelBase
