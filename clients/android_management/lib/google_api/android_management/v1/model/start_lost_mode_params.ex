@@ -24,7 +24,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StartLostModeParams do
   *   `lostEmailAddress` (*type:* `String.t`, *default:* `nil`) - The email address displayed to the user when the device is in lost mode.
   *   `lostMessage` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The message displayed to the user when the device is in lost mode.
   *   `lostOrganization` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The organization name displayed to the user when the device is in lost mode.
-  *   `lostPhoneNumber` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The phone number displayed to the user when the device is in lost mode.
+  *   `lostPhoneNumber` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The phone number that will be called when the device is in lost mode and the call owner button is tapped.
   *   `lostStreetAddress` (*type:* `GoogleApi.AndroidManagement.V1.Model.UserFacingMessage.t`, *default:* `nil`) - The street address displayed to the user when the device is in lost mode.
   """
 
