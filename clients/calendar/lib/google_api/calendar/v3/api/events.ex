@@ -366,7 +366,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored.
-      *   `:eventTypes` (*type:* `list(String.t)`) - Event types to return. Optional. This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].
+      *   `:eventTypes` (*type:* `list(String.t)`) - Event types to return. Optional. This parameter can be repeated multiple times to return events of different types. If unset, returns all event types.
       *   `:iCalUID` (*type:* `String.t`) - Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
@@ -762,7 +762,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
       *   `:alwaysIncludeEmail` (*type:* `boolean()`) - Deprecated and ignored.
-      *   `:eventTypes` (*type:* `list(String.t)`) - Event types to return. Optional. This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].
+      *   `:eventTypes` (*type:* `list(String.t)`) - Event types to return. Optional. This parameter can be repeated multiple times to return events of different types. If unset, returns all event types.
       *   `:iCalUID` (*type:* `String.t`) - Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
       *   `:maxAttendees` (*type:* `integer()`) - The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
