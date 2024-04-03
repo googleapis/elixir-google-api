@@ -22,7 +22,7 @@ defmodule GoogleApi.AdvisoryNotifications.V1.Model.GoogleCloudAdvisorynotificati
   ## Attributes
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Required. Fingerprint for optimistic concurrency returned in Get requests. Must be provided for Update requests. If the value provided does not match the value known to the server, ABORTED will be thrown, and the client should retry the read-modify-write cycle.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings.
   *   `notificationSettings` (*type:* `%{optional(String.t) => GoogleApi.AdvisoryNotifications.V1.Model.GoogleCloudAdvisorynotificationsV1NotificationSettings.t}`, *default:* `nil`) - Required. Map of each notification type and its settings to get/set all settings at once. The server will validate the value for each notification type.
   """
 
