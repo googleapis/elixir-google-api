@@ -31,7 +31,7 @@ defmodule GoogleApi.AdvisoryNotifications.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdvisoryNotifications.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -108,7 +108,7 @@ defmodule GoogleApi.AdvisoryNotifications.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdvisoryNotifications.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings.
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the settings to retrieve. Format: organizations/{organization}/locations/{location}/settings or projects/{projects}/locations/{location}/settings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -266,7 +266,7 @@ defmodule GoogleApi.AdvisoryNotifications.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdvisoryNotifications.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of notifications. Must be of the form "organizations/{organization}/locations/{location}" or "projects/{project}/locations/{location}"
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of notifications. Must be of the form "organizations/{organization}/locations/{location}" or "projects/{project}/locations/{location}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
