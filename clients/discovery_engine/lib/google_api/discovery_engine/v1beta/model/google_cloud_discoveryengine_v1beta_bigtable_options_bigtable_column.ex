@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableOptionsBigtableColumn do
   @moduledoc """
-
+  The column of the Bigtable.
 
   ## Attributes
 
-  *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The encoding mode of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. This can be overridden for a specific column by listing that column in 'columns' and specifying an encoding for it.
-  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field name to use for this column in the UCS document. The name has to match a-zA-Z0-9* If not set, we will parse it from the qualifier bytes with best effort. However, field name collisions could happen, where parsing behavior is undefined.
-  *   `qualifier` (*type:* `String.t`, *default:* `nil`) - Required. Qualifier of the column. If cannot decode with utf-8, store a base-64 encoded string.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of values in this column family. The values are expected to be encoded using HBase Bytes.toBytes function when the encoding value is set to BINARY.
+  *   `encoding` (*type:* `String.t`, *default:* `nil`) - The encoding mode of the values when the type is not `STRING`. Acceptable encoding values are: * `TEXT`: indicates values are alphanumeric text strings. * `BINARY`: indicates values are encoded using `HBase Bytes.toBytes` family of functions. This can be overridden for a specific column by listing that column in `columns` and specifying an encoding for it.
+  *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The field name to use for this column in the document. The name has to match the pattern `a-zA-Z0-9*`. If not set, it is parsed from the qualifier bytes with best effort. However, due to different naming patterns, field name collisions could happen, where parsing behavior is undefined.
+  *   `qualifier` (*type:* `String.t`, *default:* `nil`) - Required. Qualifier of the column. If it cannot be decoded with utf-8, use a base-64 encoded string instead.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of values in this column family. The values are expected to be encoded using `HBase Bytes.toBytes` function when the encoding value is set to `BINARY`.
   """
 
   use GoogleApi.Gax.ModelBase
