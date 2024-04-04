@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.SpaceBatchUpdatedEventData do
   @moduledoc """
-  Payload for batch updated space events where the `EventType` field is `google.workspace.chat.space.v1.batchUpdated`.
+  Event payload for multiple updates to a space. Event type: `google.workspace.chat.space.v1.batchUpdated`
 
   ## Attributes
 

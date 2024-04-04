@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ReactionBatchDeletedEventData do
   @moduledoc """
-  Payload for batch deleted reaction events where the `EventType` field is `google.workspace.chat.reaction.v1.batchDeleted`.
+  Event payload for multiple deleted reactions. Event type: `google.workspace.chat.reaction.v1.batchDeleted`
 
   ## Attributes
 

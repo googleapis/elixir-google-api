@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipDeletedEventData do
   @moduledoc """
-  Payload for deleted membership events where the `EventType` field is `google.workspace.chat.membership.v1.deleted`.
+  Event payload for a deleted membership. Event type: `google.workspace.chat.membership.v1.deleted`
 
   ## Attributes
 
-  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The deleted membership. Only `name` and `state` are populated.
+  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The deleted membership. Only the `name` and `state` fields are populated.
   """
 
   use GoogleApi.Gax.ModelBase

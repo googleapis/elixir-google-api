@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.SpaceUpdatedEventData do
   @moduledoc """
-  Payload for updated space events where the `EventType` field is `google.workspace.chat.space.v1.updated`.
+  Event payload for an updated space. Event type: `google.workspace.chat.space.v1.updated`
 
   ## Attributes
 
-  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The recent version of the space.
+  *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The updated space.
   """
 
   use GoogleApi.Gax.ModelBase

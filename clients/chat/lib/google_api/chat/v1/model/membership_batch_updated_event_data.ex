@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipBatchUpdatedEventData do
   @moduledoc """
-  Payload for batch updated membership events where the `EventType` field is `google.workspace.chat.membership.v1.batchUpdated`.
+  Event payload for multiple updated memberships. Event type: `google.workspace.chat.membership.v1.batchUpdated`
 
   ## Attributes
 

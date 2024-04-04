@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipCreatedEventData do
   @moduledoc """
-  Payload for new membership events where the `EventType` field is `google.workspace.chat.membership.v1.created`.
+  Event payload for a new membership. Event type: `google.workspace.chat.membership.v1.created`.
 
   ## Attributes
 
-  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The most recent version of membership.
+  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The new membership.
   """
 
   use GoogleApi.Gax.ModelBase

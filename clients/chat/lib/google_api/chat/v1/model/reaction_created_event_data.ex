@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.ReactionCreatedEventData do
   @moduledoc """
-  Payload for new reaction events where the `EventType` field is `google.workspace.chat.reaction.v1.created`.
+  Event payload for a new reaction. Event type: `google.workspace.chat.reaction.v1.created`
 
   ## Attributes
 
-  *   `reaction` (*type:* `GoogleApi.Chat.V1.Model.Reaction.t`, *default:* `nil`) - The created reaction.
+  *   `reaction` (*type:* `GoogleApi.Chat.V1.Model.Reaction.t`, *default:* `nil`) - The new reaction.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipBatchDeletedEventData do
   @moduledoc """
-  Payload for batch deleted membership events where the `EventType` field is `google.workspace.chat.membership.v1.batchDeleted`.
+  Event payload for multiple deleted memberships. Event type: `google.workspace.chat.membership.v1.batchDeleted`
 
   ## Attributes
 

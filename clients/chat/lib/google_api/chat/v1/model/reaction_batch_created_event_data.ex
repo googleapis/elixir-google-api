@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.ReactionBatchCreatedEventData do
   @moduledoc """
-  Payload for batch new reaction events where the `EventType` field is `google.workspace.chat.reaction.v1.batchCreated`.
+  Event payload for multiple new reactions. Event type: `google.workspace.chat.reaction.v1.batchCreated`
 
   ## Attributes
 
-  *   `reactions` (*type:* `list(GoogleApi.Chat.V1.Model.ReactionCreatedEventData.t)`, *default:* `nil`) - A list of created reactions.
+  *   `reactions` (*type:* `list(GoogleApi.Chat.V1.Model.ReactionCreatedEventData.t)`, *default:* `nil`) - A list of new reactions.
   """
 
   use GoogleApi.Gax.ModelBase
