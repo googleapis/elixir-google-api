@@ -21,26 +21,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RaySpec do
 
   ## Attributes
 
-  *   `headNodeResourcePoolId` (*type:* `String.t`, *default:* `nil`) - Optional. This will be used to indicate which resource pool will serve as the Ray head node(the first node within that pool). Will use the machine from the first workerpool as the head node by default if this field isn't set.
-  *   `imageUri` (*type:* `String.t`, *default:* `nil`) - Optional. Default image for user to choose a preferred ML framework (for example, TensorFlow or Pytorch) by choosing from [Vertex prebuilt images](https://cloud.google.com/vertex-ai/docs/training/pre-built-containers). Either this or the resource_pool_images is required. Use this field if you need all the resource pools to have the same Ray image. Otherwise, use the {@code resource_pool_images} field.
-  *   `rayMetricSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RayMetricSpec.t`, *default:* `nil`) - Optional. Ray metrics configurations.
-  *   `resourcePoolImages` (*type:* `map()`, *default:* `nil`) - Optional. Required if image_uri isn't set. A map of resource_pool_id to prebuild Ray image if user need to use different images for different head/worker pools. This map needs to cover all the resource pool ids. Example: { "ray_head_node_pool": "head image" "ray_worker_node_pool1": "worker image" "ray_worker_node_pool2": "another worker image" }
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{
-          :headNodeResourcePoolId => String.t() | nil,
-          :imageUri => String.t() | nil,
-          :rayMetricSpec =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RayMetricSpec.t() | nil,
-          :resourcePoolImages => map() | nil
-        }
-
-  field(:headNodeResourcePoolId)
-  field(:imageUri)
-  field(:rayMetricSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RayMetricSpec)
-  field(:resourcePoolImages, type: :map)
+  @type t :: %__MODULE__{}
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RaySpec do

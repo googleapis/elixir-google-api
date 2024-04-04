@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ServiceAccountSpe
   ## Attributes
 
   *   `enableCustomServiceAccount` (*type:* `boolean()`, *default:* `nil`) - Required. If true, custom user-managed service account is enforced to run any workloads (for example, Vertex Jobs) on the resource. Otherwise, uses the [Vertex AI Custom Code Service Agent](https://cloud.google.com/vertex-ai/docs/general/access-control#service-agents).
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Default service account that this PersistentResource's workloads run as. The workloads include: * Any runtime specified via `ResourceRuntimeSpec` on creation time, for example, Ray. * Jobs submitted to PersistentResource, if no other service account specified in the job specs. Only works when custom service account is enabled and users have the `iam.serviceAccounts.actAs` permission on this service account. Required if any containers are specified in `ResourceRuntimeSpec`.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Required when all below conditions are met * `enable_custom_service_account` is true; * any runtime is specified via `ResourceRuntimeSpec` on creation time, for example, Ray The users must have `iam.serviceAccounts.actAs` permission on this service account and then the specified runtime containers will run as it. Do not set this field if you want to submit jobs using custom service account to this PersistentResource after creation, but only specify the `service_account` inside the job.
   """
 
   use GoogleApi.Gax.ModelBase
