@@ -22,6 +22,7 @@ defmodule GoogleApi.Content.V21.Model.Action do
   ## Attributes
 
   *   `builtinSimpleAction` (*type:* `GoogleApi.Content.V21.Model.BuiltInSimpleAction.t`, *default:* `nil`) - Action implemented and performed in (your) third-party application. The application should point the merchant to the place, where they can access the corresponding functionality or provide instructions, if the specific functionality is not available.
+  *   `builtinUserInputAction` (*type:* `GoogleApi.Content.V21.Model.BuiltInUserInputAction.t`, *default:* `nil`) - Action implemented and performed in (your) third-party application. The application needs to show an additional content and input form to the merchant as specified for given action. They can trigger the action only when they provided all required inputs.
   *   `buttonLabel` (*type:* `String.t`, *default:* `nil`) - Label of the action button.
   *   `externalAction` (*type:* `GoogleApi.Content.V21.Model.ExternalAction.t`, *default:* `nil`) - Action that is implemented and performed outside of (your) third-party application. The application needs to redirect the merchant to the external location where they can perform the action.
   *   `isAvailable` (*type:* `boolean()`, *default:* `nil`) - Controlling whether the button is active or disabled. The value is 'false' when the action was already requested or is not available. If the action is not available then a reason will be present. If (your) third-party application shows a disabled button for action that is not available, then it should also show reasons.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Content.V21.Model.Action do
 
   @type t :: %__MODULE__{
           :builtinSimpleAction => GoogleApi.Content.V21.Model.BuiltInSimpleAction.t() | nil,
+          :builtinUserInputAction => GoogleApi.Content.V21.Model.BuiltInUserInputAction.t() | nil,
           :buttonLabel => String.t() | nil,
           :externalAction => GoogleApi.Content.V21.Model.ExternalAction.t() | nil,
           :isAvailable => boolean() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.Content.V21.Model.Action do
         }
 
   field(:builtinSimpleAction, as: GoogleApi.Content.V21.Model.BuiltInSimpleAction)
+  field(:builtinUserInputAction, as: GoogleApi.Content.V21.Model.BuiltInUserInputAction)
   field(:buttonLabel)
   field(:externalAction, as: GoogleApi.Content.V21.Model.ExternalAction)
   field(:isAvailable)
