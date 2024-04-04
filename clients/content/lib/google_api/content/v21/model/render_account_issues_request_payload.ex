@@ -22,15 +22,18 @@ defmodule GoogleApi.Content.V21.Model.RenderAccountIssuesRequestPayload do
   ## Attributes
 
   *   `contentOption` (*type:* `String.t`, *default:* `nil`) - Optional. How the detailed content should be returned. Default option is to return the content as a pre-rendered HTML text.
+  *   `userInputActionOption` (*type:* `String.t`, *default:* `nil`) - Optional. How actions with user input form should be handled. If not provided, actions will be returned as links that points merchant to Merchant Center where they can request the action.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :contentOption => String.t() | nil
+          :contentOption => String.t() | nil,
+          :userInputActionOption => String.t() | nil
         }
 
   field(:contentOption)
+  field(:userInputActionOption)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.RenderAccountIssuesRequestPayload do

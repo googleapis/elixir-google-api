@@ -108,9 +108,11 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see product data specification ).
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
   *   `costOfGoodsSold` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Cost of goods sold. Used for gross profit reporting.
+  *   `structuredDescription` (*type:* `GoogleApi.Content.V21.Model.ProductStructuredDescription.t`, *default:* `nil`) - Structured description, for algorithmically (AI)-generated descriptions.
   *   `availability` (*type:* `String.t`, *default:* `nil`) - Availability status of the item.
   *   `shippingHeight` (*type:* `GoogleApi.Content.V21.Model.ProductShippingDimension.t`, *default:* `nil`) - Height of the item for shipping.
   *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Feed label for the item. Either `targetCountry` or `feedLabel` is required. Must be less than or equal to 20 uppercase letters (A-Z), numbers (0-9), and dashes (-).
+  *   `structuredTitle` (*type:* `GoogleApi.Content.V21.Model.ProductStructuredTitle.t`, *default:* `nil`) - Structured title, for algorithmically (AI)-generated titles.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The REST ID of the product. Content API methods that operate on products take this as their `productId` parameter. The REST ID for a product has one of the 2 forms channel:contentLanguage: targetCountry: offerId or channel:contentLanguage:feedLabel: offerId.
   *   `externalSellerId` (*type:* `String.t`, *default:* `nil`) - Required for multi-seller accounts. Use this attribute if you're a marketplace uploading products for various sellers to your multi-seller account.
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Brand of the item.
@@ -213,9 +215,12 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :salePriceEffectiveDate => String.t() | nil,
           :energyEfficiencyClass => String.t() | nil,
           :costOfGoodsSold => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :structuredDescription =>
+            GoogleApi.Content.V21.Model.ProductStructuredDescription.t() | nil,
           :availability => String.t() | nil,
           :shippingHeight => GoogleApi.Content.V21.Model.ProductShippingDimension.t() | nil,
           :feedLabel => String.t() | nil,
+          :structuredTitle => GoogleApi.Content.V21.Model.ProductStructuredTitle.t() | nil,
           :id => String.t() | nil,
           :externalSellerId => String.t() | nil,
           :brand => String.t() | nil,
@@ -318,9 +323,11 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:salePriceEffectiveDate)
   field(:energyEfficiencyClass)
   field(:costOfGoodsSold, as: GoogleApi.Content.V21.Model.Price)
+  field(:structuredDescription, as: GoogleApi.Content.V21.Model.ProductStructuredDescription)
   field(:availability)
   field(:shippingHeight, as: GoogleApi.Content.V21.Model.ProductShippingDimension)
   field(:feedLabel)
+  field(:structuredTitle, as: GoogleApi.Content.V21.Model.ProductStructuredTitle)
   field(:id)
   field(:externalSellerId)
   field(:brand)
