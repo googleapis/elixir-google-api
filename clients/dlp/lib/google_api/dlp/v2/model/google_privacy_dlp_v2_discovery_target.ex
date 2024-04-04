@@ -22,16 +22,20 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
   ## Attributes
 
   *   `bigQueryTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t`, *default:* `nil`) - BigQuery target for Discovery. The first target to match a table will be the one applied.
+  *   `cloudSqlTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t`, *default:* `nil`) - Cloud SQL target for Discovery. The first target to match a table will be the one applied.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :bigQueryTarget =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t() | nil
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t() | nil,
+          :cloudSqlTarget =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t() | nil
         }
 
   field(:bigQueryTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget)
+  field(:cloudSqlTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
