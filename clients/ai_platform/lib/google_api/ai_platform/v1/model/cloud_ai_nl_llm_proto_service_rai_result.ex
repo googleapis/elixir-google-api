@@ -27,6 +27,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult do
   *   `filtered` (*type:* `boolean()`, *default:* `nil`) - Whether the text should be filtered and not shown to the end user. This is determined based on a combination of `triggered_recitation`, `triggered_blocklist`, `language_filter_result`, and `triggered_safety_filter`.
   *   `languageFilterResult` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootLanguageFilterResult.t`, *default:* `nil`) - Language filter result from SAFT LangId.
   *   `raiSignals` (*type:* `list(GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal.t)`, *default:* `nil`) - The RAI signals for the text.
+  *   `translationRequestInfos` (*type:* `list(GoogleApi.AIPlatform.V1.Model.LearningGenaiRootTranslationRequestInfo.t)`, *default:* `nil`) - Translation request info during RAI for debugging purpose. Each TranslationRequestInfo corresponds to a request sent to the translation server.
   *   `triggeredBlocklist` (*type:* `boolean()`, *default:* `nil`) - Whether the text triggered the blocklist.
   *   `triggeredRecitation` (*type:* `boolean()`, *default:* `nil`) - Whether the text should be blocked by the recitation result from Aida recitation checker. It is determined from aida_recitation_result.
   *   `triggeredSafetyFilter` (*type:* `boolean()`, *default:* `nil`) - Whether the text triggered the safety filter. Currently, this is due to CSAI triggering or one of four categories (derogatory, sexual, toxic, violent) having a score over the filter threshold.
@@ -45,6 +46,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult do
             GoogleApi.AIPlatform.V1.Model.LearningGenaiRootLanguageFilterResult.t() | nil,
           :raiSignals =>
             list(GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal.t()) | nil,
+          :translationRequestInfos =>
+            list(GoogleApi.AIPlatform.V1.Model.LearningGenaiRootTranslationRequestInfo.t()) | nil,
           :triggeredBlocklist => boolean() | nil,
           :triggeredRecitation => boolean() | nil,
           :triggeredSafetyFilter => boolean() | nil
@@ -64,6 +67,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult do
 
   field(:raiSignals,
     as: GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal,
+    type: :list
+  )
+
+  field(:translationRequestInfos,
+    as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootTranslationRequestInfo,
     type: :list
   )
 

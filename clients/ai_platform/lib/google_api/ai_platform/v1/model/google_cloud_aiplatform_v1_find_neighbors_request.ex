@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequest do
   @moduledoc """
-  LINT.IfChange The request message for MatchService.FindNeighbors.
+  The request message for MatchService.FindNeighbors.
 
   ## Attributes
 
