@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.MessageCreatedEventData do
   @moduledoc """
-  Payload for new message events where the `EventType` field is `google.workspace.chat.message.v1.created`.
+  Event payload for a new message. Event type: `google.workspace.chat.message.v1.created`
 
   ## Attributes
 
-  *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The most recent version of the message.
+  *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The new message.
   """
 
   use GoogleApi.Gax.ModelBase

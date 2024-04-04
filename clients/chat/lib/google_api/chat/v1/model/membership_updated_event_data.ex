@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipUpdatedEventData do
   @moduledoc """
-  Payload for updated membership events where the `EventType` field is `google.workspace.chat.membership.v1.updated`.
+  Event payload for an updated membership. Event type: `google.workspace.chat.membership.v1.updated`
 
   ## Attributes
 
-  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The most recent version of membership.
+  *   `membership` (*type:* `GoogleApi.Chat.V1.Model.Membership.t`, *default:* `nil`) - The updated membership.
   """
 
   use GoogleApi.Gax.ModelBase
