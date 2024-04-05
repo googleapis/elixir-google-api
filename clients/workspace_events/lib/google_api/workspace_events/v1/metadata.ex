@@ -20,7 +20,7 @@ defmodule GoogleApi.WorkspaceEvents.V1 do
   API client metadata for GoogleApi.WorkspaceEvents.V1.
   """
 
-  @discovery_revision "20240310"
+  @discovery_revision "20240402"
 
   def discovery_revision(), do: @discovery_revision
 end
