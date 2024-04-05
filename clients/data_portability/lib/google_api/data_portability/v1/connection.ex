@@ -63,9 +63,6 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of pages you bookmarked in Chrome.
       "https://www.googleapis.com/auth/dataportability.chrome.bookmarks",
 
-      # Move a copy of feedback you gave after completing trips using Maps directions.
-      "https://www.googleapis.com/auth/dataportability.maps.post_trip_feedback",
-
       # Move a copy of your YouTube activity.
       "https://www.googleapis.com/auth/dataportability.myactivity.youtube",
 
