@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudSupport.V2 do
   API client metadata for GoogleApi.CloudSupport.V2.
   """
 
-  @discovery_revision "20240320"
+  @discovery_revision "20240403"
 
   def discovery_revision(), do: @discovery_revision
 end

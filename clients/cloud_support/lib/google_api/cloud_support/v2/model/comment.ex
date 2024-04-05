@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.CloudSupport.V2.Model.Comment do
   @moduledoc """
-  Case comments are the main way Google Support communicates with a user who has opened a case. When a user responds to Google Support, the user's responses also appear as comments.
+  A comment associated with a support case. Case comments are the primary way for Google Support to communicate with a user who has opened a case. When a user responds to Google Support, the user's responses also appear as comments.
 
   ## Attributes
 
-  *   `body` (*type:* `String.t`, *default:* `nil`) - The full comment body. Maximum of 12800 characters. This can contain rich text syntax.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this comment was created.
-  *   `creator` (*type:* `GoogleApi.CloudSupport.V2.Model.Actor.t`, *default:* `nil`) - Output only. The user or Google Support agent created this comment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the comment.
-  *   `plainTextBody` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED. An automatically generated plain text version of body with all rich text syntax stripped.
+  *   `body` (*type:* `String.t`, *default:* `nil`) - The full comment body. Maximum of 12800 characters.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the comment was created.
+  *   `creator` (*type:* `GoogleApi.CloudSupport.V2.Model.Actor.t`, *default:* `nil`) - Output only. The user or Google Support agent who created the comment.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the comment.
+  *   `plainTextBody` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED. DO NOT USE. A duplicate of the `body` field. This field is only present for legacy reasons.
   """
 
   use GoogleApi.Gax.ModelBase
