@@ -41,6 +41,7 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.DeviceSignals do
   *   `osVersion` (*type:* `String.t`, *default:* `nil`) - The current version of the Operating System. On Windows and linux, the value will also include the security patch information.
   *   `passwordProtectionWarningTrigger` (*type:* `String.t`, *default:* `nil`) - Whether the Password Protection Warning feature is enabled or not. Password protection alerts users when they reuse their protected password on potentially suspicious sites. This setting is controlled by an enterprise policy: https://chromeenterprise.google/policies/#PasswordProtectionWarningTrigger. Note that the policy unset does not have the same effects as having the policy explicitly set to `PASSWORD_PROTECTION_OFF`.
   *   `profileAffiliationIds` (*type:* `list(String.t)`, *default:* `nil`) - Affiliation IDs of the organizations that are affiliated with the organization that is currently managing the Chrome Profile’s user or ChromeOS user.
+  *   `profileEnrollmentDomain` (*type:* `String.t`, *default:* `nil`) - Enrollment domain of the customer which is currently managing the profile.
   *   `realtimeUrlCheckMode` (*type:* `String.t`, *default:* `nil`) - Whether Enterprise-grade (i.e. custom) unsafe URL scanning is enabled or not. This setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#EnterpriseRealTimeUrlCheckMode
   *   `safeBrowsingProtectionLevel` (*type:* `String.t`, *default:* `nil`) - Safe Browsing Protection Level. That setting may be controlled by an enterprise policy: https://chromeenterprise.google/policies/#SafeBrowsingProtectionLevel.
   *   `screenLockSecured` (*type:* `String.t`, *default:* `nil`) - The state of the Screen Lock password protection. On ChromeOS, this value will always be ENABLED as there is not way to disable requiring a password or pin when unlocking the device.
@@ -77,6 +78,7 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.DeviceSignals do
           :osVersion => String.t() | nil,
           :passwordProtectionWarningTrigger => String.t() | nil,
           :profileAffiliationIds => list(String.t()) | nil,
+          :profileEnrollmentDomain => String.t() | nil,
           :realtimeUrlCheckMode => String.t() | nil,
           :safeBrowsingProtectionLevel => String.t() | nil,
           :screenLockSecured => String.t() | nil,
@@ -110,6 +112,7 @@ defmodule GoogleApi.VerifiedAccess.V2.Model.DeviceSignals do
   field(:osVersion)
   field(:passwordProtectionWarningTrigger)
   field(:profileAffiliationIds, type: :list)
+  field(:profileEnrollmentDomain)
   field(:realtimeUrlCheckMode)
   field(:safeBrowsingProtectionLevel)
   field(:screenLockSecured)
