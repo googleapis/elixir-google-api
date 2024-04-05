@@ -30,8 +30,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersion 
   *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - The KMS key version with which data is encrypted.
   *   `latestEvaluation` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1EvaluationReference.t`, *default:* `nil`) - The most recently invoked evaluation for the processor version.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. The model type of this processor version.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the processor version.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor version.
   """
 
   use GoogleApi.Gax.ModelBase
