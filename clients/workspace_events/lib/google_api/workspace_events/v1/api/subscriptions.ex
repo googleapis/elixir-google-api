@@ -296,7 +296,7 @@ defmodule GoogleApi.WorkspaceEvents.V1.Api.Subscriptions do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. Required. The field to update. You can update one of the following fields in a subscription: * `expire_time`: The timestamp when the subscription expires. * `ttl`: The time-to-live (TTL) or duration of the subscription.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The field to update. If omitted, updates any fields included in the request. You can update one of the following fields in a subscription: * `expire_time`: The timestamp when the subscription expires. * `ttl`: The time-to-live (TTL) or duration of the subscription. To fully replace the subscription (the equivalent of `PUT`), use `*`. Any omitted fields are updated with empty values.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set to `true`, validates and previews the request, but doesn't update the subscription.
       *   `:body` (*type:* `GoogleApi.WorkspaceEvents.V1.Model.Subscription.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
