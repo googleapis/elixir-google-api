@@ -33,6 +33,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   *   `products` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deprecated: consider using `line_items` as the input. Required. Resource name that identifies the purchased products. The format will be 'partners/{partner_id}/products/{product_id}'.
   *   `promotionSpecs` (*type:* `list(GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1SubscriptionPromotionSpec.t)`, *default:* `nil`) - Optional. Subscription-level promotions. Only free trial is supported on this level. It determines the first renewal time of the subscription to be the end of the free trial period. Specify the promotion resource name only when used as input.
   *   `promotions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deprecated: consider using the top-level `promotion_specs` as the input. Optional. Resource name that identifies one or more promotions that can be applied on the product. A typical promotion for a subscription is Free trial. The format will be 'partners/{partner_id}/promotions/{promotion_id}'.
+  *   `purchaseTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The timestamp when the user transaction was made with the Partner. Specify for the case of "bundle with choice", and it must be before the provision_time (when the user makes a selection).
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - Output only. The place where partners should redirect the end-user to after creation. This field might also be populated when creation failed. However, Partners should always prepare a default URL to redirect the user in case this field is empty.
   *   `renewalTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the subscription is expected to be renewed by Google - a new charge will be incurred and the service entitlement will be renewed. A non-immediate cancellation will take place at this time too, before which, the service entitlement for the end user will remain valid. UTC timezone in ISO 8061 format. For example: "2019-08-31T17:28:54.564Z"
   *   `serviceLocation` (*type:* `GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsResellerSubscriptionV1Location.t`, *default:* `nil`) - Required. The location that the service is provided as indicated by the partner.
@@ -66,6 +67,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
             )
             | nil,
           :promotions => list(String.t()) | nil,
+          :purchaseTime => DateTime.t() | nil,
           :redirectUri => String.t() | nil,
           :renewalTime => DateTime.t() | nil,
           :serviceLocation =>
@@ -106,6 +108,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Model.GoogleCloudPaymentsRes
   )
 
   field(:promotions, type: :list)
+  field(:purchaseTime, as: DateTime)
   field(:redirectUri)
   field(:renewalTime, as: DateTime)
 
