@@ -21,16 +21,30 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScope do
 
   ## Attributes
 
+  *   `anySubscriptionInApp` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeAnySubscriptionInApp.t`, *default:* `nil`) - The scope of the current targeting rule is any subscription in the parent app.
   *   `specificSubscriptionInApp` (*type:* `String.t`, *default:* `nil`) - The scope of the current targeting rule is the subscription with the specified subscription ID. Must be a subscription within the same parent app.
+  *   `thisSubscription` (*type:* `GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeThisSubscription.t`, *default:* `nil`) - The scope of the current targeting rule is the subscription in which this offer is defined.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :specificSubscriptionInApp => String.t() | nil
+          :anySubscriptionInApp =>
+            GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeAnySubscriptionInApp.t() | nil,
+          :specificSubscriptionInApp => String.t() | nil,
+          :thisSubscription =>
+            GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeThisSubscription.t() | nil
         }
 
+  field(:anySubscriptionInApp,
+    as: GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeAnySubscriptionInApp
+  )
+
   field(:specificSubscriptionInApp)
+
+  field(:thisSubscription,
+    as: GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScopeThisSubscription
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.TargetingRuleScope do
