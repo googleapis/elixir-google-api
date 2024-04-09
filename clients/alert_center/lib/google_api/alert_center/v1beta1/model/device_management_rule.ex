@@ -25,6 +25,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
   *   `deviceModel` (*type:* `String.t`, *default:* `nil`) - The model of the device.
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of the device.
   *   `email` (*type:* `String.t`, *default:* `nil`) - The email of the user this alert was created for.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the rule that triggered the alert
   *   `iosVendorId` (*type:* `String.t`, *default:* `nil`) - Required for iOS, empty for others.
   *   `ownerId` (*type:* `String.t`, *default:* `nil`) - Obfuscated ID of the owner of the device
   *   `resourceId` (*type:* `String.t`, *default:* `nil`) - The device resource ID.
@@ -39,6 +40,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
           :deviceModel => String.t() | nil,
           :deviceType => String.t() | nil,
           :email => String.t() | nil,
+          :id => String.t() | nil,
           :iosVendorId => String.t() | nil,
           :ownerId => String.t() | nil,
           :resourceId => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.DeviceManagementRule do
   field(:deviceModel)
   field(:deviceType)
   field(:email)
+  field(:id)
   field(:iosVendorId)
   field(:ownerId)
   field(:resourceId)
