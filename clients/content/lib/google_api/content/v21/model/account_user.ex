@@ -26,7 +26,7 @@ defmodule GoogleApi.Content.V21.Model.AccountUser do
   *   `orderManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is an order manager.
   *   `paymentsAnalyst` (*type:* `boolean()`, *default:* `nil`) - Whether user can access payment statements.
   *   `paymentsManager` (*type:* `boolean()`, *default:* `nil`) - Whether user can manage payment settings.
-  *   `reportingManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is a reporting manager.
+  *   `reportingManager` (*type:* `boolean()`, *default:* `nil`) - Whether user is a reporting manager. This role is equivalent to the Performance and insights role in Merchant Center.
   """
 
   use GoogleApi.Gax.ModelBase
