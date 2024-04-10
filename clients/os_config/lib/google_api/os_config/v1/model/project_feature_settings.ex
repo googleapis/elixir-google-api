@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.OSConfig.V1.Model.ProjectFeatureSettings do
   @moduledoc """
-  ProjectFeatureSettings represents the features settings for the VM Manager. The project features settings can be set for a project.
+  ProjectFeatureSettings represents the VM Manager feature settings in a project. For more information, see Enable full VM Manager functionality.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Name of the config, e.g. projects/12345/locations/global/projectFeatureSettings
-  *   `patchAndConfigFeatureSet` (*type:* `String.t`, *default:* `nil`) - Currently set PatchAndConfigFeatureSet for name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Name specifies the URL for the ProjectFeatureSettings resource: projects/project_id/locations/global/projectFeatureSettings.
+  *   `patchAndConfigFeatureSet` (*type:* `String.t`, *default:* `nil`) - Set PatchAndConfigFeatureSet for the project.
   """
 
   use GoogleApi.Gax.ModelBase
