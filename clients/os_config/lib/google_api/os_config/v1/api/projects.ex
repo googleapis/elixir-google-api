@@ -26,12 +26,12 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  GetProjectFeatureSettings returns the feature settings for a project
+  GetProjectFeatureSettings returns the VM Manager feature settings for a project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSConfig.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the billing config. "projects//locations/global/projectFeatureSettings"
+  *   `name` (*type:* `String.t`) - Required. Name specifies the URL for the ProjectFeatureSettings resource: projects/project_id/locations/global/projectFeatureSettings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -96,12 +96,12 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
   end
 
   @doc """
-  UpdateProjectFeatureSettings sets the feature settings for a project.
+  UpdateProjectFeatureSettings sets the VM Manager features for a project.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSConfig.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Immutable. Name of the config, e.g. projects/12345/locations/global/projectFeatureSettings
+  *   `name` (*type:* `String.t`) - Required. Immutable. Name specifies the URL for the ProjectFeatureSettings resource: projects/project_id/locations/global/projectFeatureSettings.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
