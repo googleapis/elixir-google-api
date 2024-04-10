@@ -500,7 +500,7 @@ defmodule GoogleApi.Integrations.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Integrations.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the SFDC instance projects/{project}/locations/{location}/authConfigs/{authConfig}.
+  *   `name` (*type:* `String.t`) - Resource name of the auth config. For more information, see Manage authentication profiles. projects/{project}/locations/{location}/authConfigs/{authConfig}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2847,7 +2847,7 @@ defmodule GoogleApi.Integrations.V1alpha.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Integrations.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the SFDC instance projects/{project}/locations/{location}/authConfigs/{authConfig}.
+  *   `name` (*type:* `String.t`) - Resource name of the auth config. For more information, see Manage authentication profiles. projects/{project}/locations/{location}/authConfigs/{authConfig}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

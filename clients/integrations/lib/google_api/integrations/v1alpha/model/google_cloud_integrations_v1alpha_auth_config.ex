@@ -31,7 +31,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaAut
   *   `encryptedCredential` (*type:* `String.t`, *default:* `nil`) - Auth credential encrypted by Cloud KMS. Can be decrypted as Credential with proper KMS key.
   *   `expiryNotificationDuration` (*type:* `list(String.t)`, *default:* `nil`) - User can define the time to receive notification after which the auth config becomes invalid. Support up to 30 days. Support granularity in hours.
   *   `lastModifierEmail` (*type:* `String.t`, *default:* `nil`) - The last modifier's email address. Generated based on the End User Credentials/LOAS role of the user making the call.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the SFDC instance projects/{project}/locations/{location}/authConfigs/{authConfig}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the auth config. For more information, see Manage authentication profiles. projects/{project}/locations/{location}/authConfigs/{authConfig}.
   *   `overrideValidTime` (*type:* `DateTime.t`, *default:* `nil`) - User provided expiry time to override. For the example of Salesforce, username/password credentials can be valid for 6 months depending on the instance settings.
   *   `reason` (*type:* `String.t`, *default:* `nil`) - The reason / details of the current status.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The status of the auth config.
