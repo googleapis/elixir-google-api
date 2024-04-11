@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ActionStatus do
   @moduledoc """
-  Represents the status for a request to either invoke or submit a [dialog](https://developers.google.com/chat/how-tos/dialogs).
+  Represents the status for a request to either invoke or submit a [dialog](https://developers.google.com/workspace/chat/dialogs).
 
   ## Attributes
 

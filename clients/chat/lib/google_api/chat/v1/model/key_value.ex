@@ -21,14 +21,14 @@ defmodule GoogleApi.Chat.V1.Model.KeyValue do
 
   ## Attributes
 
-  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text of the bottom label. Formatted text supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `bottomLabel` (*type:* `String.t`, *default:* `nil`) - The text of the bottom label. Formatted text supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/workspace/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
   *   `button` (*type:* `GoogleApi.Chat.V1.Model.Button.t`, *default:* `nil`) - A button that can be clicked to trigger an action.
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the content. Formatted text supported and always required. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The text of the content. Formatted text supported and always required. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/workspace/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
   *   `contentMultiline` (*type:* `boolean()`, *default:* `nil`) - If the content should be multiline.
   *   `icon` (*type:* `String.t`, *default:* `nil`) - An enum value that's replaced by the Chat API with the corresponding icon image.
   *   `iconUrl` (*type:* `String.t`, *default:* `nil`) - The icon specified by a URL.
   *   `onClick` (*type:* `GoogleApi.Chat.V1.Model.OnClick.t`, *default:* `nil`) - The `onclick` action. Only the top label, bottom label, and content region are clickable.
-  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text of the top label. Formatted text supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
+  *   `topLabel` (*type:* `String.t`, *default:* `nil`) - The text of the top label. Formatted text supported. For more information about formatting text, see [Formatting text in Google Chat apps](https://developers.google.com/workspace/chat/format-messages#card-formatting) and [Formatting text in Google Workspace Add-ons](https://developers.google.com/apps-script/add-ons/concepts/widgets#text_formatting).
   """
 
   use GoogleApi.Gax.ModelBase

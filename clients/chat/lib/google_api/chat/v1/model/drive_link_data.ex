@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.DriveLinkData do
 
   ## Attributes
 
-  *   `driveDataRef` (*type:* `GoogleApi.Chat.V1.Model.DriveDataRef.t`, *default:* `nil`) - A [DriveDataRef](https://developers.google.com/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref) which references a Google Drive file.
+  *   `driveDataRef` (*type:* `GoogleApi.Chat.V1.Model.DriveDataRef.t`, *default:* `nil`) - A [DriveDataRef](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces.messages.attachments#drivedataref) which references a Google Drive file.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - The mime type of the linked Google Drive resource.
   """
 

@@ -21,12 +21,12 @@ defmodule GoogleApi.Chat.V1.Model.DeprecatedEvent do
 
   ## Attributes
 
-  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - For `CARD_CLICKED` interaction events, the form action data associated when a user clicks a card or dialog. To learn more, see [Read form data input by users on cards](https://developers.google.com/chat/ui/read-form-data).
-  *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/chat/how-tos/dialogs), like data entered on a card.
-  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the Chat app should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. For more information, see [Connect a Chat app with other services & tools](https://developers.google.com/chat/how-tos/connect-web-services-tools).
-  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/chat/how-tos/dialogs) interaction event received.
+  *   `action` (*type:* `GoogleApi.Chat.V1.Model.FormAction.t`, *default:* `nil`) - For `CARD_CLICKED` interaction events, the form action data associated when a user clicks a card or dialog. To learn more, see [Read form data input by users on cards](https://developers.google.com/workspace/chat/read-form-data).
+  *   `common` (*type:* `GoogleApi.Chat.V1.Model.CommonEventObject.t`, *default:* `nil`) - Represents information about the user's client, such as locale, host app, and platform. For Chat apps, `CommonEventObject` includes information submitted by users interacting with [dialogs](https://developers.google.com/workspace/chat/dialogs), like data entered on a card.
+  *   `configCompleteRedirectUrl` (*type:* `String.t`, *default:* `nil`) - The URL the Chat app should redirect the user to after they have completed an authorization or configuration flow outside of Google Chat. For more information, see [Connect a Chat app with other services & tools](https://developers.google.com/workspace/chat/connect-web-services-tools).
+  *   `dialogEventType` (*type:* `String.t`, *default:* `nil`) - The type of [dialog](https://developers.google.com/workspace/chat/dialogs) interaction event received.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp indicating when the interaction event occurred.
-  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - For `CARD_CLICKED` interaction events, whether the user interacted with a [dialog](https://developers.google.com/chat/how-tos/dialogs).
+  *   `isDialogEvent` (*type:* `boolean()`, *default:* `nil`) - For `CARD_CLICKED` interaction events, whether the user interacted with a [dialog](https://developers.google.com/workspace/chat/dialogs).
   *   `message` (*type:* `GoogleApi.Chat.V1.Model.Message.t`, *default:* `nil`) - The message that triggered the interaction event, if applicable.
   *   `space` (*type:* `GoogleApi.Chat.V1.Model.Space.t`, *default:* `nil`) - The space in which the interaction event occurred.
   *   `threadKey` (*type:* `String.t`, *default:* `nil`) - The Chat app-defined key for the thread related to the interaction event. See [`spaces.messages.thread.threadKey`](/chat/api/reference/rest/v1/spaces.messages#Thread.FIELDS.thread_key) for more information.

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.SlashCommand do
   @moduledoc """
-  A [slash command](https://developers.google.com/chat/how-tos/slash-commands) in Google Chat.
+  A [slash command](https://developers.google.com/workspace/chat/slash-commands) in Google Chat.
 
   ## Attributes
 

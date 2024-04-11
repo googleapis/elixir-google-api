@@ -22,10 +22,10 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1SwitchControl do
   ## Attributes
 
   *   `controlType` (*type:* `String.t`, *default:* `nil`) - How the switch appears in the user interface. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend):
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the switch widget is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data).
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name by which the switch widget is identified in a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data).
   *   `onChangeAction` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action.t`, *default:* `nil`) - The action to perform when the switch state is changed, such as what function to run.
   *   `selected` (*type:* `boolean()`, *default:* `nil`) - When `true`, the switch is selected.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/chat/ui/read-form-data).
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The value entered by a user, returned as part of a form input event. For details about working with form inputs, see [Receive form data](https://developers.google.com/workspace/chat/read-form-data).
   """
 
   use GoogleApi.Gax.ModelBase
