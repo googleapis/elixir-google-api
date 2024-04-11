@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.ActionResponse do
 
   ## Attributes
 
-  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - Input only. A response to an interaction event related to a [dialog](https://developers.google.com/chat/how-tos/dialogs). Must be accompanied by `ResponseType.Dialog`.
+  *   `dialogAction` (*type:* `GoogleApi.Chat.V1.Model.DialogAction.t`, *default:* `nil`) - Input only. A response to an interaction event related to a [dialog](https://developers.google.com/workspace/chat/dialogs). Must be accompanied by `ResponseType.Dialog`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Input only. The type of Chat app response.
   *   `updatedWidget` (*type:* `GoogleApi.Chat.V1.Model.UpdatedWidget.t`, *default:* `nil`) - Input only. The response of the updated widget.
   *   `url` (*type:* `String.t`, *default:* `nil`) - Input only. URL for users to authenticate or configure. (Only for `REQUEST_CONFIG` response types.)
