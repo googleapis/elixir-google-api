@@ -18,7 +18,7 @@
 defmodule GoogleApi.AndroidManagement.Mixfile do
   use Mix.Project
 
-  @version "0.48.2"
+  @version "0.48.3"
 
   def project() do
     [

@@ -1288,12 +1288,12 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API.
+  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API. See the guide (https://developers.google.com/android/management/dpc-migration) for more details.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The enterprise in which this migration token will be created. Format: enterprises/{enterprise}
+  *   `parent` (*type:* `String.t`) - Required. The enterprise in which this migration token is created. This must be the same enterprise which already manages the device in the Play EMM API. Format: enterprises/{enterprise}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
