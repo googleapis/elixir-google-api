@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRenderStats do
   @moduledoc """
-  Next id: 17.
+  Next id: 20.
 
   ## Attributes
 
@@ -26,11 +26,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRende
   *   `counter` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRenderStatsCounter.t)`, *default:* `nil`) - 
   *   `documentBuildTimeMsec` (*type:* `integer()`, *default:* `nil`) - Time to build document and render tree response data.
   *   `droppedLogEntryCount` (*type:* `integer()`, *default:* `nil`) - Number of dropped log messages. Since we capture only a subset of the messages in console_log_entry this field is included just so that the consumers can get an idea of how many actual attempts were made by the renderer.
+  *   `fetchDeadlineMsec` (*type:* `integer()`, *default:* `nil`) - Time allowed to use for fetching in milliseconds: fetch_deadline - render_start_time. go/render-timeline#render-timeline
   *   `imageEncodingTimeMsec` (*type:* `integer()`, *default:* `nil`) - Image encoding (e.g. raw -> PNG) time.
   *   `imageScalingTimeMsec` (*type:* `integer()`, *default:* `nil`) - Image scaling time.
+  *   `javascriptDeadlineMsec` (*type:* `integer()`, *default:* `nil`) - Time allowed to use for javascript in milliseconds: javascript_deadline - render_start_time. go/render-timeline#render-timeline
   *   `layoutTimeMsec` (*type:* `integer()`, *default:* `nil`) - Time from starting render to document finished loading. This includes all fetches, parsing, decoding, running JavaScript, etc.
   *   `paintTimeMsec` (*type:* `integer()`, *default:* `nil`) - Time required to paint a document into our buffer.
   *   `renderCostMgcu` (*type:* `integer()`, *default:* `nil`) - Total cost this render spent running and RPC cost in milliGCUs.
+  *   `renderDeadlineMsec` (*type:* `integer()`, *default:* `nil`) - Time allowed to use for rendering in milliseconds: render_deadline - render_start_time. go/render-timeline#render-timeline
   *   `renderEngine` (*type:* `String.t`, *default:* `nil`) - Render engine used to render this document.
   *   `renderRunningTimeMsec` (*type:* `integer()`, *default:* `nil`) - Total CPU time this render spent running in milliseconds.
   *   `renderServerBaselineCl` (*type:* `String.t`, *default:* `nil`) - The CL from which the render engine was built.
@@ -58,11 +61,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRende
             | nil,
           :documentBuildTimeMsec => integer() | nil,
           :droppedLogEntryCount => integer() | nil,
+          :fetchDeadlineMsec => integer() | nil,
           :imageEncodingTimeMsec => integer() | nil,
           :imageScalingTimeMsec => integer() | nil,
+          :javascriptDeadlineMsec => integer() | nil,
           :layoutTimeMsec => integer() | nil,
           :paintTimeMsec => integer() | nil,
           :renderCostMgcu => integer() | nil,
+          :renderDeadlineMsec => integer() | nil,
           :renderEngine => String.t() | nil,
           :renderRunningTimeMsec => integer() | nil,
           :renderServerBaselineCl => String.t() | nil,
@@ -87,11 +93,14 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.HtmlrenderWebkitHeadlessProtoRende
 
   field(:documentBuildTimeMsec)
   field(:droppedLogEntryCount)
+  field(:fetchDeadlineMsec)
   field(:imageEncodingTimeMsec)
   field(:imageScalingTimeMsec)
+  field(:javascriptDeadlineMsec)
   field(:layoutTimeMsec)
   field(:paintTimeMsec)
   field(:renderCostMgcu)
+  field(:renderDeadlineMsec)
   field(:renderEngine)
   field(:renderRunningTimeMsec)
   field(:renderServerBaselineCl)

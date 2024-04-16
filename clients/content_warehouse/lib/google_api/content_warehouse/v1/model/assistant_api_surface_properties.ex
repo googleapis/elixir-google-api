@@ -22,7 +22,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AssistantApiSurfaceProperties do
   ## Attributes
 
   *   `executionCapabilities` (*type:* `GoogleApi.ContentWarehouse.V1.Model.AssistantApiSurfacePropertiesExecutionCapabilities.t`, *default:* `nil`) - 
-  *   `prefersGlanceableUi` (*type:* `boolean()`, *default:* `nil`) - Indicates if the surface prefers glanceable UI when rendering Assistant response. (see go/mobile-dr-hbird-glanceable-comms-cuj for more context).
+  *   `prefersGlanceableUi` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED: This field is used only by the Hummingbird effort, which has culminated and is being cleaned up (b/325065733). Indicates if the surface prefers glanceable UI when rendering Assistant response. (see go/mobile-dr-hbird-glanceable-comms-cuj for more context).
   *   `responseDisplayFormat` (*type:* `String.t`, *default:* `nil`) - If this field is unset, the response format is unknown
   *   `supportsMultiResponse` (*type:* `boolean()`, *default:* `nil`) - If true, the client supports receiving multiple responses. See go/multiple-response-in-media-use-cases for more details.
   """

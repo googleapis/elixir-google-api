@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichSnippetsApplication do
   @moduledoc """
-  This structure holds data for application information for rich snippets Next ID: 53
+  This structure holds data for application information for rich snippets Next ID: 54
 
   ## Attributes
 
@@ -51,6 +51,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichS
   *   `supportsAndroidTv` (*type:* `boolean()`, *default:* `nil`) - Whether this App supports Android TV. Note that some App supports more than one platforms. So we would use boolean for a platform.
   *   `hasEditorsChoiceBadge` (*type:* `boolean()`, *default:* `nil`) - Whether the app has editors choice tag
   *   `vendorCanonicalUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `isBattlestarTitle` (*type:* `boolean()`, *default:* `nil`) - Whether this is a game and avaible on Battlestar (go/battlestar).
   *   `version` (*type:* `String.t`, *default:* `nil`) - 
   *   `countriesSupported` (*type:* `list(String.t)`, *default:* `nil`) - These are currently used only for Google Play.
   *   `imageData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData.t`, *default:* `nil`) - Copied from google3/contentads/shared/boulder/mobile-app-data-image-data.proto.
@@ -117,6 +118,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichS
           :supportsAndroidTv => boolean() | nil,
           :hasEditorsChoiceBadge => boolean() | nil,
           :vendorCanonicalUrl => String.t() | nil,
+          :isBattlestarTitle => boolean() | nil,
           :version => String.t() | nil,
           :countriesSupported => list(String.t()) | nil,
           :imageData =>
@@ -194,6 +196,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.RepositoryAnnotationsRdfaRdfaRichS
   field(:supportsAndroidTv)
   field(:hasEditorsChoiceBadge)
   field(:vendorCanonicalUrl)
+  field(:isBattlestarTitle)
   field(:version)
   field(:countriesSupported, type: :list)
   field(:imageData, as: GoogleApi.ContentWarehouse.V1.Model.QualityCalypsoAppsUniversalImageData)

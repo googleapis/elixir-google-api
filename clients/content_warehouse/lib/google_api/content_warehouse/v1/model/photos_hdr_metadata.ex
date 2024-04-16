@@ -21,15 +21,19 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadata do
 
   ## Attributes
 
+  *   `baseFormat` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataBaseFormat.t`, *default:* `nil`) - 
   *   `gainmap` (*type:* `GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataGainmap.t`, *default:* `nil`) - Indicates the presence of some kind of gainmap-utilizing format.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :baseFormat =>
+            GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataBaseFormat.t() | nil,
           :gainmap => GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataGainmap.t() | nil
         }
 
+  field(:baseFormat, as: GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataBaseFormat)
   field(:gainmap, as: GoogleApi.ContentWarehouse.V1.Model.PhotosHdrMetadataGainmap)
 end
 

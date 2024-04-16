@@ -22,8 +22,8 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeo
   ## Attributes
 
   *   `loops` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMultiPoint.t)`, *default:* `nil`) - The first loop is exterior; any additional are interior.
-  *   `materialSpecs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMaterialSpec.t)`, *default:* `nil`) - The materials this surface is made of. Either all or none of the Surface protos must have this field set (even for 'null' references). Otherwise, this field must not be set. IMPORTANT: This field must not contain more than one MaterialSpec unless CityJSON's material "theme" is incorporated into CityJsonProto (see discussion in go/cityjson-for-hand-modeled-landmarks).
-  *   `semanticsIndex` (*type:* `integer()`, *default:* `nil`) - The semantics of this surface (e.g. what part of a building it is) represented as an index into the containing Geometry's `semantics` field. Either all or none of the Surface protos must have this field set (even for 'null' references). Otherwise, this field must not be set.
+  *   `materialSpecs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoCityObjectGeometryMaterialSpec.t)`, *default:* `nil`) - The materials this surface is made of. May be left blank if materials are unspecified for this surface. IMPORTANT: This field must not contain more than one MaterialSpec unless CityJSON's material "theme" is incorporated into CityJsonProto (see discussion in go/cityjson-for-hand-modeled-landmarks).
+  *   `semanticsIndex` (*type:* `integer()`, *default:* `nil`) - The semantics of this surface (e.g. what part of a building it is) represented as an index into the containing Geometry's `semantics` field. May be left blank if semantics are unspecified for this surface.
   """
 
   use GoogleApi.Gax.ModelBase

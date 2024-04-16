@@ -89,7 +89,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleap
   *   `interest` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiInterest.t)`, *default:* `nil`) - 
   *   `contactGroupMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiContactGroupMembership.t)`, *default:* `nil`) - Contact groups that this person is a member of.
   *   `address` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiAddress.t)`, *default:* `nil`) - 
-  *   `circleMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t)`, *default:* `nil`) - Circles that this person is a member of.
+  *   `circleMembership` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership.t)`, *default:* `nil`) - DEPRECATED. No data is returned for this field anymore. See b/329513077.
   *   `certifiedBornBefore` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCertifiedBornBefore.t)`, *default:* `nil`) - 
   *   `braggingRights` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiBraggingRights.t)`, *default:* `nil`) - Used only by contacts, no data will be returned for profiles.
   *   `gender` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiGender.t)`, *default:* `nil`) - 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDocData do
   @moduledoc """
-  PerDocData for fringe-query-prior (built into the shards for eventual consumption at Fringe classification time). Not stored in DocJoins. NEXT ID: 16
+  PerDocData for fringe-query-prior (built into the shards for eventual consumption at Fringe classification time). Not stored in DocJoins. NEXT ID: 17
 
   ## Attributes
 
@@ -34,6 +34,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
   *   `encodedPredictedXlqScoreAndConfidence` (*type:* `integer()`, *default:* `nil`) - A combined encoding of the pXLQ score in [0,1] and the confidence with which that score should be interpreted in [0,1].
   *   `encodedProximityScore` (*type:* `integer()`, *default:* `nil`) - A score in [0, 1] representing the similarity of this doc to known fringe-vulnerable 'seeds'. See go/fringe-proximity for more information. Encoded for compactness and to restrict visibility.
   *   `encodedPseudoraterPxlqScore` (*type:* `integer()`, *default:* `nil`) - An encoding of the XLQ pseudorater severity score translated into pXLQ score space in [0,1]. The encoding includes the pseudorater version and confidence.
+  *   `politicsPageGovSite` (*type:* `boolean()`, *default:* `nil`) - Whether the page is a politics page according to petacats on a government domain according to KG. Used to override pXLQ in Q* delta-pxlq.
   *   `sensitiveEntitiesIndices` (*type:* `list(integer())`, *default:* `nil`) - Indices on the repository_webref::WebrefEntities::entity field of entities that represent a person or a group of people (aka sensitive entities). Will be deprecated once sensitive_entities_mids is fully launched (see b/290268614).
   *   `sensitiveEntitiesMids` (*type:* `list(String.t)`, *default:* `nil`) - MIDs of entities that represent a person or a group of people (aka sensitive entities). See b/290268614 for reference why this is needed in replacement to sensitive_entities_indices.
   """
@@ -54,6 +55,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
           :encodedPredictedXlqScoreAndConfidence => integer() | nil,
           :encodedProximityScore => integer() | nil,
           :encodedPseudoraterPxlqScore => integer() | nil,
+          :politicsPageGovSite => boolean() | nil,
           :sensitiveEntitiesIndices => list(integer()) | nil,
           :sensitiveEntitiesMids => list(String.t()) | nil
         }
@@ -71,6 +73,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityFringeFringeQueryPriorPerDo
   field(:encodedPredictedXlqScoreAndConfidence)
   field(:encodedProximityScore)
   field(:encodedPseudoraterPxlqScore)
+  field(:politicsPageGovSite)
   field(:sensitiveEntitiesIndices, type: :list)
   field(:sensitiveEntitiesMids, type: :list)
 end

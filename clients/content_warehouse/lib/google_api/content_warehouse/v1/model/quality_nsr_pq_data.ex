@@ -37,7 +37,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
   *   `rhubarb` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Site-URL delta signals based quality score computed in Goldmine via the Rhubarb model (go/rhubarb-dd).
   *   `subchunkData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQDataSubchunkData.t)`, *default:* `nil`) - 
   *   `tofu` (*type:* `number()`, *default:* `nil`) - URL-level tofu prediction.
-  *   `unversionedRhubarb` (*type:* `number()`, *default:* `nil`) - The delta score of the URL-level quality predictor.
   *   `urlAutopilotScore` (*type:* `number()`, *default:* `nil`) - 
   *   `vlq` (*type:* `number()`, *default:* `nil`) - URL-level score of the VLQ model.
   """
@@ -67,7 +66,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
           :subchunkData =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQDataSubchunkData.t()) | nil,
           :tofu => number() | nil,
-          :unversionedRhubarb => number() | nil,
           :urlAutopilotScore => number() | nil,
           :vlq => number() | nil
         }
@@ -112,7 +110,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrPQData do
   )
 
   field(:tofu)
-  field(:unversionedRhubarb)
   field(:urlAutopilotScore)
   field(:vlq)
 end

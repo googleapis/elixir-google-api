@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumentSignals do
   @moduledoc """
-  A message representing the signals associated with an argument. NEXT ID TO USE: 66 For //depot/google3/logs/proto/knowledge/interpretation/intent_query.proto in the "ThenChange", fields under Argument.signals in the serving proto are stored directly under Argument on the logging side. For example, see http://google3/nlp/semantic_parsing/data_management/logs/web_logs/semantic_logging_converters/semantic_logging_request_argument_converter.cc?l=58&rcl=322925428. LINT.IfChange
+  A message representing the signals associated with an argument. NEXT ID TO USE: 67 For //depot/google3/logs/proto/knowledge/interpretation/intent_query.proto in the "ThenChange", fields under Argument.signals in the serving proto are stored directly under Argument on the logging side. For example, see http://google3/nlp/semantic_parsing/data_management/logs/web_logs/semantic_logging_converters/semantic_logging_request_argument_converter.cc?l=58&rcl=322925428. LINT.IfChange
 
   ## Attributes
 
@@ -59,6 +59,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   *   `isGenieAnnotation` (*type:* `boolean()`, *default:* `nil`) - Whether this annotation was propagated as part of a Genie rewrite (go/genie-aqua).
   *   `resolvedFromContext` (*type:* `boolean()`, *default:* `nil`) - Whether this argument was resolved through context from a previous query. Examples: obama -> "he" is resolved from the Obama entity starbucks -> Q2 is resolved from the list of shops
   *   `valueSource` (*type:* `String.t`, *default:* `nil`) - What added the argument value.
+  *   `entityCardSignals` (*type:* `GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryEntityCardSignals.t`, *default:* `nil`) - Signals about the entity card entity for this argument.
   *   `webrefListSource` (*type:* `String.t`, *default:* `nil`) - This represents which list entities index refers to.
   *   `isDefaultValue` (*type:* `boolean()`, *default:* `nil`) - If true, the value of the argument is populated with the default value specified by the system if the value can't be inferred from the input query. In IntentConfig case, the default value is specified by using IntentConfig.slot.default_value.
   *   `parsedDueToExperiment` (*type:* `list(String.t)`, *default:* `nil`) - Experiment ID for experiments that were used to parse this FunctionCall. Empty indicates no experiments used.
@@ -155,6 +156,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
           :isGenieAnnotation => boolean() | nil,
           :resolvedFromContext => boolean() | nil,
           :valueSource => String.t() | nil,
+          :entityCardSignals =>
+            GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryEntityCardSignals.t()
+            | nil,
           :webrefListSource => String.t() | nil,
           :isDefaultValue => boolean() | nil,
           :parsedDueToExperiment => list(String.t()) | nil,
@@ -294,6 +298,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryArgumen
   field(:isGenieAnnotation)
   field(:resolvedFromContext)
   field(:valueSource)
+
+  field(:entityCardSignals,
+    as: GoogleApi.ContentWarehouse.V1.Model.KnowledgeAnswersIntentQueryEntityCardSignals
+  )
+
   field(:webrefListSource)
   field(:isDefaultValue)
   field(:parsedDueToExperiment, type: :list)

@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
   @moduledoc """
-  The following message contains info of sub image docs, it is populated in query_state and consumed in web image boost twiddler: (go/WebImageBoostTwiddler). NextID: 26
+  The following message contains info of sub image docs, it is populated in query_state and consumed in web image boost twiddler: (go/WebImageBoostTwiddler). NextID: 31
 
   ## Attributes
 
   *   `additionalSafesearchSignals` (*type:* `list(integer())`, *default:* `nil`) - 
+  *   `aestheticsAdjusterInfo` (*type:* `GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoMinimalAestheticsAdjusterInfo.t`, *default:* `nil`) - 
   *   `bestThumbnailType` (*type:* `String.t`, *default:* `nil`) - The best thumbnail type is either 300K or 50K.
   *   `crops` (*type:* `integer()`, *default:* `nil`) - 
   *   `deepCropBytes` (*type:* `String.t`, *default:* `nil`) - Deepcrop thumbnail cropping hints.
@@ -36,6 +37,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
   *   `height50k` (*type:* `integer()`, *default:* `nil`) - 
   *   `humanModelScore` (*type:* `number()`, *default:* `nil`) - DeepTags human model score. go/VisualShoppingImageAttributes
   *   `imageUrl` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ocrTokensCount` (*type:* `integer()`, *default:* `nil`) - 
   *   `pamirNormalizedScore` (*type:* `number()`, *default:* `nil`) - 
   *   `pornSignals` (*type:* `integer()`, *default:* `nil`) - Encoded Safe Search annotations of the image. See image/safesearch/overall/public/image_porn_attachments.h for decoding functions.
   *   `safeForUniversal` (*type:* `boolean()`, *default:* `nil`) - Result is not on the Images Universal blacklist. For more comprehensive filtering of IU images, including this bit, see superroot/impls/images/quality/safesearch/iu_inappropriate_filter_lib.h
@@ -52,6 +54,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
 
   @type t :: %__MODULE__{
           :additionalSafesearchSignals => list(integer()) | nil,
+          :aestheticsAdjusterInfo =>
+            GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoMinimalAestheticsAdjusterInfo.t()
+            | nil,
           :bestThumbnailType => String.t() | nil,
           :crops => integer() | nil,
           :deepCropBytes => String.t() | nil,
@@ -66,6 +71,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
           :height50k => integer() | nil,
           :humanModelScore => number() | nil,
           :imageUrl => String.t() | nil,
+          :ocrTokensCount => integer() | nil,
           :pamirNormalizedScore => number() | nil,
           :pornSignals => integer() | nil,
           :safeForUniversal => boolean() | nil,
@@ -79,6 +85,11 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
         }
 
   field(:additionalSafesearchSignals, type: :list)
+
+  field(:aestheticsAdjusterInfo,
+    as: GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoMinimalAestheticsAdjusterInfo
+  )
+
   field(:bestThumbnailType)
   field(:crops)
   field(:deepCropBytes)
@@ -93,6 +104,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.WWWResultInfoSubImageDocInfo do
   field(:height50k)
   field(:humanModelScore)
   field(:imageUrl)
+  field(:ocrTokensCount)
   field(:pamirNormalizedScore)
   field(:pornSignals)
   field(:safeForUniversal)

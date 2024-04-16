@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.AppsPeopleOzExternalMergedpeopleapiCircleMembership do
   @moduledoc """
-  A circle membership that the person has. A circle membership is created by adding a person to a circle by person-id or by email.
+  DEPRECATED. No data is returned for this field anymore. See b/329513077.
 
   ## Attributes
 

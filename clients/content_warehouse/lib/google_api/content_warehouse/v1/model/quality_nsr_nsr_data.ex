@@ -37,7 +37,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   *   `chardScoreVariance` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Site-level Chard Variance for all pages of a site.
   *   `chardScoreEncoded` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedIntSignal.t)`, *default:* `nil`) - Site-level Chard (encoded as an int).
   *   `nsrdataFromFallbackPatternKey` (*type:* `boolean()`, *default:* `nil`) - If true indicates that we do not have NSR data computed for the chunk, and instead the data is coming from an average of other host chunks.
-  *   `siteQualityStddevs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - 
+  *   `siteQualityStddevs` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrVersionedFloatSignal.t)`, *default:* `nil`) - Estimate of site's PQ rating stddev--spread of the page-level PQ ratings of a site. Note this is different from nsr_variance which predicts error of NSR itself from the aggregated site-level rating.
   *   `clusterId` (*type:* `integer()`, *default:* `nil`) - An id for defining clusters of sites. Used in ecosystem experiments (project Tundra).
   *   `videoScore` (*type:* `number()`, *default:* `nil`) - 
   *   `shoppingScore` (*type:* `number()`, *default:* `nil`) - 
@@ -56,7 +56,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   *   `host` (*type:* `String.t`, *default:* `nil`) - 
   *   `isCovidLocalAuthority` (*type:* `boolean()`, *default:* `nil`) - Bit to determine whether the site has the local authority covid signal, as computed by go/covid-local-authority
   *   `pnav` (*type:* `number()`, *default:* `nil`) - Fractional signals.
-  *   `siteQualityStddev` (*type:* `number()`, *default:* `nil`) - Estimate of site's PQ rating stddev--spread of the page-level PQ ratings of a site. Note this is different from nsr_variance which predicts error of NSR itself from the aggregated site-level rating.
   *   `impressions` (*type:* `number()`, *default:* `nil`) - Site-level impressions.
   *   `directFrac` (*type:* `number()`, *default:* `nil`) - 
   *   `vlq` (*type:* `number()`, *default:* `nil`) - Score of the Video LQ model.
@@ -124,7 +123,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
           :host => String.t() | nil,
           :isCovidLocalAuthority => boolean() | nil,
           :pnav => number() | nil,
-          :siteQualityStddev => number() | nil,
           :impressions => number() | nil,
           :directFrac => number() | nil,
           :vlq => number() | nil,
@@ -216,7 +214,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.QualityNsrNsrData do
   field(:host)
   field(:isCovidLocalAuthority)
   field(:pnav)
-  field(:siteQualityStddev)
   field(:impressions)
   field(:directFrac)
   field(:vlq)

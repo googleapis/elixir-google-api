@@ -21,7 +21,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.VideoAssetsVenomVideoId do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - REQUIRED. IDs have some constraints: - 32 bytes max: this is enforced by the server - for the time being, must be parseable as a youtube ID (basically a base64-encoded string which maps to a 64-bit integer). This restriction will eventually be lifted.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - REQUIRED. IDs have some constraints: - must be parseable as a youtube ID (basically a base64-encoded string which maps to a 64-bit integer, see google3/video/tools/video_id.h):
   *   `ns` (*type:* `String.t`, *default:* `nil`) - LINT.ThenChange( //depot/google3/googledata/production/playbooks/video-assets/clients.md, //depot/google3/video/assets/venom/proto/namespace.proto ) REQUIRED.
   """
 

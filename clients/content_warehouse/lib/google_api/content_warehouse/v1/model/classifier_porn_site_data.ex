@@ -30,7 +30,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteData do
   *   `siteSoftpornRatio` (*type:* `number()`, *default:* `nil`) - 
   *   `versionedscore` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteDataVersionedScore.t)`, *default:* `nil`) - 
   *   `violenceScore` (*type:* `number()`, *default:* `nil`) - The cubic mean aggregation of violence page scores in the site.
-  *   `violenceStats` (*type:* `GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteViolenceStats.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,9 +45,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteData do
           :versionedscore =>
             list(GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteDataVersionedScore.t())
             | nil,
-          :violenceScore => number() | nil,
-          :violenceStats =>
-            GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteViolenceStats.t() | nil
+          :violenceScore => number() | nil
         }
 
   field(:avgPedoPageScore)
@@ -65,7 +62,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteData do
   )
 
   field(:violenceScore)
-  field(:violenceStats, as: GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteViolenceStats)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContentWarehouse.V1.Model.ClassifierPornSiteData do

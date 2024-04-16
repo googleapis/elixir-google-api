@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.SocialGraphApiProtoImageReference do
   @moduledoc """
-  A reference to a photo in either Photos Backend or SGI storage. This message should be treated as an opaque blob to avoid a dependency on a specific storage backend. This version of ImageReference is visible outside of SGBE. Do not add fields that should not be exposed outside of Profile Service and Image Service.
+  A reference to a photo in either Photos Backend or SGI storage. This message should be treated as an opaque blob to avoid a dependency on a specific storage backend. This version of ImageReference is visible outside of SGBE. Do not add fields that should not be exposed outside of Profile Service and Image Service. See the SGBE-internal version here: http://google3/social/graph/image/proto/image_reference.proto
 
   ## Attributes
 

@@ -22,7 +22,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMat
   ## Attributes
 
   *   `diffuseColor` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMaterialRgbColor.t`, *default:* `nil`) - The color that this material shows under pure white light when incoming light is reflected in all directions equally.
-  *   `isNull` (*type:* `boolean()`, *default:* `nil`) - is_null=true is used to represent 'null' material references. There may only be one is_null=true Material per CityJsonProto, and it must not have any other fields set.
   *   `isSmooth` (*type:* `boolean()`, *default:* `nil`) - Whether this material has an even, regular surface or consistency.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this material.
   *   `shininess` (*type:* `number()`, *default:* `nil`) - The degree to which this material reflects light; value is [0,1].
@@ -35,7 +34,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMat
           :diffuseColor =>
             GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMaterialRgbColor.t()
             | nil,
-          :isNull => boolean() | nil,
           :isSmooth => boolean() | nil,
           :name => String.t() | nil,
           :shininess => number() | nil,
@@ -46,7 +44,6 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMat
     as: GoogleApi.ContentWarehouse.V1.Model.GeostoreCityJsonProtoAppearanceMaterialRgbColor
   )
 
-  field(:isNull)
   field(:isSmooth)
   field(:name)
   field(:shininess)

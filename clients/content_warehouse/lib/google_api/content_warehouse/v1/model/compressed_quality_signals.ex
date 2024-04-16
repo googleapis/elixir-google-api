@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
   @moduledoc """
-  A message containing per doc signals that are compressed and included in Mustang and TeraGoogle. For TeraGoogle, this message is included in perdocdata which means it can be used in preliminary scoring. CAREFUL: For TeraGoogle, this data resides in very limited serving memory (Flash storage) for a huge number of documents. Next id: 43
+  A message containing per doc signals that are compressed and included in Mustang and TeraGoogle. For TeraGoogle, this message is included in perdocdata which means it can be used in preliminary scoring. CAREFUL: For TeraGoogle, this data resides in very limited serving memory (Flash storage) for a huge number of documents. Next id: 44
 
   ## Attributes
 
@@ -51,6 +51,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
   *   `crapsUnscaledIpPriorBadFraction` (*type:* `integer()`, *default:* `nil`) - 
   *   `pandaDemotion` (*type:* `integer()`, *default:* `nil`) - This is the encoding of Panda fields in the proto SiteQualityFeatures in quality/q2/proto/site_quality_features.proto. The encoding/decoding is performed using functions from quality_coati::coati_util.
   *   `unauthoritativeScore` (*type:* `integer()`, *default:* `nil`) - Unauthoritative score. Used as one of the web page quality qstar signals.
+  *   `experimentalWebHealthSignal` (*type:* `number()`, *default:* `nil`) - This field is *not* propagated to shards. It is meant to be populated at serving time using one of the versions present in the `experimental_nsr_team_wsj_data` field above (using the `ExperimentalNsrTeamDataOverridesParams` opti to populate it; see http://source/search?q=ExperimentalNsrTeamDataOverridesParams%20file:ascorer.proto). The purpose of this field is to be read by an experimental W* component, in order to quickly run LEs with new signals. See go/0DayLEs for details.
   *   `experimentalNsrTeamWsjData` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrExperimentalNsrTeamWSJData.t)`, *default:* `nil`) - This field is *not* propagated to shards, but it's populated at serving time by go/web-signal-joins (see b/207344056). See go/0DayLEs for details. This is only meant to be used during LEs, it should *not* be used for launches.
   *   `experimentalNsrTeamData` (*type:* `GoogleApi.ContentWarehouse.V1.Model.QualityNsrExperimentalNsrTeamData.t`, *default:* `nil`) - This field is *not* propagated to shards, but it's populated at serving time by go/web-signal-joins (see b/207344056). See go/0DayLEs for details. This is only meant to be used during LEs, it should *not* be used for launches.
   *   `productReviewPReviewPage` (*type:* `integer()`, *default:* `nil`) - Fields product_review_p_review_page and product_review_p_uhq_page are for promoting/demoting HQ/LQ review pages in NGS. See go/pr-boosts for details. The possibility of a page being a review page.
@@ -100,6 +101,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
           :crapsUnscaledIpPriorBadFraction => integer() | nil,
           :pandaDemotion => integer() | nil,
           :unauthoritativeScore => integer() | nil,
+          :experimentalWebHealthSignal => number() | nil,
           :experimentalNsrTeamWsjData =>
             list(GoogleApi.ContentWarehouse.V1.Model.QualityNsrExperimentalNsrTeamWSJData.t())
             | nil,
@@ -149,6 +151,7 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.CompressedQualitySignals do
   field(:crapsUnscaledIpPriorBadFraction)
   field(:pandaDemotion)
   field(:unauthoritativeScore)
+  field(:experimentalWebHealthSignal)
 
   field(:experimentalNsrTeamWsjData,
     as: GoogleApi.ContentWarehouse.V1.Model.QualityNsrExperimentalNsrTeamWSJData,
