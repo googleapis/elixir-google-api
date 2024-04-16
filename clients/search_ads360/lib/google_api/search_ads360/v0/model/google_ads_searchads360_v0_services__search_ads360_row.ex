@@ -70,6 +70,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `adGroupBidModifier` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupBidModifier.t`, *default:* `nil`) - The bid modifier referenced in the query.
   *   `genderView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t`, *default:* `nil`) - The gender view referenced in the query.
   *   `adGroupAssetSet` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t`, *default:* `nil`) - The ad group asset set referenced in the query.
+  *   `accessibleBiddingStrategy` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AccessibleBiddingStrategy.t`, *default:* `nil`) - The accessible bidding strategy referenced in the query.
   *   `adGroupCriterionLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t`, *default:* `nil`) - The ad group criterion label referenced in the query.
   *   `productGroupView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t`, *default:* `nil`) - The product group view referenced in the query.
   *   `shoppingPerformanceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t`, *default:* `nil`) - The shopping performance view referenced in the query.
@@ -208,6 +209,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GenderView.t() | nil,
           :adGroupAssetSet =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet.t()
+            | nil,
+          :accessibleBiddingStrategy =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AccessibleBiddingStrategy.t()
             | nil,
           :adGroupCriterionLabel =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t()
@@ -396,6 +400,10 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   field(:adGroupAssetSet,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAssetSet
+  )
+
+  field(:accessibleBiddingStrategy,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AccessibleBiddingStrategy
   )
 
   field(:adGroupCriterionLabel,
