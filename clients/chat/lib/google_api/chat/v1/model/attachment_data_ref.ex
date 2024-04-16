@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.AttachmentDataRef do
   @moduledoc """
-
+  A reference to the attachment data.
 
   ## Attributes
 

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.CompleteImportSpaceResponse do
   @moduledoc """
-
+  Response message for completing the import process for a space.
 
   ## Attributes
 
