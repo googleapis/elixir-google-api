@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the session finished.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `project/*/locations/global/collections/{collection}/engines/{engine}/sessions/*`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*`
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the session started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the session.
   *   `turns` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaSessionTurn.t)`, *default:* `nil`) - Turns.

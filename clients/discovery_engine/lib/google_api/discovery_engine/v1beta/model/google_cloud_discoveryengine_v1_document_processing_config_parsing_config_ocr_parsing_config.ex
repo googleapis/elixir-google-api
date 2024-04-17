@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Doc
 
   ## Attributes
 
-  *   `enhancedDocumentElements` (*type:* `list(String.t)`, *default:* `nil`) - Apply additional enhanced OCR processing to a list of document elements. Supported values: * `table`: advanced table parsing model.
+  *   `enhancedDocumentElements` (*type:* `list(String.t)`, *default:* `nil`) - [DEPRECATED] This field is deprecated. To use the additional enhanced document elements processing, please switch to `layout_parsing_config`.
   *   `useNativeText` (*type:* `boolean()`, *default:* `nil`) - If true, will use native text instead of OCR text on pages containing native text.
   """
 
