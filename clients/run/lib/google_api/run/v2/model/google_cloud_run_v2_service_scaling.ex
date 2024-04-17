@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling do
 
   ## Attributes
 
-  *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - total min instances for the service. This number of instances is divided among all revisions with specified traffic based on the percent of traffic they are receiving. (BETA)
+  *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. total min instances for the service. This number of instances is divided among all revisions with specified traffic based on the percent of traffic they are receiving. (BETA)
   """
 
   use GoogleApi.Gax.ModelBase
