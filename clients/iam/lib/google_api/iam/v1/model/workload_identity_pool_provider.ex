@@ -32,7 +32,6 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
   *   `oidc` (*type:* `GoogleApi.IAM.V1.Model.Oidc.t`, *default:* `nil`) - An OpenId Connect 1.0 identity provider.
   *   `saml` (*type:* `GoogleApi.IAM.V1.Model.Saml.t`, *default:* `nil`) - An SAML 2.0 identity provider.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the provider.
-  *   `x509` (*type:* `GoogleApi.IAM.V1.Model.X509.t`, *default:* `nil`) - An X.509-type identity provider.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,8 +47,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
           :name => String.t() | nil,
           :oidc => GoogleApi.IAM.V1.Model.Oidc.t() | nil,
           :saml => GoogleApi.IAM.V1.Model.Saml.t() | nil,
-          :state => String.t() | nil,
-          :x509 => GoogleApi.IAM.V1.Model.X509.t() | nil
+          :state => String.t() | nil
         }
 
   field(:attributeCondition)
@@ -63,7 +61,6 @@ defmodule GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do
   field(:oidc, as: GoogleApi.IAM.V1.Model.Oidc)
   field(:saml, as: GoogleApi.IAM.V1.Model.Saml)
   field(:state)
-  field(:x509, as: GoogleApi.IAM.V1.Model.X509)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.WorkloadIdentityPoolProvider do

@@ -555,7 +555,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Returns the caller's permissions on the WorkforcePool. If the pool does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+  Returns the caller's permissions on the WorkforcePool. If the pool doesn't exist, this call returns an empty set of permissions. It doesn't return a `NOT_FOUND` error.
 
   ## Parameters
 
@@ -869,7 +869,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Deletes a WorkforcePoolProvider. Deleting a provider does not revoke credentials that have already been\\ issued; they continue to grant access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You cannot update deleted providers. However, you can view and list them.
+  Deletes a WorkforcePoolProvider. Deleting a provider does not revoke credentials that have already been issued; they continue to grant access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You cannot update deleted providers. However, you can view and list them.
 
   ## Parameters
 
@@ -1886,12 +1886,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Deletes a WorkforcePoolSubject. Subject must not already be in a deleted state. A WorkforcePoolSubject is automatically created the first time an external credential is exchanged for a Google Cloud credential with a mapped `google.subject` attribute. There is no path to manually create WorkforcePoolSubjects. Once deleted, the WorkforcePoolSubject may not be used for 30 days. After 30 days, the WorkforcePoolSubject will be deleted forever and can be reused in token exchanges with Google Cloud STS. This will automatically create a new WorkforcePoolSubject that is independent of the previously deleted WorkforcePoolSubject with the same google.subject value.
+  Deletes a WorkforcePoolSubject. Subject must not already be in a deleted state. A WorkforcePoolSubject is automatically created the first time an external credential is exchanged for a Google Cloud credential using a mapped `google.subject` attribute. There is no endpoint to manually create a WorkforcePoolSubject. For 30 days after a WorkforcePoolSubject is deleted, using the same `google.subject` attribute in token exchanges with Google Cloud STS fails. Call UndeleteWorkforcePoolSubject to undelete a WorkforcePoolSubject that has been deleted, within within 30 days of deleting it. After 30 days, the WorkforcePoolSubject is permanently deleted. At this point, a token exchange with Google Cloud STS that uses the same mapped `google.subject` attribute automatically creates a new WorkforcePoolSubject that is unrelated to the previously deleted WorkforcePoolSubject but has the same `google.subject` value.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like `/` and `:`, must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
   *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
   *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -1972,7 +1972,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
+  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like `/` and `:`, must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
   *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
   *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
