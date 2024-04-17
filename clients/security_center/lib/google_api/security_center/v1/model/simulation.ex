@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Simulation do
 
   ## Attributes
 
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - Indicates which cloud provider was used in this simulation.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time simulation was created
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full resource name of the Simulation: organizations/123/simulations/456
   *   `resourceValueConfigsMetadata` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.ResourceValueConfigMetadata.t)`, *default:* `nil`) - Resource value configurations' metadata used in this simulation. Maximum of 100.
@@ -29,12 +30,14 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Simulation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudProvider => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :resourceValueConfigsMetadata =>
             list(GoogleApi.SecurityCenter.V1.Model.ResourceValueConfigMetadata.t()) | nil
         }
 
+  field(:cloudProvider)
   field(:createTime, as: DateTime)
   field(:name)
 
