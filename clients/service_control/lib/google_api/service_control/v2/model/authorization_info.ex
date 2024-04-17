@@ -23,6 +23,7 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuthorizationInfo do
 
   *   `granted` (*type:* `boolean()`, *default:* `nil`) - Whether or not authorization for `resource` and `permission` was granted.
   *   `permission` (*type:* `String.t`, *default:* `nil`) - The required IAM permission.
+  *   `permissionType` (*type:* `String.t`, *default:* `nil`) - The type of the permission that was checked. For data access audit logs this corresponds with the permission type that must be enabled in the project/folder/organization IAM policy in order for the log to be written.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - The resource being accessed, as a REST-style or cloud resource string. For example: bigquery.googleapis.com/projects/PROJECTID/datasets/DATASETID or projects/PROJECTID/datasets/DATASETID
   *   `resourceAttributes` (*type:* `GoogleApi.ServiceControl.V2.Model.Resource.t`, *default:* `nil`) - Resource attributes used in IAM condition evaluation. This field contains resource attributes like resource type and resource name. To get the whole view of the attributes used in IAM condition evaluation, the user must also look into `AuditLog.request_metadata.request_attributes`.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.ServiceControl.V2.Model.AuthorizationInfo do
   @type t :: %__MODULE__{
           :granted => boolean() | nil,
           :permission => String.t() | nil,
+          :permissionType => String.t() | nil,
           :resource => String.t() | nil,
           :resourceAttributes => GoogleApi.ServiceControl.V2.Model.Resource.t() | nil
         }
 
   field(:granted)
   field(:permission)
+  field(:permissionType)
   field(:resource)
   field(:resourceAttributes, as: GoogleApi.ServiceControl.V2.Model.Resource)
 end
