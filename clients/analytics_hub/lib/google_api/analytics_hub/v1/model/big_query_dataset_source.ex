@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource do
   ## Attributes
 
   *   `dataset` (*type:* `String.t`, *default:* `nil`) - Resource name of the dataset source for this listing. e.g. `projects/myproject/datasets/123`
+  *   `restrictedExportPolicy` (*type:* `GoogleApi.AnalyticsHub.V1.Model.RestrictedExportPolicy.t`, *default:* `nil`) - Optional. If set, restricted export policy will be propagated and enforced on the linked dataset.
   *   `selectedResources` (*type:* `list(GoogleApi.AnalyticsHub.V1.Model.SelectedResource.t)`, *default:* `nil`) - Optional. Resources in this dataset that are selectively shared. If this field is empty, then the entire dataset (all resources) are shared. This field is only valid for data clean room exchanges.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.BigQueryDatasetSource do
 
   @type t :: %__MODULE__{
           :dataset => String.t() | nil,
+          :restrictedExportPolicy =>
+            GoogleApi.AnalyticsHub.V1.Model.RestrictedExportPolicy.t() | nil,
           :selectedResources => list(GoogleApi.AnalyticsHub.V1.Model.SelectedResource.t()) | nil
         }
 
   field(:dataset)
+  field(:restrictedExportPolicy, as: GoogleApi.AnalyticsHub.V1.Model.RestrictedExportPolicy)
   field(:selectedResources, as: GoogleApi.AnalyticsHub.V1.Model.SelectedResource, type: :list)
 end
 
