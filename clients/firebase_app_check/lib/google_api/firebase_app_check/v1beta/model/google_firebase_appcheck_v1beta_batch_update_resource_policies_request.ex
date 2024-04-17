@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaBa
 
   ## Attributes
 
-  *   `requests` (*type:* `list(GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaUpdateResourcePolicyRequest.t)`, *default:* `nil`) - Required. The request messages specifying the ResourcePolicys to update. A maximum of 100 objects can be updated in a batch.
+  *   `requests` (*type:* `list(GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaUpdateResourcePolicyRequest.t)`, *default:* `nil`) - Required. The request messages specifying the ResourcePolicy objects to update. A maximum of 100 objects can be updated in a batch.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. A comma-separated list of names of fields in the ResourcePolicy objects to update. Example: `enforcement_mode`. If this field is present, the `update_mask` field in the UpdateResourcePolicyRequest messages must all match this field, or the entire batch fails and no updates will be committed.
   """
 
