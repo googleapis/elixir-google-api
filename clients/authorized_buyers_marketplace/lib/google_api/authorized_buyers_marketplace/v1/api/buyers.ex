@@ -116,6 +116,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Api.Buyers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Optional query string using the [Cloud API list filtering syntax](https://developers.google.com/authorized-buyers/apis/guides/list-filters) Only supported when parent is bidder. Supported columns for filtering are: * displayName * createTime * updateTime * eligibleSeatIds
       *   `:pageSize` (*type:* `integer()`) - Requested page size. The server may return fewer results than requested. Max allowed page size is 500.
       *   `:pageToken` (*type:* `String.t`) - The page token as returned. ListAuctionPackagesResponse.nextPageToken
   *   `opts` (*type:* `keyword()`) - Call options
@@ -153,6 +154,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Api.Buyers do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :pageSize => :query,
       :pageToken => :query
     }
