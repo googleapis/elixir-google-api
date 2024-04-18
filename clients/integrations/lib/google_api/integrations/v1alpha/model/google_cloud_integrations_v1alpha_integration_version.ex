@@ -23,6 +23,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaInt
 
   *   `cloudLoggingDetails` (*type:* `GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t`, *default:* `nil`) - Optional. Cloud Logging details for the integration version
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Auto-generated.
+  *   `createdFromTemplate` (*type:* `String.t`, *default:* `nil`) - Optional. Optional. The resource name of the template from which the integration is created.
   *   `databasePersistencePolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Flag to disable database persistence for execution data, including event execution info, execution export info, execution metadata index and execution param index.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The integration description.
   *   `enableVariableMasking` (*type:* `boolean()`, *default:* `nil`) - Optional. True if variable masking feature should be turned on for this version
@@ -55,6 +56,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaInt
             GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaCloudLoggingDetails.t()
             | nil,
           :createTime => DateTime.t() | nil,
+          :createdFromTemplate => String.t() | nil,
           :databasePersistencePolicy => String.t() | nil,
           :description => String.t() | nil,
           :enableVariableMasking => boolean() | nil,
@@ -116,6 +118,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaInt
   )
 
   field(:createTime, as: DateTime)
+  field(:createdFromTemplate)
   field(:databasePersistencePolicy)
   field(:description)
   field(:enableVariableMasking)

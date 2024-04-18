@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Integrations.V1alpha.Model.GoogleInternalCloudCrmEventbusV3PostToQueueWithTriggerIdRequest do
   @moduledoc """
-  LINT.IfChange Use this request to post all workflows associated with a given trigger id. Next available id: 12
+  LINT.IfChange Use this request to post all workflows associated with a given trigger id. Next available id: 13
 
   ## Attributes
 
@@ -25,6 +25,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleInternalCloudCrmEventbusV3P
   *   `ignoreErrorIfNoActiveWorkflow` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to determine whether clients would suppress a warning when no ACTIVE workflows are not found. If this flag is set to be true, an error will not be thrown if the requested trigger_id or client_id is not found in any ACTIVE workflow. Otherwise, the error is always thrown. The flag is set to be false by default.
   *   `parameters` (*type:* `GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmEventbusProtoEventParameters.t`, *default:* `nil`) - Passed in as parameters to each workflow execution. Optional.
   *   `priority` (*type:* `String.t`, *default:* `nil`) - The request priority this request should be processed at. For internal users:
+  *   `quotaRetryCount` (*type:* `integer()`, *default:* `nil`) - Optional. This is a field to see the quota retry count for integration execution
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Optional. This is used to de-dup incoming request: if the duplicate request was detected, the response from the previous execution is returned. Must have no more than 36 characters and contain only alphanumeric characters and hyphens.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - This field is only required when using Admin Access. The resource name of target, or the parent resource name. For example: "projects/*/locations/*/integrations/*"
   *   `scheduledTime` (*type:* `String.t`, *default:* `nil`) - Optional. Time in milliseconds since epoch when the given event would be scheduled.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleInternalCloudCrmEventbusV3P
             GoogleApi.Integrations.V1alpha.Model.EnterpriseCrmEventbusProtoEventParameters.t()
             | nil,
           :priority => String.t() | nil,
+          :quotaRetryCount => integer() | nil,
           :requestId => String.t() | nil,
           :resourceName => String.t() | nil,
           :scheduledTime => String.t() | nil,
@@ -60,6 +62,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleInternalCloudCrmEventbusV3P
   )
 
   field(:priority)
+  field(:quotaRetryCount)
   field(:requestId)
   field(:resourceName)
   field(:scheduledTime)

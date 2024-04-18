@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudIntegrationsV1alphaScheduleIntegrationsRequest do
   @moduledoc """
-  The request for scheduling an integration. Next available id: 10
+  The request for scheduling an integration. Next available id: 11
 
   ## Attributes
 
