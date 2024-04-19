@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Looker.V1.Model.Instance do
   @moduledoc """
-  A Looker instance.
+  A Looker instance. LINT.IfChange
 
   ## Attributes
 
