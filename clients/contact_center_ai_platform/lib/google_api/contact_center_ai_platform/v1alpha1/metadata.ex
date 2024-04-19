@@ -20,7 +20,7 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1 do
   API client metadata for GoogleApi.ContactCenterAIPlatform.V1alpha1.
   """
 
-  @discovery_revision "20240306"
+  @discovery_revision "20240416"
 
   def discovery_revision(), do: @discovery_revision
 end

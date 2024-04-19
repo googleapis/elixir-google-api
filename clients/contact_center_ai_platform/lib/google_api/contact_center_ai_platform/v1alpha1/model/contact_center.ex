@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.ContactCenter do
   @moduledoc """
-  Message describing ContactCenter object Next ID: 20
+  Message describing ContactCenter object Next ID: 22
 
   ## Attributes
 
