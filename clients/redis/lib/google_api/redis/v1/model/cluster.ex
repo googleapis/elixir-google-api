@@ -23,6 +23,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
+  *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   @type t :: %__MODULE__{
           :authorizationMode => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t()) | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   field(:authorizationMode)
   field(:createTime, as: DateTime)
+  field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1.Model.DiscoveryEndpoint, type: :list)
   field(:name)
   field(:nodeType)
