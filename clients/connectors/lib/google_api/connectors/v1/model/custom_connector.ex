@@ -21,7 +21,8 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
 
   ## Attributes
 
-  *   `activeConnectorVersions` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Active connector versions.
+  *   `activeConnectorVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Active connector versions.
+  *   `allConnectorVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All connector versions.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `customConnectorType` (*type:* `String.t`, *default:* `nil`) - Required. Type of the custom connector.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
 
   @type t :: %__MODULE__{
           :activeConnectorVersions => list(String.t()) | nil,
+          :allConnectorVersions => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :customConnectorType => String.t() | nil,
           :description => String.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.Connectors.V1.Model.CustomConnector do
         }
 
   field(:activeConnectorVersions, type: :list)
+  field(:allConnectorVersions, type: :list)
   field(:createTime, as: DateTime)
   field(:customConnectorType)
   field(:description)
