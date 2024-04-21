@@ -21,7 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.MigrationExecution do
 
   ## Attributes
 
-  *   `cloudSqlMigrationConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.CloudSQLMigrationConfig.t`, *default:* `nil`) - Configuration information specific to migrating from self-managed hive metastore on GCP using Cloud SQL as the backend database to DPMS.
+  *   `cloudSqlMigrationConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.CloudSQLMigrationConfig.t`, *default:* `nil`) - Configuration information specific to migrating from self-managed hive metastore on Google Cloud using Cloud SQL as the backend database to Dataproc Metastore.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the migration execution was started.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the migration execution finished.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the migration execution, in the following form: projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions/{migration_execution_id}
