@@ -21,8 +21,8 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AppAccessRiskVerdict do
 
   ## Attributes
 
-  *   `otherApps` (*type:* `String.t`, *default:* `nil`) - Required. App access risk verdict related to apps that are not installed by Google Play, and are not preloaded on the system image by the device manufacturer.
-  *   `playOrSystemApps` (*type:* `String.t`, *default:* `nil`) - Required. App access risk verdict related to apps that are not installed by the Google Play Store, and are not preloaded on the system image by the device manufacturer.
+  *   `otherApps` (*type:* `String.t`, *default:* `nil`) - App access risk verdict related to apps that are not installed by Google Play, and are not preloaded on the system image by the device manufacturer.
+  *   `playOrSystemApps` (*type:* `String.t`, *default:* `nil`) - App access risk verdict related to apps that are not installed by the Google Play Store, and are not preloaded on the system image by the device manufacturer.
   """
 
   use GoogleApi.Gax.ModelBase
