@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyOutput do
 
   *   `codeyChatMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyChatMetadata.t`, *default:* `nil`) - 
   *   `codeyCompletionMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyCompletionMetadata.t`, *default:* `nil`) - 
+  *   `codeyGenerationMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyGenerationMetadata.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,13 +32,19 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyOutput do
           :codeyChatMetadata =>
             GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyChatMetadata.t() | nil,
           :codeyCompletionMetadata =>
-            GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyCompletionMetadata.t() | nil
+            GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyCompletionMetadata.t() | nil,
+          :codeyGenerationMetadata =>
+            GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyGenerationMetadata.t() | nil
         }
 
   field(:codeyChatMetadata, as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyChatMetadata)
 
   field(:codeyCompletionMetadata,
     as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyCompletionMetadata
+  )
+
+  field(:codeyGenerationMetadata,
+    as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootCodeyGenerationMetadata
   )
 end
 

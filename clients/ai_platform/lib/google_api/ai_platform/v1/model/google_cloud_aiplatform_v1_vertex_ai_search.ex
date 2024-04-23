@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch do
 
   ## Attributes
 
-  *   `datastore` (*type:* `String.t`, *default:* `nil`) - Required. Fully-qualified Vertex AI Search's datastore resource ID. Format: projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}
+  *   `datastore` (*type:* `String.t`, *default:* `nil`) - Required. Fully-qualified Vertex AI Search's datastore resource ID. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{dataStore}`
   """
 
   use GoogleApi.Gax.ModelBase

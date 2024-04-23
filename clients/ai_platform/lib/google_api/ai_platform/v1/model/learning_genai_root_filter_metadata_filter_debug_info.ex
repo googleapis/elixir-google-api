@@ -27,6 +27,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootFilterMetadataFilterDeb
   *   `raiOutput` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootRAIOutput.t`, *default:* `nil`) - Safety filter output information for LLM Root RAI harm check.
   *   `raiResult` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult.t`, *default:* `nil`) - 
   *   `raiSignal` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal.t`, *default:* `nil`) - 
+  *   `records` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootControlDecodingRecords.t`, *default:* `nil`) - Number of rewinds by controlled decoding.
   *   `streamRecitationResult` (*type:* `GoogleApi.AIPlatform.V1.Model.LanguageLabsAidaTrustRecitationProtoStreamRecitationResult.t`, *default:* `nil`) - 
   *   `takedownResult` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootTakedownResult.t`, *default:* `nil`) - 
   *   `toxicityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.LearningGenaiRootToxicityResult.t`, *default:* `nil`) - 
@@ -43,6 +44,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootFilterMetadataFilterDeb
           :raiOutput => GoogleApi.AIPlatform.V1.Model.LearningGenaiRootRAIOutput.t() | nil,
           :raiResult => GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult.t() | nil,
           :raiSignal => GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal.t() | nil,
+          :records =>
+            GoogleApi.AIPlatform.V1.Model.LearningGenaiRootControlDecodingRecords.t() | nil,
           :streamRecitationResult =>
             GoogleApi.AIPlatform.V1.Model.LanguageLabsAidaTrustRecitationProtoStreamRecitationResult.t()
             | nil,
@@ -62,6 +65,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.LearningGenaiRootFilterMetadataFilterDeb
   field(:raiOutput, as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootRAIOutput)
   field(:raiResult, as: GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiResult)
   field(:raiSignal, as: GoogleApi.AIPlatform.V1.Model.CloudAiNlLlmProtoServiceRaiSignal)
+  field(:records, as: GoogleApi.AIPlatform.V1.Model.LearningGenaiRootControlDecodingRecords)
 
   field(:streamRecitationResult,
     as: GoogleApi.AIPlatform.V1.Model.LanguageLabsAidaTrustRecitationProtoStreamRecitationResult
