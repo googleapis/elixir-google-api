@@ -93,7 +93,7 @@ defmodule GoogleApi.Gax.Connection do
       *   `{:ok, Tesla.Env.t}` - If the call was successful
       *   `{:error, reason}` - If the call failed
       """
-      @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: {:ok, Tesla.Env.t()}
+      @spec execute(Tesla.Client.t(), GoogleApi.Gax.Request.t()) :: Tesla.Env.result()
       def execute(connection, request) do
         request
         |> GoogleApi.Gax.Connection.build_request()
