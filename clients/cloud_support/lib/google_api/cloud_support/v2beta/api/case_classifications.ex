@@ -45,6 +45,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.CaseClassifications do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of classifications fetched with each request.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
+      *   `:"product.productLine"` (*type:* `String.t`) - The product line of the Product.
       *   `:query` (*type:* `String.t`) - An expression used to filter case classifications. If it's an empty string, then no filtering happens. Otherwise, case classifications will be returned that match the filter.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -73,6 +74,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.CaseClassifications do
       :upload_protocol => :query,
       :pageSize => :query,
       :pageToken => :query,
+      :"product.productLine" => :query,
       :query => :query
     }
 
