@@ -23,9 +23,9 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
 
   *   `booleanConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanConstraint.t`, *default:* `nil`) - Defines this constraint as being a BooleanConstraint.
   *   `constraintDefault` (*type:* `String.t`, *default:* `nil`) - The evaluation behavior of this constraint in the absence of a policy.
-  *   `customConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint.t`, *default:* `nil`) - Defines this constraint as being a CustomConstraint.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed description of what this constraint controls as well as how and where it is enforced. Mutable.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name. Mutable.
+  *   `googleManagedConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleManagedConstraint.t`, *default:* `nil`) - Defines this constraint as being a GoogleManagedConstraint.
   *   `listConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint.t`, *default:* `nil`) - Defines this constraint as being a ListConstraint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the constraint. Must be in one of the following forms: * `projects/{project_number}/constraints/{constraint_name}` * `folders/{folder_id}/constraints/{constraint_name}` * `organizations/{organization_id}/constraints/{constraint_name}` For example, "/projects/123/constraints/compute.disableSerialPortAccess".
   *   `supportsDryRun` (*type:* `boolean()`, *default:* `nil`) - Shows if dry run is supported for this constraint or not.
@@ -38,11 +38,11 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
             GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanConstraint.t()
             | nil,
           :constraintDefault => String.t() | nil,
-          :customConstraint =>
-            GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint.t()
-            | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :googleManagedConstraint =>
+            GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleManagedConstraint.t()
+            | nil,
           :listConstraint =>
             GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint.t() | nil,
           :name => String.t() | nil,
@@ -54,13 +54,12 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
   )
 
   field(:constraintDefault)
-
-  field(:customConstraint,
-    as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint
-  )
-
   field(:description)
   field(:displayName)
+
+  field(:googleManagedConstraint,
+    as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleManagedConstraint
+  )
 
   field(:listConstraint,
     as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint
