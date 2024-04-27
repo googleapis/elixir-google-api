@@ -10410,7 +10410,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `fhirStore.name`. Output only. Identifier. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `projects_id` (*type:* `String.t`) - Part of `fhirStore.name`. Output only. Identifier. Resource name of the FHIR store, of the form `projects/{project_id}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `locations_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
   *   `datasets_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
   *   `fhir_stores_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
