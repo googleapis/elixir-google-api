@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.SkaffoldModules do
 
   *   `configs` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Skaffold Config modules to use from the specified source.
   *   `git` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGitSource.t`, *default:* `nil`) - Remote git repository containing the Skaffold Config modules.
+  *   `googleCloudBuildRepo` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCBRepoSource.t`, *default:* `nil`) - Cloud Build V2 repository containing the Skaffold Config modules.
   *   `googleCloudStorage` (*type:* `GoogleApi.CloudDeploy.V1.Model.SkaffoldGCSSource.t`, *default:* `nil`) - Cloud Storage bucket containing the Skaffold Config modules.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.SkaffoldModules do
   @type t :: %__MODULE__{
           :configs => list(String.t()) | nil,
           :git => GoogleApi.CloudDeploy.V1.Model.SkaffoldGitSource.t() | nil,
+          :googleCloudBuildRepo => GoogleApi.CloudDeploy.V1.Model.SkaffoldGCBRepoSource.t() | nil,
           :googleCloudStorage => GoogleApi.CloudDeploy.V1.Model.SkaffoldGCSSource.t() | nil
         }
 
   field(:configs, type: :list)
   field(:git, as: GoogleApi.CloudDeploy.V1.Model.SkaffoldGitSource)
+  field(:googleCloudBuildRepo, as: GoogleApi.CloudDeploy.V1.Model.SkaffoldGCBRepoSource)
   field(:googleCloudStorage, as: GoogleApi.CloudDeploy.V1.Model.SkaffoldGCSSource)
 end
 
