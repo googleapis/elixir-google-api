@@ -1571,6 +1571,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Filter for the returned list.
+      *   `:orderBy` (*type:* `String.t`) - Optional. This field only supports ordering by `name` and `create_time`. If unspecified, the server will choose the ordering. If specified, the default order is ascending for the `name` field.
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of compilation results to return. The server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous `ListCompilationResults` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCompilationResults` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1609,6 +1610,7 @@ defmodule GoogleApi.Dataform.V1beta1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :filter => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
