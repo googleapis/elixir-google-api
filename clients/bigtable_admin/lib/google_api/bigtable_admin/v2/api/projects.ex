@@ -1925,7 +1925,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
@@ -2190,7 +2190,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
@@ -2277,7 +2277,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 
@@ -2944,7 +2944,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
@@ -3348,7 +3348,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
@@ -3431,7 +3431,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 
@@ -3860,7 +3860,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
@@ -4128,7 +4128,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
@@ -4215,7 +4215,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 

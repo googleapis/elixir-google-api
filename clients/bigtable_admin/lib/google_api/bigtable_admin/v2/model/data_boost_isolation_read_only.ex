@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.DataBoostIsolationReadOnly do
   @moduledoc """
-  Data Boost is a serverless compute capability that lets you run high-throughput read jobs on your Bigtable data, without impacting the performance of the clusters that handle your application traffic. Currently, Data Boost exclusively supports read-only use-cases with single-cluster routing. Data Boost reads are only guaranteed to see the results of writes that were written at least 30 minutes ago. This means newly written values may not become visible for up to 30m, and also means that old values may remain visible for up to 30m after being deleted or overwritten. To mitigate the staleness of the data, users may either wait 30m, or use CheckConsistency.
+  Data Boost is a serverless compute capability that lets you run high-throughput read jobs and queries on your Bigtable data, without impacting the performance of the clusters that handle your application traffic. Data Boost supports read-only use cases with single-cluster routing.
 
   ## Attributes
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.UpdateAuthorizedViewRequest do
 
   ## Attributes
 
-  *   `authorizedView` (*type:* `GoogleApi.BigtableAdmin.V2.Model.AuthorizedView.t`, *default:* `nil`) - Required. The AuthorizedView to update. The `name` in `authorized_view` is used to identify the AuthorizedView. AuthorizedView name must in this format projects//instances//tables//authorizedViews/
+  *   `authorizedView` (*type:* `GoogleApi.BigtableAdmin.V2.Model.AuthorizedView.t`, *default:* `nil`) - Required. The AuthorizedView to update. The `name` in `authorized_view` is used to identify the AuthorizedView. AuthorizedView name must in this format: `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
   *   `ignoreWarnings` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, ignore the safety checks when updating the AuthorizedView.
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. The list of fields to update. A mask specifying which fields in the AuthorizedView resource should be updated. This mask is relative to the AuthorizedView resource, not to the request message. A field will be overwritten if it is in the mask. If empty, all fields set in the request will be overwritten. A special value `*` means to overwrite all fields (including fields not set in the request).
   """
