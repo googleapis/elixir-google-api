@@ -69,6 +69,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `model` (*type:* `GoogleApi.BigQuery.V2.Model.ModelDefinition.t`, *default:* `nil`) - Deprecated.
   *   `numTotalLogicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total number of logical bytes in the table or materialized view.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque ID uniquely identifying the table.
+  *   `restrictions` (*type:* `GoogleApi.BigQuery.V2.Model.RestrictionConfig.t`, *default:* `nil`) - Optional. Output only. Restriction config for table. If set, restrict certain accesses on the table based on the config. See [Data egress](/bigquery/docs/analytics-hub-introduction#data_egress) for more details.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   """
 
@@ -125,6 +126,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t() | nil,
           :numTotalLogicalBytes => String.t() | nil,
           :id => String.t() | nil,
+          :restrictions => GoogleApi.BigQuery.V2.Model.RestrictionConfig.t() | nil,
           :encryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil
         }
@@ -177,6 +179,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
   field(:numTotalLogicalBytes)
   field(:id)
+  field(:restrictions, as: GoogleApi.BigQuery.V2.Model.RestrictionConfig)
   field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
 end
 

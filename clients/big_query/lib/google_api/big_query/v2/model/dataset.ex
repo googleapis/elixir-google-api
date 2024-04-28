@@ -43,12 +43,13 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   *   `linkedDatasetSource` (*type:* `GoogleApi.BigQuery.V2.Model.LinkedDatasetSource.t`, *default:* `nil`) - Optional. The source dataset reference when the dataset is of type LINKED. For all other dataset types it is not set. This field cannot be updated once it is set. Any attempt to update this field using Update and Patch API Operations will be ignored.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geographic location where the dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations.
   *   `maxTimeTravelHours` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the time travel window in hours. The value can be from 48 to 168 hours (2 to 7 days). The default value is 168 hours if this is not set.
+  *   `restrictions` (*type:* `GoogleApi.BigQuery.V2.Model.RestrictionConfig.t`, *default:* `nil`) - Optional. Output only. Restriction config for all tables and dataset. If set, restrict certain accesses on the dataset and all its tables based on the config. See [Data egress](/bigquery/docs/analytics-hub-introduction#data_egress) for more details.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
   *   `storageBillingModel` (*type:* `String.t`, *default:* `nil`) - Optional. Updates storage_billing_model for the dataset.
   *   `tags` (*type:* `list(GoogleApi.BigQuery.V2.Model.DatasetTags.t)`, *default:* `nil`) - Output only. Tags for the Dataset.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Same as `type` in `ListFormatDataset`. The type of the dataset, one of: * DEFAULT - only accessible by owner and authorized accounts, * PUBLIC - accessible by everyone, * LINKED - linked dataset, * EXTERNAL - dataset with definition in external metadata catalog. -- *BIGLAKE_METASTORE - dataset that references a database created in BigLakeMetastore service. --
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Same as `type` in `ListFormatDataset`. The type of the dataset, one of: * DEFAULT - only accessible by owner and authorized accounts, * PUBLIC - accessible by everyone, * LINKED - linked dataset, * EXTERNAL - dataset with definition in external metadata catalog.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -79,6 +80,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
           :linkedDatasetSource => GoogleApi.BigQuery.V2.Model.LinkedDatasetSource.t() | nil,
           :location => String.t() | nil,
           :maxTimeTravelHours => String.t() | nil,
+          :restrictions => GoogleApi.BigQuery.V2.Model.RestrictionConfig.t() | nil,
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
@@ -113,6 +115,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Dataset do
   field(:linkedDatasetSource, as: GoogleApi.BigQuery.V2.Model.LinkedDatasetSource)
   field(:location)
   field(:maxTimeTravelHours)
+  field(:restrictions, as: GoogleApi.BigQuery.V2.Model.RestrictionConfig)
   field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:selfLink)

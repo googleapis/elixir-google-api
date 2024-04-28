@@ -23,17 +23,20 @@ defmodule GoogleApi.BigQuery.V2.Model.ParquetOptions do
 
   *   `enableListInference` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to use schema inference specifically for Parquet LIST logical type.
   *   `enumAsString` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether to infer Parquet ENUM logical type as STRING instead of BYTES by default.
+  *   `mapTargetType` (*type:* `String.t`, *default:* `nil`) - Optional. Will indicate how to represent a parquet map if present.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enableListInference => boolean() | nil,
-          :enumAsString => boolean() | nil
+          :enumAsString => boolean() | nil,
+          :mapTargetType => String.t() | nil
         }
 
   field(:enableListInference)
   field(:enumAsString)
+  field(:mapTargetType)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.ParquetOptions do
