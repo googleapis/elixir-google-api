@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.Value do
 
   ## Attributes
 
-  *   `arrayValue` (*type:* `GoogleApi.Firestore.V1.Model.ArrayValue.t`, *default:* `nil`) - An array value. Cannot directly contain another array value, though can contain an map which contains another array.
+  *   `arrayValue` (*type:* `GoogleApi.Firestore.V1.Model.ArrayValue.t`, *default:* `nil`) - An array value. Cannot directly contain another array value, though can contain a map which contains another array.
   *   `booleanValue` (*type:* `boolean()`, *default:* `nil`) - A boolean value.
   *   `bytesValue` (*type:* `String.t`, *default:* `nil`) - A bytes value. Must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes are considered by queries.
   *   `doubleValue` (*type:* `float()`, *default:* `nil`) - A double value.

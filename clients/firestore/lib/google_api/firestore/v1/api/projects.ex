@@ -559,7 +559,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
   end
 
   @doc """
-  Creates a backup schedule on a database. At most two backup schedules can be configured on a database, one daily backup schedule with retention up to 7 days and one weekly backup schedule with retention up to 14 weeks.
+  Creates a backup schedule on a database. At most two backup schedules can be configured on a database, one daily backup schedule and one weekly backup schedule.
 
   ## Parameters
 
@@ -1018,7 +1018,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter to apply to list results. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with a filter that includes `indexConfig.usesAncestorConfig:false` .
+      *   `:filter` (*type:* `String.t`) - The filter to apply to list results. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with a filter that includes `indexConfig.usesAncestorConfig:false` or `ttlConfig:*`.
       *   `:pageSize` (*type:* `integer()`) - The number of results to return.
       *   `:pageToken` (*type:* `String.t`) - A page token, returned from a previous call to FirestoreAdmin.ListFields, that may be used to get the next page of results.
   *   `opts` (*type:* `keyword()`) - Call options

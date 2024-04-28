@@ -21,7 +21,7 @@ defmodule GoogleApi.Firestore.V1.Model.FindNearest do
 
   ## Attributes
 
-  *   `distanceMeasure` (*type:* `String.t`, *default:* `nil`) - Required. The Distance Measure to use, required.
+  *   `distanceMeasure` (*type:* `String.t`, *default:* `nil`) - Required. The distance measure to use, required.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - Required. The number of nearest neighbors to return. Must be a positive integer of no more than 1000.
   *   `queryVector` (*type:* `GoogleApi.Firestore.V1.Model.Value.t`, *default:* `nil`) - Required. The query vector that we are searching on. Must be a vector of no more than 2048 dimensions.
   *   `vectorField` (*type:* `GoogleApi.Firestore.V1.Model.FieldReference.t`, *default:* `nil`) - Required. An indexed vector field to search upon. Only documents which contain vectors whose dimensionality match the query_vector can be returned.
