@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
 
   ## Attributes
 
+  *   `asset` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAsset.t`, *default:* `nil`) - Optional. Data asset.
   *   `authentication` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentication.t`, *default:* `nil`) - Client authentication.
   *   `connectorId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The ID of the Connector these parameters are configured for.
   *   `endpoint` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationEndpoint.t`, *default:* `nil`) - Specifies how to reach the remote system this connection is pointing to.
@@ -30,6 +31,7 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :asset => GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAsset.t() | nil,
           :authentication =>
             GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentication.t() | nil,
           :connectorId => String.t() | nil,
@@ -38,6 +40,8 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfiguration do
           :network =>
             GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationNetwork.t() | nil
         }
+
+  field(:asset, as: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAsset)
 
   field(:authentication,
     as: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentication
