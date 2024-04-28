@@ -23,6 +23,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConfig do
 
   *   `disableGlobalAccess` (*type:* `boolean()`, *default:* `nil`) - This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The resource path of the consumer network where PSC connections are allowed to be created in. Note, this network does not need be in the ConsumerPscConfig.project in the case of SharedVPC. Example: projects/{projectNumOrId}/global/networks/{networkId}.
+  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. An immutable identifier for the producer instance.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The consumer project where PSC connections are allowed to be created in.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Overall state of PSC Connections management for this consumer psc config.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConfig do
   @type t :: %__MODULE__{
           :disableGlobalAccess => boolean() | nil,
           :network => String.t() | nil,
+          :producerInstanceId => String.t() | nil,
           :project => String.t() | nil,
           :state => String.t() | nil
         }
 
   field(:disableGlobalAccess)
   field(:network)
+  field(:producerInstanceId)
   field(:project)
   field(:state)
 end
