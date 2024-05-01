@@ -966,7 +966,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Promotes the read replica instance to be a stand-alone Cloud SQL instance. Using this operation might cause your instance to restart.
+  Promotes the read replica instance to be an independent Cloud SQL primary instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -985,7 +985,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:failover` (*type:* `boolean()`) - Set to true if the promote operation should attempt to re-add the original primary as a replica when it comes back online. Otherwise, if this value is false or not set, the original primary will be a standalone instance.
+      *   `:failover` (*type:* `boolean()`) - Set to true to invoke a replica failover to the designated DR replica. As part of replica failover, the promote operation attempts to add the original primary instance as a replica of the promoted DR replica when the original primary instance comes back online. If set to false or not specified, then the original primary instance becomes an independent Cloud SQL primary instance. Only applicable to MySQL.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1612,7 +1612,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Switches over from the primary instance to the replica instance.
+  Switches over from the primary instance to the designated DR replica instance.
 
   ## Parameters
 

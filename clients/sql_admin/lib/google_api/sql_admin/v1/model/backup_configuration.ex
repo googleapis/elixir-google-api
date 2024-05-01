@@ -30,7 +30,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.BackupConfiguration do
   *   `replicationLogArchivingEnabled` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `startTime` (*type:* `String.t`, *default:* `nil`) - Start time for the daily backup configuration in UTC timezone in the 24 hour format - `HH:MM`.
   *   `transactionLogRetentionDays` (*type:* `integer()`, *default:* `nil`) - The number of days of transaction logs we retain for point in time restore, from 1-7.
-  *   `transactionalLogStorageState` (*type:* `String.t`, *default:* `nil`) - Output only. This value contains the storage location of transactional logs for the database for point-in-time recovery.
+  *   `transactionalLogStorageState` (*type:* `String.t`, *default:* `nil`) - Output only. This value contains the storage location of transactional logs used to perform point-in-time recovery (PITR) for the database.
   """
 
   use GoogleApi.Gax.ModelBase
