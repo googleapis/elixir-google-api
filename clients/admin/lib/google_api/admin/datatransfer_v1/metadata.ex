@@ -20,7 +20,7 @@ defmodule GoogleApi.Admin.Datatransfer_v1 do
   API client metadata for GoogleApi.Admin.Datatransfer_v1.
   """
 
-  @discovery_revision "20240304"
+  @discovery_revision "20240429"
 
   def discovery_revision(), do: @discovery_revision
 end

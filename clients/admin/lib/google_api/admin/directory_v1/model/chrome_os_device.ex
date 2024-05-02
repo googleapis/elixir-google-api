@@ -35,15 +35,19 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Notes about this device added by the administrator. This property can be [searched](https://support.google.com/chrome/a/answer/1698333) with the [list](/admin-sdk/directory/v1/reference/chromeosdevices/list) method's `query` parameter. Maximum length is 500 characters. Empty values are allowed.
   *   `orgUnitPath` (*type:* `String.t`, *default:* `nil`) - The full parent path with the organizational unit's name associated with the device. Path names are case insensitive. If the parent organizational unit is the top-level organization, it is represented as a forward slash, `/`. This property can be [updated](/admin-sdk/directory/v1/guides/manage-chrome-devices#move_chrome_devices_to_ou) using the API. For more information about how to create an organizational structure for your device, see the [administration help center](https://support.google.com/a/answer/182433).
   *   `macAddress` (*type:* `String.t`, *default:* `nil`) - The device's wireless MAC address. If the device does not have this information, it is not included in the response.
-  *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support
+  *   `extendedSupportStart` (*type:* `String.t`, *default:* `nil`) - Output only. Date of the device when extended support policy for automatic updates starts.
+  *   `autoUpdateExpiration` (*type:* `String.t`, *default:* `nil`) - (Read-only) The timestamp after which the device will stop receiving Chrome updates or support. Please use "autoUpdateThrough" instead.
   *   `willAutoRenew` (*type:* `boolean()`, *default:* `nil`) - Determines if the device will auto renew its support after the support end date. This is a read-only property.
   *   `lastKnownNetwork` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t)`, *default:* `nil`) - Contains last known network (Read-only)
+  *   `autoUpdateThrough` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp after which the device will stop receiving Chrome updates or support.
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique ID of the Chrome device.
   *   `firmwareVersion` (*type:* `String.t`, *default:* `nil`) - The Chrome device's firmware version.
   *   `activeTimeRanges` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceActiveTimeRanges.t)`, *default:* `nil`) - A list of active time ranges (Read-only).
   *   `cpuStatusReports` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t)`, *default:* `nil`) - Reports of CPU utilization and temperature (Read-only)
   *   `ethernetMacAddress0` (*type:* `String.t`, *default:* `nil`) - (Read-only) MAC address used by the Chromebook’s internal ethernet port, and for onboard network (ethernet) interface. The format is twelve (12) hexadecimal digits without any delimiter (uppercase letters). This is only relevant for some devices.
+  *   `extendedSupportEligible` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not the device requires the extended support opt in.
   *   `orderNumber` (*type:* `String.t`, *default:* `nil`) - The device's order number. Only devices directly purchased from Google have an order number.
+  *   `extendedSupportEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether extended support policy is enabled on the device.
   *   `backlightInfo` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t)`, *default:* `nil`) - Output only. Contains backlight information for the device.
   *   `recentUsers` (*type:* `list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t)`, *default:* `nil`) - A list of recent device users, in descending order, by last login time.
   *   `firstEnrollmentTime` (*type:* `String.t`, *default:* `nil`) - Date and time for the first time the device was enrolled.
@@ -85,10 +89,12 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :notes => String.t() | nil,
           :orgUnitPath => String.t() | nil,
           :macAddress => String.t() | nil,
+          :extendedSupportStart => String.t() | nil,
           :autoUpdateExpiration => String.t() | nil,
           :willAutoRenew => boolean() | nil,
           :lastKnownNetwork =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceLastKnownNetwork.t()) | nil,
+          :autoUpdateThrough => String.t() | nil,
           :deviceId => String.t() | nil,
           :firmwareVersion => String.t() | nil,
           :activeTimeRanges =>
@@ -96,7 +102,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
           :cpuStatusReports =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceCpuStatusReports.t()) | nil,
           :ethernetMacAddress0 => String.t() | nil,
+          :extendedSupportEligible => boolean() | nil,
           :orderNumber => String.t() | nil,
+          :extendedSupportEnabled => boolean() | nil,
           :backlightInfo => list(GoogleApi.Admin.Directory_v1.Model.BacklightInfo.t()) | nil,
           :recentUsers =>
             list(GoogleApi.Admin.Directory_v1.Model.ChromeOsDeviceRecentUsers.t()) | nil,
@@ -141,6 +149,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   field(:notes)
   field(:orgUnitPath)
   field(:macAddress)
+  field(:extendedSupportStart)
   field(:autoUpdateExpiration)
   field(:willAutoRenew)
 
@@ -149,6 +158,7 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
     type: :list
   )
 
+  field(:autoUpdateThrough)
   field(:deviceId)
   field(:firmwareVersion)
 
@@ -163,7 +173,9 @@ defmodule GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice do
   )
 
   field(:ethernetMacAddress0)
+  field(:extendedSupportEligible)
   field(:orderNumber)
+  field(:extendedSupportEnabled)
   field(:backlightInfo, as: GoogleApi.Admin.Directory_v1.Model.BacklightInfo, type: :list)
 
   field(:recentUsers,
