@@ -51,6 +51,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   *   `releaseVersion` (*type:* `String.t`, *default:* `nil`) - Output only. OS release version. Example: 6.0.
   *   `securityPatchTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. OS security patch update time on device.
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - Serial Number of device. Example: HT82V1A01076.
+  *   `unifiedDeviceId` (*type:* `String.t`, *default:* `nil`) - Output only. Unified device id of the device.
   *   `wifiMacAddresses` (*type:* `list(String.t)`, *default:* `nil`) - WiFi MAC addresses of device.
   """
 
@@ -91,6 +92,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
           :releaseVersion => String.t() | nil,
           :securityPatchTime => DateTime.t() | nil,
           :serialNumber => String.t() | nil,
+          :unifiedDeviceId => String.t() | nil,
           :wifiMacAddresses => list(String.t()) | nil
         }
 
@@ -132,6 +134,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Devic
   field(:releaseVersion)
   field(:securityPatchTime, as: DateTime)
   field(:serialNumber)
+  field(:unifiedDeviceId)
   field(:wifiMacAddresses, type: :list)
 end
 
