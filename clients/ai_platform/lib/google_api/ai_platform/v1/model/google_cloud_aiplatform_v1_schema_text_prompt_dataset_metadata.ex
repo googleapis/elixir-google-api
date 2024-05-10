@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   *   `note` (*type:* `String.t`, *default:* `nil`) - User-created prompt note. Note size limit is 2KB.
   *   `promptType` (*type:* `String.t`, *default:* `nil`) - Type of the prompt dataset.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Customized stop sequences.
+  *   `systemInstructionGcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the system instruction, starting with gs://.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The content of the prompt dataset.
   *   `topK` (*type:* `String.t`, *default:* `nil`) - Top K value set when the dataset was saved. This value determines how many candidates with highest probability from the vocab would be selected for each decoding step.
@@ -46,6 +47,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
           :note => String.t() | nil,
           :promptType => String.t() | nil,
           :stopSequences => list(String.t()) | nil,
+          :systemInstructionGcsUri => String.t() | nil,
           :temperature => number() | nil,
           :text => String.t() | nil,
           :topK => String.t() | nil,
@@ -63,6 +65,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   field(:note)
   field(:promptType)
   field(:stopSequences, type: :list)
+  field(:systemInstructionGcsUri)
   field(:temperature)
   field(:text)
   field(:topK)

@@ -22,7 +22,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsResp
   ## Attributes
 
   *   `datapoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint.t`, *default:* `nil`) - The datapoint of the neighbor. Note that full datapoints are returned only when "return_full_datapoint" is set to true. Otherwise, only the "datapoint_id" and "crowding_tag" fields are populated.
-  *   `distance` (*type:* `float()`, *default:* `nil`) - The distance between the neighbor and the query vector.
+  *   `distance` (*type:* `float()`, *default:* `nil`) - The distance between the neighbor and the dense embedding query.
+  *   `sparseDistance` (*type:* `float()`, *default:* `nil`) - The distance between the neighbor and the query sparse_embedding.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +31,13 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsResp
   @type t :: %__MODULE__{
           :datapoint =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint.t() | nil,
-          :distance => float() | nil
+          :distance => float() | nil,
+          :sparseDistance => float() | nil
         }
 
   field(:datapoint, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint)
   field(:distance)
+  field(:sparseDistance)
 end
 
 defimpl Poison.Decoder,

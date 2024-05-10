@@ -36,6 +36,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
   *   `reservationAffinity` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookReservationAffinity.t`, *default:* `nil`) - Output only. Reservation Affinity of the notebook runtime.
   *   `runtimeState` (*type:* `String.t`, *default:* `nil`) - Output only. The runtime (instance) state of the NotebookRuntime.
   *   `runtimeUser` (*type:* `String.t`, *default:* `nil`) - Required. The user email of the NotebookRuntime.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. The service account that the NotebookRuntime workload runs as.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntime was most recently updated.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Output only. The VM os image version of NotebookRuntime.
@@ -63,6 +65,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
             | nil,
           :runtimeState => String.t() | nil,
           :runtimeUser => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :serviceAccount => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :version => String.t() | nil
@@ -91,6 +95,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntime d
 
   field(:runtimeState)
   field(:runtimeUser)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:serviceAccount)
   field(:updateTime, as: DateTime)
   field(:version)

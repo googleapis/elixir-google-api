@@ -21,9 +21,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
 
   ## Attributes
 
-  *   `baseModel` (*type:* `String.t`, *default:* `nil`) - Model name for tuning, e.g., "gemini-1.0-pro-002".
+  *   `baseModel` (*type:* `String.t`, *default:* `nil`) - The base model that is being tuned, e.g., "gemini-1.0-pro-002".
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the TuningJob.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key options for a TuningJob. If this is set, then all resources created by the TuningJob will be encrypted with the provided encryption key.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the TuningJob entered any of the following JobStates: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`, `JOB_STATE_EXPIRED`.
   *   `error` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. Only populated when job's state is `JOB_STATE_FAILED` or `JOB_STATE_CANCELLED`.
   *   `experiment` (*type:* `String.t`, *default:* `nil`) - Output only. The Experiment associated with this TuningJob.
@@ -44,6 +45,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
           :baseModel => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :encryptionSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t() | nil,
           :experiment => String.t() | nil,
@@ -64,6 +67,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TuningJob do
   field(:baseModel)
   field(:createTime, as: DateTime)
   field(:description)
+  field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus)
   field(:experiment)

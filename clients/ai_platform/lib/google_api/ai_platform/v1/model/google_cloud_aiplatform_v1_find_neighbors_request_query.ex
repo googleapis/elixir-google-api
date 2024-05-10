@@ -26,6 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequ
   *   `fractionLeafNodesToSearchOverride` (*type:* `float()`, *default:* `nil`) - The fraction of the number of leaves to search, set at query time allows user to tune search performance. This value increase result in both search accuracy and latency increase. The value should be between 0.0 and 1.0. If not set or set to 0.0, query uses the default value specified in NearestNeighborSearchConfig.TreeAHConfig.fraction_leaf_nodes_to_search.
   *   `neighborCount` (*type:* `integer()`, *default:* `nil`) - The number of nearest neighbors to be retrieved from database for each query. If not set, will use the default from the service configuration (https://cloud.google.com/vertex-ai/docs/matching-engine/configuring-indexes#nearest-neighbor-search-config).
   *   `perCrowdingAttributeNeighborCount` (*type:* `integer()`, *default:* `nil`) - Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity. This field is the maximum number of matches with the same crowding tag.
+  *   `rrf` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF.t`, *default:* `nil`) - Optional. Represents RRF algorithm that combines search results.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequ
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint.t() | nil,
           :fractionLeafNodesToSearchOverride => float() | nil,
           :neighborCount => integer() | nil,
-          :perCrowdingAttributeNeighborCount => integer() | nil
+          :perCrowdingAttributeNeighborCount => integer() | nil,
+          :rrf =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF.t()
+            | nil
         }
 
   field(:approximateNeighborCount)
@@ -44,6 +48,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequ
   field(:fractionLeafNodesToSearchOverride)
   field(:neighborCount)
   field(:perCrowdingAttributeNeighborCount)
+
+  field(:rrf,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FindNeighborsRequestQueryRRF
+  )
 end
 
 defimpl Poison.Decoder,

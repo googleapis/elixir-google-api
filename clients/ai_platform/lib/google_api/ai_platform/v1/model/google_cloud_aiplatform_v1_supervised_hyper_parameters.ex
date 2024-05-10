@@ -22,8 +22,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedHyperPa
   ## Attributes
 
   *   `adapterSize` (*type:* `String.t`, *default:* `nil`) - Optional. Adapter size for tuning.
-  *   `epochCount` (*type:* `String.t`, *default:* `nil`) - Optional. Number of training epoches for this tuning job.
-  *   `learningRateMultiplier` (*type:* `float()`, *default:* `nil`) - Optional. Learning rate multiplier for tuning.
+  *   `epochCount` (*type:* `String.t`, *default:* `nil`) - Optional. Number of complete passes the model makes over the entire training dataset during training.
+  *   `learningRateMultiplier` (*type:* `float()`, *default:* `nil`) - Optional. Multiplier for adjusting the default learning rate.
   """
 
   use GoogleApi.Gax.ModelBase

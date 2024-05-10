@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroup do
 
   ## Attributes
 
-  *   `bigQuery` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQuery.t`, *default:* `nil`) - Indicates that features for this group come from BigQuery Table/View. By default treats the source as a sparse time series source, which is required to have an entity_id and a feature_timestamp column in the source.
+  *   `bigQuery` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQuery.t`, *default:* `nil`) - Indicates that features for this group come from BigQuery Table/View. By default treats the source as a sparse time series source. The BigQuery source table or view must have at least one entity ID column and a column named `feature_timestamp`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureGroup was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the FeatureGroup.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.

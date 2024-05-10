@@ -23,9 +23,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint do
 
   *   `crowdingTag` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointCrowdingTag.t`, *default:* `nil`) - Optional. CrowdingTag of the datapoint, the number of neighbors to return in each crowding can be configured during query.
   *   `datapointId` (*type:* `String.t`, *default:* `nil`) - Required. Unique identifier of the datapoint.
-  *   `featureVector` (*type:* `list(number())`, *default:* `nil`) - Required. Feature embedding vector. An array of numbers with the length of [NearestNeighborSearchConfig.dimensions].
+  *   `featureVector` (*type:* `list(number())`, *default:* `nil`) - Required. Feature embedding vector for dense index. An array of numbers with the length of [NearestNeighborSearchConfig.dimensions].
   *   `numericRestricts` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointNumericRestriction.t)`, *default:* `nil`) - Optional. List of Restrict of the datapoint, used to perform "restricted searches" where boolean rule are used to filter the subset of the database eligible for matching. This uses numeric comparisons.
   *   `restricts` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointRestriction.t)`, *default:* `nil`) - Optional. List of Restrict of the datapoint, used to perform "restricted searches" where boolean rule are used to filter the subset of the database eligible for matching. This uses categorical tokens. See: https://cloud.google.com/vertex-ai/docs/matching-engine/filtering
+  *   `sparseEmbedding` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointSparseEmbedding.t`, *default:* `nil`) - Optional. Feature embedding vector for sparse index.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,6 +46,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint do
             list(
               GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointRestriction.t()
             )
+            | nil,
+          :sparseEmbedding =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointSparseEmbedding.t()
             | nil
         }
 
@@ -63,6 +67,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapoint do
   field(:restricts,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointRestriction,
     type: :list
+  )
+
+  field(:sparseEmbedding,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexDatapointSparseEmbedding
   )
 end
 
