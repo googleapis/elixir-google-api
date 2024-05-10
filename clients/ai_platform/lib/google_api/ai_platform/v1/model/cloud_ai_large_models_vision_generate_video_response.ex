@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionGenerateVideoRes
   ## Attributes
 
   *   `generatedSamples` (*type:* `list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionMedia.t)`, *default:* `nil`) - The generates samples.
+  *   `raiErrorMessage` (*type:* `String.t`, *default:* `nil`) - Returns rai error message for filtered videos.
   *   `raiMediaFilteredCount` (*type:* `integer()`, *default:* `nil`) - Returns if any videos were filtered due to RAI policies.
   *   `raiMediaFilteredReasons` (*type:* `list(String.t)`, *default:* `nil`) - Returns rai failure reasons if any.
   *   `raiTextFilteredReason` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionFilteredText.t`, *default:* `nil`) - Returns filtered text rai info.
@@ -32,6 +33,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionGenerateVideoRes
   @type t :: %__MODULE__{
           :generatedSamples =>
             list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionMedia.t()) | nil,
+          :raiErrorMessage => String.t() | nil,
           :raiMediaFilteredCount => integer() | nil,
           :raiMediaFilteredReasons => list(String.t()) | nil,
           :raiTextFilteredReason =>
@@ -43,6 +45,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionGenerateVideoRes
     type: :list
   )
 
+  field(:raiErrorMessage)
   field(:raiMediaFilteredCount)
   field(:raiMediaFilteredReasons, type: :list)
 

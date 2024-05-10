@@ -22,8 +22,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningS
   ## Attributes
 
   *   `hyperParameters` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedHyperParameters.t`, *default:* `nil`) - Optional. Hyperparameters for SFT.
-  *   `trainingDatasetUri` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage path to file containing training dataset for tuning.
-  *   `validationDatasetUri` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage path to file containing validation dataset for tuning.
+  *   `trainingDatasetUri` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage path to file containing training dataset for tuning. The dataset must be formatted as a JSONL file.
+  *   `validationDatasetUri` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage path to file containing validation dataset for tuning. The dataset must be formatted as a JSONL file.
   """
 
   use GoogleApi.Gax.ModelBase

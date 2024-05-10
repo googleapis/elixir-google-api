@@ -21,22 +21,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
 
   ## Attributes
 
-  *   `groundingAttributions` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingAttribution.t)`, *default:* `nil`) - Optional. List of grounding attributions.
+  *   `searchEntryPoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t`, *default:* `nil`) - Optional. Google search entry for the following-up web searches.
   *   `webSearchQueries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Web search queries for the following-up web search.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :groundingAttributions =>
-            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingAttribution.t())
-            | nil,
+          :searchEntryPoint =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t() | nil,
           :webSearchQueries => list(String.t()) | nil
         }
 
-  field(:groundingAttributions,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingAttribution,
-    type: :list
+  field(:searchEntryPoint,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint
   )
 
   field(:webSearchQueries, type: :list)

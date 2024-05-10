@@ -22,25 +22,30 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborSe
   ## Attributes
 
   *   `invalidRecordCount` (*type:* `String.t`, *default:* `nil`) - Number of records in this file we skipped due to validate errors.
+  *   `invalidSparseRecordCount` (*type:* `String.t`, *default:* `nil`) - Number of sparse records in this file we skipped due to validate errors.
   *   `partialErrors` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborSearchOperationMetadataRecordError.t)`, *default:* `nil`) - The detail information of the partial failures encountered for those invalid records that couldn't be parsed. Up to 50 partial errors will be reported.
   *   `sourceGcsUri` (*type:* `String.t`, *default:* `nil`) - Cloud Storage URI pointing to the original file in user's bucket.
   *   `validRecordCount` (*type:* `String.t`, *default:* `nil`) - Number of records in this file that were successfully processed.
+  *   `validSparseRecordCount` (*type:* `String.t`, *default:* `nil`) - Number of sparse records in this file that were successfully processed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :invalidRecordCount => String.t() | nil,
+          :invalidSparseRecordCount => String.t() | nil,
           :partialErrors =>
             list(
               GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborSearchOperationMetadataRecordError.t()
             )
             | nil,
           :sourceGcsUri => String.t() | nil,
-          :validRecordCount => String.t() | nil
+          :validRecordCount => String.t() | nil,
+          :validSparseRecordCount => String.t() | nil
         }
 
   field(:invalidRecordCount)
+  field(:invalidSparseRecordCount)
 
   field(:partialErrors,
     as:
@@ -50,6 +55,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborSe
 
   field(:sourceGcsUri)
   field(:validRecordCount)
+  field(:validSparseRecordCount)
 end
 
 defimpl Poison.Decoder,

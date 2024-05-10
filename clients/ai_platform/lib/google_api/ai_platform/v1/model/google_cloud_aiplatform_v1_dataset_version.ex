@@ -26,6 +26,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DatasetVersion do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The user-defined name of the DatasetVersion. The name can be up to 128 characters long and can consist of any UTF-8 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `metadata` (*type:* `any()`, *default:* `nil`) - Required. Output only. Additional information about the DatasetVersion.
+  *   `modelReference` (*type:* `String.t`, *default:* `nil`) - Output only. Reference to the public base model last used by the dataset version. Only set for prompt dataset versions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the DatasetVersion.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this DatasetVersion was last updated.
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DatasetVersion do
           :displayName => String.t() | nil,
           :etag => String.t() | nil,
           :metadata => any() | nil,
+          :modelReference => String.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DatasetVersion do
   field(:displayName)
   field(:etag)
   field(:metadata)
+  field(:modelReference)
   field(:name)
   field(:updateTime, as: DateTime)
 end

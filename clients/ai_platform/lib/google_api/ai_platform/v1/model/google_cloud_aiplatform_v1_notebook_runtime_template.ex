@@ -31,7 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
   *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Output only. The default template to use if not specified.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize the NotebookRuntimeTemplates. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
   *   `machineSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t`, *default:* `nil`) - Optional. Immutable. The specification of a single machine for the template.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the NotebookRuntimeTemplate.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the NotebookRuntimeTemplate.
   *   `networkSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec.t`, *default:* `nil`) - Optional. Network spec.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
   *   `notebookRuntimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The type of the notebook runtime template.

@@ -22,17 +22,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexStats do
   ## Attributes
 
   *   `shardsCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of shards in the Index.
-  *   `vectorsCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of vectors in the Index.
+  *   `sparseVectorsCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of sparse vectors in the Index.
+  *   `vectorsCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of dense vectors in the Index.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :shardsCount => integer() | nil,
+          :sparseVectorsCount => String.t() | nil,
           :vectorsCount => String.t() | nil
         }
 
   field(:shardsCount)
+  field(:sparseVectorsCount)
   field(:vectorsCount)
 end
 
