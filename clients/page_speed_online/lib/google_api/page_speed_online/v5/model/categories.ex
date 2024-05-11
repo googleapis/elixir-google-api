@@ -24,7 +24,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.Categories do
   *   `accessibility` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The accessibility category, containing all accessibility related audits.
   *   `best-practices` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The best practices category, containing all best practices related audits.
   *   `performance` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The performance category, containing all performance related audits.
-  *   `pwa` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The Progressive-Web-App (PWA) category, containing all pwa related audits.
+  *   `pwa` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The Progressive-Web-App (PWA) category, containing all pwa related audits. This is deprecated in Lighthouse's 12.0 release.
   *   `seo` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.LighthouseCategoryV5.t`, *default:* `nil`) - The Search-Engine-Optimization (SEO) category, containing all seo related audits.
   """
 
