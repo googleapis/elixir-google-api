@@ -23,6 +23,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] End time stamp
   *   `evaluationId` (*type:* `String.t`, *default:* `nil`) - Output only. [Output only] Evaluation ID
+  *   `externalDataSources` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.ExternalDataSources.t)`, *default:* `nil`) - Optional. External data sources
   *   `inventoryTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Inventory time stamp
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of execution resource. The format is projects/{project}/locations/{location}/evaluations/{evaluation}/executions/{execution}
@@ -36,6 +37,8 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
           :evaluationId => String.t() | nil,
+          :externalDataSources =>
+            list(GoogleApi.WorkloadManager.V1.Model.ExternalDataSources.t()) | nil,
           :inventoryTime => DateTime.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -46,6 +49,12 @@ defmodule GoogleApi.WorkloadManager.V1.Model.Execution do
 
   field(:endTime, as: DateTime)
   field(:evaluationId)
+
+  field(:externalDataSources,
+    as: GoogleApi.WorkloadManager.V1.Model.ExternalDataSources,
+    type: :list
+  )
+
   field(:inventoryTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)

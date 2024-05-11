@@ -21,21 +21,35 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
 
   ## Attributes
 
+  *   `appInstances` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesAppInstance.t)`, *default:* `nil`) - Optional. App server instances on the host
   *   `clusterInstances` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of instance URIs that are part of a cluster with this one.
   *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. The VM's instance number.
+  *   `instanceRole` (*type:* `String.t`, *default:* `nil`) - Optional. Bitmask of instance role, a resource may have multiple roles at once.
   *   `virtualHostname` (*type:* `String.t`, *default:* `nil`) - Optional. A virtual hostname of the instance if it has one.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appInstances =>
+            list(
+              GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesAppInstance.t()
+            )
+            | nil,
           :clusterInstances => list(String.t()) | nil,
           :instanceNumber => String.t() | nil,
+          :instanceRole => String.t() | nil,
           :virtualHostname => String.t() | nil
         }
 
+  field(:appInstances,
+    as: GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropertiesAppInstance,
+    type: :list
+  )
+
   field(:clusterInstances, type: :list)
   field(:instanceNumber)
+  field(:instanceRole)
   field(:virtualHostname)
 end
 
