@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
 
   ## Attributes
 
+  *   `defaultStreamingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates the default streaming mode for a streaming template. Only valid if both supports_at_least_once and supports_exactly_once are true. Possible values: UNSPECIFIED, EXACTLY_ONCE and AT_LEAST_ONCE
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description of the template.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the template.
   *   `parameters` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t)`, *default:* `nil`) - The parameters for the template.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :defaultStreamingMode => String.t() | nil,
           :description => String.t() | nil,
           :name => String.t() | nil,
           :parameters => list(GoogleApi.Dataflow.V1b3.Model.ParameterMetadata.t()) | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.TemplateMetadata do
           :supportsExactlyOnce => boolean() | nil
         }
 
+  field(:defaultStreamingMode)
   field(:description)
   field(:name)
   field(:parameters, as: GoogleApi.Dataflow.V1b3.Model.ParameterMetadata, type: :list)
