@@ -23,6 +23,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ComplianceOccurrence do
 
   *   `nonComplianceReason` (*type:* `String.t`, *default:* `nil`) - 
   *   `nonCompliantFiles` (*type:* `list(GoogleApi.ContainerAnalysis.V1.Model.NonCompliantFile.t)`, *default:* `nil`) - 
+  *   `version` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ComplianceVersion.t`, *default:* `nil`) - The OS and config version the benchmark was run on.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,12 +31,15 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ComplianceOccurrence do
   @type t :: %__MODULE__{
           :nonComplianceReason => String.t() | nil,
           :nonCompliantFiles =>
-            list(GoogleApi.ContainerAnalysis.V1.Model.NonCompliantFile.t()) | nil
+            list(GoogleApi.ContainerAnalysis.V1.Model.NonCompliantFile.t()) | nil,
+          :version => GoogleApi.ContainerAnalysis.V1.Model.ComplianceVersion.t() | nil
         }
 
   field(:nonComplianceReason)
 
   field(:nonCompliantFiles, as: GoogleApi.ContainerAnalysis.V1.Model.NonCompliantFile, type: :list)
+
+  field(:version, as: GoogleApi.ContainerAnalysis.V1.Model.ComplianceVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1.Model.ComplianceOccurrence do
