@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.ReplicationCluster do
   @moduledoc """
-  Primary-DR replica pair
+  A primary instance and disaster recovery (DR) replica pair. A DR replica is a cross-region replica that you designate for failover in the event that the primary instance has regional failure. Only applicable to MySQL.
 
   ## Attributes
 
-  *   `drReplica` (*type:* `boolean()`, *default:* `nil`) - Output only. read-only field that indicates if the replica is a dr_replica; not set for a primary.
-  *   `failoverDrReplicaName` (*type:* `String.t`, *default:* `nil`) - Optional. If the instance is a primary instance, then this field identifies the disaster recovery (DR) replica. A DR replica is an optional configuration for Enterprise Plus edition instances. If the instance is a read replica, then the field is not set. Users can set this field to set a designated DR replica for a primary. Removing this field removes the DR replica.
+  *   `drReplica` (*type:* `boolean()`, *default:* `nil`) - Output only. Read-only field that indicates whether the replica is a DR replica. This field is not set if the instance is a primary instance.
+  *   `failoverDrReplicaName` (*type:* `String.t`, *default:* `nil`) - Optional. If the instance is a primary instance, then this field identifies the disaster recovery (DR) replica. A DR replica is an optional configuration for Enterprise Plus edition instances. If the instance is a read replica, then the field is not set. Set this field to a replica name to designate a DR replica for a primary instance. Remove the replica name to remove the DR replica designation.
   """
 
   use GoogleApi.Gax.ModelBase

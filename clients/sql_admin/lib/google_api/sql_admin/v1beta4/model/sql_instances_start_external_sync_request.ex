@@ -21,7 +21,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.SqlInstancesStartExternalSyncRequest 
 
   ## Attributes
 
-  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType decides if the migration is a physical file based migration or logical migration.
+  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType configures the migration to use physical files or logical dump files. If not set, then the logical dump file configuration is used. Valid values are `LOGICAL` or `PHYSICAL`. Only applicable to MySQL.
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.MySqlSyncConfig.t`, *default:* `nil`) - MySQL-specific settings for start external sync.
   *   `skipVerification` (*type:* `boolean()`, *default:* `nil`) - Whether to skip the verification step (VESS).
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode.

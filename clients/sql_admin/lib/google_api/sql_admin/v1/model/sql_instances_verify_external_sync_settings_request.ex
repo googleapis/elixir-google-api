@@ -21,10 +21,10 @@ defmodule GoogleApi.SQLAdmin.V1.Model.SqlInstancesVerifyExternalSyncSettingsRequ
 
   ## Attributes
 
-  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType decides if the migration is a physical file based migration or logical migration
+  *   `migrationType` (*type:* `String.t`, *default:* `nil`) - Optional. MigrationType configures the migration to use physical files or logical dump files. If not set, then the logical dump file configuration is used. Valid values are `LOGICAL` or `PHYSICAL`. Only applicable to MySQL.
   *   `mysqlSyncConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.MySqlSyncConfig.t`, *default:* `nil`) - Optional. MySQL-specific settings for start external sync.
   *   `syncMode` (*type:* `String.t`, *default:* `nil`) - External sync mode
-  *   `syncParallelLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Parallel level for initial data sync. Currently only applicable for PostgreSQL.
+  *   `syncParallelLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Parallel level for initial data sync. Only applicable for PostgreSQL.
   *   `verifyConnectionOnly` (*type:* `boolean()`, *default:* `nil`) - Flag to enable verifying connection only
   *   `verifyReplicationOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to verify settings required by replication setup only
   """
