@@ -22,9 +22,9 @@ defmodule GoogleApi.AppEngine.V1.Model.ProjectEvent do
   ## Attributes
 
   *   `eventId` (*type:* `String.t`, *default:* `nil`) - The unique ID for this project event. CLHs can use this value to dedup repeated calls. required
-  *   `phase` (*type:* `String.t`, *default:* `nil`) - 
+  *   `phase` (*type:* `String.t`, *default:* `nil`) - Phase indicates when in the container event propagation this event is being communicated. Events are sent before and after the per-resource events are propagated. required
   *   `projectMetadata` (*type:* `GoogleApi.AppEngine.V1.Model.ProjectsMetadata.t`, *default:* `nil`) - The projects metadata for this project. required
-  *   `state` (*type:* `GoogleApi.AppEngine.V1.Model.ContainerState.t`, *default:* `nil`) - The state of the project that led to this event.
+  *   `state` (*type:* `GoogleApi.AppEngine.V1.Model.ContainerState.t`, *default:* `nil`) - The state of the organization that led to this event.
   """
 
   use GoogleApi.Gax.ModelBase
