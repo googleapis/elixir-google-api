@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
+  *   `advancedSiteSearchDataSources` (*type:* `list(String.t)`, *default:* `nil`) - If this field is set, only the corresponding source will be indexed for this field. Otherwise, the values from different sources are merged. Assuming a page with `` in meta tag, and `` in page map: if this enum is set to METATAGS, we will only index ``; if this enum is not set, we will merge them and index ``.
   *   `completableOption` (*type:* `String.t`, *default:* `nil`) - If completable_option is COMPLETABLE_ENABLED, field values are directly used and returned as suggestions for Autocomplete in CompletionService.CompleteQuery. If completable_option is unset, the server behavior defaults to COMPLETABLE_DISABLED for fields that support setting completable options, which are just `string` fields. For those fields that do not support setting completable options, the server will skip completable option setting, and setting completable_option for those fields will throw `INVALID_ARGUMENT` error.
   *   `dynamicFacetableOption` (*type:* `String.t`, *default:* `nil`) - If dynamic_facetable_option is DYNAMIC_FACETABLE_ENABLED, field values are available for dynamic facet. Could only be DYNAMIC_FACETABLE_DISABLED if FieldConfig.indexable_option is INDEXABLE_DISABLED. Otherwise, an `INVALID_ARGUMENT` error will be returned. If dynamic_facetable_option is unset, the server behavior defaults to DYNAMIC_FACETABLE_DISABLED for fields that support setting dynamic facetable options. For those fields that do not support setting dynamic facetable options, such as `object` and `boolean`, the server will skip dynamic facetable option setting, and setting dynamic_facetable_option for those fields will throw `INVALID_ARGUMENT` error.
   *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Required. Field path of the schema field. For example: `title`, `description`, `release_info.release_year`.
@@ -35,6 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedSiteSearchDataSources => list(String.t()) | nil,
           :completableOption => String.t() | nil,
           :dynamicFacetableOption => String.t() | nil,
           :fieldPath => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
           :searchableOption => String.t() | nil
         }
 
+  field(:advancedSiteSearchDataSources, type: :list)
   field(:completableOption)
   field(:dynamicFacetableOption)
   field(:fieldPath)

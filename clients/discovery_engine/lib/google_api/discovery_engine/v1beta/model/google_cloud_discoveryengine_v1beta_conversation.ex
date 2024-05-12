@@ -23,7 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the conversation finished.
   *   `messages` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaConversationMessage.t)`, *default:* `nil`) - Conversation messages.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `project/*/locations/global/collections/{collection}/dataStore/*/conversations/*` or `project/*/locations/global/collections/{collection}/engines/*/conversations/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/dataStore/*/conversations/*` or `projects/{project}/locations/global/collections/{collection}/engines/*/conversations/*`.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the conversation started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the Conversation.
   *   `userPseudoId` (*type:* `String.t`, *default:* `nil`) - A unique identifier for tracking users.

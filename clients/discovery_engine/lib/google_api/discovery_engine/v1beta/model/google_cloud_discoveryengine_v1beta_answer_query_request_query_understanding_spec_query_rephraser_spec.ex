@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `disable` (*type:* `boolean()`, *default:* `nil`) - Disable query rephraser.
-  *   `maxRephraseSteps` (*type:* `integer()`, *default:* `nil`) - Max rephrase steps. The max number is 10 steps. If not set or set to < 1, it will be set to 1 by default.
+  *   `maxRephraseSteps` (*type:* `integer()`, *default:* `nil`) - Max rephrase steps. The max number is 5 steps. If not set or set to < 1, it will be set to 1 by default.
   """
 
   use GoogleApi.Gax.ModelBase
