@@ -174,7 +174,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ExportDocumentsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -310,7 +310,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1097,7 +1097,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - A mask, relative to the field. If specified, only configuration specified by this field_mask will be updated in the field.
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1172,7 +1172,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Index.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1466,7 +1466,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BatchGetDocumentsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BatchGetDocumentsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1540,7 +1540,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BatchWriteRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BatchWriteRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1612,7 +1612,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BeginTransactionRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.BeginTransactionRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1684,7 +1684,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.CommitRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.CommitRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1759,7 +1759,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:documentId` (*type:* `String.t`) - The client-assigned document ID to use for this document. Optional. If not specified, an ID will be assigned by the service.
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2074,7 +2074,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.ListCollectionIdsRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.ListCollectionIdsRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2236,7 +2236,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.ListenRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.ListenRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2308,7 +2308,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.PartitionQueryRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.PartitionQueryRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2384,7 +2384,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:"currentDocument.updateTime"` (*type:* `DateTime.t`) - When set, the target document must exist and have been last updated at that time. Timestamp must be microsecond aligned.
       *   `:"mask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
       *   `:"updateMask.fieldPaths"` (*type:* `list(String.t)`) - The list of field paths in the mask. See Document.fields for a field path syntax reference.
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.Document.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2460,7 +2460,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.RollbackRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.RollbackRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2606,7 +2606,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.RunQueryRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.RunQueryRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2621,6 +2621,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
           keyword()
         ) ::
           {:ok, GoogleApi.Firestore.V1.Model.RunQueryResponse.t()}
+          | {:ok, [GoogleApi.Firestore.V1.Model.RunQueryResponse.t()]}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
@@ -2678,7 +2679,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.WriteRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.WriteRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2750,7 +2751,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleLongrunningCancelOperationRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Firestore.V1.Model.GoogleLongrunningCancelOperationRequest.t`) -
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
