@@ -23,7 +23,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
 
   *   `productWidth` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The width of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `maxEnergyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
-  *   `autoPricingMinPrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - A safeguard in the [Automated Discounts](https://support.google.com/merchants/answer/10295759?hl=en) and [Dynamic Promotions](https://support.google.com/merchants/answer/13949249?hl=en) projects, ensuring that discounts on merchants' offers do not fall below this value, thereby preserving the offer's value and profitability.
+  *   `autoPricingMinPrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - A safeguard in the [Automated Discounts](//support.google.com/merchants/answer/10295759) and [Dynamic Promotions](//support.google.com/merchants/answer/13949249) projects, ensuring that discounts on merchants' offers do not fall below this value, thereby preserving the offer's value and profitability.
   *   `ageGroup` (*type:* `String.t`, *default:* `nil`) - Target age group of the item.
   *   `color` (*type:* `String.t`, *default:* `nil`) - Color of the item.
   *   `imageLink` (*type:* `String.t`, *default:* `nil`) - URL of an image of the item.
@@ -51,7 +51,6 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `multipack` (*type:* `String.t`, *default:* `nil`) - The number of identical products in a merchant-defined multipack.
   *   `salePrice` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Advertised sale price of the item.
   *   `displayAdsSimilarIds` (*type:* `list(String.t)`, *default:* `nil`) - Advertiser-specified recommendations.
-  *   `loyaltyPoints` (*type:* `GoogleApi.Content.V21.Model.LoyaltyPoints.t`, *default:* `nil`) - Loyalty points that users receive after purchasing the item. Japan only.
   *   `sizeSystem` (*type:* `String.t`, *default:* `nil`) - System in which the size is specified. Recommended for apparel items.
   *   `productLength` (*type:* `GoogleApi.Content.V21.Model.ProductDimension.t`, *default:* `nil`) - The length of the product in the units provided. The value must be between 0 (exclusive) and 3000 (inclusive).
   *   `itemGroupId` (*type:* `String.t`, *default:* `nil`) - Shared identifier for all variants of the same product.
@@ -104,6 +103,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   *   `material` (*type:* `String.t`, *default:* `nil`) - The material of which the item is made.
   *   `shippingLabel` (*type:* `String.t`, *default:* `nil`) - The shipping label of the product, used to group product in account-level shipping rules.
   *   `identifierExists` (*type:* `boolean()`, *default:* `nil`) - False when the item does not have unique product identifiers appropriate to its category, such as GTIN, MPN, and brand. Required according to the Unique Product Identifier Rules for all target countries except for Canada.
+  *   `loyaltyProgram` (*type:* `GoogleApi.Content.V21.Model.LoyaltyProgram.t`, *default:* `nil`) - Loyalty program information that is used to surface loyalty benefits ( for example pricing, points, etc) to the user for this item.
   *   `installment` (*type:* `GoogleApi.Content.V21.Model.Installment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
   *   `salePriceEffectiveDate` (*type:* `String.t`, *default:* `nil`) - Date range during which the item is on sale (see product data specification ).
   *   `energyEfficiencyClass` (*type:* `String.t`, *default:* `nil`) - The energy efficiency class as defined in EU directive 2010/30/EU.
@@ -157,7 +157,6 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :multipack => String.t() | nil,
           :salePrice => GoogleApi.Content.V21.Model.Price.t() | nil,
           :displayAdsSimilarIds => list(String.t()) | nil,
-          :loyaltyPoints => GoogleApi.Content.V21.Model.LoyaltyPoints.t() | nil,
           :sizeSystem => String.t() | nil,
           :productLength => GoogleApi.Content.V21.Model.ProductDimension.t() | nil,
           :itemGroupId => String.t() | nil,
@@ -211,6 +210,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
           :material => String.t() | nil,
           :shippingLabel => String.t() | nil,
           :identifierExists => boolean() | nil,
+          :loyaltyProgram => GoogleApi.Content.V21.Model.LoyaltyProgram.t() | nil,
           :installment => GoogleApi.Content.V21.Model.Installment.t() | nil,
           :salePriceEffectiveDate => String.t() | nil,
           :energyEfficiencyClass => String.t() | nil,
@@ -261,7 +261,6 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:multipack)
   field(:salePrice, as: GoogleApi.Content.V21.Model.Price)
   field(:displayAdsSimilarIds, type: :list)
-  field(:loyaltyPoints, as: GoogleApi.Content.V21.Model.LoyaltyPoints)
   field(:sizeSystem)
   field(:productLength, as: GoogleApi.Content.V21.Model.ProductDimension)
   field(:itemGroupId)
@@ -319,6 +318,7 @@ defmodule GoogleApi.Content.V21.Model.Product do
   field(:material)
   field(:shippingLabel)
   field(:identifierExists)
+  field(:loyaltyProgram, as: GoogleApi.Content.V21.Model.LoyaltyProgram)
   field(:installment, as: GoogleApi.Content.V21.Model.Installment)
   field(:salePriceEffectiveDate)
   field(:energyEfficiencyClass)
