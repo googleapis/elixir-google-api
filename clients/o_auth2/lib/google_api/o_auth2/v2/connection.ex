@@ -24,7 +24,7 @@ defmodule GoogleApi.OAuth2.V2.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # View your email address
+      # See your primary Google Account email address
       "https://www.googleapis.com/auth/userinfo.email",
 
       # See your personal info, including any personal info you've made publicly available
