@@ -28,6 +28,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevt
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the request to create the build was received.
   *   `failureInfo` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfo.t`, *default:* `nil`) - Output only. Contains information about the build when status=FAILURE.
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which execution of the build was finished. The difference between finish_time and start_time is the duration of the build's execution.
+  *   `gitConfig` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitConfig.t`, *default:* `nil`) - Optional. Configuration for git operations.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Unique identifier of the build.
   *   `images` (*type:* `list(String.t)`, *default:* `nil`) - A list of images to be pushed upon the successful completion of all build steps. The images are pushed using the builder service account's credentials. The digests of the pushed images will be stored in the `Build` resource's results field. If any of the images fail to be pushed, the build status is marked `FAILURE`.
   *   `logUrl` (*type:* `String.t`, *default:* `nil`) - Output only. URL to logs for this build in Google Cloud Console.
@@ -70,6 +71,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevt
             GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1BuildFailureInfo.t()
             | nil,
           :finishTime => DateTime.t() | nil,
+          :gitConfig =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitConfig.t()
+            | nil,
           :id => String.t() | nil,
           :images => list(String.t()) | nil,
           :logUrl => String.t() | nil,
@@ -143,6 +147,12 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevt
   )
 
   field(:finishTime, as: DateTime)
+
+  field(:gitConfig,
+    as:
+      GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitConfig
+  )
+
   field(:id)
   field(:images, type: :list)
   field(:logUrl)
