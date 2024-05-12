@@ -23,7 +23,6 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Cloud Run revision.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location in which this revision is deployed.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - ID of Cloud Run Service this revision belongs to.
   *   `serviceUri` (*type:* `String.t`, *default:* `nil`) - URI of Cloud Run service this revision belongs to.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud Run revision.
   """
@@ -33,14 +32,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo do
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :location => String.t() | nil,
-          :serviceName => String.t() | nil,
           :serviceUri => String.t() | nil,
           :uri => String.t() | nil
         }
 
   field(:displayName)
   field(:location)
-  field(:serviceName)
   field(:serviceUri)
   field(:uri)
 end
