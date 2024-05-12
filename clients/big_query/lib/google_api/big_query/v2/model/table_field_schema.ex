@@ -26,6 +26,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   *   `defaultValueExpression` (*type:* `String.t`, *default:* `nil`) - Optional. A SQL expression to specify the [default value] (https://cloud.google.com/bigquery/docs/default-values) for this field.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The field description. The maximum length is 1,024 characters.
   *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)`, *default:* `nil`) - Optional. Describes the nested schema fields if the type property is set to RECORD.
+  *   `foreignTypeDefinition` (*type:* `String.t`, *default:* `nil`) - Optional. Definition of the foreign data type. Only valid for top-level schema fields (not nested fields). If the type is FOREIGN, this field is required.
   *   `maxLength` (*type:* `String.t`, *default:* `nil`) - Optional. Maximum length of values of this field for STRINGS or BYTES. If max_length is not specified, no maximum length constraint is imposed on this field. If type = "STRING", then max_length represents the maximum UTF-8 length of strings in this field. If type = "BYTES", then max_length represents the maximum number of bytes in this field. It is invalid to set this field if type ≠ "STRING" and ≠ "BYTES".
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. The field mode. Possible values include NULLABLE, REQUIRED and REPEATED. The default value is NULLABLE.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The field name. The name must contain only letters (a-z, A-Z), numbers (0-9), or underscores (_), and must start with a letter or underscore. The maximum length is 300 characters.
@@ -45,6 +46,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
           :defaultValueExpression => String.t() | nil,
           :description => String.t() | nil,
           :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil,
+          :foreignTypeDefinition => String.t() | nil,
           :maxLength => String.t() | nil,
           :mode => String.t() | nil,
           :name => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   field(:defaultValueExpression)
   field(:description)
   field(:fields, as: GoogleApi.BigQuery.V2.Model.TableFieldSchema, type: :list)
+  field(:foreignTypeDefinition)
   field(:maxLength)
   field(:mode)
   field(:name)

@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics2ReservationUsage do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Reservation name or "unreserved" for on-demand resources usage.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Reservation name or "unreserved" for on-demand resource usage and multi-statement queries.
   *   `slotMs` (*type:* `String.t`, *default:* `nil`) - Total slot milliseconds used by the reservation for a particular job.
   """
 
