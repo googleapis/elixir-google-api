@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.AuthorizedView do
   @moduledoc """
-  Placeholder for admin API work while we work out the internals.
+  An Authorized View of a Cloud Bigtable Table.
 
   ## Attributes
 
