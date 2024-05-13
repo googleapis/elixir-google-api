@@ -27,7 +27,7 @@ defmodule GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Recom
   *   `description` (*type:* `String.t`, *default:* `nil`) - Free-form human readable summary in English. The maximum length is 500 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the Recommendation. Provides optimistic locking when updating states.
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time this recommendation was refreshed by the system that created it in the first place.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of recommendation.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of recommendation.
   *   `primaryImpact` (*type:* `GoogleApi.Recommender.V1beta1.Model.GoogleCloudRecommenderV1beta1Impact.t`, *default:* `nil`) - The primary impact that this recommendation can have while trying to optimize for one category.
   *   `priority` (*type:* `String.t`, *default:* `nil`) - Recommendation's priority.
   *   `recommenderSubtype` (*type:* `String.t`, *default:* `nil`) - Contains an identifier for a subtype of recommendations produced for the same recommender. Subtype is a function of content and impact, meaning a new subtype might be added when significant changes to `content` or `primary_impact.category` are introduced. See the Recommenders section to see a list of subtypes for a given Recommender. Examples: For recommender = "google.iam.policy.Recommender", recommender_subtype can be one of "REMOVE_ROLE"/"REPLACE_ROLE"

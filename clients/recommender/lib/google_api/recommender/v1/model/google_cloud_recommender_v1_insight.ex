@@ -28,7 +28,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1Insight do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the Insight. Provides optimistic locking when updating states.
   *   `insightSubtype` (*type:* `String.t`, *default:* `nil`) - Insight subtype. Insight content schema will be stable for a given subtype.
   *   `lastRefreshTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp of the latest data used to generate the insight.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the insight.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the insight.
   *   `observationPeriod` (*type:* `String.t`, *default:* `nil`) - Observation period that led to the insight. The source data used to generate the insight ends at last_refresh_time and begins at (last_refresh_time - observation_period).
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Insight's severity.
   *   `stateInfo` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightStateInfo.t`, *default:* `nil`) - Information state and metadata.
