@@ -409,7 +409,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates Configs returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Config field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Config field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate configs to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateIssuanceConfigsResponse`. Indicates that this is a continuation of a prior `ListCertificateIssuanceConfigs` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -704,7 +704,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates Maps returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate maps to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateMapsResponse`. Indicates that this is a continuation of a prior `ListCertificateMaps` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1074,7 +1074,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the returned Certificate Map Entries.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map Entry field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map Entry field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate map entries to return. The service may return fewer than this value. If unspecified, at most 50 certificate map entries will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateMapEntriesResponse`. Indicates that this is a continuation of a prior `ListCertificateMapEntries` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1442,7 +1442,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of Certificate field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of certificates to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificatesResponse`. Indicates that this is a continuation of a prior `ListCertificates` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1812,7 +1812,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Dns Authorizations returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Dns Authorization field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of Dns Authorization field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of dns authorizations to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDnsAuthorizationsResponse`. Indicates that this is a continuation of a prior `ListDnsAuthorizations` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2472,7 +2472,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Filter expression to restrict the TrustConfigs returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of TrustConfig field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix " desc".
+      *   `:orderBy` (*type:* `String.t`) - A list of TrustConfig field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of TrustConfigs to return per call.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTrustConfigsResponse`. Indicates that this is a continuation of a prior `ListTrustConfigs` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
