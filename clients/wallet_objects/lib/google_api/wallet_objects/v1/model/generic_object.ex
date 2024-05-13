@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
   @moduledoc """
-  Generic Object Next ID: 121
+  Generic Object
 
   ## Attributes
 
