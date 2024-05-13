@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1DailyRecurrence do
   @moduledoc """
-  Represents a recurring schedule that runs at a specific time every day. The time zone is UTC.
+  Represents a recurring schedule that runs every day. The time zone is UTC.
 
   ## Attributes
 
