@@ -21,6 +21,7 @@ defmodule GoogleApi.Container.V1.Model.DNSConfig do
 
   ## Attributes
 
+  *   `additiveVpcScopeDnsDomain` (*type:* `String.t`, *default:* `nil`) - Optional. The domain used in Additive VPC scope.
   *   `clusterDns` (*type:* `String.t`, *default:* `nil`) - cluster_dns indicates which in-cluster DNS provider should be used.
   *   `clusterDnsDomain` (*type:* `String.t`, *default:* `nil`) - cluster_dns_domain is the suffix used for all cluster service records.
   *   `clusterDnsScope` (*type:* `String.t`, *default:* `nil`) - cluster_dns_scope indicates the scope of access to cluster DNS records.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Container.V1.Model.DNSConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :additiveVpcScopeDnsDomain => String.t() | nil,
           :clusterDns => String.t() | nil,
           :clusterDnsDomain => String.t() | nil,
           :clusterDnsScope => String.t() | nil
         }
 
+  field(:additiveVpcScopeDnsDomain)
   field(:clusterDns)
   field(:clusterDnsDomain)
   field(:clusterDnsScope)

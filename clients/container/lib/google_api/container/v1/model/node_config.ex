@@ -27,6 +27,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The map of Kubernetes labels (key/value pairs) to be applied to each node. These will added in addition to any default label(s) that Kubernetes may apply to the node. In case of conflict in label keys, the applied set may differ depending on the Kubernetes version -- it's best to assume the behavior is undefined and conflicts should be avoided. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
   *   `resourceManagerTags` (*type:* `GoogleApi.Container.V1.Model.ResourceManagerTags.t`, *default:* `nil`) - A map of resource manager tag keys and values to be attached to the nodes.
   *   `taints` (*type:* `list(GoogleApi.Container.V1.Model.NodeTaint.t)`, *default:* `nil`) - List of kubernetes taints to be applied to each node. For more information, including usage and the valid values, see: https://kubernetes.io/docs/concepts/configuration/taint-and-toleration/
+  *   `containerdConfig` (*type:* `GoogleApi.Container.V1.Model.ContainerdConfig.t`, *default:* `nil`) - Parameters for containerd customization.
   *   `kubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - Node kubelet configs.
   *   `bootDiskKmsKey` (*type:* `String.t`, *default:* `nil`) -  The Customer Managed Encryption Key used to encrypt the boot disk attached to each node in the node pool. This should be of the form projects/[KEY_PROJECT_ID]/locations/[LOCATION]/keyRings/[RING_NAME]/cryptoKeys/[KEY_NAME]. For more information about protecting resources with Cloud KMS Keys please see: https://cloud.google.com/compute/docs/disks/customer-managed-encryption
   *   `advancedMachineFeatures` (*type:* `GoogleApi.Container.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Advanced features for the Compute Engine VM.
@@ -70,6 +71,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :labels => map() | nil,
           :resourceManagerTags => GoogleApi.Container.V1.Model.ResourceManagerTags.t() | nil,
           :taints => list(GoogleApi.Container.V1.Model.NodeTaint.t()) | nil,
+          :containerdConfig => GoogleApi.Container.V1.Model.ContainerdConfig.t() | nil,
           :kubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
           :bootDiskKmsKey => String.t() | nil,
           :advancedMachineFeatures =>
@@ -116,6 +118,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:labels, type: :map)
   field(:resourceManagerTags, as: GoogleApi.Container.V1.Model.ResourceManagerTags)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaint, type: :list)
+  field(:containerdConfig, as: GoogleApi.Container.V1.Model.ContainerdConfig)
   field(:kubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
   field(:bootDiskKmsKey)
   field(:advancedMachineFeatures, as: GoogleApi.Container.V1.Model.AdvancedMachineFeatures)

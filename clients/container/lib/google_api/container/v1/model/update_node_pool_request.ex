@@ -21,8 +21,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
 
   ## Attributes
 
+  *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
   *   `clusterId` (*type:* `String.t`, *default:* `nil`) - Deprecated. The name of the cluster to upgrade. This field has been deprecated and replaced by the name field.
   *   `confidentialNodes` (*type:* `GoogleApi.Container.V1.Model.ConfidentialNodes.t`, *default:* `nil`) - Confidential nodes config. All the nodes in the node pool will be Confidential VM once enabled.
+  *   `containerdConfig` (*type:* `GoogleApi.Container.V1.Model.ContainerdConfig.t`, *default:* `nil`) - The desired containerd config for nodes in the node pool. Initiates an upgrade operation that recreates the nodes with the new config.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Optional. The desired disk size for nodes in the node pool specified in GB. The smallest allowed disk size is 10GB. Initiates an upgrade operation that migrates the nodes in the node pool to the specified disk size.
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - Optional. The desired disk type (e.g. 'pd-standard', 'pd-ssd' or 'pd-balanced') for nodes in the node pool. Initiates an upgrade operation that migrates the nodes in the node pool to the specified disk type.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The current etag of the node pool. If an etag is provided and does not match the current etag of the node pool, update will be blocked and an ABORTED error will be returned.
@@ -55,8 +57,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
           :clusterId => String.t() | nil,
           :confidentialNodes => GoogleApi.Container.V1.Model.ConfidentialNodes.t() | nil,
+          :containerdConfig => GoogleApi.Container.V1.Model.ContainerdConfig.t() | nil,
           :diskSizeGb => String.t() | nil,
           :diskType => String.t() | nil,
           :etag => String.t() | nil,
@@ -87,8 +91,10 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :zone => String.t() | nil
         }
 
+  field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
   field(:clusterId)
   field(:confidentialNodes, as: GoogleApi.Container.V1.Model.ConfidentialNodes)
+  field(:containerdConfig, as: GoogleApi.Container.V1.Model.ContainerdConfig)
   field(:diskSizeGb)
   field(:diskType)
   field(:etag)
