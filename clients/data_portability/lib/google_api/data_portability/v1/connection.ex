@@ -201,9 +201,6 @@ defmodule GoogleApi.DataPortability.V1.Connection do
       # Move a copy of your public YouTube playlists.
       "https://www.googleapis.com/auth/dataportability.youtube.public_playlists",
 
-      # Move a copy of the Google Alerts subscriptions you created.
-      "https://www.googleapis.com/auth/dataportability.alerts.subscriptions",
-
       # Move a copy of reviews you wrote about products or online stores on Google Search.
       "https://www.googleapis.com/auth/dataportability.shopping.reviews",
 
