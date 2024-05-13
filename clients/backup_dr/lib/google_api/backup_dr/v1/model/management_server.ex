@@ -21,6 +21,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
 
   ## Attributes
 
+  *   `baProxyUri` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The hostname or ip address of the exposed AGM endpoints, used by BAs to connect to BA proxy.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the ManagementServer instance (2048 characters or less).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Server specified ETag for the ManagementServer resource to prevent simultaneous updates from overwiting each other.
@@ -39,6 +40,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :baProxyUri => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
             GoogleApi.BackupDR.V1.Model.WorkforceIdentityBasedOAuth2ClientID.t() | nil
         }
 
+  field(:baProxyUri, type: :list)
   field(:createTime, as: DateTime)
   field(:description)
   field(:etag)
