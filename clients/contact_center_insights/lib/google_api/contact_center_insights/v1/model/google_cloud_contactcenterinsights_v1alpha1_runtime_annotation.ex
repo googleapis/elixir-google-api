@@ -29,6 +29,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `dialogflowInteraction` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1DialogflowInteractionData.t`, *default:* `nil`) - Dialogflow interaction data.
   *   `endBoundary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary.t`, *default:* `nil`) - The boundary in the conversation where the annotation ends, inclusive.
   *   `faqAnswer` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1FaqAnswerData.t`, *default:* `nil`) - Agent Assist FAQ answer data.
+  *   `generatorSuggestionResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetGeneratorSuggestionResponse.t`, *default:* `nil`) - The generator suggestion result.
+  *   `knowledgeAssistResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetKnowledgeAssistResponse.t`, *default:* `nil`) - The Knowledge Assist result.
+  *   `knowledgeSearchResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SearchKnowledgeAnswer.t`, *default:* `nil`) - The Knowledge Search result.
   *   `smartComposeSuggestion` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SmartComposeSuggestionData.t`, *default:* `nil`) - Agent Assist Smart Compose suggestion data.
   *   `smartReply` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SmartReplyData.t`, *default:* `nil`) - Agent Assist Smart Reply data.
   *   `startBoundary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1AnnotationBoundary.t`, *default:* `nil`) - The boundary in the conversation where the annotation starts, inclusive.
@@ -56,6 +59,15 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             | nil,
           :faqAnswer =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1FaqAnswerData.t()
+            | nil,
+          :generatorSuggestionResult =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetGeneratorSuggestionResponse.t()
+            | nil,
+          :knowledgeAssistResult =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetKnowledgeAssistResponse.t()
+            | nil,
+          :knowledgeSearchResult =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SearchKnowledgeAnswer.t()
             | nil,
           :smartComposeSuggestion =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SmartComposeSuggestionData.t()
@@ -100,6 +112,21 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:faqAnswer,
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1FaqAnswerData
+  )
+
+  field(:generatorSuggestionResult,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetGeneratorSuggestionResponse
+  )
+
+  field(:knowledgeAssistResult,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1GetKnowledgeAssistResponse
+  )
+
+  field(:knowledgeSearchResult,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SearchKnowledgeAnswer
   )
 
   field(:smartComposeSuggestion,
