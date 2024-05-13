@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.Documentation do
   @moduledoc """
-  A content string and a MIME type that describes the content string's format.
+  Documentation that is included in the notifications and incidents pertaining to this policy.
 
   ## Attributes
 
