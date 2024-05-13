@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeCategory do
   @moduledoc """
-  Classification of infoTypes to organize them according to geographic location, industry, and data type.
+  Classification of infoTypes to organize them according to geographic location, industry, and data type. NEXT_ID: 47
 
   ## Attributes
 
