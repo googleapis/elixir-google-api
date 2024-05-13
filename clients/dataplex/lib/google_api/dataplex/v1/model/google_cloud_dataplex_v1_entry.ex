@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry do
 
   ## Attributes
 
-  *   `aspects` (*type:* `%{optional(String.t) => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Aspect.t}`, *default:* `nil`) - Optional. The Aspects attached to the Entry. The key is either the resource name of the aspect type (if the aspect is attached directly to the entry) or "aspectType@path" if the aspect is attached to an entry's path.
+  *   `aspects` (*type:* `%{optional(String.t) => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Aspect.t}`, *default:* `nil`) - Optional. The Aspects attached to the Entry. The format for the key can be one of the following: 1. {projectId}.{locationId}.{aspectTypeId} (if the aspect is attached directly to the entry) 2. {projectId}.{locationId}.{aspectTypeId}@{path} (if the aspect is attached to an entry's path)
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Entry was created.
   *   `entrySource` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource.t`, *default:* `nil`) - Optional. Source system related information for an entry.
   *   `entryType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The resource name of the EntryType used to create this Entry.
