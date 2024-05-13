@@ -362,6 +362,7 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       *   `:filter` (*type:* `String.t`) - An expression used to filter cases. If it's an empty string, then no filtering happens. Otherwise, the endpoint returns the cases that match the filter. Expressions use the following fields separated by `AND` and specified with `=`: - `state`: Can be `OPEN` or `CLOSED`. - `priority`: Can be `P0`, `P1`, `P2`, `P3`, or `P4`. You can specify multiple values for priority using the `OR` operator. For example, `priority=P1 OR priority=P2`. - `creator.email`: The email address of the case creator. EXAMPLES: - `state=CLOSED` - `state=OPEN AND creator.email="tester@example.com"` - `state=OPEN AND (priority=P0 OR priority=P1)`
       *   `:pageSize` (*type:* `integer()`) - The maximum number of cases fetched with each request. Defaults to 10.
       *   `:pageToken` (*type:* `String.t`) - A token identifying the page of results to return. If unspecified, the first page is retrieved.
+      *   `:productLine` (*type:* `String.t`) - The product line to request cases for. If unspecified, only Google Cloud cases will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -395,7 +396,8 @@ defmodule GoogleApi.CloudSupport.V2beta.Api.Cases do
       :upload_protocol => :query,
       :filter => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :productLine => :query
     }
 
     request =

@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudSupport.V2beta.Model.CaseClassification do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A display name for the classification. The display name is not static and can change. To uniquely and consistently identify classifications, use the `CaseClassification.id` field.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID for a classification. Must be specified for case creation. To retrieve valid classification IDs for case creation, use `caseClassifications.search`. Classification IDs returned by `caseClassifications.search` are guaranteed to be valid for at least 6 months. If a given classification is deactiveated, it will immediately stop being returned. After 6 months, `case.create` requests using the classification ID will fail.
+  *   `product` (*type:* `GoogleApi.CloudSupport.V2beta.Model.Product.t`, *default:* `nil`) - The full product the classification corresponds to.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
-          :id => String.t() | nil
+          :id => String.t() | nil,
+          :product => GoogleApi.CloudSupport.V2beta.Model.Product.t() | nil
         }
 
   field(:displayName)
   field(:id)
+  field(:product, as: GoogleApi.CloudSupport.V2beta.Model.Product)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudSupport.V2beta.Model.CaseClassification do
