@@ -18,7 +18,7 @@
 defmodule GoogleApi.Dataproc.Mixfile do
   use Mix.Project
 
-  @version "0.54.0"
+  @version "0.54.1"
 
   def project() do
     [
