@@ -24,6 +24,7 @@ defmodule GoogleApi.DataMigration.V1.Model.IndexEntity do
   *   `customFeatures` (*type:* `map()`, *default:* `nil`) - Custom engine specific features.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the index.
   *   `tableColumns` (*type:* `list(String.t)`, *default:* `nil`) - Table columns used as part of the Index, for example B-TREE index should list the columns which constitutes the index.
+  *   `tableColumnsDescending` (*type:* `list(boolean())`, *default:* `nil`) - For each table_column, mark whether it's sorting order is ascending (false) or descending (true). If no value is defined, assume all columns are sorted in ascending order. Otherwise, the number of items must match that of table_columns with each value specifying the direction of the matched column by its index.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of index, for example B-TREE.
   *   `unique` (*type:* `boolean()`, *default:* `nil`) - Boolean value indicating whether the index is unique.
   """
@@ -34,6 +35,7 @@ defmodule GoogleApi.DataMigration.V1.Model.IndexEntity do
           :customFeatures => map() | nil,
           :name => String.t() | nil,
           :tableColumns => list(String.t()) | nil,
+          :tableColumnsDescending => list(boolean()) | nil,
           :type => String.t() | nil,
           :unique => boolean() | nil
         }
@@ -41,6 +43,7 @@ defmodule GoogleApi.DataMigration.V1.Model.IndexEntity do
   field(:customFeatures, type: :map)
   field(:name)
   field(:tableColumns, type: :list)
+  field(:tableColumnsDescending, type: :list)
   field(:type)
   field(:unique)
 end

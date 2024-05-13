@@ -20,7 +20,7 @@ defmodule GoogleApi.DataMigration.V1 do
   API client metadata for GoogleApi.DataMigration.V1.
   """
 
-  @discovery_revision "20240327"
+  @discovery_revision "20240421"
 
   def discovery_revision(), do: @discovery_revision
 end
