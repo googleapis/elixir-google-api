@@ -28,6 +28,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
   *   `errorInfo` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcErrorInfo.t`, *default:* `nil`) - Output only. The error info for the latest error during operating this connection.
   *   `errorType` (*type:* `String.t`, *default:* `nil`) - The error type indicates whether the error is consumer facing, producer facing or system internal.
   *   `gceOperation` (*type:* `String.t`, *default:* `nil`) - The last Compute Engine operation to setup PSC connection.
+  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. An immutable identifier for the producer instance.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - The PSC connection id of the PSC forwarding rule.
   *   `selectedSubnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the subnetwork selected to allocate IP address for this connection.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the PSC Connection
@@ -43,6 +44,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
           :errorInfo => GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcErrorInfo.t() | nil,
           :errorType => String.t() | nil,
           :gceOperation => String.t() | nil,
+          :producerInstanceId => String.t() | nil,
           :pscConnectionId => String.t() | nil,
           :selectedSubnetwork => String.t() | nil,
           :state => String.t() | nil
@@ -55,6 +57,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
   field(:errorInfo, as: GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcErrorInfo)
   field(:errorType)
   field(:gceOperation)
+  field(:producerInstanceId)
   field(:pscConnectionId)
   field(:selectedSubnetwork)
   field(:state)
