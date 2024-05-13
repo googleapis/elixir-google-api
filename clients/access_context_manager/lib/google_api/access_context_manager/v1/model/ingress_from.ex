@@ -21,7 +21,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.IngressFrom do
 
   ## Attributes
 
-  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through this ingress policy, in the format of `user:{email_id}` or `serviceAccount:{email_id}`.
+  *   `identities` (*type:* `list(String.t)`, *default:* `nil`) - A list of identities that are allowed access through [IngressPolicy]. Identities can be an individual user, service account, Google group, or third-party identity. The `v1` identities that have the prefix `user`, `group`, `serviceAccount`, `principal`, and `principalSet` in https://cloud.google.com/iam/docs/principal-identifiers#v1 are supported.
   *   `identityType` (*type:* `String.t`, *default:* `nil`) - Specifies the type of identities that are allowed access from outside the perimeter. If left unspecified, then members of `identities` field will be allowed access.
   *   `sources` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.IngressSource.t)`, *default:* `nil`) - Sources that this IngressPolicy authorizes access from.
   """
