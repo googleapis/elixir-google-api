@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaUp
 
   ## Attributes
 
-  *   `resourcePolicy` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaResourcePolicy.t`, *default:* `nil`) - Required. The ResourcePolicy to update. The ResourcePolicy's `name` field is used to identify the ResourcePolicy to be updated, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_name} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS) Only the top-level resources are supported for each of the services. The resources must belong to the service specified and `resource_name` should be formatted as: * `oauthClients/{oauth_client_id}` (Google Identity for iOS)
+  *   `resourcePolicy` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaResourcePolicy.t`, *default:* `nil`) - Required. The ResourcePolicy to update. The ResourcePolicy's `name` field is used to identify the ResourcePolicy to be updated, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. A comma-separated list of names of fields in the ResourcePolicy to update. Example: `enforcement_mode`.
   """
 

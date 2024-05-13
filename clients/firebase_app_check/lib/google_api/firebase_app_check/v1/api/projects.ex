@@ -1033,7 +1033,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the AppAttestConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the AppAttestConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1AppAttestConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1637,7 +1637,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the DeviceCheckConfig Gets to update. Example: `key_id,private_key`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the DeviceCheckConfig to update. Example: `key_id,private_key`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1DeviceCheckConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1870,7 +1870,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the PlayIntegrityConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the PlayIntegrityConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1PlayIntegrityConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2569,7 +2569,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the SafetyNetConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the SafetyNetConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1SafetyNetConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

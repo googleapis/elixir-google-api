@@ -21,11 +21,11 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaRe
 
   ## Attributes
 
-  *   `enforcementMode` (*type:* `String.t`, *default:* `nil`) - Required. The App Check enforcement mode for this resource. This will override the EnforcementMode setting on the service. For new resources that you are creating, you should consider setting an override and enable enforcement on the resource immediately, if there are no outdated clients that can use it.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. This etag is strongly validated.
+  *   `enforcementMode` (*type:* `String.t`, *default:* `nil`) - Required. The App Check enforcement mode for this resource. This will override the EnforcementMode setting on the parent service.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. This etag is strongly validated as defined by RFC 7232.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative name of the resource configuration object, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS) `resource_policy_id` is a system-generated UID used as the resource ID for the policy.
-  *   `targetResource` (*type:* `String.t`, *default:* `nil`) - Required. Service specific name of the resource object to which this policy applies, in the format: * `//oauth2.googleapis.com/projects/{project}/oauthClients/{oauth_client_id}` (Google Identity for iOS) NOTE that the resource must belong to the service specified in the `name` and be from the same project as this policy, but it may or may not exist at the time of creation of the policy.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this service configuration object was most recently updated.
+  *   `targetResource` (*type:* `String.t`, *default:* `nil`) - Required. Service specific name of the resource object to which this policy applies, in the format: * `//oauth2.googleapis.com/projects/{project}/oauthClients/{oauth_client_id}` (Google Identity for iOS) Note that the resource must belong to the service specified in the `name` and be from the same project as this policy, but the resource is allowed to be missing at the time of creation of this policy; in that case, we make a best-effort attempt at respecting this policy, but it may not have any effect until the resource is fully created.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this resource policy configuration object was most recently updated.
   """
 
   use GoogleApi.Gax.ModelBase
