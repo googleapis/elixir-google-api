@@ -63,6 +63,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   *   `excludedParentAssetFieldTypes` (*type:* `list(String.t)`, *default:* `nil`) - The asset field types that should be excluded from this campaign. Asset links with these field types will not be inherited by this campaign from the upper level.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last day of the campaign in serving customer's timezone in YYYY-MM-DD format. On create, defaults to 2037-12-30, which means the campaign will run indefinitely. To set an existing campaign to run indefinitely, set this field to 2037-12-30.
   *   `biddingStrategyType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of bidding strategy. A bidding strategy can be created by setting either the bidding scheme to create a standard bidding strategy or the `bidding_strategy` field to create a portfolio bidding strategy. This field is read-only.
+  *   `accessibleBiddingStrategy` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of AccessibleBiddingStrategy, a read-only view of the unrestricted attributes of the attached portfolio bidding strategy identified by 'bidding_strategy'. Empty, if the campaign does not use a portfolio strategy. Unrestricted strategy attributes are available to all customers with whom the strategy is shared and are read from the AccessibleBiddingStrategy resource. In contrast, restricted attributes are only available to the owner customer of the strategy and their managers. Restricted attributes can only be read from the BiddingStrategy resource.
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - The date when campaign started in serving customer's timezone in YYYY-MM-DD format.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the campaign.
   """
@@ -150,6 +151,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
           :excludedParentAssetFieldTypes => list(String.t()) | nil,
           :endDate => String.t() | nil,
           :biddingStrategyType => String.t() | nil,
+          :accessibleBiddingStrategy => String.t() | nil,
           :startDate => String.t() | nil,
           :id => String.t() | nil
         }
@@ -252,6 +254,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   field(:excludedParentAssetFieldTypes, type: :list)
   field(:endDate)
   field(:biddingStrategyType)
+  field(:accessibleBiddingStrategy)
   field(:startDate)
   field(:id)
 end

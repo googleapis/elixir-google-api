@@ -45,7 +45,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the criterion. This is the status of the ad group criterion entity, set by the client. Note: UI reports may incorporate additional information that affects whether a criterion is eligible to run. In some cases a criterion that's REMOVED in the API can still show as enabled in the UI. For example, campaigns by default show to users of all age ranges unless excluded. The UI will show each age range as "enabled", since they're eligible to see the ads; but AdGroupCriterion.status will show "removed", since no positive criterion was added.
   *   `trackingUrlTemplate` (*type:* `String.t`, *default:* `nil`) - The URL template for constructing a tracking URL.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the criterion.
-  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_UserListInfo.t`, *default:* `nil`) - Immutable. User List. The Similar Audiences sunset starts May 2023. Refer to https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html for other options.
+  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_UserListInfo.t`, *default:* `nil`) - Immutable. User List.
   *   `webpage` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_WebpageInfo.t`, *default:* `nil`) - Immutable. Webpage
   """
 
