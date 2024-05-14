@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig do
   *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether client-side authentication is enabled for the target server. Enables two-way TLS.
   *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig.t`, *default:* `nil`) - Common name to validate the target server against.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether one-way TLS is enabled. Set to `true` to enable one-way TLS.
+  *   `enforce` (*type:* `boolean()`, *default:* `nil`) - Flag that enforces TLS settings
   *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - Flag that specifies whether to ignore TLS certificate validation errors. Set to `true` to ignore errors.
   *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Name of the alias used for client-side authentication in the following format: `organizations/{org}/environments/{env}/keystores/{keystore}/aliases/{alias}`
   *   `keyAliasReference` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference.t`, *default:* `nil`) - Reference name and alias pair to use for client-side authentication.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig do
           :clientAuthEnabled => boolean() | nil,
           :commonName => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig.t() | nil,
           :enabled => boolean() | nil,
+          :enforce => boolean() | nil,
           :ignoreValidationErrors => boolean() | nil,
           :keyAlias => String.t() | nil,
           :keyAliasReference =>
@@ -51,6 +53,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoConfig do
   field(:clientAuthEnabled)
   field(:commonName, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1CommonNameConfig)
   field(:enabled)
+  field(:enforce)
   field(:ignoreValidationErrors)
   field(:keyAlias)
   field(:keyAliasReference, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1KeyAliasReference)
