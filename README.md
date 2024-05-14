@@ -61,6 +61,15 @@ the path to the key file, for example:
 If you are deploying to App Engine, Compute Engine, or Container Engine, your
 credentials will be available by default.
 
+Some of the configurations expect the `GCP_CREDENTIALS` system variable.
+This needs to be the JSON content, downloaded from a service account (not a path to the file).
+
+    export GCP_CREDENTIALS=$(cat /path/to/service_account.json)
+
+If you are running tests, sometimes there are other system variables you may have to set:
+
+    export BUCKET="my_test_bucket_must_already_exist"
+
 #### OAuth 2.0
 
 Many APIs (like Drive, Gmail, and YouTube) require you to use OAuth 2.0 to
