@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
   *   `canonicalTarget` (*type:* `GoogleApi.Dataform.V1beta1.Model.Target.t`, *default:* `nil`) - Output only. The action's identifier if the project had been compiled without any overrides configured. Unique within the compilation result.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - Output only. If and only if action's state is FAILED a failure reason is set.
   *   `invocationTiming` (*type:* `GoogleApi.Dataform.V1beta1.Model.Interval.t`, *default:* `nil`) - Output only. This action's timing details. `start_time` will be set if the action is in [RUNNING, SUCCEEDED, CANCELLED, FAILED] state. `end_time` will be set if the action is in [SUCCEEDED, CANCELLED, FAILED] state.
+  *   `notebookAction` (*type:* `GoogleApi.Dataform.V1beta1.Model.NotebookAction.t`, *default:* `nil`) - Output only. The workflow action's notebook action details.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. This action's current state.
   *   `target` (*type:* `GoogleApi.Dataform.V1beta1.Model.Target.t`, *default:* `nil`) - Output only. This action's identifier. Unique within the workflow invocation.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
           :canonicalTarget => GoogleApi.Dataform.V1beta1.Model.Target.t() | nil,
           :failureReason => String.t() | nil,
           :invocationTiming => GoogleApi.Dataform.V1beta1.Model.Interval.t() | nil,
+          :notebookAction => GoogleApi.Dataform.V1beta1.Model.NotebookAction.t() | nil,
           :state => String.t() | nil,
           :target => GoogleApi.Dataform.V1beta1.Model.Target.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocationAction do
   field(:canonicalTarget, as: GoogleApi.Dataform.V1beta1.Model.Target)
   field(:failureReason)
   field(:invocationTiming, as: GoogleApi.Dataform.V1beta1.Model.Interval)
+  field(:notebookAction, as: GoogleApi.Dataform.V1beta1.Model.NotebookAction)
   field(:state)
   field(:target, as: GoogleApi.Dataform.V1beta1.Model.Target)
 end

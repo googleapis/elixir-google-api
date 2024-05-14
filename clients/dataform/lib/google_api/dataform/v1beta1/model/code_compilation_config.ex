@@ -25,6 +25,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig do
   *   `databaseSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. The suffix that should be appended to all database (Google Cloud project ID) names.
   *   `defaultDatabase` (*type:* `String.t`, *default:* `nil`) - Optional. The default database (Google Cloud project ID).
   *   `defaultLocation` (*type:* `String.t`, *default:* `nil`) - Optional. The default BigQuery location to use. Defaults to "US". See the BigQuery docs for a full list of locations: https://cloud.google.com/bigquery/docs/locations.
+  *   `defaultNotebookRuntimeOptions` (*type:* `GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions.t`, *default:* `nil`) - 
   *   `defaultSchema` (*type:* `String.t`, *default:* `nil`) - Optional. The default schema (BigQuery dataset ID).
   *   `schemaSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. The suffix that should be appended to all schema (BigQuery dataset ID) names.
   *   `tablePrefix` (*type:* `String.t`, *default:* `nil`) - Optional. The prefix that should be prepended to all table names.
@@ -38,6 +39,8 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig do
           :databaseSuffix => String.t() | nil,
           :defaultDatabase => String.t() | nil,
           :defaultLocation => String.t() | nil,
+          :defaultNotebookRuntimeOptions =>
+            GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions.t() | nil,
           :defaultSchema => String.t() | nil,
           :schemaSuffix => String.t() | nil,
           :tablePrefix => String.t() | nil,
@@ -48,6 +51,11 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig do
   field(:databaseSuffix)
   field(:defaultDatabase)
   field(:defaultLocation)
+
+  field(:defaultNotebookRuntimeOptions,
+    as: GoogleApi.Dataform.V1beta1.Model.NotebookRuntimeOptions
+  )
+
   field(:defaultSchema)
   field(:schemaSuffix)
   field(:tablePrefix)
