@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
   @moduledoc """
-
+  The response for a list spaces request.
 
   ## Attributes
 

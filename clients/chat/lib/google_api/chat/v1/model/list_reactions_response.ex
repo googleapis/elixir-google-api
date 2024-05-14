@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ListReactionsResponse do
   @moduledoc """
-
+  Response to a list reactions request.
 
   ## Attributes
 

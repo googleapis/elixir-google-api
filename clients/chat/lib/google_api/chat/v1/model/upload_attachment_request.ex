@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.UploadAttachmentRequest do
   @moduledoc """
-
+  Request to upload an attachment.
 
   ## Attributes
 

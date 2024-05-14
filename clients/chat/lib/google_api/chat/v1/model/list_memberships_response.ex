@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ListMembershipsResponse do
   @moduledoc """
-
+  Response to list memberships of the space.
 
   ## Attributes
 

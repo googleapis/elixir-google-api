@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.SetUpSpaceRequest do
   @moduledoc """
-
+  Request to create a space and add specified users to it.
 
   ## Attributes
 
