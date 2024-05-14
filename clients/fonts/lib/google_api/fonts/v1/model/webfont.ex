@@ -23,6 +23,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
 
   *   `axes` (*type:* `list(GoogleApi.Fonts.V1.Model.Axis.t)`, *default:* `nil`) - Axis for variable fonts.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the font.
+  *   `colorCapabilities` (*type:* `list(String.t)`, *default:* `nil`) - The color format(s) available for this family.
   *   `family` (*type:* `String.t`, *default:* `nil`) - The name of the font.
   *   `files` (*type:* `map()`, *default:* `nil`) - The font files (with all supported scripts) for each one of the available variants, as a key : value map.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a webfont object in the webfonts service.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
   @type t :: %__MODULE__{
           :axes => list(GoogleApi.Fonts.V1.Model.Axis.t()) | nil,
           :category => String.t() | nil,
+          :colorCapabilities => list(String.t()) | nil,
           :family => String.t() | nil,
           :files => map() | nil,
           :kind => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Fonts.V1.Model.Webfont do
 
   field(:axes, as: GoogleApi.Fonts.V1.Model.Axis, type: :list)
   field(:category)
+  field(:colorCapabilities, type: :list)
   field(:family)
   field(:files, type: :map)
   field(:kind)
