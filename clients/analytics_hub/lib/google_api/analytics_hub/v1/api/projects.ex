@@ -1720,7 +1720,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - The filter expression may be used to filter by Data Exchange or Listing.
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request. Eligible fields for filtering are: + `listing` + `data_exchange` Alternatively, a literal wrapped in double quotes may be provided. This will be checked for an exact match against both fields above. In all cases, the full Data Exchange or Listing resource name must be provided. Some example of using filters: + data_exchange="projects/myproject/locations/us/dataExchanges/123" + listing="projects/123/locations/us/dataExchanges/456/listings/789" + "projects/myproject/locations/us/dataExchanges/123"
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response page.
       *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call.
   *   `opts` (*type:* `keyword()`) - Call options

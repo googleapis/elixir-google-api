@@ -21,7 +21,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.SubscribeListingRequest do
 
   ## Attributes
 
-  *   `destinationDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t`, *default:* `nil`) - BigQuery destination dataset to create for the subscriber.
+  *   `destinationDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t`, *default:* `nil`) - Input only. BigQuery destination dataset to create for the subscriber.
   """
 
   use GoogleApi.Gax.ModelBase
