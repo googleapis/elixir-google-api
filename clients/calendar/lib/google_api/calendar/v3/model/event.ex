@@ -77,7 +77,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       - "default" - A regular event or not further specified. 
       - "outOfOffice" - An out-of-office event. 
       - "focusTime" - A focus-time event. 
-      - "workingLocation" - A working location event.  Currently, only "default " and "workingLocation" events can be created using the API. Extended support for other event types will be made available in later releases.
+      - "workingLocation" - A working location event.
   *   `locked` (*type:* `boolean()`, *default:* `false`) - Whether this is a locked event copy where no changes can be made to the main event fields "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-Only.
   *   `endTimeUnspecified` (*type:* `boolean()`, *default:* `false`) - Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the event.
