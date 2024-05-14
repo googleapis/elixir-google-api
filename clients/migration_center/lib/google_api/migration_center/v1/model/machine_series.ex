@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.MigrationCenter.V1.Model.MachineSeries do
   @moduledoc """
-  A Compute Engine machine series.
+  A machine series, for a target product (e.g. Compute Engine, Google Cloud VMware Engine).
 
   ## Attributes
 
-  *   `code` (*type:* `String.t`, *default:* `nil`) - Code to identify a Compute Engine machine series. Consult https://cloud.google.com/compute/docs/machine-resource#machine_type_comparison for more details on the available series.
+  *   `code` (*type:* `String.t`, *default:* `nil`) - Code to identify a machine series. Consult this for more details on the available series for Compute Engine: https://cloud.google.com/compute/docs/machine-resource#machine_type_comparison Consult this for more details on the available series for Google Cloud VMware Engine: https://cloud.google.com/vmware-engine/pricing
   """
 
   use GoogleApi.Gax.ModelBase

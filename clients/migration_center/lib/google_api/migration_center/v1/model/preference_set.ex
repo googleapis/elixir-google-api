@@ -26,7 +26,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.PreferenceSet do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User-friendly display name. Maximum length is 63 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the preference set.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the preference set was last updated.
-  *   `virtualMachinePreferences` (*type:* `GoogleApi.MigrationCenter.V1.Model.VirtualMachinePreferences.t`, *default:* `nil`) - A set of preferences that applies to all virtual machines in the context.
+  *   `virtualMachinePreferences` (*type:* `GoogleApi.MigrationCenter.V1.Model.VirtualMachinePreferences.t`, *default:* `nil`) - Optional. A set of preferences that applies to all virtual machines in the context.
   """
 
   use GoogleApi.Gax.ModelBase
