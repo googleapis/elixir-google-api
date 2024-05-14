@@ -22,6 +22,7 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1Connection
   ## Attributes
 
   *   `authConfig` (*type:* `GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
+  *   `billingConfig` (*type:* `GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1BillingConfig.t`, *default:* `nil`) - Output only. Billing config for the connection.
   *   `configVariables` (*type:* `list(GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
   *   `connectionRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Connection revision. This field is only updated when the connection is created or updated by User.
   *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Required. Connector version on which the connection is created. The format is: projects/*/locations/*/providers/*/connectors/*/versions/* Only global location is supported for ConnectorVersion resource.
@@ -55,6 +56,8 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1Connection
   @type t :: %__MODULE__{
           :authConfig =>
             GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1AuthConfig.t() | nil,
+          :billingConfig =>
+            GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1BillingConfig.t() | nil,
           :configVariables =>
             list(GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1ConfigVariable.t())
             | nil,
@@ -100,6 +103,10 @@ defmodule GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1Connection
         }
 
   field(:authConfig, as: GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1AuthConfig)
+
+  field(:billingConfig,
+    as: GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1BillingConfig
+  )
 
   field(:configVariables,
     as: GoogleApi.Integrations.V1alpha.Model.GoogleCloudConnectorsV1ConfigVariable,
