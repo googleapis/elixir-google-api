@@ -44,6 +44,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -68,7 +69,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
@@ -1970,6 +1972,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the message in.
       *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is `METADATA`, only include headers specified.
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1996,7 +1999,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :uploadType => :query,
       :upload_protocol => :query,
       :format => :query,
-      :metadataHeaders => :query
+      :metadataHeaders => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
@@ -2682,6 +2686,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of messages to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return messages matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2711,7 +2716,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :labelIds => :query,
       :maxResults => :query,
       :pageToken => :query,
-      :q => :query
+      :q => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
@@ -3253,6 +3259,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3291,7 +3298,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
@@ -6529,6 +6537,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:format` (*type:* `String.t`) - The format to return the messages in.
       *   `:metadataHeaders` (*type:* `list(String.t)`) - When given and format is METADATA, only include headers specified.
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6555,7 +6564,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :uploadType => :query,
       :upload_protocol => :query,
       :format => :query,
-      :metadataHeaders => :query
+      :metadataHeaders => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
@@ -6597,6 +6607,7 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       *   `:maxResults` (*type:* `integer()`) - Maximum number of threads to return. This field defaults to 100. The maximum allowed value for this field is 500.
       *   `:pageToken` (*type:* `String.t`) - Page token to retrieve a specific page of results in the list.
       *   `:q` (*type:* `String.t`) - Only return threads matching the specified query. Supports the same query format as the Gmail search box. For example, `"from:someuser@example.com rfc822msgid: is:unread"`. Parameter cannot be used when accessing the api using the gmail.metadata scope.
+      *   `:temporaryEeccBypass` (*type:* `boolean()`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -6626,7 +6637,8 @@ defmodule GoogleApi.Gmail.V1.Api.Users do
       :labelIds => :query,
       :maxResults => :query,
       :pageToken => :query,
-      :q => :query
+      :q => :query,
+      :temporaryEeccBypass => :query
     }
 
     request =
