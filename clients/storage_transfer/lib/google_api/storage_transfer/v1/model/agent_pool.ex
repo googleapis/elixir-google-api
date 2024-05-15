@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.AgentPool do
   @moduledoc """
-  Represents an On-Premises Agent pool.
+  Represents an agent pool.
 
   ## Attributes
 
