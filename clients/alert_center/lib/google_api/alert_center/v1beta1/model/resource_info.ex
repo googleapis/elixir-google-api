@@ -21,6 +21,9 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo do
 
   ## Attributes
 
+  *   `chatAttachmentId` (*type:* `String.t`, *default:* `nil`) - Chat attachment ID.
+  *   `chatMessageId` (*type:* `String.t`, *default:* `nil`) - Chat message ID.
+  *   `deviceId` (*type:* `String.t`, *default:* `nil`) - Id to identify a device. For example, for Android devices, this is the "Android Device Id" and for Chrome OS devices, it's the "Device Virtual Id".
   *   `documentId` (*type:* `String.t`, *default:* `nil`) - Drive file ID.
   *   `resourceTitle` (*type:* `String.t`, *default:* `nil`) - Title of the resource, for example email subject, or document title.
   """
@@ -28,10 +31,16 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chatAttachmentId => String.t() | nil,
+          :chatMessageId => String.t() | nil,
+          :deviceId => String.t() | nil,
           :documentId => String.t() | nil,
           :resourceTitle => String.t() | nil
         }
 
+  field(:chatAttachmentId)
+  field(:chatMessageId)
+  field(:deviceId)
   field(:documentId)
   field(:resourceTitle)
 end
