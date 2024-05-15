@@ -23,7 +23,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.ExclusionWindow do
 
   *   `daily` (*type:* `boolean()`, *default:* `nil`) - The exclusion window occurs every day if set to "True". Specifying this field to "False" is an error.
   *   `daysOfWeek` (*type:* `GoogleApi.GKEBackup.V1.Model.DayOfWeekList.t`, *default:* `nil`) - The exclusion window occurs on these days of each week in UTC.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Required. Specifies duration of the window. Restrictions for duration based on the recurrence type to allow some time for backup to happen: - single_occurrence_date: no restriction, but UI may warn about this when duration >= target RPO - daily window: duration < 24 hours - weekly window: - days of week includes all seven days of a week: duration < 24 hours - all other weekly window: duration < 168 hours (i.e., 24 * 7 hours)
+  *   `duration` (*type:* `String.t`, *default:* `nil`) - Required. Specifies duration of the window. Duration must be >= 5 minutes and < (target RPO - 20 minutes). Additional restrictions based on the recurrence type to allow some time for backup to happen: - single_occurrence_date: no restriction, but UI may warn about this when duration >= target RPO - daily window: duration < 24 hours - weekly window: - days of week includes all seven days of a week: duration < 24 hours - all other weekly window: duration < 168 hours (i.e., 24 * 7 hours)
   *   `singleOccurrenceDate` (*type:* `GoogleApi.GKEBackup.V1.Model.Date.t`, *default:* `nil`) - No recurrence. The exclusion window occurs only once and on this date in UTC.
   *   `startTime` (*type:* `GoogleApi.GKEBackup.V1.Model.TimeOfDay.t`, *default:* `nil`) - Required. Specifies the start time of the window using time of the day in UTC.
   """

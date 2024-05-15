@@ -20,7 +20,7 @@ defmodule GoogleApi.GKEBackup.V1 do
   API client metadata for GoogleApi.GKEBackup.V1.
   """
 
-  @discovery_revision "20240320"
+  @discovery_revision "20240410"
 
   def discovery_revision(), do: @discovery_revision
 end
