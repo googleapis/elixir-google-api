@@ -23,7 +23,7 @@ defmodule GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidc do
 
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. The client ID. Must match the audience claim of the JWT issued by the identity provider.
   *   `clientSecret` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidcClientSecret.t`, *default:* `nil`) - The optional client secret. Required to enable Authorization Code flow for web sign-in.
-  *   `issuerUri` (*type:* `String.t`, *default:* `nil`) - Required. The OIDC issuer URI. Must be a valid URI using the 'https' scheme.
+  *   `issuerUri` (*type:* `String.t`, *default:* `nil`) - Required. The OIDC issuer URI. Must be a valid URI using the `https` scheme.
   *   `jwksJson` (*type:* `String.t`, *default:* `nil`) - OIDC JWKs in JSON String format. For details on the definition of a JWK, see https://tools.ietf.org/html/rfc7517. If not set, the `jwks_uri` from the discovery document(fetched from the .well-known path of the `issuer_uri`) will be used. Currently, RSA and EC asymmetric keys are supported. The JWK must use following format and include only the following fields: { "keys": [ { "kty": "RSA/EC", "alg": "", "use": "sig", "kid": "", "n": "", "e": "", "x": "", "y": "", "crv": "" } ] }
   *   `webSsoConfig` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidcWebSsoConfig.t`, *default:* `nil`) - Required. Configuration for web single sign-on for the OIDC provider. Here, web sign-in refers to console sign-in and gcloud sign-in through the browser.
   """

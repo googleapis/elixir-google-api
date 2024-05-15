@@ -21,11 +21,19 @@ defmodule GoogleApi.IAM.V1.Model.DisableServiceAccountKeyRequest do
 
   ## Attributes
 
+  *   `extendedStatusMessage` (*type:* `String.t`, *default:* `nil`) - Optional. Usable by internal google services only. An extended_status_message can be used to include additional information about the key, such as its private key data being exposed on a public repository like GitHub.
+  *   `serviceAccountKeyDisableReason` (*type:* `String.t`, *default:* `nil`) - Optional. Describes the reason this key is being disabled. If unspecified, the default value of SERVICE_ACCOUNT_KEY_DISABLE_REASON_USER_INITIATED will be used.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :extendedStatusMessage => String.t() | nil,
+          :serviceAccountKeyDisableReason => String.t() | nil
+        }
+
+  field(:extendedStatusMessage)
+  field(:serviceAccountKeyDisableReason)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAM.V1.Model.DisableServiceAccountKeyRequest do
