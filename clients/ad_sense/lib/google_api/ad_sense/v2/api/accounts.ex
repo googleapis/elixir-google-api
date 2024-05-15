@@ -1661,7 +1661,7 @@ defmodule GoogleApi.AdSense.V2.Api.Accounts do
   end
 
   @doc """
-  Lists all the policy issues for the specified account.
+  Lists all the policy issues where the specified account is involved, both directly and through any AFP child accounts.
 
   ## Parameters
 
