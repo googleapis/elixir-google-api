@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshMembershipState do
 
   ## Attributes
 
-  *   `conditions` (*type:* `list(GoogleApi.GKEHub.V1.Model.ServiceMeshCondition.t)`, *default:* `nil`) - Output only. List of condition reporting membership statues
+  *   `conditions` (*type:* `list(GoogleApi.GKEHub.V1.Model.ServiceMeshCondition.t)`, *default:* `nil`) - Output only. List of conditions reported for this membership.
   *   `controlPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement.t`, *default:* `nil`) - Output only. Status of control plane management
   *   `dataPlaneManagement` (*type:* `GoogleApi.GKEHub.V1.Model.ServiceMeshDataPlaneManagement.t`, *default:* `nil`) - Output only. Status of data plane management.
   """
