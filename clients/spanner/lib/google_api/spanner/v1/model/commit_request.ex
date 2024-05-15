@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.CommitRequest do
 
   ## Attributes
 
-  *   `maxCommitDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of latency this request is willing to incur in order to improve throughput. If this field is not set, Spanner assumes requests are relatively latency sensitive and automatically determines an appropriate delay time. You can specify a batching delay value between 0 and 500 ms.
+  *   `maxCommitDelay` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of latency this request is configured to incur in order to improve throughput. If this field is not set, Spanner assumes requests are relatively latency sensitive and automatically determines an appropriate delay time. You can specify a commit delay value between 0 and 500 ms.
   *   `mutations` (*type:* `list(GoogleApi.Spanner.V1.Model.Mutation.t)`, *default:* `nil`) - The mutations to be executed when this transaction commits. All mutations are applied atomically, in the order they appear in this list.
   *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request.
   *   `returnCommitStats` (*type:* `boolean()`, *default:* `nil`) - If `true`, then statistics related to the transaction will be included in the CommitResponse. Default value is `false`.
