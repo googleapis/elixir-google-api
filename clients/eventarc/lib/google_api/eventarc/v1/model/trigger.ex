@@ -30,6 +30,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
   *   `eventFilters` (*type:* `list(GoogleApi.Eventarc.V1.Model.EventFilter.t)`, *default:* `nil`) - Required. Unordered list. The list of filters that applies to event attributes. Only events that match all the provided filters are sent to the destination.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User labels attached to the triggers that can be used to group resources.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the trigger. Must be unique within the location of the project and must be in `projects/{project}/locations/{location}/triggers/{trigger}` format.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not this Trigger satisfies the requirements of physical zone separation
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The `iam.serviceAccounts.actAs` permission must be granted on the service account to allow a principal to impersonate the service account. For more information, see the [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific to the trigger destination.
   *   `transport` (*type:* `GoogleApi.Eventarc.V1.Model.Transport.t`, *default:* `nil`) - Optional. To deliver messages, Eventarc might use other Google Cloud products as a transport intermediary. This field contains a reference to that transport intermediary. This information can be used for debugging purposes.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server-assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
           :eventFilters => list(GoogleApi.Eventarc.V1.Model.EventFilter.t()) | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :serviceAccount => String.t() | nil,
           :transport => GoogleApi.Eventarc.V1.Model.Transport.t() | nil,
           :uid => String.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Trigger do
   field(:eventFilters, as: GoogleApi.Eventarc.V1.Model.EventFilter, type: :list)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzs)
   field(:serviceAccount)
   field(:transport, as: GoogleApi.Eventarc.V1.Model.Transport)
   field(:uid)

@@ -27,6 +27,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Channel do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the channel. Must be unique within the location on the project and must be in `projects/{project}/locations/{location}/channels/{channel_id}` format.
   *   `provider` (*type:* `String.t`, *default:* `nil`) - The name of the event provider (e.g. Eventarc SaaS partner) associated with the channel. This provider will be granted permissions to publish events to the channel. Format: `projects/{project}/locations/{location}/providers/{provider_id}`.
   *   `pubsubTopic` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Pub/Sub topic created and managed by Eventarc system as a transport for the event delivery. Format: `projects/{project}/topics/{topic_id}`.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether or not this Channel satisfies the requirements of physical zone separation
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of a Channel.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last-modified time.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Channel do
           :name => String.t() | nil,
           :provider => String.t() | nil,
           :pubsubTopic => String.t() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.Eventarc.V1.Model.Channel do
   field(:name)
   field(:provider)
   field(:pubsubTopic)
+  field(:satisfiesPzs)
   field(:state)
   field(:uid)
   field(:updateTime, as: DateTime)
