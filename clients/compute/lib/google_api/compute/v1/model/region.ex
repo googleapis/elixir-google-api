@@ -27,6 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#region`) - [Output Only] Type of the resource. Always compute#region for regions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] Name of the resource.
+  *   `quotaStatusWarning` (*type:* `GoogleApi.Compute.V1.Model.RegionQuotaStatusWarning.t`, *default:* `nil`) - [Output Only] Warning of fetching the `quotas` field for this region. This field is populated only if fetching of the `quotas` field fails.
   *   `quotas` (*type:* `list(GoogleApi.Compute.V1.Model.Quota.t)`, *default:* `nil`) - [Output Only] Quotas assigned to this region.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] Status of the region, either UP or DOWN.
@@ -43,6 +44,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :quotaStatusWarning => GoogleApi.Compute.V1.Model.RegionQuotaStatusWarning.t() | nil,
           :quotas => list(GoogleApi.Compute.V1.Model.Quota.t()) | nil,
           :selfLink => String.t() | nil,
           :status => String.t() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.Compute.V1.Model.Region do
   field(:id)
   field(:kind)
   field(:name)
+  field(:quotaStatusWarning, as: GoogleApi.Compute.V1.Model.RegionQuotaStatusWarning)
   field(:quotas, as: GoogleApi.Compute.V1.Model.Quota, type: :list)
   field(:selfLink)
   field(:status)
