@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Metastore.V1beta.Model.CloudSQLMigrationConfig do
   @moduledoc """
-  Configuration information for migrating from self-managed hive metastore on GCP using Cloud SQL as the backend database to DPMS.
+  Configuration information for migrating from self-managed hive metastore on Google Cloud using Cloud SQL as the backend database to Dataproc Metastore.
 
   ## Attributes
 

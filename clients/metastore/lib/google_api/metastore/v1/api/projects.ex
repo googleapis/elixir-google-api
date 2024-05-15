@@ -1979,7 +1979,7 @@ defmodule GoogleApi.Metastore.V1.Api.Projects do
   end
 
   @doc """
-  Query DPMS metadata.
+  Query Dataproc Metastore metadata.
 
   ## Parameters
 
