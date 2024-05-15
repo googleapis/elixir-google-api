@@ -34,6 +34,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.PipelineRun do
   *   `pipelineRef` (*type:* `GoogleApi.CloudBuild.V2.Model.PipelineRef.t`, *default:* `nil`) - PipelineRef refer to a specific instance of a Pipeline.
   *   `pipelineRunStatus` (*type:* `String.t`, *default:* `nil`) - Pipelinerun status the user can provide. Used for cancellation.
   *   `pipelineSpec` (*type:* `GoogleApi.CloudBuild.V2.Model.PipelineSpec.t`, *default:* `nil`) - PipelineSpec defines the desired state of Pipeline.
+  *   `pipelineSpecYaml` (*type:* `String.t`, *default:* `nil`) - Output only. Inline pipelineSpec yaml string, used by workflow run requests.
   *   `provenance` (*type:* `GoogleApi.CloudBuild.V2.Model.Provenance.t`, *default:* `nil`) - Optional. Provenance configuration.
   *   `record` (*type:* `String.t`, *default:* `nil`) - Output only. The `Record` of this `PipelineRun`. Format: `projects/{project}/locations/{location}/results/{result_id}/records/{record_id}`
   *   `resolvedPipelineSpec` (*type:* `GoogleApi.CloudBuild.V2.Model.PipelineSpec.t`, *default:* `nil`) - Output only. The exact PipelineSpec used to instantiate the run.
@@ -68,6 +69,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.PipelineRun do
           :pipelineRef => GoogleApi.CloudBuild.V2.Model.PipelineRef.t() | nil,
           :pipelineRunStatus => String.t() | nil,
           :pipelineSpec => GoogleApi.CloudBuild.V2.Model.PipelineSpec.t() | nil,
+          :pipelineSpecYaml => String.t() | nil,
           :provenance => GoogleApi.CloudBuild.V2.Model.Provenance.t() | nil,
           :record => String.t() | nil,
           :resolvedPipelineSpec => GoogleApi.CloudBuild.V2.Model.PipelineSpec.t() | nil,
@@ -103,6 +105,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.PipelineRun do
   field(:pipelineRef, as: GoogleApi.CloudBuild.V2.Model.PipelineRef)
   field(:pipelineRunStatus)
   field(:pipelineSpec, as: GoogleApi.CloudBuild.V2.Model.PipelineSpec)
+  field(:pipelineSpecYaml)
   field(:provenance, as: GoogleApi.CloudBuild.V2.Model.Provenance)
   field(:record)
   field(:resolvedPipelineSpec, as: GoogleApi.CloudBuild.V2.Model.PipelineSpec)

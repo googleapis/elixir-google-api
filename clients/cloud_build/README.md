@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_build, "~> 0.50"}]
+  [{:google_api_cloud_build, "~> 0.51"}]
 end
 ```
 
