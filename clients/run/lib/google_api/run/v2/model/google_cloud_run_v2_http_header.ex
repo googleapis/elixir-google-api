@@ -22,7 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2HTTPHeader do
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The header field name
-  *   `value` (*type:* `String.t`, *default:* `nil`) - The header field value
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Optional. The header field value
   """
 
   use GoogleApi.Gax.ModelBase

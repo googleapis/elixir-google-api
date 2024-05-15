@@ -22,8 +22,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess do
   ## Attributes
 
   *   `connector` (*type:* `String.t`, *default:* `nil`) - VPC Access connector name. Format: projects/{project}/locations/{location}/connectors/{connector}, where {project} can be project id or number. For more information on sending traffic to a VPC network via a connector, visit https://cloud.google.com/run/docs/configuring/vpc-connectors.
-  *   `egress` (*type:* `String.t`, *default:* `nil`) - Traffic VPC egress settings. If not provided, it defaults to PRIVATE_RANGES_ONLY.
-  *   `networkInterfaces` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2NetworkInterface.t)`, *default:* `nil`) - Direct VPC egress settings. Currently only single network interface is supported.
+  *   `egress` (*type:* `String.t`, *default:* `nil`) - Optional. Traffic VPC egress settings. If not provided, it defaults to PRIVATE_RANGES_ONLY.
+  *   `networkInterfaces` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2NetworkInterface.t)`, *default:* `nil`) - Optional. Direct VPC egress settings. Currently only single network interface is supported.
   """
 
   use GoogleApi.Gax.ModelBase
