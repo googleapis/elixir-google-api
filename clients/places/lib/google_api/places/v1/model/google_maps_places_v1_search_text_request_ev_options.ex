@@ -21,8 +21,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestEVOptions
 
   ## Attributes
 
-  *   `connectorTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of preferred EV connector types. A place that does not support any of the listed connector types are filter out.
-  *   `minimumChargingRateKw` (*type:* `float()`, *default:* `nil`) - Optional. Filtering places by minimum charging rate. Any places with charging a rate less than the minimum charging rate are filtered out.
+  *   `connectorTypes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of preferred EV connector types. A place that does not support any of the listed connector types is filtered out.
+  *   `minimumChargingRateKw` (*type:* `float()`, *default:* `nil`) - Optional. Minimum required charging rate in kilowatts. A place with a charging rate less than the specified rate is filtered out.
   """
 
   use GoogleApi.Gax.ModelBase
