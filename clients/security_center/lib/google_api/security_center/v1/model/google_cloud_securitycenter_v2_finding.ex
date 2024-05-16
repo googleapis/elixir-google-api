@@ -32,6 +32,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `moduleName` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the module which generated the finding. Example: folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
   *   `description` (*type:* `String.t`, *default:* `nil`) - Contains more details about the finding.
+  *   `notebook` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Notebook.t`, *default:* `nil`) - Notebook associated with the finding.
   *   `cloudDlpDataProfile` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudDlpDataProfile.t`, *default:* `nil`) - Cloud DLP data profile that is associated with the finding.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding. This field is managed by the source that writes the finding.
   *   `kubernetes` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Kubernetes.t`, *default:* `nil`) - Kubernetes resources associated with the finding.
@@ -52,6 +53,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `kernelRootkit` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2KernelRootkit.t`, *default:* `nil`) - Signature of the kernel rootkit.
   *   `processes` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Process.t)`, *default:* `nil`) - Represents operating system processes associated with the Finding.
   *   `logEntries` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2LogEntry.t)`, *default:* `nil`) - Log entries that are relevant to the finding.
+  *   `cloudArmor` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor.t`, *default:* `nil`) - Fields related to Cloud Armor findings.
   *   `access` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access.t`, *default:* `nil`) - Access details associated with the finding, such as more information on the caller, which method was accessed, and from where.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. For findings on Google Cloud resources, the full resource name of the Google Cloud resource this finding is for. See: https://cloud.google.com/apis/design/resource_names#full_resource_name When the finding is for a non-Google Cloud resource, the resourceName can be a customer or partner defined string.
   *   `mitreAttack` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2MitreAttack.t`, *default:* `nil`) - MITRE ATT&CK tactics and techniques related to this finding. See: https://attack.mitre.org
@@ -86,6 +88,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
           :mute => String.t() | nil,
           :moduleName => String.t() | nil,
           :description => String.t() | nil,
+          :notebook =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Notebook.t() | nil,
           :cloudDlpDataProfile =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudDlpDataProfile.t()
             | nil,
@@ -132,6 +136,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
             list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Process.t()) | nil,
           :logEntries =>
             list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2LogEntry.t()) | nil,
+          :cloudArmor =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor.t() | nil,
           :access =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access.t() | nil,
           :resourceName => String.t() | nil,
@@ -183,6 +189,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   field(:mute)
   field(:moduleName)
   field(:description)
+  field(:notebook, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Notebook)
 
   field(:cloudDlpDataProfile,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudDlpDataProfile
@@ -256,6 +263,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
     type: :list
   )
 
+  field(:cloudArmor, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2CloudArmor)
   field(:access, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Access)
   field(:resourceName)
 

@@ -21,6 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourceV
 
   ## Attributes
 
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - Cloud provider this configuration applies to
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp this resource value config was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the resource value config.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the resource value config
@@ -36,6 +37,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourceV
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudProvider => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :name => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourceV
           :updateTime => DateTime.t() | nil
         }
 
+  field(:cloudProvider)
   field(:createTime, as: DateTime)
   field(:description)
   field(:name)

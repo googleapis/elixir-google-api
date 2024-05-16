@@ -22,12 +22,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ComplianceSnapshot do
   ## Attributes
 
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of Findings matching.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - The cloud provider for the compliance snapshot.
   *   `complianceStandard` (*type:* `String.t`, *default:* `nil`) - The compliance standard (ie CIS).
   *   `complianceVersion` (*type:* `String.t`, *default:* `nil`) - The compliance version (ie 1.3) in CIS 1.3.
   *   `count` (*type:* `String.t`, *default:* `nil`) - Total count of findings for the given properties.
   *   `leafContainerResource` (*type:* `String.t`, *default:* `nil`) - The leaf container resource name that is closest to the snapshot.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The compliance snapshot name. Format: //sources//complianceSnapshots/
-  *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The CRM resource display name that is closest to the snapshot the Findings belong to.
   *   `snapshotTime` (*type:* `DateTime.t`, *default:* `nil`) - The snapshot time of the snapshot.
   """
 
@@ -35,22 +35,22 @@ defmodule GoogleApi.SecurityCenter.V1.Model.ComplianceSnapshot do
 
   @type t :: %__MODULE__{
           :category => String.t() | nil,
+          :cloudProvider => String.t() | nil,
           :complianceStandard => String.t() | nil,
           :complianceVersion => String.t() | nil,
           :count => String.t() | nil,
           :leafContainerResource => String.t() | nil,
           :name => String.t() | nil,
-          :projectDisplayName => String.t() | nil,
           :snapshotTime => DateTime.t() | nil
         }
 
   field(:category)
+  field(:cloudProvider)
   field(:complianceStandard)
   field(:complianceVersion)
   field(:count)
   field(:leafContainerResource)
   field(:name)
-  field(:projectDisplayName)
   field(:snapshotTime, as: DateTime)
 end
 

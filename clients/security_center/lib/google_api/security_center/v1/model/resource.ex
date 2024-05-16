@@ -21,36 +21,57 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Resource do
 
   ## Attributes
 
+  *   `awsMetadata` (*type:* `GoogleApi.SecurityCenter.V1.Model.AwsMetadata.t`, *default:* `nil`) - The AWS metadata associated with the finding.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - Indicates which cloud provider the finding is from.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of the resource.
   *   `folders` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.Folder.t)`, *default:* `nil`) - Contains a Folder message for each folder in the assets ancestry. The first folder is the deepest nested folder, and the last folder is the folder directly under the Organization.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The region or location of the service (if applicable).
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `organization` (*type:* `String.t`, *default:* `nil`) - Indicates which organization / tenant the finding is for.
   *   `parentDisplayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of resource's parent.
   *   `parentName` (*type:* `String.t`, *default:* `nil`) - The full resource name of resource's parent.
   *   `projectDisplayName` (*type:* `String.t`, *default:* `nil`) - The project ID that the resource belongs to.
   *   `projectName` (*type:* `String.t`, *default:* `nil`) - The full resource name of project that the resource belongs to.
+  *   `resourcePath` (*type:* `GoogleApi.SecurityCenter.V1.Model.ResourcePath.t`, *default:* `nil`) - Provides the path to the resource within the resource hierarchy.
+  *   `resourcePathString` (*type:* `String.t`, *default:* `nil`) - A string representation of the resource path. For GCP, it has the format of: org/{organization_id}/folder/{folder_id}/folder/{folder_id}/project/{project_id} where there can be any number of folders. For AWS, it has the format of: org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id} where there can be any number of organizational units. For Azure, it has the format of: mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name} where there can be any number of management groups.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The service or resource provider associated with the resource.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The full resource type of the resource.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :awsMetadata => GoogleApi.SecurityCenter.V1.Model.AwsMetadata.t() | nil,
+          :cloudProvider => String.t() | nil,
           :displayName => String.t() | nil,
           :folders => list(GoogleApi.SecurityCenter.V1.Model.Folder.t()) | nil,
+          :location => String.t() | nil,
           :name => String.t() | nil,
+          :organization => String.t() | nil,
           :parentDisplayName => String.t() | nil,
           :parentName => String.t() | nil,
           :projectDisplayName => String.t() | nil,
           :projectName => String.t() | nil,
+          :resourcePath => GoogleApi.SecurityCenter.V1.Model.ResourcePath.t() | nil,
+          :resourcePathString => String.t() | nil,
+          :service => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:awsMetadata, as: GoogleApi.SecurityCenter.V1.Model.AwsMetadata)
+  field(:cloudProvider)
   field(:displayName)
   field(:folders, as: GoogleApi.SecurityCenter.V1.Model.Folder, type: :list)
+  field(:location)
   field(:name)
+  field(:organization)
   field(:parentDisplayName)
   field(:parentName)
   field(:projectDisplayName)
   field(:projectName)
+  field(:resourcePath, as: GoogleApi.SecurityCenter.V1.Model.ResourcePath)
+  field(:resourcePathString)
+  field(:service)
   field(:type)
 end
 
