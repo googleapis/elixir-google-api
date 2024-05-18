@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_file, "~> 0.29"}]
+  [{:google_api_file, "~> 0.30"}]
 end
 ```
 
