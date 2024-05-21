@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
   ## Attributes
 
   *   `adsPersonalizationEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. It is automatically set by GA to false if this is an NPA Audience and is excluded from ads personalization.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the Audience was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Required. The description of the Audience.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the Audience.
   *   `eventTrigger` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudienceEventTrigger.t`, *default:* `nil`) - Optional. Specifies an event to log when a user joins the Audience. If not set, no event is logged when a user joins the Audience.
@@ -35,6 +36,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
 
   @type t :: %__MODULE__{
           :adsPersonalizationEnabled => boolean() | nil,
+          :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :eventTrigger =>
@@ -51,6 +53,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudi
         }
 
   field(:adsPersonalizationEnabled)
+  field(:createTime, as: DateTime)
   field(:description)
   field(:displayName)
 
