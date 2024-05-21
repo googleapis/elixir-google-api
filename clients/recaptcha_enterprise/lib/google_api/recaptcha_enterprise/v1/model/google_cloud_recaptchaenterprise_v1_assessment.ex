@@ -28,6 +28,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   *   `fraudPreventionAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment.t`, *default:* `nil`) - Output only. Assessment returned by Fraud Prevention when TransactionData is provided.
   *   `fraudSignals` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudSignals.t`, *default:* `nil`) - Output only. Fraud Signals specific to the users involved in a payment transaction.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name for the Assessment in the format `projects/{project}/assessments/{assessment}`.
+  *   `phoneFraudAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment.t`, *default:* `nil`) - Output only. Assessment returned when a site key, a token, and a phone number as `user_id` are provided. Account defender and SMS toll fraud protection need to be enabled.
   *   `privatePasswordLeakVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t`, *default:* `nil`) - Optional. The private password leak verification field contains the parameters that are used to to check for leaks privately without sharing user credentials.
   *   `riskAnalysis` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1RiskAnalysis.t`, *default:* `nil`) - Output only. The risk analysis result for the event being assessed.
   *   `tokenProperties` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TokenProperties.t`, *default:* `nil`) - Output only. Properties of the provided event token.
@@ -54,6 +55,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudSignals.t()
             | nil,
           :name => String.t() | nil,
+          :phoneFraudAssessment =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment.t()
+            | nil,
           :privatePasswordLeakVerification =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PrivatePasswordLeakVerification.t()
             | nil,
@@ -92,6 +96,11 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   )
 
   field(:name)
+
+  field(:phoneFraudAssessment,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1PhoneFraudAssessment
+  )
 
   field(:privatePasswordLeakVerification,
     as:
