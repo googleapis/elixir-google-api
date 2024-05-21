@@ -21,16 +21,19 @@ defmodule GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1Data do
 
   ## Attributes
 
-  *   `countMessagesAccepted` (*type:* `String.t`, *default:* `nil`) - Count of messages accepted by FCM intended to Android devices. The targeted device must have opted in to the collection of usage and diagnostic information.
+  *   `countMessagesAccepted` (*type:* `String.t`, *default:* `nil`) - Count of messages accepted by FCM intended for Android devices. The targeted device must have opted in to the collection of usage and diagnostic information.
+  *   `countNotificationsAccepted` (*type:* `String.t`, *default:* `nil`) - Count of notifications accepted by FCM intended for Android devices. The targeted device must have opted in to the collection of usage and diagnostic information.
   *   `deliveryPerformancePercents` (*type:* `GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1DeliveryPerformancePercents.t`, *default:* `nil`) - Additional information about delivery performance for messages that were successfully delivered.
   *   `messageInsightPercents` (*type:* `GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1MessageInsightPercents.t`, *default:* `nil`) - Additional general insights about message delivery.
   *   `messageOutcomePercents` (*type:* `GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1MessageOutcomePercents.t`, *default:* `nil`) - Mutually exclusive breakdown of message delivery outcomes.
+  *   `proxyNotificationInsightPercents` (*type:* `GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1ProxyNotificationInsightPercents.t`, *default:* `nil`) - Additional insights about proxy notification delivery.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :countMessagesAccepted => String.t() | nil,
+          :countNotificationsAccepted => String.t() | nil,
           :deliveryPerformancePercents =>
             GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1DeliveryPerformancePercents.t()
             | nil,
@@ -39,10 +42,14 @@ defmodule GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1Data do
             | nil,
           :messageOutcomePercents =>
             GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1MessageOutcomePercents.t()
+            | nil,
+          :proxyNotificationInsightPercents =>
+            GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1ProxyNotificationInsightPercents.t()
             | nil
         }
 
   field(:countMessagesAccepted)
+  field(:countNotificationsAccepted)
 
   field(:deliveryPerformancePercents,
     as: GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1DeliveryPerformancePercents
@@ -54,6 +61,11 @@ defmodule GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1Data do
 
   field(:messageOutcomePercents,
     as: GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1MessageOutcomePercents
+  )
+
+  field(:proxyNotificationInsightPercents,
+    as:
+      GoogleApi.FCMData.V1beta1.Model.GoogleFirebaseFcmDataV1beta1ProxyNotificationInsightPercents
   )
 end
 
