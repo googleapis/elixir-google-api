@@ -18,7 +18,7 @@
 defmodule GoogleApi.SourceRepo.Mixfile do
   use Mix.Project
 
-  @version "0.16.3"
+  @version "0.17.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.SourceRepo.Mixfile do
 
   defp description() do
     """
-    Cloud Source Repositories API client library. Accesses source code repositories hosted by Google.
+    Cloud Source Repositories API client library.
     """
   end
 
@@ -59,7 +59,7 @@ defmodule GoogleApi.SourceRepo.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/source_repo",
-        "Homepage" => "https://cloud.google.com/source-repositories/docs/apis"
+        "Homepage" => "https://cloud.google.com/source-repositories/docs"
       }
     ]
   end
