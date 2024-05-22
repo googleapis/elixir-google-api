@@ -23,8 +23,8 @@ defmodule GoogleApi.CloudBilling.V1.Model.Service do
 
   *   `businessEntityName` (*type:* `String.t`, *default:* `nil`) - The business under which the service is offered. Ex. "businessEntities/GCP", "businessEntities/Maps"
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A human readable display name for this service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the service. Example: "services/DA34-426B-A397"
-  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The identifier for the service. Example: "DA34-426B-A397"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the service. Example: "services/6F81-5844-456A"
+  *   `serviceId` (*type:* `String.t`, *default:* `nil`) - The identifier for the service. Example: "6F81-5844-456A"
   """
 
   use GoogleApi.Gax.ModelBase
