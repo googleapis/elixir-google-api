@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_sas_portal, "~> 0.17"}]
+  [{:google_api_sas_portal, "~> 0.18"}]
 end
 ```
 
