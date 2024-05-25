@@ -28,6 +28,8 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels of the endpoint.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the endpoint.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified URL of the network to which the IDS Endpoint is attached.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. [Output Only] Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. [Output Only] Reserved for future use.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - Required. Lowest threat severity that this endpoint will alert on.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the endpoint.
   *   `threatExceptions` (*type:* `list(String.t)`, *default:* `nil`) - List of threat IDs to be excepted from generating alerts.
@@ -45,6 +47,8 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
           :labels => map() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :severity => String.t() | nil,
           :state => String.t() | nil,
           :threatExceptions => list(String.t()) | nil,
@@ -59,6 +63,8 @@ defmodule GoogleApi.IDS.V1.Model.Endpoint do
   field(:labels, type: :map)
   field(:name)
   field(:network)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:severity)
   field(:state)
   field(:threatExceptions, type: :list)
