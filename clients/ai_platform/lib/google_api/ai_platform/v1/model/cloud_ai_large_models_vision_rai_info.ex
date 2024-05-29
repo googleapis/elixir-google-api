@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
 
   ## Attributes
 
+  *   `detectedLabels` (*type:* `list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t)`, *default:* `nil`) - 
   *   `raiCategories` (*type:* `list(String.t)`, *default:* `nil`) - List of rai categories' information to return
   *   `scores` (*type:* `list(number())`, *default:* `nil`) - List of rai scores mapping to the rai categories. Rounded to 1 decimal place.
   """
@@ -28,9 +29,17 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :detectedLabels =>
+            list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t())
+            | nil,
           :raiCategories => list(String.t()) | nil,
           :scores => list(number()) | nil
         }
+
+  field(:detectedLabels,
+    as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels,
+    type: :list
+  )
 
   field(:raiCategories, type: :list)
   field(:scores, type: :list)

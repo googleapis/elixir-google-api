@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Probe do
 
   ## Attributes
 
-  *   `exec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeExecAction.t`, *default:* `nil`) - Exec specifies the action to take.
+  *   `exec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ProbeExecAction.t`, *default:* `nil`) - ExecAction probes the health of a container by executing a command.
   *   `periodSeconds` (*type:* `integer()`, *default:* `nil`) - How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'.
   *   `timeoutSeconds` (*type:* `integer()`, *default:* `nil`) - Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'.
   """

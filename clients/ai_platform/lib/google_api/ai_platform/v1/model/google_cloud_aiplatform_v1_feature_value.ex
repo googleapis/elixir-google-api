@@ -31,6 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValue do
   *   `metadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValueMetadata.t`, *default:* `nil`) - Metadata of feature value.
   *   `stringArrayValue` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StringArray.t`, *default:* `nil`) - A list of string type feature value.
   *   `stringValue` (*type:* `String.t`, *default:* `nil`) - String feature value.
+  *   `structValue` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StructValue.t`, *default:* `nil`) - A struct type feature value.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -50,7 +51,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValue do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValueMetadata.t() | nil,
           :stringArrayValue =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StringArray.t() | nil,
-          :stringValue => String.t() | nil
+          :stringValue => String.t() | nil,
+          :structValue =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StructValue.t() | nil
         }
 
   field(:boolArrayValue, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BoolArray)
@@ -63,6 +66,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValue do
   field(:metadata, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValueMetadata)
   field(:stringArrayValue, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StringArray)
   field(:stringValue)
+  field(:structValue, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StructValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureValue do
