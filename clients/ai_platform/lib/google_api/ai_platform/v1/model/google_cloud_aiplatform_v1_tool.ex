@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool do
   ## Attributes
 
   *   `functionDeclarations` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration.t)`, *default:* `nil`) - Optional. Function tool type. One or more function declarations to be passed to the model along with the current user query. Model may decide to call a subset of these functions by populating FunctionCall in the response. User should provide a FunctionResponse for each function call in the next turn. Based on the function responses, Model will generate the final response back to the user. Maximum 64 function declarations can be provided.
+  *   `googleSearchRetrieval` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleSearchRetrieval.t`, *default:* `nil`) - Optional. GoogleSearchRetrieval tool type. Specialized retrieval tool that is powered by Google search.
   *   `retrieval` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval.t`, *default:* `nil`) - Optional. Retrieval tool type. System will always execute the provided retrieval tool(s) to get external knowledge to answer the prompt. Retrieval results are presented to the model for generation.
   """
 
@@ -31,12 +32,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool do
           :functionDeclarations =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration.t())
             | nil,
+          :googleSearchRetrieval =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleSearchRetrieval.t() | nil,
           :retrieval => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval.t() | nil
         }
 
   field(:functionDeclarations,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionDeclaration,
     type: :list
+  )
+
+  field(:googleSearchRetrieval,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleSearchRetrieval
   )
 
   field(:retrieval, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval)

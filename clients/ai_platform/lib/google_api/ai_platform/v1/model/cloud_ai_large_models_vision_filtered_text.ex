@@ -21,8 +21,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionFilteredText do
 
   ## Attributes
 
-  *   `category` (*type:* `String.t`, *default:* `nil`) - Confidence level
-  *   `confidence` (*type:* `String.t`, *default:* `nil`) - Filtered category
+  *   `category` (*type:* `String.t`, *default:* `nil`) - Filtered category
+  *   `confidence` (*type:* `String.t`, *default:* `nil`) - Confidence score
   *   `prompt` (*type:* `String.t`, *default:* `nil`) - Input prompt
   *   `score` (*type:* `float()`, *default:* `nil`) - Score for category
   """

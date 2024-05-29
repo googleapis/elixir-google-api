@@ -26,7 +26,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   *   `maxOutputTokens` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of output tokens to generate per message.
   *   `presencePenalty` (*type:* `number()`, *default:* `nil`) - Optional. Positive penalties.
   *   `responseMimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Output response mimetype of the generated candidate text. Supported mimetype: - `text/plain`: (default) Text output. - `application/json`: JSON response in the candidates. The model needs to be prompted to output the appropriate response type, otherwise the behavior is undefined. This is a preview feature.
-  *   `responseStyle` (*type:* `String.t`, *default:* `nil`) - Optional. Control Three levels of creativity in the model output. Default: RESPONSE_STYLE_BALANCED
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Stop sequences.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Optional. Controls the randomness of predictions.
   *   `topK` (*type:* `number()`, *default:* `nil`) - Optional. If specified, top-k sampling will be used.
@@ -41,7 +40,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
           :maxOutputTokens => integer() | nil,
           :presencePenalty => number() | nil,
           :responseMimeType => String.t() | nil,
-          :responseStyle => String.t() | nil,
           :stopSequences => list(String.t()) | nil,
           :temperature => number() | nil,
           :topK => number() | nil,
@@ -53,7 +51,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   field(:maxOutputTokens)
   field(:presencePenalty)
   field(:responseMimeType)
-  field(:responseStyle)
   field(:stopSequences, type: :list)
   field(:temperature)
   field(:topK)
