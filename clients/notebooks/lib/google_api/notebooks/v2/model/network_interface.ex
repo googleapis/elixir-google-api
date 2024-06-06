@@ -21,6 +21,7 @@ defmodule GoogleApi.Notebooks.V2.Model.NetworkInterface do
 
   ## Attributes
 
+  *   `accessConfigs` (*type:* `list(GoogleApi.Notebooks.V2.Model.AccessConfig.t)`, *default:* `nil`) - Optional. An array of configurations for this interface. Currently, only one access config, ONE_TO_ONE_NAT, is supported. If no accessConfigs specified, the instance will have an external internet access through an ephemeral external IP address.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the VPC that this VM instance is in. Format: `projects/{project_id}/global/networks/{network_id}`
   *   `nicType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of vNIC to be used on this interface. This may be gVNIC or VirtioNet.
   *   `subnet` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the subnet that this VM instance is in. Format: `projects/{project_id}/regions/{region}/subnetworks/{subnetwork_id}`
@@ -29,11 +30,13 @@ defmodule GoogleApi.Notebooks.V2.Model.NetworkInterface do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessConfigs => list(GoogleApi.Notebooks.V2.Model.AccessConfig.t()) | nil,
           :network => String.t() | nil,
           :nicType => String.t() | nil,
           :subnet => String.t() | nil
         }
 
+  field(:accessConfigs, as: GoogleApi.Notebooks.V2.Model.AccessConfig, type: :list)
   field(:network)
   field(:nicType)
   field(:subnet)
