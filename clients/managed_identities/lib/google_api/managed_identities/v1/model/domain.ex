@@ -27,7 +27,7 @@ defmodule GoogleApi.ManagedIdentities.V1.Model.Domain do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was created.
   *   `fqdn` (*type:* `String.t`, *default:* `nil`) - Output only. The fully-qualified domain name of the exposed domain used by clients to connect to the service. Similar to what would be chosen for an Active Directory set up on an internal network.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels that can contain user-provided metadata.
-  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Required. Locations where domain needs to be provisioned. regions e.g. us-west1 or us-east4 Service supports up to 4 locations at once. Each location will use a /26 block.
+  *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - Required. Locations where domain needs to be provisioned. The locations can be specified according to https://cloud.google.com/compute/docs/regions-zones, such as `us-west1` or `us-east4`. Each domain supports up to 4 locations, separated by commas. Each location will use a /26 block.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The unique name of the domain using the form: `projects/{project_id}/locations/global/domains/{domain_name}`.
   *   `reservedIpRange` (*type:* `String.t`, *default:* `nil`) - Required. The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger. Ranges must be unique and non-overlapping with existing subnets in [Domain].[authorized_networks].
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this domain.
