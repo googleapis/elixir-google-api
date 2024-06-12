@@ -231,7 +231,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent project and zone for the signing request. This is needed to properly ensure per-organization ISS processing and potentially to provide for the possibility of zone-specific certificates used in the signing process.
+  *   `parent` (*type:* `String.t`) - The parent project and region for the signing request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -305,7 +305,7 @@ defmodule GoogleApi.OSLogin.V1alpha.Api.Users do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.OSLogin.V1alpha.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - The parent project and zone for the signing request. This is needed to properly ensure per-organization ISS processing and potentially to provide for the possibility of zone-specific certificates used in the signing process.
+  *   `parent` (*type:* `String.t`) - The parent project and region for the signing request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
