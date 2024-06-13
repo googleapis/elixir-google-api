@@ -90,7 +90,6 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CivicInfo.V2.Connection.t`) - Connection to server
-  *   `address` (*type:* `String.t`) - The registered address of the voter to look up.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -103,6 +102,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:address` (*type:* `String.t`) - The registered address of the voter to look up.
       *   `:electionId` (*type:* `String.t`) - The unique ID of the election to look up. A list of election IDs can be obtained at https://www.googleapis.com/civicinfo/{version}/elections. If no election ID is specified in the query and there is more than one election with data for the given voter, the additional elections are provided in the otherElections response field.
       *   `:officialOnly` (*type:* `boolean()`) - If set to true, only data from official state sources will be returned.
       *   `:productionDataOnly` (*type:* `boolean()`) - Whether to include data that has not been vetted yet. Should only be made available to internal IPs or trusted partners. This is a non-discoverable parameter in the One Platform API config.
@@ -114,12 +114,12 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
   *   `{:ok, %GoogleApi.CivicInfo.V2.Model.VoterInfoResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec civicinfo_elections_voter_info_query(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec civicinfo_elections_voter_info_query(Tesla.Env.client(), keyword(), keyword()) ::
           {:ok, GoogleApi.CivicInfo.V2.Model.VoterInfoResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def civicinfo_elections_voter_info_query(connection, address, optional_params \\ [], opts \\ []) do
+  def civicinfo_elections_voter_info_query(connection, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -132,6 +132,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :address => :query,
       :electionId => :query,
       :officialOnly => :query,
       :productionDataOnly => :query,
@@ -142,7 +143,6 @@ defmodule GoogleApi.CivicInfo.V2.Api.Elections do
       Request.new()
       |> Request.method(:get)
       |> Request.url("/civicinfo/v2/voterinfo", %{})
-      |> Request.add_param(:query, :address, address)
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
