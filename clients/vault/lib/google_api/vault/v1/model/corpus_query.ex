@@ -21,6 +21,7 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
 
   ## Attributes
 
+  *   `calendarQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldCalendarQuery.t`, *default:* `nil`) - Service-specific options for Calendar holds. If set, **CorpusType** must be **CALENDAR**.
   *   `driveQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldDriveQuery.t`, *default:* `nil`) - Service-specific options for Drive holds. If set, **CorpusType** must be **DRIVE**.
   *   `groupsQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldGroupsQuery.t`, *default:* `nil`) - Service-specific options for Groups holds. If set, **CorpusType** must be **GROUPS**.
   *   `hangoutsChatQuery` (*type:* `GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t`, *default:* `nil`) - Service-specific options for Chat holds. If set, **CorpusType** must be **HANGOUTS_CHAT**.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :calendarQuery => GoogleApi.Vault.V1.Model.HeldCalendarQuery.t() | nil,
           :driveQuery => GoogleApi.Vault.V1.Model.HeldDriveQuery.t() | nil,
           :groupsQuery => GoogleApi.Vault.V1.Model.HeldGroupsQuery.t() | nil,
           :hangoutsChatQuery => GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Vault.V1.Model.CorpusQuery do
           :voiceQuery => GoogleApi.Vault.V1.Model.HeldVoiceQuery.t() | nil
         }
 
+  field(:calendarQuery, as: GoogleApi.Vault.V1.Model.HeldCalendarQuery)
   field(:driveQuery, as: GoogleApi.Vault.V1.Model.HeldDriveQuery)
   field(:groupsQuery, as: GoogleApi.Vault.V1.Model.HeldGroupsQuery)
   field(:hangoutsChatQuery, as: GoogleApi.Vault.V1.Model.HeldHangoutsChatQuery)
