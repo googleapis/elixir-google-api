@@ -26,7 +26,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.AccountUserProfile do
   *   `advertiserFilter` (*type:* `GoogleApi.DFAReporting.V4.Model.ObjectFilter.t`, *default:* `nil`) - Filter that describes which advertisers are visible to the user profile.
   *   `campaignFilter` (*type:* `GoogleApi.DFAReporting.V4.Model.ObjectFilter.t`, *default:* `nil`) - Filter that describes which campaigns are visible to the user profile.
   *   `comments` (*type:* `String.t`, *default:* `nil`) - Comments for this user profile.
-  *   `email` (*type:* `String.t`, *default:* `nil`) - Email of the user profile. The email addresss must be linked to a Google Account. This field is required on insertion and is read-only after insertion.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - Email of the user profile. The email address must be linked to a Google Account. This field is required on insertion and is read-only after insertion.
   *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the user profile. This is a read-only, auto-generated field.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#accountUserProfile".
   *   `locale` (*type:* `String.t`, *default:* `nil`) - Locale of the user profile. This is a required field. Acceptable values are: - "cs" (Czech) - "de" (German) - "en" (English) - "en-GB" (English United Kingdom) - "es" (Spanish) - "fr" (French) - "it" (Italian) - "ja" (Japanese) - "ko" (Korean) - "pl" (Polish) - "pt-BR" (Portuguese Brazil) - "ru" (Russian) - "sv" (Swedish) - "tr" (Turkish) - "zh-CN" (Chinese Simplified) - "zh-TW" (Chinese Traditional) 

@@ -103,7 +103,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingListShares do
   end
 
   @doc """
-  Updates an existing RemarketingListShare. This method supports patch semantics.
+  Updates an existing remarketing list share. This method supports patch semantics.
 
   ## Parameters
 

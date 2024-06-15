@@ -262,7 +262,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.RemarketingLists do
   end
 
   @doc """
-  Updates an existing RemarketingList. This method supports patch semantics.
+  Updates an existing remarketing list. This method supports patch semantics.
 
   ## Parameters
 

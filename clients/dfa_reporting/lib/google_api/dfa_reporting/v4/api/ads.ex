@@ -256,7 +256,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Ads do
   end
 
   @doc """
-  Updates an existing event tag. This method supports patch semantics.
+  Updates an existing ad. This method supports patch semantics.
 
   ## Parameters
 

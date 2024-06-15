@@ -179,7 +179,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.FloodlightConfigurations do
   end
 
   @doc """
-  Updates an existing event tag. This method supports patch semantics.
+  Updates an existing floodlight configuration. This method supports patch semantics.
 
   ## Parameters
 
