@@ -262,7 +262,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.AccountUserProfiles do
   end
 
   @doc """
-  Updates an existing user role. This method supports patch semantics.
+  Updates an existing account user profile. This method supports patch semantics.
 
   ## Parameters
 

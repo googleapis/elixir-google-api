@@ -34,8 +34,6 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - The timestamp (in milliseconds since epoch) of when this report was last modified.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the report.
   *   `ownerProfileId` (*type:* `String.t`, *default:* `nil`) - The user profile id of the owner of this report.
-  *   `pathAttributionCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportPathAttributionCriteria.t`, *default:* `nil`) - The report criteria for a report of type "PATH_ATTRIBUTION".
-  *   `pathCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportPathCriteria.t`, *default:* `nil`) - The report criteria for a report of type "PATH".
   *   `pathToConversionCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportPathToConversionCriteria.t`, *default:* `nil`) - The report criteria for a report of type "PATH_TO_CONVERSION".
   *   `reachCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportReachCriteria.t`, *default:* `nil`) - The report criteria for a report of type "REACH".
   *   `schedule` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportSchedule.t`, *default:* `nil`) - The report's schedule. Can only be set if the report's 'dateRange' is a relative date range and the relative date range is not "TODAY".
@@ -61,9 +59,6 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
           :lastModifiedTime => String.t() | nil,
           :name => String.t() | nil,
           :ownerProfileId => String.t() | nil,
-          :pathAttributionCriteria =>
-            GoogleApi.DFAReporting.V4.Model.ReportPathAttributionCriteria.t() | nil,
-          :pathCriteria => GoogleApi.DFAReporting.V4.Model.ReportPathCriteria.t() | nil,
           :pathToConversionCriteria =>
             GoogleApi.DFAReporting.V4.Model.ReportPathToConversionCriteria.t() | nil,
           :reachCriteria => GoogleApi.DFAReporting.V4.Model.ReportReachCriteria.t() | nil,
@@ -89,12 +84,6 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
   field(:lastModifiedTime)
   field(:name)
   field(:ownerProfileId)
-
-  field(:pathAttributionCriteria,
-    as: GoogleApi.DFAReporting.V4.Model.ReportPathAttributionCriteria
-  )
-
-  field(:pathCriteria, as: GoogleApi.DFAReporting.V4.Model.ReportPathCriteria)
 
   field(:pathToConversionCriteria,
     as: GoogleApi.DFAReporting.V4.Model.ReportPathToConversionCriteria

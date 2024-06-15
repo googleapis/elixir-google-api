@@ -417,7 +417,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.FloodlightActivities do
   end
 
   @doc """
-  Updates an existing event tag. This method supports patch semantics.
+  Updates an existing floodlight activity. This method supports patch semantics.
 
   ## Parameters
 

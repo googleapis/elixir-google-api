@@ -264,7 +264,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.AdvertiserLandingPages do
   end
 
   @doc """
-  Updates an existing advertiser. This method supports patch semantics.
+  Updates an existing landing page. This method supports patch semantics.
 
   ## Parameters
 
