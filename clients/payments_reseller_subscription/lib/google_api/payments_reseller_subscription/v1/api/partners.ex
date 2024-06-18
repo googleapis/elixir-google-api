@@ -26,7 +26,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  To retrieve the products that can be resold by the partner. It should be autenticated with a service account.
+  To retrieve the products that can be resold by the partner. It should be autenticated with a service account. - This API doesn't apply to YouTube products currently.
 
   ## Parameters
 
@@ -188,7 +188,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  To retrieve the promotions, such as free trial, that can be used by the partner. It should be autenticated with a service account.
+  Retrieves the promotions, such as free trial, that can be used by the partner. - This API doesn't apply to YouTube promotions currently. It should be autenticated with a service account.
 
   ## Parameters
 
@@ -747,7 +747,7 @@ defmodule GoogleApi.PaymentsResellerSubscription.V1.Api.Partners do
   end
 
   @doc """
-  Used by partners to revoke the pending cancellation of a subscription, which is currently in `STATE_CANCEL_AT_END_OF_CYCLE` state. If the subscription is already cancelled, the request will fail. It should be called directly by the partner using service accounts.
+  Revokes the pending cancellation of a subscription, which is currently in `STATE_CANCEL_AT_END_OF_CYCLE` state. If the subscription is already cancelled, the request will fail. - **This API doesn't apply to YouTube subscriptions.** It should be called directly by the partner using service accounts.
 
   ## Parameters
 
