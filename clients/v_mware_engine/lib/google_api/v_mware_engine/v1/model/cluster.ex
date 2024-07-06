@@ -21,6 +21,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.Cluster do
 
   ## Attributes
 
+  *   `autoscalingSettings` (*type:* `GoogleApi.VMwareEngine.V1.Model.AutoscalingSettings.t`, *default:* `nil`) - Optional. Configuration of the autoscaling applied to this cluster.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Creation time of this resource.
   *   `management` (*type:* `boolean()`, *default:* `nil`) - Output only. True if the cluster is a management cluster; false otherwise. There can only be one management cluster in a private cloud and it has to be the first one.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
@@ -34,6 +35,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.Cluster do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoscalingSettings => GoogleApi.VMwareEngine.V1.Model.AutoscalingSettings.t() | nil,
           :createTime => DateTime.t() | nil,
           :management => boolean() | nil,
           :name => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.VMwareEngine.V1.Model.Cluster do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:autoscalingSettings, as: GoogleApi.VMwareEngine.V1.Model.AutoscalingSettings)
   field(:createTime, as: DateTime)
   field(:management)
   field(:name)
