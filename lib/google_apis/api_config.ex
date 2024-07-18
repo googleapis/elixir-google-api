@@ -41,6 +41,10 @@ defmodule GoogleApis.ApiConfig do
     Macro.underscore(name)
   end
 
+  def dam_name(%{name: name, version: version}) do
+    "#{String.downcase(name)}.#{version}.json"
+  end
+
   def library_namespace(api_config) do
     "#{library_root_namespace(api_config)}.#{module_version(api_config)}"
   end

@@ -14,6 +14,9 @@
 
 desc "Run standard Google client generation."
 
+flag :use_dam do
+  desc "Get discovery documents from discovery-artifact-manager instead of the discovery service"
+end
 flag :git_remote, "--remote=NAME" do
   desc "The name of the git remote to use as the pull request head. If omitted, does not open a pull request."
 end
@@ -53,6 +56,7 @@ def run
 
   @timestamp = Time.now.utc.strftime("%Y%m%d-%H%M%S")
   setup_builds
+  setup_dam if use_dam
   api_names = list_apis
   api_names.each_with_index do |entry, index|
     handle_package entry, index + 1, api_names.size
@@ -64,6 +68,11 @@ def setup_builds
   exec ["mix", "compile"]
 end
 
+def setup_dam
+  ENV["DISCOVERIES_DIR"] = git_cache.get("https://github.com/googleapis/discovery-artifact-manager.git",
+                                         path: "discoveries", update: true)
+end
+
 def list_apis
   return requested unless all
   api_list = JSON.parse File.read "#{context_directory}/config/apis.json"
@@ -73,7 +82,7 @@ end
 def handle_package api_name, index, total
   branch_name = "gen/#{api_name}-#{@timestamp}"
   commit_message = "feat: Automated regeneration of #{api_name} client"
-  if open_pr_exists? commit_message
+  if !git_remote.nil? && open_pr_exists?(commit_message)
     puts "(#{index}/#{total}) Pull request already exists for #{api_name}", :yellow
     return
   end

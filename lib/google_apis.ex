@@ -22,6 +22,27 @@ defmodule GoogleApis do
   alias GoogleApis.ApiConfig
 
   def fetch(api_config) do
+    case System.fetch_env("DISCOVERIES_DIR") do
+      {:ok, dir} -> fetch_dir(api_config, dir)
+      :error -> fetch_discovery(api_config)
+    end
+  end
+
+  def fetch_dir(api_config, dir) do
+    dest_file = ApiConfig.google_spec_file(api_config)
+    dam_name = ApiConfig.dam_name(api_config)
+    src_file = Path.expand(dam_name, dir)
+
+    with {:ok, body} <- File.read(src_file),
+         :ok <- File.mkdir_p(Path.dirname(dest_file)),
+         :ok <- File.write(dest_file, body) do
+      {:ok, dest_file}
+    else
+      error -> IO.inspect(error)
+    end
+  end
+
+  def fetch_discovery(api_config) do
     file = ApiConfig.google_spec_file(api_config)
 
     with {:ok, {body, _format}} <- GoogleApis.Discovery.fetch(api_config.url),
