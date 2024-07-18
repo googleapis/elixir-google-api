@@ -22,7 +22,7 @@ defmodule GoogleApi.Translate.V3.Model.GlossaryEntry do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Describes the glossary entry.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the entry. Format: "projects/*/locations/*/glossaries/*/glossaryEntries/*"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the entry. Format: "projects/*/locations/*/glossaries/*/glossaryEntries/*"
   *   `termsPair` (*type:* `GoogleApi.Translate.V3.Model.GlossaryTermsPair.t`, *default:* `nil`) - Used for an unidirectional glossary.
   *   `termsSet` (*type:* `GoogleApi.Translate.V3.Model.GlossaryTermsSet.t`, *default:* `nil`) - Used for an equivalent term sets glossary.
   """

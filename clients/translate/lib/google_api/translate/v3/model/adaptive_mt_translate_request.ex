@@ -21,19 +21,26 @@ defmodule GoogleApi.Translate.V3.Model.AdaptiveMtTranslateRequest do
 
   ## Attributes
 
-  *   `content` (*type:* `list(String.t)`, *default:* `nil`) - Required. The content of the input in string format. For now only one sentence per request is supported.
+  *   `content` (*type:* `list(String.t)`, *default:* `nil`) - Required. The content of the input in string format.
   *   `dataset` (*type:* `String.t`, *default:* `nil`) - Required. The resource name for the dataset to use for adaptive MT. `projects/{project}/locations/{location-id}/adaptiveMtDatasets/{dataset}`
+  *   `glossaryConfig` (*type:* `GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t`, *default:* `nil`) - Optional. Glossary to be applied. The glossary must be within the same region (have the same location-id) as the model, otherwise an INVALID_ARGUMENT (400) error is returned.
+  *   `referenceSentenceConfig` (*type:* `GoogleApi.Translate.V3.Model.ReferenceSentenceConfig.t`, *default:* `nil`) - Configuration for caller provided reference sentences.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :content => list(String.t()) | nil,
-          :dataset => String.t() | nil
+          :dataset => String.t() | nil,
+          :glossaryConfig => GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig.t() | nil,
+          :referenceSentenceConfig =>
+            GoogleApi.Translate.V3.Model.ReferenceSentenceConfig.t() | nil
         }
 
   field(:content, type: :list)
   field(:dataset)
+  field(:glossaryConfig, as: GoogleApi.Translate.V3.Model.TranslateTextGlossaryConfig)
+  field(:referenceSentenceConfig, as: GoogleApi.Translate.V3.Model.ReferenceSentenceConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Translate.V3.Model.AdaptiveMtTranslateRequest do
