@@ -32,4 +32,4 @@ jobs:
           mix do deps.get, compile
       - name: Discover updates
         run: |
-          toys update-api-list -v --fork
+          toys update-api-list -v --fork --use-dam

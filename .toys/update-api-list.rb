@@ -14,6 +14,9 @@
 
 desc "Update the API list from discovery"
 
+flag :use_dam do
+  desc "Get discovery index from discovery-artifact-manager instead of the discovery service"
+end
 flag :git_remote, "--remote=NAME" do
   desc "The name of the git remote to use as the pull request head. If omitted, does not open a pull request."
 end
@@ -39,6 +42,7 @@ def run
 
   @timestamp = Time.now.utc.strftime("%Y%m%d-%H%M%S")
   setup_builds
+  setup_dam if use_dam
   update_api_list
 end
 
@@ -47,10 +51,15 @@ def setup_builds
   exec ["mix", "compile"]
 end
 
+def setup_dam
+  ENV["DISCOVERIES_DIR"] = git_cache.get("https://github.com/googleapis/discovery-artifact-manager.git",
+                                         path: "discoveries", update: true)
+end
+
 def update_api_list
   branch_name = "action/auto-update-api-list"
   commit_message = "chore: Automatic update of apis.json"
-  if open_pr_exists? commit_message
+  if !git_remote.nil? && open_pr_exists?(commit_message)
     puts "Pull request already exists", :yellow
     return
   end

@@ -54,11 +54,12 @@ defmodule GoogleApis.Discovery do
   Download the list of preferred APIs from the Discovery service
   """
   def discover(opts \\ []) do
-    conn = Connection.new()
-    preferred = Keyword.get(opts, :preferred, true)
-    exceptions = Keyword.get_lazy(opts, :exceptions, &get_exceptions/0)
-    {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: preferred)
+    items = case System.fetch_env("DISCOVERIES_DIR") do
+      {:ok, dir} -> items_from_dam(dir, opts)
+      :error -> items_from_service(opts)
+    end
 
+    exceptions = Keyword.get_lazy(opts, :exceptions, &get_exceptions/0)
     Enum.flat_map(items, fn %{name: name, version: version, discoveryRestUrl: url} ->
       exceptions
       |> Enum.any?(fn
@@ -72,6 +73,27 @@ defmodule GoogleApis.Discovery do
         [%ApiConfig{name: name, version: version, url: url}]
       end
     end)
+  end
+
+  defp items_from_dam(dir, opts) do
+    src_file = Path.expand("index.json", dir)
+    {:ok, body} = File.read(src_file)
+    {:ok, %{items: items}} = Jason.decode(body, keys: :atoms)
+    preferred = Keyword.get(opts, :preferred, true)
+    if preferred do
+      Enum.filter(items, fn
+        %{preferred: preferred} -> preferred
+      end)
+    else
+      items
+    end
+  end
+
+  defp items_from_service(opts) do
+    conn = Connection.new()
+    preferred = Keyword.get(opts, :preferred, true)
+    {:ok, %{items: items}} = Apis.discovery_apis_list(conn, preferred: preferred)
+    items
   end
 
   defmodule Exception do
