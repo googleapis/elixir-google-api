@@ -24,8 +24,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AttackPathNode do
   *   `associatedFindings` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.PathNodeAssociatedFinding.t)`, *default:* `nil`) - The findings associated with this node in the attack path.
   *   `attackSteps` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.AttackStepNode.t)`, *default:* `nil`) - A list of attack step nodes that exist in this attack path node.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Human-readable name of this resource.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource at this point in the attack path. The format of the name follows the Cloud Asset Inventory [resource name format]("https://cloud.google.com/asset-inventory/docs/resource-name-format")
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The [supported resource type](https://cloud.google.com/asset-inventory/docs/supported-asset-types")
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource at this point in the attack path. The format of the name follows the Cloud Asset Inventory [resource name format](https://cloud.google.com/asset-inventory/docs/resource-name-format)
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - The [supported resource type](https://cloud.google.com/asset-inventory/docs/supported-asset-types)
   *   `uuid` (*type:* `String.t`, *default:* `nil`) - Unique id of the attack path node.
   """
 

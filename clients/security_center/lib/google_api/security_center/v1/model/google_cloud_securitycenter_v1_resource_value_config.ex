@@ -17,25 +17,27 @@
 
 defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ResourceValueConfig do
   @moduledoc """
-  A resource value config (RVC) is a mapping configuration of user's resources to resource values. Used in Attack path simulations.
+  A resource value configuration (RVC) is a mapping configuration of user's resources to resource values. Used in Attack path simulations.
 
   ## Attributes
 
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp this resource value config was created.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the resource value config.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the resource value config
-  *   `resourceLabelsSelector` (*type:* `map()`, *default:* `nil`) - List of resource labels to search for, evaluated with AND. E.g. "resource_labels_selector": {"key": "value", "env": "prod"} will match resources with labels "key": "value" AND "env": "prod" https://cloud.google.com/resource-manager/docs/creating-managing-labels
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Apply resource_value only to resources that match resource_type. resource_type will be checked with "AND" of other resources. E.g. "storage.googleapis.com/Bucket" with resource_value "HIGH" will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - Cloud provider this configuration applies to
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp this resource value configuration was created.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the resource value configuration.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Name for the resource value configuration
+  *   `resourceLabelsSelector` (*type:* `map()`, *default:* `nil`) - List of resource labels to search for, evaluated with `AND`. For example, `"resource_labels_selector": {"key": "value", "env": "prod"}` will match resources with labels "key": "value" `AND` "env": "prod" https://cloud.google.com/resource-manager/docs/creating-managing-labels
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Apply resource_value only to resources that match resource_type. resource_type will be checked with `AND` of other resources. For example, "storage.googleapis.com/Bucket" with resource_value "HIGH" will apply "HIGH" value only to "storage.googleapis.com/Bucket" resources.
   *   `resourceValue` (*type:* `String.t`, *default:* `nil`) - Required. Resource value level this expression represents
-  *   `scope` (*type:* `String.t`, *default:* `nil`) - Project or folder to scope this config to. For example, "project/456" would apply this config only to resources in "project/456" scope will be checked with "AND" of other resources.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Project or folder to scope this configuration to. For example, "project/456" would apply this configuration only to resources in "project/456" scope will be checked with `AND` of other resources.
   *   `sensitiveDataProtectionMapping` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1SensitiveDataProtectionMapping.t`, *default:* `nil`) - A mapping of the sensitivity on Sensitive Data Protection finding to resource values. This mapping can only be used in combination with a resource_type that is related to BigQuery, e.g. "bigquery.googleapis.com/Dataset".
-  *   `tagValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. Tag values combined with AND to check against. Values in the form "tagValues/123" E.g. [ "tagValues/123", "tagValues/456", "tagValues/789" ] https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp this resource value config was last updated.
+  *   `tagValues` (*type:* `list(String.t)`, *default:* `nil`) - Required. Tag values combined with `AND` to check against. Values in the form "tagValues/123" Example: `[ "tagValues/123", "tagValues/456", "tagValues/789" ]` https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp this resource value configuration was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cloudProvider => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :name => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1ResourceV
           :updateTime => DateTime.t() | nil
         }
 
+  field(:cloudProvider)
   field(:createTime, as: DateTime)
   field(:description)
   field(:name)

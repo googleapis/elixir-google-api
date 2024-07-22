@@ -21,21 +21,56 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Resource 
 
   ## Attributes
 
+  *   `awsMetadata` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AwsMetadata.t`, *default:* `nil`) - The AWS metadata associated with the finding.
+  *   `azureMetadata` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMetadata.t`, *default:* `nil`) - The Azure metadata associated with the finding.
+  *   `cloudProvider` (*type:* `String.t`, *default:* `nil`) - Indicates which cloud provider the finding is from.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name of the resource.
+  *   `gcpMetadata` (*type:* `GoogleApi.SecurityCenter.V1.Model.GcpMetadata.t`, *default:* `nil`) - The GCP metadata associated with the finding.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - The region or location of the service (if applicable).
   *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name of the resource. See: https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `resourcePath` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourcePath.t`, *default:* `nil`) - Provides the path to the resource within the resource hierarchy.
+  *   `resourcePathString` (*type:* `String.t`, *default:* `nil`) - A string representation of the resource path. For Google Cloud, it has the format of `organizations/{organization_id}/folders/{folder_id}/folders/{folder_id}/projects/{project_id}` where there can be any number of folders. For AWS, it has the format of `org/{organization_id}/ou/{organizational_unit_id}/ou/{organizational_unit_id}/account/{account_id}` where there can be any number of organizational units. For Azure, it has the format of `mg/{management_group_id}/mg/{management_group_id}/subscription/{subscription_id}/rg/{resource_group_name}` where there can be any number of management groups.
+  *   `service` (*type:* `String.t`, *default:* `nil`) - The service or resource provider associated with the resource.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The full resource type of the resource.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :awsMetadata =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AwsMetadata.t() | nil,
+          :azureMetadata =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMetadata.t() | nil,
+          :cloudProvider => String.t() | nil,
           :displayName => String.t() | nil,
+          :gcpMetadata => GoogleApi.SecurityCenter.V1.Model.GcpMetadata.t() | nil,
+          :location => String.t() | nil,
           :name => String.t() | nil,
+          :resourcePath =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourcePath.t() | nil,
+          :resourcePathString => String.t() | nil,
+          :service => String.t() | nil,
           :type => String.t() | nil
         }
 
+  field(:awsMetadata, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AwsMetadata)
+
+  field(:azureMetadata,
+    as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMetadata
+  )
+
+  field(:cloudProvider)
   field(:displayName)
+  field(:gcpMetadata, as: GoogleApi.SecurityCenter.V1.Model.GcpMetadata)
+  field(:location)
   field(:name)
+
+  field(:resourcePath,
+    as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2ResourcePath
+  )
+
+  field(:resourcePathString)
+  field(:service)
   field(:type)
 end
 
