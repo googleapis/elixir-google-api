@@ -22,15 +22,18 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1WeeklyRecurrence do
   ## Attributes
 
   *   `day` (*type:* `String.t`, *default:* `nil`) - The day of week to run. DAY_OF_WEEK_UNSPECIFIED is not allowed.
+  *   `time` (*type:* `GoogleApi.Firestore.V1.Model.TimeOfDay.t`, *default:* `nil`) - Time of the day. If day is today, the first run will happen today if schedule creation time precedes time_of_day, and the next week otherwise.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :day => String.t() | nil
+          :day => String.t() | nil,
+          :time => GoogleApi.Firestore.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:day)
+  field(:time, as: GoogleApi.Firestore.V1.Model.TimeOfDay)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1WeeklyRecurrence do

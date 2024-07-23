@@ -26,12 +26,14 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   *   `concurrencyMode` (*type:* `String.t`, *default:* `nil`) - The concurrency control mode to use for this database.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this database was created. Databases created before 2016 do not populate create_time.
   *   `deleteProtectionState` (*type:* `String.t`, *default:* `nil`) - State of delete protection for the database.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this database was deleted. Only set if the database has been deleted.
   *   `earliestVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The earliest timestamp at which older versions of the data can be read from the database. See [version_retention_period] above; this field is populated with `now - version_retention_period`. This value is continuously updated, and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `keyPrefix` (*type:* `String.t`, *default:* `nil`) - Output only. The key_prefix for this database. This key_prefix is used, in combination with the project id ("~") to construct the application id that is returned from the Cloud Datastore APIs in Google App Engine first generation runtimes. This value may be empty in which case the appid to use for URL-encoded keys is the project_id (eg: foo instead of v~foo).
   *   `locationId` (*type:* `String.t`, *default:* `nil`) - The location of the database. Available locations are listed at https://cloud.google.com/firestore/docs/locations.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Database. Format: `projects/{project}/databases/{database}`
   *   `pointInTimeRecoveryEnablement` (*type:* `String.t`, *default:* `nil`) - Whether to enable the PITR feature on this database.
+  *   `previousId` (*type:* `String.t`, *default:* `nil`) - Output only. The database resource's prior database ID. This field is only populated for deleted databases.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated UUID4 for this Database.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this database was most recently updated. Note this only includes updates to the database resource and not data contained by the database.
@@ -46,12 +48,14 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
           :concurrencyMode => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :deleteProtectionState => String.t() | nil,
+          :deleteTime => DateTime.t() | nil,
           :earliestVersionTime => DateTime.t() | nil,
           :etag => String.t() | nil,
           :keyPrefix => String.t() | nil,
           :locationId => String.t() | nil,
           :name => String.t() | nil,
           :pointInTimeRecoveryEnablement => String.t() | nil,
+          :previousId => String.t() | nil,
           :type => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -63,12 +67,14 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   field(:concurrencyMode)
   field(:createTime, as: DateTime)
   field(:deleteProtectionState)
+  field(:deleteTime, as: DateTime)
   field(:earliestVersionTime, as: DateTime)
   field(:etag)
   field(:keyPrefix)
   field(:locationId)
   field(:name)
   field(:pointInTimeRecoveryEnablement)
+  field(:previousId)
   field(:type)
   field(:uid)
   field(:updateTime, as: DateTime)

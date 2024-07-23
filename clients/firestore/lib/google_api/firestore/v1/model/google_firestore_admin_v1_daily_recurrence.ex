@@ -17,15 +17,20 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1DailyRecurrence do
   @moduledoc """
-  Represents a recurring schedule that runs at a specific time every day. The time zone is UTC.
+  Represents a recurring schedule that runs every day. The time zone is UTC.
 
   ## Attributes
 
+  *   `time` (*type:* `GoogleApi.Firestore.V1.Model.TimeOfDay.t`, *default:* `nil`) - Time of the day. The first run scheduled will be either on the same day if schedule creation time precedes time_of_day or the next day otherwise.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :time => GoogleApi.Firestore.V1.Model.TimeOfDay.t() | nil
+        }
+
+  field(:time, as: GoogleApi.Firestore.V1.Model.TimeOfDay)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1DailyRecurrence do

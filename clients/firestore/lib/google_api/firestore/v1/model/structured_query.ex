@@ -22,7 +22,7 @@ defmodule GoogleApi.Firestore.V1.Model.StructuredQuery do
   ## Attributes
 
   *   `endAt` (*type:* `GoogleApi.Firestore.V1.Model.Cursor.t`, *default:* `nil`) - A potential prefix of a position in the result set to end the query at. This is similar to `START_AT` but with it controlling the end position rather than the start position. Requires: * The number of values cannot be greater than the number of fields specified in the `ORDER BY` clause.
-  *   `findNearest` (*type:* `GoogleApi.Firestore.V1.Model.FindNearest.t`, *default:* `nil`) - Optional. A potential Nearest Neighbors Search. Applies after all other filters and ordering. Finds the closest vector embeddings to the given query vector.
+  *   `findNearest` (*type:* `GoogleApi.Firestore.V1.Model.FindNearest.t`, *default:* `nil`) - Optional. A potential nearest neighbors search. Applies after all other filters and ordering. Finds the closest vector embeddings to the given query vector.
   *   `from` (*type:* `list(GoogleApi.Firestore.V1.Model.CollectionSelector.t)`, *default:* `nil`) - The collections to query.
   *   `limit` (*type:* `integer()`, *default:* `nil`) - The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified.
   *   `offset` (*type:* `integer()`, *default:* `nil`) - The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified.
