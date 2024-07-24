@@ -86,12 +86,13 @@ def handle_package api_name, index, total
     puts "(#{index}/#{total}) Pull request already exists for #{api_name}", :yellow
     return
   end
-  approval_message = "Rubber-stamped client auto-generation!"
+  approval_message = approval_token ? "Rubber-stamped client auto-generation!" : nil
+  labels = approval_token ? ["automerge: exact"] : nil
   result = yoshi_pr_generator.capture enabled: !git_remote.nil?,
                                       remote: git_remote,
                                       branch_name: branch_name,
                                       commit_message: commit_message,
-                                      labels: ["automerge"],
+                                      labels: labels,
                                       cooldown_wait: 15,
                                       auto_approve: approval_message,
                                       approval_token: approval_token do
