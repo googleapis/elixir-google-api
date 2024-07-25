@@ -27,6 +27,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this Restore resource was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - User specified descriptive string for this Restore.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestore`, and systems are expected to put that etag in the request to `UpdateRestore` or `DeleteRestore` to ensure that their change will be applied to the same version of the resource.
+  *   `filter` (*type:* `GoogleApi.GKEBackup.V1.Model.Filter.t`, *default:* `nil`) - Optional. Immutable. Filters resources for `Restore`. If not specified, the scope of the restore will remain the same as defined in the `RestorePlan`. If this is specified and no resources are matched by the `inclusion_filters` or everyting is excluded by the `exclusion_filters`, nothing will be restored. This filter can only be specified if the value of namespaced_resource_restore_mode is set to `MERGE_SKIP_ON_CONFLICT`, `MERGE_REPLACE_VOLUME_ON_CONFLICT` or `MERGE_REPLACE_ON_CONFLICT`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - A set of custom labels supplied by user.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The full name of the Restore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*`
   *   `resourcesExcludedCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of resources excluded during the restore execution.
@@ -37,6 +38,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
   *   `stateReason` (*type:* `String.t`, *default:* `nil`) - Output only. Human-readable description of why the Restore is in its current state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this Restore resource was last updated.
+  *   `volumeDataRestorePolicyOverrides` (*type:* `list(GoogleApi.GKEBackup.V1.Model.VolumeDataRestorePolicyOverride.t)`, *default:* `nil`) - Optional. Immutable. Overrides the volume data restore policies selected in the Restore Config for override-scoped resources.
   *   `volumesRestoredCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of volumes restored during the restore execution.
   """
 
@@ -49,6 +51,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
+          :filter => GoogleApi.GKEBackup.V1.Model.Filter.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :resourcesExcludedCount => integer() | nil,
@@ -59,6 +62,8 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
           :stateReason => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
+          :volumeDataRestorePolicyOverrides =>
+            list(GoogleApi.GKEBackup.V1.Model.VolumeDataRestorePolicyOverride.t()) | nil,
           :volumesRestoredCount => integer() | nil
         }
 
@@ -68,6 +73,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
   field(:createTime, as: DateTime)
   field(:description)
   field(:etag)
+  field(:filter, as: GoogleApi.GKEBackup.V1.Model.Filter)
   field(:labels, type: :map)
   field(:name)
   field(:resourcesExcludedCount)
@@ -78,6 +84,12 @@ defmodule GoogleApi.GKEBackup.V1.Model.Restore do
   field(:stateReason)
   field(:uid)
   field(:updateTime, as: DateTime)
+
+  field(:volumeDataRestorePolicyOverrides,
+    as: GoogleApi.GKEBackup.V1.Model.VolumeDataRestorePolicyOverride,
+    type: :list
+  )
+
   field(:volumesRestoredCount)
 end
 

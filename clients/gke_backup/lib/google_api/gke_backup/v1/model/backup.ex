@@ -36,6 +36,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Backup do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A set of custom labels supplied by user.
   *   `manual` (*type:* `boolean()`, *default:* `nil`) - Output only. This flag indicates whether this Backup resource was created manually by a user or via a schedule in the BackupPlan. A value of True means that the Backup was created manually.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`
+  *   `permissiveMode` (*type:* `boolean()`, *default:* `nil`) - Output only. If false, Backup will fail when Backup for GKE detects Kubernetes configuration that is non-standard or requires additional setup to restore. Inherited from the parent BackupPlan's permissive_mode value.
   *   `podCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of Kubernetes Pods contained in the Backup.
   *   `resourceCount` (*type:* `integer()`, *default:* `nil`) - Output only. The total number of Kubernetes resources included in the Backup.
   *   `retainDays` (*type:* `integer()`, *default:* `nil`) - Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
@@ -68,6 +69,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Backup do
           :labels => map() | nil,
           :manual => boolean() | nil,
           :name => String.t() | nil,
+          :permissiveMode => boolean() | nil,
           :podCount => integer() | nil,
           :resourceCount => integer() | nil,
           :retainDays => integer() | nil,
@@ -97,6 +99,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.Backup do
   field(:labels, type: :map)
   field(:manual)
   field(:name)
+  field(:permissiveMode)
   field(:podCount)
   field(:resourceCount)
   field(:retainDays)
