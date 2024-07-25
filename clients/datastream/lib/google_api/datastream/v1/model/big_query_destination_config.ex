@@ -21,7 +21,9 @@ defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
 
   ## Attributes
 
+  *   `appendOnly` (*type:* `GoogleApi.Datastream.V1.Model.AppendOnly.t`, *default:* `nil`) - Append only mode
   *   `dataFreshness` (*type:* `String.t`, *default:* `nil`) - The guaranteed data freshness (in seconds) when querying tables created by the stream. Editing this field will only affect new tables created in the future, but existing tables will not be impacted. Lower values mean that queries will return fresher data, but may result in higher cost.
+  *   `merge` (*type:* `GoogleApi.Datastream.V1.Model.Merge.t`, *default:* `nil`) - The standard mode
   *   `singleTargetDataset` (*type:* `GoogleApi.Datastream.V1.Model.SingleTargetDataset.t`, *default:* `nil`) - Single destination dataset.
   *   `sourceHierarchyDatasets` (*type:* `GoogleApi.Datastream.V1.Model.SourceHierarchyDatasets.t`, *default:* `nil`) - Source hierarchy datasets.
   """
@@ -29,13 +31,17 @@ defmodule GoogleApi.Datastream.V1.Model.BigQueryDestinationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appendOnly => GoogleApi.Datastream.V1.Model.AppendOnly.t() | nil,
           :dataFreshness => String.t() | nil,
+          :merge => GoogleApi.Datastream.V1.Model.Merge.t() | nil,
           :singleTargetDataset => GoogleApi.Datastream.V1.Model.SingleTargetDataset.t() | nil,
           :sourceHierarchyDatasets =>
             GoogleApi.Datastream.V1.Model.SourceHierarchyDatasets.t() | nil
         }
 
+  field(:appendOnly, as: GoogleApi.Datastream.V1.Model.AppendOnly)
   field(:dataFreshness)
+  field(:merge, as: GoogleApi.Datastream.V1.Model.Merge)
   field(:singleTargetDataset, as: GoogleApi.Datastream.V1.Model.SingleTargetDataset)
   field(:sourceHierarchyDatasets, as: GoogleApi.Datastream.V1.Model.SourceHierarchyDatasets)
 end
