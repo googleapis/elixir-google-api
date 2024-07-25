@@ -18,7 +18,7 @@
 defmodule GoogleApi.People.Mixfile do
   use Mix.Project
 
-  @version "0.41.0"
+  @version "0.42.0"
 
   def project() do
     [

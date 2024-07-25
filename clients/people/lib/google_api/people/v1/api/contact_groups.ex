@@ -155,7 +155,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to delete.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the contact group to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -181,12 +181,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_contact_groups_delete(
-        connection,
-        contact_groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def people_contact_groups_delete(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -205,9 +200,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" =>
-          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+resourceName}", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -223,7 +217,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to get.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the contact group to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -250,7 +244,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_contact_groups_get(connection, contact_groups_id, optional_params \\ [], opts \\ []) do
+  def people_contact_groups_get(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -270,9 +264,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" =>
-          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+resourceName}", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -353,7 +346,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `contactGroup.resourceName`. The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`.
+  *   `resource_name` (*type:* `String.t`) - The resource name for the contact group, assigned by the server. An ASCII string, in the form of `contactGroups/{contact_group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -379,12 +372,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_contact_groups_update(
-        connection,
-        contact_groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def people_contact_groups_update(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -403,9 +391,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v1/contactGroups/{contactGroupsId}", %{
-        "contactGroupsId" =>
-          URI.encode(contact_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+resourceName}", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -421,7 +408,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `contact_groups_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact group to modify.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the contact group to modify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -449,7 +436,7 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
           | {:error, any()}
   def people_contact_groups_members_modify(
         connection,
-        contact_groups_id,
+        resource_name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -471,8 +458,8 @@ defmodule GoogleApi.People.V1.Api.ContactGroups do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/contactGroups/{contactGroupsId}/members:modify", %{
-        "contactGroupsId" => URI.encode(contact_groups_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}/members:modify", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

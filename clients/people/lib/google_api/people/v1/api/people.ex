@@ -271,7 +271,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact to delete.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the contact to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -296,7 +296,7 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_delete_contact(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_delete_contact(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -314,8 +314,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/people/{peopleId}:deleteContact", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}:deleteContact", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -331,7 +331,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the contact whose photo will be deleted.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the contact whose photo will be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -358,7 +358,12 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_delete_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_delete_contact_photo(
+        connection,
+        resource_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -378,8 +383,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/people/{peopleId}:deleteContactPhoto", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}:deleteContactPhoto", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -395,7 +400,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the person to provide information about. - To get information about the authenticated user, specify `people/me`. - To get information about a google account, specify `people/{account_id}`. - To get information about a contact, specify the resource name that identifies the contact as returned by `people.connections.list`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -423,7 +428,7 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_get(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_get(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -444,8 +449,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/people/{peopleId}", %{
-        "peopleId" => URI.encode(people_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+resourceName}", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -733,7 +738,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `person.resourceName`. The resource name for the person, assigned by the server. An ASCII string in the form of `people/{person_id}`.
+  *   `resource_name` (*type:* `String.t`) - The resource name for the person, assigned by the server. An ASCII string in the form of `people/{person_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -762,7 +767,7 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_update_contact(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_update_contact(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -784,8 +789,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/people/{peopleId}:updateContact", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}:updateContact", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -801,7 +806,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. Person resource name
+  *   `resource_name` (*type:* `String.t`) - Required. Person resource name
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -827,7 +832,12 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_update_contact_photo(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_update_contact_photo(
+        connection,
+        resource_name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -846,8 +856,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/people/{peopleId}:updateContactPhoto", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}:updateContactPhoto", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -863,7 +873,7 @@ defmodule GoogleApi.People.V1.Api.People do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `people_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name to return connections for. Only `people/me` is valid.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name to return connections for. Only `people/me` is valid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -896,7 +906,7 @@ defmodule GoogleApi.People.V1.Api.People do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def people_people_connections_list(connection, people_id, optional_params \\ [], opts \\ []) do
+  def people_people_connections_list(connection, resource_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -922,8 +932,8 @@ defmodule GoogleApi.People.V1.Api.People do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/people/{peopleId}/connections", %{
-        "peopleId" => URI.encode(people_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}/connections", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
