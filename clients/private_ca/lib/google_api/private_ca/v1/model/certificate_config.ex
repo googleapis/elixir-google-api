@@ -23,7 +23,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateConfig do
 
   *   `publicKey` (*type:* `GoogleApi.PrivateCA.V1.Model.PublicKey.t`, *default:* `nil`) - Optional. The public key that corresponds to this config. This is, for example, used when issuing Certificates, but not when creating a self-signed CertificateAuthority or CertificateAuthority CSR.
   *   `subjectConfig` (*type:* `GoogleApi.PrivateCA.V1.Model.SubjectConfig.t`, *default:* `nil`) - Required. Specifies some of the values in a certificate that are related to the subject.
-  *   `subjectKeyId` (*type:* `GoogleApi.PrivateCA.V1.Model.CertificateConfigKeyId.t`, *default:* `nil`) - Optional. When specified this provides a custom SKI to be used in the certificate. This should only be used to maintain a SKI of an existing CA originally created outside CAS, which was not generated using method (1) described in RFC 5280 section 4.2.1.2.
+  *   `subjectKeyId` (*type:* `GoogleApi.PrivateCA.V1.Model.CertificateConfigKeyId.t`, *default:* `nil`) - Optional. When specified this provides a custom SKI to be used in the certificate. This should only be used to maintain a SKI of an existing CA originally created outside CA service, which was not generated using method (1) described in RFC 5280 section 4.2.1.2.
   *   `x509Config` (*type:* `GoogleApi.PrivateCA.V1.Model.X509Parameters.t`, *default:* `nil`) - Required. Describes how some of the technical X.509 fields in a certificate should be populated.
   """
 

@@ -33,6 +33,8 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateAuthority do
   *   `lifetime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The desired lifetime of the CA certificate. Used to create the "not_before_time" and "not_after_time" fields inside an X.509 certificate.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
   *   `pemCaCertificates` (*type:* `list(String.t)`, *default:* `nil`) - Output only. This CertificateAuthority's certificate chain, including the current CertificateAuthority's certificate. Ordered such that the root issuer is the final element (consistent with RFC 5246). For a self-signed CA, this will only list the current CertificateAuthority's certificate.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The State for this CertificateAuthority.
   *   `subordinateConfig` (*type:* `GoogleApi.PrivateCA.V1.Model.SubordinateConfig.t`, *default:* `nil`) - Optional. If this is a subordinate CertificateAuthority, this field will be set with the subordinate configuration, which describes its issuers. This may be updated, but this CertificateAuthority must continue to validate.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - Output only. The CaPool.Tier of the CaPool that includes this CertificateAuthority.
@@ -56,6 +58,8 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateAuthority do
           :lifetime => String.t() | nil,
           :name => String.t() | nil,
           :pemCaCertificates => list(String.t()) | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :subordinateConfig => GoogleApi.PrivateCA.V1.Model.SubordinateConfig.t() | nil,
           :tier => String.t() | nil,
@@ -80,6 +84,8 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateAuthority do
   field(:lifetime)
   field(:name)
   field(:pemCaCertificates, type: :list)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:subordinateConfig, as: GoogleApi.PrivateCA.V1.Model.SubordinateConfig)
   field(:tier)

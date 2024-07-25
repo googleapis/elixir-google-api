@@ -23,7 +23,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.X509Parameters do
 
   *   `additionalExtensions` (*type:* `list(GoogleApi.PrivateCA.V1.Model.X509Extension.t)`, *default:* `nil`) - Optional. Describes custom X.509 extensions.
   *   `aiaOcspServers` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Describes Online Certificate Status Protocol (OCSP) endpoint addresses that appear in the "Authority Information Access" extension in the certificate.
-  *   `caOptions` (*type:* `GoogleApi.PrivateCA.V1.Model.CaOptions.t`, *default:* `nil`) - Optional. Describes options in this X509Parameters that are relevant in a CA certificate.
+  *   `caOptions` (*type:* `GoogleApi.PrivateCA.V1.Model.CaOptions.t`, *default:* `nil`) - Optional. Describes options in this X509Parameters that are relevant in a CA certificate. If not specified, a default basic constraints extension with `is_ca=false` will be added for leaf certificates.
   *   `keyUsage` (*type:* `GoogleApi.PrivateCA.V1.Model.KeyUsage.t`, *default:* `nil`) - Optional. Indicates the intended use for keys that correspond to a certificate.
   *   `nameConstraints` (*type:* `GoogleApi.PrivateCA.V1.Model.NameConstraints.t`, *default:* `nil`) - Optional. Describes the X.509 name constraints extension.
   *   `policyIds` (*type:* `list(GoogleApi.PrivateCA.V1.Model.ObjectId.t)`, *default:* `nil`) - Optional. Describes the X.509 certificate policy object identifiers, per https://tools.ietf.org/html/rfc5280#section-4.2.1.4.
