@@ -21,10 +21,11 @@ defmodule GoogleApi.Chat.V1.Model.Space do
 
   ## Attributes
 
-  *   `adminInstalled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the Chat app was installed by a Google Workspace administrator. Administrators can install a Chat app for their domain, organizational unit, or a group of users. Administrators can only install Chat apps for direct messaging between users and the app. To support admin install, your app must feature direct messaging.
+  *   `accessSettings` (*type:* `GoogleApi.Chat.V1.Model.AccessSettings.t`, *default:* `nil`) - Optional. Specifies the [access setting](https://support.google.com/chat/answer/11971020) of the space. Only populated when the `space_type` is `SPACE`.
+  *   `adminInstalled` (*type:* `boolean()`, *default:* `nil`) - Output only. For direct message (DM) spaces with a Chat app, whether the space was created by a Google Workspace administrator. Administrators can install and set up a direct message with a Chat app on behalf of users in their organization. To support admin install, your Chat app must feature direct messaging.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. For spaces created in Chat, the time the space was created. This field is output only, except when used in import mode spaces. For import mode spaces, set this field to the historical timestamp at which the space was created in the source in order to preserve the original creation time. Only populated in the output when `spaceType` is `GROUP_CHAT` or `SPACE`.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The space's display name. Required when [creating a space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create). If you receive the error message `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a different `displayName`. An existing space within the Google Workspace organization might already use this display name. For direct messages, this field might be empty. Supports up to 128 characters.
-  *   `externalUserAllowed` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether this space permits any Google Chat user as a member. Input when creating a space in a Google Workspace organization. Omit this field when creating spaces in the following conditions: * The authenticated user uses a consumer account (unmanaged user account). By default, a space created by a consumer account permits any Google Chat user. * The space is used to [import data to Google Chat] (https://developers.google.com/workspace/chat/import-data). Import mode spaces must only permit members from the same Google Workspace organization. For existing spaces, this field is output only.
+  *   `externalUserAllowed` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether this space permits any Google Chat user as a member. Input when creating a space in a Google Workspace organization. Omit this field when creating spaces in the following conditions: * The authenticated user uses a consumer account (unmanaged user account). By default, a space created by a consumer account permits any Google Chat user. For existing spaces, this field is output only.
   *   `importMode` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether this space is created in `Import Mode` as part of a data migration into Google Workspace. While spaces are being imported, they aren't visible to users until the import is complete.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space. Format: `spaces/{space}`
   *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the space is a DM between a Chat app and a single human.
@@ -32,6 +33,7 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   *   `spaceHistoryState` (*type:* `String.t`, *default:* `nil`) - The message history state for messages and threads in this space.
   *   `spaceThreadingState` (*type:* `String.t`, *default:* `nil`) - Output only. The threading state in the Chat space.
   *   `spaceType` (*type:* `String.t`, *default:* `nil`) - The type of space. Required when creating a space or updating the space type of a space. Output only for other usage.
+  *   `spaceUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI for a user to access the space.
   *   `threaded` (*type:* `boolean()`, *default:* `nil`) - Output only. Deprecated: Use `spaceThreadingState` instead. Whether messages are threaded in this space.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated: Use `space_type` instead. The type of a space.
   """
@@ -39,6 +41,7 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessSettings => GoogleApi.Chat.V1.Model.AccessSettings.t() | nil,
           :adminInstalled => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
@@ -50,10 +53,12 @@ defmodule GoogleApi.Chat.V1.Model.Space do
           :spaceHistoryState => String.t() | nil,
           :spaceThreadingState => String.t() | nil,
           :spaceType => String.t() | nil,
+          :spaceUri => String.t() | nil,
           :threaded => boolean() | nil,
           :type => String.t() | nil
         }
 
+  field(:accessSettings, as: GoogleApi.Chat.V1.Model.AccessSettings)
   field(:adminInstalled)
   field(:createTime, as: DateTime)
   field(:displayName)
@@ -65,6 +70,7 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   field(:spaceHistoryState)
   field(:spaceThreadingState)
   field(:spaceType)
+  field(:spaceUri)
   field(:threaded)
   field(:type)
 end

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Widgets do
   @moduledoc """
-  The supported widgets that you can include in a column. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend): Columns for Google Workspace Add-ons are in Developer Preview.
+  The supported widgets that you can include in a column. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend)
 
   ## Attributes
 

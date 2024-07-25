@@ -24,6 +24,21 @@ defmodule GoogleApi.Chat.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
+      # Delete conversations and spaces owned by your organization and remove access to associated files in Google Chat
+      "https://www.googleapis.com/auth/chat.admin.delete",
+
+      # View, add, update and remove members and managers in conversations owned by your organization
+      "https://www.googleapis.com/auth/chat.admin.memberships",
+
+      # View members and managers in conversations owned by your organization
+      "https://www.googleapis.com/auth/chat.admin.memberships.readonly",
+
+      # View or edit display name, description, and other metadata for all Google Chat conversations owned by your organization
+      "https://www.googleapis.com/auth/chat.admin.spaces",
+
+      # View display name, description, and other metadata for all Google Chat conversations owned by your organization
+      "https://www.googleapis.com/auth/chat.admin.spaces.readonly",
+
       # Private Service: https://www.googleapis.com/auth/chat.bot
       "https://www.googleapis.com/auth/chat.bot",
 
@@ -33,7 +48,7 @@ defmodule GoogleApi.Chat.V1.Connection do
       # Import spaces, messages, and memberships into Google Chat.
       "https://www.googleapis.com/auth/chat.import",
 
-      # View, add, and remove members from conversations in Google Chat
+      # View, add, update, and remove members from conversations in Google Chat
       "https://www.googleapis.com/auth/chat.memberships",
 
       # Add and remove itself from conversations in Google Chat
@@ -67,7 +82,13 @@ defmodule GoogleApi.Chat.V1.Connection do
       "https://www.googleapis.com/auth/chat.spaces.create",
 
       # View chat and spaces in Google Chat
-      "https://www.googleapis.com/auth/chat.spaces.readonly"
+      "https://www.googleapis.com/auth/chat.spaces.readonly",
+
+      # View and modify last read time for Google Chat conversations
+      "https://www.googleapis.com/auth/chat.users.readstate",
+
+      # View last read time for Google Chat conversations
+      "https://www.googleapis.com/auth/chat.users.readstate.readonly"
     ],
     otp_app: :google_api_chat,
     base_url: "https://chat.googleapis.com/"

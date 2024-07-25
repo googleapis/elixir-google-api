@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Column do
   @moduledoc """
-  A column. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend): Columns for Google Workspace Add-ons are in Developer Preview.
+  A column. [Google Workspace Add-ons and Chat apps](https://developers.google.com/workspace/extend)
 
   ## Attributes
 

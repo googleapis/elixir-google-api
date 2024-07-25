@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Action do
 
   ## Attributes
 
-  *   `function` (*type:* `String.t`, *default:* `nil`) - A custom function to invoke when the containing element is clicked or othrwise activated. For example usage, see [Read form data](https://developers.google.com/workspace/chat/read-form-data).
+  *   `function` (*type:* `String.t`, *default:* `nil`) - A custom function to invoke when the containing element is clicked or otherwise activated. For example usage, see [Read form data](https://developers.google.com/workspace/chat/read-form-data).
   *   `interaction` (*type:* `String.t`, *default:* `nil`) - Optional. Required when opening a [dialog](https://developers.google.com/workspace/chat/dialogs). What to do in response to an interaction with a user, such as a user clicking a button in a card message. If unspecified, the app responds by executing an `action`—like opening a link or running a function—as normal. By specifying an `interaction`, the app can respond in special interactive ways. For example, by setting `interaction` to `OPEN_DIALOG`, the app can open a [dialog](https://developers.google.com/workspace/chat/dialogs). When specified, a loading indicator isn't shown. If specified for an add-on, the entire card is stripped and nothing is shown in the client. [Google Chat apps](https://developers.google.com/workspace/chat):
   *   `loadIndicator` (*type:* `String.t`, *default:* `nil`) - Specifies the loading indicator that the action displays while making the call to the action.
   *   `parameters` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1ActionParameter.t)`, *default:* `nil`) - List of action parameters.
