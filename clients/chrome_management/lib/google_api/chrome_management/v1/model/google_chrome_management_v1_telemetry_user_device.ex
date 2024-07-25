@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryU
 
   ## Attributes
 
+  *   `appReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport.t)`, *default:* `nil`) - Output only. App reports collected periodically sorted in a decreasing order of report_time.
   *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically sorted in a decreasing order of report_time.
   *   `deviceActivityReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1DeviceActivityReport.t)`, *default:* `nil`) - Output only. Device activity reports collected periodically sorted in a decreasing order of report_time.
   *   `deviceId` (*type:* `String.t`, *default:* `nil`) - The unique Directory API ID of the device. This value is the same as the Admin Console's Directory API ID in the ChromeOS Devices tab.
@@ -31,6 +32,8 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryU
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appReport =>
+            list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport.t()) | nil,
           :audioStatusReport =>
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t()
@@ -53,6 +56,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryU
             )
             | nil
         }
+
+  field(:appReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport,
+    type: :list
+  )
 
   field(:audioStatusReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport,

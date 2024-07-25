@@ -21,6 +21,9 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryE
 
   ## Attributes
 
+  *   `appInstallEvent` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppInstallEvent.t`, *default:* `nil`) - Output only. Payload for app install event. Present only when `event_type` is `APP_INSTALLED`.
+  *   `appLaunchEvent` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppLaunchEvent.t`, *default:* `nil`) - Output only. Payload for app launch event.Present only when `event_type` is `APP_LAUNCHED`.
+  *   `appUninstallEvent` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppUninstallEvent.t`, *default:* `nil`) - Output only. Payload for app uninstall event. Present only when `event_type` is `APP_UNINSTALLED`.
   *   `audioSevereUnderrunEvent` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent.t`, *default:* `nil`) - Output only. Payload for audio severe underrun event. Present only when the `event_type` field is `AUDIO_SEVERE_UNDERRUN`.
   *   `device` (*type:* `GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryDeviceInfo.t`, *default:* `nil`) - Output only. Information about the device associated with the event.
   *   `eventType` (*type:* `String.t`, *default:* `nil`) - The event type of the current event.
@@ -37,6 +40,15 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryE
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appInstallEvent =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppInstallEvent.t()
+            | nil,
+          :appLaunchEvent =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppLaunchEvent.t()
+            | nil,
+          :appUninstallEvent =>
+            GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppUninstallEvent.t()
+            | nil,
           :audioSevereUnderrunEvent =>
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAudioSevereUnderrunEvent.t()
             | nil,
@@ -65,6 +77,18 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryE
             GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryNetworkSignalStrengthEvent.t()
             | nil
         }
+
+  field(:appInstallEvent,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppInstallEvent
+  )
+
+  field(:appLaunchEvent,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppLaunchEvent
+  )
+
+  field(:appUninstallEvent,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryAppUninstallEvent
+  )
 
   field(:audioSevereUnderrunEvent,
     as:

@@ -21,6 +21,7 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
 
   ## Attributes
 
+  *   `appReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport.t)`, *default:* `nil`) - Output only. App reports collected periodically sorted in a decreasing order of report_time.
   *   `audioStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t)`, *default:* `nil`) - Output only. Audio reports collected periodically sorted in a decreasing order of report_time.
   *   `batteryInfo` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryInfo.t)`, *default:* `nil`) - Output only. Information on battery specs for the device.
   *   `batteryStatusReport` (*type:* `list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1BatteryStatusReport.t)`, *default:* `nil`) - Output only. Battery reports collected periodically.
@@ -53,6 +54,8 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appReport =>
+            list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport.t()) | nil,
           :audioStatusReport =>
             list(
               GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport.t()
@@ -146,6 +149,11 @@ defmodule GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1TelemetryD
             list(GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1ThunderboltInfo.t())
             | nil
         }
+
+  field(:appReport,
+    as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AppReport,
+    type: :list
+  )
 
   field(:audioStatusReport,
     as: GoogleApi.ChromeManagement.V1.Model.GoogleChromeManagementV1AudioStatusReport,

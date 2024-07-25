@@ -1002,8 +1002,8 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name * app_id
-      *   `:orderBy` (*type:* `String.t`) - Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * app_id
+      *   `:filter` (*type:* `String.t`) - Query string to filter results, AND-separated fields in EBNF syntax. Note: OR operations are not supported in this filter. Supported filter fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * latest_profile_active_date * permission_name * app_id * manifest_versions
+      *   `:orderBy` (*type:* `String.t`) - Field used to order results. Supported order by fields: * app_name * app_type * install_type * number_of_permissions * total_install_count * app_id * manifest_versions
       *   `:orgUnitId` (*type:* `String.t`) - The ID of the organizational unit.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. Maximum and default are 100.
       *   `:pageToken` (*type:* `String.t`) - Token to specify the page of the request to be returned.
@@ -1604,7 +1604,7 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:filter` (*type:* `String.t`) - Optional. Only include resources that match the filter. Although this parameter is currently optional, this parameter will be required- please specify at least 1 event type. Supported filter fields: - device_id - user_id - device_org_unit_id - user_org_unit_id - timestamp - event_type The "timestamp" filter accepts either the Unix Epoch milliseconds format or the RFC3339 UTC "Zulu" format with nanosecond resolution and up to nine fractional digits. Both formats should be surrounded by simple double quotes. Examples: "2014-10-02T15:01:23Z", "2014-10-02T15:01:23.045123456Z", "1679283943823".
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of results to return. Default value is 100. Maximum value is 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. Token to specify next page in the list.
-      *   `:readMask` (*type:* `String.t`) - Required. Read mask to specify which fields to return. Although currently required, this field will become optional, while the filter parameter with an event type will be come required. Supported read_mask paths are: - device - user - audio_severe_underrun_event - usb_peripherals_event - https_latency_change_event - network_state_change_event - wifi_signal_strength_event - vpn_connection_state_change_event - app_install_event - app_uninstall_event - app_launch_event 
+      *   `:readMask` (*type:* `String.t`) - Required. Read mask to specify which fields to return. Although currently required, this field will become optional, while the filter parameter with an event type will be come required. Supported read_mask paths are: - device - user - audio_severe_underrun_event - usb_peripherals_event - https_latency_change_event - network_state_change_event - wifi_signal_strength_event - vpn_connection_state_change_event - app_install_event - app_uninstall_event - app_launch_event - os_crash_event 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
