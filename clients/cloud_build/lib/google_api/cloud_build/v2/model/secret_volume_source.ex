@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.SecretVolumeSource do
   ## Attributes
 
   *   `secretName` (*type:* `String.t`, *default:* `nil`) - Name of the secret referenced by the WorkspaceBinding.
-  *   `secretVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/*
+  *   `secretVersion` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the SecretVersion. In format: projects/*/secrets/*/versions/*
   """
 
   use GoogleApi.Gax.ModelBase
