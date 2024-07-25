@@ -104,7 +104,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Recommender.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
+  *   `name` (*type:* `String.t`) - Identifier. Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -481,7 +481,7 @@ defmodule GoogleApi.Recommender.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Recommender.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
+  *   `name` (*type:* `String.t`) - Identifier. Name of recommender config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/recommenders/[RECOMMENDER_ID]/config
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

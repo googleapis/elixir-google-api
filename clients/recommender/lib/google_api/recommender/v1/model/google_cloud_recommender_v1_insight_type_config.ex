@@ -25,7 +25,7 @@ defmodule GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightTypeConf
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A user-settable field to provide a human-readable name to be used in user interfaces.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Fingerprint of the InsightTypeConfig. Provides optimistic locking when updating.
   *   `insightTypeGenerationConfig` (*type:* `GoogleApi.Recommender.V1.Model.GoogleCloudRecommenderV1InsightTypeGenerationConfig.t`, *default:* `nil`) - InsightTypeGenerationConfig which configures the generation of insights for this insight type.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of insight type config. Eg, projects/[PROJECT_NUMBER]/locations/[LOCATION]/insightTypes/[INSIGHT_TYPE_ID]/config
   *   `revisionId` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The revision ID of the config. A new revision is committed whenever the config is changed in any way. The format is an 8-character hexadecimal string.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time when the config was updated.
   """
