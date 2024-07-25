@@ -21,9 +21,9 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.MTLSPolicy do
 
   ## Attributes
 
-  *   `clientValidationCa` (*type:* `list(GoogleApi.NetworkSecurity.V1.Model.ValidationCA.t)`, *default:* `nil`) - Required if the policy is to be used with Traffic Director. For external HTTPS load balancers it must be empty. Defines the mechanism to obtain the Certificate Authority certificate to validate the client certificate.
-  *   `clientValidationMode` (*type:* `String.t`, *default:* `nil`) - When the client presents an invalid certificate or no certificate to the load balancer, the `client_validation_mode` specifies how the client connection is handled. Required if the policy is to be used with the external HTTPS load balancing. For Traffic Director it must be empty.
-  *   `clientValidationTrustConfig` (*type:* `String.t`, *default:* `nil`) - Reference to the TrustConfig from certificatemanager.googleapis.com namespace. If specified, the chain validation will be performed against certificates configured in the given TrustConfig. Allowed only if the policy is to be used with external HTTPS load balancers.
+  *   `clientValidationCa` (*type:* `list(GoogleApi.NetworkSecurity.V1.Model.ValidationCA.t)`, *default:* `nil`) - Required if the policy is to be used with Traffic Director. For Application Load Balancers it must be empty. Defines the mechanism to obtain the Certificate Authority certificate to validate the client certificate.
+  *   `clientValidationMode` (*type:* `String.t`, *default:* `nil`) - When the client presents an invalid certificate or no certificate to the load balancer, the `client_validation_mode` specifies how the client connection is handled. Required if the policy is to be used with the Application Load Balancers. For Traffic Director it must be empty.
+  *   `clientValidationTrustConfig` (*type:* `String.t`, *default:* `nil`) - Reference to the TrustConfig from certificatemanager.googleapis.com namespace. If specified, the chain validation will be performed against certificates configured in the given TrustConfig. Allowed only if the policy is to be used with Application Load Balancers.
   """
 
   use GoogleApi.Gax.ModelBase
