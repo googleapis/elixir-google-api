@@ -21,9 +21,9 @@ defmodule GoogleApi.Container.V1.Model.AdditionalPodNetworkConfig do
 
   ## Attributes
 
-  *   `maxPodsPerNode` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The maximum number of pods per node which use this pod network
-  *   `secondaryPodRange` (*type:* `String.t`, *default:* `nil`) - The name of the secondary range on the subnet which provides IP address for this pod range
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Name of the subnetwork where the additional pod network belongs
+  *   `maxPodsPerNode` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The maximum number of pods per node which use this pod network.
+  *   `secondaryPodRange` (*type:* `String.t`, *default:* `nil`) - The name of the secondary range on the subnet which provides IP address for this pod range.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Name of the subnetwork where the additional pod network belongs.
   """
 
   use GoogleApi.Gax.ModelBase

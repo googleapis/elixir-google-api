@@ -22,20 +22,20 @@ defmodule GoogleApi.Container.V1.Model.Operation do
   ## Attributes
 
   *   `clusterConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current cluster state. Deprecated. Use field error instead.
-  *   `detail` (*type:* `String.t`, *default:* `nil`) - Detailed operation progress, if available.
-  *   `endTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation completed, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `detail` (*type:* `String.t`, *default:* `nil`) - Output only. Detailed operation progress, if available.
+  *   `endTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the operation completed, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `error` (*type:* `GoogleApi.Container.V1.Model.Status.t`, *default:* `nil`) - The error result of the operation in case of failure.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - [Output only] The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned ID for the operation.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) or [region](https://cloud.google.com/compute/docs/regions-zones/regions-zones#available) in which the cluster resides.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The server-assigned ID for the operation.
   *   `nodepoolConditions` (*type:* `list(GoogleApi.Container.V1.Model.StatusCondition.t)`, *default:* `nil`) - Which conditions caused the current node pool state. Deprecated. Use field error instead.
-  *   `operationType` (*type:* `String.t`, *default:* `nil`) - The operation type.
-  *   `progress` (*type:* `GoogleApi.Container.V1.Model.OperationProgress.t`, *default:* `nil`) - Output only. [Output only] Progress information for an operation.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URI for the operation. Example: `https://container.googleapis.com/v1alpha1/projects/123/locations/us-central1/operations/operation-123`.
-  *   `startTime` (*type:* `String.t`, *default:* `nil`) - [Output only] The time the operation started, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The current status of the operation.
+  *   `operationType` (*type:* `String.t`, *default:* `nil`) - Output only. The operation type.
+  *   `progress` (*type:* `GoogleApi.Container.V1.Model.OperationProgress.t`, *default:* `nil`) - Output only. Progress information for an operation.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URI for the operation. Example: `https://container.googleapis.com/v1alpha1/projects/123/locations/us-central1/operations/operation-123`.
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the operation started, in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The current status of the operation.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. If an error has occurred, a textual description of the error. Deprecated. Use the field error instead.
-  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - Server-defined URI for the target of the operation. The format of this is a URI to the resource being modified (such as a cluster, node pool, or node). For node pool repairs, there may be multiple nodes being repaired, but only one will be the target. Examples: - ## `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster` ## `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np` `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation is taking place. This field is deprecated, use location instead.
+  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URI for the target of the operation. The format of this is a URI to the resource being modified (such as a cluster, node pool, or node). For node pool repairs, there may be multiple nodes being repaired, but only one will be the target. Examples: - ## `https://container.googleapis.com/v1/projects/123/locations/us-central1/clusters/my-cluster` ## `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np` `https://container.googleapis.com/v1/projects/123/zones/us-central1-c/clusters/my-cluster/nodePools/my-np/node/my-node`
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the operation is taking place. This field is deprecated, use location instead.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -32,6 +32,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   *   `httpLoadBalancing` (*type:* `GoogleApi.Container.V1.Model.HttpLoadBalancing.t`, *default:* `nil`) - Configuration for the HTTP (L7) load balancing controller addon, which makes it easy to set up HTTP load balancers for services in a cluster.
   *   `kubernetesDashboard` (*type:* `GoogleApi.Container.V1.Model.KubernetesDashboard.t`, *default:* `nil`) - Configuration for the Kubernetes Dashboard. This addon is deprecated, and will be disabled in 1.15. It is recommended to use the Cloud Console to manage and monitor your Kubernetes clusters, workloads and applications. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dashboards
   *   `networkPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.NetworkPolicyConfig.t`, *default:* `nil`) - Configuration for NetworkPolicy. This only tracks whether the addon is enabled or not on the Master, it does not track whether network policy is enabled for the nodes.
+  *   `rayOperatorConfig` (*type:* `GoogleApi.Container.V1.Model.RayOperatorConfig.t`, *default:* `nil`) - Optional. Configuration for Ray Operator addon.
   *   `statefulHaConfig` (*type:* `GoogleApi.Container.V1.Model.StatefulHAConfig.t`, *default:* `nil`) - Optional. Configuration for the StatefulHA add-on.
   """
 
@@ -53,6 +54,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
           :httpLoadBalancing => GoogleApi.Container.V1.Model.HttpLoadBalancing.t() | nil,
           :kubernetesDashboard => GoogleApi.Container.V1.Model.KubernetesDashboard.t() | nil,
           :networkPolicyConfig => GoogleApi.Container.V1.Model.NetworkPolicyConfig.t() | nil,
+          :rayOperatorConfig => GoogleApi.Container.V1.Model.RayOperatorConfig.t() | nil,
           :statefulHaConfig => GoogleApi.Container.V1.Model.StatefulHAConfig.t() | nil
         }
 
@@ -72,6 +74,7 @@ defmodule GoogleApi.Container.V1.Model.AddonsConfig do
   field(:httpLoadBalancing, as: GoogleApi.Container.V1.Model.HttpLoadBalancing)
   field(:kubernetesDashboard, as: GoogleApi.Container.V1.Model.KubernetesDashboard)
   field(:networkPolicyConfig, as: GoogleApi.Container.V1.Model.NetworkPolicyConfig)
+  field(:rayOperatorConfig, as: GoogleApi.Container.V1.Model.RayOperatorConfig)
   field(:statefulHaConfig, as: GoogleApi.Container.V1.Model.StatefulHAConfig)
 end
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.EnterpriseConfig do
 
   ## Attributes
 
-  *   `clusterTier` (*type:* `String.t`, *default:* `nil`) - Output only. [Output only] cluster_tier specifies the premium tier of the cluster.
+  *   `clusterTier` (*type:* `String.t`, *default:* `nil`) - Output only. cluster_tier specifies the premium tier of the cluster.
   """
 
   use GoogleApi.Gax.ModelBase

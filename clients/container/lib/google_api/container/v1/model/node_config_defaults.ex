@@ -21,19 +21,25 @@ defmodule GoogleApi.Container.V1.Model.NodeConfigDefaults do
 
   ## Attributes
 
+  *   `containerdConfig` (*type:* `GoogleApi.Container.V1.Model.ContainerdConfig.t`, *default:* `nil`) - Parameters for containerd customization.
   *   `gcfsConfig` (*type:* `GoogleApi.Container.V1.Model.GcfsConfig.t`, *default:* `nil`) - GCFS (Google Container File System, also known as Riptide) options.
   *   `loggingConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t`, *default:* `nil`) - Logging configuration for node pools.
+  *   `nodeKubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - NodeKubeletConfig controls the defaults for new node-pools. Currently only `insecure_kubelet_readonly_port_enabled` can be set here.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :containerdConfig => GoogleApi.Container.V1.Model.ContainerdConfig.t() | nil,
           :gcfsConfig => GoogleApi.Container.V1.Model.GcfsConfig.t() | nil,
-          :loggingConfig => GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil
+          :loggingConfig => GoogleApi.Container.V1.Model.NodePoolLoggingConfig.t() | nil,
+          :nodeKubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil
         }
 
+  field(:containerdConfig, as: GoogleApi.Container.V1.Model.ContainerdConfig)
   field(:gcfsConfig, as: GoogleApi.Container.V1.Model.GcfsConfig)
   field(:loggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
+  field(:nodeKubeletConfig, as: GoogleApi.Container.V1.Model.NodeKubeletConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.NodeConfigDefaults do
