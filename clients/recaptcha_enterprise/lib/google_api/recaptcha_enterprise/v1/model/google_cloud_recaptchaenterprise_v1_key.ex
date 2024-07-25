@@ -24,8 +24,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   *   `androidSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AndroidKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by Android apps.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp corresponding to the creation of this key.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name of this key. Modifiable by user.
+  *   `expressSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ExpressKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by reCAPTCHA Express.
   *   `iosSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1IOSKeySettings.t`, *default:* `nil`) - Settings for keys that can be used by iOS apps.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels] (https://cloud.google.com/recaptcha-enterprise/docs/labels).
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. See [Creating and managing labels] (https://cloud.google.com/recaptcha/docs/labels).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name for the Key in the format `projects/{project}/keys/{key}`.
   *   `testingOptions` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TestingOptions.t`, *default:* `nil`) - Optional. Options for user acceptance testing.
   *   `wafSettings` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1WafSettings.t`, *default:* `nil`) - Optional. Settings for WAF
@@ -40,6 +41,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
             | nil,
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :expressSettings =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ExpressKeySettings.t()
+            | nil,
           :iosSettings =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1IOSKeySettings.t()
             | nil,
@@ -62,6 +66,10 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   field(:createTime, as: DateTime)
   field(:displayName)
+
+  field(:expressSettings,
+    as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1ExpressKeySettings
+  )
 
   field(:iosSettings,
     as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1IOSKeySettings
