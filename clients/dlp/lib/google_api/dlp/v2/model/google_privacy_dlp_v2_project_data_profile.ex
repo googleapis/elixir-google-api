@@ -22,30 +22,37 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProjectDataProfile do
   ## Attributes
 
   *   `dataRiskLevel` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel.t`, *default:* `nil`) - The data risk level of this project.
+  *   `fileStoreDataProfileCount` (*type:* `String.t`, *default:* `nil`) - The number of file store data profiles generated for this project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the profile.
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status of the last attempt to profile the project.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that was profiled.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this project.
+  *   `tableDataProfileCount` (*type:* `String.t`, *default:* `nil`) - The number of table data profiles generated for this project.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dataRiskLevel => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel.t() | nil,
+          :fileStoreDataProfileCount => String.t() | nil,
           :name => String.t() | nil,
           :profileLastGenerated => DateTime.t() | nil,
           :profileStatus => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t() | nil,
           :projectId => String.t() | nil,
-          :sensitivityScore => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil
+          :sensitivityScore =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t() | nil,
+          :tableDataProfileCount => String.t() | nil
         }
 
   field(:dataRiskLevel, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel)
+  field(:fileStoreDataProfileCount)
   field(:name)
   field(:profileLastGenerated, as: DateTime)
   field(:profileStatus, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus)
   field(:projectId)
   field(:sensitivityScore, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore)
+  field(:tableDataProfileCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProjectDataProfile do

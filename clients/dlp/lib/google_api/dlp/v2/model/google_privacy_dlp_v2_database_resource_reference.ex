@@ -21,17 +21,23 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatabaseResourceReference do
 
   ## Attributes
 
-  *   `instance` (*type:* `String.t`, *default:* `nil`) - Required. The instance where this resource is located. For example: Cloud SQL's instance id.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. If within a project-level config, then this must match the config's project id.
+  *   `database` (*type:* `String.t`, *default:* `nil`) - Required. Name of a database within the instance.
+  *   `databaseResource` (*type:* `String.t`, *default:* `nil`) - Required. Name of a database resource, for example, a table within the database.
+  *   `instance` (*type:* `String.t`, *default:* `nil`) - Required. The instance where this resource is located. For example: Cloud SQL instance ID.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Required. If within a project-level config, then this must match the config's project ID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :database => String.t() | nil,
+          :databaseResource => String.t() | nil,
           :instance => String.t() | nil,
           :projectId => String.t() | nil
         }
 
+  field(:database)
+  field(:databaseResource)
   field(:instance)
   field(:projectId)
 end

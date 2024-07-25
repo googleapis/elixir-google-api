@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryBigQueryFilter do
   ## Attributes
 
   *   `otherTables` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AllOtherBigQueryTables.t`, *default:* `nil`) - Catch-all. This should always be the last filter in the list because anything above it will apply first. Should only appear once in a configuration. If none is specified, a default one will be added automatically.
+  *   `tableReference` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableReference.t`, *default:* `nil`) - The table to scan. Discovery configurations including this can only include one DiscoveryTarget (the DiscoveryTarget with this TableReference).
   *   `tables` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTableCollection.t`, *default:* `nil`) - A specific set of tables for this filter to apply to. A table collection must be specified in only one filter per config. If a table id or dataset is empty, Cloud DLP assumes all tables in that collection must be profiled. Must specify a project ID.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryBigQueryFilter do
   @type t :: %__MODULE__{
           :otherTables =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AllOtherBigQueryTables.t() | nil,
+          :tableReference => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableReference.t() | nil,
           :tables => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTableCollection.t() | nil
         }
 
   field(:otherTables, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2AllOtherBigQueryTables)
+  field(:tableReference, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableReference)
   field(:tables, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryTableCollection)
 end
 

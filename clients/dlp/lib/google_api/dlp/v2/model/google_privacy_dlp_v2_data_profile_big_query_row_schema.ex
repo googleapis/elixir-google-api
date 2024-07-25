@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileBigQueryRowSchema 
   ## Attributes
 
   *   `columnProfile` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ColumnDataProfile.t`, *default:* `nil`) - Column data profile column
+  *   `fileStoreProfile` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile.t`, *default:* `nil`) - File store data profile column.
   *   `tableProfile` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile.t`, *default:* `nil`) - Table data profile column
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileBigQueryRowSchema 
 
   @type t :: %__MODULE__{
           :columnProfile => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ColumnDataProfile.t() | nil,
+          :fileStoreProfile =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile.t() | nil,
           :tableProfile => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile.t() | nil
         }
 
   field(:columnProfile, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ColumnDataProfile)
+  field(:fileStoreProfile, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile)
   field(:tableProfile, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile)
 end
 

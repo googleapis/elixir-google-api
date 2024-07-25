@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
   ## Attributes
 
   *   `details` (*type:* `GoogleApi.DLP.V2.Model.GoogleRpcStatus.t`, *default:* `nil`) - Detailed error codes and messages.
+  *   `extraInfo` (*type:* `String.t`, *default:* `nil`) - Additional information about the error.
   *   `timestamps` (*type:* `list(DateTime.t)`, *default:* `nil`) - The times the error occurred. List includes the oldest timestamp and the last 9 timestamps.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error do
 
   @type t :: %__MODULE__{
           :details => GoogleApi.DLP.V2.Model.GoogleRpcStatus.t() | nil,
+          :extraInfo => String.t() | nil,
           :timestamps => list(DateTime.t()) | nil
         }
 
   field(:details, as: GoogleApi.DLP.V2.Model.GoogleRpcStatus)
+  field(:extraInfo)
   field(:timestamps, as: DateTime, type: :list)
 end
 

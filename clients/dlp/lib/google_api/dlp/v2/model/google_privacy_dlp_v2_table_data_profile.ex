@@ -38,7 +38,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `predictedInfoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeSummary.t)`, *default:* `nil`) - The infoTypes predicted from this table's data.
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated.
-  *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name to the project data profile for this table.
+  *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name of the project data profile for this table.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
   *   `rowCount` (*type:* `String.t`, *default:* `nil`) - Number of rows in the table when the profile was generated. This will not be populated for BigLake tables.

@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretManagerCredential do
 
   ## Attributes
 
-  *   `passwordSecretVersionName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Secret Manager resource that stores the password, in the form "projects/project-id/secrets/secret-name/versions/version".
+  *   `passwordSecretVersionName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Secret Manager resource that stores the password, in the form `projects/project-id/secrets/secret-name/versions/version`.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Required. The username.
   """
 
