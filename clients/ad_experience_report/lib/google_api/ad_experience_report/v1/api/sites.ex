@@ -31,7 +31,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AdExperienceReport.V1.Connection.t`) - Connection to server
-  *   `sites_id` (*type:* `String.t`) - Part of `name`. Required. The name of the site whose summary to get, e.g. `sites/http%3A%2F%2Fwww.google.com%2F`. Format: `sites/{site}`
+  *   `name` (*type:* `String.t`) - Required. The name of the site whose summary to get, e.g. `sites/http%3A%2F%2Fwww.google.com%2F`. Format: `sites/{site}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +56,7 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def adexperiencereport_sites_get(connection, sites_id, optional_params \\ [], opts \\ []) do
+  def adexperiencereport_sites_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -74,8 +74,8 @@ defmodule GoogleApi.AdExperienceReport.V1.Api.Sites do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/sites/{sitesId}", %{
-        "sitesId" => URI.encode(sites_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
