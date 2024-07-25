@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.PathRule do
 
   ## Attributes
 
+  *   `customErrorResponsePolicy` (*type:* `GoogleApi.Compute.V1.Model.CustomErrorResponsePolicy.t`, *default:* `nil`) - customErrorResponsePolicy specifies how the Load Balancer returns error responses when BackendServiceor BackendBucket responds with an error. If a policy for an error code is not configured for the PathRule, a policy for the error code configured in pathMatcher.defaultCustomErrorResponsePolicy is applied. If one is not specified in pathMatcher.defaultCustomErrorResponsePolicy, the policy configured in UrlMap.defaultCustomErrorResponsePolicy takes effect. For example, consider a UrlMap with the following configuration: - UrlMap.defaultCustomErrorResponsePolicy are configured with policies for 5xx and 4xx errors - A PathRule for /coming_soon/ is configured for the error code 404. If the request is for www.myotherdomain.com and a 404 is encountered, the policy under UrlMap.defaultCustomErrorResponsePolicy takes effect. If a 404 response is encountered for the request www.example.com/current_events/, the pathMatcher's policy takes effect. If however, the request for www.example.com/coming_soon/ encounters a 404, the policy in PathRule.customErrorResponsePolicy takes effect. If any of the requests in this example encounter a 500 error code, the policy at UrlMap.defaultCustomErrorResponsePolicy takes effect. customErrorResponsePolicy is supported only for global external Application Load Balancers.
   *   `paths` (*type:* `list(String.t)`, *default:* `nil`) - The list of path patterns to match. Each must start with / and the only place a * is allowed is at the end following a /. The string fed to the path matcher does not include any text after the first ? or #, and those chars are not allowed here.
   *   `routeAction` (*type:* `GoogleApi.Compute.V1.Model.HttpRouteAction.t`, *default:* `nil`) - In response to a matching path, the load balancer performs advanced routing actions, such as URL rewrites and header transformations, before forwarding the request to the selected backend. If routeAction specifies any weightedBackendServices, service must not be set. Conversely if service is set, routeAction cannot contain any weightedBackendServices. Only one of routeAction or urlRedirect must be set. URL maps for classic Application Load Balancers only support the urlRewrite action within a path rule's routeAction.
   *   `service` (*type:* `String.t`, *default:* `nil`) - The full or partial URL of the backend service resource to which traffic is directed if this rule is matched. If routeAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. However, if service is specified, routeAction cannot contain any weightedBackendServices. Conversely, if routeAction specifies any weightedBackendServices, service must not be specified. Only one of urlRedirect, service or routeAction.weightedBackendService must be set.
@@ -30,12 +31,15 @@ defmodule GoogleApi.Compute.V1.Model.PathRule do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customErrorResponsePolicy =>
+            GoogleApi.Compute.V1.Model.CustomErrorResponsePolicy.t() | nil,
           :paths => list(String.t()) | nil,
           :routeAction => GoogleApi.Compute.V1.Model.HttpRouteAction.t() | nil,
           :service => String.t() | nil,
           :urlRedirect => GoogleApi.Compute.V1.Model.HttpRedirectAction.t() | nil
         }
 
+  field(:customErrorResponsePolicy, as: GoogleApi.Compute.V1.Model.CustomErrorResponsePolicy)
   field(:paths, type: :list)
   field(:routeAction, as: GoogleApi.Compute.V1.Model.HttpRouteAction)
   field(:service)

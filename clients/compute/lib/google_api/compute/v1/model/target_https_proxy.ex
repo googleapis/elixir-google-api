@@ -37,6 +37,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic. serverTlsPolicy only applies to a global TargetHttpsProxy attached to globalForwardingRules with the loadBalancingScheme set to INTERNAL_SELF_MANAGED or EXTERNAL or EXTERNAL_MANAGED. For details which ServerTlsPolicy resources are accepted with INTERNAL_SELF_MANAGED and which with EXTERNAL, EXTERNAL_MANAGED loadBalancingScheme consult ServerTlsPolicy documentation. If left blank, communications are not encrypted.
   *   `sslCertificates` (*type:* `list(String.t)`, *default:* `nil`) - URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. Currently, you may specify up to 15 SSL certificates. sslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED.
   *   `sslPolicy` (*type:* `String.t`, *default:* `nil`) - URL of SslPolicy resource that will be associated with the TargetHttpsProxy resource. If not set, the TargetHttpsProxy resource has no SSL policy configured.
+  *   `tlsEarlyData` (*type:* `String.t`, *default:* `nil`) -  Specifies whether TLS 1.3 0-RTT Data ("Early Data") should be accepted for this service. Early Data allows a TLS resumption handshake to include the initial application payload (a HTTP request) alongside the handshake, reducing the effective round trips to "zero". This applies to TLS 1.3 connections over TCP (HTTP/2) as well as over UDP (QUIC/h3). This can improve application performance, especially on networks where interruptions may be common, such as on mobile. Requests with Early Data will have the "Early-Data" HTTP header set on the request, with a value of "1", to allow the backend to determine whether Early Data was included. Note: TLS Early Data may allow requests to be replayed, as the data is sent to the backend before the handshake has fully completed. Applications that allow idempotent HTTP methods to make non-idempotent changes, such as a GET request updating a database, should not accept Early Data on those requests, and reject requests with the "Early-Data: 1" HTTP header by returning a HTTP 425 (Too Early) status code, in order to remain RFC compliant. The default value is DISABLED.
   *   `urlMap` (*type:* `String.t`, *default:* `nil`) - A fully-qualified or valid partial URL to the UrlMap resource that defines the mapping from URL to the BackendService. For example, the following are all valid URLs for specifying a URL map: - https://www.googleapis.compute/v1/projects/project/global/urlMaps/ url-map - projects/project/global/urlMaps/url-map - global/urlMaps/url-map 
   """
 
@@ -59,6 +60,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
           :serverTlsPolicy => String.t() | nil,
           :sslCertificates => list(String.t()) | nil,
           :sslPolicy => String.t() | nil,
+          :tlsEarlyData => String.t() | nil,
           :urlMap => String.t() | nil
         }
 
@@ -78,6 +80,7 @@ defmodule GoogleApi.Compute.V1.Model.TargetHttpsProxy do
   field(:serverTlsPolicy)
   field(:sslCertificates, type: :list)
   field(:sslPolicy)
+  field(:tlsEarlyData)
   field(:urlMap)
 end
 

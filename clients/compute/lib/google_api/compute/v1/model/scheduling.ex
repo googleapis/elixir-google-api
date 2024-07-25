@@ -22,39 +22,52 @@ defmodule GoogleApi.Compute.V1.Model.Scheduling do
   ## Attributes
 
   *   `automaticRestart` (*type:* `boolean()`, *default:* `nil`) - Specifies whether the instance should be automatically restarted if it is terminated by Compute Engine (not terminated by a user). You can only set the automatic restart option for standard instances. Preemptible instances cannot be automatically restarted. By default, this is set to true so an instance is automatically restarted if it is terminated by Compute Engine.
+  *   `availabilityDomain` (*type:* `integer()`, *default:* `nil`) - Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
   *   `instanceTerminationAction` (*type:* `String.t`, *default:* `nil`) - Specifies the termination action for the instance.
   *   `localSsdRecoveryTimeout` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the maximum amount of time a Local Ssd Vm should wait while recovery of the Local Ssd state is attempted. Its value should be in between 0 and 168 hours with hour granularity and the default value being 1 hour.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the instance close to other resources. This field is for use by internal tools that use the public API.
+  *   `maxRunDuration` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the max run duration for the given instance. If specified, the instance termination action will be performed at the end of the run duration.
   *   `minNodeCpus` (*type:* `integer()`, *default:* `nil`) - The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node.
   *   `nodeAffinities` (*type:* `list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t)`, *default:* `nil`) - A set of node affinity and anti-affinity configurations. Refer to Configuring node affinity for more information. Overrides reservationAffinity.
   *   `onHostMaintenance` (*type:* `String.t`, *default:* `nil`) - Defines the maintenance behavior for this instance. For standard instances, the default behavior is MIGRATE. For preemptible instances, the default and only possible behavior is TERMINATE. For more information, see Set VM host maintenance policy.
+  *   `onInstanceStopAction` (*type:* `GoogleApi.Compute.V1.Model.SchedulingOnInstanceStopAction.t`, *default:* `nil`) - 
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance is preemptible. This can only be set during instance creation or while the instance is stopped and therefore, in a `TERMINATED` state. See Instance Life Cycle for more information on the possible instance states.
   *   `provisioningModel` (*type:* `String.t`, *default:* `nil`) - Specifies the provisioning model of the instance.
+  *   `terminationTime` (*type:* `String.t`, *default:* `nil`) - Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :automaticRestart => boolean() | nil,
+          :availabilityDomain => integer() | nil,
           :instanceTerminationAction => String.t() | nil,
           :localSsdRecoveryTimeout => GoogleApi.Compute.V1.Model.Duration.t() | nil,
           :locationHint => String.t() | nil,
+          :maxRunDuration => GoogleApi.Compute.V1.Model.Duration.t() | nil,
           :minNodeCpus => integer() | nil,
           :nodeAffinities => list(GoogleApi.Compute.V1.Model.SchedulingNodeAffinity.t()) | nil,
           :onHostMaintenance => String.t() | nil,
+          :onInstanceStopAction =>
+            GoogleApi.Compute.V1.Model.SchedulingOnInstanceStopAction.t() | nil,
           :preemptible => boolean() | nil,
-          :provisioningModel => String.t() | nil
+          :provisioningModel => String.t() | nil,
+          :terminationTime => String.t() | nil
         }
 
   field(:automaticRestart)
+  field(:availabilityDomain)
   field(:instanceTerminationAction)
   field(:localSsdRecoveryTimeout, as: GoogleApi.Compute.V1.Model.Duration)
   field(:locationHint)
+  field(:maxRunDuration, as: GoogleApi.Compute.V1.Model.Duration)
   field(:minNodeCpus)
   field(:nodeAffinities, as: GoogleApi.Compute.V1.Model.SchedulingNodeAffinity, type: :list)
   field(:onHostMaintenance)
+  field(:onInstanceStopAction, as: GoogleApi.Compute.V1.Model.SchedulingOnInstanceStopAction)
   field(:preemptible)
   field(:provisioningModel)
+  field(:terminationTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.Scheduling do

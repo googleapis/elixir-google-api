@@ -21,15 +21,18 @@ defmodule GoogleApi.Compute.V1.Model.ConfidentialInstanceConfig do
 
   ## Attributes
 
+  *   `confidentialInstanceType` (*type:* `String.t`, *default:* `nil`) - Defines the type of technology used by the confidential instance.
   *   `enableConfidentialCompute` (*type:* `boolean()`, *default:* `nil`) - Defines whether the instance should have confidential compute enabled.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :confidentialInstanceType => String.t() | nil,
           :enableConfidentialCompute => boolean() | nil
         }
 
+  field(:confidentialInstanceType)
   field(:enableConfidentialCompute)
 end
 

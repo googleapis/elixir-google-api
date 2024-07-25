@@ -32,7 +32,7 @@ defmodule GoogleApi.Compute.V1.Model.VpnGateway do
   *   `network` (*type:* `String.t`, *default:* `nil`) - URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where the VPN gateway resides.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
-  *   `stackType` (*type:* `String.t`, *default:* `nil`) - The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6. If not specified, IPV4_ONLY will be used.
+  *   `stackType` (*type:* `String.t`, *default:* `nil`) - The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY, IPV4_IPV6, IPV6_ONLY. If not specified, IPV4_ONLY is used if the gateway IP version is IPV4, or IPV4_IPV6 if the gateway IP version is IPV6.
   *   `vpnInterfaces` (*type:* `list(GoogleApi.Compute.V1.Model.VpnGatewayVpnGatewayInterface.t)`, *default:* `nil`) - The list of VPN interfaces associated with this VPN gateway.
   """
 

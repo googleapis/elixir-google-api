@@ -34,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   *   `serverId` (*type:* `String.t`, *default:* `nil`) - Server ID associated with this node.
   *   `status` (*type:* `String.t`, *default:* `nil`) - 
   *   `totalResources` (*type:* `GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t`, *default:* `nil`) - Total amount of available resources on the node.
+  *   `upcomingMaintenance` (*type:* `GoogleApi.Compute.V1.Model.UpcomingMaintenance.t`, *default:* `nil`) - [Output Only] The information about an upcoming maintenance event.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -52,7 +53,8 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
           :serverBinding => GoogleApi.Compute.V1.Model.ServerBinding.t() | nil,
           :serverId => String.t() | nil,
           :status => String.t() | nil,
-          :totalResources => GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t() | nil
+          :totalResources => GoogleApi.Compute.V1.Model.InstanceConsumptionInfo.t() | nil,
+          :upcomingMaintenance => GoogleApi.Compute.V1.Model.UpcomingMaintenance.t() | nil
         }
 
   field(:accelerators, as: GoogleApi.Compute.V1.Model.AcceleratorConfig, type: :list)
@@ -73,6 +75,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroupNode do
   field(:serverId)
   field(:status)
   field(:totalResources, as: GoogleApi.Compute.V1.Model.InstanceConsumptionInfo)
+  field(:upcomingMaintenance, as: GoogleApi.Compute.V1.Model.UpcomingMaintenance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Compute.V1.Model.NodeGroupNode do

@@ -28,6 +28,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#nodeGroup`) - [Output Only] The type of the resource. Always compute#nodeGroup for node group.
   *   `locationHint` (*type:* `String.t`, *default:* `nil`) - An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
+  *   `maintenanceInterval` (*type:* `String.t`, *default:* `nil`) - Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
   *   `maintenancePolicy` (*type:* `String.t`, *default:* `nil`) - Specifies how to handle instances when a node in the group undergoes maintenance. Set to one of: DEFAULT, RESTART_IN_PLACE, or MIGRATE_WITHIN_NODE_GROUP. The default value is DEFAULT. For more information, see Maintenance policies.
   *   `maintenanceWindow` (*type:* `GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow.t`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroup do
           :id => String.t() | nil,
           :kind => String.t() | nil,
           :locationHint => String.t() | nil,
+          :maintenanceInterval => String.t() | nil,
           :maintenancePolicy => String.t() | nil,
           :maintenanceWindow => GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow.t() | nil,
           :name => String.t() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.Compute.V1.Model.NodeGroup do
   field(:id)
   field(:kind)
   field(:locationHint)
+  field(:maintenanceInterval)
   field(:maintenancePolicy)
   field(:maintenanceWindow, as: GoogleApi.Compute.V1.Model.NodeGroupMaintenanceWindow)
   field(:name)

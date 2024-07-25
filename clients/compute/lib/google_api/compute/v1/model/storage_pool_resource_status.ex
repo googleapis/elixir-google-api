@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.StoragePoolResourceStatus do
   *   `lastResizeTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Timestamp of the last successful resize in RFC3339 text format.
   *   `maxTotalProvisionedDiskCapacityGb` (*type:* `String.t`, *default:* `nil`) - [Output Only] Maximum allowed aggregate disk size in gigabytes.
   *   `poolUsedCapacityBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] Space used by data stored in disks within the storage pool (in bytes). This will reflect the total number of bytes written to the disks in the pool, in contrast to the capacity of those disks.
-  *   `poolUsedIops` (*type:* `String.t`, *default:* `nil`) - Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity.
+  *   `poolUsedIops` (*type:* `String.t`, *default:* `nil`) - [Output Only] Sum of all the disks' provisioned IOPS, minus some amount that is allowed per disk that is not counted towards pool's IOPS capacity. For more information, see https://cloud.google.com/compute/docs/disks/storage-pools.
   *   `poolUsedThroughput` (*type:* `String.t`, *default:* `nil`) - [Output Only] Sum of all the disks' provisioned throughput in MB/s.
   *   `poolUserWrittenBytes` (*type:* `String.t`, *default:* `nil`) - [Output Only] Amount of data written into the pool, before it is compacted.
   *   `totalProvisionedDiskCapacityGb` (*type:* `String.t`, *default:* `nil`) - [Output Only] Sum of all the capacity provisioned in disks in this storage pool. A disk's provisioned capacity is the same as its total capacity.

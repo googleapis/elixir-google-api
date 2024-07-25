@@ -42,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   *   `sourceSnapshot` (*type:* `String.t`, *default:* `nil`) - The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project /global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot 
   *   `sourceDisk` (*type:* `String.t`, *default:* `nil`) - The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region /disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk 
   *   `asyncSecondaryDisks` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.DiskAsyncReplicationList.t}`, *default:* `nil`) - [Output Only] A list of disks this disk is asynchronously replicated to.
+  *   `accessMode` (*type:* `String.t`, *default:* `nil`) - The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `asyncPrimaryDisk` (*type:* `GoogleApi.Compute.V1.Model.DiskAsyncReplication.t`, *default:* `nil`) - Disk asynchronously replicated into this disk.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
@@ -99,6 +100,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
           :asyncSecondaryDisks =>
             %{optional(String.t()) => GoogleApi.Compute.V1.Model.DiskAsyncReplicationList.t()}
             | nil,
+          :accessMode => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :asyncPrimaryDisk => GoogleApi.Compute.V1.Model.DiskAsyncReplication.t() | nil,
           :zone => String.t() | nil,
@@ -150,6 +152,7 @@ defmodule GoogleApi.Compute.V1.Model.Disk do
   field(:sourceSnapshot)
   field(:sourceDisk)
   field(:asyncSecondaryDisks, as: GoogleApi.Compute.V1.Model.DiskAsyncReplicationList, type: :map)
+  field(:accessMode)
   field(:creationTimestamp)
   field(:asyncPrimaryDisk, as: GoogleApi.Compute.V1.Model.DiskAsyncReplication)
   field(:zone)

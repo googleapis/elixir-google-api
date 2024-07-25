@@ -21,10 +21,12 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefixPublicDelegatedSubPref
 
   ## Attributes
 
+  *   `allocatablePrefixLength` (*type:* `integer()`, *default:* `nil`) - The allocatable prefix length supported by this PublicDelegatedSubPrefix.
   *   `delegateeProject` (*type:* `String.t`, *default:* `nil`) - Name of the project scoping this PublicDelegatedSubPrefix.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP address range, in CIDR format, represented by this sub public delegated prefix.
   *   `isAddress` (*type:* `boolean()`, *default:* `nil`) - Whether the sub prefix is delegated to create Address resources in the delegatee project.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - The PublicDelegatedSubPrefix mode for IPv6 only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the sub public delegated prefix.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The region of the sub public delegated prefix if it is regional. If absent, the sub prefix is global.
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the sub public delegated prefix.
@@ -33,19 +35,23 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefixPublicDelegatedSubPref
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allocatablePrefixLength => integer() | nil,
           :delegateeProject => String.t() | nil,
           :description => String.t() | nil,
           :ipCidrRange => String.t() | nil,
           :isAddress => boolean() | nil,
+          :mode => String.t() | nil,
           :name => String.t() | nil,
           :region => String.t() | nil,
           :status => String.t() | nil
         }
 
+  field(:allocatablePrefixLength)
   field(:delegateeProject)
   field(:description)
   field(:ipCidrRange)
   field(:isAddress)
+  field(:mode)
   field(:name)
   field(:region)
   field(:status)
