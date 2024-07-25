@@ -26,7 +26,7 @@ defmodule GoogleApi.Chat.V1.Model.Attachment do
   *   `contentType` (*type:* `String.t`, *default:* `nil`) - Output only. The content type (MIME type) of the file.
   *   `downloadUri` (*type:* `String.t`, *default:* `nil`) - Output only. The download URL which should be used to allow a human user to download the attachment. Chat apps shouldn't use this URL to download attachment content.
   *   `driveDataRef` (*type:* `GoogleApi.Chat.V1.Model.DriveDataRef.t`, *default:* `nil`) - Output only. A reference to the Google Drive attachment. This field is used with the Google Drive API.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the attachment, in the form `spaces/*/messages/*/attachments/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the attachment, in the form `spaces/{space}/messages/{message}/attachments/{attachment}`.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Output only. The source of the attachment.
   *   `thumbnailUri` (*type:* `String.t`, *default:* `nil`) - Output only. The thumbnail URL which should be used to preview the attachment to a human user. Chat apps shouldn't use this URL to download attachment content.
   """

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ListMessagesResponse do
   @moduledoc """
-
+  Response message for listing messages.
 
   ## Attributes
 

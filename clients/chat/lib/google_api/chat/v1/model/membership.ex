@@ -23,10 +23,10 @@ defmodule GoogleApi.Chat.V1.Model.Membership do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. The creation time of the membership, such as when a member joined or was invited to join a space. This field is output only, except when used to import historical memberships in import mode spaces.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Immutable. The deletion time of the membership, such as when a member left or was removed from a space. This field is output only, except when used to import historical memberships in import mode spaces.
-  *   `groupMember` (*type:* `GoogleApi.Chat.V1.Model.Group.t`, *default:* `nil`) - The Google Group the membership corresponds to. Only supports read operations. Other operations, like creating or updating a membership, aren't currently supported.
+  *   `groupMember` (*type:* `GoogleApi.Chat.V1.Model.Group.t`, *default:* `nil`) - The Google Group the membership corresponds to.
   *   `member` (*type:* `GoogleApi.Chat.V1.Model.User.t`, *default:* `nil`) - The Google Chat user or app the membership corresponds to. If your Chat app [authenticates as a user](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user), the output populates the [user](https://developers.google.com/workspace/chat/api/reference/rest/v1/User) `name` and `type`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the membership, assigned by the server. Format: `spaces/{space}/members/{member}`
-  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. User's role within a Chat space, which determines their permitted actions in the space. [Developer Preview](https://developers.google.com/workspace/preview): This field can only be used as input in `UpdateMembership`.
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. User's role within a Chat space, which determines their permitted actions in the space. This field can only be used as input in `UpdateMembership`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the membership.
   """
 

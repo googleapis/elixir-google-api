@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.CustomEmoji do
 
   ## Attributes
 
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Unique key for the custom emoji resource.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Unique key for the custom emoji resource.
   """
 
   use GoogleApi.Gax.ModelBase

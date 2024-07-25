@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_chat, "~> 0.34"}]
+  [{:google_api_chat, "~> 0.35"}]
 end
 ```
 
