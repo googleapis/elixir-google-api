@@ -612,7 +612,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Api.Projects do
   end
 
   @doc """
-  Creates a Subscription to a Data Exchange. This is a long-running operation as it will create one or more linked datasets.
+  Creates a Subscription to a Data Clean Room. This is a long-running operation as it will create one or more linked datasets.
 
   ## Parameters
 
