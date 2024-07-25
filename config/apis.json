@@ -27,8 +27,7 @@
   {
     "version": "v1",
     "url": "https://addressvalidation.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Addressvalidation"
+    "name": "AddressValidation"
   },
   {
     "version": "v2beta1",
@@ -73,8 +72,7 @@
   {
     "version": "v1alpha",
     "url": "https://adsenseplatform.googleapis.com/$discovery/rest?version=v1alpha",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Adsenseplatform"
+    "name": "AdSensePlatform"
   },
   {
     "version": "v1",
@@ -89,8 +87,7 @@
   {
     "version": "v1",
     "url": "https://airquality.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Airquality"
+    "name": "AirQuality"
   },
   {
     "version": "v1beta1",
@@ -185,8 +182,7 @@
   {
     "version": "v1alpha",
     "url": "https://apim.googleapis.com/$discovery/rest?version=v1alpha",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Apim"
+    "name": "APIM"
   },
   {
     "version": "v1",
@@ -391,8 +387,7 @@
   {
     "version": "v1",
     "url": "https://cloudcontrolspartner.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Cloudcontrolspartner"
+    "name": "CloudControlsPartner"
   },
   {
     "version": "v1",
@@ -507,7 +502,6 @@
   {
     "version": "v1",
     "url": "https://config.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Config"
   },
   {
@@ -563,8 +557,7 @@
   {
     "version": "v1",
     "url": "https://css.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Css"
+    "name": "CSS"
   },
   {
     "version": "v1",
@@ -659,8 +652,7 @@
   {
     "version": "v1",
     "url": "https://developerconnect.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Developerconnect"
+    "name": "DeveloperConnect"
   },
   {
     "version": "v3.5",
@@ -695,7 +687,6 @@
   {
     "version": "v1",
     "url": "https://discoveryengine.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "DiscoveryEngine"
   },
   {
@@ -791,12 +782,6 @@
   {
     "version": "v1",
     "url": "https://eventarc.googleapis.com/$discovery/rest?version=v1",
-    "name": "Eventarc"
-  },
-  {
-    "version": "v1beta1",
-    "url": "https://eventarc.googleapis.com/$discovery/rest?version=v1beta1",
-    "publish": "CHECKME: No longer in discovery. Consider removal.",
     "name": "Eventarc"
   },
   {
@@ -1007,13 +992,6 @@
   {
     "version": "v1",
     "url": "https://integrations.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Integrations"
-  },
-  {
-    "version": "v1alpha",
-    "url": "https://integrations.googleapis.com/$discovery/rest?version=v1alpha",
-    "publish": "CHECKME: No longer in discovery. Consider removal.",
     "name": "Integrations"
   },
   {
@@ -1104,7 +1082,6 @@
   {
     "version": "v2",
     "url": "https://meet.googleapis.com/$discovery/rest?version=v2",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Meet"
   },
   {
@@ -1120,8 +1097,7 @@
   {
     "version": "reports_v1beta",
     "url": "https://merchantapi.googleapis.com/$discovery/rest?version=reports_v1beta",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
-    "name": "Merchantapi"
+    "name": "MerchantAPI"
   },
   {
     "version": "v1",
@@ -1306,7 +1282,6 @@
   {
     "version": "v1",
     "url": "https://pollen.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Pollen"
   },
   {
@@ -1522,14 +1497,7 @@
   {
     "version": "v1",
     "url": "https://solar.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: Newly added. Adjust the name capitalization.",
     "name": "Solar"
-  },
-  {
-    "version": "v1",
-    "url": "https://sourcerepo.googleapis.com/$discovery/rest?version=v1",
-    "publish": "CHECKME: No longer in discovery. Consider removal.",
-    "name": "SourceRepo"
   },
   {
     "version": "v1",
