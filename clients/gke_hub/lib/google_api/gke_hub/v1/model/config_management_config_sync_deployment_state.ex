@@ -25,7 +25,9 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState do
   *   `gitSync` (*type:* `String.t`, *default:* `nil`) - Deployment state of the git-sync pod
   *   `importer` (*type:* `String.t`, *default:* `nil`) - Deployment state of the importer pod
   *   `monitor` (*type:* `String.t`, *default:* `nil`) - Deployment state of the monitor pod
+  *   `otelCollector` (*type:* `String.t`, *default:* `nil`) - Deployment state of otel-collector
   *   `reconcilerManager` (*type:* `String.t`, *default:* `nil`) - Deployment state of reconciler-manager pod
+  *   `resourceGroupControllerManager` (*type:* `String.t`, *default:* `nil`) - Deployment state of resource-group-controller-manager
   *   `rootReconciler` (*type:* `String.t`, *default:* `nil`) - Deployment state of root-reconciler
   *   `syncer` (*type:* `String.t`, *default:* `nil`) - Deployment state of the syncer pod
   """
@@ -37,7 +39,9 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState do
           :gitSync => String.t() | nil,
           :importer => String.t() | nil,
           :monitor => String.t() | nil,
+          :otelCollector => String.t() | nil,
           :reconcilerManager => String.t() | nil,
+          :resourceGroupControllerManager => String.t() | nil,
           :rootReconciler => String.t() | nil,
           :syncer => String.t() | nil
         }
@@ -46,7 +50,9 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncDeploymentState do
   field(:gitSync)
   field(:importer)
   field(:monitor)
+  field(:otelCollector)
   field(:reconcilerManager)
+  field(:resourceGroupControllerManager)
   field(:rootReconciler)
   field(:syncer)
 end

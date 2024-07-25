@@ -22,15 +22,22 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec do
   ## Attributes
 
   *   `authMethods` (*type:* `list(GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod.t)`, *default:* `nil`) - A member may support multiple auth methods.
+  *   `identityServiceOptions` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceIdentityServiceOptions.t`, *default:* `nil`) - Optional. non-protocol-related configuration options.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authMethods => list(GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod.t()) | nil
+          :authMethods => list(GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod.t()) | nil,
+          :identityServiceOptions =>
+            GoogleApi.GKEHub.V1.Model.IdentityServiceIdentityServiceOptions.t() | nil
         }
 
   field(:authMethods, as: GoogleApi.GKEHub.V1.Model.IdentityServiceAuthMethod, type: :list)
+
+  field(:identityServiceOptions,
+    as: GoogleApi.GKEHub.V1.Model.IdentityServiceIdentityServiceOptions
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEHub.V1.Model.IdentityServiceMembershipSpec do
