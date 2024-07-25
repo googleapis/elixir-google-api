@@ -20,7 +20,7 @@ defmodule GoogleApi.FactCheckTools.V1alpha1 do
   API client metadata for GoogleApi.FactCheckTools.V1alpha1.
   """
 
-  @discovery_revision "20240326"
+  @discovery_revision "20240626"
 
   def discovery_revision(), do: @discovery_revision
 end
