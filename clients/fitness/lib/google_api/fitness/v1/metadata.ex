@@ -20,7 +20,7 @@ defmodule GoogleApi.Fitness.V1 do
   API client metadata for GoogleApi.Fitness.V1.
   """
 
-  @discovery_revision "20210920"
+  @discovery_revision "20231107"
 
   def discovery_revision(), do: @discovery_revision
 end
