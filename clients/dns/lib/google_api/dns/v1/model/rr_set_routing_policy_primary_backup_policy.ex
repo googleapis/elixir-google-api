@@ -21,10 +21,10 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyPrimaryBackupPolicy do
 
   ## Attributes
 
-  *   `backupGeoTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy.t`, *default:* `nil`) - Backup targets provide a regional failover policy for the otherwise global primary targets. If serving state is set to BACKUP, this policy essentially becomes a geo routing policy.
+  *   `backupGeoTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy.t`, *default:* `nil`) - Backup targets provide a regional failover policy for the otherwise global primary targets. If serving state is set to `BACKUP`, this policy essentially becomes a geo routing policy.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyPrimaryBackupPolicy`) - 
-  *   `primaryTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - Endpoints that are health checked before making the routing decision. Unhealthy endpoints are omitted from the results. If all endpoints are unhealthy, we serve a response based on the backup_geo_targets.
-  *   `trickleTraffic` (*type:* `float()`, *default:* `nil`) - When serving state is PRIMARY, this field provides the option of sending a small percentage of the traffic to the backup targets.
+  *   `primaryTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - Endpoints that are health checked before making the routing decision. Unhealthy endpoints are omitted from the results. If all endpoints are unhealthy, we serve a response based on the `backup_geo_targets`.
+  *   `trickleTraffic` (*type:* `float()`, *default:* `nil`) - When serving state is `PRIMARY`, this field provides the option of sending a small percentage of the traffic to the backup targets.
   """
 
   use GoogleApi.Gax.ModelBase

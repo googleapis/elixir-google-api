@@ -21,11 +21,11 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicyGeoPolicyItem do
 
   ## Attributes
 
-  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - For A and AAAA types only. Endpoints to return in the query result only if they are healthy. These can be specified along with rrdata within this item.
+  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - For A and AAAA types only. Endpoints to return in the query result only if they are healthy. These can be specified along with `rrdata` within this item.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyGeoPolicyGeoPolicyItem`) - 
   *   `location` (*type:* `String.t`, *default:* `nil`) - The geo-location granularity is a GCP region. This location string should correspond to a GCP region. e.g. "us-east1", "southamerica-east1", "asia-east1", etc.
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the rrdata within this item. If health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
+  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. If health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
   """
 
   use GoogleApi.Gax.ModelBase
