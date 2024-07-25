@@ -22,15 +22,18 @@ defmodule GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest do
   ## Attributes
 
   *   `objectId` (*type:* `String.t`, *default:* `nil`) - The ID of the positioned object to delete.
+  *   `tabId` (*type:* `String.t`, *default:* `nil`) - The tab that the positioned object to delete is in. When omitted, the request is applied to the first tab. In a document containing a single tab: - If provided, must match the singular tab's ID. - If omitted, the request applies to the singular tab. In a document containing multiple tabs: - If provided, the request applies to the specified tab. - If omitted, the request applies to the first tab in the document.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :objectId => String.t() | nil
+          :objectId => String.t() | nil,
+          :tabId => String.t() | nil
         }
 
   field(:objectId)
+  field(:tabId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.DeletePositionedObjectRequest do
