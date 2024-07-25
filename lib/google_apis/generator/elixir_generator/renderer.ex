@@ -86,6 +86,7 @@ defmodule GoogleApis.Generator.ElixirGenerator.Renderer do
     str
     |> String.replace("\"\"\"", "\\\"\\\"\\\"")
     |> String.replace("\\", "\\\\")
+    |> String.replace("\#{", "\\\#{")
     |> String.replace(~r{(\n+)([^\n])}, "\\1#{prefix}\\2")
   end
 
