@@ -21,7 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AttackExp
 
   ## Attributes
 
-  *   `attackExposureResult` (*type:* `String.t`, *default:* `nil`) - The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: organizations/123/simulations/456/attackExposureResults/789
+  *   `attackExposureResult` (*type:* `String.t`, *default:* `nil`) - The resource name of the attack path simulation result that contains the details regarding this attack exposure score. Example: `organizations/123/simulations/456/attackExposureResults/789`
   *   `exposedHighValueResourcesCount` (*type:* `integer()`, *default:* `nil`) - The number of high value resources that are exposed as a result of this finding.
   *   `exposedLowValueResourcesCount` (*type:* `integer()`, *default:* `nil`) - The number of high value resources that are exposed as a result of this finding.
   *   `exposedMediumValueResourcesCount` (*type:* `integer()`, *default:* `nil`) - The number of medium value resources that are exposed as a result of this finding.

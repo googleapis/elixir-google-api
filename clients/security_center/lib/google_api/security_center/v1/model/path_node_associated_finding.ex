@@ -21,7 +21,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.PathNodeAssociatedFinding do
 
   ## Attributes
 
-  *   `canonicalFinding` (*type:* `String.t`, *default:* `nil`) - Canonical name of the associated findings. Example: organizations/123/sources/456/findings/789
+  *   `canonicalFinding` (*type:* `String.t`, *default:* `nil`) - Canonical name of the associated findings. Example: `organizations/123/sources/456/findings/789`
   *   `findingCategory` (*type:* `String.t`, *default:* `nil`) - The additional taxonomy group within findings from a given source.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Full resource name of the finding.
   """

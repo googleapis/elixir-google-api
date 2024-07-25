@@ -27,7 +27,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EventThreatDetectionCustomModule do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name to be displayed for the module.
   *   `enablementState` (*type:* `String.t`, *default:* `nil`) - The state of enablement for the module at the given level of the hierarchy.
   *   `lastEditor` (*type:* `String.t`, *default:* `nil`) - Output only. The editor the module was last updated by.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the Event Threat Detection custom module. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}". * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the Event Threat Detection custom module. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type for the module. e.g. CONFIGURABLE_BAD_IP.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the module was last updated.
   """

@@ -25,7 +25,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.EffectiveEventThreatDetectionCustomM
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. The description for the module.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The human readable name to be displayed for the module.
   *   `enablementState` (*type:* `String.t`, *default:* `nil`) - Output only. The effective state of enablement for the module at the given level of the hierarchy.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the effective ETD custom module. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/effectiveCustomModules/{module}". * "projects/{project}/eventThreatDetectionSettings/effectiveCustomModules/{module}".
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the effective ETD custom module. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/effectiveCustomModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/effectiveCustomModules/{module}`.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Type for the module. e.g. CONFIGURABLE_BAD_IP.
   """
 
