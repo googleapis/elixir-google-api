@@ -21,8 +21,8 @@ defmodule GoogleApi.ServiceControl.V2.Model.OrgPolicyViolationInfo do
 
   ## Attributes
 
-  *   `payload` (*type:* `map()`, *default:* `nil`) - Optional. Resource payload that is currently in scope and is subjected to orgpolicy conditions. This payload may be the subset of the actual Resource that may come in the request. This payload should not contain any core content.
-  *   `resourceTags` (*type:* `map()`, *default:* `nil`) - Optional. Tags referenced on the resource at the time of evaluation. These also include the federated tags, if they are supplied in the CheckOrgPolicy or CheckCustomConstraints Requests. Optional field as of now. These tags are the Cloud tags that are available on the resource during the policy evaluation and will be available as part of the OrgPolicy check response for logging purposes.
+  *   `payload` (*type:* `map()`, *default:* `nil`) - Optional. Deprecated. Resource payload that is currently in scope and is subjected to orgpolicy conditions. This payload may be the subset of the actual Resource that may come in the request.
+  *   `resourceTags` (*type:* `map()`, *default:* `nil`) - Optional. Deprecated. Tags referenced on the resource at the time of evaluation.
   *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Optional. Resource type that the orgpolicy is checked against. Example: compute.googleapis.com/Instance, store.googleapis.com/bucket
   *   `violationInfo` (*type:* `list(GoogleApi.ServiceControl.V2.Model.ViolationInfo.t)`, *default:* `nil`) - Optional. Policy violations
   """
