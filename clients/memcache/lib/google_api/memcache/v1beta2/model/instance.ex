@@ -37,6 +37,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
   *   `nodeCount` (*type:* `integer()`, *default:* `nil`) - Required. Number of nodes in the Memcached instance.
   *   `parameters` (*type:* `GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t`, *default:* `nil`) - User defined parameters to apply to the memcached process on each node.
   *   `reservedIpRangeId` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Optional. Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this Memcached instance.
   *   `updateAvailable` (*type:* `boolean()`, *default:* `nil`) - Output only. Returns true if there is an update waiting to be applied
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the instance was updated.
@@ -63,6 +65,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
           :nodeCount => integer() | nil,
           :parameters => GoogleApi.Memcache.V1beta2.Model.MemcacheParameters.t() | nil,
           :reservedIpRangeId => list(String.t()) | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :updateAvailable => boolean() | nil,
           :updateTime => DateTime.t() | nil,
@@ -89,6 +93,8 @@ defmodule GoogleApi.Memcache.V1beta2.Model.Instance do
   field(:nodeCount)
   field(:parameters, as: GoogleApi.Memcache.V1beta2.Model.MemcacheParameters)
   field(:reservedIpRangeId, type: :list)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:updateAvailable)
   field(:updateTime, as: DateTime)
