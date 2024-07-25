@@ -78,6 +78,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   *   `updateProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t`, *default:* `nil`) - Updates a protected range.
   *   `addDimensionGroup` (*type:* `GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest.t`, *default:* `nil`) - Creates a group over the specified range.
   *   `updateCells` (*type:* `GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t`, *default:* `nil`) - Updates many cells at once.
+  *   `cancelDataSourceRefresh` (*type:* `GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshRequest.t`, *default:* `nil`) - Cancels refreshes of one or multiple data sources and associated dbobjects.
   *   `addProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest.t`, *default:* `nil`) - Adds a protected range.
   *   `addDataSource` (*type:* `GoogleApi.Sheets.V4.Model.AddDataSourceRequest.t`, *default:* `nil`) - Adds a data source.
   *   `addNamedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t`, *default:* `nil`) - Adds a named range.
@@ -164,6 +165,8 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
             GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest.t() | nil,
           :addDimensionGroup => GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest.t() | nil,
           :updateCells => GoogleApi.Sheets.V4.Model.UpdateCellsRequest.t() | nil,
+          :cancelDataSourceRefresh =>
+            GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshRequest.t() | nil,
           :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest.t() | nil,
           :addDataSource => GoogleApi.Sheets.V4.Model.AddDataSourceRequest.t() | nil,
           :addNamedRange => GoogleApi.Sheets.V4.Model.AddNamedRangeRequest.t() | nil,
@@ -253,6 +256,7 @@ defmodule GoogleApi.Sheets.V4.Model.Request do
   field(:updateProtectedRange, as: GoogleApi.Sheets.V4.Model.UpdateProtectedRangeRequest)
   field(:addDimensionGroup, as: GoogleApi.Sheets.V4.Model.AddDimensionGroupRequest)
   field(:updateCells, as: GoogleApi.Sheets.V4.Model.UpdateCellsRequest)
+  field(:cancelDataSourceRefresh, as: GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshRequest)
   field(:addProtectedRange, as: GoogleApi.Sheets.V4.Model.AddProtectedRangeRequest)
   field(:addDataSource, as: GoogleApi.Sheets.V4.Model.AddDataSourceRequest)
   field(:addNamedRange, as: GoogleApi.Sheets.V4.Model.AddNamedRangeRequest)
