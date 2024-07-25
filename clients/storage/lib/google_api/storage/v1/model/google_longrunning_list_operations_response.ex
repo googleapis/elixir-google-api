@@ -21,6 +21,7 @@ defmodule GoogleApi.Storage.V1.Model.GoogleLongrunningListOperationsResponse do
 
   ## Attributes
 
+  *   `kind` (*type:* `String.t`, *default:* `storage#operations`) - The kind of item this is. For lists of operations, this is always storage#operations.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
   *   `operations` (*type:* `list(GoogleApi.Storage.V1.Model.GoogleLongrunningOperation.t)`, *default:* `nil`) - A list of operations that matches the specified filter in the request.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Storage.V1.Model.GoogleLongrunningListOperationsResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :kind => String.t() | nil,
           :nextPageToken => String.t() | nil,
           :operations => list(GoogleApi.Storage.V1.Model.GoogleLongrunningOperation.t()) | nil
         }
 
+  field(:kind)
   field(:nextPageToken)
   field(:operations, as: GoogleApi.Storage.V1.Model.GoogleLongrunningOperation, type: :list)
 end

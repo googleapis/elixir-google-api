@@ -35,6 +35,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - The type of the bucket location.
   *   `website` (*type:* `GoogleApi.Storage.V1.Model.BucketWebsite.t`, *default:* `nil`) - The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
   *   `timeCreated` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the bucket in RFC 3339 format.
+  *   `ipFilter` (*type:* `GoogleApi.Storage.V1.Model.BucketIpFilter.t`, *default:* `nil`) - The bucket's IP filter configuration. Specifies the network sources that are allowed to access the operations on the bucket, as well as its underlying objects. Only enforced when the mode is set to 'Enabled'.
   *   `softDeletePolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy.t`, *default:* `nil`) - The bucket's soft delete policy, which defines the period of time that soft-deleted objects will be retained, and cannot be permanently deleted.
   *   `encryption` (*type:* `GoogleApi.Storage.V1.Model.BucketEncryption.t`, *default:* `nil`) - Encryption configuration for a bucket.
   *   `rpo` (*type:* `String.t`, *default:* `nil`) - The Recovery Point Objective (RPO) of this bucket. Set to ASYNC_TURBO to turn on Turbo Replication on a bucket.
@@ -74,6 +75,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :locationType => String.t() | nil,
           :website => GoogleApi.Storage.V1.Model.BucketWebsite.t() | nil,
           :timeCreated => DateTime.t() | nil,
+          :ipFilter => GoogleApi.Storage.V1.Model.BucketIpFilter.t() | nil,
           :softDeletePolicy => GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy.t() | nil,
           :encryption => GoogleApi.Storage.V1.Model.BucketEncryption.t() | nil,
           :rpo => String.t() | nil,
@@ -110,6 +112,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:locationType)
   field(:website, as: GoogleApi.Storage.V1.Model.BucketWebsite)
   field(:timeCreated, as: DateTime)
+  field(:ipFilter, as: GoogleApi.Storage.V1.Model.BucketIpFilter)
   field(:softDeletePolicy, as: GoogleApi.Storage.V1.Model.BucketSoftDeletePolicy)
   field(:encryption, as: GoogleApi.Storage.V1.Model.BucketEncryption)
   field(:rpo)
