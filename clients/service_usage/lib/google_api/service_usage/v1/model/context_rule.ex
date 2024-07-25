@@ -23,8 +23,8 @@ defmodule GoogleApi.ServiceUsage.V1.Model.ContextRule do
 
   *   `allowedRequestExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc side channel from client to backend.
   *   `allowedResponseExtensions` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names or extension IDs of extensions allowed in grpc side channel from backend to client.
-  *   `provided` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of provided contexts.
-  *   `requested` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of requested contexts.
+  *   `provided` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of provided contexts. It is used to support propagating HTTP headers and ETags from the response extension.
+  *   `requested` (*type:* `list(String.t)`, *default:* `nil`) - A list of full type names of requested contexts, only the requested context will be made available to the backend.
   *   `selector` (*type:* `String.t`, *default:* `nil`) - Selects the methods to which this rule applies. Refer to selector for syntax details.
   """
 
