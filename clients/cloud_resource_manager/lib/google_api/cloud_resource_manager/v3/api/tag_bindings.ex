@@ -92,7 +92,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagBindings do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_bindings_id` (*type:* `String.t`) - Part of `name`. Required. The name of the TagBinding. This is a String of the form: `tagBindings/{id}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`).
+  *   `name` (*type:* `String.t`) - Required. The name of the TagBinding. This is a String of the form: `tagBindings/{id}` (e.g. `tagBindings/%2F%2Fcloudresourcemanager.googleapis.com%2Fprojects%2F123/tagValues/456`).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -124,7 +124,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagBindings do
           | {:error, any()}
   def cloudresourcemanager_tag_bindings_delete(
         connection,
-        tag_bindings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -145,8 +145,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagBindings do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/tagBindings/{tagBindingsId}", %{
-        "tagBindingsId" => URI.encode(tag_bindings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

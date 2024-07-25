@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. Name of the resource for the `Policy` to clear.
+  *   `resource` (*type:* `String.t`) - Name of the resource for the `Policy` to clear.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,7 +64,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_clear_org_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -86,8 +86,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:clearOrgPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:clearOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,7 +103,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The resource name of the Organization to fetch. This is the organization's relative path in the API, formatted as "organizations/[organizationId]". For example, "organizations/1234".
+  *   `name` (*type:* `String.t`) - The resource name of the Organization to fetch. This is the organization's relative path in the API, formatted as "organizations/[organizationId]". For example, "organizations/1234".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -133,12 +133,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_organizations_get(
-        connection,
-        organizations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_organizations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -156,8 +151,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -173,7 +168,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. The name of the resource to start computing the effective `Policy`.
+  *   `resource` (*type:* `String.t`) - The name of the resource to start computing the effective `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -206,7 +201,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_get_effective_org_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -228,8 +223,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:getEffectiveOrgPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getEffectiveOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -245,7 +240,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -278,7 +273,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_get_iam_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -300,8 +295,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:getIamPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -317,7 +312,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. Name of the resource the `Policy` is set on.
+  *   `resource` (*type:* `String.t`) - Name of the resource the `Policy` is set on.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -350,7 +345,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_get_org_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -372,8 +367,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:getOrgPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -389,7 +384,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list `Constraints` for.
+  *   `resource` (*type:* `String.t`) - Name of the resource to list `Constraints` for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -423,7 +418,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_list_available_org_policy_constraints(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -445,8 +440,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:listAvailableOrgPolicyConstraints", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:listAvailableOrgPolicyConstraints", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -468,7 +463,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list Policies for.
+  *   `resource` (*type:* `String.t`) - Name of the resource to list Policies for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -501,7 +496,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_list_org_policies(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -523,8 +518,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:listOrgPolicies", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:listOrgPolicies", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -603,7 +598,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -636,7 +631,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_set_iam_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -658,8 +653,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:setIamPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -675,7 +670,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. Resource name of the resource to attach the `Policy`.
+  *   `resource` (*type:* `String.t`) - Resource name of the resource to attach the `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -708,7 +703,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_set_org_policy(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -730,8 +725,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:setOrgPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -747,7 +742,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -780,7 +775,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
           | {:error, any()}
   def cloudresourcemanager_organizations_test_iam_permissions(
         connection,
-        organizations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -802,8 +797,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}:testIamPermissions", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

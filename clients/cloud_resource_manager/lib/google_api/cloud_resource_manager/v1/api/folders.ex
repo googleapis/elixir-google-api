@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. Name of the resource for the `Policy` to clear.
+  *   `resource` (*type:* `String.t`) - Name of the resource for the `Policy` to clear.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,7 +64,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_clear_org_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -86,8 +86,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:clearOrgPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:clearOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,7 +103,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. The name of the resource to start computing the effective `Policy`.
+  *   `resource` (*type:* `String.t`) - The name of the resource to start computing the effective `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -136,7 +136,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_get_effective_org_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -158,8 +158,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:getEffectiveOrgPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getEffectiveOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -175,7 +175,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. Name of the resource the `Policy` is set on.
+  *   `resource` (*type:* `String.t`) - Name of the resource the `Policy` is set on.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -208,7 +208,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_get_org_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -230,8 +230,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:getOrgPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -247,7 +247,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list `Constraints` for.
+  *   `resource` (*type:* `String.t`) - Name of the resource to list `Constraints` for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -281,7 +281,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_list_available_org_policy_constraints(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -303,8 +303,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:listAvailableOrgPolicyConstraints", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:listAvailableOrgPolicyConstraints", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -326,7 +326,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. Name of the resource to list Policies for.
+  *   `resource` (*type:* `String.t`) - Name of the resource to list Policies for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -359,7 +359,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_list_org_policies(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -381,8 +381,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:listOrgPolicies", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:listOrgPolicies", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -400,7 +400,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. Resource name of the resource to attach the `Policy`.
+  *   `resource` (*type:* `String.t`) - Resource name of the resource to attach the `Policy`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -433,7 +433,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_set_org_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -455,8 +455,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/folders/{foldersId}:setOrgPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setOrgPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
