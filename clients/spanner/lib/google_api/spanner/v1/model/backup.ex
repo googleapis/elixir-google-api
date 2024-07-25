@@ -21,10 +21,12 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
 
   ## Attributes
 
+  *   `backupSchedules` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of backup schedule URIs that are associated with creating this backup. This is only applicable for scheduled backups, and is empty for on-demand backups. To optimize for storage, whenever possible, multiple schedules are collapsed together to create one backup. In such cases, this field captures the list of all backup schedule URIs that are associated with creating this backup. If collapsing is not done, then this field captures the single backup schedule URI associated with creating this backup.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the CreateBackup request is received. If the request does not specify `version_time`, the `version_time` of the backup will be equivalent to the `create_time`.
   *   `database` (*type:* `String.t`, *default:* `nil`) - Required for the CreateBackup operation. Name of the database from which this backup was created. This needs to be in the same instance as the backup. Values are of the form `projects//instances//databases/`.
   *   `databaseDialect` (*type:* `String.t`, *default:* `nil`) - Output only. The database dialect information for the backup.
   *   `encryptionInfo` (*type:* `GoogleApi.Spanner.V1.Model.EncryptionInfo.t`, *default:* `nil`) - Output only. The encryption information for the backup.
+  *   `encryptionInformation` (*type:* `list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t)`, *default:* `nil`) - Output only. The encryption information for the backup, whether it is protected by one or more KMS keys. The information includes all Cloud KMS key versions used to encrypt the backup. The `encryption_status' field inside of each `EncryptionInfo` is not populated. At least one of the key versions must be available for the backup to be restored. If a key version is revoked in the middle of a restore, the restore behavior is undefined.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required for the CreateBackup operation. The expiration time of the backup, with microseconds granularity that must be at least 6 hours and at most 366 days from the time the CreateBackup request is processed. Once the `expire_time` has passed, the backup is eligible to be automatically deleted by Cloud Spanner to free the resources used by the backup.
   *   `maxExpireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The max allowed expiration time of the backup, with microseconds granularity. A backup's expiration time can be configured in multiple APIs: CreateBackup, UpdateBackup, CopyBackup. When updating or copying an existing backup, the expiration time specified must be less than `Backup.max_expire_time`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only for the CreateBackup operation. Required for the UpdateBackup operation. A globally unique identifier for the backup which cannot be changed. Values are of the form `projects//instances//backups/a-z*[a-z0-9]` The final segment of the name must be between 2 and 60 characters in length. The backup is stored in the location(s) specified in the instance configuration of the instance containing the backup, identified by the prefix of the backup name of the form `projects//instances/`.
@@ -38,10 +40,12 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :backupSchedules => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :database => String.t() | nil,
           :databaseDialect => String.t() | nil,
           :encryptionInfo => GoogleApi.Spanner.V1.Model.EncryptionInfo.t() | nil,
+          :encryptionInformation => list(GoogleApi.Spanner.V1.Model.EncryptionInfo.t()) | nil,
           :expireTime => DateTime.t() | nil,
           :maxExpireTime => DateTime.t() | nil,
           :name => String.t() | nil,
@@ -52,10 +56,12 @@ defmodule GoogleApi.Spanner.V1.Model.Backup do
           :versionTime => DateTime.t() | nil
         }
 
+  field(:backupSchedules, type: :list)
   field(:createTime, as: DateTime)
   field(:database)
   field(:databaseDialect)
   field(:encryptionInfo, as: GoogleApi.Spanner.V1.Model.EncryptionInfo)
+  field(:encryptionInformation, as: GoogleApi.Spanner.V1.Model.EncryptionInfo, type: :list)
   field(:expireTime, as: DateTime)
   field(:maxExpireTime, as: DateTime)
   field(:name)

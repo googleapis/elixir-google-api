@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Spanner.V1.Model.AutoscalingConfig do
   @moduledoc """
-  Autoscaling config for an instance.
+  Autoscaling configuration for an instance.
 
   ## Attributes
 
