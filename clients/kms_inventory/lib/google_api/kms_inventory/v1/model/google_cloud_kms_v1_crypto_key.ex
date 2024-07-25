@@ -23,8 +23,9 @@ defmodule GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1CryptoKey do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this CryptoKey was created.
   *   `cryptoKeyBackend` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the backend environment where the key material for all CryptoKeyVersions associated with this CryptoKey reside and where all related cryptographic operations are performed. Only applicable if CryptoKeyVersions have a ProtectionLevel of EXTERNAL_VPC, with the resource name in the format `projects/*/locations/*/ekmConnections/*`. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future.
-  *   `destroyScheduledDuration` (*type:* `String.t`, *default:* `nil`) - Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 24 hours.
+  *   `destroyScheduledDuration` (*type:* `String.t`, *default:* `nil`) - Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 30 days.
   *   `importOnly` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether this key may contain imported versions only.
+  *   `keyAccessJustificationsPolicy` (*type:* `GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1KeyAccessJustificationsPolicy.t`, *default:* `nil`) - Optional. The policy used for Key Access Justifications Policy Enforcement. If this field is present and this key is enrolled in Key Access Justifications Policy Enforcement, the policy will be evaluated in encrypt, decrypt, and sign operations, and the operation will fail if rejected by the policy. The policy is defined by specifying zero or more allowed justification codes. https://cloud.google.com/assured-workloads/key-access-justifications/docs/justification-codes By default, this field is absent, and all justification codes are allowed.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `nextRotationTime` (*type:* `DateTime.t`, *default:* `nil`) - At next_rotation_time, the Key Management Service will automatically: 1. Create a new version of this CryptoKey. 2. Mark the new version as primary. Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted.
@@ -41,6 +42,9 @@ defmodule GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1CryptoKey do
           :cryptoKeyBackend => String.t() | nil,
           :destroyScheduledDuration => String.t() | nil,
           :importOnly => boolean() | nil,
+          :keyAccessJustificationsPolicy =>
+            GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1KeyAccessJustificationsPolicy.t()
+            | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :nextRotationTime => DateTime.t() | nil,
@@ -55,6 +59,11 @@ defmodule GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1CryptoKey do
   field(:cryptoKeyBackend)
   field(:destroyScheduledDuration)
   field(:importOnly)
+
+  field(:keyAccessJustificationsPolicy,
+    as: GoogleApi.KMSInventory.V1.Model.GoogleCloudKmsV1KeyAccessJustificationsPolicy
+  )
+
   field(:labels, type: :map)
   field(:name)
   field(:nextRotationTime, as: DateTime)
