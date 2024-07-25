@@ -22,24 +22,30 @@ defmodule GoogleApi.Connectors.V1.Model.ResultMetadata do
   ## Attributes
 
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - The data type of the field.
+  *   `defaultValue` (*type:* `any()`, *default:* `nil`) - The following field specifies the default value of the Parameter provided by the external system if a value is not provided.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A brief description of the field.
   *   `field` (*type:* `String.t`, *default:* `nil`) - Name of the result field.
   *   `jsonSchema` (*type:* `GoogleApi.Connectors.V1.Model.JsonSchema.t`, *default:* `nil`) - JsonSchema representation of this action's result
+  *   `nullable` (*type:* `boolean()`, *default:* `nil`) - Specifies whether a null value is allowed.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :dataType => String.t() | nil,
+          :defaultValue => any() | nil,
           :description => String.t() | nil,
           :field => String.t() | nil,
-          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil
+          :jsonSchema => GoogleApi.Connectors.V1.Model.JsonSchema.t() | nil,
+          :nullable => boolean() | nil
         }
 
   field(:dataType)
+  field(:defaultValue)
   field(:description)
   field(:field)
   field(:jsonSchema, as: GoogleApi.Connectors.V1.Model.JsonSchema)
+  field(:nullable)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.ResultMetadata do

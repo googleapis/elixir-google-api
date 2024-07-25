@@ -24,6 +24,7 @@ defmodule GoogleApi.Connectors.V2.Model.EntityType do
   *   `fields` (*type:* `list(GoogleApi.Connectors.V2.Model.Field.t)`, *default:* `nil`) - List containing metadata information about each field of the entity type.
   *   `jsonSchema` (*type:* `GoogleApi.Connectors.V2.Model.JsonSchema.t`, *default:* `nil`) - JsonSchema representation of this entity's schema
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the entity type.
+  *   `operations` (*type:* `list(String.t)`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Connectors.V2.Model.EntityType do
   @type t :: %__MODULE__{
           :fields => list(GoogleApi.Connectors.V2.Model.Field.t()) | nil,
           :jsonSchema => GoogleApi.Connectors.V2.Model.JsonSchema.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :operations => list(String.t()) | nil
         }
 
   field(:fields, as: GoogleApi.Connectors.V2.Model.Field, type: :list)
   field(:jsonSchema, as: GoogleApi.Connectors.V2.Model.JsonSchema)
   field(:name)
+  field(:operations, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V2.Model.EntityType do

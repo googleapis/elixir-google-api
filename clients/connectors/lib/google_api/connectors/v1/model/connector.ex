@@ -21,6 +21,8 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
 
   ## Attributes
 
+  *   `category` (*type:* `String.t`, *default:* `nil`) - Output only. Category of the connector.
+  *   `connectorType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the connector.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. Description of the resource.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name.
@@ -30,6 +32,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Connector. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector} Only global location is supported for Connector resource.
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Tags of the connector.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   *   `webAssetsLocation` (*type:* `String.t`, *default:* `nil`) - Output only. Cloud storage location of icons etc consumed by UI.
   """
@@ -37,6 +40,8 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :category => String.t() | nil,
+          :connectorType => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -46,10 +51,13 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
           :labels => map() | nil,
           :launchStage => String.t() | nil,
           :name => String.t() | nil,
+          :tags => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil,
           :webAssetsLocation => String.t() | nil
         }
 
+  field(:category)
+  field(:connectorType)
   field(:createTime, as: DateTime)
   field(:description)
   field(:displayName)
@@ -59,6 +67,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connector do
   field(:labels, type: :map)
   field(:launchStage)
   field(:name)
+  field(:tags, type: :list)
   field(:updateTime, as: DateTime)
   field(:webAssetsLocation)
 end
