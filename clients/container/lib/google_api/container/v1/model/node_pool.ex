@@ -27,19 +27,19 @@ defmodule GoogleApi.Container.V1.Model.NodePool do
   *   `config` (*type:* `GoogleApi.Container.V1.Model.NodeConfig.t`, *default:* `nil`) - The node configuration of the pool.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of node pool fields, and may be sent on update requests to ensure the client has an up-to-date value before proceeding.
   *   `initialNodeCount` (*type:* `integer()`, *default:* `nil`) - The initial node count for the pool. You must ensure that your Compute Engine [resource quota](https://cloud.google.com/compute/quotas) is sufficient for this number of instances. You must also have available firewall and routes quota.
-  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - [Output only] The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. During the node pool blue-green upgrade operation, the URLs contain both blue and green resources.
+  *   `instanceGroupUrls` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource URLs of the [managed instance groups](https://cloud.google.com/compute/docs/instance-groups/creating-groups-of-managed-instances) associated with this node pool. During the node pool blue-green upgrade operation, the URLs contain both blue and green resources.
   *   `locations` (*type:* `list(String.t)`, *default:* `nil`) - The list of Google Compute Engine [zones](https://cloud.google.com/compute/docs/zones#available) in which the NodePool's nodes should be located. If this value is unspecified during node pool creation, the [Cluster.Locations](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters#Cluster.FIELDS.locations) value will be used, instead. Warning: changing node pool locations will result in nodes being added and/or removed.
   *   `management` (*type:* `GoogleApi.Container.V1.Model.NodeManagement.t`, *default:* `nil`) - NodeManagement configuration for this NodePool.
   *   `maxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The constraint on the maximum number of pods that can be run simultaneously on a node in the node pool.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the node pool.
   *   `networkConfig` (*type:* `GoogleApi.Container.V1.Model.NodeNetworkConfig.t`, *default:* `nil`) - Networking configuration for this NodePool. If specified, it overrides the cluster-level defaults.
   *   `placementPolicy` (*type:* `GoogleApi.Container.V1.Model.PlacementPolicy.t`, *default:* `nil`) - Specifies the node placement policy.
-  *   `podIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - [Output only] The pod CIDR block size per node in this node pool.
+  *   `podIpv4CidrSize` (*type:* `integer()`, *default:* `nil`) - Output only. The pod CIDR block size per node in this node pool.
   *   `queuedProvisioning` (*type:* `GoogleApi.Container.V1.Model.QueuedProvisioning.t`, *default:* `nil`) - Specifies the configuration of queued provisioning.
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output only] Server-defined URL for the resource.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - [Output only] The status of the nodes in this pool instance.
-  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output only] Deprecated. Use conditions instead. Additional information about the current status of this node pool instance, if available.
-  *   `updateInfo` (*type:* `GoogleApi.Container.V1.Model.UpdateInfo.t`, *default:* `nil`) - Output only. [Output only] Update info contains relevant information during a node pool update.
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL for the resource.
+  *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The status of the nodes in this pool instance.
+  *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated. Use conditions instead. Additional information about the current status of this node pool instance, if available.
+  *   `updateInfo` (*type:* `GoogleApi.Container.V1.Model.UpdateInfo.t`, *default:* `nil`) - Output only. Update info contains relevant information during a node pool update.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
   *   `version` (*type:* `String.t`, *default:* `nil`) - The version of Kubernetes running on this NodePool's nodes. If unspecified, it defaults as described [here](https://cloud.google.com/kubernetes-engine/versioning#specifying_node_version).
   """

@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.AdditionalPodRangesConfig do
 
   ## Attributes
 
-  *   `podRangeInfo` (*type:* `list(GoogleApi.Container.V1.Model.RangeInfo.t)`, *default:* `nil`) - Output only. [Output only] Information for additional pod range.
+  *   `podRangeInfo` (*type:* `list(GoogleApi.Container.V1.Model.RangeInfo.t)`, *default:* `nil`) - Output only. Information for additional pod range.
   *   `podRangeNames` (*type:* `list(String.t)`, *default:* `nil`) - Name for pod secondary ipv4 range which has the actual range defined ahead.
   """
 
