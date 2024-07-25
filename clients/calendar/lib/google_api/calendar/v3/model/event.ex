@@ -21,7 +21,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
 
   ## Attributes
 
-  *   `reminders` (*type:* `GoogleApi.Calendar.V3.Model.EventReminders.t`, *default:* `nil`) - Information about the event's reminders for the authenticated user.
+  *   `reminders` (*type:* `GoogleApi.Calendar.V3.Model.EventReminders.t`, *default:* `nil`) - Information about the event's reminders for the authenticated user. Note that changing reminders does not also change the updated property of the enclosing event.
   *   `guestsCanInviteOthers` (*type:* `boolean()`, *default:* `true`) - Whether attendees other than the organizer can invite others to the event. Optional. The default is True.
   *   `sequence` (*type:* `integer()`, *default:* `nil`) - Sequence number as per iCalendar.
   *   `start` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - The (inclusive) start time of the event. For a recurring event, this is the start time of the first instance.
@@ -31,7 +31,7 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
   *   `creator` (*type:* `GoogleApi.Calendar.V3.Model.EventCreator.t`, *default:* `nil`) - The creator of the event. Read-only.
   *   `outOfOfficeProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventOutOfOfficeProperties.t`, *default:* `nil`) - Out of office event data. Used if eventType is outOfOffice.
   *   `guestsCanSeeOtherGuests` (*type:* `boolean()`, *default:* `true`) - Whether attendees other than the organizer can see who the event's attendees are. Optional. The default is True.
-  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modification time of the event (as a RFC3339 timestamp). Read-only.
+  *   `updated` (*type:* `DateTime.t`, *default:* `nil`) - Last modification time of the main event data (as a RFC3339 timestamp). Updating event reminders will not cause this to change. Read-only.
   *   `attendeesOmitted` (*type:* `boolean()`, *default:* `false`) - Whether attendees may have been omitted from the event's representation. When retrieving an event, this may be due to a restriction specified by the maxAttendee query parameter. When updating an event, this can be used to only update the participant's response. Optional. The default is False.
   *   `workingLocationProperties` (*type:* `GoogleApi.Calendar.V3.Model.EventWorkingLocationProperties.t`, *default:* `nil`) - Working location event data.
   *   `anyoneCanAddSelf` (*type:* `boolean()`, *default:* `false`) - Whether anyone can invite themselves to the event (deprecated). Optional. The default is False.
@@ -77,7 +77,8 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       - "default" - A regular event or not further specified. 
       - "outOfOffice" - An out-of-office event. 
       - "focusTime" - A focus-time event. 
-      - "workingLocation" - A working location event.  Currently, only "default " and "workingLocation" events can be created using the API. Extended support for other event types will be made available in later releases.
+      - "workingLocation" - A working location event. 
+      - "fromGmail" - An event from Gmail. This type of event cannot be created.
   *   `locked` (*type:* `boolean()`, *default:* `false`) - Whether this is a locked event copy where no changes can be made to the main event fields "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-Only.
   *   `endTimeUnspecified` (*type:* `boolean()`, *default:* `false`) - Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the event.

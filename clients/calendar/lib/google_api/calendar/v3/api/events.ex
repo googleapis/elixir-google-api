@@ -143,7 +143,8 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   end
 
   @doc """
-  Imports an event. This operation is used to add a private copy of an existing event to a calendar.
+  Imports an event. This operation is used to add a private copy of an existing event to a calendar. Only events with an eventType of default may be imported.
+  Deprecated behavior: If a non-default event is imported, its type will be changed to default and any event-type-specific properties it may have will be dropped.
 
   ## Parameters
 
@@ -465,7 +466,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   end
 
   @doc """
-  Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; outOfOffice, focusTime and workingLocation events cannot be moved.
+  Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; outOfOffice, focusTime, workingLocation and fromGmail events cannot be moved.
 
   ## Parameters
 
