@@ -21,8 +21,8 @@ defmodule GoogleApi.IAP.V1.Model.AllowedDomainsSettings do
 
   ## Attributes
 
-  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - List of trusted domains.
-  *   `enable` (*type:* `boolean()`, *default:* `nil`) - Configuration for customers to opt in for the feature.
+  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of trusted domains.
+  *   `enable` (*type:* `boolean()`, *default:* `nil`) - Optional. Configuration for customers to opt in for the feature.
   """
 
   use GoogleApi.Gax.ModelBase

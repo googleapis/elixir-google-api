@@ -21,8 +21,8 @@ defmodule GoogleApi.IAP.V1.Model.IapSettings do
 
   ## Attributes
 
-  *   `accessSettings` (*type:* `GoogleApi.IAP.V1.Model.AccessSettings.t`, *default:* `nil`) - Top level wrapper for all access related setting in IAP
-  *   `applicationSettings` (*type:* `GoogleApi.IAP.V1.Model.ApplicationSettings.t`, *default:* `nil`) - Top level wrapper for all application related settings in IAP
+  *   `accessSettings` (*type:* `GoogleApi.IAP.V1.Model.AccessSettings.t`, *default:* `nil`) - Optional. Top level wrapper for all access related setting in IAP
+  *   `applicationSettings` (*type:* `GoogleApi.IAP.V1.Model.ApplicationSettings.t`, *default:* `nil`) - Optional. Top level wrapper for all application related settings in IAP
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the IAP protected resource.
   """
 
