@@ -31,8 +31,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the schema we are revising. Format is `projects/{project}/schemas/{schema}`.
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the schema we are revising. Format is `projects/{project}/schemas/{schema}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -53,24 +52,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Schema{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_schemas_commit(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_schemas_commit(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_commit(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_commit(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -89,9 +76,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:commit", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:commit", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -107,7 +93,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in which to create the schema. Format is `projects/{project-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which to create the schema. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -134,7 +120,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_create(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def pubsub_projects_schemas_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -154,8 +140,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/schemas", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -171,8 +157,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the schema to delete. Format is `projects/{project}/schemas/{schema}`.
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the schema to delete. Format is `projects/{project}/schemas/{schema}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -192,24 +177,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_schemas_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_schemas_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_delete(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -227,9 +200,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -245,8 +217,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the schema revision to be deleted, with a revision ID explicitly included. Example: `projects/123/schemas/my-schema@c7cfa2a8`
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the schema revision to be deleted, with a revision ID explicitly included. Example: `projects/123/schemas/my-schema@c7cfa2a8`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -270,7 +241,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_schemas_delete_revision(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -278,13 +248,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_delete_revision(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_delete_revision(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -303,9 +267,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:deleteRevision", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:deleteRevision", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -321,8 +284,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the schema to get. Format is `projects/{project}/schemas/{schema}`.
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the schema to get. Format is `projects/{project}/schemas/{schema}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -343,24 +305,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Schema{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_schemas_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_schemas_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_get(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -379,9 +329,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -397,8 +346,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `schemas_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -422,7 +370,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_schemas_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -432,8 +379,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_schemas_get_iam_policy(
         connection,
-        projects_id,
-        schemas_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -455,9 +401,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -473,7 +418,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in which to list schemas. Format is `projects/{project-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which to list schemas. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -501,7 +446,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def pubsub_projects_schemas_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -522,8 +467,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/schemas", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/schemas", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -539,8 +484,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the schema to list revisions for.
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the schema to list revisions for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -566,7 +510,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_schemas_list_revisions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -574,13 +517,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_list_revisions(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_list_revisions(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -601,9 +538,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:listRevisions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:listRevisions", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -619,8 +555,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The schema being rolled back with revision id.
-  *   `schemas_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The schema being rolled back with revision id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -641,24 +576,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Schema{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_schemas_rollback(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_schemas_rollback(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Schema.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_rollback(
-        connection,
-        projects_id,
-        schemas_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_schemas_rollback(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -677,9 +600,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:rollback", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:rollback", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -695,8 +617,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `schemas_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -720,7 +641,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_schemas_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -730,8 +650,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_schemas_set_iam_policy(
         connection,
-        projects_id,
-        schemas_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -753,9 +672,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -771,8 +689,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `schemas_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -796,7 +713,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_schemas_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -806,8 +722,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_schemas_test_iam_permissions(
         connection,
-        projects_id,
-        schemas_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -829,9 +744,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas/{schemasId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "schemasId" => URI.encode(schemas_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -847,7 +761,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -873,7 +787,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_schemas_validate(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def pubsub_projects_schemas_validate(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -892,8 +806,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas:validate", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/schemas:validate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -909,7 +823,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which to validate schemas. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -942,7 +856,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_schemas_validate_message(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -964,8 +878,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/schemas:validateMessage", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/schemas:validateMessage", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -981,8 +895,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the [resource name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is `projects/{project}/snapshots/{snap}`.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. User-provided name for this snapshot. If the name is not provided in the request, the server will assign a random name for this snapshot on the same project as the subscription. Note that for REST API requests, you must specify a name. See the [resource name rules](https://cloud.google.com/pubsub/docs/pubsub-basics#resource_names). Format is `projects/{project}/snapshots/{snap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1003,24 +916,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Snapshot{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_snapshots_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_snapshots_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_snapshots_create(
-        connection,
-        projects_id,
-        snapshots_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_snapshots_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1039,9 +940,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1057,8 +957,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. Required. The name of the snapshot to delete. Format is `projects/{project}/snapshots/{snap}`.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
+  *   `snapshot` (*type:* `String.t`) - Required. The name of the snapshot to delete. Format is `projects/{project}/snapshots/{snap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1078,24 +977,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_snapshots_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_snapshots_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_snapshots_delete(
-        connection,
-        projects_id,
-        snapshots_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_snapshots_delete(connection, snapshot, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1113,9 +1000,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+snapshot}", %{
+        "snapshot" => URI.encode(snapshot, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1131,8 +1017,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snapshot`. Required. The name of the snapshot to get. Format is `projects/{project}/snapshots/{snap}`.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot`. See documentation of `projectsId`.
+  *   `snapshot` (*type:* `String.t`) - Required. The name of the snapshot to get. Format is `projects/{project}/snapshots/{snap}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1152,24 +1037,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Snapshot{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_snapshots_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_snapshots_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_snapshots_get(
-        connection,
-        projects_id,
-        snapshots_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_snapshots_get(connection, snapshot, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1187,9 +1060,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+snapshot}", %{
+        "snapshot" => URI.encode(snapshot, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1205,8 +1077,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1230,7 +1101,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_snapshots_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1240,8 +1110,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_snapshots_get_iam_policy(
         connection,
-        projects_id,
-        snapshots_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1263,9 +1132,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1281,7 +1149,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list snapshots. Format is `projects/{project-id}`.
+  *   `project` (*type:* `String.t`) - Required. The name of the project in which to list snapshots. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1308,7 +1176,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_snapshots_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def pubsub_projects_snapshots_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1328,8 +1196,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/snapshots", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+project}/snapshots", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1345,8 +1213,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snapshot.name`. Optional. The name of the snapshot.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `snapshot.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Optional. The name of the snapshot.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1367,24 +1234,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Snapshot{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_snapshots_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_snapshots_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Snapshot.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_snapshots_patch(
-        connection,
-        projects_id,
-        snapshots_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_snapshots_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1403,9 +1258,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1421,8 +1275,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1446,7 +1299,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_snapshots_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1456,8 +1308,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_snapshots_set_iam_policy(
         connection,
-        projects_id,
-        snapshots_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1479,9 +1330,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1497,8 +1347,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `snapshots_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1522,7 +1371,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_snapshots_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1532,8 +1380,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_snapshots_test_iam_permissions(
         connection,
-        projects_id,
-        snapshots_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1555,9 +1402,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/snapshots/{snapshotsId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snapshotsId" => URI.encode(snapshots_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1573,8 +1419,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription whose message is being acknowledged. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The subscription whose message is being acknowledged. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1598,7 +1443,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_acknowledge(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1608,8 +1452,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_acknowledge(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1631,9 +1474,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:acknowledge", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+subscription}:acknowledge", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1649,8 +1491,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the subscription. It must have the format `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the subscription. It must have the format `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1671,24 +1512,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Subscription{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_subscriptions_create(
-        connection,
-        projects_id,
-        subscriptions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_subscriptions_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1707,9 +1536,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1725,8 +1553,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription to delete. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The subscription to delete. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1746,21 +1573,14 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def pubsub_projects_subscriptions_delete(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1781,9 +1601,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+subscription}", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1799,8 +1618,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription to detach. Format is `projects/{project}/subscriptions/{subscription}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The subscription to detach. Format is `projects/{project}/subscriptions/{subscription}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1820,21 +1638,14 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.DetachSubscriptionResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_detach(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_detach(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.DetachSubscriptionResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def pubsub_projects_subscriptions_detach(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1855,9 +1666,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:detach", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+subscription}:detach", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1873,8 +1683,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription to get. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The name of the subscription to get. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1894,21 +1703,14 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Subscription{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def pubsub_projects_subscriptions_get(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1929,9 +1731,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+subscription}", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1947,8 +1748,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1972,7 +1772,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1982,8 +1781,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_get_iam_policy(
         connection,
-        projects_id,
-        subscriptions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2005,9 +1803,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2023,7 +1820,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list subscriptions. Format is `projects/{project-id}`.
+  *   `project` (*type:* `String.t`) - Required. The name of the project in which to list subscriptions. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2050,12 +1847,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_subscriptions_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_subscriptions_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2075,8 +1867,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+project}/subscriptions", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2092,8 +1884,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2117,7 +1908,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_modify_ack_deadline(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2127,8 +1917,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_modify_ack_deadline(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2150,13 +1939,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:modifyAckDeadline",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+subscription}:modifyAckDeadline", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2171,8 +1956,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The name of the subscription. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2196,7 +1980,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_modify_push_config(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2206,8 +1989,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_modify_push_config(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2229,13 +2011,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:modifyPushConfig",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+subscription}:modifyPushConfig", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2250,8 +2028,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription.name`. Required. The name of the subscription. It must have the format `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the subscription. It must have the format `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2272,24 +2049,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Subscription{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Subscription.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_subscriptions_patch(
-        connection,
-        projects_id,
-        subscriptions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_subscriptions_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2308,9 +2073,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2326,8 +2090,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription from which messages should be pulled. Format is `projects/{project}/subscriptions/{sub}`.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The subscription from which messages should be pulled. Format is `projects/{project}/subscriptions/{sub}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2348,21 +2111,14 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.PullResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_pull(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_pull(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.PullResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def pubsub_projects_subscriptions_pull(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2384,9 +2140,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:pull", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+subscription}:pull", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2402,8 +2157,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `subscription`. Required. The subscription to affect.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `subscription`. See documentation of `projectsId`.
+  *   `subscription` (*type:* `String.t`) - Required. The subscription to affect.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2424,21 +2178,14 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.SeekResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_subscriptions_seek(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_subscriptions_seek(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.SeekResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
   def pubsub_projects_subscriptions_seek(
         connection,
-        projects_id,
-        subscriptions_id,
+        subscription,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2460,9 +2207,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:seek", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+subscription}:seek", %{
+        "subscription" => URI.encode(subscription, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2478,8 +2224,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2503,7 +2248,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2513,8 +2257,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_set_iam_policy(
         connection,
-        projects_id,
-        subscriptions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2536,9 +2279,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2554,8 +2296,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `subscriptions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2579,7 +2320,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_subscriptions_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2589,8 +2329,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_subscriptions_test_iam_permissions(
         connection,
-        projects_id,
-        subscriptions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2612,13 +2351,9 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/subscriptions/{subscriptionsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "subscriptionsId" => URI.encode(subscriptions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2633,8 +2368,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
-  *   `topics_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2655,24 +2389,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Topic{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_topics_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_topics_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_create(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2691,9 +2413,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2709,8 +2430,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
+  *   `topic` (*type:* `String.t`) - Required. Name of the topic to delete. Format is `projects/{project}/topics/{topic}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2730,24 +2450,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_topics_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_topics_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_delete(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_delete(connection, topic, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2765,9 +2473,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+topic}", %{
+        "topic" => URI.encode(topic, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2783,8 +2490,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
+  *   `topic` (*type:* `String.t`) - Required. The name of the topic to get. Format is `projects/{project}/topics/{topic}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2804,24 +2510,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Topic{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_topics_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_topics_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_get(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_get(connection, topic, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2839,9 +2533,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+topic}", %{
+        "topic" => URI.encode(topic, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2857,8 +2550,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2882,7 +2574,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2892,8 +2583,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_topics_get_iam_policy(
         connection,
-        projects_id,
-        topics_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2915,9 +2605,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2933,7 +2622,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The name of the project in which to list topics. Format is `projects/{project-id}`.
+  *   `project` (*type:* `String.t`) - Required. The name of the project in which to list topics. Format is `projects/{project-id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2960,7 +2649,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def pubsub_projects_topics_list(connection, project, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2980,8 +2669,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/topics", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+project}/topics", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2997,8 +2686,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic.name`. Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the topic. It must have the format `"projects/{project}/topics/{topic}"`. `{topic}` must start with a letter, and contain only letters (`[A-Za-z]`), numbers (`[0-9]`), dashes (`-`), underscores (`_`), periods (`.`), tildes (`~`), plus (`+`) or percent signs (`%`). It must be between 3 and 255 characters in length, and it must not start with `"goog"`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3019,24 +2707,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.Topic{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_topics_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_topics_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.Topic.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_patch(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3055,9 +2731,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3073,8 +2748,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The messages in the request will be published on this topic. Format is `projects/{project}/topics/{topic}`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
+  *   `topic` (*type:* `String.t`) - Required. The messages in the request will be published on this topic. Format is `projects/{project}/topics/{topic}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3095,24 +2769,12 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   *   `{:ok, %GoogleApi.PubSub.V1.Model.PublishResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec pubsub_projects_topics_publish(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec pubsub_projects_topics_publish(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.PubSub.V1.Model.PublishResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_publish(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_publish(connection, topic, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3131,9 +2793,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:publish", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+topic}:publish", %{
+        "topic" => URI.encode(topic, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3149,8 +2810,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3174,7 +2834,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3184,8 +2843,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_topics_set_iam_policy(
         connection,
-        projects_id,
-        topics_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3207,9 +2865,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3225,8 +2882,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `topics_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3250,7 +2906,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3260,8 +2915,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_topics_test_iam_permissions(
         connection,
-        projects_id,
-        topics_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3283,9 +2937,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3301,8 +2954,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic that snapshots are attached to. Format is `projects/{project}/topics/{topic}`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
+  *   `topic` (*type:* `String.t`) - Required. The name of the topic that snapshots are attached to. Format is `projects/{project}/topics/{topic}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3327,7 +2979,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_snapshots_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3335,13 +2986,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def pubsub_projects_topics_snapshots_list(
-        connection,
-        projects_id,
-        topics_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def pubsub_projects_topics_snapshots_list(connection, topic, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -3361,9 +3006,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}/snapshots", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+topic}/snapshots", %{
+        "topic" => URI.encode(topic, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3379,8 +3023,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PubSub.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `topic`. Required. The name of the topic that subscriptions are attached to. Format is `projects/{project}/topics/{topic}`.
-  *   `topics_id` (*type:* `String.t`) - Part of `topic`. See documentation of `projectsId`.
+  *   `topic` (*type:* `String.t`) - Required. The name of the topic that subscriptions are attached to. Format is `projects/{project}/topics/{topic}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3405,7 +3048,6 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
   @spec pubsub_projects_topics_subscriptions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3415,8 +3057,7 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
           | {:error, any()}
   def pubsub_projects_topics_subscriptions_list(
         connection,
-        projects_id,
-        topics_id,
+        topic,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3439,9 +3080,8 @@ defmodule GoogleApi.PubSub.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/topics/{topicsId}/subscriptions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "topicsId" => URI.encode(topics_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+topic}/subscriptions", %{
+        "topic" => URI.encode(topic, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
