@@ -22,7 +22,9 @@ defmodule GoogleApi.NetworkManagement.V1.Model.DeliverInfo do
   ## Attributes
 
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - IP address of the target (if applicable).
+  *   `pscGoogleApiTarget` (*type:* `String.t`, *default:* `nil`) - PSC Google API target the packet is delivered to (if applicable).
   *   `resourceUri` (*type:* `String.t`, *default:* `nil`) - URI of the resource that the packet is delivered to.
+  *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - Name of the Cloud Storage Bucket the packet is delivered to (if applicable).
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target type where the packet is delivered to.
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.NetworkManagement.V1.Model.DeliverInfo do
 
   @type t :: %__MODULE__{
           :ipAddress => String.t() | nil,
+          :pscGoogleApiTarget => String.t() | nil,
           :resourceUri => String.t() | nil,
+          :storageBucket => String.t() | nil,
           :target => String.t() | nil
         }
 
   field(:ipAddress)
+  field(:pscGoogleApiTarget)
   field(:resourceUri)
+  field(:storageBucket)
   field(:target)
 end
 

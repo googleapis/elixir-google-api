@@ -23,7 +23,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.CloudRunRevisionInfo do
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Cloud Run revision.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location in which this revision is deployed.
-  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - ID of Cloud Run Service this revision belongs to.
+  *   `serviceName` (*type:* `String.t`, *default:* `nil`) - ID of Cloud Run Service this revision belongs to. Was never set, is not exported to v1 proto and public protos. Do not export to v1beta1 public proto.
   *   `serviceUri` (*type:* `String.t`, *default:* `nil`) - URI of Cloud Run service this revision belongs to.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Cloud Run revision.
   """

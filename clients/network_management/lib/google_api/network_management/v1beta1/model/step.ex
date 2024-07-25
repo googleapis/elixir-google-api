@@ -44,6 +44,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that contains the configuration this step is validating.
   *   `proxyConnection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t`, *default:* `nil`) - Display information of a ProxyConnection.
   *   `route` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t`, *default:* `nil`) - Display information of a Compute Engine route.
+  *   `serverlessNeg` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo.t`, *default:* `nil`) - Display information of a Serverless network endpoint group backend. Used only for return traces.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Each step is in one of the pre-defined states.
   *   `storageBucket` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo.t`, *default:* `nil`) - Display information of a Storage Bucket. Used only for return traces.
   *   `vpcConnector` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo.t`, *default:* `nil`) - Display information of a VPC connector.
@@ -83,6 +84,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
           :proxyConnection =>
             GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t() | nil,
           :route => GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t() | nil,
+          :serverlessNeg => GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo.t() | nil,
           :state => String.t() | nil,
           :storageBucket => GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo.t() | nil,
           :vpcConnector => GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo.t() | nil,
@@ -117,6 +119,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   field(:projectId)
   field(:proxyConnection, as: GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo)
   field(:route, as: GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo)
+  field(:serverlessNeg, as: GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo)
   field(:state)
   field(:storageBucket, as: GoogleApi.NetworkManagement.V1beta1.Model.StorageBucketInfo)
   field(:vpcConnector, as: GoogleApi.NetworkManagement.V1beta1.Model.VpcConnectorInfo)
