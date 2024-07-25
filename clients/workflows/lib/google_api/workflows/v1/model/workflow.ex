@@ -17,13 +17,16 @@
 
 defmodule GoogleApi.Workflows.V1.Model.Workflow do
   @moduledoc """
-  Workflow program to be executed by Workflows.
+  LINT.IfChange Workflow program to be executed by Workflows.
 
   ## Attributes
 
+  *   `allKmsKeys` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A list of all KMS crypto keys used to encrypt or decrypt the data associated with the workflow.
+  *   `allKmsKeysVersions` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A list of all KMS crypto key versions used to encrypt or decrypt the data associated with the workflow.
   *   `callLogLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Describes the level of platform logging to apply to calls and call responses during executions of this workflow. If both the workflow and the execution specify a logging level, the execution level takes precedence.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for when the workflow was created. This is a workflow-wide field and is not tied to a specific revision.
   *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of a KMS crypto key used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. If not provided, data associated with the workflow will not be CMEK-encrypted.
+  *   `cryptoKeyVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of a KMS crypto key version used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the workflow provided by the user. Must be at most 1000 Unicode characters long. This is a workflow-wide field and is not tied to a specific revision.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this workflow. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. This is a workflow-wide field and is not tied to a specific revision.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the workflow. Format: projects/{project}/locations/{location}/workflows/{workflow}. This is a workflow-wide field and is not tied to a specific revision.
@@ -40,9 +43,12 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allKmsKeys => list(String.t()) | nil,
+          :allKmsKeysVersions => list(String.t()) | nil,
           :callLogLevel => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :cryptoKeyName => String.t() | nil,
+          :cryptoKeyVersion => String.t() | nil,
           :description => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -56,9 +62,12 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
           :userEnvVars => map() | nil
         }
 
+  field(:allKmsKeys, type: :list)
+  field(:allKmsKeysVersions, type: :list)
   field(:callLogLevel)
   field(:createTime, as: DateTime)
   field(:cryptoKeyName)
+  field(:cryptoKeyVersion)
   field(:description)
   field(:labels, type: :map)
   field(:name)
