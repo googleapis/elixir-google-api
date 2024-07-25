@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_v_mware_engine, "~> 0.3"}]
+  [{:google_api_v_mware_engine, "~> 0.4"}]
 end
 ```
 
