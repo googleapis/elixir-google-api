@@ -238,7 +238,7 @@ defmodule GoogleApi.BigQuery.V2.Api.Datasets do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:all` (*type:* `boolean()`) - Whether to list all datasets, including hidden ones
-      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request by label. The syntax is \\"labels.<name>[:<value>]\\". Multiple filters can be ANDed together by connecting with a space. Example: \\"labels.department:receiving labels.active\\". See [Filtering datasets using labels](/bigquery/docs/labeling-datasets#filtering_datasets_using_labels) for details.
+      *   `:filter` (*type:* `String.t`) - An expression for filtering the results of the request by label. The syntax is `labels.[:]`. Multiple filters can be ANDed together by connecting with a space. Example: `labels.department:receiving labels.active`. See [Filtering datasets using labels](https://cloud.google.com/bigquery/docs/filtering-labels#filtering_datasets_using_labels) for details.
       *   `:maxResults` (*type:* `integer()`) - The maximum number of results to return in a single response page. Leverage the page tokens to iterate through the entire collection.
       *   `:pageToken` (*type:* `String.t`) - Page token, returned by a previous call, to request the next page of results
   *   `opts` (*type:* `keyword()`) - Call options

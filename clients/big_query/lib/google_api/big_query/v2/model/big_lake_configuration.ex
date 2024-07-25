@@ -21,9 +21,9 @@ defmodule GoogleApi.BigQuery.V2.Model.BigLakeConfiguration do
 
   ## Attributes
 
-  *   `connectionId` (*type:* `String.t`, *default:* `nil`) - Required. The connection specifying the credentials to be used to read and write to external storage, such as Cloud Storage. The connection_id can have the form "<project\\_id>.<location\\_id>.<connection\\_id>" or "projects/<project\\_id>/locations/<location\\_id>/connections/<connection\\_id>".
+  *   `connectionId` (*type:* `String.t`, *default:* `nil`) - Required. The connection specifying the credentials to be used to read and write to external storage, such as Cloud Storage. The connection_id can have the form `{project}.{location}.{connection_id}` or `projects/{project}/locations/{location}/connections/{connection_id}".
   *   `fileFormat` (*type:* `String.t`, *default:* `nil`) - Required. The file format the table data is stored in.
-  *   `storageUri` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified location prefix of the external folder where table data is stored. The '*' wildcard character is not allowed. The URI should be in the format "gs://bucket/path_to_table/"
+  *   `storageUri` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified location prefix of the external folder where table data is stored. The '*' wildcard character is not allowed. The URI should be in the format `gs://bucket/path_to_table/`
   *   `tableFormat` (*type:* `String.t`, *default:* `nil`) - Required. The table format the metadata only snapshots are stored in.
   """
 

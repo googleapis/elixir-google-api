@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition do
 
   ## Attributes
 
-  *   `allowNonIncrementalDefinition` (*type:* `boolean()`, *default:* `nil`) - Optional. This option declares authors intention to construct a materialized view that will not be refreshed incrementally.
+  *   `allowNonIncrementalDefinition` (*type:* `boolean()`, *default:* `nil`) - Optional. This option declares the intention to construct a materialized view that isn't refreshed incrementally.
   *   `enableRefresh` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable automatic refresh of the materialized view when the base table is updated. The default value is "true".
   *   `lastRefreshTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time when this materialized view was last refreshed, in milliseconds since the epoch.
   *   `maxStaleness` (*type:* `String.t`, *default:* `nil`) - [Optional] Max staleness of data that could be returned when materizlized view is queried (formatted as Google SQL Interval type).

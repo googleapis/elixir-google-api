@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.UndeleteDatasetRequest do
 
   ## Attributes
 
-  *   `deletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The exact time when the dataset was deleted. If not specified, the most recently deleted version is undeleted.
+  *   `deletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The exact time when the dataset was deleted. If not specified, the most recently deleted version is undeleted. Undeleting a dataset using deletion time is not supported.
   """
 
   use GoogleApi.Gax.ModelBase

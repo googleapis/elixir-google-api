@@ -37,6 +37,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Required. Reference describing the ID of this table.
   *   `numTimeTravelPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
   *   `replicas` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableReference.t)`, *default:* `nil`) - Optional. Output only. Table references of all replicas currently active on the table.
+  *   `numCurrentPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of physical bytes used by current live data storage. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
   *   `clustering` (*type:* `GoogleApi.BigQuery.V2.Model.Clustering.t`, *default:* `nil`) - Clustering specification for the table. Must be specified with time-based partitioning, data in the table will be first partitioned and subsequently clustered.
   *   `timePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.TimePartitioning.t`, *default:* `nil`) - If specified, configures time-based partitioning for this table.
   *   `biglakeConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.BigLakeConfiguration.t`, *default:* `nil`) - Optional. Specifies the configuration of a BigLake managed table.
@@ -60,7 +61,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `materializedView` (*type:* `GoogleApi.BigQuery.V2.Model.MaterializedViewDefinition.t`, *default:* `nil`) - Optional. The materialized view definition.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](/bigquery/docs/table-snapshots-intro). The default value is `TABLE`.
   *   `numActivePhysicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-  *   `partitionDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.PartitioningDefinition.t`, *default:* `nil`) - Output only. The partition information for all table formats, including managed partitioned tables, hive partitioned tables, and iceberg partitioned tables.
+  *   `partitionDefinition` (*type:* `GoogleApi.BigQuery.V2.Model.PartitioningDefinition.t`, *default:* `nil`) - Optional. The partition information for all table formats, including managed partitioned tables, hive partitioned tables, iceberg partitioned, and metastore partitioned tables. This field is only populated for metastore partitioned tables. For other table formats, this is an output only field.
   *   `rangePartitioning` (*type:* `GoogleApi.BigQuery.V2.Model.RangePartitioning.t`, *default:* `nil`) - If specified, configures range partitioning for this table.
   *   `numPhysicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The physical size of this table in bytes. This includes storage used for time travel.
   *   `numRows` (*type:* `String.t`, *default:* `nil`) - Output only. The number of rows of data in this table, excluding any data in the streaming buffer.
@@ -69,6 +70,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   *   `model` (*type:* `GoogleApi.BigQuery.V2.Model.ModelDefinition.t`, *default:* `nil`) - Deprecated.
   *   `numTotalLogicalBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total number of logical bytes in the table or materialized view.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. An opaque ID uniquely identifying the table.
+  *   `restrictions` (*type:* `GoogleApi.BigQuery.V2.Model.RestrictionConfig.t`, *default:* `nil`) - Optional. Output only. Restriction config for table. If set, restrict certain accesses on the table based on the config. See [Data egress](/bigquery/docs/analytics-hub-introduction#data_egress) for more details.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys).
   """
 
@@ -92,6 +94,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :numTimeTravelPhysicalBytes => String.t() | nil,
           :replicas => list(GoogleApi.BigQuery.V2.Model.TableReference.t()) | nil,
+          :numCurrentPhysicalBytes => String.t() | nil,
           :clustering => GoogleApi.BigQuery.V2.Model.Clustering.t() | nil,
           :timePartitioning => GoogleApi.BigQuery.V2.Model.TimePartitioning.t() | nil,
           :biglakeConfiguration => GoogleApi.BigQuery.V2.Model.BigLakeConfiguration.t() | nil,
@@ -125,6 +128,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
           :model => GoogleApi.BigQuery.V2.Model.ModelDefinition.t() | nil,
           :numTotalLogicalBytes => String.t() | nil,
           :id => String.t() | nil,
+          :restrictions => GoogleApi.BigQuery.V2.Model.RestrictionConfig.t() | nil,
           :encryptionConfiguration =>
             GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t() | nil
         }
@@ -145,6 +149,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:numTimeTravelPhysicalBytes)
   field(:replicas, as: GoogleApi.BigQuery.V2.Model.TableReference, type: :list)
+  field(:numCurrentPhysicalBytes)
   field(:clustering, as: GoogleApi.BigQuery.V2.Model.Clustering)
   field(:timePartitioning, as: GoogleApi.BigQuery.V2.Model.TimePartitioning)
   field(:biglakeConfiguration, as: GoogleApi.BigQuery.V2.Model.BigLakeConfiguration)
@@ -177,6 +182,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Table do
   field(:model, as: GoogleApi.BigQuery.V2.Model.ModelDefinition)
   field(:numTotalLogicalBytes)
   field(:id)
+  field(:restrictions, as: GoogleApi.BigQuery.V2.Model.RestrictionConfig)
   field(:encryptionConfiguration, as: GoogleApi.BigQuery.V2.Model.EncryptionConfiguration)
 end
 

@@ -22,15 +22,18 @@ defmodule GoogleApi.BigQuery.V2.Model.TableSchema do
   ## Attributes
 
   *   `fields` (*type:* `list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t)`, *default:* `nil`) - Describes the fields in a table.
+  *   `foreignTypeInfo` (*type:* `GoogleApi.BigQuery.V2.Model.ForeignTypeInfo.t`, *default:* `nil`) - Optional. Specifies metadata of the foreign data type definition in field schema (TableFieldSchema.foreign_type_definition).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil
+          :fields => list(GoogleApi.BigQuery.V2.Model.TableFieldSchema.t()) | nil,
+          :foreignTypeInfo => GoogleApi.BigQuery.V2.Model.ForeignTypeInfo.t() | nil
         }
 
   field(:fields, as: GoogleApi.BigQuery.V2.Model.TableFieldSchema, type: :list)
+  field(:foreignTypeInfo, as: GoogleApi.BigQuery.V2.Model.ForeignTypeInfo)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigQuery.V2.Model.TableSchema do

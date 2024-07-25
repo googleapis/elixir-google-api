@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.DatasetReference do
   @moduledoc """
-
+  Identifier for a dataset.
 
   ## Attributes
 

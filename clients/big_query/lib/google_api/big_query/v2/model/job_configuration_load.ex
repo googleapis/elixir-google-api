@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   ## Attributes
 
   *   `sourceUris` (*type:* `list(String.t)`, *default:* `nil`) - [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
+  *   `columnNameCharacterMap` (*type:* `String.t`, *default:* `nil`) - Optional. Character map supported for column names in CSV/Parquet loads. Defaults to STRICT and can be overridden by Project Config Service. Using this option with unsupporting load formats will result in an error.
   *   `schemaInlineFormat` (*type:* `String.t`, *default:* `nil`) - [Deprecated] The format of the schemaInline property.
   *   `hivePartitioningOptions` (*type:* `GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t`, *default:* `nil`) - Optional. When set, configures hive partitioning support. Not all storage formats support hive partitioning -- requesting hive partitioning on an unsupported format will lead to an error, as will providing an invalid specification.
   *   `destinationEncryptionConfiguration` (*type:* `GoogleApi.BigQuery.V2.Model.EncryptionConfiguration.t`, *default:* `nil`) - Custom encryption configuration (e.g., Cloud KMS keys)
@@ -55,7 +56,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
   *   `destinationTableProperties` (*type:* `GoogleApi.BigQuery.V2.Model.DestinationTableProperties.t`, *default:* `nil`) - Optional. [Experimental] Properties with which to create the destination table if it is new.
   *   `parquetOptions` (*type:* `GoogleApi.BigQuery.V2.Model.ParquetOptions.t`, *default:* `nil`) - Optional. Additional properties to set if sourceFormat is set to PARQUET.
   *   `decimalTargetTypes` (*type:* `list(String.t)`, *default:* `nil`) - Defines the list of possible SQL data types to which the source decimal values are converted. This list and the precision and the scale parameters of the decimal field determine the target type. In the order of NUMERIC, BIGNUMERIC, and STRING, a type is picked if it is in the specified list and if it supports the precision and the scale. STRING supports all precision and scale values. If none of the listed types supports the precision and the scale, the type supporting the widest range in the specified list is picked, and if a value exceeds the supported range when reading the data, an error will be thrown. Example: Suppose the value of this field is ["NUMERIC", "BIGNUMERIC"]. If (precision,scale) is: * (38,9) -> NUMERIC; * (39,9) -> BIGNUMERIC (NUMERIC cannot hold 30 integer digits); * (38,10) -> BIGNUMERIC (NUMERIC cannot hold 10 fractional digits); * (76,38) -> BIGNUMERIC; * (77,38) -> BIGNUMERIC (error if value exeeds supported range). This field cannot contain duplicate types. The order of the types in this field is ignored. For example, ["BIGNUMERIC", "NUMERIC"] is the same as ["NUMERIC", "BIGNUMERIC"] and NUMERIC always takes precedence over BIGNUMERIC. Defaults to ["NUMERIC", "STRING"] for ORC and ["NUMERIC"] for the other file formats.
-  *   `copyFilesOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. [Experimental] Configures the load job to only copy files to the destination BigLake managed table with an external storage_uri, without reading file content and writing them to new files. Copying files only is supported when: * source_uris are in the same external storage system as the destination table but they do not overlap with storage_uri of the destination table. * source_format is the same file format as the destination table. * destination_table is an existing BigLake managed table. Its schema does not have default value expression. It schema does not have type parameters other than precision and scale. * No options other than the above are specified.
+  *   `copyFilesOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. [Experimental] Configures the load job to copy files directly to the destination BigLake managed table, bypassing file content reading and rewriting. Copying files only is supported when all the following are true: * `source_uris` are located in the same Cloud Storage location as the destination table's `storage_uri` location. * `source_format` is `PARQUET`. * `destination_table` is an existing BigLake managed table. The table's schema does not have flexible column names. The table's columns do not have type parameters other than precision and scale. * No options other than the above are specified.
   *   `connectionProperties` (*type:* `list(GoogleApi.BigQuery.V2.Model.ConnectionProperty.t)`, *default:* `nil`) - Optional. Connection properties which can modify the load job behavior. Currently, only the 'session_id' connection property is supported, and is used to resolve _SESSION appearing as the dataset id.
   """
 
@@ -63,6 +64,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
 
   @type t :: %__MODULE__{
           :sourceUris => list(String.t()) | nil,
+          :columnNameCharacterMap => String.t() | nil,
           :schemaInlineFormat => String.t() | nil,
           :hivePartitioningOptions =>
             GoogleApi.BigQuery.V2.Model.HivePartitioningOptions.t() | nil,
@@ -104,6 +106,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobConfigurationLoad do
         }
 
   field(:sourceUris, type: :list)
+  field(:columnNameCharacterMap)
   field(:schemaInlineFormat)
   field(:hivePartitioningOptions, as: GoogleApi.BigQuery.V2.Model.HivePartitioningOptions)
 
