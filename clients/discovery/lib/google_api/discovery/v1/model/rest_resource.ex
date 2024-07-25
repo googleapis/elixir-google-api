@@ -21,6 +21,7 @@ defmodule GoogleApi.Discovery.V1.Model.RestResource do
 
   ## Attributes
 
+  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - Whether this resource is deprecated.
   *   `methods` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestMethod.t}`, *default:* `nil`) - Methods on this resource.
   *   `resources` (*type:* `%{optional(String.t) => GoogleApi.Discovery.V1.Model.RestResource.t}`, *default:* `nil`) - Sub-resources on this resource.
   """
@@ -28,12 +29,14 @@ defmodule GoogleApi.Discovery.V1.Model.RestResource do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :deprecated => boolean() | nil,
           :methods =>
             %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestMethod.t()} | nil,
           :resources =>
             %{optional(String.t()) => GoogleApi.Discovery.V1.Model.RestResource.t()} | nil
         }
 
+  field(:deprecated)
   field(:methods, as: GoogleApi.Discovery.V1.Model.RestMethod, type: :map)
   field(:resources, as: GoogleApi.Discovery.V1.Model.RestResource, type: :map)
 end
