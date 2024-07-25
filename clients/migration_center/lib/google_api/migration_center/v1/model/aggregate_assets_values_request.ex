@@ -22,7 +22,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AggregateAssetsValuesRequest do
   ## Attributes
 
   *   `aggregations` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.Aggregation.t)`, *default:* `nil`) - Array of aggregations to perform. Up to 25 aggregations can be defined.
-  *   `filter` (*type:* `String.t`, *default:* `nil`) - The aggregation will be performed on assets that match the provided filter.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. The aggregation will be performed on assets that match the provided filter.
   """
 
   use GoogleApi.Gax.ModelBase
