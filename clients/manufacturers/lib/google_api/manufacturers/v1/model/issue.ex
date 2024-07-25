@@ -21,6 +21,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Issue do
 
   ## Attributes
 
+  *   `applicableCountries` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of country codes (ISO 3166-1 alpha-2) where issue applies to the manufacturer product.
   *   `attribute` (*type:* `String.t`, *default:* `nil`) - If present, the attribute that triggered the issue. For more information about attributes, see https://support.google.com/manufacturers/answer/6124116.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Longer description of the issue focused on how to resolve it.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The destination this issue applies to.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Issue do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :applicableCountries => list(String.t()) | nil,
           :attribute => String.t() | nil,
           :description => String.t() | nil,
           :destination => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Issue do
           :type => String.t() | nil
         }
 
+  field(:applicableCountries, type: :list)
   field(:attribute)
   field(:description)
   field(:destination)
