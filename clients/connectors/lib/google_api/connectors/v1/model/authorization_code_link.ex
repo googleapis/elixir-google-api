@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthorizationCodeLink do
 
   *   `clientId` (*type:* `String.t`, *default:* `nil`) - The client ID assigned to the Google Cloud Connectors OAuth app for the connector data source.
   *   `enablePkce` (*type:* `boolean()`, *default:* `nil`) - Whether to enable PKCE for the auth code flow.
+  *   `omitQueryParams` (*type:* `boolean()`, *default:* `nil`) - Optional. Omit query params from the redirect URI.
   *   `scopes` (*type:* `list(String.t)`, *default:* `nil`) - The scopes for which the user will authorize Google Cloud Connectors on the connector data source.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The base URI the user must click to trigger the authorization code login flow.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Connectors.V1.Model.AuthorizationCodeLink do
   @type t :: %__MODULE__{
           :clientId => String.t() | nil,
           :enablePkce => boolean() | nil,
+          :omitQueryParams => boolean() | nil,
           :scopes => list(String.t()) | nil,
           :uri => String.t() | nil
         }
 
   field(:clientId)
   field(:enablePkce)
+  field(:omitQueryParams)
   field(:scopes, type: :list)
   field(:uri)
 end

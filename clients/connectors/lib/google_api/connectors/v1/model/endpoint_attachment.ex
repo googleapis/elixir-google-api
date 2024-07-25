@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Created time.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the resource.
+  *   `endpointGlobalAccess` (*type:* `boolean()`, *default:* `nil`) - Optional. The Private Service Connect Connection Endpoint Global Access. https://cloud.google.com/vpc/docs/about-accessing-vpc-hosted-services-endpoints#global-access
   *   `endpointIp` (*type:* `String.t`, *default:* `nil`) - Output only. The Private Service Connect connection endpoint ip
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Endpoint Attachment. Format: projects/{project}/locations/{location}/endpointAttachments/{endpoint_attachment}
@@ -35,6 +36,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
+          :endpointGlobalAccess => boolean() | nil,
           :endpointIp => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
 
   field(:createTime, as: DateTime)
   field(:description)
+  field(:endpointGlobalAccess)
   field(:endpointIp)
   field(:labels, type: :map)
   field(:name)

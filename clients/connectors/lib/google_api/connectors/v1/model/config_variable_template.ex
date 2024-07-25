@@ -29,6 +29,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   *   `isAdvanced` (*type:* `boolean()`, *default:* `nil`) - Indicates if current template is part of advanced settings
   *   `key` (*type:* `String.t`, *default:* `nil`) - Key of the config variable.
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - Optional. Location Tyep denotes where this value should be sent in BYOC connections.
+  *   `multipleSelectConfig` (*type:* `GoogleApi.Connectors.V1.Model.MultipleSelectConfig.t`, *default:* `nil`) - Optional. MultipleSelectConfig represents the multiple options for a config variable.
   *   `required` (*type:* `boolean()`, *default:* `nil`) - Flag represents that this `ConfigVariable` must be provided for a connection.
   *   `requiredCondition` (*type:* `GoogleApi.Connectors.V1.Model.LogicalExpression.t`, *default:* `nil`) - Condition under which a field would be required. The condition can be represented in the form of a logical expression.
   *   `roleGrant` (*type:* `GoogleApi.Connectors.V1.Model.RoleGrant.t`, *default:* `nil`) - Role grant configuration for the config variable.
@@ -48,6 +49,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
           :isAdvanced => boolean() | nil,
           :key => String.t() | nil,
           :locationType => String.t() | nil,
+          :multipleSelectConfig => GoogleApi.Connectors.V1.Model.MultipleSelectConfig.t() | nil,
           :required => boolean() | nil,
           :requiredCondition => GoogleApi.Connectors.V1.Model.LogicalExpression.t() | nil,
           :roleGrant => GoogleApi.Connectors.V1.Model.RoleGrant.t() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConfigVariableTemplate do
   field(:isAdvanced)
   field(:key)
   field(:locationType)
+  field(:multipleSelectConfig, as: GoogleApi.Connectors.V1.Model.MultipleSelectConfig)
   field(:required)
   field(:requiredCondition, as: GoogleApi.Connectors.V1.Model.LogicalExpression)
   field(:roleGrant, as: GoogleApi.Connectors.V1.Model.RoleGrant)
