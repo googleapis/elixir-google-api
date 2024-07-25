@@ -31,7 +31,7 @@ defmodule GoogleApi.Drive.V3.Model.About do
   *   `kind` (*type:* `String.t`, *default:* `drive#about`) - Identifies what kind of resource this is. Value: the fixed string `"drive#about"`.
   *   `maxImportSizes` (*type:* `map()`, *default:* `nil`) - A map of maximum import sizes by MIME type, in bytes.
   *   `maxUploadSize` (*type:* `String.t`, *default:* `nil`) - The maximum upload size in bytes.
-  *   `storageQuota` (*type:* `GoogleApi.Drive.V3.Model.AboutStorageQuota.t`, *default:* `nil`) - The user's storage quota limits and usage. All fields are measured in bytes.
+  *   `storageQuota` (*type:* `GoogleApi.Drive.V3.Model.AboutStorageQuota.t`, *default:* `nil`) - The user's storage quota limits and usage. For users that are part of an organization with pooled storage, information about the limit and usage across all services is for the organization, rather than the individual user. All fields are measured in bytes.
   *   `teamDriveThemes` (*type:* `list(GoogleApi.Drive.V3.Model.AboutTeamDriveThemes.t)`, *default:* `nil`) - Deprecated: Use `driveThemes` instead.
   *   `user` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - The authenticated user.
   """

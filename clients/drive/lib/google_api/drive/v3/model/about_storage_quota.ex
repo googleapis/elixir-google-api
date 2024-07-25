@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Drive.V3.Model.AboutStorageQuota do
   @moduledoc """
-  The user's storage quota limits and usage. All fields are measured in bytes.
+  The user's storage quota limits and usage. For users that are part of an organization with pooled storage, information about the limit and usage across all services is for the organization, rather than the individual user. All fields are measured in bytes.
 
   ## Attributes
 
-  *   `limit` (*type:* `String.t`, *default:* `nil`) - The usage limit, if applicable. This will not be present if the user has unlimited storage.
-  *   `usage` (*type:* `String.t`, *default:* `nil`) - The total usage across all services.
+  *   `limit` (*type:* `String.t`, *default:* `nil`) - The usage limit, if applicable. This will not be present if the user has unlimited storage. For users that are part of an organization with pooled storage, this is the limit for the organization, rather than the individual user.
+  *   `usage` (*type:* `String.t`, *default:* `nil`) - The total usage across all services. For users that are part of an organization with pooled storage, this is the usage across all services for the organization, rather than the individual user.
   *   `usageInDrive` (*type:* `String.t`, *default:* `nil`) - The usage by all files in Google Drive.
   *   `usageInDriveTrash` (*type:* `String.t`, *default:* `nil`) - The usage by trashed files in Google Drive.
   """

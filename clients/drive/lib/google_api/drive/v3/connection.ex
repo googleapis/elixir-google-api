@@ -36,6 +36,9 @@ defmodule GoogleApi.Drive.V3.Connection do
       # See, edit, create, and delete only the specific Google Drive files you use with this app
       "https://www.googleapis.com/auth/drive.file",
 
+      # See and download your Google Drive files that were created or edited by Google Meet.
+      "https://www.googleapis.com/auth/drive.meet.readonly",
+
       # View and manage metadata of files in your Google Drive
       "https://www.googleapis.com/auth/drive.metadata",
 
