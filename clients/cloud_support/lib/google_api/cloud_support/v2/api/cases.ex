@@ -31,9 +31,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The name of the case to close.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The name of the case to close.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,26 +52,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Case{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_close(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_close(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Case.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_close(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_close(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -92,10 +76,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}:close", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}:close", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -111,8 +93,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent under which the case should be created.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent under which the case should be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -133,18 +114,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Case{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Case.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def cloudsupport_cases_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -163,9 +138,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/cases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -181,9 +155,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The name of the case to be escalated.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The name of the case to be escalated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -204,26 +176,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Case{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_escalate(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_escalate(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Case.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_escalate(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_escalate(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -242,10 +200,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}:escalate", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}:escalate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -261,9 +217,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full name of a case to be retrieved.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full name of a case to be retrieved.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -283,26 +237,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Case{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Case.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_get(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -320,10 +260,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -339,8 +277,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The name of a parent to list cases under.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of a parent to list cases under.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -363,12 +300,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.ListCasesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec cloudsupport_cases_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.ListCasesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def cloudsupport_cases_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -389,9 +326,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/cases", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -407,9 +343,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `case.name`. The resource name for the case.
-  *   `v2_id1` (*type:* `String.t`) - Part of `case.name`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `case.name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - The resource name for the case.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -431,26 +365,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Case{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Case.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_patch(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -470,10 +390,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -489,8 +407,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. The name of the parent resource to search for cases under.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - The name of the parent resource to search for cases under.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -513,18 +430,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.SearchCasesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_search(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_search(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.SearchCasesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_search(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def cloudsupport_cases_search(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -545,9 +456,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases:search", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/cases:search", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -563,9 +473,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case for which attachments should be listed.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the case for which attachments should be listed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -587,26 +495,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.ListAttachmentsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_attachments_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_attachments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.ListAttachmentsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_attachments_list(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_attachments_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -626,10 +520,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}/attachments", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/attachments", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -647,9 +539,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case to which the comment should be added.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the case to which the comment should be added.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -670,26 +560,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.Comment{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_comments_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_comments_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.Comment.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_comments_create(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_comments_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -708,10 +584,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}/comments", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/comments", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -727,9 +601,7 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudSupport.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the case for which to list comments.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `cases_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the case for which to list comments.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -751,26 +623,12 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
   *   `{:ok, %GoogleApi.CloudSupport.V2.Model.ListCommentsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudsupport_cases_comments_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudsupport_cases_comments_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudSupport.V2.Model.ListCommentsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudsupport_cases_comments_list(
-        connection,
-        v2_id,
-        v2_id1,
-        cases_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudsupport_cases_comments_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -790,10 +648,8 @@ defmodule GoogleApi.CloudSupport.V2.Api.Cases do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cases/{casesId}/comments", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "casesId" => URI.encode(cases_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/comments", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
