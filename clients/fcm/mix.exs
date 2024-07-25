@@ -18,7 +18,7 @@
 defmodule GoogleApi.FCM.Mixfile do
   use Mix.Project
 
-  @version "0.11.1"
+  @version "0.12.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.FCM.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/fcm",
         "Homepage" => "https://firebase.google.com/docs/cloud-messaging"
