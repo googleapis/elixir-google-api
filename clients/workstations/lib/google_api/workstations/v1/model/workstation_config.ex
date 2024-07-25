@@ -21,6 +21,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
 
   ## Attributes
 
+  *   `allowedPorts` (*type:* `list(GoogleApi.Workstations.V1.Model.PortRange.t)`, *default:* `nil`) - Optional. A Single or Range of ports externally accessible in the workstation. If not specified defaults to ports 22, 80 and ports 1024-65535.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client-specified annotations.
   *   `conditions` (*type:* `list(GoogleApi.Workstations.V1.Model.Status.t)`, *default:* `nil`) - Output only. Status conditions describing the current resource state.
   *   `container` (*type:* `GoogleApi.Workstations.V1.Model.Container.t`, *default:* `nil`) - Optional. Container that runs upon startup for each workstation using this workstation configuration.
@@ -29,7 +30,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when this workstation configuration was soft-deleted.
   *   `disableTcpConnections` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables support for plain TCP connections in the workstation. By default the service supports TCP connections through a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain TCP connections, such as SSH. When enabled, all communication must occur over HTTPS or WSS.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Human-readable name for this workstation configuration.
-  *   `enableAuditAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable Linux `auditd` logging on the workstation. When enabled, a service account must also be specified that has `logging.buckets.write` permission on the project. Operating system audit logging is distinct from [Cloud Audit Logs](https://cloud.google.com/workstations/docs/audit-logging).
+  *   `enableAuditAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable Linux `auditd` logging on the workstation. When enabled, a service_account must also be specified that has `roles/logging.logWriter` and `roles/monitoring.metricWriter` on the project. Operating system audit logging is distinct from [Cloud Audit Logs](https://cloud.google.com/workstations/docs/audit-logging) and [Container output logging](http://cloud/workstations/docs/container-output-logging#overview). Operating system audit logs are available in the [Cloud Logging](https://cloud.google.com/logging/docs) console by querying: resource.type="gce_instance" log_name:"/logs/linux-auditd"
   *   `encryptionKey` (*type:* `GoogleApi.Workstations.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Immutable. Encrypts resources of this workstation configuration using a customer-managed encryption key (CMEK). If specified, the boot disk of the Compute Engine instance and the persistent disk are encrypted using this encryption key. If this field is not set, the disks are encrypted using a generated key. Customer-managed encryption keys do not protect disk metadata. If the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key. Be sure to keep older versions of the key until the persistent disk is recreated. Otherwise, data on the persistent disk might be lost. If the encryption key is revoked, the workstation session automatically stops within 7 hours. Immutable after the workstation configuration is created.
   *   `ephemeralDirectories` (*type:* `list(GoogleApi.Workstations.V1.Model.EphemeralDirectory.t)`, *default:* `nil`) - Optional. Ephemeral directories which won't persist across workstation sessions.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Checksum computed by the server. May be sent on update and delete requests to make sure that the client has an up-to-date value before proceeding.
@@ -49,6 +50,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allowedPorts => list(GoogleApi.Workstations.V1.Model.PortRange.t()) | nil,
           :annotations => map() | nil,
           :conditions => list(GoogleApi.Workstations.V1.Model.Status.t()) | nil,
           :container => GoogleApi.Workstations.V1.Model.Container.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:allowedPorts, as: GoogleApi.Workstations.V1.Model.PortRange, type: :list)
   field(:annotations, type: :map)
   field(:conditions, as: GoogleApi.Workstations.V1.Model.Status, type: :list)
   field(:container, as: GoogleApi.Workstations.V1.Model.Container)
