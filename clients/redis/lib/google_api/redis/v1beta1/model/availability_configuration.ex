@@ -22,6 +22,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.AvailabilityConfiguration do
   ## Attributes
 
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available).
+  *   `crossRegionReplicaConfigured` (*type:* `boolean()`, *default:* `nil`) - Checks for resources that are configured to have redundancy, and ongoing replication across regions
   *   `externalReplicaConfigured` (*type:* `boolean()`, *default:* `nil`) - 
   *   `promotableReplicaConfigured` (*type:* `boolean()`, *default:* `nil`) - 
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Redis.V1beta1.Model.AvailabilityConfiguration do
 
   @type t :: %__MODULE__{
           :availabilityType => String.t() | nil,
+          :crossRegionReplicaConfigured => boolean() | nil,
           :externalReplicaConfigured => boolean() | nil,
           :promotableReplicaConfigured => boolean() | nil
         }
 
   field(:availabilityType)
+  field(:crossRegionReplicaConfigured)
   field(:externalReplicaConfigured)
   field(:promotableReplicaConfigured)
 end

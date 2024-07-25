@@ -23,7 +23,8 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceFeed do
 
   *   `feedTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Required. Timestamp when feed is generated.
   *   `feedType` (*type:* `String.t`, *default:* `nil`) - Required. Type feed to be ingested into condor
-  *   `recommendationSignalData` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceRecommendationSignalData.t`, *default:* `nil`) - More feed data would be added in subsequent CLs
+  *   `observabilityMetricData` (*type:* `GoogleApi.Redis.V1.Model.ObservabilityMetricData.t`, *default:* `nil`) - 
+  *   `recommendationSignalData` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceRecommendationSignalData.t`, *default:* `nil`) - 
   *   `resourceHealthSignalData` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceHealthSignalData.t`, *default:* `nil`) - 
   *   `resourceId` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceId.t`, *default:* `nil`) - Primary key associated with the Resource. resource_id is available in individual feed level as well.
   *   `resourceMetadata` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceMetadata.t`, *default:* `nil`) - 
@@ -34,6 +35,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceFeed do
   @type t :: %__MODULE__{
           :feedTimestamp => DateTime.t() | nil,
           :feedType => String.t() | nil,
+          :observabilityMetricData => GoogleApi.Redis.V1.Model.ObservabilityMetricData.t() | nil,
           :recommendationSignalData =>
             GoogleApi.Redis.V1.Model.DatabaseResourceRecommendationSignalData.t() | nil,
           :resourceHealthSignalData =>
@@ -44,6 +46,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceFeed do
 
   field(:feedTimestamp, as: DateTime)
   field(:feedType)
+  field(:observabilityMetricData, as: GoogleApi.Redis.V1.Model.ObservabilityMetricData)
 
   field(:recommendationSignalData,
     as: GoogleApi.Redis.V1.Model.DatabaseResourceRecommendationSignalData
