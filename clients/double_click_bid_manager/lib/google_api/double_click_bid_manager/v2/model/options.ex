@@ -22,18 +22,15 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Model.Options do
   ## Attributes
 
   *   `includeOnlyTargetedUserLists` (*type:* `boolean()`, *default:* `nil`) - Set to true and filter your report by `FILTER_INSERTION_ORDER` or `FILTER_LINE_ITEM` to include data for audience lists specifically targeted by those items.
-  *   `pathQueryOptions` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.PathQueryOptions.t`, *default:* `nil`) - Options that contain Path Filters and Custom Channel Groupings. This field is deprecated and will sunset on **May 1, 2024**. After sunset, requests using this field will return an error.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :includeOnlyTargetedUserLists => boolean() | nil,
-          :pathQueryOptions => GoogleApi.DoubleClickBidManager.V2.Model.PathQueryOptions.t() | nil
+          :includeOnlyTargetedUserLists => boolean() | nil
         }
 
   field(:includeOnlyTargetedUserLists)
-  field(:pathQueryOptions, as: GoogleApi.DoubleClickBidManager.V2.Model.PathQueryOptions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DoubleClickBidManager.V2.Model.Options do
