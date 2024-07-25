@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Assets do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the organization, folder, or project the assets belong to. Format: "organizations/[organization-number]" (such as "organizations/123"), "projects/[project-id]" (such as "projects/my-project-id"), "projects/[project-number]" (such as "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization, folder, or project the assets belong to. Format: "organizations/[organization-number]" (such as "organizations/123"), "projects/[project-id]" (such as "projects/my-project-id"), "projects/[project-number]" (such as "projects/12345"), or "folders/[folder-number]" (such as "folders/12345").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -58,12 +57,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.Assets do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.ListAssetsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_assets_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec cloudasset_assets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.ListAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_assets_list(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_assets_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -87,9 +86,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.Assets do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/assets", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/assets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
