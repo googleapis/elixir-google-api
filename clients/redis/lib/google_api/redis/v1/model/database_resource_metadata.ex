@@ -32,13 +32,13 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   *   `id` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceId.t`, *default:* `nil`) - Required. Unique identifier for a Database resource
   *   `instanceType` (*type:* `String.t`, *default:* `nil`) - The type of the instance. Specified at creation time.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The resource location. REQUIRED
+  *   `machineConfiguration` (*type:* `GoogleApi.Redis.V1.Model.MachineConfiguration.t`, *default:* `nil`) - Machine configuration for this resource.
   *   `primaryResourceId` (*type:* `GoogleApi.Redis.V1.Model.DatabaseResourceId.t`, *default:* `nil`) - Identifier for this resource's immediate parent/primary resource if the current resource is a replica or derived form of another Database resource. Else it would be NULL. REQUIRED if the immediate parent exists when first time resource is getting ingested, otherwise optional.
   *   `product` (*type:* `GoogleApi.Redis.V1.Model.Product.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
   *   `updationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the resource was updated and recorded at partner service.
   *   `userLabelSet` (*type:* `GoogleApi.Redis.V1.Model.UserLabels.t`, *default:* `nil`) - User-provided labels associated with the resource
-  *   `userLabels` (*type:* `map()`, *default:* `nil`) - User-provided labels, represented as a dictionary where each label is a single key value pair.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -56,13 +56,13 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
           :id => GoogleApi.Redis.V1.Model.DatabaseResourceId.t() | nil,
           :instanceType => String.t() | nil,
           :location => String.t() | nil,
+          :machineConfiguration => GoogleApi.Redis.V1.Model.MachineConfiguration.t() | nil,
           :primaryResourceId => GoogleApi.Redis.V1.Model.DatabaseResourceId.t() | nil,
           :product => GoogleApi.Redis.V1.Model.Product.t() | nil,
           :resourceContainer => String.t() | nil,
           :resourceName => String.t() | nil,
           :updationTime => DateTime.t() | nil,
-          :userLabelSet => GoogleApi.Redis.V1.Model.UserLabels.t() | nil,
-          :userLabels => map() | nil
+          :userLabelSet => GoogleApi.Redis.V1.Model.UserLabels.t() | nil
         }
 
   field(:availabilityConfiguration, as: GoogleApi.Redis.V1.Model.AvailabilityConfiguration)
@@ -76,13 +76,13 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do
   field(:id, as: GoogleApi.Redis.V1.Model.DatabaseResourceId)
   field(:instanceType)
   field(:location)
+  field(:machineConfiguration, as: GoogleApi.Redis.V1.Model.MachineConfiguration)
   field(:primaryResourceId, as: GoogleApi.Redis.V1.Model.DatabaseResourceId)
   field(:product, as: GoogleApi.Redis.V1.Model.Product)
   field(:resourceContainer)
   field(:resourceName)
   field(:updationTime, as: DateTime)
   field(:userLabelSet, as: GoogleApi.Redis.V1.Model.UserLabels)
-  field(:userLabels, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1.Model.DatabaseResourceMetadata do

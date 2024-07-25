@@ -23,8 +23,9 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
+  *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
   *   `preciseSizeGb` (*type:* `float()`, *default:* `nil`) - Output only. Precise value of redis memory size in GB for the entire cluster.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `stateInfo` (*type:* `GoogleApi.Redis.V1.Model.StateInfo.t`, *default:* `nil`) - Output only. Additional information about the current state of the cluster.
   *   `transitEncryptionMode` (*type:* `String.t`, *default:* `nil`) - Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System assigned, unique identifier for the cluster.
+  *   `zoneDistributionConfig` (*type:* `GoogleApi.Redis.V1.Model.ZoneDistributionConfig.t`, *default:* `nil`) - Optional. This config will be used to determine how the customer wants us to distribute cluster resources within the region.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,6 +47,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   @type t :: %__MODULE__{
           :authorizationMode => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t()) | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
@@ -59,11 +62,13 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
           :state => String.t() | nil,
           :stateInfo => GoogleApi.Redis.V1.Model.StateInfo.t() | nil,
           :transitEncryptionMode => String.t() | nil,
-          :uid => String.t() | nil
+          :uid => String.t() | nil,
+          :zoneDistributionConfig => GoogleApi.Redis.V1.Model.ZoneDistributionConfig.t() | nil
         }
 
   field(:authorizationMode)
   field(:createTime, as: DateTime)
+  field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1.Model.DiscoveryEndpoint, type: :list)
   field(:name)
   field(:nodeType)
@@ -79,6 +84,7 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   field(:stateInfo, as: GoogleApi.Redis.V1.Model.StateInfo)
   field(:transitEncryptionMode)
   field(:uid)
+  field(:zoneDistributionConfig, as: GoogleApi.Redis.V1.Model.ZoneDistributionConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1.Model.Cluster do
