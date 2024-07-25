@@ -27,10 +27,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `facets` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
   *   `geoSearchDebugInfo` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGeoSearchDebugInfo.t)`, *default:* `nil`) - 
   *   `guidedSearchResult` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResult.t`, *default:* `nil`) - Guided search result.
+  *   `naturalLanguageQueryUnderstandingInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfo.t`, *default:* `nil`) - Natural language query understanding information for the returned results.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
   *   `queryExpansionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched documents. The order represents the ranking.
+  *   `sessionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo.t`, *default:* `nil`) - Session information. Only set if SearchRequest.session is provided. See its description for more details.
   *   `summary` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummary.t`, *default:* `nil`) - A summary as part of the search results. This field is only returned if SearchRequest.ContentSearchSpec.summary_spec is set.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
   """
@@ -54,6 +56,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :guidedSearchResult =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResult.t()
             | nil,
+          :naturalLanguageQueryUnderstandingInfo =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfo.t()
+            | nil,
           :nextPageToken => String.t() | nil,
           :queryExpansionInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseQueryExpansionInfo.t()
@@ -63,6 +68,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             list(
               GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult.t()
             )
+            | nil,
+          :sessionInfo =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo.t()
             | nil,
           :summary =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummary.t()
@@ -91,6 +99,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResult
   )
 
+  field(:naturalLanguageQueryUnderstandingInfo,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfo
+  )
+
   field(:nextPageToken)
 
   field(:queryExpansionInfo,
@@ -104,6 +117,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult,
     type: :list
+  )
+
+  field(:sessionInfo,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSessionInfo
   )
 
   field(:summary,

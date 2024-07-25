@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `dynamicFacet` (*type:* `boolean()`, *default:* `nil`) - Whether the facet is dynamically generated.
-  *   `key` (*type:* `String.t`, *default:* `nil`) - The key for this facet. E.g., "colors" or "price". It matches SearchRequest.FacetSpec.FacetKey.key.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - The key for this facet. For example, `"colors"` or `"price"`. It matches SearchRequest.FacetSpec.FacetKey.key.
   *   `values` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseFacetFacetValue.t)`, *default:* `nil`) - The facet values for this field.
   """
 

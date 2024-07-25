@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   *   `document` (*type:* `String.t`, *default:* `nil`) - Document resource name.
   *   `pageIdentifier` (*type:* `String.t`, *default:* `nil`) - Page identifier.
+  *   `structData` (*type:* `map()`, *default:* `nil`) - The structured JSON metadata for the document. It is populated from the struct data from the Chunk in search result.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the document.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   @type t :: %__MODULE__{
           :document => String.t() | nil,
           :pageIdentifier => String.t() | nil,
+          :structData => map() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
 
   field(:document)
   field(:pageIdentifier)
+  field(:structData, type: :map)
   field(:title)
   field(:uri)
 end

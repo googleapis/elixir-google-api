@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `chunkText` (*type:* `String.t`, *default:* `nil`) - Text content of the fact chunk. Can be at most 10K characters long.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of this chunk. Currently, only used for the streaming mode.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Source from which this fact chunk was retrieved. If it was retrieved from the GroundingFacts provided in the request then this field will contain the index of the specific fact from which this chunk was retrieved.
   *   `sourceMetadata` (*type:* `map()`, *default:* `nil`) - More fine-grained information for the source reference.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   @type t :: %__MODULE__{
           :chunkText => String.t() | nil,
+          :index => integer() | nil,
           :source => String.t() | nil,
           :sourceMetadata => map() | nil
         }
 
   field(:chunkText)
+  field(:index)
   field(:source)
   field(:sourceMetadata, type: :map)
 end

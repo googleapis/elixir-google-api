@@ -26,7 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `citations` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerCitation.t)`, *default:* `nil`) - Citations.
   *   `completeTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer completed timestamp.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Answer creation timestamp.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `project/*/locations/global/collections/{collection}/engines/{engine}/sessions/*/answers/*`
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*/answers/*`
   *   `queryUnderstandingInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerQueryUnderstandingInfo.t`, *default:* `nil`) - Query understanding information.
   *   `references` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerReference.t)`, *default:* `nil`) - References.
   *   `relatedQuestions` (*type:* `list(String.t)`, *default:* `nil`) - Suggested related questions.

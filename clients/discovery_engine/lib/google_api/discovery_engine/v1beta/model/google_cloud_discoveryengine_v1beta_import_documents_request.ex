@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `alloyDbSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAlloyDbSource.t`, *default:* `nil`) - AlloyDB input source.
   *   `autoGenerateIds` (*type:* `boolean()`, *default:* `nil`) - Whether to automatically generate IDs for the documents if absent. If set to `true`, Document.ids are automatically generated based on the hash of the payload, where IDs may not be consistent during multiple imports. In which case ReconciliationMode.FULL is highly recommended to avoid duplicate contents. If unset or set to `false`, Document.ids have to be specified using id_field, otherwise, documents without IDs fail to be imported. Supported data sources: * GcsSource. GcsSource.data_schema must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * BigQuerySource. BigQuerySource.data_schema must be `custom` or `csv`. Otherwise, an INVALID_ARGUMENT error is thrown. * SpannerSource. * CloudSqlSource. * FirestoreSource. * BigtableSource.
   *   `bigquerySource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigQuerySource.t`, *default:* `nil`) - BigQuery input source.
   *   `bigtableSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigtableSource.t`, *default:* `nil`) - Cloud Bigtable input source.
@@ -39,6 +40,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alloyDbSource =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAlloyDbSource.t()
+            | nil,
           :autoGenerateIds => boolean() | nil,
           :bigquerySource =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBigQuerySource.t()
@@ -71,6 +75,10 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             | nil,
           :updateMask => String.t() | nil
         }
+
+  field(:alloyDbSource,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAlloyDbSource
+  )
 
   field(:autoGenerateIds)
 

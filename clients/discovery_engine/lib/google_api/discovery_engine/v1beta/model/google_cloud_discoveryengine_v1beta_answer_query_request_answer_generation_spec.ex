@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `answerLanguageCode` (*type:* `String.t`, *default:* `nil`) - Language code for Answer. Use language tags defined by [BCP47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt). Note: This is an experimental feature.
   *   `ignoreAdversarialQuery` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out adversarial queries. The default value is `false`. Google employs search-query classification to detect adversarial queries. No answer is returned if the search query is classified as an adversarial query. For example, a user might ask a question regarding negative comments about the company or submit a query designed to generate unsafe, policy-violating output. If this field is set to `true`, we skip generating answers for adversarial queries and return fallback messages instead.
+  *   `ignoreLowRelevantContent` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out queries that have low relevance. If this field is set to `false`, all search results are used regardless of relevance to generate answers. If set to `true` or unset, the behavior will be determined automatically by the service.
   *   `ignoreNonAnswerSeekingQuery` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out queries that are not answer-seeking. The default value is `false`. Google employs search-query classification to detect answer-seeking queries. No answer is returned if the search query is classified as a non-answer seeking query. If this field is set to `true`, we skip generating answers for non-answer seeking queries and return fallback messages instead.
   *   `includeCitations` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to include citation metadata in the answer. The default value is `false`.
   *   `modelSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerQueryRequestAnswerGenerationSpecModelSpec.t`, *default:* `nil`) - Answer generation model specification.
@@ -34,6 +35,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   @type t :: %__MODULE__{
           :answerLanguageCode => String.t() | nil,
           :ignoreAdversarialQuery => boolean() | nil,
+          :ignoreLowRelevantContent => boolean() | nil,
           :ignoreNonAnswerSeekingQuery => boolean() | nil,
           :includeCitations => boolean() | nil,
           :modelSpec =>
@@ -46,6 +48,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   field(:answerLanguageCode)
   field(:ignoreAdversarialQuery)
+  field(:ignoreLowRelevantContent)
   field(:ignoreNonAnswerSeekingQuery)
   field(:includeCitations)
 

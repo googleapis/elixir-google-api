@@ -21,8 +21,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `attributeKey` (*type:* `String.t`, *default:* `nil`) - Attribute key used to refine the results e.g. 'movie_type'.
-  *   `attributeValue` (*type:* `String.t`, *default:* `nil`) - Attribute value used to refine the results e.g. 'drama'.
+  *   `attributeKey` (*type:* `String.t`, *default:* `nil`) - Attribute key used to refine the results. For example, `"movie_type"`.
+  *   `attributeValue` (*type:* `String.t`, *default:* `nil`) - Attribute value used to refine the results. For example, `"drama"`.
   """
 
   use GoogleApi.Gax.ModelBase

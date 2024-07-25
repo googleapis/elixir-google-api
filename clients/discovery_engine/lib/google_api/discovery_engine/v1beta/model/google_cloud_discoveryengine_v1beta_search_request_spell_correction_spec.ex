@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode under which spell correction should take effect to replace the original search query. Default to Mode.AUTO.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - The mode under which spell correction replaces the original search query. Defaults to Mode.AUTO.
   """
 
   use GoogleApi.Gax.ModelBase

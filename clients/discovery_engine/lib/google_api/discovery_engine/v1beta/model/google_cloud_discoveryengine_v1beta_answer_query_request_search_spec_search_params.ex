@@ -22,9 +22,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `boostSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpec.t`, *default:* `nil`) - Boost specification to boost certain documents in search results which may affect the answer query response. For more information on boosting, see [Boosting](https://cloud.google.com/retail/docs/boosting#boost)
+  *   `dataStoreSpecs` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestDataStoreSpec.t)`, *default:* `nil`) - Specs defining dataStores to filter on in a search call and configurations for those dataStores. This is only considered for engines with multiple dataStores use case. For single dataStore within an engine, they should use the specs at the top level.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - The filter syntax consists of an expression language for constructing a predicate from one or more fields of the documents being filtered. Filter expression is case-sensitive. This will be used to filter search results which may affect the Answer response. If this field is unrecognizable, an `INVALID_ARGUMENT` is returned. Filtering in Vertex AI Search is done by mapping the LHS filter key to a key property defined in the Vertex AI Search backend -- this mapping is defined by the customer in their schema. For example a media customers might have a field 'name' in their schema. In this case the filter would look like this: filter --> name:'ANY("king kong")' For more information about filtering including syntax and filter operators, see [Filter](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
   *   `maxReturnResults` (*type:* `integer()`, *default:* `nil`) - Number of search results to return. The default value is 10.
   *   `orderBy` (*type:* `String.t`, *default:* `nil`) - The order in which documents are returned. Documents can be ordered by a field in an Document object. Leave it unset if ordered by relevance. `order_by` expression is case-sensitive. For more information on ordering, see [Ordering](https://cloud.google.com/retail/docs/filter-and-order#order) If this field is unrecognizable, an `INVALID_ARGUMENT` is returned.
+  *   `searchResultMode` (*type:* `String.t`, *default:* `nil`) - Specifies the search result mode. If unspecified, the search result mode defaults to `DOCUMENTS`. See [parse and chunk documents](https://cloud.google.com/generative-ai-app-builder/docs/parse-chunk-documents)
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,9 +35,15 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :boostSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpec.t()
             | nil,
+          :dataStoreSpecs =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestDataStoreSpec.t()
+            )
+            | nil,
           :filter => String.t() | nil,
           :maxReturnResults => integer() | nil,
-          :orderBy => String.t() | nil
+          :orderBy => String.t() | nil,
+          :searchResultMode => String.t() | nil
         }
 
   field(:boostSpec,
@@ -43,9 +51,16 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestBoostSpec
   )
 
+  field(:dataStoreSpecs,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestDataStoreSpec,
+    type: :list
+  )
+
   field(:filter)
   field(:maxReturnResults)
   field(:orderBy)
+  field(:searchResultMode)
 end
 
 defimpl Poison.Decoder,

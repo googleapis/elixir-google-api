@@ -24,6 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `chunkInfo` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerStepActionObservationSearchResultChunkInfo.t)`, *default:* `nil`) - If citation_type is CHUNK_LEVEL_CITATION and chunk mode is on, populate chunk info.
   *   `document` (*type:* `String.t`, *default:* `nil`) - Document resource name.
   *   `snippetInfo` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerStepActionObservationSearchResultSnippetInfo.t)`, *default:* `nil`) - If citation_type is DOCUMENT_LEVEL_CITATION, populate document level snippets.
+  *   `structData` (*type:* `map()`, *default:* `nil`) - Data representation. The structured JSON data for the document. It's populated from the struct data from the Document , or the Chunk in search result .
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the document.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
               GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerStepActionObservationSearchResultSnippetInfo.t()
             )
             | nil,
+          :structData => map() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
@@ -60,6 +62,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
     type: :list
   )
 
+  field(:structData, type: :map)
   field(:title)
   field(:uri)
 end

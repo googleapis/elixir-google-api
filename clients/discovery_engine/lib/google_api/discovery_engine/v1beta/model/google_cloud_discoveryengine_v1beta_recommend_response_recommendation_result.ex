@@ -23,7 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `document` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument.t`, *default:* `nil`) - Set if `returnDocument` is set to true in RecommendRequest.params.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Resource ID of the recommended Document.
-  *   `metadata` (*type:* `map()`, *default:* `nil`) - Additional Document metadata / annotations. Possible values: * `score`: Recommendation score in double value. Is set if `returnScore` is set to true in RecommendRequest.params.
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Additional Document metadata or annotations. Possible values: * `score`: Recommendation score in double value. Is set if `returnScore` is set to true in RecommendRequest.params.
   """
 
   use GoogleApi.Gax.ModelBase

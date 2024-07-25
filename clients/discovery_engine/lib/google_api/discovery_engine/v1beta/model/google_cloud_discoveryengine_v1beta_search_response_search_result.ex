@@ -21,7 +21,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `document` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument.t`, *default:* `nil`) - The document data snippet in the search response. Only fields that are marked as retrievable are populated.
+  *   `chunk` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaChunk.t`, *default:* `nil`) - The chunk data in the search response if the SearchRequest.ContentSearchSpec.search_result_mode is set to CHUNKS.
+  *   `document` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument.t`, *default:* `nil`) - The document data snippet in the search response. Only fields that are marked as `retrievable` are populated.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Document.id of the searched Document.
   *   `modelScores` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDoubleList.t}`, *default:* `nil`) - Google provided available scores.
   """
@@ -29,6 +30,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chunk =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaChunk.t() | nil,
           :document =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument.t()
             | nil,
@@ -40,6 +43,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             }
             | nil
         }
+
+  field(:chunk, as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaChunk)
 
   field(:document,
     as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaDocument

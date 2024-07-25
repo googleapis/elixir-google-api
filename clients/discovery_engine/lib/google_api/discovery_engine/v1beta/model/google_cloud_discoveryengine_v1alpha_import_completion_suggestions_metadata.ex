@@ -22,6 +22,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation create time.
+  *   `failureCount` (*type:* `String.t`, *default:* `nil`) - Count of CompletionSuggestions that failed to be imported.
+  *   `successCount` (*type:* `String.t`, *default:* `nil`) - Count of CompletionSuggestions successfully imported.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Operation last update time. If the operation is done, this is also the finish time.
   """
 
@@ -29,10 +31,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :failureCount => String.t() | nil,
+          :successCount => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:createTime, as: DateTime)
+  field(:failureCount)
+  field(:successCount)
   field(:updateTime, as: DateTime)
 end
 

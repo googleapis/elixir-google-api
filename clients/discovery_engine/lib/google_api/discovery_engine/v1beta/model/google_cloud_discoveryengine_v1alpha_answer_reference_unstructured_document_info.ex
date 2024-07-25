@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   *   `chunkContents` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerReferenceUnstructuredDocumentInfoChunkContent.t)`, *default:* `nil`) - List of cited chunk contents derived from document content.
   *   `document` (*type:* `String.t`, *default:* `nil`) - Document resource name.
+  *   `structData` (*type:* `map()`, *default:* `nil`) - The structured JSON metadata for the document. It is populated from the struct data from the Chunk in search result.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI for the document.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
             )
             | nil,
           :document => String.t() | nil,
+          :structData => map() | nil,
           :title => String.t() | nil,
           :uri => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   )
 
   field(:document)
+  field(:structData, type: :map)
   field(:title)
   field(:uri)
 end

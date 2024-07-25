@@ -27,6 +27,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `indexingStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Indexing status.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The fully qualified resource name of the target site. `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/targetSites/{target_site}` The `target_site_id` is system-generated.
   *   `providedUriPattern` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The user provided URI pattern from which the `generated_uri_pattern` is generated.
+  *   `rootDomainUri` (*type:* `String.t`, *default:* `nil`) - Output only. Root domain of the provided_uri_pattern.
   *   `siteVerificationInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSiteVerificationInfo.t`, *default:* `nil`) - Output only. Site ownership and validity verification status.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the target site, e.g., whether the site is to be included or excluded.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The target site's last updated time.
@@ -43,6 +44,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :indexingStatus => String.t() | nil,
           :name => String.t() | nil,
           :providedUriPattern => String.t() | nil,
+          :rootDomainUri => String.t() | nil,
           :siteVerificationInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSiteVerificationInfo.t()
             | nil,
@@ -61,6 +63,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   field(:indexingStatus)
   field(:name)
   field(:providedUriPattern)
+  field(:rootDomainUri)
 
   field(:siteVerificationInfo,
     as:
