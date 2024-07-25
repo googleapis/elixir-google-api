@@ -21,7 +21,7 @@ defmodule GoogleApi.Content.V21.Model.LiaAboutPageSettings do
 
   ## Attributes
 
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the verification process for the About page. Acceptable values are: - "`active`" - "`inactive`" - "`pending`" 
+  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the verification process for the About page. Supported values are: - "`active`" - "`inactive`" - "`pending`" 
   *   `url` (*type:* `String.t`, *default:* `nil`) - The URL for the About page.
   """
 

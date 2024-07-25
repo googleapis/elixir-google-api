@@ -24,6 +24,7 @@ defmodule GoogleApi.Content.V21.Model.ProductCertification do
   *   `certificationAuthority` (*type:* `String.t`, *default:* `nil`) - The certification authority, for example "European_Commission". Maximum length is 2000 characters.
   *   `certificationCode` (*type:* `String.t`, *default:* `nil`) - The certification code, for eaxample "123456". Maximum length is 2000 characters.
   *   `certificationName` (*type:* `String.t`, *default:* `nil`) - The name of the certification, for example "EPREL". Maximum length is 2000 characters.
+  *   `certificationValue` (*type:* `String.t`, *default:* `nil`) - The certification value (also known as class, level or grade), for example "A+", "C", "gold". Maximum length is 2000 characters.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Content.V21.Model.ProductCertification do
   @type t :: %__MODULE__{
           :certificationAuthority => String.t() | nil,
           :certificationCode => String.t() | nil,
-          :certificationName => String.t() | nil
+          :certificationName => String.t() | nil,
+          :certificationValue => String.t() | nil
         }
 
   field(:certificationAuthority)
   field(:certificationCode)
   field(:certificationName)
+  field(:certificationValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Content.V21.Model.ProductCertification do

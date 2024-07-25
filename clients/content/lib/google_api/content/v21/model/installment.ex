@@ -17,11 +17,13 @@
 
 defmodule GoogleApi.Content.V21.Model.Installment do
   @moduledoc """
-
+  Details of a monthly installment payment offering. [Learn more](https://support.google.com/merchants/answer/6324474) about installments.
 
   ## Attributes
 
   *   `amount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The amount the buyer has to pay per month.
+  *   `creditType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of installment payments. Supported values are: - "`finance`" - "`lease`" 
+  *   `downpayment` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - Optional. The initial down payment amount the buyer has to pay.
   *   `months` (*type:* `String.t`, *default:* `nil`) - The number of installments the buyer has to pay.
   """
 
@@ -29,10 +31,14 @@ defmodule GoogleApi.Content.V21.Model.Installment do
 
   @type t :: %__MODULE__{
           :amount => GoogleApi.Content.V21.Model.Price.t() | nil,
+          :creditType => String.t() | nil,
+          :downpayment => GoogleApi.Content.V21.Model.Price.t() | nil,
           :months => String.t() | nil
         }
 
   field(:amount, as: GoogleApi.Content.V21.Model.Price)
+  field(:creditType)
+  field(:downpayment, as: GoogleApi.Content.V21.Model.Price)
   field(:months)
 end
 
