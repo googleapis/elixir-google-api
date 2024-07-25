@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.ProductSubscriptionCost do
   ## Attributes
 
   *   `amount` (*type:* `GoogleApi.Content.V21.Model.Price.t`, *default:* `nil`) - The amount the buyer has to pay per subscription period.
-  *   `period` (*type:* `String.t`, *default:* `nil`) - The type of subscription period.
+  *   `period` (*type:* `String.t`, *default:* `nil`) - The type of subscription period. - "`month`" - "`year`" 
   *   `periodLength` (*type:* `String.t`, *default:* `nil`) - The number of subscription periods the buyer has to pay.
   """
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.Content.V21.Model.InputFieldTextInput do
   ## Attributes
 
   *   `additionalInfo` (*type:* `GoogleApi.Content.V21.Model.TextWithTooltip.t`, *default:* `nil`) - Additional info regarding the field to be displayed to merchant. For example, warning to not include personal identifiable information. There may be more information to be shown in a tooltip.
-  *   `ariaLabel` (*type:* `String.t`, *default:* `nil`) - Text to be used as the [aria label](https://www.w3.org/TR/WCAG20-TECHS/ARIA14.html) for the input.
+  *   `ariaLabel` (*type:* `String.t`, *default:* `nil`) - Text to be used as the [aria-label](https://www.w3.org/TR/WCAG20-TECHS/ARIA14.html) for the input.
   *   `formatInfo` (*type:* `String.t`, *default:* `nil`) - Information about the required format. If present, it should be shown close to the input field to help merchants to provide a correct value. For example: "VAT numbers should be in a format similar to SK9999999999"
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the text input
   """

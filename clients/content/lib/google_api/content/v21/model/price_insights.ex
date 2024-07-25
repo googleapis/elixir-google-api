@@ -21,6 +21,7 @@ defmodule GoogleApi.Content.V21.Model.PriceInsights do
 
   ## Attributes
 
+  *   `effectiveness` (*type:* `String.t`, *default:* `nil`) - The predicted effectiveness of applying the price suggestion, bucketed.
   *   `predictedClicksChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in clicks as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in clicks.
   *   `predictedConversionsChangeFraction` (*type:* `float()`, *default:* `nil`) - The predicted change in conversions as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in conversions).
   *   `predictedGrossProfitChangeFraction` (*type:* `float()`, *default:* `nil`) - *Deprecated*: This field is no longer supported and will start returning 0. The predicted change in gross profit as a fraction after introducing the suggested price compared to current active price. For example, 0.05 is a 5% predicted increase in gross profit.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Content.V21.Model.PriceInsights do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :effectiveness => String.t() | nil,
           :predictedClicksChangeFraction => float() | nil,
           :predictedConversionsChangeFraction => float() | nil,
           :predictedGrossProfitChangeFraction => float() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Content.V21.Model.PriceInsights do
           :suggestedPriceMicros => String.t() | nil
         }
 
+  field(:effectiveness)
   field(:predictedClicksChangeFraction)
   field(:predictedConversionsChangeFraction)
   field(:predictedGrossProfitChangeFraction)
