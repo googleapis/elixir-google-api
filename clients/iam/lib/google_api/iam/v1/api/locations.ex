@@ -31,7 +31,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `location`. The location of the pool to create. Format: `locations/{location}`.
+  *   `location` (*type:* `String.t`) - The location of the pool to create. Format: `locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -60,7 +60,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_create(
         connection,
-        locations_id,
+        location,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -83,8 +83,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+location}/workforcePools", %{
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -100,8 +100,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the pool to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -121,24 +120,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_locations_workforce_pools_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_locations_workforce_pools_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_locations_workforce_pools_delete(
-        connection,
-        locations_id,
-        workforce_pools_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_locations_workforce_pools_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -156,10 +143,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" =>
-          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -175,8 +160,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the pool to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -196,24 +180,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   *   `{:ok, %GoogleApi.IAM.V1.Model.WorkforcePool{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_locations_workforce_pools_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_locations_workforce_pools_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.WorkforcePool.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_locations_workforce_pools_get(
-        connection,
-        locations_id,
-        workforce_pools_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_locations_workforce_pools_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -231,10 +203,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" =>
-          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -250,8 +220,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -275,7 +244,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -285,8 +253,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_get_iam_policy(
         connection,
-        locations_id,
-        workforce_pools_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -308,13 +275,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:getIamPolicy",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -329,7 +292,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `location`. The location of the pool. Format: `locations/{location}`.
+  *   `location` (*type:* `String.t`) - The location of the pool. Format: `locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -358,12 +321,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_locations_workforce_pools_list(
-        connection,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_locations_workforce_pools_list(connection, location, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -385,8 +343,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+location}/workforcePools", %{
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -402,8 +360,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `workforcePool.name`. Output only. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `workforcePool.name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -425,24 +382,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   *   `{:ok, %GoogleApi.IAM.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_locations_workforce_pools_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_locations_workforce_pools_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_locations_workforce_pools_patch(
-        connection,
-        locations_id,
-        workforce_pools_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_locations_workforce_pools_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -462,10 +407,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" =>
-          URI.encode(workforce_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -481,8 +424,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -506,7 +448,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -516,8 +457,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_set_iam_policy(
         connection,
-        locations_id,
-        workforce_pools_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -539,13 +479,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:setIamPolicy",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -555,13 +491,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Returns the caller's permissions on the WorkforcePool. If the pool does not exist, this will return an empty set of permissions, not a `NOT_FOUND` error.
+  Returns the caller's permissions on the WorkforcePool. If the pool doesn't exist, this call returns an empty set of permissions. It doesn't return a `NOT_FOUND` error.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `resource`. See documentation of `locationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -585,7 +520,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -595,8 +529,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_test_iam_permissions(
         connection,
-        locations_id,
-        workforce_pools_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -618,13 +551,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:testIamPermissions",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -639,8 +568,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the pool to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the pool to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -664,7 +592,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_undelete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -672,13 +599,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_locations_workforce_pools_undelete(
-        connection,
-        locations_id,
-        workforce_pools_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_locations_workforce_pools_undelete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -697,9 +618,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}:undelete", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -715,9 +635,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -740,8 +658,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -751,9 +667,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_operations_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -774,14 +688,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/operations/{operationsId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -796,8 +705,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The pool to create this provider in. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `parent` (*type:* `String.t`) - Required. The pool to create this provider in. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -822,7 +730,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -832,8 +739,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_create(
         connection,
-        locations_id,
-        workforce_pools_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -856,9 +762,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/providers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -869,14 +774,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Deletes a WorkforcePoolProvider. Deleting a provider does not revoke credentials that have already been\\ issued; they continue to grant access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You cannot update deleted providers. However, you can view and list them.
+  Deletes a WorkforcePoolProvider. Deleting a provider does not revoke credentials that have already been issued; they continue to grant access. You can undelete a provider for 30 days. After 30 days, deletion is permanent. You cannot update deleted providers. However, you can view and list them.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the provider to delete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -899,8 +802,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -910,9 +811,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_delete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -933,14 +832,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -955,9 +849,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the provider to retrieve. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -980,8 +872,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -991,9 +881,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1014,14 +902,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1036,8 +919,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The pool to list providers for. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `parent` (*type:* `String.t`) - Required. The pool to list providers for. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1063,7 +945,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1073,8 +954,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_list(
         connection,
-        locations_id,
-        workforce_pools_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1098,9 +978,8 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers", %{
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/providers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1118,9 +997,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `workforcePoolProvider.name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1145,8 +1022,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1156,9 +1031,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_patch(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1181,14 +1054,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1203,9 +1071,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the provider to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the provider to undelete. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1229,8 +1095,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_undelete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1240,9 +1104,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_undelete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1264,14 +1126,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}:undelete",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1286,9 +1143,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The provider to create this key in.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `parent` (*type:* `String.t`) - Required. The provider to create this key in.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1313,8 +1168,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1324,9 +1177,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_create(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1349,14 +1200,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/keys", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1371,10 +1217,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to delete.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1397,9 +1240,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1409,10 +1249,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_delete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
-        keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1433,15 +1270,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1456,10 +1287,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to retrieve.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1482,9 +1310,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1494,10 +1319,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
-        keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1518,15 +1340,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1541,9 +1357,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. Required. The provider resource to list encryption keys for. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `parent`. See documentation of `locationsId`.
+  *   `parent` (*type:* `String.t`) - Required. The provider resource to list encryption keys for. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1569,8 +1383,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1580,9 +1392,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_list(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1606,14 +1416,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/keys", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1630,10 +1435,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the key to undelete.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the key to undelete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1657,9 +1459,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_undelete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1669,10 +1468,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_undelete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
-        keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1694,15 +1490,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}:undelete",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1717,11 +1507,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1744,10 +1530,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_keys_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1757,11 +1539,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_keys_operations_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
-        keys_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1782,16 +1560,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/keys/{keysId}/operations/{operationsId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-          "keysId" => URI.encode(keys_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1806,10 +1577,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1832,9 +1600,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_providers_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1844,10 +1609,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_providers_operations_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        providers_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1868,15 +1630,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/providers/{providersId}/operations/{operationsId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1886,14 +1642,12 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   end
 
   @doc """
-  Deletes a WorkforcePoolSubject. Subject must not already be in a deleted state. A WorkforcePoolSubject is automatically created the first time an external credential is exchanged for a Google Cloud credential with a mapped `google.subject` attribute. There is no path to manually create WorkforcePoolSubjects. Once deleted, the WorkforcePoolSubject may not be used for 30 days. After 30 days, the WorkforcePoolSubject will be deleted forever and can be reused in token exchanges with Google Cloud STS. This will automatically create a new WorkforcePoolSubject that is independent of the previously deleted WorkforcePoolSubject with the same google.subject value.
+  Deletes a WorkforcePoolSubject. Subject must not already be in a deleted state. A WorkforcePoolSubject is automatically created the first time an external credential is exchanged for a Google Cloud credential using a mapped `google.subject` attribute. There is no endpoint to manually create a WorkforcePoolSubject. For 30 days after a WorkforcePoolSubject is deleted, using the same `google.subject` attribute in token exchanges with Google Cloud STS fails. Call UndeleteWorkforcePoolSubject to undelete a WorkforcePoolSubject that has been deleted, within within 30 days of deleting it. After 30 days, the WorkforcePoolSubject is permanently deleted. At this point, a token exchange with Google Cloud STS that uses the same mapped `google.subject` attribute automatically creates a new WorkforcePoolSubject that is unrelated to the previously deleted WorkforcePoolSubject but has the same `google.subject` value.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the WorkforcePoolSubject. Special characters, like `/` and `:`, must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1916,8 +1670,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_subjects_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1927,9 +1679,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_subjects_delete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        subjects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1950,14 +1700,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/subjects/{subjectsId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "subjectsId" => URI.encode(subjects_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1972,9 +1717,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the WorkforcePoolSubject. Special characters, like '/' and ':', must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the WorkforcePoolSubject. Special characters, like `/` and `:`, must be escaped, because all URLs need to conform to the "When to Escape and Unescape" section of [RFC3986](https://www.ietf.org/rfc/rfc2396.txt). Format: `locations/{location}/workforcePools/{workforce_pool_id}/subjects/{subject_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1998,8 +1741,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_subjects_undelete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2009,9 +1750,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_subjects_undelete(
         connection,
-        locations_id,
-        workforce_pools_id,
-        subjects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2033,14 +1772,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/subjects/{subjectsId}:undelete",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "subjectsId" => URI.encode(subjects_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2055,10 +1789,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V1.Connection.t`) - Connection to server
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `workforce_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `subjects_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `locationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2081,9 +1812,6 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
   @spec iam_locations_workforce_pools_subjects_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2093,10 +1821,7 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
           | {:error, any()}
   def iam_locations_workforce_pools_subjects_operations_get(
         connection,
-        locations_id,
-        workforce_pools_id,
-        subjects_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2117,15 +1842,9 @@ defmodule GoogleApi.IAM.V1.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/locations/{locationsId}/workforcePools/{workforcePoolsId}/subjects/{subjectsId}/operations/{operationsId}",
-        %{
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workforcePoolsId" => URI.encode(workforce_pools_id, &URI.char_unreserved?/1),
-          "subjectsId" => URI.encode(subjects_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

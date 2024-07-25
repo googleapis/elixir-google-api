@@ -27,6 +27,7 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePoolProvider do
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Disables the workforce pool provider. You cannot use a disabled provider to exchange tokens. However, existing tokens still grant access.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A user-specified display name for the provider. Cannot exceed 32 characters.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time after which the workload pool provider will be permanently purged and cannot be recovered.
+  *   `extraAttributesOauth2Client` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderExtraAttributesOAuth2Client.t`, *default:* `nil`) - Optional. The configuration for OAuth 2.0 client used to get the additional user attributes. This should be used when users can't get the desired claims in authentication credentials. Currently this configuration is only supported with OIDC protocol.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the provider. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}`
   *   `oidc` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidc.t`, *default:* `nil`) - An OpenId Connect 1.0 identity provider configuration.
   *   `saml` (*type:* `GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderSaml.t`, *default:* `nil`) - A SAML identity provider configuration.
@@ -42,6 +43,9 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePoolProvider do
           :disabled => boolean() | nil,
           :displayName => String.t() | nil,
           :expireTime => DateTime.t() | nil,
+          :extraAttributesOauth2Client =>
+            GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderExtraAttributesOAuth2Client.t()
+            | nil,
           :name => String.t() | nil,
           :oidc => GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidc.t() | nil,
           :saml => GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderSaml.t() | nil,
@@ -54,6 +58,11 @@ defmodule GoogleApi.IAM.V1.Model.WorkforcePoolProvider do
   field(:disabled)
   field(:displayName)
   field(:expireTime, as: DateTime)
+
+  field(:extraAttributesOauth2Client,
+    as: GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderExtraAttributesOAuth2Client
+  )
+
   field(:name)
   field(:oidc, as: GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderOidc)
   field(:saml, as: GoogleApi.IAM.V1.Model.GoogleIamAdminV1WorkforcePoolProviderSaml)

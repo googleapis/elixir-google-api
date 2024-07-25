@@ -21,7 +21,9 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
 
   ## Attributes
 
+  *   `disableReason` (*type:* `String.t`, *default:* `nil`) - Output only. optional. If the key is disabled, it may have a DisableReason describing why it was disabled.
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - The key status.
+  *   `extendedStatus` (*type:* `list(GoogleApi.IAM.V1.Model.ExtendedStatus.t)`, *default:* `nil`) - Output only. Extended Status provides permanent information about a service account key. For example, if this key was detected as exposed or compromised, that information will remain for the lifetime of the key in the extended_status.
   *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Specifies the algorithm (and possibly key size) for the key.
   *   `keyOrigin` (*type:* `String.t`, *default:* `nil`) - The key origin.
   *   `keyType` (*type:* `String.t`, *default:* `nil`) - The key type.
@@ -36,7 +38,9 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disableReason => String.t() | nil,
           :disabled => boolean() | nil,
+          :extendedStatus => list(GoogleApi.IAM.V1.Model.ExtendedStatus.t()) | nil,
           :keyAlgorithm => String.t() | nil,
           :keyOrigin => String.t() | nil,
           :keyType => String.t() | nil,
@@ -48,7 +52,9 @@ defmodule GoogleApi.IAM.V1.Model.ServiceAccountKey do
           :validBeforeTime => DateTime.t() | nil
         }
 
+  field(:disableReason)
   field(:disabled)
+  field(:extendedStatus, as: GoogleApi.IAM.V1.Model.ExtendedStatus, type: :list)
   field(:keyAlgorithm)
   field(:keyOrigin)
   field(:keyType)

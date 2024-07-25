@@ -31,8 +31,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `parent`. Required. The resource that the policy is attached to, along with the kind of policy to create. Format: `policies/{attachment_point}/denypolicies` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
-  *   `policies_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `policiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource that the policy is attached to, along with the kind of policy to create. Format: `policies/{attachment_point}/denypolicies` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,24 +53,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleLongrunningOperation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_create_policy(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_create_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_create_policy(
-        connection,
-        policies_id,
-        policies_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_create_policy(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -91,9 +78,8 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/policies/{policiesId}/{policiesId1}", %{
-        "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-        "policiesId1" => URI.encode(policies_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+parent}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,9 +95,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy to delete. Format: `policies/{attachment_point}/denypolicies/{policy_id}` Use the URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
-  *   `policies_id1` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
-  *   `policies_id2` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the policy to delete. Format: `policies/{attachment_point}/denypolicies/{policy_id}` Use the URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -132,26 +116,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleLongrunningOperation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_delete(
-        connection,
-        policies_id,
-        policies_id1,
-        policies_id2,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -170,10 +140,8 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/policies/{policiesId}/{policiesId1}/{policiesId2}", %{
-        "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-        "policiesId1" => URI.encode(policies_id1, &URI.char_unreserved?/1),
-        "policiesId2" => URI.encode(policies_id2, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -189,9 +157,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy to retrieve. Format: `policies/{attachment_point}/denypolicies/{policy_id}` Use the URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
-  *   `policies_id1` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
-  *   `policies_id2` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the policy to retrieve. Format: `policies/{attachment_point}/denypolicies/{policy_id}` Use the URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -211,26 +177,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleIamV2Policy{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleIamV2Policy.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_get(
-        connection,
-        policies_id,
-        policies_id1,
-        policies_id2,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -248,10 +200,8 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/policies/{policiesId}/{policiesId1}/{policiesId2}", %{
-        "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-        "policiesId1" => URI.encode(policies_id1, &URI.char_unreserved?/1),
-        "policiesId2" => URI.encode(policies_id2, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -267,8 +217,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `parent`. Required. The resource that the policy is attached to, along with the kind of policy to list. Format: `policies/{attachment_point}/denypolicies` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
-  *   `policies_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `policiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource that the policy is attached to, along with the kind of policy to list. Format: `policies/{attachment_point}/denypolicies` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies`. For organizations and folders, use the numeric ID in the full resource name. For projects, you can use the alphanumeric or the numeric ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -290,24 +239,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleIamV2ListPoliciesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_list_policies(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_list_policies(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleIamV2ListPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_list_policies(
-        connection,
-        policies_id,
-        policies_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_list_policies(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -327,9 +264,8 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/policies/{policiesId}/{policiesId1}", %{
-        "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-        "policiesId1" => URI.encode(policies_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+parent}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -347,9 +283,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `policy.name`. Immutable. The resource name of the `Policy`, which must be unique. Format: `policies/{attachment_point}/denypolicies/{policy_id}` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-deny-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, requests can use the alphanumeric or the numeric ID. Responses always contain the numeric ID.
-  *   `policies_id1` (*type:* `String.t`) - Part of `policy.name`. See documentation of `policiesId`.
-  *   `policies_id2` (*type:* `String.t`) - Part of `policy.name`. See documentation of `policiesId`.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name of the `Policy`, which must be unique. Format: `policies/{attachment_point}/denypolicies/{policy_id}` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-deny-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, requests can use the alphanumeric or the numeric ID. Responses always contain the numeric ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -370,26 +304,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleLongrunningOperation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_update(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_update(
-        connection,
-        policies_id,
-        policies_id1,
-        policies_id2,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -408,10 +328,8 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v2/policies/{policiesId}/{policiesId1}/{policiesId2}", %{
-        "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-        "policiesId1" => URI.encode(policies_id1, &URI.char_unreserved?/1),
-        "policiesId2" => URI.encode(policies_id2, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -427,10 +345,7 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAM.V2.Connection.t`) - Connection to server
-  *   `policies_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `policies_id1` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
-  *   `policies_id2` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `policiesId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -450,28 +365,12 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
   *   `{:ok, %GoogleApi.IAM.V2.Model.GoogleLongrunningOperation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iam_policies_operations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec iam_policies_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAM.V2.Model.GoogleLongrunningOperation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iam_policies_operations_get(
-        connection,
-        policies_id,
-        policies_id1,
-        policies_id2,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iam_policies_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -489,15 +388,9 @@ defmodule GoogleApi.IAM.V2.Api.Policies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/policies/{policiesId}/{policiesId1}/{policiesId2}/operations/{operationsId}",
-        %{
-          "policiesId" => URI.encode(policies_id, &URI.char_unreserved?/1),
-          "policiesId1" => URI.encode(policies_id1, &URI.char_unreserved?/1),
-          "policiesId2" => URI.encode(policies_id2, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
