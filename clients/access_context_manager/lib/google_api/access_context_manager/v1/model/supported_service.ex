@@ -24,6 +24,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.SupportedService do
   *   `availableOnRestrictedVip` (*type:* `boolean()`, *default:* `nil`) - True if the service is available on the restricted VIP. Services on the restricted VIP typically either support VPC Service Controls or are core infrastructure services required for the functioning of Google Cloud.
   *   `knownLimitations` (*type:* `boolean()`, *default:* `nil`) - True if the service is supported with some limitations. Check [documentation](https://cloud.google.com/vpc-service-controls/docs/supported-products) for details.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The service name or address of the supported service, such as `service.googleapis.com`.
+  *   `serviceSupportStage` (*type:* `String.t`, *default:* `nil`) - The support stage of the service.
   *   `supportStage` (*type:* `String.t`, *default:* `nil`) - The support stage of the service.
   *   `supportedMethods` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.MethodSelector.t)`, *default:* `nil`) - The list of the supported methods. This field exists only in response to GetSupportedService
   *   `title` (*type:* `String.t`, *default:* `nil`) - The name of the supported product, such as 'Cloud Product API'.
@@ -35,6 +36,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.SupportedService do
           :availableOnRestrictedVip => boolean() | nil,
           :knownLimitations => boolean() | nil,
           :name => String.t() | nil,
+          :serviceSupportStage => String.t() | nil,
           :supportStage => String.t() | nil,
           :supportedMethods =>
             list(GoogleApi.AccessContextManager.V1.Model.MethodSelector.t()) | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.SupportedService do
   field(:availableOnRestrictedVip)
   field(:knownLimitations)
   field(:name)
+  field(:serviceSupportStage)
   field(:supportStage)
 
   field(:supportedMethods, as: GoogleApi.AccessContextManager.V1.Model.MethodSelector, type: :list)
