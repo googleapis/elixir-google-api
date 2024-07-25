@@ -31,8 +31,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project this entry group is in. Example: * projects/{project_id}/locations/{location} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project this entry group is in. Example: * projects/{project_id}/locations/{location} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -57,7 +56,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -67,8 +65,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -91,9 +88,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/entryGroups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -112,9 +108,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -138,8 +132,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -149,9 +141,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_delete(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -173,14 +163,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -195,9 +180,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entry group. For example, `projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -221,8 +204,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -232,9 +213,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_get(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -256,14 +235,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -281,9 +255,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -307,8 +279,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -318,9 +288,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -342,14 +310,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -364,8 +327,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the location that contains the entry groups, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the location that contains the entry groups, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -390,7 +352,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -401,8 +362,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -425,9 +385,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/entryGroups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -449,9 +408,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entryGroup.name`. Identifier. The resource name of the entry group in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `entryGroup.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the entry group in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this EntryGroup and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -476,8 +433,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -487,9 +442,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_patch(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -512,14 +465,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -537,9 +485,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -563,8 +509,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -574,9 +518,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -598,14 +540,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -620,9 +557,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -646,8 +581,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -657,9 +590,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -681,14 +612,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -705,9 +631,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group this entry is in. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the entry group this entry is in. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -732,8 +656,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -743,9 +665,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_create(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -768,14 +688,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/entries", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -792,10 +707,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -818,9 +730,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -830,10 +739,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_delete(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -854,15 +760,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -877,10 +777,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the entry. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -903,9 +800,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -915,10 +809,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_get(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -939,15 +830,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -964,10 +849,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -991,9 +873,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1003,10 +882,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1028,15 +904,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1051,9 +921,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the entry group that contains the entries, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the entry group that contains the entries, which can be provided in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1079,8 +947,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1091,9 +957,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_list(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1117,14 +981,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/entries", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1145,10 +1004,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `entry.name`. Output only. Identifier. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `entry.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1173,9 +1029,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1185,10 +1038,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_patch(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1211,15 +1061,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1236,10 +1080,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1263,9 +1104,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1275,10 +1113,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1300,15 +1135,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1325,10 +1154,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1352,9 +1178,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_tags_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1364,10 +1187,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_create(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1389,15 +1209,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}/tags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/tags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1414,11 +1228,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1441,10 +1251,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_tags_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1454,11 +1260,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_delete(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
-        tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1479,16 +1281,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}/tags/{tagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1503,10 +1298,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1531,9 +1323,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_tags_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1544,10 +1333,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_list(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1570,15 +1356,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}/tags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/tags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1599,11 +1379,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. Identifier. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
-  *   `entries_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
-  *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1628,10 +1404,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_entries_tags_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1641,11 +1413,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_entries_tags_patch(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        entries_id,
-        tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1668,16 +1436,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/entries/{entriesId}/tags/{tagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "entriesId" => URI.encode(entries_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1694,9 +1455,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the resource to attach this tag to. Tags can be attached to Entries. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Tag and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1720,8 +1479,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_tags_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1731,9 +1488,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_tags_create(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1755,14 +1510,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/tags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1779,10 +1529,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag to delete. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1805,9 +1552,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_tags_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1817,10 +1561,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_tags_delete(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1841,15 +1582,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags/{tagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1864,9 +1599,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the Data Catalog resource to list the tags of. The resource could be an Entry or an EntryGroup. Examples: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id} * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1891,8 +1624,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_tags_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1903,9 +1634,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_tags_list(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1928,14 +1657,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/tags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1956,10 +1680,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tag.name`. Identifier. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
-  *   `entry_groups_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
-  *   `tags_id` (*type:* `String.t`) - Part of `tag.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the tag in URL format. Example: * projects/{project_id}/locations/{location}/entrygroups/{entry_group_id}/entries/{entry_id}/tags/{tag_id} where `tag_id` is a system-generated identifier. Note that this Tag may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1984,9 +1705,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_entry_groups_tags_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1996,10 +1714,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_entry_groups_tags_patch(
         connection,
-        projects_id,
-        locations_id,
-        entry_groups_id,
-        tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2022,15 +1737,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/entryGroups/{entryGroupsId}/tags/{tagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "entryGroupsId" => URI.encode(entry_groups_id, &URI.char_unreserved?/1),
-          "tagsId" => URI.encode(tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2047,8 +1756,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions. Example: * projects/{project_id}/locations/us-central1
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions. Example: * projects/{project_id}/locations/us-central1
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2073,7 +1781,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2083,8 +1790,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2107,9 +1813,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/tagTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2128,9 +1833,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag template to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2154,8 +1857,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2165,9 +1866,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_delete(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2189,15 +1888,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" =>
-            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2212,9 +1905,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2237,8 +1928,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2248,9 +1937,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_get(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2271,15 +1958,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" =>
-            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2297,9 +1978,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2323,8 +2002,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2334,9 +2011,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2358,14 +2033,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2380,9 +2050,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tagTemplate.name`. Identifier. The resource name of the tag template in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id} Note that this TagTemplate and its child resources may not actually be stored in the location in this name.
-  *   `locations_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `tagTemplate.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the tag template in URL format. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id} Note that this TagTemplate and its child resources may not actually be stored in the location in this name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2407,8 +2075,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2418,9 +2084,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_patch(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2443,15 +2107,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" =>
-            URI.encode(tag_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2469,9 +2127,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2495,8 +2151,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2506,9 +2160,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2530,14 +2182,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2552,9 +2199,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2578,8 +2223,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2589,9 +2232,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2613,14 +2254,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2637,9 +2273,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions). Example: * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project and the template location [region](https://cloud.google.com/data-catalog/docs/concepts/regions). Example: * projects/{project_id}/locations/us-central1/tagTemplates/{tag_template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2664,8 +2298,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_fields_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2676,9 +2308,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_create(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2701,14 +2331,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}/fields",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fields", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2729,10 +2354,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag template field to delete. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2756,9 +2378,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_fields_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2768,10 +2387,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_delete(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
-        fields_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2793,15 +2409,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}/fields/{fieldsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2816,10 +2426,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template field. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag template field. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2844,9 +2451,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_fields_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2857,10 +2461,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_patch(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
-        fields_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2883,15 +2484,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}/fields/{fieldsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2912,10 +2507,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the tag template. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2939,9 +2531,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_fields_rename(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2952,10 +2541,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_rename(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
-        fields_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2977,15 +2563,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}/fields/{fieldsId}:rename",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:rename", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3006,11 +2586,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the enum field value. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tag_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fields_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `enum_values_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the enum field value. Example: * projects/{project_id}/locations/{location}/tagTemplates/{tag_template_id}/fields/{tag_template_field_id}/enumValues/{enum_value_display_name}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3034,10 +2610,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_tag_templates_fields_enum_values_rename(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3048,11 +2620,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_tag_templates_fields_enum_values_rename(
         connection,
-        projects_id,
-        locations_id,
-        tag_templates_id,
-        fields_id,
-        enum_values_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3074,16 +2642,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/tagTemplates/{tagTemplatesId}/fields/{fieldsId}/enumValues/{enumValuesId}:rename",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "tagTemplatesId" => URI.encode(tag_templates_id, &URI.char_unreserved?/1),
-          "fieldsId" => URI.encode(fields_id, &URI.char_unreserved?/1),
-          "enumValuesId" => URI.encode(enum_values_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:rename", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3104,8 +2665,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the project that the taxonomy will belong to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the project that the taxonomy will belong to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3129,7 +2689,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3139,8 +2698,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3162,9 +2720,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/taxonomies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3183,9 +2740,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the taxonomy to be deleted. All policy tags in this taxonomy will also be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the taxonomy to be deleted. All policy tags in this taxonomy will also be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3208,8 +2763,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3219,9 +2772,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_delete(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3242,14 +2793,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3264,8 +2810,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the project that taxonomies to be exported will share.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the project that taxonomies to be exported will share.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3290,7 +2835,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_export(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3301,8 +2845,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_export(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3325,13 +2868,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies:export",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/taxonomies:export", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3352,9 +2891,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the requested taxonomy.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the requested taxonomy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3377,8 +2914,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3388,9 +2923,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_get(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3411,14 +2944,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3436,9 +2964,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3462,8 +2988,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3473,9 +2997,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3497,14 +3019,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3519,8 +3036,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of project that the imported taxonomies will belong to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of project that the imported taxonomies will belong to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3544,7 +3060,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3555,8 +3070,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_import(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3578,13 +3092,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/taxonomies:import", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3605,8 +3115,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the project to list the taxonomies of.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the project to list the taxonomies of.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3632,7 +3141,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3643,8 +3151,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3668,9 +3175,8 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/taxonomies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3692,9 +3198,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `taxonomy.name`. Identifier. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
-  *   `locations_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `taxonomy.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3719,8 +3223,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3730,9 +3232,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_patch(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3755,14 +3255,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3780,9 +3275,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3806,8 +3299,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3817,9 +3308,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3841,14 +3330,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3863,9 +3347,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3889,8 +3371,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3900,9 +3380,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3924,14 +3402,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3948,9 +3421,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the taxonomy that the policy tag will belong to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the taxonomy that the policy tag will belong to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3974,8 +3445,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3985,9 +3454,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_create(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4009,14 +3476,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/policyTags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4034,10 +3496,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the policy tag to be deleted. All of its descendant policy tags will also be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the policy tag to be deleted. All of its descendant policy tags will also be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4060,9 +3519,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4072,10 +3528,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_delete(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4096,15 +3549,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4119,10 +3566,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the requested policy tag.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the requested policy tag.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4145,9 +3589,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4157,10 +3598,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4181,15 +3619,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4207,10 +3639,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4234,9 +3663,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4246,10 +3672,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4271,15 +3694,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4294,9 +3711,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the taxonomy to list the policy tags of.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the taxonomy to list the policy tags of.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4321,8 +3736,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4333,9 +3746,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_list(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4358,14 +3769,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/policyTags", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4386,10 +3792,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `policyTag.name`. Identifier. Resource name of this policy tag, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
-  *   `locations_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `policyTag.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of this policy tag, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{taxonomy_id}/policyTags/{id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4414,9 +3817,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4426,10 +3826,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_patch(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4452,15 +3849,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4478,10 +3869,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4505,9 +3893,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4517,10 +3902,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4542,15 +3924,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4565,10 +3941,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DataCatalog.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `taxonomies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `policy_tags_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4592,9 +3965,6 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
   @spec datacatalog_projects_locations_taxonomies_policy_tags_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4604,10 +3974,7 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
           | {:error, any()}
   def datacatalog_projects_locations_taxonomies_policy_tags_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        taxonomies_id,
-        policy_tags_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4629,15 +3996,9 @@ defmodule GoogleApi.DataCatalog.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/taxonomies/{taxonomiesId}/policyTags/{policyTagsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "taxonomiesId" => URI.encode(taxonomies_id, &URI.char_unreserved?/1),
-          "policyTagsId" => URI.encode(policy_tags_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
