@@ -18,7 +18,7 @@
 defmodule GoogleApi.WorkspaceEvents.Mixfile do
   use Mix.Project
 
-  @version "0.2.1"
+  @version "0.3.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.WorkspaceEvents.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/workspace_events",
         "Homepage" => "https://developers.google.com/workspace/events"
