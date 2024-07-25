@@ -25,6 +25,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupConfig do
   *   `encryptionKey` (*type:* `GoogleApi.GKEBackup.V1.Model.EncryptionKey.t`, *default:* `nil`) - Optional. This defines a customer managed encryption key that will be used to encrypt the "config" portion (the Kubernetes resources) of Backups created via this plan. Default (empty): Config backup artifacts will not be encrypted.
   *   `includeSecrets` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag specifies whether Kubernetes Secret resources should be included when they fall into the scope of Backups. Default: False
   *   `includeVolumeData` (*type:* `boolean()`, *default:* `nil`) - Optional. This flag specifies whether volume data should be backed up when PVCs are included in the scope of a Backup. Default: False
+  *   `permissiveMode` (*type:* `boolean()`, *default:* `nil`) - Optional. If false, Backups will fail when Backup for GKE detects Kubernetes configuration that is non-standard or requires additional setup to restore. Default: False
   *   `selectedApplications` (*type:* `GoogleApi.GKEBackup.V1.Model.NamespacedNames.t`, *default:* `nil`) - If set, include just the resources referenced by the listed ProtectedApplications.
   *   `selectedNamespaces` (*type:* `GoogleApi.GKEBackup.V1.Model.Namespaces.t`, *default:* `nil`) - If set, include just the resources in the listed namespaces.
   """
@@ -36,6 +37,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupConfig do
           :encryptionKey => GoogleApi.GKEBackup.V1.Model.EncryptionKey.t() | nil,
           :includeSecrets => boolean() | nil,
           :includeVolumeData => boolean() | nil,
+          :permissiveMode => boolean() | nil,
           :selectedApplications => GoogleApi.GKEBackup.V1.Model.NamespacedNames.t() | nil,
           :selectedNamespaces => GoogleApi.GKEBackup.V1.Model.Namespaces.t() | nil
         }
@@ -44,6 +46,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.BackupConfig do
   field(:encryptionKey, as: GoogleApi.GKEBackup.V1.Model.EncryptionKey)
   field(:includeSecrets)
   field(:includeVolumeData)
+  field(:permissiveMode)
   field(:selectedApplications, as: GoogleApi.GKEBackup.V1.Model.NamespacedNames)
   field(:selectedNamespaces, as: GoogleApi.GKEBackup.V1.Model.Namespaces)
 end

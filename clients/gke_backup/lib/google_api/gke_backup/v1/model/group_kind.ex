@@ -21,7 +21,7 @@ defmodule GoogleApi.GKEBackup.V1.Model.GroupKind do
 
   ## Attributes
 
-  *   `resourceGroup` (*type:* `String.t`, *default:* `nil`) - Optional. API group string of a Kubernetes resource, e.g. "apiextensions.k8s.io", "storage.k8s.io", etc. Note: use empty string for core API group
+  *   `resourceGroup` (*type:* `String.t`, *default:* `nil`) - Optional. API group string of a Kubernetes resource, e.g. "apiextensions.k8s.io", "storage.k8s.io", etc. Note: use empty string for core API group.
   *   `resourceKind` (*type:* `String.t`, *default:* `nil`) - Optional. Kind of a Kubernetes resource, must be in UpperCamelCase (PascalCase) and singular form. E.g. "CustomResourceDefinition", "StorageClass", etc.
   """
 
