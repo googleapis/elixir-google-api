@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_page_speed_online, "~> 0.16"}]
+  [{:google_api_page_speed_online, "~> 0.17"}]
 end
 ```
 
