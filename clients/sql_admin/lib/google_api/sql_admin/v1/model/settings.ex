@@ -28,7 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `enableGoogleMlIntegration` (*type:* `boolean()`, *default:* `nil`) - Optional. When this parameter is set to true, Cloud SQL instances can connect to Vertex AI to pass requests for real-time predictions and insights to the AI. The default value is false. This applies only to Cloud SQL for PostgreSQL instances.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Configuration to protect against accidental instance deletion.
   *   `activationPolicy` (*type:* `String.t`, *default:* `nil`) - The activation policy specifies when the instance is activated; it is applicable only when the instance state is RUNNABLE. Valid values: * `ALWAYS`: The instance is on, and remains so even in the absence of connection requests. * `NEVER`: The instance is off; it is not activated, even if a connection request arrives.
-  *   `advancedMachineFeatures` (*type:* `GoogleApi.SQLAdmin.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Specifies advance machine configuration for the instance relevant only for SQL Server.
+  *   `advancedMachineFeatures` (*type:* `GoogleApi.SQLAdmin.V1.Model.AdvancedMachineFeatures.t`, *default:* `nil`) - Specifies advanced machine configuration for the instances relevant only for SQL Server.
   *   `ipConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.IpConfiguration.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled for Second Generation instances.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#settings`.
   *   `settingsVersion` (*type:* `String.t`, *default:* `nil`) - The version of instance settings. This is a required field for update method to make sure concurrent updates are handled properly. During update, use the most recent settingsVersion value for this instance and do not try to update this value.
@@ -49,6 +49,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   *   `storageAutoResize` (*type:* `boolean()`, *default:* `nil`) - Configuration to increase storage size automatically. The default value is true.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Server timezone, relevant only for Cloud SQL for SQL Server.
   *   `sqlServerAuditConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.SqlServerAuditConfig.t`, *default:* `nil`) - SQL Server specific audit configuration.
+  *   `enableDataplexIntegration` (*type:* `boolean()`, *default:* `nil`) - Optional. By default, Cloud SQL instances have schema extraction disabled for Dataplex. When this parameter is set to true, schema extraction for Dataplex on Cloud SQL instances is activated.
   *   `activeDirectoryConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.SqlActiveDirectoryConfig.t`, *default:* `nil`) - Active Directory configuration, relevant only for Cloud SQL for SQL Server.
   *   `passwordValidationPolicy` (*type:* `GoogleApi.SQLAdmin.V1.Model.PasswordValidationPolicy.t`, *default:* `nil`) - The local user password validation policy of the instance.
   *   `dataCacheConfig` (*type:* `GoogleApi.SQLAdmin.V1.Model.DataCacheConfig.t`, *default:* `nil`) - Configuration for data cache.
@@ -89,6 +90,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
           :storageAutoResize => boolean() | nil,
           :timeZone => String.t() | nil,
           :sqlServerAuditConfig => GoogleApi.SQLAdmin.V1.Model.SqlServerAuditConfig.t() | nil,
+          :enableDataplexIntegration => boolean() | nil,
           :activeDirectoryConfig =>
             GoogleApi.SQLAdmin.V1.Model.SqlActiveDirectoryConfig.t() | nil,
           :passwordValidationPolicy =>
@@ -131,6 +133,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.Settings do
   field(:storageAutoResize)
   field(:timeZone)
   field(:sqlServerAuditConfig, as: GoogleApi.SQLAdmin.V1.Model.SqlServerAuditConfig)
+  field(:enableDataplexIntegration)
   field(:activeDirectoryConfig, as: GoogleApi.SQLAdmin.V1.Model.SqlActiveDirectoryConfig)
   field(:passwordValidationPolicy, as: GoogleApi.SQLAdmin.V1.Model.PasswordValidationPolicy)
   field(:dataCacheConfig, as: GoogleApi.SQLAdmin.V1.Model.DataCacheConfig)

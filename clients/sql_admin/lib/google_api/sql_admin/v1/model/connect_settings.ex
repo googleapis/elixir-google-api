@@ -29,6 +29,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
   *   `pscEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether PSC connectivity is enabled for this instance.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The cloud region for the instance. For example, `us-central1`, `europe-west1`. The region cannot be changed after instance creation.
   *   `serverCaCert` (*type:* `GoogleApi.SQLAdmin.V1.Model.SslCert.t`, *default:* `nil`) - SSL configuration.
+  *   `serverCaMode` (*type:* `String.t`, *default:* `nil`) - Specify what type of CA is used for the server certificate.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
           :kind => String.t() | nil,
           :pscEnabled => boolean() | nil,
           :region => String.t() | nil,
-          :serverCaCert => GoogleApi.SQLAdmin.V1.Model.SslCert.t() | nil
+          :serverCaCert => GoogleApi.SQLAdmin.V1.Model.SslCert.t() | nil,
+          :serverCaMode => String.t() | nil
         }
 
   field(:backendType)
@@ -52,6 +54,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.ConnectSettings do
   field(:pscEnabled)
   field(:region)
   field(:serverCaCert, as: GoogleApi.SQLAdmin.V1.Model.SslCert)
+  field(:serverCaMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.ConnectSettings do

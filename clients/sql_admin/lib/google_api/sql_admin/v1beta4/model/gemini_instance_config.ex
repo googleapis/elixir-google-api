@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.SQLAdmin.V1beta4.Model.GeminiInstanceConfig do
   @moduledoc """
-  Gemini configuration.
+  Gemini instance configuration.
 
   ## Attributes
 
-  *   `activeQueryEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether active query is enabled.
+  *   `activeQueryEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the active query is enabled.
   *   `entitled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether Gemini is enabled.
-  *   `flagRecommenderEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether flag recommender is enabled.
-  *   `googleVacuumMgmtEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether vacuum management is enabled.
-  *   `indexAdvisorEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether index advisor is enabled.
-  *   `oomSessionCancelEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether oom session cancel is enabled.
+  *   `flagRecommenderEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the flag recommender is enabled.
+  *   `googleVacuumMgmtEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the vacuum management is enabled.
+  *   `indexAdvisorEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the index advisor is enabled.
+  *   `oomSessionCancelEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether canceling the out-of-memory (OOM) session is enabled.
   """
 
   use GoogleApi.Gax.ModelBase

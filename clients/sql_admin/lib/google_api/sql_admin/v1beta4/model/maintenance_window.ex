@@ -21,10 +21,10 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.MaintenanceWindow do
 
   ## Attributes
 
-  *   `day` (*type:* `integer()`, *default:* `nil`) - day of week (1-7), starting on Monday.
-  *   `hour` (*type:* `integer()`, *default:* `nil`) - hour of day - 0 to 23.
+  *   `day` (*type:* `integer()`, *default:* `nil`) - Day of week - `MONDAY`, `TUESDAY`, `WEDNESDAY`, `THURSDAY`, `FRIDAY`, `SATURDAY`, or `SUNDAY`. Specify in the UTC time zone. Returned in output as an integer, 1 to 7, where `1` equals Monday.
+  *   `hour` (*type:* `integer()`, *default:* `nil`) - Hour of day - 0 to 23. Specify in the UTC time zone.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#maintenanceWindow`.
-  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing setting: `canary` (Earlier) or `stable` (Later). [Learn more](https://cloud.google.com/sql/docs/mysql/instance-settings#maintenance-timing-2ndgen).
+  *   `updateTrack` (*type:* `String.t`, *default:* `nil`) - Maintenance timing settings: `canary`, `stable`, or `week5`. For more information, see [About maintenance on Cloud SQL instances](https://cloud.google.com/sql/docs/mysql/maintenance).
   """
 
   use GoogleApi.Gax.ModelBase

@@ -104,7 +104,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Add a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in.
+  Add a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in. For instances that have enabled Certificate Authority Service (CAS) based server CA, please use AddServerCertificate to add a new server certificate.
 
   ## Parameters
 
@@ -968,7 +968,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Promotes the read replica instance to be a stand-alone Cloud SQL instance. Using this operation might cause your instance to restart.
+  Promotes the read replica instance to be an independent Cloud SQL primary instance. Using this operation might cause your instance to restart.
 
   ## Parameters
 
@@ -987,7 +987,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:failover` (*type:* `boolean()`) - Set to true if the promote operation should attempt to re-add the original primary as a replica when it comes back online. Otherwise, if this value is false or not set, the original primary will be a standalone instance.
+      *   `:failover` (*type:* `boolean()`) - Set to true to invoke a replica failover to the designated DR replica. As part of replica failover, the promote operation attempts to add the original primary instance as a replica of the promoted DR replica when the original primary instance comes back online. If set to false or not specified, then the original primary instance becomes an independent Cloud SQL primary instance. Only applicable to MySQL.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1396,7 +1396,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method.
+  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method. For instances that have enabled Certificate Authority Service (CAS) based server CA, please use RotateServerCertificate to rotate the server certificate.
 
   ## Parameters
 
@@ -1614,7 +1614,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Instances do
   end
 
   @doc """
-  Switches over from the primary instance to a replica instance.
+  Switches over from the primary instance to the designated DR replica instance.
 
   ## Parameters
 

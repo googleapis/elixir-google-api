@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptions do
   ## Attributes
 
   *   `parallel` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the import should be parallel.
+  *   `postgresImportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptionsPostgresImportOptions.t`, *default:* `nil`) - Optional. Options for importing from a Cloud SQL for PostgreSQL instance.
   *   `threads` (*type:* `integer()`, *default:* `nil`) - Optional. The number of threads to use for parallel import.
   """
 
@@ -29,10 +30,18 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptions do
 
   @type t :: %__MODULE__{
           :parallel => boolean() | nil,
+          :postgresImportOptions =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptionsPostgresImportOptions.t()
+            | nil,
           :threads => integer() | nil
         }
 
   field(:parallel)
+
+  field(:postgresImportOptions,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.ImportContextSqlImportOptionsPostgresImportOptions
+  )
+
   field(:threads)
 end
 
