@@ -21,15 +21,18 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Workspace do
 
   ## Attributes
 
+  *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. A data encryption state of a Git repository if this Workspace is protected by a KMS key.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workspace's name.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:name)
 end
 

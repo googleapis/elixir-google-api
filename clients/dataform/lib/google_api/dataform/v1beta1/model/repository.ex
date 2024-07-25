@@ -22,8 +22,10 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the repository was created.
+  *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. A data encryption state of a Git repository if this Repository is protected by a KMS key.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The repository's user-friendly name.
   *   `gitRemoteSettings` (*type:* `GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings.t`, *default:* `nil`) - Optional. If set, configures this repository to be linked to a Git remote.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The reference to a KMS encryption key. If provided, it will be used to encrypt user data in the repository and all child resources. It is not possible to add or update the encryption key after the repository is created. Example: `projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]`
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Repository user labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The repository's name.
   *   `npmrcEnvironmentVariablesSecretVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the Secret Manager secret version to be used to interpolate variables into the .npmrc file for package installation operations. Must be in the format `projects/*/secrets/*/versions/*`. The file itself must be in a JSON format.
@@ -36,8 +38,10 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :displayName => String.t() | nil,
           :gitRemoteSettings => GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings.t() | nil,
+          :kmsKeyName => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :npmrcEnvironmentVariablesSecretVersion => String.t() | nil,
@@ -48,8 +52,10 @@ defmodule GoogleApi.Dataform.V1beta1.Model.Repository do
         }
 
   field(:createTime, as: DateTime)
+  field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:displayName)
   field(:gitRemoteSettings, as: GoogleApi.Dataform.V1beta1.Model.GitRemoteSettings)
+  field(:kmsKeyName)
   field(:labels, type: :map)
   field(:name)
   field(:npmrcEnvironmentVariablesSecretVersion)
