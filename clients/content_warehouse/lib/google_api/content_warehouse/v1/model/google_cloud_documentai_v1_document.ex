@@ -21,7 +21,9 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1Document do
 
   ## Attributes
 
+  *   `chunkedDocument` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentChunkedDocument.t`, *default:* `nil`) - Document chunked based on chunking config.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Optional. Inline document content, represented as a stream of bytes. Note: As with all `bytes` fields, protobuffers use a pure binary representation, whereas JSON representations use base64.
+  *   `documentLayout` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentDocumentLayout.t`, *default:* `nil`) - Parsed layout of the document.
   *   `entities` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentEntity.t)`, *default:* `nil`) - A list of entities detected on Document.text. For document shards, entities in this list may cross shard boundaries.
   *   `entityRelations` (*type:* `list(GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentEntityRelation.t)`, *default:* `nil`) - Placeholder. Relationship among Document.entities.
   *   `error` (*type:* `GoogleApi.ContentWarehouse.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Any error that occurred while processing this document.
@@ -38,7 +40,13 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1Document do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chunkedDocument =>
+            GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentChunkedDocument.t()
+            | nil,
           :content => String.t() | nil,
+          :documentLayout =>
+            GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentDocumentLayout.t()
+            | nil,
           :entities =>
             list(GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentEntity.t())
             | nil,
@@ -69,7 +77,15 @@ defmodule GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1Document do
           :uri => String.t() | nil
         }
 
+  field(:chunkedDocument,
+    as: GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentChunkedDocument
+  )
+
   field(:content)
+
+  field(:documentLayout,
+    as: GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentDocumentLayout
+  )
 
   field(:entities,
     as: GoogleApi.ContentWarehouse.V1.Model.GoogleCloudDocumentaiV1DocumentEntity,
