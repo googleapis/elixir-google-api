@@ -31,7 +31,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the organization to get organization settings for. Its format is "organizations/[organization_id]/organizationSettings".
+  *   `name` (*type:* `String.t`) - Required. Name of the organization to get organization settings for. Its format is `organizations/[organization_id]/organizationSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -63,7 +63,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_get_organization_settings(
         connection,
-        organizations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -84,8 +84,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/organizationSettings", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,7 +103,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `organizationSettings.name`. The relative resource name of the settings. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/organizationSettings".
+  *   `name` (*type:* `String.t`) - The relative resource name of the settings. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/organizationSettings".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -137,7 +137,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_update_organization_settings(
         connection,
-        organizations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -160,8 +160,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/organizations/{organizationsId}/organizationSettings", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -179,7 +179,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent to group the assets by. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent to group the assets by. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -212,7 +212,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_assets_group(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -234,8 +234,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/assets:group", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/assets:group", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -251,7 +251,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource that contains the assets. The value that you can specify on parent depends on the method in which you specify parent. You can specify one of the following values: "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent resource that contains the assets. The value that you can specify on parent depends on the method in which you specify parent. You can specify one of the following values: `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -290,7 +290,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_assets_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -318,8 +318,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/assets", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/assets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -335,7 +335,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the organization to run asset discovery for. Its format is "organizations/[organization_id]".
+  *   `parent` (*type:* `String.t`) - Required. Name of the organization to run asset discovery for. Its format is `organizations/[organization_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -368,7 +368,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_assets_run_discovery(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -390,8 +390,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/assets:runDiscovery", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/assets:runDiscovery", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -407,8 +407,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `securityMarks.name`. The relative resource name of the SecurityMarks. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Examples: "organizations/{organization_id}/assets/{asset_id}/securityMarks" "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
-  *   `assets_id` (*type:* `String.t`) - Part of `securityMarks.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The relative resource name of the SecurityMarks. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Examples: "organizations/{organization_id}/assets/{asset_id}/securityMarks" "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -434,7 +433,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_assets_update_security_marks(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -444,8 +442,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_assets_update_security_marks(
         connection,
-        organizations_id,
-        assets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -469,9 +466,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/organizations/{organizationsId}/assets/{assetsId}/securityMarks", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "assetsId" => URI.encode(assets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -487,7 +483,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent resource of the new BigQuery export. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent resource of the new BigQuery export. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -521,7 +517,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_big_query_exports_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -544,8 +540,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/bigQueryExports", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/bigQueryExports", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -564,8 +560,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The name of the BigQuery export to delete. Its format is organizations/{organization}/bigQueryExports/{export_id}, folders/{folder}/bigQueryExports/{export_id}, or projects/{project}/bigQueryExports/{export_id}
-  *   `big_query_exports_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the BigQuery export to delete. Its format is `organizations/{organization}/bigQueryExports/{export_id}`, `folders/{folder}/bigQueryExports/{export_id}`, or `projects/{project}/bigQueryExports/{export_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -588,7 +583,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_big_query_exports_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -598,8 +592,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_big_query_exports_delete(
         connection,
-        organizations_id,
-        big_query_exports_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -620,10 +613,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/organizations/{organizationsId}/bigQueryExports/{bigQueryExportsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "bigQueryExportsId" =>
-          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -639,8 +630,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the BigQuery export to retrieve. Its format is organizations/{organization}/bigQueryExports/{export_id}, folders/{folder}/bigQueryExports/{export_id}, or projects/{project}/bigQueryExports/{export_id}
-  *   `big_query_exports_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the BigQuery export to retrieve. Its format is `organizations/{organization}/bigQueryExports/{export_id}`, `folders/{folder}/bigQueryExports/{export_id}`, or `projects/{project}/bigQueryExports/{export_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -663,7 +653,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_big_query_exports_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -673,8 +662,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_big_query_exports_get(
         connection,
-        organizations_id,
-        big_query_exports_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -695,10 +683,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/bigQueryExports/{bigQueryExportsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "bigQueryExportsId" =>
-          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -717,7 +703,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns the collection of BigQuery exports. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns the collection of BigQuery exports. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -751,7 +737,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_big_query_exports_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -774,8 +760,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/bigQueryExports", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/bigQueryExports", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -793,8 +779,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `bigQueryExport.name`. The relative resource name of this export. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name. Example format: "organizations/{organization_id}/bigQueryExports/{export_id}" Example format: "folders/{folder_id}/bigQueryExports/{export_id}" Example format: "projects/{project_id}/bigQueryExports/{export_id}" This field is provided in responses, and is ignored when provided in create requests.
-  *   `big_query_exports_id` (*type:* `String.t`) - Part of `bigQueryExport.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The relative resource name of this export. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name. Example format: "organizations/{organization_id}/bigQueryExports/{export_id}" Example format: "folders/{folder_id}/bigQueryExports/{export_id}" Example format: "projects/{project_id}/bigQueryExports/{export_id}" This field is provided in responses, and is ignored when provided in create requests.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -819,7 +804,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_big_query_exports_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -829,8 +813,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_big_query_exports_patch(
         connection,
-        organizations_id,
-        big_query_exports_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -853,10 +836,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/organizations/{organizationsId}/bigQueryExports/{bigQueryExportsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "bigQueryExportsId" =>
-          URI.encode(big_query_exports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -875,7 +856,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent to validate the Custom Module under. Its format is: * "organizations/{organization}/eventThreatDetectionSettings". * "folders/{folder}/eventThreatDetectionSettings". * "projects/{project}/eventThreatDetectionSettings".
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent to validate the Custom Module under. Its format is: * `organizations/{organization}/eventThreatDetectionSettings`. * `folders/{folder}/eventThreatDetectionSettings`. * `projects/{project}/eventThreatDetectionSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -909,7 +890,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_validate_custom_module(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -931,12 +912,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings:validateCustomModule",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}:validateCustomModule", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -957,7 +935,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The new custom module's parent. Its format is: * "organizations/{organization}/eventThreatDetectionSettings". * "folders/{folder}/eventThreatDetectionSettings". * "projects/{project}/eventThreatDetectionSettings".
+  *   `parent` (*type:* `String.t`) - Required. The new custom module's parent. Its format is: * `organizations/{organization}/eventThreatDetectionSettings`. * `folders/{folder}/eventThreatDetectionSettings`. * `projects/{project}/eventThreatDetectionSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -990,7 +968,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1012,12 +990,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1034,8 +1009,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the custom module to delete. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}". * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the custom module to delete. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1058,7 +1032,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_event_threat_detection_settings_custom_modules_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1068,8 +1041,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_delete(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1090,14 +1062,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1112,8 +1079,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the custom module to get. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}". * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the custom module to get. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1136,7 +1102,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_event_threat_detection_settings_custom_modules_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1146,8 +1111,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_get(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1168,14 +1132,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1192,7 +1151,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent to list custom modules under. Its format is: * "organizations/{organization}/eventThreatDetectionSettings". * "folders/{folder}/eventThreatDetectionSettings". * "projects/{project}/eventThreatDetectionSettings".
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent to list custom modules under. Its format is: * `organizations/{organization}/eventThreatDetectionSettings`. * `folders/{folder}/eventThreatDetectionSettings`. * `projects/{project}/eventThreatDetectionSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1227,7 +1186,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1250,12 +1209,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1276,7 +1232,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent to list custom modules under. Its format is: * "organizations/{organization}/eventThreatDetectionSettings". * "folders/{folder}/eventThreatDetectionSettings". * "projects/{project}/eventThreatDetectionSettings".
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent to list custom modules under. Its format is: * `organizations/{organization}/eventThreatDetectionSettings`. * `folders/{folder}/eventThreatDetectionSettings`. * `projects/{project}/eventThreatDetectionSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1311,7 +1267,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_list_descendant(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1334,12 +1290,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules:listDescendant",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules:listDescendant", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1360,8 +1313,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `eventThreatDetectionCustomModule.name`. Immutable. The resource name of the Event Threat Detection custom module. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/customModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/customModules/{module}". * "projects/{project}/eventThreatDetectionSettings/customModules/{module}".
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `eventThreatDetectionCustomModule.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name of the Event Threat Detection custom module. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/customModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/customModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/customModules/{module}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1386,7 +1338,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_event_threat_detection_settings_custom_modules_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1396,8 +1347,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_custom_modules_patch(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1420,14 +1370,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1444,8 +1389,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the effective Event Threat Detection custom module. Its format is: * "organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}". * "folders/{folder}/eventThreatDetectionSettings/effectiveCustomModules/{module}". * "projects/{project}/eventThreatDetectionSettings/effectiveCustomModules/{module}".
-  *   `effective_custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the effective Event Threat Detection custom module. Its format is: * `organizations/{organization}/eventThreatDetectionSettings/effectiveCustomModules/{module}`. * `folders/{folder}/eventThreatDetectionSettings/effectiveCustomModules/{module}`. * `projects/{project}/eventThreatDetectionSettings/effectiveCustomModules/{module}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1468,7 +1412,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_event_threat_detection_settings_effective_custom_modules_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1478,8 +1421,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_effective_custom_modules_get(
         connection,
-        organizations_id,
-        effective_custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1500,14 +1442,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/effectiveCustomModules/{effectiveCustomModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "effectiveCustomModulesId" =>
-            URI.encode(effective_custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1525,7 +1462,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent to list custom modules for. Its format is: * "organizations/{organization}/eventThreatDetectionSettings". * "folders/{folder}/eventThreatDetectionSettings". * "projects/{project}/eventThreatDetectionSettings".
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent to list custom modules for. Its format is: * `organizations/{organization}/eventThreatDetectionSettings`. * `folders/{folder}/eventThreatDetectionSettings`. * `projects/{project}/eventThreatDetectionSettings`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1560,7 +1497,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_event_threat_detection_settings_effective_custom_modules_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1583,12 +1520,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/eventThreatDetectionSettings/effectiveCustomModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/effectiveCustomModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1609,7 +1543,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, at which bulk action needs to be applied. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The parent, at which bulk action needs to be applied. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1642,7 +1576,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_findings_bulk_mute(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1664,8 +1598,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/findings:bulkMute", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/findings:bulkMute", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1676,14 +1610,88 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   end
 
   @doc """
+  Creates a mute config.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new mute configs's parent. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:muteConfigId` (*type:* `String.t`) - Required. Unique identifier provided by the client within the parent scope. It must consist of only lowercase letters, numbers, and hyphens, must start with a letter, must end with either a letter or a number, and must be 63 characters or less.
+      *   `:body` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1MuteConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1MuteConfig{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_organizations_locations_mute_configs_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1MuteConfig.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_organizations_locations_mute_configs_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :muteConfigId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/muteConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV1MuteConfig{}]
+    )
+  end
+
+  @doc """
   Deletes an existing mute config.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the mute config to delete. Its format is organizations/{organization}/muteConfigs/{config_id}, folders/{folder}/muteConfigs/{config_id}, projects/{project}/muteConfigs/{config_id}, organizations/{organization}/locations/global/muteConfigs/{config_id}, folders/{folder}/locations/global/muteConfigs/{config_id}, or projects/{project}/locations/global/muteConfigs/{config_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the mute config to delete. Its format is `organizations/{organization}/muteConfigs/{config_id}`, `folders/{folder}/muteConfigs/{config_id}`, `projects/{project}/muteConfigs/{config_id}`, `organizations/{organization}/locations/global/muteConfigs/{config_id}`, `folders/{folder}/locations/global/muteConfigs/{config_id}`, or `projects/{project}/locations/global/muteConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1706,8 +1714,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_locations_mute_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1717,9 +1723,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_locations_mute_configs_delete(
         connection,
-        organizations_id,
-        locations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1740,14 +1744,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/locations/{locationsId}/muteConfigs/{muteConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1762,9 +1761,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the mute config to retrieve. Its format is organizations/{organization}/muteConfigs/{config_id}, folders/{folder}/muteConfigs/{config_id}, projects/{project}/muteConfigs/{config_id}, organizations/{organization}/locations/global/muteConfigs/{config_id}, folders/{folder}/locations/global/muteConfigs/{config_id}, or projects/{project}/locations/global/muteConfigs/{config_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the mute config to retrieve. Its format is `organizations/{organization}/muteConfigs/{config_id}`, `folders/{folder}/muteConfigs/{config_id}`, `projects/{project}/muteConfigs/{config_id}`, `organizations/{organization}/locations/global/muteConfigs/{config_id}`, `folders/{folder}/locations/global/muteConfigs/{config_id}`, or `projects/{project}/locations/global/muteConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1787,8 +1784,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_locations_mute_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1798,9 +1793,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_locations_mute_configs_get(
         connection,
-        organizations_id,
-        locations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1821,14 +1814,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/locations/{locationsId}/muteConfigs/{muteConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1840,14 +1828,88 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   end
 
   @doc """
+  Lists mute configs.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns the collection of mute configs. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, `projects/[project_id]`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of configs to return. The service may return fewer than this value. If unspecified, at most 10 configs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListMuteConfigs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMuteConfigs` must match the call that provided the page token.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.SecurityCenter.V1.Model.ListMuteConfigsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec securitycenter_organizations_locations_mute_configs_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.SecurityCenter.V1.Model.ListMuteConfigsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def securitycenter_organizations_locations_mute_configs_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :pageSize => :query,
+      :pageToken => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.SecurityCenter.V1.Model.ListMuteConfigsResponse{}]
+    )
+  end
+
+  @doc """
   Updates a mute config.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `muteConfig.name`. This field will be ignored if provided on config creation. Format "organizations/{organization}/muteConfigs/{mute_config}" "folders/{folder}/muteConfigs/{mute_config}" "projects/{project}/muteConfigs/{mute_config}" "organizations/{organization}/locations/global/muteConfigs/{mute_config}" "folders/{folder}/locations/global/muteConfigs/{mute_config}" "projects/{project}/locations/global/muteConfigs/{mute_config}"
-  *   `locations_id` (*type:* `String.t`) - Part of `muteConfig.name`. See documentation of `organizationsId`.
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `muteConfig.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - This field will be ignored if provided on config creation. Format `organizations/{organization}/muteConfigs/{mute_config}` `folders/{folder}/muteConfigs/{mute_config}` `projects/{project}/muteConfigs/{mute_config}` `organizations/{organization}/locations/global/muteConfigs/{mute_config}` `folders/{folder}/locations/global/muteConfigs/{mute_config}` `projects/{project}/locations/global/muteConfigs/{mute_config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1872,8 +1934,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_locations_mute_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1883,9 +1943,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_locations_mute_configs_patch(
         connection,
-        organizations_id,
-        locations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1908,14 +1966,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/locations/{locationsId}/muteConfigs/{muteConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1932,7 +1985,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new mute configs's parent. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new mute configs's parent. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1966,7 +2019,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_mute_configs_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1989,8 +2042,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/muteConfigs", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/muteConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2008,8 +2061,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the mute config to delete. Its format is organizations/{organization}/muteConfigs/{config_id}, folders/{folder}/muteConfigs/{config_id}, projects/{project}/muteConfigs/{config_id}, organizations/{organization}/locations/global/muteConfigs/{config_id}, folders/{folder}/locations/global/muteConfigs/{config_id}, or projects/{project}/locations/global/muteConfigs/{config_id}.
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the mute config to delete. Its format is `organizations/{organization}/muteConfigs/{config_id}`, `folders/{folder}/muteConfigs/{config_id}`, `projects/{project}/muteConfigs/{config_id}`, `organizations/{organization}/locations/global/muteConfigs/{config_id}`, `folders/{folder}/locations/global/muteConfigs/{config_id}`, or `projects/{project}/locations/global/muteConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2032,7 +2084,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_mute_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2042,8 +2093,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_mute_configs_delete(
         connection,
-        organizations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2064,9 +2114,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/organizations/{organizationsId}/muteConfigs/{muteConfigsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2082,8 +2131,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the mute config to retrieve. Its format is organizations/{organization}/muteConfigs/{config_id}, folders/{folder}/muteConfigs/{config_id}, projects/{project}/muteConfigs/{config_id}, organizations/{organization}/locations/global/muteConfigs/{config_id}, folders/{folder}/locations/global/muteConfigs/{config_id}, or projects/{project}/locations/global/muteConfigs/{config_id}.
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the mute config to retrieve. Its format is `organizations/{organization}/muteConfigs/{config_id}`, `folders/{folder}/muteConfigs/{config_id}`, `projects/{project}/muteConfigs/{config_id}`, `organizations/{organization}/locations/global/muteConfigs/{config_id}`, `folders/{folder}/locations/global/muteConfigs/{config_id}`, or `projects/{project}/locations/global/muteConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2106,7 +2154,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_mute_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2116,8 +2163,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_mute_configs_get(
         connection,
-        organizations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2138,9 +2184,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/muteConfigs/{muteConfigsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2158,7 +2203,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns the collection of mute configs. Its format is "organizations/[organization_id]", "folders/[folder_id]", "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns the collection of mute configs. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2192,7 +2237,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_mute_configs_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2215,8 +2260,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/muteConfigs", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/muteConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2234,8 +2279,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `muteConfig.name`. This field will be ignored if provided on config creation. Format "organizations/{organization}/muteConfigs/{mute_config}" "folders/{folder}/muteConfigs/{mute_config}" "projects/{project}/muteConfigs/{mute_config}" "organizations/{organization}/locations/global/muteConfigs/{mute_config}" "folders/{folder}/locations/global/muteConfigs/{mute_config}" "projects/{project}/locations/global/muteConfigs/{mute_config}"
-  *   `mute_configs_id` (*type:* `String.t`) - Part of `muteConfig.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - This field will be ignored if provided on config creation. Format `organizations/{organization}/muteConfigs/{mute_config}` `folders/{folder}/muteConfigs/{mute_config}` `projects/{project}/muteConfigs/{mute_config}` `organizations/{organization}/locations/global/muteConfigs/{mute_config}` `folders/{folder}/locations/global/muteConfigs/{mute_config}` `projects/{project}/locations/global/muteConfigs/{mute_config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2260,7 +2304,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_mute_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2270,8 +2313,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_mute_configs_patch(
         connection,
-        organizations_id,
-        mute_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2294,9 +2336,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/organizations/{organizationsId}/muteConfigs/{muteConfigsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "muteConfigsId" => URI.encode(mute_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2314,7 +2355,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new notification config's parent. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new notification config's parent. Its format is `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2348,7 +2389,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_notification_configs_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2371,8 +2412,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/notificationConfigs", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/notificationConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2388,8 +2429,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the notification config to delete. Its format is "organizations/[organization_id]/notificationConfigs/[config_id]", "folders/[folder_id]/notificationConfigs/[config_id]", or "projects/[project_id]/notificationConfigs/[config_id]".
-  *   `notification_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the notification config to delete. Its format is `organizations/[organization_id]/notificationConfigs/[config_id]`, `folders/[folder_id]/notificationConfigs/[config_id]`, or `projects/[project_id]/notificationConfigs/[config_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2412,7 +2452,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_notification_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2422,8 +2461,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_notification_configs_delete(
         connection,
-        organizations_id,
-        notification_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2444,14 +2482,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/notificationConfigs/{notificationConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "notificationConfigsId" =>
-            URI.encode(notification_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2466,8 +2499,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the notification config to get. Its format is "organizations/[organization_id]/notificationConfigs/[config_id]", "folders/[folder_id]/notificationConfigs/[config_id]", or "projects/[project_id]/notificationConfigs/[config_id]".
-  *   `notification_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the notification config to get. Its format is `organizations/[organization_id]/notificationConfigs/[config_id]`, `folders/[folder_id]/notificationConfigs/[config_id]`, or `projects/[project_id]/notificationConfigs/[config_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2490,7 +2522,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_notification_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2500,8 +2531,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_notification_configs_get(
         connection,
-        organizations_id,
-        notification_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2522,14 +2552,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/notificationConfigs/{notificationConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "notificationConfigsId" =>
-            URI.encode(notification_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2544,7 +2569,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the parent in which to list the notification configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. The name of the parent in which to list the notification configurations. Its format is "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2578,7 +2603,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_notification_configs_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2601,8 +2626,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/notificationConfigs", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/notificationConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2620,8 +2645,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `notificationConfig.name`. The relative resource name of this notification config. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/notificationConfigs/notify_public_bucket", "folders/{folder_id}/notificationConfigs/notify_public_bucket", or "projects/{project_id}/notificationConfigs/notify_public_bucket".
-  *   `notification_configs_id` (*type:* `String.t`) - Part of `notificationConfig.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The relative resource name of this notification config. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/notificationConfigs/notify_public_bucket", "folders/{folder_id}/notificationConfigs/notify_public_bucket", or "projects/{project_id}/notificationConfigs/notify_public_bucket".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2646,7 +2670,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_notification_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2656,8 +2679,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_notification_configs_patch(
         connection,
-        organizations_id,
-        notification_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2680,14 +2702,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/notificationConfigs/{notificationConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "notificationConfigsId" =>
-            URI.encode(notification_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2702,8 +2719,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2726,7 +2742,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2736,8 +2751,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_operations_cancel(
         connection,
-        organizations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2758,9 +2772,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/operations/{operationsId}:cancel", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2776,8 +2789,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2800,7 +2812,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_operations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2810,8 +2821,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_operations_delete(
         connection,
-        organizations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2832,9 +2842,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/organizations/{organizationsId}/operations/{operationsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2850,8 +2859,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2874,7 +2882,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2884,8 +2891,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_operations_get(
         connection,
-        organizations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2906,9 +2912,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/operations/{operationsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2924,7 +2929,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2959,7 +2964,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_operations_list(
         connection,
-        organizations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2983,8 +2988,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/operations", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3002,7 +3007,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new ResourceValueConfig's parent. The parent field in the CreateResourceValueConfigRequest messages must either be empty or match this field.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new ResourceValueConfig's parent. The parent field in the CreateResourceValueConfigRequest messages must either be empty or match this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3035,7 +3040,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_resource_value_configs_batch_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3057,8 +3062,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/resourceValueConfigs:batchCreate", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/resourceValueConfigs:batchCreate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3077,8 +3082,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the ResourceValueConfig to delete
-  *   `resource_value_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the ResourceValueConfig to delete
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3101,7 +3105,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_resource_value_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3111,8 +3114,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_resource_value_configs_delete(
         connection,
-        organizations_id,
-        resource_value_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3133,14 +3135,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/resourceValueConfigs/{resourceValueConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "resourceValueConfigsId" =>
-            URI.encode(resource_value_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3155,8 +3152,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the resource value config to retrieve. Its format is organizations/{organization}/resourceValueConfigs/{config_id}.
-  *   `resource_value_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the resource value config to retrieve. Its format is `organizations/{organization}/resourceValueConfigs/{config_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3179,7 +3175,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_resource_value_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3190,8 +3185,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_resource_value_configs_get(
         connection,
-        organizations_id,
-        resource_value_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3212,14 +3206,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/resourceValueConfigs/{resourceValueConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "resourceValueConfigsId" =>
-            URI.encode(resource_value_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3240,7 +3229,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns the collection of resource value configs. Its format is "organizations/[organization_id]"
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns the collection of resource value configs. Its format is `organizations/[organization_id]`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3274,7 +3263,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_resource_value_configs_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3297,8 +3286,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/resourceValueConfigs", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/resourceValueConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3316,8 +3305,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resourceValueConfig.name`. Name for the resource value config
-  *   `resource_value_configs_id` (*type:* `String.t`) - Part of `resourceValueConfig.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Name for the resource value configuration
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3342,7 +3330,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_resource_value_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3353,8 +3340,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_resource_value_configs_patch(
         connection,
-        organizations_id,
-        resource_value_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3377,14 +3363,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/resourceValueConfigs/{resourceValueConfigsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "resourceValueConfigsId" =>
-            URI.encode(resource_value_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3405,7 +3386,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new custom module's parent. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new custom module's parent. Its format is `organizations/{organization}/securityHealthAnalyticsSettings`, `folders/{folder}/securityHealthAnalyticsSettings`, or `projects/{project}/securityHealthAnalyticsSettings`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3439,7 +3420,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3461,12 +3442,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3487,8 +3465,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the custom module to delete. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}", "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the custom module to delete. Its format is `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`, `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`, or `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3511,7 +3488,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_security_health_analytics_settings_custom_modules_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3521,8 +3497,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_delete(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3543,14 +3518,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3565,8 +3535,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the custom module to get. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}", "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}"
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the custom module to get. Its format is `organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}`, `folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}`, or `projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3589,7 +3558,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_security_health_analytics_settings_custom_modules_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3600,8 +3568,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_get(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3622,14 +3589,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3650,7 +3612,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list custom modules. Its format is `organizations/{organization}/securityHealthAnalyticsSettings`, `folders/{folder}/securityHealthAnalyticsSettings`, or `projects/{project}/securityHealthAnalyticsSettings`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3685,7 +3647,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3708,12 +3670,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3734,7 +3693,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list descendant custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list descendant custom modules. Its format is `organizations/{organization}/securityHealthAnalyticsSettings`, `folders/{folder}/securityHealthAnalyticsSettings`, or `projects/{project}/securityHealthAnalyticsSettings`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3769,7 +3728,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_list_descendant(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3792,12 +3751,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules:listDescendant",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules:listDescendant", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3818,8 +3774,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `securityHealthAnalyticsCustomModule.name`. Immutable. The resource name of the custom module. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}", or "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}" The id {customModule} is server-generated and is not user settable. It will be a numeric id containing 1-20 digits.
-  *   `custom_modules_id` (*type:* `String.t`) - Part of `securityHealthAnalyticsCustomModule.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name of the custom module. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/customModules/{customModule}", or "folders/{folder}/securityHealthAnalyticsSettings/customModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/customModules/{customModule}" The id {customModule} is server-generated and is not user settable. It will be a numeric id containing 1-20 digits.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3844,7 +3799,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_security_health_analytics_settings_custom_modules_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3855,8 +3809,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_patch(
         connection,
-        organizations_id,
-        custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3879,14 +3832,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules/{customModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "customModulesId" =>
-            URI.encode(custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3907,7 +3855,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the organization, project, or folder. For more information about relative resource names, see [Relative Resource Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) Example: `organizations/{organization_id}`
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the organization, project, or folder. For more information about relative resource names, see [Relative Resource Name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) Example: `organizations/{organization_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3941,7 +3889,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_custom_modules_simulate(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3963,12 +3911,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/customModules:simulate",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/customModules:simulate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3989,8 +3934,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Name of the effective custom module to get. Its format is "organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}", "folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}", or "projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}"
-  *   `effective_custom_modules_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the effective custom module to get. Its format is `organizations/{organization}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`, `folders/{folder}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`, or `projects/{project}/securityHealthAnalyticsSettings/effectiveCustomModules/{customModule}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4013,7 +3957,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_security_health_analytics_settings_effective_custom_modules_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4024,8 +3967,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_effective_custom_modules_get(
         connection,
-        organizations_id,
-        effective_custom_modules_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4046,14 +3988,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/effectiveCustomModules/{effectiveCustomModulesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "effectiveCustomModulesId" =>
-            URI.encode(effective_custom_modules_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4074,7 +4011,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list effective custom modules. Its format is "organizations/{organization}/securityHealthAnalyticsSettings", "folders/{folder}/securityHealthAnalyticsSettings", or "projects/{project}/securityHealthAnalyticsSettings"
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list effective custom modules. Its format is `organizations/{organization}/securityHealthAnalyticsSettings`, `folders/{folder}/securityHealthAnalyticsSettings`, or `projects/{project}/securityHealthAnalyticsSettings`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4109,7 +4046,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_security_health_analytics_settings_effective_custom_modules_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4132,12 +4069,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/securityHealthAnalyticsSettings/effectiveCustomModules",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/effectiveCustomModules", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4158,8 +4092,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The organization name or simulation name of this simulation Valid format: "organizations/{organization}/simulations/latest" "organizations/{organization}/simulations/{simulation}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The organization name or simulation name of this simulation Valid format: `organizations/{organization}/simulations/latest` `organizations/{organization}/simulations/{simulation}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4182,7 +4115,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4192,8 +4124,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_get(
         connection,
-        organizations_id,
-        simulations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4214,9 +4145,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/simulations/{simulationsId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "simulationsId" => URI.encode(simulations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4232,9 +4162,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list attack paths. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}" "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
-  *   `attack_exposure_results_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list attack paths. Valid formats: `organizations/{organization}`, `organizations/{organization}/simulations/{simulation}` `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}` `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4260,8 +4188,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_attack_exposure_results_attack_paths_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4271,9 +4197,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_attack_exposure_results_attack_paths_list(
         connection,
-        organizations_id,
-        simulations_id,
-        attack_exposure_results_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4297,15 +4221,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/attackExposureResults/{attackExposureResultsId}/attackPaths",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1),
-          "attackExposureResultsId" =>
-            URI.encode(attack_exposure_results_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/attackPaths", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4322,9 +4240,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list valued resources. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
-  *   `attack_exposure_results_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list valued resources. Valid formats: `organizations/{organization}`, `organizations/{organization}/simulations/{simulation}` `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4338,7 +4254,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The filter expression that filters the valued resources in the response. Supported fields: * `resource_value` supports = * `resource_type` supports =
-      *   `:orderBy` (*type:* `String.t`) - Optional. The fields by which to order the valued resources response. Supported fields: * `exposed_score` * `resource_value` * `resource_type` * `resource` * `display_name` Values should be a comma separated list of fields. For example: `exposed_score,resource_value`. The default sorting order is descending. To specify ascending or descending order for a field, append a " ASC" or a " DESC" suffix, respectively; for example: `exposed_score DESC`.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The fields by which to order the valued resources response. Supported fields: * `exposed_score` * `resource_value` * `resource_type` * `resource` * `display_name` Values should be a comma separated list of fields. For example: `exposed_score,resource_value`. The default sorting order is descending. To specify ascending or descending order for a field, append a ` ASC` or a ` DESC` suffix, respectively; for example: `exposed_score DESC`.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListValuedResourcesResponse`; indicates that this is a continuation of a prior `ListValuedResources` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4351,8 +4267,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_attack_exposure_results_valued_resources_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4362,9 +4276,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_attack_exposure_results_valued_resources_list(
         connection,
-        organizations_id,
-        simulations_id,
-        attack_exposure_results_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4389,15 +4301,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/attackExposureResults/{attackExposureResultsId}/valuedResources",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1),
-          "attackExposureResultsId" =>
-            URI.encode(attack_exposure_results_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/valuedResources", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4414,8 +4320,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list attack paths. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}" "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list attack paths. Valid formats: `organizations/{organization}`, `organizations/{organization}/simulations/{simulation}` `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}` `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4441,7 +4346,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_attack_paths_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4451,8 +4355,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_attack_paths_list(
         connection,
-        organizations_id,
-        simulations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4476,13 +4379,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/attackPaths",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/attackPaths", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4499,9 +4398,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The name of this valued resource Valid format: "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
-  *   `valued_resources_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of this valued resource Valid format: `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4524,8 +4421,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_valued_resources_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4535,9 +4430,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_valued_resources_get(
         connection,
-        organizations_id,
-        simulations_id,
-        valued_resources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4558,15 +4451,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/valuedResources/{valuedResourcesId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1),
-          "valuedResourcesId" =>
-            URI.encode(valued_resources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4581,8 +4468,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list valued resources. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list valued resources. Valid formats: `organizations/{organization}`, `organizations/{organization}/simulations/{simulation}` `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4596,7 +4482,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - The filter expression that filters the valued resources in the response. Supported fields: * `resource_value` supports = * `resource_type` supports =
-      *   `:orderBy` (*type:* `String.t`) - Optional. The fields by which to order the valued resources response. Supported fields: * `exposed_score` * `resource_value` * `resource_type` * `resource` * `display_name` Values should be a comma separated list of fields. For example: `exposed_score,resource_value`. The default sorting order is descending. To specify ascending or descending order for a field, append a " ASC" or a " DESC" suffix, respectively; for example: `exposed_score DESC`.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The fields by which to order the valued resources response. Supported fields: * `exposed_score` * `resource_value` * `resource_type` * `resource` * `display_name` Values should be a comma separated list of fields. For example: `exposed_score,resource_value`. The default sorting order is descending. To specify ascending or descending order for a field, append a ` ASC` or a ` DESC` suffix, respectively; for example: `exposed_score DESC`.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. Default is 10, minimum is 1, maximum is 1000.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListValuedResourcesResponse`; indicates that this is a continuation of a prior `ListValuedResources` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4609,7 +4495,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_valued_resources_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4619,8 +4504,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_valued_resources_list(
         connection,
-        organizations_id,
-        simulations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4645,13 +4529,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/valuedResources",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/valuedResources", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4668,9 +4548,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of parent to list attack paths. Valid formats: "organizations/{organization}", "organizations/{organization}/simulations/{simulation}" "organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}" "organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}"
-  *   `simulations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
-  *   `valued_resources_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of parent to list attack paths. Valid formats: `organizations/{organization}`, `organizations/{organization}/simulations/{simulation}` `organizations/{organization}/simulations/{simulation}/attackExposureResults/{attack_exposure_result_v2}` `organizations/{organization}/simulations/{simulation}/valuedResources/{valued_resource}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4696,8 +4574,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_simulations_valued_resources_attack_paths_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4707,9 +4583,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_simulations_valued_resources_attack_paths_list(
         connection,
-        organizations_id,
-        simulations_id,
-        valued_resources_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4733,14 +4607,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/simulations/{simulationsId}/valuedResources/{valuedResourcesId}/attackPaths",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "simulationsId" => URI.encode(simulations_id, &URI.char_unreserved?/1),
-          "valuedResourcesId" => URI.encode(valued_resources_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/attackPaths", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4757,7 +4626,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new source's parent. Its format should be "organizations/[organization_id]".
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new source's parent. Its format should be `organizations/[organization_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4790,7 +4659,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_create(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4812,8 +4681,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/sources", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sources", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4829,8 +4698,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. Relative resource name of the source. Its format is "organizations/[organization_id]/source/[source_id]".
-  *   `sources_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. Relative resource name of the source. Its format is `organizations/[organization_id]/source/[source_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4853,7 +4721,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4863,8 +4730,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_get(
         connection,
-        organizations_id,
-        sources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4885,9 +4751,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4903,8 +4768,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `sources_id` (*type:* `String.t`) - Part of `resource`. See documentation of `organizationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4928,7 +4792,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4938,8 +4801,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_get_iam_policy(
         connection,
-        organizations_id,
-        sources_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4961,9 +4823,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}:getIamPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4979,7 +4840,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent of sources to list. Its format should be "organizations/[organization_id]", "folders/[folder_id]", or "projects/[project_id]".
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent of sources to list. Its format should be `organizations/[organization_id]`, `folders/[folder_id]`, or `projects/[project_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5013,7 +4874,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_list(
         connection,
-        organizations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5036,8 +4897,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/sources", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sources", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5053,8 +4914,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `source.name`. The relative resource name of this source. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}"
-  *   `sources_id` (*type:* `String.t`) - Part of `source.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The relative resource name of this source. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Example: "organizations/{organization_id}/sources/{source_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5079,7 +4939,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5089,8 +4948,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_patch(
         connection,
-        organizations_id,
-        sources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5113,9 +4971,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5131,8 +4988,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `sources_id` (*type:* `String.t`) - Part of `resource`. See documentation of `organizationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5156,7 +5012,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5166,8 +5021,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_set_iam_policy(
         connection,
-        organizations_id,
-        sources_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5189,9 +5043,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}:setIamPolicy", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5207,8 +5060,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `sources_id` (*type:* `String.t`) - Part of `resource`. See documentation of `organizationsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5232,7 +5084,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5242,8 +5093,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_test_iam_permissions(
         connection,
-        organizations_id,
-        sources_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5265,13 +5115,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}:testIamPermissions",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5288,8 +5134,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the new finding's parent. Its format should be "organizations/[organization_id]/sources/[source_id]".
-  *   `sources_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the new finding's parent. Its format should be `organizations/[organization_id]/sources/[source_id]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5314,7 +5159,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5324,8 +5168,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_create(
         connection,
-        organizations_id,
-        sources_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5348,9 +5191,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}/findings", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/findings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5366,8 +5208,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the source to groupBy. Its format is "organizations/[organization_id]/sources/[source_id]", folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]. To groupBy across all sources provide a source_id of `-`. For example: organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-, or projects/{project_id}/sources/-
-  *   `sources_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the source to groupBy. Its format is `organizations/[organization_id]/sources/[source_id]`, `folders/[folder_id]/sources/[source_id]`, or `projects/[project_id]/sources/[source_id]`. To groupBy across all sources provide a source_id of `-`. For example: `organizations/{organization_id}/sources/-, folders/{folder_id}/sources/-`, or `projects/{project_id}/sources/-`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5391,7 +5232,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_group(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5401,8 +5241,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_group(
         connection,
-        organizations_id,
-        sources_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5424,9 +5263,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}/findings:group", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/findings:group", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5444,8 +5282,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the source the findings belong to. Its format is "organizations/[organization_id]/sources/[source_id], folders/[folder_id]/sources/[source_id], or projects/[project_id]/sources/[source_id]". To list across all sources provide a source_id of `-`. For example: organizations/{organization_id}/sources/-, folders/{folder_id}/sources/- or projects/{projects_id}/sources/-
-  *   `sources_id` (*type:* `String.t`) - Part of `parent`. See documentation of `organizationsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the source the findings belong to. Its format is `organizations/[organization_id]/sources/[source_id]`, `folders/[folder_id]/sources/[source_id]`, or `projects/[project_id]/sources/[source_id]`. To list across all sources provide a source_id of `-`. For example: `organizations/{organization_id}/sources/-`, `folders/{folder_id}/sources/-` or `projects/{projects_id}/sources/-`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5475,7 +5312,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5485,8 +5321,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_list(
         connection,
-        organizations_id,
-        sources_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5514,9 +5349,8 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/organizations/{organizationsId}/sources/{sourcesId}/findings", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-        "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/findings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -5534,9 +5368,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `finding.name`. The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
-  *   `sources_id` (*type:* `String.t`) - Part of `finding.name`. See documentation of `organizationsId`.
-  *   `findings_id` (*type:* `String.t`) - Part of `finding.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5561,8 +5393,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5572,9 +5402,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_patch(
         connection,
-        organizations_id,
-        sources_id,
-        findings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5597,14 +5425,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}/findings/{findingsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1),
-          "findingsId" => URI.encode(findings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5619,9 +5442,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
-  *   `sources_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
-  *   `findings_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`, `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`, `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5645,8 +5466,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_set_mute(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5656,9 +5475,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_set_mute(
         connection,
-        organizations_id,
-        sources_id,
-        findings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5680,14 +5497,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}/findings/{findingsId}:setMute",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1),
-          "findingsId" => URI.encode(findings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:setMute", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5702,9 +5514,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}", "folders/{folder_id}/sources/{source_id}/findings/{finding_id}", "projects/{project_id}/sources/{source_id}/findings/{finding_id}".
-  *   `sources_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
-  *   `findings_id` (*type:* `String.t`) - Part of `name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Required. The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. Example: `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}`, `folders/{folder_id}/sources/{source_id}/findings/{finding_id}`, `projects/{project_id}/sources/{source_id}/findings/{finding_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5728,8 +5538,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_set_state(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5739,9 +5547,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_set_state(
         connection,
-        organizations_id,
-        sources_id,
-        findings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5763,14 +5569,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}/findings/{findingsId}:setState",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1),
-          "findingsId" => URI.encode(findings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:setState", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5785,9 +5586,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `securityMarks.name`. The relative resource name of the SecurityMarks. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Examples: "organizations/{organization_id}/assets/{asset_id}/securityMarks" "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
-  *   `sources_id` (*type:* `String.t`) - Part of `securityMarks.name`. See documentation of `organizationsId`.
-  *   `findings_id` (*type:* `String.t`) - Part of `securityMarks.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - The relative resource name of the SecurityMarks. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name Examples: "organizations/{organization_id}/assets/{asset_id}/securityMarks" "organizations/{organization_id}/sources/{source_id}/findings/{finding_id}/securityMarks".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5813,8 +5612,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_update_security_marks(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5824,9 +5621,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_update_security_marks(
         connection,
-        organizations_id,
-        sources_id,
-        findings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5850,14 +5645,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}/findings/{findingsId}/securityMarks",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1),
-          "findingsId" => URI.encode(findings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5872,10 +5662,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecurityCenter.V1.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `externalSystem.name`. Full resource name of the external system, for example: "organizations/1234/sources/5678/findings/123456/externalSystems/jira", "folders/1234/sources/5678/findings/123456/externalSystems/jira", "projects/1234/sources/5678/findings/123456/externalSystems/jira"
-  *   `sources_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `organizationsId`.
-  *   `findings_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `organizationsId`.
-  *   `external_systems_id` (*type:* `String.t`) - Part of `externalSystem.name`. See documentation of `organizationsId`.
+  *   `name` (*type:* `String.t`) - Full resource name of the external system, for example: "organizations/1234/sources/5678/findings/123456/externalSystems/jira", "folders/1234/sources/5678/findings/123456/externalSystems/jira", "projects/1234/sources/5678/findings/123456/externalSystems/jira"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5900,9 +5687,6 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
   @spec securitycenter_organizations_sources_findings_external_systems_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5912,10 +5696,7 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
           | {:error, any()}
   def securitycenter_organizations_sources_findings_external_systems_patch(
         connection,
-        organizations_id,
-        sources_id,
-        findings_id,
-        external_systems_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5938,16 +5719,9 @@ defmodule GoogleApi.SecurityCenter.V1.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/organizations/{organizationsId}/sources/{sourcesId}/findings/{findingsId}/externalSystems/{externalSystemsId}",
-        %{
-          "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1),
-          "sourcesId" => URI.encode(sources_id, &URI.char_unreserved?/1),
-          "findingsId" => URI.encode(findings_id, &URI.char_unreserved?/1),
-          "externalSystemsId" =>
-            URI.encode(external_systems_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
