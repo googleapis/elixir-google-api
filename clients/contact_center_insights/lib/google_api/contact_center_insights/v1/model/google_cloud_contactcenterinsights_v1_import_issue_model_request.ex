@@ -21,7 +21,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
-  *   `createNewModel` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, will create a new issue model from the imported file with randomly generated IDs for the issue model and corresponding issues. Otherwise, replaces an existing model with the same ID as the file.
+  *   `createNewModel` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, will create an issue model from the imported file with randomly generated IDs for the issue model and corresponding issues. Otherwise, replaces an existing model with the same ID as the file.
   *   `gcsSource` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ImportIssueModelRequestGcsSource.t`, *default:* `nil`) - Google Cloud Storage source message.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource of the issue model.
   """

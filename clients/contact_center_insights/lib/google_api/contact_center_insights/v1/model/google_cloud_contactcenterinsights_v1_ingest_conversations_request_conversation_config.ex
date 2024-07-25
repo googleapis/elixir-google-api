@@ -22,7 +22,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   ## Attributes
 
   *   `agentChannel` (*type:* `integer()`, *default:* `nil`) - Optional. Indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for conversations to be properly displayed and analyzed.
-  *   `agentId` (*type:* `String.t`, *default:* `nil`) - An opaque, user-specified string representing the human agent who handled the conversations.
+  *   `agentId` (*type:* `String.t`, *default:* `nil`) - Optional. An opaque, user-specified string representing a human agent who handled all conversations in the import. Note that this will be overridden if per-conversation metadata is provided through the `metadata_bucket_uri`.
   *   `customerChannel` (*type:* `integer()`, *default:* `nil`) - Optional. Indicates which of the channels, 1 or 2, contains the agent. Note that this must be set for conversations to be properly displayed and analyzed.
   """
 
