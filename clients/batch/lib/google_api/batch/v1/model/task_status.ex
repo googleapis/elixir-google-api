@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Batch.V1.Model.TaskStatus do
   @moduledoc """
-  Status of a task
+  Status of a task.
 
   ## Attributes
 
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Task state
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Task state.
   *   `statusEvents` (*type:* `list(GoogleApi.Batch.V1.Model.StatusEvent.t)`, *default:* `nil`) - Detailed info about why the state is reached.
   """
 
