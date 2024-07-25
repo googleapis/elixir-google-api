@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the alerting policy. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a Metrics Scope, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the alerting policy. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policy will be written, not the name of the created policy. |name| must be a host project of a Metrics Scope, otherwise INVALID_ARGUMENT error will return. The alerting policy that is returned will have a name that contains a normalized representation of this name as a prefix but adds a suffix of the form /alertPolicies/[ALERT_POLICY_ID], identifying the policy in the container.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,7 +64,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_alert_policies_create(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -86,8 +86,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/alertPolicies", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,8 +103,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The alerting policy to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] For more information, see AlertPolicy.
-  *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The alerting policy to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] For more information, see AlertPolicy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -127,7 +126,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_alert_policies_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -137,8 +135,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_alert_policies_delete(
         connection,
-        projects_id,
-        alert_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -159,10 +156,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" =>
-          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -178,8 +173,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The alerting policy to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] 
-  *   `alert_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The alerting policy to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -202,7 +196,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_alert_policies_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -210,13 +203,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_alert_policies_get(
-        connection,
-        projects_id,
-        alert_policies_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_alert_policies_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -234,10 +221,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" =>
-          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -253,7 +238,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose alert policies are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose alert policies are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] Note that this field names the parent container in which the alerting policies to be listed are stored. To retrieve a single alerting policy by name, use the GetAlertPolicy operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -287,12 +272,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_alert_policies_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_alert_policies_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -314,8 +294,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/alertPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/alertPolicies", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -333,8 +313,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `alertPolicy.name`. Required if the policy exists. The resource name for this policy. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] [ALERT_POLICY_ID] is assigned by Cloud Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
-  *   `alert_policies_id` (*type:* `String.t`) - Part of `alertPolicy.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required if the policy exists. The resource name for this policy. The format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[ALERT_POLICY_ID] [ALERT_POLICY_ID] is assigned by Cloud Monitoring when the policy is created. When calling the alertPolicies.create method, do not include the name field in the alerting policy passed as part of the request.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -359,7 +338,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_alert_policies_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -369,8 +347,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_alert_policies_patch(
         connection,
-        projects_id,
-        alert_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -393,10 +370,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/projects/{projectsId}/alertPolicies/{alertPoliciesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "alertPoliciesId" =>
-          URI.encode(alert_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -412,7 +387,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the time series. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the time series. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -445,7 +420,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_collectd_time_series_create(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -467,8 +442,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/collectdTimeSeries", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/collectdTimeSeries", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -486,7 +461,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the group. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the group. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -513,12 +488,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_create(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_groups_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -538,8 +508,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/groups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/groups", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -555,8 +525,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
-  *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The group to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -577,24 +546,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_projects_groups_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_projects_groups_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_delete(
-        connection,
-        projects_id,
-        groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_groups_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -613,9 +570,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -631,8 +587,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
-  *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The group to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -652,24 +607,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Group{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_projects_groups_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_projects_groups_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_get(
-        connection,
-        projects_id,
-        groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_groups_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -687,9 +630,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -705,7 +647,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose groups are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose groups are to be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -735,7 +677,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def monitoring_projects_groups_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -758,8 +700,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/groups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/groups", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -775,8 +717,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `group.name`. Output only. The name of this group. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique [GROUP_ID] that is generated automatically.
-  *   `groups_id` (*type:* `String.t`) - Part of `group.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The name of this group. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] When creating a group, this field is ignored and a new name is created consisting of the project specified in the call to CreateGroup and a unique [GROUP_ID] that is generated automatically.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -798,24 +739,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Group{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_projects_groups_update(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_projects_groups_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Group.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_update(
-        connection,
-        projects_id,
-        groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_groups_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -835,9 +764,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -853,8 +781,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The group whose members are listed. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
-  *   `groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The group whose members are listed. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -882,7 +809,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_groups_members_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -890,13 +816,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_groups_members_list(
-        connection,
-        projects_id,
-        groups_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_groups_members_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -919,9 +839,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/groups/{groupsId}/members", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "groupsId" => URI.encode(groups_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/members", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -939,7 +858,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: 4 projects/PROJECT_ID_OR_NUMBER
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: 4 projects/PROJECT_ID_OR_NUMBER
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -972,7 +891,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_metric_descriptors_create(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -994,8 +913,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/metricDescriptors", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1011,8 +930,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The metric descriptor on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example of [METRIC_ID] is: "custom.googleapis.com/my_test_metric".
-  *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The metric descriptor on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example of [METRIC_ID] is: "custom.googleapis.com/my_test_metric".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1035,7 +953,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_metric_descriptors_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1045,8 +962,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_metric_descriptors_delete(
         connection,
-        projects_id,
-        metric_descriptors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1067,10 +983,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricDescriptorsId" =>
-          URI.encode(metric_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1086,8 +1000,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The metric descriptor on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example value of [METRIC_ID] is "compute.googleapis.com/instance/disk/read_bytes_count".
-  *   `metric_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The metric descriptor on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/metricDescriptors/[METRIC_ID] An example value of [METRIC_ID] is "compute.googleapis.com/instance/disk/read_bytes_count".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1110,7 +1023,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_metric_descriptors_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1120,8 +1032,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_metric_descriptors_get(
         connection,
-        projects_id,
-        metric_descriptors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1142,10 +1053,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/metricDescriptors/{metricDescriptorsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "metricDescriptorsId" =>
-          URI.encode(metric_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1161,7 +1070,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1196,7 +1105,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_metric_descriptors_list(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1220,8 +1129,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/metricDescriptors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/metricDescriptors", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1239,8 +1148,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The monitored resource descriptor to get. The format is: projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE] The [RESOURCE_TYPE] is a predefined type, such as cloudsql_database.
-  *   `monitored_resource_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The monitored resource descriptor to get. The format is: projects/[PROJECT_ID_OR_NUMBER]/monitoredResourceDescriptors/[RESOURCE_TYPE] The [RESOURCE_TYPE] is a predefined type, such as cloudsql_database.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1263,7 +1171,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_monitored_resource_descriptors_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1273,8 +1180,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_get(
         connection,
-        projects_id,
-        monitored_resource_descriptors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1295,14 +1201,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v3/projects/{projectsId}/monitoredResourceDescriptors/{monitoredResourceDescriptorsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "monitoredResourceDescriptorsId" =>
-            URI.encode(monitored_resource_descriptors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1319,7 +1220,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1354,7 +1255,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_monitored_resource_descriptors_list(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1378,8 +1279,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/monitoredResourceDescriptors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/monitoredResourceDescriptors", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1397,8 +1298,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel type for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE] 
-  *   `notification_channel_descriptors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The channel type for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannelDescriptors/[CHANNEL_TYPE] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1421,7 +1321,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channel_descriptors_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1431,8 +1330,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_get(
         connection,
-        projects_id,
-        notification_channel_descriptors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1453,17 +1351,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v3/projects/{projectsId}/notificationChannelDescriptors/{notificationChannelDescriptorsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "notificationChannelDescriptorsId" =>
-            URI.encode(
-              notification_channel_descriptors_id,
-              &(URI.char_unreserved?(&1) || &1 == ?/)
-            )
-        }
-      )
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1480,7 +1370,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID_OR_NUMBER] Note that this names (https://cloud.google.com/monitoring/api/v3#project_name) the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
+  *   `name` (*type:* `String.t`) - Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID_OR_NUMBER] Note that this names (https://cloud.google.com/monitoring/api/v3#project_name) the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1514,7 +1404,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channel_descriptors_list(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1537,8 +1427,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannelDescriptors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/notificationChannelDescriptors", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1557,7 +1447,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container into which the channel will be written, this does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container into which the channel will be written, this does not name the newly created channel. The resulting channel's name will have a normalized version of this field as a prefix, but will add /notificationChannels/[CHANNEL_ID] to identify the channel.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1590,7 +1480,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_create(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1612,8 +1502,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/notificationChannels", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1629,8 +1519,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] 
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The channel for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1654,7 +1543,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1664,8 +1552,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_delete(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1687,10 +1574,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" =>
-          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1706,8 +1591,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The channel for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] 
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The channel for which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1730,7 +1614,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1740,8 +1623,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_get(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1762,10 +1644,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" =>
-          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1781,8 +1661,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The notification channel for which a verification code is to be generated and retrieved. This must name a channel that is already verified; if the specified channel is not verified, the request will fail.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1806,7 +1685,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_get_verification_code(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1816,8 +1694,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_get_verification_code(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1839,14 +1716,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:getVerificationCode",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "notificationChannelsId" =>
-            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v3/{+name}:getVerificationCode", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1864,7 +1736,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] This names the container in which to look for the notification channels; it does not name a specific channel. To query a specific channel by REST resource name, use the GetNotificationChannel operation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1900,7 +1772,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_list(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1925,8 +1797,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannels", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/notificationChannels", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1944,8 +1816,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `notificationChannel.name`. The full REST resource name for this channel. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] The [CHANNEL_ID] is automatically assigned by the server on creation.
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `notificationChannel.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The full REST resource name for this channel. The format is: projects/[PROJECT_ID_OR_NUMBER]/notificationChannels/[CHANNEL_ID] The [CHANNEL_ID] is automatically assigned by the server on creation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1970,7 +1841,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1980,8 +1850,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_patch(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2004,10 +1873,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notificationChannelsId" =>
-          URI.encode(notification_channels_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2023,8 +1890,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel to which to send a verification code.
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The notification channel to which to send a verification code.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2048,7 +1914,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_send_verification_code(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2058,8 +1923,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_send_verification_code(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2081,14 +1945,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:sendVerificationCode",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "notificationChannelsId" =>
-            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v3/{+name}:sendVerificationCode", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2103,8 +1962,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The notification channel to verify.
-  *   `notification_channels_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The notification channel to verify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2128,7 +1986,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_notification_channels_verify(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2138,8 +1995,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_notification_channels_verify(
         connection,
-        projects_id,
-        notification_channels_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2161,14 +2017,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v3/projects/{projectsId}/notificationChannels/{notificationChannelsId}:verify",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "notificationChannelsId" =>
-            URI.encode(notification_channels_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v3/{+name}:verify", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2183,7 +2034,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which a Snooze should be created. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `parent` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which a Snooze should be created. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2209,12 +2060,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_snoozes_create(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_snoozes_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2233,8 +2079,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/snoozes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/snoozes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2250,8 +2096,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The ID of the Snooze to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID] 
-  *   `snoozes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The ID of the Snooze to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2271,24 +2116,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Snooze{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_projects_snoozes_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_projects_snoozes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Snooze.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_snoozes_get(
-        connection,
-        projects_id,
-        snoozes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_snoozes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2306,9 +2139,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/snoozes/{snoozesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snoozesId" => URI.encode(snoozes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2324,7 +2156,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Snoozes should be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `parent` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Snoozes should be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2352,7 +2184,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_snoozes_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def monitoring_projects_snoozes_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2373,8 +2205,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/snoozes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/snoozes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2390,8 +2222,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `snooze.name`. Required. The name of the Snooze. The format is: projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID] The ID of the Snooze will be generated by the system.
-  *   `snoozes_id` (*type:* `String.t`) - Part of `snooze.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Identifier. The name of the Snooze. The format is: projects/[PROJECT_ID_OR_NUMBER]/snoozes/[SNOOZE_ID] The ID of the Snooze will be generated by the system.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2413,24 +2244,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Snooze{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_projects_snoozes_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_projects_snoozes_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Snooze.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_snoozes_patch(
-        connection,
-        projects_id,
-        snoozes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_snoozes_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2450,9 +2269,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/projects/{projectsId}/snoozes/{snoozesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "snoozesId" => URI.encode(snoozes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2468,7 +2286,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2499,12 +2317,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_time_series_create(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_time_series_create(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2523,8 +2336,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/timeSeries", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2540,7 +2353,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2573,7 +2386,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_time_series_create_service(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2595,8 +2408,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/timeSeries:createService", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/timeSeries:createService", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2612,7 +2425,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name), organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name), organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2652,12 +2465,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_time_series_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_time_series_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2690,8 +2498,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/timeSeries", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/timeSeries", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2707,7 +2515,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2738,12 +2546,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_projects_time_series_query(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_projects_time_series_query(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2762,8 +2565,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/timeSeries:query", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/timeSeries:query", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2779,7 +2582,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the Uptime check. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `parent` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) in which to create the Uptime check. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2812,7 +2615,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_uptime_check_configs_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2834,8 +2637,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/uptimeCheckConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2851,8 +2654,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The Uptime check configuration to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] 
-  *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The Uptime check configuration to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2875,7 +2677,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_uptime_check_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2885,8 +2686,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_uptime_check_configs_delete(
         connection,
-        projects_id,
-        uptime_check_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2907,10 +2707,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" =>
-          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2926,8 +2724,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The Uptime check configuration to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] 
-  *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The Uptime check configuration to retrieve. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2950,7 +2747,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_uptime_check_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2960,8 +2756,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_uptime_check_configs_get(
         connection,
-        projects_id,
-        uptime_check_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2982,10 +2777,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" =>
-          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3001,7 +2794,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Uptime check configurations are listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
+  *   `parent` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Uptime check configurations are listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3036,7 +2829,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_uptime_check_configs_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3060,8 +2853,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/uptimeCheckConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3079,8 +2872,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. Identifier. A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] [PROJECT_ID_OR_NUMBER] is the Workspace host project associated with the Uptime check.This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
-  *   `uptime_check_configs_id` (*type:* `String.t`) - Part of `uptimeCheckConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. A unique resource name for this Uptime check configuration. The format is: projects/[PROJECT_ID_OR_NUMBER]/uptimeCheckConfigs/[UPTIME_CHECK_ID] [PROJECT_ID_OR_NUMBER] is the Workspace host project associated with the Uptime check.This field should be omitted when creating the Uptime check configuration; on create, the resource name is assigned by the server and included in the response.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3105,7 +2897,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
   @spec monitoring_projects_uptime_check_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3115,8 +2906,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
           | {:error, any()}
   def monitoring_projects_uptime_check_configs_patch(
         connection,
-        projects_id,
-        uptime_check_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3139,10 +2929,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/projects/{projectsId}/uptimeCheckConfigs/{uptimeCheckConfigsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "uptimeCheckConfigsId" =>
-          URI.encode(uptime_check_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

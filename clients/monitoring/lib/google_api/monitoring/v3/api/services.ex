@@ -31,8 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name (https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics Scope. The format is: projects/[PROJECT_ID_OR_NUMBER] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name (https://cloud.google.com/monitoring/api/v3#project_name) of the parent Metrics Scope. The format is: projects/[PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,18 +53,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Service{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_services_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_services_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_services_create(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
+  def monitoring_services_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -85,9 +78,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,9 +95,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the Service to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -125,26 +115,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_services_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_services_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_services_delete(
-        connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_services_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -162,10 +138,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -181,9 +155,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -203,26 +175,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Service{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_services_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_services_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_services_get(
-        connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_services_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -240,10 +198,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -259,8 +215,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed services, either a project (https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent containing the listed services, either a project (https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -283,12 +238,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.ListServicesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_services_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec monitoring_services_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.ListServicesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_services_list(connection, v3_id, v3_id1, optional_params \\ [], opts \\ []) do
+  def monitoring_services_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -309,9 +264,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -327,9 +281,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `service.name`. Identifier. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name for this Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -351,26 +303,12 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   *   `{:ok, %GoogleApi.Monitoring.V3.Model.Service{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec monitoring_services_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec monitoring_services_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Monitoring.V3.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def monitoring_services_patch(
-        connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def monitoring_services_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -390,10 +328,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -409,9 +345,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent Service. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -436,8 +370,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   @spec monitoring_services_service_level_objectives_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -447,9 +379,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           | {:error, any()}
   def monitoring_services_service_level_objectives_create(
         connection,
-        v3_id,
-        v3_id1,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -472,10 +402,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}/serviceLevelObjectives", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/serviceLevelObjectives", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -491,10 +419,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the ServiceLevelObjective to delete. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -517,9 +442,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   @spec monitoring_services_service_level_objectives_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -529,10 +451,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           | {:error, any()}
   def monitoring_services_service_level_objectives_delete(
         connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        service_level_objectives_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -553,16 +472,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v3/{v3Id}/{v3Id1}/services/{servicesId}/serviceLevelObjectives/{serviceLevelObjectivesId}",
-        %{
-          "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-          "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -577,10 +489,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `name`. Required. Resource name of the ServiceLevelObjective to get. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
-  *   `service_level_objectives_id` (*type:* `String.t`) - Part of `name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Required. Resource name of the ServiceLevelObjective to get. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -604,9 +513,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   @spec monitoring_services_service_level_objectives_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -616,10 +522,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           | {:error, any()}
   def monitoring_services_service_level_objectives_get(
         connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        service_level_objectives_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -641,16 +544,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v3/{v3Id}/{v3Id1}/services/{servicesId}/serviceLevelObjectives/{serviceLevelObjectivesId}",
-        %{
-          "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-          "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -665,9 +561,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `parent`. Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/- 
-  *   `v3_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v3Id`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/- 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -694,8 +588,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   @spec monitoring_services_service_level_objectives_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -705,9 +597,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           | {:error, any()}
   def monitoring_services_service_level_objectives_list(
         connection,
-        v3_id,
-        v3_id1,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -732,10 +622,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/{v3Id}/{v3Id1}/services/{servicesId}/serviceLevelObjectives", %{
-        "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-        "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-        "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+parent}/serviceLevelObjectives", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -753,10 +641,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `v3_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. Identifier. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
-  *   `v3_id1` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
-  *   `services_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
-  *   `service_level_objectives_id` (*type:* `String.t`) - Part of `serviceLevelObjective.name`. See documentation of `v3Id`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -781,9 +666,6 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
   @spec monitoring_services_service_level_objectives_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -793,10 +675,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
           | {:error, any()}
   def monitoring_services_service_level_objectives_patch(
         connection,
-        v3_id,
-        v3_id1,
-        services_id,
-        service_level_objectives_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -819,16 +698,9 @@ defmodule GoogleApi.Monitoring.V3.Api.Services do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v3/{v3Id}/{v3Id1}/services/{servicesId}/serviceLevelObjectives/{serviceLevelObjectivesId}",
-        %{
-          "v3Id" => URI.encode(v3_id, &URI.char_unreserved?/1),
-          "v3Id1" => URI.encode(v3_id1, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "serviceLevelObjectivesId" =>
-            URI.encode(service_level_objectives_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
