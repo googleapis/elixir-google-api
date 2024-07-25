@@ -18,7 +18,7 @@
 defmodule GoogleApi.ServiceNetworking.Mixfile do
   use Mix.Project
 
-  @version "0.32.1"
+  @version "0.33.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.ServiceNetworking.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/service_networking",
         "Homepage" => "https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started"
