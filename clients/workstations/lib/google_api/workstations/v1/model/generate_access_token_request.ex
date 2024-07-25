@@ -22,6 +22,7 @@ defmodule GoogleApi.Workstations.V1.Model.GenerateAccessTokenRequest do
   ## Attributes
 
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Desired expiration time of the access token. This value must be at most 24 hours in the future. If a value is not specified, the token's expiration time will be set to a default value of 1 hour in the future.
+  *   `port` (*type:* `integer()`, *default:* `nil`) - Optional. Port for which the access token should be generated. If specified, the generated access token grants access only to the specified port of the workstation. If specified, values must be within the range [1 - 65535]. If not specified, the generated access token grants access to all ports of the workstation.
   *   `ttl` (*type:* `String.t`, *default:* `nil`) - Desired lifetime duration of the access token. This value must be at most 24 hours. If a value is not specified, the token's lifetime will be set to a default value of 1 hour.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Workstations.V1.Model.GenerateAccessTokenRequest do
 
   @type t :: %__MODULE__{
           :expireTime => DateTime.t() | nil,
+          :port => integer() | nil,
           :ttl => String.t() | nil
         }
 
   field(:expireTime, as: DateTime)
+  field(:port)
   field(:ttl)
 end
 
