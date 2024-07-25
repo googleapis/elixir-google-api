@@ -31,8 +31,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -52,24 +51,12 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   *   `{:ok, %GoogleApi.SecretManager.V1.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec secretmanager_projects_locations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec secretmanager_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecretManager.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_locations_get(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -87,9 +74,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -105,7 +91,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -138,12 +124,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -164,8 +145,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -183,9 +164,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret to associate with the SecretVersion in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the Secret to associate with the SecretVersion in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -209,8 +188,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_add_version(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -220,9 +197,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_add_version(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -244,14 +219,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}:addVersion",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}:addVersion", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -266,8 +236,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project to associate with the Secret, in the format `projects/*` or `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project to associate with the Secret, in the format `projects/*` or `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -292,7 +261,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -302,8 +270,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -326,9 +293,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/secrets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -344,9 +310,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret to delete in the format `projects/*/secrets/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Secret to delete in the format `projects/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -370,8 +334,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -381,9 +343,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_delete(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -405,10 +365,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -424,9 +382,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Secret, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -449,8 +405,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -460,9 +414,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_get(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -483,10 +435,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -502,9 +452,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -528,8 +476,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -539,9 +485,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -563,14 +507,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -585,8 +524,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project associated with the Secrets, in the format `projects/*` or `projects/*/locations/*`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project associated with the Secrets, in the format `projects/*` or `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -612,7 +550,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -622,8 +559,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -647,9 +583,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/secrets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -665,9 +600,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `secret.name`. Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `secret.name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `secret.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -692,8 +625,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -703,9 +634,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_patch(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -728,10 +657,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -747,9 +674,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -773,8 +698,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -784,9 +707,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -808,14 +729,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -830,9 +746,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -856,8 +770,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -867,9 +779,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -891,14 +801,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -915,10 +820,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -941,9 +843,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_access(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -953,10 +852,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_access(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -977,15 +873,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions/{versionsId}:access",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:access", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1002,10 +892,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to destroy in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to destroy in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1029,9 +916,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_destroy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1041,10 +925,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_destroy(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1066,15 +947,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions/{versionsId}:destroy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:destroy", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1089,10 +964,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to disable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to disable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1116,9 +988,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_disable(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1128,10 +997,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_disable(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1153,15 +1019,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions/{versionsId}:disable",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:disable", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1176,10 +1036,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to enable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to enable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1203,9 +1060,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_enable(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1215,10 +1069,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_enable(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1240,15 +1091,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions/{versionsId}:enable",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:enable", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1263,10 +1108,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1289,9 +1131,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1301,10 +1140,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_get(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1325,15 +1161,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions/{versionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1348,9 +1178,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret associated with the SecretVersions to list, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the Secret associated with the SecretVersions to list, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1376,8 +1204,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_locations_secrets_versions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1387,9 +1213,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_locations_secrets_versions_list(
         connection,
-        projects_id,
-        locations_id,
-        secrets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1413,14 +1237,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/secrets/{secretsId}/versions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/versions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1437,8 +1256,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret to associate with the SecretVersion in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the Secret to associate with the SecretVersion in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1462,7 +1280,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_add_version(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1472,8 +1289,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_add_version(
         connection,
-        projects_id,
-        secrets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1495,9 +1311,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}:addVersion", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}:addVersion", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1513,7 +1328,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project to associate with the Secret, in the format `projects/*` or `projects/*/locations/*`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project to associate with the Secret, in the format `projects/*` or `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1545,12 +1360,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_secrets_create(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_secrets_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1570,8 +1380,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/secrets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/secrets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1587,8 +1397,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret to delete in the format `projects/*/secrets/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Secret to delete in the format `projects/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1612,7 +1421,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1620,13 +1428,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_secrets_delete(
-        connection,
-        projects_id,
-        secrets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_secrets_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1645,9 +1447,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1663,8 +1464,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Secret, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Secret, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1684,24 +1484,12 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   *   `{:ok, %GoogleApi.SecretManager.V1.Model.Secret{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec secretmanager_projects_secrets_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec secretmanager_projects_secrets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecretManager.V1.Model.Secret.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_secrets_get(
-        connection,
-        projects_id,
-        secrets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_secrets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1719,9 +1507,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1737,8 +1524,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1762,7 +1548,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1772,8 +1557,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_get_iam_policy(
         connection,
-        projects_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1795,9 +1579,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1813,7 +1596,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the project associated with the Secrets, in the format `projects/*` or `projects/*/locations/*`
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the project associated with the Secrets, in the format `projects/*` or `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1841,12 +1624,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_secrets_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_secrets_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1867,8 +1645,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/secrets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/secrets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1884,8 +1662,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `secret.name`. Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `secret.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1907,24 +1684,12 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   *   `{:ok, %GoogleApi.SecretManager.V1.Model.Secret{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec secretmanager_projects_secrets_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec secretmanager_projects_secrets_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.SecretManager.V1.Model.Secret.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def secretmanager_projects_secrets_patch(
-        connection,
-        projects_id,
-        secrets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def secretmanager_projects_secrets_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1944,9 +1709,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1962,8 +1726,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1987,7 +1750,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1997,8 +1759,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_set_iam_policy(
         connection,
-        projects_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2020,9 +1781,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2038,8 +1798,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `secrets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2063,7 +1822,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2073,8 +1831,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_test_iam_permissions(
         connection,
-        projects_id,
-        secrets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2096,9 +1853,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2116,9 +1872,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2141,8 +1895,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_access(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2152,9 +1904,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_access(
         connection,
-        projects_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2175,14 +1925,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/secrets/{secretsId}/versions/{versionsId}:access",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:access", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2199,9 +1944,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to destroy in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to destroy in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2225,8 +1968,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_destroy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2236,9 +1977,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_destroy(
         connection,
-        projects_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2260,14 +1999,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/secrets/{secretsId}/versions/{versionsId}:destroy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:destroy", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2282,9 +2016,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to disable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to disable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2308,8 +2040,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_disable(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2319,9 +2049,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_disable(
         connection,
-        projects_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2343,14 +2071,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/secrets/{secretsId}/versions/{versionsId}:disable",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:disable", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2365,9 +2088,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion to enable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion to enable in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2391,8 +2112,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_enable(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2402,9 +2121,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_enable(
         connection,
-        projects_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2426,14 +2143,9 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/secrets/{secretsId}/versions/{versionsId}:enable",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-          "versionsId" => URI.encode(versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:enable", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2448,9 +2160,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
-  *   `secrets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*` or `projects/*/locations/*/secrets/*/versions/*`. `projects/*/secrets/*/versions/latest` or `projects/*/locations/*/secrets/*/versions/latest` is an alias to the most recently created SecretVersion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2473,8 +2183,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2484,9 +2192,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_get(
         connection,
-        projects_id,
-        secrets_id,
-        versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2507,10 +2213,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}/versions/{versionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1),
-        "versionsId" => URI.encode(versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2526,8 +2230,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.SecretManager.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the Secret associated with the SecretVersions to list, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
-  *   `secrets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the Secret associated with the SecretVersions to list, in the format `projects/*/secrets/*` or `projects/*/locations/*/secrets/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2553,7 +2256,6 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
   @spec secretmanager_projects_secrets_versions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2563,8 +2265,7 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
           | {:error, any()}
   def secretmanager_projects_secrets_versions_list(
         connection,
-        projects_id,
-        secrets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2588,9 +2289,8 @@ defmodule GoogleApi.SecretManager.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/secrets/{secretsId}/versions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "secretsId" => URI.encode(secrets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/versions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
