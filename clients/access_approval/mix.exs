@@ -18,7 +18,7 @@
 defmodule GoogleApi.AccessApproval.Mixfile do
   use Mix.Project
 
-  @version "0.13.0"
+  @version "0.14.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.AccessApproval.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/access_approval",
         "Homepage" => "https://cloud.google.com/assured-workloads/access-approval/docs"
