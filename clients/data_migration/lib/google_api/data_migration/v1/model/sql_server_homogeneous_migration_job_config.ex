@@ -23,6 +23,7 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfi
 
   *   `backupFilePattern` (*type:* `String.t`, *default:* `nil`) - Required. Pattern that describes the default backup naming strategy. The specified pattern should ensure lexicographical order of backups. The pattern must define one of the following capture group sets: Capture group set #1 yy/yyyy - year, 2 or 4 digits mm - month number, 1-12 dd - day of month, 1-31 hh - hour of day, 00-23 mi - minutes, 00-59 ss - seconds, 00-59 Example: For backup file TestDB_20230802_155400.trn, use pattern: (?.*)_backup_(?\\d{4})(?\\d{2})(?\\d{2})_(?\\d{2})(?\\d{2})(?\\d{2}).trn Capture group set #2 timestamp - unix timestamp Example: For backup file TestDB.1691448254.trn, use pattern: (?.*)\\.(?\\d*).trn or (?.*)\\.(?\\d*).trn
   *   `databaseBackups` (*type:* `list(GoogleApi.DataMigration.V1.Model.SqlServerDatabaseBackup.t)`, *default:* `nil`) - Required. Backup details per database in Cloud Storage.
+  *   `useDiffBackup` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable differential backups.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,7 +31,8 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfi
   @type t :: %__MODULE__{
           :backupFilePattern => String.t() | nil,
           :databaseBackups =>
-            list(GoogleApi.DataMigration.V1.Model.SqlServerDatabaseBackup.t()) | nil
+            list(GoogleApi.DataMigration.V1.Model.SqlServerDatabaseBackup.t()) | nil,
+          :useDiffBackup => boolean() | nil
         }
 
   field(:backupFilePattern)
@@ -39,6 +41,8 @@ defmodule GoogleApi.DataMigration.V1.Model.SqlServerHomogeneousMigrationJobConfi
     as: GoogleApi.DataMigration.V1.Model.SqlServerDatabaseBackup,
     type: :list
   )
+
+  field(:useDiffBackup)
 end
 
 defimpl Poison.Decoder,
