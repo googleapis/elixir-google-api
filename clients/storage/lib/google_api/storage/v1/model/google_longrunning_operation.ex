@@ -23,9 +23,11 @@ defmodule GoogleApi.Storage.V1.Model.GoogleLongrunningOperation do
 
   *   `done` (*type:* `boolean()`, *default:* `nil`) - If the value is "false", it means the operation is still in progress. If "true", the operation is completed, and either "error" or "response" is available.
   *   `error` (*type:* `GoogleApi.Storage.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The error result of the operation in case of failure or cancellation.
+  *   `kind` (*type:* `String.t`, *default:* `storage#operation`) - The kind of item this is. For operations, this is always storage#operation.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Service-specific metadata associated with the operation. It typically contains progress information and common metadata such as create time. Some services might not provide such metadata. Any method that returns a long-running operation should document the metadata type, if any.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The server-assigned name, which is only unique within the same service that originally returns it. If you use the default HTTP mapping, the "name" should be a resource name ending with "operations/{operationId}".
   *   `response` (*type:* `map()`, *default:* `nil`) - The normal response of the operation in case of success. If the original method returns no data on success, such as "Delete", the response is google.protobuf.Empty. If the original method is standard Get/Create/Update, the response should be the resource. For other methods, the response should have the type "XxxResponse", where "Xxx" is the original method name. For example, if the original method name is "TakeSnapshot()", the inferred response type is "TakeSnapshotResponse".
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The link to this long running operation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,16 +35,20 @@ defmodule GoogleApi.Storage.V1.Model.GoogleLongrunningOperation do
   @type t :: %__MODULE__{
           :done => boolean() | nil,
           :error => GoogleApi.Storage.V1.Model.GoogleRpcStatus.t() | nil,
+          :kind => String.t() | nil,
           :metadata => map() | nil,
           :name => String.t() | nil,
-          :response => map() | nil
+          :response => map() | nil,
+          :selfLink => String.t() | nil
         }
 
   field(:done)
   field(:error, as: GoogleApi.Storage.V1.Model.GoogleRpcStatus)
+  field(:kind)
   field(:metadata, type: :map)
   field(:name)
   field(:response, type: :map)
+  field(:selfLink)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Storage.V1.Model.GoogleLongrunningOperation do
