@@ -24,6 +24,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   *   `commitStreamChunkSizeBytes` (*type:* `String.t`, *default:* `nil`) - Chunk size for commit streams from the harness to windmill.
   *   `getDataStreamChunkSizeBytes` (*type:* `String.t`, *default:* `nil`) - Chunk size for get data streams from the harness to windmill.
   *   `maxWorkItemCommitBytes` (*type:* `String.t`, *default:* `nil`) - Maximum size for work item commit supported windmill storage layer.
+  *   `operationalLimits` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingOperationalLimits.t`, *default:* `nil`) - Operational limits for the streaming job. Can be used by the worker to validate outputs sent to the backend.
   *   `streamingComputationConfigs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t)`, *default:* `nil`) - Set of computation configuration information.
   *   `userStepToStateFamilyNameMap` (*type:* `map()`, *default:* `nil`) - Map from user step names to state families.
   *   `windmillServiceEndpoint` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this endpoint to communicate with Windmill Service dispatchers, otherwise the worker must continue to use whatever endpoint it had been using.
@@ -36,6 +37,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
           :commitStreamChunkSizeBytes => String.t() | nil,
           :getDataStreamChunkSizeBytes => String.t() | nil,
           :maxWorkItemCommitBytes => String.t() | nil,
+          :operationalLimits =>
+            GoogleApi.Dataflow.V1b3.Model.StreamingOperationalLimits.t() | nil,
           :streamingComputationConfigs =>
             list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t()) | nil,
           :userStepToStateFamilyNameMap => map() | nil,
@@ -46,6 +49,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   field(:commitStreamChunkSizeBytes)
   field(:getDataStreamChunkSizeBytes)
   field(:maxWorkItemCommitBytes)
+  field(:operationalLimits, as: GoogleApi.Dataflow.V1b3.Model.StreamingOperationalLimits)
 
   field(:streamingComputationConfigs,
     as: GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig,

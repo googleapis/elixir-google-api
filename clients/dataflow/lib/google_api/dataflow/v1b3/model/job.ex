@@ -26,13 +26,13 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   *   `createdFromSnapshotId` (*type:* `String.t`, *default:* `nil`) - If this is specified, the job's initial state is populated from the given snapshot.
   *   `currentState` (*type:* `String.t`, *default:* `nil`) - The current state of the job. Jobs are created in the `JOB_STATE_STOPPED` state unless otherwise specified. A job in the `JOB_STATE_RUNNING` state may asynchronously enter a terminal state. After a job has reached a terminal state, no further state updates may be made. This field might be mutated by the Dataflow service; callers cannot mutate it.
   *   `currentStateTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp associated with the current state.
-  *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.Environment.t`, *default:* `nil`) - The environment for the job.
+  *   `environment` (*type:* `GoogleApi.Dataflow.V1b3.Model.Environment.t`, *default:* `nil`) - Optional. The environment for the job.
   *   `executionInfo` (*type:* `GoogleApi.Dataflow.V1b3.Model.JobExecutionInfo.t`, *default:* `nil`) - Deprecated.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique ID of this job. This field is set by the Dataflow service when the job is created, and is immutable for the life of the job.
   *   `jobMetadata` (*type:* `GoogleApi.Dataflow.V1b3.Model.JobMetadata.t`, *default:* `nil`) - This field is populated by the Dataflow service to support filtering jobs by the metadata values provided here. Populated for ListJobs and all GetJob views SUMMARY and higher.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels for this job. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Optional. The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains this job.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
   *   `pipelineDescription` (*type:* `GoogleApi.Dataflow.V1b3.Model.PipelineDescription.t`, *default:* `nil`) - Preliminary field: The format of this data may change at any time. A description of the user pipeline and stages through which it is executed. Created by Cloud Dataflow service. Only retrieved with JOB_VIEW_DESCRIPTION or JOB_VIEW_ALL.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - The ID of the Google Cloud project that the job belongs to.
   *   `replaceJobId` (*type:* `String.t`, *default:* `nil`) - If this job is an update of an existing job, this field is the job ID of the job it replaced. When sending a `CreateJobRequest`, you can update a job by specifying it here. The job named here is stopped, and its intermediate state is transferred to this job.
@@ -41,13 +41,14 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   *   `runtimeUpdatableParams` (*type:* `GoogleApi.Dataflow.V1b3.Model.RuntimeUpdatableParams.t`, *default:* `nil`) - This field may ONLY be modified at runtime using the projects.jobs.update method to adjust job behavior. This field has no effect when specified at job creation.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
+  *   `serviceResources` (*type:* `GoogleApi.Dataflow.V1b3.Model.ServiceResources.t`, *default:* `nil`) - Output only. Resources used by the Dataflow Service to run the job.
   *   `stageStates` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageState.t)`, *default:* `nil`) - This field may be mutated by the Cloud Dataflow service; callers cannot mutate it.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp when the job was started (transitioned to JOB_STATE_PENDING). Flexible resource scheduling jobs are started with some delay after job creation, so start_time is unset before start and is updated when the job is started by the Cloud Dataflow service. For other jobs, start_time always equals to create_time and is immutable and set by the Cloud Dataflow service.
   *   `steps` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.Step.t)`, *default:* `nil`) - Exactly one of step or steps_location should be specified. The top-level steps that constitute the entire job. Only retrieved with JOB_VIEW_ALL.
   *   `stepsLocation` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage location where the steps are stored.
   *   `tempFiles` (*type:* `list(String.t)`, *default:* `nil`) - A set of files the system should be aware of that are used for temporary storage. These temporary files will be removed on job completion. No duplicates are allowed. No file patterns are supported. The supported files are: Google Cloud Storage: storage.googleapis.com/{bucket}/{object} bucket.storage.googleapis.com/{object}
-  *   `transformNameMapping` (*type:* `map()`, *default:* `nil`) - The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of Dataflow job.
+  *   `transformNameMapping` (*type:* `map()`, *default:* `nil`) - Optional. The map of transform name prefixes of the job to be replaced to the corresponding name prefixes of the new job.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of Dataflow job.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -74,6 +75,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
             GoogleApi.Dataflow.V1b3.Model.RuntimeUpdatableParams.t() | nil,
           :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
+          :serviceResources => GoogleApi.Dataflow.V1b3.Model.ServiceResources.t() | nil,
           :stageStates => list(GoogleApi.Dataflow.V1b3.Model.ExecutionStageState.t()) | nil,
           :startTime => DateTime.t() | nil,
           :steps => list(GoogleApi.Dataflow.V1b3.Model.Step.t()) | nil,
@@ -103,6 +105,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.Job do
   field(:runtimeUpdatableParams, as: GoogleApi.Dataflow.V1b3.Model.RuntimeUpdatableParams)
   field(:satisfiesPzi)
   field(:satisfiesPzs)
+  field(:serviceResources, as: GoogleApi.Dataflow.V1b3.Model.ServiceResources)
   field(:stageStates, as: GoogleApi.Dataflow.V1b3.Model.ExecutionStageState, type: :list)
   field(:startTime, as: DateTime)
   field(:steps, as: GoogleApi.Dataflow.V1b3.Model.Step, type: :list)

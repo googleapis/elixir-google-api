@@ -28,10 +28,7 @@ defmodule GoogleApi.Dataflow.V1b3.Connection do
       "https://www.googleapis.com/auth/cloud-platform",
 
       # View and manage your Google Compute Engine resources
-      "https://www.googleapis.com/auth/compute",
-
-      # View your Google Compute Engine resources
-      "https://www.googleapis.com/auth/compute.readonly"
+      "https://www.googleapis.com/auth/compute"
     ],
     otp_app: :google_api_dataflow,
     base_url: "https://dataflow.googleapis.com/"
