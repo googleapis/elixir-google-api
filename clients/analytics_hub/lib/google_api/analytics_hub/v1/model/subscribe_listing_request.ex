@@ -21,16 +21,23 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.SubscribeListingRequest do
 
   ## Attributes
 
-  *   `destinationDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t`, *default:* `nil`) - BigQuery destination dataset to create for the subscriber.
+  *   `destinationDataset` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t`, *default:* `nil`) - Input only. BigQuery destination dataset to create for the subscriber.
+  *   `destinationPubsubSubscription` (*type:* `GoogleApi.AnalyticsHub.V1.Model.DestinationPubSubSubscription.t`, *default:* `nil`) - Required. Input only. Destination Pub/Sub subscription to create for the subscriber.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :destinationDataset => GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t() | nil
+          :destinationDataset => GoogleApi.AnalyticsHub.V1.Model.DestinationDataset.t() | nil,
+          :destinationPubsubSubscription =>
+            GoogleApi.AnalyticsHub.V1.Model.DestinationPubSubSubscription.t() | nil
         }
 
   field(:destinationDataset, as: GoogleApi.AnalyticsHub.V1.Model.DestinationDataset)
+
+  field(:destinationPubsubSubscription,
+    as: GoogleApi.AnalyticsHub.V1.Model.DestinationPubSubSubscription
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsHub.V1.Model.SubscribeListingRequest do

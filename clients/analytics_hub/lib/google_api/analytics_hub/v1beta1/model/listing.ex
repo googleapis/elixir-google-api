@@ -32,7 +32,7 @@ defmodule GoogleApi.AnalyticsHub.V1beta1.Model.Listing do
   *   `primaryContact` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
   *   `publisher` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.Publisher.t`, *default:* `nil`) - Optional. Details of the publisher who owns the listing and who can share the source data.
   *   `requestAccess` (*type:* `String.t`, *default:* `nil`) - Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes.
-  *   `restrictedExportConfig` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.RestrictedExportConfig.t`, *default:* `nil`) - Optional. If set, restricted export configuration will be propagated and enforced on the linked dataset.
+  *   `restrictedExportConfig` (*type:* `GoogleApi.AnalyticsHub.V1beta1.Model.RestrictedExportConfig.t`, *default:* `nil`) - Optional. If set, restricted export configuration will be propagated and enforced on the linked dataset. This is a required field for data clean room exchanges.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the listing.
   """
 

@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the data exchange. The description must not contain Unicode non-characters as well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
+  *   `discoveryType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of discovery on the discovery page for all the listings under this exchange. Updating this field also updates (overwrites) the discovery_type field for all the listings under this exchange.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human-readable display name of the data exchange. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and must not start or end with spaces. Default value is an empty string. Max length: 63 bytes.
   *   `documentation` (*type:* `String.t`, *default:* `nil`) - Optional. Documentation describing the data exchange.
   *   `icon` (*type:* `String.t`, *default:* `nil`) - Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the content of the fields are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
@@ -35,6 +36,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
 
   @type t :: %__MODULE__{
           :description => String.t() | nil,
+          :discoveryType => String.t() | nil,
           :displayName => String.t() | nil,
           :documentation => String.t() | nil,
           :icon => String.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.DataExchange do
         }
 
   field(:description)
+  field(:discoveryType)
   field(:displayName)
   field(:documentation)
   field(:icon)

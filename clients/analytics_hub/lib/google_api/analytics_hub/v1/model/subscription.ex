@@ -25,10 +25,12 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Subscription do
   *   `dataExchange` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the source Data Exchange. e.g. projects/123/locations/US/dataExchanges/456
   *   `lastModifyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when the subscription was last modified.
   *   `linkedDatasetMap` (*type:* `%{optional(String.t) => GoogleApi.AnalyticsHub.V1.Model.LinkedResource.t}`, *default:* `nil`) - Output only. Map of listing resource names to associated linked resource, e.g. projects/123/locations/US/dataExchanges/456/listings/789 -> projects/123/datasets/my_dataset For listing-level subscriptions, this is a map of size 1. Only contains values if state == STATE_ACTIVE.
+  *   `linkedResources` (*type:* `list(GoogleApi.AnalyticsHub.V1.Model.LinkedResource.t)`, *default:* `nil`) - Output only. Linked resources created in the subscription. Only contains values if state = STATE_ACTIVE.
   *   `listing` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the source Listing. e.g. projects/123/locations/US/dataExchanges/456/listings/789
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the subscription. e.g. `projects/myproject/locations/US/subscriptions/123`.
   *   `organizationDisplayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name of the project of this subscription.
   *   `organizationId` (*type:* `String.t`, *default:* `nil`) - Output only. Organization of the project this subscription belongs to.
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Output only. Listing shared asset type.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the subscription.
   *   `subscriberContact` (*type:* `String.t`, *default:* `nil`) - Output only. Email of the subscriber.
   """
@@ -41,10 +43,12 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Subscription do
           :lastModifyTime => DateTime.t() | nil,
           :linkedDatasetMap =>
             %{optional(String.t()) => GoogleApi.AnalyticsHub.V1.Model.LinkedResource.t()} | nil,
+          :linkedResources => list(GoogleApi.AnalyticsHub.V1.Model.LinkedResource.t()) | nil,
           :listing => String.t() | nil,
           :name => String.t() | nil,
           :organizationDisplayName => String.t() | nil,
           :organizationId => String.t() | nil,
+          :resourceType => String.t() | nil,
           :state => String.t() | nil,
           :subscriberContact => String.t() | nil
         }
@@ -53,10 +57,12 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.Subscription do
   field(:dataExchange)
   field(:lastModifyTime, as: DateTime)
   field(:linkedDatasetMap, as: GoogleApi.AnalyticsHub.V1.Model.LinkedResource, type: :map)
+  field(:linkedResources, as: GoogleApi.AnalyticsHub.V1.Model.LinkedResource, type: :list)
   field(:listing)
   field(:name)
   field(:organizationDisplayName)
   field(:organizationId)
+  field(:resourceType)
   field(:state)
   field(:subscriberContact)
 end
