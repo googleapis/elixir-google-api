@@ -21,18 +21,20 @@ defmodule GoogleApi.WalletObjects.V1.Model.Resources do
 
   ## Attributes
 
-  *   `eventTicketClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.EventTicketClass.t)`, *default:* `nil`) - 
-  *   `eventTicketObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.EventTicketObject.t)`, *default:* `nil`) - 
-  *   `flightClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.FlightClass.t)`, *default:* `nil`) - 
-  *   `flightObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.FlightObject.t)`, *default:* `nil`) - 
-  *   `giftCardClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GiftCardClass.t)`, *default:* `nil`) - 
-  *   `giftCardObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GiftCardObject.t)`, *default:* `nil`) - 
-  *   `loyaltyClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t)`, *default:* `nil`) - 
-  *   `loyaltyObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LoyaltyObject.t)`, *default:* `nil`) - 
-  *   `offerClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.OfferClass.t)`, *default:* `nil`) - 
-  *   `offerObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.OfferObject.t)`, *default:* `nil`) - 
-  *   `transitClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TransitClass.t)`, *default:* `nil`) - 
-  *   `transitObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TransitObject.t)`, *default:* `nil`) - 
+  *   `eventTicketClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.EventTicketClass.t)`, *default:* `nil`) - A list of event ticket classes.
+  *   `eventTicketObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.EventTicketObject.t)`, *default:* `nil`) - A list of event ticket objects.
+  *   `flightClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.FlightClass.t)`, *default:* `nil`) - A list of flight classes.
+  *   `flightObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.FlightObject.t)`, *default:* `nil`) - A list of flight objects.
+  *   `genericClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GenericClass.t)`, *default:* `nil`) - A list of generic classes.
+  *   `genericObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GenericObject.t)`, *default:* `nil`) - A list of generic objects.
+  *   `giftCardClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GiftCardClass.t)`, *default:* `nil`) - A list of gift card classes.
+  *   `giftCardObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.GiftCardObject.t)`, *default:* `nil`) - A list of gift card objects.
+  *   `loyaltyClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t)`, *default:* `nil`) - A list of loyalty classes.
+  *   `loyaltyObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LoyaltyObject.t)`, *default:* `nil`) - A list of loyalty objects.
+  *   `offerClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.OfferClass.t)`, *default:* `nil`) - A list of offer classes.
+  *   `offerObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.OfferObject.t)`, *default:* `nil`) - A list of offer objects.
+  *   `transitClasses` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TransitClass.t)`, *default:* `nil`) - A list of transit classes.
+  *   `transitObjects` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TransitObject.t)`, *default:* `nil`) - A list of transit objects.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -44,6 +46,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.Resources do
             list(GoogleApi.WalletObjects.V1.Model.EventTicketObject.t()) | nil,
           :flightClasses => list(GoogleApi.WalletObjects.V1.Model.FlightClass.t()) | nil,
           :flightObjects => list(GoogleApi.WalletObjects.V1.Model.FlightObject.t()) | nil,
+          :genericClasses => list(GoogleApi.WalletObjects.V1.Model.GenericClass.t()) | nil,
+          :genericObjects => list(GoogleApi.WalletObjects.V1.Model.GenericObject.t()) | nil,
           :giftCardClasses => list(GoogleApi.WalletObjects.V1.Model.GiftCardClass.t()) | nil,
           :giftCardObjects => list(GoogleApi.WalletObjects.V1.Model.GiftCardObject.t()) | nil,
           :loyaltyClasses => list(GoogleApi.WalletObjects.V1.Model.LoyaltyClass.t()) | nil,
@@ -58,6 +62,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.Resources do
   field(:eventTicketObjects, as: GoogleApi.WalletObjects.V1.Model.EventTicketObject, type: :list)
   field(:flightClasses, as: GoogleApi.WalletObjects.V1.Model.FlightClass, type: :list)
   field(:flightObjects, as: GoogleApi.WalletObjects.V1.Model.FlightObject, type: :list)
+  field(:genericClasses, as: GoogleApi.WalletObjects.V1.Model.GenericClass, type: :list)
+  field(:genericObjects, as: GoogleApi.WalletObjects.V1.Model.GenericObject, type: :list)
   field(:giftCardClasses, as: GoogleApi.WalletObjects.V1.Model.GiftCardClass, type: :list)
   field(:giftCardObjects, as: GoogleApi.WalletObjects.V1.Model.GiftCardObject, type: :list)
   field(:loyaltyClasses, as: GoogleApi.WalletObjects.V1.Model.LoyaltyClass, type: :list)

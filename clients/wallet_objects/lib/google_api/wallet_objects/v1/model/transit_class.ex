@@ -21,6 +21,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
 
   ## Attributes
 
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding object that will be used instead.
   *   `languageOverride` (*type:* `String.t`, *default:* `nil`) - If this field is present, transit tickets served to a user's device will always be in this language. Represents the BCP 47 language tag. Example values are "en-US", "en-GB", "de", or "de-AT".
   *   `redemptionIssuers` (*type:* `list(String.t)`, *default:* `nil`) - Identifies which redemption issuers can redeem the pass over Smart Tap. Redemption issuers are identified by their issuer ID. Redemption issuers must have at least one Smart Tap key configured. The `enableSmartTap` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
   *   `securityAnimation` (*type:* `GoogleApi.WalletObjects.V1.Model.SecurityAnimation.t`, *default:* `nil`) - Optional information about the security animation. If this is set a security animation will be rendered on pass details.
@@ -78,6 +79,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appLinkData => GoogleApi.WalletObjects.V1.Model.AppLinkData.t() | nil,
           :languageOverride => String.t() | nil,
           :redemptionIssuers => list(String.t()) | nil,
           :securityAnimation => GoogleApi.WalletObjects.V1.Model.SecurityAnimation.t() | nil,
@@ -142,6 +144,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
           :id => String.t() | nil
         }
 
+  field(:appLinkData, as: GoogleApi.WalletObjects.V1.Model.AppLinkData)
   field(:languageOverride)
   field(:redemptionIssuers, type: :list)
   field(:securityAnimation, as: GoogleApi.WalletObjects.V1.Model.SecurityAnimation)

@@ -21,7 +21,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
 
   ## Attributes
 
-  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional information about the partner app link.
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding class only object AppLinkData will be displayed.
   *   `barcode` (*type:* `GoogleApi.WalletObjects.V1.Model.Barcode.t`, *default:* `nil`) - The barcode type and value.
   *   `classId` (*type:* `String.t`, *default:* `nil`) - Required. The class associated with this object. The class must be of the same type as this object, must already exist, and must be approved. Class IDs should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you.
   *   `classReference` (*type:* `GoogleApi.WalletObjects.V1.Model.OfferClass.t`, *default:* `nil`) - A copy of the inherited fields of the parent class. These fields are retrieved during a GET.
@@ -39,6 +39,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
   *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode type and value.
+  *   `saveRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t`, *default:* `nil`) - Restrictions on the object that needs to be verified before the user tries to save the pass. Note that this restrictions will only be applied during save time. If the restrictions changed after a user saves the pass, the new restrictions will not be applied to an already saved pass.
   *   `smartTapRedemptionValue` (*type:* `String.t`, *default:* `nil`) - The value that will be transmitted to a Smart Tap certified terminal over NFC for this object. The class level fields `enableSmartTap` and `redemptionIssuers` must also be set up correctly in order for the pass to support Smart Tap. Only ASCII characters are supported.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
@@ -67,6 +68,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
           :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
+          :saveRestrictions => GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t() | nil,
           :smartTapRedemptionValue => String.t() | nil,
           :state => String.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
@@ -92,6 +94,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferObject do
   field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
+  field(:saveRestrictions, as: GoogleApi.WalletObjects.V1.Model.SaveRestrictions)
   field(:smartTapRedemptionValue)
   field(:state)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)

@@ -21,6 +21,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericClass do
 
   ## Attributes
 
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding object that will be used instead.
   *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
   *   `classTemplateInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t`, *default:* `nil`) - Template information about how the class should be displayed. If unset, Google will fallback to a default set of fields to display.
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Available only to Smart Tap enabled partners. Contact support for additional guidance.
@@ -38,6 +39,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericClass do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appLinkData => GoogleApi.WalletObjects.V1.Model.AppLinkData.t() | nil,
           :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
           :classTemplateInfo => GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t() | nil,
           :enableSmartTap => boolean() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericClass do
           :viewUnlockRequirement => String.t() | nil
         }
 
+  field(:appLinkData, as: GoogleApi.WalletObjects.V1.Model.AppLinkData)
   field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
   field(:classTemplateInfo, as: GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo)
   field(:enableSmartTap)

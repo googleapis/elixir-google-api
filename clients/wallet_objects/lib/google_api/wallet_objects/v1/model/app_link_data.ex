@@ -21,9 +21,9 @@ defmodule GoogleApi.WalletObjects.V1.Model.AppLinkData do
 
   ## Attributes
 
-  *   `androidAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner app link. If included, the app link link module will be rendered on the valuable details on the android client.
-  *   `iosAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner app link. If included, the app link link module will be rendered on the valuable details on the ios client.
-  *   `webAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner app link. If included, the app link link module will be rendered on the valuable details on the web client.
+  *   `androidAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner app link.
+  *   `iosAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Deprecated. Links to open iOS apps are not supported.
+  *   `webAppLinkInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo.t`, *default:* `nil`) - Optional information about the partner web link.
   """
 
   use GoogleApi.Gax.ModelBase

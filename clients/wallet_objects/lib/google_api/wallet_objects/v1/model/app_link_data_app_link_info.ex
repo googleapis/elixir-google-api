@@ -21,10 +21,10 @@ defmodule GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfo do
 
   ## Attributes
 
-  *   `appLogoImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional image to be displayed in the App Link Module
-  *   `appTarget` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfoAppTarget.t`, *default:* `nil`) - Url to follow when opening the App Link Module on clients. It will be used by partners to open their webpage or deeplink into their app.
-  *   `description` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - String to be displayed in the description of the App Link Module Required
-  *   `title` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - String to be displayed in the title of the App Link Module Required
+  *   `appLogoImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Deprecated. Image isn't supported in the app link module.
+  *   `appTarget` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkDataAppLinkInfoAppTarget.t`, *default:* `nil`) - Target to follow when opening the app link on clients. It will be used by partners to open their app or webpage.
+  *   `description` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Deprecated. Description isn't supported in the app link module.
+  *   `title` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Deprecated. Title isn't supported in the app link module.
   """
 
   use GoogleApi.Gax.ModelBase
