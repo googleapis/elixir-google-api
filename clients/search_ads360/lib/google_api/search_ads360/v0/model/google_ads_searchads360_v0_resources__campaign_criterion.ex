@@ -36,7 +36,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the campaign criterion. Campaign criterion resource names have the form: `customers/{customer_id}/campaignCriteria/{campaign_id}~{criterion_id}`
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the criterion.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the criterion.
-  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_UserListInfo.t`, *default:* `nil`) - Immutable. User List. The Similar Audiences sunset starts May 2023. Refer to https://ads-developers.googleblog.com/2022/11/announcing-deprecation-and-sunset-of.html for other options.
+  *   `userList` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_UserListInfo.t`, *default:* `nil`) - Immutable. User List.
   *   `webpage` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_WebpageInfo.t`, *default:* `nil`) - Immutable. Webpage.
   """
 
