@@ -24,6 +24,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
   *   `documentWarehouseConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetDocumentWarehouseConfig.t`, *default:* `nil`) - Optional. Deprecated. Warehouse-based dataset configuration is not supported.
   *   `gcsManagedConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig.t`, *default:* `nil`) - Optional. User-managed Cloud Storage dataset configuration. Use this configuration if the dataset documents are stored under a user-managed Cloud Storage location.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Dataset resource name. Format: `projects/{project}/locations/{location}/processors/{processor}/dataset`
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `spannerIndexingConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig.t`, *default:* `nil`) - Optional. A lightweight indexing source with low latency and high reliability, but lacking advanced features like CMEK and content-based search.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. State of the dataset. Ignored when updating dataset.
   *   `unmanagedDatasetConfig` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetUnmanagedDatasetConfig.t`, *default:* `nil`) - Optional. Unmanaged dataset configuration. Use this configuration if the dataset documents are managed by the document service internally (not user-managed).
@@ -39,6 +41,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetGCSManagedConfig.t()
             | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :spannerIndexingConfig =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DatasetSpannerIndexingConfig.t()
             | nil,
@@ -58,6 +62,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Dataset
   )
 
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 
   field(:spannerIndexingConfig,
     as:

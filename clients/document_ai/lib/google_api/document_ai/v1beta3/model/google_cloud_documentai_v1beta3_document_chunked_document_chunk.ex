@@ -26,6 +26,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   *   `pageFooters` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentChunkedDocumentChunkChunkPageFooter.t)`, *default:* `nil`) - Page footers associated with the chunk.
   *   `pageHeaders` (*type:* `list(GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentChunkedDocumentChunkChunkPageHeader.t)`, *default:* `nil`) - Page headers associated with the chunk.
   *   `pageSpan` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentChunkedDocumentChunkChunkPageSpan.t`, *default:* `nil`) - Page span of the chunk.
+  *   `sourceBlockIds` (*type:* `list(String.t)`, *default:* `nil`) - Unused.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
             | nil,
           :pageSpan =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentChunkedDocumentChunkChunkPageSpan.t()
-            | nil
+            | nil,
+          :sourceBlockIds => list(String.t()) | nil
         }
 
   field(:chunkId)
@@ -67,6 +69,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
     as:
       GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentChunkedDocumentChunkChunkPageSpan
   )
+
+  field(:sourceBlockIds, type: :list)
 end
 
 defimpl Poison.Decoder,

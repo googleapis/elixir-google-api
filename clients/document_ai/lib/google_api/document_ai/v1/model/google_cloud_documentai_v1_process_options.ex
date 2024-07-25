@@ -24,6 +24,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptions do
   *   `fromEnd` (*type:* `integer()`, *default:* `nil`) - Only process certain pages from the end, same as above.
   *   `fromStart` (*type:* `integer()`, *default:* `nil`) - Only process certain pages from the start. Process all if the document has fewer pages.
   *   `individualPageSelector` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector.t`, *default:* `nil`) - Which pages to process (1-indexed).
+  *   `layoutConfig` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig.t`, *default:* `nil`) - Optional. Only applicable to `LAYOUT_PARSER_PROCESSOR`. Returns error if set on other processor types.
   *   `ocrConfig` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1OcrConfig.t`, *default:* `nil`) - Only applicable to `OCR_PROCESSOR` and `FORM_PARSER_PROCESSOR`. Returns error if set on other processor types.
   *   `schemaOverride` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchema.t`, *default:* `nil`) - Optional. Override the schema of the ProcessorVersion. Will return an Invalid Argument error if this field is set when the underlying ProcessorVersion doesn't support schema override.
   """
@@ -36,6 +37,9 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptions do
           :individualPageSelector =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector.t()
             | nil,
+          :layoutConfig =>
+            GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig.t()
+            | nil,
           :ocrConfig => GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1OcrConfig.t() | nil,
           :schemaOverride =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1DocumentSchema.t() | nil
@@ -46,6 +50,10 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptions do
 
   field(:individualPageSelector,
     as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsIndividualPageSelector
+  )
+
+  field(:layoutConfig,
+    as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptionsLayoutConfig
   )
 
   field(:ocrConfig, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1OcrConfig)

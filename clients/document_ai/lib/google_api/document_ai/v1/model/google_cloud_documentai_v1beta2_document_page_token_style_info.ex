@@ -30,10 +30,10 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1beta2DocumentPage
   *   `italic` (*type:* `boolean()`, *default:* `nil`) - Whether the text is italic.
   *   `letterSpacing` (*type:* `float()`, *default:* `nil`) - Letter spacing in points.
   *   `pixelFontSize` (*type:* `float()`, *default:* `nil`) - Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
-  *   `smallcaps` (*type:* `boolean()`, *default:* `nil`) - Whether the text is in small caps.
-  *   `strikeout` (*type:* `boolean()`, *default:* `nil`) - Whether the text is strikethrough.
-  *   `subscript` (*type:* `boolean()`, *default:* `nil`) - Whether the text is a subscript.
-  *   `superscript` (*type:* `boolean()`, *default:* `nil`) - Whether the text is a superscript.
+  *   `smallcaps` (*type:* `boolean()`, *default:* `nil`) - Whether the text is in small caps. This feature is not supported yet.
+  *   `strikeout` (*type:* `boolean()`, *default:* `nil`) - Whether the text is strikethrough. This feature is not supported yet.
+  *   `subscript` (*type:* `boolean()`, *default:* `nil`) - Whether the text is a subscript. This feature is not supported yet.
+  *   `superscript` (*type:* `boolean()`, *default:* `nil`) - Whether the text is a superscript. This feature is not supported yet.
   *   `textColor` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleTypeColor.t`, *default:* `nil`) - Color of the text.
   *   `underlined` (*type:* `boolean()`, *default:* `nil`) - Whether the text is underlined.
   """

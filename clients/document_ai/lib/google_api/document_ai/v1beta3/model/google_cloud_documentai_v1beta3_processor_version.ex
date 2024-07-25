@@ -25,12 +25,15 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
   *   `deprecationInfo` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionDeprecationInfo.t`, *default:* `nil`) - If set, information about the eventual deprecation of this version.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the processor version.
   *   `documentSchema` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t`, *default:* `nil`) - The schema of the processor version. Describes the output.
+  *   `genAiModelInfo` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionGenAiModelInfo.t`, *default:* `nil`) - Output only. Information about Generative AI model-based processor versions.
   *   `googleManaged` (*type:* `boolean()`, *default:* `nil`) - Output only. Denotes that this `ProcessorVersion` is managed by Google.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The KMS key name used for encryption.
   *   `kmsKeyVersionName` (*type:* `String.t`, *default:* `nil`) - The KMS key version with which data is encrypted.
   *   `latestEvaluation` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EvaluationReference.t`, *default:* `nil`) - The most recently invoked evaluation for the processor version.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. The model type of this processor version.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the processor version. Format: `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processor_version}`
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor version.
   """
 
@@ -45,6 +48,9 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
           :documentSchema =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema.t()
             | nil,
+          :genAiModelInfo =>
+            GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionGenAiModelInfo.t()
+            | nil,
           :googleManaged => boolean() | nil,
           :kmsKeyName => String.t() | nil,
           :kmsKeyVersionName => String.t() | nil,
@@ -53,6 +59,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
             | nil,
           :modelType => String.t() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil
         }
 
@@ -69,6 +77,11 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
     as: GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchema
   )
 
+  field(:genAiModelInfo,
+    as:
+      GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3ProcessorVersionGenAiModelInfo
+  )
+
   field(:googleManaged)
   field(:kmsKeyName)
   field(:kmsKeyVersionName)
@@ -79,6 +92,8 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Process
 
   field(:modelType)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
 end
 
