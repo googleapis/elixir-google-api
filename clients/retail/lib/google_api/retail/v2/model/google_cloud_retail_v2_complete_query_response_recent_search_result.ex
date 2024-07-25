@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseRecentSearchResult do
   @moduledoc """
-  Recent search of this user.
+  Deprecated: Recent search of this user.
 
   ## Attributes
 

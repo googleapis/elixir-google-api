@@ -22,26 +22,15 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttributeFacetConf
   ## Attributes
 
   *   `mergedFacetKey` (*type:* `String.t`, *default:* `nil`) - The merged facet key should be a valid facet key that is different than the facet key of the current catalog attribute. We refer this is merged facet key as the child of the current catalog attribute. This merged facet key can't be a parent of another facet key (i.e. no directed path of length 2). This merged facet key needs to be either a textual custom attribute or a numerical custom attribute.
-  *   `mergedFacetValues` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue.t)`, *default:* `nil`) - Each instance is a list of facet values that map into the same (possibly different) merged facet value. For the current attribute config, each facet value should map to at most one merged facet value.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :mergedFacetKey => String.t() | nil,
-          :mergedFacetValues =>
-            list(
-              GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue.t()
-            )
-            | nil
+          :mergedFacetKey => String.t() | nil
         }
 
   field(:mergedFacetKey)
-
-  field(:mergedFacetValues,
-    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CatalogAttributeFacetConfigMergedFacetValue,
-    type: :list
-  )
 end
 
 defimpl Poison.Decoder,
