@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_notebooks, "~> 0.10"}]
+  [{:google_api_notebooks, "~> 0.11"}]
 end
 ```
 
