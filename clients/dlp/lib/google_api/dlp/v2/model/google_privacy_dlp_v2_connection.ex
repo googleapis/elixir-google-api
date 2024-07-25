@@ -23,7 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Connection do
 
   *   `cloudSql` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlProperties.t`, *default:* `nil`) - Connect to a Cloud SQL instance.
   *   `errors` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Error.t)`, *default:* `nil`) - Output only. Set if status == ERROR, to provide additional details. Will store the last 10 errors sorted with the most recent first.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the connection: projects/{project}/locations/{location}/connections/{name}.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the connection: `projects/{project}/locations/{location}/connections/{name}`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The connection's state in its lifecycle.
   """
 

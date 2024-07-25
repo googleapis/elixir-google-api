@@ -24,7 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DatabaseResourceRegex do
   *   `databaseRegex` (*type:* `String.t`, *default:* `nil`) - Regex to test the database name against. If empty, all databases match.
   *   `databaseResourceNameRegex` (*type:* `String.t`, *default:* `nil`) - Regex to test the database resource's name against. An example of a database resource name is a table's name. Other database resource names like view names could be included in the future. If empty, all database resources match.
   *   `instanceRegex` (*type:* `String.t`, *default:* `nil`) - Regex to test the instance name against. If empty, all instances match.
-  *   `projectIdRegex` (*type:* `String.t`, *default:* `nil`) - For organizations, if unset, will match all projects. Has no effect for Data Profile configurations created within a project.
+  *   `projectIdRegex` (*type:* `String.t`, *default:* `nil`) - For organizations, if unset, will match all projects. Has no effect for configurations created within a project.
   """
 
   use GoogleApi.Gax.ModelBase

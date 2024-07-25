@@ -21,6 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryGenerationCadence do
 
   ## Attributes
 
+  *   `inspectTemplateModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when the inspection rules defined by the `InspectTemplate` change. If not set, changing the template will not cause a data profile to update.
   *   `schemaModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when a schema is modified.
   *   `tableModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTableModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when a table is modified.
   """
@@ -28,11 +29,18 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryGenerationCadence do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :inspectTemplateModifiedCadence =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t()
+            | nil,
           :schemaModifiedCadence =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence.t() | nil,
           :tableModifiedCadence =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTableModifiedCadence.t() | nil
         }
+
+  field(:inspectTemplateModifiedCadence,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence
+  )
 
   field(:schemaModifiedCadence,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence

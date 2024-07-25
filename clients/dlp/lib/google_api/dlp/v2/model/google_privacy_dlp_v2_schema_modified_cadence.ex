@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SchemaModifiedCadence do
   @moduledoc """
-  How frequency to modify the profile when the table's schema is modified.
+  How frequently to modify the profile when the table's schema is modified.
 
   ## Attributes
 

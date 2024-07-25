@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileLocation do
 
   ## Attributes
 
-  *   `folderId` (*type:* `String.t`, *default:* `nil`) - The ID of the Folder within an organization to scan.
+  *   `folderId` (*type:* `String.t`, *default:* `nil`) - The ID of the folder within an organization to scan.
   *   `organizationId` (*type:* `String.t`, *default:* `nil`) - The ID of an organization to scan.
   """
 

@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfilePubSubMessage do
   ## Attributes
 
   *   `event` (*type:* `String.t`, *default:* `nil`) - The event that caused the Pub/Sub message to be sent.
+  *   `fileStoreProfile` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile.t`, *default:* `nil`) - If `DetailLevel` is `FILE_STORE_PROFILE` this will be fully populated. Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and `file_store_path` will be populated.
   *   `profile` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile.t`, *default:* `nil`) - If `DetailLevel` is `TABLE_PROFILE` this will be fully populated. Otherwise, if `DetailLevel` is `RESOURCE_NAME`, then only `name` and `full_resource` will be populated.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfilePubSubMessage do
 
   @type t :: %__MODULE__{
           :event => String.t() | nil,
+          :fileStoreProfile =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile.t() | nil,
           :profile => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile.t() | nil
         }
 
   field(:event)
+  field(:fileStoreProfile, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile)
   field(:profile, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile)
 end
 

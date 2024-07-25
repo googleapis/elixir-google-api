@@ -23,6 +23,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
 
   *   `bigQueryTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t`, *default:* `nil`) - BigQuery target for Discovery. The first target to match a table will be the one applied.
   *   `cloudSqlTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t`, *default:* `nil`) - Cloud SQL target for Discovery. The first target to match a table will be the one applied.
+  *   `cloudStorageTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget.t`, *default:* `nil`) - Cloud Storage target for Discovery. The first target to match a table will be the one applied.
+  *   `secretsTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t`, *default:* `nil`) - Discovery target that looks for credentials and secrets stored in cloud resource metadata and reports them as vulnerabilities to Security Command Center. Only one target of this type is allowed.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,11 +33,21 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
           :bigQueryTarget =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t() | nil,
           :cloudSqlTarget =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t() | nil
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t() | nil,
+          :cloudStorageTarget =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget.t() | nil,
+          :secretsTarget =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t() | nil
         }
 
   field(:bigQueryTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget)
   field(:cloudSqlTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget)
+
+  field(:cloudStorageTarget,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget
+  )
+
+  field(:secretsTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do

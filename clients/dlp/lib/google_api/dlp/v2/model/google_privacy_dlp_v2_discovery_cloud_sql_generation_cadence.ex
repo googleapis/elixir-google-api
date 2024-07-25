@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCa
 
   ## Attributes
 
-  *   `refreshFrequency` (*type:* `String.t`, *default:* `nil`) - Data changes (non-schema changes) in Cloud SQL tables can't trigger reprofiling. If you set this field, profiles are refreshed at this frequency regardless of whether the underlying tables have changes. Defaults to never.
+  *   `refreshFrequency` (*type:* `String.t`, *default:* `nil`) - Data changes (non-schema changes) in Cloud SQL tables can't trigger reprofiling. If you set this field, profiles are refreshed at this frequency regardless of whether the underlying tables have changed. Defaults to never.
   *   `schemaModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SchemaModifiedCadence.t`, *default:* `nil`) - When to reprofile if the schema has changed.
   """
 
