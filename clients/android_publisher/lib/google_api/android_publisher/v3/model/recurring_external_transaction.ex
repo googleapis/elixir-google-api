@@ -25,6 +25,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RecurringExternalTransaction do
   *   `externalTransactionToken` (*type:* `String.t`, *default:* `nil`) - Input only. Provided during the call to Create. Retrieved from the client when the alternative billing flow is launched. Required only for the initial purchase.
   *   `initialExternalTransactionId` (*type:* `String.t`, *default:* `nil`) - The external transaction id of the first transaction of this recurring series of transactions. For example, for a subscription this would be the transaction id of the first payment. Required when creating recurring external transactions.
   *   `migratedTransactionProgram` (*type:* `String.t`, *default:* `nil`) - Input only. Provided during the call to Create. Must only be used when migrating a subscription from manual monthly reporting to automated reporting.
+  *   `otherRecurringProduct` (*type:* `GoogleApi.AndroidPublisher.V3.Model.OtherRecurringProduct.t`, *default:* `nil`) - Details of a recurring external transaction product which doesn't belong to any other specific category.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +35,16 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RecurringExternalTransaction do
             GoogleApi.AndroidPublisher.V3.Model.ExternalSubscription.t() | nil,
           :externalTransactionToken => String.t() | nil,
           :initialExternalTransactionId => String.t() | nil,
-          :migratedTransactionProgram => String.t() | nil
+          :migratedTransactionProgram => String.t() | nil,
+          :otherRecurringProduct =>
+            GoogleApi.AndroidPublisher.V3.Model.OtherRecurringProduct.t() | nil
         }
 
   field(:externalSubscription, as: GoogleApi.AndroidPublisher.V3.Model.ExternalSubscription)
   field(:externalTransactionToken)
   field(:initialExternalTransactionId)
   field(:migratedTransactionProgram)
+  field(:otherRecurringProduct, as: GoogleApi.AndroidPublisher.V3.Model.OtherRecurringProduct)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidPublisher.V3.Model.RecurringExternalTransaction do

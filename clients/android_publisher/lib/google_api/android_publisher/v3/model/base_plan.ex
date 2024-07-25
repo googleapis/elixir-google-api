@@ -23,6 +23,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.BasePlan do
 
   *   `autoRenewingBasePlanType` (*type:* `GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType.t`, *default:* `nil`) - Set when the base plan automatically renews at a regular interval.
   *   `basePlanId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique identifier of this base plan. Must be unique within the subscription, and conform with RFC-1034. That is, this ID can only contain lower-case letters (a-z), numbers (0-9), and hyphens (-), and be at most 63 characters.
+  *   `installmentsBasePlanType` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InstallmentsBasePlanType.t`, *default:* `nil`) - Set for installments base plans where a user is committed to a specified number of payments.
   *   `offerTags` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.OfferTag.t)`, *default:* `nil`) - List of up to 20 custom tags specified for this base plan, and returned to the app through the billing library. Subscription offers for this base plan will also receive these offer tags in the billing library.
   *   `otherRegionsConfig` (*type:* `GoogleApi.AndroidPublisher.V3.Model.OtherRegionsBasePlanConfig.t`, *default:* `nil`) - Pricing information for any new locations Play may launch in the future. If omitted, the BasePlan will not be automatically available any new locations Play may launch in the future.
   *   `prepaidBasePlanType` (*type:* `GoogleApi.AndroidPublisher.V3.Model.PrepaidBasePlanType.t`, *default:* `nil`) - Set when the base plan does not automatically renew at the end of the billing period.
@@ -36,6 +37,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.BasePlan do
           :autoRenewingBasePlanType =>
             GoogleApi.AndroidPublisher.V3.Model.AutoRenewingBasePlanType.t() | nil,
           :basePlanId => String.t() | nil,
+          :installmentsBasePlanType =>
+            GoogleApi.AndroidPublisher.V3.Model.InstallmentsBasePlanType.t() | nil,
           :offerTags => list(GoogleApi.AndroidPublisher.V3.Model.OfferTag.t()) | nil,
           :otherRegionsConfig =>
             GoogleApi.AndroidPublisher.V3.Model.OtherRegionsBasePlanConfig.t() | nil,
@@ -51,6 +54,11 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.BasePlan do
   )
 
   field(:basePlanId)
+
+  field(:installmentsBasePlanType,
+    as: GoogleApi.AndroidPublisher.V3.Model.InstallmentsBasePlanType
+  )
+
   field(:offerTags, as: GoogleApi.AndroidPublisher.V3.Model.OfferTag, type: :list)
   field(:otherRegionsConfig, as: GoogleApi.AndroidPublisher.V3.Model.OtherRegionsBasePlanConfig)
   field(:prepaidBasePlanType, as: GoogleApi.AndroidPublisher.V3.Model.PrepaidBasePlanType)
