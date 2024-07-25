@@ -635,6 +635,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:osPolicyAssignmentId` (*type:* `String.t`) - Required. The logical name of the OS policy assignment in the project with the following restrictions: * Must contain only lowercase letters, numbers, and hyphens. * Must start with a letter. * Must be between 1-63 characters. * Must end with a number or a letter. * Must be unique within the project.
+      *   `:requestId` (*type:* `String.t`) - Optional. A unique identifier for this request. Restricted to 36 ASCII characters. A random UUID is recommended. This request is only idempotent if a `request_id` is provided.
       *   `:body` (*type:* `GoogleApi.OSConfig.V1.Model.OSPolicyAssignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -672,6 +673,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       :uploadType => :query,
       :upload_protocol => :query,
       :osPolicyAssignmentId => :query,
+      :requestId => :query,
       :body => :body
     }
 
@@ -708,6 +710,7 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:requestId` (*type:* `String.t`) - Optional. A unique identifier for this request. Restricted to 36 ASCII characters. A random UUID is recommended. This request is only idempotent if a `request_id` is provided.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -742,7 +745,8 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :requestId => :query
     }
 
     request =
@@ -1000,6 +1004,8 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, and the OS policy assignment is not found, a new OS policy assignment will be created. In this situation, `update_mask` is ignored.
+      *   `:requestId` (*type:* `String.t`) - Optional. A unique identifier for this request. Restricted to 36 ASCII characters. A random UUID is recommended. This request is only idempotent if a `request_id` is provided.
       *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that controls which fields of the assignment should be updated.
       *   `:body` (*type:* `GoogleApi.OSConfig.V1.Model.OSPolicyAssignment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1037,6 +1043,8 @@ defmodule GoogleApi.OSConfig.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
+      :requestId => :query,
       :updateMask => :query,
       :body => :body
     }
