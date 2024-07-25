@@ -25,10 +25,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchema do
   *   `additionalProperties` (*type:* `GoogleApi.Discovery.V1.Model.JsonSchema.t`, *default:* `nil`) - If this is a schema for an object, this property is the schema for any additional properties with dynamic keys on this object.
   *   `annotations` (*type:* `GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations.t`, *default:* `nil`) - Additional information about this property.
   *   `default` (*type:* `String.t`, *default:* `nil`) - The default value of this property (if one exists).
-  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - Whether the parameter is deprecated.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of this object.
   *   `enum` (*type:* `list(String.t)`, *default:* `nil`) - Values this parameter may take (if it is an enum).
-  *   `enumDeprecated` (*type:* `list(boolean())`, *default:* `nil`) - The deprecation status for the enums. Each position maps to the corresponding value in the "enum" array.
   *   `enumDescriptions` (*type:* `list(String.t)`, *default:* `nil`) - The descriptions for the enums. Each position maps to the corresponding value in the "enum" array.
   *   `format` (*type:* `String.t`, *default:* `nil`) - An additional regular expression or key that helps constrain the value. For more details see: http://tools.ietf.org/html/draft-zyp-json-schema-03#section-5.23
   *   `id` (*type:* `String.t`, *default:* `nil`) - Unique identifier for this schema.
@@ -52,10 +50,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchema do
           :additionalProperties => GoogleApi.Discovery.V1.Model.JsonSchema.t() | nil,
           :annotations => GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations.t() | nil,
           :default => String.t() | nil,
-          :deprecated => boolean() | nil,
           :description => String.t() | nil,
           :enum => list(String.t()) | nil,
-          :enumDeprecated => list(boolean()) | nil,
           :enumDescriptions => list(String.t()) | nil,
           :format => String.t() | nil,
           :id => String.t() | nil,
@@ -77,10 +73,8 @@ defmodule GoogleApi.Discovery.V1.Model.JsonSchema do
   field(:additionalProperties, as: GoogleApi.Discovery.V1.Model.JsonSchema)
   field(:annotations, as: GoogleApi.Discovery.V1.Model.JsonSchemaAnnotations)
   field(:default)
-  field(:deprecated)
   field(:description)
   field(:enum, type: :list)
-  field(:enumDeprecated, type: :list)
   field(:enumDescriptions, type: :list)
   field(:format)
   field(:id)
