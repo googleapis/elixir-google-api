@@ -36,16 +36,21 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - For Resource freshness validation (https://google.aip.dev/154)
   *   `initialUser` (*type:* `GoogleApi.AlloyDB.V1.Model.UserPassword.t`, *default:* `nil`) - Input only. Initial user to setup during cluster creation. Required. If used in `RestoreCluster` this is ignored.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
+  *   `maintenanceSchedule` (*type:* `GoogleApi.AlloyDB.V1.Model.MaintenanceSchedule.t`, *default:* `nil`) - Output only. The maintenance schedule for the cluster, generated for a specific rollout if a maintenance window is set.
+  *   `maintenanceUpdatePolicy` (*type:* `GoogleApi.AlloyDB.V1.Model.MaintenanceUpdatePolicy.t`, *default:* `nil`) - Optional. The maintenance update policy determines when to allow or deny updates.
   *   `migrationSource` (*type:* `GoogleApi.AlloyDB.V1.Model.MigrationSource.t`, *default:* `nil`) - Output only. Cluster created via DMS migration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the cluster resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id} where the cluster ID segment should satisfy the regex expression `[a-z0-9-]+`. For more details see https://google.aip.dev/122. The prefix of the cluster resource name is the name of the parent resource: * projects/{project}/locations/{region}
   *   `network` (*type:* `String.t`, *default:* `nil`) - Required. The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP. The network must belong to the same project as the cluster. It is specified in the form: `projects/{project}/global/networks/{network_id}`. This is required to create a cluster. Deprecated, use network_config.network instead.
   *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.NetworkConfig.t`, *default:* `nil`) - 
   *   `primaryConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.PrimaryConfig.t`, *default:* `nil`) - Output only. Cross Region replication config specific to PRIMARY cluster.
+  *   `pscConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.PscConfig.t`, *default:* `nil`) - Optional. The configuration for Private Service Connect (PSC) for the cluster.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Cluster does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `secondaryConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.SecondaryConfig.t`, *default:* `nil`) - Cross Region replication config specific to SECONDARY cluster.
   *   `sslConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.SslConfig.t`, *default:* `nil`) - SSL configuration for this AlloyDB cluster.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current serving state of the cluster.
+  *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Optional. Subscription type of the cluster.
+  *   `trialMetadata` (*type:* `GoogleApi.AlloyDB.V1.Model.TrialMetadata.t`, *default:* `nil`) - Output only. Metadata for free trial clusters
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time stamp
   """
@@ -68,16 +73,22 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
           :etag => String.t() | nil,
           :initialUser => GoogleApi.AlloyDB.V1.Model.UserPassword.t() | nil,
           :labels => map() | nil,
+          :maintenanceSchedule => GoogleApi.AlloyDB.V1.Model.MaintenanceSchedule.t() | nil,
+          :maintenanceUpdatePolicy =>
+            GoogleApi.AlloyDB.V1.Model.MaintenanceUpdatePolicy.t() | nil,
           :migrationSource => GoogleApi.AlloyDB.V1.Model.MigrationSource.t() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
           :networkConfig => GoogleApi.AlloyDB.V1.Model.NetworkConfig.t() | nil,
           :primaryConfig => GoogleApi.AlloyDB.V1.Model.PrimaryConfig.t() | nil,
+          :pscConfig => GoogleApi.AlloyDB.V1.Model.PscConfig.t() | nil,
           :reconciling => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :secondaryConfig => GoogleApi.AlloyDB.V1.Model.SecondaryConfig.t() | nil,
           :sslConfig => GoogleApi.AlloyDB.V1.Model.SslConfig.t() | nil,
           :state => String.t() | nil,
+          :subscriptionType => String.t() | nil,
+          :trialMetadata => GoogleApi.AlloyDB.V1.Model.TrialMetadata.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -97,16 +108,21 @@ defmodule GoogleApi.AlloyDB.V1.Model.Cluster do
   field(:etag)
   field(:initialUser, as: GoogleApi.AlloyDB.V1.Model.UserPassword)
   field(:labels, type: :map)
+  field(:maintenanceSchedule, as: GoogleApi.AlloyDB.V1.Model.MaintenanceSchedule)
+  field(:maintenanceUpdatePolicy, as: GoogleApi.AlloyDB.V1.Model.MaintenanceUpdatePolicy)
   field(:migrationSource, as: GoogleApi.AlloyDB.V1.Model.MigrationSource)
   field(:name)
   field(:network)
   field(:networkConfig, as: GoogleApi.AlloyDB.V1.Model.NetworkConfig)
   field(:primaryConfig, as: GoogleApi.AlloyDB.V1.Model.PrimaryConfig)
+  field(:pscConfig, as: GoogleApi.AlloyDB.V1.Model.PscConfig)
   field(:reconciling)
   field(:satisfiesPzs)
   field(:secondaryConfig, as: GoogleApi.AlloyDB.V1.Model.SecondaryConfig)
   field(:sslConfig, as: GoogleApi.AlloyDB.V1.Model.SslConfig)
   field(:state)
+  field(:subscriptionType)
+  field(:trialMetadata, as: GoogleApi.AlloyDB.V1.Model.TrialMetadata)
   field(:uid)
   field(:updateTime, as: DateTime)
 end
