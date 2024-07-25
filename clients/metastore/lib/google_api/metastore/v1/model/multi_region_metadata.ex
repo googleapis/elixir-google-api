@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Metastore.V1.Model.MultiRegionMetadata do
   @moduledoc """
-  The metadata for the multi-region that includes the constituent regions. The metadata is only populated if the region is multi-region. For single region, it will be empty.
+  The metadata for the multi-region that includes the constituent regions. The metadata is only populated if the region is multi-region. For single region or custom dual region, it will be empty.
 
   ## Attributes
 

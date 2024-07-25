@@ -21,6 +21,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.ScalingConfig do
 
   ## Attributes
 
+  *   `autoscalingConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.AutoscalingConfig.t`, *default:* `nil`) - Optional. The autoscaling configuration.
   *   `instanceSize` (*type:* `String.t`, *default:* `nil`) - An enum of readable instance sizes, with each instance size mapping to a float value (e.g. InstanceSize.EXTRA_SMALL = scaling_factor(0.1))
   *   `scalingFactor` (*type:* `number()`, *default:* `nil`) - Scaling factor, increments of 0.1 for values less than 1.0, and increments of 1.0 for values greater than 1.0.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Metastore.V1beta.Model.ScalingConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autoscalingConfig => GoogleApi.Metastore.V1beta.Model.AutoscalingConfig.t() | nil,
           :instanceSize => String.t() | nil,
           :scalingFactor => number() | nil
         }
 
+  field(:autoscalingConfig, as: GoogleApi.Metastore.V1beta.Model.AutoscalingConfig)
   field(:instanceSize)
   field(:scalingFactor)
 end
