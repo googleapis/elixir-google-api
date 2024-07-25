@@ -532,7 +532,7 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
   end
 
   @doc """
-  Looks up a Container by destination ID.
+  Looks up a Container by destination ID or tag ID.
 
   ## Parameters
 
@@ -549,7 +549,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:destinationId` (*type:* `String.t`) - Destination ID linked to a GTM Container, e.g. AW-123456789. Example: accounts/containers:lookup?destination_id={destination_id}.
+      *   `:destinationId` (*type:* `String.t`) - Destination ID linked to a GTM Container, e.g. AW-123456789. Example: accounts/containers:lookup?destination_id={destination_id}. Only one of destination_id or tag_id should be set.
+      *   `:tagId` (*type:* `String.t`) - Tag ID for a GTM Container, e.g. GTM-123456789. Example: accounts/containers:lookup?tag_id={tag_id}. Only one of destination_id or tag_id should be set.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -575,7 +576,8 @@ defmodule GoogleApi.TagManager.V2.Api.Accounts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :destinationId => :query
+      :destinationId => :query,
+      :tagId => :query
     }
 
     request =
