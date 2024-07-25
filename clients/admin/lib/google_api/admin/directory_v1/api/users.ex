@@ -149,7 +149,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
   end
 
   @doc """
-  Creates a user. Mutate calls immediately following user creation might sometimes fail as the user isn't fully created due to propagation delay in our backends. Check the error details for the "User creation is not complete" message to see if this is the case. Retrying the calls after some time can help in this case.
+  Creates a user. Mutate calls immediately following user creation might sometimes fail as the user isn't fully created due to propagation delay in our backends. Check the error details for the "User creation is not complete" message to see if this is the case. Retrying the calls after some time can help in this case. If `resolveConflictAccount` is set to `true`, a `202` response code means that a conflicting unmanaged account exists and was invited to join the organization. A `409` response code means that a conflicting account exists so the user wasn't created based on the [handling unmanaged user accounts](https://support.google.com/a/answer/11112794) option selected.
 
   ## Parameters
 
@@ -228,8 +228,8 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Users do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:customFieldMask` (*type:* `String.t`) - A comma-separated list of schema names. All fields from these schemas are fetched. This should only be set when `projection=custom`.
-      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
-      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
+      *   `:customer` (*type:* `String.t`) - The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all users for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
+      *   `:domain` (*type:* `String.t`) - The domain name. Use this field to get users from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
       *   `:event` (*type:* `String.t`) - Event on which subscription is intended (if subscribing)
       *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
       *   `:orderBy` (*type:* `String.t`) - Property to use for sorting results.
