@@ -78,7 +78,7 @@ defmodule GoogleApi.Drive.V3.Model.File do
   *   `permissionIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of permission IDs for users with access to this file.
   *   `createdTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the file was created (RFC 3339 date-time).
   *   `permissions` (*type:* `list(GoogleApi.Drive.V3.Model.Permission.t)`, *default:* `nil`) - Output only. The full list of permissions for the file. This is only available if the requesting user can share the file. Not populated for items in shared drives.
-  *   `shortcutDetails` (*type:* `GoogleApi.Drive.V3.Model.FileShortcutDetails.t`, *default:* `nil`) - Shortcut file details. Only populated for shortcut files, which have the mimeType field set to `application/vnd.google-apps.shortcut`.
+  *   `shortcutDetails` (*type:* `GoogleApi.Drive.V3.Model.FileShortcutDetails.t`, *default:* `nil`) - Shortcut file details. Only populated for shortcut files, which have the mimeType field set to `application/vnd.google-apps.shortcut`. Can only be set on `files.create` requests.
   *   `resourceKey` (*type:* `String.t`, *default:* `nil`) - Output only. A key needed to access the item via a shared link.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the file.
   *   `capabilities` (*type:* `GoogleApi.Drive.V3.Model.FileCapabilities.t`, *default:* `nil`) - Output only. Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take.

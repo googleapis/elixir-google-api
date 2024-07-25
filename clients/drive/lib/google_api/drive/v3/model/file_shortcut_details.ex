@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Drive.V3.Model.FileShortcutDetails do
   @moduledoc """
-  Shortcut file details. Only populated for shortcut files, which have the mimeType field set to `application/vnd.google-apps.shortcut`.
+  Shortcut file details. Only populated for shortcut files, which have the mimeType field set to `application/vnd.google-apps.shortcut`. Can only be set on `files.create` requests.
 
   ## Attributes
 
-  *   `targetId` (*type:* `String.t`, *default:* `nil`) - The ID of the file that this shortcut points to.
+  *   `targetId` (*type:* `String.t`, *default:* `nil`) - The ID of the file that this shortcut points to. Can only be set on `files.create` requests.
   *   `targetMimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The MIME type of the file that this shortcut points to. The value of this field is a snapshot of the target's MIME type, captured when the shortcut is created.
   *   `targetResourceKey` (*type:* `String.t`, *default:* `nil`) - Output only. The ResourceKey for the target file.
   """
