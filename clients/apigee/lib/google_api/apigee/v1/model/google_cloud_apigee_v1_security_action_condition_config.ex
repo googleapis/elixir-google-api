@@ -24,10 +24,13 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionConditionCo
   *   `accessTokens` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of access_tokens. Limit 1000 per action.
   *   `apiKeys` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of API keys. Limit 1000 per action.
   *   `apiProducts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of API Products. Limit 1000 per action.
+  *   `asns` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of ASN numbers to act on, e.g. 23. https://en.wikipedia.org/wiki/Autonomous_system_(Internet) This uses int64 instead of uint32 because of https://linter.aip.dev/141/forbidden-types.
   *   `botReasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of Bot Reasons. Current options: Flooder, Brute Guessor, Static Content Scraper, OAuth Abuser, Robot Abuser, TorListRule, Advanced Anomaly Detection, Advanced API Scraper, Search Engine Crawlers, Public Clouds, Public Cloud AWS, Public Cloud Azure, and Public Cloud Google.
   *   `developerApps` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of developer apps. Limit 1000 per action.
   *   `developers` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of developers. Limit 1000 per action.
+  *   `httpMethods` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Act only on particular HTTP methods. E.g. A read-only API can block POST/PUT/DELETE methods. Accepted values are: GET, HEAD, POST, PUT, DELETE, CONNECT, OPTIONS, TRACE and PATCH.
   *   `ipAddressRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of IP addresses. This could be either IPv4 or IPv6. Limited to 100 per action.
+  *   `regionCodes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of countries/region codes to act on, e.g. US. This follows https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2.
   *   `userAgents` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of user agents to deny. We look for exact matches. Limit 50 per action.
   """
 
@@ -37,20 +40,26 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionConditionCo
           :accessTokens => list(String.t()) | nil,
           :apiKeys => list(String.t()) | nil,
           :apiProducts => list(String.t()) | nil,
+          :asns => list(String.t()) | nil,
           :botReasons => list(String.t()) | nil,
           :developerApps => list(String.t()) | nil,
           :developers => list(String.t()) | nil,
+          :httpMethods => list(String.t()) | nil,
           :ipAddressRanges => list(String.t()) | nil,
+          :regionCodes => list(String.t()) | nil,
           :userAgents => list(String.t()) | nil
         }
 
   field(:accessTokens, type: :list)
   field(:apiKeys, type: :list)
   field(:apiProducts, type: :list)
+  field(:asns, type: :list)
   field(:botReasons, type: :list)
   field(:developerApps, type: :list)
   field(:developers, type: :list)
+  field(:httpMethods, type: :list)
   field(:ipAddressRanges, type: :list)
+  field(:regionCodes, type: :list)
   field(:userAgents, type: :list)
 end
 

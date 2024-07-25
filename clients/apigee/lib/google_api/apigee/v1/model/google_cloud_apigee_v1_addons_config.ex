@@ -22,7 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AddonsConfig do
   ## Attributes
 
   *   `advancedApiOpsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AdvancedApiOpsConfig.t`, *default:* `nil`) - Configuration for the Advanced API Ops add-on.
-  *   `analyticsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnalyticsConfig.t`, *default:* `nil`) - Configuration for the Analytics add-on.
+  *   `analyticsConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1AnalyticsConfig.t`, *default:* `nil`) - Configuration for the Analytics add-on. Only used in organizations.environments.addonsConfig.
   *   `apiSecurityConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ApiSecurityConfig.t`, *default:* `nil`) - Configuration for the API Security add-on.
   *   `connectorsPlatformConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ConnectorsPlatformConfig.t`, *default:* `nil`) - Configuration for the Connectors Platform add-on.
   *   `integrationConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1IntegrationConfig.t`, *default:* `nil`) - Configuration for the Integration add-on.
