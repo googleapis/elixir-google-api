@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSe
 
   ## Attributes
 
+  *   `enableConsentBasedRedaction` (*type:* `boolean()`, *default:* `nil`) - Enables consent-based end-user input redaction, if true, a pre-defined session parameter `$session.params.conversation-redaction` will be used to determine if the utterance should be redacted.
   *   `enableInteractionLogging` (*type:* `boolean()`, *default:* `nil`) - Enables DF Interaction logging.
   *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Enables StackDriver logging.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :enableConsentBasedRedaction => boolean() | nil,
           :enableInteractionLogging => boolean() | nil,
           :enableStackdriverLogging => boolean() | nil
         }
 
+  field(:enableConsentBasedRedaction)
   field(:enableInteractionLogging)
   field(:enableStackdriverLogging)
 end
