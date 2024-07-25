@@ -17,20 +17,24 @@
 
 defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.ContactCenter do
   @moduledoc """
-  Message describing ContactCenter object Next ID: 20
+  Message describing ContactCenter object Next ID: 23
 
   ## Attributes
 
   *   `adminUser` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.AdminUser.t`, *default:* `nil`) - Optional. Info about the first admin user, such as given name and family name.
   *   `ccaipManagedUsers` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to enable users to be created in the CCAIP-instance concurrently to having users in Cloud identity
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create time stamp
+  *   `critical` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Critical.t`, *default:* `nil`) - Optional. Critical release channel.
   *   `customerDomainPrefix` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. At least 2 and max 16 char long, must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. A user friendly name for the ContactCenter.
+  *   `early` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Early.t`, *default:* `nil`) - Optional. Early release channel.
   *   `instanceConfig` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.InstanceConfig.t`, *default:* `nil`) - The configuration of this instance, it is currently immutable once created.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Immutable. The KMS key name to encrypt the user input (`ContactCenter`).
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - name of resource
-  *   `privateComponents` (*type:* `list(String.t)`, *default:* `nil`) - Output only. A list of UJET components that should be privately accessed. This field is set by reading settings from the data plane. For more information about the format of the component please refer to go/ccaip-vpc-sc-org-policy. This field is must be fully populated only for Create/Update resource operations. The main use case for this field is OrgPolicy checks via CPE.
+  *   `normal` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Normal.t`, *default:* `nil`) - Optional. Normal release channel.
+  *   `privateAccess` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.PrivateAccess.t`, *default:* `nil`) - Optional. VPC-SC related networking configuration.
+  *   `privateComponents` (*type:* `list(String.t)`, *default:* `nil`) - Output only. TODO(b/283407860) Deprecate this field.
   *   `samlParams` (*type:* `GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams.t`, *default:* `nil`) - Optional. Params that sets up Google as IdP.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this contact center.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Update time stamp
@@ -44,13 +48,18 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.ContactCenter do
           :adminUser => GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.AdminUser.t() | nil,
           :ccaipManagedUsers => boolean() | nil,
           :createTime => DateTime.t() | nil,
+          :critical => GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Critical.t() | nil,
           :customerDomainPrefix => String.t() | nil,
           :displayName => String.t() | nil,
+          :early => GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Early.t() | nil,
           :instanceConfig =>
             GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.InstanceConfig.t() | nil,
           :kmsKey => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :normal => GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Normal.t() | nil,
+          :privateAccess =>
+            GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.PrivateAccess.t() | nil,
           :privateComponents => list(String.t()) | nil,
           :samlParams => GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams.t() | nil,
           :state => String.t() | nil,
@@ -62,12 +71,16 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.ContactCenter do
   field(:adminUser, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.AdminUser)
   field(:ccaipManagedUsers)
   field(:createTime, as: DateTime)
+  field(:critical, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Critical)
   field(:customerDomainPrefix)
   field(:displayName)
+  field(:early, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Early)
   field(:instanceConfig, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.InstanceConfig)
   field(:kmsKey)
   field(:labels, type: :map)
   field(:name)
+  field(:normal, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Normal)
+  field(:privateAccess, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.PrivateAccess)
   field(:privateComponents, type: :list)
   field(:samlParams, as: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams)
   field(:state)

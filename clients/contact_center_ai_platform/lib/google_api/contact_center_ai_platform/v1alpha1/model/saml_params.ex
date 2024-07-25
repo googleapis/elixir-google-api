@@ -21,6 +21,7 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams do
 
   ## Attributes
 
+  *   `authenticationContexts` (*type:* `list(String.t)`, *default:* `nil`) - Additional contexts used for authentication.
   *   `certificate` (*type:* `String.t`, *default:* `nil`) - SAML certificate
   *   `emailMapping` (*type:* `String.t`, *default:* `nil`) - IdP field that maps to the user’s email address
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Entity id URL
@@ -31,6 +32,7 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :authenticationContexts => list(String.t()) | nil,
           :certificate => String.t() | nil,
           :emailMapping => String.t() | nil,
           :entityId => String.t() | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.SAMLParams do
           :userEmail => String.t() | nil
         }
 
+  field(:authenticationContexts, type: :list)
   field(:certificate)
   field(:emailMapping)
   field(:entityId)
