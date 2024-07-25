@@ -83,7 +83,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Deletes the specified task from the task list.
+  Deletes the specified task from the task list. If the task is assigned, both the assigned task and the original task (in Docs, Chat Spaces) are deleted. To delete the assigned task only, navigate to the assignment surface and unassign the task from there.
 
   ## Parameters
 
@@ -204,7 +204,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Creates a new task on the specified task list. A user can have up to 20,000 uncompleted tasks per list and up to 100,000 tasks in total at a time.
+  Creates a new task on the specified task list. Tasks assigned from Docs or Chat Spaces cannot be inserted from Tasks Public API; they can only be created by assigning them from Docs or Chat Spaces. A user can have up to 20,000 non-hidden tasks per list and up to 100,000 tasks in total at a time.
 
   ## Parameters
 
@@ -222,7 +222,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - Parent task identifier. If the task is created at the top level, this parameter is omitted. Optional.
+      *   `:parent` (*type:* `String.t`) - Parent task identifier. If the task is created at the top level, this parameter is omitted. An assigned task cannot be a parent task, nor can it have a parent. Setting the parent to an assigned task results in failure of the request. Optional.
       *   `:previous` (*type:* `String.t`) - Previous sibling task identifier. If the task is created at the first position among its siblings, this parameter is omitted. Optional.
       *   `:body` (*type:* `GoogleApi.Tasks.V1.Model.Task.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -270,7 +270,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Returns all tasks in the specified task list. A user can have up to 20,000 uncompleted tasks per list and up to 100,000 tasks in total at a time.
+  Returns all tasks in the specified task list. Does not return assigned tasks be default (from Docs, Chat Spaces). A user can have up to 20,000 non-hidden tasks per list and up to 100,000 tasks in total at a time.
 
   ## Parameters
 
@@ -294,7 +294,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:dueMin` (*type:* `String.t`) - Lower bound for a task's due date (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by due date.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of tasks returned on one page. Optional. The default is 20 (max allowed: 100).
       *   `:pageToken` (*type:* `String.t`) - Token specifying the result page to return. Optional.
-      *   `:showCompleted` (*type:* `boolean()`) - Flag indicating whether completed tasks are returned in the result. Optional. The default is True. Note that showHidden must also be True to show tasks completed in first party clients, such as the web UI and Google's mobile apps.
+      *   `:showAssigned` (*type:* `boolean()`) - Optional. Flag indicating whether tasks assigned to the current user are returned in the result. Optional. The default is False.
+      *   `:showCompleted` (*type:* `boolean()`) - Flag indicating whether completed tasks are returned in the result. Note that showHidden must also be True to show tasks completed in first party clients, such as the web UI and Google's mobile apps. Optional. The default is True.
       *   `:showDeleted` (*type:* `boolean()`) - Flag indicating whether deleted tasks are returned in the result. Optional. The default is False.
       *   `:showHidden` (*type:* `boolean()`) - Flag indicating whether hidden tasks are returned in the result. Optional. The default is False.
       *   `:updatedMin` (*type:* `String.t`) - Lower bound for a task's last modification time (as a RFC 3339 timestamp) to filter by. Optional. The default is not to filter by last modification time.
@@ -329,6 +330,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       :dueMin => :query,
       :maxResults => :query,
       :pageToken => :query,
+      :showAssigned => :query,
       :showCompleted => :query,
       :showDeleted => :query,
       :showHidden => :query,
@@ -350,7 +352,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
   end
 
   @doc """
-  Moves the specified task to another position in the task list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks. A user can have up to 2,000 subtasks per task.
+  Moves the specified task to another position in the destination task list. If the destination list is not specified, the task is moved within its current list. This can include putting it as a child task under a new parent and/or move it to a different position among its sibling tasks. A user can have up to 2,000 subtasks per task.
 
   ## Parameters
 
@@ -369,7 +371,8 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Optional.
+      *   `:destinationTasklist` (*type:* `String.t`) - Optional. Destination task list identifier. If set, the task is moved from tasklist to the destinationTasklist list. Otherwise the task is moved within its current list. Recurrent tasks cannot currently be moved between lists. Optional.
+      *   `:parent` (*type:* `String.t`) - New parent task identifier. If the task is moved to the top level, this parameter is omitted. Assigned tasks can not be set as parent task (have subtasks) or be moved under a parent task (become subtasks). Optional.
       *   `:previous` (*type:* `String.t`) - New previous sibling task identifier. If the task is moved to the first position among its siblings, this parameter is omitted. Optional.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -396,6 +399,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasks do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :destinationTasklist => :query,
       :parent => :query,
       :previous => :query
     }

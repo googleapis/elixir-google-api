@@ -26,7 +26,7 @@ defmodule GoogleApi.Tasks.V1.Api.Tasklists do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Deletes the authenticated user's specified task list.
+  Deletes the authenticated user's specified task list. If the list contains assigned tasks, both the assigned tasks and the original tasks in the assignment surface (Docs, Chat Spaces) are deleted.
 
   ## Parameters
 
