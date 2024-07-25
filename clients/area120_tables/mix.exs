@@ -18,7 +18,7 @@
 defmodule GoogleApi.Area120Tables.Mixfile do
   use Mix.Project
 
-  @version "0.7.1"
+  @version "0.8.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.Area120Tables.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/area120_tables",
         "Homepage" => "https://support.google.com/area120-tables/answer/10011390"
