@@ -23,17 +23,20 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings do
 
   *   `legacyRedirectionState` (*type:* `String.t`, *default:* `nil`) - The redirection state of the legacy repositories in this project.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the project's settings. Always of the form: projects/{project-id}/projectSettings In update request: never set In response: always set
+  *   `pullPercent` (*type:* `integer()`, *default:* `nil`) - The percentage of pull traffic to redirect from GCR to AR when using partial redirection.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :legacyRedirectionState => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :pullPercent => integer() | nil
         }
 
   field(:legacyRedirectionState)
   field(:name)
+  field(:pullPercent)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ArtifactRegistry.V1.Model.ProjectSettings do
