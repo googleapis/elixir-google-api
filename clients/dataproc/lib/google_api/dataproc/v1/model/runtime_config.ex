@@ -21,6 +21,8 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
 
   ## Attributes
 
+  *   `autotuningConfig` (*type:* `GoogleApi.Dataproc.V1.Model.AutotuningConfig.t`, *default:* `nil`) - Optional. Autotuning configuration of the workload.
+  *   `cohort` (*type:* `String.t`, *default:* `nil`) - Optional. Cohort identifier. Identifies families of the workloads having the same shape, e.g. daily ETL jobs.
   *   `containerImage` (*type:* `String.t`, *default:* `nil`) - Optional. Optional custom container image for the job runtime environment. If not specified, a default container image will be used.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, which are used to configure workload execution.
   *   `repositoryConfig` (*type:* `GoogleApi.Dataproc.V1.Model.RepositoryConfig.t`, *default:* `nil`) - Optional. Dependency repository configuration.
@@ -30,12 +32,16 @@ defmodule GoogleApi.Dataproc.V1.Model.RuntimeConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :autotuningConfig => GoogleApi.Dataproc.V1.Model.AutotuningConfig.t() | nil,
+          :cohort => String.t() | nil,
           :containerImage => String.t() | nil,
           :properties => map() | nil,
           :repositoryConfig => GoogleApi.Dataproc.V1.Model.RepositoryConfig.t() | nil,
           :version => String.t() | nil
         }
 
+  field(:autotuningConfig, as: GoogleApi.Dataproc.V1.Model.AutotuningConfig)
+  field(:cohort)
   field(:containerImage)
   field(:properties, type: :map)
   field(:repositoryConfig, as: GoogleApi.Dataproc.V1.Model.RepositoryConfig)

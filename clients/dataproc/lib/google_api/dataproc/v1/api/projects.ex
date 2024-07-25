@@ -31,8 +31,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +55,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -66,8 +64,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -89,9 +86,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/autoscalingPolicies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -107,9 +103,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -132,8 +126,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -143,9 +135,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_delete(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -166,15 +156,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -189,9 +173,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -214,8 +196,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -225,9 +205,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -248,15 +226,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -271,9 +243,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -297,8 +267,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -308,9 +276,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -332,14 +298,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -354,8 +315,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -380,7 +340,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -390,8 +349,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -414,9 +372,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/autoscalingPolicies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -434,9 +391,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -460,8 +415,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -471,9 +424,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -495,14 +446,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -517,9 +463,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -543,8 +487,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -554,9 +496,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -578,14 +518,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -602,9 +537,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `policy.name`. Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `policy.name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `policy.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -628,8 +561,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_autoscaling_policies_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -639,9 +570,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_autoscaling_policies_update(
         connection,
-        projects_id,
-        locations_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -663,15 +592,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -686,9 +609,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the batch to analyze in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `batches_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the batch to analyze in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -712,8 +633,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_batches_analyze(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -723,9 +642,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_batches_analyze(
         connection,
-        projects_id,
-        locations_id,
-        batches_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -747,14 +664,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/batches/{batchesId}:analyze",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "batchesId" => URI.encode(batches_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:analyze", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -769,8 +681,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource where this batch will be created.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource where this batch will be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -796,7 +707,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_batches_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -806,8 +716,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_batches_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -831,9 +740,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/batches", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/batches", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -849,9 +757,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the batch to retrieve in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `batches_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the batch to retrieve in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -874,8 +780,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_batches_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -885,9 +789,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_batches_delete(
         connection,
-        projects_id,
-        locations_id,
-        batches_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -908,10 +810,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/batches/{batchesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "batchesId" => URI.encode(batches_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -927,9 +827,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the batch to retrieve in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `batches_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the batch to retrieve in the format "projects/PROJECT_ID/locations/DATAPROC_REGION/batches/BATCH_ID"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -952,8 +850,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_batches_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -961,14 +857,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def dataproc_projects_locations_batches_get(
-        connection,
-        projects_id,
-        locations_id,
-        batches_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def dataproc_projects_locations_batches_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -986,10 +875,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/batches/{batchesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "batchesId" => URI.encode(batches_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1005,8 +892,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns this collection of batches.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of batches.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1033,7 +919,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_batches_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1043,8 +928,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_batches_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1069,9 +953,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/batches", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/batches", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1087,9 +970,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1112,8 +993,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1123,9 +1002,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_operations_cancel(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1146,14 +1023,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1168,9 +1040,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1193,8 +1063,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_operations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1204,9 +1072,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_operations_delete(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1227,14 +1093,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1249,9 +1110,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1274,8 +1133,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1285,9 +1142,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1308,14 +1163,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1330,8 +1180,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1357,7 +1206,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1367,8 +1215,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_operations_list(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1392,9 +1239,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1410,8 +1256,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource where this session template will be created.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource where this session template will be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1435,7 +1280,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_session_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1445,8 +1289,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_session_templates_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1468,9 +1311,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessionTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sessionTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1486,9 +1328,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the session template resource to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `session_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the session template resource to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1511,8 +1351,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_session_templates_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1522,9 +1360,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_session_templates_delete(
         connection,
-        projects_id,
-        locations_id,
-        session_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1545,15 +1381,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/sessionTemplates/{sessionTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "sessionTemplatesId" =>
-            URI.encode(session_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1568,9 +1398,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the session template to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `session_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the session template to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1593,8 +1421,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_session_templates_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1604,9 +1430,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_session_templates_get(
         connection,
-        projects_id,
-        locations_id,
-        session_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1627,15 +1451,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/sessionTemplates/{sessionTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "sessionTemplatesId" =>
-            URI.encode(session_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1650,8 +1468,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent that owns this collection of session templates.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent that owns this collection of session templates.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1677,7 +1494,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_session_templates_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1687,8 +1503,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_session_templates_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1712,9 +1527,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessionTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sessionTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1732,9 +1546,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sessionTemplate.name`. Required. The resource name of the session template.
-  *   `locations_id` (*type:* `String.t`) - Part of `sessionTemplate.name`. See documentation of `projectsId`.
-  *   `session_templates_id` (*type:* `String.t`) - Part of `sessionTemplate.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the session template.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1758,8 +1570,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_session_templates_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1769,9 +1579,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_session_templates_patch(
         connection,
-        projects_id,
-        locations_id,
-        session_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1793,15 +1601,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/sessionTemplates/{sessionTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "sessionTemplatesId" =>
-            URI.encode(session_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1816,8 +1618,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource where this session will be created.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource where this session will be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1843,7 +1644,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_sessions_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1853,8 +1653,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_sessions_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1878,9 +1677,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sessions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1896,9 +1694,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the session resource to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `sessions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the session resource to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1922,8 +1718,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_sessions_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1933,9 +1727,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_sessions_delete(
         connection,
-        projects_id,
-        locations_id,
-        sessions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1957,10 +1749,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessions/{sessionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "sessionsId" => URI.encode(sessions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1976,9 +1766,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the session to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `sessions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the session to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2001,8 +1789,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_sessions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2012,9 +1798,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_sessions_get(
         connection,
-        projects_id,
-        locations_id,
-        sessions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2035,10 +1819,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessions/{sessionsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "sessionsId" => URI.encode(sessions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2054,8 +1836,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent, which owns this collection of sessions.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent, which owns this collection of sessions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2081,7 +1862,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_sessions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2091,8 +1871,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_sessions_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2116,9 +1895,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/sessions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/sessions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2134,9 +1912,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the session resource to terminate.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `sessions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the session resource to terminate.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2160,8 +1936,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_sessions_terminate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2171,9 +1945,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_sessions_terminate(
         connection,
-        projects_id,
-        locations_id,
-        sessions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2195,14 +1967,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/sessions/{sessionsId}:terminate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "sessionsId" => URI.encode(sessions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:terminate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2217,8 +1984,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2242,7 +2008,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2252,8 +2017,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2275,9 +2039,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workflowTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2293,9 +2056,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.delete, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.delete, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2319,8 +2080,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2330,9 +2089,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_delete(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2354,15 +2111,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2377,9 +2128,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2403,8 +2152,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2414,9 +2161,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2438,15 +2183,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2461,9 +2200,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2487,8 +2224,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2498,9 +2233,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2522,14 +2255,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2544,9 +2272,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2570,8 +2296,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_instantiate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2581,9 +2305,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2605,14 +2327,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:instantiate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2627,8 +2344,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,instantiateinline, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.instantiateinline, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,instantiateinline, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.instantiateinline, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2653,7 +2369,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_instantiate_inline(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2663,8 +2378,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_instantiate_inline(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2687,13 +2401,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates:instantiateInline",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/workflowTemplates:instantiateInline", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2708,8 +2418,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2734,7 +2443,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2744,8 +2452,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2768,9 +2475,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workflowTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2788,9 +2494,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2814,8 +2518,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2825,9 +2527,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2849,14 +2549,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2871,9 +2566,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2897,8 +2590,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2908,9 +2599,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2932,14 +2621,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2956,9 +2640,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `template.name`. Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `template.name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `template.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2982,8 +2664,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_locations_workflow_templates_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2993,9 +2673,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_locations_workflow_templates_update(
         connection,
-        projects_id,
-        locations_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3017,15 +2695,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3040,8 +2712,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3065,7 +2736,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3075,8 +2745,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_create(
         connection,
-        projects_id,
-        regions_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3098,9 +2767,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/autoscalingPolicies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3116,9 +2784,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.delete, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3141,8 +2807,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3152,9 +2816,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_delete(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3175,15 +2837,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3198,9 +2854,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies.get, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3223,8 +2877,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3234,9 +2886,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3257,15 +2907,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3280,9 +2924,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3306,8 +2948,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3317,9 +2957,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_get_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3341,14 +2979,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3363,8 +2996,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The "resource name" of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies.list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.autoscalingPolicies.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3389,7 +3021,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3399,8 +3030,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_list(
         connection,
-        projects_id,
-        regions_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3423,9 +3053,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/autoscalingPolicies", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3443,9 +3072,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3469,8 +3096,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3480,9 +3105,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_set_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3504,14 +3127,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3526,9 +3144,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3552,8 +3168,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3563,9 +3177,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_test_iam_permissions(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3587,14 +3199,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" => URI.encode(autoscaling_policies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3611,9 +3218,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `policy.name`. Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `policy.name`. See documentation of `projectsId`.
-  *   `autoscaling_policies_id` (*type:* `String.t`) - Part of `policy.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3637,8 +3242,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_autoscaling_policies_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3648,9 +3251,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_autoscaling_policies_update(
         connection,
-        projects_id,
-        regions_id,
-        autoscaling_policies_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3672,15 +3273,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/autoscalingPolicies/{autoscalingPoliciesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "autoscalingPoliciesId" =>
-            URI.encode(autoscaling_policies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4020,9 +3615,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4046,8 +3639,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4057,9 +3648,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_get_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4081,14 +3670,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4103,9 +3687,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project`. Required. The ID of the Google Cloud Platform project the cluster belongs to, of the form projects/.
-  *   `regions_id` (*type:* `String.t`) - Part of `region`. Required. The region containing the cluster, of the form regions/.
-  *   `clusters_id` (*type:* `String.t`) - Part of `cluster`. Required. The cluster, in the form clusters/.
+  *   `project` (*type:* `String.t`) - Required. The ID of the Google Cloud Platform project the cluster belongs to, of the form projects/.
+  *   `region` (*type:* `String.t`) - Required. The region containing the cluster, of the form regions/.
+  *   `cluster` (*type:* `String.t`) - Required. The cluster, in the form clusters/.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4140,9 +3724,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_inject_credentials(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
+        project,
+        region,
+        cluster,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4164,14 +3748,11 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:injectCredentials",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+project}/{+region}/{+cluster}:injectCredentials", %{
+        "project" => URI.encode(project, &URI.char_unreserved?/1),
+        "region" => URI.encode(region, &URI.char_unreserved?/1),
+        "cluster" => URI.encode(cluster, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4432,9 +4013,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4458,8 +4037,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4469,9 +4046,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_set_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4493,14 +4068,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4675,9 +4245,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4701,8 +4269,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4712,9 +4278,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_test_iam_permissions(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4736,14 +4300,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4760,9 +4319,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource where this node group will be created. Format: projects/{project}/regions/{region}/clusters/{cluster}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource where this node group will be created. Format: projects/{project}/regions/{region}/clusters/{cluster}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4789,8 +4346,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_node_groups_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4800,9 +4355,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_node_groups_create(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4827,14 +4380,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}/nodeGroups",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/nodeGroups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4849,10 +4397,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the node group to retrieve. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `node_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the node group to retrieve. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4875,9 +4420,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_node_groups_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4887,10 +4429,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_node_groups_get(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
-        node_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4911,15 +4450,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}/nodeGroups/{nodeGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "nodeGroupsId" => URI.encode(node_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4934,10 +4467,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the node group to resize. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `node_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the node group to resize. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4961,9 +4491,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_node_groups_repair(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4973,10 +4500,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_node_groups_repair(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
-        node_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4998,15 +4522,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}/nodeGroups/{nodeGroupsId}:repair",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "nodeGroupsId" => URI.encode(node_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:repair", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5021,10 +4539,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the node group to resize. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `node_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the node group to resize. Format: projects/{project}/regions/{region}/clusters/{cluster}/nodeGroups/{nodeGroup}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5048,9 +4563,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_clusters_node_groups_resize(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5060,10 +4572,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_clusters_node_groups_resize(
         connection,
-        projects_id,
-        regions_id,
-        clusters_id,
-        node_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5085,15 +4594,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/clusters/{clustersId}/nodeGroups/{nodeGroupsId}:resize",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "nodeGroupsId" => URI.encode(node_groups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:resize", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5344,9 +4847,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5370,8 +4871,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_jobs_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5381,9 +4880,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_jobs_get_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5405,14 +4902,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5593,9 +5085,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5619,8 +5109,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_jobs_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5630,9 +5118,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_jobs_set_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5654,14 +5140,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5828,9 +5309,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5854,8 +5333,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_jobs_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5865,9 +5342,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_jobs_test_iam_permissions(
         connection,
-        projects_id,
-        regions_id,
-        jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5889,14 +5364,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/jobs/{jobsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5913,9 +5383,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5938,8 +5406,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5949,9 +5415,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_cancel(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5972,14 +5436,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5994,9 +5453,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6019,8 +5476,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6030,9 +5485,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_delete(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6053,10 +5506,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -6072,9 +5523,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6097,8 +5546,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6108,9 +5555,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_get(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6131,10 +5576,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -6150,9 +5593,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6176,8 +5617,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6187,9 +5626,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_get_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6211,14 +5648,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6233,8 +5665,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6260,7 +5691,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6270,8 +5700,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_list(
         connection,
-        projects_id,
-        regions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6295,9 +5724,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -6313,9 +5741,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6339,8 +5765,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6350,9 +5774,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_set_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6374,14 +5796,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6396,9 +5813,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6422,8 +5837,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_operations_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6433,9 +5846,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_operations_test_iam_permissions(
         connection,
-        projects_id,
-        regions_id,
-        operations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6457,14 +5868,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/operations/{operationsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6481,8 +5887,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.create, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.create, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6506,7 +5911,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6516,8 +5920,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_create(
         connection,
-        projects_id,
-        regions_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6539,9 +5942,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workflowTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -6557,9 +5959,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.delete, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.delete, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6583,8 +5983,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6594,9 +5992,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_delete(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6618,15 +6014,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6641,9 +6031,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.get, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6667,8 +6055,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6678,9 +6064,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6702,15 +6086,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6725,9 +6103,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6751,8 +6127,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6762,9 +6136,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_get_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6786,14 +6158,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6808,9 +6175,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates.instantiate, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6834,8 +6199,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_instantiate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6845,9 +6208,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6869,14 +6230,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:instantiate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:instantiate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6891,8 +6247,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,instantiateinline, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.instantiateinline, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,instantiateinline, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.instantiateinline, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6917,7 +6272,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_instantiate_inline(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6927,8 +6281,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_instantiate_inline(
         connection,
-        projects_id,
-        regions_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6951,13 +6304,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates:instantiateInline",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/workflowTemplates:instantiateInline", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6972,8 +6321,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
-  *   `regions_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the region or location, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates,list, the resource name of the region has the following format: projects/{project_id}/regions/{region} For projects.locations.workflowTemplates.list, the resource name of the location has the following format: projects/{project_id}/locations/{location}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6998,7 +6346,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7008,8 +6355,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_list(
         connection,
-        projects_id,
-        regions_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7032,9 +6378,8 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workflowTemplates", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -7052,9 +6397,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7078,8 +6421,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7089,9 +6430,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_set_iam_policy(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7113,14 +6452,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7135,9 +6469,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `regions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7161,8 +6493,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7172,9 +6502,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_test_iam_permissions(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7196,14 +6524,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" => URI.encode(workflow_templates_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7220,9 +6543,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataproc.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `template.name`. Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-  *   `regions_id` (*type:* `String.t`) - Part of `template.name`. See documentation of `projectsId`.
-  *   `workflow_templates_id` (*type:* `String.t`) - Part of `template.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7246,8 +6567,6 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
   @spec dataproc_projects_regions_workflow_templates_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7257,9 +6576,7 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
           | {:error, any()}
   def dataproc_projects_regions_workflow_templates_update(
         connection,
-        projects_id,
-        regions_id,
-        workflow_templates_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7281,15 +6598,9 @@ defmodule GoogleApi.Dataproc.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1/projects/{projectsId}/regions/{regionsId}/workflowTemplates/{workflowTemplatesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "regionsId" => URI.encode(regions_id, &URI.char_unreserved?/1),
-          "workflowTemplatesId" =>
-            URI.encode(workflow_templates_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
