@@ -26,6 +26,9 @@ defmodule GoogleApi.CloudBuild.V2.Model.Step do
   *   `env` (*type:* `list(GoogleApi.CloudBuild.V2.Model.EnvVar.t)`, *default:* `nil`) - List of environment variables to set in the container.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Docker image name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the container specified as a DNS_LABEL.
+  *   `onError` (*type:* `String.t`, *default:* `nil`) - Optional. OnError defines the exiting behavior on error can be set to [ continue | stopAndFail ]
+  *   `params` (*type:* `list(GoogleApi.CloudBuild.V2.Model.Param.t)`, *default:* `nil`) - Optional. Optional parameters passed to the StepAction.
+  *   `ref` (*type:* `GoogleApi.CloudBuild.V2.Model.StepRef.t`, *default:* `nil`) - Optional. Optional reference to a remote StepAction.
   *   `script` (*type:* `String.t`, *default:* `nil`) - The contents of an executable file to execute.
   *   `securityContext` (*type:* `GoogleApi.CloudBuild.V2.Model.SecurityContext.t`, *default:* `nil`) - Optional. SecurityContext defines the security options the Step should be run with. If set, the fields of SecurityContext override the equivalent fields of PodSecurityContext. More info: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/ +optional
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Time after which the Step times out. Defaults to never.
@@ -41,6 +44,9 @@ defmodule GoogleApi.CloudBuild.V2.Model.Step do
           :env => list(GoogleApi.CloudBuild.V2.Model.EnvVar.t()) | nil,
           :image => String.t() | nil,
           :name => String.t() | nil,
+          :onError => String.t() | nil,
+          :params => list(GoogleApi.CloudBuild.V2.Model.Param.t()) | nil,
+          :ref => GoogleApi.CloudBuild.V2.Model.StepRef.t() | nil,
           :script => String.t() | nil,
           :securityContext => GoogleApi.CloudBuild.V2.Model.SecurityContext.t() | nil,
           :timeout => String.t() | nil,
@@ -53,6 +59,9 @@ defmodule GoogleApi.CloudBuild.V2.Model.Step do
   field(:env, as: GoogleApi.CloudBuild.V2.Model.EnvVar, type: :list)
   field(:image)
   field(:name)
+  field(:onError)
+  field(:params, as: GoogleApi.CloudBuild.V2.Model.Param, type: :list)
+  field(:ref, as: GoogleApi.CloudBuild.V2.Model.StepRef)
   field(:script)
   field(:securityContext, as: GoogleApi.CloudBuild.V2.Model.SecurityContext)
   field(:timeout)

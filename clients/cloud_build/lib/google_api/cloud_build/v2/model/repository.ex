@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.Repository do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Allows clients to store small amounts of arbitrary data.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Allows clients to store small amounts of arbitrary data.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Server assigned timestamp for when the connection was created.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of the repository, in the format `projects/*/locations/*/connections/*/repositories/*`.

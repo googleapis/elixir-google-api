@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEventsConfig do
 
   ## Attributes
 
-  *   `enterpriseConfigResourceName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the github enterprise config that should be applied to this installation. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
+  *   `enterpriseConfigResourceName` (*type:* `String.t`, *default:* `nil`) - The resource name of the github enterprise config that should be applied to this installation. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `installationId` (*type:* `String.t`, *default:* `nil`) - The installationID that emits the GitHub event.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the repository. For example: The name for https://github.com/googlecloudplatform/cloud-builders is "cloud-builders".
   *   `owner` (*type:* `String.t`, *default:* `nil`) - Owner of the repository. For example: The owner for https://github.com/googlecloudplatform/cloud-builders is "googlecloudplatform".

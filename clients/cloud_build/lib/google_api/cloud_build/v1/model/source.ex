@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
   ## Attributes
 
   *   `connectedRepository` (*type:* `GoogleApi.CloudBuild.V1.Model.ConnectedRepository.t`, *default:* `nil`) - Optional. If provided, get the source from this 2nd-gen Google Cloud Build repository resource.
+  *   `developerConnectConfig` (*type:* `GoogleApi.CloudBuild.V1.Model.DeveloperConnectConfig.t`, *default:* `nil`) - If provided, get the source from this Developer Connect config.
   *   `gitSource` (*type:* `GoogleApi.CloudBuild.V1.Model.GitSource.t`, *default:* `nil`) - If provided, get the source from this Git repository.
   *   `repoSource` (*type:* `GoogleApi.CloudBuild.V1.Model.RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.CloudBuild.V1.Model.StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Cloud Storage.
@@ -32,6 +33,8 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
 
   @type t :: %__MODULE__{
           :connectedRepository => GoogleApi.CloudBuild.V1.Model.ConnectedRepository.t() | nil,
+          :developerConnectConfig =>
+            GoogleApi.CloudBuild.V1.Model.DeveloperConnectConfig.t() | nil,
           :gitSource => GoogleApi.CloudBuild.V1.Model.GitSource.t() | nil,
           :repoSource => GoogleApi.CloudBuild.V1.Model.RepoSource.t() | nil,
           :storageSource => GoogleApi.CloudBuild.V1.Model.StorageSource.t() | nil,
@@ -39,6 +42,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.Source do
         }
 
   field(:connectedRepository, as: GoogleApi.CloudBuild.V1.Model.ConnectedRepository)
+  field(:developerConnectConfig, as: GoogleApi.CloudBuild.V1.Model.DeveloperConnectConfig)
   field(:gitSource, as: GoogleApi.CloudBuild.V1.Model.GitSource)
   field(:repoSource, as: GoogleApi.CloudBuild.V1.Model.RepoSource)
   field(:storageSource, as: GoogleApi.CloudBuild.V1.Model.StorageSource)

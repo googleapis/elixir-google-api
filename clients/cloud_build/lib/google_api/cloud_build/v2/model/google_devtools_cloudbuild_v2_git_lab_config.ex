@@ -22,11 +22,11 @@ defmodule GoogleApi.CloudBuild.V2.Model.GoogleDevtoolsCloudbuildV2GitLabConfig d
   ## Attributes
 
   *   `authorizerCredential` (*type:* `GoogleApi.CloudBuild.V2.Model.UserCredential.t`, *default:* `nil`) - Required. A GitLab personal access token with the `api` scope access.
-  *   `hostUri` (*type:* `String.t`, *default:* `nil`) - The URI of the GitLab Enterprise host this connection is for. If not specified, the default value is https://gitlab.com.
+  *   `hostUri` (*type:* `String.t`, *default:* `nil`) - Optional. The URI of the GitLab Enterprise host this connection is for. If not specified, the default value is https://gitlab.com.
   *   `readAuthorizerCredential` (*type:* `GoogleApi.CloudBuild.V2.Model.UserCredential.t`, *default:* `nil`) - Required. A GitLab personal access token with the minimum `read_api` scope access.
   *   `serverVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Version of the GitLab Enterprise server running on the `host_uri`.
-  *   `serviceDirectoryConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig.t`, *default:* `nil`) - Configuration for using Service Directory to privately connect to a GitLab Enterprise server. This should only be set if the GitLab Enterprise server is hosted on-premises and not reachable by public internet. If this field is left empty, calls to the GitLab Enterprise server will be made over the public internet.
-  *   `sslCa` (*type:* `String.t`, *default:* `nil`) - SSL certificate to use for requests to GitLab Enterprise.
+  *   `serviceDirectoryConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.GoogleDevtoolsCloudbuildV2ServiceDirectoryConfig.t`, *default:* `nil`) - Optional. Configuration for using Service Directory to privately connect to a GitLab Enterprise server. This should only be set if the GitLab Enterprise server is hosted on-premises and not reachable by public internet. If this field is left empty, calls to the GitLab Enterprise server will be made over the public internet.
+  *   `sslCa` (*type:* `String.t`, *default:* `nil`) - Optional. SSL certificate to use for requests to GitLab Enterprise.
   *   `webhookSecretSecretVersion` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. SecretManager resource containing the webhook secret of a GitLab Enterprise project, formatted as `projects/*/secrets/*/versions/*`.
   """
 

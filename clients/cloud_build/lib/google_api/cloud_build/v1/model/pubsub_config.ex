@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudBuild.V1.Model.PubsubConfig do
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Service account that will make the push request.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Potential issues with the underlying Pub/Sub subscription configuration. Only populated on get requests.
   *   `subscription` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the subscription. Format is `projects/{project}/subscriptions/{subscription}`.
-  *   `topic` (*type:* `String.t`, *default:* `nil`) - The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`.
+  *   `topic` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`.
   """
 
   use GoogleApi.Gax.ModelBase
