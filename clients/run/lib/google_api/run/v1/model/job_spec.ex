@@ -21,15 +21,21 @@ defmodule GoogleApi.Run.V1.Model.JobSpec do
 
   ## Attributes
 
+  *   `runExecutionToken` (*type:* `String.t`, *default:* `nil`) - A unique string used as a suffix for creating a new execution. The Job will become ready when the execution is successfully completed. The sum of job name and token length must be fewer than 63 characters.
+  *   `startExecutionToken` (*type:* `String.t`, *default:* `nil`) - A unique string used as a suffix for creating a new execution. The Job will become ready when the execution is successfully started. The sum of job name and token length must be fewer than 63 characters.
   *   `template` (*type:* `GoogleApi.Run.V1.Model.ExecutionTemplateSpec.t`, *default:* `nil`) - Optional. Describes the execution that will be created when running a job.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :runExecutionToken => String.t() | nil,
+          :startExecutionToken => String.t() | nil,
           :template => GoogleApi.Run.V1.Model.ExecutionTemplateSpec.t() | nil
         }
 
+  field(:runExecutionToken)
+  field(:startExecutionToken)
   field(:template, as: GoogleApi.Run.V1.Model.ExecutionTemplateSpec)
 end
 

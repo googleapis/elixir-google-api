@@ -31,7 +31,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Name of the parent Project resource. Example: `projects/myproject`.
+  *   `parent` (*type:* `String.t`) - Name of the parent Project resource. Example: `projects/myproject`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -63,12 +63,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_authorizeddomains_list(
-        connection,
-        namespaces_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_authorizeddomains_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -88,12 +83,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/authorizeddomains",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/apis/domains.cloudrun.com/v1/{+parent}/authorizeddomains", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -108,8 +100,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the configuration to retrieve. For Cloud Run, replace {namespace_id} with the project ID or number.
-  *   `configurations_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - The name of the configuration to retrieve. For Cloud Run, replace {namespace_id} with the project ID or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -129,24 +120,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Configuration{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_configurations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_configurations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Configuration.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_configurations_get(
-        connection,
-        namespaces_id,
-        configurations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_configurations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -164,14 +143,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/configurations/{configurationsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "configurationsId" =>
-            URI.encode(configurations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -181,12 +155,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  List configurations.
+  List configurations. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the configurations should be listed. For Cloud Run, replace {namespace_id} with the project ID or number.
+  *   `parent` (*type:* `String.t`) - The namespace from which the configurations should be listed. For Cloud Run, replace {namespace_id} with the project ID or number.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -218,12 +192,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_configurations_list(
-        connection,
-        namespaces_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_configurations_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -248,8 +217,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/serving.knative.dev/v1/namespaces/{namespacesId}/configurations", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/serving.knative.dev/v1/{+parent}/configurations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -265,7 +234,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace in which the domain mapping should be created. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -292,12 +261,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_domainmappings_create(
-        connection,
-        namespaces_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_domainmappings_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -317,8 +281,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/domains.cloudrun.com/v1/{+parent}/domainmappings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -334,8 +298,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the domain mapping to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -359,24 +322,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Status{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_domainmappings_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_domainmappings_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Status.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_domainmappings_delete(
-        connection,
-        namespaces_id,
-        domainmappings_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_domainmappings_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -398,14 +349,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings/{domainmappingsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "domainmappingsId" =>
-            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/domains.cloudrun.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -420,8 +366,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `domainmappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the domain mapping to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -441,24 +386,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.DomainMapping{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_domainmappings_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_domainmappings_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.DomainMapping.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_domainmappings_get(
-        connection,
-        namespaces_id,
-        domainmappings_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_domainmappings_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -476,14 +409,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings/{domainmappingsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "domainmappingsId" =>
-            URI.encode(domainmappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/domains.cloudrun.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -498,7 +426,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace from which the domain mappings should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -530,12 +458,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_domainmappings_list(
-        connection,
-        namespaces_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_domainmappings_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -560,8 +483,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/domains.cloudrun.com/v1/namespaces/{namespacesId}/domainmappings", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/domains.cloudrun.com/v1/{+parent}/domainmappings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -577,8 +500,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to cancel. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the execution to cancel. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -599,24 +521,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Execution{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_executions_cancel(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_executions_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_executions_cancel(
-        connection,
-        namespaces_id,
-        executions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_executions_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -635,13 +545,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/apis/run.googleapis.com/v1/namespaces/{namespacesId}/executions/{executionsId}:cancel",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "executionsId" => URI.encode(executions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -656,8 +562,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the execution to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -680,24 +585,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Status{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_executions_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_executions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Status.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_executions_delete(
-        connection,
-        namespaces_id,
-        executions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_executions_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -718,13 +611,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/apis/run.googleapis.com/v1/namespaces/{namespacesId}/executions/{executionsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "executionsId" => URI.encode(executions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -739,8 +628,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the execution to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the execution to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -760,24 +648,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Execution{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_executions_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_executions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_executions_get(
-        connection,
-        namespaces_id,
-        executions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_executions_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -795,13 +671,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/run.googleapis.com/v1/namespaces/{namespacesId}/executions/{executionsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "executionsId" => URI.encode(executions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -811,12 +683,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  List executions.
+  List executions. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the executions should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace from which the executions should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -848,7 +720,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_executions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_executions_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -873,8 +745,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/executions", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/run.googleapis.com/v1/{+parent}/executions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -890,7 +762,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace in which the job should be created. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace in which the job should be created. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -916,7 +788,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_jobs_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -935,8 +807,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/run.googleapis.com/v1/{+parent}/jobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -952,8 +824,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the job to delete. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -976,24 +847,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Status{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_jobs_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_jobs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Status.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_delete(
-        connection,
-        namespaces_id,
-        jobs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_jobs_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1014,9 +873,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs/{jobsId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1032,8 +890,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the job to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1053,18 +910,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Job{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_jobs_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec run_namespaces_jobs_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Job.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_get(
-        connection,
-        namespaces_id,
-        jobs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_jobs_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1082,9 +933,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs/{jobsId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1095,12 +945,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  List jobs.
+  List jobs. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the jobs should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace from which the jobs should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1132,7 +982,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_jobs_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1157,8 +1007,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/run.googleapis.com/v1/{+parent}/jobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1174,8 +1024,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job being replaced. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the job being replaced. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1196,24 +1045,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Job{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_jobs_replace_job(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_jobs_replace_job(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Job.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_replace_job(
-        connection,
-        namespaces_id,
-        jobs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_jobs_replace_job(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1232,9 +1069,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs/{jobsId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1250,8 +1086,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the job to run. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the job to run. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1272,18 +1107,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Execution{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_jobs_run(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec run_namespaces_jobs_run(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Execution.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_jobs_run(
-        connection,
-        namespaces_id,
-        jobs_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_jobs_run(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1302,9 +1131,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/jobs/{jobsId}:run", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "jobsId" => URI.encode(jobs_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}:run", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1320,8 +1148,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - The name of the revision to delete. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1345,24 +1172,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Status{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_revisions_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_revisions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Status.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_revisions_delete(
-        connection,
-        namespaces_id,
-        revisions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_revisions_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1384,13 +1199,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/revisions/{revisionsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1405,8 +1216,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `revisions_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - The name of the revision to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1426,24 +1236,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Revision{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_revisions_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_revisions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Revision.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_revisions_get(
-        connection,
-        namespaces_id,
-        revisions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_revisions_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1461,13 +1259,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/revisions/{revisionsId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "revisionsId" => URI.encode(revisions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1477,12 +1271,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  List revisions.
+  List revisions. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - The namespace from which the revisions should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1514,7 +1308,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_revisions_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_revisions_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1539,8 +1333,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/serving.knative.dev/v1/namespaces/{namespacesId}/revisions", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/serving.knative.dev/v1/{+parent}/revisions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1556,8 +1350,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `routes_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - The name of the route to retrieve. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1577,24 +1370,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Route{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_routes_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_routes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Route.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_routes_get(
-        connection,
-        namespaces_id,
-        routes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_routes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1612,13 +1393,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/routes/{routesId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "routesId" => URI.encode(routes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1628,12 +1405,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  List routes.
+  List routes. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - The namespace from which the routes should be listed. For Cloud Run (fully managed), replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1665,7 +1442,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_routes_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_routes_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1690,8 +1467,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/serving.knative.dev/v1/namespaces/{namespacesId}/routes", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/serving.knative.dev/v1/{+parent}/routes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1707,7 +1484,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
+  *   `parent` (*type:* `String.t`) - Required. The resource's parent. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1734,7 +1511,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_services_create(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_services_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1754,8 +1531,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/serving.knative.dev/v1/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1771,8 +1548,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the service to delete. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1796,24 +1572,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Status{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_services_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_services_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Status.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_services_delete(
-        connection,
-        namespaces_id,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_services_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1835,13 +1599,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1856,8 +1616,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the service to retrieve. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1877,24 +1636,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Service{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_services_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec run_namespaces_services_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Service.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_services_get(
-        connection,
-        namespaces_id,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_services_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1912,13 +1659,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1928,12 +1671,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   end
 
   @doc """
-  Lists services for the given project and region.
+  Lists services for the given project and region. Results are sorted by creation time, descending.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
+  *   `parent` (*type:* `String.t`) - Required. The parent from where the resources should be listed. In Cloud Run, it may be one of the following: * `{project_id_or_number}` * `namespaces/{project_id_or_number}` * `namespaces/{project_id_or_number}/services` * `projects/{project_id_or_number}/locations/{region}` * `projects/{project_id_or_number}/regions/{region}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1965,7 +1708,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_services_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_services_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1990,8 +1733,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/serving.knative.dev/v1/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2007,8 +1750,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The fully qualified name of the service to replace. It can be any of the following forms: * `namespaces/{project_id_or_number}/services/{service_name}` (only when the `endpoint` is regional) * `projects/{project_id_or_number}/locations/{region}/services/{service_name}` * `projects/{project_id_or_number}/regions/{region}/services/{service_name}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2033,7 +1775,6 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   @spec run_namespaces_services_replace_service(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2041,13 +1782,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_services_replace_service(
-        connection,
-        namespaces_id,
-        services_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_services_replace_service(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2067,13 +1802,9 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/apis/serving.knative.dev/v1/namespaces/{namespacesId}/services/{servicesId}",
-        %{
-          "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/apis/serving.knative.dev/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2088,8 +1819,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `name`. Required. The name of the task to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
-  *   `tasks_id` (*type:* `String.t`) - Part of `name`. See documentation of `namespacesId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the task to retrieve. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2109,18 +1839,12 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   *   `{:ok, %GoogleApi.Run.V1.Model.Task{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec run_namespaces_tasks_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec run_namespaces_tasks_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Run.V1.Model.Task.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_tasks_get(
-        connection,
-        namespaces_id,
-        tasks_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def run_namespaces_tasks_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2138,9 +1862,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/tasks/{tasksId}", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1),
-        "tasksId" => URI.encode(tasks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/apis/run.googleapis.com/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2156,7 +1879,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V1.Connection.t`) - Connection to server
-  *   `namespaces_id` (*type:* `String.t`) - Part of `parent`. Required. The namespace from which the tasks should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
+  *   `parent` (*type:* `String.t`) - Required. The namespace from which the tasks should be listed. Replace {namespace} with the project ID or number. It takes the form namespaces/{namespace}. For example: namespaces/PROJECT_ID
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2188,7 +1911,7 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def run_namespaces_tasks_list(connection, namespaces_id, optional_params \\ [], opts \\ []) do
+  def run_namespaces_tasks_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -2213,8 +1936,8 @@ defmodule GoogleApi.Run.V1.Api.Namespaces do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/apis/run.googleapis.com/v1/namespaces/{namespacesId}/tasks", %{
-        "namespacesId" => URI.encode(namespaces_id, &URI.char_unreserved?/1)
+      |> Request.url("/apis/run.googleapis.com/v1/{+parent}/tasks", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

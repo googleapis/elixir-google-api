@@ -23,12 +23,12 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2TaskTemplate do
 
   *   `containers` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Container.t)`, *default:* `nil`) - Holds the single container that defines the unit of execution for this task.
   *   `encryptionKey` (*type:* `String.t`, *default:* `nil`) - A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek
-  *   `executionEnvironment` (*type:* `String.t`, *default:* `nil`) - The execution environment being used to host this Task.
+  *   `executionEnvironment` (*type:* `String.t`, *default:* `nil`) - Optional. The execution environment being used to host this Task.
   *   `maxRetries` (*type:* `integer()`, *default:* `nil`) - Number of retries allowed per Task, before marking this Task failed. Defaults to 3.
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the Task of a Job. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project's default service account.
-  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Max allowed time duration the Task may be active before the system will actively try to mark it failed and kill associated containers. This applies per attempt of a task, meaning each retry can run for the full timeout. Defaults to 600 seconds.
-  *   `volumes` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t)`, *default:* `nil`) - A list of Volumes to make available to containers.
-  *   `vpcAccess` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess.t`, *default:* `nil`) - VPC Access configuration to use for this Task. For more information, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Email address of the IAM service account associated with the Task of a Job. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project's default service account.
+  *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. Max allowed time duration the Task may be active before the system will actively try to mark it failed and kill associated containers. This applies per attempt of a task, meaning each retry can run for the full timeout. Defaults to 600 seconds.
+  *   `volumes` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t)`, *default:* `nil`) - Optional. A list of Volumes to make available to containers.
+  *   `vpcAccess` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2VpcAccess.t`, *default:* `nil`) - Optional. VPC Access configuration to use for this Task. For more information, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,21 +21,27 @@ defmodule GoogleApi.Run.V1.Model.ExecutionReference do
 
   ## Attributes
 
+  *   `completionStatus` (*type:* `String.t`, *default:* `nil`) - Optional. Status for the execution completion.
   *   `completionTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Completion timestamp of the execution.
   *   `creationTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Creation timestamp of the execution.
+  *   `deletionTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The read-only soft deletion timestamp of the execution.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :completionStatus => String.t() | nil,
           :completionTimestamp => DateTime.t() | nil,
           :creationTimestamp => DateTime.t() | nil,
+          :deletionTimestamp => DateTime.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:completionStatus)
   field(:completionTimestamp, as: DateTime)
   field(:creationTimestamp, as: DateTime)
+  field(:deletionTimestamp, as: DateTime)
   field(:name)
 end
 

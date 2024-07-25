@@ -21,21 +21,27 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ExecutionReference do
 
   ## Attributes
 
+  *   `completionStatus` (*type:* `String.t`, *default:* `nil`) - Status for the execution completion.
   *   `completionTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp of the execution.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Creation timestamp of the execution.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - The deletion time of the execution. It is only populated as a response to a Delete request.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :completionStatus => String.t() | nil,
           :completionTime => DateTime.t() | nil,
           :createTime => DateTime.t() | nil,
+          :deleteTime => DateTime.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:completionStatus)
   field(:completionTime, as: DateTime)
   field(:createTime, as: DateTime)
+  field(:deleteTime, as: DateTime)
   field(:name)
 end
 

@@ -21,8 +21,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling do
 
   ## Attributes
 
-  *   `maxInstanceCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of serving instances that this resource should have.
-  *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - Minimum number of serving instances that this resource should have.
+  *   `maxInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of serving instances that this resource should have.
+  *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. Minimum number of serving instances that this resource should have.
   """
 
   use GoogleApi.Gax.ModelBase

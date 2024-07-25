@@ -22,6 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1Source do
   ## Attributes
 
   *   `connectedRepository` (*type:* `GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1ConnectedRepository.t`, *default:* `nil`) - Optional. If provided, get the source from this 2nd-gen Google Cloud Build repository resource.
+  *   `developerConnectConfig` (*type:* `GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1DeveloperConnectConfig.t`, *default:* `nil`) - If provided, get the source from this Developer Connect config.
   *   `gitSource` (*type:* `GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1GitSource.t`, *default:* `nil`) - If provided, get the source from this Git repository.
   *   `repoSource` (*type:* `GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Cloud Storage.
@@ -33,6 +34,8 @@ defmodule GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1Source do
   @type t :: %__MODULE__{
           :connectedRepository =>
             GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1ConnectedRepository.t() | nil,
+          :developerConnectConfig =>
+            GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1DeveloperConnectConfig.t() | nil,
           :gitSource => GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1GitSource.t() | nil,
           :repoSource => GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1RepoSource.t() | nil,
           :storageSource =>
@@ -43,6 +46,10 @@ defmodule GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1Source do
 
   field(:connectedRepository,
     as: GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1ConnectedRepository
+  )
+
+  field(:developerConnectConfig,
+    as: GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1DeveloperConnectConfig
   )
 
   field(:gitSource, as: GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1GitSource)

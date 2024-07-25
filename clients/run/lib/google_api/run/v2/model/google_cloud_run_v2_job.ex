@@ -28,7 +28,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Job do
   *   `conditions` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t)`, *default:* `nil`) - Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Job does not reach its desired state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation time.
   *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. Email address of the authenticated creator.
-  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The deletion time.
+  *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The deletion time. It is only populated as a response to a Delete request.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
   *   `executionCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of executions created for this job.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. For a deleted resource, the time after which it will be permamently deleted.
@@ -40,7 +40,9 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Job do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The fully qualified name of this Job. Format: projects/{project}/locations/{location}/jobs/{job}
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Job. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Returns true if the Job is currently being acted upon by the system to bring it into the desired state. When a new Job is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Job to the desired state. This process is called reconciliation. While reconciliation is in process, `observed_generation` and `latest_succeeded_execution`, will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the state matches the Job, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `observed_generation` and `generation`, `latest_succeeded_execution` and `latest_created_execution`. If reconciliation failed, `observed_generation` and `latest_succeeded_execution` will have the state of the last succeeded execution or empty for newly created Job. Additional information on the failure can be found in `terminal_condition` and `conditions`.
+  *   `runExecutionToken` (*type:* `String.t`, *default:* `nil`) - A unique string used as a suffix for creating a new execution. The Job will become ready when the execution is successfully completed. The sum of job name and token length must be fewer than 63 characters.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `startExecutionToken` (*type:* `String.t`, *default:* `nil`) - A unique string used as a suffix creating a new execution. The Job will become ready when the execution is successfully started. The sum of job name and token length must be fewer than 63 characters.
   *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2ExecutionTemplate.t`, *default:* `nil`) - Required. The template used to create executions for this Job.
   *   `terminalCondition` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t`, *default:* `nil`) - Output only. The Condition of this Job, containing its readiness status, and detailed error information in case it did not reach the desired state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the Execution. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
@@ -71,7 +73,9 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Job do
           :name => String.t() | nil,
           :observedGeneration => String.t() | nil,
           :reconciling => boolean() | nil,
+          :runExecutionToken => String.t() | nil,
           :satisfiesPzs => boolean() | nil,
+          :startExecutionToken => String.t() | nil,
           :template => GoogleApi.Run.V2.Model.GoogleCloudRunV2ExecutionTemplate.t() | nil,
           :terminalCondition => GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition.t() | nil,
           :uid => String.t() | nil,
@@ -97,7 +101,9 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Job do
   field(:name)
   field(:observedGeneration)
   field(:reconciling)
+  field(:runExecutionToken)
   field(:satisfiesPzs)
+  field(:startExecutionToken)
   field(:template, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ExecutionTemplate)
   field(:terminalCondition, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition)
   field(:uid)

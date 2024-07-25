@@ -38,6 +38,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   *   `logUri` (*type:* `String.t`, *default:* `nil`) - Output only. The Google Console URI to obtain logs for the Revision.
   *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Sets the maximum number of requests that each serving instance can receive.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique name of this Revision.
+  *   `nodeSelector` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2NodeSelector.t`, *default:* `nil`) - The node selector for the revision.
   *   `observedGeneration` (*type:* `String.t`, *default:* `nil`) - Output only. The generation of this Revision currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether the resource's reconciliation is still in progress. See comments in `Service.reconciling` for additional information on reconciliation process in Cloud Run.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
@@ -73,6 +74,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
           :logUri => String.t() | nil,
           :maxInstanceRequestConcurrency => integer() | nil,
           :name => String.t() | nil,
+          :nodeSelector => GoogleApi.Run.V2.Model.GoogleCloudRunV2NodeSelector.t() | nil,
           :observedGeneration => String.t() | nil,
           :reconciling => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
@@ -106,6 +108,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   field(:logUri)
   field(:maxInstanceRequestConcurrency)
   field(:name)
+  field(:nodeSelector, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2NodeSelector)
   field(:observedGeneration)
   field(:reconciling)
   field(:satisfiesPzs)

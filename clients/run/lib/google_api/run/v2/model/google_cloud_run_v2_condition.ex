@@ -21,11 +21,11 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Condition do
 
   ## Attributes
 
-  *   `executionReason` (*type:* `String.t`, *default:* `nil`) - A reason for the execution condition.
+  *   `executionReason` (*type:* `String.t`, *default:* `nil`) - Output only. A reason for the execution condition.
   *   `lastTransitionTime` (*type:* `DateTime.t`, *default:* `nil`) - Last time the condition transitioned from one status to another.
   *   `message` (*type:* `String.t`, *default:* `nil`) - Human readable message indicating details about the current status.
-  *   `reason` (*type:* `String.t`, *default:* `nil`) - A common (service-level) reason for this condition.
-  *   `revisionReason` (*type:* `String.t`, *default:* `nil`) - A reason for the revision condition.
+  *   `reason` (*type:* `String.t`, *default:* `nil`) - Output only. A common (service-level) reason for this condition.
+  *   `revisionReason` (*type:* `String.t`, *default:* `nil`) - Output only. A reason for the revision condition.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - How to interpret failures of this condition, one of Error, Warning, Info
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the condition.
   *   `type` (*type:* `String.t`, *default:* `nil`) - type is used to communicate the status of the reconciliation process. See also: https://github.com/knative/serving/blob/main/docs/spec/errors.md#error-conditions-and-reporting Types common to all resources include: * "Ready": True when the Resource is ready.
