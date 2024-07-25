@@ -26,6 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Subscription do
   *   `listings` (*type:* `list(GoogleApi.AndroidPublisher.V3.Model.SubscriptionListing.t)`, *default:* `nil`) - Required. List of localized listings for this subscription. Must contain at least an entry for the default language of the parent app.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Immutable. Package name of the parent app.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Immutable. Unique product ID of the product. Unique within the parent app. Product IDs must be composed of lower-case letters (a-z), numbers (0-9), underscores (_) and dots (.). It must start with a lower-case letter or number, and be between 1 and 40 (inclusive) characters in length.
+  *   `restrictedPaymentCountries` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RestrictedPaymentCountries.t`, *default:* `nil`) - Optional. Countries where the purchase of this subscription is restricted to payment methods registered in the same country. If empty, no payment location restrictions are imposed.
   *   `taxAndComplianceSettings` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings.t`, *default:* `nil`) - Details about taxes and legal compliance.
   """
 
@@ -37,6 +38,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Subscription do
           :listings => list(GoogleApi.AndroidPublisher.V3.Model.SubscriptionListing.t()) | nil,
           :packageName => String.t() | nil,
           :productId => String.t() | nil,
+          :restrictedPaymentCountries =>
+            GoogleApi.AndroidPublisher.V3.Model.RestrictedPaymentCountries.t() | nil,
           :taxAndComplianceSettings =>
             GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings.t() | nil
         }
@@ -46,6 +49,10 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.Subscription do
   field(:listings, as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionListing, type: :list)
   field(:packageName)
   field(:productId)
+
+  field(:restrictedPaymentCountries,
+    as: GoogleApi.AndroidPublisher.V3.Model.RestrictedPaymentCountries
+  )
 
   field(:taxAndComplianceSettings,
     as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionTaxAndComplianceSettings

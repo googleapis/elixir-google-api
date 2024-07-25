@@ -31,6 +31,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the external transaction. The package name of the application the inapp products were sold (for example, 'com.some.app').
   *   `recurringTransaction` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RecurringExternalTransaction.t`, *default:* `nil`) - This transaction is part of a recurring series of transactions.
   *   `testPurchase` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExternalTransactionTestPurchase.t`, *default:* `nil`) - Output only. If set, this transaction was a test purchase. Google will not charge for a test transaction.
+  *   `transactionProgramCode` (*type:* `integer()`, *default:* `nil`) - Optional. The transaction program code, used to help determine service fee for eligible apps participating in partner programs. Developers participating in the Play Media Experience Program (https://play.google.com/console/about/programs/mediaprogram/) must provide the program code when reporting alternative billing transactions. If you are an eligible developer, please contact your BDM for more information on how to set this field. Note: this field can not be used for external offers transactions.
   *   `transactionState` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the transaction.
   *   `transactionTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The time when the transaction was completed.
   *   `userTaxAddress` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExternalTransactionAddress.t`, *default:* `nil`) - Required. User address for tax computation.
@@ -52,6 +53,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
             GoogleApi.AndroidPublisher.V3.Model.RecurringExternalTransaction.t() | nil,
           :testPurchase =>
             GoogleApi.AndroidPublisher.V3.Model.ExternalTransactionTestPurchase.t() | nil,
+          :transactionProgramCode => integer() | nil,
           :transactionState => String.t() | nil,
           :transactionTime => DateTime.t() | nil,
           :userTaxAddress =>
@@ -72,6 +74,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
   )
 
   field(:testPurchase, as: GoogleApi.AndroidPublisher.V3.Model.ExternalTransactionTestPurchase)
+  field(:transactionProgramCode)
   field(:transactionState)
   field(:transactionTime, as: DateTime)
   field(:userTaxAddress, as: GoogleApi.AndroidPublisher.V3.Model.ExternalTransactionAddress)

@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalSubscriptionOfferPhaseConf
   ## Attributes
 
   *   `absoluteDiscount` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Money.t`, *default:* `nil`) - The absolute amount of money subtracted from the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a $1 absolute discount for a phase of a duration of 3 months would correspond to a price of $2. The resulting price may not be smaller than the minimum price allowed for this region.
+  *   `free` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RegionalSubscriptionOfferPhaseFreePriceOverride.t`, *default:* `nil`) - Set to specify this offer is free to obtain.
   *   `price` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Money.t`, *default:* `nil`) - The absolute price the user pays for this offer phase. The price must not be smaller than the minimum price allowed for this region.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The region to which this config applies.
   *   `relativeDiscount` (*type:* `float()`, *default:* `nil`) - The fraction of the base plan price prorated over the phase duration that the user pays for this offer phase. For example, if the base plan price for this region is $12 for a period of 1 year, then a 50% discount for a phase of a duration of 3 months would correspond to a price of $1.50. The discount must be specified as a fraction strictly larger than 0 and strictly smaller than 1. The resulting price will be rounded to the nearest billable unit (e.g. cents for USD). The relative discount is considered invalid if the discounted price ends up being smaller than the minimum price allowed in this region.
@@ -31,12 +32,20 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalSubscriptionOfferPhaseConf
 
   @type t :: %__MODULE__{
           :absoluteDiscount => GoogleApi.AndroidPublisher.V3.Model.Money.t() | nil,
+          :free =>
+            GoogleApi.AndroidPublisher.V3.Model.RegionalSubscriptionOfferPhaseFreePriceOverride.t()
+            | nil,
           :price => GoogleApi.AndroidPublisher.V3.Model.Money.t() | nil,
           :regionCode => String.t() | nil,
           :relativeDiscount => float() | nil
         }
 
   field(:absoluteDiscount, as: GoogleApi.AndroidPublisher.V3.Model.Money)
+
+  field(:free,
+    as: GoogleApi.AndroidPublisher.V3.Model.RegionalSubscriptionOfferPhaseFreePriceOverride
+  )
+
   field(:price, as: GoogleApi.AndroidPublisher.V3.Model.Money)
   field(:regionCode)
   field(:relativeDiscount)

@@ -26,7 +26,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.VoidedPurchase do
   *   `purchaseTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was made, in milliseconds since the epoch (Jan 1, 1970).
   *   `purchaseToken` (*type:* `String.t`, *default:* `nil`) - The token which uniquely identifies a one-time purchase or subscription. To uniquely identify subscription renewals use order_id (available starting from version 3 of the API).
   *   `voidedQuantity` (*type:* `integer()`, *default:* `nil`) - The voided quantity as the result of a quantity-based partial refund. Voided purchases of quantity-based partial refunds may only be returned when includeQuantityBasedPartialRefund is set to true.
-  *   `voidedReason` (*type:* `integer()`, *default:* `nil`) - The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback
+  *   `voidedReason` (*type:* `integer()`, *default:* `nil`) - The reason why the purchase was voided, possible values are: 0. Other 1. Remorse 2. Not_received 3. Defective 4. Accidental_purchase 5. Fraud 6. Friendly_fraud 7. Chargeback 8. Unacknowledged_purchase
   *   `voidedSource` (*type:* `integer()`, *default:* `nil`) - The initiator of voided purchase, possible values are: 0. User 1. Developer 2. Google
   *   `voidedTimeMillis` (*type:* `String.t`, *default:* `nil`) - The time at which the purchase was canceled/refunded/charged-back, in milliseconds since the epoch (Jan 1, 1970).
   """

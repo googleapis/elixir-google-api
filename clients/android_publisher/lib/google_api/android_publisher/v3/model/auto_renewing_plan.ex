@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
   ## Attributes
 
   *   `autoRenewEnabled` (*type:* `boolean()`, *default:* `nil`) - If the subscription is currently set to auto-renew, e.g. the user has not canceled the subscription
+  *   `installmentDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.InstallmentPlan.t`, *default:* `nil`) - The installment plan commitment and state related info for the auto renewing plan.
   *   `priceChangeDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t`, *default:* `nil`) - The information of the last price change for the item since subscription signup.
   """
 
@@ -29,11 +30,13 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.AutoRenewingPlan do
 
   @type t :: %__MODULE__{
           :autoRenewEnabled => boolean() | nil,
+          :installmentDetails => GoogleApi.AndroidPublisher.V3.Model.InstallmentPlan.t() | nil,
           :priceChangeDetails =>
             GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails.t() | nil
         }
 
   field(:autoRenewEnabled)
+  field(:installmentDetails, as: GoogleApi.AndroidPublisher.V3.Model.InstallmentPlan)
 
   field(:priceChangeDetails,
     as: GoogleApi.AndroidPublisher.V3.Model.SubscriptionItemPriceChangeDetails

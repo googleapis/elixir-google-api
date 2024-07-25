@@ -22,7 +22,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.SubscriptionPurchaseV2 do
   ## Attributes
 
   *   `acknowledgementState` (*type:* `String.t`, *default:* `nil`) - The acknowledgement state of the subscription.
-  *   `canceledStateContext` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CanceledStateContext.t`, *default:* `nil`) - Additional context around canceled subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_CANCELED.
+  *   `canceledStateContext` (*type:* `GoogleApi.AndroidPublisher.V3.Model.CanceledStateContext.t`, *default:* `nil`) - Additional context around canceled subscriptions. Only present if the subscription currently has subscription_state SUBSCRIPTION_STATE_CANCELED or SUBSCRIPTION_STATE_EXPIRED.
   *   `externalAccountIdentifiers` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExternalAccountIdentifiers.t`, *default:* `nil`) - User account identifier in the third-party service.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This kind represents a SubscriptionPurchaseV2 object in the androidpublisher service.
   *   `latestOrderId` (*type:* `String.t`, *default:* `nil`) - The order id of the latest order associated with the purchase of the subscription. For autoRenewing subscription, this is the order id of signup order if it is not renewed yet, or the last recurring order id (success, pending, or declined order). For prepaid subscription, this is the order id associated with the queried purchase token.
