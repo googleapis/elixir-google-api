@@ -32,6 +32,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
   *   `playAudio` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessagePlayAudio.t`, *default:* `nil`) - Signal that the client should play an audio clip hosted at a client-specific URI. Dialogflow uses this to construct mixed_audio. However, Dialogflow itself does not try to read or process the URI in any way.
   *   `telephonyTransferCall` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageTelephonyTransferCall.t`, *default:* `nil`) - A signal that the client should transfer the phone call connected to this agent to a third-party endpoint.
   *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageText.t`, *default:* `nil`) - Returns a text response.
+  *   `toolCall` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCall.t`, *default:* `nil`) - Returns the definition of a tool call that should be executed by the client.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,7 +66,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
             | nil,
           :text =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageText.t()
-            | nil
+            | nil,
+          :toolCall =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCall.t() | nil
         }
 
   field(:channel)
@@ -109,6 +112,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMe
   )
 
   field(:text, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ResponseMessageText)
+
+  field(:toolCall, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCall)
 end
 
 defimpl Poison.Decoder,

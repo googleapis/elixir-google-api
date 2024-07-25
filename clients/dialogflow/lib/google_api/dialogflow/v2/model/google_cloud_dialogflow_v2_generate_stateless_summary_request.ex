@@ -22,8 +22,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStateless
   ## Attributes
 
   *   `conversationProfile` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationProfile.t`, *default:* `nil`) - Required. A ConversationProfile containing information required for Summary generation. Required fields: {language_code, security_settings} Optional fields: {agent_assistant_config}
-  *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - The name of the latest conversation message used as context for generating a Summary. If empty, the latest message of the conversation will be used. The format is specific to the user and the names of the messages provided.
-  *   `maxContextSize` (*type:* `integer()`, *default:* `nil`) - Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
+  *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the latest conversation message used as context for generating a Summary. If empty, the latest message of the conversation will be used. The format is specific to the user and the names of the messages provided.
+  *   `maxContextSize` (*type:* `integer()`, *default:* `nil`) - Optional. Max number of messages prior to and including [latest_message] to use as context when compiling the suggestion. By default 500 and at most 1000.
   *   `statelessConversation` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2GenerateStatelessSummaryRequestMinimalConversation.t`, *default:* `nil`) - Required. The conversation to suggest a summary for.
   """
 

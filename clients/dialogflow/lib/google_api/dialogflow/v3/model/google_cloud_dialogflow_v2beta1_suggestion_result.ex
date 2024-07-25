@@ -26,6 +26,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
   *   `suggestDialogflowAssistsResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for DIALOGFLOW_ASSIST.
   *   `suggestEntityExtractionResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestDialogflowAssistsResponse.t`, *default:* `nil`) - SuggestDialogflowAssistsResponse if request is for ENTITY_EXTRACTION.
   *   `suggestFaqAnswersResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse.t`, *default:* `nil`) - SuggestFaqAnswersResponse if request is for FAQ_ANSWER.
+  *   `suggestKnowledgeAssistResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse.t`, *default:* `nil`) - SuggestKnowledgeAssistResponse if request is for KNOWLEDGE_ASSIST.
   *   `suggestSmartRepliesResponse` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse.t`, *default:* `nil`) - SuggestSmartRepliesResponse if request is for SMART_REPLY.
   """
 
@@ -44,6 +45,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
             | nil,
           :suggestFaqAnswersResponse =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse.t()
+            | nil,
+          :suggestKnowledgeAssistResponse =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse.t()
             | nil,
           :suggestSmartRepliesResponse =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestSmartRepliesResponse.t()
@@ -66,6 +70,10 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestionRe
 
   field(:suggestFaqAnswersResponse,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestFaqAnswersResponse
+  )
+
+  field(:suggestKnowledgeAssistResponse,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SuggestKnowledgeAssistResponse
   )
 
   field(:suggestSmartRepliesResponse,

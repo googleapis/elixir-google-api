@@ -21,8 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TestConfig
 
   ## Attributes
 
-  *   `flow` (*type:* `String.t`, *default:* `nil`) - Flow name to start the test case with. Format: `projects//locations//agents//flows/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If both are set, `page` takes precedence over `flow`. If neither is set, the test case will start with start page on the default start flow.
-  *   `page` (*type:* `String.t`, *default:* `nil`) - The page to start the test case with. Format: `projects//locations//agents//flows//pages/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If both are set, `page` takes precedence over `flow`. If neither is set, the test case will start with start page on the default start flow.
+  *   `flow` (*type:* `String.t`, *default:* `nil`) - Flow name to start the test case with. Format: `projects//locations//agents//flows/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If neither is set, the test case will start with start page on the default start flow.
+  *   `page` (*type:* `String.t`, *default:* `nil`) - The page to start the test case with. Format: `projects//locations//agents//flows//pages/`. Only one of `flow` and `page` should be set to indicate the starting point of the test case. If neither is set, the test case will start with start page on the default start flow.
   *   `trackingParameters` (*type:* `list(String.t)`, *default:* `nil`) - Session parameters to be compared when calculating differences.
   """
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoff
 
   ## Attributes
 
-  *   `livePersonConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfigLivePersonConfig.t`, *default:* `nil`) - Uses LivePerson (https://www.liveperson.com).
+  *   `livePersonConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfigLivePersonConfig.t`, *default:* `nil`) - Uses [LivePerson](https://www.liveperson.com).
   *   `salesforceLiveAgentConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfigSalesforceLiveAgentConfig.t`, *default:* `nil`) - Uses Salesforce Live Agent.
   """
 

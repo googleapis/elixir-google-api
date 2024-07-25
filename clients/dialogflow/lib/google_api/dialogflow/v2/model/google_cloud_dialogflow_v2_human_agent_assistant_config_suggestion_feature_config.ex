@@ -26,6 +26,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   *   `disableAgentQueryLogging` (*type:* `boolean()`, *default:* `nil`) - Optional. Disable the logging of search queries sent by human agents. It can prevent those queries from being stored at answer records. Supported features: KNOWLEDGE_SEARCH.
   *   `enableConversationAugmentedQuery` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable including conversation context during query answer generation. Supported features: KNOWLEDGE_SEARCH.
   *   `enableEventBasedSuggestion` (*type:* `boolean()`, *default:* `nil`) - Automatically iterates all participants and tries to compile suggestions. Supported features: ARTICLE_SUGGESTION, FAQ, DIALOGFLOW_ASSIST, KNOWLEDGE_ASSIST.
+  *   `enableQuerySuggestionOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable query suggestion only. Supported features: KNOWLEDGE_ASSIST
+  *   `enableQuerySuggestionWhenNoAnswer` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable query suggestion even if we can't find its answer. By default, queries are suggested only if we find its answer. Supported features: KNOWLEDGE_ASSIST
   *   `queryConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig.t`, *default:* `nil`) - Configs of query.
   *   `suggestionFeature` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SuggestionFeature.t`, *default:* `nil`) - The suggestion feature.
   *   `suggestionTriggerSettings` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionTriggerSettings.t`, *default:* `nil`) - Settings of suggestion trigger. Currently, only ARTICLE_SUGGESTION and FAQ will use this field.
@@ -43,6 +45,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
           :disableAgentQueryLogging => boolean() | nil,
           :enableConversationAugmentedQuery => boolean() | nil,
           :enableEventBasedSuggestion => boolean() | nil,
+          :enableQuerySuggestionOnly => boolean() | nil,
+          :enableQuerySuggestionWhenNoAnswer => boolean() | nil,
           :queryConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionQueryConfig.t()
             | nil,
@@ -66,6 +70,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
   field(:disableAgentQueryLogging)
   field(:enableConversationAugmentedQuery)
   field(:enableEventBasedSuggestion)
+  field(:enableQuerySuggestionOnly)
+  field(:enableQuerySuggestionWhenNoAnswer)
 
   field(:queryConfig,
     as:

@@ -21,6 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DataStoreConnec
 
   ## Attributes
 
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Name of the generative model. For example, "gemini-ultra", "gemini-pro", "gemini-1.5-flash" etc. Defaults to "Other" if the model is unknown.
   *   `modelOutput` (*type:* `String.t`, *default:* `nil`) - Output of the generative model.
   *   `renderedPrompt` (*type:* `String.t`, *default:* `nil`) - Prompt as sent to the model.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DataStoreConnec
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :model => String.t() | nil,
           :modelOutput => String.t() | nil,
           :renderedPrompt => String.t() | nil
         }
 
+  field(:model)
   field(:modelOutput)
   field(:renderedPrompt)
 end

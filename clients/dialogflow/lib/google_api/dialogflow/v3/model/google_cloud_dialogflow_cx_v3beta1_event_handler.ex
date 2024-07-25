@@ -25,6 +25,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1EventHandl
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of this event handler.
   *   `targetFlow` (*type:* `String.t`, *default:* `nil`) - The target flow to transition to. Format: `projects//locations//agents//flows/`.
   *   `targetPage` (*type:* `String.t`, *default:* `nil`) - The target page to transition to. Format: `projects//locations//agents//flows//pages/`.
+  *   `targetPlaybook` (*type:* `String.t`, *default:* `nil`) - The target playbook to transition to. Format: `projects//locations//agents//playbooks/`.
   *   `triggerFulfillment` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1Fulfillment.t`, *default:* `nil`) - The fulfillment to call when the event occurs. Handling webhook errors with a fulfillment enabled with webhook could cause infinite loop. It is invalid to specify such fulfillment for a handler handling webhooks.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1EventHandl
           :name => String.t() | nil,
           :targetFlow => String.t() | nil,
           :targetPage => String.t() | nil,
+          :targetPlaybook => String.t() | nil,
           :triggerFulfillment =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1Fulfillment.t() | nil
         }
@@ -43,6 +45,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1EventHandl
   field(:name)
   field(:targetFlow)
   field(:targetPage)
+  field(:targetPlaybook)
 
   field(:triggerFulfillment,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1Fulfillment

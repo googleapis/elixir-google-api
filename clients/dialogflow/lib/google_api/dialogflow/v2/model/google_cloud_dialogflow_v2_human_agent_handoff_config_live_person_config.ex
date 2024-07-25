@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentHandoffConfigLivePersonConfig do
   @moduledoc """
-  Configuration specific to LivePerson (https://www.liveperson.com).
+  Configuration specific to [LivePerson](https://www.liveperson.com).
 
   ## Attributes
 
