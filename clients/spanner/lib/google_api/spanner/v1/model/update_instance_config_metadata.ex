@@ -22,7 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.UpdateInstanceConfigMetadata do
   ## Attributes
 
   *   `cancelTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which this operation was cancelled.
-  *   `instanceConfig` (*type:* `GoogleApi.Spanner.V1.Model.InstanceConfig.t`, *default:* `nil`) - The desired instance config after updating.
+  *   `instanceConfig` (*type:* `GoogleApi.Spanner.V1.Model.InstanceConfig.t`, *default:* `nil`) - The desired instance configuration after updating.
   *   `progress` (*type:* `GoogleApi.Spanner.V1.Model.InstanceOperationProgress.t`, *default:* `nil`) - The progress of the UpdateInstanceConfig operation.
   """
 

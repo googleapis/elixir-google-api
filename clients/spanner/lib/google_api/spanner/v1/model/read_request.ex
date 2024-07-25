@@ -27,6 +27,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   *   `index` (*type:* `String.t`, *default:* `nil`) - If non-empty, the name of an index on table. This index is used instead of the table primary key when interpreting key_set and sorting result rows. See key_set for further information.
   *   `keySet` (*type:* `GoogleApi.Spanner.V1.Model.KeySet.t`, *default:* `nil`) - Required. `key_set` identifies the rows to be yielded. `key_set` names the primary keys of the rows in table to be yielded, unless index is present. If index is present, then key_set instead names index keys in index. If the partition_token field is empty, rows are yielded in table primary key order (if index is empty) or index key order (if index is non-empty). If the partition_token field is not empty, rows will be yielded in an unspecified order. It is not an error for the `key_set` to name rows that do not exist in the database. Read yields nothing for nonexistent rows.
   *   `limit` (*type:* `String.t`, *default:* `nil`) - If greater than zero, only the first `limit` rows are yielded. If `limit` is zero, the default is no limit. A limit cannot be specified if `partition_token` is set.
+  *   `lockHint` (*type:* `String.t`, *default:* `nil`) - Optional. Lock Hint for the request, it can only be used with read-write transactions.
+  *   `orderBy` (*type:* `String.t`, *default:* `nil`) - Optional. Order for the returned rows. By default, Spanner will return result rows in primary key order except for PartitionRead requests. For applications that do not require rows to be returned in primary key (`ORDER_BY_PRIMARY_KEY`) order, setting `ORDER_BY_NO_ORDER` option allows Spanner to optimize row retrieval, resulting in lower latencies in certain cases (e.g. bulk point lookups).
   *   `partitionToken` (*type:* `String.t`, *default:* `nil`) - If present, results will be restricted to the specified partition previously created using PartitionRead(). There must be an exact match for the values of fields common to this message and the PartitionReadRequest message used to create this partition_token.
   *   `requestOptions` (*type:* `GoogleApi.Spanner.V1.Model.RequestOptions.t`, *default:* `nil`) - Common options for this request.
   *   `resumeToken` (*type:* `String.t`, *default:* `nil`) - If this request is resuming a previously interrupted read, `resume_token` should be copied from the last PartialResultSet yielded before the interruption. Doing this enables the new read to resume where the last read left off. The rest of the request parameters must exactly match the request that yielded this token.
@@ -43,6 +45,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
           :index => String.t() | nil,
           :keySet => GoogleApi.Spanner.V1.Model.KeySet.t() | nil,
           :limit => String.t() | nil,
+          :lockHint => String.t() | nil,
+          :orderBy => String.t() | nil,
           :partitionToken => String.t() | nil,
           :requestOptions => GoogleApi.Spanner.V1.Model.RequestOptions.t() | nil,
           :resumeToken => String.t() | nil,
@@ -56,6 +60,8 @@ defmodule GoogleApi.Spanner.V1.Model.ReadRequest do
   field(:index)
   field(:keySet, as: GoogleApi.Spanner.V1.Model.KeySet)
   field(:limit)
+  field(:lockHint)
+  field(:orderBy)
   field(:partitionToken)
   field(:requestOptions, as: GoogleApi.Spanner.V1.Model.RequestOptions)
   field(:resumeToken)

@@ -23,7 +23,7 @@ defmodule GoogleApi.Spanner.V1.Model.ListInstancePartitionsResponse do
 
   *   `instancePartitions` (*type:* `list(GoogleApi.Spanner.V1.Model.InstancePartition.t)`, *default:* `nil`) - The list of requested instancePartitions.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - `next_page_token` can be sent in a subsequent ListInstancePartitions call to fetch more of the matching instance partitions.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - The list of unreachable instance partitions. It includes the names of instance partitions whose metadata could not be retrieved within instance_partition_deadline.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - The list of unreachable instances or instance partitions. It includes the names of instances or instance partitions whose metadata could not be retrieved within instance_partition_deadline.
   """
 
   use GoogleApi.Gax.ModelBase
