@@ -21,15 +21,19 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationAuthentica
 
   ## Attributes
 
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Google-managed service account associated with this connection, e.g., `service-{project_number}@gcp-sa-bigqueryconnection.iam.gserviceaccount.com`. BigQuery jobs using this connection will act as `service_account` identity while connecting to the datasource.
   *   `usernamePassword` (*type:* `GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationUsernamePassword.t`, *default:* `nil`) - Username/password authentication.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :serviceAccount => String.t() | nil,
           :usernamePassword =>
             GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationUsernamePassword.t() | nil
         }
+
+  field(:serviceAccount)
 
   field(:usernamePassword,
     as: GoogleApi.BigQueryConnection.V1.Model.ConnectorConfigurationUsernamePassword
