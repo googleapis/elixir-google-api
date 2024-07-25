@@ -31,8 +31,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -52,24 +51,12 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   *   `{:ok, %GoogleApi.Metastore.V1beta.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec metastore_projects_locations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec metastore_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Metastore.V1beta.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def metastore_projects_locations_get(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def metastore_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -87,9 +74,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -105,7 +91,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -133,12 +119,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def metastore_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def metastore_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -159,8 +140,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -178,8 +159,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the location in which to create a federation service, in the following form:projects/{project_number}/locations/{location_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the location in which to create a federation service, in the following form:projects/{project_number}/locations/{location_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -205,7 +185,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -215,8 +194,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -240,9 +218,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}/federations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+parent}/federations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -258,9 +235,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the metastore federation to delete, in the following form:projects/{project_number}/locations/{location_id}/federations/{federation_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the metastore federation to delete, in the following form:projects/{project_number}/locations/{location_id}/federations/{federation_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -284,8 +259,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -295,9 +268,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_delete(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -319,14 +290,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -341,9 +307,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the metastore federation to retrieve, in the following form:projects/{project_number}/locations/{location_id}/federations/{federation_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the metastore federation to retrieve, in the following form:projects/{project_number}/locations/{location_id}/federations/{federation_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -366,8 +330,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -377,9 +339,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_get(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -400,14 +360,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -422,9 +377,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -448,8 +401,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -459,9 +410,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -483,14 +432,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -505,8 +449,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the location of metastore federations to list, in the following form: projects/{project_number}/locations/{location_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the location of metastore federations to list, in the following form: projects/{project_number}/locations/{location_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -533,7 +476,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -543,8 +485,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -569,9 +510,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}/federations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+parent}/federations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -589,9 +529,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `federation.name`. Immutable. The relative resource name of the federation, of the form: projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `federation.name`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `federation.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Immutable. The relative resource name of the federation, of the form: projects/{project_number}/locations/{location_id}/federations/{federation_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -617,8 +555,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -628,9 +564,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_patch(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -654,14 +588,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -676,9 +605,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -702,8 +629,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -713,9 +638,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -737,14 +660,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -759,9 +677,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `federations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -785,8 +701,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_federations_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -796,9 +710,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_federations_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        federations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -820,14 +732,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/federations/{federationsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "federationsId" => URI.encode(federations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -844,9 +751,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -870,8 +775,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -881,9 +784,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_operations_cancel(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -905,14 +806,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -927,9 +823,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -952,8 +846,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_operations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -963,9 +855,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_operations_delete(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -986,14 +876,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1008,9 +893,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1033,8 +916,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1044,9 +925,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1067,14 +946,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1089,8 +963,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1116,7 +989,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1126,8 +998,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_operations_list(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1151,9 +1022,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1171,9 +1041,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to mutate metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to mutate metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1197,8 +1065,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_alter_location(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1208,9 +1074,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_alter_location(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1232,14 +1096,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:alterLocation",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:alterLocation", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1254,9 +1113,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the Dataproc Metastore service that's being used to mutate metadata table properties, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the Dataproc Metastore service that's being used to mutate metadata table properties, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1280,8 +1137,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_alter_table_properties(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1291,9 +1146,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_alter_table_properties(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1315,14 +1168,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:alterTableProperties",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:alterTableProperties", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1337,9 +1185,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to cancel the ongoing migration to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to cancel the ongoing migration to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1363,8 +1209,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_cancel_migration(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1374,9 +1218,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_cancel_migration(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1398,14 +1240,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:cancelMigration",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:cancelMigration", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1420,9 +1257,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to complete the migration to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to complete the migration to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1446,8 +1281,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_complete_migration(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1457,9 +1290,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_complete_migration(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1481,14 +1312,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:completeMigration",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:completeMigration", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1503,8 +1329,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the location in which to create a metastore service, in the following form:projects/{project_number}/locations/{location_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the location in which to create a metastore service, in the following form:projects/{project_number}/locations/{location_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1530,7 +1355,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1540,8 +1364,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1565,9 +1388,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}/services", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1583,9 +1405,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the metastore service to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the metastore service to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1609,8 +1429,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1620,9 +1438,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_delete(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1644,14 +1460,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1666,9 +1477,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to run export, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to run export, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1692,8 +1501,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_export_metadata(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1703,9 +1510,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_export_metadata(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1727,14 +1532,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:exportMetadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:exportMetadata", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1749,9 +1549,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the metastore service to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the metastore service to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1774,8 +1572,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1785,9 +1581,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_get(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1808,14 +1602,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1830,9 +1619,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1856,8 +1643,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1867,9 +1652,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1891,14 +1674,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1913,8 +1691,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the location of metastore services to list, in the following form:projects/{project_number}/locations/{location_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the location of metastore services to list, in the following form:projects/{project_number}/locations/{location_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1941,7 +1718,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1951,8 +1727,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1977,9 +1752,8 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta/projects/{projectsId}/locations/{locationsId}/services", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta/{+parent}/services", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1995,9 +1769,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to mutate metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to mutate metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2021,8 +1793,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_move_table_to_database(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2032,9 +1802,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_move_table_to_database(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2056,14 +1824,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:moveTableToDatabase",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:moveTableToDatabase", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2078,9 +1841,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service.name`. Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2106,8 +1867,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2117,9 +1876,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_patch(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2143,14 +1900,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2160,14 +1912,12 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   end
 
   @doc """
-  Query DPMS metadata.
+  Query Dataproc Metastore metadata.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to query metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to query metadata, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2191,8 +1941,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_query_metadata(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2202,9 +1950,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_query_metadata(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2226,14 +1972,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:queryMetadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:queryMetadata", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2248,10 +1989,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The relative resource name of the dataplane resource to remove IAM policy, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id} or projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id1` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - Required. The relative resource name of the dataplane resource to remove IAM policy, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id} or projects/{project_id}/locations/{location_id}/services/{service_id}/databases/{database_id}/tables/{table_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2275,9 +2013,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_remove_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2287,10 +2022,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_remove_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        services_id1,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2312,15 +2044,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/{servicesId1}:removeIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "servicesId1" => URI.encode(services_id1, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:removeIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2337,9 +2063,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to run restore, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to run restore, in the following form:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2363,8 +2087,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_restore(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2374,9 +2096,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_restore(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2398,14 +2118,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:restore",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:restore", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2420,9 +2135,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2446,8 +2159,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2457,9 +2168,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2481,14 +2190,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2503,9 +2207,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `service`. Required. The relative resource name of the metastore service to start migrating to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `service`. See documentation of `projectsId`.
+  *   `service` (*type:* `String.t`) - Required. The relative resource name of the metastore service to start migrating to, in the following format:projects/{project_id}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2529,8 +2231,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_start_migration(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2540,9 +2240,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_start_migration(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2564,14 +2262,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:startMigration",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+service}:startMigration", %{
+        "service" => URI.encode(service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2586,9 +2279,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2612,8 +2303,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2623,9 +2312,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2647,14 +2334,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2671,9 +2353,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the service in which to create a backup of the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the service in which to create a backup of the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2699,8 +2379,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2710,9 +2388,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_create(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2736,14 +2412,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2758,10 +2429,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the backup to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the backup to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2785,9 +2453,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2797,10 +2462,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_delete(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        backups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2822,15 +2484,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups/{backupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2845,10 +2501,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the backup to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the backup to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2871,9 +2524,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2883,10 +2533,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_get(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        backups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2907,15 +2554,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups/{backupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2930,10 +2571,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2957,9 +2595,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2969,10 +2604,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2994,15 +2626,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups/{backupsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3017,9 +2643,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the service whose backups to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the service whose backups to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3046,8 +2670,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3057,9 +2679,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_list(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3084,14 +2704,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3106,10 +2721,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3133,9 +2745,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3145,10 +2754,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3170,15 +2776,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups/{backupsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3193,10 +2793,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3220,9 +2817,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_backups_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3232,10 +2826,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_backups_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3257,15 +2848,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/backups/{backupsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3282,10 +2867,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3309,9 +2891,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3321,10 +2900,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3346,15 +2922,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3369,10 +2939,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3396,9 +2963,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3408,10 +2972,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3433,15 +2994,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3456,10 +3011,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3483,9 +3035,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3495,10 +3044,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3520,15 +3066,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3545,11 +3085,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3573,10 +3109,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_tables_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3586,11 +3118,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_tables_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3612,16 +3140,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}/tables/{tablesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3636,11 +3157,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3664,10 +3181,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_tables_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3677,11 +3190,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_tables_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3703,16 +3212,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}/tables/{tablesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3727,11 +3229,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `databases_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3755,10 +3253,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_databases_tables_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3768,11 +3262,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_databases_tables_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        databases_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3794,16 +3284,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/databases/{databasesId}/tables/{tablesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "databasesId" => URI.encode(databases_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3820,9 +3303,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the service in which to create a metastore import, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the service in which to create a metastore import, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3848,8 +3329,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_metadata_imports_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3859,9 +3338,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_metadata_imports_create(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3885,14 +3362,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/metadataImports",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+parent}/metadataImports", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3907,10 +3379,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the metadata import to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `metadata_imports_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the metadata import to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{import_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3933,9 +3402,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_metadata_imports_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3945,10 +3411,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_metadata_imports_get(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        metadata_imports_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3969,16 +3432,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/metadataImports/{metadataImportsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "metadataImportsId" =>
-            URI.encode(metadata_imports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3993,9 +3449,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the service whose metadata imports to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the service whose metadata imports to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4022,8 +3476,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_metadata_imports_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4033,9 +3485,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_metadata_imports_list(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4060,14 +3510,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/metadataImports",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+parent}/metadataImports", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4084,10 +3529,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `metadataImport.name`. Immutable. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `metadataImport.name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `metadataImport.name`. See documentation of `projectsId`.
-  *   `metadata_imports_id` (*type:* `String.t`) - Part of `metadataImport.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Immutable. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4113,9 +3555,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_metadata_imports_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4125,10 +3564,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_metadata_imports_patch(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        metadata_imports_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4152,16 +3588,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/metadataImports/{metadataImportsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "metadataImportsId" =>
-            URI.encode(metadata_imports_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4176,10 +3605,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the migrationExecution to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions/{migration_execution_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `migration_executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the migrationExecution to delete, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions/{migration_execution_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4203,9 +3629,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_migration_executions_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4215,10 +3638,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_migration_executions_delete(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        migration_executions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4240,16 +3660,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/migrationExecutions/{migrationExecutionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "migrationExecutionsId" =>
-            URI.encode(migration_executions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4264,10 +3677,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The relative resource name of the migration execution to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions/{migration_execution_id}.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `migration_executions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the migration execution to retrieve, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions/{migration_execution_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4290,9 +3700,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_migration_executions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4302,10 +3709,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_migration_executions_get(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
-        migration_executions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4326,16 +3730,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/migrationExecutions/{migrationExecutionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1),
-          "migrationExecutionsId" =>
-            URI.encode(migration_executions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4350,9 +3747,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Metastore.V1beta.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The relative resource name of the service whose migration executions to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `services_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the service whose migration executions to list, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/migrationExecutions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4379,8 +3774,6 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
   @spec metastore_projects_locations_services_migration_executions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4390,9 +3783,7 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
           | {:error, any()}
   def metastore_projects_locations_services_migration_executions_list(
         connection,
-        projects_id,
-        locations_id,
-        services_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4417,14 +3808,9 @@ defmodule GoogleApi.Metastore.V1beta.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta/projects/{projectsId}/locations/{locationsId}/services/{servicesId}/migrationExecutions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "servicesId" => URI.encode(services_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta/{+parent}/migrationExecutions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

@@ -24,6 +24,7 @@ defmodule GoogleApi.Metastore.V1.Model.Service do
   *   `artifactGcsUri` (*type:* `String.t`, *default:* `nil`) - Output only. A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metastore service was created.
   *   `databaseType` (*type:* `String.t`, *default:* `nil`) - Immutable. The database type that the Metastore service stores its data.
+  *   `deletionProtection` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the dataproc metastore should be protected against accidental deletions.
   *   `encryptionConfig` (*type:* `GoogleApi.Metastore.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Immutable. Information used to configure the Dataproc Metastore service to encrypt customer data at rest. Cannot be updated.
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the endpoint used to access the metastore service.
   *   `hiveMetastoreConfig` (*type:* `GoogleApi.Metastore.V1.Model.HiveMetastoreConfig.t`, *default:* `nil`) - Configuration information specific to running Hive metastore software as the metastore service.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Metastore.V1.Model.Service do
           :artifactGcsUri => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :databaseType => String.t() | nil,
+          :deletionProtection => boolean() | nil,
           :encryptionConfig => GoogleApi.Metastore.V1.Model.EncryptionConfig.t() | nil,
           :endpointUri => String.t() | nil,
           :hiveMetastoreConfig => GoogleApi.Metastore.V1.Model.HiveMetastoreConfig.t() | nil,
@@ -78,6 +80,7 @@ defmodule GoogleApi.Metastore.V1.Model.Service do
   field(:artifactGcsUri)
   field(:createTime, as: DateTime)
   field(:databaseType)
+  field(:deletionProtection)
   field(:encryptionConfig, as: GoogleApi.Metastore.V1.Model.EncryptionConfig)
   field(:endpointUri)
   field(:hiveMetastoreConfig, as: GoogleApi.Metastore.V1.Model.HiveMetastoreConfig)

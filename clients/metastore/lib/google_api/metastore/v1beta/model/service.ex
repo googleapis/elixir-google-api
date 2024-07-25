@@ -24,6 +24,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   *   `artifactGcsUri` (*type:* `String.t`, *default:* `nil`) - Output only. A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metastore service was created.
   *   `databaseType` (*type:* `String.t`, *default:* `nil`) - Immutable. The database type that the Metastore service stores its data.
+  *   `deletionProtection` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the dataproc metastore should be protected against accidental deletions.
   *   `encryptionConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.EncryptionConfig.t`, *default:* `nil`) - Immutable. Information used to configure the Dataproc Metastore service to encrypt customer data at rest. Cannot be updated.
   *   `endpointUri` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the endpoint used to access the metastore service.
   *   `hiveMetastoreConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.HiveMetastoreConfig.t`, *default:* `nil`) - Configuration information specific to running Hive metastore software as the metastore service.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   *   `maintenanceWindow` (*type:* `GoogleApi.Metastore.V1beta.Model.MaintenanceWindow.t`, *default:* `nil`) - The one hour maintenance window of the metastore service. This specifies when the service can be restarted for maintenance purposes in UTC time. Maintenance window is not needed for services with the SPANNER database type.
   *   `metadataIntegration` (*type:* `GoogleApi.Metastore.V1beta.Model.MetadataIntegration.t`, *default:* `nil`) - Optional. The setting that defines how metastore metadata should be integrated with external services and systems.
   *   `metadataManagementActivity` (*type:* `GoogleApi.Metastore.V1beta.Model.MetadataManagementActivity.t`, *default:* `nil`) - Output only. The metadata management activities of the metastore service.
+  *   `multiRegionConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.MultiRegionConfig.t`, *default:* `nil`) - Optional. Specifies the multi-region configuration information for the Hive metastore service.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the metastore service, in the following format:projects/{project_number}/locations/{location_id}/services/{service_id}.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Immutable. The relative resource name of the VPC network on which the instance can be accessed. It is specified in the following form:projects/{project_number}/global/networks/{network_id}.
   *   `networkConfig` (*type:* `GoogleApi.Metastore.V1beta.Model.NetworkConfig.t`, *default:* `nil`) - The configuration specifying the network settings for the Dataproc Metastore service.
@@ -52,6 +54,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
           :artifactGcsUri => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :databaseType => String.t() | nil,
+          :deletionProtection => boolean() | nil,
           :encryptionConfig => GoogleApi.Metastore.V1beta.Model.EncryptionConfig.t() | nil,
           :endpointUri => String.t() | nil,
           :hiveMetastoreConfig => GoogleApi.Metastore.V1beta.Model.HiveMetastoreConfig.t() | nil,
@@ -60,6 +63,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
           :metadataIntegration => GoogleApi.Metastore.V1beta.Model.MetadataIntegration.t() | nil,
           :metadataManagementActivity =>
             GoogleApi.Metastore.V1beta.Model.MetadataManagementActivity.t() | nil,
+          :multiRegionConfig => GoogleApi.Metastore.V1beta.Model.MultiRegionConfig.t() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
           :networkConfig => GoogleApi.Metastore.V1beta.Model.NetworkConfig.t() | nil,
@@ -78,6 +82,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
   field(:artifactGcsUri)
   field(:createTime, as: DateTime)
   field(:databaseType)
+  field(:deletionProtection)
   field(:encryptionConfig, as: GoogleApi.Metastore.V1beta.Model.EncryptionConfig)
   field(:endpointUri)
   field(:hiveMetastoreConfig, as: GoogleApi.Metastore.V1beta.Model.HiveMetastoreConfig)
@@ -89,6 +94,7 @@ defmodule GoogleApi.Metastore.V1beta.Model.Service do
     as: GoogleApi.Metastore.V1beta.Model.MetadataManagementActivity
   )
 
+  field(:multiRegionConfig, as: GoogleApi.Metastore.V1beta.Model.MultiRegionConfig)
   field(:name)
   field(:network)
   field(:networkConfig, as: GoogleApi.Metastore.V1beta.Model.NetworkConfig)

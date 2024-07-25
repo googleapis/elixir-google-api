@@ -21,6 +21,7 @@ defmodule GoogleApi.Metastore.V1.Model.LocationMetadata do
 
   ## Attributes
 
+  *   `customRegionMetadata` (*type:* `list(GoogleApi.Metastore.V1.Model.CustomRegionMetadata.t)`, *default:* `nil`) - Possible configurations supported if the current region is a custom region.
   *   `multiRegionMetadata` (*type:* `GoogleApi.Metastore.V1.Model.MultiRegionMetadata.t`, *default:* `nil`) - The multi-region metadata if the current region is a multi-region.
   *   `supportedHiveMetastoreVersions` (*type:* `list(GoogleApi.Metastore.V1.Model.HiveMetastoreVersion.t)`, *default:* `nil`) - The versions of Hive Metastore that can be used when creating a new metastore service in this location. The server guarantees that exactly one HiveMetastoreVersion in the list will set is_default.
   """
@@ -28,11 +29,14 @@ defmodule GoogleApi.Metastore.V1.Model.LocationMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :customRegionMetadata =>
+            list(GoogleApi.Metastore.V1.Model.CustomRegionMetadata.t()) | nil,
           :multiRegionMetadata => GoogleApi.Metastore.V1.Model.MultiRegionMetadata.t() | nil,
           :supportedHiveMetastoreVersions =>
             list(GoogleApi.Metastore.V1.Model.HiveMetastoreVersion.t()) | nil
         }
 
+  field(:customRegionMetadata, as: GoogleApi.Metastore.V1.Model.CustomRegionMetadata, type: :list)
   field(:multiRegionMetadata, as: GoogleApi.Metastore.V1.Model.MultiRegionMetadata)
 
   field(:supportedHiveMetastoreVersions,
