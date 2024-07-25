@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PolicyAnalyzer.V1.Model.GoogleCloudPolicyanalyzerV1Activity do
   @moduledoc """
-
+  Represents Activity on a GCP resource over specific observation period.
 
   ## Attributes
 
