@@ -21,7 +21,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardObject do
 
   ## Attributes
 
-  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional information about the partner app link.
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding class only object AppLinkData will be displayed.
   *   `balance` (*type:* `GoogleApi.WalletObjects.V1.Model.Money.t`, *default:* `nil`) - The card's monetary balance.
   *   `balanceUpdateTime` (*type:* `GoogleApi.WalletObjects.V1.Model.DateTime.t`, *default:* `nil`) - The date and time when the balance was last updated. Offset is required. If balance is updated and this property is not provided, system will default to the current time.
   *   `barcode` (*type:* `GoogleApi.WalletObjects.V1.Model.Barcode.t`, *default:* `nil`) - The barcode type and value.
@@ -44,6 +44,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardObject do
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `pin` (*type:* `String.t`, *default:* `nil`) - The card's PIN.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode type and value.
+  *   `saveRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t`, *default:* `nil`) - Restrictions on the object that needs to be verified before the user tries to save the pass. Note that this restrictions will only be applied during save time. If the restrictions changed after a user saves the pass, the new restrictions will not be applied to an already saved pass.
   *   `smartTapRedemptionValue` (*type:* `String.t`, *default:* `nil`) - The value that will be transmitted to a Smart Tap certified terminal over NFC for this object. The class level fields `enableSmartTap` and `redemptionIssuers` must also be set up correctly in order for the pass to support Smart Tap. Only ASCII characters are supported.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
@@ -77,6 +78,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardObject do
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :pin => String.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
+          :saveRestrictions => GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t() | nil,
           :smartTapRedemptionValue => String.t() | nil,
           :state => String.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
@@ -107,6 +109,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardObject do
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:pin)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
+  field(:saveRestrictions, as: GoogleApi.WalletObjects.V1.Model.SaveRestrictions)
   field(:smartTapRedemptionValue)
   field(:state)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)

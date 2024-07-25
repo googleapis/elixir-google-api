@@ -22,7 +22,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   ## Attributes
 
   *   `barcode` (*type:* `GoogleApi.WalletObjects.V1.Model.Barcode.t`, *default:* `nil`) - The barcode type and value.
-  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional information about the partner app link.
+  *   `appLinkData` (*type:* `GoogleApi.WalletObjects.V1.Model.AppLinkData.t`, *default:* `nil`) - Optional app or website link that will be displayed as a button on the front of the pass. If AppLinkData is provided for the corresponding class only object AppLinkData will be displayed.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
   *   `tripType` (*type:* `String.t`, *default:* `nil`) - Required. The type of trip this transit object represents. Used to determine the pass title and/or which symbol to use between the origin and destination.
   *   `concessionCategory` (*type:* `String.t`, *default:* `nil`) - The concession category for the ticket.
@@ -59,6 +59,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be `active` and object can be used. An object's state will be changed to `expired` when this time period has passed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for an object. This ID must be unique across all objects from an issuer. This value should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you. The unique identifier should only include alphanumeric characters, '.', '_', or '-'.
   *   `ticketLeg` (*type:* `GoogleApi.WalletObjects.V1.Model.TicketLeg.t`, *default:* `nil`) - A single ticket leg contains departure and arrival information along with boarding and seating information. If more than one leg is to be specified then use the `ticketLegs` field instead. Both `ticketLeg` and `ticketLegs` may not be set.
+  *   `saveRestrictions` (*type:* `GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t`, *default:* `nil`) - Restrictions on the object that needs to be verified before the user tries to save the pass. Note that this restrictions will only be applied during save time. If the restrictions changed after a user saves the pass, the new restrictions will not be applied to an already saved pass.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -101,7 +102,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
           :passengerType => String.t() | nil,
           :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
           :id => String.t() | nil,
-          :ticketLeg => GoogleApi.WalletObjects.V1.Model.TicketLeg.t() | nil
+          :ticketLeg => GoogleApi.WalletObjects.V1.Model.TicketLeg.t() | nil,
+          :saveRestrictions => GoogleApi.WalletObjects.V1.Model.SaveRestrictions.t() | nil
         }
 
   field(:barcode, as: GoogleApi.WalletObjects.V1.Model.Barcode)
@@ -142,6 +144,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
   field(:id)
   field(:ticketLeg, as: GoogleApi.WalletObjects.V1.Model.TicketLeg)
+  field(:saveRestrictions, as: GoogleApi.WalletObjects.V1.Model.SaveRestrictions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WalletObjects.V1.Model.TransitObject do

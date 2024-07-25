@@ -23,7 +23,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TextModuleData do
 
   *   `body` (*type:* `String.t`, *default:* `nil`) - The body of the Text Module, which is defined as an uninterrupted string. Recommended maximum length is 500 characters to ensure full string is displayed on smaller screens.
   *   `header` (*type:* `String.t`, *default:* `nil`) - The header of the Text Module. Recommended maximum length is 35 characters to ensure full string is displayed on smaller screens.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID associated with a text module. This field is here to enable ease of management of text modules.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID associated with a text module. This field is here to enable ease of management of text modules and referencing them in template overrides. The ID should only include alphanumeric characters, '_', or '-'. It can not include dots, as dots are used to separate fields within FieldReference.fieldPaths in template overrides.
   *   `localizedBody` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the body. Recommended maximum length is 500 characters to ensure full string is displayed on smaller screens.
   *   `localizedHeader` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the header. Recommended maximum length is 35 characters to ensure full string is displayed on smaller screens.
   """
