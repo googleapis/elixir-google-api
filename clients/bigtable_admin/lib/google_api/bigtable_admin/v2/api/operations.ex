@@ -31,7 +31,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +56,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_operations_get(connection, operations_id, optional_params \\ [], opts \\ []) do
+  def bigtableadmin_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -74,8 +74,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/operations/{operationsId}", %{
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -91,7 +91,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -126,7 +126,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
           | {:error, any()}
   def bigtableadmin_operations_projects_operations_list(
         connection,
-        projects_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -150,8 +150,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/operations/projects/{projectsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

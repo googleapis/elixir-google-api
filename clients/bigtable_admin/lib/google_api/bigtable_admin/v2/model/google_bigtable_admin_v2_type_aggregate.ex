@@ -21,7 +21,10 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate do
 
   ## Attributes
 
+  *   `hllppUniqueCount` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateHyperLogLogPlusPlusUniqueCount.t`, *default:* `nil`) - HyperLogLogPlusPlusUniqueCount aggregator.
   *   `inputType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Type of the inputs that are accumulated by this `Aggregate`, which must specify a full encoding. Use `AddInput` mutations to accumulate new inputs.
+  *   `max` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMax.t`, *default:* `nil`) - Max aggregator.
+  *   `min` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMin.t`, *default:* `nil`) - Min aggregator.
   *   `stateType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.Type.t`, *default:* `nil`) - Output only. Type that holds the internal accumulator state for the `Aggregate`. This is a function of the `input_type` and `aggregator` chosen, and will always specify a full encoding.
   *   `sum` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateSum.t`, *default:* `nil`) - Sum aggregator.
   """
@@ -29,12 +32,26 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hllppUniqueCount =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateHyperLogLogPlusPlusUniqueCount.t()
+            | nil,
           :inputType => GoogleApi.BigtableAdmin.V2.Model.Type.t() | nil,
+          :max =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMax.t() | nil,
+          :min =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMin.t() | nil,
           :stateType => GoogleApi.BigtableAdmin.V2.Model.Type.t() | nil,
           :sum => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateSum.t() | nil
         }
 
+  field(:hllppUniqueCount,
+    as:
+      GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateHyperLogLogPlusPlusUniqueCount
+  )
+
   field(:inputType, as: GoogleApi.BigtableAdmin.V2.Model.Type)
+  field(:max, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMax)
+  field(:min, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateMin)
   field(:stateType, as: GoogleApi.BigtableAdmin.V2.Model.Type)
   field(:sum, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregateSum)
 end

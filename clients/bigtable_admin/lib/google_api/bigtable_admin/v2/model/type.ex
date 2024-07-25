@@ -17,13 +17,22 @@
 
 defmodule GoogleApi.BigtableAdmin.V2.Model.Type do
   @moduledoc """
-  `Type` represents the type of data that is written to, read from, or stored in Bigtable. It is heavily based on the GoogleSQL standard to help maintain familiarity and consistency across products and features. For compatibility with Bigtable's existing untyped APIs, each `Type` includes an `Encoding` which describes how to convert to/from the underlying data. This might involve composing a series of steps into an "encoding chain," for example to convert from INT64 -> STRING -> raw bytes. In most cases, a "link" in the encoding chain will be based an on existing GoogleSQL conversion function like `CAST`. Each link in the encoding chain also defines the following properties: * Natural sort: Does the encoded value sort consistently with the original typed value? Note that Bigtable will always sort data based on the raw encoded value, *not* the decoded type. - Example: STRING values sort in the same order as their UTF-8 encodings. - Counterexample: Encoding INT64 to a fixed-width STRING does *not* preserve sort order when dealing with negative numbers. INT64(1) > INT64(-1), but STRING("-00001") > STRING("00001). - The overall encoding chain sorts naturally if *every* link does. * Self-delimiting: If we concatenate two encoded values, can we always tell where the first one ends and the second one begins? - Example: If we encode INT64s to fixed-width STRINGs, the first value will always contain exactly N digits, possibly preceded by a sign. - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have no way to tell where the first one ends. - The overall encoding chain is self-delimiting if *any* link is. * Compatibility: Which other systems have matching encoding schemes? For example, does this encoding have a GoogleSQL equivalent? HBase? Java?
+  `Type` represents the type of data that is written to, read from, or stored in Bigtable. It is heavily based on the GoogleSQL standard to help maintain familiarity and consistency across products and features. For compatibility with Bigtable's existing untyped APIs, each `Type` includes an `Encoding` which describes how to convert to/from the underlying data. Each encoding also defines the following properties: * Order-preserving: Does the encoded value sort consistently with the original typed value? Note that Bigtable will always sort data based on the raw encoded value, *not* the decoded type. - Example: BYTES values sort in the same order as their raw encodings. - Counterexample: Encoding INT64 as a fixed-width decimal string does *not* preserve sort order when dealing with negative numbers. INT64(1) > INT64(-1), but STRING("-00001") > STRING("00001). * Self-delimiting: If we concatenate two encoded values, can we always tell where the first one ends and the second one begins? - Example: If we encode INT64s to fixed-width STRINGs, the first value will always contain exactly N digits, possibly preceded by a sign. - Counterexample: If we concatenate two UTF-8 encoded STRINGs, we have no way to tell where the first one ends. * Compatibility: Which other systems have matching encoding schemes? For example, does this encoding have a GoogleSQL equivalent? HBase? Java?
 
   ## Attributes
 
   *   `aggregateType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate.t`, *default:* `nil`) - Aggregate
+  *   `arrayType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeArray.t`, *default:* `nil`) - Array
+  *   `boolType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBool.t`, *default:* `nil`) - Bool
   *   `bytesType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBytes.t`, *default:* `nil`) - Bytes
+  *   `dateType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeDate.t`, *default:* `nil`) - Date
+  *   `float32Type` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat32.t`, *default:* `nil`) - Float32
+  *   `float64Type` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat64.t`, *default:* `nil`) - Float64
   *   `int64Type` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64.t`, *default:* `nil`) - Int64
+  *   `mapType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeMap.t`, *default:* `nil`) - Map
+  *   `stringType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeString.t`, *default:* `nil`) - String
+  *   `structType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStruct.t`, *default:* `nil`) - Struct
+  *   `timestampType` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestamp.t`, *default:* `nil`) - Timestamp
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,13 +40,36 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Type do
   @type t :: %__MODULE__{
           :aggregateType =>
             GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate.t() | nil,
+          :arrayType => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeArray.t() | nil,
+          :boolType => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBool.t() | nil,
           :bytesType => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBytes.t() | nil,
-          :int64Type => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64.t() | nil
+          :dateType => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeDate.t() | nil,
+          :float32Type =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat32.t() | nil,
+          :float64Type =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat64.t() | nil,
+          :int64Type => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64.t() | nil,
+          :mapType => GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeMap.t() | nil,
+          :stringType =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeString.t() | nil,
+          :structType =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStruct.t() | nil,
+          :timestampType =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestamp.t() | nil
         }
 
   field(:aggregateType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeAggregate)
+  field(:arrayType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeArray)
+  field(:boolType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBool)
   field(:bytesType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeBytes)
+  field(:dateType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeDate)
+  field(:float32Type, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat32)
+  field(:float64Type, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeFloat64)
   field(:int64Type, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeInt64)
+  field(:mapType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeMap)
+  field(:stringType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeString)
+  field(:structType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStruct)
+  field(:timestampType, as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeTimestamp)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.Type do
