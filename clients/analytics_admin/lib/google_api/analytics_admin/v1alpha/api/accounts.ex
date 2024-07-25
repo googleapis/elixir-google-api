@@ -156,7 +156,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the settings to lookup. Format: accounts/{account}/dataSharingSettings Example: "accounts/1000/dataSharingSettings"
+  *   `name` (*type:* `String.t`) - Required. The name of the settings to lookup. Format: accounts/{account}/dataSharingSettings Example: `accounts/1000/dataSharingSettings`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -519,7 +519,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Accounts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `account` (*type:* `String.t`) - Required. The account resource for which to return change history resources. Format: accounts/{account} Example: "accounts/100"
+  *   `account` (*type:* `String.t`) - Required. The account resource for which to return change history resources. Format: accounts/{account} Example: `accounts/100`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

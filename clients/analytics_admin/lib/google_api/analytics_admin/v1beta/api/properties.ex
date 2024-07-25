@@ -669,7 +669,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   end
 
   @doc """
-  Creates a conversion event with the specified attributes.
+  Deprecated: Use `CreateKeyEvent` instead. Creates a conversion event with the specified attributes.
 
   ## Parameters
 
@@ -748,7 +748,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   end
 
   @doc """
-  Deletes a conversion event in a property.
+  Deprecated: Use `DeleteKeyEvent` instead. Deletes a conversion event in a property.
 
   ## Parameters
 
@@ -820,7 +820,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   end
 
   @doc """
-  Retrieve a single conversion event.
+  Deprecated: Use `GetKeyEvent` instead. Retrieve a single conversion event.
 
   ## Parameters
 
@@ -897,7 +897,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   end
 
   @doc """
-  Returns a list of conversion events in the specified parent property. Returns an empty list if no conversion events are found.
+  Deprecated: Use `ListKeyEvents` instead. Returns a list of conversion events in the specified parent property. Returns an empty list if no conversion events are found.
 
   ## Parameters
 
@@ -978,7 +978,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   end
 
   @doc """
-  Updates a conversion event with the specified attributes.
+  Deprecated: Use `UpdateKeyEvent` instead. Updates a conversion event with the specified attributes.
 
   ## Parameters
 
@@ -2604,7 +2604,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Format: properties/{property_id} Example: properties/1234
+  *   `parent` (*type:* `String.t`) - Required. Format: properties/{property_id} Example: `properties/1234`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2679,7 +2679,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id} Example: properties/1234/firebaseLinks/5678
+  *   `name` (*type:* `String.t`) - Required. Format: properties/{property_id}/firebaseLinks/{firebase_link_id} Example: `properties/1234/firebaseLinks/5678`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2751,7 +2751,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Format: properties/{property_id} Example: properties/1234
+  *   `parent` (*type:* `String.t`) - Required. Format: properties/{property_id} Example: `properties/1234`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

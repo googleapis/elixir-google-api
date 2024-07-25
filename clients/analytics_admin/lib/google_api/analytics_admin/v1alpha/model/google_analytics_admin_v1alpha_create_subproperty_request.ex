@@ -21,7 +21,6 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCrea
 
   ## Attributes
 
-  *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The ordinary property for which to create a subproperty. Format: properties/property_id Example: properties/123
   *   `subproperty` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t`, *default:* `nil`) - Required. The subproperty to create.
   *   `subpropertyEventFilter` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSubpropertyEventFilter.t`, *default:* `nil`) - Optional. The subproperty event filter to create on an ordinary property.
   """
@@ -29,15 +28,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaCrea
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :parent => String.t() | nil,
           :subproperty =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty.t() | nil,
           :subpropertyEventFilter =>
             GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSubpropertyEventFilter.t()
             | nil
         }
-
-  field(:parent)
 
   field(:subproperty,
     as: GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty

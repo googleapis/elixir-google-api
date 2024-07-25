@@ -23,6 +23,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBigQ
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the link was created.
   *   `dailyExportEnabled` (*type:* `boolean()`, *default:* `nil`) - If set true, enables daily data export to the linked Google Cloud project.
+  *   `datasetLocation` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The geographic location where the created BigQuery dataset should reside. See https://cloud.google.com/bigquery/docs/locations for supported locations.
   *   `excludedEvents` (*type:* `list(String.t)`, *default:* `nil`) - The list of event names that will be excluded from exports.
   *   `exportStreams` (*type:* `list(String.t)`, *default:* `nil`) - The list of streams under the parent property for which data will be exported. Format: properties/{property_id}/dataStreams/{stream_id} Example: ['properties/1000/dataStreams/2000']
   *   `freshDailyExportEnabled` (*type:* `boolean()`, *default:* `nil`) - If set true, enables fresh daily export to the linked Google Cloud project.
@@ -37,6 +38,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBigQ
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :dailyExportEnabled => boolean() | nil,
+          :datasetLocation => String.t() | nil,
           :excludedEvents => list(String.t()) | nil,
           :exportStreams => list(String.t()) | nil,
           :freshDailyExportEnabled => boolean() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBigQ
 
   field(:createTime, as: DateTime)
   field(:dailyExportEnabled)
+  field(:datasetLocation)
   field(:excludedEvents, type: :list)
   field(:exportStreams, type: :list)
   field(:freshDailyExportEnabled)
