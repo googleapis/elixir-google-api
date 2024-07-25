@@ -31,8 +31,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAMCredentials.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
-  *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +55,6 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   @spec iamcredentials_projects_service_accounts_generate_access_token(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -66,8 +64,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
           | {:error, any()}
   def iamcredentials_projects_service_accounts_generate_access_token(
         connection,
-        projects_id,
-        service_accounts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -89,13 +86,9 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:generateAccessToken",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:generateAccessToken", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -112,8 +105,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAMCredentials.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
-  *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -137,7 +129,6 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   @spec iamcredentials_projects_service_accounts_generate_id_token(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -147,8 +138,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
           | {:error, any()}
   def iamcredentials_projects_service_accounts_generate_id_token(
         connection,
-        projects_id,
-        service_accounts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -170,13 +160,9 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:generateIdToken",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:generateIdToken", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -193,8 +179,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAMCredentials.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
-  *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -218,7 +203,6 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   @spec iamcredentials_projects_service_accounts_sign_blob(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -228,8 +212,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
           | {:error, any()}
   def iamcredentials_projects_service_accounts_sign_blob(
         connection,
-        projects_id,
-        service_accounts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -251,9 +234,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signBlob", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:signBlob", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -269,8 +251,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAMCredentials.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
-  *   `service_accounts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the service account for which the credentials are requested, in the following format: `projects/-/serviceAccounts/{ACCOUNT_EMAIL_OR_UNIQUEID}`. The `-` wildcard character is required; replacing it with a project ID is invalid.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -294,7 +275,6 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
   @spec iamcredentials_projects_service_accounts_sign_jwt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -304,8 +284,7 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
           | {:error, any()}
   def iamcredentials_projects_service_accounts_sign_jwt(
         connection,
-        projects_id,
-        service_accounts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -327,9 +306,8 @@ defmodule GoogleApi.IAMCredentials.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/serviceAccounts/{serviceAccountsId}:signJwt", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "serviceAccountsId" => URI.encode(service_accounts_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:signJwt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
