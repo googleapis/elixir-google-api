@@ -25,6 +25,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.Environment do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which this environment was created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \\p{Ll}\\p{Lo}{0,62} * Values must conform to regexp: [\\p{Ll}\\p{Lo}\\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the environment, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" EnvironmentId must start with a lowercase letter followed by up to 63 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The current state of the environment.
   *   `storageConfig` (*type:* `GoogleApi.Composer.V1beta1.Model.StorageConfig.t`, *default:* `nil`) - Optional. Storage configuration for this environment.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.Environment do
           :createTime => DateTime.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :storageConfig => GoogleApi.Composer.V1beta1.Model.StorageConfig.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Composer.V1beta1.Model.Environment do
   field(:createTime, as: DateTime)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:state)
   field(:storageConfig, as: GoogleApi.Composer.V1beta1.Model.StorageConfig)
