@@ -32,6 +32,8 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels to apply to this instance. These can be later modified by the UpdateInstance method.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
   *   `proxyUri` (*type:* `String.t`, *default:* `nil`) - Output only. The proxy endpoint that is used to access the Jupyter notebook.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use for Zone Isolation.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use for Zone Separation.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of this instance.
   *   `thirdPartyProxyUrl` (*type:* `String.t`, *default:* `nil`) - Output only. The workforce pools proxy endpoint that is used to access the Jupyter notebook.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Instance update time.
@@ -52,6 +54,8 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
           :labels => map() | nil,
           :name => String.t() | nil,
           :proxyUri => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :thirdPartyProxyUrl => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -69,6 +73,8 @@ defmodule GoogleApi.Notebooks.V2.Model.Instance do
   field(:labels, type: :map)
   field(:name)
   field(:proxyUri)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:thirdPartyProxyUrl)
   field(:updateTime, as: DateTime)
