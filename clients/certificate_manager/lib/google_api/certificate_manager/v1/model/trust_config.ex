@@ -21,7 +21,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.TrustConfig do
 
   ## Attributes
 
-  *   `allowlistedCertificates` (*type:* `list(GoogleApi.CertificateManager.V1.Model.AllowlistedCertificate.t)`, *default:* `nil`) - Optional. A certificate matching an allowlisted certificate is always considered valid as long as the certificate is parseable, proof of private key possession is established, and constraints on the certificate’s SAN field are met.
+  *   `allowlistedCertificates` (*type:* `list(GoogleApi.CertificateManager.V1.Model.AllowlistedCertificate.t)`, *default:* `nil`) - Optional. A certificate matching an allowlisted certificate is always considered valid as long as the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a TrustConfig.
   *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a TrustConfig.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
