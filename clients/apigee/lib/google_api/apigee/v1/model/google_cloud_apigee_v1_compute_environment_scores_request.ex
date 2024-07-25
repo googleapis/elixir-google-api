@@ -24,7 +24,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ComputeEnvironmentScoresR
   *   `filters` (*type:* `list(GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1ComputeEnvironmentScoresRequestFilter.t)`, *default:* `nil`) - Optional. Filters are used to filter scored components. Return all the components if no filter is mentioned. Example: [{ "scorePath": "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source" }, { "scorePath": "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/target", }] This will return components with path: "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/source" OR "/org@myorg/envgroup@myenvgroup/env@myenv/proxies/proxy@myproxy/target"
   *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of subcomponents to be returned in a single page. The service may return fewer than this value. If unspecified, at most 100 subcomponents will be returned in a single page.
   *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. A token that can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages.
-  *   `timeRange` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeInterval.t`, *default:* `nil`) - Required. Time range for score calculation. At most 14 days of scores will be returned.
+  *   `timeRange` (*type:* `GoogleApi.Apigee.V1.Model.GoogleTypeInterval.t`, *default:* `nil`) - Required. Time range for score calculation. At most 14 days of scores will be returned, and both the start and end dates must be within the last 90 days.
   """
 
   use GoogleApi.Gax.ModelBase

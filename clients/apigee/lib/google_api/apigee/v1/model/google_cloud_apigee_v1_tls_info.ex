@@ -25,6 +25,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   *   `clientAuthEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Enables two-way TLS.
   *   `commonName` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t`, *default:* `nil`) - The TLS Common Name of the certificate.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
+  *   `enforce` (*type:* `boolean()`, *default:* `nil`) - TLS is strictly enforced.
   *   `ignoreValidationErrors` (*type:* `boolean()`, *default:* `nil`) - If true, Edge ignores TLS certificate errors. Valid when configuring TLS for target servers and target endpoints, and when configuring virtual hosts that use 2-way TLS. When used with a target endpoint/target server, if the backend system uses SNI and returns a cert with a subject Distinguished Name (DN) that does not match the hostname, there is no way to ignore the error and the connection fails.
   *   `keyAlias` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID for the alias containing the private key and cert.
   *   `keyStore` (*type:* `String.t`, *default:* `nil`) - Required if `client_auth_enabled` is true. The resource ID of the keystore.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
           :clientAuthEnabled => boolean() | nil,
           :commonName => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName.t() | nil,
           :enabled => boolean() | nil,
+          :enforce => boolean() | nil,
           :ignoreValidationErrors => boolean() | nil,
           :keyAlias => String.t() | nil,
           :keyStore => String.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfo do
   field(:clientAuthEnabled)
   field(:commonName, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1TlsInfoCommonName)
   field(:enabled)
+  field(:enforce)
   field(:ignoreValidationErrors)
   field(:keyAlias)
   field(:keyStore)
