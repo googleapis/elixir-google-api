@@ -24,7 +24,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams do
   *   `antennaAzimuth` (*type:* `integer()`, *default:* `nil`) - Boresight direction of the horizontal plane of the antenna in degrees with respect to true north. The value of this parameter is an integer with a value between 0 and 359 inclusive. A value of 0 degrees means true north; a value of 90 degrees means east. This parameter is optional for Category A devices and conditional for Category B devices.
   *   `antennaBeamwidth` (*type:* `integer()`, *default:* `nil`) - 3-dB antenna beamwidth of the antenna in the horizontal-plane in degrees. This parameter is an unsigned integer having a value between 0 and 360 (degrees) inclusive; it is optional for Category A devices and conditional for Category B devices.
   *   `antennaDowntilt` (*type:* `integer()`, *default:* `nil`) - Antenna downtilt in degrees and is an integer with a value between -90 and +90 inclusive; a negative value means the antenna is tilted up (above horizontal). This parameter is optional for Category A devices and conditional for Category B devices.
-  *   `antennaGain` (*type:* `integer()`, *default:* `nil`) - Peak antenna gain in dBi. This parameter is an integer with a value between -127 and +128 (dBi) inclusive.
+  *   `antennaGain` (*type:* `float()`, *default:* `nil`) - Peak antenna gain in dBi. This parameter is a double with a value between -127 and +128 (dBi) inclusive. Part of Release 2 to support floating-point value
   *   `antennaModel` (*type:* `String.t`, *default:* `nil`) - If an external antenna is used, the antenna model is optionally provided in this field. The string has a maximum length of 128 octets.
   *   `cpeCbsdIndication` (*type:* `boolean()`, *default:* `nil`) - If present, this parameter specifies whether the CBSD is a CPE-CBSD or not.
   *   `eirpCapability` (*type:* `integer()`, *default:* `nil`) - This parameter is the maximum device EIRP in units of dBm/10MHz and is an integer with a value between -127 and +47 (dBm/10 MHz) inclusive. If not included, SAS interprets it as maximum allowable EIRP in units of dBm/10MHz for device category.
@@ -43,7 +43,7 @@ defmodule GoogleApi.SASPortal.V1alpha1.Model.SasPortalInstallationParams do
           :antennaAzimuth => integer() | nil,
           :antennaBeamwidth => integer() | nil,
           :antennaDowntilt => integer() | nil,
-          :antennaGain => integer() | nil,
+          :antennaGain => float() | nil,
           :antennaModel => String.t() | nil,
           :cpeCbsdIndication => boolean() | nil,
           :eirpCapability => integer() | nil,
