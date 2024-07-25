@@ -31,7 +31,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RuntimeConfig.V1.Connection.t`) - Connection to server
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -57,12 +57,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def runtimeconfig_operations_cancel(
-        connection,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def runtimeconfig_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -81,8 +76,8 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/operations/{operationsId}:cancel", %{
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -98,7 +93,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RuntimeConfig.V1.Connection.t`) - Connection to server
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be deleted.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -123,12 +118,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def runtimeconfig_operations_delete(
-        connection,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def runtimeconfig_operations_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -146,8 +136,8 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/operations/{operationsId}", %{
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -163,6 +153,7 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RuntimeConfig.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -185,12 +176,12 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
   *   `{:ok, %GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec runtimeconfig_operations_list(Tesla.Env.client(), keyword(), keyword()) ::
+  @spec runtimeconfig_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.RuntimeConfig.V1.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def runtimeconfig_operations_list(connection, optional_params \\ [], opts \\ []) do
+  def runtimeconfig_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -211,7 +202,9 @@ defmodule GoogleApi.RuntimeConfig.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/operations", %{})
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
