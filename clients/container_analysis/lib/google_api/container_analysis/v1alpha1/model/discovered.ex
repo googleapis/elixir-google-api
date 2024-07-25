@@ -31,6 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
   *   `lastScanTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time this resource was scanned.
   *   `operation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t`, *default:* `nil`) - Output only. An operation that indicates the status of the current scan. This field is deprecated, do not use.
   *   `sbomStatus` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMStatus.t`, *default:* `nil`) - Output only. The status of an SBOM generation.
+  *   `vulnerabilityAttestation` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAttestation.t`, *default:* `nil`) - Output only. The status of a vulnerability attestation generation.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -46,7 +47,9 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
           :cpe => String.t() | nil,
           :lastScanTime => DateTime.t() | nil,
           :operation => GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation.t() | nil,
-          :sbomStatus => GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMStatus.t() | nil
+          :sbomStatus => GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMStatus.t() | nil,
+          :vulnerabilityAttestation =>
+            GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAttestation.t() | nil
         }
 
   field(:analysisCompleted, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.AnalysisCompleted)
@@ -59,6 +62,10 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do
   field(:lastScanTime, as: DateTime)
   field(:operation, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.Operation)
   field(:sbomStatus, as: GoogleApi.ContainerAnalysis.V1alpha1.Model.SBOMStatus)
+
+  field(:vulnerabilityAttestation,
+    as: GoogleApi.ContainerAnalysis.V1alpha1.Model.VulnerabilityAttestation
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContainerAnalysis.V1alpha1.Model.Discovered do

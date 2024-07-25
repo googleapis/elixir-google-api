@@ -31,7 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name of the project. Should be of the form "providers/{provider_id}". @Deprecated
+  *   `name` (*type:* `String.t`) - The name of the project. Should be of the form "providers/{provider_id}". @Deprecated
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -66,7 +66,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_create(
         connection,
-        providers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -90,8 +90,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+name}/notes", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -107,8 +107,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `providersId`.
+  *   `name` (*type:* `String.t`) - The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -131,7 +130,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -141,8 +139,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_delete(
         connection,
-        providers_id,
-        notes_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -163,9 +160,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1alpha1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -181,8 +177,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `providersId`.
+  *   `name` (*type:* `String.t`) - The name of the note in the form of "providers/{provider_id}/notes/{NOTE_ID}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -205,7 +200,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -213,13 +207,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_providers_notes_get(
-        connection,
-        providers_id,
-        notes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_providers_notes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -237,9 +225,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1alpha1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -255,8 +242,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -280,7 +266,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -290,8 +275,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_get_iam_policy(
         connection,
-        providers_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -313,9 +297,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}:getIamPolicy", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -331,7 +314,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name field will contain the project Id for example: "providers/{provider_id} @Deprecated
+  *   `name` (*type:* `String.t`) - The name field will contain the project Id for example: "providers/{provider_id} @Deprecated
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -365,12 +348,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_providers_notes_list(
-        connection,
-        providers_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_providers_notes_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -392,8 +370,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+name}/notes", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -411,8 +389,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name of the note. Should be of the form "projects/{provider_id}/notes/{note_id}".
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `providersId`.
+  *   `name` (*type:* `String.t`) - The name of the note. Should be of the form "projects/{provider_id}/notes/{note_id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -437,7 +414,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -445,13 +421,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_providers_notes_patch(
-        connection,
-        providers_id,
-        notes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_providers_notes_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -471,9 +441,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1alpha1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -489,8 +458,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -514,7 +482,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -524,8 +491,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_set_iam_policy(
         connection,
-        providers_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -547,9 +513,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}:setIamPolicy", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -565,8 +530,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `providersId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -590,7 +554,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -600,8 +563,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_test_iam_permissions(
         connection,
-        providers_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -623,9 +585,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}:testIamPermissions", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -643,8 +604,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1alpha1.Connection.t`) - Connection to server
-  *   `providers_id` (*type:* `String.t`) - Part of `name`. The name field will contain the note name for example: "provider/{provider_id}/notes/{note_id}"
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `providersId`.
+  *   `name` (*type:* `String.t`) - The name field will contain the note name for example: "provider/{provider_id}/notes/{note_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -670,7 +630,6 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
   @spec containeranalysis_providers_notes_occurrences_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -680,8 +639,7 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
           | {:error, any()}
   def containeranalysis_providers_notes_occurrences_list(
         connection,
-        providers_id,
-        notes_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -705,9 +663,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Api.Providers do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1alpha1/providers/{providersId}/notes/{notesId}/occurrences", %{
-        "providersId" => URI.encode(providers_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1alpha1/{+name}/occurrences", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
