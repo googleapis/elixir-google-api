@@ -28,6 +28,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
   *   `duration` (*type:* `String.t`, *default:* `nil`) - Output only. Measures the duration of the execution.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Marks the end of execution, successful or not.
   *   `error` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.Error.t`, *default:* `nil`) - Output only. The error which caused the execution to finish prematurely. The value is only present if the execution's state is `FAILED` or `CANCELLED`.
+  *   `executionHistoryLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Describes the level of the execution history feature to apply to this execution. If not specified, the level of the execution history feature will be determined by its workflow's execution history level. If the value is different from its workflow's value, it will override the workflow's execution history level for this exeuction.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. By default, labels are inherited from the workflow but are overridden by any labels associated with the execution.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
   *   `result` (*type:* `String.t`, *default:* `nil`) - Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
@@ -48,6 +49,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
           :duration => String.t() | nil,
           :endTime => DateTime.t() | nil,
           :error => GoogleApi.WorkflowExecutions.V1.Model.Error.t() | nil,
+          :executionHistoryLevel => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :result => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.Execution do
   field(:duration)
   field(:endTime, as: DateTime)
   field(:error, as: GoogleApi.WorkflowExecutions.V1.Model.Error)
+  field(:executionHistoryLevel)
   field(:labels, type: :map)
   field(:name)
   field(:result)
