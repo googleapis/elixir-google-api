@@ -28,6 +28,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Processor do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}`
   *   `processEndpoint` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The http endpoint that can be called to invoke processing.
   *   `processorVersionAliases` (*type:* `list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersionAlias.t)`, *default:* `nil`) - Output only. The processor version aliases.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the processor.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`. To get a list of processor types, see FetchProcessorTypes.
   """
@@ -44,6 +46,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Processor do
           :processorVersionAliases =>
             list(GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessorVersionAlias.t())
             | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :type => String.t() | nil
         }
@@ -60,6 +64,8 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Processor do
     type: :list
   )
 
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:type)
 end
