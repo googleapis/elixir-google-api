@@ -25,6 +25,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
   *   `audioFormat` (*type:* `String.t`, *default:* `nil`) - File format for exported audio file. Currently only in telephony recordings.
   *   `enableAudioRedaction` (*type:* `boolean()`, *default:* `nil`) - Enable audio redaction if it is true. Note that this only redacts end-user audio data; Synthesised audio from the virtual agent is not redacted.
   *   `gcsBucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket to export audio record to. Setting this field would grant the Storage Object Creator role to the Dialogflow Service Agent. API caller that tries to modify this field should have the permission of storage.buckets.setIamPolicy.
+  *   `storeTtsAudio` (*type:* `boolean()`, *default:* `nil`) - Whether to store TTS audio. By default, TTS audio from the virtual agent is not exported.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3SecuritySetting
           :audioExportPattern => String.t() | nil,
           :audioFormat => String.t() | nil,
           :enableAudioRedaction => boolean() | nil,
-          :gcsBucket => String.t() | nil
+          :gcsBucket => String.t() | nil,
+          :storeTtsAudio => boolean() | nil
         }
 
   field(:audioExportPattern)
   field(:audioFormat)
   field(:enableAudioRedaction)
   field(:gcsBucket)
+  field(:storeTtsAudio)
 end
 
 defimpl Poison.Decoder,

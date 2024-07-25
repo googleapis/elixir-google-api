@@ -27,6 +27,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput
   *   `intent` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInput.t`, *default:* `nil`) - The intent to be triggered.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Required. The language of the input. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language.
   *   `text` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput.t`, *default:* `nil`) - The natural language text to be processed.
+  *   `toolCallResult` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCallResult.t`, *default:* `nil`) - The results of a tool executed by the client.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +42,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput
           :intent =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInput.t() | nil,
           :languageCode => String.t() | nil,
-          :text => GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput.t() | nil
+          :text =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput.t() | nil,
+          :toolCallResult =>
+            GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCallResult.t() | nil
         }
 
   field(:audio, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AudioInput)
@@ -50,6 +54,10 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1QueryInput
   field(:intent, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1IntentInput)
   field(:languageCode)
   field(:text, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1TextInput)
+
+  field(:toolCallResult,
+    as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1ToolCallResult
+  )
 end
 
 defimpl Poison.Decoder,

@@ -21,20 +21,26 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
 
   ## Attributes
 
+  *   `disableHighLatencyFeaturesSyncDelivery` (*type:* `boolean()`, *default:* `nil`) - Optional. When disable_high_latency_features_sync_delivery is true and using the AnalyzeContent API, we will not deliver the responses from high latency features in the API response. The human_agent_assistant_config.notification_config must be configured and enable_event_based_suggestion must be set to true to receive the responses from high latency features in Pub/Sub. High latency feature(s): KNOWLEDGE_ASSIST
   *   `featureConfigs` (*type:* `list(GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionFeatureConfig.t)`, *default:* `nil`) - Configuration of different suggestion features. One feature can have only one config.
+  *   `generators` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of various generator resource names used in the conversation profile.
   *   `groupSuggestionResponses` (*type:* `boolean()`, *default:* `nil`) - If `group_suggestion_responses` is false, and there are multiple `feature_configs` in `event based suggestion` or StreamingAnalyzeContent, we will try to deliver suggestions to customers as soon as we get new suggestion. Different type of suggestions based on the same context will be in separate Pub/Sub event or `StreamingAnalyzeContentResponse`. If `group_suggestion_responses` set to true. All the suggestions to the same participant based on the same context will be grouped into a single Pub/Sub event or StreamingAnalyzeContentResponse.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :disableHighLatencyFeaturesSyncDelivery => boolean() | nil,
           :featureConfigs =>
             list(
               GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssistantConfigSuggestionFeatureConfig.t()
             )
             | nil,
+          :generators => list(String.t()) | nil,
           :groupSuggestionResponses => boolean() | nil
         }
+
+  field(:disableHighLatencyFeaturesSyncDelivery)
 
   field(:featureConfigs,
     as:
@@ -42,6 +48,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2HumanAgentAssista
     type: :list
   )
 
+  field(:generators, type: :list)
   field(:groupSuggestionResponses)
 end
 

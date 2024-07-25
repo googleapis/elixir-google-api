@@ -21,8 +21,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3beta1AdvancedSe
 
   ## Attributes
 
-  *   `enableInteractionLogging` (*type:* `boolean()`, *default:* `nil`) - If true, DF Interaction logging is currently enabled.
-  *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - If true, StackDriver logging is currently enabled.
+  *   `enableInteractionLogging` (*type:* `boolean()`, *default:* `nil`) - Enables DF Interaction logging.
+  *   `enableStackdriverLogging` (*type:* `boolean()`, *default:* `nil`) - Enables StackDriver logging.
   """
 
   use GoogleApi.Gax.ModelBase

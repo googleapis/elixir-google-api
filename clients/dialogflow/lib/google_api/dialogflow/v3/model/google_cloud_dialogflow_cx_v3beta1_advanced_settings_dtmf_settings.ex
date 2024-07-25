@@ -22,7 +22,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1AdvancedSe
   ## Attributes
 
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - If true, incoming audio is processed for DTMF (dual tone multi frequency) events. For example, if the caller presses a button on their telephone keypad and DTMF processing is enabled, Dialogflow will detect the event (e.g. a "3" was pressed) in the incoming audio and pass the event to the bot to drive business logic (e.g. when 3 is pressed, return the account balance).
+  *   `endpointingTimeoutDuration` (*type:* `String.t`, *default:* `nil`) - Endpoint timeout setting for matching dtmf input to regex.
   *   `finishDigit` (*type:* `String.t`, *default:* `nil`) - The digit that terminates a DTMF digit sequence.
+  *   `interdigitTimeoutDuration` (*type:* `String.t`, *default:* `nil`) - Interdigit timeout setting for matching dtmf input to regex.
   *   `maxDigits` (*type:* `integer()`, *default:* `nil`) - Max length of DTMF digits.
   """
 
@@ -30,12 +32,16 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1AdvancedSe
 
   @type t :: %__MODULE__{
           :enabled => boolean() | nil,
+          :endpointingTimeoutDuration => String.t() | nil,
           :finishDigit => String.t() | nil,
+          :interdigitTimeoutDuration => String.t() | nil,
           :maxDigits => integer() | nil
         }
 
   field(:enabled)
+  field(:endpointingTimeoutDuration)
   field(:finishDigit)
+  field(:interdigitTimeoutDuration)
   field(:maxDigits)
 end
 

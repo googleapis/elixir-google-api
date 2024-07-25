@@ -28,6 +28,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1Message do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The unique identifier of the message. Format: `projects//locations//conversations//messages/`.
   *   `participant` (*type:* `String.t`, *default:* `nil`) - Output only. The participant that sends this message.
   *   `participantRole` (*type:* `String.t`, *default:* `nil`) - Output only. The role of the participant.
+  *   `responseMessages` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1ResponseMessage.t)`, *default:* `nil`) - Optional. Automated agent responses.
   *   `sendTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the message was sent.
   *   `sentimentAnalysis` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t`, *default:* `nil`) - Output only. The sentiment analysis result for the message.
   """
@@ -43,6 +44,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1Message do
           :name => String.t() | nil,
           :participant => String.t() | nil,
           :participantRole => String.t() | nil,
+          :responseMessages =>
+            list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1ResponseMessage.t())
+            | nil,
           :sendTime => DateTime.t() | nil,
           :sentimentAnalysis =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1SentimentAnalysisResult.t()
@@ -60,6 +64,12 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1Message do
   field(:name)
   field(:participant)
   field(:participantRole)
+
+  field(:responseMessages,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1ResponseMessage,
+    type: :list
+  )
+
   field(:sendTime, as: DateTime)
 
   field(:sentimentAnalysis,
