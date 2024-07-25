@@ -25,6 +25,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent do
   *   `databaseProperties` (*type:* `GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProperties.t`, *default:* `nil`) - Optional. The component is a SAP database.
   *   `haHosts` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of host URIs that are part of the HA configuration if present. An empty list indicates the component is not configured for HA.
   *   `hostProject` (*type:* `String.t`, *default:* `nil`) - Required. Pantheon Project in which the resources reside.
+  *   `replicationSites` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent.t)`, *default:* `nil`) - Optional. A list of replication sites used in Disaster Recovery (DR) configurations.
   *   `resources` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResource.t)`, *default:* `nil`) - Optional. The resources in a component.
   *   `sid` (*type:* `String.t`, *default:* `nil`) - Optional. The SAP identifier, used by the SAP software and helps differentiate systems for customers.
   *   `topologyType` (*type:* `String.t`, *default:* `nil`) - Optional. The detected topology of the component.
@@ -40,6 +41,8 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent do
             GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponentDatabaseProperties.t() | nil,
           :haHosts => list(String.t()) | nil,
           :hostProject => String.t() | nil,
+          :replicationSites =>
+            list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent.t()) | nil,
           :resources => list(GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResource.t()) | nil,
           :sid => String.t() | nil,
           :topologyType => String.t() | nil
@@ -55,6 +58,12 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent do
 
   field(:haHosts, type: :list)
   field(:hostProject)
+
+  field(:replicationSites,
+    as: GoogleApi.WorkloadManager.V1.Model.SapDiscoveryComponent,
+    type: :list
+  )
+
   field(:resources, as: GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResource, type: :list)
   field(:sid)
   field(:topologyType)
