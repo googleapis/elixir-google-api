@@ -18,7 +18,7 @@
 defmodule GoogleApi.SearchConsole.Mixfile do
   use Mix.Project
 
-  @version "0.17.0"
+  @version "0.18.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.SearchConsole.Mixfile do
       licenses: ["Apache 2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/search_console",
-        "Homepage" => "https://developers.google.com/webmaster-tools/search-console-api/"
+        "Homepage" => "https://developers.google.com/webmaster-tools/about"
       }
     ]
   end

@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_search_console, "~> 0.17"}]
+  [{:google_api_search_console, "~> 0.18"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://developers.google.com/webmaster-tools/search-console-api/](https://developers.google.com/webmaster-tools/search-console-api/).
+Product documentation is available at [https://developers.google.com/webmaster-tools/about](https://developers.google.com/webmaster-tools/about).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_search_console](https://hexdocs.pm/google_api_search_console).
