@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
 
   ## Attributes
 
+  *   `includeImportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included during import from hub.(does not control transit connectivity) The only allowed value for now is "ALL_IPV4_RANGES".
   *   `instances` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance.t)`, *default:* `nil`) - The list of router appliance instances.
   *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
   *   `vpcNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC network where these router appliance instances are located.
@@ -29,11 +30,14 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :includeImportRanges => list(String.t()) | nil,
           :instances =>
             list(GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance.t()) | nil,
           :siteToSiteDataTransfer => boolean() | nil,
           :vpcNetwork => String.t() | nil
         }
+
+  field(:includeImportRanges, type: :list)
 
   field(:instances,
     as: GoogleApi.NetworkConnectivity.V1.Model.RouterApplianceInstance,

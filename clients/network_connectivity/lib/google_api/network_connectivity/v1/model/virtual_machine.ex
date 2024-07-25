@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.VirtualMachine do
   @moduledoc """
-  VM instances to which this policy-based route applies to.
+  VM instances that this policy-based route applies to.
 
   ## Attributes
 
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of VM instance tags the this policy-based route applies to. VM instances that have ANY of tags specified here will install this PBR.
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of VM instance tags that this policy-based route applies to. VM instances that have ANY of tags specified here installs this PBR.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,6 +21,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments d
 
   ## Attributes
 
+  *   `includeImportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included during import from hub.(does not control transit connectivity) The only allowed value for now is "ALL_IPV4_RANGES".
   *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The URIs of linked interconnect attachment resources
   *   `vpcNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC network where these VLAN attachments are located.
@@ -29,11 +30,13 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments d
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :includeImportRanges => list(String.t()) | nil,
           :siteToSiteDataTransfer => boolean() | nil,
           :uris => list(String.t()) | nil,
           :vpcNetwork => String.t() | nil
         }
 
+  field(:includeImportRanges, type: :list)
   field(:siteToSiteDataTransfer)
   field(:uris, type: :list)
   field(:vpcNetwork)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkConnectivity.V1.Model.PolicyBasedRoute do
   @moduledoc """
-  Policy-based routes route L4 network traffic based on not just destination IP address, but also source IP address, protocol, and more. If a policy-based route conflicts with other types of routes, the policy-based route always take precedence.
+  Policy-based routes route L4 network traffic based on not just destination IP address, but also source IP address, protocol, and more. If a policy-based route conflicts with other types of routes, the policy-based route always takes precedence.
 
   ## Attributes
 
@@ -34,7 +34,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PolicyBasedRoute do
   *   `priority` (*type:* `integer()`, *default:* `nil`) - Optional. The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined fully-qualified URL for this resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the policy-based route was updated.
-  *   `virtualMachine` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.VirtualMachine.t`, *default:* `nil`) - Optional. VM instances to which this policy-based route applies to.
+  *   `virtualMachine` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.VirtualMachine.t`, *default:* `nil`) - Optional. VM instances that this policy-based route applies to.
   *   `warnings` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.Warnings.t)`, *default:* `nil`) - Output only. If potential misconfigurations are detected for this route, this field will be populated with warning messages.
   """
 
