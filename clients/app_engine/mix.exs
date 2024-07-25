@@ -18,7 +18,7 @@
 defmodule GoogleApi.AppEngine.Mixfile do
   use Mix.Project
 
-  @version "0.38.1"
+  @version "0.39.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.AppEngine.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/app_engine",
         "Homepage" => "https://cloud.google.com/appengine/docs/admin-api/"
