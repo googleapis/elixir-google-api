@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.PartitionedColumn do
 
   ## Attributes
 
-  *   `field` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the partition column.
+  *   `field` (*type:* `String.t`, *default:* `nil`) - Required. The name of the partition column.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.EncryptionConfiguration do
   @moduledoc """
-
+  Configuration for Cloud KMS encryption settings.
 
   ## Attributes
 

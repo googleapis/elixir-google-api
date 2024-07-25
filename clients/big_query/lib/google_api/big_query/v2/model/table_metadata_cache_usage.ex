@@ -22,6 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableMetadataCacheUsage do
   ## Attributes
 
   *   `explanation` (*type:* `String.t`, *default:* `nil`) - Free form human-readable reason metadata caching was unused for the job.
+  *   `staleness` (*type:* `String.t`, *default:* `nil`) - Duration since last refresh as of this job for managed tables (indicates metadata cache staleness as seen by this job).
   *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Metadata caching eligible table referenced in the query.
   *   `tableType` (*type:* `String.t`, *default:* `nil`) - [Table type](/bigquery/docs/reference/rest/v2/tables#Table.FIELDS.type).
   *   `unusedReason` (*type:* `String.t`, *default:* `nil`) - Reason for not using metadata caching for the table.
@@ -31,12 +32,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TableMetadataCacheUsage do
 
   @type t :: %__MODULE__{
           :explanation => String.t() | nil,
+          :staleness => String.t() | nil,
           :tableReference => GoogleApi.BigQuery.V2.Model.TableReference.t() | nil,
           :tableType => String.t() | nil,
           :unusedReason => String.t() | nil
         }
 
   field(:explanation)
+  field(:staleness)
   field(:tableReference, as: GoogleApi.BigQuery.V2.Model.TableReference)
   field(:tableType)
   field(:unusedReason)

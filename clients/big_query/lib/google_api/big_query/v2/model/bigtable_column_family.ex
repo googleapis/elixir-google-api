@@ -21,7 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.BigtableColumnFamily do
 
   ## Attributes
 
-  *   `columns` (*type:* `list(GoogleApi.BigQuery.V2.Model.BigtableColumn.t)`, *default:* `nil`) - Optional. Lists of columns that should be exposed as individual fields as opposed to a list of (column name, value) pairs. All columns whose qualifier matches a qualifier in this list can be accessed as .. Other columns can be accessed as a list through .Column field.
+  *   `columns` (*type:* `list(GoogleApi.BigQuery.V2.Model.BigtableColumn.t)`, *default:* `nil`) - Optional. Lists of columns that should be exposed as individual fields as opposed to a list of (column name, value) pairs. All columns whose qualifier matches a qualifier in this list can be accessed as `.`. Other columns can be accessed as a list through the `.Column` field.
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Optional. The encoding of the values when the type is not STRING. Acceptable encoding values are: TEXT - indicates values are alphanumeric text strings. BINARY - indicates values are encoded using HBase Bytes.toBytes family of functions. This can be overridden for a specific column by listing that column in 'columns' and specifying an encoding for it.
   *   `familyId` (*type:* `String.t`, *default:* `nil`) - Identifier of the column family.
   *   `onlyReadLatest` (*type:* `boolean()`, *default:* `nil`) - Optional. If this is set only the latest version of value are exposed for all columns in this column family. This can be overridden for a specific column by listing that column in 'columns' and specifying a different setting for that column.

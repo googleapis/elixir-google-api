@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.BigQuery.V2.Model.PartitioningDefinition do
   @moduledoc """
-  The partitioning information, which includes managed table and external table partition information.
+  The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
 
   ## Attributes
 
-  *   `partitionedColumn` (*type:* `list(GoogleApi.BigQuery.V2.Model.PartitionedColumn.t)`, *default:* `nil`) - Output only. Details about each partitioning column. BigQuery native tables only support 1 partitioning column. Other table types may support 0, 1 or more partitioning columns.
+  *   `partitionedColumn` (*type:* `list(GoogleApi.BigQuery.V2.Model.PartitionedColumn.t)`, *default:* `nil`) - Optional. Details about each partitioning column. This field is output only for all partitioning types other than metastore partitioned tables. BigQuery native tables only support 1 partitioning column. Other table types may support 0, 1 or more partitioning columns. For metastore partitioned tables, the order must match the definition order in the Hive Metastore, where it must match the physical layout of the table. For example, CREATE TABLE a_table(id BIGINT, name STRING) PARTITIONED BY (city STRING, state STRING). In this case the values must be ['city', 'state'] in that order.
   """
 
   use GoogleApi.Gax.ModelBase

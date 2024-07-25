@@ -21,6 +21,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
 
   ## Attributes
 
+  *   `foreignDefinitions` (*type:* `list(GoogleApi.BigQuery.V2.Model.ForeignViewDefinition.t)`, *default:* `nil`) - Optional. Foreign view representations.
   *   `privacyPolicy` (*type:* `GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t`, *default:* `nil`) - Optional. Specifices the privacy policy for the view.
   *   `query` (*type:* `String.t`, *default:* `nil`) - Required. A query that BigQuery executes when the view is referenced.
   *   `useExplicitColumnNames` (*type:* `boolean()`, *default:* `nil`) - True if the column names are explicitly specified. For example by using the 'CREATE VIEW v(c1, c2) AS ...' syntax. Can only be set for GoogleSQL views.
@@ -31,6 +32,8 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :foreignDefinitions =>
+            list(GoogleApi.BigQuery.V2.Model.ForeignViewDefinition.t()) | nil,
           :privacyPolicy => GoogleApi.BigQuery.V2.Model.PrivacyPolicy.t() | nil,
           :query => String.t() | nil,
           :useExplicitColumnNames => boolean() | nil,
@@ -39,6 +42,7 @@ defmodule GoogleApi.BigQuery.V2.Model.ViewDefinition do
             list(GoogleApi.BigQuery.V2.Model.UserDefinedFunctionResource.t()) | nil
         }
 
+  field(:foreignDefinitions, as: GoogleApi.BigQuery.V2.Model.ForeignViewDefinition, type: :list)
   field(:privacyPolicy, as: GoogleApi.BigQuery.V2.Model.PrivacyPolicy)
   field(:query)
   field(:useExplicitColumnNames)

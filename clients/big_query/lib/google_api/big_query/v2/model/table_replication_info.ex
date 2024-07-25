@@ -23,7 +23,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableReplicationInfo do
 
   *   `replicatedSourceLastRefreshTime` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. If source is a materialized view, this field signifies the last refresh time of the source.
   *   `replicationError` (*type:* `GoogleApi.BigQuery.V2.Model.ErrorProto.t`, *default:* `nil`) - Optional. Output only. Replication error that will permanently stopped table replication.
-  *   `replicationIntervalMs` (*type:* `String.t`, *default:* `nil`) - Required. Specifies the interval at which the source table is polled for updates.
+  *   `replicationIntervalMs` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the interval at which the source table is polled for updates. It's Optional. If not specified, default replication interval would be applied.
   *   `replicationStatus` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. Replication status of configured replication.
   *   `sourceTable` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Required. Source table reference that is replicated.
   """
