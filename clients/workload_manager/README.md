@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_workload_manager, "~> 0.4"}]
+  [{:google_api_workload_manager, "~> 0.5"}]
 end
 ```
 

@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.WorkloadManager.V1.Model.ViolationDetails do
   @moduledoc """
-  Message describing the violdation in execution result
+  Message describing the violation in an evaluation result.
 
   ## Attributes
 
-  *   `asset` (*type:* `String.t`, *default:* `nil`) - the name of asset
-  *   `observed` (*type:* `map()`, *default:* `nil`) - observed
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - the service account associate with resource
+  *   `asset` (*type:* `String.t`, *default:* `nil`) - The name of the asset.
+  *   `observed` (*type:* `map()`, *default:* `nil`) - Details of the violation.
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account associated with the resource.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,17 +21,19 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExecutionResult do
 
   ## Attributes
 
-  *   `documentationUrl` (*type:* `String.t`, *default:* `nil`) - the document url of the rule
-  *   `resource` (*type:* `GoogleApi.WorkloadManager.V1.Model.Resource.t`, *default:* `nil`) - the violate resource
-  *   `rule` (*type:* `String.t`, *default:* `nil`) - the rule which violate in execution
-  *   `severity` (*type:* `String.t`, *default:* `nil`) - severity of violation
-  *   `violationDetails` (*type:* `GoogleApi.WorkloadManager.V1.Model.ViolationDetails.t`, *default:* `nil`) - the details of violation in result
-  *   `violationMessage` (*type:* `String.t`, *default:* `nil`) - the violation message of an execution
+  *   `commands` (*type:* `list(GoogleApi.WorkloadManager.V1.Model.Command.t)`, *default:* `nil`) - The commands to remediate the violation.
+  *   `documentationUrl` (*type:* `String.t`, *default:* `nil`) - The URL for the documentation of the rule.
+  *   `resource` (*type:* `GoogleApi.WorkloadManager.V1.Model.Resource.t`, *default:* `nil`) - The resource that violates the rule.
+  *   `rule` (*type:* `String.t`, *default:* `nil`) - The rule that is violated in an evaluation.
+  *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of violation.
+  *   `violationDetails` (*type:* `GoogleApi.WorkloadManager.V1.Model.ViolationDetails.t`, *default:* `nil`) - The details of violation in an evaluation result.
+  *   `violationMessage` (*type:* `String.t`, *default:* `nil`) - The violation message of an execution.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :commands => list(GoogleApi.WorkloadManager.V1.Model.Command.t()) | nil,
           :documentationUrl => String.t() | nil,
           :resource => GoogleApi.WorkloadManager.V1.Model.Resource.t() | nil,
           :rule => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExecutionResult do
           :violationMessage => String.t() | nil
         }
 
+  field(:commands, as: GoogleApi.WorkloadManager.V1.Model.Command, type: :list)
   field(:documentationUrl)
   field(:resource, as: GoogleApi.WorkloadManager.V1.Model.Resource)
   field(:rule)
