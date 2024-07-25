@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DataFusion.V1beta1.Model.Accelerator do
   @moduledoc """
-  Identifies Data Fusion accelerators for an instance.
+  Identifies Cloud Data Fusion accelerators for an instance.
 
   ## Attributes
 
-  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - The type of an accelator for a CDF instance.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the accelerator.
+  *   `acceleratorType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of an accelator for a Cloud Data Fusion instance.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the accelerator.
   """
 
   use GoogleApi.Gax.ModelBase
