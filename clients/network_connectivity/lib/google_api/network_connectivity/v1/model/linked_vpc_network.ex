@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork do
   ## Attributes
 
   *   `excludeExportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges encompassing the subnets to be excluded from peering.
+  *   `includeExportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included from peering.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the VPC network resource.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork do
 
   @type t :: %__MODULE__{
           :excludeExportRanges => list(String.t()) | nil,
+          :includeExportRanges => list(String.t()) | nil,
           :uri => String.t() | nil
         }
 
   field(:excludeExportRanges, type: :list)
+  field(:includeExportRanges, type: :list)
   field(:uri)
 end
 

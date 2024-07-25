@@ -23,7 +23,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Filter do
 
   *   `destRange` (*type:* `String.t`, *default:* `nil`) - Optional. The destination IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
   *   `ipProtocol` (*type:* `String.t`, *default:* `nil`) - Optional. The IP protocol that this policy-based route applies to. Valid values are 'TCP', 'UDP', and 'ALL'. Default is 'ALL'.
-  *   `protocolVersion` (*type:* `String.t`, *default:* `nil`) - Required. Internet protocol versions this policy-based route applies to. For this version, only IPV4 is supported.
+  *   `protocolVersion` (*type:* `String.t`, *default:* `nil`) - Required. Internet protocol versions this policy-based route applies to. For this version, only IPV4 is supported. IPV6 is supported in preview.
   *   `srcRange` (*type:* `String.t`, *default:* `nil`) - Optional. The source IP range of outgoing packets that this policy-based route applies to. Default is "0.0.0.0/0" if protocol version is IPv4.
   """
 

@@ -27,7 +27,11 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Route do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
   *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The origin location of the route. Uses the following form: "projects/{project}/locations/{location}" Example: projects/1234/locations/us-central1
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the route. Route names must be unique. Route names use the following form: `projects/{project_number}/locations/global/hubs/{hub}/routeTables/{route_table_id}/routes/{route_id}`
+  *   `nextHopInterconnectAttachment` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.NextHopInterconnectAttachment.t`, *default:* `nil`) - Immutable. The next-hop VLAN attachment for packets on this route.
+  *   `nextHopRouterApplianceInstance` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.NextHopRouterApplianceInstance.t`, *default:* `nil`) - Immutable. The next-hop Router appliance instance for packets on this route.
   *   `nextHopVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.NextHopVpcNetwork.t`, *default:* `nil`) - Immutable. The destination VPC network for packets on this route.
+  *   `nextHopVpnTunnel` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.NextHopVPNTunnel.t`, *default:* `nil`) - Immutable. The next-hop VPN tunnel for packets on this route.
+  *   `priority` (*type:* `String.t`, *default:* `nil`) - Output only. The priority of this route. Priority is used to break ties in cases where a destination matches more than one route. In these cases the route with the lowest-numbered priority value wins.
   *   `spoke` (*type:* `String.t`, *default:* `nil`) - Immutable. The spoke that this route leads to. Example: projects/12345/locations/global/spokes/SPOKE
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current lifecycle state of the route.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. The route's type. Its type is determined by the properties of its IP address range.
@@ -44,8 +48,14 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Route do
           :labels => map() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
+          :nextHopInterconnectAttachment =>
+            GoogleApi.NetworkConnectivity.V1.Model.NextHopInterconnectAttachment.t() | nil,
+          :nextHopRouterApplianceInstance =>
+            GoogleApi.NetworkConnectivity.V1.Model.NextHopRouterApplianceInstance.t() | nil,
           :nextHopVpcNetwork =>
             GoogleApi.NetworkConnectivity.V1.Model.NextHopVpcNetwork.t() | nil,
+          :nextHopVpnTunnel => GoogleApi.NetworkConnectivity.V1.Model.NextHopVPNTunnel.t() | nil,
+          :priority => String.t() | nil,
           :spoke => String.t() | nil,
           :state => String.t() | nil,
           :type => String.t() | nil,
@@ -59,7 +69,18 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Route do
   field(:labels, type: :map)
   field(:location)
   field(:name)
+
+  field(:nextHopInterconnectAttachment,
+    as: GoogleApi.NetworkConnectivity.V1.Model.NextHopInterconnectAttachment
+  )
+
+  field(:nextHopRouterApplianceInstance,
+    as: GoogleApi.NetworkConnectivity.V1.Model.NextHopRouterApplianceInstance
+  )
+
   field(:nextHopVpcNetwork, as: GoogleApi.NetworkConnectivity.V1.Model.NextHopVpcNetwork)
+  field(:nextHopVpnTunnel, as: GoogleApi.NetworkConnectivity.V1.Model.NextHopVPNTunnel)
+  field(:priority)
   field(:spoke)
   field(:state)
   field(:type)
