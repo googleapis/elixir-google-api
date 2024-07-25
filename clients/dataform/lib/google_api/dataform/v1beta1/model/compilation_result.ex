@@ -23,6 +23,8 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
 
   *   `codeCompilationConfig` (*type:* `GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig.t`, *default:* `nil`) - Immutable. If set, fields of `code_compilation_config` override the default compilation settings that are specified in dataform.json.
   *   `compilationErrors` (*type:* `list(GoogleApi.Dataform.V1beta1.Model.CompilationError.t)`, *default:* `nil`) - Output only. Errors encountered during project compilation.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the compilation result was created.
+  *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. Only set if the repository has a KMS Key.
   *   `dataformCoreVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The version of `@dataform/core` that was used for compilation.
   *   `gitCommitish` (*type:* `String.t`, *default:* `nil`) - Immutable. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The compilation result's name.
@@ -37,6 +39,8 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
           :codeCompilationConfig =>
             GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig.t() | nil,
           :compilationErrors => list(GoogleApi.Dataform.V1beta1.Model.CompilationError.t()) | nil,
+          :createTime => DateTime.t() | nil,
+          :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :dataformCoreVersion => String.t() | nil,
           :gitCommitish => String.t() | nil,
           :name => String.t() | nil,
@@ -47,6 +51,8 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResult do
 
   field(:codeCompilationConfig, as: GoogleApi.Dataform.V1beta1.Model.CodeCompilationConfig)
   field(:compilationErrors, as: GoogleApi.Dataform.V1beta1.Model.CompilationError, type: :list)
+  field(:createTime, as: DateTime)
+  field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:dataformCoreVersion)
   field(:gitCommitish)
   field(:name)

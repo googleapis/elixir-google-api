@@ -22,6 +22,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocation do
   ## Attributes
 
   *   `compilationResult` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the compilation result to use for this invocation. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
+  *   `dataEncryptionState` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t`, *default:* `nil`) - Output only. Only set if the repository has a KMS Key.
   *   `invocationConfig` (*type:* `GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t`, *default:* `nil`) - Immutable. If left unset, a default InvocationConfig will be used.
   *   `invocationTiming` (*type:* `GoogleApi.Dataform.V1beta1.Model.Interval.t`, *default:* `nil`) - Output only. This workflow invocation's timing details.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The workflow invocation's name.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocation do
 
   @type t :: %__MODULE__{
           :compilationResult => String.t() | nil,
+          :dataEncryptionState => GoogleApi.Dataform.V1beta1.Model.DataEncryptionState.t() | nil,
           :invocationConfig => GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t() | nil,
           :invocationTiming => GoogleApi.Dataform.V1beta1.Model.Interval.t() | nil,
           :name => String.t() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowInvocation do
         }
 
   field(:compilationResult)
+  field(:dataEncryptionState, as: GoogleApi.Dataform.V1beta1.Model.DataEncryptionState)
   field(:invocationConfig, as: GoogleApi.Dataform.V1beta1.Model.InvocationConfig)
   field(:invocationTiming, as: GoogleApi.Dataform.V1beta1.Model.Interval)
   field(:name)

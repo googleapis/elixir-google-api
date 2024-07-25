@@ -21,26 +21,31 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
 
   ## Attributes
 
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the WorkflowConfig was created.
   *   `cronSchedule` (*type:* `String.t`, *default:* `nil`) - Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
   *   `invocationConfig` (*type:* `GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t`, *default:* `nil`) - Optional. If left unset, a default InvocationConfig will be used.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The workflow config's name.
   *   `recentScheduledExecutionRecords` (*type:* `list(GoogleApi.Dataform.V1beta1.Model.ScheduledExecutionRecord.t)`, *default:* `nil`) - Output only. Records of the 10 most recent scheduled execution attempts, ordered in in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule.
   *   `releaseConfig` (*type:* `String.t`, *default:* `nil`) - Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
   *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the time zone database (https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is UTC.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when the WorkflowConfig was last updated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :createTime => DateTime.t() | nil,
           :cronSchedule => String.t() | nil,
           :invocationConfig => GoogleApi.Dataform.V1beta1.Model.InvocationConfig.t() | nil,
           :name => String.t() | nil,
           :recentScheduledExecutionRecords =>
             list(GoogleApi.Dataform.V1beta1.Model.ScheduledExecutionRecord.t()) | nil,
           :releaseConfig => String.t() | nil,
-          :timeZone => String.t() | nil
+          :timeZone => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
+  field(:createTime, as: DateTime)
   field(:cronSchedule)
   field(:invocationConfig, as: GoogleApi.Dataform.V1beta1.Model.InvocationConfig)
   field(:name)
@@ -52,6 +57,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
 
   field(:releaseConfig)
   field(:timeZone)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataform.V1beta1.Model.WorkflowConfig do
