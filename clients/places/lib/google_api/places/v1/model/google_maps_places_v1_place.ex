@@ -27,6 +27,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `attributions` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAttribution.t)`, *default:* `nil`) - A set of data provider that must be shown with this result.
   *   `servesVegetarianFood` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place serves vegetarian food.
   *   `name` (*type:* `String.t`, *default:* `nil`) - This Place's resource name, in `places/{place_id}` format. Can be used to look up the Place.
+  *   `generativeSummary` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGenerativeSummary.t`, *default:* `nil`) - Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details. AI-generated summary of the place.
   *   `servesBreakfast` (*type:* `boolean()`, *default:* `nil`) - Specifies if the place serves breakfast.
   *   `currentSecondaryOpeningHours` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t)`, *default:* `nil`) - Contains an array of entries for the next seven days including information about secondary hours of a business. Secondary hours are different from a business's main hours. For example, a restaurant can specify drive through hours or delivery hours as its secondary hours. This field populates the type subfield, which draws from a predefined list of opening hours types (such as DRIVE_THROUGH, PICKUP, or TAKEOUT) based on the types of the place. This field includes the special_days subfield of all hours, set for dates that have exceptional hours.
   *   `priceLevel` (*type:* `String.t`, *default:* `nil`) - Price level of the place.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
   *   `subDestinations` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceSubDestination.t)`, *default:* `nil`) - A list of sub destinations related to the place.
   *   `editorialSummary` (*type:* `GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t`, *default:* `nil`) - Contains a summary of the place. A summary is comprised of a textual overview, and also includes the language code for these if applicable. Summary text must be presented as-is and can not be modified or altered.
   *   `googleMapsUri` (*type:* `String.t`, *default:* `nil`) - A URL providing more information about this place.
+  *   `areaSummary` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAreaSummary.t`, *default:* `nil`) - Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details. AI-generated summary of the area that the place is in.
   *   `currentOpeningHours` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t`, *default:* `nil`) - The hours of operation for the next seven days (including today). The time period starts at midnight on the date of the request and ends at 11:59 pm six days later. This field includes the special_days subfield of all hours, set for dates that have exceptional hours.
   *   `reviews` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review.t)`, *default:* `nil`) - List of reviews about this place, sorted by relevance. A maximum of 5 reviews can be returned.
   *   `restroom` (*type:* `boolean()`, *default:* `nil`) - Place has restroom.
@@ -94,6 +96,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAttribution.t()) | nil,
           :servesVegetarianFood => boolean() | nil,
           :name => String.t() | nil,
+          :generativeSummary =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGenerativeSummary.t() | nil,
           :servesBreakfast => boolean() | nil,
           :currentSecondaryOpeningHours =>
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t()) | nil,
@@ -116,6 +120,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
             list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceSubDestination.t()) | nil,
           :editorialSummary => GoogleApi.Places.V1.Model.GoogleTypeLocalizedText.t() | nil,
           :googleMapsUri => String.t() | nil,
+          :areaSummary => GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAreaSummary.t() | nil,
           :currentOpeningHours =>
             GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours.t() | nil,
           :reviews => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review.t()) | nil,
@@ -172,6 +177,9 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
 
   field(:servesVegetarianFood)
   field(:name)
+
+  field(:generativeSummary, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceGenerativeSummary)
+
   field(:servesBreakfast)
 
   field(:currentSecondaryOpeningHours,
@@ -200,6 +208,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place do
 
   field(:editorialSummary, as: GoogleApi.Places.V1.Model.GoogleTypeLocalizedText)
   field(:googleMapsUri)
+  field(:areaSummary, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceAreaSummary)
   field(:currentOpeningHours, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours)
   field(:reviews, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Review, type: :list)
   field(:restroom)

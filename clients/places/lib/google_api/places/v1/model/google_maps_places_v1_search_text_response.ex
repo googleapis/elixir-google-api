@@ -21,15 +21,26 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextResponse do
 
   ## Attributes
 
+  *   `contextualContents` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContextualContent.t)`, *default:* `nil`) - Experimental: See https://developers.google.com/maps/documentation/places/web-service/experimental/places-generative for more details. A list of contextual contents where each entry associates to the corresponding place in the same index in the places field. The contents that are relevant to the `text_query` in the request are preferred. If the contextual content is not available for one of the places, it will return non-contextual content. It will be empty only when the content is unavailable for this place. This list should have as many entries as the list of places if requested.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as `page_token` to retrieve the next page. If this field is omitted or empty, there are no subsequent pages.
   *   `places` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t)`, *default:* `nil`) - A list of places that meet the user's text search criteria.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contextualContents =>
+            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContextualContent.t()) | nil,
+          :nextPageToken => String.t() | nil,
           :places => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t()) | nil
         }
 
+  field(:contextualContents,
+    as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1ContextualContent,
+    type: :list
+  )
+
+  field(:nextPageToken)
   field(:places, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place, type: :list)
 end
 

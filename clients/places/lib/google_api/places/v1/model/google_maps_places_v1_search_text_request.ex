@@ -26,9 +26,11 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Place details will be displayed with the preferred language if available. If the language code is unspecified or unrecognized, place details of any language may be returned, with a preference for English if such details exist. Current list of supported languages: https://developers.google.com/maps/faq#languagesupport.
   *   `locationBias` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestLocationBias.t`, *default:* `nil`) - The region to search. This location serves as a bias which means results around given location might be returned. Cannot be set along with location_restriction.
   *   `locationRestriction` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestLocationRestriction.t`, *default:* `nil`) - The region to search. This location serves as a restriction which means results outside given location will not be returned. Cannot be set along with location_bias.
-  *   `maxResultCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of results to return. It must be between 1 and 20, inclusively. The default is 20. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
+  *   `maxResultCount` (*type:* `integer()`, *default:* `nil`) - Deprecated: Use `page_size` instead. The maximum number of results per page that can be returned. If the number of available results is larger than `max_result_count`, a `next_page_token` is returned which can be passed to `page_token` to get the next page of results in subsequent requests. If 0 or no value is provided, a default of 20 is used. The maximum value is 20; values above 20 will be coerced to 20. Negative values will return an INVALID_ARGUMENT error. If both `max_result_count` and `page_size` are specified, `max_result_count` will be ignored.
   *   `minRating` (*type:* `float()`, *default:* `nil`) - Filter out results whose average user rating is strictly less than this limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all results with a less than 1.0 rating.
   *   `openNow` (*type:* `boolean()`, *default:* `nil`) - Used to restrict the search to places that are currently open. The default is false.
+  *   `pageSize` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of results per page that can be returned. If the number of available results is larger than `page_size`, a `next_page_token` is returned which can be passed to `page_token` to get the next page of results in subsequent requests. If 0 or no value is provided, a default of 20 is used. The maximum value is 20; values above 20 will be set to 20. Negative values will return an INVALID_ARGUMENT error. If both `max_result_count` and `page_size` are specified, `max_result_count` will be ignored.
+  *   `pageToken` (*type:* `String.t`, *default:* `nil`) - Optional. A page token, received from a previous TextSearch call. Provide this to retrieve the subsequent page. When paginating, all parameters other than `page_token`, `page_size`, and `max_result_count` provided to TextSearch must match the initial call that provided the page token. Otherwise an INVALID_ARGUMENT error is returned.
   *   `priceLevels` (*type:* `list(String.t)`, *default:* `nil`) - Used to restrict the search to places that are marked as certain price levels. Users can choose any combinations of price levels. Default to select all price levels.
   *   `rankPreference` (*type:* `String.t`, *default:* `nil`) - How results will be ranked in the response.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The Unicode country/region code (CLDR) of the location where the request is coming from. This parameter is used to display the place details, like region-specific place name, if available. The parameter can affect results based on applicable law. For more information, see https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html. Note that 3-digit region codes are not currently supported.
@@ -51,6 +53,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
           :maxResultCount => integer() | nil,
           :minRating => float() | nil,
           :openNow => boolean() | nil,
+          :pageSize => integer() | nil,
+          :pageToken => String.t() | nil,
           :priceLevels => list(String.t()) | nil,
           :rankPreference => String.t() | nil,
           :regionCode => String.t() | nil,
@@ -73,6 +77,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   field(:maxResultCount)
   field(:minRating)
   field(:openNow)
+  field(:pageSize)
+  field(:pageToken)
   field(:priceLevels, type: :list)
   field(:rankPreference)
   field(:regionCode)
