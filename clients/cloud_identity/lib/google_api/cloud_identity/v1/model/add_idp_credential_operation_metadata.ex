@@ -21,11 +21,16 @@ defmodule GoogleApi.CloudIdentity.V1.Model.AddIdpCredentialOperationMetadata do
 
   ## Attributes
 
+  *   `state` (*type:* `String.t`, *default:* `nil`) - State of this Operation Will be "awaiting-multi-party-approval" when the operation is deferred due to the target customer having enabled [Multi-party approval for sensitive actions](https://support.google.com/a/answer/13790448).
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :state => String.t() | nil
+        }
+
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudIdentity.V1.Model.AddIdpCredentialOperationMetadata do
