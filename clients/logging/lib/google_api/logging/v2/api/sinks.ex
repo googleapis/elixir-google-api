@@ -31,8 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-project" "organizations/123456789"
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The resource in which to create the sink: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-project" "organizations/123456789"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -45,7 +44,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customWriterIdentity` (*type:* `String.t`) - Optional. A service account provided by the caller that will be used to write the log entries. The format must be serviceAccount:some@email. This field can only be specified if you are routing logs to a destination outside this sink's project. If not specified, a Logging service account will automatically be generated.
+      *   `:customWriterIdentity` (*type:* `String.t`) - Optional. The service account provided by the caller that will be used to write the log entries. The format must be serviceAccount:some@email. This field can only be specified when you are routing logs to a log bucket that is in a different project than the sink. When not specified, a Logging service account will automatically be generated.
       *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. Determines the kind of IAM identity returned as writer_identity in the new sink. If this value is omitted or set to false, and if the sink's parent is a project, then the value returned as writer_identity is the same group or service account used by Cloud Logging before the addition of writer identities to this API. The sink's destination must be in the same project as the sink itself.If this field is set to true, or if the sink is owned by a non-project resource such as an organization, then the value of writer_identity will be a service agent (https://cloud.google.com/iam/docs/service-account-types#service-agents) used by the sinks with the same parent. For more information, see writer_identity in LogSink.
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -55,12 +54,12 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_sinks_create(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_sinks_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_sinks_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_sinks_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -81,9 +80,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/sinks", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/sinks", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -99,9 +97,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
-  *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
-  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
+  *   `sink_name` (*type:* `String.t`) - Required. The full resource name of the sink to delete, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -121,19 +117,12 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_sinks_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_sinks_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_sinks_delete(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
+  def logging_sinks_delete(connection, sink_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -151,10 +140,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/sinks/{sinksId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+sinkName}", %{
+        "sinkName" => URI.encode(sink_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -170,9 +157,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
-  *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
-  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
+  *   `sink_name` (*type:* `String.t`) - Required. The resource name of the sink: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -192,19 +177,12 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_sinks_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_sinks_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_sinks_get(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
+  def logging_sinks_get(connection, sink_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -222,10 +200,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/sinks/{sinksId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+sinkName}", %{
+        "sinkName" => URI.encode(sink_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -241,8 +217,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose sinks are to be listed: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource whose sinks are to be listed: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -265,12 +240,12 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListSinksResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_sinks_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_sinks_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListSinksResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_sinks_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_sinks_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -291,9 +266,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/sinks", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/sinks", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -309,9 +283,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `sinkName`. Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
-  *   `v2_id1` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
-  *   `sinks_id` (*type:* `String.t`) - Part of `sinkName`. See documentation of `v2Id`.
+  *   `sink_name` (*type:* `String.t`) - Required. The full resource name of the sink to update, including the parent resource and the sink identifier: "projects/[PROJECT_ID]/sinks/[SINK_ID]" "organizations/[ORGANIZATION_ID]/sinks/[SINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_ID]" "folders/[FOLDER_ID]/sinks/[SINK_ID]" For example:"projects/my-project/sinks/my-sink"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -324,7 +296,7 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:customWriterIdentity` (*type:* `String.t`) - Optional. A service account provided by the caller that will be used to write the log entries. The format must be serviceAccount:some@email. This field can only be specified if you are routing logs to a destination outside this sink's project. If not specified, a Logging service account will automatically be generated.
+      *   `:customWriterIdentity` (*type:* `String.t`) - Optional. The service account provided by the caller that will be used to write the log entries. The format must be serviceAccount:some@email. This field can only be specified when you are routing logs to a log bucket that is in a different project than the sink. When not specified, a Logging service account will automatically be generated.
       *   `:uniqueWriterIdentity` (*type:* `boolean()`) - Optional. See sinks.create for a description of this field. When updating a sink, the effect of this field on the value of writer_identity in the updated sink depends on both the old and new values of this field: If the old and new values of this field are both false or both true, then there is no change to the sink's writer_identity. If the old value is false and the new value is true, then writer_identity is changed to a service agent (https://cloud.google.com/iam/docs/service-account-types#service-agents) owned by Cloud Logging. It is an error if the old value is true and the new value is set to false or defaulted to false.
       *   `:updateMask` (*type:* `String.t`) - Optional. Field mask that specifies the fields in sink that need an update. A sink field will be overwritten if, and only if, it is in the update mask. name and output only fields cannot be updated.An empty updateMask is temporarily treated as using the following mask for backwards compatibility purposes:destination,filter,includeChildrenAt some point in the future, behavior will be removed and specifying an empty updateMask will be an error.For a detailed FieldMask definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMaskFor example: updateMask=filter
       *   `:body` (*type:* `GoogleApi.Logging.V2.Model.LogSink.t`) - 
@@ -335,19 +307,12 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogSink{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_sinks_update(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_sinks_update(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogSink.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_sinks_update(connection, v2_id, v2_id1, sinks_id, optional_params \\ [], opts \\ []) do
+  def logging_sinks_update(connection, sink_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -369,10 +334,8 @@ defmodule GoogleApi.Logging.V2.Api.Sinks do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/sinks/{sinksId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "sinksId" => URI.encode(sinks_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+sinkName}", %{
+        "sinkName" => URI.encode(sink_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

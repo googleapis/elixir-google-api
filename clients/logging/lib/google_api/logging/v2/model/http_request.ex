@@ -25,8 +25,8 @@ defmodule GoogleApi.Logging.V2.Model.HttpRequest do
   *   `cacheHit` (*type:* `boolean()`, *default:* `nil`) - Whether or not an entity was served from cache (with or without validation).
   *   `cacheLookup` (*type:* `boolean()`, *default:* `nil`) - Whether or not a cache lookup was attempted.
   *   `cacheValidatedWithOriginServer` (*type:* `boolean()`, *default:* `nil`) - Whether or not the response was validated with the origin server before being served from cache. This field is only meaningful if cache_hit is True.
-  *   `latency` (*type:* `String.t`, *default:* `nil`) - The request processing latency on the server, from the time the request was received until the response was sent.
-  *   `protocol` (*type:* `String.t`, *default:* `nil`) - Protocol used for the request. Examples: "HTTP/1.1", "HTTP/2", "websocket"
+  *   `latency` (*type:* `String.t`, *default:* `nil`) - The request processing latency on the server, from the time the request was received until the response was sent. For WebSocket connections, this field refers to the entire time duration of the connection.
+  *   `protocol` (*type:* `String.t`, *default:* `nil`) - Protocol used for the request. Examples: "HTTP/1.1", "HTTP/2"
   *   `referer` (*type:* `String.t`, *default:* `nil`) - The referer URL of the request, as defined in HTTP/1.1 Header Field Definitions (https://datatracker.ietf.org/doc/html/rfc2616#section-14.36).
   *   `remoteIp` (*type:* `String.t`, *default:* `nil`) - The IP address (IPv4 or IPv6) of the client that issued the HTTP request. This field can include port information. Examples: "192.168.1.1", "10.0.0.1:80", "FE80::0202:B3FF:FE1E:8329".
   *   `requestMethod` (*type:* `String.t`, *default:* `nil`) - The request method. Examples: "GET", "HEAD", "PUT", "POST".

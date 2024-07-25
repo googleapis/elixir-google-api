@@ -31,8 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource in which to create the exclusion: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-logging-project" "organizations/123456789"
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource in which to create the exclusion: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" For examples:"projects/my-logging-project" "organizations/123456789"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -53,18 +52,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_exclusions_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_exclusions_create(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_exclusions_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -83,9 +76,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/exclusions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -101,9 +93,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion to delete: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of an existing exclusion to delete: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -123,26 +113,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_exclusions_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_exclusions_delete(
-        connection,
-        v2_id,
-        v2_id1,
-        exclusions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_exclusions_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -160,10 +136,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -179,9 +153,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of an existing exclusion: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of an existing exclusion: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -201,26 +173,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_exclusions_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_exclusions_get(
-        connection,
-        v2_id,
-        v2_id1,
-        exclusions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_exclusions_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -238,10 +196,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -257,8 +213,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose exclusions are to be listed. "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource whose exclusions are to be listed. "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -280,12 +235,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListExclusionsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_exclusions_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListExclusionsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_exclusions_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_exclusions_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -305,9 +260,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/exclusions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -323,9 +277,7 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the exclusion to update: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `exclusions_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the exclusion to update: "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]" "organizations/[ORGANIZATION_ID]/exclusions/[EXCLUSION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/exclusions/[EXCLUSION_ID]" "folders/[FOLDER_ID]/exclusions/[EXCLUSION_ID]" For example:"projects/my-project/exclusions/my-exclusion"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -347,26 +299,12 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogExclusion{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_exclusions_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_exclusions_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogExclusion.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_exclusions_patch(
-        connection,
-        v2_id,
-        v2_id1,
-        exclusions_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_exclusions_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -386,10 +324,8 @@ defmodule GoogleApi.Logging.V2.Api.Exclusions do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/exclusions/{exclusionsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "exclusionsId" => URI.encode(exclusions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
