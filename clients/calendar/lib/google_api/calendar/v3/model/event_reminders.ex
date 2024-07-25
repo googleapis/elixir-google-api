@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Calendar.V3.Model.EventReminders do
   @moduledoc """
-  Information about the event's reminders for the authenticated user.
+  Information about the event's reminders for the authenticated user. Note that changing reminders does not also change the updated property of the enclosing event.
 
   ## Attributes
 
