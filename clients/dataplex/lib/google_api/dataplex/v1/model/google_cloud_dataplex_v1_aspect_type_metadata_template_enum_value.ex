@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue do
   @moduledoc """
-  Definition of Enumvalue (to be used by enum fields)
+  Definition of Enumvalue, to be used for enum fields.
 
   ## Attributes
 
-  *   `deprecated` (*type:* `String.t`, *default:* `nil`) - Optional. Optional deprecation message to be set if an enum value needs to be deprecated.
-  *   `index` (*type:* `integer()`, *default:* `nil`) - Required. Index for the enum. Cannot be modified.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the enumvalue. This is the actual value that the aspect will contain.
+  *   `deprecated` (*type:* `String.t`, *default:* `nil`) - Optional. You can set this message if you need to deprecate an enum value.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - Required. Index for the enum value. It can't be modified.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the enumvalue. This is the actual value that the aspect can contain.
   """
 
   use GoogleApi.Gax.ModelBase

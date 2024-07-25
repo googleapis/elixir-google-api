@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityScanRuleRe
 
   ## Attributes
 
+  *   `assertionRowCount` (*type:* `String.t`, *default:* `nil`) - The number of rows returned by the SQL statement in a SQL assertion rule. This field is only valid for SQL assertion rules.
   *   `column` (*type:* `String.t`, *default:* `nil`) - The column which this rule is evaluated against.
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - The data source of the data scan (e.g. BigQuery table name).
   *   `evaluatedRowCount` (*type:* `String.t`, *default:* `nil`) - The number of rows evaluated against the data quality rule. This field is only valid for rules of PER_ROW evaluation type.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityScanRuleRe
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :assertionRowCount => String.t() | nil,
           :column => String.t() | nil,
           :dataSource => String.t() | nil,
           :evaluatedRowCount => String.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityScanRuleRe
           :thresholdPercent => float() | nil
         }
 
+  field(:assertionRowCount)
   field(:column)
   field(:dataSource)
   field(:evaluatedRowCount)

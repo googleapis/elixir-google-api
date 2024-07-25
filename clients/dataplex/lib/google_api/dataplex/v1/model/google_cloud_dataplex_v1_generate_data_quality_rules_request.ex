@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1GenerateDataQualityRulesRequest do
   @moduledoc """
-  Generate recommended DataQualityRules request.
+  Request details for generating data quality rule recommendations.
 
   ## Attributes
 

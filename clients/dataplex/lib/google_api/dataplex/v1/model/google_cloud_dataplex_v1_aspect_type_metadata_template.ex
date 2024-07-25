@@ -17,21 +17,21 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate do
   @moduledoc """
-  MetadataTemplate definition for AspectType
+  MetadataTemplate definition for an AspectType.
 
   ## Attributes
 
   *   `annotations` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations.t`, *default:* `nil`) - Optional. Specifies annotations on this field.
-  *   `arrayItems` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t`, *default:* `nil`) - Optional. array_items needs to be set if the type is array. array_items can refer to a primitive field or a complex (record only) field. To specify a primitive field, just name and type needs to be set in the nested MetadataTemplate. The recommended value for the name field is item, as this is not used in the actual payload.
+  *   `arrayItems` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t`, *default:* `nil`) - Optional. If the type is array, set array_items. array_items can refer to a primitive field or a complex (record only) field. To specify a primitive field, you only need to set name and type in the nested MetadataTemplate. The recommended value for the name field is item, as this isn't used in the actual payload.
   *   `constraints` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateConstraints.t`, *default:* `nil`) - Optional. Specifies the constraints on this field.
-  *   `enumValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue.t)`, *default:* `nil`) - Optional. The list of values for an enum type. Needs to be defined if the type is enum.
+  *   `enumValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateEnumValue.t)`, *default:* `nil`) - Optional. The list of values for an enum type. You must define it if the type is enum.
   *   `index` (*type:* `integer()`, *default:* `nil`) - Optional. Index is used to encode Template messages. The value of index can range between 1 and 2,147,483,647. Index must be unique within all fields in a Template. (Nested Templates can reuse indexes). Once a Template is defined, the index cannot be changed, because it identifies the field in the actual storage format. Index is a mandatory field, but it is optional for top level fields, and map/array "values" definitions.
-  *   `mapItems` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t`, *default:* `nil`) - Optional. map_items needs to be set if the type is map. map_items can refer to a primitive field or a complex (record only) field. To specify a primitive field, just name and type needs to be set in the nested MetadataTemplate. The recommended value for the name field is item, as this is not used in the actual payload.
+  *   `mapItems` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t`, *default:* `nil`) - Optional. If the type is map, set map_items. map_items can refer to a primitive field or a complex (record only) field. To specify a primitive field, you only need to set name and type in the nested MetadataTemplate. The recommended value for the name field is item, as this isn't used in the actual payload.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the field.
-  *   `recordFields` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t)`, *default:* `nil`) - Optional. Field definition, needs to be specified if the type is record. Defines the nested fields.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The datatype of this field. The following values are supported: Primitive types (string, integer, boolean, double, datetime); datetime must be of the format RFC3339 UTC "Zulu" (Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z"). Complex types (enum, array, map, record).
-  *   `typeId` (*type:* `String.t`, *default:* `nil`) - Optional. Id can be used if this definition of the field needs to be reused later. Id needs to be unique across the entire template. Id can only be specified if the field type is record.
-  *   `typeRef` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to another field definition (instead of an inline definition). The value must be equal to the value of an id field defined elsewhere in the MetadataTemplate. Only fields with type as record can refer to other fields.
+  *   `recordFields` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t)`, *default:* `nil`) - Optional. Field definition. You must specify it if the type is record. It defines the nested fields.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The datatype of this field. The following values are supported:Primitive types: string integer boolean double datetime. Must be of the format RFC3339 UTC "Zulu" (Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").Complex types: enum array map record
+  *   `typeId` (*type:* `String.t`, *default:* `nil`) - Optional. You can use type id if this definition of the field needs to be reused later. The type id must be unique across the entire template. You can only specify it if the field type is record.
+  *   `typeRef` (*type:* `String.t`, *default:* `nil`) - Optional. A reference to another field definition (not an inline definition). The value must be equal to the value of an id field defined elsewhere in the MetadataTemplate. Only fields with record type can refer to other fields.
   """
 
   use GoogleApi.Gax.ModelBase

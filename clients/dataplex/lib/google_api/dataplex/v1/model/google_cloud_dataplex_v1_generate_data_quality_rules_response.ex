@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1GenerateDataQualityRulesResponse do
   @moduledoc """
-  Generate recommended DataQualityRules response.
+  Response details for data quality rule recommendations.
 
   ## Attributes
 
-  *   `rule` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t)`, *default:* `nil`) - Generated recommended {@link DataQualityRule}s.
+  *   `rule` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRule.t)`, *default:* `nil`) - The data quality rules that Dataplex generates based on the results of a data profiling scan.
   """
 
   use GoogleApi.Gax.ModelBase

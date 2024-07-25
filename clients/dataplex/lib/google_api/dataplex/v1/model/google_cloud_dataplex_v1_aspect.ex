@@ -24,7 +24,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Aspect do
   *   `aspectSource` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectSource.t`, *default:* `nil`) - 
   *   `aspectType` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the type used to create this Aspect.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Aspect was created.
-  *   `data` (*type:* `map()`, *default:* `nil`) - Required. The content of the aspect, according to its aspect type schema. This will replace content. The maximum size of the field is 120KB (encoded as UTF-8).
+  *   `data` (*type:* `map()`, *default:* `nil`) - Required. The content of the aspect, according to its aspect type schema. The maximum size of the field is 120KB (encoded as UTF-8).
   *   `path` (*type:* `String.t`, *default:* `nil`) - Output only. The path in the entry under which the aspect is attached.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the Aspect was last updated.
   """

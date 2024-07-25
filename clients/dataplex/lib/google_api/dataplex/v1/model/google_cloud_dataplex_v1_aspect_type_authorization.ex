@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeAuthorization do
   @moduledoc """
-  Autorization for an Aspect Type.
+  Autorization for an AspectType.
 
   ## Attributes
 
-  *   `alternateUsePermission` (*type:* `String.t`, *default:* `nil`) - Immutable. The IAM permission grantable on the Entry Group to allow access to instantiate Aspects of Dataplex owned Aspect Types, only settable for Dataplex owned Types.
+  *   `alternateUsePermission` (*type:* `String.t`, *default:* `nil`) - Immutable. The IAM permission grantable on the EntryGroup to allow access to instantiate Aspects of Dataplex owned AspectTypes, only settable for Dataplex owned Types.
   """
 
   use GoogleApi.Gax.ModelBase

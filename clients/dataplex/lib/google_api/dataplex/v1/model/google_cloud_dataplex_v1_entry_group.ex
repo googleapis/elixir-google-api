@@ -24,11 +24,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the EntryGroup was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the EntryGroup.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the service, and might be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the EntryGroup.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the EntryGroup, of the form: projects/{project_number}/locations/{location_id}/entryGroups/{entry_group_id}.
-  *   `transferStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Denotes the transfer status of the Entry Group. It is unspecified for Entry Group created from Dataplex API.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the EntryGroup. This ID will be different if the EntryGroup is deleted and re-created with the same name.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the EntryGroup. If you delete and recreate the EntryGroup with the same name, this ID will be different.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the EntryGroup was last updated.
   """
 
@@ -41,7 +40,6 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup do
           :etag => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
-          :transferStatus => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -52,7 +50,6 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup do
   field(:etag)
   field(:labels, type: :map)
   field(:name)
-  field(:transferStatus)
   field(:uid)
   field(:updateTime, as: DateTime)
 end

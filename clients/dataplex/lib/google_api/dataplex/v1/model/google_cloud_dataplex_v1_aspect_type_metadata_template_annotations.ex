@@ -17,16 +17,16 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateAnnotations do
   @moduledoc """
-  Definition of the annotations of a field
+  Definition of the annotations of a field.
 
   ## Attributes
 
-  *   `deprecated` (*type:* `String.t`, *default:* `nil`) - Optional. Marks a field as deprecated, a deprecation message can be included.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Specify a description for a field
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Specify a displayname for a field.
-  *   `displayOrder` (*type:* `integer()`, *default:* `nil`) - Optional. Specify a display order for a field. Display order can be used to reorder where a field is rendered
-  *   `stringType` (*type:* `String.t`, *default:* `nil`) - Optional. String Type annotations can be used to specify special meaning to string fields. The following values are supported: richText: The field must be interpreted as a rich text field. url: A fully qualified url link. resource: A service qualified resource reference.
-  *   `stringValues` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Suggested hints for string fields. These can be used to suggest values to users, through an UI for example.
+  *   `deprecated` (*type:* `String.t`, *default:* `nil`) - Optional. Marks a field as deprecated. You can include a deprecation message.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description for a field.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Display name for a field.
+  *   `displayOrder` (*type:* `integer()`, *default:* `nil`) - Optional. Display order for a field. You can use this to reorder where a field is rendered.
+  *   `stringType` (*type:* `String.t`, *default:* `nil`) - Optional. You can use String Type annotations to specify special meaning to string fields. The following values are supported: richText: The field must be interpreted as a rich text field. url: A fully qualified URL link. resource: A service qualified resource reference.
+  *   `stringValues` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Suggested hints for string fields. You can use them to suggest values to users through console.
   """
 
   use GoogleApi.Gax.ModelBase

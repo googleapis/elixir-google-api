@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectSource do
   @moduledoc """
-  AspectSource contains source system related information for the aspect.
+  AspectSource contains information related to the source system of the Aspect.
 
   ## Attributes
 

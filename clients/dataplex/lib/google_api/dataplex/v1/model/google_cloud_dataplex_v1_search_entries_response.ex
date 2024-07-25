@@ -21,10 +21,10 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResponse
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   *   `results` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResult.t)`, *default:* `nil`) - The results matching the search query.
-  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total number of matching entries. Not guaranteed to be accurate.
-  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Unreachable locations. Search results don't include data from those locations.
+  *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total number of matching entries. This number isn't guaranteed to be accurate.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Locations that the service couldn't reach. Search results don't include data from these locations.
   """
 
   use GoogleApi.Gax.ModelBase

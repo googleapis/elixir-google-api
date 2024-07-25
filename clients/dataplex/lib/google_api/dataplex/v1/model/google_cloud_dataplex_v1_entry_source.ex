@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource do
   @moduledoc """
-  EntrySource contains source system related information for the entry.
+  EntrySource contains information related to the source system of the Entry.
 
   ## Attributes
 
@@ -26,6 +26,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Entry. The maximum size of the field is 2000 characters.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User friendly display name. The maximum size of the field is 500 characters.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels. The maximum size of keys and values is 128 characters each.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. Location of the resource in the source system. You can search the Entry by this location. By default, this should match the location of the EntryGroup containing this entry. A different value allows capturing the source location for data external to Google Cloud.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform containing the source system. The maximum size of the field is 64 characters.
   *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource in the source system. The maximum size of the field is 4000 characters.
   *   `system` (*type:* `String.t`, *default:* `nil`) - The name of the source system. The maximum size of the field is 64 characters.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :labels => map() | nil,
+          :location => String.t() | nil,
           :platform => String.t() | nil,
           :resource => String.t() | nil,
           :system => String.t() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource do
   field(:description)
   field(:displayName)
   field(:labels, type: :map)
+  field(:location)
   field(:platform)
   field(:resource)
   field(:system)

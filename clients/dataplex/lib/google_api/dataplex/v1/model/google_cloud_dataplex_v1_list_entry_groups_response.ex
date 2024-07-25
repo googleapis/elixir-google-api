@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListEntryGroupsResponse do
   @moduledoc """
-  List ListEntryGroups response.
+  List entry groups response.
 
   ## Attributes
 
-  *   `entryGroups` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup.t)`, *default:* `nil`) - ListEntryGroups under the given parent location.
+  *   `entryGroups` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup.t)`, *default:* `nil`) - Entry groups under the given parent location.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
-  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
+  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that the service couldn't reach.
   """
 
   use GoogleApi.Gax.ModelBase
