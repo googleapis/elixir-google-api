@@ -21,6 +21,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
 
   ## Attributes
 
+  *   `baProxyUri` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The hostname or ip address of the exposed AGM endpoints, used by BAs to connect to BA proxy.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the ManagementServer instance (2048 characters or less).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Server specified ETag for the ManagementServer resource to prevent simultaneous updates from overwiting each other.
@@ -28,7 +29,9 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
   *   `managementUri` (*type:* `GoogleApi.BackupDR.V1.Model.ManagementURI.t`, *default:* `nil`) - Output only. The hostname or ip address of the exposed AGM endpoints, used by clients to connect to AGM/RD graphical user interface and APIs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
   *   `networks` (*type:* `list(GoogleApi.BackupDR.V1.Model.NetworkConfig.t)`, *default:* `nil`) - Required. VPC networks to which the ManagementServer instance is connected. For this version, only a single network is supported.
-  *   `oauth2ClientId` (*type:* `String.t`, *default:* `nil`) - Output only. The OAuth 2.0 client id is required to make API calls to the BackupDR instance API of this ManagementServer. This is the value that should be provided in the ‘aud’ field of the OIDC ID Token (see openid specification https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
+  *   `oauth2ClientId` (*type:* `String.t`, *default:* `nil`) - Output only. The OAuth 2.0 client id is required to make API calls to the BackupDR instance API of this ManagementServer. This is the value that should be provided in the 'aud' field of the OIDC ID Token (see openid specification https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The ManagementServer state.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the ManagementServer resource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was updated.
@@ -39,6 +42,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :baProxyUri => list(String.t()) | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
@@ -47,6 +51,8 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
           :name => String.t() | nil,
           :networks => list(GoogleApi.BackupDR.V1.Model.NetworkConfig.t()) | nil,
           :oauth2ClientId => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :type => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -56,6 +62,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
             GoogleApi.BackupDR.V1.Model.WorkforceIdentityBasedOAuth2ClientID.t() | nil
         }
 
+  field(:baProxyUri, type: :list)
   field(:createTime, as: DateTime)
   field(:description)
   field(:etag)
@@ -64,6 +71,8 @@ defmodule GoogleApi.BackupDR.V1.Model.ManagementServer do
   field(:name)
   field(:networks, as: GoogleApi.BackupDR.V1.Model.NetworkConfig, type: :list)
   field(:oauth2ClientId)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:type)
   field(:updateTime, as: DateTime)
