@@ -23,10 +23,10 @@ defmodule GoogleApi.Tasks.V1.Model.TaskList do
 
   *   `etag` (*type:* `String.t`, *default:* `nil`) - ETag of the resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Task list identifier.
-  *   `kind` (*type:* `String.t`, *default:* `nil`) - Type of the resource. This is always "tasks#taskList".
-  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - URL pointing to this task list. Used to retrieve, update, or delete this task list.
+  *   `kind` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the resource. This is always "tasks#taskList".
+  *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. URL pointing to this task list. Used to retrieve, update, or delete this task list.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the task list. Maximum length allowed: 1024 characters.
-  *   `updated` (*type:* `String.t`, *default:* `nil`) - Last modification time of the task list (as a RFC 3339 timestamp).
+  *   `updated` (*type:* `String.t`, *default:* `nil`) - Output only. Last modification time of the task list (as a RFC 3339 timestamp).
   """
 
   use GoogleApi.Gax.ModelBase
