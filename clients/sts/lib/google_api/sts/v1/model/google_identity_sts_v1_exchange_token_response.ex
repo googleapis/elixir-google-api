@@ -21,6 +21,7 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenResponse do
 
   ## Attributes
 
+  *   `access_boundary_session_key` (*type:* `String.t`, *default:* `nil`) - The access boundary session key. This key is used along with the access boundary intermediate token to generate Credential Access Boundary tokens at client side. This field is absent when the `requested_token_type` from the request is not `urn:ietf:params:oauth:token-type:access_boundary_intermediate_token`.
   *   `access_token` (*type:* `String.t`, *default:* `nil`) - An OAuth 2.0 security token, issued by Google, in response to the token exchange request. Tokens can vary in size, depending in part on the size of mapped claims, up to a maximum of 12288 bytes (12 KB). Google reserves the right to change the token size and the maximum length at any time.
   *   `expires_in` (*type:* `integer()`, *default:* `nil`) - The amount of time, in seconds, between the time when the access token was issued and the time when the access token will expire. This field is absent when the `subject_token` in the request is a Google-issued, short-lived access token. In this case, the access token has the same expiration time as the `subject_token`.
   *   `issued_token_type` (*type:* `String.t`, *default:* `nil`) - The token type. Always matches the value of `requested_token_type` from the request.
@@ -30,12 +31,14 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1ExchangeTokenResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :access_boundary_session_key => String.t() | nil,
           :access_token => String.t() | nil,
           :expires_in => integer() | nil,
           :issued_token_type => String.t() | nil,
           :token_type => String.t() | nil
         }
 
+  field(:access_boundary_session_key)
   field(:access_token)
   field(:expires_in)
   field(:issued_token_type)
