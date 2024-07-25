@@ -242,7 +242,7 @@ defmodule GoogleApi.DFAReporting.V4.Api.Campaigns do
   end
 
   @doc """
-  Updates an existing creative. This method supports patch semantics.
+  Updates an existing campaign. This method supports patch semantics.
 
   ## Parameters
 
