@@ -31,8 +31,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -52,24 +51,12 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec healthcare_projects_locations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec healthcare_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.HealthCare.V1beta1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def healthcare_projects_locations_get(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def healthcare_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -87,9 +74,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -105,7 +91,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -133,12 +119,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def healthcare_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def healthcare_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -159,8 +140,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -178,8 +159,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project where the server creates the dataset. For example, `projects/{project_id}/locations/{location_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project where the server creates the dataset. For example, `projects/{project_id}/locations/{location_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -204,7 +184,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -214,8 +193,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -238,9 +216,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/datasets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -256,9 +233,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceDataset`. Required. Source dataset resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `sourceDataset`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `sourceDataset`. See documentation of `projectsId`.
+  *   `source_dataset` (*type:* `String.t`) - Required. Source dataset resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -282,8 +257,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_deidentify(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -293,9 +266,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_deidentify(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        source_dataset,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -317,14 +288,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}:deidentify",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+sourceDataset}:deidentify", %{
+        "sourceDataset" => URI.encode(source_dataset, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -339,9 +305,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the dataset to delete. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the dataset to delete. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -364,8 +328,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -375,9 +337,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -398,14 +358,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -420,9 +375,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the dataset to read. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the dataset to read. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -445,8 +398,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -456,9 +407,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -479,14 +428,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -501,9 +445,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -527,8 +469,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -538,9 +478,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -562,14 +500,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -584,8 +517,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project whose datasets should be listed. For example, `projects/{project_id}/locations/{location_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project whose datasets should be listed. For example, `projects/{project_id}/locations/{location_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -610,7 +542,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -620,8 +551,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -644,9 +574,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/datasets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -664,9 +593,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dataset.name`. Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `dataset.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -691,8 +618,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -702,9 +627,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -727,14 +650,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -749,9 +667,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -775,8 +691,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -786,9 +700,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -810,14 +722,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -832,9 +739,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -858,8 +763,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -869,9 +772,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -893,14 +794,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -917,9 +813,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this Annotation store belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the dataset this Annotation store belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -944,8 +838,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -955,9 +847,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -980,14 +870,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/annotationStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1002,10 +887,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Annotation store to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Annotation store to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1028,9 +910,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1040,10 +919,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1064,16 +940,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" =>
-            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1088,10 +957,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The Annotation store to compare against `golden_store`, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1115,9 +981,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_evaluate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1127,10 +990,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_evaluate(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1152,15 +1012,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:evaluate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:evaluate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1175,10 +1029,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Annotation store to export annotations to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the Annotation store to export annotations to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1202,9 +1053,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_export(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1214,10 +1062,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_export(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1239,15 +1084,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:export",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:export", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1262,10 +1101,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Annotation store to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Annotation store to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1288,9 +1124,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1300,10 +1133,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1324,16 +1154,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" =>
-            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1348,10 +1171,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1375,9 +1195,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1387,10 +1204,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1412,15 +1226,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1435,10 +1243,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Annotation store to which the server imports annotations, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the Annotation store to which the server imports annotations, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1462,9 +1267,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1474,10 +1276,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_import(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1499,15 +1298,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:import", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1522,9 +1315,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1550,8 +1341,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1561,9 +1350,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1587,14 +1374,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/annotationStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1611,10 +1393,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `annotationStore.name`. Identifier. Resource name of the Annotation store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `annotationStore.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `annotationStore.name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `annotationStore.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the Annotation store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1639,9 +1418,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1651,10 +1427,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1677,16 +1450,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" =>
-            URI.encode(annotation_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1701,10 +1467,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1728,9 +1491,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1740,10 +1500,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1765,15 +1522,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1788,10 +1539,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1815,9 +1563,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1827,10 +1572,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1852,15 +1594,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1877,10 +1613,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the Annotation store this annotation belongs to. For example, `projects/my-project/locations/us-central1/datasets/mydataset/annotationStores/myannotationstore`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the Annotation store this annotation belongs to. For example, `projects/my-project/locations/us-central1/datasets/mydataset/annotationStores/myannotationstore`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1904,9 +1637,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_annotations_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1916,10 +1646,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_annotations_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1941,15 +1668,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}/annotations",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/annotations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1964,11 +1685,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Annotation to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Annotation to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1991,10 +1708,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_annotations_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2004,11 +1717,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_annotations_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
-        annotations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2029,16 +1738,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}/annotations/{annotationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2053,11 +1755,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Annotation to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `annotations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Annotation to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2080,10 +1778,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_annotations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2093,11 +1787,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_annotations_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
-        annotations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2118,16 +1808,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}/annotations/{annotationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2142,10 +1825,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the Annotation store to retrieve Annotations from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the Annotation store to retrieve Annotations from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2172,9 +1852,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_annotations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2184,10 +1861,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_annotations_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2212,15 +1886,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}/annotations",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/annotations", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2237,11 +1905,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `annotation.name`. Identifier. Resource name of the Annotation, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}/annotations/{annotation_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `annotation.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `annotation.name`. See documentation of `projectsId`.
-  *   `annotation_stores_id` (*type:* `String.t`) - Part of `annotation.name`. See documentation of `projectsId`.
-  *   `annotations_id` (*type:* `String.t`) - Part of `annotation.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the Annotation, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/annotationStores/{annotation_store_id}/annotations/{annotation_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2266,10 +1930,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_annotation_stores_annotations_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2279,11 +1939,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_annotation_stores_annotations_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        annotation_stores_id,
-        annotations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2306,16 +1962,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/annotationStores/{annotationStoresId}/annotations/{annotationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "annotationStoresId" => URI.encode(annotation_stores_id, &URI.char_unreserved?/1),
-          "annotationsId" => URI.encode(annotations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2330,10 +1979,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consentStore`. Required. Name of the consent store where the requested data_id is stored, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
+  *   `consent_store` (*type:* `String.t`) - Required. Name of the consent store where the requested data_id is stored, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2357,9 +2003,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_check_data_access(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2369,10 +2012,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_check_data_access(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        consent_store,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2394,15 +2034,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:checkDataAccess",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+consentStore}:checkDataAccess", %{
+        "consentStore" => URI.encode(consent_store, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2419,9 +2053,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this consent store belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the dataset this consent store belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2446,8 +2078,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2457,9 +2087,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2482,14 +2110,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consentStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2504,10 +2127,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the consent store to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the consent store to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2530,9 +2150,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2542,10 +2159,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2566,16 +2180,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" =>
-            URI.encode(consent_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2590,10 +2197,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consentStore`. Required. Name of the consent store to retrieve User data mappings from.
-  *   `locations_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
+  *   `consent_store` (*type:* `String.t`) - Required. Name of the consent store to retrieve User data mappings from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2617,9 +2221,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_evaluate_user_consents(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2629,10 +2230,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_evaluate_user_consents(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        consent_store,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2654,15 +2252,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:evaluateUserConsents",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+consentStore}:evaluateUserConsents", %{
+        "consentStore" => URI.encode(consent_store, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2679,10 +2271,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the consent store to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the consent store to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2705,9 +2294,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2717,10 +2303,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2741,16 +2324,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" =>
-            URI.encode(consent_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2765,10 +2341,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2792,9 +2365,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2804,10 +2374,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2829,15 +2396,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2852,9 +2413,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2880,8 +2439,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2891,9 +2448,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2917,14 +2472,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consentStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2941,10 +2491,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consentStore.name`. Resource name of the consent store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. Cannot be changed after creation.
-  *   `locations_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `consentStore.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name of the consent store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}`. Cannot be changed after creation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2969,9 +2516,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2981,10 +2525,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3007,16 +2548,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" =>
-            URI.encode(consent_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3031,10 +2565,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consentStore`. Required. Name of the consent store to retrieve User data mappings from.
-  *   `locations_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `consentStore`. See documentation of `projectsId`.
+  *   `consent_store` (*type:* `String.t`) - Required. Name of the consent store to retrieve User data mappings from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3058,9 +2589,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_query_accessible_data(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3070,10 +2598,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_query_accessible_data(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        consent_store,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3095,15 +2620,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:queryAccessibleData",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+consentStore}:queryAccessibleData", %{
+        "consentStore" => URI.encode(consent_store, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3118,10 +2637,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3145,9 +2661,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3157,10 +2670,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3182,15 +2692,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3205,10 +2709,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3232,9 +2733,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3244,10 +2742,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3269,15 +2764,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3294,10 +2783,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the consent store that this Attribute definition belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the consent store that this Attribute definition belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3322,9 +2808,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_attribute_definitions_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3334,10 +2817,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_attribute_definitions_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3360,15 +2840,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/attributeDefinitions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/attributeDefinitions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3385,11 +2859,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Attribute definition to delete. To preserve referential integrity, Attribute definitions referenced by a User data mapping or the latest revision of a Consent cannot be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `attribute_definitions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Attribute definition to delete. To preserve referential integrity, Attribute definitions referenced by a User data mapping or the latest revision of a Consent cannot be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3412,10 +2882,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_attribute_definitions_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3425,11 +2891,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_attribute_definitions_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        attribute_definitions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3450,17 +2912,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/attributeDefinitions/{attributeDefinitionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "attributeDefinitionsId" =>
-            URI.encode(attribute_definitions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3475,11 +2929,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Attribute definition to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `attribute_definitions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Attribute definition to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3502,10 +2952,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_attribute_definitions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3515,11 +2961,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_attribute_definitions_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        attribute_definitions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3540,17 +2982,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/attributeDefinitions/{attributeDefinitionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "attributeDefinitionsId" =>
-            URI.encode(attribute_definitions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3567,10 +3001,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store to retrieve Attribute definitions from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store to retrieve Attribute definitions from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3596,9 +3027,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_attribute_definitions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3608,10 +3036,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_attribute_definitions_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3635,15 +3060,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/attributeDefinitions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/attributeDefinitions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3660,11 +3079,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. Identifier. Resource name of the Attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`. Cannot be changed after creation.
-  *   `locations_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
-  *   `attribute_definitions_id` (*type:* `String.t`) - Part of `attributeDefinition.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the Attribute definition, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/attributeDefinitions/{attribute_definition_id}`. Cannot be changed after creation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3689,10 +3104,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_attribute_definitions_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3702,11 +3113,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_attribute_definitions_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        attribute_definitions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3729,17 +3136,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/attributeDefinitions/{attributeDefinitionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "attributeDefinitionsId" =>
-            URI.encode(attribute_definitions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3756,10 +3155,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the consent store this Consent artifact belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the consent store this Consent artifact belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3783,9 +3179,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consent_artifacts_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3795,10 +3188,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consent_artifacts_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3820,15 +3210,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consentArtifacts",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consentArtifacts", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3843,11 +3227,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent artifact to delete. To preserve referential integrity, Consent artifacts referenced by the latest revision of a Consent cannot be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_artifacts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent artifact to delete. To preserve referential integrity, Consent artifacts referenced by the latest revision of a Consent cannot be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3870,10 +3250,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consent_artifacts_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3883,11 +3259,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consent_artifacts_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consent_artifacts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3908,17 +3280,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consentArtifacts/{consentArtifactsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentArtifactsId" =>
-            URI.encode(consent_artifacts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3933,11 +3297,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent artifact to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_artifacts_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent artifact to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3960,10 +3320,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consent_artifacts_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3973,11 +3329,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consent_artifacts_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consent_artifacts_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3998,17 +3350,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consentArtifacts/{consentArtifactsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentArtifactsId" =>
-            URI.encode(consent_artifacts_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4023,10 +3367,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store to retrieve consent artifacts from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store to retrieve consent artifacts from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4052,9 +3393,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consent_artifacts_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4064,10 +3402,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consent_artifacts_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4091,15 +3426,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consentArtifacts",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consentArtifacts", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4116,11 +3445,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to activate, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to activate, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4144,10 +3469,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_activate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4157,11 +3478,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_activate(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4183,16 +3500,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}:activate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:activate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4207,10 +3517,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4234,9 +3541,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4246,10 +3550,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4271,15 +3572,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4294,11 +3589,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to delete, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to delete, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4321,10 +3612,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4334,11 +3621,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4359,16 +3642,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4383,11 +3659,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent revision to delete, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}@{revision_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is not specified in the name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent revision to delete, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}@{revision_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is not specified in the name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4410,10 +3682,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_delete_revision(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4423,11 +3691,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_delete_revision(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4448,16 +3712,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}:deleteRevision",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:deleteRevision", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4472,11 +3729,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to retrieve, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. In order to retrieve a previous revision of the Consent, also provide the revision ID: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}@{revision_id}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to retrieve, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. In order to retrieve a previous revision of the Consent, also provide the revision ID: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}@{revision_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4499,10 +3752,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4512,11 +3761,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4537,16 +3782,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4561,10 +3799,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store to retrieve Consents from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store to retrieve Consents from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4590,9 +3825,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4602,10 +3834,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4629,15 +3858,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/consents", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4654,11 +3877,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to retrieve revisions for.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to retrieve revisions for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4684,10 +3903,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_list_revisions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4697,11 +3912,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_list_revisions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4725,16 +3936,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}:listRevisions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:listRevisions", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4751,11 +3955,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `consent.name`. Identifier. Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. Cannot be changed after creation.
-  *   `locations_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `consent.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the Consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. Cannot be changed after creation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4780,10 +3980,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4793,11 +3989,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4820,16 +4012,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4844,11 +4029,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to reject, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to reject, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4872,10 +4053,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_reject(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4885,11 +4062,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_reject(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4911,16 +4084,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}:reject",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:reject", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4935,11 +4101,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Consent to revoke, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consents_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Consent to revoke, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consents/{consent_id}`. An INVALID_ARGUMENT error occurs if `revision_id` is specified in the name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4963,10 +4125,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_consents_revoke(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4976,11 +4134,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_consents_revoke(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        consents_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5002,16 +4156,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/consents/{consentsId}:revoke",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "consentsId" => URI.encode(consents_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:revoke", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5026,11 +4173,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the User data mapping to archive.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `user_data_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the User data mapping to archive.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5054,10 +4197,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_archive(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5067,11 +4206,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_archive(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        user_data_mappings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5093,16 +4228,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings/{userDataMappingsId}:archive",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "userDataMappingsId" => URI.encode(user_data_mappings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:archive", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5119,10 +4247,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5146,9 +4271,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5158,10 +4280,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5183,15 +4302,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/userDataMappings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5206,11 +4319,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the User data mapping to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `user_data_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the User data mapping to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5233,10 +4342,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5246,11 +4351,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        user_data_mappings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5271,17 +4372,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings/{userDataMappingsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "userDataMappingsId" =>
-            URI.encode(user_data_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5296,11 +4389,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the User data mapping to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `user_data_mappings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the User data mapping to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5323,10 +4412,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5336,11 +4421,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        user_data_mappings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5361,17 +4442,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings/{userDataMappingsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "userDataMappingsId" =>
-            URI.encode(user_data_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5386,10 +4459,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the consent store to retrieve User data mappings from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the consent store to retrieve User data mappings from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5415,9 +4485,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5427,10 +4494,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5454,15 +4518,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/userDataMappings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5479,11 +4537,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `userDataMapping.name`. Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `userDataMapping.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `userDataMapping.name`. See documentation of `projectsId`.
-  *   `consent_stores_id` (*type:* `String.t`) - Part of `userDataMapping.name`. See documentation of `projectsId`.
-  *   `user_data_mappings_id` (*type:* `String.t`) - Part of `userDataMapping.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5508,10 +4562,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_consent_stores_user_data_mappings_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5521,11 +4571,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_consent_stores_user_data_mappings_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        consent_stores_id,
-        user_data_mappings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5548,17 +4594,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/consentStores/{consentStoresId}/userDataMappings/{userDataMappingsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "consentStoresId" => URI.encode(consent_stores_id, &URI.char_unreserved?/1),
-          "userDataMappingsId" =>
-            URI.encode(user_data_mappings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5573,10 +4611,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5600,9 +4635,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_data_mapper_workspaces_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5612,10 +4644,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_data_mapper_workspaces_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        data_mapper_workspaces_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5637,16 +4666,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dataMapperWorkspacesId" =>
-            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5661,10 +4683,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5688,9 +4707,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_data_mapper_workspaces_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5700,10 +4716,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_data_mapper_workspaces_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        data_mapper_workspaces_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5725,16 +4738,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dataMapperWorkspacesId" =>
-            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5749,10 +4755,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `data_mapper_workspaces_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5776,9 +4779,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_data_mapper_workspaces_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5788,10 +4788,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_data_mapper_workspaces_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        data_mapper_workspaces_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5813,16 +4810,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dataMapperWorkspaces/{dataMapperWorkspacesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dataMapperWorkspacesId" =>
-            URI.encode(data_mapper_workspaces_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5839,9 +4829,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this DICOM store belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the dataset this DICOM store belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5866,8 +4854,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5877,9 +4863,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5902,14 +4886,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -5924,10 +4903,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Required. Source DICOM store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
+  *   `source_store` (*type:* `String.t`) - Required. Source DICOM store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5951,9 +4927,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_deidentify(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -5963,10 +4936,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_deidentify(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        source_store,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -5988,15 +4958,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:deidentify",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+sourceStore}:deidentify", %{
+        "sourceStore" => URI.encode(source_store, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6011,10 +4975,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the DICOM store to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6037,9 +4998,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6049,10 +5007,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6073,15 +5028,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6096,10 +5045,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The DICOM store resource name from which to export the data. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The DICOM store resource name from which to export the data. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6123,9 +5069,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_export(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6135,10 +5078,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_export(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6160,15 +5100,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:export",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:export", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6183,10 +5117,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the DICOM store to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6209,9 +5140,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6221,10 +5149,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6245,15 +5170,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6268,10 +5187,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the DICOM store to get metrics for.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the DICOM store to get metrics for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6294,9 +5210,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_get_dicom_store_metrics(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6306,10 +5219,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get_dicom_store_metrics(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6330,15 +5240,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:getDICOMStoreMetrics",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:getDICOMStoreMetrics", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6353,10 +5257,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6380,9 +5281,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6392,10 +5290,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6417,15 +5312,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6440,10 +5329,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the DICOM store resource into which the data is imported. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the DICOM store resource into which the data is imported. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6467,9 +5353,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6479,10 +5362,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_import(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6504,15 +5384,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:import", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6527,9 +5401,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6555,8 +5427,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6566,9 +5436,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6592,14 +5460,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6616,10 +5479,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `dicomStore.name`. Identifier. Resource name of the DICOM store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `dicomStore.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the DICOM store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6644,9 +5504,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6656,10 +5513,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6682,15 +5536,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6705,10 +5553,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6732,8 +5578,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6743,10 +5587,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_instances(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6767,15 +5609,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/instances",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6790,10 +5627,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForSeries DICOMweb request. For example, `series` or `studies/{study_uid}/series`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6817,8 +5652,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6828,10 +5661,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_series(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6852,15 +5683,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/series",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6875,10 +5701,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForStudies DICOMweb request. For example, `studies`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6902,8 +5726,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6913,10 +5735,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_search_for_studies(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -6937,15 +5757,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -6960,10 +5775,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6987,9 +5799,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_set_blob_storage_settings(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -6999,10 +5808,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_set_blob_storage_settings(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7024,15 +5830,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:setBlobStorageSettings",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setBlobStorageSettings", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7047,10 +5847,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7074,9 +5871,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7086,10 +5880,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7111,15 +5902,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7134,10 +5919,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the StoreInstances DICOMweb request. For example, `studies/[{study_uid}]`. Note that the `study_uid` is optional.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7162,8 +5945,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7173,10 +5954,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_store_instances(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7198,15 +5977,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7221,10 +5995,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7248,9 +6019,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7260,10 +6028,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7285,15 +6050,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7310,11 +6069,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `study`. Required. The study resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `study`. See documentation of `projectsId`.
+  *   `study` (*type:* `String.t`) - Required. The study resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7337,10 +6092,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_get_study_metrics(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7350,11 +6101,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_get_study_metrics(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        study,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7375,16 +6122,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}:getStudyMetrics",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+study}:getStudyMetrics", %{
+        "study" => URI.encode(study, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7399,11 +6139,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - Required. The path of the resource to update the blob storage settings in the format of `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}`, `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/`, or `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`. If `filter_config` is specified, set the value of `resource` to the resource name of a DICOM store in the format `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7427,10 +6163,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_set_blob_storage_settings(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7440,11 +6172,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_set_blob_storage_settings(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7466,16 +6194,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}:setBlobStorageSettings",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setBlobStorageSettings", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7490,12 +6211,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `series`. Required. The series resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}/series/{series_uid}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
-  *   `series_id` (*type:* `String.t`) - Part of `series`. See documentation of `projectsId`.
+  *   `series` (*type:* `String.t`) - Required. The series resource path. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}/dicomWeb/studies/{study_uid}/series/{series_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7518,11 +6234,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_get_series_metrics(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7532,12 +6243,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_get_series_metrics(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
+        series,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7558,17 +6264,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}:getSeriesMetrics",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+series}:getSeriesMetrics", %{
+        "series" => URI.encode(series, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7583,13 +6281,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. Required. The path of the resource for which the storage info is requested (for exaxmple for a DICOM Instance: `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreId}/dicomWeb/studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`)
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `series_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - Required. The path of the instance to return storage info for, in the form: `projects/{projectID}/locations/{locationID}/datasets/{datasetID}/dicomStores/{dicomStoreID}/dicomWeb/studies/{studyUID}/series/{seriesUID}/instances/{instanceUID}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7612,12 +6304,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_instances_get_storage_info(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7627,13 +6313,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_dicom_web_studies_series_instances_get_storage_info(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7654,18 +6334,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}:getStorageInfo",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getStorageInfo", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7680,11 +6351,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. 
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteStudy request. For example, `studies/{study_uid}`.
+  *   `parent` (*type:* `String.t`) - 
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the DeleteStudy request. For example, `studies/{study_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7708,9 +6376,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7720,11 +6385,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7745,16 +6407,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7769,11 +6425,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveStudyMetadata DICOMweb request. For example, `studies/{study_uid}/metadata`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveStudyMetadata DICOMweb request. For example, `studies/{study_uid}/metadata`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7797,9 +6450,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7809,11 +6459,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_metadata(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7834,16 +6481,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/metadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7858,11 +6499,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveStudy DICOMweb request. For example, `studies/{study_uid}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveStudy DICOMweb request. For example, `studies/{study_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7886,9 +6524,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7898,11 +6533,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_retrieve_study(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -7923,16 +6555,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -7947,11 +6573,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7975,9 +6598,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -7987,11 +6607,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_instances(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8012,16 +6629,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/instances",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8036,11 +6647,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForSeries DICOMweb request. For example, `series` or `studies/{study_uid}/series`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForSeries DICOMweb request. For example, `series` or `studies/{study_uid}/series`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8064,9 +6672,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8076,11 +6681,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_search_for_series(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8101,16 +6703,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8125,11 +6721,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the StoreInstances DICOMweb request. For example, `studies/[{study_uid}]`. Note that the `study_uid` is optional.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the StoreInstances DICOMweb request. For example, `studies/[{study_uid}]`. Note that the `study_uid` is optional.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8154,9 +6747,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8166,11 +6756,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_store_instances(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8192,16 +6779,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8216,12 +6797,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteSeries request. For example, `studies/{study_uid}/series/{series_uid}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the DeleteSeries request. For example, `studies/{study_uid}/series/{series_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8245,10 +6822,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8258,12 +6831,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8284,17 +6853,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8309,12 +6871,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveSeriesMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/metadata`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveSeriesMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/metadata`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8338,10 +6896,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8351,12 +6905,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_metadata(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8377,17 +6927,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/metadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8402,12 +6945,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveSeries DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveSeries DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8431,10 +6970,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8444,12 +6979,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_retrieve_series(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8470,17 +7001,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8495,12 +7019,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the SearchForInstancesRequest DICOMweb request. For example, `instances`, `series/{series_uid}/instances`, or `studies/{study_uid}/instances`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8524,10 +7044,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8537,12 +7053,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_search_for_instances(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8563,17 +7075,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8588,13 +7093,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the DeleteInstance request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the DeleteInstance request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8618,11 +7118,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8632,13 +7127,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8659,18 +7149,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8685,13 +7167,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8715,11 +7192,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8729,13 +7201,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_instance(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8756,18 +7223,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8782,13 +7241,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveInstanceMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/metadata`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveInstanceMetadata DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/metadata`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8812,11 +7266,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8826,13 +7275,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_metadata(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8853,18 +7297,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}/metadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8879,13 +7315,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveRenderedInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/rendered`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveRenderedInstance DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/rendered`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8909,11 +7340,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -8923,13 +7349,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_retrieve_rendered(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -8950,18 +7371,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}/rendered",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -8976,15 +7389,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path for the `RetrieveBulkdata` DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/bukdata/{bulkdata_uri}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `bulkdata_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `bulkdata_id1` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path for the `RetrieveBulkdata` DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/bukdata/{bulkdata_uri}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9008,13 +7414,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9024,15 +7423,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_bulkdata_retrieve_bulkdata(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
-        bulkdata_id,
-        bulkdata_id1,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9053,20 +7445,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}/bulkdata/{bulkdataId}/{bulkdataId1}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "bulkdataId" => URI.encode(bulkdata_id, &URI.char_unreserved?/1),
-          "bulkdataId1" => URI.encode(bulkdata_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9081,14 +7463,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `frames_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9112,12 +7488,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9127,14 +7497,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_frames(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
-        frames_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9155,19 +7519,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}/frames/{framesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "framesId" => URI.encode(frames_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9182,14 +7537,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `dicom_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `studies_id` (*type:* `String.t`) - Part of `dicomWebPath`. Required. The path of the RetrieveRenderedFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}/rendered`.
-  *   `series_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `instances_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
-  *   `frames_id` (*type:* `String.t`) - Part of `dicomWebPath`. See documentation of `studiesId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the DICOM store that is being accessed. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/dicomStores/{dicom_store_id}`.
+  *   `dicom_web_path` (*type:* `String.t`) - Required. The path of the RetrieveRenderedFrames DICOMweb request. For example, `studies/{study_uid}/series/{series_uid}/instances/{instance_uid}/frames/{frame_list}/rendered`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9213,12 +7562,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9228,14 +7571,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_dicom_stores_studies_series_instances_frames_retrieve_rendered(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        dicom_stores_id,
-        studies_id,
-        series_id,
-        instances_id,
-        frames_id,
+        parent,
+        dicom_web_path,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9256,19 +7593,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/dicomStores/{dicomStoresId}/dicomWeb/studies/{studiesId}/series/{seriesId}/instances/{instancesId}/frames/{framesId}/rendered",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "dicomStoresId" => URI.encode(dicom_stores_id, &URI.char_unreserved?/1),
-          "studiesId" => URI.encode(studies_id, &URI.char_unreserved?/1),
-          "seriesId" => URI.encode(series_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "framesId" => URI.encode(frames_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/dicomWeb/{+dicomWebPath}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "dicomWebPath" => URI.encode(dicom_web_path, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9283,10 +7611,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9310,9 +7635,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_apply_admin_consents(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9322,10 +7644,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_apply_admin_consents(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9347,15 +7666,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:applyAdminConsents",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:applyAdminConsents", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9370,10 +7683,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9397,9 +7707,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_apply_consents(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9409,10 +7716,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_apply_consents(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9434,15 +7738,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:applyConsents",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:applyConsents", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9457,10 +7755,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to configure, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to configure, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9484,9 +7779,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_configure_search(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9496,10 +7788,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_configure_search(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9521,15 +7810,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:configureSearch",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:configureSearch", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9544,9 +7827,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this FHIR store belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the dataset this FHIR store belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9571,8 +7852,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9582,9 +7861,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9607,14 +7884,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhirStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9629,10 +7901,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `sourceStore`. Required. Source FHIR store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `sourceStore`. See documentation of `projectsId`.
+  *   `source_store` (*type:* `String.t`) - Required. Source FHIR store resource name. For example, `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9656,9 +7925,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_deidentify(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9668,10 +7934,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_deidentify(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        source_store,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9693,15 +7956,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:deidentify",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+sourceStore}:deidentify", %{
+        "sourceStore" => URI.encode(source_store, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9716,10 +7973,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the FHIR store to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9742,9 +7996,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9754,10 +8005,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9778,15 +8026,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9801,10 +8043,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to enforce, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9828,9 +8067,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_explain_data_access(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9840,10 +8076,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_explain_data_access(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9865,15 +8098,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:explainDataAccess",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:explainDataAccess", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9890,10 +8117,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to export resource from, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to export resource from, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -9917,9 +8141,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_export(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -9929,10 +8150,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_export(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -9954,15 +8172,81 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:export",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:export", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Operation{}])
+  end
+
+  @doc """
+  Export resources including historical versions from the FHIR store to the specified destination. The exported resource, along with previous versions, will be exported in one or more FHIR history bundles. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ExportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to export resource from, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ExportResourcesHistoryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_export_history(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_export_history(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta1/{+name}:exportHistory", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -9977,10 +8261,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the FHIR store to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10003,9 +8284,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10015,10 +8293,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10039,15 +8314,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10062,10 +8331,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the FHIR store to get metrics for.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the FHIR store to get metrics for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10088,9 +8354,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_get_fhir_store_metrics(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10100,10 +8363,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get_fhir_store_metrics(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10124,15 +8384,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:getFHIRStoreMetrics",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:getFHIRStoreMetrics", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10147,10 +8401,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10174,9 +8425,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10186,10 +8434,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10211,15 +8456,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10234,10 +8473,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to import FHIR resources to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to import FHIR resources to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10261,9 +8497,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10273,10 +8506,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_import(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10298,15 +8528,81 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:import", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.HealthCare.V1beta1.Model.Operation{}])
+  end
+
+  @doc """
+  Import resource historical versions from Cloud Storage source to destination fhir store. The exported resource, along with previous versions, will be exported in one or more FHIR history bundles. This method returns an Operation that can be used to track the status of the export by calling GetOperation. Immediate fatal errors appear in the error field, errors are also logged to Cloud Logging (see [Viewing error logs in Cloud Logging](https://cloud.google.com/healthcare/docs/how-tos/logging)). Otherwise, when the operation finishes, a detailed response of type ImportResourcesResponse is returned in the response field. The metadata field type for this operation is OperationMetadata.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to import FHIR resources to, in the format of `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.HealthCare.V1beta1.Model.ImportResourcesHistoryRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.HealthCare.V1beta1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec healthcare_projects_locations_datasets_fhir_stores_import_history(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.HealthCare.V1beta1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def healthcare_projects_locations_datasets_fhir_stores_import_history(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1beta1/{+name}:importHistory", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10321,9 +8617,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10349,8 +8643,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10360,9 +8652,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10386,14 +8676,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhirStores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10410,10 +8695,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `fhirStore.name`. Output only. Identifier. Resource name of the FHIR store, of the form `projects/{project_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `fhirStore.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Resource name of the FHIR store, of the form `projects/{project_id}/locations/{location}/datasets/{dataset_id}/fhirStores/{fhir_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10438,9 +8720,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10450,10 +8729,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10476,15 +8752,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10499,10 +8769,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the FHIR store to rollback, in the format of "projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /fhirStores/{fhir_store_id}".
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the FHIR store to rollback, in the format of "projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /fhirStores/{fhir_store_id}".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10526,9 +8793,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_rollback(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10538,10 +8802,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_rollback(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10563,15 +8824,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:rollback",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:rollback", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10586,10 +8841,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10613,9 +8865,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10625,10 +8874,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10650,15 +8896,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10673,10 +8913,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10700,9 +8937,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10712,10 +8946,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10737,15 +8968,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10762,10 +8987,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name for the FHIR store containing the concept map(s) to use for the translation.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name for the FHIR store containing the concept map(s) to use for the translation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10794,9 +9016,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_search_translate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10806,10 +9025,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_search_translate(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10836,15 +9052,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/ConceptMap/$translate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/ConceptMap/$translate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10859,11 +9069,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The URL for the concept map to use for the translation.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `concept_map_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The URL for the concept map to use for the translation.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10889,10 +9095,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_translate(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10902,11 +9104,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__concept_map_translate(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        concept_map_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -10930,16 +9128,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/ConceptMap/{ConceptMapId}/$translate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "ConceptMapId" => URI.encode(concept_map_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/$translate", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -10954,11 +9145,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the consent resource to find enforcement status, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Consent/{consent_id}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `consent_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the consent resource to find enforcement status, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Consent/{consent_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10981,10 +9168,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__consent_enforcement_status(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -10994,11 +9177,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__consent_enforcement_status(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        consent_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11019,16 +9198,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/Consent/{ConsentId}/$consent-enforcement-status",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "ConsentId" => URI.encode(consent_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/$consent-enforcement-status", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11043,10 +9215,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store to retrieve resources from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the FHIR store to retrieve resources from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11069,9 +9238,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11081,10 +9247,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__observation_lastn(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11105,15 +9268,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/Observation/$lastn",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/Observation/$lastn", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11128,11 +9285,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the patient to find enforcement statuses, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Patient/{patient_id}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `patient_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the patient to find enforcement statuses, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/fhirStores/{fhir_store_id}/fhir/Patient/{patient_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11157,10 +9310,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient_consent_enforcement_status(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11170,11 +9319,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__patient_consent_enforcement_status(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        patient_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11197,16 +9342,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/Patient/{PatientId}/$consent-enforcement-status",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "PatientId" => URI.encode(patient_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/$consent-enforcement-status", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11221,11 +9359,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the `Patient` resource for which the information is required.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `patient_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the `Patient` resource for which the information is required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11254,10 +9388,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11267,11 +9397,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__patient_everything(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        patient_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11298,16 +9424,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/Patient/{PatientId}/$everything",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "PatientId" => URI.encode(patient_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/$everything", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11322,10 +9441,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store that holds the target resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store that holds the target resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11353,9 +9469,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource_incoming_references(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11365,10 +9478,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_incoming_references(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11394,15 +9504,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/$references",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/$references", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11417,12 +9521,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to purge.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to purge.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11445,11 +9544,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11459,12 +9553,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_purge(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11485,17 +9574,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}/$purge",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/$purge", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11510,11 +9591,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store that holds the profiles being used for validation.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type of the resource being validated. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), or [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store that holds the profiles being used for validation.
+  *   `type` (*type:* `String.t`) - Required. The FHIR resource type of the resource being validated. For a complete list, see the FHIR Resource Index ([DSTU2](http://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](http://hl7.org/implement/standards/fhir/STU3/resourcelist.html), or [R4](http://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11540,9 +9618,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11552,11 +9627,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir__resource_validate(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
+        parent,
+        type,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11579,16 +9651,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/$validate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{+type}/$validate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "type" => URI.encode(type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11603,10 +9669,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the FHIR store to retrieve the capabilities for.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the FHIR store to retrieve the capabilities for.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11629,9 +9692,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_capabilities(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11641,10 +9701,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_capabilities(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11665,15 +9722,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/metadata",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/fhir/metadata", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11688,11 +9739,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to delete, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store this resource belongs to.
+  *   `type` (*type:* `String.t`) - Required. The FHIR resource type to delete, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11716,9 +9764,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11728,11 +9773,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
+        parent,
+        type,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11753,16 +9795,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{+type}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "type" => URI.encode(type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11777,11 +9813,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store this resource belongs to.
+  *   `type` (*type:* `String.t`) - Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11806,9 +9839,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11818,11 +9848,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
+        parent,
+        type,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11844,16 +9871,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{+type}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "type" => URI.encode(type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11868,11 +9889,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store this resource belongs to.
+  *   `type` (*type:* `String.t`) - Required. The FHIR resource type to update, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11897,9 +9915,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -11909,11 +9924,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_conditional_update(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
+        parent,
+        type,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -11935,16 +9947,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{+type}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "type" => URI.encode(type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -11959,11 +9965,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the FHIR store this resource belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `type`. Required. The FHIR resource type to create, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
+  *   `parent` (*type:* `String.t`) - Required. The name of the FHIR store this resource belongs to.
+  *   `type` (*type:* `String.t`) - Required. The FHIR resource type to create, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)). Must match the resource type in the provided content.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11988,9 +9991,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12000,11 +10000,8 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
+        parent,
+        type,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12026,16 +10023,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{+type}", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "type" => URI.encode(type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12050,12 +10041,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12078,11 +10064,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12092,12 +10073,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12118,17 +10094,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12143,10 +10111,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store in which this bundle will be executed.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the FHIR store in which this bundle will be executed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12170,9 +10135,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_execute_bundle(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12182,10 +10144,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_execute_bundle(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12207,15 +10166,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12230,12 +10183,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12262,11 +10210,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_history(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12276,12 +10219,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_history(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12306,17 +10244,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}/_history",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/_history", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12331,12 +10261,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to update.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12360,11 +10285,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12374,12 +10294,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12401,17 +10316,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12426,12 +10333,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12454,11 +10356,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_read(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12468,12 +10365,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_read(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12494,17 +10386,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12519,10 +10403,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store to retrieve resources from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the FHIR store to retrieve resources from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12546,9 +10427,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_search(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12558,10 +10436,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_search(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12583,15 +10458,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/_search",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/_search", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12606,10 +10475,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the FHIR store to retrieve resources from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the FHIR store to retrieve resources from.
   *   `resource_type` (*type:* `String.t`) - Required. The FHIR resource type to search, such as Patient or Observation. For a complete list, see the FHIR Resource Index ([DSTU2](https://hl7.org/implement/standards/fhir/DSTU2/resourcelist.html), [STU3](https://hl7.org/implement/standards/fhir/STU3/resourcelist.html), [R4](https://hl7.org/implement/standards/fhir/R4/resourcelist.html)).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -12635,9 +10501,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           Tesla.Env.client(),
           String.t(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12647,10 +10510,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_search_type(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
+        parent,
         resource_type,
         optional_params \\ [],
         opts \\ []
@@ -12673,16 +10533,10 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{resourceType}/_search",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "resourceType" => URI.encode(resource_type, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/fhir/{resourceType}/_search", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1),
+        "resourceType" => URI.encode(resource_type, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12697,12 +10551,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to update.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12726,11 +10575,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12740,12 +10584,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_update(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12767,17 +10606,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12792,13 +10623,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource version to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `fhir_id1` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `_history_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource version to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12821,12 +10646,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_fhir_stores_fhir_vread(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12836,13 +10655,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_fhir_stores_fhir_vread(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        fhir_stores_id,
-        fhir_id,
-        fhir_id1,
-        _history_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12863,18 +10676,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/fhirStores/{fhirStoresId}/fhir/{fhirId}/{fhirId1}/_history/{_historyId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "fhirStoresId" => URI.encode(fhir_stores_id, &URI.char_unreserved?/1),
-          "fhirId" => URI.encode(fhir_id, &URI.char_unreserved?/1),
-          "fhirId1" => URI.encode(fhir_id1, &URI.char_unreserved?/1),
-          "_historyId" => URI.encode(_history_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12889,9 +10693,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the dataset this HL7v2 store belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the dataset this HL7v2 store belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12916,8 +10718,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -12927,9 +10727,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -12952,14 +10750,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/hl7V2Stores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -12974,10 +10767,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the HL7v2 store to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13000,9 +10790,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13012,10 +10799,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13036,15 +10820,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13059,10 +10837,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the source HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the source HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13086,9 +10861,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_export(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13098,10 +10870,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_export(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13123,15 +10892,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:export",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:export", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13146,10 +10909,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the HL7v2 store to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13172,9 +10932,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13184,10 +10941,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13208,15 +10962,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13231,10 +10979,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 store to get metrics for, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the HL7v2 store to get metrics for, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13257,9 +11002,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_get_hl7v2_store_metrics(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13269,10 +11011,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get_hl7v2_store_metrics(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13293,15 +11032,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:getHL7v2StoreMetrics",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:getHL7v2StoreMetrics", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13316,10 +11049,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13343,9 +11073,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13355,10 +11082,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13380,15 +11104,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13403,10 +11121,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the target HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the target HL7v2 store, in the format `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13430,9 +11145,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13442,10 +11154,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_import(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13467,15 +11176,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:import", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13490,9 +11193,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the dataset.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the dataset.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13518,8 +11219,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13529,9 +11228,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13555,14 +11252,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/hl7V2Stores", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13579,10 +11271,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. Identifier. Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `hl7V2Store.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name of the HL7v2 store, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7v2_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13607,9 +11296,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13619,10 +11305,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13645,15 +11328,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13668,10 +11345,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13695,9 +11369,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13707,10 +11378,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13732,15 +11400,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13755,10 +11417,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13782,9 +11441,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13794,10 +11450,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13819,15 +11472,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13844,10 +11491,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the HL7v2 store to retrieve messages from, in the format: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the HL7v2 store to retrieve messages from, in the format: `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7v2Stores/{hl7v2_store_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13872,9 +11516,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_batch_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13884,10 +11525,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_batch_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13910,15 +11548,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages:batchGet",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/messages:batchGet", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -13935,10 +11567,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the HL7v2 store this message belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the HL7v2 store this message belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13962,9 +11591,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -13974,10 +11600,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_create(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -13999,15 +11622,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/messages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14022,11 +11639,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 message to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `messages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the HL7v2 message to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14049,10 +11662,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14062,11 +11671,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_delete(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
-        messages_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14087,16 +11692,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages/{messagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14111,11 +11709,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the HL7v2 message to retrieve.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `messages_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the HL7v2 message to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14139,10 +11733,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14152,11 +11742,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
-        messages_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14178,16 +11764,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages/{messagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14202,10 +11781,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the HL7v2 store this message belongs to.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the HL7v2 store this message belongs to.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14229,9 +11805,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_ingest(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14241,10 +11814,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_ingest(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14266,15 +11836,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages:ingest",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/messages:ingest", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14291,10 +11855,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the HL7v2 store to retrieve messages from.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the HL7v2 store to retrieve messages from.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14322,9 +11883,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14334,10 +11892,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14363,15 +11918,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/messages", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14388,11 +11937,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `message.name`. Output only. Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
-  *   `locations_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
-  *   `hl7_v2_stores_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
-  *   `messages_id` (*type:* `String.t`) - Part of `message.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. Resource name of the Message, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/hl7V2Stores/{hl7_v2_store_id}/messages/{message_id}`. Assigned by the server.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14417,10 +11962,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_hl7_v2_stores_messages_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14430,11 +11971,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_hl7_v2_stores_messages_patch(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        hl7_v2_stores_id,
-        messages_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14457,16 +11994,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/hl7V2Stores/{hl7V2StoresId}/messages/{messagesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "hl7V2StoresId" => URI.encode(hl7_v2_stores_id, &URI.char_unreserved?/1),
-          "messagesId" => URI.encode(messages_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14481,10 +12011,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14508,9 +12035,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14520,10 +12044,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_operations_cancel(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14545,15 +12066,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/operations/{operationsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14568,10 +12083,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14594,9 +12106,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14606,10 +12115,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14630,15 +12136,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14653,9 +12153,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `datasets_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14681,8 +12179,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_datasets_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14692,9 +12188,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_datasets_operations_list(
         connection,
-        projects_id,
-        locations_id,
-        datasets_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14718,14 +12212,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/datasets/{datasetsId}/operations",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "datasetsId" => URI.encode(datasets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -14742,8 +12231,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.HealthCare.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `nlpService`. The resource name of the service of the form: "projects/{project_id}/locations/{location_id}/services/nlp".
-  *   `locations_id` (*type:* `String.t`) - Part of `nlpService`. See documentation of `projectsId`.
+  *   `nlp_service` (*type:* `String.t`) - The resource name of the service of the form: "projects/{project_id}/locations/{location_id}/services/nlp".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14767,7 +12255,6 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
   @spec healthcare_projects_locations_services_nlp_analyze_entities(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -14777,8 +12264,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
           | {:error, any()}
   def healthcare_projects_locations_services_nlp_analyze_entities(
         connection,
-        projects_id,
-        locations_id,
+        nlp_service,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -14800,13 +12286,9 @@ defmodule GoogleApi.HealthCare.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/services/nlp:analyzeEntities",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+nlpService}:analyzeEntities", %{
+        "nlpService" => URI.encode(nlp_service, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

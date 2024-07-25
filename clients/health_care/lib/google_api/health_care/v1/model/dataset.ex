@@ -21,17 +21,20 @@ defmodule GoogleApi.HealthCare.V1.Model.Dataset do
 
   ## Attributes
 
+  *   `encryptionSpec` (*type:* `GoogleApi.HealthCare.V1.Model.EncryptionSpec.t`, *default:* `nil`) - Optional. Customer-managed encryption key spec for a Dataset. If set, this Dataset and all of its sub-resources will be secured by this key. If empty, the Dataset is secured by the default Google encryption key.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
-  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified.
+  *   `timeZone` (*type:* `String.t`, *default:* `nil`) - Optional. The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :encryptionSpec => GoogleApi.HealthCare.V1.Model.EncryptionSpec.t() | nil,
           :name => String.t() | nil,
           :timeZone => String.t() | nil
         }
 
+  field(:encryptionSpec, as: GoogleApi.HealthCare.V1.Model.EncryptionSpec)
   field(:name)
   field(:timeZone)
 end
