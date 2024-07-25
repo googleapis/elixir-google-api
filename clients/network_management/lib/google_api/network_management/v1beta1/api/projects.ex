@@ -542,12 +542,12 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Api.Projects do
   end
 
   @doc """
-  Updates the configuration of an existing `ConnectivityTest`. After you update a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes. The Reachability state in the test resource is updated with the new result. If the endpoint specifications in `ConnectivityTest` are invalid (for example, they contain non-existent resources in the network, or the user does not have read permissions to the network configurations of listed projects), then the reachability result returns a value of UNKNOWN. If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for for more details.
+  Updates the configuration of an existing `ConnectivityTest`. After you update a test, the reachability analysis is performed as part of the long running operation, which completes when the analysis completes. The Reachability state in the test resource is updated with the new result. If the endpoint specifications in `ConnectivityTest` are invalid (for example, they contain non-existent resources in the network, or the user does not have read permissions to the network configurations of listed projects), then the reachability result returns a value of UNKNOWN. If the endpoint specifications in `ConnectivityTest` are incomplete, the reachability result returns a value of `AMBIGUOUS`. See the documentation in `ConnectivityTest` for more details.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test}`
+  *   `name` (*type:* `String.t`) - Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

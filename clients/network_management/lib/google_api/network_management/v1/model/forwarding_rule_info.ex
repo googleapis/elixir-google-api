@@ -21,12 +21,16 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo do
 
   ## Attributes
 
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Compute Engine forwarding rule.
-  *   `matchedPortRange` (*type:* `String.t`, *default:* `nil`) - Port range defined in the forwarding rule that matches the test.
-  *   `matchedProtocol` (*type:* `String.t`, *default:* `nil`) - Protocol defined in the forwarding rule that matches the test.
-  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - Network URI. Only valid for Internal Load Balancer.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of the forwarding rule.
+  *   `loadBalancerName` (*type:* `String.t`, *default:* `nil`) - Name of the load balancer the forwarding rule belongs to. Empty for forwarding rules not related to load balancers (like PSC forwarding rules).
+  *   `matchedPortRange` (*type:* `String.t`, *default:* `nil`) - Port range defined in the forwarding rule that matches the packet.
+  *   `matchedProtocol` (*type:* `String.t`, *default:* `nil`) - Protocol defined in the forwarding rule that matches the packet.
+  *   `networkUri` (*type:* `String.t`, *default:* `nil`) - Network URI.
+  *   `pscGoogleApiTarget` (*type:* `String.t`, *default:* `nil`) - PSC Google API target this forwarding rule targets (if applicable).
+  *   `pscServiceAttachmentUri` (*type:* `String.t`, *default:* `nil`) - URI of the PSC service attachment this forwarding rule targets (if applicable).
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Region of the forwarding rule. Set only for regional forwarding rules.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Target type of the forwarding rule.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine forwarding rule.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of the forwarding rule.
   *   `vip` (*type:* `String.t`, *default:* `nil`) - VIP of the forwarding rule.
   """
 
@@ -34,18 +38,26 @@ defmodule GoogleApi.NetworkManagement.V1.Model.ForwardingRuleInfo do
 
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
+          :loadBalancerName => String.t() | nil,
           :matchedPortRange => String.t() | nil,
           :matchedProtocol => String.t() | nil,
           :networkUri => String.t() | nil,
+          :pscGoogleApiTarget => String.t() | nil,
+          :pscServiceAttachmentUri => String.t() | nil,
+          :region => String.t() | nil,
           :target => String.t() | nil,
           :uri => String.t() | nil,
           :vip => String.t() | nil
         }
 
   field(:displayName)
+  field(:loadBalancerName)
   field(:matchedPortRange)
   field(:matchedProtocol)
   field(:networkUri)
+  field(:pscGoogleApiTarget)
+  field(:pscServiceAttachmentUri)
+  field(:region)
   field(:target)
   field(:uri)
   field(:vip)
