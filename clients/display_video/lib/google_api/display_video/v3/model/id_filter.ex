@@ -23,9 +23,11 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IdFilter do
 
   *   `adGroupAdIds` (*type:* `list(String.t)`, *default:* `nil`) - YouTube Ads to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   *   `adGroupIds` (*type:* `list(String.t)`, *default:* `nil`) - YouTube Ad Groups to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `adGroupQaIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. YouTube Ad Groups, by ID, to download in QA format. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   *   `campaignIds` (*type:* `list(String.t)`, *default:* `nil`) - Campaigns to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   *   `insertionOrderIds` (*type:* `list(String.t)`, *default:* `nil`) - Insertion Orders to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   *   `lineItemIds` (*type:* `list(String.t)`, *default:* `nil`) - Line Items to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
+  *   `lineItemQaIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Line Items, by ID, to download in QA format. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   *   `mediaProductIds` (*type:* `list(String.t)`, *default:* `nil`) - Media Products to download by ID. All IDs must belong to the same Advertiser or Partner specified in CreateSdfDownloadTaskRequest.
   """
 
@@ -34,17 +36,21 @@ defmodule GoogleApi.DisplayVideo.V3.Model.IdFilter do
   @type t :: %__MODULE__{
           :adGroupAdIds => list(String.t()) | nil,
           :adGroupIds => list(String.t()) | nil,
+          :adGroupQaIds => list(String.t()) | nil,
           :campaignIds => list(String.t()) | nil,
           :insertionOrderIds => list(String.t()) | nil,
           :lineItemIds => list(String.t()) | nil,
+          :lineItemQaIds => list(String.t()) | nil,
           :mediaProductIds => list(String.t()) | nil
         }
 
   field(:adGroupAdIds, type: :list)
   field(:adGroupIds, type: :list)
+  field(:adGroupQaIds, type: :list)
   field(:campaignIds, type: :list)
   field(:insertionOrderIds, type: :list)
   field(:lineItemIds, type: :list)
+  field(:lineItemQaIds, type: :list)
   field(:mediaProductIds, type: :list)
 end
 

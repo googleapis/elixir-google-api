@@ -21,6 +21,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Kpi do
 
   ## Attributes
 
+  *   `kpiAlgorithmId` (*type:* `String.t`, *default:* `nil`) - Optional. Custom Bidding Algorithm ID associated with KPI_CUSTOM_IMPRESSION_VALUE_OVER_COST. This field is ignored if the proper KPI is not selected.
   *   `kpiAmountMicros` (*type:* `String.t`, *default:* `nil`) - The goal amount, in micros of the advertiser's currency. Applicable when kpi_type is one of: * `KPI_TYPE_CPM` * `KPI_TYPE_CPC` * `KPI_TYPE_CPA` * `KPI_TYPE_CPIAVC` * `KPI_TYPE_VCPM` For example: 1500000 represents 1.5 standard units of the currency.
   *   `kpiPercentageMicros` (*type:* `String.t`, *default:* `nil`) - The decimal representation of the goal percentage in micros. Applicable when kpi_type is one of: * `KPI_TYPE_CTR` * `KPI_TYPE_VIEWABILITY` * `KPI_TYPE_CLICK_CVR` * `KPI_TYPE_IMPRESSION_CVR` * `KPI_TYPE_VTR` * `KPI_TYPE_AUDIO_COMPLETION_RATE` * `KPI_TYPE_VIDEO_COMPLETION_RATE` For example: 70000 represents 7% (decimal 0.07).
   *   `kpiString` (*type:* `String.t`, *default:* `nil`) - A KPI string, which can be empty. Must be UTF-8 encoded with a length of no more than 100 characters. Applicable when kpi_type is `KPI_TYPE_OTHER`.
@@ -30,12 +31,14 @@ defmodule GoogleApi.DisplayVideo.V3.Model.Kpi do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :kpiAlgorithmId => String.t() | nil,
           :kpiAmountMicros => String.t() | nil,
           :kpiPercentageMicros => String.t() | nil,
           :kpiString => String.t() | nil,
           :kpiType => String.t() | nil
         }
 
+  field(:kpiAlgorithmId)
   field(:kpiAmountMicros)
   field(:kpiPercentageMicros)
   field(:kpiString)
