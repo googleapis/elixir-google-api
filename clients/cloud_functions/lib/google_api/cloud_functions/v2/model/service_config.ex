@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
   *   `allTrafficOnLatestRevision` (*type:* `boolean()`, *default:* `nil`) - Whether 100% of traffic is routed to the latest revision. On CreateFunction and UpdateFunction, when set to true, the revision being deployed will serve 100% of traffic, ignoring any traffic split settings, if any. On GetFunction, true will be returned if the latest revision is serving 100% of traffic.
   *   `availableCpu` (*type:* `String.t`, *default:* `nil`) - The number of CPUs used in a single container instance. Default value is calculated from available memory. Supports the same values as Cloud Run, see https://cloud.google.com/run/docs/reference/rest/v1/Container#resourcerequirements Example: "1" indicates 1 vCPU
   *   `availableMemory` (*type:* `String.t`, *default:* `nil`) - The amount of memory available for a function. Defaults to 256M. Supported units are k, M, G, Mi, Gi. If no unit is supplied the value is interpreted as bytes. See https://github.com/kubernetes/kubernetes/blob/master/staging/src/k8s.io/apimachinery/pkg/api/resource/quantity.go a full description.
+  *   `binaryAuthorizationPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. The binary authorization policy to be checked when deploying the Cloud Run service.
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - Environment variables that shall be available during function execution.
   *   `ingressSettings` (*type:* `String.t`, *default:* `nil`) - The ingress settings for the function, controlling what traffic can reach it.
   *   `maxInstanceCount` (*type:* `integer()`, *default:* `nil`) - The limit on the maximum number of function instances that may coexist at a given time. In some cases, such as rapid traffic surges, Cloud Functions may, for a short period of time, create more instances than the specified max instances limit. If your function cannot tolerate this temporary behavior, you may want to factor in a safety margin and set a lower max instances value than your function can tolerate. See the [Max Instances](https://cloud.google.com/functions/docs/max-instances) Guide for more details.
@@ -47,6 +48,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
           :allTrafficOnLatestRevision => boolean() | nil,
           :availableCpu => String.t() | nil,
           :availableMemory => String.t() | nil,
+          :binaryAuthorizationPolicy => String.t() | nil,
           :environmentVariables => map() | nil,
           :ingressSettings => String.t() | nil,
           :maxInstanceCount => integer() | nil,
@@ -68,6 +70,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.ServiceConfig do
   field(:allTrafficOnLatestRevision)
   field(:availableCpu)
   field(:availableMemory)
+  field(:binaryAuthorizationPolicy)
   field(:environmentVariables, type: :map)
   field(:ingressSettings)
   field(:maxInstanceCount)

@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.OnDeployUpdatePolicy do
 
   ## Attributes
 
-  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. contains the runtime version which was used during latest function deployment.
+  *   `runtimeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Contains the runtime version which was used during latest function deployment.
   """
 
   use GoogleApi.Gax.ModelBase

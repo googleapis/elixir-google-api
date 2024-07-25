@@ -24,6 +24,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.StorageSource do
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage bucket containing the source (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
   *   `generation` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
   *   `object` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage object containing the source. This object must be a gzipped archive file (`.tar.gz`) containing source to build.
+  *   `sourceUploadUrl` (*type:* `String.t`, *default:* `nil`) - When the specified storage bucket is a 1st gen function uploard url bucket, this field should be set as the generated upload url for 1st gen deployment.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.CloudFunctions.V2.Model.StorageSource do
   @type t :: %__MODULE__{
           :bucket => String.t() | nil,
           :generation => String.t() | nil,
-          :object => String.t() | nil
+          :object => String.t() | nil,
+          :sourceUploadUrl => String.t() | nil
         }
 
   field(:bucket)
   field(:generation)
   field(:object)
+  field(:sourceUploadUrl)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudFunctions.V2.Model.StorageSource do

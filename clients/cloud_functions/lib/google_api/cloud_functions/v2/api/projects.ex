@@ -31,7 +31,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,12 +64,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudfunctions_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudfunctions_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -90,8 +85,8 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,9 +104,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function for which upgrade should be aborted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function for which upgrade should be aborted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -135,8 +128,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_abort_function_upgrade(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -146,9 +137,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_abort_function_upgrade(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -170,14 +159,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:abortFunctionUpgrade",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:abortFunctionUpgrade", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -192,9 +176,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function for which upgrade should be finalized.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function for which upgrade should be finalized.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -218,8 +200,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_commit_function_upgrade(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -229,9 +209,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_commit_function_upgrade(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -253,14 +231,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:commitFunctionUpgrade",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:commitFunctionUpgrade", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -275,8 +248,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location in which the function should be created, specified in the format `projects/*/locations/*`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project and location in which the function should be created, specified in the format `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -301,7 +273,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -311,8 +282,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -335,9 +305,8 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/functions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/functions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -353,9 +322,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function which should be deleted.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function which should be deleted.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -378,8 +345,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -389,9 +354,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_delete(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -412,14 +375,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -434,9 +392,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of function for which source code Google Cloud Storage signed URL should be generated.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of function for which source code Google Cloud Storage signed URL should be generated.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -460,8 +416,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_generate_download_url(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -471,9 +425,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_generate_download_url(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -495,14 +447,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:generateDownloadUrl",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:generateDownloadUrl", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -519,8 +466,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project and location in which the Google Cloud Storage signed URL should be generated, specified in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -544,7 +490,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_generate_upload_url(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -554,8 +499,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_generate_upload_url(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -577,13 +521,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions:generateUploadUrl",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/functions:generateUploadUrl", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -600,9 +540,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function which details should be obtained.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function which details should be obtained.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -626,8 +564,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -637,9 +573,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_get(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -661,14 +595,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -683,9 +612,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -709,8 +636,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -720,9 +645,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -744,14 +667,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -766,8 +684,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location from which the function should be listed, specified in the format `projects/*/locations/*` If you want to list functions in all locations, use "-" in place of a location. When listing functions in all locations, if one or more location(s) are unreachable, the response will contain functions from all reachable locations along with the names of any unreachable locations.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project and location from which the function should be listed, specified in the format `projects/*/locations/*` If you want to list functions in all locations, use "-" in place of a location. When listing functions in all locations, if one or more location(s) are unreachable, the response will contain functions from all reachable locations along with the names of any unreachable locations.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -794,7 +711,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -804,8 +720,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -830,9 +745,8 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/functions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/functions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -850,9 +764,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `function.name`. A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
-  *   `locations_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `function.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -877,8 +789,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -888,9 +798,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_patch(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -913,14 +821,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -935,9 +838,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function for which traffic target should be changed to 2nd Gen from 1st Gen.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function for which traffic target should be changed to 2nd Gen from 1st Gen.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -961,8 +862,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_redirect_function_upgrade_traffic(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -972,9 +871,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_redirect_function_upgrade_traffic(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -996,14 +893,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:redirectFunctionUpgradeTraffic",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:redirectFunctionUpgradeTraffic", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1018,9 +910,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function for which traffic target should be changed back to 1st Gen from 2nd Gen.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function for which traffic target should be changed back to 1st Gen from 2nd Gen.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1044,8 +934,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_rollback_function_upgrade_traffic(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1055,9 +943,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_rollback_function_upgrade_traffic(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1079,14 +965,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:rollbackFunctionUpgradeTraffic",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:rollbackFunctionUpgradeTraffic", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1101,9 +982,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1127,8 +1006,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1138,9 +1015,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1162,14 +1037,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1184,9 +1054,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the function which should have configuration copied for upgrade.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the function which should have configuration copied for upgrade.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1210,8 +1078,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_setup_function_upgrade_config(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1221,9 +1087,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_setup_function_upgrade_config(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1245,14 +1109,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:setupFunctionUpgradeConfig",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:setupFunctionUpgradeConfig", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1267,9 +1126,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `functions_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1293,8 +1150,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_functions_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1304,9 +1159,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_functions_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        functions_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1328,14 +1181,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/functions/{functionsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "functionsId" => URI.encode(functions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1352,9 +1200,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1377,8 +1223,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1388,9 +1232,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1411,14 +1253,9 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1433,8 +1270,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1460,7 +1296,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1470,8 +1305,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_operations_list(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1495,9 +1329,8 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1515,8 +1348,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudFunctions.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location from which the runtimes should be listed, specified in the format `projects/*/locations/*`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project and location from which the runtimes should be listed, specified in the format `projects/*/locations/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1540,7 +1372,6 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
   @spec cloudfunctions_projects_locations_runtimes_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1550,8 +1381,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
           | {:error, any()}
   def cloudfunctions_projects_locations_runtimes_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1573,9 +1403,8 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/locations/{locationsId}/runtimes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/runtimes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
