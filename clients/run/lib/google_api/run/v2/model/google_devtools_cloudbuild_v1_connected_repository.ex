@@ -21,9 +21,9 @@ defmodule GoogleApi.Run.V2.Model.GoogleDevtoolsCloudbuildV1ConnectedRepository d
 
   ## Attributes
 
-  *   `dir` (*type:* `String.t`, *default:* `nil`) - Directory, relative to the source root, in which to run the build.
+  *   `dir` (*type:* `String.t`, *default:* `nil`) - Optional. Directory, relative to the source root, in which to run the build.
   *   `repository` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Google Cloud Build repository, formatted as `projects/*/locations/*/connections/*/repositories/*`.
-  *   `revision` (*type:* `String.t`, *default:* `nil`) - The revision to fetch from the Git repository such as a branch, a tag, a commit SHA, or any Git ref.
+  *   `revision` (*type:* `String.t`, *default:* `nil`) - Required. The revision to fetch from the Git repository such as a branch, a tag, a commit SHA, or any Git ref.
   """
 
   use GoogleApi.Gax.ModelBase
