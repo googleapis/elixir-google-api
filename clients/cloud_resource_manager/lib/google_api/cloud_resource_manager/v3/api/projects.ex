@@ -90,7 +90,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the Project (for example, `projects/415104041262`).
+  *   `name` (*type:* `String.t`) - Required. The name of the Project (for example, `projects/415104041262`).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -115,12 +115,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_projects_delete(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_projects_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -138,8 +133,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/projects/{projectsId}", %{
-        "projectsId" => URI.encode(projects_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -155,7 +150,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the project (for example, `projects/415104041262`).
+  *   `name` (*type:* `String.t`) - Required. The name of the project (for example, `projects/415104041262`).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -180,12 +175,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_projects_get(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_projects_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -203,8 +193,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/projects/{projectsId}", %{
-        "projectsId" => URI.encode(projects_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -220,7 +210,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -253,7 +243,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:error, any()}
   def cloudresourcemanager_projects_get_iam_policy(
         connection,
-        projects_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -275,8 +265,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -359,7 +349,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the project to move.
+  *   `name` (*type:* `String.t`) - Required. The name of the project to move.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -385,12 +375,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_projects_move(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_projects_move(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -409,8 +394,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}:move", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}:move", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -426,7 +411,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `project.name`. Output only. The unique resource name of the project. It is an int64 generated number prefixed by "projects/". Example: `projects/415104041262`
+  *   `name` (*type:* `String.t`) - Output only. The unique resource name of the project. It is an int64 generated number prefixed by "projects/". Example: `projects/415104041262`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -453,12 +438,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_projects_patch(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_projects_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -478,8 +458,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/projects/{projectsId}", %{
-        "projectsId" => URI.encode(projects_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -560,7 +540,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -593,7 +573,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:error, any()}
   def cloudresourcemanager_projects_set_iam_policy(
         connection,
-        projects_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -615,8 +595,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -632,7 +612,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -665,7 +645,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:error, any()}
   def cloudresourcemanager_projects_test_iam_permissions(
         connection,
-        projects_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -687,8 +667,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -706,7 +686,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the project (for example, `projects/415104041262`). Required.
+  *   `name` (*type:* `String.t`) - Required. The name of the project (for example, `projects/415104041262`). Required.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -737,12 +717,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_projects_undelete(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_projects_undelete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -761,8 +736,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/projects/{projectsId}:undelete", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

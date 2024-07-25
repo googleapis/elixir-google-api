@@ -90,7 +90,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `liens_id` (*type:* `String.t`) - Part of `name`. Required. The name/identifier of the Lien to delete.
+  *   `name` (*type:* `String.t`) - Required. The name/identifier of the Lien to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -115,7 +115,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_liens_delete(connection, liens_id, optional_params \\ [], opts \\ []) do
+  def cloudresourcemanager_liens_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -133,8 +133,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/liens/{liensId}", %{
-        "liensId" => URI.encode(liens_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -150,7 +150,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V1.Connection.t`) - Connection to server
-  *   `liens_id` (*type:* `String.t`) - Part of `name`. Required. The name/identifier of the Lien.
+  *   `name` (*type:* `String.t`) - Required. The name/identifier of the Lien.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -175,7 +175,7 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_liens_get(connection, liens_id, optional_params \\ [], opts \\ []) do
+  def cloudresourcemanager_liens_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -193,8 +193,8 @@ defmodule GoogleApi.CloudResourceManager.V1.Api.Liens do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/liens/{liensId}", %{
-        "liensId" => URI.encode(liens_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

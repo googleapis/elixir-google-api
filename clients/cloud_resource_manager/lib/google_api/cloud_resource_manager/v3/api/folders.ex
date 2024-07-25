@@ -90,7 +90,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the folder to be deleted. Must be of the form `folders/{folder_id}`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the folder to be deleted. Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -115,12 +115,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_folders_delete(
-        connection,
-        folders_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_folders_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -138,8 +133,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -155,7 +150,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the folder to retrieve. Must be of the form `folders/{folder_id}`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the folder to retrieve. Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -180,7 +175,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_folders_get(connection, folders_id, optional_params \\ [], opts \\ []) do
+  def cloudresourcemanager_folders_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -198,8 +193,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -215,7 +210,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -248,7 +243,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_get_iam_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -270,8 +265,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/folders/{foldersId}:getIamPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -354,7 +349,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the Folder to move. Must be of the form folders/{folder_id}
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Folder to move. Must be of the form folders/{folder_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -380,7 +375,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_folders_move(connection, folders_id, optional_params \\ [], opts \\ []) do
+  def cloudresourcemanager_folders_move(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -399,8 +394,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/folders/{foldersId}:move", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}:move", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -416,7 +411,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `folder.name`. Output only. The resource name of the folder. Its format is `folders/{folder_id}`, for example: "folders/1234".
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the folder. Its format is `folders/{folder_id}`, for example: "folders/1234".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -443,12 +438,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_folders_patch(
-        connection,
-        folders_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_folders_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -468,8 +458,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/folders/{foldersId}", %{
-        "foldersId" => URI.encode(folders_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -550,7 +540,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -583,7 +573,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_set_iam_policy(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -605,8 +595,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/folders/{foldersId}:setIamPolicy", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -622,7 +612,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -655,7 +645,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:error, any()}
   def cloudresourcemanager_folders_test_iam_permissions(
         connection,
-        folders_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -677,8 +667,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/folders/{foldersId}:testIamPermissions", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -696,7 +686,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `folders_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the folder to undelete. Must be of the form `folders/{folder_id}`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the folder to undelete. Must be of the form `folders/{folder_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -727,12 +717,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_folders_undelete(
-        connection,
-        folders_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_folders_undelete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -751,8 +736,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.Folders do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/folders/{foldersId}:undelete", %{
-        "foldersId" => URI.encode(folders_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

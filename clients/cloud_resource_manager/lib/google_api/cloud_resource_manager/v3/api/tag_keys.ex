@@ -92,7 +92,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or it will not be deleted successfully.
+  *   `name` (*type:* `String.t`) - Required. The resource name of a TagKey to be deleted in the format `tagKeys/123`. The TagKey cannot be a parent of any existing TagValues or it will not be deleted successfully.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -119,12 +119,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_tag_keys_delete(
-        connection,
-        tag_keys_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_tag_keys_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -144,8 +139,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v3/tagKeys/{tagKeysId}", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -161,7 +156,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `name`. Required. A resource name in the format `tagKeys/{id}`, such as `tagKeys/123`.
+  *   `name` (*type:* `String.t`) - Required. A resource name in the format `tagKeys/{id}`, such as `tagKeys/123`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -186,12 +181,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_tag_keys_get(
-        connection,
-        tag_keys_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_tag_keys_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -209,8 +199,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/tagKeys/{tagKeysId}", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -226,7 +216,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -259,7 +249,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:error, any()}
   def cloudresourcemanager_tag_keys_get_iam_policy(
         connection,
-        tag_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -281,8 +271,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/tagKeys/{tagKeysId}:getIamPolicy", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -422,7 +412,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `tagKey.name`. Immutable. The resource name for a TagKey. Must be in the format `tagKeys/{tag_key_id}`, where `tag_key_id` is the generated numeric id for the TagKey.
+  *   `name` (*type:* `String.t`) - Immutable. The resource name for a TagKey. Must be in the format `tagKeys/{tag_key_id}`, where `tag_key_id` is the generated numeric id for the TagKey.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -450,12 +440,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudresourcemanager_tag_keys_patch(
-        connection,
-        tag_keys_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudresourcemanager_tag_keys_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -476,8 +461,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v3/tagKeys/{tagKeysId}", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v3/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -493,7 +478,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -526,7 +511,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:error, any()}
   def cloudresourcemanager_tag_keys_set_iam_policy(
         connection,
-        tag_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -548,8 +533,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/tagKeys/{tagKeysId}:setIamPolicy", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -565,7 +550,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudResourceManager.V3.Connection.t`) - Connection to server
-  *   `tag_keys_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -598,7 +583,7 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
           | {:error, any()}
   def cloudresourcemanager_tag_keys_test_iam_permissions(
         connection,
-        tag_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -620,8 +605,8 @@ defmodule GoogleApi.CloudResourceManager.V3.Api.TagKeys do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v3/tagKeys/{tagKeysId}:testIamPermissions", %{
-        "tagKeysId" => URI.encode(tag_keys_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
