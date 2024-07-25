@@ -22,8 +22,8 @@ defmodule GoogleApi.ContainerAnalysis.V1alpha1.Model.ContaineranalysisGoogleDevt
   ## Attributes
 
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - Cloud Storage bucket containing the source (see [Bucket Name Requirements](https://cloud.google.com/storage/docs/bucket-naming#requirements)).
-  *   `generation` (*type:* `String.t`, *default:* `nil`) - Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
-  *   `object` (*type:* `String.t`, *default:* `nil`) - Cloud Storage object containing the source. This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`) containing source to build.
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - Optional. Cloud Storage generation for the object. If the generation is omitted, the latest generation will be used.
+  *   `object` (*type:* `String.t`, *default:* `nil`) - Required. Cloud Storage object containing the source. This object must be a zipped (`.zip`) or gzipped archive file (`.tar.gz`) containing source to build.
   *   `sourceFetcher` (*type:* `String.t`, *default:* `nil`) - Optional. Option to specify the tool to fetch the source file for the build.
   """
 

@@ -22,6 +22,7 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   ## Attributes
 
   *   `connectedRepository` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository.t`, *default:* `nil`) - Optional. If provided, get the source from this 2nd-gen Google Cloud Build repository resource.
+  *   `developerConnectConfig` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1DeveloperConnectConfig.t`, *default:* `nil`) - If provided, get the source from this Developer Connect config.
   *   `gitSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitSource.t`, *default:* `nil`) - If provided, get the source from this Git repository.
   *   `repoSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1RepoSource.t`, *default:* `nil`) - If provided, get the source from this location in a Cloud Source Repository.
   *   `storageSource` (*type:* `GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1StorageSource.t`, *default:* `nil`) - If provided, get the source from this location in Cloud Storage.
@@ -33,6 +34,9 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   @type t :: %__MODULE__{
           :connectedRepository =>
             GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository.t()
+            | nil,
+          :developerConnectConfig =>
+            GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1DeveloperConnectConfig.t()
             | nil,
           :gitSource =>
             GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1GitSource.t()
@@ -51,6 +55,11 @@ defmodule GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCl
   field(:connectedRepository,
     as:
       GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1ConnectedRepository
+  )
+
+  field(:developerConnectConfig,
+    as:
+      GoogleApi.ContainerAnalysis.V1.Model.ContaineranalysisGoogleDevtoolsCloudbuildV1DeveloperConnectConfig
   )
 
   field(:gitSource,

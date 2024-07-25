@@ -31,9 +31,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,8 +54,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_notes_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -67,9 +63,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_notes_get(
         connection,
-        projects_id,
-        locations_id,
-        notes_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -90,10 +84,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/notes/{notesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,8 +101,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -136,7 +127,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_notes_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -146,8 +136,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_notes_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -171,9 +160,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/notes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/notes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -191,9 +179,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note to list occurrences for in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note to list occurrences for in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -219,8 +205,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_notes_occurrences_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -230,9 +214,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_notes_occurrences_list(
         connection,
-        projects_id,
-        locations_id,
-        notes_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -256,14 +238,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/notes/{notesId}/occurrences",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/occurrences", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -280,9 +257,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -305,8 +280,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_occurrences_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -316,9 +289,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_occurrences_get(
         connection,
-        projects_id,
-        locations_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -339,14 +310,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/occurrences/{occurrencesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -361,9 +327,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -386,8 +350,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_occurrences_get_notes(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -397,9 +359,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_occurrences_get_notes(
         connection,
-        projects_id,
-        locations_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -420,14 +380,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/occurrences/{occurrencesId}/notes",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}/notes", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -442,8 +397,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to get a vulnerability summary for in the form of `projects/[PROJECT_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to get a vulnerability summary for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -467,7 +421,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_occurrences_get_vulnerability_summary(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -477,8 +430,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_occurrences_get_vulnerability_summary(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -500,13 +452,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/occurrences:vulnerabilitySummary",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+parent}/occurrences:vulnerabilitySummary", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -524,8 +472,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to list occurrences for in the form of `projects/[PROJECT_ID]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to list occurrences for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -551,7 +498,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_occurrences_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -561,8 +507,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_occurrences_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -586,9 +531,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/locations/{locationsId}/occurrences", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/occurrences", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -606,9 +550,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `resources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -632,8 +574,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_resources_export_sbom(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -643,9 +583,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_resources_export_sbom(
         connection,
-        projects_id,
-        locations_id,
-        resources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -667,14 +605,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/resources/{resourcesId}:exportSBOM",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "resourcesId" => URI.encode(resources_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:exportSBOM", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -691,9 +624,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to get a packages summary for in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `resources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to get a packages summary for in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -717,8 +648,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_locations_resources_generate_packages_summary(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -728,9 +657,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_locations_resources_generate_packages_summary(
         connection,
-        projects_id,
-        locations_id,
-        resources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -752,14 +679,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/locations/{locationsId}/resources/{resourcesId}:generatePackagesSummary",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "resourcesId" => URI.encode(resources_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:generatePackagesSummary", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -776,7 +698,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the notes are to be created.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the notes are to be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -809,7 +731,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_batch_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -831,8 +753,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes:batchCreate", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/notes:batchCreate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -850,7 +772,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the note is to be created.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the note is to be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -884,7 +806,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -907,8 +829,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/notes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -924,8 +846,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -948,7 +869,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -956,13 +876,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_projects_notes_delete(
-        connection,
-        projects_id,
-        notes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_projects_notes_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -980,9 +894,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -998,8 +911,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1019,24 +931,12 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   *   `{:ok, %GoogleApi.ContainerAnalysis.V1beta1.Model.Note{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec containeranalysis_projects_notes_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec containeranalysis_projects_notes_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.ContainerAnalysis.V1beta1.Model.Note.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_projects_notes_get(
-        connection,
-        projects_id,
-        notes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_projects_notes_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1054,9 +954,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1072,8 +971,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1097,7 +995,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1107,8 +1004,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_get_iam_policy(
         connection,
-        projects_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1130,9 +1026,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1148,7 +1043,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to list notes for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1181,12 +1076,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_projects_notes_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_projects_notes_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1207,8 +1097,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/notes", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1226,8 +1116,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1252,7 +1141,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1260,13 +1148,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def containeranalysis_projects_notes_patch(
-        connection,
-        projects_id,
-        notes_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def containeranalysis_projects_notes_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1286,9 +1168,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1304,8 +1185,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1329,7 +1209,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1339,8 +1218,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_set_iam_policy(
         connection,
-        projects_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1362,9 +1240,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1380,8 +1257,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `notes_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1405,7 +1281,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1415,8 +1290,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_test_iam_permissions(
         connection,
-        projects_id,
-        notes_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1438,9 +1312,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1458,8 +1331,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the note to list occurrences for in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
-  *   `notes_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the note to list occurrences for in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1485,7 +1357,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_notes_occurrences_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1495,8 +1366,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_notes_occurrences_list(
         connection,
-        projects_id,
-        notes_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1520,9 +1390,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/notes/{notesId}/occurrences", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "notesId" => URI.encode(notes_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}/occurrences", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1540,7 +1409,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the occurrences are to be created.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the occurrences are to be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1573,7 +1442,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_batch_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1595,8 +1464,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences:batchCreate", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/occurrences:batchCreate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1615,7 +1484,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the occurrence is to be created.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in the form of `projects/[PROJECT_ID]`, under which the occurrence is to be created.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1648,7 +1517,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1670,8 +1539,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/occurrences", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1687,8 +1556,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1711,7 +1579,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1721,8 +1588,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_delete(
         connection,
-        projects_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1743,9 +1609,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1761,8 +1626,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1785,7 +1649,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1795,8 +1658,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_get(
         connection,
-        projects_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1817,9 +1679,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1835,8 +1696,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1860,7 +1720,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1870,8 +1729,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_iam_policy(
         connection,
-        projects_id,
-        occurrences_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1893,9 +1751,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1911,8 +1768,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1935,7 +1791,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_get_notes(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1945,8 +1800,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_notes(
         connection,
-        projects_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1967,9 +1821,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}/notes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}/notes", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1985,7 +1838,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to get a vulnerability summary for in the form of `projects/[PROJECT_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to get a vulnerability summary for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2018,7 +1871,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_get_vulnerability_summary(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2040,8 +1893,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences:vulnerabilitySummary", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/occurrences:vulnerabilitySummary", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2060,7 +1913,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project to list occurrences for in the form of `projects/[PROJECT_ID]`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project to list occurrences for in the form of `projects/[PROJECT_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2095,7 +1948,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2119,8 +1972,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+parent}/occurrences", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2138,8 +1991,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the occurrence in the form of `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2164,7 +2016,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2174,8 +2025,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_patch(
         connection,
-        projects_id,
-        occurrences_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2198,9 +2048,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1beta1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2216,8 +2065,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2241,7 +2089,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2251,8 +2098,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_set_iam_policy(
         connection,
-        projects_id,
-        occurrences_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2274,9 +2120,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2292,8 +2137,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `occurrences_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2317,7 +2161,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_occurrences_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2327,8 +2170,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_occurrences_test_iam_permissions(
         connection,
-        projects_id,
-        occurrences_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2350,13 +2192,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/occurrences/{occurrencesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "occurrencesId" => URI.encode(occurrences_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2373,8 +2211,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
-  *   `resources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2398,7 +2235,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_resources_export_sbom(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2408,8 +2244,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_resources_export_sbom(
         connection,
-        projects_id,
-        resources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2431,9 +2266,8 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1beta1/projects/{projectsId}/resources/{resourcesId}:exportSBOM", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "resourcesId" => URI.encode(resources_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1beta1/{+name}:exportSBOM", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2451,8 +2285,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContainerAnalysis.V1beta1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the resource to get a packages summary for in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
-  *   `resources_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the resource to get a packages summary for in the form of `projects/[PROJECT_ID]/resources/[RESOURCE_URL]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2476,7 +2309,6 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
   @spec containeranalysis_projects_resources_generate_packages_summary(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2486,8 +2318,7 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
           | {:error, any()}
   def containeranalysis_projects_resources_generate_packages_summary(
         connection,
-        projects_id,
-        resources_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2509,13 +2340,9 @@ defmodule GoogleApi.ContainerAnalysis.V1beta1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1beta1/projects/{projectsId}/resources/{resourcesId}:generatePackagesSummary",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "resourcesId" => URI.encode(resources_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1beta1/{+name}:generatePackagesSummary", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
