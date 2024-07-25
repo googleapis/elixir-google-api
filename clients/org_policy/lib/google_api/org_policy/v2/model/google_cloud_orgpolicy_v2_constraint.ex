@@ -23,7 +23,6 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
 
   *   `booleanConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanConstraint.t`, *default:* `nil`) - Defines this constraint as being a BooleanConstraint.
   *   `constraintDefault` (*type:* `String.t`, *default:* `nil`) - The evaluation behavior of this constraint in the absence of a policy.
-  *   `customConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint.t`, *default:* `nil`) - Defines this constraint as being a CustomConstraint.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Detailed description of what this constraint controls as well as how and where it is enforced. Mutable.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The human readable name. Mutable.
   *   `listConstraint` (*type:* `GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintListConstraint.t`, *default:* `nil`) - Defines this constraint as being a ListConstraint.
@@ -38,9 +37,6 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
             GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintBooleanConstraint.t()
             | nil,
           :constraintDefault => String.t() | nil,
-          :customConstraint =>
-            GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint.t()
-            | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :listConstraint =>
@@ -54,11 +50,6 @@ defmodule GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2Constraint do
   )
 
   field(:constraintDefault)
-
-  field(:customConstraint,
-    as: GoogleApi.OrgPolicy.V2.Model.GoogleCloudOrgpolicyV2ConstraintGoogleDefinedCustomConstraint
-  )
-
   field(:description)
   field(:displayName)
 
