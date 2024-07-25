@@ -22,7 +22,6 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1Options do
   ## Attributes
 
   *   `accessBoundary` (*type:* `GoogleApi.STS.V1.Model.GoogleIdentityStsV1AccessBoundary.t`, *default:* `nil`) - An access boundary that defines the upper bound of permissions the credential may have. The value should be a JSON object of AccessBoundary. The access boundary can include up to 10 rules. The size of the parameter value should not exceed 2048 characters.
-  *   `audiences` (*type:* `list(String.t)`, *default:* `nil`) - The intended audience(s) of the credential. The audience value(s) should be the name(s) of services intended to receive the credential. Example: `["https://pubsub.googleapis.com/", "https://storage.googleapis.com/"]`. A maximum of 5 audiences can be included. For each provided audience, the maximum length is 262 characters.
   *   `userProject` (*type:* `String.t`, *default:* `nil`) - A Google project used for quota and billing purposes when the credential is used to access Google APIs. The provided project overrides the project bound to the credential. The value must be a project number or a project ID. Example: `my-sample-project-191923`. The maximum length is 32 characters.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.STS.V1.Model.GoogleIdentityStsV1Options do
 
   @type t :: %__MODULE__{
           :accessBoundary => GoogleApi.STS.V1.Model.GoogleIdentityStsV1AccessBoundary.t() | nil,
-          :audiences => list(String.t()) | nil,
           :userProject => String.t() | nil
         }
 
   field(:accessBoundary, as: GoogleApi.STS.V1.Model.GoogleIdentityStsV1AccessBoundary)
-  field(:audiences, type: :list)
   field(:userProject)
 end
 
