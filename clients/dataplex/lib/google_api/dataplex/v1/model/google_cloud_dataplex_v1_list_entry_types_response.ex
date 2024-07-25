@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListEntryTypesResponse do
   @moduledoc """
-  List EntryTypes response
+  List EntryTypes response.
 
   ## Attributes
 
-  *   `entryTypes` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryType.t)`, *default:* `nil`) - ListEntryTypes under the given parent location.
+  *   `entryTypes` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryType.t)`, *default:* `nil`) - EntryTypes under the given parent location.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
-  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
+  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that the service couldn't reach.
   """
 
   use GoogleApi.Gax.ModelBase

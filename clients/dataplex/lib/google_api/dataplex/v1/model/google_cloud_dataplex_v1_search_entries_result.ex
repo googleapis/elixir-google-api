@@ -21,15 +21,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResult d
 
   ## Attributes
 
-  *   `dataplexEntry` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t`, *default:* `nil`) - Entry format of the result.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Entry description.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name.
-  *   `entry` (*type:* `String.t`, *default:* `nil`) - Resource name of the entry.
-  *   `entryType` (*type:* `String.t`, *default:* `nil`) - The entry type.
-  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Fully qualified name.
+  *   `dataplexEntry` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t`, *default:* `nil`) - 
   *   `linkedResource` (*type:* `String.t`, *default:* `nil`) - Linked resource name.
-  *   `modifyTime` (*type:* `DateTime.t`, *default:* `nil`) - The last modification timestamp.
-  *   `relativeResource` (*type:* `String.t`, *default:* `nil`) - Relative resource name.
   *   `snippets` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResultSnippets.t`, *default:* `nil`) - Snippets.
   """
 
@@ -37,27 +30,13 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResult d
 
   @type t :: %__MODULE__{
           :dataplexEntry => GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t() | nil,
-          :description => String.t() | nil,
-          :displayName => String.t() | nil,
-          :entry => String.t() | nil,
-          :entryType => String.t() | nil,
-          :fullyQualifiedName => String.t() | nil,
           :linkedResource => String.t() | nil,
-          :modifyTime => DateTime.t() | nil,
-          :relativeResource => String.t() | nil,
           :snippets =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResultSnippets.t() | nil
         }
 
   field(:dataplexEntry, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry)
-  field(:description)
-  field(:displayName)
-  field(:entry)
-  field(:entryType)
-  field(:fullyQualifiedName)
   field(:linkedResource)
-  field(:modifyTime, as: DateTime)
-  field(:relativeResource)
 
   field(:snippets,
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1SearchEntriesResultSnippets

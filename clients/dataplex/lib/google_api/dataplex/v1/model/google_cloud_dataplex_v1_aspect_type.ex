@@ -17,20 +17,19 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType do
   @moduledoc """
-  Aspect Type is a template for creating Aspects, and represents the JSON-schema for a given Entry, e.g., BigQuery Table Schema.
+  AspectType is a template for creating Aspects, and represents the JSON-schema for a given Entry, for example, BigQuery Table Schema.
 
   ## Attributes
 
-  *   `authorization` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeAuthorization.t`, *default:* `nil`) - Immutable. Authorization defined for this type.
+  *   `authorization` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeAuthorization.t`, *default:* `nil`) - Immutable. Defines the Authorization for this type.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the AspectType was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the AspectType.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - The service computes this checksum. The client may send it on update and delete requests to ensure it has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the AspectType.
   *   `metadataTemplate` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t`, *default:* `nil`) - Required. MetadataTemplate of the aspect.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the AspectType, of the form: projects/{project_number}/locations/{location_id}/aspectTypes/{aspect_type_id}.
-  *   `transferStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Denotes the transfer status of the Aspect Type. It is unspecified for Aspect Types created from Dataplex API.
-  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the AspectType. This ID will be different if the AspectType is deleted and re-created with the same name.
+  *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the AspectType. If you delete and recreate the AspectType with the same name, then this ID will be different.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the AspectType was last updated.
   """
 
@@ -47,7 +46,6 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType do
           :metadataTemplate =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplate.t() | nil,
           :name => String.t() | nil,
-          :transferStatus => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -67,7 +65,6 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType do
   )
 
   field(:name)
-  field(:transferStatus)
   field(:uid)
   field(:updateTime, as: DateTime)
 end

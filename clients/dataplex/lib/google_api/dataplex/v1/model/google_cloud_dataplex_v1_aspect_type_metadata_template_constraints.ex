@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectTypeMetadataTemplateConstraints do
   @moduledoc """
-  Definition of the constraints of a field
+  Definition of the constraints of a field.
 
   ## Attributes
 
-  *   `required` (*type:* `boolean()`, *default:* `nil`) - Optional. Marks this as an optional/required field.
+  *   `required` (*type:* `boolean()`, *default:* `nil`) - Optional. Marks this field as optional or required.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStat
 
   ## Attributes
 
+  *   `latestJobCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when the DataScanJob execution was created.
   *   `latestJobEndTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the latest DataScanJob ended.
   *   `latestJobStartTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the latest DataScanJob started.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataScanExecutionStat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :latestJobCreateTime => DateTime.t() | nil,
           :latestJobEndTime => DateTime.t() | nil,
           :latestJobStartTime => DateTime.t() | nil
         }
 
+  field(:latestJobCreateTime, as: DateTime)
   field(:latestJobEndTime, as: DateTime)
   field(:latestJobStartTime, as: DateTime)
 end

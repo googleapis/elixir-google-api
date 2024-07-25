@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListEntriesResponse do
   @moduledoc """
-
+  List Entries response.
 
   ## Attributes
 
-  *   `entries` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t)`, *default:* `nil`) - The list of entries.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Pagination token.
+  *   `entries` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t)`, *default:* `nil`) - The list of entries under the given parent location.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
   """
 
   use GoogleApi.Gax.ModelBase

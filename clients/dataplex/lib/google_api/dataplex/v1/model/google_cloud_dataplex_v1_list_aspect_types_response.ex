@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1ListAspectTypesResponse do
   @moduledoc """
-  List AspectTypes response
+  List AspectTypes response.
 
   ## Attributes
 
-  *   `aspectTypes` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType.t)`, *default:* `nil`) - ListAspectTypes under the given parent location.
+  *   `aspectTypes` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType.t)`, *default:* `nil`) - AspectTypes under the given parent location.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - Token to retrieve the next page of results, or empty if there are no more results in the list.
-  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that could not be reached.
+  *   `unreachableLocations` (*type:* `list(String.t)`, *default:* `nil`) - Locations that the service couldn't reach.
   """
 
   use GoogleApi.Gax.ModelBase

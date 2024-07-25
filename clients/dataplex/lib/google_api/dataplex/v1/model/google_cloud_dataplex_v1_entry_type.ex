@@ -25,13 +25,13 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryType do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the EntryType was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the EntryType.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User friendly display name.
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the service, and might be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels for the EntryType.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}.
   *   `platform` (*type:* `String.t`, *default:* `nil`) - Optional. The platform that Entries of this type belongs to.
   *   `requiredAspects` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryTypeAspectInfo.t)`, *default:* `nil`) - AspectInfo for the entry type.
   *   `system` (*type:* `String.t`, *default:* `nil`) - Optional. The system that Entries of this type belongs to. Examples include CloudSQL, MariaDB etc
-  *   `typeAliases` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Indicates the class this Entry Type belongs to, for example, TABLE, DATABASE, MODEL.
+  *   `typeAliases` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Indicates the classes this Entry Type belongs to, for example, TABLE, DATABASE, MODEL.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. System generated globally unique ID for the EntryType. This ID will be different if the EntryType is deleted and re-created with the same name.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the EntryType was last updated.
   """

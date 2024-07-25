@@ -156,7 +156,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Looks up a single entry.
+  Looks up a single Entry by name using the permission on the source system.
 
   ## Parameters
 
@@ -174,10 +174,10 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:aspectTypes` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to the provided aspect types. Only works if the CUSTOM view is selected.
+      *   `:aspectTypes` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to the provided aspect types. It only works for CUSTOM view.
       *   `:entry` (*type:* `String.t`) - Required. The resource name of the Entry: projects/{project}/locations/{location}/entryGroups/{entry_group}/entries/{entry}.
-      *   `:paths` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to those associated with the provided paths within the Entry. Only works if the CUSTOM view is selected.
-      *   `:view` (*type:* `String.t`) - Optional. View for controlling which parts of an entry are to be returned.
+      *   `:paths` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to those associated with the provided paths within the Entry. It only works for CUSTOM view.
+      *   `:view` (*type:* `String.t`) - Optional. View to control which parts of an entry the service should return.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -236,7 +236,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Searches for entries matching given query and scope.
+  Searches for Entries matching the given query and scope.
 
   ## Parameters
 
@@ -254,11 +254,11 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Optional. Ordering of the results. Supported options to be added later.
-      *   `:pageSize` (*type:* `integer()`) - Optional. Pagination.
-      *   `:pageToken` (*type:* `String.t`) - 
+      *   `:orderBy` (*type:* `String.t`) - Optional. Specifies the ordering of results.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Number of results in the search page. If <=0, then defaults to 10. Max limit for page_size is 1000. Throws an invalid argument for page_size > 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous SearchEntries call. Provide this to retrieve the subsequent page.
       *   `:query` (*type:* `String.t`) - Required. The query against which entries in scope should be matched.
-      *   `:scope` (*type:* `String.t`) - Optional. The scope under which the search should be operating. Should either be organizations/ or projects/. If left unspecified, it will default to the organization where the project provided in name is located.
+      *   `:scope` (*type:* `String.t`) - Optional. The scope under which the search should be operating. It must either be organizations/ or projects/. If it is unspecified, it defaults to the organization where the project provided in name is located.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -318,12 +318,12 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Creates an AspectType
+  Creates an AspectType.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the AspectType, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a GCP region.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the AspectType, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a Google Cloud region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -337,7 +337,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:aspectTypeId` (*type:* `String.t`) - Required. AspectType identifier.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1AspectType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -396,7 +396,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a AspectType resource.
+  Deletes an AspectType.
 
   ## Parameters
 
@@ -414,7 +414,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteAspectTypeRequest method returns an ABORTED error response
+      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteAspectTypeRequest method returns an ABORTED error response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -470,7 +470,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a AspectType resource.
+  Gets an AspectType.
 
   ## Parameters
 
@@ -619,7 +619,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the AspectType location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a GCP region.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the AspectType location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a Google Cloud region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -632,10 +632,10 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter request. Filters are case-sensitive. The following formats are supported:labels.key1 = "value1" labels:key1 name = "value" These restrictions can be coinjoined with AND, OR and NOT conjunctions.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Order by fields (name or create_time) for the result. If not specified, the ordering is undefined.
-      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of AspectTypes to return. The service may return fewer than this value. If unspecified, at most 10 AspectTypes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListAspectTypes call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListAspectTypes must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter request. Filters are case-sensitive. The service supports the following formats: labels.key1 = "value1" labels:key1 name = "value"These restrictions can be conjoined with AND, OR, and NOT conjunctions.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Orders the result by name or create_time fields. If not specified, the ordering is undefined.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of AspectTypes to return. The service may return fewer than this value. If unspecified, the service returns at most 10 AspectTypes. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListAspectTypes call. Provide this to retrieve the subsequent page. When paginating, all other parameters you provide to ListAspectTypes must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -695,7 +695,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Updates a AspectType resource.
+  Updates an AspectType.
 
   ## Parameters
 
@@ -1674,12 +1674,12 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Generates recommended DataQualityRule from a data profiling DataScan.
+  Generates recommended data quality rules based on the results of a data profiling scan.Use the recommendations to build rules for a data quality scan.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name should be either * the name of a datascan with at least one successful completed data profiling job, or * the name of a successful completed data profiling datascan job.
+  *   `name` (*type:* `String.t`) - Required. The name must be one of the following: The name of a data scan with at least one successful, completed data profiling job The name of a successful, completed data profiling job (a data scan job where the job type is data profiling)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2277,12 +2277,12 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Generates recommended DataQualityRule from a data profiling DataScan.
+  Generates recommended data quality rules based on the results of a data profiling scan.Use the recommendations to build rules for a data quality scan.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name should be either * the name of a datascan with at least one successful completed data profiling job, or * the name of a successful completed data profiling datascan job.
+  *   `name` (*type:* `String.t`) - Required. The name must be one of the following: The name of a data scan with at least one successful, completed data profiling job The name of a successful, completed data profiling job (a data scan job where the job type is data profiling)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3711,7 +3711,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Creates an EntryGroup
+  Creates an EntryGroup.
 
   ## Parameters
 
@@ -3730,7 +3730,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:entryGroupId` (*type:* `String.t`) - Required. EntryGroup identifier.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3789,7 +3789,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a EntryGroup resource.
+  Deletes an EntryGroup.
 
   ## Parameters
 
@@ -3807,7 +3807,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteEntryGroupRequest method returns an ABORTED error response
+      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteEntryGroupRequest method returns an ABORTED error response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3863,7 +3863,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a EntryGroup resource.
+  Gets an EntryGroup.
 
   ## Parameters
 
@@ -4012,7 +4012,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the entryGroup location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a GCP region.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the entryGroup location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a Google Cloud region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4027,8 +4027,8 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Filter request.
       *   `:orderBy` (*type:* `String.t`) - Optional. Order by fields for the result.
-      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of EntryGroups to return. The service may return fewer than this value. If unspecified, at most 10 EntryGroups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListEntryGroups call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListEntryGroups must match the call that provided the page token.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of EntryGroups to return. The service may return fewer than this value. If unspecified, the service returns at most 10 EntryGroups. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListEntryGroups call. Provide this to retrieve the subsequent page. When paginating, all other parameters you provide to ListEntryGroups must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4088,7 +4088,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Updates a EntryGroup resource.
+  Updates an EntryGroup.
 
   ## Parameters
 
@@ -4107,7 +4107,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request, without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryGroup.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4330,7 +4330,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:entryId` (*type:* `String.t`) - Required. Entry identifier. It has to be unique within an Entry Group.Entries corresponding to Google Cloud resources use Entry ID format based on Full Resource Names (https://cloud.google.com/apis/design/resource_names#full_resource_name). The format is a Full Resource Name of the resource without the prefix double slashes in the API Service Name part of Full Resource Name. This allows retrieval of entries using their associated resource name.For example if the Full Resource Name of a resource is //library.googleapis.com/shelves/shelf1/books/book2, then the suggested entry_id is library.googleapis.com/shelves/shelf1/books/book2.It is also suggested to follow the same convention for entries corresponding to resources from other providers or systems than Google Cloud.The maximum size of the field is 4000 characters.
+      *   `:entryId` (*type:* `String.t`) - Required. Entry identifier. It has to be unique within an Entry Group.Entries corresponding to Google Cloud resources use an Entry ID format based on full resource names (https://cloud.google.com/apis/design/resource_names#full_resource_name). The format is a full resource name of the resource without the prefix double slashes in the API service name part of the full resource name. This allows retrieval of entries using their associated resource name.For example, if the full resource name of a resource is //library.googleapis.com/shelves/shelf1/books/book2, then the suggested entry_id is library.googleapis.com/shelves/shelf1/books/book2.It is also suggested to follow the same convention for entries corresponding to resources from providers or systems other than Google Cloud.The maximum size of the field is 4000 characters.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4460,7 +4460,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Gets a single entry.
+  Gets an Entry.
 
   ## Parameters
 
@@ -4478,9 +4478,9 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:aspectTypes` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to the provided aspect types. Only works if the CUSTOM view is selected.
-      *   `:paths` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to those associated with the provided paths within the Entry. Only works if the CUSTOM view is selected.
-      *   `:view` (*type:* `String.t`) - Optional. View for controlling which parts of an entry are to be returned.
+      *   `:aspectTypes` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to the provided aspect types. It only works for CUSTOM view.
+      *   `:paths` (*type:* `list(String.t)`) - Optional. Limits the aspects returned to those associated with the provided paths within the Entry. It only works for CUSTOM view.
+      *   `:view` (*type:* `String.t`) - Optional. View to control which parts of an entry the service should return.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4538,7 +4538,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Lists entries within an entry group.
+  Lists Entries within an EntryGroup.
 
   ## Parameters
 
@@ -4556,9 +4556,9 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. A filter on the entries to return. Filters are case-sensitive. The request can be filtered by the following fields: entry_type, entry_source.display_name. The comparison operators are =, !=, <, >, <=, >= (strings are compared according to lexical order) The logical operators AND, OR, NOT can be used in the filter. Wildcard "*" can be used, but for entry_type the full project id or number needs to be provided. Example filter expressions: "entry_source.display_name=AnExampleDisplayName" "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type" "entry_type=projects/example-project/locations/us/entryTypes/a* OR entry_type=projects/another-project/locations/*" "NOT entry_source.display_name=AnotherExampleDisplayName"
-      *   `:pageSize` (*type:* `integer()`) - 
-      *   `:pageToken` (*type:* `String.t`) - Optional. The pagination token returned by a previous request.
+      *   `:filter` (*type:* `String.t`) - Optional. A filter on the entries to return. Filters are case-sensitive. You can filter the request by the following fields: entry_type entry_source.display_nameThe comparison operators are =, !=, <, >, <=, >=. The service compares strings according to lexical order.You can use the logical operators AND, OR, NOT in the filter.You can use Wildcard "*", but for entry_type you need to provide the full project id or number.Example filter expressions: "entry_source.display_name=AnExampleDisplayName" "entry_type=projects/example-project/locations/global/entryTypes/example-entry_type" "entry_type=projects/example-project/locations/us/entryTypes/a* OR entry_type=projects/another-project/locations/*" "NOT entry_source.display_name=AnotherExampleDisplayName"
+      *   `:pageSize` (*type:* `integer()`) - Optional. Number of items to return per page. If there are remaining results, the service returns a next_page_token. If unspecified, the service returns at most 10 Entries. The maximum value is 100; values above 100 will be coerced to 100.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListEntries call. Provide this to retrieve the subsequent page.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4634,10 +4634,10 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true and the entry does not exist, it will be created.
-      *   `:aspectKeys` (*type:* `list(String.t)`) - Optional. The map keys of the Aspects which should be modified. Supports the following syntaxes: * - matches aspect on given type and empty path * @path - matches aspect on given type and specified path * * - matches aspects on given type for all paths * *@path - matches aspects of all types on the given pathExisting aspects matching the syntax will not be removed unless delete_missing_aspects is set to true.If this field is left empty, it will be treated as specifying exactly those Aspects present in the request.
-      *   `:deleteMissingAspects` (*type:* `boolean()`) - Optional. If set to true and the aspect_keys specify aspect ranges, any existing aspects from that range not provided in the request will be deleted.
-      *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update. To update Aspects, the update_mask must contain the value "aspects".If the update_mask is empty, all modifiable fields present in the request will be updated.
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true and the entry doesn't exist, the service will create it.
+      *   `:aspectKeys` (*type:* `list(String.t)`) - Optional. The map keys of the Aspects which the service should modify. It supports the following syntaxes: - matches an aspect of the given type and empty path. @path - matches an aspect of the given type and specified path. * - matches aspects of the given type for all paths. *@path - matches aspects of all types on the given path.The service will not remove existing aspects matching the syntax unless delete_missing_aspects is set to true.If this field is left empty, the service treats it as specifying exactly those Aspects present in the request.
+      *   `:deleteMissingAspects` (*type:* `boolean()`) - Optional. If set to true and the aspect_keys specify aspect ranges, the service deletes any existing aspects from that range that weren't provided in the request.
+      *   `:updateMask` (*type:* `String.t`) - Optional. Mask of fields to update. To update Aspects, the update_mask must contain the value "aspects".If the update_mask is empty, the service will update all modifiable fields present in the request.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4698,12 +4698,12 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Creates an EntryType
+  Creates an EntryType.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a GCP region.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a Google Cloud region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4717,7 +4717,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:entryTypeId` (*type:* `String.t`) - Required. EntryType identifier.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4776,7 +4776,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Deletes a EntryType resource.
+  Deletes an EntryType.
 
   ## Parameters
 
@@ -4794,7 +4794,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteEntryTypeRequest method returns an ABORTED error response
+      *   `:etag` (*type:* `String.t`) - Optional. If the client provided etag value does not match the current etag value, the DeleteEntryTypeRequest method returns an ABORTED error response.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4850,7 +4850,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Retrieves a EntryType resource.
+  Gets an EntryType.
 
   ## Parameters
 
@@ -4999,7 +4999,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dataplex.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the EntryType location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a GCP region.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the EntryType location, of the form: projects/{project_number}/locations/{location_id} where location_id refers to a Google Cloud region.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5012,10 +5012,10 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. Filter request. Filters are case-sensitive. The following formats are supported:labels.key1 = "value1" labels:key1 name = "value" These restrictions can be coinjoined with AND, OR and NOT conjunctions.
-      *   `:orderBy` (*type:* `String.t`) - Optional. Order by fields (name or create_time) for the result. If not specified, the ordering is undefined.
-      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of EntryTypes to return. The service may return fewer than this value. If unspecified, at most 10 EntryTypes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
-      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListEntryTypes call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListEntryTypes must match the call that provided the page token.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter request. Filters are case-sensitive. The service supports the following formats: labels.key1 = "value1" labels:key1 name = "value"These restrictions can be conjoined with AND, OR, and NOT conjunctions.
+      *   `:orderBy` (*type:* `String.t`) - Optional. Orders the result by name or create_time fields. If not specified, the ordering is undefined.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of EntryTypes to return. The service may return fewer than this value. If unspecified, the service returns at most 10 EntryTypes. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Page token received from a previous ListEntryTypes call. Provide this to retrieve the subsequent page. When paginating, all other parameters you provided to ListEntryTypes must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -5074,7 +5074,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Updates a EntryType resource.
+  Updates an EntryType.
 
   ## Parameters
 
@@ -5093,7 +5093,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:updateMask` (*type:* `String.t`) - Required. Mask of fields to update.
-      *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is false.
+      *   `:validateOnly` (*type:* `boolean()`) - Optional. The service validates the request without performing any mutations. The default is false.
       *   `:body` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntryType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

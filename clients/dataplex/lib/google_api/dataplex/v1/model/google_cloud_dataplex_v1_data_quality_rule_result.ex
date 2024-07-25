@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataQualityRuleResult
 
   ## Attributes
 
-  *   `assertionRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of rows returned by the sql statement in the SqlAssertion rule.This field is only valid for SqlAssertion rules.
+  *   `assertionRowCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of rows returned by the SQL statement in a SQL assertion rule.This field is only valid for SQL assertion rules.
   *   `evaluatedCount` (*type:* `String.t`, *default:* `nil`) - The number of rows a rule was evaluated against.This field is only valid for row-level type rules.Evaluated count can be configured to either include all rows (default) - with null rows automatically failing rule evaluation, or exclude null rows from the evaluated_count, by setting ignore_nulls = true.
   *   `failingRowsQuery` (*type:* `String.t`, *default:* `nil`) - The query to find rows that did not pass this rule.This field is only valid for row-level type rules.
   *   `nullCount` (*type:* `String.t`, *default:* `nil`) - The number of rows with null values in the specified column.
