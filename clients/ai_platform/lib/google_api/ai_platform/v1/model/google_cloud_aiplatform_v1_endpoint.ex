@@ -22,6 +22,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Endpoint was created.
+  *   `dedicatedEndpointDns` (*type:* `String.t`, *default:* `nil`) - Output only. DNS of the dedicated endpoint. Will only be populated if dedicated_endpoint_enabled is true. Format: `https://{endpoint_id}.{region}-{project_number}.prediction.vertexai.goog`.
+  *   `dedicatedEndpointEnabled` (*type:* `boolean()`, *default:* `nil`) - If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon.
   *   `deployedModels` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel.t)`, *default:* `nil`) - Output only. The models deployed in this Endpoint. To add or remove DeployedModels use EndpointService.DeployModel and EndpointService.UndeployModel respectively.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the Endpoint.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the Endpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -42,6 +44,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :dedicatedEndpointDns => String.t() | nil,
+          :dedicatedEndpointEnabled => boolean() | nil,
           :deployedModels =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel.t()) | nil,
           :description => String.t() | nil,
@@ -65,6 +69,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Endpoint do
         }
 
   field(:createTime, as: DateTime)
+  field(:dedicatedEndpointDns)
+  field(:dedicatedEndpointEnabled)
 
   field(:deployedModels,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedModel,

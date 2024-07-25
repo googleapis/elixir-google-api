@@ -24,6 +24,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQu
   *   `embedding` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryEmbedding.t`, *default:* `nil`) - Optional. The embedding vector that be used for similar search.
   *   `entityId` (*type:* `String.t`, *default:* `nil`) - Optional. The entity id whose similar entities should be searched for. If embedding is set, search will use embedding instead of entity_id.
   *   `neighborCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of similar entities to be retrieved from feature view for each query.
+  *   `numericFilters` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter.t)`, *default:* `nil`) - Optional. The list of numeric filters.
   *   `parameters` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryParameters.t`, *default:* `nil`) - Optional. Parameters that can be set to tune query on the fly.
   *   `perCrowdingAttributeNeighborCount` (*type:* `integer()`, *default:* `nil`) - Optional. Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than sper_crowding_attribute_neighbor_count of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity.
   *   `stringFilters` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryStringFilter.t)`, *default:* `nil`) - Optional. The list of string filters.
@@ -37,6 +38,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQu
             | nil,
           :entityId => String.t() | nil,
           :neighborCount => integer() | nil,
+          :numericFilters =>
+            list(
+              GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter.t()
+            )
+            | nil,
           :parameters =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryParameters.t()
             | nil,
@@ -54,6 +60,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQu
 
   field(:entityId)
   field(:neighborCount)
+
+  field(:numericFilters,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter,
+    type: :list
+  )
 
   field(:parameters,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryParameters

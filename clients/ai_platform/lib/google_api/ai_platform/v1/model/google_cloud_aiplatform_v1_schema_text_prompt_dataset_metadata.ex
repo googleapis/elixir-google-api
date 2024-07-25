@@ -24,10 +24,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   *   `candidateCount` (*type:* `String.t`, *default:* `nil`) - Number of candidates.
   *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the prompt data.
   *   `groundingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig.t`, *default:* `nil`) - Grounding checking configuration.
+  *   `hasPromptVariable` (*type:* `boolean()`, *default:* `nil`) - Whether the prompt dataset has prompt variable.
   *   `maxOutputTokens` (*type:* `String.t`, *default:* `nil`) - Value of the maximum number of tokens generated set when the dataset was saved.
   *   `note` (*type:* `String.t`, *default:* `nil`) - User-created prompt note. Note size limit is 2KB.
   *   `promptType` (*type:* `String.t`, *default:* `nil`) - Type of the prompt dataset.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Customized stop sequences.
+  *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - The content of the prompt dataset system instruction.
   *   `systemInstructionGcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the system instruction, starting with gs://.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness.
   *   `text` (*type:* `String.t`, *default:* `nil`) - The content of the prompt dataset.
@@ -43,10 +45,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
           :groundingConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig.t()
             | nil,
+          :hasPromptVariable => boolean() | nil,
           :maxOutputTokens => String.t() | nil,
           :note => String.t() | nil,
           :promptType => String.t() | nil,
           :stopSequences => list(String.t()) | nil,
+          :systemInstruction => String.t() | nil,
           :systemInstructionGcsUri => String.t() | nil,
           :temperature => number() | nil,
           :text => String.t() | nil,
@@ -61,10 +65,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig
   )
 
+  field(:hasPromptVariable)
   field(:maxOutputTokens)
   field(:note)
   field(:promptType)
   field(:stopSequences, type: :list)
+  field(:systemInstruction)
   field(:systemInstructionGcsUri)
   field(:temperature)
   field(:text)

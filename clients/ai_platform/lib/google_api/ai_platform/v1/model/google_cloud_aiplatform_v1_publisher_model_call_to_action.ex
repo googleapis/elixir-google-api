@@ -24,7 +24,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
   *   `createApplication` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t`, *default:* `nil`) - Optional. Create application using the PublisherModel.
   *   `deploy` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeploy.t`, *default:* `nil`) - Optional. Deploy the PublisherModel to Vertex Endpoint.
   *   `deployGke` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployGke.t`, *default:* `nil`) - Optional. Deploy PublisherModel to Google Kubernetes Engine.
-  *   `fineTune` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t`, *default:* `nil`) - Optional. Fine tune the PublisherModel with the third-party model tuning UI.
   *   `openEvaluationPipeline` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t`, *default:* `nil`) - Optional. Open evaluation pipeline of the PublisherModel.
   *   `openFineTuningPipeline` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t`, *default:* `nil`) - Optional. Open fine-tuning pipeline of the PublisherModel.
   *   `openFineTuningPipelines` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionOpenFineTuningPipelines.t`, *default:* `nil`) - Optional. Open fine-tuning pipelines of the PublisherModel.
@@ -48,9 +47,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
             | nil,
           :deployGke =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployGke.t()
-            | nil,
-          :fineTune =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t()
             | nil,
           :openEvaluationPipeline =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences.t()
@@ -95,11 +91,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
 
   field(:deployGke,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployGke
-  )
-
-  field(:fineTune,
-    as:
-      GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionRegionalResourceReferences
   )
 
   field(:openEvaluationPipeline,

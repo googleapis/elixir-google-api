@@ -31,6 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PipelineJob do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the PipelineJob.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The full name of the Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the Pipeline Job's workload should be peered. For example, `projects/12345/global/networks/myVPC`. [Format](/compute/docs/reference/rest/v1/networks/insert) is of the form `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in `12345`, and {network} is a network name. Private services access must already be configured for the network. Pipeline job will apply the network configuration to the Google Cloud resources being launched, if applied, such as Vertex AI Training or Dataflow job. If left unspecified, the workload is not peered with any network.
   *   `pipelineSpec` (*type:* `map()`, *default:* `nil`) - The spec of the pipeline.
+  *   `preflightValidations` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to do component level validations before job creation.
   *   `reservedIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - A list of names for the reserved ip ranges under the VPC network that can be used for this Pipeline Job's workload. If set, we will deploy the Pipeline Job's workload within the provided ip ranges. Otherwise, the job will be deployed to any ip ranges under the provided VPC network. Example: ['vertex-ai-ip-range'].
   *   `runtimeConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PipelineJobRuntimeConfig.t`, *default:* `nil`) - Runtime config of the pipeline.
   *   `scheduleName` (*type:* `String.t`, *default:* `nil`) - Output only. The schedule resource name. Only returned if the Pipeline is created by Schedule API.
@@ -57,6 +58,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PipelineJob do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :pipelineSpec => map() | nil,
+          :preflightValidations => boolean() | nil,
           :reservedIpRanges => list(String.t()) | nil,
           :runtimeConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PipelineJobRuntimeConfig.t()
@@ -82,6 +84,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PipelineJob do
   field(:name)
   field(:network)
   field(:pipelineSpec, type: :map)
+  field(:preflightValidations)
   field(:reservedIpRanges, type: :list)
 
   field(:runtimeConfig,

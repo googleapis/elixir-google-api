@@ -21,16 +21,27 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
 
   ## Attributes
 
+  *   `privateServiceConnectConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig.t`, *default:* `nil`) - Optional. Private service connect config. The private service connection is available only for Optimized storage type, not for embedding management now. If PrivateServiceConnectConfig.enable_private_service_connect set to true, customers will use private service connection to send request. Otherwise, the connection will set to public endpoint.
   *   `publicEndpointDomainName` (*type:* `String.t`, *default:* `nil`) - Output only. This field will be populated with the domain name to use for this FeatureOnlineStore
+  *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the service attachment resource. Populated if private service connect is enabled and after FeatureViewSync is created.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :publicEndpointDomainName => String.t() | nil
+          :privateServiceConnectConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig.t()
+            | nil,
+          :publicEndpointDomainName => String.t() | nil,
+          :serviceAttachment => String.t() | nil
         }
 
+  field(:privateServiceConnectConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig
+  )
+
   field(:publicEndpointDomainName)
+  field(:serviceAttachment)
 end
 
 defimpl Poison.Decoder,

@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   *   `generationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t`, *default:* `nil`) - Optional. Generation config.
   *   `safetySettings` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t)`, *default:* `nil`) - Optional. Per request settings for blocking unsafe content. Enforced on GenerateContentResponse.candidates.
   *   `systemInstruction` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Optional. The user provided system instructions for the model. Note: only text should be used in parts and content in each part will be in a separate paragraph.
+  *   `toolConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig.t`, *default:* `nil`) - Optional. Tool config. This config is shared for all tools provided in the request.
   *   `tools` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t)`, *default:* `nil`) - Optional. A list of `Tools` the model may use to generate the next response. A `Tool` is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model.
   """
 
@@ -39,6 +40,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t()) | nil,
           :systemInstruction =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t() | nil,
+          :toolConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig.t() | nil,
           :tools => list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t()) | nil
         }
 
@@ -54,6 +57,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   )
 
   field(:systemInstruction, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content)
+  field(:toolConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig)
   field(:tools, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool, type: :list)
 end
 

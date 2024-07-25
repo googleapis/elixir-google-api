@@ -21,6 +21,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
 
   ## Attributes
 
+  *   `groundingChunks` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunk.t)`, *default:* `nil`) - List of supporting references retrieved from specified grounding source.
+  *   `groundingSupports` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport.t)`, *default:* `nil`) - Optional. List of grounding support.
   *   `searchEntryPoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t`, *default:* `nil`) - Optional. Google search entry for the following-up web searches.
   *   `webSearchQueries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Web search queries for the following-up web search.
   """
@@ -28,10 +30,24 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :groundingChunks =>
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunk.t()) | nil,
+          :groundingSupports =>
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport.t()) | nil,
           :searchEntryPoint =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t() | nil,
           :webSearchQueries => list(String.t()) | nil
         }
+
+  field(:groundingChunks,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunk,
+    type: :list
+  )
+
+  field(:groundingSupports,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport,
+    type: :list
+  )
 
   field(:searchEntryPoint,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint

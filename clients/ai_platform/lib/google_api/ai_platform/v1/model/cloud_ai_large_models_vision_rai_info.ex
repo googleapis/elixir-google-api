@@ -21,6 +21,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
 
   ## Attributes
 
+  *   `detectedLabels` (*type:* `list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t)`, *default:* `nil`) - The list of detected labels for different rai categories.
+  *   `modelName` (*type:* `String.t`, *default:* `nil`) - The model name used to indexing into the RaiFilterConfig map. Would either be one of imagegeneration@002-006, imagen-3.0-... api endpoint names, or internal names used for mapping to different filter configs (genselfie, ai_watermark) than its api endpoint.
   *   `raiCategories` (*type:* `list(String.t)`, *default:* `nil`) - List of rai categories' information to return
   *   `scores` (*type:* `list(number())`, *default:* `nil`) - List of rai scores mapping to the rai categories. Rounded to 1 decimal place.
   """
@@ -28,10 +30,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :detectedLabels =>
+            list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t())
+            | nil,
+          :modelName => String.t() | nil,
           :raiCategories => list(String.t()) | nil,
           :scores => list(number()) | nil
         }
 
+  field(:detectedLabels,
+    as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels,
+    type: :list
+  )
+
+  field(:modelName)
   field(:raiCategories, type: :list)
   field(:scores, type: :list)
 end

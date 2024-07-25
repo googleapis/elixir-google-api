@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval do
 
   ## Attributes
 
-  *   `disableAttribution` (*type:* `boolean()`, *default:* `nil`) - Optional. Disable using the result from this tool in detecting grounding attribution. This does not affect how the result is given to the model for generation.
+  *   `disableAttribution` (*type:* `boolean()`, *default:* `nil`) - Optional. Deprecated. This option is no longer supported.
   *   `vertexAiSearch` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch.t`, *default:* `nil`) - Set to use data source powered by Vertex AI Search.
   """
 

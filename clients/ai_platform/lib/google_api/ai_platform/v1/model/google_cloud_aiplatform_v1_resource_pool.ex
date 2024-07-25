@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePool do
 
   ## Attributes
 
-  *   `autoscalingSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePoolAutoscalingSpec.t`, *default:* `nil`) - Optional. Optional spec to configure GKE autoscaling
+  *   `autoscalingSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePoolAutoscalingSpec.t`, *default:* `nil`) - Optional. Optional spec to configure GKE or Ray-on-Vertex autoscaling
   *   `diskSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DiskSpec.t`, *default:* `nil`) - Optional. Disk spec for the machine in this node pool.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique ID in a PersistentResource for referring to this resource pool. User can specify it if necessary. Otherwise, it's generated automatically.
   *   `machineSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t`, *default:* `nil`) - Required. Immutable. The specification of a single machine.

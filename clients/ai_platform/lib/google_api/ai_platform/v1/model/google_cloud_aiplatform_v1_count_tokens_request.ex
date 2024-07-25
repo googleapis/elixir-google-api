@@ -21,9 +21,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensReques
 
   ## Attributes
 
-  *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Required. Input content.
-  *   `instances` (*type:* `list(any())`, *default:* `nil`) - Required. The instances that are the input to token counting call. Schema is identical to the prediction schema of the underlying model.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Required. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Optional. Input content.
+  *   `instances` (*type:* `list(any())`, *default:* `nil`) - Optional. The instances that are the input to token counting call. Schema is identical to the prediction schema of the underlying model.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `systemInstruction` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Optional. The user provided system instructions for the model. Note: only text should be used in parts and content in each part will be in a separate paragraph.
+  *   `tools` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t)`, *default:* `nil`) - Optional. A list of `Tools` the model may use to generate the next response. A `Tool` is a piece of code that enables the system to interact with external systems to perform an action, or set of actions, outside of knowledge and scope of the model.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,12 +34,17 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensReques
           :contents =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
           :instances => list(any()) | nil,
-          :model => String.t() | nil
+          :model => String.t() | nil,
+          :systemInstruction =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t() | nil,
+          :tools => list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool.t()) | nil
         }
 
   field(:contents, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content, type: :list)
   field(:instances, type: :list)
   field(:model)
+  field(:systemInstruction, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content)
+  field(:tools, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tool, type: :list)
 end
 
 defimpl Poison.Decoder,

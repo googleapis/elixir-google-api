@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
 
   ## Attributes
 
+  *   `billableSum` (*type:* `String.t`, *default:* `nil`) - Output only. Sum of a given population of values that are billable.
   *   `buckets` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningDatasetDistributionDatasetBucket.t)`, *default:* `nil`) - Output only. Defines the histogram bucket.
   *   `max` (*type:* `float()`, *default:* `nil`) - Output only. The maximum of the population values.
   *   `mean` (*type:* `float()`, *default:* `nil`) - Output only. The arithmetic mean of the values in the population.
@@ -34,6 +35,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :billableSum => String.t() | nil,
           :buckets =>
             list(
               GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningDatasetDistributionDatasetBucket.t()
@@ -47,6 +49,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
           :p95 => float() | nil,
           :sum => String.t() | nil
         }
+
+  field(:billableSum)
 
   field(:buckets,
     as:
