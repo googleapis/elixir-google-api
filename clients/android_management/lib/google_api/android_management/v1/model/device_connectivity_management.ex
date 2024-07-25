@@ -25,6 +25,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do
   *   `tetheringSettings` (*type:* `String.t`, *default:* `nil`) - Controls tethering settings. Based on the value set, the user is partially or fully disallowed from using different forms of tethering.
   *   `usbDataAccess` (*type:* `String.t`, *default:* `nil`) - Controls what files and/or data can be transferred via USB. Supported only on company-owned devices.
   *   `wifiDirectSettings` (*type:* `String.t`, *default:* `nil`) - Controls configuring and using Wi-Fi direct settings. Supported on company-owned devices running Android 13 and above.
+  *   `wifiSsidPolicy` (*type:* `GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy.t`, *default:* `nil`) - Restrictions on which Wi-Fi SSIDs the device can connect to. Note that this does not affect which networks can be configured on the device. Supported on company-owned devices running Android 13 and above.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,15 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do
           :configureWifi => String.t() | nil,
           :tetheringSettings => String.t() | nil,
           :usbDataAccess => String.t() | nil,
-          :wifiDirectSettings => String.t() | nil
+          :wifiDirectSettings => String.t() | nil,
+          :wifiSsidPolicy => GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy.t() | nil
         }
 
   field(:configureWifi)
   field(:tetheringSettings)
   field(:usbDataAccess)
   field(:wifiDirectSettings)
+  field(:wifiSsidPolicy, as: GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do

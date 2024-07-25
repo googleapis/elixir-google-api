@@ -39,6 +39,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   *   `minimumVersionCode` (*type:* `integer()`, *default:* `nil`) - The minimum version of the app that runs on the device. If set, the device attempts to update the app to at least this version code. If the app is not up-to-date, the device will contain a NonComplianceDetail with non_compliance_reason set to APP_NOT_UPDATED. The app must already be published to Google Play with a version code greater than or equal to this value. At most 20 apps may specify a minimum version code per policy.
   *   `packageName` (*type:* `String.t`, *default:* `nil`) - The package name of the app. For example, com.google.android.youtube for the YouTube app.
   *   `permissionGrants` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t)`, *default:* `nil`) - Explicit permission grants or denials for the app. These values override the default_permission_policy and permission_grants which apply to all apps.
+  *   `userControlSettings` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies whether user control is permitted for the app. User control includes user actions like force-stopping and clearing app data. Supported on Android 11 and above.
   *   `workProfileWidgets` (*type:* `String.t`, *default:* `nil`) - Specifies whether the app installed in the work profile is allowed to add widgets to the home screen.
   """
 
@@ -66,6 +67,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
           :packageName => String.t() | nil,
           :permissionGrants =>
             list(GoogleApi.AndroidManagement.V1.Model.PermissionGrant.t()) | nil,
+          :userControlSettings => String.t() | nil,
           :workProfileWidgets => String.t() | nil
         }
 
@@ -96,6 +98,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ApplicationPolicy do
   field(:minimumVersionCode)
   field(:packageName)
   field(:permissionGrants, as: GoogleApi.AndroidManagement.V1.Model.PermissionGrant, type: :list)
+  field(:userControlSettings)
   field(:workProfileWidgets)
 end
 

@@ -43,6 +43,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.SignupUrls do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:adminEmail` (*type:* `String.t`) - Optional. Email address used to prefill the admin field of the enterprise signup form. This value is a hint only and can be altered by the user.
       *   `:callbackUrl` (*type:* `String.t`) - The callback URL that the admin will be redirected to after successfully creating an enterprise. Before redirecting there the system will add a query parameter to this URL named enterpriseToken which will contain an opaque token to be used for the create enterprise request. The URL will be parsed then reformatted in order to add the enterpriseToken parameter, so there may be some minor formatting changes.
       *   `:projectId` (*type:* `String.t`) - The ID of the Google Cloud Platform project which will own the enterprise.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -70,6 +71,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.SignupUrls do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :adminEmail => :query,
       :callbackUrl => :query,
       :projectId => :query
     }

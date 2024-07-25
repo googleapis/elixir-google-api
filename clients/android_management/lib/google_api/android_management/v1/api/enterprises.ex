@@ -1000,7 +1000,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Creates an enrollment token for a given enterprise. It's up to the caller's responsibility to manage the lifecycle of newly created tokens and deleting them when they're not intended to be used anymore. Once an enrollment token has been created, it's not possible to retrieve the token's content anymore using AM API. It is recommended for EMMs to securely store the token if it's intended to be reused.
+  Creates an enrollment token for a given enterprise. It's up to the caller's responsibility to manage the lifecycle of newly created tokens and deleting them when they're not intended to be used anymore.
 
   ## Parameters
 
@@ -1142,7 +1142,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Gets an active, unexpired enrollment token. Only a partial view of EnrollmentToken is returned: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.
+  Gets an active, unexpired enrollment token. A partial view of the enrollment token is returned. Only the following fields are populated: name, expirationTimestamp, allowPersonalUsage, value, qrCode. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.
 
   ## Parameters
 
@@ -1212,7 +1212,7 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Lists active, unexpired enrollment tokens for a given enterprise. The list items contain only a partial view of EnrollmentToken: all the fields but name and expiration_timestamp are empty. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.
+  Lists active, unexpired enrollment tokens for a given enterprise. The list items contain only a partial view of EnrollmentToken object. Only the following fields are populated: name, expirationTimestamp, allowPersonalUsage, value, qrCode. This method is meant to help manage active enrollment tokens lifecycle. For security reasons, it's recommended to delete active enrollment tokens as soon as they're not intended to be used anymore.
 
   ## Parameters
 
@@ -1288,12 +1288,12 @@ defmodule GoogleApi.AndroidManagement.V1.Api.Enterprises do
   end
 
   @doc """
-  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API.
+  Creates a migration token, to migrate an existing device from being managed by the EMM's Device Policy Controller (DPC) to being managed by the Android Management API. See the guide (https://developers.google.com/android/management/dpc-migration) for more details.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AndroidManagement.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The enterprise in which this migration token will be created. Format: enterprises/{enterprise}
+  *   `parent` (*type:* `String.t`) - Required. The enterprise in which this migration token is created. This must be the same enterprise which already manages the device in the Play EMM API. Format: enterprises/{enterprise}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

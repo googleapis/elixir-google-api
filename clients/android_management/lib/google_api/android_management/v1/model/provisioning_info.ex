@@ -22,33 +22,45 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ProvisioningInfo do
   ## Attributes
 
   *   `apiLevel` (*type:* `integer()`, *default:* `nil`) - The API level of the Android platform version running on the device.
+  *   `authenticatedUserEmail` (*type:* `String.t`, *default:* `nil`) - The email address of the authenticated user (only present for Google Account provisioning method).
   *   `brand` (*type:* `String.t`, *default:* `nil`) - The brand of the device. For example, Google.
   *   `enterprise` (*type:* `String.t`, *default:* `nil`) - The name of the enterprise in the form enterprises/{enterprise}.
+  *   `imei` (*type:* `String.t`, *default:* `nil`) - For corporate-owned devices, IMEI number of the GSM device. For example, A1000031212.
   *   `managementMode` (*type:* `String.t`, *default:* `nil`) - The management mode of the device or profile.
+  *   `meid` (*type:* `String.t`, *default:* `nil`) - For corporate-owned devices, MEID number of the CDMA device. For example, A00000292788E1.
   *   `model` (*type:* `String.t`, *default:* `nil`) - The model of the device. For example, Asus Nexus 7.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this resource in the form provisioningInfo/{provisioning_info}.
   *   `ownership` (*type:* `String.t`, *default:* `nil`) - Ownership of the managed device.
+  *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - For corporate-owned devices, The device serial number.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :apiLevel => integer() | nil,
+          :authenticatedUserEmail => String.t() | nil,
           :brand => String.t() | nil,
           :enterprise => String.t() | nil,
+          :imei => String.t() | nil,
           :managementMode => String.t() | nil,
+          :meid => String.t() | nil,
           :model => String.t() | nil,
           :name => String.t() | nil,
-          :ownership => String.t() | nil
+          :ownership => String.t() | nil,
+          :serialNumber => String.t() | nil
         }
 
   field(:apiLevel)
+  field(:authenticatedUserEmail)
   field(:brand)
   field(:enterprise)
+  field(:imei)
   field(:managementMode)
+  field(:meid)
   field(:model)
   field(:name)
   field(:ownership)
+  field(:serialNumber)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.ProvisioningInfo do

@@ -40,6 +40,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default permission policy for runtime permission requests.
   *   `unmuteMicrophoneDisabled` (*type:* `boolean()`, *default:* `nil`) - If microphone_access is set to any value other than MICROPHONE_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether microphones are disabled: If true, all microphones are disabled, otherwise they are available. This is available only on fully managed devices.
   *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
+  *   `displaySettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.DisplaySettings.t`, *default:* `nil`) - Optional. Controls for the display settings.
   *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
   *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
   *   `passwordRequirements` (*type:* `GoogleApi.AndroidManagement.V1.Model.PasswordRequirements.t`, *default:* `nil`) - Password requirements. The field password_requirements.require_password_unlock must not be set. DEPRECATED - Use passwordPolicies.Note:Complexity-based values of PasswordQuality, that is, COMPLEXITY_LOW, COMPLEXITY_MEDIUM, and COMPLEXITY_HIGH, cannot be used here. unified_lock_settings cannot be used here.
@@ -62,7 +63,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `networkEscapeHatchEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details. Setting configureWifi to DISALLOW_CONFIGURING_WIFI will override this setting under specific circumstances. Please see DISALLOW_CONFIGURING_WIFI for further details.
   *   `dataRoamingDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether roaming data services are disabled.
   *   `crossProfilePolicies` (*type:* `GoogleApi.AndroidManagement.V1.Model.CrossProfilePolicies.t`, *default:* `nil`) - Cross-profile policies applied on the device.
-  *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.
+  *   `systemUpdate` (*type:* `GoogleApi.AndroidManagement.V1.Model.SystemUpdate.t`, *default:* `nil`) - The system update policy, which controls how OS updates are applied. If the update type is WINDOWED, the update window will automatically apply to Play app updates as well.Note: Google Play system updates (https://source.android.com/docs/core/ota/modular-system) (also called Mainline updates) are automatically downloaded and require a device reboot to be installed. Refer to the mainline section in Manage system updates (https://developer.android.com/work/dpc/system-updates#mainline) for further details.
   *   `policyEnforcementRules` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.PolicyEnforcementRule.t)`, *default:* `nil`) - Rules that define the behavior when a particular policy can not be applied on device
   *   `frpAdminEmails` (*type:* `list(String.t)`, *default:* `nil`) - Email addresses of device administrators for factory reset protection. When the device is factory reset, it will require one of these admins to log in with the Google account email and password to unlock the device. If no admins are specified, the device won't provide factory reset protection.
   *   `adjustVolumeDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether adjusting the master volume is disabled. Also mutes the device.
@@ -138,6 +139,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :defaultPermissionPolicy => String.t() | nil,
           :unmuteMicrophoneDisabled => boolean() | nil,
           :createWindowsDisabled => boolean() | nil,
+          :displaySettings => GoogleApi.AndroidManagement.V1.Model.DisplaySettings.t() | nil,
           :bluetoothDisabled => boolean() | nil,
           :setUserIconDisabled => boolean() | nil,
           :passwordRequirements =>
@@ -250,6 +252,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:defaultPermissionPolicy)
   field(:unmuteMicrophoneDisabled)
   field(:createWindowsDisabled)
+  field(:displaySettings, as: GoogleApi.AndroidManagement.V1.Model.DisplaySettings)
   field(:bluetoothDisabled)
   field(:setUserIconDisabled)
   field(:passwordRequirements, as: GoogleApi.AndroidManagement.V1.Model.PasswordRequirements)
