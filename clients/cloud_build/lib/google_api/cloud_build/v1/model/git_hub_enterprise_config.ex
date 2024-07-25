@@ -23,11 +23,11 @@ defmodule GoogleApi.CloudBuild.V1.Model.GitHubEnterpriseConfig do
 
   *   `appId` (*type:* `String.t`, *default:* `nil`) - Required. The GitHub app id of the Cloud Build app on the GitHub Enterprise server.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the installation was associated with the project.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name to display for this config.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. Name to display for this config.
   *   `hostUrl` (*type:* `String.t`, *default:* `nil`) - The URL of the github enterprise host the configuration is for.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `peeredNetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The network to be used when reaching out to the GitHub Enterprise server. The VPC network must be enabled for private service connection. This should be set if the GitHub Enterprise server is hosted on-premises and not reachable by public internet. If this field is left empty, no network peering will occur and calls to the GitHub Enterprise server will be made over the public internet. Must be in the format `projects/{project}/global/networks/{network}`, where {project} is a project number or id and {network} is the name of a VPC network in the project.
-  *   `secrets` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEnterpriseSecrets.t`, *default:* `nil`) - Names of secrets in Secret Manager.
+  *   `secrets` (*type:* `GoogleApi.CloudBuild.V1.Model.GitHubEnterpriseSecrets.t`, *default:* `nil`) - Optional. Names of secrets in Secret Manager.
   *   `sslCa` (*type:* `String.t`, *default:* `nil`) - Optional. SSL certificate to use for requests to GitHub Enterprise.
   *   `webhookKey` (*type:* `String.t`, *default:* `nil`) - The key that should be attached to webhook calls to the ReceiveWebhook endpoint.
   """

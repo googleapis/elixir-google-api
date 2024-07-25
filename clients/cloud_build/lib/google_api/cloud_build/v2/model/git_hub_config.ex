@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudBuild.V2.Model.GitHubConfig do
 
   ## Attributes
 
-  *   `appInstallationId` (*type:* `String.t`, *default:* `nil`) - GitHub App installation id.
-  *   `authorizerCredential` (*type:* `GoogleApi.CloudBuild.V2.Model.OAuthCredential.t`, *default:* `nil`) - OAuth credential of the account that authorized the Cloud Build GitHub App. It is recommended to use a robot account instead of a human user account. The OAuth token must be tied to the Cloud Build GitHub App.
+  *   `appInstallationId` (*type:* `String.t`, *default:* `nil`) - Optional. GitHub App installation id.
+  *   `authorizerCredential` (*type:* `GoogleApi.CloudBuild.V2.Model.OAuthCredential.t`, *default:* `nil`) - Optional. OAuth credential of the account that authorized the Cloud Build GitHub App. It is recommended to use a robot account instead of a human user account. The OAuth token must be tied to the Cloud Build GitHub App.
   """
 
   use GoogleApi.Gax.ModelBase

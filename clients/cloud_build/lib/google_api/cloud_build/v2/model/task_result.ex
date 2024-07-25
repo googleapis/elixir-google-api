@@ -25,6 +25,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.TaskResult do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the result.
   *   `properties` (*type:* `%{optional(String.t) => GoogleApi.CloudBuild.V2.Model.PropertySpec.t}`, *default:* `nil`) - When type is OBJECT, this map holds the names of fields inside that object along with the type of data each field holds.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of data that the result holds.
+  *   `value` (*type:* `GoogleApi.CloudBuild.V2.Model.ParamValue.t`, *default:* `nil`) - Optional. Optionally used to initialize a Task's result with a Step's result.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -34,13 +35,15 @@ defmodule GoogleApi.CloudBuild.V2.Model.TaskResult do
           :name => String.t() | nil,
           :properties =>
             %{optional(String.t()) => GoogleApi.CloudBuild.V2.Model.PropertySpec.t()} | nil,
-          :type => String.t() | nil
+          :type => String.t() | nil,
+          :value => GoogleApi.CloudBuild.V2.Model.ParamValue.t() | nil
         }
 
   field(:description)
   field(:name)
   field(:properties, as: GoogleApi.CloudBuild.V2.Model.PropertySpec, type: :map)
   field(:type)
+  field(:value, as: GoogleApi.CloudBuild.V2.Model.ParamValue)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudBuild.V2.Model.TaskResult do

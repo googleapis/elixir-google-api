@@ -21,11 +21,11 @@ defmodule GoogleApi.CloudBuild.V2.Model.Connection do
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Allows clients to store small amounts of arbitrary data.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Allows clients to store small amounts of arbitrary data.
   *   `bitbucketCloudConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.BitbucketCloudConfig.t`, *default:* `nil`) - Configuration for connections to Bitbucket Cloud.
   *   `bitbucketDataCenterConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.BitbucketDataCenterConfig.t`, *default:* `nil`) - Configuration for connections to Bitbucket Data Center.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Server assigned timestamp for when the connection was created.
-  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
+  *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `githubConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.GitHubConfig.t`, *default:* `nil`) - Configuration for connections to github.com.
   *   `githubEnterpriseConfig` (*type:* `GoogleApi.CloudBuild.V2.Model.GoogleDevtoolsCloudbuildV2GitHubEnterpriseConfig.t`, *default:* `nil`) - Configuration for connections to an instance of GitHub Enterprise.

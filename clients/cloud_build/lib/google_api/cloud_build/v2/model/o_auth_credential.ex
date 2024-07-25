@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.OAuthCredential do
 
   ## Attributes
 
-  *   `oauthTokenSecretVersion` (*type:* `String.t`, *default:* `nil`) - A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.
+  *   `oauthTokenSecretVersion` (*type:* `String.t`, *default:* `nil`) - Optional. A SecretManager resource containing the OAuth token that authorizes the Cloud Build connection. Format: `projects/*/secrets/*/versions/*`.
   *   `username` (*type:* `String.t`, *default:* `nil`) - Output only. The username associated to this token.
   """
 

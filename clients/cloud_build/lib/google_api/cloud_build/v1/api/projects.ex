@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the target build. For example: "projects/{$project_id}/builds/{$build_id}"
-  *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the target build. For example: "projects/{$project_id}/builds/{$build_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -53,24 +52,12 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   *   `{:ok, %GoogleApi.CloudBuild.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudbuild_projects_builds_approve(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudbuild_projects_builds_approve(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudBuild.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudbuild_projects_builds_approve(
-        connection,
-        projects_id,
-        builds_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudbuild_projects_builds_approve(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -89,9 +76,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/builds/{buildsId}:approve", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "buildsId" => URI.encode(builds_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:approve", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -467,7 +453,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
+  *   `parent` (*type:* `String.t`) - Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -502,7 +488,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_github_enterprise_configs_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -526,8 +512,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/githubEnterpriseConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/githubEnterpriseConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -543,8 +529,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -569,7 +554,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_github_enterprise_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -579,8 +563,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_github_enterprise_configs_delete(
         connection,
-        projects_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -603,14 +586,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -625,8 +603,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -651,7 +628,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_github_enterprise_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -661,8 +637,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_github_enterprise_configs_get(
         connection,
-        projects_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -685,14 +660,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -707,7 +677,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
+  *   `parent` (*type:* `String.t`) - Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -740,7 +710,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_github_enterprise_configs_list(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -762,8 +732,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/githubEnterpriseConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/githubEnterpriseConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -781,8 +751,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -807,7 +776,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_github_enterprise_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -817,8 +785,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_github_enterprise_configs_patch(
         connection,
-        projects_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -841,14 +808,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -863,8 +825,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the `DefaultServiceAccount` to retrieve. Format: `projects/{project}/locations/{location}/defaultServiceAccount`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `DefaultServiceAccount` to retrieve. Format: `projects/{project}/locations/{location}/defaultServiceAccount`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -887,7 +848,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_get_default_service_account(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -897,8 +857,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_get_default_service_account(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -919,9 +878,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/defaultServiceAccount", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -937,8 +895,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -963,7 +920,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -973,8 +929,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -997,13 +952,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/bitbucketServerConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1018,9 +969,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The config resource name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The config resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1043,8 +992,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1054,9 +1001,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_delete(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1077,15 +1022,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1100,9 +1039,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The config resource name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The config resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1125,8 +1062,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1136,9 +1071,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_get(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1159,15 +1092,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1182,8 +1109,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1208,7 +1134,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1218,8 +1143,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1242,13 +1166,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/bitbucketServerConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1265,9 +1185,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `bitbucketServerConfig.name`. The resource name for the config.
-  *   `locations_id` (*type:* `String.t`) - Part of `bitbucketServerConfig.name`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `bitbucketServerConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The resource name for the config.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1292,8 +1210,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1303,9 +1219,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_patch(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1328,15 +1242,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1351,9 +1259,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `config`. Required. The name of the `BitbucketServerConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`
-  *   `locations_id` (*type:* `String.t`) - Part of `config`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `config`. See documentation of `projectsId`.
+  *   `config` (*type:* `String.t`) - Required. The name of the `BitbucketServerConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1377,8 +1283,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_remove_bitbucket_server_connected_repository(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1388,9 +1292,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_remove_bitbucket_server_connected_repository(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        config,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1412,15 +1314,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}:removeBitbucketServerConnectedRepository",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+config}:removeBitbucketServerConnectedRepository", %{
+        "config" => URI.encode(config, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1435,9 +1331,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the `BitbucketServerConfig` that added connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The name of the `BitbucketServerConfig` that added connected repository. Format: `projects/{project}/locations/{location}/bitbucketServerConfigs/{config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1461,8 +1355,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_connected_repositories_batch_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1472,9 +1364,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_connected_repositories_batch_create(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1496,15 +1386,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}/connectedRepositories:batchCreate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/connectedRepositories:batchCreate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1519,9 +1403,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `bitbucket_server_configs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1546,8 +1428,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_bitbucket_server_configs_repos_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1557,9 +1437,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_bitbucket_server_configs_repos_list(
         connection,
-        projects_id,
-        locations_id,
-        bitbucket_server_configs_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1582,15 +1460,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/bitbucketServerConfigs/{bitbucketServerConfigsId}/repos",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bitbucketServerConfigsId" =>
-            URI.encode(bitbucket_server_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/repos", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1607,9 +1479,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the target build. For example: "projects/{$project_id}/builds/{$build_id}"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the target build. For example: "projects/{$project_id}/builds/{$build_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1633,8 +1503,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_approve(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1644,9 +1512,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_approve(
         connection,
-        projects_id,
-        locations_id,
-        builds_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1668,14 +1534,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/builds/{buildsId}:approve",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "buildsId" => URI.encode(builds_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:approve", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1690,9 +1551,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Build` to cancel. Format: `projects/{project}/locations/{location}/builds/{build}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Build` to cancel. Format: `projects/{project}/locations/{location}/builds/{build}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1716,8 +1575,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1727,9 +1584,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_cancel(
         connection,
-        projects_id,
-        locations_id,
-        builds_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1751,14 +1606,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/builds/{buildsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "buildsId" => URI.encode(builds_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1773,8 +1623,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent resource where this build will be created. Format: `projects/{project}/locations/{location}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The parent resource where this build will be created. Format: `projects/{project}/locations/{location}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1799,7 +1648,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1809,8 +1657,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1833,9 +1680,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/builds", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/builds", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1851,9 +1697,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Build` to retrieve. Format: `projects/{project}/locations/{location}/builds/{build}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1878,8 +1722,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1889,9 +1731,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_get(
         connection,
-        projects_id,
-        locations_id,
-        builds_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1914,10 +1754,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/builds/{buildsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "buildsId" => URI.encode(builds_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1933,8 +1771,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The parent of the collection of `Builds`. Format: `projects/{project}/locations/{location}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1961,7 +1798,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1971,8 +1807,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1997,9 +1832,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/builds", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/builds", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2015,9 +1849,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Build` to retry. Format: `projects/{project}/locations/{location}/builds/{build}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `builds_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Build` to retry. Format: `projects/{project}/locations/{location}/builds/{build}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2041,8 +1873,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_builds_retry(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2052,9 +1882,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_builds_retry(
         connection,
-        projects_id,
-        locations_id,
-        builds_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2076,14 +1904,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/builds/{buildsId}:retry",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "buildsId" => URI.encode(builds_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:retry", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2098,8 +1921,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2124,7 +1946,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2134,8 +1955,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2158,9 +1978,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/gitLabConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2176,9 +1995,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The config resource name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The config resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2201,8 +2018,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2212,9 +2027,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_delete(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2235,15 +2048,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" =>
-            URI.encode(git_lab_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2258,9 +2065,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The config resource name.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The config resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2283,8 +2088,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2294,9 +2097,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_get(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2317,15 +2118,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" =>
-            URI.encode(git_lab_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2340,8 +2135,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2366,7 +2160,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2376,8 +2169,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2400,9 +2192,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/gitLabConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2420,9 +2211,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `gitlabConfig.name`. The resource name for the config.
-  *   `locations_id` (*type:* `String.t`) - Part of `gitlabConfig.name`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `gitlabConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The resource name for the config.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2447,8 +2236,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2458,9 +2245,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_patch(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2483,15 +2268,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" =>
-            URI.encode(git_lab_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2506,9 +2285,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `config`. Required. The name of the `GitLabConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`
-  *   `locations_id` (*type:* `String.t`) - Part of `config`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `config`. See documentation of `projectsId`.
+  *   `config` (*type:* `String.t`) - Required. The name of the `GitLabConfig` to remove a connected repository. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2532,8 +2309,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_remove_git_lab_connected_repository(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2543,9 +2318,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_remove_git_lab_connected_repository(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        config,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2567,14 +2340,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}:removeGitLabConnectedRepository",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" => URI.encode(git_lab_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+config}:removeGitLabConnectedRepository", %{
+        "config" => URI.encode(config, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2589,9 +2357,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The name of the `GitLabConfig` that adds connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The name of the `GitLabConfig` that adds connected repositories. Format: `projects/{project}/locations/{location}/gitLabConfigs/{config}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2615,8 +2381,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_connected_repositories_batch_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2626,9 +2390,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_connected_repositories_batch_create(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2650,14 +2412,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}/connectedRepositories:batchCreate",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" => URI.encode(git_lab_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/connectedRepositories:batchCreate", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2672,9 +2429,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Name of the parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `git_lab_configs_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Name of the parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2699,8 +2454,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_git_lab_configs_repos_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2710,9 +2463,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_git_lab_configs_repos_list(
         connection,
-        projects_id,
-        locations_id,
-        git_lab_configs_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2735,14 +2486,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/gitLabConfigs/{gitLabConfigsId}/repos",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "gitLabConfigsId" => URI.encode(git_lab_configs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/repos", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2759,8 +2505,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2786,7 +2531,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_github_enterprise_configs_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2796,8 +2540,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_github_enterprise_configs_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2821,13 +2564,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/githubEnterpriseConfigs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/githubEnterpriseConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2842,9 +2581,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2869,8 +2606,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_github_enterprise_configs_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2880,9 +2615,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_github_enterprise_configs_delete(
         connection,
-        projects_id,
-        locations_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2905,15 +2638,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2928,9 +2655,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - This field should contain the name of the enterprise config resource. For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2955,8 +2680,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_github_enterprise_configs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2966,9 +2689,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_github_enterprise_configs_get(
         connection,
-        projects_id,
-        locations_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2991,15 +2712,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3014,8 +2729,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Name of the parent project. For example: projects/{$project_number} or projects/{$project_id}
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3039,7 +2753,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_github_enterprise_configs_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3049,8 +2762,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_github_enterprise_configs_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3072,13 +2784,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/githubEnterpriseConfigs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/githubEnterpriseConfigs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3095,9 +2803,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. Optional. The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
-  *   `locations_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
-  *   `github_enterprise_configs_id` (*type:* `String.t`) - Part of `githubEnterpriseConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The full resource name for the GitHubEnterpriseConfig For example: "projects/{$project_id}/locations/{$location_id}/githubEnterpriseConfigs/{$config_id}"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3122,8 +2828,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_github_enterprise_configs_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3133,9 +2837,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_github_enterprise_configs_patch(
         connection,
-        projects_id,
-        locations_id,
-        github_enterprise_configs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3158,15 +2860,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/githubEnterpriseConfigs/{githubEnterpriseConfigsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "githubEnterpriseConfigsId" =>
-            URI.encode(github_enterprise_configs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3181,9 +2877,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3207,8 +2901,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_operations_cancel(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3218,9 +2910,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_operations_cancel(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3242,14 +2932,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}:cancel",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3264,9 +2949,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3289,8 +2972,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3300,9 +2981,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3323,14 +3002,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3345,8 +3019,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent resource where this trigger will be created. Format: `projects/{project}/locations/{location}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The parent resource where this trigger will be created. Format: `projects/{project}/locations/{location}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3371,7 +3044,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3381,8 +3053,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3405,9 +3076,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/triggers", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/triggers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3423,9 +3093,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Trigger` to delete. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Trigger` to delete. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3450,8 +3118,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3461,9 +3127,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_delete(
         connection,
-        projects_id,
-        locations_id,
-        triggers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3486,10 +3150,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "triggersId" => URI.encode(triggers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3505,9 +3167,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Trigger` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Trigger` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3532,8 +3192,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3543,9 +3201,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_get(
         connection,
-        projects_id,
-        locations_id,
-        triggers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3568,10 +3224,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "triggersId" => URI.encode(triggers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3587,8 +3241,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - The parent of the collection of `Triggers`. Format: `projects/{project}/locations/{location}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3614,7 +3267,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3624,8 +3276,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3649,9 +3300,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/triggers", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/triggers", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3669,9 +3319,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `trigger.resourceName`. The `Trigger` name with format: `projects/{project}/locations/{location}/triggers/{trigger}`, where {trigger} is a unique identifier generated by the service.
-  *   `locations_id` (*type:* `String.t`) - Part of `trigger.resourceName`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `trigger.resourceName`. See documentation of `projectsId`.
+  *   `resource_name` (*type:* `String.t`) - The `Trigger` name with format: `projects/{project}/locations/{location}/triggers/{trigger}`, where {trigger} is a unique identifier generated by the service.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3698,8 +3346,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3709,9 +3355,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_patch(
         connection,
-        projects_id,
-        locations_id,
-        triggers_id,
+        resource_name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3736,10 +3380,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "triggersId" => URI.encode(triggers_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+resourceName}", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3755,9 +3397,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `Trigger` to run. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3781,8 +3421,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_run(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3792,9 +3430,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_run(
         connection,
-        projects_id,
-        locations_id,
-        triggers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3816,14 +3452,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}:run",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:run", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3838,9 +3469,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the `ReceiveTriggerWebhook` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `triggers_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the `ReceiveTriggerWebhook` to retrieve. Format: `projects/{project}/locations/{location}/triggers/{trigger}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3867,8 +3496,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_triggers_webhook(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3878,9 +3505,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_triggers_webhook(
         connection,
-        projects_id,
-        locations_id,
-        triggers_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3905,14 +3530,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/triggers/{triggersId}:webhook",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "triggersId" => URI.encode(triggers_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:webhook", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3929,8 +3549,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource where this worker pool will be created. Format: `projects/{project}/locations/{location}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource where this worker pool will be created. Format: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3956,7 +3575,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_worker_pools_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3966,8 +3584,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_worker_pools_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3991,9 +3608,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workerPools", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workerPools", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4009,9 +3625,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the `WorkerPool` to delete. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `worker_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `WorkerPool` to delete. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4037,8 +3651,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_worker_pools_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4048,9 +3660,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_worker_pools_delete(
         connection,
-        projects_id,
-        locations_id,
-        worker_pools_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4074,14 +3684,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workerPools/{workerPoolsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workerPoolsId" => URI.encode(worker_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4096,9 +3701,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the `WorkerPool` to retrieve. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `worker_pools_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `WorkerPool` to retrieve. Format: `projects/{project}/locations/{location}/workerPools/{workerPool}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4121,8 +3724,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_worker_pools_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4132,9 +3733,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_worker_pools_get(
         connection,
-        projects_id,
-        locations_id,
-        worker_pools_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4155,14 +3754,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workerPools/{workerPoolsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workerPoolsId" => URI.encode(worker_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4177,8 +3771,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/{location}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The parent of the collection of `WorkerPools`. Format: `projects/{project}/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4203,7 +3796,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_worker_pools_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4213,8 +3805,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_worker_pools_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4237,9 +3828,8 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/workerPools", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/workerPools", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -4255,9 +3845,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudBuild.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `workerPool.name`. Output only. The resource name of the `WorkerPool`, with format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. The value of `{worker_pool}` is provided by `worker_pool_id` in `CreateWorkerPool` request and the value of `{location}` is determined by the endpoint accessed.
-  *   `locations_id` (*type:* `String.t`) - Part of `workerPool.name`. See documentation of `projectsId`.
-  *   `worker_pools_id` (*type:* `String.t`) - Part of `workerPool.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name of the `WorkerPool`, with format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. The value of `{worker_pool}` is provided by `worker_pool_id` in `CreateWorkerPool` request and the value of `{location}` is determined by the endpoint accessed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4270,7 +3858,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - A mask specifying which fields in `worker_pool` to update.
+      *   `:updateMask` (*type:* `String.t`) - Optional. A mask specifying which fields in `worker_pool` to update.
       *   `:validateOnly` (*type:* `boolean()`) - If set, validate the request and preview the response, but do not actually post it.
       *   `:body` (*type:* `GoogleApi.CloudBuild.V1.Model.WorkerPool.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4283,8 +3871,6 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
   @spec cloudbuild_projects_locations_worker_pools_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4294,9 +3880,7 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
           | {:error, any()}
   def cloudbuild_projects_locations_worker_pools_patch(
         connection,
-        projects_id,
-        locations_id,
-        worker_pools_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4320,14 +3904,9 @@ defmodule GoogleApi.CloudBuild.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/workerPools/{workerPoolsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "workerPoolsId" => URI.encode(worker_pools_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
