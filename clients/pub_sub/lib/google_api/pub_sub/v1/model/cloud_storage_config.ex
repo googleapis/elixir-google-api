@@ -28,6 +28,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
   *   `filenameSuffix` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided suffix for Cloud Storage filename. See the [object naming requirements](https://cloud.google.com/storage/docs/objects#naming). Must not end in "/".
   *   `maxBytes` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum bytes that can be written to a Cloud Storage file before a new file is created. Min 1 KB, max 10 GiB. The max_bytes limit may be exceeded in cases where messages are larger than the limit.
   *   `maxDuration` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum duration that can elapse before a new Cloud Storage file is created. Min 1 minute, max 10 minutes, default 5 minutes. May not exceed the subscription's acknowledgement deadline.
+  *   `maxMessages` (*type:* `String.t`, *default:* `nil`) - Optional. The maximum number of messages that can be written to a Cloud Storage file before a new file is created. Min 1000 messages.
   *   `serviceAccountEmail` (*type:* `String.t`, *default:* `nil`) - Optional. The service account to use to write to Cloud Storage. The subscription creator or updater that specifies this field must have `iam.serviceAccounts.actAs` permission on the service account. If not specified, the Pub/Sub [service agent](https://cloud.google.com/iam/docs/service-agents), service-{project_number}@gcp-sa-pubsub.iam.gserviceaccount.com, is used.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. An output-only field that indicates whether or not the subscription can receive messages.
   *   `textConfig` (*type:* `GoogleApi.PubSub.V1.Model.TextConfig.t`, *default:* `nil`) - Optional. If set, message data will be written to Cloud Storage in text format.
@@ -43,6 +44,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
           :filenameSuffix => String.t() | nil,
           :maxBytes => String.t() | nil,
           :maxDuration => String.t() | nil,
+          :maxMessages => String.t() | nil,
           :serviceAccountEmail => String.t() | nil,
           :state => String.t() | nil,
           :textConfig => GoogleApi.PubSub.V1.Model.TextConfig.t() | nil
@@ -55,6 +57,7 @@ defmodule GoogleApi.PubSub.V1.Model.CloudStorageConfig do
   field(:filenameSuffix)
   field(:maxBytes)
   field(:maxDuration)
+  field(:maxMessages)
   field(:serviceAccountEmail)
   field(:state)
   field(:textConfig, as: GoogleApi.PubSub.V1.Model.TextConfig)
