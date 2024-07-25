@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudBilling.V1 do
   API client metadata for GoogleApi.CloudBilling.V1.
   """
 
-  @discovery_revision "20240301"
+  @discovery_revision "20240517"
 
   def discovery_revision(), do: @discovery_revision
 end
