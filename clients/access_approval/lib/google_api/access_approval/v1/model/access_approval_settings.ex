@@ -31,6 +31,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Optional. A pubsub topic to which notifications relating to approval requests should be sent.
   *   `preferNoBroadApprovalRequests` (*type:* `boolean()`, *default:* `nil`) - This preference is communicated to Google personnel when sending an approval request but can be overridden if necessary.
   *   `preferredRequestExpirationDays` (*type:* `integer()`, *default:* `nil`) - This preference is shared with Google personnel, but can be overridden if said personnel deems necessary. The approver ultimately can set the expiration at approval time.
+  *   `requestScopeMaxWidthPreference` (*type:* `String.t`, *default:* `nil`) - Optional. A setting to indicate the maximum width of an Access Approval request.
+  *   `requireCustomerVisibleJustification` (*type:* `boolean()`, *default:* `nil`) - Optional. A setting to require approval request justifications to be customer visible.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +47,9 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
           :notificationEmails => list(String.t()) | nil,
           :notificationPubsubTopic => String.t() | nil,
           :preferNoBroadApprovalRequests => boolean() | nil,
-          :preferredRequestExpirationDays => integer() | nil
+          :preferredRequestExpirationDays => integer() | nil,
+          :requestScopeMaxWidthPreference => String.t() | nil,
+          :requireCustomerVisibleJustification => boolean() | nil
         }
 
   field(:activeKeyVersion)
@@ -58,6 +62,8 @@ defmodule GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
   field(:notificationPubsubTopic)
   field(:preferNoBroadApprovalRequests)
   field(:preferredRequestExpirationDays)
+  field(:requestScopeMaxWidthPreference)
+  field(:requireCustomerVisibleJustification)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessApproval.V1.Model.AccessApprovalSettings do
