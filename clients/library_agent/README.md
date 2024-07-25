@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_library_agent, "~> 0.6"}]
+  [{:google_api_library_agent, "~> 0.7"}]
 end
 ```
 
