@@ -21,7 +21,8 @@ defmodule GoogleApi.Batch.V1.Model.InstancePolicyOrTemplate do
 
   ## Attributes
 
-  *   `installGpuDrivers` (*type:* `boolean()`, *default:* `nil`) - Set this field true if users want Batch to help fetch drivers from a third party location and install them for GPUs specified in policy.accelerators or instance_template on their behalf. Default is false. For Container-Optimized Image cases, Batch will install the accelerator driver following milestones of https://cloud.google.com/container-optimized-os/docs/release-notes. For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install_gpu_driver.py.
+  *   `installGpuDrivers` (*type:* `boolean()`, *default:* `nil`) - Set this field true if you want Batch to help fetch drivers from a third party location and install them for GPUs specified in `policy.accelerators` or `instance_template` on your behalf. Default is false. For Container-Optimized Image cases, Batch will install the accelerator driver following milestones of https://cloud.google.com/container-optimized-os/docs/release-notes. For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install_gpu_driver.py.
+  *   `installOpsAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this field true if you want Batch to install Ops Agent on your behalf. Default is false.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - Name of an instance template used to create VMs. Named the field as 'instance_template' instead of 'template' to avoid c++ keyword conflict.
   *   `policy` (*type:* `GoogleApi.Batch.V1.Model.InstancePolicy.t`, *default:* `nil`) - InstancePolicy.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Batch.V1.Model.InstancePolicyOrTemplate do
 
   @type t :: %__MODULE__{
           :installGpuDrivers => boolean() | nil,
+          :installOpsAgent => boolean() | nil,
           :instanceTemplate => String.t() | nil,
           :policy => GoogleApi.Batch.V1.Model.InstancePolicy.t() | nil
         }
 
   field(:installGpuDrivers)
+  field(:installOpsAgent)
   field(:instanceTemplate)
   field(:policy, as: GoogleApi.Batch.V1.Model.InstancePolicy)
 end

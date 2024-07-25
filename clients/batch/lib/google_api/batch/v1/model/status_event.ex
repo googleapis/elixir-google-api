@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.Batch.V1.Model.StatusEvent do
   @moduledoc """
-  Status event
+  Status event.
 
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the event.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this event occurred.
-  *   `taskExecution` (*type:* `GoogleApi.Batch.V1.Model.TaskExecution.t`, *default:* `nil`) - Task Execution
-  *   `taskState` (*type:* `String.t`, *default:* `nil`) - Task State
+  *   `taskExecution` (*type:* `GoogleApi.Batch.V1.Model.TaskExecution.t`, *default:* `nil`) - Task Execution. This field is only defined for task-level status events where the task fails.
+  *   `taskState` (*type:* `String.t`, *default:* `nil`) - Task State. This field is only defined for task-level status events.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Type of the event.
   """
 

@@ -27,6 +27,7 @@ defmodule GoogleApi.Batch.V1.Model.AgentMetadata do
   *   `instance` (*type:* `String.t`, *default:* `nil`) - GCP instance name (go/instance-name).
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - GCP instance ID (go/instance-id).
   *   `instancePreemptionNoticeReceived` (*type:* `boolean()`, *default:* `nil`) - If the GCP instance has received preemption notice.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. machine type of the VM
   *   `osRelease` (*type:* `map()`, *default:* `nil`) - parsed contents of /etc/os-release
   *   `version` (*type:* `String.t`, *default:* `nil`) - agent binary version running on VM
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Agent zone.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Batch.V1.Model.AgentMetadata do
           :instance => String.t() | nil,
           :instanceId => String.t() | nil,
           :instancePreemptionNoticeReceived => boolean() | nil,
+          :machineType => String.t() | nil,
           :osRelease => map() | nil,
           :version => String.t() | nil,
           :zone => String.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.Batch.V1.Model.AgentMetadata do
   field(:instance)
   field(:instanceId)
   field(:instancePreemptionNoticeReceived)
+  field(:machineType)
   field(:osRelease, type: :map)
   field(:version)
   field(:zone)
