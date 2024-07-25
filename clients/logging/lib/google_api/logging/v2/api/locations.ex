@@ -31,9 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -53,26 +51,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_get(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -90,10 +74,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,8 +91,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -133,12 +114,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListLocationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_locations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLocationsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -159,9 +140,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -177,9 +157,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -201,26 +179,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogBucket{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_create(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -240,10 +204,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/buckets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -259,9 +221,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The resource in which to create the log bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" For example:"projects/my-project/locations/global"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -286,8 +246,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_create_async(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -297,9 +255,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:error, any()}
   def logging_locations_buckets_create_async(
         connection,
-        v2_id,
-        v2_id1,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -322,10 +278,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets:createAsync", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/buckets:createAsync", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -341,10 +295,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the bucket to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -364,28 +315,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_delete(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -403,11 +338,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -423,10 +355,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the bucket: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -446,28 +375,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogBucket{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_get(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -485,11 +398,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -505,9 +415,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose buckets are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]" Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource whose buckets are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]" Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -529,26 +437,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListBucketsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListBucketsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_list(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -568,10 +462,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/buckets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -587,10 +479,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -612,28 +501,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogBucket{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogBucket.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_patch(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -653,11 +526,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -673,10 +543,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the bucket to undelete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -697,28 +564,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_undelete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_undelete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_undelete(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_undelete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -737,11 +588,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}:undelete", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -757,10 +605,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the bucket to update. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -785,9 +630,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_update_async(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -795,15 +637,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_update_async(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_update_async(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -823,15 +657,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}:updateAsync",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:updateAsync", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -846,10 +674,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The full resource name of the bucket to create a link for. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The full resource name of the bucket to create a link for. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -874,9 +699,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_links_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -886,10 +708,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:error, any()}
   def logging_locations_buckets_links_create(
         connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -912,11 +731,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/links", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/links", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -932,11 +748,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the link to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `links_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the link to delete. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -959,10 +771,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_links_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -970,16 +778,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_links_delete(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        links_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_links_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -997,16 +796,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/links/{linksId}",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1),
-          "linksId" => URI.encode(links_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1021,11 +813,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the link: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `links_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the link: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1045,30 +833,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Link{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_links_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_links_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Link.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_links_get(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        links_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_links_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1086,16 +856,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/links/{linksId}",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1),
-          "linksId" => URI.encode(links_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1110,10 +873,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The parent resource whose links are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent resource whose links are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1135,28 +895,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListLinksResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_links_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_links_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLinksResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_links_list(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_links_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1176,11 +920,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/links", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/links", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1196,10 +937,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket in which to create the view `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"` For example:"projects/my-project/locations/global/buckets/my-bucket"
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The bucket in which to create the view `"projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]"` For example:"projects/my-project/locations/global/buckets/my-bucket"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1224,9 +962,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_views_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1236,10 +971,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:error, any()}
   def logging_locations_buckets_views_create(
         connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1262,11 +994,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/views", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/views", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1282,11 +1011,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the view to delete: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1309,10 +1034,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_views_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1320,16 +1041,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_views_delete(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        views_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_views_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1347,16 +1059,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/views/{viewsId}",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1),
-          "viewsId" => URI.encode(views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1371,11 +1076,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the policy: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1395,30 +1096,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.LogView{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_views_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_views_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.LogView.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_views_get(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        views_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_views_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1436,16 +1119,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/views/{viewsId}",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1),
-          "viewsId" => URI.encode(views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1455,15 +1131,84 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
+  Gets the access control policy for a resource. Returns an empty policy if the resource exists and does not have a policy set.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.GetIamPolicyRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Policy{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec logging_locations_buckets_views_get_iam_policy(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.Policy.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def logging_locations_buckets_views_get_iam_policy(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.Policy{}])
+  end
+
+  @doc """
   Lists views on a log bucket.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The bucket whose views are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The bucket whose views are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1485,28 +1230,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListViewsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_buckets_views_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_buckets_views_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListViewsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_views_list(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_views_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1526,11 +1255,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/views", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/views", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1546,11 +1272,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `buckets_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `views_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The full resource name of the view to update "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]" For example:"projects/my-project/locations/global/buckets/my-bucket/views/my-view"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1575,10 +1297,6 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   @spec logging_locations_buckets_views_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1586,16 +1304,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_buckets_views_patch(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        buckets_id,
-        views_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_buckets_views_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1615,16 +1324,9 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/buckets/{bucketsId}/views/{viewsId}",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "bucketsId" => URI.encode(buckets_id, &URI.char_unreserved?/1),
-          "viewsId" => URI.encode(views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1634,15 +1336,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   end
 
   @doc """
-  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.
+  Sets the access control policy on the specified resource. Replaces any existing policy.Can return NOT_FOUND, INVALID_ARGUMENT, and PERMISSION_DENIED errors.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource to be cancelled.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1655,33 +1354,27 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.CancelOperationRequest.t`) - 
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.SetIamPolicyRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
 
-  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Policy{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_operations_cancel(
+  @spec logging_locations_buckets_views_set_iam_policy(
           Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
           String.t(),
           keyword(),
           keyword()
         ) ::
-          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          {:ok, GoogleApi.Logging.V2.Model.Policy.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_operations_cancel(
+  def logging_locations_buckets_views_set_iam_policy(
         connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        operations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1703,15 +1396,143 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/{v2Id}/{v2Id1}/locations/{locationsId}/operations/{operationsId}:cancel",
-        %{
-          "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-          "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.Policy{}])
+  end
+
+  @doc """
+  Returns permissions that a caller has on the specified resource. If the resource does not exist, this will return an empty set of permissions, not a NOT_FOUND error.Note: This operation is designed to be used for building permission-aware UIs and command-line tools, not for authorization checking. This operation may "fail open" without warning.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.TestIamPermissionsRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Logging.V2.Model.TestIamPermissionsResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec logging_locations_buckets_views_test_iam_permissions(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Logging.V2.Model.TestIamPermissionsResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def logging_locations_buckets_views_test_iam_permissions(
+        connection,
+        resource,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.Logging.V2.Model.TestIamPermissionsResponse{}])
+  end
+
+  @doc """
+  Starts asynchronous cancellation on a long-running operation. The server makes a best effort to cancel the operation, but success is not guaranteed. If the server doesn't support this method, it returns google.rpc.Code.UNIMPLEMENTED. Clients can use Operations.GetOperation or other methods to check whether the cancellation succeeded or whether the operation completed despite cancellation. On successful cancellation, the operation is not deleted; instead, it becomes an operation with an Operation.error value with a google.rpc.Status.code of 1, corresponding to Code.CANCELLED.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource to be cancelled.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:body` (*type:* `GoogleApi.Logging.V2.Model.CancelOperationRequest.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec logging_locations_operations_cancel(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def logging_locations_operations_cancel(connection, name, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v2/{+name}:cancel", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1726,10 +1547,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1749,28 +1567,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_operations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_operations_get(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        operations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1788,11 +1590,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/operations/{operationsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1808,9 +1607,7 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1833,26 +1630,12 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListOperationsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_locations_operations_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_locations_operations_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListOperationsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_locations_operations_list(
-        connection,
-        v2_id,
-        v2_id1,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def logging_locations_operations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -1873,10 +1656,8 @@ defmodule GoogleApi.Logging.V2.Api.Locations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/locations/{locationsId}/operations", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

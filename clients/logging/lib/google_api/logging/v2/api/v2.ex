@@ -31,8 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource for which to retrieve CMEK settings. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" For example:"organizations/12345/cmekSettings"Note: CMEK for the Log Router can be configured for Google Cloud projects, folders, organizations, and billing accounts. Once configured for an organization, it applies to all projects and folders in the Google Cloud organization.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource for which to retrieve CMEK settings. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" For example:"organizations/12345/cmekSettings"Note: CMEK for the Log Router can be configured for Google Cloud projects, folders, organizations, and billing accounts. Once configured for an organization, it applies to all projects and folders in the Google Cloud organization.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -52,18 +51,12 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   *   `{:ok, %GoogleApi.Logging.V2.Model.CmekSettings{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_get_cmek_settings(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_get_cmek_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.CmekSettings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_get_cmek_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_get_cmek_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -81,9 +74,8 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cmekSettings", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/cmekSettings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -99,8 +91,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource for which to retrieve settings. "projects/[PROJECT_ID]/settings" "organizations/[ORGANIZATION_ID]/settings" "billingAccounts/[BILLING_ACCOUNT_ID]/settings" "folders/[FOLDER_ID]/settings" For example:"organizations/12345/settings"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource for which to retrieve settings. "projects/[PROJECT_ID]/settings" "organizations/[ORGANIZATION_ID]/settings" "billingAccounts/[BILLING_ACCOUNT_ID]/settings" "folders/[FOLDER_ID]/settings" For example:"organizations/12345/settings"Note: Settings can be retrieved for Google Cloud projects, folders, organizations, and billing accounts.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -120,12 +111,12 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Settings{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_get_settings(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_get_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Settings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_get_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_get_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -143,9 +134,8 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/settings", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/settings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -161,8 +151,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for the CMEK settings to update. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" For example:"organizations/12345/cmekSettings"Note: CMEK for the Log Router can currently only be configured for Google Cloud organizations. Once configured, it applies to all projects and folders in the Google Cloud organization.
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name for the CMEK settings to update. "projects/[PROJECT_ID]/cmekSettings" "organizations/[ORGANIZATION_ID]/cmekSettings" "billingAccounts/[BILLING_ACCOUNT_ID]/cmekSettings" "folders/[FOLDER_ID]/cmekSettings" For example:"organizations/12345/cmekSettings"Note: CMEK for the Log Router can currently only be configured for Google Cloud organizations. Once configured, it applies to all projects and folders in the Google Cloud organization.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -184,18 +173,12 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   *   `{:ok, %GoogleApi.Logging.V2.Model.CmekSettings{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_update_cmek_settings(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_update_cmek_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.CmekSettings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_update_cmek_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_update_cmek_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -215,9 +198,8 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/cmekSettings", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/cmekSettings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -233,8 +215,7 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for the settings to update. "organizations/[ORGANIZATION_ID]/settings" For example:"organizations/12345/settings"
-  *   `v2_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v2Id`.
+  *   `name` (*type:* `String.t`) - Required. The resource name for the settings to update. "organizations/[ORGANIZATION_ID]/settings" "folders/[FOLDER_ID]/settings" For example:"organizations/12345/settings"
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -256,12 +237,12 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Settings{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_update_settings(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_update_settings(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Settings.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_update_settings(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_update_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -281,9 +262,8 @@ defmodule GoogleApi.Logging.V2.Api.V2 do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/settings", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/settings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

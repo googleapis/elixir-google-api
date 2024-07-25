@@ -31,9 +31,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `logName`. Required. The resource name of the log to delete: projects/[PROJECT_ID]/logs/[LOG_ID] organizations/[ORGANIZATION_ID]/logs/[LOG_ID] billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID] folders/[FOLDER_ID]/logs/[LOG_ID][LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/123/logs/cloudaudit.googleapis.com%2Factivity".For more information about log names, see LogEntry.
-  *   `v2_id1` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
-  *   `logs_id` (*type:* `String.t`) - Part of `logName`. See documentation of `v2Id`.
+  *   `log_name` (*type:* `String.t`) - Required. The resource name of the log to delete: projects/[PROJECT_ID]/logs/[LOG_ID] organizations/[ORGANIZATION_ID]/logs/[LOG_ID] billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID] folders/[FOLDER_ID]/logs/[LOG_ID][LOG_ID] must be URL-encoded. For example, "projects/my-project-id/logs/syslog", "organizations/123/logs/cloudaudit.googleapis.com%2Factivity".For more information about log names, see LogEntry.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -53,19 +51,12 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   *   `{:ok, %GoogleApi.Logging.V2.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_logs_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec logging_logs_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_logs_delete(connection, v2_id, v2_id1, logs_id, optional_params \\ [], opts \\ []) do
+  def logging_logs_delete(connection, log_name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -83,10 +74,8 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/logs/{logsId}", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1),
-        "logsId" => URI.encode(logs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+logName}", %{
+        "logName" => URI.encode(log_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -102,8 +91,7 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Logging.V2.Connection.t`) - Connection to server
-  *   `v2_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name to list logs for: projects/[PROJECT_ID] organizations/[ORGANIZATION_ID] billingAccounts/[BILLING_ACCOUNT_ID] folders/[FOLDER_ID]
-  *   `v2_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v2Id`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name to list logs for: projects/[PROJECT_ID] organizations/[ORGANIZATION_ID] billingAccounts/[BILLING_ACCOUNT_ID] folders/[FOLDER_ID]
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -126,12 +114,12 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
   *   `{:ok, %GoogleApi.Logging.V2.Model.ListLogsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec logging_logs_list(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec logging_logs_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.Logging.V2.Model.ListLogsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def logging_logs_list(connection, v2_id, v2_id1, optional_params \\ [], opts \\ []) do
+  def logging_logs_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -152,9 +140,8 @@ defmodule GoogleApi.Logging.V2.Api.Logs do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/{v2Id}/{v2Id1}/logs", %{
-        "v2Id" => URI.encode(v2_id, &URI.char_unreserved?/1),
-        "v2Id1" => URI.encode(v2_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/logs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
