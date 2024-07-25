@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.RepairPhase do
   @moduledoc """
-  RepairPhase tracks the repair attempts that have been made for each `RepairMode` specified in the `Automation` resource.
+  RepairPhase tracks the repair attempts that have been made for each `RepairPhaseConfig` specified in the `Automation` resource.
 
   ## Attributes
 

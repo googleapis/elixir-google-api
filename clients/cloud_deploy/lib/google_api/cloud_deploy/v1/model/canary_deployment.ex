@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.CanaryDeployment do
 
   ## Attributes
 
-  *   `percentages` (*type:* `list(integer())`, *default:* `nil`) - Required. The percentage based deployments that will occur as a part of a `Rollout`. List is expected in ascending order and each integer n is 0 <= n < 100.
+  *   `percentages` (*type:* `list(integer())`, *default:* `nil`) - Required. The percentage based deployments that will occur as a part of a `Rollout`. List is expected in ascending order and each integer n is 0 <= n < 100. If the GatewayServiceMesh is configured for Kubernetes, then the range for n is 0 <= n <= 100.
   *   `postdeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Postdeploy.t`, *default:* `nil`) - Optional. Configuration for the postdeploy job of the last phase. If this is not configured, there will be no postdeploy job for this phase.
   *   `predeploy` (*type:* `GoogleApi.CloudDeploy.V1.Model.Predeploy.t`, *default:* `nil`) - Optional. Configuration for the predeploy job of the first phase. If this is not configured, there will be no predeploy job for this phase.
   *   `verify` (*type:* `boolean()`, *default:* `nil`) - Whether to run verify tests after each percentage deployment.

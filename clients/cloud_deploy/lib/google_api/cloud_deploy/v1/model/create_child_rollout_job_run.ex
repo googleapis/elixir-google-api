@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.CreateChildRolloutJobRun do
 
   ## Attributes
 
-  *   `rollout` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `ChildRollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/a-z{0,62}`.
+  *   `rollout` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `ChildRollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
   *   `rolloutPhaseId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the childRollout Phase initiated by this JobRun.
   """
 

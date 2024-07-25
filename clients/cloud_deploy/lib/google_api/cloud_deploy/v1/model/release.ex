@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Release do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `Release`. Max length is 255 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/a-z{0,62}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`. The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
   *   `renderEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the render completed.
   *   `renderStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the render began.
   *   `renderState` (*type:* `String.t`, *default:* `nil`) - Output only. Current state of the render operation.

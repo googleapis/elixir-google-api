@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ExecutionConfig do
   *   `privatePool` (*type:* `GoogleApi.CloudDeploy.V1.Model.PrivatePool.t`, *default:* `nil`) - Optional. Use private Cloud Build pool.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Google service account to use for execution. If unspecified, the project execution service account (-compute@developer.gserviceaccount.com) is used.
   *   `usages` (*type:* `list(String.t)`, *default:* `nil`) - Required. Usages when this configuration should be applied.
+  *   `verbose` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, additional logging will be enabled when running builds in this execution environment.
   *   `workerPool` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of the `WorkerPool`, with the format `projects/{project}/locations/{location}/workerPools/{worker_pool}`. If this optional field is unspecified, the default Cloud Build pool will be used.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ExecutionConfig do
           :privatePool => GoogleApi.CloudDeploy.V1.Model.PrivatePool.t() | nil,
           :serviceAccount => String.t() | nil,
           :usages => list(String.t()) | nil,
+          :verbose => boolean() | nil,
           :workerPool => String.t() | nil
         }
 
@@ -48,6 +50,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ExecutionConfig do
   field(:privatePool, as: GoogleApi.CloudDeploy.V1.Model.PrivatePool)
   field(:serviceAccount)
   field(:usages, type: :list)
+  field(:verbose)
   field(:workerPool)
 end
 

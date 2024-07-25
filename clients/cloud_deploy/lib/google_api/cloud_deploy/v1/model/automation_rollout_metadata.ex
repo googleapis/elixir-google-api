@@ -21,23 +21,20 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRolloutMetadata do
 
   ## Attributes
 
-  *   `advanceAutomationRuns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of the AutomationRuns initiated by an advance rollout rule.
-  *   `currentRepairAutomationRun` (*type:* `String.t`, *default:* `nil`) - Output only. The current AutomationRun repairing the rollout.
-  *   `promoteAutomationRun` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the AutomationRun initiated by a promote release rule.
-  *   `repairAutomationRuns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The IDs of the AutomationRuns initiated by a repair rollout rule.
+  *   `advanceAutomationRuns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The names of the AutomationRuns initiated by an advance rollout rule.
+  *   `promoteAutomationRun` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the AutomationRun initiated by a promote release rule.
+  *   `repairAutomationRuns` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The names of the AutomationRuns initiated by a repair rollout rule.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :advanceAutomationRuns => list(String.t()) | nil,
-          :currentRepairAutomationRun => String.t() | nil,
           :promoteAutomationRun => String.t() | nil,
           :repairAutomationRuns => list(String.t()) | nil
         }
 
   field(:advanceAutomationRuns, type: :list)
-  field(:currentRepairAutomationRun)
   field(:promoteAutomationRun)
   field(:repairAutomationRuns, type: :list)
 end
