@@ -22,15 +22,21 @@ defmodule GoogleApi.AnalyticsHub.V1.Model.LinkedResource do
   ## Attributes
 
   *   `linkedDataset` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the linked dataset, e.g. projects/subscriberproject/datasets/linked_dataset
+  *   `linkedPubsubSubscription` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Pub/Sub subscription, e.g. projects/subscriberproject/subscriptions/subscriptions/sub_id
+  *   `listing` (*type:* `String.t`, *default:* `nil`) - Output only. Listing for which linked resource is created.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :linkedDataset => String.t() | nil
+          :linkedDataset => String.t() | nil,
+          :linkedPubsubSubscription => String.t() | nil,
+          :listing => String.t() | nil
         }
 
   field(:linkedDataset)
+  field(:linkedPubsubSubscription)
+  field(:listing)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AnalyticsHub.V1.Model.LinkedResource do
