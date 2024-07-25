@@ -224,7 +224,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
   end
 
   @doc """
-  Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the javascript API documentation for further information.
+  Returns a unique token to access an embeddable UI. To generate a web UI, pass the generated token into the managed Google Play javascript API. Each token may only be used to start one UI session. See the JavaScript API documentation for further information.
 
   ## Parameters
 
@@ -376,6 +376,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:adminEmail` (*type:* `String.t`) - Optional. Email address used to prefill the admin field of the enterprise signup form. This value is a hint only and can be altered by the user.
       *   `:callbackUrl` (*type:* `String.t`) - The callback URL to which the Admin will be redirected after successfully creating an enterprise. Before redirecting there the system will add a single query parameter to this URL named "enterpriseToken" which will contain an opaque token to be used for the CompleteSignup request. Beware that this means that the URL will be parsed, the parameter added and then a new URL formatted, i.e. there may be some minor formatting changes and, more importantly, the URL must be well-formed so that it can be parsed.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -410,6 +411,7 @@ defmodule GoogleApi.AndroidEnterprise.V1.Api.Enterprises do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :adminEmail => :query,
       :callbackUrl => :query
     }
 

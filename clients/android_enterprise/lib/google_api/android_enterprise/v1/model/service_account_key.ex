@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidEnterprise.V1.Model.ServiceAccountKey do
   @moduledoc """
-  Credentials that can be used to authenticate as a service account.
+   *Deprecated:* New integrations cannot use this method and can refer to our new recommendations. Credentials that can be used to authenticate as a service account.
 
   ## Attributes
 
