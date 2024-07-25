@@ -22,6 +22,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
   ## Attributes
 
   *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Source of the data.
+  *   `eventType` (*type:* `String.t`, *default:* `nil`) - Event associated with this alert after applying the rule.
   *   `matchInfo` (*type:* `list(GoogleApi.AlertCenter.V1beta1.Model.MatchInfo.t)`, *default:* `nil`) - List of matches that were found in the resource content.
   *   `recipients` (*type:* `list(String.t)`, *default:* `nil`) - Resource recipients. For Drive, they are grantees that the Drive file was shared with at the time of rule triggering. Valid values include user emails, group emails, domains, or 'anyone' if the file was publicly accessible. If the file was private the recipients list will be empty. For Gmail, they are emails of the users or groups that the Gmail message was sent to.
   *   `resourceInfo` (*type:* `GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo.t`, *default:* `nil`) - Details of the resource which violated the rule.
@@ -37,6 +38,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
 
   @type t :: %__MODULE__{
           :dataSource => String.t() | nil,
+          :eventType => String.t() | nil,
           :matchInfo => list(GoogleApi.AlertCenter.V1beta1.Model.MatchInfo.t()) | nil,
           :recipients => list(String.t()) | nil,
           :resourceInfo => GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo.t() | nil,
@@ -49,6 +51,7 @@ defmodule GoogleApi.AlertCenter.V1beta1.Model.RuleViolationInfo do
         }
 
   field(:dataSource)
+  field(:eventType)
   field(:matchInfo, as: GoogleApi.AlertCenter.V1beta1.Model.MatchInfo, type: :list)
   field(:recipients, type: :list)
   field(:resourceInfo, as: GoogleApi.AlertCenter.V1beta1.Model.ResourceInfo)
