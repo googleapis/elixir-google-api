@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_cloud_resource_manager, "~> 0.43"}]
+  [{:google_api_cloud_resource_manager, "~> 0.44"}]
 end
 ```
 
