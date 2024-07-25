@@ -21,8 +21,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
 
   ## Attributes
 
-  *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - The API Version of this method, as passed in via the `X-Goog-Api-Version` header or `$apiVersion` query parameter.
-  *   `deprecated` (*type:* `boolean()`, *default:* `nil`) - Whether this method is deprecated.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of this method.
   *   `etagRequired` (*type:* `boolean()`, *default:* `nil`) - Whether this method requires an ETag to be specified. The ETag is sent as an HTTP If-Match or If-None-Match header.
   *   `flatPath` (*type:* `String.t`, *default:* `nil`) - The URI path of this REST method in (RFC 6570) format without level 2 features ({+var}). Supplementary to the path property.
@@ -44,8 +42,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :apiVersion => String.t() | nil,
-          :deprecated => boolean() | nil,
           :description => String.t() | nil,
           :etagRequired => boolean() | nil,
           :flatPath => String.t() | nil,
@@ -65,8 +61,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestMethod do
           :useMediaDownloadService => boolean() | nil
         }
 
-  field(:apiVersion)
-  field(:deprecated)
   field(:description)
   field(:etagRequired)
   field(:flatPath)

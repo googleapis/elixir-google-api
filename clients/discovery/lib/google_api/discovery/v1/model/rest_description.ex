@@ -29,7 +29,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescription do
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of this API.
   *   `discoveryVersion` (*type:* `String.t`, *default:* `v1`) - Indicate the version of the Discovery API used to generate this doc.
   *   `documentationLink` (*type:* `String.t`, *default:* `nil`) - A link to human readable documentation for the API.
-  *   `endpoints` (*type:* `list(GoogleApi.Discovery.V1.Model.RestDescriptionEndpoints.t)`, *default:* `nil`) - A list of location-based endpoint objects for this API. Each object contains the endpoint URL, location, description and deprecation status.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The ETag for this response.
   *   `exponentialBackoffDefault` (*type:* `boolean()`, *default:* `nil`) - Enable exponential backoff for suitable methods in the generated clients.
   *   `features` (*type:* `list(String.t)`, *default:* `nil`) - A list of supported features for this API.
@@ -65,7 +64,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescription do
           :description => String.t() | nil,
           :discoveryVersion => String.t() | nil,
           :documentationLink => String.t() | nil,
-          :endpoints => list(GoogleApi.Discovery.V1.Model.RestDescriptionEndpoints.t()) | nil,
           :etag => String.t() | nil,
           :exponentialBackoffDefault => boolean() | nil,
           :features => list(String.t()) | nil,
@@ -102,7 +100,6 @@ defmodule GoogleApi.Discovery.V1.Model.RestDescription do
   field(:description)
   field(:discoveryVersion)
   field(:documentationLink)
-  field(:endpoints, as: GoogleApi.Discovery.V1.Model.RestDescriptionEndpoints, type: :list)
   field(:etag)
   field(:exponentialBackoffDefault)
   field(:features, type: :list)

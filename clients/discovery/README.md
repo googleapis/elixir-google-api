@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_discovery, "~> 0.14"}]
+  [{:google_api_discovery, "~> 0.15"}]
 end
 ```
 
