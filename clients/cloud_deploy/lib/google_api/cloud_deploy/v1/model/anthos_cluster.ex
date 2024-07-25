@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AnthosCluster do
 
   ## Attributes
 
-  *   `membership` (*type:* `String.t`, *default:* `nil`) - Membership of the GKE Hub-registered cluster to which to apply the Skaffold configuration. Format is `projects/{project}/locations/{location}/memberships/{membership_name}`.
+  *   `membership` (*type:* `String.t`, *default:* `nil`) - Optional. Membership of the GKE Hub-registered cluster to which to apply the Skaffold configuration. Format is `projects/{project}/locations/{location}/memberships/{membership_name}`.
   """
 
   use GoogleApi.Gax.ModelBase

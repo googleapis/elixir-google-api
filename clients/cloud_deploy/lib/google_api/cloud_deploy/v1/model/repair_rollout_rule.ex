@@ -22,10 +22,8 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule do
   ## Attributes
 
   *   `condition` (*type:* `GoogleApi.CloudDeploy.V1.Model.AutomationRuleCondition.t`, *default:* `nil`) - Output only. Information around the state of the 'Automation' rule.
-  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. ID of the rule. This id must be unique in the `Automation` resource to which this rule belongs. The format is `a-z{0,62}`.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - Required. ID of the rule. This id must be unique in the `Automation` resource to which this rule belongs. The format is `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
   *   `jobs` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Jobs to repair. Proceeds only after job name matched any one in the list, or for all jobs if unspecified or empty. The phase that includes the job must match the phase ID specified in `source_phase`. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
-  *   `repairModes` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.RepairMode.t)`, *default:* `nil`) - Required. Defines the types of automatic repair actions for failed jobs.
-  *   `sourcePhases` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Phases within which jobs are subject to automatic repair actions on failure. Proceeds only after phase name matched any one in the list, or for all phases if unspecified. This value must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,16 +31,12 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule do
   @type t :: %__MODULE__{
           :condition => GoogleApi.CloudDeploy.V1.Model.AutomationRuleCondition.t() | nil,
           :id => String.t() | nil,
-          :jobs => list(String.t()) | nil,
-          :repairModes => list(GoogleApi.CloudDeploy.V1.Model.RepairMode.t()) | nil,
-          :sourcePhases => list(String.t()) | nil
+          :jobs => list(String.t()) | nil
         }
 
   field(:condition, as: GoogleApi.CloudDeploy.V1.Model.AutomationRuleCondition)
   field(:id)
   field(:jobs, type: :list)
-  field(:repairModes, as: GoogleApi.CloudDeploy.V1.Model.RepairMode, type: :list)
-  field(:sourcePhases, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.RepairRolloutRule do

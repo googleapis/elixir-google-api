@@ -32,7 +32,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Target do
   *   `gke` (*type:* `GoogleApi.CloudDeploy.V1.Model.GkeCluster.t`, *default:* `nil`) - Optional. Information specifying a GKE Cluster.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
   *   `multiTarget` (*type:* `GoogleApi.CloudDeploy.V1.Model.MultiTarget.t`, *default:* `nil`) - Optional. Information specifying a multiTarget.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Target`. Format is `projects/{project}/locations/{location}/targets/a-z{0,62}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the `Target`. Format is `projects/{project}/locations/{location}/targets/{target}`. The `target` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
   *   `requireApproval` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the `Target` requires approval.
   *   `run` (*type:* `GoogleApi.CloudDeploy.V1.Model.CloudRunLocation.t`, *default:* `nil`) - Optional. Information specifying a Cloud Run deployment target.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - Output only. Resource id of the `Target`.

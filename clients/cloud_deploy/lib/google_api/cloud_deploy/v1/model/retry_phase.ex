@@ -23,8 +23,6 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RetryPhase do
 
   *   `attempts` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.RetryAttempt.t)`, *default:* `nil`) - Output only. Detail of a retry action.
   *   `backoffMode` (*type:* `String.t`, *default:* `nil`) - Output only. The pattern of how the wait time of the retry attempt is calculated.
-  *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. The job ID for the Job to retry.
-  *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Output only. The phase ID of the phase that includes the job being retried.
   *   `totalAttempts` (*type:* `String.t`, *default:* `nil`) - Output only. The number of attempts that have been made.
   """
 
@@ -33,15 +31,11 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RetryPhase do
   @type t :: %__MODULE__{
           :attempts => list(GoogleApi.CloudDeploy.V1.Model.RetryAttempt.t()) | nil,
           :backoffMode => String.t() | nil,
-          :jobId => String.t() | nil,
-          :phaseId => String.t() | nil,
           :totalAttempts => String.t() | nil
         }
 
   field(:attempts, as: GoogleApi.CloudDeploy.V1.Model.RetryAttempt, type: :list)
   field(:backoffMode)
-  field(:jobId)
-  field(:phaseId)
   field(:totalAttempts)
 end
 
