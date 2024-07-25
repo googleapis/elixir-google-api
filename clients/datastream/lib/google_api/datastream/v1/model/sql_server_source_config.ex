@@ -21,25 +21,31 @@ defmodule GoogleApi.Datastream.V1.Model.SqlServerSourceConfig do
 
   ## Attributes
 
+  *   `changeTables` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerChangeTables.t`, *default:* `nil`) - CDC reader reads from change tables.
   *   `excludeObjects` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerRdbms.t`, *default:* `nil`) - SQLServer objects to exclude from the stream.
   *   `includeObjects` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerRdbms.t`, *default:* `nil`) - SQLServer objects to include in the stream.
   *   `maxConcurrentBackfillTasks` (*type:* `integer()`, *default:* `nil`) - Max concurrent backfill tasks.
   *   `maxConcurrentCdcTasks` (*type:* `integer()`, *default:* `nil`) - Max concurrent CDC tasks.
+  *   `transactionLogs` (*type:* `GoogleApi.Datastream.V1.Model.SqlServerTransactionLogs.t`, *default:* `nil`) - CDC reader reads from transaction logs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :changeTables => GoogleApi.Datastream.V1.Model.SqlServerChangeTables.t() | nil,
           :excludeObjects => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil,
           :includeObjects => GoogleApi.Datastream.V1.Model.SqlServerRdbms.t() | nil,
           :maxConcurrentBackfillTasks => integer() | nil,
-          :maxConcurrentCdcTasks => integer() | nil
+          :maxConcurrentCdcTasks => integer() | nil,
+          :transactionLogs => GoogleApi.Datastream.V1.Model.SqlServerTransactionLogs.t() | nil
         }
 
+  field(:changeTables, as: GoogleApi.Datastream.V1.Model.SqlServerChangeTables)
   field(:excludeObjects, as: GoogleApi.Datastream.V1.Model.SqlServerRdbms)
   field(:includeObjects, as: GoogleApi.Datastream.V1.Model.SqlServerRdbms)
   field(:maxConcurrentBackfillTasks)
   field(:maxConcurrentCdcTasks)
+  field(:transactionLogs, as: GoogleApi.Datastream.V1.Model.SqlServerTransactionLogs)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.SqlServerSourceConfig do
