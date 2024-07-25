@@ -25,15 +25,16 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   *   `cleanupPolicyDryRun` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the cleanup pipeline is prevented from deleting versions in this repository.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the repository was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The user-provided description of the repository.
-  *   `disallowUnspecifiedMode` (*type:* `boolean()`, *default:* `nil`) - Optional. If this is true, aunspecified repo type will be treated as error. Is used for new repo types that don't have any specific fields. Right now is used by AOSS team when creating repos for customers.
+  *   `disallowUnspecifiedMode` (*type:* `boolean()`, *default:* `nil`) - Optional. If this is true, an unspecified repo type will be treated as error rather than defaulting to standard.
   *   `dockerConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.DockerRepositoryConfig.t`, *default:* `nil`) - Docker repository config contains repository level configuration for the repositories of docker type.
   *   `format` (*type:* `String.t`, *default:* `nil`) - Optional. The format of packages that are stored in the repository.
   *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS resource name of the customer managed encryption key that's used to encrypt the contents of the Repository. Has the form: `projects/my-project/locations/my-region/keyRings/my-kr/cryptoKeys/my-key`. This value may not be changed after the Repository has been created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels with user-defined metadata. This field may contain up to 64 entries. Label keys and values may be no longer than 63 characters. Label keys must begin with a lowercase letter and may only contain lowercase letters, numeric characters, underscores, and dashes.
   *   `mavenConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.MavenRepositoryConfig.t`, *default:* `nil`) - Maven repository config contains repository level configuration for the repositories of maven type.
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode of the repository.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique.
   *   `remoteRepositoryConfig` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig.t`, *default:* `nil`) - Configuration specific for a Remote Repository.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, the repository satisfies physical zone isolation.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. If set, the repository satisfies physical zone separation.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the repository was last updated.
@@ -58,6 +59,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
           :name => String.t() | nil,
           :remoteRepositoryConfig =>
             GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig.t() | nil,
+          :satisfiesPzi => boolean() | nil,
           :satisfiesPzs => boolean() | nil,
           :sizeBytes => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -78,6 +80,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Repository do
   field(:mode)
   field(:name)
   field(:remoteRepositoryConfig, as: GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig)
+  field(:satisfiesPzi)
   field(:satisfiesPzs)
   field(:sizeBytes)
   field(:updateTime, as: DateTime)
