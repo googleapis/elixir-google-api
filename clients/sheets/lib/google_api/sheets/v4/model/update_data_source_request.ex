@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Sheets.V4.Model.UpdateDataSourceRequest do
   @moduledoc """
-  Updates a data source. After the data source is updated successfully, an execution is triggered to refresh the associated DATA_SOURCE sheet to read data from the updated data source. The request requires an additional `bigquery.readonly` OAuth scope.
+  Updates a data source. After the data source is updated successfully, an execution is triggered to refresh the associated DATA_SOURCE sheet to read data from the updated data source. The request requires an additional `bigquery.readonly` OAuth scope if you are updating a BigQuery data source.
 
   ## Attributes
 

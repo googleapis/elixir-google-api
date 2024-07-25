@@ -22,6 +22,7 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceSpec do
   ## Attributes
 
   *   `bigQuery` (*type:* `GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec.t`, *default:* `nil`) - A BigQueryDataSourceSpec.
+  *   `looker` (*type:* `GoogleApi.Sheets.V4.Model.LookerDataSourceSpec.t`, *default:* `nil`) - A LookerDatasourceSpec.
   *   `parameters` (*type:* `list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t)`, *default:* `nil`) - The parameters of the data source, used when querying the data source.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Sheets.V4.Model.DataSourceSpec do
 
   @type t :: %__MODULE__{
           :bigQuery => GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec.t() | nil,
+          :looker => GoogleApi.Sheets.V4.Model.LookerDataSourceSpec.t() | nil,
           :parameters => list(GoogleApi.Sheets.V4.Model.DataSourceParameter.t()) | nil
         }
 
   field(:bigQuery, as: GoogleApi.Sheets.V4.Model.BigQueryDataSourceSpec)
+  field(:looker, as: GoogleApi.Sheets.V4.Model.LookerDataSourceSpec)
   field(:parameters, as: GoogleApi.Sheets.V4.Model.DataSourceParameter, type: :list)
 end
 

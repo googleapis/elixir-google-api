@@ -30,6 +30,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   *   `addProtectedRange` (*type:* `GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t`, *default:* `nil`) - A reply from adding a protected range.
   *   `addSheet` (*type:* `GoogleApi.Sheets.V4.Model.AddSheetResponse.t`, *default:* `nil`) - A reply from adding a sheet.
   *   `addSlicer` (*type:* `GoogleApi.Sheets.V4.Model.AddSlicerResponse.t`, *default:* `nil`) - A reply from adding a slicer.
+  *   `cancelDataSourceRefresh` (*type:* `GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshResponse.t`, *default:* `nil`) - A reply from cancelling data source object refreshes.
   *   `createDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from creating a developer metadata entry.
   *   `deleteConditionalFormatRule` (*type:* `GoogleApi.Sheets.V4.Model.DeleteConditionalFormatRuleResponse.t`, *default:* `nil`) - A reply from deleting a conditional format rule.
   *   `deleteDeveloperMetadata` (*type:* `GoogleApi.Sheets.V4.Model.DeleteDeveloperMetadataResponse.t`, *default:* `nil`) - A reply from deleting a developer metadata entry.
@@ -58,6 +59,8 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
           :addProtectedRange => GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse.t() | nil,
           :addSheet => GoogleApi.Sheets.V4.Model.AddSheetResponse.t() | nil,
           :addSlicer => GoogleApi.Sheets.V4.Model.AddSlicerResponse.t() | nil,
+          :cancelDataSourceRefresh =>
+            GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshResponse.t() | nil,
           :createDeveloperMetadata =>
             GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse.t() | nil,
           :deleteConditionalFormatRule =>
@@ -90,6 +93,7 @@ defmodule GoogleApi.Sheets.V4.Model.Response do
   field(:addProtectedRange, as: GoogleApi.Sheets.V4.Model.AddProtectedRangeResponse)
   field(:addSheet, as: GoogleApi.Sheets.V4.Model.AddSheetResponse)
   field(:addSlicer, as: GoogleApi.Sheets.V4.Model.AddSlicerResponse)
+  field(:cancelDataSourceRefresh, as: GoogleApi.Sheets.V4.Model.CancelDataSourceRefreshResponse)
   field(:createDeveloperMetadata, as: GoogleApi.Sheets.V4.Model.CreateDeveloperMetadataResponse)
 
   field(:deleteConditionalFormatRule,
