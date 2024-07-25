@@ -20,7 +20,7 @@ defmodule GoogleApi.Language.V2 do
   API client metadata for GoogleApi.Language.V2.
   """
 
-  @discovery_revision "20240310"
+  @discovery_revision "20240713"
 
   def discovery_revision(), do: @discovery_revision
 end
