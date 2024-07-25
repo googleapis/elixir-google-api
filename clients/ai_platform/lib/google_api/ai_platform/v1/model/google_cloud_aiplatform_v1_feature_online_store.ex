@@ -24,6 +24,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
   *   `bigtable` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreBigtable.t`, *default:* `nil`) - Contains settings for the Cloud Bigtable instance that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureOnlineStore was created.
   *   `dedicatedServingEndpoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint.t`, *default:* `nil`) - Optional. The dedicated serving endpoint for this FeatureOnlineStore, which is different from common Vertex service endpoint.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Optional. Customer-managed encryption key spec for data storage. If set, online store will be secured by this key.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your FeatureOnlineStore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one FeatureOnlineStore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureOnlineStore. Format: `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
@@ -42,6 +43,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
           :dedicatedServingEndpoint =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint.t()
             | nil,
+          :encryptionSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -63,6 +66,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
       GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreDedicatedServingEndpoint
   )
 
+  field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:etag)
   field(:labels, type: :map)
   field(:name)

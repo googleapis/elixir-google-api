@@ -23,7 +23,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeploymentResourc
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this DeploymentResourcePool was created.
   *   `dedicatedResources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources.t`, *default:* `nil`) - Required. The underlying DedicatedResources that the DeploymentResourcePool uses.
+  *   `disableContainerLogging` (*type:* `boolean()`, *default:* `nil`) - If the DeploymentResourcePool is deployed with custom-trained Models or AutoML Tabular Models, the container(s) of the DeploymentResourcePool will send `stderr` and `stdout` streams to Cloud Logging by default. Please note that the logs incur cost, which are subject to [Cloud Logging pricing](https://cloud.google.com/logging/pricing). User can disable container logging by setting this flag to true.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for a DeploymentResourcePool. If set, this DeploymentResourcePool will be secured by this key. Endpoints and the DeploymentResourcePool they deploy in need to have the same EncryptionSpec.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the DeploymentResourcePool. Format: `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the DeploymentResourcePool's container(s) run as. Specify the email address of the service account. If this service account is not specified, the container(s) run as a service account that doesn't have access to the resource project. Users deploying the Models to this DeploymentResourcePool must have the `iam.serviceAccounts.actAs` permission on this service account.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,7 +35,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeploymentResourc
           :createTime => DateTime.t() | nil,
           :dedicatedResources =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources.t() | nil,
-          :name => String.t() | nil
+          :disableContainerLogging => boolean() | nil,
+          :encryptionSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
+          :name => String.t() | nil,
+          :serviceAccount => String.t() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -41,7 +48,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeploymentResourc
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources
   )
 
+  field(:disableContainerLogging)
+  field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:name)
+  field(:serviceAccount)
 end
 
 defimpl Poison.Decoder,

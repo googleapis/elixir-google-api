@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
   ## Attributes
 
   *   `totalBillableCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable characters in the tuning dataset.
+  *   `totalBillableTokenCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable tokens in the tuning dataset.
   *   `totalTuningCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning characters in the tuning dataset.
   *   `tuningDatasetExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples in the tuning dataset.
   *   `tuningStepCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning steps for this Tuning Job.
@@ -35,6 +36,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
 
   @type t :: %__MODULE__{
           :totalBillableCharacterCount => String.t() | nil,
+          :totalBillableTokenCount => String.t() | nil,
           :totalTuningCharacterCount => String.t() | nil,
           :tuningDatasetExampleCount => String.t() | nil,
           :tuningStepCount => String.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
         }
 
   field(:totalBillableCharacterCount)
+  field(:totalBillableTokenCount)
   field(:totalTuningCharacterCount)
   field(:tuningDatasetExampleCount)
   field(:tuningStepCount)

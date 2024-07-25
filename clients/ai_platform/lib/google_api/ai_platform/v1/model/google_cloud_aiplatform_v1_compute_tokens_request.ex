@@ -21,16 +21,23 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ComputeTokensRequ
 
   ## Attributes
 
-  *   `instances` (*type:* `list(any())`, *default:* `nil`) - Required. The instances that are the input to token computing API call. Schema is identical to the prediction schema of the text model, even for the non-text models, like chat models, or Codey models.
+  *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Optional. Input content.
+  *   `instances` (*type:* `list(any())`, *default:* `nil`) - Optional. The instances that are the input to token computing API call. Schema is identical to the prediction schema of the text model, even for the non-text models, like chat models, or Codey models.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the publisher model requested to serve the prediction. Format: projects/{project}/locations/{location}/publishers/*/models/*
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :instances => list(any()) | nil
+          :contents =>
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
+          :instances => list(any()) | nil,
+          :model => String.t() | nil
         }
 
+  field(:contents, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content, type: :list)
   field(:instances, type: :list)
+  field(:model)
 end
 
 defimpl Poison.Decoder,

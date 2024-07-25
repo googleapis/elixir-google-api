@@ -31,6 +31,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tensorboard do
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize your Tensorboards. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Tensorboard (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
   *   `runCount` (*type:* `integer()`, *default:* `nil`) - Output only. The number of Runs stored in this Tensorboard.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Tensorboard was last updated.
   """
 
@@ -48,6 +50,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tensorboard do
           :labels => map() | nil,
           :name => String.t() | nil,
           :runCount => integer() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -61,6 +65,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Tensorboard do
   field(:labels, type: :map)
   field(:name)
   field(:runCount)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:updateTime, as: DateTime)
 end
 

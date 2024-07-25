@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStore do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this MetadataStore was created.
+  *   `dataplexConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStoreDataplexConfig.t`, *default:* `nil`) - Optional. Dataplex integration settings.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the MetadataStore.
   *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for a Metadata Store. If set, this Metadata Store and all sub-resources of this Metadata Store are secured using this key.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the MetadataStore instance.
@@ -33,6 +34,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStore do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :dataplexConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStoreDataplexConfig.t()
+            | nil,
           :description => String.t() | nil,
           :encryptionSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
@@ -44,6 +48,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStore do
         }
 
   field(:createTime, as: DateTime)
+
+  field(:dataplexConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MetadataStoreDataplexConfig
+  )
+
   field(:description)
   field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:name)

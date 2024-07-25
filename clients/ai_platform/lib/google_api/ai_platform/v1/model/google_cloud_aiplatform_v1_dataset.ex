@@ -32,7 +32,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Dataset do
   *   `metadataArtifact` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Artifact that was created in MetadataStore when creating the Dataset. The Artifact resource name pattern is `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
   *   `metadataSchemaUri` (*type:* `String.t`, *default:* `nil`) - Required. Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
   *   `modelReference` (*type:* `String.t`, *default:* `nil`) - Optional. Reference to the public base model last used by the dataset. Only set for prompt datasets.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the Dataset.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the Dataset.
   *   `savedQueries` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SavedQuery.t)`, *default:* `nil`) - All SavedQueries belong to the Dataset will be returned in List/Get Dataset response. The annotation_specs field will not be populated except for UI cases which will only use annotation_spec_count. In CreateDataset request, a SavedQuery is created together if this field is set, up to one SavedQuery can be set in CreateDatasetRequest. The SavedQuery should not contain any AnnotationSpec.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Dataset was last updated.
   """

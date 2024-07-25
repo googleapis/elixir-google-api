@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
   *   `automaticResources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1AutomaticResources.t`, *default:* `nil`) - A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration.
   *   `containerSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelContainerSpec.t`, *default:* `nil`) - Optional. The specification of the container that is to be used when deploying this Model in Vertex AI. Not present for Large Models.
   *   `dedicatedResources` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources.t`, *default:* `nil`) - A description of resources that are dedicated to the DeployedModel, and that need a higher degree of manual configuration.
+  *   `deployMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployDeployMetadata.t`, *default:* `nil`) - Optional. Metadata information about this deployment config.
   *   `deployTaskName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the deploy task (e.g., "text to image generation").
   *   `largeModelReference` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1LargeModelReference.t`, *default:* `nil`) - Optional. Large model reference. When this is set, model_artifact_spec is not needed.
   *   `modelDisplayName` (*type:* `String.t`, *default:* `nil`) - Optional. Default model display name.
@@ -43,6 +44,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelContainerSpec.t() | nil,
           :dedicatedResources =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources.t() | nil,
+          :deployMetadata =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployDeployMetadata.t()
+            | nil,
           :deployTaskName => String.t() | nil,
           :largeModelReference =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1LargeModelReference.t() | nil,
@@ -64,6 +68,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
 
   field(:dedicatedResources,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResources
+  )
+
+  field(:deployMetadata,
+    as:
+      GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCallToActionDeployDeployMetadata
   )
 
   field(:deployTaskName)

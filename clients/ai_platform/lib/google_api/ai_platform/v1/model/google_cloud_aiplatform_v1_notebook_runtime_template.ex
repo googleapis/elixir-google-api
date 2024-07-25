@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
   *   `dataPersistentDiskSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentDiskSpec.t`, *default:* `nil`) - Optional. The specification of persistent disk attached to the runtime as data disk storage.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the NotebookRuntimeTemplate.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the NotebookRuntimeTemplate. The name can be up to 128 characters long and can consist of any UTF-8 characters.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for the notebook runtime.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
   *   `eucConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig.t`, *default:* `nil`) - EUC configuration of the NotebookRuntimeTemplate.
   *   `idleShutdownConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookIdleShutdownConfig.t`, *default:* `nil`) - The idle shutdown configuration of NotebookRuntimeTemplate. This config will only be set when idle shutdown is enabled.
@@ -35,7 +36,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
   *   `networkSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec.t`, *default:* `nil`) - Optional. Network spec.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
   *   `notebookRuntimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The type of the notebook runtime template.
-  *   `reservationAffinity` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookReservationAffinity.t`, *default:* `nil`) - Optional. Reservation Affinity of the notebook runtime template.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the runtime workload runs as. You can use any service account within the same project, but you must have the service account user permission to use the instance. If not specified, the [Compute Engine default service account](https://cloud.google.com/compute/docs/access/service-accounts#default_service_account) is used.
   *   `shieldedVmConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t`, *default:* `nil`) - Optional. Immutable. Runtime Shielded VM spec.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this NotebookRuntimeTemplate was most recently updated.
@@ -49,6 +49,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentDiskSpec.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :encryptionSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
           :etag => String.t() | nil,
           :eucConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig.t() | nil,
@@ -64,9 +66,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec.t() | nil,
           :networkTags => list(String.t()) | nil,
           :notebookRuntimeType => String.t() | nil,
-          :reservationAffinity =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookReservationAffinity.t()
-            | nil,
           :serviceAccount => String.t() | nil,
           :shieldedVmConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ShieldedVmConfig.t() | nil,
@@ -81,6 +80,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
 
   field(:description)
   field(:displayName)
+  field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:etag)
   field(:eucConfig, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookEucConfig)
 
@@ -95,11 +95,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookRuntimeTe
   field(:networkSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NetworkSpec)
   field(:networkTags, type: :list)
   field(:notebookRuntimeType)
-
-  field(:reservationAffinity,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookReservationAffinity
-  )
-
   field(:serviceAccount)
 
   field(:shieldedVmConfig,

@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TokensInfo do
 
   ## Attributes
 
+  *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. Optional fields for the role from the corresponding Content.
   *   `tokenIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of token ids from the input.
   *   `tokens` (*type:* `list(String.t)`, *default:* `nil`) - A list of tokens from the input.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1TokensInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :role => String.t() | nil,
           :tokenIds => list(String.t()) | nil,
           :tokens => list(String.t()) | nil
         }
 
+  field(:role)
   field(:tokenIds, type: :list)
   field(:tokens, type: :list)
 end
