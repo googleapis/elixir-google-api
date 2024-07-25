@@ -411,7 +411,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
   end
 
   @doc """
-  Creates a conversation.
+  Creates a conversation. Does not support audio transcription or DLP redaction. Use `conversations.upload` instead.
 
   ## Parameters
 
@@ -738,7 +738,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to reduce results to a specific subset. Useful for querying conversations with specific properties.
-      *   `:orderBy` (*type:* `String.t`) - Optional. The attribute by which to order conversations in the response. If empty, conversations will be ordered by descending creation time. Supported values are one of the following: * create_time * customer_satisfaction_rating * duration * latest_analysis * start_time * turn_count The default sort order is ascending. To specify order, append `asc` or `desc`, i.e. `create_time desc`. See https://google.aip.dev/132#ordering for more details.
+      *   `:orderBy` (*type:* `String.t`) - Optional. The attribute by which to order conversations in the response. If empty, conversations will be ordered by descending creation time. Supported values are one of the following: * create_time * customer_satisfaction_rating * duration * latest_analysis * start_time * turn_count The default sort order is ascending. To specify order, append `asc` or `desc` (`create_time desc`). For more details, see [Google AIPs Ordering](https://google.aip.dev/132#ordering).
       *   `:pageSize` (*type:* `integer()`) - The maximum number of conversations to return in the response. A valid page size ranges from 0 to 1,000 inclusive. If the page size is zero or unspecified, a default page size of 100 will be chosen. Note that a call might return fewer results than the requested page size.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListConversationsResponse`. This value indicates that this is a continuation of a prior `ListConversations` call and that the system should return the next page of data.
       *   `:view` (*type:* `String.t`) - The level of details of the conversation. Default is `BASIC`.
@@ -824,7 +824,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. All possible fields can be updated by passing `*`, or a subset of the following updateable fields can be provided: * `agent_id` * `language_code` * `labels` * `metadata` * `quality_metadata` * `call_metadata` * `start_time` * `expire_time` or `ttl` * `data_source.gcs_source.audio_uri` or `data_source.dialogflow_source.audio_uri`
       *   `:body` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Conversation.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -887,7 +887,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
   end
 
   @doc """
-  Create a longrunning conversation upload operation. This method differs from CreateConversation by allowing audio transcription and optional DLP redaction.
+  Create a long-running conversation upload operation. This method differs from `CreateConversation` by allowing audio transcription and optional DLP redaction.
 
   ## Parameters
 
@@ -1643,7 +1643,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ContactCenterInsights.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The issue model to export
+  *   `name` (*type:* `String.t`) - Required. The issue model to export.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

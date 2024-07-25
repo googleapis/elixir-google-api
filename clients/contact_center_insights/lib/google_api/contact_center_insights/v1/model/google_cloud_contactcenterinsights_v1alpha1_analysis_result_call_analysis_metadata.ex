@@ -27,6 +27,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `issueModelResult` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IssueModelResult.t`, *default:* `nil`) - Overall conversation-level issue modeling result.
   *   `phraseMatchers` (*type:* `%{optional(String.t) => GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1PhraseMatchData.t}`, *default:* `nil`) - All the matched phrase matchers in the call.
   *   `sentiments` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentiment.t)`, *default:* `nil`) - Overall conversation-level sentiment for each channel of the call.
+  *   `silence` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSilence.t`, *default:* `nil`) - Overall conversation-level silence during the call.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -62,6 +63,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             list(
               GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentiment.t()
             )
+            | nil,
+          :silence =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSilence.t()
             | nil
         }
 
@@ -96,6 +100,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSentiment,
     type: :list
+  )
+
+  field(:silence,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ConversationLevelSilence
   )
 end
 

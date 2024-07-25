@@ -24,7 +24,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `bucketObjectType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of the objects in `bucket_uri`.
   *   `bucketUri` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud Storage bucket containing source objects.
   *   `customMetadataKeys` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Custom keys to extract as conversation labels from metadata files in `metadata_bucket_uri`. Keys not included in this field will be ignored. Note that there is a limit of 20 labels per conversation.
-  *   `metadataBucketUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud Storage path to the source object metadata. Note that: [1] metadata files are expected to be in JSON format [2] metadata and source objects must be in separate buckets [3] a source object's metadata object must share the same name to be properly ingested
+  *   `metadataBucketUri` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud Storage path to the conversation metadata. Note that: [1] Metadata files are expected to be in JSON format. [2] Metadata and source files (transcripts or audio) must be in separate buckets. [3] A source file and its corresponding metadata file must share the same name to be properly ingested, E.g. `gs://bucket/audio/conversation1.mp3` and `gs://bucket/metadata/conversation1.json`.
   """
 
   use GoogleApi.Gax.ModelBase

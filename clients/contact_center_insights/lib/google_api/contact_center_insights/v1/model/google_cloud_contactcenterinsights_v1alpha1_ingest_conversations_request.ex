@@ -25,6 +25,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `gcsSource` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestGcsSource.t`, *default:* `nil`) - A cloud storage bucket source. Note that any previously ingested objects from the source will be skipped to avoid duplication.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource for new conversations.
   *   `redactionConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1RedactionConfig.t`, *default:* `nil`) - Optional. DLP settings for transcript redaction. Optional, will default to the config specified in Settings.
+  *   `sampleSize` (*type:* `integer()`, *default:* `nil`) - Optional. If set, this fields indicates the number of objects to ingest from the Cloud Storage bucket. If empty, the entire bucket will be ingested. Unless they are first deleted, conversations produced through sampling won't be ingested by subsequent ingest requests.
   *   `speechConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SpeechConfig.t`, *default:* `nil`) - Optional. Default Speech-to-Text configuration. Optional, will default to the config specified in Settings.
   *   `transcriptObjectConfig` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1IngestConversationsRequestTranscriptObjectConfig.t`, *default:* `nil`) - Configuration for when `source` contains conversation transcripts.
   """
@@ -42,6 +43,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
           :redactionConfig =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1RedactionConfig.t()
             | nil,
+          :sampleSize => integer() | nil,
           :speechConfig =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1SpeechConfig.t()
             | nil,
@@ -66,6 +68,8 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1RedactionConfig
   )
+
+  field(:sampleSize)
 
   field(:speechConfig,
     as:

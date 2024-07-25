@@ -21,8 +21,8 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   ## Attributes
 
-  *   `gcsDestination` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ExportIssueModelRequestGcsDestination.t`, *default:* `nil`) - Google Cloud Storage URI to export the Issue Model to.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The issue model to export
+  *   `gcsDestination` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1alpha1ExportIssueModelRequestGcsDestination.t`, *default:* `nil`) - Google Cloud Storage URI to export the issue model to.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The issue model to export.
   """
 
   use GoogleApi.Gax.ModelBase

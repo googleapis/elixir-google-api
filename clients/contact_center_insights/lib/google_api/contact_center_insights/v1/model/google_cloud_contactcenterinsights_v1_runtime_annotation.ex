@@ -32,6 +32,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `smartComposeSuggestion` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SmartComposeSuggestionData.t`, *default:* `nil`) - Agent Assist Smart Compose suggestion data.
   *   `smartReply` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1SmartReplyData.t`, *default:* `nil`) - Agent Assist Smart Reply data.
   *   `startBoundary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotationBoundary.t`, *default:* `nil`) - The boundary in the conversation where the annotation starts, inclusive.
+  *   `userInput` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotationUserInput.t`, *default:* `nil`) - Explicit input used for generating the answer
   """
 
   use GoogleApi.Gax.ModelBase
@@ -65,6 +66,9 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
             | nil,
           :startBoundary =>
             GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotationBoundary.t()
+            | nil,
+          :userInput =>
+            GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotationUserInput.t()
             | nil
         }
 
@@ -112,6 +116,11 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   field(:startBoundary,
     as:
       GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1AnnotationBoundary
+  )
+
+  field(:userInput,
+    as:
+      GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1RuntimeAnnotationUserInput
   )
 end
 
