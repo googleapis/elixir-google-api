@@ -22,11 +22,11 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1BackupSchedule do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this backup schedule was created and effective since. No backups will be created for this schedule before this time.
-  *   `dailyRecurrence` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1DailyRecurrence.t`, *default:* `nil`) - For a schedule that runs daily at a specified time.
+  *   `dailyRecurrence` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1DailyRecurrence.t`, *default:* `nil`) - For a schedule that runs daily.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The unique backup schedule identifier across all locations and databases for the given project. This will be auto-assigned. Format is `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
-  *   `retention` (*type:* `String.t`, *default:* `nil`) - At what relative time in the future, compared to its creation time, the backup should be deleted, e.g. keep backups for 7 days.
+  *   `retention` (*type:* `String.t`, *default:* `nil`) - At what relative time in the future, compared to its creation time, the backup should be deleted, e.g. keep backups for 7 days. The maximum supported retention period is 14 weeks.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this backup schedule was most recently updated. When a backup schedule is first created, this is the same as create_time.
-  *   `weeklyRecurrence` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1WeeklyRecurrence.t`, *default:* `nil`) - For a schedule that runs weekly on a specific day and time.
+  *   `weeklyRecurrence` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1WeeklyRecurrence.t`, *default:* `nil`) - For a schedule that runs weekly on a specific day.
   """
 
   use GoogleApi.Gax.ModelBase
