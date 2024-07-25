@@ -27,6 +27,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImportJob do
   *   `diskImageTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails.t`, *default:* `nil`) - Output only. Target details used to import a disk image.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the image import was ended.
   *   `errors` (*type:* `list(GoogleApi.VMMigration.V1.Model.Status.t)`, *default:* `nil`) - Output only. Provides details on the error that led to the image import state in case of an error.
+  *   `machineImageTargetDetails` (*type:* `GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails.t`, *default:* `nil`) - Output only. Target details used to import a machine image.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource path of the ImageImportJob.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the image import.
   *   `steps` (*type:* `list(GoogleApi.VMMigration.V1.Model.ImageImportStep.t)`, *default:* `nil`) - Output only. The image import steps list representing its progress.
@@ -43,6 +44,8 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImportJob do
             GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails.t() | nil,
           :endTime => DateTime.t() | nil,
           :errors => list(GoogleApi.VMMigration.V1.Model.Status.t()) | nil,
+          :machineImageTargetDetails =>
+            GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails.t() | nil,
           :name => String.t() | nil,
           :state => String.t() | nil,
           :steps => list(GoogleApi.VMMigration.V1.Model.ImageImportStep.t()) | nil,
@@ -55,6 +58,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImportJob do
   field(:diskImageTargetDetails, as: GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails)
   field(:endTime, as: DateTime)
   field(:errors, as: GoogleApi.VMMigration.V1.Model.Status, type: :list)
+  field(:machineImageTargetDetails, as: GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails)
   field(:name)
   field(:state)
   field(:steps, as: GoogleApi.VMMigration.V1.Model.ImageImportStep, type: :list)

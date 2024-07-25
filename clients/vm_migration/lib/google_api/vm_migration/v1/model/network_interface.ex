@@ -21,10 +21,11 @@ defmodule GoogleApi.VMMigration.V1.Model.NetworkInterface do
 
   ## Attributes
 
-  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - The external IP to define in the NIC.
-  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - The internal IP to define in the NIC. The formats accepted are: `ephemeral` \\ ipv4 address \\ a named address resource full path.
+  *   `externalIp` (*type:* `String.t`, *default:* `nil`) - Optional. The external IP to define in the NIC.
+  *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Optional. The internal IP to define in the NIC. The formats accepted are: `ephemeral` \\ ipv4 address \\ a named address resource full path.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The network to connect the NIC to.
-  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The subnetwork to connect the NIC to.
+  *   `networkTier` (*type:* `String.t`, *default:* `nil`) - Optional. The networking tier used for configuring network access configuration. If left empty, will default to PREMIUM.
+  *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Optional. The subnetwork to connect the NIC to.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +34,14 @@ defmodule GoogleApi.VMMigration.V1.Model.NetworkInterface do
           :externalIp => String.t() | nil,
           :internalIp => String.t() | nil,
           :network => String.t() | nil,
+          :networkTier => String.t() | nil,
           :subnetwork => String.t() | nil
         }
 
   field(:externalIp)
   field(:internalIp)
   field(:network)
+  field(:networkTier)
   field(:subnetwork)
 end
 

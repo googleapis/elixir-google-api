@@ -21,8 +21,8 @@ defmodule GoogleApi.VMMigration.V1.Model.Tag do
 
   ## Attributes
 
-  *   `key` (*type:* `String.t`, *default:* `nil`) - Key of tag.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Value of tag.
+  *   `key` (*type:* `String.t`, *default:* `nil`) - Required. Key of tag.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - Required. Value of tag.
   """
 
   use GoogleApi.Gax.ModelBase

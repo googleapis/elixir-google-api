@@ -21,9 +21,9 @@ defmodule GoogleApi.VMMigration.V1.Model.VmwareSourceVmDetails do
 
   ## Attributes
 
-  *   `committedStorageBytes` (*type:* `String.t`, *default:* `nil`) - The total size of the disks being migrated in bytes.
-  *   `disks` (*type:* `list(GoogleApi.VMMigration.V1.Model.VmwareDiskDetails.t)`, *default:* `nil`) - The disks attached to the source VM.
-  *   `firmware` (*type:* `String.t`, *default:* `nil`) - The firmware type of the source VM.
+  *   `committedStorageBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The total size of the disks being migrated in bytes.
+  *   `disks` (*type:* `list(GoogleApi.VMMigration.V1.Model.VmwareDiskDetails.t)`, *default:* `nil`) - Output only. The disks attached to the source VM.
+  *   `firmware` (*type:* `String.t`, *default:* `nil`) - Output only. The firmware type of the source VM.
   *   `vmCapabilitiesInfo` (*type:* `GoogleApi.VMMigration.V1.Model.VmCapabilities.t`, *default:* `nil`) - Output only. Information about VM capabilities needed for some Compute Engine features.
   """
 

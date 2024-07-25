@@ -21,9 +21,9 @@ defmodule GoogleApi.VMMigration.V1.Model.AzureDiskDetails do
 
   ## Attributes
 
-  *   `diskId` (*type:* `String.t`, *default:* `nil`) - Azure disk ID.
-  *   `diskNumber` (*type:* `integer()`, *default:* `nil`) - The ordinal number of the disk.
-  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Size in GB.
+  *   `diskId` (*type:* `String.t`, *default:* `nil`) - Output only. Azure disk ID.
+  *   `diskNumber` (*type:* `integer()`, *default:* `nil`) - Output only. The ordinal number of the disk.
+  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Output only. Size in GB.
   """
 
   use GoogleApi.Gax.ModelBase

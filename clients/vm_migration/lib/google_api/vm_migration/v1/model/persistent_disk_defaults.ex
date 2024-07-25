@@ -26,7 +26,7 @@ defmodule GoogleApi.VMMigration.V1.Model.PersistentDiskDefaults do
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - The disk type to use.
   *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. The encryption to apply to the disk.
   *   `sourceDiskNumber` (*type:* `integer()`, *default:* `nil`) - Required. The ordinal number of the source VM disk.
-  *   `vmAttachmentDetails` (*type:* `GoogleApi.VMMigration.V1.Model.VmAttachmentDetails.t`, *default:* `nil`) - Optional. Details for attachment of the disk to a VM. Used when the disk is set to be attacked to a target VM.
+  *   `vmAttachmentDetails` (*type:* `GoogleApi.VMMigration.V1.Model.VmAttachmentDetails.t`, *default:* `nil`) - Optional. Details for attachment of the disk to a VM. Used when the disk is set to be attached to a target VM.
   """
 
   use GoogleApi.Gax.ModelBase

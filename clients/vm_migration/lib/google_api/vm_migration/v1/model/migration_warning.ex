@@ -21,10 +21,10 @@ defmodule GoogleApi.VMMigration.V1.Model.MigrationWarning do
 
   ## Attributes
 
-  *   `actionItem` (*type:* `GoogleApi.VMMigration.V1.Model.LocalizedMessage.t`, *default:* `nil`) - Suggested action for solving the warning.
+  *   `actionItem` (*type:* `GoogleApi.VMMigration.V1.Model.LocalizedMessage.t`, *default:* `nil`) - Output only. Suggested action for solving the warning.
   *   `code` (*type:* `String.t`, *default:* `nil`) - The warning code.
-  *   `helpLinks` (*type:* `list(GoogleApi.VMMigration.V1.Model.Link.t)`, *default:* `nil`) - URL(s) pointing to additional information on handling the current warning.
-  *   `warningMessage` (*type:* `GoogleApi.VMMigration.V1.Model.LocalizedMessage.t`, *default:* `nil`) - The localized warning message.
+  *   `helpLinks` (*type:* `list(GoogleApi.VMMigration.V1.Model.Link.t)`, *default:* `nil`) - Output only. URL(s) pointing to additional information on handling the current warning.
+  *   `warningMessage` (*type:* `GoogleApi.VMMigration.V1.Model.LocalizedMessage.t`, *default:* `nil`) - Output only. The localized warning message.
   *   `warningTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the warning occurred.
   """
 

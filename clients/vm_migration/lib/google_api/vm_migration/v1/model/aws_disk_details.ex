@@ -21,9 +21,9 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsDiskDetails do
 
   ## Attributes
 
-  *   `diskNumber` (*type:* `integer()`, *default:* `nil`) - The ordinal number of the disk.
-  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Size in GB.
-  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - AWS volume ID.
+  *   `diskNumber` (*type:* `integer()`, *default:* `nil`) - Output only. The ordinal number of the disk.
+  *   `sizeGb` (*type:* `String.t`, *default:* `nil`) - Output only. Size in GB.
+  *   `volumeId` (*type:* `String.t`, *default:* `nil`) - Output only. AWS volume ID.
   """
 
   use GoogleApi.Gax.ModelBase

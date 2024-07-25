@@ -21,7 +21,7 @@ defmodule GoogleApi.VMMigration.V1.Model.UpgradeStatus do
 
   ## Attributes
 
-  *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Provides details on the state of the upgrade operation in case of an error.
+  *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details on the state of the upgrade operation in case of an error.
   *   `previousVersion` (*type:* `String.t`, *default:* `nil`) - The version from which we upgraded.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was started.
   *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the upgradeAppliance operation.
