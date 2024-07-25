@@ -26,7 +26,7 @@ defmodule GoogleApi.Monitoring.V3.Api.UptimeCheckIps do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns the list of IP addresses that checkers run from
+  Returns the list of IP addresses that checkers run from.
 
   ## Parameters
 

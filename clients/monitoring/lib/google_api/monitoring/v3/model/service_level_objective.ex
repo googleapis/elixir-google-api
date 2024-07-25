@@ -23,7 +23,7 @@ defmodule GoogleApi.Monitoring.V3.Model.ServiceLevelObjective do
 
   *   `calendarPeriod` (*type:* `String.t`, *default:* `nil`) - A calendar period, semantically "since the start of the current ". At this time, only DAY, WEEK, FORTNIGHT, and MONTH are supported.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name used for UI elements listing this SLO.
-  *   `goal` (*type:* `float()`, *default:* `nil`) - The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999.
+  *   `goal` (*type:* `float()`, *default:* `nil`) - The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.9999.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] 
   *   `rollingPeriod` (*type:* `String.t`, *default:* `nil`) - A rolling time period, semantically "in the past ". Must be an integer multiple of 1 day no larger than 30 days.
   *   `serviceLevelIndicator` (*type:* `GoogleApi.Monitoring.V3.Model.ServiceLevelIndicator.t`, *default:* `nil`) - The definition of good service, used to measure and calculate the quality of the Service's performance with respect to a single aspect of service quality.

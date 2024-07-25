@@ -31,7 +31,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Organizations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Monitoring.V3.Connection.t`) - Connection to server
-  *   `organizations_id` (*type:* `String.t`) - Part of `name`. Required. The project (https://cloud.google.com/monitoring/api/v3#project_name), organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
+  *   `name` (*type:* `String.t`) - Required. The project (https://cloud.google.com/monitoring/api/v3#project_name), organization or folder on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] organizations/[ORGANIZATION_ID] folders/[FOLDER_ID] 
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -78,7 +78,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Organizations do
           | {:error, any()}
   def monitoring_organizations_time_series_list(
         connection,
-        organizations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -114,8 +114,8 @@ defmodule GoogleApi.Monitoring.V3.Api.Organizations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v3/organizations/{organizationsId}/timeSeries", %{
-        "organizationsId" => URI.encode(organizations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v3/{+name}/timeSeries", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
