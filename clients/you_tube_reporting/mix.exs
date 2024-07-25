@@ -18,7 +18,7 @@
 defmodule GoogleApi.YouTubeReporting.Mixfile do
   use Mix.Project
 
-  @version "0.14.1"
+  @version "0.15.0"
 
   def project() do
     [
@@ -56,7 +56,7 @@ defmodule GoogleApi.YouTubeReporting.Mixfile do
     [
       files: ["lib", "mix.exs", "README*", "LICENSE"],
       maintainers: ["Jeff Ching", "Daniel Azuma"],
-      licenses: ["Apache 2.0"],
+      licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/you_tube_reporting",
         "Homepage" => "https://developers.google.com/youtube/reporting/v1/reports/"
