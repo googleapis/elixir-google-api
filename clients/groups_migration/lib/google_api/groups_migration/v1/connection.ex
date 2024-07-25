@@ -24,7 +24,7 @@ defmodule GoogleApi.GroupsMigration.V1.Connection do
 
   use GoogleApi.Gax.Connection,
     scopes: [
-      # Manage messages in groups on your domain
+      # Upload messages to any Google group in your domain
       "https://www.googleapis.com/auth/apps.groups.migration"
     ],
     otp_app: :google_api_groups_migration,
