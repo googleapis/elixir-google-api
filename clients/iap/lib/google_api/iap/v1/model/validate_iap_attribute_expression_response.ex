@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.IAP.V1.Model.ValidateIapAttributeExpressionResponse do
   @moduledoc """
-  API requires a return message, but currently all response strings will fit in the status and public message. In the future, this response can hold AST validation info.
+  IAP Expression Linter endpoint returns empty response body.
 
   ## Attributes
 

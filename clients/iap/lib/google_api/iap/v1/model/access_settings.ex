@@ -21,12 +21,14 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
 
   ## Attributes
 
-  *   `allowedDomainsSettings` (*type:* `GoogleApi.IAP.V1.Model.AllowedDomainsSettings.t`, *default:* `nil`) - Settings to configure and enable allowed domains.
-  *   `corsSettings` (*type:* `GoogleApi.IAP.V1.Model.CorsSettings.t`, *default:* `nil`) - Configuration to allow cross-origin requests via IAP.
-  *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - GCIP claims and endpoint configurations for 3p identity providers.
-  *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Settings to configure IAP's OAuth behavior.
-  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Settings to configure Policy delegation for apps hosted in tenant projects. INTERNAL_ONLY.
-  *   `reauthSettings` (*type:* `GoogleApi.IAP.V1.Model.ReauthSettings.t`, *default:* `nil`) - Settings to configure reauthentication policies in IAP.
+  *   `allowedDomainsSettings` (*type:* `GoogleApi.IAP.V1.Model.AllowedDomainsSettings.t`, *default:* `nil`) - Optional. Settings to configure and enable allowed domains.
+  *   `corsSettings` (*type:* `GoogleApi.IAP.V1.Model.CorsSettings.t`, *default:* `nil`) - Optional. Configuration to allow cross-origin requests via IAP.
+  *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - Optional. GCIP claims and endpoint configurations for 3p identity providers.
+  *   `identitySources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Identity sources that IAP can use to authenticate the end user. Only one identity source can be configured.
+  *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Optional. Settings to configure IAP's OAuth behavior.
+  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Optional. Settings to configure Policy delegation for apps hosted in tenant projects. INTERNAL_ONLY.
+  *   `reauthSettings` (*type:* `GoogleApi.IAP.V1.Model.ReauthSettings.t`, *default:* `nil`) - Optional. Settings to configure reauthentication policies in IAP.
+  *   `workforceIdentitySettings` (*type:* `GoogleApi.IAP.V1.Model.WorkforceIdentitySettings.t`, *default:* `nil`) - Optional. Settings to configure the workforce identity federation, including workforce pools and OAuth 2.0 settings.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,17 +37,21 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
           :allowedDomainsSettings => GoogleApi.IAP.V1.Model.AllowedDomainsSettings.t() | nil,
           :corsSettings => GoogleApi.IAP.V1.Model.CorsSettings.t() | nil,
           :gcipSettings => GoogleApi.IAP.V1.Model.GcipSettings.t() | nil,
+          :identitySources => list(String.t()) | nil,
           :oauthSettings => GoogleApi.IAP.V1.Model.OAuthSettings.t() | nil,
           :policyDelegationSettings => GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t() | nil,
-          :reauthSettings => GoogleApi.IAP.V1.Model.ReauthSettings.t() | nil
+          :reauthSettings => GoogleApi.IAP.V1.Model.ReauthSettings.t() | nil,
+          :workforceIdentitySettings => GoogleApi.IAP.V1.Model.WorkforceIdentitySettings.t() | nil
         }
 
   field(:allowedDomainsSettings, as: GoogleApi.IAP.V1.Model.AllowedDomainsSettings)
   field(:corsSettings, as: GoogleApi.IAP.V1.Model.CorsSettings)
   field(:gcipSettings, as: GoogleApi.IAP.V1.Model.GcipSettings)
+  field(:identitySources, type: :list)
   field(:oauthSettings, as: GoogleApi.IAP.V1.Model.OAuthSettings)
   field(:policyDelegationSettings, as: GoogleApi.IAP.V1.Model.PolicyDelegationSettings)
   field(:reauthSettings, as: GoogleApi.IAP.V1.Model.ReauthSettings)
+  field(:workforceIdentitySettings, as: GoogleApi.IAP.V1.Model.WorkforceIdentitySettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.IAP.V1.Model.AccessSettings do

@@ -31,7 +31,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -57,7 +57,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_get_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_get_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -76,8 +76,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}:getIamPolicy", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -93,7 +93,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The resource name for which to retrieve the settings. Authorization: Requires the `getSettings` permission for the associated resource.
+  *   `name` (*type:* `String.t`) - Required. The resource name for which to retrieve the settings. Authorization: Requires the `getSettings` permission for the associated resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -118,7 +118,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_get_iap_settings(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_get_iap_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -136,8 +136,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}:iapSettings", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:iapSettings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -153,7 +153,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,7 +179,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_set_iam_policy(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_set_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -198,8 +198,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}:setIamPolicy", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -215,7 +215,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -241,7 +241,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_test_iam_permissions(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_test_iam_permissions(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -260,8 +260,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}:testIamPermissions", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -277,7 +277,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `iapSettings.name`. Required. The resource name of the IAP protected resource.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the IAP protected resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -304,7 +304,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_update_iap_settings(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_update_iap_settings(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -324,8 +324,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/{v1Id}:iapSettings", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:iapSettings", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -341,7 +341,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the IAP protected resource.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the IAP protected resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -367,7 +367,7 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_validate_attribute_expression(connection, v1_id, optional_params \\ [], opts \\ []) do
+  def iap_validate_attribute_expression(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -386,8 +386,8 @@ defmodule GoogleApi.IAP.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}:validateAttributeExpression", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}:validateAttributeExpression", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

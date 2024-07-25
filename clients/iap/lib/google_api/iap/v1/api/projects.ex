@@ -31,7 +31,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id under which the brand is to be created. In the following format: projects/{project_number/id}.
+  *   `parent` (*type:* `String.t`) - Required. GCP Project number/id under which the brand is to be created. In the following format: projects/{project_number/id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -57,7 +57,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_projects_brands_create(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def iap_projects_brands_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -76,8 +76,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/brands", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/brands", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -93,8 +93,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the brand to be fetched. In the following format: projects/{project_number/id}/brands/{brand}.
-  *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the brand to be fetched. In the following format: projects/{project_number/id}/brands/{brand}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -114,18 +113,12 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   *   `{:ok, %GoogleApi.IAP.V1.Model.Brand{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec iap_projects_brands_get(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec iap_projects_brands_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.IAP.V1.Model.Brand.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_projects_brands_get(
-        connection,
-        projects_id,
-        brands_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def iap_projects_brands_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -143,9 +136,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/brands/{brandsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "brandsId" => URI.encode(brands_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -161,7 +153,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. GCP Project number/id. In the following format: projects/{project_number/id}.
+  *   `parent` (*type:* `String.t`) - Required. GCP Project number/id. In the following format: projects/{project_number/id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -186,7 +178,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def iap_projects_brands_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def iap_projects_brands_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -204,8 +196,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/brands", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/brands", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -221,8 +213,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Path to create the client in. In the following format: projects/{project_number/id}/brands/{brand}. The project must belong to a G Suite account.
-  *   `brands_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Path to create the client in. In the following format: projects/{project_number/id}/brands/{brand}. The project must belong to a G Suite account.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -246,7 +237,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_identity_aware_proxy_clients_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -256,8 +246,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_create(
         connection,
-        projects_id,
-        brands_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -279,9 +268,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/brands/{brandsId}/identityAwareProxyClients", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/identityAwareProxyClients", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -297,9 +285,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be deleted. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
-  *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the Identity Aware Proxy client to be deleted. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -322,8 +308,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_identity_aware_proxy_clients_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -333,9 +317,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_delete(
         connection,
-        projects_id,
-        brands_id,
-        identity_aware_proxy_clients_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -356,15 +338,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/brands/{brandsId}/identityAwareProxyClients/{identityAwareProxyClientsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1),
-          "identityAwareProxyClientsId" =>
-            URI.encode(identity_aware_proxy_clients_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -379,9 +355,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to be fetched. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
-  *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the Identity Aware Proxy client to be fetched. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -404,8 +378,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_identity_aware_proxy_clients_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -415,9 +387,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_get(
         connection,
-        projects_id,
-        brands_id,
-        identity_aware_proxy_clients_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -438,15 +408,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/brands/{brandsId}/identityAwareProxyClients/{identityAwareProxyClientsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1),
-          "identityAwareProxyClientsId" =>
-            URI.encode(identity_aware_proxy_clients_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -461,8 +425,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Full brand path. In the following format: projects/{project_number/id}/brands/{brand}.
-  *   `brands_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Full brand path. In the following format: projects/{project_number/id}/brands/{brand}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -487,7 +450,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_identity_aware_proxy_clients_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -497,8 +459,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_list(
         connection,
-        projects_id,
-        brands_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -521,9 +482,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/brands/{brandsId}/identityAwareProxyClients", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/identityAwareProxyClients", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -541,9 +501,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the Identity Aware Proxy client to that will have its secret reset. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
-  *   `brands_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `identity_aware_proxy_clients_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the Identity Aware Proxy client to that will have its secret reset. In the following format: projects/{project_number/id}/brands/{brand}/identityAwareProxyClients/{client_id}.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -567,8 +525,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_brands_identity_aware_proxy_clients_reset_secret(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -578,9 +534,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_brands_identity_aware_proxy_clients_reset_secret(
         connection,
-        projects_id,
-        brands_id,
-        identity_aware_proxy_clients_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -602,15 +556,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/brands/{brandsId}/identityAwareProxyClients/{identityAwareProxyClientsId}:resetSecret",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "brandsId" => URI.encode(brands_id, &URI.char_unreserved?/1),
-          "identityAwareProxyClientsId" =>
-            URI.encode(identity_aware_proxy_clients_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:resetSecret", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -625,8 +573,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -651,7 +598,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_iap_tunnel_locations_dest_groups_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -661,8 +607,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_iap_tunnel_locations_dest_groups_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -685,9 +630,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/destGroups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -703,9 +647,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to delete. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the TunnelDestGroup to delete. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -728,8 +670,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_iap_tunnel_locations_dest_groups_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -739,9 +679,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_iap_tunnel_locations_dest_groups_delete(
         connection,
-        projects_id,
-        locations_id,
-        dest_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -762,14 +700,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -784,9 +717,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the TunnelDestGroup to be fetched. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `dest_groups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the TunnelDestGroup to be fetched. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}/destGroups/{dest_group}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -809,8 +740,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_iap_tunnel_locations_dest_groups_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -820,9 +749,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_iap_tunnel_locations_dest_groups_get(
         connection,
-        projects_id,
-        locations_id,
-        dest_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -843,14 +770,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -865,8 +787,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`. A `-` can be used for the location to group across all locations.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. Google Cloud Project ID and location. In the following format: `projects/{project_number/id}/iap_tunnel/locations/{location}`. A `-` can be used for the location to group across all locations.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -891,7 +812,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_iap_tunnel_locations_dest_groups_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -901,8 +821,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_iap_tunnel_locations_dest_groups_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -925,9 +844,8 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/destGroups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -943,9 +861,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.IAP.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. Required. Immutable. Identifier for the TunnelDestGroup. Must be unique within the project and contain only lower case letters (a-z) and dashes (-).
-  *   `locations_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
-  *   `dest_groups_id` (*type:* `String.t`) - Part of `tunnelDestGroup.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. Identifier for the TunnelDestGroup. Must be unique within the project and contain only lower case letters (a-z) and dashes (-).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -970,8 +886,6 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
   @spec iap_projects_iap_tunnel_locations_dest_groups_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -981,9 +895,7 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
           | {:error, any()}
   def iap_projects_iap_tunnel_locations_dest_groups_patch(
         connection,
-        projects_id,
-        locations_id,
-        dest_groups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1006,14 +918,9 @@ defmodule GoogleApi.IAP.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/iap_tunnel/locations/{locationsId}/destGroups/{destGroupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "destGroupsId" => URI.encode(dest_groups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
