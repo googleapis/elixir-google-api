@@ -35,6 +35,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
   *   `sourceInstanceTier` (*type:* `String.t`, *default:* `nil`) - Output only. The service tier of the source Filestore instance that this backup is created from.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The backup state.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,8 @@ defmodule GoogleApi.File.V1.Model.Backup do
           :sourceInstance => String.t() | nil,
           :sourceInstanceTier => String.t() | nil,
           :state => String.t() | nil,
-          :storageBytes => String.t() | nil
+          :storageBytes => String.t() | nil,
+          :tags => map() | nil
         }
 
   field(:capacityGb)
@@ -70,6 +72,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
   field(:sourceInstanceTier)
   field(:state)
   field(:storageBytes)
+  field(:tags, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.File.V1.Model.Backup do

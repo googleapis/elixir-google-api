@@ -27,6 +27,7 @@ defmodule GoogleApi.File.V1.Model.Snapshot do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the snapshot, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The snapshot state.
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.File.V1.Model.Snapshot do
           :filesystemUsedBytes => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
-          :state => String.t() | nil
+          :state => String.t() | nil,
+          :tags => map() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -46,6 +48,7 @@ defmodule GoogleApi.File.V1.Model.Snapshot do
   field(:labels, type: :map)
   field(:name)
   field(:state)
+  field(:tags, type: :map)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.File.V1.Model.Snapshot do
