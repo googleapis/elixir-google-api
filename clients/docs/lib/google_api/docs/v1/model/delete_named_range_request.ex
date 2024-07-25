@@ -23,17 +23,20 @@ defmodule GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest do
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the range(s) to delete. All named ranges with the given name will be deleted.
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The ID of the named range to delete.
+  *   `tabsCriteria` (*type:* `GoogleApi.Docs.V1.Model.TabsCriteria.t`, *default:* `nil`) - Optional. The criteria used to specify which tab(s) the range deletion should occur in. When omitted, the range deletion is applied to all tabs. In a document containing a single tab: - If provided, must match the singular tab's ID. - If omitted, the range deletion applies to the singular tab. In a document containing multiple tabs: - If provided, the range deletion applies to the specified tabs. - If not provided, the range deletion applies to all tabs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :name => String.t() | nil,
-          :namedRangeId => String.t() | nil
+          :namedRangeId => String.t() | nil,
+          :tabsCriteria => GoogleApi.Docs.V1.Model.TabsCriteria.t() | nil
         }
 
   field(:name)
   field(:namedRangeId)
+  field(:tabsCriteria, as: GoogleApi.Docs.V1.Model.TabsCriteria)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.DeleteNamedRangeRequest do

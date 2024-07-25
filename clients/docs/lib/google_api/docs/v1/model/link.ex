@@ -21,21 +21,30 @@ defmodule GoogleApi.Docs.V1.Model.Link do
 
   ## Attributes
 
+  *   `bookmark` (*type:* `GoogleApi.Docs.V1.Model.BookmarkLink.t`, *default:* `nil`) - A bookmark in this document. In documents containing a single tab, links to bookmarks within the singular tab continue to return Link.bookmark_id when the includeTabsContent parameter is set to `false` or unset. Otherwise, this field is returned.
   *   `bookmarkId` (*type:* `String.t`, *default:* `nil`) - The ID of a bookmark in this document.
+  *   `heading` (*type:* `GoogleApi.Docs.V1.Model.HeadingLink.t`, *default:* `nil`) - A heading in this document. In documents containing a single tab, links to headings within the singular tab continue to return Link.heading_id when the includeTabsContent parameter is set to `false` or unset. Otherwise, this field is returned.
   *   `headingId` (*type:* `String.t`, *default:* `nil`) - The ID of a heading in this document.
+  *   `tabId` (*type:* `String.t`, *default:* `nil`) - The ID of a tab in this document.
   *   `url` (*type:* `String.t`, *default:* `nil`) - An external URL.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :bookmark => GoogleApi.Docs.V1.Model.BookmarkLink.t() | nil,
           :bookmarkId => String.t() | nil,
+          :heading => GoogleApi.Docs.V1.Model.HeadingLink.t() | nil,
           :headingId => String.t() | nil,
+          :tabId => String.t() | nil,
           :url => String.t() | nil
         }
 
+  field(:bookmark, as: GoogleApi.Docs.V1.Model.BookmarkLink)
   field(:bookmarkId)
+  field(:heading, as: GoogleApi.Docs.V1.Model.HeadingLink)
   field(:headingId)
+  field(:tabId)
   field(:url)
 end
 

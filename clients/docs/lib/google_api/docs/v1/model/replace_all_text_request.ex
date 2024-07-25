@@ -23,17 +23,20 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceAllTextRequest do
 
   *   `containsText` (*type:* `GoogleApi.Docs.V1.Model.SubstringMatchCriteria.t`, *default:* `nil`) - Finds text in the document matching this substring.
   *   `replaceText` (*type:* `String.t`, *default:* `nil`) - The text that will replace the matched text.
+  *   `tabsCriteria` (*type:* `GoogleApi.Docs.V1.Model.TabsCriteria.t`, *default:* `nil`) - Optional. The criteria used to specify in which tabs the replacement occurs. When omitted, the replacement applies to all tabs. In a document containing a single tab: - If provided, must match the singular tab's ID. - If omitted, the replacement applies to the singular tab. In a document containing multiple tabs: - If provided, the replacement applies to the specified tabs. - If omitted, the replacement applies to all tabs.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :containsText => GoogleApi.Docs.V1.Model.SubstringMatchCriteria.t() | nil,
-          :replaceText => String.t() | nil
+          :replaceText => String.t() | nil,
+          :tabsCriteria => GoogleApi.Docs.V1.Model.TabsCriteria.t() | nil
         }
 
   field(:containsText, as: GoogleApi.Docs.V1.Model.SubstringMatchCriteria)
   field(:replaceText)
+  field(:tabsCriteria, as: GoogleApi.Docs.V1.Model.TabsCriteria)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Docs.V1.Model.ReplaceAllTextRequest do

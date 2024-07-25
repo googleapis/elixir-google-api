@@ -23,6 +23,7 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest do
 
   *   `namedRangeId` (*type:* `String.t`, *default:* `nil`) - The ID of the named range whose content will be replaced. If there is no named range with the given ID a 400 bad request error is returned.
   *   `namedRangeName` (*type:* `String.t`, *default:* `nil`) - The name of the NamedRanges whose content will be replaced. If there are multiple named ranges with the given name, then the content of each one will be replaced. If there are no named ranges with the given name, then the request will be a no-op.
+  *   `tabsCriteria` (*type:* `GoogleApi.Docs.V1.Model.TabsCriteria.t`, *default:* `nil`) - Optional. The criteria used to specify in which tabs the replacement occurs. When omitted, the replacement applies to all tabs. In a document containing a single tab: - If provided, must match the singular tab's ID. - If omitted, the replacement applies to the singular tab. In a document containing multiple tabs: - If provided, the replacement applies to the specified tabs. - If omitted, the replacement applies to all tabs.
   *   `text` (*type:* `String.t`, *default:* `nil`) - Replaces the content of the specified named range(s) with the given text.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Docs.V1.Model.ReplaceNamedRangeContentRequest do
   @type t :: %__MODULE__{
           :namedRangeId => String.t() | nil,
           :namedRangeName => String.t() | nil,
+          :tabsCriteria => GoogleApi.Docs.V1.Model.TabsCriteria.t() | nil,
           :text => String.t() | nil
         }
 
   field(:namedRangeId)
   field(:namedRangeName)
+  field(:tabsCriteria, as: GoogleApi.Docs.V1.Model.TabsCriteria)
   field(:text)
 end
 

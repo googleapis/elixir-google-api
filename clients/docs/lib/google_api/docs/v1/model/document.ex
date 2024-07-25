@@ -36,6 +36,7 @@ defmodule GoogleApi.Docs.V1.Model.Document do
   *   `suggestedDocumentStyleChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedDocumentStyle.t}`, *default:* `nil`) - Output only. The suggested changes to the style of the document, keyed by suggestion ID.
   *   `suggestedNamedStylesChanges` (*type:* `%{optional(String.t) => GoogleApi.Docs.V1.Model.SuggestedNamedStyles.t}`, *default:* `nil`) - Output only. The suggested changes to the named styles of the document, keyed by suggestion ID.
   *   `suggestionsViewMode` (*type:* `String.t`, *default:* `nil`) - Output only. The suggestions view mode applied to the document. Note: When editing a document, changes must be based on a document with SUGGESTIONS_INLINE.
+  *   `tabs` (*type:* `list(GoogleApi.Docs.V1.Model.Tab.t)`, *default:* `nil`) - Tabs that are part of a document. Tabs can contain child tabs, a tab nested within another tab. Child tabs are represented by the Tab.child_tabs field.
   *   `title` (*type:* `String.t`, *default:* `nil`) - The title of the document.
   """
 
@@ -62,6 +63,7 @@ defmodule GoogleApi.Docs.V1.Model.Document do
           :suggestedNamedStylesChanges =>
             %{optional(String.t()) => GoogleApi.Docs.V1.Model.SuggestedNamedStyles.t()} | nil,
           :suggestionsViewMode => String.t() | nil,
+          :tabs => list(GoogleApi.Docs.V1.Model.Tab.t()) | nil,
           :title => String.t() | nil
         }
 
@@ -86,6 +88,7 @@ defmodule GoogleApi.Docs.V1.Model.Document do
   field(:suggestedNamedStylesChanges, as: GoogleApi.Docs.V1.Model.SuggestedNamedStyles, type: :map)
 
   field(:suggestionsViewMode)
+  field(:tabs, as: GoogleApi.Docs.V1.Model.Tab, type: :list)
   field(:title)
 end
 

@@ -165,6 +165,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:includeTabsContent` (*type:* `boolean()`) - Whether to populate the Document.tabs field instead of the text content fields like body and documentStyle on Document. - When `True`: Document content populates in the Document.tabs field instead of the text content fields in Document. - When `False`: The content of the document's first tab populates the content fields in Document excluding Document.tabs. If a document has only one tab, then that tab is used to populate the document content. Document.tabs will be empty.
       *   `:suggestionsViewMode` (*type:* `String.t`) - The suggestions view mode to apply to the document. This allows viewing the document with all suggestions inline, accepted or rejected. If one is not specified, DEFAULT_FOR_CURRENT_ACCESS is used.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -191,6 +192,7 @@ defmodule GoogleApi.Docs.V1.Api.Documents do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :includeTabsContent => :query,
       :suggestionsViewMode => :query
     }
 
