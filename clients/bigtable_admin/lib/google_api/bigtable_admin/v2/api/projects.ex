@@ -31,7 +31,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project in which to create the new instance. Values are of the form `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the project in which to create the new instance. Values are of the form `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,7 +64,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_create(
         connection,
-        projects_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -86,8 +86,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/instances", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -103,8 +103,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the instance to be deleted. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the instance to be deleted. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -127,7 +126,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -135,13 +133,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_projects_instances_delete(
-        connection,
-        projects_id,
-        instances_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def bigtableadmin_projects_instances_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -159,9 +151,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -177,8 +168,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested instance. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the requested instance. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -198,24 +188,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   *   `{:ok, %GoogleApi.BigtableAdmin.V2.Model.Instance{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec bigtableadmin_projects_instances_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec bigtableadmin_projects_instances_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.BigtableAdmin.V2.Model.Instance.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_projects_instances_get(
-        connection,
-        projects_id,
-        instances_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def bigtableadmin_projects_instances_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -233,9 +211,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -251,8 +228,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -276,7 +252,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -286,8 +261,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_get_iam_policy(
         connection,
-        projects_id,
-        instances_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -309,9 +283,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}:getIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -327,7 +300,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the project for which a list of instances is requested. Values are of the form `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the project for which a list of instances is requested. Values are of the form `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -358,12 +331,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_projects_instances_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def bigtableadmin_projects_instances_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -382,8 +350,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/instances", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -401,8 +369,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `instance.name`. The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
-  *   `instances_id` (*type:* `String.t`) - Part of `instance.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -427,7 +394,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_partial_update_instance(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -437,8 +403,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_partial_update_instance(
         connection,
-        projects_id,
-        instances_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -461,9 +426,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -479,8 +443,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -504,7 +467,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -514,8 +476,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_set_iam_policy(
         connection,
-        projects_id,
-        instances_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -537,9 +498,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}:setIamPolicy", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -555,8 +515,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -580,7 +539,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -590,8 +548,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_test_iam_permissions(
         connection,
-        projects_id,
-        instances_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -613,9 +570,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}:testIamPermissions", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -633,8 +589,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the instance. Values are of the form `projects/{project}/instances/a-z+[a-z0-9]`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -658,7 +613,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -666,13 +620,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_projects_instances_update(
-        connection,
-        projects_id,
-        instances_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def bigtableadmin_projects_instances_update(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -691,9 +639,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -709,8 +656,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new app profile. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance in which to create the new app profile. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -736,7 +682,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_app_profiles_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -746,8 +691,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_app_profiles_create(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -771,9 +715,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/appProfiles", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/appProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -789,9 +732,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the app profile to be deleted. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `app_profiles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the app profile to be deleted. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -815,8 +756,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_app_profiles_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -826,9 +765,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_app_profiles_delete(
         connection,
-        projects_id,
-        instances_id,
-        app_profiles_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -850,14 +787,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/appProfiles/{appProfilesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -872,9 +804,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `app_profiles_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the requested app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/{app_profile}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -897,8 +827,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_app_profiles_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -908,9 +836,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_app_profiles_get(
         connection,
-        projects_id,
-        instances_id,
-        app_profiles_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -931,14 +857,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/appProfiles/{appProfilesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -953,8 +874,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of app profiles is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g., `projects/myproject/instances/-`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance for which a list of app profiles is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list AppProfiles for all Instances in a project, e.g., `projects/myproject/instances/-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -979,7 +899,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_app_profiles_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -989,8 +908,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_app_profiles_list(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1013,9 +931,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/appProfiles", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/appProfiles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1033,9 +950,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `appProfile.name`. The unique name of the app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
-  *   `instances_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
-  *   `app_profiles_id` (*type:* `String.t`) - Part of `appProfile.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the app profile. Values are of the form `projects/{project}/instances/{instance}/appProfiles/_a-zA-Z0-9*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1061,8 +976,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_app_profiles_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1072,9 +985,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_app_profiles_patch(
         connection,
-        projects_id,
-        instances_id,
-        app_profiles_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1098,14 +1009,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/appProfiles/{appProfilesId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "appProfilesId" => URI.encode(app_profiles_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1120,8 +1026,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the new cluster. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance in which to create the new cluster. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1146,7 +1051,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1156,8 +1060,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_create(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1180,9 +1083,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/clusters", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1198,9 +1100,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the cluster to be deleted. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the cluster to be deleted. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1223,8 +1123,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1234,9 +1132,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_delete(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1257,10 +1153,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1276,9 +1170,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the requested cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1301,8 +1193,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1312,9 +1202,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_get(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1335,10 +1223,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1354,8 +1240,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which a list of clusters is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list Clusters for all Instances in a project, e.g., `projects/myproject/instances/-`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance for which a list of clusters is requested. Values are of the form `projects/{project}/instances/{instance}`. Use `{instance} = '-'` to list Clusters for all Instances in a project, e.g., `projects/myproject/instances/-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1379,7 +1264,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1389,8 +1273,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_list(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1412,9 +1295,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/clusters", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1430,9 +1312,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `cluster.name`. The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
-  *   `instances_id` (*type:* `String.t`) - Part of `cluster.name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `cluster.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1457,8 +1337,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_partial_update_cluster(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1468,9 +1346,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_partial_update_cluster(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1493,10 +1369,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1512,9 +1386,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1538,8 +1410,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_update(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1549,9 +1419,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_update(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1573,10 +1441,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:put)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "clustersId" => URI.encode(clusters_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1592,9 +1458,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the destination cluster that will contain the backup copy. The cluster must already exists. Values are of the form: `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the destination cluster that will contain the backup copy. The cluster must already exist. Values are of the form: `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1618,8 +1482,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_copy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1629,9 +1491,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_copy(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1653,14 +1513,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups:copy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/backups:copy", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1675,9 +1530,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. This must be one of the clusters in the instance in which this table is located. The backup will be stored in this cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. This must be one of the clusters in the instance in which this table is located. The backup will be stored in this cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1702,8 +1555,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1713,9 +1564,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_create(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1738,14 +1587,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1760,10 +1604,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup to delete. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the backup to delete. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1786,9 +1627,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1798,10 +1636,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_delete(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1822,15 +1657,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1845,10 +1674,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of the backup. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of the backup. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/backups/{backup}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1871,9 +1697,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1883,10 +1706,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_get(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1907,15 +1727,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1925,15 +1739,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1957,9 +1768,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1969,10 +1777,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_get_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1994,15 +1799,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2017,9 +1816,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The cluster to list backups from. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list backups for all clusters in an instance, e.g., `projects/{project}/instances/{instance}/clusters/-`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The cluster to list backups from. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}`. Use `{cluster} = '-'` to list backups for all clusters in an instance, e.g., `projects/{project}/instances/{instance}/clusters/-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2046,8 +1843,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2057,9 +1852,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_list(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2084,14 +1877,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/backups", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2106,10 +1894,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `backup.name`. A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `backup.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2134,9 +1919,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2146,10 +1928,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_patch(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2172,15 +1951,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2190,15 +1963,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2222,9 +1992,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2234,10 +2001,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_set_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2259,15 +2023,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2277,15 +2035,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `backups_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2309,9 +2064,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_backups_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2321,10 +2073,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_backups_test_iam_permissions(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
-        backups_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2346,15 +2095,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/backups/{backupsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1),
-          "backupsId" => URI.encode(backups_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2371,9 +2114,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The cluster name to list hot tablets. Value is in the following form: `projects/{project}/instances/{instance}/clusters/{cluster}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `clusters_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The cluster name to list hot tablets. Value is in the following form: `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2400,8 +2141,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_clusters_hot_tablets_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2411,9 +2150,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_clusters_hot_tablets_list(
         connection,
-        projects_id,
-        instances_id,
-        clusters_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2438,14 +2175,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/clusters/{clustersId}/hotTablets",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "clustersId" => URI.encode(clusters_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/hotTablets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2462,9 +2194,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to check replication consistency. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the Table for which to check replication consistency. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2488,8 +2218,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_check_consistency(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2499,9 +2227,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_check_consistency(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2523,14 +2249,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:checkConsistency",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:checkConsistency", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2547,8 +2268,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance in which to create the table. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance in which to create the table. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2572,7 +2292,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2582,8 +2301,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_create(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2605,9 +2323,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/tables", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2623,9 +2340,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the table to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2648,8 +2363,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2659,9 +2372,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_delete(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2682,10 +2393,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "tablesId" => URI.encode(tables_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2701,9 +2410,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table on which to drop a range of rows. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the table on which to drop a range of rows. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2727,8 +2434,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_drop_row_range(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2738,9 +2443,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_drop_row_range(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2762,14 +2465,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:dropRowRange",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:dropRowRange", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2784,9 +2482,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the Table for which to create a consistency token. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the Table for which to create a consistency token. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2810,8 +2506,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_generate_consistency_token(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2821,9 +2515,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_generate_consistency_token(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2845,14 +2537,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:generateConsistencyToken",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:generateConsistencyToken", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2869,9 +2556,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested table. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the requested table. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2895,8 +2580,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2906,9 +2589,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_get(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2930,10 +2611,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "tablesId" => URI.encode(tables_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -2944,14 +2623,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2975,8 +2652,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2986,9 +2661,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_get_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3010,14 +2683,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3032,8 +2700,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the instance for which tables should be listed. Values are of the form `projects/{project}/instances/{instance}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the instance for which tables should be listed. Values are of the form `projects/{project}/instances/{instance}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3059,7 +2726,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3069,8 +2735,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_list(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3094,9 +2759,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/tables", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3112,9 +2776,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table whose families should be modified. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the table whose families should be modified. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3138,8 +2800,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_modify_column_families(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3149,9 +2809,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_modify_column_families(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3173,14 +2831,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:modifyColumnFamilies",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:modifyColumnFamilies", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3195,9 +2848,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `table.name`. The unique name of the table. Values are of the form `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`. Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `STATS_VIEW`, `FULL`
-  *   `instances_id` (*type:* `String.t`) - Part of `table.name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `table.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The unique name of the table. Values are of the form `projects/{project}/instances/{instance}/tables/_a-zA-Z0-9*`. Views: `NAME_ONLY`, `SCHEMA_VIEW`, `REPLICATION_VIEW`, `STATS_VIEW`, `FULL`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3222,8 +2873,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3233,9 +2882,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_patch(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3258,10 +2905,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-        "tablesId" => URI.encode(tables_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3277,8 +2922,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the instance in which to create the restored table. Values are of the form `projects//instances/`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the instance in which to create the restored table. Values are of the form `projects//instances/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3302,7 +2946,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_restore(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3312,8 +2955,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_restore(
         connection,
-        projects_id,
-        instances_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3335,9 +2977,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v2/projects/{projectsId}/instances/{instancesId}/tables:restore", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+parent}/tables:restore", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -3348,14 +2989,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3379,8 +3018,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3390,9 +3027,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_set_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3414,14 +3049,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3431,14 +3061,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3462,8 +3090,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3473,9 +3099,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_test_iam_permissions(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3497,14 +3121,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3521,9 +3140,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the table to be restored. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the table to be restored. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3547,8 +3164,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_undelete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3558,9 +3173,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_undelete(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3582,14 +3195,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}:undelete",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+name}:undelete", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3604,9 +3212,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. This is the name of the table the AuthorizedView belongs to. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. This is the name of the table the AuthorizedView belongs to. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3631,8 +3237,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3642,9 +3246,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_create(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3667,14 +3269,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/authorizedViews", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3689,10 +3286,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the AuthorizedView to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the AuthorizedView to be deleted. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3716,9 +3310,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3728,10 +3319,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_delete(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3753,16 +3341,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" =>
-            URI.encode(authorized_views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3777,10 +3358,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The unique name of the requested AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The unique name of the requested AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3804,9 +3382,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3816,10 +3391,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_get(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3841,16 +3413,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" =>
-            URI.encode(authorized_views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3860,15 +3425,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Gets the access control policy for a Table or Backup resource. Returns an empty policy if the resource exists but does not have a policy set.
+  Gets the access control policy for a Bigtable resource. Returns an empty policy if the resource exists but does not have a policy set.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3892,9 +3454,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3904,10 +3463,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_get_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3929,15 +3485,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" => URI.encode(authorized_views_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3952,9 +3502,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The unique name of the table for which AuthorizedViews should be listed. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
-  *   `instances_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The unique name of the table for which AuthorizedViews should be listed. Values are of the form `projects/{project}/instances/{instance}/tables/{table}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3969,7 +3517,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of results per page. A page_size of zero lets the server choose the number of items to return. A page_size which is strictly positive will return at most that many items. A negative page_size will cause an error. Following the first request, subsequent paginated calls are not required to pass a page_size. If a page_size is set in subsequent calls, it must match the page_size given in the first request.
       *   `:pageToken` (*type:* `String.t`) - Optional. The value of `next_page_token` returned by a previous call.
-      *   `:view` (*type:* `String.t`) - Optional. The resource_view to be applied to the returned views' fields. Default to NAME_ONLY.
+      *   `:view` (*type:* `String.t`) - Optional. The resource_view to be applied to the returned AuthorizedViews' fields. Default to NAME_ONLY.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3980,8 +3528,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3991,9 +3537,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_list(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4017,14 +3561,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+parent}/authorizedViews", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4041,10 +3580,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `authorizedView.name`. Identifier. The name of this AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`
-  *   `instances_id` (*type:* `String.t`) - Part of `authorizedView.name`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `authorizedView.name`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `authorizedView.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Identifier. The name of this AuthorizedView. Values are of the form `projects/{project}/instances/{instance}/tables/{table}/authorizedViews/{authorized_view}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4070,9 +3606,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4082,10 +3615,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_patch(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4109,16 +3639,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" =>
-            URI.encode(authorized_views_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v2/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4128,15 +3651,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Sets the access control policy on a Table or Backup resource. Replaces any existing policy.
+  Sets the access control policy on a Bigtable resource. Replaces any existing policy.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4160,9 +3680,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4172,10 +3689,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_set_iam_policy(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4197,15 +3711,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" => URI.encode(authorized_views_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4215,15 +3723,12 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   end
 
   @doc """
-  Returns permissions that the caller has on the specified Table or Backup resource.
+  Returns permissions that the caller has on the specified Bigtable resource.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `instances_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `tables_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `authorized_views_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4247,9 +3752,6 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   @spec bigtableadmin_projects_instances_tables_authorized_views_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4259,10 +3761,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:error, any()}
   def bigtableadmin_projects_instances_tables_authorized_views_test_iam_permissions(
         connection,
-        projects_id,
-        instances_id,
-        tables_id,
-        authorized_views_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4284,15 +3783,9 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v2/projects/{projectsId}/instances/{instancesId}/tables/{tablesId}/authorizedViews/{authorizedViewsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "instancesId" => URI.encode(instances_id, &URI.char_unreserved?/1),
-          "tablesId" => URI.encode(tables_id, &URI.char_unreserved?/1),
-          "authorizedViewsId" => URI.encode(authorized_views_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v2/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4309,7 +3802,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BigtableAdmin.V2.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4342,12 +3835,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def bigtableadmin_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def bigtableadmin_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -4368,8 +3856,8 @@ defmodule GoogleApi.BigtableAdmin.V2.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v2/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v2/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

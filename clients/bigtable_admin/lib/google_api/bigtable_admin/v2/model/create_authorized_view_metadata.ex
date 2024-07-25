@@ -22,7 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.CreateAuthorizedViewMetadata do
   ## Attributes
 
   *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the operation failed or was completed successfully.
-  *   `originalRequest` (*type:* `GoogleApi.BigtableAdmin.V2.Model.CreateAuthorizedViewRequest.t`, *default:* `nil`) - The request that prompted the initiation of this CreateInstance operation.
+  *   `originalRequest` (*type:* `GoogleApi.BigtableAdmin.V2.Model.CreateAuthorizedViewRequest.t`, *default:* `nil`) - The request that prompted the initiation of this CreateAuthorizedView operation.
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the original request was received.
   """
 
