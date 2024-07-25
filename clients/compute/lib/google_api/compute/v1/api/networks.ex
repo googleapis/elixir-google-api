@@ -544,7 +544,7 @@ defmodule GoogleApi.Compute.V1.Api.Networks do
   end
 
   @doc """
-  Patches the specified network with the data included in the request. Only the following fields can be modified: routingConfig.routingMode.
+  Patches the specified network with the data included in the request. Only routingConfig can be modified.
 
   ## Parameters
 

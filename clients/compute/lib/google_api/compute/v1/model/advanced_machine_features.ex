@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
 
   *   `enableNestedVirtualization` (*type:* `boolean()`, *default:* `nil`) - Whether to enable nested virtualization or not (default is false).
   *   `enableUefiNetworking` (*type:* `boolean()`, *default:* `nil`) - Whether to enable UEFI networking for instance creation.
+  *   `performanceMonitoringUnit` (*type:* `String.t`, *default:* `nil`) - Type of Performance Monitoring Unit requested on instance.
   *   `threadsPerCore` (*type:* `integer()`, *default:* `nil`) - The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1. If unset, the maximum number of threads supported per core by the underlying processor is assumed.
   *   `visibleCoreCount` (*type:* `integer()`, *default:* `nil`) - The number of physical cores to expose to an instance. Multiply by the number of threads per core to compute the total number of virtual CPUs to expose to the instance. If unset, the number of cores is inferred from the instance's nominal CPU count and the underlying platform's SMT width.
   """
@@ -32,12 +33,14 @@ defmodule GoogleApi.Compute.V1.Model.AdvancedMachineFeatures do
   @type t :: %__MODULE__{
           :enableNestedVirtualization => boolean() | nil,
           :enableUefiNetworking => boolean() | nil,
+          :performanceMonitoringUnit => String.t() | nil,
           :threadsPerCore => integer() | nil,
           :visibleCoreCount => integer() | nil
         }
 
   field(:enableNestedVirtualization)
   field(:enableUefiNetworking)
+  field(:performanceMonitoringUnit)
   field(:threadsPerCore)
   field(:visibleCoreCount)
 end

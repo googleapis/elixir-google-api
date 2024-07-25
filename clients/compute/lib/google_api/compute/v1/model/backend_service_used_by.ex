@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendServiceUsedBy do
 
   ## Attributes
 
-  *   `reference` (*type:* `String.t`, *default:* `nil`) - 
+  *   `reference` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for resources referencing given BackendService like UrlMaps, TargetTcpProxies, TargetSslProxies and ForwardingRule.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
 
   *   `allInstancesConfig` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerAllInstancesConfig.t`, *default:* `nil`) - Specifies configuration that overrides the instance template configuration for the group.
   *   `autoHealingPolicies` (*type:* `list(GoogleApi.Compute.V1.Model.InstanceGroupManagerAutoHealingPolicy.t)`, *default:* `nil`) - The autohealing policy for this managed instance group. You can specify only one value.
-  *   `baseInstanceName` (*type:* `String.t`, *default:* `nil`) - The base instance name to use for instances in this group. The value must be 1-58 characters long. Instances are named by appending a hyphen and a random four-character string to the base instance name. The base instance name must comply with RFC1035.
+  *   `baseInstanceName` (*type:* `String.t`, *default:* `nil`) - The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,52}-\#{1,10}(\\\\[[0-9]{1,10}\\\\])?))
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] The creation timestamp for this managed instance group in RFC3339 text format.
   *   `currentActions` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerActionsSummary.t`, *default:* `nil`) - [Output Only] The list of instance actions and the number of instances in this managed instance group that are scheduled for each of those actions.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource.
@@ -38,6 +38,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the managed instance group. The name must be 1-63 characters long, and comply with RFC1035.
   *   `namedPorts` (*type:* `list(GoogleApi.Compute.V1.Model.NamedPort.t)`, *default:* `nil`) - Named ports configured for the Instance Groups complementary to this Instance Group Manager.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the region where the managed instance group resides (for regional resources).
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - [Output Only] Reserved for future use.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this managed instance group. The server defines this URL.
   *   `statefulPolicy` (*type:* `GoogleApi.Compute.V1.Model.StatefulPolicy.t`, *default:* `nil`) - Stateful configuration for this Instanced Group Manager
   *   `status` (*type:* `GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t`, *default:* `nil`) - [Output Only] The status of this managed instance group.
@@ -72,6 +74,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
           :name => String.t() | nil,
           :namedPorts => list(GoogleApi.Compute.V1.Model.NamedPort.t()) | nil,
           :region => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :selfLink => String.t() | nil,
           :statefulPolicy => GoogleApi.Compute.V1.Model.StatefulPolicy.t() | nil,
           :status => GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus.t() | nil,
@@ -108,6 +112,8 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManager do
   field(:name)
   field(:namedPorts, as: GoogleApi.Compute.V1.Model.NamedPort, type: :list)
   field(:region)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:selfLink)
   field(:statefulPolicy, as: GoogleApi.Compute.V1.Model.StatefulPolicy)
   field(:status, as: GoogleApi.Compute.V1.Model.InstanceGroupManagerStatus)

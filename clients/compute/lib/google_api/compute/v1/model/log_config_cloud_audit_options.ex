@@ -21,19 +21,15 @@ defmodule GoogleApi.Compute.V1.Model.LogConfigCloudAuditOptions do
 
   ## Attributes
 
-  *   `authorizationLoggingOptions` (*type:* `GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   *   `logName` (*type:* `String.t`, *default:* `nil`) - This is deprecated and has no effect. Do not use.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :authorizationLoggingOptions =>
-            GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions.t() | nil,
           :logName => String.t() | nil
         }
 
-  field(:authorizationLoggingOptions, as: GoogleApi.Compute.V1.Model.AuthorizationLoggingOptions)
   field(:logName)
 end
 

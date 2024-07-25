@@ -21,7 +21,8 @@ defmodule GoogleApi.Compute.V1.Model.RouterInterface do
 
   ## Attributes
 
-  *   `ipRange` (*type:* `String.t`, *default:* `nil`) - IP address and range of the interface. The IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example: 169.254.0.1/30. NOTE: Do not truncate the address as it represents the IP address of the interface.
+  *   `ipRange` (*type:* `String.t`, *default:* `nil`) - IP address and range of the interface. - For Internet Protocol version 4 (IPv4), the IP range must be in the RFC3927 link-local IP address space. The value must be a CIDR-formatted string, for example, 169.254.0.1/30. Note: Do not truncate the IP address, as it represents the IP address of the interface. - For Internet Protocol version 6 (IPv6), the value must be a unique local address (ULA) range from fdff:1::/64 with a mask length of 126 or less. This value should be a CIDR-formatted string, for example, fc00:0:1:1::1/112. Within the router's VPC, this IPv6 prefix will be reserved exclusively for this connection and cannot be used for any other purpose. 
+  *   `ipVersion` (*type:* `String.t`, *default:* `nil`) - IP version of this interface.
   *   `linkedInterconnectAttachment` (*type:* `String.t`, *default:* `nil`) - URI of the linked Interconnect attachment. It must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
   *   `linkedVpnTunnel` (*type:* `String.t`, *default:* `nil`) - URI of the linked VPN tunnel, which must be in the same region as the router. Each interface can have one linked resource, which can be a VPN tunnel, an Interconnect attachment, or a subnetwork.
   *   `managementType` (*type:* `String.t`, *default:* `nil`) - [Output Only] The resource that configures and manages this interface. - MANAGED_BY_USER is the default value and can be managed directly by users. - MANAGED_BY_ATTACHMENT is an interface that is configured and managed by Cloud Interconnect, specifically, by an InterconnectAttachment of type PARTNER. Google automatically creates, updates, and deletes this type of interface when the PARTNER InterconnectAttachment is created, updated, or deleted. 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterInterface do
 
   @type t :: %__MODULE__{
           :ipRange => String.t() | nil,
+          :ipVersion => String.t() | nil,
           :linkedInterconnectAttachment => String.t() | nil,
           :linkedVpnTunnel => String.t() | nil,
           :managementType => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.Compute.V1.Model.RouterInterface do
         }
 
   field(:ipRange)
+  field(:ipVersion)
   field(:linkedInterconnectAttachment)
   field(:linkedVpnTunnel)
   field(:managementType)

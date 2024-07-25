@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Compute.V1.Model.ResourcePolicyGroupPlacementPolicy do
   @moduledoc """
-  A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation as well as network locality
+  A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
 
   ## Attributes
 

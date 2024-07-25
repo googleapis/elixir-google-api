@@ -25,7 +25,11 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer
   *   `autoDeployExpirationSec` (*type:* `integer()`, *default:* `nil`) - 
   *   `autoDeployImpactedBaselineThreshold` (*type:* `number()`, *default:* `nil`) - 
   *   `autoDeployLoadThreshold` (*type:* `number()`, *default:* `nil`) - 
+  *   `detectionAbsoluteQps` (*type:* `number()`, *default:* `nil`) - 
+  *   `detectionLoadThreshold` (*type:* `number()`, *default:* `nil`) - 
+  *   `detectionRelativeToBaselineQps` (*type:* `number()`, *default:* `nil`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name must be 1-63 characters long, and comply with RFC1035. The name must be unique within the security policy.
+  *   `trafficGranularityConfigs` (*type:* `list(GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig.t)`, *default:* `nil`) - Configuration options for enabling Adaptive Protection to operate on specified granular traffic units.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,14 +39,31 @@ defmodule GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer
           :autoDeployExpirationSec => integer() | nil,
           :autoDeployImpactedBaselineThreshold => number() | nil,
           :autoDeployLoadThreshold => number() | nil,
-          :name => String.t() | nil
+          :detectionAbsoluteQps => number() | nil,
+          :detectionLoadThreshold => number() | nil,
+          :detectionRelativeToBaselineQps => number() | nil,
+          :name => String.t() | nil,
+          :trafficGranularityConfigs =>
+            list(
+              GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig.t()
+            )
+            | nil
         }
 
   field(:autoDeployConfidenceThreshold)
   field(:autoDeployExpirationSec)
   field(:autoDeployImpactedBaselineThreshold)
   field(:autoDeployLoadThreshold)
+  field(:detectionAbsoluteQps)
+  field(:detectionLoadThreshold)
+  field(:detectionRelativeToBaselineQps)
   field(:name)
+
+  field(:trafficGranularityConfigs,
+    as:
+      GoogleApi.Compute.V1.Model.SecurityPolicyAdaptiveProtectionConfigLayer7DdosDefenseConfigThresholdConfigTrafficGranularityConfig,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder,

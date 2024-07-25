@@ -21,7 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.SnapshotSettingsStorageLocationSettings do
 
   ## Attributes
 
-  *   `locations` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.SnapshotSettingsStorageLocationSettingsStorageLocationPreference.t}`, *default:* `nil`) - When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are GCS bucket locations.
+  *   `locations` (*type:* `%{optional(String.t) => GoogleApi.Compute.V1.Model.SnapshotSettingsStorageLocationSettingsStorageLocationPreference.t}`, *default:* `nil`) - When the policy is SPECIFIC_LOCATIONS, snapshots will be stored in the locations listed in this field. Keys are Cloud Storage bucket locations. Only one location can be specified.
   *   `policy` (*type:* `String.t`, *default:* `nil`) - The chosen location policy.
   """
 

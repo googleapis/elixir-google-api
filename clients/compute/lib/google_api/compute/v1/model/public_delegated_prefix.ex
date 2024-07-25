@@ -21,6 +21,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
 
   ## Attributes
 
+  *   `allocatablePrefixLength` (*type:* `integer()`, *default:* `nil`) - The allocatable prefix length supported by this public delegated prefix. This field is optional and cannot be set for prefixes in DELEGATION mode. It cannot be set for IPv4 prefixes either, and it always defaults to 32.
   *   `byoipApiVersion` (*type:* `String.t`, *default:* `nil`) - [Output Only] The version of BYOIP API.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
@@ -29,6 +30,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
   *   `ipCidrRange` (*type:* `String.t`, *default:* `nil`) - The IP address range, in CIDR format, represented by this public delegated prefix.
   *   `isLiveMigration` (*type:* `boolean()`, *default:* `nil`) - If true, the prefix will be live migrated.
   *   `kind` (*type:* `String.t`, *default:* `compute#publicDelegatedPrefix`) - [Output Only] Type of the resource. Always compute#publicDelegatedPrefix for public delegated prefixes.
+  *   `mode` (*type:* `String.t`, *default:* `nil`) - The public delegated prefix mode for IPv6 only.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
   *   `parentPrefix` (*type:* `String.t`, *default:* `nil`) - The URL of parent prefix. Either PublicAdvertisedPrefix or PublicDelegatedPrefix.
   *   `publicDelegatedSubPrefixs` (*type:* `list(GoogleApi.Compute.V1.Model.PublicDelegatedPrefixPublicDelegatedSubPrefix.t)`, *default:* `nil`) - The list of sub public delegated prefixes that exist for this public delegated prefix.
@@ -40,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :allocatablePrefixLength => integer() | nil,
           :byoipApiVersion => String.t() | nil,
           :creationTimestamp => String.t() | nil,
           :description => String.t() | nil,
@@ -48,6 +51,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
           :ipCidrRange => String.t() | nil,
           :isLiveMigration => boolean() | nil,
           :kind => String.t() | nil,
+          :mode => String.t() | nil,
           :name => String.t() | nil,
           :parentPrefix => String.t() | nil,
           :publicDelegatedSubPrefixs =>
@@ -58,6 +62,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
           :status => String.t() | nil
         }
 
+  field(:allocatablePrefixLength)
   field(:byoipApiVersion)
   field(:creationTimestamp)
   field(:description)
@@ -66,6 +71,7 @@ defmodule GoogleApi.Compute.V1.Model.PublicDelegatedPrefix do
   field(:ipCidrRange)
   field(:isLiveMigration)
   field(:kind)
+  field(:mode)
   field(:name)
   field(:parentPrefix)
 

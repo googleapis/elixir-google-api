@@ -25,7 +25,7 @@ defmodule GoogleApi.Compute.V1.Model.PacketMirroring do
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `enable` (*type:* `String.t`, *default:* `nil`) - Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
-  *   `filter` (*type:* `GoogleApi.Compute.V1.Model.PacketMirroringFilter.t`, *default:* `nil`) - Filter for mirrored traffic. If unspecified, all traffic is mirrored.
+  *   `filter` (*type:* `GoogleApi.Compute.V1.Model.PacketMirroringFilter.t`, *default:* `nil`) - Filter for mirrored traffic. If unspecified, all IPv4 traffic is mirrored.
   *   `id` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique identifier for the resource. This identifier is defined by the server.
   *   `kind` (*type:* `String.t`, *default:* `compute#packetMirroring`) - [Output Only] Type of the resource. Always compute#packetMirroring for packet mirrorings.
   *   `mirroredResources` (*type:* `GoogleApi.Compute.V1.Model.PacketMirroringMirroredResourceInfo.t`, *default:* `nil`) - PacketMirroring mirroredResourceInfos. MirroredResourceInfo specifies a set of mirrored VM instances, subnetworks and/or tags for which traffic from/to all VM instances will be mirrored.
