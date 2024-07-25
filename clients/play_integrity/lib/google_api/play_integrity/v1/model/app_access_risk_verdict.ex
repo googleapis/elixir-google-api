@@ -21,17 +21,20 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.AppAccessRiskVerdict do
 
   ## Attributes
 
-  *   `otherApps` (*type:* `String.t`, *default:* `nil`) - Required. App access risk verdict related to apps that are not installed by Google Play, and are not preloaded on the system image by the device manufacturer.
-  *   `playOrSystemApps` (*type:* `String.t`, *default:* `nil`) - Required. App access risk verdict related to apps that are not installed by the Google Play Store, and are not preloaded on the system image by the device manufacturer.
+  *   `appsDetected` (*type:* `list(String.t)`, *default:* `nil`) - List of detected app types signalled for App Access Risk.
+  *   `otherApps` (*type:* `String.t`, *default:* `nil`) - Deprecated: this field will be removed, please use apps_detected instead. App access risk verdict related to apps that are not installed by Google Play, and are not preloaded on the system image by the device manufacturer.
+  *   `playOrSystemApps` (*type:* `String.t`, *default:* `nil`) - Deprecated: this field will be removed, please use apps_detected instead. App access risk verdict related to apps that are not installed by the Google Play Store, and are not preloaded on the system image by the device manufacturer.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :appsDetected => list(String.t()) | nil,
           :otherApps => String.t() | nil,
           :playOrSystemApps => String.t() | nil
         }
 
+  field(:appsDetected, type: :list)
   field(:otherApps)
   field(:playOrSystemApps)
 end
