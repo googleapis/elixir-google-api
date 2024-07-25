@@ -22,6 +22,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.PlatformPolicy do
   ## Attributes
 
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A description comment about the policy.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Used to prevent updating the policy when another request has updated it since it was retrieved.
   *   `gkePolicy` (*type:* `GoogleApi.BinaryAuthorization.V1.Model.GkePolicy.t`, *default:* `nil`) - Optional. GKE platform-specific policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The relative resource name of the Binary Authorization platform policy, in the form of `projects/*/platforms/*/policies/*`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the policy was last updated.
@@ -31,12 +32,14 @@ defmodule GoogleApi.BinaryAuthorization.V1.Model.PlatformPolicy do
 
   @type t :: %__MODULE__{
           :description => String.t() | nil,
+          :etag => String.t() | nil,
           :gkePolicy => GoogleApi.BinaryAuthorization.V1.Model.GkePolicy.t() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:description)
+  field(:etag)
   field(:gkePolicy, as: GoogleApi.BinaryAuthorization.V1.Model.GkePolicy)
   field(:name)
   field(:updateTime, as: DateTime)

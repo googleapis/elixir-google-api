@@ -984,6 +984,7 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:etag` (*type:* `String.t`) - Optional. Used to prevent deleting the policy when another request has updated it since it was retrieved.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1018,7 +1019,8 @@ defmodule GoogleApi.BinaryAuthorization.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :etag => :query
     }
 
     request =
