@@ -27,6 +27,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.LbTrafficExtension do
   *   `forwardingRules` (*type:* `list(String.t)`, *default:* `nil`) - Required. A list of references to the forwarding rules to which this service extension is attached to. At least one forwarding rule is required. There can be only one `LBTrafficExtension` resource per forwarding rule.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with the `LbTrafficExtension` resource. The format must comply with [the requirements for labels](https://cloud.google.com/compute/docs/labeling-resources#requirements) for Google Cloud resources.
   *   `loadBalancingScheme` (*type:* `String.t`, *default:* `nil`) - Required. All backend services and forwarding rules referenced by this extension must share the same load balancing scheme. Supported values: `INTERNAL_MANAGED`, `EXTERNAL_MANAGED`. For more information, refer to [Choosing a load balancer](https://cloud.google.com/load-balancing/docs/backend-service).
+  *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. The metadata provided here is included in the `ProcessingRequest.metadata_context.filter_metadata` map field. The metadata is available under the key `com.google.lb_traffic_extension.`. The following variables are supported in the metadata: `{forwarding_rule_id}` - substituted with the forwarding rule's fully qualified resource name.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Name of the `LbTrafficExtension` resource in the following format: `projects/{project}/locations/{location}/lbTrafficExtensions/{lb_traffic_extension}`.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.LbTrafficExtension do
           :forwardingRules => list(String.t()) | nil,
           :labels => map() | nil,
           :loadBalancingScheme => String.t() | nil,
+          :metadata => map() | nil,
           :name => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.LbTrafficExtension do
   field(:forwardingRules, type: :list)
   field(:labels, type: :map)
   field(:loadBalancingScheme)
+  field(:metadata, type: :map)
   field(:name)
   field(:updateTime, as: DateTime)
 end
