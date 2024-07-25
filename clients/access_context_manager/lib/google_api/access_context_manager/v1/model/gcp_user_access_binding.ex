@@ -25,6 +25,7 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
   *   `dryRunAccessLevels` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Dry run access level that will be evaluated but will not be enforced. The access denial based on dry run policy will be logged. Only one access level is supported, not multiple. This list must have exactly one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
   *   `groupKey` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Google Group id whose members are subject to this binding's restrictions. See "id" in the [G Suite Directory API's Groups resource] (https://developers.google.com/admin-sdk/directory/v1/reference/groups#resource). If a group's email address/alias is changed, this resource will continue to point at the changed group. This field does not accept group email addresses or aliases. Example: "01d520gv4vjcrht"
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Assigned by the server during creation. The last segment has an arbitrary length and has only URI unreserved characters (as defined by [RFC 3986 Section 2.3](https://tools.ietf.org/html/rfc3986#section-2.3)). Should not be specified by the client during creation. Example: "organizations/256/gcpUserAccessBindings/b3-BhcX_Ud5N"
+  *   `restrictedClientApplications` (*type:* `list(GoogleApi.AccessContextManager.V1.Model.Application.t)`, *default:* `nil`) - Optional. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,13 +34,20 @@ defmodule GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do
           :accessLevels => list(String.t()) | nil,
           :dryRunAccessLevels => list(String.t()) | nil,
           :groupKey => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :restrictedClientApplications =>
+            list(GoogleApi.AccessContextManager.V1.Model.Application.t()) | nil
         }
 
   field(:accessLevels, type: :list)
   field(:dryRunAccessLevels, type: :list)
   field(:groupKey)
   field(:name)
+
+  field(:restrictedClientApplications,
+    as: GoogleApi.AccessContextManager.V1.Model.Application,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding do

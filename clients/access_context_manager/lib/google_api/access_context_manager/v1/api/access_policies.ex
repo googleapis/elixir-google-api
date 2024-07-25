@@ -367,7 +367,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -879,7 +879,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1389,7 +1389,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the `AuthorizedOrgsDesc`. Format: `accessPolicies/{access_policy}/authorizedOrgsDescs/{authorized_orgs_desc}`. The `authorized_orgs_desc` component must begin with a letter, followed by alphanumeric characters or `_`. After you create an `AuthorizedOrgsDesc`, you cannot change its `name`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name for the `AuthorizedOrgsDesc`. Format: `accessPolicies/{access_policy}/authorizedOrgsDescs/{authorized_orgs_desc}`. The `authorized_orgs_desc` component must begin with a letter, followed by alphanumeric characters or `_`. After you create an `AuthorizedOrgsDesc`, you cannot change its `name`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1825,7 +1825,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.AccessPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AccessContextManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.
+  *   `name` (*type:* `String.t`) - Identifier. Resource name for the `ServicePerimeter`. Format: `accessPolicies/{access_policy}/servicePerimeters/{service_perimeter}`. The `service_perimeter` component must begin with a letter, followed by alphanumeric characters or `_`. After you create a `ServicePerimeter`, you cannot change its `name`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
