@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Eventarc.V1.Model.NetworkConfig do
   @moduledoc """
-  Represents a network config to be used for destination resolution and connectivity.
+  Network Configuration that can be inherited by other protos.
 
   ## Attributes
 
-  *   `networkAttachment` (*type:* `String.t`, *default:* `nil`) - Required. Name of the NetworkAttachment that allows access to the destination VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAttachments/{NETWORK_ATTACHMENT_NAME}`
+  *   `networkAttachment` (*type:* `String.t`, *default:* `nil`) - Required. Name of the NetworkAttachment that allows access to the customer's VPC. Format: `projects/{PROJECT_ID}/regions/{REGION}/networkAttachments/{NETWORK_ATTACHMENT_NAME}`
   """
 
   use GoogleApi.Gax.ModelBase
