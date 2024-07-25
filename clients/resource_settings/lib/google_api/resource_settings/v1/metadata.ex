@@ -20,7 +20,7 @@ defmodule GoogleApi.ResourceSettings.V1 do
   API client metadata for GoogleApi.ResourceSettings.V1.
   """
 
-  @discovery_revision "20211207"
+  @discovery_revision "20240602"
 
   def discovery_revision(), do: @discovery_revision
 end
