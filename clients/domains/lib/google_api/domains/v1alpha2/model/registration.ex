@@ -25,6 +25,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the `Registration` resource.
   *   `dnsSettings` (*type:* `GoogleApi.Domains.V1alpha2.Model.DnsSettings.t`, *default:* `nil`) - Settings controlling the DNS configuration of the `Registration`. You cannot update these with the `UpdateRegistration` method. To update these settings, use the `ConfigureDnsSettings` method.
   *   `domainName` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The domain name. Unicode domain names must be expressed in Punycode format.
+  *   `domainProperties` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Special properties of the domain.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The expiration timestamp of the `Registration`.
   *   `issues` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The set of issues with the `Registration` that require attention.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with the `Registration`.
@@ -45,6 +46,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
           :createTime => DateTime.t() | nil,
           :dnsSettings => GoogleApi.Domains.V1alpha2.Model.DnsSettings.t() | nil,
           :domainName => String.t() | nil,
+          :domainProperties => list(String.t()) | nil,
           :expireTime => DateTime.t() | nil,
           :issues => list(String.t()) | nil,
           :labels => map() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.Registration do
   field(:createTime, as: DateTime)
   field(:dnsSettings, as: GoogleApi.Domains.V1alpha2.Model.DnsSettings)
   field(:domainName)
+  field(:domainProperties, type: :list)
   field(:expireTime, as: DateTime)
   field(:issues, type: :list)
   field(:labels, type: :map)

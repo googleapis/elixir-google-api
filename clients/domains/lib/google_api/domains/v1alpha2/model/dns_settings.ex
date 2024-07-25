@@ -24,6 +24,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.DnsSettings do
   *   `customDns` (*type:* `GoogleApi.Domains.V1alpha2.Model.CustomDns.t`, *default:* `nil`) - An arbitrary DNS provider identified by its name servers.
   *   `glueRecords` (*type:* `list(GoogleApi.Domains.V1alpha2.Model.GlueRecord.t)`, *default:* `nil`) - The list of glue records for this `Registration`. Commonly empty.
   *   `googleDomainsDns` (*type:* `GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns.t`, *default:* `nil`) - Deprecated: For more information, see [Cloud Domains feature deprecation](https://cloud.google.com/domains/docs/deprecations/feature-deprecations). The free DNS zone provided by [Google Domains](https://domains.google/).
+  *   `googleDomainsRedirectsDataAvailable` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates if this `Registration` has configured one of the following deprecated Google Domains DNS features: * Domain forwarding (HTTP `301` and `302` response status codes), * Email forwarding. See https://cloud.google.com/domains/docs/deprecations/feature-deprecations for more details. If any of these features is enabled call the `RetrieveGoogleDomainsForwardingConfig` method to get details about the feature's configuration. A forwarding configuration might not work correctly if required DNS records are not present in the domain's authoritative DNS Zone.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Domains.V1alpha2.Model.DnsSettings do
   @type t :: %__MODULE__{
           :customDns => GoogleApi.Domains.V1alpha2.Model.CustomDns.t() | nil,
           :glueRecords => list(GoogleApi.Domains.V1alpha2.Model.GlueRecord.t()) | nil,
-          :googleDomainsDns => GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns.t() | nil
+          :googleDomainsDns => GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns.t() | nil,
+          :googleDomainsRedirectsDataAvailable => boolean() | nil
         }
 
   field(:customDns, as: GoogleApi.Domains.V1alpha2.Model.CustomDns)
   field(:glueRecords, as: GoogleApi.Domains.V1alpha2.Model.GlueRecord, type: :list)
   field(:googleDomainsDns, as: GoogleApi.Domains.V1alpha2.Model.GoogleDomainsDns)
+  field(:googleDomainsRedirectsDataAvailable)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Domains.V1alpha2.Model.DnsSettings do
