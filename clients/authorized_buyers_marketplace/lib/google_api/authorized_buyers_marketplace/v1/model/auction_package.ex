@@ -25,8 +25,11 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
   *   `creator` (*type:* `String.t`, *default:* `nil`) - Output only. The buyer that created this auction package. Format: `buyers/{buyerAccountId}`
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. A description of the auction package.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display_name assigned to the auction package.
+  *   `eligibleSeatIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. If set, this field contains the list of DSP specific seat ids set by media planners that are eligible to transact on this deal. The seat ID is in the calling DSP's namespace.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The unique identifier for the auction package. Format: `buyers/{accountId}/auctionPackages/{auctionPackageId}` The auction_package_id part of name is sent in the BidRequest to all RTB bidders and is returned as deal_id by the bidder in the BidResponse.
-  *   `subscribedClients` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of clients of the current buyer that are subscribed to the AuctionPackage. Format: `buyers/{buyerAccountId}/clients/{clientAccountId}`
+  *   `subscribedBuyers` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of buyers that are subscribed to the AuctionPackage. This field is only populated when calling as a bidder. Format: `buyers/{buyerAccountId}`
+  *   `subscribedClients` (*type:* `list(String.t)`, *default:* `nil`) - Output only. When calling as a buyer, the list of clients of the current buyer that are subscribed to the AuctionPackage. When calling as a bidder, the list of clients that are subscribed to the AuctionPackage owned by the bidder or its buyers. Format: `buyers/{buyerAccountId}/clients/{clientAccountId}`
+  *   `subscribedMediaPlanners` (*type:* `list(GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MediaPlanner.t)`, *default:* `nil`) - Output only. The list of media planners that are subscribed to the AuctionPackage. This field is only populated when calling as a bidder.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the auction package was last updated. This value is only increased when this auction package is updated but never when a buyer subscribed.
   """
 
@@ -37,8 +40,12 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
           :creator => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
+          :eligibleSeatIds => list(String.t()) | nil,
           :name => String.t() | nil,
+          :subscribedBuyers => list(String.t()) | nil,
           :subscribedClients => list(String.t()) | nil,
+          :subscribedMediaPlanners =>
+            list(GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MediaPlanner.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -46,8 +53,16 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.AuctionPackage do
   field(:creator)
   field(:description)
   field(:displayName)
+  field(:eligibleSeatIds, type: :list)
   field(:name)
+  field(:subscribedBuyers, type: :list)
   field(:subscribedClients, type: :list)
+
+  field(:subscribedMediaPlanners,
+    as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MediaPlanner,
+    type: :list
+  )
+
   field(:updateTime, as: DateTime)
 end
 
