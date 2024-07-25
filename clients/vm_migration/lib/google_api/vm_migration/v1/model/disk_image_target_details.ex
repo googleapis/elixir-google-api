@@ -21,10 +21,10 @@ defmodule GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails do
 
   ## Attributes
 
-  *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional licenses to assign to the image.
+  *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional licenses to assign to the image. Format: https://www.googleapis.com/compute/v1/projects/PROJECT_ID/global/licenses/LICENSE_NAME Or https://www.googleapis.com/compute/beta/projects/PROJECT_ID/global/licenses/LICENSE_NAME
   *   `dataDiskImageImport` (*type:* `GoogleApi.VMMigration.V1.Model.DataDiskImageImport.t`, *default:* `nil`) - Optional. Use to skip OS adaptation process.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the image.
-  *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. Immutable. The encryption to apply to the image.
+  *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Immutable. The encryption to apply to the image.
   *   `familyName` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the image family to which the new image belongs.
   *   `imageName` (*type:* `String.t`, *default:* `nil`) - Required. The name of the image to be created.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A map of labels to associate with the image.

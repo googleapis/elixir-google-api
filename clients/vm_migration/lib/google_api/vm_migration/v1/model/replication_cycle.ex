@@ -23,7 +23,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ReplicationCycle do
 
   *   `cycleNumber` (*type:* `integer()`, *default:* `nil`) - The cycle's ordinal number.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the replication cycle has ended.
-  *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Provides details on the state of the cycle in case of an error.
+  *   `error` (*type:* `GoogleApi.VMMigration.V1.Model.Status.t`, *default:* `nil`) - Output only. Provides details on the state of the cycle in case of an error.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The identifier of the ReplicationCycle.
   *   `progressPercent` (*type:* `integer()`, *default:* `nil`) - The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the replication cycle has started.

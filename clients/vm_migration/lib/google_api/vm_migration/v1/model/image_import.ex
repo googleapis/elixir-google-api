@@ -25,6 +25,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImport do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the image import was created.
   *   `diskImageTargetDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails.t`, *default:* `nil`) - Immutable. Target details for importing a disk image, will be used by ImageImportJob.
   *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Immutable. The encryption details used by the image import process during the image adaptation for Compute Engine.
+  *   `machineImageTargetDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails.t`, *default:* `nil`) - Immutable. Target details for importing a machine image, will be used by ImageImportJob.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource path of the ImageImport.
   *   `recentImageImportJobs` (*type:* `list(GoogleApi.VMMigration.V1.Model.ImageImportJob.t)`, *default:* `nil`) - Output only. The result of the most recent runs for this ImageImport. All jobs for this ImageImport can be listed via ListImageImportJobs.
   """
@@ -37,6 +38,8 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImport do
           :diskImageTargetDefaults =>
             GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails.t() | nil,
           :encryption => GoogleApi.VMMigration.V1.Model.Encryption.t() | nil,
+          :machineImageTargetDefaults =>
+            GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails.t() | nil,
           :name => String.t() | nil,
           :recentImageImportJobs => list(GoogleApi.VMMigration.V1.Model.ImageImportJob.t()) | nil
         }
@@ -45,6 +48,7 @@ defmodule GoogleApi.VMMigration.V1.Model.ImageImport do
   field(:createTime, as: DateTime)
   field(:diskImageTargetDefaults, as: GoogleApi.VMMigration.V1.Model.DiskImageTargetDetails)
   field(:encryption, as: GoogleApi.VMMigration.V1.Model.Encryption)
+  field(:machineImageTargetDefaults, as: GoogleApi.VMMigration.V1.Model.MachineImageTargetDetails)
   field(:name)
   field(:recentImageImportJobs, as: GoogleApi.VMMigration.V1.Model.ImageImportJob, type: :list)
 end
