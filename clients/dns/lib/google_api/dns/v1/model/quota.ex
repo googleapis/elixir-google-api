@@ -25,6 +25,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   *   `gkeClustersPerManagedZone` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters to which a privately scoped zone can be attached.
   *   `gkeClustersPerPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters per policy.
   *   `gkeClustersPerResponsePolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of GKE clusters per response policy.
+  *   `internetHealthChecksPerManagedZone` (*type:* `integer()`, *default:* `nil`) - 
   *   `itemsPerRoutingPolicy` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of items per routing policy.
   *   `kind` (*type:* `String.t`, *default:* `dns#quota`) - 
   *   `managedZones` (*type:* `integer()`, *default:* `nil`) - Maximum allowed number of managed zones in the project.
@@ -55,6 +56,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
           :gkeClustersPerManagedZone => integer() | nil,
           :gkeClustersPerPolicy => integer() | nil,
           :gkeClustersPerResponsePolicy => integer() | nil,
+          :internetHealthChecksPerManagedZone => integer() | nil,
           :itemsPerRoutingPolicy => integer() | nil,
           :kind => String.t() | nil,
           :managedZones => integer() | nil,
@@ -82,6 +84,7 @@ defmodule GoogleApi.DNS.V1.Model.Quota do
   field(:gkeClustersPerManagedZone)
   field(:gkeClustersPerPolicy)
   field(:gkeClustersPerResponsePolicy)
+  field(:internetHealthChecksPerManagedZone)
   field(:itemsPerRoutingPolicy)
   field(:kind)
   field(:managedZones)
