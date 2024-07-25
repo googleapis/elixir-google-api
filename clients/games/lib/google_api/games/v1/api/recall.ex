@@ -26,6 +26,142 @@ defmodule GoogleApi.Games.V1.Api.Recall do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Retrieve the Recall tokens from all requested games that is associated with the PGS Player encoded in the provided recall session id. The API is only available for users that have an active PGS Player profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
+  *   `session_id` (*type:* `String.t`) - Required. Opaque server-generated string that encodes all the necessary information to identify the PGS player / Google user and application.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:applicationIds` (*type:* `list(String.t)`) - Required. The application IDs from the Google Play developer console for the games to return scoped ids for.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Games.V1.Model.RetrieveGamesPlayerTokensResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec games_recall_games_player_tokens(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+          {:ok, GoogleApi.Games.V1.Model.RetrieveGamesPlayerTokensResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def games_recall_games_player_tokens(connection, session_id, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :applicationIds => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/games/v1/recall/gamesPlayerTokens/{sessionId}", %{
+        "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.RetrieveGamesPlayerTokensResponse{}]
+    )
+  end
+
+  @doc """
+  Retrieve the last Recall token from all developer games that is associated with the PGS Player encoded in the provided recall session id. The API is only available for users that have active PGS Player profile.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Games.V1.Connection.t`) - Connection to server
+  *   `session_id` (*type:* `String.t`) - Required. Opaque server-generated string that encodes all the necessary information to identify the PGS player / Google user and application.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.Games.V1.Model.RetrieveDeveloperGamesLastPlayerTokenResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec games_recall_last_token_from_all_developer_games(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.Games.V1.Model.RetrieveDeveloperGamesLastPlayerTokenResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def games_recall_last_token_from_all_developer_games(
+        connection,
+        session_id,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/games/v1/recall/developerGamesLastPlayerToken/{sessionId}", %{
+        "sessionId" => URI.encode(session_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.Games.V1.Model.RetrieveDeveloperGamesLastPlayerTokenResponse{}]
+    )
+  end
+
+  @doc """
   Associate the PGS Player principal encoded in the provided recall session id with an in-game account
 
   ## Parameters
@@ -144,7 +280,7 @@ defmodule GoogleApi.Games.V1.Api.Recall do
   end
 
   @doc """
-  Retrieve all Recall tokens associated with the PGS Player principal encoded in the provided recall session id. The API is only available for users that have active PGS Player profile.
+  Retrieve all Recall tokens associated with the PGS Player encoded in the provided recall session id. The API is only available for users that have active PGS Player profile.
 
   ## Parameters
 
