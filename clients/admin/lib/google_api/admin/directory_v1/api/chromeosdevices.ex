@@ -196,11 +196,11 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:includeChildOrgunits` (*type:* `boolean()`) - Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.
-      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return.
+      *   `:maxResults` (*type:* `integer()`) - Maximum number of results to return. Value should not exceed 300.
       *   `:orderBy` (*type:* `String.t`) - Device property to use for sorting results.
       *   `:orgUnitPath` (*type:* `String.t`) - The full path of the organizational unit (minus the leading `/`) or its unique ID.
       *   `:pageToken` (*type:* `String.t`) - The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.
-      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:projection` (*type:* `String.t`) - Determines whether the response contains the full list of properties or only a subset.
       *   `:query` (*type:* `String.t`) - Search string in the format given at https://developers.google.com/admin-sdk/directory/v1/list-query-operators
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Must be used with the `orderBy` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -347,7 +347,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:projection` (*type:* `String.t`) - Determines whether the response contains the full list of properties or only a subset.
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -425,7 +425,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Chromeosdevices do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:projection` (*type:* `String.t`) - Restrict information returned to a set of selected fields.
+      *   `:projection` (*type:* `String.t`) - Determines whether the response contains the full list of properties or only a subset.
       *   `:body` (*type:* `GoogleApi.Admin.Directory_v1.Model.ChromeOsDevice.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
