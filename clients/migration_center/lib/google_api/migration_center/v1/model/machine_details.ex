@@ -22,7 +22,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.MachineDetails do
   ## Attributes
 
   *   `architecture` (*type:* `GoogleApi.MigrationCenter.V1.Model.MachineArchitectureDetails.t`, *default:* `nil`) - Architecture details (vendor, CPU architecture).
-  *   `coreCount` (*type:* `integer()`, *default:* `nil`) - Number of CPU cores in the machine. Must be non-negative.
+  *   `coreCount` (*type:* `integer()`, *default:* `nil`) - Number of logical CPU cores in the machine. Must be non-negative.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Machine creation time.
   *   `disks` (*type:* `GoogleApi.MigrationCenter.V1.Model.MachineDiskDetails.t`, *default:* `nil`) - Disk details.
   *   `guestOs` (*type:* `GoogleApi.MigrationCenter.V1.Model.GuestOsDetails.t`, *default:* `nil`) - Guest OS information.
