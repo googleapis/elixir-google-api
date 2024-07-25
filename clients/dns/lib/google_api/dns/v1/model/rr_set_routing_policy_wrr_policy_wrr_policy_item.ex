@@ -21,11 +21,11 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyWrrPolicyWrrPolicyItem do
 
   ## Attributes
 
-  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - Endpoints that are health checked before making the routing decision. The unhealthy endpoints are omitted from the result. If all endpoints within a bucket are unhealthy, we choose a different bucket (sampled with respect to its weight) for responding. If DNSSEC is enabled for this zone, only one of rrdata or health_checked_targets can be set.
+  *   `healthCheckedTargets` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicyHealthCheckTargets.t`, *default:* `nil`) - Endpoints that are health checked before making the routing decision. The unhealthy endpoints are omitted from the result. If all endpoints within a bucket are unhealthy, we choose a different bucket (sampled with respect to its weight) for responding. If DNSSEC is enabled for this zone, only one of `rrdata` or `health_checked_targets` can be set.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyWrrPolicyWrrPolicyItem`) - 
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - 
-  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
-  *   `weight` (*type:* `float()`, *default:* `nil`) - The weight corresponding to this WrrPolicyItem object. When multiple WrrPolicyItem objects are configured, the probability of returning an WrrPolicyItem object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative.
+  *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - DNSSEC generated signatures for all the `rrdata` within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item.
+  *   `weight` (*type:* `float()`, *default:* `nil`) - The weight corresponding to this `WrrPolicyItem` object. When multiple `WrrPolicyItem` objects are configured, the probability of returning an `WrrPolicyItem` object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative.
   """
 
   use GoogleApi.Gax.ModelBase

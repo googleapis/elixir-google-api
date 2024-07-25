@@ -21,18 +21,15 @@ defmodule GoogleApi.DNS.V1.Model.PoliciesPatchResponse do
 
   ## Attributes
 
-  *   `header` (*type:* `GoogleApi.DNS.V1.Model.ResponseHeader.t`, *default:* `nil`) - 
   *   `policy` (*type:* `GoogleApi.DNS.V1.Model.Policy.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
           :policy => GoogleApi.DNS.V1.Model.Policy.t() | nil
         }
 
-  field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)
   field(:policy, as: GoogleApi.DNS.V1.Model.Policy)
 end
 

@@ -21,22 +21,19 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSetsListResponse do
 
   ## Attributes
 
-  *   `header` (*type:* `GoogleApi.DNS.V1.Model.ResponseHeader.t`, *default:* `nil`) - 
   *   `kind` (*type:* `String.t`, *default:* `dns#resourceRecordSetsListResponse`) - Type of resource.
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The presence of this field indicates that there exist more results following your last page of results in pagination order. To fetch them, make another list request using this value as your pagination token. This lets you retrieve the complete contents of even larger collections, one page at a time. However, if the collection changes between paginated list requests, the set of elements returned is an inconsistent view of the collection. You cannot retrieve a consistent snapshot of a collection larger than the maximum page size.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - This field indicates that more results are available beyond the last page displayed. To fetch the results, make another list request and use this value as your page token. This lets you retrieve the complete contents of a very large collection one page at a time. However, if the contents of the collection change between the first and last paginated list request, the set of all elements returned are an inconsistent view of the collection. You can't retrieve a consistent snapshot of a collection larger than the maximum page size.
   *   `rrsets` (*type:* `list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t)`, *default:* `nil`) - The resource record set resources.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :header => GoogleApi.DNS.V1.Model.ResponseHeader.t() | nil,
           :kind => String.t() | nil,
           :nextPageToken => String.t() | nil,
           :rrsets => list(GoogleApi.DNS.V1.Model.ResourceRecordSet.t()) | nil
         }
 
-  field(:header, as: GoogleApi.DNS.V1.Model.ResponseHeader)
   field(:kind)
   field(:nextPageToken)
   field(:rrsets, as: GoogleApi.DNS.V1.Model.ResourceRecordSet, type: :list)

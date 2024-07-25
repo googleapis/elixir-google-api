@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyGeoPolicy do
   @moduledoc """
-  Configures a RRSetRoutingPolicy that routes based on the geo location of the querying user.
+  Configures a `RRSetRoutingPolicy` that routes based on the geo location of the querying user.
 
   ## Attributes
 

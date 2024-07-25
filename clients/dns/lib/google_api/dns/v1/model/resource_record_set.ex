@@ -23,10 +23,10 @@ defmodule GoogleApi.DNS.V1.Model.ResourceRecordSet do
 
   *   `kind` (*type:* `String.t`, *default:* `dns#resourceRecordSet`) - 
   *   `name` (*type:* `String.t`, *default:* `nil`) - For example, www.example.com.
-  *   `routingPolicy` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicy.t`, *default:* `nil`) - Configures dynamic query responses based on either the geo location of the querying user or a weighted round robin based routing policy. A valid ResourceRecordSet contains only rrdata (for static resolution) or a routing_policy (for dynamic resolution).
+  *   `routingPolicy` (*type:* `GoogleApi.DNS.V1.Model.RRSetRoutingPolicy.t`, *default:* `nil`) - Configures dynamic query responses based on either the geo location of the querying user or a weighted round robin based routing policy. A valid `ResourceRecordSet` contains only `rrdata` (for static resolution) or a `routing_policy` (for dynamic resolution).
   *   `rrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1) -- see examples.
   *   `signatureRrdatas` (*type:* `list(String.t)`, *default:* `nil`) - As defined in RFC 4034 (section 3.2).
-  *   `ttl` (*type:* `integer()`, *default:* `nil`) - Number of seconds that this ResourceRecordSet can be cached by resolvers.
+  *   `ttl` (*type:* `integer()`, *default:* `nil`) - Number of seconds that this `ResourceRecordSet` can be cached by resolvers.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The identifier of a supported record type. See the list of Supported DNS record types.
   """
 

@@ -25,7 +25,7 @@ defmodule GoogleApi.DNS.V1.Model.RRSetRoutingPolicyLoadBalancerTarget do
   *   `ipProtocol` (*type:* `String.t`, *default:* `nil`) - The protocol of the load balancer to health check.
   *   `kind` (*type:* `String.t`, *default:* `dns#rRSetRoutingPolicyLoadBalancerTarget`) - 
   *   `loadBalancerType` (*type:* `String.t`, *default:* `nil`) - The type of load balancer specified by this target. This value must match the configuration of the load balancer located at the LoadBalancerTarget's IP address, port, and region. Use the following: - *regionalL4ilb*: for a regional internal passthrough Network Load Balancer. - *regionalL7ilb*: for a regional internal Application Load Balancer. - *globalL7ilb*: for a global internal Application Load Balancer. 
-  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the network that the load balancer is attached to. This should be formatted like https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network} .
+  *   `networkUrl` (*type:* `String.t`, *default:* `nil`) - The fully qualified URL of the network that the load balancer is attached to. This should be formatted like `https://www.googleapis.com/compute/v1/projects/{project}/global/networks/{network}`.
   *   `port` (*type:* `String.t`, *default:* `nil`) - The configured port of the load balancer.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The project ID in which the load balancer is located.
   *   `region` (*type:* `String.t`, *default:* `nil`) - The region in which the load balancer is located.

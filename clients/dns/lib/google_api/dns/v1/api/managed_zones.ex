@@ -226,8 +226,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `managed_zones_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -248,24 +247,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:ok, %GoogleApi.DNS.V1.Model.GoogleIamV1Policy{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dns_managed_zones_get_iam_policy(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec dns_managed_zones_get_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.GoogleIamV1Policy.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def dns_managed_zones_get_iam_policy(
-        connection,
-        projects_id,
-        managed_zones_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def dns_managed_zones_get_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -284,13 +271,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/dns/v1/projects/{projectsId}/managedZones/{managedZonesId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "managedZonesId" => URI.encode(managed_zones_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/dns/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -443,8 +426,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `managed_zones_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -465,24 +447,12 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   *   `{:ok, %GoogleApi.DNS.V1.Model.GoogleIamV1Policy{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec dns_managed_zones_set_iam_policy(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec dns_managed_zones_set_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.DNS.V1.Model.GoogleIamV1Policy.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def dns_managed_zones_set_iam_policy(
-        connection,
-        projects_id,
-        managed_zones_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def dns_managed_zones_set_iam_policy(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -501,13 +471,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/dns/v1/projects/{projectsId}/managedZones/{managedZonesId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "managedZonesId" => URI.encode(managed_zones_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/dns/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -522,8 +488,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DNS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `managed_zones_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -547,7 +512,6 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
   @spec dns_managed_zones_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -557,8 +521,7 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
           | {:error, any()}
   def dns_managed_zones_test_iam_permissions(
         connection,
-        projects_id,
-        managed_zones_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -580,13 +543,9 @@ defmodule GoogleApi.DNS.V1.Api.ManagedZones do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/dns/v1/projects/{projectsId}/managedZones/{managedZonesId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "managedZonesId" => URI.encode(managed_zones_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/dns/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 

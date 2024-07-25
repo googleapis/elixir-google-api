@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DNS.V1.Model.Project do
   @moduledoc """
-  A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console. Next tag: 7.
+  A project resource. The project is a top level container for resources including Cloud DNS ManagedZones. Projects can be created only in the APIs console.
 
   ## Attributes
 
