@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_bare_metal_solution, "~> 0.5"}]
+  [{:google_api_bare_metal_solution, "~> 0.6"}]
 end
 ```
 
