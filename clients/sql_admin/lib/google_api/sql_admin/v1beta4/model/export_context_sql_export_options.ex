@@ -23,6 +23,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
 
   *   `mysqlExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t`, *default:* `nil`) - Options for exporting from MySQL.
   *   `parallel` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether or not the export should be parallel.
+  *   `postgresExportOptions` (*type:* `GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsPostgresExportOptions.t`, *default:* `nil`) - Options for exporting from a Cloud SQL for PostgreSQL instance.
   *   `schemaOnly` (*type:* `boolean()`, *default:* `nil`) - Export only schemas.
   *   `tables` (*type:* `list(String.t)`, *default:* `nil`) - Tables to export, or that were exported, from the specified database. If you specify tables, specify one and only one database. For PostgreSQL instances, you can specify only one table.
   *   `threads` (*type:* `integer()`, *default:* `nil`) - Optional. The number of threads to use for parallel export.
@@ -35,6 +36,9 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
             GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsMysqlExportOptions.t()
             | nil,
           :parallel => boolean() | nil,
+          :postgresExportOptions =>
+            GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsPostgresExportOptions.t()
+            | nil,
           :schemaOnly => boolean() | nil,
           :tables => list(String.t()) | nil,
           :threads => integer() | nil
@@ -45,6 +49,11 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptions do
   )
 
   field(:parallel)
+
+  field(:postgresExportOptions,
+    as: GoogleApi.SQLAdmin.V1beta4.Model.ExportContextSqlExportOptionsPostgresExportOptions
+  )
+
   field(:schemaOnly)
   field(:tables, type: :list)
   field(:threads)

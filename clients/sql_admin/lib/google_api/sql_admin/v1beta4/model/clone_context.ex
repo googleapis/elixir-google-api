@@ -28,7 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.CloneContext do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#cloneContext`.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
   *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp, if specified, identifies the time to which the source instance is cloned.
-  *   `preferredZone` (*type:* `String.t`, *default:* `nil`) - Optional. (Point-in-time recovery for PostgreSQL only) Clone to an instance in the specified zone. If no zone is specified, clone to the same zone as the source instance.
+  *   `preferredZone` (*type:* `String.t`, *default:* `nil`) - Optional. Copy clone and point-in-time recovery clone of an instance to the specified zone. If no zone is specified, clone to the same primary zone as the source instance.
   """
 
   use GoogleApi.Gax.ModelBase
