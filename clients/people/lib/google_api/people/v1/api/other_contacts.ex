@@ -31,7 +31,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.People.V1.Connection.t`) - Connection to server
-  *   `other_contacts_id` (*type:* `String.t`) - Part of `resourceName`. Required. The resource name of the "Other contact" to copy.
+  *   `resource_name` (*type:* `String.t`) - Required. The resource name of the "Other contact" to copy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -64,7 +64,7 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
           | {:error, any()}
   def people_other_contacts_copy_other_contact_to_my_contacts_group(
         connection,
-        other_contacts_id,
+        resource_name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -86,8 +86,8 @@ defmodule GoogleApi.People.V1.Api.OtherContacts do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/otherContacts/{otherContactsId}:copyOtherContactToMyContactsGroup", %{
-        "otherContactsId" => URI.encode(other_contacts_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resourceName}:copyOtherContactToMyContactsGroup", %{
+        "resourceName" => URI.encode(resource_name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
