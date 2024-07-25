@@ -33,6 +33,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.InsertionOrder do
   *   `integrationDetails` (*type:* `GoogleApi.DisplayVideo.V3.Model.IntegrationDetails.t`, *default:* `nil`) - Additional integration details of the insertion order.
   *   `kpi` (*type:* `GoogleApi.DisplayVideo.V3.Model.Kpi.t`, *default:* `nil`) - Required. The key performance indicator (KPI) of the insertion order. This is represented as referred to as the "Goal" in the Display & Video 360 interface.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the insertion order.
+  *   `optimizationObjective` (*type:* `String.t`, *default:* `nil`) - Optional. The optimization objective of the insertion order. **This field is only available to allowlisted customers.** If a customer is not allowlisted, this field will be null and attempts to set it will return an error.
   *   `pacing` (*type:* `GoogleApi.DisplayVideo.V3.Model.Pacing.t`, *default:* `nil`) - Required. The budget spending speed setting of the insertion order.
   *   `partnerCosts` (*type:* `list(GoogleApi.DisplayVideo.V3.Model.PartnerCost.t)`, *default:* `nil`) - The partner costs associated with the insertion order. If absent or empty in CreateInsertionOrder method, the newly created insertion order will inherit partner costs from the partner settings.
   *   `reservationType` (*type:* `String.t`, *default:* `nil`) - Output only. The reservation type of the insertion order.
@@ -54,6 +55,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.InsertionOrder do
           :integrationDetails => GoogleApi.DisplayVideo.V3.Model.IntegrationDetails.t() | nil,
           :kpi => GoogleApi.DisplayVideo.V3.Model.Kpi.t() | nil,
           :name => String.t() | nil,
+          :optimizationObjective => String.t() | nil,
           :pacing => GoogleApi.DisplayVideo.V3.Model.Pacing.t() | nil,
           :partnerCosts => list(GoogleApi.DisplayVideo.V3.Model.PartnerCost.t()) | nil,
           :reservationType => String.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.InsertionOrder do
   field(:integrationDetails, as: GoogleApi.DisplayVideo.V3.Model.IntegrationDetails)
   field(:kpi, as: GoogleApi.DisplayVideo.V3.Model.Kpi)
   field(:name)
+  field(:optimizationObjective)
   field(:pacing, as: GoogleApi.DisplayVideo.V3.Model.Pacing)
   field(:partnerCosts, as: GoogleApi.DisplayVideo.V3.Model.PartnerCost, type: :list)
   field(:reservationType)
