@@ -26,13 +26,84 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
+  Returns the effective Cloud KMS Autokey configuration for a given project.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Name of the resource project to the show effective Cloud KMS Autokey configuration for. This may be helpful for interrogating the effect of nested folder configurations on a given resource project.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ShowEffectiveAutokeyConfigResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_show_effective_autokey_config(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ShowEffectiveAutokeyConfigResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudkms_projects_show_effective_autokey_config(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}:showEffectiveAutokeyConfig", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(
+      opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.ShowEffectiveAutokeyConfigResponse{}]
+    )
+  end
+
+  @doc """
   Generate random bytes using the Cloud KMS randomness source in the provided location.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `location`. The project-specific location in which to generate random bytes. For example, "projects/my-project/locations/us-central1".
-  *   `locations_id` (*type:* `String.t`) - Part of `location`. See documentation of `projectsId`.
+  *   `location` (*type:* `String.t`) - The project-specific location in which to generate random bytes. For example, "projects/my-project/locations/us-central1".
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +127,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_generate_random_bytes(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -66,8 +136,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_generate_random_bytes(
         connection,
-        projects_id,
-        locations_id,
+        location,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -89,9 +158,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}:generateRandomBytes", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+location}:generateRandomBytes", %{
+        "location" => URI.encode(location, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,8 +177,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Resource name for the location.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Resource name for the location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -130,24 +197,12 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Location{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudkms_projects_locations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudkms_projects_locations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudKMS.V1.Model.Location.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudkms_projects_locations_get(
-        connection,
-        projects_id,
-        locations_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudkms_projects_locations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -165,9 +220,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -183,8 +237,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the EkmConfig to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the EkmConfig to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -207,7 +260,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_get_ekm_config(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -217,8 +269,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_get_ekm_config(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -239,9 +290,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/ekmConfig", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -257,7 +307,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -285,7 +335,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudkms_projects_locations_list(connection, projects_id, optional_params \\ [], opts \\ []) do
+  def cloudkms_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -306,8 +356,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -323,8 +373,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `ekmConfig.name`. Output only. The resource name for the EkmConfig in the format `projects/*/locations/*/ekmConfig`.
-  *   `locations_id` (*type:* `String.t`) - Part of `ekmConfig.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name for the EkmConfig in the format `projects/*/locations/*/ekmConfig`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -349,7 +398,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_update_ekm_config(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -359,8 +407,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_update_ekm_config(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -383,9 +430,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/ekmConfig", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -401,8 +447,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -426,7 +471,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_config_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -436,8 +480,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_config_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -459,13 +502,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConfig:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -480,8 +519,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -505,7 +543,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_config_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -515,8 +552,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_config_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -538,13 +574,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConfig:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -559,8 +591,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -584,7 +615,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_config_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -594,8 +624,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_config_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -617,13 +646,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConfig:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -640,8 +665,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the EkmConnection, in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the location associated with the EkmConnection, in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -666,7 +690,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -676,8 +699,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -700,9 +722,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/ekmConnections", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -718,9 +739,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the EkmConnection to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the EkmConnection to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -743,8 +762,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -754,9 +771,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_get(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -777,15 +792,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" =>
-            URI.encode(ekm_connections_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -800,9 +809,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -826,8 +833,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -837,9 +842,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -861,14 +864,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" => URI.encode(ekm_connections_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -883,8 +881,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the EkmConnections to list, in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the location associated with the EkmConnections to list, in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -911,7 +908,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -921,8 +917,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -947,9 +942,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/ekmConnections", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -967,9 +961,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `ekmConnection.name`. Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `ekmConnection.name`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `ekmConnection.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -994,8 +986,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1005,9 +995,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_patch(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1030,15 +1018,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" =>
-            URI.encode(ekm_connections_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1053,9 +1035,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1079,8 +1059,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1090,9 +1068,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1114,14 +1090,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" => URI.encode(ekm_connections_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1136,9 +1107,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1162,8 +1131,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1173,9 +1140,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1197,14 +1162,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" => URI.encode(ekm_connections_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1221,9 +1181,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the EkmConnection to verify.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `ekm_connections_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the EkmConnection to verify.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1246,8 +1204,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_ekm_connections_verify_connectivity(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1257,9 +1213,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_ekm_connections_verify_connectivity(
         connection,
-        projects_id,
-        locations_id,
-        ekm_connections_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1280,14 +1234,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/ekmConnections/{ekmConnectionsId}:verifyConnectivity",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "ekmConnectionsId" => URI.encode(ekm_connections_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:verifyConnectivity", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1299,13 +1248,228 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   end
 
   @doc """
+  Creates a new KeyHandle, triggering the provisioning of a new CryptoKey for CMEK use with the given resource type in the configured key project and the same location. GetOperation should be used to resolve the resulting long-running operation and get the resulting KeyHandle and CryptoKey.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Name of the resource project and location to create the KeyHandle in, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:keyHandleId` (*type:* `String.t`) - Optional. Id of the KeyHandle. Must be unique to the resource project and location. If not provided by the caller, a new UUID is used.
+      *   `:body` (*type:* `GoogleApi.CloudKMS.V1.Model.KeyHandle.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_handles_create(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudkms_projects_locations_key_handles_create(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :keyHandleId => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/v1/{+parent}/keyHandles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.Operation{}])
+  end
+
+  @doc """
+  Returns the KeyHandle.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Required. Name of the KeyHandle resource, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}/keyHandles/{KEY_HANDLE_ID}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.KeyHandle{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_handles_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.KeyHandle.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudkms_projects_locations_key_handles_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.KeyHandle{}])
+  end
+
+  @doc """
+  Lists KeyHandles.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `parent` (*type:* `String.t`) - Required. Name of the resource project and location from which to list KeyHandles, e.g. `projects/{PROJECT_ID}/locations/{LOCATION}`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. Filter to apply when listing KeyHandles, e.g. `resource_type_selector="{SERVICE}.googleapis.com/{TYPE}"`.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.ListKeyHandlesResponse{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_key_handles_list(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.ListKeyHandlesResponse.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudkms_projects_locations_key_handles_list(
+        connection,
+        parent,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :filter => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+parent}/keyHandles", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.ListKeyHandlesResponse{}])
+  end
+
+  @doc """
   Create a new KeyRing in a given Project and Location.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1330,7 +1494,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1340,8 +1503,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1364,9 +1526,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/keyRings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1382,9 +1543,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the KeyRing to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the KeyRing to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1407,8 +1566,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1418,9 +1575,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_get(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1441,10 +1596,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-        "keyRingsId" => URI.encode(key_rings_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1460,9 +1613,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1486,8 +1637,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1497,9 +1646,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1521,14 +1668,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1543,8 +1685,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the location associated with the KeyRings, in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1571,7 +1712,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1581,8 +1721,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1607,9 +1746,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/keyRings", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/keyRings", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -1625,9 +1763,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1651,8 +1787,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1662,9 +1796,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1686,14 +1818,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1708,9 +1835,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1734,8 +1859,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1745,9 +1868,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1769,14 +1890,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1793,9 +1909,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the CryptoKeys.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the KeyRing associated with the CryptoKeys.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1821,8 +1935,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1832,9 +1944,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_create(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1858,14 +1968,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/cryptoKeys", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1880,10 +1985,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to use for decryption. The server will choose the appropriate version.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKey to use for decryption. The server will choose the appropriate version.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1907,9 +2009,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -1919,10 +2018,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_decrypt(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -1944,15 +2040,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:decrypt",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:decrypt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -1967,10 +2057,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey or CryptoKeyVersion to use for encryption. If a CryptoKey is specified, the server will use its primary version.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKey or CryptoKeyVersion to use for encryption. If a CryptoKey is specified, the server will use its primary version.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1994,9 +2081,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2006,10 +2090,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_encrypt(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2031,15 +2112,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:encrypt",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:encrypt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2054,10 +2129,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKey to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the CryptoKey to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2080,9 +2152,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2092,10 +2161,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2116,15 +2182,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2139,10 +2199,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2166,9 +2223,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2178,10 +2232,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2203,15 +2254,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2226,9 +2271,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2256,8 +2299,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2267,9 +2308,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_list(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2295,14 +2334,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/cryptoKeys", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2317,10 +2351,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKey.name`. Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKey.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2345,9 +2376,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2357,10 +2385,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_patch(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2383,15 +2408,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2406,10 +2425,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2433,9 +2449,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2445,10 +2458,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2470,15 +2480,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2493,10 +2497,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2520,9 +2521,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2532,10 +2530,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2557,15 +2552,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2582,10 +2571,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKey to update.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKey to update.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2609,9 +2595,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2621,10 +2604,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_update_primary_version(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2646,15 +2626,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}:updatePrimaryVersion",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:updatePrimaryVersion", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2669,11 +2643,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for decryption.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for decryption.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2697,10 +2667,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_decrypt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2710,11 +2676,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_decrypt(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2736,16 +2698,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:asymmetricDecrypt",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:asymmetricDecrypt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2760,11 +2715,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for signing.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for signing.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2788,10 +2739,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_sign(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2801,11 +2748,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_asymmetric_sign(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2827,16 +2770,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:asymmetricSign",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:asymmetricSign", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2851,10 +2787,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey associated with the CryptoKeyVersions.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the CryptoKey associated with the CryptoKeyVersions.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2878,9 +2811,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2890,10 +2820,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_create(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -2915,15 +2842,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/cryptoKeyVersions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -2938,11 +2859,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to destroy.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to destroy.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2966,10 +2883,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -2979,11 +2892,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_destroy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3005,16 +2914,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:destroy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:destroy", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3029,11 +2931,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the CryptoKeyVersion to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3056,10 +2954,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3069,11 +2963,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3094,17 +2984,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" =>
-            URI.encode(crypto_key_versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3119,11 +3001,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the CryptoKeyVersion public key to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the CryptoKeyVersion public key to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3146,10 +3024,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3159,11 +3033,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_get_public_key(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3184,16 +3054,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}/publicKey",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}/publicKey", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3208,10 +3071,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the CryptoKey to be imported into. The create permission is only required on this key when creating a new CryptoKeyVersion.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the CryptoKey to be imported into. The create permission is only required on this key when creating a new CryptoKeyVersion.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3235,9 +3095,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3247,10 +3104,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_import(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3272,15 +3126,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions:import",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/cryptoKeyVersions:import", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3295,10 +3143,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the CryptoKey to list, in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the CryptoKey to list, in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3326,9 +3171,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3338,10 +3180,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_list(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3367,15 +3206,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/cryptoKeyVersions", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3392,11 +3225,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for signing.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for signing.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3420,10 +3249,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_mac_sign(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3433,11 +3258,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_mac_sign(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3459,16 +3280,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:macSign",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:macSign", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3483,11 +3297,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for verification.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for verification.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3511,10 +3321,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_mac_verify(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3524,11 +3330,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_mac_verify(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3550,16 +3352,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:macVerify",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:macVerify", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3574,11 +3369,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `cryptoKeyVersion.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3603,10 +3394,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3616,11 +3403,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_patch(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3643,17 +3426,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" =>
-            URI.encode(crypto_key_versions_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3668,11 +3443,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for decryption.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for decryption.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3696,10 +3467,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_raw_decrypt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3709,11 +3476,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_raw_decrypt(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3735,16 +3498,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:rawDecrypt",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:rawDecrypt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3759,11 +3515,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to use for encryption.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to use for encryption.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3787,10 +3539,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_raw_encrypt(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3800,11 +3548,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_raw_encrypt(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3826,16 +3570,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:rawEncrypt",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:rawEncrypt", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3850,11 +3587,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The resource name of the CryptoKeyVersion to restore.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_keys_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `crypto_key_versions_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the CryptoKeyVersion to restore.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3878,10 +3611,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3891,11 +3620,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_crypto_keys_crypto_key_versions_restore(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        crypto_keys_id,
-        crypto_key_versions_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -3917,16 +3642,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/cryptoKeys/{cryptoKeysId}/cryptoKeyVersions/{cryptoKeyVersionsId}:restore",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "cryptoKeysId" => URI.encode(crypto_keys_id, &URI.char_unreserved?/1),
-          "cryptoKeyVersionsId" => URI.encode(crypto_key_versions_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+name}:restore", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -3941,9 +3659,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the KeyRing associated with the ImportJobs.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the KeyRing associated with the ImportJobs.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3968,8 +3684,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -3979,9 +3693,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_create(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4004,14 +3716,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/importJobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4026,10 +3733,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. The name of the ImportJob to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `import_jobs_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. The name of the ImportJob to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4052,9 +3756,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4064,10 +3765,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        import_jobs_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4088,15 +3786,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "importJobsId" => URI.encode(import_jobs_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4111,10 +3803,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4138,9 +3827,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4150,10 +3836,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_get_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        import_jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4175,15 +3858,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:getIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:getIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4198,9 +3875,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the KeyRing to list, in the format `projects/*/locations/*/keyRings/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4227,8 +3902,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4238,9 +3911,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_list(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4265,14 +3936,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+parent}/importJobs", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4287,10 +3953,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy is being specified. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4314,9 +3977,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4326,10 +3986,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_set_iam_policy(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        import_jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4351,15 +4008,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:setIamPolicy",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:setIamPolicy", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4374,10 +4025,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `resource`. REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
-  *   `locations_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `key_rings_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
-  *   `import_jobs_id` (*type:* `String.t`) - Part of `resource`. See documentation of `projectsId`.
+  *   `resource` (*type:* `String.t`) - REQUIRED: The resource for which the policy detail is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4401,9 +4049,6 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
   @spec cloudkms_projects_locations_key_rings_import_jobs_test_iam_permissions(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -4413,10 +4058,7 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
           | {:error, any()}
   def cloudkms_projects_locations_key_rings_import_jobs_test_iam_permissions(
         connection,
-        projects_id,
-        locations_id,
-        key_rings_id,
-        import_jobs_id,
+        resource,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -4438,15 +4080,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/keyRings/{keyRingsId}/importJobs/{importJobsId}:testIamPermissions",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "keyRingsId" => URI.encode(key_rings_id, &URI.char_unreserved?/1),
-          "importJobsId" => URI.encode(import_jobs_id, &URI.char_unreserved?/1)
-        }
-      )
+      |> Request.url("/v1/{+resource}:testIamPermissions", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -4455,5 +4091,75 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
     |> Response.decode(
       opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.TestIamPermissionsResponse{}]
     )
+  end
+
+  @doc """
+  Gets the latest state of a long-running operation. Clients can use this method to poll the operation result at intervals as recommended by the API service.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CloudKMS.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CloudKMS.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec cloudkms_projects_locations_operations_get(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CloudKMS.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def cloudkms_projects_locations_operations_get(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:get)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CloudKMS.V1.Model.Operation{}])
   end
 end
