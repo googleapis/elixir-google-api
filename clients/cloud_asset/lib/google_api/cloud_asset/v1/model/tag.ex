@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.Tag do
   ## Attributes
 
   *   `tagKey` (*type:* `String.t`, *default:* `nil`) - TagKey namespaced name, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}.
+  *   `tagKeyId` (*type:* `String.t`, *default:* `nil`) - TagKey ID, in the format of tagKeys/{TAG_KEY_ID}.
   *   `tagValue` (*type:* `String.t`, *default:* `nil`) - TagValue namespaced name, in the format of {ORG_ID}/{TAG_KEY_SHORT_NAME}/{TAG_VALUE_SHORT_NAME}.
   *   `tagValueId` (*type:* `String.t`, *default:* `nil`) - TagValue ID, in the format of tagValues/{TAG_VALUE_ID}.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.CloudAsset.V1.Model.Tag do
 
   @type t :: %__MODULE__{
           :tagKey => String.t() | nil,
+          :tagKeyId => String.t() | nil,
           :tagValue => String.t() | nil,
           :tagValueId => String.t() | nil
         }
 
   field(:tagKey)
+  field(:tagKeyId)
   field(:tagValue)
   field(:tagValueId)
 end

@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The name of the project/folder/organization where this saved_query should be created in. It can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345").
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project/folder/organization where this saved_query should be created in. It can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,24 +53,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.SavedQuery{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_saved_queries_create(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_saved_queries_create(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SavedQuery.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_saved_queries_create(
-        connection,
-        v1_id,
-        v1_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_saved_queries_create(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -91,9 +78,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/savedQueries", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/savedQueries", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -109,9 +95,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the saved query to delete. It must be in the format of: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
-  *   `v1_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
-  *   `saved_queries_id` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
+  *   `name` (*type:* `String.t`) - Required. The name of the saved query to delete. It must be in the format of: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -131,26 +115,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.Empty{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_saved_queries_delete(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_saved_queries_delete(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Empty.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_saved_queries_delete(
-        connection,
-        v1_id,
-        v1_id1,
-        saved_queries_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_saved_queries_delete(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -168,10 +138,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/savedQueries/{savedQueriesId}", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "savedQueriesId" => URI.encode(saved_queries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -187,9 +155,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. Required. The name of the saved query and it must be in the format of: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
-  *   `v1_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
-  *   `saved_queries_id` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
+  *   `name` (*type:* `String.t`) - Required. The name of the saved query and it must be in the format of: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -209,26 +175,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.SavedQuery{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_saved_queries_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_saved_queries_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SavedQuery.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_saved_queries_get(
-        connection,
-        v1_id,
-        v1_id1,
-        saved_queries_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_saved_queries_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -246,10 +198,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/savedQueries/{savedQueriesId}", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "savedQueriesId" => URI.encode(saved_queries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -265,8 +215,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The parent project/folder/organization whose savedQueries are to be listed. It can only be using project/folder/organization number (such as "folders/12345")", or a project ID (such as "projects/my-project-id").
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. The parent project/folder/organization whose savedQueries are to be listed. It can only be using project/folder/organization number (such as "folders/12345")", or a project ID (such as "projects/my-project-id").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -289,18 +238,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.ListSavedQueriesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_saved_queries_list(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_saved_queries_list(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.ListSavedQueriesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_saved_queries_list(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_saved_queries_list(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -321,9 +264,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/savedQueries", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/savedQueries", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -341,9 +283,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `savedQuery.name`. The resource name of the saved query. The format must be: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
-  *   `v1_id1` (*type:* `String.t`) - Part of `savedQuery.name`. See documentation of `v1Id`.
-  *   `saved_queries_id` (*type:* `String.t`) - Part of `savedQuery.name`. See documentation of `v1Id`.
+  *   `name` (*type:* `String.t`) - The resource name of the saved query. The format must be: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -365,26 +305,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.SavedQuery{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_saved_queries_patch(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_saved_queries_patch(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SavedQuery.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_saved_queries_patch(
-        connection,
-        v1_id,
-        v1_id1,
-        saved_queries_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_saved_queries_patch(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -404,10 +330,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.SavedQueries do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/savedQueries/{savedQueriesId}", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "savedQueriesId" => URI.encode(saved_queries_id, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

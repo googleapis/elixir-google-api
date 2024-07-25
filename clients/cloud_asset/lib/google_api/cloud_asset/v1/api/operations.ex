@@ -31,10 +31,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.Operations do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `v1_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
-  *   `operations_id1` (*type:* `String.t`) - Part of `name`. See documentation of `v1Id`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -54,28 +51,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.Operations do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_operations_get(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_operations_get(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_operations_get(
-        connection,
-        v1_id,
-        v1_id1,
-        operations_id,
-        operations_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_operations_get(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -93,11 +74,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.Operations do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/operations/{operationsId}/{operationsId1}", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1),
-        "operationsId" => URI.encode(operations_id, &URI.char_unreserved?/1),
-        "operationsId1" => URI.encode(operations_id1, &(URI.char_unreserved?(&1) || &1 == ?/))
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

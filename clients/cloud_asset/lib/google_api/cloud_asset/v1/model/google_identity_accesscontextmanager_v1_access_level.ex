@@ -24,7 +24,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1Acce
   *   `basic` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1BasicLevel.t`, *default:* `nil`) - A `BasicLevel` composed of `Conditions`.
   *   `custom` (*type:* `GoogleApi.CloudAsset.V1.Model.GoogleIdentityAccesscontextmanagerV1CustomLevel.t`, *default:* `nil`) - A `CustomLevel` written in the Common Expression Language.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the `AccessLevel` and its use. Does not affect behavior.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Resource name for the `AccessLevel`. Format: `accessPolicies/{access_policy}/accessLevels/{access_level}`. The `access_level` component must begin with a letter, followed by alphanumeric characters or `_`. Its maximum length is 50 characters. After you create an `AccessLevel`, you cannot change its `name`.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Human readable title. Must be unique within the Policy.
   """
 

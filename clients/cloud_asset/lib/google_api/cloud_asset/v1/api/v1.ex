@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `analysisQuery.scope`. Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
-  *   `v1_id1` (*type:* `String.t`) - Part of `analysisQuery.scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -65,18 +64,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_analyze_iam_policy(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_analyze_iam_policy(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeIamPolicyResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_analyze_iam_policy(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_analyze_iam_policy(connection, scope, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -107,9 +100,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeIamPolicy", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:analyzeIamPolicy", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -127,8 +119,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `analysisQuery.scope`. Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
-  *   `v1_id1` (*type:* `String.t`) - Part of `analysisQuery.scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. The relative name of the root asset. Only resources and IAM policies within the scope will be analyzed. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -152,7 +143,6 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @spec cloudasset_analyze_iam_policy_longrunning(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -162,8 +152,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
           | {:error, any()}
   def cloudasset_analyze_iam_policy_longrunning(
         connection,
-        v1_id,
-        v1_id1,
+        scope,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -185,9 +174,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeIamPolicyLongrunning", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:analyzeIamPolicyLongrunning", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -203,8 +191,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `resource`. Required. Name of the resource to perform the analysis against. Only Google Cloud projects are supported as of today. Hence, this can only be a project ID (such as "projects/my-project-id") or a project number (such as "projects/12345").
-  *   `v1_id1` (*type:* `String.t`) - Part of `resource`. See documentation of `v1Id`.
+  *   `resource` (*type:* `String.t`) - Required. Name of the resource to perform the analysis against. Only Google Cloud projects are supported as of today. Hence, this can only be a project ID (such as "projects/my-project-id") or a project number (such as "projects/12345").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -226,12 +213,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeMoveResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_analyze_move(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec cloudasset_analyze_move(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeMoveResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_analyze_move(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_analyze_move(connection, resource, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -251,9 +238,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeMove", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+resource}:analyzeMove", %{
+        "resource" => URI.encode(resource, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -269,8 +255,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. The organization to scope the request. Only organization policies within the scope will be analyzed. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -294,24 +279,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPoliciesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_analyze_org_policies(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_analyze_org_policies(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.AnalyzeOrgPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_analyze_org_policies(
-        connection,
-        v1_id,
-        v1_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_analyze_org_policies(connection, scope, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -333,9 +306,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicies", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:analyzeOrgPolicies", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -353,8 +325,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output assets will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output assets will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -381,7 +352,6 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @spec cloudasset_analyze_org_policy_governed_assets(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -391,8 +361,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
           | {:error, any()}
   def cloudasset_analyze_org_policy_governed_assets(
         connection,
-        v1_id,
-        v1_id1,
+        scope,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -417,9 +386,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicyGovernedAssets", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:analyzeOrgPolicyGovernedAssets", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -437,8 +405,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output containers will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. The organization to scope the request. Only organization policies within the scope will be analyzed. The output containers will also be limited to the ones governed by those in-scope organization policies. * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -465,7 +432,6 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   @spec cloudasset_analyze_org_policy_governed_containers(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -475,8 +441,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
           | {:error, any()}
   def cloudasset_analyze_org_policy_governed_containers(
         connection,
-        v1_id,
-        v1_id1,
+        scope,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -501,9 +466,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:analyzeOrgPolicyGovernedContainers", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:analyzeOrgPolicyGovernedContainers", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -522,8 +486,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The relative name of the root asset. It can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id")", or a project number (such as "projects/12345").
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. The relative name of the root asset. It can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id")", or a project number (such as "projects/12345").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -548,24 +511,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_batch_get_assets_history(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_batch_get_assets_history(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.BatchGetAssetsHistoryResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_batch_get_assets_history(
-        connection,
-        v1_id,
-        v1_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_batch_get_assets_history(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -588,9 +539,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:batchGetAssetsHistory", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}:batchGetAssetsHistory", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -608,8 +558,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The relative name of the root asset. This can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"), or a folder number (such as "folders/123").
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. The relative name of the root asset. This can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"), or a folder number (such as "folders/123").
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -630,12 +579,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.Operation{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_export_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec cloudasset_export_assets(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.Operation.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_export_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_export_assets(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -654,9 +603,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:exportAssets", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}:exportAssets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -672,8 +620,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `parent`. Required. The relative name of the root asset. This can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"), or a folder number (such as "folders/123"). Only assets belonging to the `parent` will be returned.
-  *   `v1_id1` (*type:* `String.t`) - Part of `parent`. See documentation of `v1Id`.
+  *   `parent` (*type:* `String.t`) - Required. The relative name of the root asset. This can only be an organization number (such as "organizations/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"), or a folder number (such as "folders/123"). Only assets belonging to the `parent` will be returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -694,12 +641,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_query_assets(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+  @spec cloudasset_query_assets(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_query_assets(connection, v1_id, v1_id1, optional_params \\ [], opts \\ []) do
+  def cloudasset_query_assets(connection, parent, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -718,9 +665,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:queryAssets", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}:queryAssets", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -736,8 +682,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. A scope can be a project, a folder, or an organization. The search is limited to the IAM policies within the `scope`. The caller must be granted the [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions) permission on the desired scope. The allowed values are: * projects/{PROJECT_ID} (e.g., "projects/foo-bar") * projects/{PROJECT_NUMBER} (e.g., "projects/12345678") * folders/{FOLDER_NUMBER} (e.g., "folders/1234567") * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. A scope can be a project, a folder, or an organization. The search is limited to the IAM policies within the `scope`. The caller must be granted the [`cloudasset.assets.searchAllIamPolicies`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions) permission on the desired scope. The allowed values are: * projects/{PROJECT_ID} (e.g., "projects/foo-bar") * projects/{PROJECT_NUMBER} (e.g., "projects/12345678") * folders/{FOLDER_NUMBER} (e.g., "folders/1234567") * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -762,24 +707,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.SearchAllIamPoliciesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_search_all_iam_policies(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_search_all_iam_policies(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SearchAllIamPoliciesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_search_all_iam_policies(
-        connection,
-        v1_id,
-        v1_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_search_all_iam_policies(connection, scope, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -802,9 +735,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:searchAllIamPolicies", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:searchAllIamPolicies", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -822,8 +754,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. A scope can be a project, a folder, or an organization. The search is limited to the resources within the `scope`. The caller must be granted the [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions) permission on the desired scope. The allowed values are: * projects/{PROJECT_ID} (e.g., "projects/foo-bar") * projects/{PROJECT_NUMBER} (e.g., "projects/12345678") * folders/{FOLDER_NUMBER} (e.g., "folders/1234567") * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. A scope can be a project, a folder, or an organization. The search is limited to the resources within the `scope`. The caller must be granted the [`cloudasset.assets.searchAllResources`](https://cloud.google.com/asset-inventory/docs/access-control#required_permissions) permission on the desired scope. The allowed values are: * projects/{PROJECT_ID} (e.g., "projects/foo-bar") * projects/{PROJECT_NUMBER} (e.g., "projects/12345678") * folders/{FOLDER_NUMBER} (e.g., "folders/1234567") * organizations/{ORGANIZATION_NUMBER} (e.g., "organizations/123456")
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -849,24 +780,12 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
   *   `{:ok, %GoogleApi.CloudAsset.V1.Model.SearchAllResourcesResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudasset_search_all_resources(
-          Tesla.Env.client(),
-          String.t(),
-          String.t(),
-          keyword(),
-          keyword()
-        ) ::
+  @spec cloudasset_search_all_resources(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
           {:ok, GoogleApi.CloudAsset.V1.Model.SearchAllResourcesResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudasset_search_all_resources(
-        connection,
-        v1_id,
-        v1_id1,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def cloudasset_search_all_resources(connection, scope, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -890,9 +809,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.V1 do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}:searchAllResources", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}:searchAllResources", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)

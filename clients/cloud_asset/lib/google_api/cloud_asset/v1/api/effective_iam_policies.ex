@@ -31,8 +31,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.EffectiveIamPolicies do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudAsset.V1.Connection.t`) - Connection to server
-  *   `v1_id` (*type:* `String.t`) - Part of `scope`. Required. Only IAM policies on or below the scope will be returned. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
-  *   `v1_id1` (*type:* `String.t`) - Part of `scope`. See documentation of `v1Id`.
+  *   `scope` (*type:* `String.t`) - Required. Only IAM policies on or below the scope will be returned. This can only be an organization number (such as "organizations/123"), a folder number (such as "folders/123"), a project ID (such as "projects/my-project-id"), or a project number (such as "projects/12345"). To know how to get organization ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-organization#retrieving_your_organization_id). To know how to get folder or project ID, visit [here ](https://cloud.google.com/resource-manager/docs/creating-managing-folders#viewing_or_listing_folders_and_projects).
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -56,7 +55,6 @@ defmodule GoogleApi.CloudAsset.V1.Api.EffectiveIamPolicies do
   @spec cloudasset_effective_iam_policies_batch_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -66,8 +64,7 @@ defmodule GoogleApi.CloudAsset.V1.Api.EffectiveIamPolicies do
           | {:error, any()}
   def cloudasset_effective_iam_policies_batch_get(
         connection,
-        v1_id,
-        v1_id1,
+        scope,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -89,9 +86,8 @@ defmodule GoogleApi.CloudAsset.V1.Api.EffectiveIamPolicies do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/{v1Id}/{v1Id1}/effectiveIamPolicies:batchGet", %{
-        "v1Id" => URI.encode(v1_id, &URI.char_unreserved?/1),
-        "v1Id1" => URI.encode(v1_id1, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+scope}/effectiveIamPolicies:batchGet", %{
+        "scope" => URI.encode(scope, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
