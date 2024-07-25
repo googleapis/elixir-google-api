@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSummary do
   @moduledoc """
-  Summary of the top N search result specified by the summary spec.
+  Summary of the top N search results specified by the summary spec.
 
   ## Attributes
 

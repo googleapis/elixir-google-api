@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaImportErrorConfig.t`, *default:* `nil`) - The desired location of errors incurred during the data ingestion and training.
   *   `gcsTrainingInput` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaTrainCustomModelRequestGcsTrainingInput.t`, *default:* `nil`) - Cloud Storage training input.
+  *   `modelId` (*type:* `String.t`, *default:* `nil`) - If not provided, a UUID will be generated.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Model to be trained. Supported values are: * **search-tuning**: Fine tuning the search system based on data provided.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :gcsTrainingInput =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaTrainCustomModelRequestGcsTrainingInput.t()
             | nil,
+          :modelId => String.t() | nil,
           :modelType => String.t() | nil
         }
 
@@ -47,6 +49,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaTrainCustomModelRequestGcsTrainingInput
   )
 
+  field(:modelId)
   field(:modelType)
 end
 

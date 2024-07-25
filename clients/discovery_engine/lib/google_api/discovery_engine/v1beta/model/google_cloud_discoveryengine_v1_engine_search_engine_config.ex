@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Eng
   ## Attributes
 
   *   `searchAddOns` (*type:* `list(String.t)`, *default:* `nil`) - The add-on that this search engine enables.
-  *   `searchTier` (*type:* `String.t`, *default:* `nil`) - The search feature tier of this engine. Different tiers might have different pricing. To learn more, please check the pricing documentation. Defaults to SearchTier.SEARCH_TIER_STANDARD if not specified.
+  *   `searchTier` (*type:* `String.t`, *default:* `nil`) - The search feature tier of this engine. Different tiers might have different pricing. To learn more, check the pricing documentation. Defaults to SearchTier.SEARCH_TIER_STANDARD if not specified.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,22 +21,24 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
+  *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaImportErrorConfig.t`, *default:* `nil`) - The desired location of errors incurred during the Import.
   *   `errorSamples` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while processing the request.
-  *   `failureCount` (*type:* `String.t`, *default:* `nil`) - Count of CompletionSuggestions that failed to be imported.
-  *   `successCount` (*type:* `String.t`, *default:* `nil`) - Count of CompletionSuggestions successfully imported.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :errorSamples => list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t()) | nil,
-          :failureCount => String.t() | nil,
-          :successCount => String.t() | nil
+          :errorConfig =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaImportErrorConfig.t()
+            | nil,
+          :errorSamples => list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t()) | nil
         }
 
+  field(:errorConfig,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaImportErrorConfig
+  )
+
   field(:errorSamples, as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus, type: :list)
-  field(:failureCount)
-  field(:successCount)
 end
 
 defimpl Poison.Decoder,

@@ -24,8 +24,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `ignoreRecordDetailsInResponse` (*type:* `boolean()`, *default:* `nil`) - If true, the response will contain only record ID and score. By default, it is false, the response will contain record details.
   *   `model` (*type:* `String.t`, *default:* `nil`) - The identifier of the model to use. It is one of: * `semantic-ranker-512@latest`: Semantic ranking model with maxiumn input token size 512. It is set to `semantic-ranker-512@latest` by default if unspecified.
   *   `query` (*type:* `String.t`, *default:* `nil`) - The query to use.
-  *   `records` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaRankingRecord.t)`, *default:* `nil`) - Required. A list of records to rank. At most 100 records to rank.
+  *   `records` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaRankingRecord.t)`, *default:* `nil`) - Required. A list of records to rank. At most 200 records to rank.
   *   `topN` (*type:* `integer()`, *default:* `nil`) - The number of results to return. If this is unset or no bigger than zero, returns all results.
+  *   `userLabels` (*type:* `map()`, *default:* `nil`) - The user labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
               GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaRankingRecord.t()
             )
             | nil,
-          :topN => integer() | nil
+          :topN => integer() | nil,
+          :userLabels => map() | nil
         }
 
   field(:ignoreRecordDetailsInResponse)
@@ -52,6 +54,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   )
 
   field(:topN)
+  field(:userLabels, type: :map)
 end
 
 defimpl Poison.Decoder,

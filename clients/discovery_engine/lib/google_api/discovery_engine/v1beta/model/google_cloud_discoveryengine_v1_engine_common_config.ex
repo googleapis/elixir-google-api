@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Eng
 
   ## Attributes
 
-  *   `companyName` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the company, business or entity that is associated with the engine. Setting this may help improve LLM related features.
+  *   `companyName` (*type:* `String.t`, *default:* `nil`) - The name of the company, business or entity that is associated with the engine. Setting this may help improve LLM related features.
   """
 
   use GoogleApi.Gax.ModelBase

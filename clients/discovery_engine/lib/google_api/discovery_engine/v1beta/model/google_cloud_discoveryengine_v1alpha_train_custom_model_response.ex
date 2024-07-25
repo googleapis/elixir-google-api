@@ -24,6 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaImportErrorConfig.t`, *default:* `nil`) - Echoes the destination for the complete errors in the request if set.
   *   `errorSamples` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t)`, *default:* `nil`) - A sample of errors encountered while processing the data.
   *   `metrics` (*type:* `map()`, *default:* `nil`) - The metrics of the trained model.
+  *   `modelName` (*type:* `String.t`, *default:* `nil`) - Fully qualified name of the CustomTuningModel.
   *   `modelStatus` (*type:* `String.t`, *default:* `nil`) - The trained model status. Possible values are: * **bad-data**: The training data quality is bad. * **no-improvement**: Tuning didn't improve performance. Won't deploy. * **in-progress**: Model training job creation is in progress. * **training**: Model is actively training. * **evaluating**: The model is evaluating trained metrics. * **indexing**: The model trained metrics are indexing. * **ready**: The model is ready for serving.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
             | nil,
           :errorSamples => list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t()) | nil,
           :metrics => map() | nil,
+          :modelName => String.t() | nil,
           :modelStatus => String.t() | nil
         }
 
@@ -44,6 +46,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   field(:errorSamples, as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus, type: :list)
   field(:metrics, type: :map)
+  field(:modelName)
   field(:modelStatus)
 end
 

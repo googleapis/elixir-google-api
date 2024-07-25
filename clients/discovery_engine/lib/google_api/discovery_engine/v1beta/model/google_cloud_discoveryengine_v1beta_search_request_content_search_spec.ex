@@ -21,7 +21,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `chunkSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec.t`, *default:* `nil`) - Specifies the chunk spec to be returned from the search response. Only available if the SearchRequest.ContentSearchSpec.search_result_mode is set to CHUNKS
   *   `extractiveContentSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec.t`, *default:* `nil`) - If there is no extractive_content_spec provided, there will be no extractive answer in the search response.
+  *   `searchResultMode` (*type:* `String.t`, *default:* `nil`) - Specifies the search result mode. If unspecified, the search result mode defaults to `DOCUMENTS`.
   *   `snippetSpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec.t`, *default:* `nil`) - If `snippetSpec` is not specified, snippets are not included in the search response.
   *   `summarySpec` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSummarySpec.t`, *default:* `nil`) - If `summarySpec` is not specified, summaries are not included in the search response.
   """
@@ -29,9 +31,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chunkSpec =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec.t()
+            | nil,
           :extractiveContentSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec.t()
             | nil,
+          :searchResultMode => String.t() | nil,
           :snippetSpec =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecSnippetSpec.t()
             | nil,
@@ -40,10 +46,17 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             | nil
         }
 
+  field(:chunkSpec,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecChunkSpec
+  )
+
   field(:extractiveContentSpec,
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestContentSearchSpecExtractiveContentSpec
   )
+
+  field(:searchResultMode)
 
   field(:snippetSpec,
     as:

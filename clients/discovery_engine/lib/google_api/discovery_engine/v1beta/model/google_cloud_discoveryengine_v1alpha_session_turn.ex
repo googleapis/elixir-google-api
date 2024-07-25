@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
-  *   `answer` (*type:* `String.t`, *default:* `nil`) - The resource name of the answer to the user query.
+  *   `answer` (*type:* `String.t`, *default:* `nil`) - The resource name of the answer to the user query. Only set if the answer generation (/answer API call) happened in this turn.
   *   `query` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaQuery.t`, *default:* `nil`) - The user query.
   """
 

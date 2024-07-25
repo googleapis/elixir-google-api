@@ -24,7 +24,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `citationIndices` (*type:* `list(integer())`, *default:* `nil`) - A list of indices (into 'cited_chunks') specifying the citations associated with the claim. For instance [1,3,4] means that cited_chunks[1], cited_chunks[3], cited_chunks[4] are the facts cited supporting for the claim. A citation to a fact indicates that the claim is supported by the fact.
   *   `claimText` (*type:* `String.t`, *default:* `nil`) - Text for the claim in the answer candidate. Always provided regardless of whether citations or anti-citations are found.
   *   `endPos` (*type:* `integer()`, *default:* `nil`) - Position indicating the end of the claim in the answer candidate, exclusive.
-  *   `startPos` (*type:* `integer()`, *default:* `nil`) - Position indicating the start of the claim in the answer candidate, measured in bytes/unicode.
+  *   `groundingCheckRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates that this claim required grounding check. When the system decided this claim doesn't require attribution/grounding check, this field will be set to false. In that case, no grounding check was done for the claim and therefore citation_indices, and anti_citation_indices should not be returned.
+  *   `startPos` (*type:* `integer()`, *default:* `nil`) - Position indicating the start of the claim in the answer candidate, measured in bytes.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -33,12 +34,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :citationIndices => list(integer()) | nil,
           :claimText => String.t() | nil,
           :endPos => integer() | nil,
+          :groundingCheckRequired => boolean() | nil,
           :startPos => integer() | nil
         }
 
   field(:citationIndices, type: :list)
   field(:claimText)
   field(:endPos)
+  field(:groundingCheckRequired)
   field(:startPos)
 end
 

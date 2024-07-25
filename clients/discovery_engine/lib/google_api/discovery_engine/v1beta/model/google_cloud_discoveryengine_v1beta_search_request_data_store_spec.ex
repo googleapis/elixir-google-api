@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchRequestDataStoreSpec do
   @moduledoc """
-  A struct to define data stores to filter on in a search call.
+  A struct to define data stores to filter on in a search call and configurations for those data stores. Otherwise, an `INVALID_ARGUMENT` error is returned.
 
   ## Attributes
 
