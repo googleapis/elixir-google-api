@@ -22,7 +22,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaBa
   ## Attributes
 
   *   `requests` (*type:* `list(GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaUpdateServiceRequest.t)`, *default:* `nil`) - Required. The request messages specifying the Services to update. A maximum of 100 objects can be updated in a batch.
-  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. A comma-separated list of names of fields in the Services to update. Example: `display_name`. If this field is present, the `update_mask` field in the UpdateServiceRequest messages must all match this field, or the entire batch fails and no updates will be committed.
+  *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Optional. A comma-separated list of names of fields in the Services to update. Example: `display_name`. If the `update_mask` field is set in both this request and any of the UpdateServiceRequest messages, they must match or the entire batch fails and no updates will be committed.
   """
 
   use GoogleApi.Gax.ModelBase

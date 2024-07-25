@@ -1227,7 +1227,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the AppAttestConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the AppAttestConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaAppAttestConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1854,7 +1854,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the DeviceCheckConfig Gets to update. Example: `key_id,private_key`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the DeviceCheckConfig to update. Example: `key_id,private_key`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaDeviceCheckConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2091,7 +2091,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the PlayIntegrityConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the PlayIntegrityConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaPlayIntegrityConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3039,7 +3039,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the SafetyNetConfig Gets to update. Example: `token_ttl`.
+      *   `:updateMask` (*type:* `String.t`) - Required. A comma-separated list of names of fields in the SafetyNetConfig to update. Example: `token_ttl`.
       *   `:body` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Model.GoogleFirebaseAppcheckV1betaSafetyNetConfig.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3186,7 +3186,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The relative resource name of the Service to retrieve, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `identitytoolkit.googleapis.com` (Firebase Authentication with Identity Platform)
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the Service to retrieve, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `identitytoolkit.googleapis.com` (Firebase Authentication with Identity Platform) * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3267,7 +3267,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of Services to return in the response. Only explicitly configured services are returned. The server may return fewer than this at its own discretion. If no value is specified or set to zero (or too large a value is specified), the server will impose its own limit.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of Services to return in the response. Only explicitly configured services are returned. The server may return fewer than this at its own discretion. If no value is specified (or too large a value is specified), the server will impose its own limit.
       *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to ListServices indicating where in the set of Services to resume listing. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListServices must match the call that provided the page token; if they do not match, the result is undefined.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3412,7 +3412,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent project name and the service, in the format ``` projects/{project_number}/services/{service_id} ``` The parent collection in the `name` field of any resource being updated must match this field, or the entire batch fails.
+  *   `parent` (*type:* `String.t`) - Required. The parent service name, in the format ``` projects/{project_number}/services/{service_id} ``` The parent collection in the `name` field of any resource being updated must match this field, or the entire batch fails.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3491,7 +3491,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the parent service in which the specified ResourcePolicy will be created, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS)
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the parent Service in which the specified ResourcePolicy will be created, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3570,7 +3570,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The relative resource name of the ResourcePolicy to delete, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_name} ```
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the ResourcePolicy to delete, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ```
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3583,7 +3583,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - The checksum to be validated against the current ResourcePolicy, to ensure the client has an up-to-date value before proceeding. The user can obtain this from the ResourcePolicy object that they last received. This etag is strongly validated.
+      *   `:etag` (*type:* `String.t`) - The checksum to be validated against the current ResourcePolicy, to ensure the client has an up-to-date value before proceeding. This checksum is computed by the server based on the values of fields in the ResourcePolicy object, and can be obtained from the ResourcePolicy object received from the last CreateResourcePolicy, GetResourcePolicy, ListResourcePolicies, UpdateResourcePolicy, or BatchUpdateResourcePolicies call. This etag is strongly validated as defined by RFC 7232.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3644,7 +3644,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The relative resource name of the ResourcePolicy to retrieve, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS) `resource_policy_id` is a system-generated UID used as the resource ID for the policy.
+  *   `name` (*type:* `String.t`) - Required. The relative resource name of the ResourcePolicy to retrieve, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3721,7 +3721,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the parent project and service for which to list each associated ResourcePolicy, in the format: ``` projects/{project_number}/services/{service_name} ```
+  *   `parent` (*type:* `String.t`) - Required. The relative resource name of the parent Service for which to list each associated ResourcePolicy, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3735,8 +3735,8 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Filters the results by the specified rule. For the exact syntax of this field, please consult the [AIP-160](https://google.aip.dev/160) standard. Currently, since the only fields in the ResourcePolicy resource are the scalar fields `enforcement_mode` and `target_resource`, this method does not support the traversal operator (`.`) or the has operator (`:`). Here are some examples of valid filters: * `enforcement_mode = ENFORCED` * `target_resource = "//oauth2.googleapis.com/projects/12345/oauthClients/"` * `enforcement_mode = ENFORCED AND target_resource = "//oauth2.googleapis.com/projects/12345/oauthClients/"`
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of ResourcePolicys to return in the response. Only explicitly configured policies are returned. The server may return fewer than this at its own discretion. If no value is specified (or too large a value is specified), the server will impose its own limit.
-      *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to ListResourcePolicies indicating where in the set of ResourcePolicys to resume listing. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListResourcePolicies must match the call that provided the page token; if they do not match, the result is undefined.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of ResourcePolicy objects to return in the response. The server may return fewer than this at its own discretion. If no value is specified (or too large a value is specified), the server will impose its own limit.
+      *   `:pageToken` (*type:* `String.t`) - Token returned from a previous call to ListResourcePolicies indicating where in the set of ResourcePolicy objects to resume listing. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListResourcePolicies must match the call that provided the page token; if they do not match, the result is undefined.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3804,7 +3804,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.FirebaseAppCheck.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The relative name of the resource configuration object, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS) `resource_policy_id` is a system-generated UID used as the resource ID for the policy.
+  *   `name` (*type:* `String.t`) - Required. Identifier. The relative name of the resource policy object, in the format: ``` projects/{project_number}/services/{service_id}/resourcePolicies/{resource_policy_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `oauth2.googleapis.com` (Google Identity for iOS) `resource_policy_id` is a system-generated UID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

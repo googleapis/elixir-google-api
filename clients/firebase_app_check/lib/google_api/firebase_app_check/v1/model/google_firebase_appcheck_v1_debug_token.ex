@@ -24,6 +24,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1DebugToken
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. A human readable display name used to identify this debug token.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative resource name of the debug token, in the format: ``` projects/{project_number}/apps/{app_id}/debugTokens/{debug_token_id} ```
   *   `token` (*type:* `String.t`, *default:* `nil`) - Required. Input only. Immutable. The secret token itself. Must be provided during creation, and must be a UUID4, case insensitive. This field is immutable once set, and cannot be provided during an UpdateDebugToken request. You can, however, delete this debug token using DeleteDebugToken to revoke it. For security reasons, this field will never be populated in any response.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this debug token was most recently updated.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1DebugToken
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :name => String.t() | nil,
-          :token => String.t() | nil
+          :token => String.t() | nil,
+          :updateTime => DateTime.t() | nil
         }
 
   field(:displayName)
   field(:name)
   field(:token)
+  field(:updateTime, as: DateTime)
 end
 
 defimpl Poison.Decoder,
