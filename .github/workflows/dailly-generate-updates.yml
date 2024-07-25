@@ -9,7 +9,6 @@ jobs:
     runs-on: ubuntu-20.04
     env:
       GITHUB_TOKEN: ${{ secrets.YOSHI_CODE_BOT_TOKEN }}
-      APPROVAL_GITHUB_TOKEN: ${{secrets.YOSHI_APPROVER_TOKEN}}
     steps:
       - name: Checkout repo
         uses: actions/checkout@v4
