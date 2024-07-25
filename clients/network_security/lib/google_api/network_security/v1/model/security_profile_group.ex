@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
   @moduledoc """
-  SecurityProfileGroup is a resource that defines the behavior for various ProfileTypes. Next ID: 8
+  SecurityProfileGroup is a resource that defines the behavior for various ProfileTypes. Next ID: 10
 
   ## Attributes
 
