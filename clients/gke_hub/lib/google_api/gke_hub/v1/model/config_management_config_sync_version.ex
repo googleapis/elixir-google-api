@@ -21,11 +21,13 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion do
 
   ## Attributes
 
-  *   `admissionWebhook` (*type:* `String.t`, *default:* `nil`) - Version of the deployed admission_webhook pod
+  *   `admissionWebhook` (*type:* `String.t`, *default:* `nil`) - Version of the deployed admission-webhook pod
   *   `gitSync` (*type:* `String.t`, *default:* `nil`) - Version of the deployed git-sync pod
   *   `importer` (*type:* `String.t`, *default:* `nil`) - Version of the deployed importer pod
   *   `monitor` (*type:* `String.t`, *default:* `nil`) - Version of the deployed monitor pod
+  *   `otelCollector` (*type:* `String.t`, *default:* `nil`) - Version of the deployed otel-collector pod
   *   `reconcilerManager` (*type:* `String.t`, *default:* `nil`) - Version of the deployed reconciler-manager pod
+  *   `resourceGroupControllerManager` (*type:* `String.t`, *default:* `nil`) - Version of the deployed resource-group-controller-manager pod
   *   `rootReconciler` (*type:* `String.t`, *default:* `nil`) - Version of the deployed reconciler container in root-reconciler pod
   *   `syncer` (*type:* `String.t`, *default:* `nil`) - Version of the deployed syncer pod
   """
@@ -37,7 +39,9 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion do
           :gitSync => String.t() | nil,
           :importer => String.t() | nil,
           :monitor => String.t() | nil,
+          :otelCollector => String.t() | nil,
           :reconcilerManager => String.t() | nil,
+          :resourceGroupControllerManager => String.t() | nil,
           :rootReconciler => String.t() | nil,
           :syncer => String.t() | nil
         }
@@ -46,7 +50,9 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSyncVersion do
   field(:gitSync)
   field(:importer)
   field(:monitor)
+  field(:otelCollector)
   field(:reconcilerManager)
+  field(:resourceGroupControllerManager)
   field(:rootReconciler)
   field(:syncer)
 end

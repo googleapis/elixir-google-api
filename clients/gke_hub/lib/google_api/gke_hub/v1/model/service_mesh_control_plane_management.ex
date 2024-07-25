@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement do
   ## Attributes
 
   *   `details` (*type:* `list(GoogleApi.GKEHub.V1.Model.ServiceMeshStatusDetails.t)`, *default:* `nil`) - Explanation of state.
+  *   `implementation` (*type:* `String.t`, *default:* `nil`) - Output only. Implementation of managed control plane.
   *   `state` (*type:* `String.t`, *default:* `nil`) - LifecycleState of control plane management.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.GKEHub.V1.Model.ServiceMeshControlPlaneManagement do
 
   @type t :: %__MODULE__{
           :details => list(GoogleApi.GKEHub.V1.Model.ServiceMeshStatusDetails.t()) | nil,
+          :implementation => String.t() | nil,
           :state => String.t() | nil
         }
 
   field(:details, as: GoogleApi.GKEHub.V1.Model.ServiceMeshStatusDetails, type: :list)
+  field(:implementation)
   field(:state)
 end
 
