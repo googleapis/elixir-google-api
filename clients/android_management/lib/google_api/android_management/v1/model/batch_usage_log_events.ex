@@ -21,10 +21,10 @@ defmodule GoogleApi.AndroidManagement.V1.Model.BatchUsageLogEvents do
 
   ## Attributes
 
-  *   `device` (*type:* `String.t`, *default:* `nil`) - The name of the device in the form ‘enterprises/{enterpriseId}/devices/{deviceId}’
+  *   `device` (*type:* `String.t`, *default:* `nil`) - If present, the name of the device in the form ‘enterprises/{enterpriseId}/devices/{deviceId}’
   *   `retrievalTime` (*type:* `DateTime.t`, *default:* `nil`) - The device timestamp when the batch of events were collected from the device.
   *   `usageLogEvents` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.UsageLogEvent.t)`, *default:* `nil`) - The list of UsageLogEvent that were reported by the device, sorted chronologically by the event time.
-  *   `user` (*type:* `String.t`, *default:* `nil`) - The resource name of the user that owns this device in the form ‘enterprises/{enterpriseId}/users/{userId}’.
+  *   `user` (*type:* `String.t`, *default:* `nil`) - If present, the resource name of the user that owns this device in the form ‘enterprises/{enterpriseId}/users/{userId}’.
   """
 
   use GoogleApi.Gax.ModelBase
