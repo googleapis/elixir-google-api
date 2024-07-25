@@ -17,17 +17,19 @@
 
 defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MarketplaceTargeting do
   @moduledoc """
-  Targeting represents different criteria that can be used to target inventory. For example, they can choose to target inventory only if the user is in the US. Multiple types of targeting are always applied as a logical AND, unless noted otherwise.
+  Targeting represents different criteria that can be used to target deals or auction packages. For example, they can choose to target inventory only if the user is in the US. Multiple types of targeting are always applied as a logical AND, unless noted otherwise.
 
   ## Attributes
 
   *   `daypartTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DayPartTargeting.t`, *default:* `nil`) - Daypart targeting information.
+  *   `excludedSensitiveCategoryIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The sensitive content category label IDs excluded. Refer to this file https://storage.googleapis.com/adx-rtb-dictionaries/content-labels.txt for category IDs.
   *   `geoTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Output only. Geo criteria IDs to be included/excluded.
   *   `inventorySizeTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.InventorySizeTargeting.t`, *default:* `nil`) - Output only. Inventory sizes to be included/excluded.
   *   `inventoryTypeTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.InventoryTypeTargeting.t`, *default:* `nil`) - Output only. Inventory type targeting information.
   *   `placementTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.PlacementTargeting.t`, *default:* `nil`) - Output only. Placement targeting information, for example, URL, mobile applications.
   *   `technologyTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.TechnologyTargeting.t`, *default:* `nil`) - Output only. Technology targeting information, for example, operating system, device category.
   *   `userListTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Buyer user list targeting information. User lists can be uploaded using https://developers.google.com/authorized-buyers/rtb/bulk-uploader.
+  *   `verticalTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t`, *default:* `nil`) - Output only. The verticals included or excluded as defined in https://developers.google.com/authorized-buyers/rtb/downloads/publisher-verticals
   *   `videoTargeting` (*type:* `GoogleApi.AuthorizedBuyersMarketplace.V1.Model.VideoTargeting.t`, *default:* `nil`) - Output only. Video targeting information.
   """
 
@@ -36,6 +38,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MarketplaceTargeting do
   @type t :: %__MODULE__{
           :daypartTargeting =>
             GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DayPartTargeting.t() | nil,
+          :excludedSensitiveCategoryIds => list(String.t()) | nil,
           :geoTargeting =>
             GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t() | nil,
           :inventorySizeTargeting =>
@@ -48,11 +51,14 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MarketplaceTargeting do
             GoogleApi.AuthorizedBuyersMarketplace.V1.Model.TechnologyTargeting.t() | nil,
           :userListTargeting =>
             GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t() | nil,
+          :verticalTargeting =>
+            GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting.t() | nil,
           :videoTargeting =>
             GoogleApi.AuthorizedBuyersMarketplace.V1.Model.VideoTargeting.t() | nil
         }
 
   field(:daypartTargeting, as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.DayPartTargeting)
+  field(:excludedSensitiveCategoryIds, type: :list)
   field(:geoTargeting, as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting)
 
   field(:inventorySizeTargeting,
@@ -70,6 +76,7 @@ defmodule GoogleApi.AuthorizedBuyersMarketplace.V1.Model.MarketplaceTargeting do
   )
 
   field(:userListTargeting, as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting)
+  field(:verticalTargeting, as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.CriteriaTargeting)
   field(:videoTargeting, as: GoogleApi.AuthorizedBuyersMarketplace.V1.Model.VideoTargeting)
 end
 
