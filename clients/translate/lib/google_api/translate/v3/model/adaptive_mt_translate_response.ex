@@ -21,6 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.AdaptiveMtTranslateResponse do
 
   ## Attributes
 
+  *   `glossaryTranslations` (*type:* `list(GoogleApi.Translate.V3.Model.AdaptiveMtTranslation.t)`, *default:* `nil`) - Text translation response if a glossary is provided in the request. This could be the same as 'translation' above if no terms apply.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Output only. The translation's language code.
   *   `translations` (*type:* `list(GoogleApi.Translate.V3.Model.AdaptiveMtTranslation.t)`, *default:* `nil`) - Output only. The translation.
   """
@@ -28,9 +29,13 @@ defmodule GoogleApi.Translate.V3.Model.AdaptiveMtTranslateResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :glossaryTranslations =>
+            list(GoogleApi.Translate.V3.Model.AdaptiveMtTranslation.t()) | nil,
           :languageCode => String.t() | nil,
           :translations => list(GoogleApi.Translate.V3.Model.AdaptiveMtTranslation.t()) | nil
         }
+
+  field(:glossaryTranslations, as: GoogleApi.Translate.V3.Model.AdaptiveMtTranslation, type: :list)
 
   field(:languageCode)
   field(:translations, as: GoogleApi.Translate.V3.Model.AdaptiveMtTranslation, type: :list)
