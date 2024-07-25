@@ -21,6 +21,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Metadata do
 
   ## Attributes
 
+  *   `comparisons` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.ComparisonMetadata.t)`, *default:* `nil`) - The comparison descriptions.
   *   `dimensions` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.DimensionMetadata.t)`, *default:* `nil`) - The dimension descriptions.
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.MetricMetadata.t)`, *default:* `nil`) - The metric descriptions.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of this metadata.
@@ -29,11 +30,13 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.Metadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :comparisons => list(GoogleApi.AnalyticsData.V1beta.Model.ComparisonMetadata.t()) | nil,
           :dimensions => list(GoogleApi.AnalyticsData.V1beta.Model.DimensionMetadata.t()) | nil,
           :metrics => list(GoogleApi.AnalyticsData.V1beta.Model.MetricMetadata.t()) | nil,
           :name => String.t() | nil
         }
 
+  field(:comparisons, as: GoogleApi.AnalyticsData.V1beta.Model.ComparisonMetadata, type: :list)
   field(:dimensions, as: GoogleApi.AnalyticsData.V1beta.Model.DimensionMetadata, type: :list)
   field(:metrics, as: GoogleApi.AnalyticsData.V1beta.Model.MetricMetadata, type: :list)
   field(:name)

@@ -22,6 +22,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunPivotReportRequest do
   ## Attributes
 
   *   `cohortSpec` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.CohortSpec.t`, *default:* `nil`) - Cohort group associated with this request. If there is a cohort group in the request the 'cohort' dimension must be present.
+  *   `comparisons` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Comparison.t)`, *default:* `nil`) - Optional. The configuration of comparisons requested and displayed. The request requires both a comparisons field and a comparisons dimension to receive a comparison column in the response.
   *   `currencyCode` (*type:* `String.t`, *default:* `nil`) - A currency code in ISO4217 format, such as "AED", "USD", "JPY". If the field is empty, the report uses the property's default currency.
   *   `dateRanges` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.DateRange.t)`, *default:* `nil`) - The date range to retrieve event data for the report. If multiple date ranges are specified, event data from each date range is used in the report. A special dimension with field name "dateRange" can be included in a Pivot's field names; if included, the report compares between date ranges. In a cohort request, this `dateRanges` must be unspecified.
   *   `dimensionFilter` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t`, *default:* `nil`) - The filter clause of dimensions. Dimensions must be requested to be used in this filter. Metrics cannot be used in this filter.
@@ -38,6 +39,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunPivotReportRequest do
 
   @type t :: %__MODULE__{
           :cohortSpec => GoogleApi.AnalyticsData.V1beta.Model.CohortSpec.t() | nil,
+          :comparisons => list(GoogleApi.AnalyticsData.V1beta.Model.Comparison.t()) | nil,
           :currencyCode => String.t() | nil,
           :dateRanges => list(GoogleApi.AnalyticsData.V1beta.Model.DateRange.t()) | nil,
           :dimensionFilter => GoogleApi.AnalyticsData.V1beta.Model.FilterExpression.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunPivotReportRequest do
         }
 
   field(:cohortSpec, as: GoogleApi.AnalyticsData.V1beta.Model.CohortSpec)
+  field(:comparisons, as: GoogleApi.AnalyticsData.V1beta.Model.Comparison, type: :list)
   field(:currencyCode)
   field(:dateRanges, as: GoogleApi.AnalyticsData.V1beta.Model.DateRange, type: :list)
   field(:dimensionFilter, as: GoogleApi.AnalyticsData.V1beta.Model.FilterExpression)
