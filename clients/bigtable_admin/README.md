@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_bigtable_admin, "~> 0.25"}]
+  [{:google_api_bigtable_admin, "~> 0.26"}]
 end
 ```
 

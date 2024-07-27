@@ -22,6 +22,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodi
   ## Attributes
 
   *   `utf8Bytes` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Bytes.t`, *default:* `nil`) - Use `Utf8Bytes` encoding.
+  *   `utf8Raw` (*type:* `GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Raw.t`, *default:* `nil`) - Deprecated: if set, converts to an empty `utf8_bytes`.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -29,11 +30,18 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodi
   @type t :: %__MODULE__{
           :utf8Bytes =>
             GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Bytes.t()
+            | nil,
+          :utf8Raw =>
+            GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Raw.t()
             | nil
         }
 
   field(:utf8Bytes,
     as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Bytes
+  )
+
+  field(:utf8Raw,
+    as: GoogleApi.BigtableAdmin.V2.Model.GoogleBigtableAdminV2TypeStringEncodingUtf8Raw
   )
 end
 
