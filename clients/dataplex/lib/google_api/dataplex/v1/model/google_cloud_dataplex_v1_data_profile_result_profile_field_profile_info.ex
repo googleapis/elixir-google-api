@@ -21,12 +21,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProf
 
   ## Attributes
 
-  *   `distinctRatio` (*type:* `float()`, *default:* `nil`) - Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
+  *   `distinctRatio` (*type:* `float()`, *default:* `nil`) - Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
   *   `doubleProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo.t`, *default:* `nil`) - Double type field information.
   *   `integerProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo.t`, *default:* `nil`) - Integer type field information.
   *   `nullRatio` (*type:* `float()`, *default:* `nil`) - Ratio of rows with null value against total scanned rows.
   *   `stringProfile` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo.t`, *default:* `nil`) - String type field information.
-  *   `topNValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue.t)`, *default:* `nil`) - The list of top N non-null values, frequency and ratio with which they occur in the scanned data. N is 10 or equal to the number of distinct values in the field, whichever is smaller. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
+  *   `topNValues` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoTopNValue.t)`, *default:* `nil`) - The list of top N non-null values, frequency and ratio with which they occur in the scanned data. N is 10 or equal to the number of distinct values in the field, whichever is smaller. Not available for complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
   """
 
   use GoogleApi.Gax.ModelBase
