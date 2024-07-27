@@ -30,7 +30,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ServiceConnectionPolicy do
   *   `network` (*type:* `String.t`, *default:* `nil`) - The resource path of the consumer network. Example: - projects/{projectNumOrId}/global/networks/{resourceId}.
   *   `pscConfig` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.PscConfig.t`, *default:* `nil`) - Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.
   *   `pscConnections` (*type:* `list(GoogleApi.NetworkConnectivity.V1.Model.PscConnection.t)`, *default:* `nil`) - Output only. [Output only] Information about each Private Service Connect connection.
-  *   `serviceClass` (*type:* `String.t`, *default:* `nil`) - The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass. It is provided by the Service Producer. Google services have a prefix of gcp. For example, gcp-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.
+  *   `serviceClass` (*type:* `String.t`, *default:* `nil`) - The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass. It is provided by the Service Producer. Google services have a prefix of gcp or google-cloud. For example, gcp-memorystore-redis or google-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the ServiceConnectionMap was updated.
   """
 
