@@ -27,6 +27,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo do
   *   `internalIp` (*type:* `String.t`, *default:* `nil`) - Internal IP address of the network interface.
   *   `networkTags` (*type:* `list(String.t)`, *default:* `nil`) - Network tags configured on the instance.
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine network.
+  *   `pscNetworkAttachmentUri` (*type:* `String.t`, *default:* `nil`) - URI of the PSC network attachment the NIC is attached to (if relevant).
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Service account authorized for the instance.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine instance.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo do
           :internalIp => String.t() | nil,
           :networkTags => list(String.t()) | nil,
           :networkUri => String.t() | nil,
+          :pscNetworkAttachmentUri => String.t() | nil,
           :serviceAccount => String.t() | nil,
           :uri => String.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.InstanceInfo do
   field(:internalIp)
   field(:networkTags, type: :list)
   field(:networkUri)
+  field(:pscNetworkAttachmentUri)
   field(:serviceAccount)
   field(:uri)
 end
