@@ -22,6 +22,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryGenerationCadence do
   ## Attributes
 
   *   `inspectTemplateModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when the inspection rules defined by the `InspectTemplate` change. If not set, changing the template will not cause a data profile to update.
+  *   `refreshFrequency` (*type:* `String.t`, *default:* `nil`) - Frequency to update profiles regardless of whether the underlying resource has changed. Defaults to never.
   *   `schemaModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when a schema is modified.
   *   `tableModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTableModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when a table is modified.
   """
@@ -32,6 +33,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryGenerationCadence do
           :inspectTemplateModifiedCadence =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t()
             | nil,
+          :refreshFrequency => String.t() | nil,
           :schemaModifiedCadence =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence.t() | nil,
           :tableModifiedCadence =>
@@ -41,6 +43,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryGenerationCadence do
   field(:inspectTemplateModifiedCadence,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence
   )
+
+  field(:refreshFrequency)
 
   field(:schemaModifiedCadence,
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoverySchemaModifiedCadence

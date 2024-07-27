@@ -2030,12 +2030,12 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   end
 
   @doc """
-  Lists Connections in a parent.
+  Lists Connections in a parent. Use SearchConnections to see all connections within an organization.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent name, for example: `projects/project-id/locations/global`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the organization or project, for example `organizations/433245324/locations/europe` or `projects/project-id/locations/asia`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2185,7 +2185,7 @@ defmodule GoogleApi.DLP.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DLP.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Parent name, typically an organization, without location. For example: `organizations/12345678`.
+  *   `parent` (*type:* `String.t`) - Required. Resource name of the organization or project with a wildcard location, for example `organizations/433245324/locations/-` or `projects/project-id/locations/-`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
