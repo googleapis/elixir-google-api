@@ -17,20 +17,20 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource do
   @moduledoc """
-  EntrySource contains information related to the source system of the Entry.
+  Information related to the source system of the data resource that is represented by the entry.
 
   ## Attributes
 
-  *   `ancestors` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySourceAncestor.t)`, *default:* `nil`) - Immutable. The ancestors of the Entry in the source system.
-  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The create time of the resource in the source system.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the Entry. The maximum size of the field is 2000 characters.
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - User friendly display name. The maximum size of the field is 500 characters.
+  *   `ancestors` (*type:* `list(GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySourceAncestor.t)`, *default:* `nil`) - Immutable. The entries representing the ancestors of the data resource in the source system.
+  *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the resource was created in the source system.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the data resource. Maximum length is 2,000 characters.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - A user-friendly display name. Maximum length is 500 characters.
   *   `labels` (*type:* `map()`, *default:* `nil`) - User-defined labels. The maximum size of keys and values is 128 characters each.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. Location of the resource in the source system. You can search the Entry by this location. By default, this should match the location of the EntryGroup containing this entry. A different value allows capturing the source location for data external to Google Cloud.
-  *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform containing the source system. The maximum size of the field is 64 characters.
-  *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource in the source system. The maximum size of the field is 4000 characters.
-  *   `system` (*type:* `String.t`, *default:* `nil`) - The name of the source system. The maximum size of the field is 64 characters.
-  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The update time of the resource in the source system.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. Location of the resource in the source system. You can search the entry by this location. By default, this should match the location of the entry group containing this entry. A different value allows capturing the source location for data external to Google Cloud.
+  *   `platform` (*type:* `String.t`, *default:* `nil`) - The platform containing the source system. Maximum length is 64 characters.
+  *   `resource` (*type:* `String.t`, *default:* `nil`) - The name of the resource in the source system. Maximum length is 4,000 characters.
+  *   `system` (*type:* `String.t`, *default:* `nil`) - The name of the source system. Maximum length is 64 characters.
+  *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the resource was last updated in the source system. If the entry exists in the system and its EntrySource has update_time populated, further updates to the EntrySource of the entry must provide incremental updates to its update_time.
   """
 
   use GoogleApi.Gax.ModelBase

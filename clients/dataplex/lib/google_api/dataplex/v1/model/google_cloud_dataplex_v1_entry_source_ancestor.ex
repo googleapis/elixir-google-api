@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySourceAncestor do
   @moduledoc """
-  Ancestor contains information about individual items in the hierarchy of an Entry.
+  Information about individual items in the hierarchy that is associated with the data resource.
 
   ## Attributes
 
