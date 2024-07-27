@@ -20,7 +20,7 @@ defmodule GoogleApi.PlayIntegrity.V1 do
   API client metadata for GoogleApi.PlayIntegrity.V1.
   """
 
-  @discovery_revision "20240711"
+  @discovery_revision "20240725"
 
   def discovery_revision(), do: @discovery_revision
 end
