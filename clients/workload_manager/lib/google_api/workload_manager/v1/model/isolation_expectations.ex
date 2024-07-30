@@ -21,6 +21,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.IsolationExpectations do
 
   ## Attributes
 
+  *   `requirementOverride` (*type:* `GoogleApi.WorkloadManager.V1.Model.RequirementOverride.t`, *default:* `nil`) - Explicit overrides for ZI and ZS requirements to be used for resources that should be excluded from ZI/ZS verification logic.
   *   `ziOrgPolicy` (*type:* `String.t`, *default:* `nil`) - 
   *   `ziRegionPolicy` (*type:* `String.t`, *default:* `nil`) - 
   *   `ziRegionState` (*type:* `String.t`, *default:* `nil`) - 
@@ -33,6 +34,8 @@ defmodule GoogleApi.WorkloadManager.V1.Model.IsolationExpectations do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :requirementOverride =>
+            GoogleApi.WorkloadManager.V1.Model.RequirementOverride.t() | nil,
           :ziOrgPolicy => String.t() | nil,
           :ziRegionPolicy => String.t() | nil,
           :ziRegionState => String.t() | nil,
@@ -42,6 +45,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.IsolationExpectations do
           :zsRegionState => String.t() | nil
         }
 
+  field(:requirementOverride, as: GoogleApi.WorkloadManager.V1.Model.RequirementOverride)
   field(:ziOrgPolicy)
   field(:ziRegionPolicy)
   field(:ziRegionState)
