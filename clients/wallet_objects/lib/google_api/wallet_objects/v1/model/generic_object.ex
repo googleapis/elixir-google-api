@@ -35,6 +35,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. Only one of the image from class and one from object level will be rendered when both set.
   *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If `linksModuleData` is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from class and 10 from object.
   *   `logo` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The logo image of the pass. This image is displayed in the card detail view in upper left, and also on the list/thumbnail view. If the logo is not present, the first letter of `cardTitle` would be shown as logo.
+  *   `messages` (*type:* `list(GoogleApi.WalletObjects.V1.Model.Message.t)`, *default:* `nil`) - An array of messages displayed in the app. All users of this object will receive its associated messages. The maximum number of these fields is 10.
   *   `notifications` (*type:* `GoogleApi.WalletObjects.V1.Model.Notifications.t`, *default:* `nil`) - The notification settings that are enabled for this object.
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode settings/details.
@@ -64,6 +65,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
           :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
           :logo => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
+          :messages => list(GoogleApi.WalletObjects.V1.Model.Message.t()) | nil,
           :notifications => GoogleApi.WalletObjects.V1.Model.Notifications.t() | nil,
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
@@ -90,6 +92,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
   field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
   field(:logo, as: GoogleApi.WalletObjects.V1.Model.Image)
+  field(:messages, as: GoogleApi.WalletObjects.V1.Model.Message, type: :list)
   field(:notifications, as: GoogleApi.WalletObjects.V1.Model.Notifications)
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
