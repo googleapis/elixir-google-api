@@ -25,6 +25,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   *   `copy` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics5.t`, *default:* `nil`) - Output only. Statistics for a copy job.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. Creation time of this job, in milliseconds since the epoch. This field will be present on all jobs.
   *   `dataMaskingStatistics` (*type:* `GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t`, *default:* `nil`) - Output only. Statistics for data-masking. Present only for query and extract jobs.
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - Output only. Name of edition corresponding to the reservation for this job at the time of this update.
   *   `endTime` (*type:* `String.t`, *default:* `nil`) - Output only. End time of this job, in milliseconds since the epoch. This field will be present whenever a job is in the DONE state.
   *   `extract` (*type:* `GoogleApi.BigQuery.V2.Model.JobStatistics4.t`, *default:* `nil`) - Output only. Statistics for an extract job.
   *   `finalExecutionDurationMs` (*type:* `String.t`, *default:* `nil`) - Output only. The duration in milliseconds of the execution of the final attempt of this job, as BigQuery may internally re-attempt to execute the job.
@@ -51,6 +52,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
           :copy => GoogleApi.BigQuery.V2.Model.JobStatistics5.t() | nil,
           :creationTime => String.t() | nil,
           :dataMaskingStatistics => GoogleApi.BigQuery.V2.Model.DataMaskingStatistics.t() | nil,
+          :edition => String.t() | nil,
           :endTime => String.t() | nil,
           :extract => GoogleApi.BigQuery.V2.Model.JobStatistics4.t() | nil,
           :finalExecutionDurationMs => String.t() | nil,
@@ -76,6 +78,7 @@ defmodule GoogleApi.BigQuery.V2.Model.JobStatistics do
   field(:copy, as: GoogleApi.BigQuery.V2.Model.JobStatistics5)
   field(:creationTime)
   field(:dataMaskingStatistics, as: GoogleApi.BigQuery.V2.Model.DataMaskingStatistics)
+  field(:edition)
   field(:endTime)
   field(:extract, as: GoogleApi.BigQuery.V2.Model.JobStatistics4)
   field(:finalExecutionDurationMs)
