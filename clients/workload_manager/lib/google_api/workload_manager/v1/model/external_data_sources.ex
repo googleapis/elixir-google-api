@@ -21,7 +21,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExternalDataSources do
 
   ## Attributes
 
-  *   `assetType` (*type:* `String.t`, *default:* `nil`) - Required. The asset type of the external data source must be one of go/cai-asset-types
+  *   `assetType` (*type:* `String.t`, *default:* `nil`) - Required. The asset type of the external data source this can be one of go/cai-asset-types to override the default asset type or it can be a custom type defined by the user custom type must match the asset type in the rule
   *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of external data source. The name will be used inside the rego/sql to refer the external data
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Type of external data source
   *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. URI of external data source. example of bq table {project_ID}.{dataset_ID}.{table_ID}
