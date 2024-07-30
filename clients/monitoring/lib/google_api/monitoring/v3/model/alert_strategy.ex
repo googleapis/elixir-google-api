@@ -23,7 +23,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this long, any open incidents will close
   *   `notificationChannelStrategy` (*type:* `list(GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy.t)`, *default:* `nil`) - Control how notifications will be sent out, on a per-channel basis.
-  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for alert policies with a LogMatch condition.This limit is not implemented for alert policies that are not log-based.
+  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for log-based alert policies, i.e. policies with a LogMatch condition.This limit is not implemented for alert policies that do not have a LogMatch condition.
   """
 
   use GoogleApi.Gax.ModelBase
