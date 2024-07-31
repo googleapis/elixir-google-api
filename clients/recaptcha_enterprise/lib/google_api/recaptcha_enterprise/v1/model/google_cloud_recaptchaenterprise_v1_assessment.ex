@@ -23,6 +23,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   *   `accountDefenderAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountDefenderAssessment.t`, *default:* `nil`) - Output only. Assessment returned by account defender when an account identifier is provided.
   *   `accountVerification` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo.t`, *default:* `nil`) - Optional. Account verification information for identity verification. The assessment event must include a token and site key to use this feature.
+  *   `assessmentEnvironment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment.t`, *default:* `nil`) - Optional. The environment creating the assessment. This describes your environment (the system invoking CreateAssessment), NOT the environment of your user.
   *   `event` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t`, *default:* `nil`) - Optional. The event being assessed.
   *   `firewallPolicyAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicyAssessment.t`, *default:* `nil`) - Output only. Assessment returned when firewall policies belonging to the project are evaluated using the field firewall_policy_evaluation.
   *   `fraudPreventionAssessment` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FraudPreventionAssessment.t`, *default:* `nil`) - Output only. Assessment returned by Fraud Prevention when TransactionData is provided.
@@ -42,6 +43,9 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
             | nil,
           :accountVerification =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo.t()
+            | nil,
+          :assessmentEnvironment =>
+            GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment.t()
             | nil,
           :event =>
             GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event.t() | nil,
@@ -77,6 +81,11 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   field(:accountVerification,
     as:
       GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AccountVerificationInfo
+  )
+
+  field(:assessmentEnvironment,
+    as:
+      GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AssessmentEnvironment
   )
 
   field(:event, as: GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Event)
