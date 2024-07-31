@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_dialogflow, "~> 0.80"}]
+  [{:google_api_dialogflow, "~> 0.81"}]
 end
 ```
 
