@@ -22,15 +22,18 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PublisherModelCal
   ## Attributes
 
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels for the deployment. For managing deployment config like verifying, source of deployment config, etc.
+  *   `sampleRequest` (*type:* `String.t`, *default:* `nil`) - Optional. Sample request for deployed endpoint.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :labels => map() | nil
+          :labels => map() | nil,
+          :sampleRequest => String.t() | nil
         }
 
   field(:labels, type: :map)
+  field(:sampleRequest)
 end
 
 defimpl Poison.Decoder,

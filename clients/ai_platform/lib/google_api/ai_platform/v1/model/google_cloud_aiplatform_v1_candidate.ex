@@ -28,7 +28,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
   *   `groundingMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata.t`, *default:* `nil`) - Output only. Metadata specifies sources used to ground generated content.
   *   `index` (*type:* `integer()`, *default:* `nil`) - Output only. Index of the candidate.
   *   `safetyRatings` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t)`, *default:* `nil`) - Output only. List of ratings for the safety of a response candidate. There is at most one rating per category.
-  *   `score` (*type:* `float()`, *default:* `nil`) - Output only. Confidence score of the candidate.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,8 +42,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata.t() | nil,
           :index => integer() | nil,
           :safetyRatings =>
-            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t()) | nil,
-          :score => float() | nil
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t()) | nil
         }
 
   field(:citationMetadata,
@@ -65,8 +63,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating,
     type: :list
   )
-
-  field(:score)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do

@@ -28,7 +28,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize PersistentResource. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Resource name of a PersistentResource.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The full name of the Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to peered with Vertex AI to host the persistent resources. For example, `projects/12345/global/networks/myVPC`. [Format](/compute/docs/reference/rest/v1/networks/insert) is of the form `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in `12345`, and {network} is a network name. To specify this field, you must have already [configured VPC Network Peering for Vertex AI](https://cloud.google.com/vertex-ai/docs/general/vpc-peering). If this field is left unspecified, the resources aren't peered with any network.
-  *   `pscInterfaceConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig.t`, *default:* `nil`) - Optional. Configuration for PSC-I for PersistentResource.
   *   `reservedIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of names for the reserved IP ranges under the VPC network that can be used for this persistent resource. If set, we will deploy the persistent resource within the provided IP ranges. Otherwise, the persistent resource is deployed to any IP ranges under the provided VPC network. Example: ['vertex-ai-ip-range'].
   *   `resourcePools` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePool.t)`, *default:* `nil`) - Required. The spec of the pools of different resources.
   *   `resourceRuntime` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntime.t`, *default:* `nil`) - Output only. Runtime information of the Persistent Resource.
@@ -49,8 +48,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
           :labels => map() | nil,
           :name => String.t() | nil,
           :network => String.t() | nil,
-          :pscInterfaceConfig =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig.t() | nil,
           :reservedIpRanges => list(String.t()) | nil,
           :resourcePools =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePool.t()) | nil,
@@ -70,11 +67,6 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
   field(:labels, type: :map)
   field(:name)
   field(:network)
-
-  field(:pscInterfaceConfig,
-    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PscInterfaceConfig
-  )
-
   field(:reservedIpRanges, type: :list)
 
   field(:resourcePools,

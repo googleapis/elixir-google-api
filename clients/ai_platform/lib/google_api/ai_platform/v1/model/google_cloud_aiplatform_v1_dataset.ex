@@ -33,6 +33,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Dataset do
   *   `metadataSchemaUri` (*type:* `String.t`, *default:* `nil`) - Required. Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
   *   `modelReference` (*type:* `String.t`, *default:* `nil`) - Optional. Reference to the public base model last used by the dataset. Only set for prompt datasets.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name of the Dataset.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `savedQueries` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SavedQuery.t)`, *default:* `nil`) - All SavedQueries belong to the Dataset will be returned in List/Get Dataset response. The annotation_specs field will not be populated except for UI cases which will only use annotation_spec_count. In CreateDataset request, a SavedQuery is created together if this field is set, up to one SavedQuery can be set in CreateDatasetRequest. The SavedQuery should not contain any AnnotationSpec.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Dataset was last updated.
   """
@@ -53,6 +55,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Dataset do
           :metadataSchemaUri => String.t() | nil,
           :modelReference => String.t() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :savedQueries =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SavedQuery.t()) | nil,
           :updateTime => DateTime.t() | nil
@@ -70,6 +74,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Dataset do
   field(:metadataSchemaUri)
   field(:modelReference)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 
   field(:savedQueries,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SavedQuery,

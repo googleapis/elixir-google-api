@@ -26,6 +26,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DataItem do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your DataItems. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one DataItem(System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the DataItem.
   *   `payload` (*type:* `any()`, *default:* `nil`) - Required. The data that the DataItem represents (for example, an image or a text snippet). The schema of the payload is stored in the parent Dataset's metadata schema's dataItemSchemaUri field.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this DataItem was last updated.
   """
 
@@ -37,6 +39,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DataItem do
           :labels => map() | nil,
           :name => String.t() | nil,
           :payload => any() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -45,6 +49,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DataItem do
   field(:labels, type: :map)
   field(:name)
   field(:payload)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:updateTime, as: DateTime)
 end
 
