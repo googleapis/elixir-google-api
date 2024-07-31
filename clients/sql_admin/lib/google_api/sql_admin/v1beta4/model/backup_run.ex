@@ -32,6 +32,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   *   `instance` (*type:* `String.t`, *default:* `nil`) - Name of the database instance.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#backupRun`.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location of the backups.
+  *   `maxChargeableBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The maximum chargeable bytes for the backup.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - The URI of this resource.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of this run.
@@ -56,6 +57,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
           :instance => String.t() | nil,
           :kind => String.t() | nil,
           :location => String.t() | nil,
+          :maxChargeableBytes => String.t() | nil,
           :selfLink => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :status => String.t() | nil,
@@ -79,6 +81,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupRun do
   field(:instance)
   field(:kind)
   field(:location)
+  field(:maxChargeableBytes)
   field(:selfLink)
   field(:startTime, as: DateTime)
   field(:status)
