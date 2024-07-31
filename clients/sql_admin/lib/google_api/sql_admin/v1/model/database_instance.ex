@@ -66,6 +66,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   *   `replicaConfiguration` (*type:* `GoogleApi.SQLAdmin.V1.Model.ReplicaConfiguration.t`, *default:* `nil`) - Configuration specific to failover replicas and read replicas.
   *   `switchTransactionLogsToCloudStorageEnabled` (*type:* `boolean()`, *default:* `nil`) - Input only. Whether Cloud SQL is enabled to switch storing point-in-time recovery log files from a data disk to Cloud Storage.
   *   `primaryDnsName` (*type:* `String.t`, *default:* `nil`) - Output only. DEPRECATED: please use write_endpoint instead.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. This status indicates whether the instance satisfies PZI. The status is reserved for future use.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -119,7 +120,8 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
           :etag => String.t() | nil,
           :replicaConfiguration => GoogleApi.SQLAdmin.V1.Model.ReplicaConfiguration.t() | nil,
           :switchTransactionLogsToCloudStorageEnabled => boolean() | nil,
-          :primaryDnsName => String.t() | nil
+          :primaryDnsName => String.t() | nil,
+          :satisfiesPzi => boolean() | nil
         }
 
   field(:selfLink)
@@ -172,6 +174,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
   field(:replicaConfiguration, as: GoogleApi.SQLAdmin.V1.Model.ReplicaConfiguration)
   field(:switchTransactionLogsToCloudStorageEnabled)
   field(:primaryDnsName)
+  field(:satisfiesPzi)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.DatabaseInstance do
