@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1UnregisterSubscrib
 
   ## Attributes
 
+  *   `integrator` (*type:* `String.t`, *default:* `nil`) - Optional. Resource name of the integrator.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Required. Service account to unregister from subscriber access to the topic.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :integrator => String.t() | nil,
           :serviceAccount => String.t() | nil
         }
 
+  field(:integrator)
   field(:serviceAccount)
 end
 
