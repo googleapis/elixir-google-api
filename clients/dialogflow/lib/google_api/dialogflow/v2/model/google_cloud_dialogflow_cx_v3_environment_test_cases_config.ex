@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowCxV3EnvironmentTest
 
   *   `enableContinuousRun` (*type:* `boolean()`, *default:* `nil`) - Whether to run test cases in TestCasesConfig.test_cases periodically. Default false. If set to true, run once a day.
   *   `enablePredeploymentRun` (*type:* `boolean()`, *default:* `nil`) - Whether to run test cases in TestCasesConfig.test_cases before deploying a flow version to the environment. Default false.
-  *   `testCases` (*type:* `list(String.t)`, *default:* `nil`) - A list of test case names to run. They should be under the same agent. Format of each test case name: `projects//locations/ /agents//testCases/`
+  *   `testCases` (*type:* `list(String.t)`, *default:* `nil`) - A list of test case names to run. They should be under the same agent. Format of each test case name: `projects//locations//agents//testCases/`
   """
 
   use GoogleApi.Gax.ModelBase

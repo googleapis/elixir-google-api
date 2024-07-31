@@ -21,7 +21,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfi
 
   ## Attributes
 
-  *   `alternativeLanguageCodes` (*type:* `list(String.t)`, *default:* `nil`) - Defines the list of other language codes in addition to the one provided by the conversation profile that may be detected as the language code for the utterances over the conversation. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes.
   *   `audioEncoding` (*type:* `String.t`, *default:* `nil`) - Audio encoding of the audio content to process.
   *   `enableWordInfo` (*type:* `boolean()`, *default:* `nil`) - If `true`, Dialogflow returns SpeechWordInfo in StreamingRecognitionResult with information about the recognized speech words, e.g. start and end time offsets. If false or unspecified, Speech doesn't return any word-level information.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - The language of the supplied audio. Dialogflow does not do translations. See [Language Support](https://cloud.google.com/dialogflow/docs/reference/language) for a list of the currently supported language codes. Note that queries in the same session do not necessarily need to specify the same language.
@@ -34,7 +33,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :alternativeLanguageCodes => list(String.t()) | nil,
           :audioEncoding => String.t() | nil,
           :enableWordInfo => boolean() | nil,
           :languageCode => String.t() | nil,
@@ -44,7 +42,6 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SpeechToTextConfi
           :useTimeoutBasedEndpointing => boolean() | nil
         }
 
-  field(:alternativeLanguageCodes, type: :list)
   field(:audioEncoding)
   field(:enableWordInfo)
   field(:languageCode)
