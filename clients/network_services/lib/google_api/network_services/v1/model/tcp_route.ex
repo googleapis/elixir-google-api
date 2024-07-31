@@ -26,7 +26,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.TcpRoute do
   *   `gateways` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/global/gateways/`
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the TcpRoute resource.
   *   `meshes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Meshes defines a list of meshes this TcpRoute is attached to, as one of the routing rules to route the requests served by the mesh. Each mesh reference should match the pattern: `projects/*/locations/global/meshes/` The attached Mesh should be of a type SIDECAR
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the TcpRoute resource. It matches pattern `projects/*/locations/global/tcpRoutes/tcp_route_name>`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the TcpRoute resource. It matches pattern `projects/*/locations/global/tcpRoutes/tcp_route_name>`.
   *   `rules` (*type:* `list(GoogleApi.NetworkServices.V1.Model.TcpRouteRouteRule.t)`, *default:* `nil`) - Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL of this resource
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.

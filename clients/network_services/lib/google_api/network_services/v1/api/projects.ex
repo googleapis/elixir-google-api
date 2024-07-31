@@ -1113,7 +1113,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the EndpointPolicy resource. It matches pattern `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+  *   `name` (*type:* `String.t`) - Identifier. Name of the EndpointPolicy resource. It matches pattern `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1477,7 +1477,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Gateway resource. It matches pattern `projects/*/locations/*/gateways/`.
+  *   `name` (*type:* `String.t`) - Identifier. Name of the Gateway resource. It matches pattern `projects/*/locations/*/gateways/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1841,7 +1841,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the GrpcRoute resource. It matches pattern `projects/*/locations/global/grpcRoutes/`
+  *   `name` (*type:* `String.t`) - Identifier. Name of the GrpcRoute resource. It matches pattern `projects/*/locations/global/grpcRoutes/`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2205,7 +2205,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the HttpRoute resource. It matches pattern `projects/*/locations/global/httpRoutes/http_route_name>`.
+  *   `name` (*type:* `String.t`) - Identifier. Name of the HttpRoute resource. It matches pattern `projects/*/locations/global/httpRoutes/http_route_name>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3315,7 +3315,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the Mesh resource. It matches pattern `projects/*/locations/global/meshes/`.
+  *   `name` (*type:* `String.t`) - Identifier. Name of the Mesh resource. It matches pattern `projects/*/locations/global/meshes/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4841,7 +4841,7 @@ defmodule GoogleApi.NetworkServices.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.NetworkServices.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the TcpRoute resource. It matches pattern `projects/*/locations/global/tcpRoutes/tcp_route_name>`.
+  *   `name` (*type:* `String.t`) - Identifier. Name of the TcpRoute resource. It matches pattern `projects/*/locations/global/tcpRoutes/tcp_route_name>`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
