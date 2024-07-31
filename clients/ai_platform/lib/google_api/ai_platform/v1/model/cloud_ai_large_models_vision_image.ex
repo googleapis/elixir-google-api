@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
   ## Attributes
 
   *   `encoding` (*type:* `String.t`, *default:* `nil`) - Image encoding, encoded as "image/png" or "image/jpg".
+  *   `generationSeed` (*type:* `integer()`, *default:* `nil`) - Generation seed for the sampled image. This parameter is exposed to the user only if one of the following is true: 1. The user specified per-example seeds in the request. 2. The user doesn't specify the generation seed in the request.
   *   `image` (*type:* `String.t`, *default:* `nil`) - Raw bytes.
   *   `imageRaiScores` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores.t`, *default:* `nil`) - RAI scores for generated image.
   *   `raiInfo` (*type:* `GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo.t`, *default:* `nil`) - RAI info for image.
@@ -34,6 +35,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
 
   @type t :: %__MODULE__{
           :encoding => String.t() | nil,
+          :generationSeed => integer() | nil,
           :image => String.t() | nil,
           :imageRaiScores =>
             GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImage do
         }
 
   field(:encoding)
+  field(:generationSeed)
   field(:image)
   field(:imageRaiScores, as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionImageRAIScores)
   field(:raiInfo, as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo)

@@ -43,6 +43,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BatchPredictionJo
   *   `outputInfo` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BatchPredictionJobOutputInfo.t`, *default:* `nil`) - Output only. Information further describing the output of this job.
   *   `partialFailures` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Output only. Partial failures encountered. For example, single files that can't be read. This field never exceeds 20 entries. Status details fields contain standard Google Cloud error details.
   *   `resourcesConsumed` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcesConsumed.t`, *default:* `nil`) - Output only. Information about resources that had been consumed by this job. Provided in real time at best effort basis, as well as a final value once the job completes. Note: This field currently may be not populated for batch predictions that use AutoML Models.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - The service account that the DeployedModel's container runs as. If not specified, a system generated one will be used, which has minimal permissions and the custom container, if used, may not have enough permission to access other Google Cloud resources. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the BatchPredictionJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
@@ -90,6 +92,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BatchPredictionJo
           :partialFailures => list(GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t()) | nil,
           :resourcesConsumed =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcesConsumed.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :serviceAccount => String.t() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
@@ -149,6 +153,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BatchPredictionJo
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcesConsumed
   )
 
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:serviceAccount)
   field(:startTime, as: DateTime)
   field(:state)
