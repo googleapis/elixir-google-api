@@ -27,7 +27,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.EndpointPolicy do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. A free-text description of the resource. Max length 1024 characters.
   *   `endpointMatcher` (*type:* `GoogleApi.NetworkServices.V1.Model.EndpointMatcher.t`, *default:* `nil`) - Required. A matcher that selects endpoints to which the policies should be applied.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the EndpointPolicy resource.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the EndpointPolicy resource. It matches pattern `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the EndpointPolicy resource. It matches pattern `projects/{project}/locations/global/endpointPolicies/{endpoint_policy}`.
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A URL referring to ServerTlsPolicy resource. ServerTlsPolicy is used to determine the authentication policy to be applied to terminate the inbound traffic at the identified backends. If this field is not set, authentication is disabled(open) for this endpoint.
   *   `trafficPortSelector` (*type:* `GoogleApi.NetworkServices.V1.Model.TrafficPortSelector.t`, *default:* `nil`) - Optional. Port selector for the (matched) endpoints. If no port selector is provided, the matched config is applied to all ports.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of endpoint policy. This is primarily used to validate the configuration.
