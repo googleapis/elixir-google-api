@@ -25,7 +25,7 @@ defmodule GoogleApi.ChromePolicy.V1.Model.GoogleChromePolicyVersionsV1PolicyApiL
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description about current life cycle.
   *   `endSupport` (*type:* `GoogleApi.ChromePolicy.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - End supporting date for current policy. Attempting to modify a policy after its end support date will result in a Bad Request (400 error). Could only be set if policy_api_lifecycle_stage is API_DEPRECATED.
   *   `policyApiLifecycleStage` (*type:* `String.t`, *default:* `nil`) - Indicates current life cycle stage of the policy API.
-  *   `scheduledToDeprecatePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Corresponding to deprecated_in_favor_of, the fully qualified namespace(s) of the old policies that will be deprecated because of introduction of this policy. This field should not be manually set but will be set and exposed through PolicyAPI automatically.
+  *   `scheduledToDeprecatePolicies` (*type:* `list(String.t)`, *default:* `nil`) - Corresponding to deprecated_in_favor_of, the fully qualified namespace(s) of the old policies that will be deprecated because of introduction of this policy.
   """
 
   use GoogleApi.Gax.ModelBase
