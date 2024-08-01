@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `chunkInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceChunkInfo.t`, *default:* `nil`) - Chunk information.
+  *   `structuredDocumentInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceStructuredDocumentInfo.t`, *default:* `nil`) - Structured document information.
   *   `unstructuredDocumentInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceUnstructuredDocumentInfo.t`, *default:* `nil`) - Unstructured document information.
   """
 
@@ -31,6 +32,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :chunkInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceChunkInfo.t()
             | nil,
+          :structuredDocumentInfo =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceStructuredDocumentInfo.t()
+            | nil,
           :unstructuredDocumentInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceUnstructuredDocumentInfo.t()
             | nil
@@ -39,6 +43,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   field(:chunkInfo,
     as:
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceChunkInfo
+  )
+
+  field(:structuredDocumentInfo,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaAnswerReferenceStructuredDocumentInfo
   )
 
   field(:unstructuredDocumentInfo,

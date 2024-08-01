@@ -21,19 +21,44 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeErrorConfig.t`, *default:* `nil`) - The desired location of errors incurred during the purge.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. Filter matching documents to purge. Only currently supported value is `*` (all items).
   *   `force` (*type:* `boolean()`, *default:* `nil`) - Actually performs the purge. If `force` is set to false, return the expected purge count without deleting any documents.
+  *   `gcsSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGcsSource.t`, *default:* `nil`) - Cloud Storage location for the input content. Supported `data_schema`: * `document_id`: One valid Document.id per line.
+  *   `inlineSource` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeDocumentsRequestInlineSource.t`, *default:* `nil`) - Inline source for the input content for purge.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :errorConfig =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeErrorConfig.t()
+            | nil,
           :filter => String.t() | nil,
-          :force => boolean() | nil
+          :force => boolean() | nil,
+          :gcsSource =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGcsSource.t()
+            | nil,
+          :inlineSource =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeDocumentsRequestInlineSource.t()
+            | nil
         }
+
+  field(:errorConfig,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeErrorConfig
+  )
 
   field(:filter)
   field(:force)
+
+  field(:gcsSource,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaGcsSource
+  )
+
+  field(:inlineSource,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaPurgeDocumentsRequestInlineSource
+  )
 end
 
 defimpl Poison.Decoder,
