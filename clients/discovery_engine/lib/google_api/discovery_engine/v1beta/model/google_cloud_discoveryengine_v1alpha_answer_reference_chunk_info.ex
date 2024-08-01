@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `chunk` (*type:* `String.t`, *default:* `nil`) - Chunk resource name.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Chunk textual content.
   *   `documentMetadata` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaAnswerReferenceChunkInfoDocumentMetadata.t`, *default:* `nil`) - Document metadata.
-  *   `relevanceScore` (*type:* `number()`, *default:* `nil`) - Relevance score.
+  *   `relevanceScore` (*type:* `number()`, *default:* `nil`) - The relevance of the chunk for a given query. Values range from 0.0 (completely irrelevant) to 1.0 (completely relevant). This value is for informational purpose only. It may change for the same query and chunk at any time due to a model retraining or change in implementation.
   """
 
   use GoogleApi.Gax.ModelBase

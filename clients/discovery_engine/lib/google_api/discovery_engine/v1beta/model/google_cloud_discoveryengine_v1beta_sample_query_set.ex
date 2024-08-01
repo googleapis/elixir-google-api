@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the SampleQuerySet was created at.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the SampleQuerySet.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The sample query set display name. This field must be a UTF-8 encoded string with a length limit of 128 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the SampleQuerySet, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The full resource name of the SampleQuerySet, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sample_query_set}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   """
 
   use GoogleApi.Gax.ModelBase

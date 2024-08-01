@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the SampleQuery was created at.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the sample query, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sampleQuerySet}/sampleQueries/{sampleQuery}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The full resource name of the sample query, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sample_query_set}/sampleQueries/{sample_query}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `queryEntry` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSampleQueryQueryEntry.t`, *default:* `nil`) - The query entry.
   """
 

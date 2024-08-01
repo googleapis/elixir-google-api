@@ -29,6 +29,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `guidedSearchResult` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGuidedSearchResult.t`, *default:* `nil`) - Guided search result.
   *   `naturalLanguageQueryUnderstandingInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfo.t`, *default:* `nil`) - Natural language query understanding information for the returned results.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token that can be sent as SearchRequest.page_token to retrieve the next page. If this field is omitted, there are no subsequent pages.
+  *   `oneBoxResults` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseOneBoxResult.t)`, *default:* `nil`) - A list of One Box results. There can be multiple One Box results of different types.
   *   `queryExpansionInfo` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched documents. The order represents the ranking.
@@ -60,6 +61,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseNaturalLanguageQueryUnderstandingInfo.t()
             | nil,
           :nextPageToken => String.t() | nil,
+          :oneBoxResults =>
+            list(
+              GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseOneBoxResult.t()
+            )
+            | nil,
           :queryExpansionInfo =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseQueryExpansionInfo.t()
             | nil,
@@ -105,6 +111,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   )
 
   field(:nextPageToken)
+
+  field(:oneBoxResults,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseOneBoxResult,
+    type: :list
+  )
 
   field(:queryExpansionInfo,
     as:

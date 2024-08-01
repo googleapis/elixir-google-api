@@ -21,22 +21,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   ## Attributes
 
-  *   `outputResult` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaOutputResult.t`, *default:* `nil`) - Output result indicating where the data were exported to.
   *   `status` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t`, *default:* `nil`) - The status of the export operation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :outputResult =>
-            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaOutputResult.t()
-            | nil,
           :status => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus.t() | nil
         }
-
-  field(:outputResult,
-    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaOutputResult
-  )
 
   field(:status, as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleRpcStatus)
 end

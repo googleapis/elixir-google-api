@@ -26,7 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaEva
   *   `error` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. The error that occurred during evaluation. Only populated when the evaluation's state is FAILED.
   *   `errorSamples` (*type:* `list(GoogleApi.DiscoveryEngine.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Output only. A sample of errors encountered while processing the request.
   *   `evaluationSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaEvaluationEvaluationSpec.t`, *default:* `nil`) - Required. The specification of the evaluation.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the Evaluation, in the format of `projects/{project}/locations/{location}/evaluations/{evaluation}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The full resource name of the Evaluation, in the format of `projects/{project}/locations/{location}/evaluations/{evaluation}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
   *   `qualityMetrics` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaQualityMetrics.t`, *default:* `nil`) - Output only. The metrics produced by the evaluation, averaged across all SampleQuerys in the SampleQuerySet. Only populated when the evaluation's state is SUCCEEDED.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the evaluation.
   """

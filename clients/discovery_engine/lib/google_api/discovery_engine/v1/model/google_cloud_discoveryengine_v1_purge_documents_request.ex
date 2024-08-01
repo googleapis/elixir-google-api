@@ -21,19 +21,40 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeDo
 
   ## Attributes
 
+  *   `errorConfig` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeErrorConfig.t`, *default:* `nil`) - The desired location of errors incurred during the purge.
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Required. Filter matching documents to purge. Only currently supported value is `*` (all items).
   *   `force` (*type:* `boolean()`, *default:* `nil`) - Actually performs the purge. If `force` is set to false, return the expected purge count without deleting any documents.
+  *   `gcsSource` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1GcsSource.t`, *default:* `nil`) - Cloud Storage location for the input content. Supported `data_schema`: * `document_id`: One valid Document.id per line.
+  *   `inlineSource` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeDocumentsRequestInlineSource.t`, *default:* `nil`) - Inline source for the input content for purge.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :errorConfig =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeErrorConfig.t()
+            | nil,
           :filter => String.t() | nil,
-          :force => boolean() | nil
+          :force => boolean() | nil,
+          :gcsSource =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1GcsSource.t() | nil,
+          :inlineSource =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeDocumentsRequestInlineSource.t()
+            | nil
         }
+
+  field(:errorConfig,
+    as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeErrorConfig
+  )
 
   field(:filter)
   field(:force)
+  field(:gcsSource, as: GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1GcsSource)
+
+  field(:inlineSource,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1PurgeDocumentsRequestInlineSource
+  )
 end
 
 defimpl Poison.Decoder,
