@@ -21,7 +21,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHours do
 
   ## Attributes
 
-  *   `openNow` (*type:* `boolean()`, *default:* `nil`) - Is this place open right now? Always present unless we lack time-of-day or timezone data for these opening hours.
+  *   `openNow` (*type:* `boolean()`, *default:* `nil`) - Whether the opening hours period is currently active. For regular opening hours and current opening hours, this field means whether the place is open. For secondary opening hours and current secondary opening hours, this field means whether the secondary hours of this place is active.
   *   `periods` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHoursPeriod.t)`, *default:* `nil`) - The periods that this place is open during the week. The periods are in chronological order, starting with Sunday in the place-local timezone. An empty (but not absent) value indicates a place that is never open, e.g. because it is closed temporarily for renovations.
   *   `secondaryHoursType` (*type:* `String.t`, *default:* `nil`) - A type string used to identify the type of secondary hours.
   *   `specialDays` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1PlaceOpeningHoursSpecialDay.t)`, *default:* `nil`) - Structured information for special days that fall within the period that the returned opening hours cover. Special days are days that could impact the business hours of a place, e.g. Christmas day. Set for current_opening_hours and current_secondary_opening_hours if there are exceptional hours.
