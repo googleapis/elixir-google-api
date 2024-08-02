@@ -28,7 +28,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Experiment do
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of this experiment.
   *   `experimentLength` (*type:* `String.t`, *default:* `nil`) - Maximum number of days to run the experiment/rollout. If auto-rollout is not enabled, default value and maximum will be 30 days. If auto-rollout is enabled, default value and maximum will be 6 days.
   *   `lastUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Last update time of this experiment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the experiment. Format: projects//locations//agents//environments//experiments/..
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the experiment. Format: projects//locations//agents//environments//experiments/.
   *   `result` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ExperimentResult.t`, *default:* `nil`) - Inference result of the experiment.
   *   `rolloutConfig` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3RolloutConfig.t`, *default:* `nil`) - The configuration for auto rollout. If set, there should be exactly two variants in the experiment (control variant being the default version of the flow), the traffic allocation for the non-control variant will gradually increase to 100% when conditions are met, and eventually replace the control variant to become the default version of the flow.
   *   `rolloutFailureReason` (*type:* `String.t`, *default:* `nil`) - The reason why rollout has failed. Should only be set when state is ROLLOUT_FAILED.

@@ -24,7 +24,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1TestCase d
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the test was created.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the test case, unique within the agent. Limit of 200 characters.
   *   `lastTestResult` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1TestCaseResult.t`, *default:* `nil`) - The latest test result.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the test case. TestCases.CreateTestCase will populate the name automatically. Otherwise use format: `projects//locations//agents/ /testCases/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The unique identifier of the test case. TestCases.CreateTestCase will populate the name automatically. Otherwise use format: `projects//locations//agents//testCases/`.
   *   `notes` (*type:* `String.t`, *default:* `nil`) - Additional freeform notes about the test case. Limit of 400 characters.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Tags are short descriptions that users may apply to test cases for organizational and filtering purposes. Each tag should start with "#" and has a limit of 30 characters.
   *   `testCaseConversationTurns` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1ConversationTurn.t)`, *default:* `nil`) - The conversation turns uttered when the test case was created, in chronological order. These include the canonical set of agent utterances that should occur when the agent is working properly.

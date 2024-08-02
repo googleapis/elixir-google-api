@@ -23,7 +23,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3TestCaseResult 
 
   *   `conversationTurns` (*type:* `list(GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3ConversationTurn.t)`, *default:* `nil`) - The conversation turns uttered during the test case replay in chronological order.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Environment where the test was run. If not set, it indicates the draft environment.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the test case result. Format: `projects//locations//agents//testCases/ /results/`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name for the test case result. Format: `projects//locations//agents//testCases//results/`.
   *   `testResult` (*type:* `String.t`, *default:* `nil`) - Whether the test case passed in the agent environment.
   *   `testTime` (*type:* `DateTime.t`, *default:* `nil`) - The time that the test was run.
   """

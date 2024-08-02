@@ -1806,7 +1806,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `environment` (*type:* `String.t`) - Required. The environment to deploy the flow to. Format: `projects//locations//agents// environments/`.
+  *   `environment` (*type:* `String.t`) - Required. The environment to deploy the flow to. Format: `projects//locations//agents//environments/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2264,7 +2264,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The environment to list results for. Format: `projects//locations//agents// environments/`.
+  *   `parent` (*type:* `String.t`) - Required. The environment to list results for. Format: `projects//locations//agents//environments/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2795,7 +2795,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the experiment. Format: projects//locations//agents//environments//experiments/..
+  *   `name` (*type:* `String.t`) - The name of the experiment. Format: projects//locations//agents//environments//experiments/.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -5211,7 +5211,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `base_version` (*type:* `String.t`) - Required. Name of the base flow version to compare with the target version. Use version ID `0` to indicate the draft version of the specified flow. Format: `projects//locations//agents/ /flows//versions/`.
+  *   `base_version` (*type:* `String.t`) - Required. Name of the base flow version to compare with the target version. Use version ID `0` to indicate the draft version of the specified flow. Format: `projects//locations//agents//flows//versions/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7461,7 +7461,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Agent name. Format: `projects//locations//agents/ `.
+  *   `parent` (*type:* `String.t`) - Required. Agent name. Format: `projects//locations//agents/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7987,7 +7987,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The unique identifier of the test case. TestCases.CreateTestCase will populate the name automatically. Otherwise use format: `projects//locations//agents/ /testCases/`.
+  *   `name` (*type:* `String.t`) - The unique identifier of the test case. TestCases.CreateTestCase will populate the name automatically. Otherwise use format: `projects//locations//agents//testCases/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8063,7 +8063,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Format of test case name to run: `projects//locations/ /agents//testCases/`.
+  *   `name` (*type:* `String.t`) - Required. Format of test case name to run: `projects//locations//agents//testCases/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8209,7 +8209,7 @@ defmodule GoogleApi.Dialogflow.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Dialogflow.V3.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The test case to list results for. Format: `projects//locations//agents// testCases/`. Specify a `-` as a wildcard for TestCase ID to list results across multiple test cases.
+  *   `parent` (*type:* `String.t`) - Required. The test case to list results for. Format: `projects//locations//agents//testCases/`. Specify a `-` as a wildcard for TestCase ID to list results across multiple test cases.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
