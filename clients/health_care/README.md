@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_health_care, "~> 0.52"}]
+  [{:google_api_health_care, "~> 0.53"}]
 end
 ```
 
