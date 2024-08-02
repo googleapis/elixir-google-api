@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
   ## Attributes
 
   *   `physicalHost` (*type:* `String.t`, *default:* `nil`) - [Output Only] An opaque ID of the host on which the VM is running.
+  *   `scheduling` (*type:* `GoogleApi.Compute.V1.Model.ResourceStatusScheduling.t`, *default:* `nil`) - 
   *   `upcomingMaintenance` (*type:* `GoogleApi.Compute.V1.Model.UpcomingMaintenance.t`, *default:* `nil`) - 
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Compute.V1.Model.ResourceStatus do
 
   @type t :: %__MODULE__{
           :physicalHost => String.t() | nil,
+          :scheduling => GoogleApi.Compute.V1.Model.ResourceStatusScheduling.t() | nil,
           :upcomingMaintenance => GoogleApi.Compute.V1.Model.UpcomingMaintenance.t() | nil
         }
 
   field(:physicalHost)
+  field(:scheduling, as: GoogleApi.Compute.V1.Model.ResourceStatusScheduling)
   field(:upcomingMaintenance, as: GoogleApi.Compute.V1.Model.UpcomingMaintenance)
 end
 

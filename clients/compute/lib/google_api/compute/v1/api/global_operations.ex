@@ -118,7 +118,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
-  *   `operation` (*type:* `String.t`) - Name of the Operations resource to delete.
+  *   `operation` (*type:* `String.t`) - Name of the Operations resource to delete, or its unique numeric identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -190,7 +190,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
-  *   `operation` (*type:* `String.t`) - Name of the Operations resource to return.
+  *   `operation` (*type:* `String.t`) - Name of the Operations resource to return, or its unique numeric identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -338,7 +338,7 @@ defmodule GoogleApi.Compute.V1.Api.GlobalOperations do
 
   *   `connection` (*type:* `GoogleApi.Compute.V1.Connection.t`) - Connection to server
   *   `project` (*type:* `String.t`) - Project ID for this request.
-  *   `operation` (*type:* `String.t`) - Name of the Operations resource to return.
+  *   `operation` (*type:* `String.t`) - Name of the Operations resource to return, or its unique numeric identifier.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

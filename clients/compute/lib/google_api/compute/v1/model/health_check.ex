@@ -35,6 +35,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply with RFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] Region where the health check resides. Not applicable to global health checks.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
+  *   `sourceRegions` (*type:* `list(String.t)`, *default:* `nil`) - The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, and GRPC protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing. 
   *   `sslHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.SSLHealthCheck.t`, *default:* `nil`) - 
   *   `tcpHealthCheck` (*type:* `GoogleApi.Compute.V1.Model.TCPHealthCheck.t`, *default:* `nil`) - 
   *   `timeoutSec` (*type:* `integer()`, *default:* `nil`) - How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
@@ -59,6 +60,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
           :name => String.t() | nil,
           :region => String.t() | nil,
           :selfLink => String.t() | nil,
+          :sourceRegions => list(String.t()) | nil,
           :sslHealthCheck => GoogleApi.Compute.V1.Model.SSLHealthCheck.t() | nil,
           :tcpHealthCheck => GoogleApi.Compute.V1.Model.TCPHealthCheck.t() | nil,
           :timeoutSec => integer() | nil,
@@ -80,6 +82,7 @@ defmodule GoogleApi.Compute.V1.Model.HealthCheck do
   field(:name)
   field(:region)
   field(:selfLink)
+  field(:sourceRegions, type: :list)
   field(:sslHealthCheck, as: GoogleApi.Compute.V1.Model.SSLHealthCheck)
   field(:tcpHealthCheck, as: GoogleApi.Compute.V1.Model.TCPHealthCheck)
   field(:timeoutSec)
