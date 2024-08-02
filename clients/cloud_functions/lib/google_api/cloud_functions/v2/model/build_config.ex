@@ -29,7 +29,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.BuildConfig do
   *   `environmentVariables` (*type:* `map()`, *default:* `nil`) - User-provided build-time environment variables for the function
   *   `onDeployUpdatePolicy` (*type:* `GoogleApi.CloudFunctions.V2.Model.OnDeployUpdatePolicy.t`, *default:* `nil`) - 
   *   `runtime` (*type:* `String.t`, *default:* `nil`) - The runtime in which to run the function. Required when deploying a new function, optional when updating an existing function. For a complete list of possible choices, see the [`gcloud` command reference](https://cloud.google.com/sdk/gcloud/reference/functions/deploy#--runtime).
-  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - [Preview] Service account to be used for building the container
+  *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Service account to be used for building the container. The format of this field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
   *   `source` (*type:* `GoogleApi.CloudFunctions.V2.Model.Source.t`, *default:* `nil`) - The location of the function source code.
   *   `sourceProvenance` (*type:* `GoogleApi.CloudFunctions.V2.Model.SourceProvenance.t`, *default:* `nil`) - Output only. A permanent fixed identifier for source.
   *   `sourceToken` (*type:* `String.t`, *default:* `nil`) - An identifier for Firebase function sources. Disclaimer: This field is only supported for Firebase function deployments.
