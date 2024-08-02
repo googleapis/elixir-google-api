@@ -22,7 +22,7 @@ defmodule GoogleApi.Logging.V2.Model.IndexConfig do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the index was last modified.This is used to return the timestamp, and will be ignored if supplied during update.
-  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Required. The LogEntry field path to index.Note that some paths are automatically indexed, and other paths are not eligible for indexing. See indexing documentation( https://cloud.google.com/logging/docs/view/advanced-queries#indexed-fields) for details.For example: jsonPayload.request.status
+  *   `fieldPath` (*type:* `String.t`, *default:* `nil`) - Required. The LogEntry field path to index.Note that some paths are automatically indexed, and other paths are not eligible for indexing. See indexing documentation( https://cloud.google.com/logging/docs/analyze/custom-index) for details.For example: jsonPayload.request.status
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of data in this index.
   """
 
