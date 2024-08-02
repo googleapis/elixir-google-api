@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3DeployFlowReque
 
   ## Attributes
 
-  *   `flowVersion` (*type:* `String.t`, *default:* `nil`) - Required. The flow version to deploy. Format: `projects//locations//agents// flows//versions/`.
+  *   `flowVersion` (*type:* `String.t`, *default:* `nil`) - Required. The flow version to deploy. Format: `projects//locations//agents//flows//versions/`.
   """
 
   use GoogleApi.Gax.ModelBase

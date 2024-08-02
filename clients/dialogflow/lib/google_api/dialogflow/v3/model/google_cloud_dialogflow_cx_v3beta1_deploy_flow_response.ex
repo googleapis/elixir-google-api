@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1DeployFlow
 
   ## Attributes
 
-  *   `deployment` (*type:* `String.t`, *default:* `nil`) - The name of the flow version deployment. Format: `projects//locations//agents// environments//deployments/`.
+  *   `deployment` (*type:* `String.t`, *default:* `nil`) - The name of the flow version deployment. Format: `projects//locations//agents//environments//deployments/`.
   *   `environment` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1Environment.t`, *default:* `nil`) - The updated environment where the flow is deployed.
   """
 

@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BatchDeleteTest
 
   ## Attributes
 
-  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - Required. Format of test case names: `projects//locations/ /agents//testCases/`.
+  *   `names` (*type:* `list(String.t)`, *default:* `nil`) - Required. Format of test case names: `projects//locations//agents//testCases/`.
   """
 
   use GoogleApi.Gax.ModelBase
