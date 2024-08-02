@@ -55,7 +55,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.CloudFunction do
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the function deployment.
   *   `versionId` (*type:* `String.t`, *default:* `nil`) - Output only. The version identifier of the Cloud Function. Each deployment attempt results in a new version of a function being created.
   *   `buildId` (*type:* `String.t`, *default:* `nil`) - Output only. The Cloud Build ID of the latest successful deployment of the function.
-  *   `buildServiceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. A service account the user provides for use with Cloud Build.
+  *   `buildServiceAccount` (*type:* `String.t`, *default:* `nil`) - A service account the user provides for use with Cloud Build. The format of this field is `projects/{projectId}/serviceAccounts/{serviceAccountEmail}`.
   *   `entryPoint` (*type:* `String.t`, *default:* `nil`) - The name of the function (as defined in source code) that will be executed. Defaults to the resource name suffix (ID of the function), if not specified.
   """
 

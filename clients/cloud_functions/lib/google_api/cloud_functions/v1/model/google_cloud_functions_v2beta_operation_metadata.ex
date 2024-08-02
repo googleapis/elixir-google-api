@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2betaOperationM
   ## Attributes
 
   *   `apiVersion` (*type:* `String.t`, *default:* `nil`) - API version used to start the operation.
+  *   `buildName` (*type:* `String.t`, *default:* `nil`) - The build name of the function for create and update operations.
   *   `cancelRequested` (*type:* `boolean()`, *default:* `nil`) - Identifies whether the user has requested cancellation of the operation. Operations that have successfully been cancelled have google.longrunning.Operation.error value with a google.rpc.Status.code of 1, corresponding to `Code.CANCELLED`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the operation finished running.
@@ -38,6 +39,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2betaOperationM
 
   @type t :: %__MODULE__{
           :apiVersion => String.t() | nil,
+          :buildName => String.t() | nil,
           :cancelRequested => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :endTime => DateTime.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.CloudFunctions.V1.Model.GoogleCloudFunctionsV2betaOperationM
         }
 
   field(:apiVersion)
+  field(:buildName)
   field(:cancelRequested)
   field(:createTime, as: DateTime)
   field(:endTime, as: DateTime)

@@ -777,7 +777,7 @@ defmodule GoogleApi.CloudFunctions.V2.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If no field mask is provided, all provided fields in the request will be updated.
+      *   `:updateMask` (*type:* `String.t`) - The list of fields to be updated. If no field mask is provided, all fields will be updated.
       *   `:body` (*type:* `GoogleApi.CloudFunctions.V2.Model.Function.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
