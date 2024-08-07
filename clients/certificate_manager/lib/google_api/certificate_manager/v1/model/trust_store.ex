@@ -21,8 +21,8 @@ defmodule GoogleApi.CertificateManager.V1.Model.TrustStore do
 
   ## Attributes
 
-  *   `intermediateCas` (*type:* `list(GoogleApi.CertificateManager.V1.Model.IntermediateCA.t)`, *default:* `nil`) - Set of intermediate CA certificates used for the path building phase of chain validation. The field is currently not supported if TrustConfig is used for the workload certificate feature.
-  *   `trustAnchors` (*type:* `list(GoogleApi.CertificateManager.V1.Model.TrustAnchor.t)`, *default:* `nil`) - List of Trust Anchors to be used while performing validation against a given TrustStore.
+  *   `intermediateCas` (*type:* `list(GoogleApi.CertificateManager.V1.Model.IntermediateCA.t)`, *default:* `nil`) - Optional. Set of intermediate CA certificates used for the path building phase of chain validation. The field is currently not supported if TrustConfig is used for the workload certificate feature.
+  *   `trustAnchors` (*type:* `list(GoogleApi.CertificateManager.V1.Model.TrustAnchor.t)`, *default:* `nil`) - Optional. List of Trust Anchors to be used while performing validation against a given TrustStore.
   """
 
   use GoogleApi.Gax.ModelBase

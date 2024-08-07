@@ -22,7 +22,7 @@ defmodule GoogleApi.CertificateManager.V1.Model.AuthorizationAttemptInfo do
   ## Attributes
 
   *   `details` (*type:* `String.t`, *default:* `nil`) - Output only. Human readable explanation for reaching the state. Provided to help address the configuration issues. Not guaranteed to be stable. For programmatic access use FailureReason enum.
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Domain name of the authorization attempt.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Output only. Domain name of the authorization attempt.
   *   `failureReason` (*type:* `String.t`, *default:* `nil`) - Output only. Reason for failure of the authorization attempt for the domain.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the domain for managed certificate issuance.
   """
