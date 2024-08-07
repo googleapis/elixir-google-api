@@ -21,8 +21,8 @@ defmodule GoogleApi.Batch.V1.Model.Script do
 
   ## Attributes
 
-  *   `path` (*type:* `String.t`, *default:* `nil`) - Script file path on the host VM. To specify an interpreter, please add a `#!`(also known as [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix))) as the first line of the file.(For example, to execute the script using bash, `#!/bin/bash` should be the first line of the file. To execute the script using`Python3`, `#!/usr/bin/env python3` should be the first line of the file.) Otherwise, the file will by default be executed by `/bin/sh`.
-  *   `text` (*type:* `String.t`, *default:* `nil`) - Shell script text. To specify an interpreter, please add a `#!\\n` at the beginning of the text.(For example, to execute the script using bash, `#!/bin/bash\\n` should be added. To execute the script using`Python3`, `#!/usr/bin/env python3\\n` should be added.) Otherwise, the script will by default be executed by `/bin/sh`.
+  *   `path` (*type:* `String.t`, *default:* `nil`) - The path to a script file that is accessible from the host VM(s). Unless the script file supports the default `#!/bin/sh` shell interpreter, you must specify an interpreter by including a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) as the first line of the file. For example, to execute the script using bash, include `#!/bin/bash` as the first line of the file. Alternatively, to execute the script using Python3, include `#!/usr/bin/env python3` as the first line of the file.
+  *   `text` (*type:* `String.t`, *default:* `nil`) - The text for a script. Unless the script text supports the default `#!/bin/sh` shell interpreter, you must specify an interpreter by including a [shebang line](https://en.wikipedia.org/wiki/Shebang_(Unix) at the beginning of the text. For example, to execute the script using bash, include `#!/bin/bash\\n` at the beginning of the text. Alternatively, to execute the script using Python3, include `#!/usr/bin/env python3\\n` at the beginning of the text.
   """
 
   use GoogleApi.Gax.ModelBase
