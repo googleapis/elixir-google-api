@@ -543,7 +543,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -556,7 +556,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:force` (*type:* `boolean()`) - Optional. If set to true, will not check plan duration against backup vault enforcement duration. Non-standard field.
+      *   `:force` (*type:* `boolean()`) - Optional. If set to true, will not check plan duration against backup vault enforcement duration.
       *   `:requestId` (*type:* `String.t`) - Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes since the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
       *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten in the BackupVault resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it is in the mask. If the user does not provide a mask then the request will fail.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. Only validate the request, but do not perform mutations. The default is 'false'.
@@ -1133,7 +1133,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1575,7 +1575,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Name of the resource.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Name of the resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

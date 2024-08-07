@@ -21,10 +21,10 @@ defmodule GoogleApi.BackupDR.V1.Model.Backup do
 
   ## Attributes
 
-  *   `backupApplianceBackupProperties` (*type:* `GoogleApi.BackupDR.V1.Model.BackupApplianceBackupProperties.t`, *default:* `nil`) - 
+  *   `backupApplianceBackupProperties` (*type:* `GoogleApi.BackupDR.V1.Model.BackupApplianceBackupProperties.t`, *default:* `nil`) - Output only. Backup Appliance specific backup properties.
   *   `backupApplianceLocks` (*type:* `list(GoogleApi.BackupDR.V1.Model.BackupLock.t)`, *default:* `nil`) - Optional. The list of BackupLocks taken by the accessor Backup Appliance.
-  *   `backupType` (*type:* `String.t`, *default:* `nil`) - 
-  *   `computeInstanceBackupProperties` (*type:* `GoogleApi.BackupDR.V1.Model.ComputeInstanceBackupProperties.t`, *default:* `nil`) - 
+  *   `backupType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the backup, unspecified, scheduled or ondemand.
+  *   `computeInstanceBackupProperties` (*type:* `GoogleApi.BackupDR.V1.Model.ComputeInstanceBackupProperties.t`, *default:* `nil`) - Output only. Compute Engine specific backup properties.
   *   `consistencyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The point in time when this backup was captured from the source.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Output only. The description of the Backup instance (2048 characters or less).
@@ -33,7 +33,7 @@ defmodule GoogleApi.BackupDR.V1.Model.Backup do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. When this backup is automatically expired.
   *   `gcpBackupPlanInfo` (*type:* `GoogleApi.BackupDR.V1.Model.GCPBackupPlanInfo.t`, *default:* `nil`) - Output only. Configuration for a Google Cloud resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Name of the resource.
   *   `resourceSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. source resource size in bytes at the time of the backup.
   *   `serviceLocks` (*type:* `list(GoogleApi.BackupDR.V1.Model.BackupLock.t)`, *default:* `nil`) - Output only. The list of BackupLocks taken by the service to prevent the deletion of the backup.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The Backup resource instance state.

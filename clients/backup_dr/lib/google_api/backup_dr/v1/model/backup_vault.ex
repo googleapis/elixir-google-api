@@ -31,7 +31,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
   *   `enforcedRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Required. The default retention period for each backup in the backup vault (Deprecated).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Server specified ETag for the backup vault resource to prevent simultaneous updates from overwiting each other.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined:
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Service account used by the BackupVault Service for this BackupVault. The user should grant this account permissions in their workload project to enable the service to run backups and restores there.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The BackupVault resource instance state.
   *   `totalStoredBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total size of the storage used by all backup resources.
