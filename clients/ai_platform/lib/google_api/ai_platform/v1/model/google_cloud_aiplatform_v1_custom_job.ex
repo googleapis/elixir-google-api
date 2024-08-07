@@ -29,6 +29,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJob do
   *   `jobSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec.t`, *default:* `nil`) - Required. Job spec.
   *   `labels` (*type:* `map()`, *default:* `nil`) - The labels with user-defined metadata to organize CustomJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of a CustomJob.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the CustomJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the CustomJob was most recently updated.
@@ -48,6 +50,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJob do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -62,6 +66,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJob do
   field(:jobSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CustomJobSpec)
   field(:labels, type: :map)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:startTime, as: DateTime)
   field(:state)
   field(:updateTime, as: DateTime)

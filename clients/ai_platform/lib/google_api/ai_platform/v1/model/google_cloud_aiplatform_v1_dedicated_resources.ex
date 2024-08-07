@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResource
   *   `machineSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t`, *default:* `nil`) - Required. Immutable. The specification of a single machine used by the prediction.
   *   `maxReplicaCount` (*type:* `integer()`, *default:* `nil`) - Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, will use min_replica_count as the default value. The value of this field impacts the charge against Vertex CPU and GPU quotas. Specifically, you will be charged for (max_replica_count * number of cores in the selected machine type) and (max_replica_count * number of GPUs per replica in the selected machine type).
   *   `minReplicaCount` (*type:* `integer()`, *default:* `nil`) - Required. Immutable. The minimum number of machine replicas this DeployedModel will be always deployed on. This value must be greater than or equal to 1. If traffic against the DeployedModel increases, it may dynamically be deployed onto more replicas, and as traffic decreases, some of these extra replicas may be freed.
+  *   `spot` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, schedule the deployment workload on [spot VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms).
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResource
           :machineSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec.t() | nil,
           :maxReplicaCount => integer() | nil,
-          :minReplicaCount => integer() | nil
+          :minReplicaCount => integer() | nil,
+          :spot => boolean() | nil
         }
 
   field(:autoscalingMetricSpecs,
@@ -47,6 +49,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DedicatedResource
   field(:machineSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1MachineSpec)
   field(:maxReplicaCount)
   field(:minReplicaCount)
+  field(:spot)
 end
 
 defimpl Poison.Decoder,

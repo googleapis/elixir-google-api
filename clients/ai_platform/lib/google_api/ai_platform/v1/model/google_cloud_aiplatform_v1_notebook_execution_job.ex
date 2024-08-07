@@ -25,6 +25,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   *   `dataformRepositorySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDataformRepositorySource.t`, *default:* `nil`) - The Dataform Repository pointing to a single file notebook repository.
   *   `directNotebookSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDirectNotebookSource.t`, *default:* `nil`) - The contents of an input notebook file.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the NotebookExecutionJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
+  *   `encryptionSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t`, *default:* `nil`) - Customer-managed encryption key spec for the notebook execution job. This field is auto-populated if the NotebookRuntimeTemplate has an encryption spec.
   *   `executionTimeout` (*type:* `String.t`, *default:* `nil`) - Max running time of the execution job in seconds (default 86400s / 24 hrs).
   *   `executionUser` (*type:* `String.t`, *default:* `nil`) - The user email to run the execution as. Only supported by Colab runtimes.
   *   `gcsNotebookSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobGcsNotebookSource.t`, *default:* `nil`) - The Cloud Storage url pointing to the ipynb file. Format: `gs://bucket/notebook_file.ipynb`
@@ -50,6 +51,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecutionJobDirectNotebookSource.t()
             | nil,
           :displayName => String.t() | nil,
+          :encryptionSpec =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec.t() | nil,
           :executionTimeout => String.t() | nil,
           :executionUser => String.t() | nil,
           :gcsNotebookSource =>
@@ -79,6 +82,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NotebookExecution
   )
 
   field(:displayName)
+  field(:encryptionSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EncryptionSpec)
   field(:executionTimeout)
   field(:executionUser)
 
