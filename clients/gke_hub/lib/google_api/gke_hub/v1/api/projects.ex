@@ -320,6 +320,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If set to true, the response will return partial results when some regions are unreachable and the unreachable field in Feature proto will be populated. If set to false, the request will fail when some regions are unreachable.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -349,7 +350,8 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
@@ -461,6 +463,7 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - One or more fields to compare and use to sort the output. See https://google.aip.dev/132#ordering.
       *   `:pageSize` (*type:* `integer()`) - When requesting a 'page' of resources, `page_size` specifies number of resources to return. If unspecified or set to 0, all resources will be returned.
       *   `:pageToken` (*type:* `String.t`) - Token returned by previous call to `ListFeatures` which specifies the position in the list from where to continue listing the resources.
+      *   `:returnPartialSuccess` (*type:* `boolean()`) - Optional. If set to true, the response will return partial results when some regions are unreachable and the unreachable field in Feature proto will be populated. If set to false, the request will fail when some regions are unreachable.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -499,7 +502,8 @@ defmodule GoogleApi.GKEHub.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :returnPartialSuccess => :query
     }
 
     request =
