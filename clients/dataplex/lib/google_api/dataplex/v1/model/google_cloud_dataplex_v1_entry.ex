@@ -25,7 +25,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1Entry do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the entry was created in Dataplex.
   *   `entrySource` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1EntrySource.t`, *default:* `nil`) - Optional. Information related to the source system of the data resource that is represented by the entry.
   *   `entryType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The relative resource name of the entry type that was used to create this entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}.
-  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Optional. A name for the entry that can be referenced by an external system. The maximum size of the field is 4000 characters.
+  *   `fullyQualifiedName` (*type:* `String.t`, *default:* `nil`) - Optional. A name for the entry that can be referenced by an external system. For more information, see Fully qualified names (https://cloud.google.com/data-catalog/docs/fully-qualified-names). The maximum size of the field is 4000 characters.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The relative resource name of the entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}.
   *   `parentEntry` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The resource name of the parent entry.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the entry was last updated in Dataplex.
