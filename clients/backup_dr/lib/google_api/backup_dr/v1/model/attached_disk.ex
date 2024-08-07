@@ -27,8 +27,8 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
   *   `diskEncryptionKey` (*type:* `GoogleApi.BackupDR.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Optional. Encrypts or decrypts a disk using a customer-supplied encryption key.
   *   `diskInterface` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the disk interface to use for attaching this disk.
   *   `diskSizeGb` (*type:* `String.t`, *default:* `nil`) - Optional. The size of the disk in GB.
-  *   `diskType` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of the disk.
-  *   `diskTypeUri` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The URI of the disk type resource. For example: projects/project/zones/zone/diskTypes/pd-standard or pd-ssd
+  *   `diskType` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The URI of the disk type resource. For example: projects/project/zones/zone/diskTypes/pd-standard or pd-ssd
+  *   `diskTypeDeprecated` (*type:* `String.t`, *default:* `nil`) - Specifies the type of the disk.
   *   `guestOsFeature` (*type:* `list(GoogleApi.BackupDR.V1.Model.GuestOsFeature.t)`, *default:* `nil`) - Optional. A list of features to enable on the guest operating system. Applicable only for bootable images.
   *   `index` (*type:* `String.t`, *default:* `nil`) - Optional. A zero-based index to this disk, where 0 is reserved for the boot disk.
   *   `initializeParams` (*type:* `GoogleApi.BackupDR.V1.Model.InitializeParams.t`, *default:* `nil`) - Optional. Specifies the parameters to initialize this disk.
@@ -37,6 +37,7 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
   *   `mode` (*type:* `String.t`, *default:* `nil`) - Optional. The mode in which to attach this disk.
   *   `savedState` (*type:* `String.t`, *default:* `nil`) - Optional. Output only. The state of the disk.
   *   `source` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies a valid partial or full URL to an existing Persistent Disk resource.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the type of the disk.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -49,7 +50,7 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
           :diskInterface => String.t() | nil,
           :diskSizeGb => String.t() | nil,
           :diskType => String.t() | nil,
-          :diskTypeUri => String.t() | nil,
+          :diskTypeDeprecated => String.t() | nil,
           :guestOsFeature => list(GoogleApi.BackupDR.V1.Model.GuestOsFeature.t()) | nil,
           :index => String.t() | nil,
           :initializeParams => GoogleApi.BackupDR.V1.Model.InitializeParams.t() | nil,
@@ -57,7 +58,8 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
           :license => list(String.t()) | nil,
           :mode => String.t() | nil,
           :savedState => String.t() | nil,
-          :source => String.t() | nil
+          :source => String.t() | nil,
+          :type => String.t() | nil
         }
 
   field(:autoDelete)
@@ -67,7 +69,7 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
   field(:diskInterface)
   field(:diskSizeGb)
   field(:diskType)
-  field(:diskTypeUri)
+  field(:diskTypeDeprecated)
   field(:guestOsFeature, as: GoogleApi.BackupDR.V1.Model.GuestOsFeature, type: :list)
   field(:index)
   field(:initializeParams, as: GoogleApi.BackupDR.V1.Model.InitializeParams)
@@ -76,6 +78,7 @@ defmodule GoogleApi.BackupDR.V1.Model.AttachedDisk do
   field(:mode)
   field(:savedState)
   field(:source)
+  field(:type)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BackupDR.V1.Model.AttachedDisk do
