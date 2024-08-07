@@ -42,7 +42,7 @@ defmodule GoogleApi.RecaptchaEnterprise.Mixfile do
     [
       {:google_gax, "~> 0.4"},
 
-      {:ex_doc, "~> 0.16", only: :dev}
+      {:ex_doc, "~> 0.34", only: :dev}
     ]
   end
 
