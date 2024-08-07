@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Batch.V1.Model.Barrier do
   @moduledoc """
-  Barrier runnable blocks until all tasks in a taskgroup reach it.
+  A barrier runnable automatically blocks the execution of subsequent runnables until all the tasks in the task group reach the barrier.
 
   ## Attributes
 
