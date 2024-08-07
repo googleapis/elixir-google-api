@@ -21,7 +21,7 @@ defmodule GoogleApi.Docs.V1.Model.TabProperties do
 
   ## Attributes
 
-  *   `index` (*type:* `integer()`, *default:* `nil`) - The index of the tab within the parent.
+  *   `index` (*type:* `integer()`, *default:* `nil`) - The zero-based index of the tab within the parent.
   *   `nestingLevel` (*type:* `integer()`, *default:* `nil`) - Output only. The depth of the tab within the document. Root-level tabs start at 0.
   *   `parentTabId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the parent tab. Empty when the current tab is a root-level tab, which means it doesn't have any parents.
   *   `tabId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the tab. This field can't be changed.
