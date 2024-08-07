@@ -18,7 +18,7 @@
 defmodule GoogleApi.Connectors.Mixfile do
   use Mix.Project
 
-  @version "0.8.0"
+  @version "0.9.0"
 
   def project() do
     [

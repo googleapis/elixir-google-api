@@ -25,6 +25,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Indicate whether connector is deployed on GKE/CloudRun
   *   `hpaConfig` (*type:* `GoogleApi.Connectors.V1.Model.HPAConfig.t`, *default:* `nil`) - HPA autoscaling config.
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported for internal requests originating from Connd.
+  *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Max Instance Request Conncurrency for Cloud Run service.
   *   `migrateDeploymentModel` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to cloud run deployment model.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Connectors.V1.Model.ResourceLimits.t`, *default:* `nil`) - System resource limits.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
           :deploymentModel => String.t() | nil,
           :hpaConfig => GoogleApi.Connectors.V1.Model.HPAConfig.t() | nil,
           :internalclientRatelimitThreshold => String.t() | nil,
+          :maxInstanceRequestConcurrency => integer() | nil,
           :migrateDeploymentModel => boolean() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits => GoogleApi.Connectors.V1.Model.ResourceLimits.t() | nil,
@@ -50,6 +52,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   field(:deploymentModel)
   field(:hpaConfig, as: GoogleApi.Connectors.V1.Model.HPAConfig)
   field(:internalclientRatelimitThreshold)
+  field(:maxInstanceRequestConcurrency)
   field(:migrateDeploymentModel)
   field(:ratelimitThreshold)
   field(:resourceLimits, as: GoogleApi.Connectors.V1.Model.ResourceLimits)

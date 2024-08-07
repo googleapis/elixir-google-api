@@ -26,6 +26,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig do
   *   `deploymentModelMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the deployment model migration.
   *   `hpaConfig` (*type:* `GoogleApi.Connectors.V1.Model.HPAConfig.t`, *default:* `nil`) - Output only. HPA autoscaling config.
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Output only. Max QPS supported for internal requests originating from Connd.
+  *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Output only. Max instance request concurrency.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Output only. Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Connectors.V1.Model.ResourceLimits.t`, *default:* `nil`) - Output only. System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Connectors.V1.Model.ResourceRequests.t`, *default:* `nil`) - Output only. System resource requests.
@@ -40,6 +41,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig do
           :deploymentModelMigrationState => String.t() | nil,
           :hpaConfig => GoogleApi.Connectors.V1.Model.HPAConfig.t() | nil,
           :internalclientRatelimitThreshold => String.t() | nil,
+          :maxInstanceRequestConcurrency => integer() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits => GoogleApi.Connectors.V1.Model.ResourceLimits.t() | nil,
           :resourceRequests => GoogleApi.Connectors.V1.Model.ResourceRequests.t() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersionInfraConfig do
   field(:deploymentModelMigrationState)
   field(:hpaConfig, as: GoogleApi.Connectors.V1.Model.HPAConfig)
   field(:internalclientRatelimitThreshold)
+  field(:maxInstanceRequestConcurrency)
   field(:ratelimitThreshold)
   field(:resourceLimits, as: GoogleApi.Connectors.V1.Model.ResourceLimits)
   field(:resourceRequests, as: GoogleApi.Connectors.V1.Model.ResourceRequests)
