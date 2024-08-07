@@ -21,10 +21,10 @@ defmodule GoogleApi.CloudAsset.V1.Model.QueryAssetsResponse do
 
   ## Attributes
 
-  *   `done` (*type:* `boolean()`, *default:* `nil`) - The query response, which can be either an `error` or a valid `response`. If `done` == `false` and the query result is being saved in a output, the output_config field will be set. If `done` == `true`, exactly one of `error`, `query_result` or `output_config` will be set.
+  *   `done` (*type:* `boolean()`, *default:* `nil`) - The query response, which can be either an `error` or a valid `response`. If `done` == `false` and the query result is being saved in an output, the output_config field will be set. If `done` == `true`, exactly one of `error`, `query_result` or `output_config` will be set. [done] is unset unless the [QueryAssetsResponse] contains a [QueryAssetsResponse.job_reference].
   *   `error` (*type:* `GoogleApi.CloudAsset.V1.Model.Status.t`, *default:* `nil`) - Error status.
   *   `jobReference` (*type:* `String.t`, *default:* `nil`) - Reference to a query job.
-  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.QueryAssetsOutputConfig.t`, *default:* `nil`) - Output configuration which indicates instead of being returned in API response on the fly, the query result will be saved in a specific output.
+  *   `outputConfig` (*type:* `GoogleApi.CloudAsset.V1.Model.QueryAssetsOutputConfig.t`, *default:* `nil`) - Output configuration, which indicates that instead of being returned in an API response on the fly, the query result will be saved in a specific output.
   *   `queryResult` (*type:* `GoogleApi.CloudAsset.V1.Model.QueryResult.t`, *default:* `nil`) - Result of the query.
   """
 
