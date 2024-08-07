@@ -23,6 +23,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.RRSetRoutingPolicy do
 
   *   `geo` (*type:* `GoogleApi.Domains.V1alpha2.Model.GeoPolicy.t`, *default:* `nil`) - 
   *   `geoPolicy` (*type:* `GoogleApi.Domains.V1alpha2.Model.GeoPolicy.t`, *default:* `nil`) - 
+  *   `healthCheck` (*type:* `String.t`, *default:* `nil`) - The selfLink attribute of the HealthCheck resource to use for this RRSetRoutingPolicy. https://cloud.google.com/compute/docs/reference/rest/v1/healthChecks
   *   `primaryBackup` (*type:* `GoogleApi.Domains.V1alpha2.Model.PrimaryBackupPolicy.t`, *default:* `nil`) - 
   *   `wrr` (*type:* `GoogleApi.Domains.V1alpha2.Model.WrrPolicy.t`, *default:* `nil`) - 
   *   `wrrPolicy` (*type:* `GoogleApi.Domains.V1alpha2.Model.WrrPolicy.t`, *default:* `nil`) - 
@@ -33,6 +34,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.RRSetRoutingPolicy do
   @type t :: %__MODULE__{
           :geo => GoogleApi.Domains.V1alpha2.Model.GeoPolicy.t() | nil,
           :geoPolicy => GoogleApi.Domains.V1alpha2.Model.GeoPolicy.t() | nil,
+          :healthCheck => String.t() | nil,
           :primaryBackup => GoogleApi.Domains.V1alpha2.Model.PrimaryBackupPolicy.t() | nil,
           :wrr => GoogleApi.Domains.V1alpha2.Model.WrrPolicy.t() | nil,
           :wrrPolicy => GoogleApi.Domains.V1alpha2.Model.WrrPolicy.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.Domains.V1alpha2.Model.RRSetRoutingPolicy do
 
   field(:geo, as: GoogleApi.Domains.V1alpha2.Model.GeoPolicy)
   field(:geoPolicy, as: GoogleApi.Domains.V1alpha2.Model.GeoPolicy)
+  field(:healthCheck)
   field(:primaryBackup, as: GoogleApi.Domains.V1alpha2.Model.PrimaryBackupPolicy)
   field(:wrr, as: GoogleApi.Domains.V1alpha2.Model.WrrPolicy)
   field(:wrrPolicy, as: GoogleApi.Domains.V1alpha2.Model.WrrPolicy)
