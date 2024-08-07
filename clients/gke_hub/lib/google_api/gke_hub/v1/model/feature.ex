@@ -33,6 +33,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
   *   `scopeStates` (*type:* `%{optional(String.t) => GoogleApi.GKEHub.V1.Model.ScopeFeatureState.t}`, *default:* `nil`) - Output only. Scope-specific Feature status. If this Feature does report any per-Scope status, this field may be unused. The keys indicate which Scope the state is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project.
   *   `spec` (*type:* `GoogleApi.GKEHub.V1.Model.CommonFeatureSpec.t`, *default:* `nil`) - Optional. Hub-wide Feature configuration. If this Feature does not support any Hub-wide configuration, this field may be unused.
   *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.CommonFeatureState.t`, *default:* `nil`) - Output only. The Hub-wide Feature state.
+  *   `unreachable` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of locations that could not be reached while fetching this feature.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. When the Feature resource was last updated.
   """
 
@@ -56,6 +57,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
             %{optional(String.t()) => GoogleApi.GKEHub.V1.Model.ScopeFeatureState.t()} | nil,
           :spec => GoogleApi.GKEHub.V1.Model.CommonFeatureSpec.t() | nil,
           :state => GoogleApi.GKEHub.V1.Model.CommonFeatureState.t() | nil,
+          :unreachable => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -75,6 +77,7 @@ defmodule GoogleApi.GKEHub.V1.Model.Feature do
   field(:scopeStates, as: GoogleApi.GKEHub.V1.Model.ScopeFeatureState, type: :map)
   field(:spec, as: GoogleApi.GKEHub.V1.Model.CommonFeatureSpec)
   field(:state, as: GoogleApi.GKEHub.V1.Model.CommonFeatureState)
+  field(:unreachable, type: :list)
   field(:updateTime, as: DateTime)
 end
 

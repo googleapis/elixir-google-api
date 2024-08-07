@@ -25,7 +25,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec do
   *   `configSync` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync.t`, *default:* `nil`) - Config Sync configuration for the cluster.
   *   `hierarchyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig.t`, *default:* `nil`) - Hierarchy Controller configuration for the cluster.
   *   `management` (*type:* `String.t`, *default:* `nil`) - Enables automatic Feature management.
-  *   `policyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController.t`, *default:* `nil`) - Policy Controller configuration for the cluster.
+  *   `policyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController.t`, *default:* `nil`) - Policy Controller configuration for the cluster. Deprecated: Configuring Policy Controller through the configmanagement feature is no longer recommended. Use the policycontroller feature instead.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Version of ACM installed.
   """
 
