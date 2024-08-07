@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudBuild.V2.Model.PipelineRef do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the Pipeline.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the Pipeline.
   *   `params` (*type:* `list(GoogleApi.CloudBuild.V2.Model.Param.t)`, *default:* `nil`) - Params contains the parameters used to identify the referenced Tekton resource. Example entries might include "repo" or "path" but the set of params ultimately depends on the chosen resolver.
   *   `resolver` (*type:* `String.t`, *default:* `nil`) - Resolver is the name of the resolver that should perform resolution of the referenced Tekton resource.
   """
