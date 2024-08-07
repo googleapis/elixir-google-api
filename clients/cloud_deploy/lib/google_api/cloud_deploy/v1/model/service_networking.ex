@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ServiceNetworking do
 
   *   `deployment` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Deployment whose traffic is managed by the specified Service.
   *   `disablePodOverprovisioning` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to disable Pod overprovisioning. If Pod overprovisioning is disabled then Cloud Deploy will limit the number of total Pods used for the deployment strategy to the number of Pods the Deployment has on the cluster.
+  *   `podSelectorLabel` (*type:* `String.t`, *default:* `nil`) - Optional. The label to use when selecting Pods for the Deployment resource. This label must already be present in the Deployment.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Service.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.CloudDeploy.V1.Model.ServiceNetworking do
   @type t :: %__MODULE__{
           :deployment => String.t() | nil,
           :disablePodOverprovisioning => boolean() | nil,
+          :podSelectorLabel => String.t() | nil,
           :service => String.t() | nil
         }
 
   field(:deployment)
   field(:disablePodOverprovisioning)
+  field(:podSelectorLabel)
   field(:service)
 end
 

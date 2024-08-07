@@ -227,7 +227,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `CustomTargetType` should be created. Format should be `projects/{project_id}/locations/{location_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `CustomTargetType` must be created. The format is `projects/{project_id}/locations/{location_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -620,7 +620,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, updating a `CustomTargetType` that does not exist will result in the creation of a new `CustomTargetType`.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server knows to ignore the request if it has already been completed. The server guarantees that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten in the `CustomTargetType` resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten by the update in the `CustomTargetType` resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set to true, the request is validated and the user is provided with an expected result, but no actual change is made.
       *   `:body` (*type:* `GoogleApi.CloudDeploy.V1.Model.CustomTargetType.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -757,7 +757,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `DeliveryPipeline` should be created. Format should be `projects/{project_id}/locations/{location_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `DeliveryPipeline` must be created. The format is `projects/{project_id}/locations/{location_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -835,7 +835,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the `DeliveryPipeline` to delete. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `DeliveryPipeline` to delete. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1152,7 +1152,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, updating a `DeliveryPipeline` that does not exist will result in the creation of a new `DeliveryPipeline`.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server knows to ignore the request if it has already been completed. The server guarantees that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten in the `DeliveryPipeline` resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten by the update in the `DeliveryPipeline` resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set to true, the request is validated and the user is provided with an expected result, but no actual change is made.
       *   `:body` (*type:* `GoogleApi.CloudDeploy.V1.Model.DeliveryPipeline.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1217,7 +1217,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The `DeliveryPipeline` for which the rollback `Rollout` should be created. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+  *   `name` (*type:* `String.t`) - Required. The `DeliveryPipeline` for which the rollback `Rollout` must be created. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1659,7 +1659,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Automation` should be created. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Automation` must be created. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1737,7 +1737,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the `Automation` to delete. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `Automation` to delete. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/automations/{automation_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1980,7 +1980,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, updating a `Automation` that does not exist will result in the creation of a new `Automation`.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server knows to ignore the request if it has already been completed. The server guarantees that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten in the `Automation` resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten by the update in the `Automation` resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set to true, the request is validated and the user is provided with an expected result, but no actual change is made.
       *   `:body` (*type:* `GoogleApi.CloudDeploy.V1.Model.Automation.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -2117,7 +2117,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Release` should be created. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Release` is created. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2559,7 +2559,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Rollout` should be created. Format should be `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Rollout` must be created. The format is `projects/{project_id}/locations/{location_name}/deliveryPipelines/{pipeline_name}/releases/{release_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3441,7 +3441,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Target` should be created. Format should be `projects/{project_id}/locations/{location_name}`.
+  *   `parent` (*type:* `String.t`) - Required. The parent collection in which the `Target` must be created. The format is `projects/{project_id}/locations/{location_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3519,7 +3519,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CloudDeploy.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the `Target` to delete. Format should be `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
+  *   `name` (*type:* `String.t`) - Required. The name of the `Target` to delete. The format is `projects/{project_id}/locations/{location_name}/targets/{target_name}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3832,7 +3832,7 @@ defmodule GoogleApi.CloudDeploy.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, updating a `Target` that does not exist will result in the creation of a new `Target`.
       *   `:requestId` (*type:* `String.t`) - Optional. A request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server knows to ignore the request if it has already been completed. The server guarantees that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
-      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten in the Target resource by the update. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
+      *   `:updateMask` (*type:* `String.t`) - Required. Field mask is used to specify the fields to be overwritten by the update in the `Target` resource. The fields specified in the update_mask are relative to the resource, not the full request. A field will be overwritten if it's in the mask. If the user doesn't provide a mask then all fields are overwritten.
       *   `:validateOnly` (*type:* `boolean()`) - Optional. If set to true, the request is validated and the user is provided with an expected result, but no actual change is made.
       *   `:body` (*type:* `GoogleApi.CloudDeploy.V1.Model.Target.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options

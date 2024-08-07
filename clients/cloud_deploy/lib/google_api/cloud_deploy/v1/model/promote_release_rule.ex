@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.PromoteReleaseRule do
   @moduledoc """
-  `PromoteRelease` rule will automatically promote a release from the current target to a specified target.
+  The `PromoteRelease` rule will automatically promote a release from the current target to a specified target.
 
   ## Attributes
 
