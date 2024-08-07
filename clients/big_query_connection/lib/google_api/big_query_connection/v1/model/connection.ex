@@ -31,7 +31,7 @@ defmodule GoogleApi.BigQueryConnection.V1.Model.Connection do
   *   `description` (*type:* `String.t`, *default:* `nil`) - User provided description.
   *   `friendlyName` (*type:* `String.t`, *default:* `nil`) - User provided display name for the connection.
   *   `hasCredential` (*type:* `boolean()`, *default:* `nil`) - Output only. True, if credential is configured for this connection.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud KMS key that is used for encryption. Example: `projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]`
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The Cloud KMS key that is used for credentials encryption. If omitted, internal Google owned encryption keys are used. Example: `projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]`
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The last update timestamp of the connection.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
   *   `salesforceDataCloud` (*type:* `GoogleApi.BigQueryConnection.V1.Model.SalesforceDataCloudProperties.t`, *default:* `nil`) - Optional. Salesforce DataCloud properties. This field is intended for use only by Salesforce partner projects. This field contains properties for your Salesforce DataCloud connection.
