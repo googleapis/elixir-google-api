@@ -17,20 +17,21 @@
 
 defmodule GoogleApi.NetworkManagement.V1.Model.FirewallInfo do
   @moduledoc """
-  For display only. Metadata associated with a VPC firewall rule, an implied VPC firewall rule, or a hierarchical firewall policy rule.
+  For display only. Metadata associated with a VPC firewall rule, an implied VPC firewall rule, or a firewall policy rule.
 
   ## Attributes
 
   *   `action` (*type:* `String.t`, *default:* `nil`) - Possible values: ALLOW, DENY, APPLY_SECURITY_PROFILE_GROUP
   *   `direction` (*type:* `String.t`, *default:* `nil`) - Possible values: INGRESS, EGRESS
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the VPC firewall rule. This field is not applicable to hierarchical firewall policy rules.
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the firewall rule. This field might be empty for firewall policy rules.
   *   `firewallRuleType` (*type:* `String.t`, *default:* `nil`) - The firewall rule's type.
   *   `networkUri` (*type:* `String.t`, *default:* `nil`) - The URI of the VPC network that the firewall rule is associated with. This field is not applicable to hierarchical firewall policy rules.
-  *   `policy` (*type:* `String.t`, *default:* `nil`) - The hierarchical firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules.
+  *   `policy` (*type:* `String.t`, *default:* `nil`) - The name of the firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules and implied VPC firewall rules.
+  *   `policyUri` (*type:* `String.t`, *default:* `nil`) - The URI of the firewall policy that this rule is associated with. This field is not applicable to VPC firewall rules and implied VPC firewall rules.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - The priority of the firewall rule.
   *   `targetServiceAccounts` (*type:* `list(String.t)`, *default:* `nil`) - The target service accounts specified by the firewall rule.
-  *   `targetTags` (*type:* `list(String.t)`, *default:* `nil`) - The target tags defined by the VPC firewall rule. This field is not applicable to hierarchical firewall policy rules.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the VPC firewall rule. This field is not applicable to implied firewall rules or hierarchical firewall policy rules.
+  *   `targetTags` (*type:* `list(String.t)`, *default:* `nil`) - The target tags defined by the VPC firewall rule. This field is not applicable to firewall policy rules.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of the firewall rule. This field is not applicable to implied VPC firewall rules.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -42,6 +43,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.FirewallInfo do
           :firewallRuleType => String.t() | nil,
           :networkUri => String.t() | nil,
           :policy => String.t() | nil,
+          :policyUri => String.t() | nil,
           :priority => integer() | nil,
           :targetServiceAccounts => list(String.t()) | nil,
           :targetTags => list(String.t()) | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.FirewallInfo do
   field(:firewallRuleType)
   field(:networkUri)
   field(:policy)
+  field(:policyUri)
   field(:priority)
   field(:targetServiceAccounts, type: :list)
   field(:targetTags, type: :list)
