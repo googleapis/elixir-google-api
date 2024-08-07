@@ -22,14 +22,14 @@ defmodule GoogleApi.CertificateManager.V1.Model.Certificate do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a Certificate.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a certificate.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. One or more paragraphs of text description of a certificate.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The expiry timestamp of a Certificate.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a Certificate.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with a Certificate.
   *   `managed` (*type:* `GoogleApi.CertificateManager.V1.Model.ManagedCertificate.t`, *default:* `nil`) - If set, contains configuration and state of a managed certificate.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/*/locations/*/certificates/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/*/locations/*/certificates/*`.
   *   `pemCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. The PEM-encoded certificate chain.
   *   `sanDnsnames` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The list of Subject Alternative Names of dnsName type defined in the certificate (see RFC 5280 4.2.1.6). Managed certificates that haven't been provisioned yet have this field populated with a value of the managed.domains field.
-  *   `scope` (*type:* `String.t`, *default:* `nil`) - Immutable. The scope of the certificate.
+  *   `scope` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The scope of the certificate.
   *   `selfManaged` (*type:* `GoogleApi.CertificateManager.V1.Model.SelfManagedCertificate.t`, *default:* `nil`) - If set, defines data of a self-managed certificate.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a Certificate.
   """

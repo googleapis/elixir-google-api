@@ -23,11 +23,11 @@ defmodule GoogleApi.CertificateManager.V1.Model.CertificateIssuanceConfig do
 
   *   `certificateAuthorityConfig` (*type:* `GoogleApi.CertificateManager.V1.Model.CertificateAuthorityConfig.t`, *default:* `nil`) - Required. The CA that issues the workload certificate. It includes the CA address, type, authentication to CA service, etc.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a CertificateIssuanceConfig.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a CertificateIssuanceConfig.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. One or more paragraphs of text description of a CertificateIssuanceConfig.
   *   `keyAlgorithm` (*type:* `String.t`, *default:* `nil`) - Required. The key algorithm to use when generating the private key.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a CertificateIssuanceConfig.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with a CertificateIssuanceConfig.
   *   `lifetime` (*type:* `String.t`, *default:* `nil`) - Required. Workload certificate lifetime requested.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the certificate issuance config. CertificateIssuanceConfig names must be unique globally and match pattern `projects/*/locations/*/certificateIssuanceConfigs/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A user-defined name of the certificate issuance config. CertificateIssuanceConfig names must be unique globally and match pattern `projects/*/locations/*/certificateIssuanceConfigs/*`.
   *   `rotationWindowPercentage` (*type:* `integer()`, *default:* `nil`) - Required. Specifies the percentage of elapsed time of the certificate lifetime to wait before renewing the certificate. Must be a number between 1-99, inclusive.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a CertificateIssuanceConfig.
   """

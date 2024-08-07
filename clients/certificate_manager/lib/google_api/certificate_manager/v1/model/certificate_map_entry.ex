@@ -21,13 +21,13 @@ defmodule GoogleApi.CertificateManager.V1.Model.CertificateMapEntry do
 
   ## Attributes
 
-  *   `certificates` (*type:* `list(String.t)`, *default:* `nil`) - A set of Certificates defines for the given `hostname`. There can be defined up to four certificates in each Certificate Map Entry. Each certificate must match pattern `projects/*/locations/*/certificates/*`.
+  *   `certificates` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A set of Certificates defines for the given `hostname`. There can be defined up to four certificates in each Certificate Map Entry. Each certificate must match pattern `projects/*/locations/*/certificates/*`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a Certificate Map Entry.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a certificate map entry.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. One or more paragraphs of text description of a certificate map entry.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - A Hostname (FQDN, e.g. `example.com`) or a wildcard hostname expression (`*.example.com`) for a set of hostnames with common suffix. Used as Server Name Indication (SNI) for selecting a proper certificate.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a Certificate Map Entry.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with a Certificate Map Entry.
   *   `matcher` (*type:* `String.t`, *default:* `nil`) - A predefined matcher for particular cases, other than SNI selection.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the Certificate Map Entry. Certificate Map Entry names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*/certificateMapEntries/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A user-defined name of the Certificate Map Entry. Certificate Map Entry names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*/certificateMapEntries/*`.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. A serving state of this Certificate Map Entry.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The update timestamp of a Certificate Map Entry.
   """

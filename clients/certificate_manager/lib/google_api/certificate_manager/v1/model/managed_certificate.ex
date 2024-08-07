@@ -22,9 +22,9 @@ defmodule GoogleApi.CertificateManager.V1.Model.ManagedCertificate do
   ## Attributes
 
   *   `authorizationAttemptInfo` (*type:* `list(GoogleApi.CertificateManager.V1.Model.AuthorizationAttemptInfo.t)`, *default:* `nil`) - Output only. Detailed state of the latest authorization attempt for each domain specified for managed certificate resource.
-  *   `dnsAuthorizations` (*type:* `list(String.t)`, *default:* `nil`) - Immutable. Authorizations that will be used for performing domain authorization.
-  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - Immutable. The domains for which a managed SSL certificate will be generated. Wildcard domains are only supported with DNS challenge resolution.
-  *   `issuanceConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name for a CertificateIssuanceConfig used to configure private PKI certificates in the format `projects/*/locations/*/certificateIssuanceConfigs/*`. If this field is not set, the certificates will instead be publicly signed as documented at https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
+  *   `dnsAuthorizations` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Immutable. Authorizations that will be used for performing domain authorization.
+  *   `domains` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Immutable. The domains for which a managed SSL certificate will be generated. Wildcard domains are only supported with DNS challenge resolution.
+  *   `issuanceConfig` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. The resource name for a CertificateIssuanceConfig used to configure private PKI certificates in the format `projects/*/locations/*/certificateIssuanceConfigs/*`. If this field is not set, the certificates will instead be publicly signed as documented at https://cloud.google.com/load-balancing/docs/ssl-certificates/google-managed-certs#caa.
   *   `provisioningIssue` (*type:* `GoogleApi.CertificateManager.V1.Model.ProvisioningIssue.t`, *default:* `nil`) - Output only. Information about issues with provisioning a Managed Certificate.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the managed certificate resource.
   """

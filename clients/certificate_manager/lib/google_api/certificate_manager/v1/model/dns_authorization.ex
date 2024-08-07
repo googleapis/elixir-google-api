@@ -22,12 +22,12 @@ defmodule GoogleApi.CertificateManager.V1.Model.DnsAuthorization do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of a DnsAuthorization.
-  *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of a DnsAuthorization.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. One or more paragraphs of text description of a DnsAuthorization.
   *   `dnsResourceRecord` (*type:* `GoogleApi.CertificateManager.V1.Model.DnsResourceRecord.t`, *default:* `nil`) - Output only. DNS Resource Record that needs to be added to DNS configuration.
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. A domain that is being authorized. A DnsAuthorization resource covers a single domain and its wildcard, e.g. authorization for `example.com` can be used to issue certificates for `example.com` and `*.example.com`.
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Set of labels associated with a DnsAuthorization.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the dns authorization. DnsAuthorization names must be unique globally and match pattern `projects/*/locations/*/dnsAuthorizations/*`.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location `global`: FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of labels associated with a DnsAuthorization.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. A user-defined name of the dns authorization. DnsAuthorization names must be unique globally and match pattern `projects/*/locations/*/dnsAuthorizations/*`.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location `global`: FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a DnsAuthorization.
   """
 

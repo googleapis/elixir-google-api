@@ -408,10 +408,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates Configs returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Config field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate configs to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateIssuanceConfigsResponse`. Indicates that this is a continuation of a prior `ListCertificateIssuanceConfigs` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the Certificates Configs returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of Certificate Config field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of certificate configs to return per call.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListCertificateIssuanceConfigsResponse`. Indicates that this is a continuation of a prior `ListCertificateIssuanceConfigs` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -468,6 +468,80 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       opts ++
         [struct: %GoogleApi.CertificateManager.V1.Model.ListCertificateIssuanceConfigsResponse{}]
     )
+  end
+
+  @doc """
+  Updates a CertificateIssuanceConfig.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the certificate issuance config. CertificateIssuanceConfig names must be unique globally and match pattern `projects/*/locations/*/certificateIssuanceConfigs/*`.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
+      *   `:access_token` (*type:* `String.t`) - OAuth access token.
+      *   `:alt` (*type:* `String.t`) - Data format for response.
+      *   `:callback` (*type:* `String.t`) - JSONP
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
+      *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:updateMask` (*type:* `String.t`) - Required. The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask.
+      *   `:body` (*type:* `GoogleApi.CertificateManager.V1.Model.CertificateIssuanceConfig.t`) - 
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %GoogleApi.CertificateManager.V1.Model.Operation{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec certificatemanager_projects_locations_certificate_issuance_configs_patch(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
+          {:ok, GoogleApi.CertificateManager.V1.Model.Operation.t()}
+          | {:ok, Tesla.Env.t()}
+          | {:ok, list()}
+          | {:error, any()}
+  def certificatemanager_projects_locations_certificate_issuance_configs_patch(
+        connection,
+        name,
+        optional_params \\ [],
+        opts \\ []
+      ) do
+    optional_params_config = %{
+      :"$.xgafv" => :query,
+      :access_token => :query,
+      :alt => :query,
+      :callback => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :upload_protocol => :query,
+      :updateMask => :query,
+      :body => :body
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:patch)
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [struct: %GoogleApi.CertificateManager.V1.Model.Operation{}])
   end
 
   @doc """
@@ -703,10 +777,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates Maps returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate maps to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateMapsResponse`. Indicates that this is a continuation of a prior `ListCertificateMaps` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the Certificates Maps returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of Certificate Map field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of certificate maps to return per call.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListCertificateMapsResponse`. Indicates that this is a continuation of a prior `ListCertificateMaps` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -770,7 +844,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A user-defined name of the Certificate Map. Certificate Map names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*`.
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the Certificate Map. Certificate Map names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1073,10 +1147,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the returned Certificate Map Entries.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate Map Entry field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of certificate map entries to return. The service may return fewer than this value. If unspecified, at most 50 certificate map entries will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificateMapEntriesResponse`. Indicates that this is a continuation of a prior `ListCertificateMapEntries` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the returned Certificate Map Entries.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of Certificate Map Entry field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of certificate map entries to return. The service may return fewer than this value. If unspecified, at most 50 certificate map entries will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListCertificateMapEntriesResponse`. Indicates that this is a continuation of a prior `ListCertificateMapEntries` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1140,7 +1214,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A user-defined name of the Certificate Map Entry. Certificate Map Entry names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*/certificateMapEntries/*`.
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the Certificate Map Entry. Certificate Map Entry names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*/certificateMapEntries/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1441,10 +1515,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Certificates returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Certificate field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of certificates to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListCertificatesResponse`. Indicates that this is a continuation of a prior `ListCertificates` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the Certificates returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of Certificate field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of certificates to return per call.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListCertificatesResponse`. Indicates that this is a continuation of a prior `ListCertificates` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1508,7 +1582,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/*/locations/*/certificates/*`.
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/*/locations/*/certificates/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1811,10 +1885,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the Dns Authorizations returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of Dns Authorization field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of dns authorizations to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListDnsAuthorizationsResponse`. Indicates that this is a continuation of a prior `ListDnsAuthorizations` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the Dns Authorizations returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of Dns Authorization field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of dns authorizations to return per call.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListDnsAuthorizationsResponse`. Indicates that this is a continuation of a prior `ListDnsAuthorizations` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1878,7 +1952,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A user-defined name of the dns authorization. DnsAuthorization names must be unique globally and match pattern `projects/*/locations/*/dnsAuthorizations/*`.
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the dns authorization. DnsAuthorization names must be unique globally and match pattern `projects/*/locations/*/dnsAuthorizations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2329,7 +2403,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:etag` (*type:* `String.t`) - The current etag of the TrustConfig. If an etag is provided and does not match the current etag of the resource, deletion will be blocked and an ABORTED error will be returned.
+      *   `:etag` (*type:* `String.t`) - Optional. The current etag of the TrustConfig. If an etag is provided and does not match the current etag of the resource, deletion will be blocked and an ABORTED error will be returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2471,10 +2545,10 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Filter expression to restrict the TrustConfigs returned.
-      *   `:orderBy` (*type:* `String.t`) - A list of TrustConfig field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
-      *   `:pageSize` (*type:* `integer()`) - Maximum number of TrustConfigs to return per call.
-      *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListTrustConfigsResponse`. Indicates that this is a continuation of a prior `ListTrustConfigs` call, and that the system should return the next page of data.
+      *   `:filter` (*type:* `String.t`) - Optional. Filter expression to restrict the TrustConfigs returned.
+      *   `:orderBy` (*type:* `String.t`) - Optional. A list of TrustConfig field names used to specify the order of the returned results. The default sorting order is ascending. To specify descending order for a field, add a suffix `" desc"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Maximum number of TrustConfigs to return per call.
+      *   `:pageToken` (*type:* `String.t`) - Optional. The value returned by the last `ListTrustConfigsResponse`. Indicates that this is a continuation of a prior `ListTrustConfigs` call, and that the system should return the next page of data.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2538,7 +2612,7 @@ defmodule GoogleApi.CertificateManager.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.CertificateManager.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - A user-defined name of the trust config. TrustConfig names must be unique globally and match pattern `projects/*/locations/*/trustConfigs/*`.
+  *   `name` (*type:* `String.t`) - Identifier. A user-defined name of the trust config. TrustConfig names must be unique globally and match pattern `projects/*/locations/*/trustConfigs/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

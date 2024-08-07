@@ -21,8 +21,8 @@ defmodule GoogleApi.CertificateManager.V1.Model.SelfManagedCertificate do
 
   ## Attributes
 
-  *   `pemCertificate` (*type:* `String.t`, *default:* `nil`) - Input only. The PEM-encoded certificate chain. Leaf certificate comes first, followed by intermediate ones if any.
-  *   `pemPrivateKey` (*type:* `String.t`, *default:* `nil`) - Input only. The PEM-encoded private key of the leaf certificate.
+  *   `pemCertificate` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. The PEM-encoded certificate chain. Leaf certificate comes first, followed by intermediate ones if any.
+  *   `pemPrivateKey` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. The PEM-encoded private key of the leaf certificate.
   """
 
   use GoogleApi.Gax.ModelBase
