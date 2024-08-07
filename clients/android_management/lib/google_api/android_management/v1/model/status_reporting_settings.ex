@@ -23,7 +23,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.StatusReportingSettings do
 
   *   `applicationReportingSettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.ApplicationReportingSettings.t`, *default:* `nil`) - Application reporting settings. Only applicable if application_reports_enabled is true.
   *   `applicationReportsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether app reports are enabled.
-  *   `commonCriteriaModeEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Common Criteria Mode reporting is enabled.
+  *   `commonCriteriaModeEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether Common Criteria Mode reporting is enabled. This is supported only on company-owned devices.
   *   `deviceSettingsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether device settings reporting is enabled.
   *   `displayInfoEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether displays reporting is enabled. Report data is not available for personally owned devices with work profiles.
   *   `hardwareStatusEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether hardware status reporting is enabled. Report data is not available for personally owned devices with work profiles.
