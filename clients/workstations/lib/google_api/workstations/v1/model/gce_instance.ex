@@ -34,7 +34,7 @@ defmodule GoogleApi.Workstations.V1.Model.GceInstance do
   *   `serviceAccountScopes` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Scopes to grant to the service_account. When specified, users of workstations under this configuration must have `iam.serviceAccounts.actAs` on the service account.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Workstations.V1.Model.GceShieldedInstanceConfig.t`, *default:* `nil`) - Optional. A set of Compute Engine Shielded instance options.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Network tags to add to the Compute Engine VMs backing the workstations. This option applies [network tags](https://cloud.google.com/vpc/docs/add-remove-network-tags) to VMs created with this configuration. These network tags enable the creation of [firewall rules](https://cloud.google.com/workstations/docs/configure-firewall-rules).
-  *   `vmTags` (*type:* `map()`, *default:* `nil`) - Optional. Resource manager tags to be bound to this instance. Tag keys and values have the same definition as https://cloud.google.com/resource-manager/docs/tags/tags-overview Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`.
+  *   `vmTags` (*type:* `map()`, *default:* `nil`) - Optional. Resource manager tags to be bound to this instance. Tag keys and values have the same definition as [resource manager tags](https://cloud.google.com/resource-manager/docs/tags/tags-overview). Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`.
   """
 
   use GoogleApi.Gax.ModelBase
