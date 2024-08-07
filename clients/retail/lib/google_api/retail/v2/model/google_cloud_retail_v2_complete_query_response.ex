@@ -21,6 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponse do
 
   ## Attributes
 
+  *   `attributeResults` (*type:* `%{optional(String.t) => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseAttributeResult.t}`, *default:* `nil`) - A map of matched attribute suggestions. This field is only available for "cloud-retail" dataset. Current supported keys: * `brands` * `categories`
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique complete token. This should be included in the UserEvent.completion_detail for search events resulting from this completion, which enables accurate attribution of complete model performance.
   *   `completionResults` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseCompletionResult.t)`, *default:* `nil`) - Results of the matching suggestions. The result list is ordered and the first result is top suggestion.
   *   `recentSearchResults` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseRecentSearchResult.t)`, *default:* `nil`) - Deprecated. Matched recent searches of this user. The maximum number of recent searches is 10. This field is a restricted feature. If you want to enable it, contact Retail Search support. This feature is only available when CompleteQueryRequest.visitor_id field is set and UserEvent is imported. The recent searches satisfy the follow rules: * They are ordered from latest to oldest. * They are matched with CompleteQueryRequest.query case insensitively. * They are transformed to lower case. * They are UTF-8 safe. Recent searches are deduplicated. More recent searches will be reserved when duplication happens.
@@ -29,6 +30,12 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponse do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :attributeResults =>
+            %{
+              optional(String.t()) =>
+                GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseAttributeResult.t()
+            }
+            | nil,
           :attributionToken => String.t() | nil,
           :completionResults =>
             list(
@@ -41,6 +48,11 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponse do
             )
             | nil
         }
+
+  field(:attributeResults,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseAttributeResult,
+    type: :map
+  )
 
   field(:attributionToken)
 
