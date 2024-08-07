@@ -21,15 +21,18 @@ defmodule GoogleApi.Domains.V1.Model.HealthCheckTargets do
 
   ## Attributes
 
+  *   `externalEndpoints` (*type:* `list(String.t)`, *default:* `nil`) - The Internet IP addresses to be health checked. The format matches the format of ResourceRecordSet.rrdata as defined in RFC 1035 (section 5) and RFC 1034 (section 3.6.1)
   *   `internalLoadBalancer` (*type:* `list(GoogleApi.Domains.V1.Model.LoadBalancerTarget.t)`, *default:* `nil`) - Configuration for internal load balancers to be health checked.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :externalEndpoints => list(String.t()) | nil,
           :internalLoadBalancer => list(GoogleApi.Domains.V1.Model.LoadBalancerTarget.t()) | nil
         }
 
+  field(:externalEndpoints, type: :list)
   field(:internalLoadBalancer, as: GoogleApi.Domains.V1.Model.LoadBalancerTarget, type: :list)
 end
 
