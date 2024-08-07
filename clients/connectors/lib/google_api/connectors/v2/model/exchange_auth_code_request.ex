@@ -17,15 +17,20 @@
 
 defmodule GoogleApi.Connectors.V2.Model.ExchangeAuthCodeRequest do
   @moduledoc """
-  ExchangeAuthCodeRequest currently includes no fields.
+  ExchangeAuthCodeRequest currently includes the auth code data.
 
   ## Attributes
 
+  *   `authCodeData` (*type:* `GoogleApi.Connectors.V2.Model.AuthCodeData.t`, *default:* `nil`) - Optional. AuthCodeData contains the data the runtime requires to exchange for access and refresh tokens. If the data is not provided, the runtime will read the data from the secret manager.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :authCodeData => GoogleApi.Connectors.V2.Model.AuthCodeData.t() | nil
+        }
+
+  field(:authCodeData, as: GoogleApi.Connectors.V2.Model.AuthCodeData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V2.Model.ExchangeAuthCodeRequest do

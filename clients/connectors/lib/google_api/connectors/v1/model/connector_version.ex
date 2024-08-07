@@ -30,6 +30,8 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name.
   *   `egressControlConfig` (*type:* `GoogleApi.Connectors.V1.Model.EgressControlConfig.t`, *default:* `nil`) - Output only. Configuration for Egress Control.
   *   `eventingConfigTemplate` (*type:* `GoogleApi.Connectors.V1.Model.EventingConfigTemplate.t`, *default:* `nil`) - Output only. Eventing configuration supported by the Connector.
+  *   `isCustomActionsSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is custom actions supported.
+  *   `isCustomEntitiesSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is custom entities supported.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Output only. Flag to mark the version indicating the launch stage.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Version. Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector}/versions/{version} Only global location is supported for Connector resource.
@@ -39,6 +41,8 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   *   `schemaRefreshConfig` (*type:* `GoogleApi.Connectors.V1.Model.SchemaRefreshConfig.t`, *default:* `nil`) - Connection Schema Refresh Config
   *   `sslConfigTemplate` (*type:* `GoogleApi.Connectors.V1.Model.SslConfigTemplate.t`, *default:* `nil`) - Output only. Ssl configuration supported by the Connector.
   *   `supportedRuntimeFeatures` (*type:* `GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures.t`, *default:* `nil`) - Output only. Information about the runtime features supported by the Connector.
+  *   `supportedStandardActions` (*type:* `list(GoogleApi.Connectors.V1.Model.StandardAction.t)`, *default:* `nil`) - Output only. Supported standard actions.
+  *   `supportedStandardEntities` (*type:* `list(GoogleApi.Connectors.V1.Model.StandardEntity.t)`, *default:* `nil`) - Output only. Supported standard entities.
   *   `unsupportedConnectionTypes` (*type:* `list(String.t)`, *default:* `nil`) - Output only. Unsupported connection types.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
@@ -59,6 +63,8 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
           :egressControlConfig => GoogleApi.Connectors.V1.Model.EgressControlConfig.t() | nil,
           :eventingConfigTemplate =>
             GoogleApi.Connectors.V1.Model.EventingConfigTemplate.t() | nil,
+          :isCustomActionsSupported => boolean() | nil,
+          :isCustomEntitiesSupported => boolean() | nil,
           :labels => map() | nil,
           :launchStage => String.t() | nil,
           :name => String.t() | nil,
@@ -69,6 +75,10 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
           :sslConfigTemplate => GoogleApi.Connectors.V1.Model.SslConfigTemplate.t() | nil,
           :supportedRuntimeFeatures =>
             GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures.t() | nil,
+          :supportedStandardActions =>
+            list(GoogleApi.Connectors.V1.Model.StandardAction.t()) | nil,
+          :supportedStandardEntities =>
+            list(GoogleApi.Connectors.V1.Model.StandardEntity.t()) | nil,
           :unsupportedConnectionTypes => list(String.t()) | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -92,6 +102,8 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   field(:displayName)
   field(:egressControlConfig, as: GoogleApi.Connectors.V1.Model.EgressControlConfig)
   field(:eventingConfigTemplate, as: GoogleApi.Connectors.V1.Model.EventingConfigTemplate)
+  field(:isCustomActionsSupported)
+  field(:isCustomEntitiesSupported)
   field(:labels, type: :map)
   field(:launchStage)
   field(:name)
@@ -101,6 +113,8 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   field(:schemaRefreshConfig, as: GoogleApi.Connectors.V1.Model.SchemaRefreshConfig)
   field(:sslConfigTemplate, as: GoogleApi.Connectors.V1.Model.SslConfigTemplate)
   field(:supportedRuntimeFeatures, as: GoogleApi.Connectors.V1.Model.SupportedRuntimeFeatures)
+  field(:supportedStandardActions, as: GoogleApi.Connectors.V1.Model.StandardAction, type: :list)
+  field(:supportedStandardEntities, as: GoogleApi.Connectors.V1.Model.StandardEntity, type: :list)
   field(:unsupportedConnectionTypes, type: :list)
   field(:updateTime, as: DateTime)
 end
