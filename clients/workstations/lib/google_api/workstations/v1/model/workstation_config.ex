@@ -21,7 +21,7 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
 
   ## Attributes
 
-  *   `allowedPorts` (*type:* `list(GoogleApi.Workstations.V1.Model.PortRange.t)`, *default:* `nil`) - Optional. A Single or Range of ports externally accessible in the workstation. If not specified defaults to ports 22, 80 and ports 1024-65535.
+  *   `allowedPorts` (*type:* `list(GoogleApi.Workstations.V1.Model.PortRange.t)`, *default:* `nil`) - Optional. A list of PortRanges specifying single ports or ranges of ports that are externally accessible in the workstation. Allowed ports must be one of 22, 80, or within range 1024-65535. If not specified defaults to ports 22, 80, and ports 1024-65535.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client-specified annotations.
   *   `conditions` (*type:* `list(GoogleApi.Workstations.V1.Model.Status.t)`, *default:* `nil`) - Output only. Status conditions describing the current resource state.
   *   `container` (*type:* `GoogleApi.Workstations.V1.Model.Container.t`, *default:* `nil`) - Optional. Container that runs upon startup for each workstation using this workstation configuration.
