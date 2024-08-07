@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.RegionalPriceMigrationConfig do
   @moduledoc """
-  Configuration for a price migration.
+  Configuration for migration of a legacy price cohort.
 
   ## Attributes
 
-  *   `oldestAllowedPriceVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The cutoff time for historical prices that subscribers can remain paying. Subscribers on prices which were available at this cutoff time or later will stay on their existing price. Subscribers on older prices will be migrated to the currently-offered price. The migrated subscribers will receive a notification that they will be paying a different price. Subscribers who do not agree to the new price will have their subscription ended at the next renewal.
-  *   `priceIncreaseType` (*type:* `String.t`, *default:* `nil`) - Optional. The behavior the caller wants users to see when there is a price increase during migration. If left unset, the behavior defaults to PRICE_INCREASE_TYPE_OPT_IN. Note that the first opt-out price increase migration for each app must be initiated in Play Console.
+  *   `oldestAllowedPriceVersionTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. Subscribers in all legacy price cohorts before this time will be migrated to the current price. Subscribers in any newer price cohorts are unaffected. Affected subscribers will receive one or more notifications from Google Play about the price change. Price decreases occur at the subscriber's next billing date. Price increases occur at the subscriber's next billing date following a notification period that varies by region and price increase type.
+  *   `priceIncreaseType` (*type:* `String.t`, *default:* `nil`) - Optional. The requested type of price increase
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - Required. Region code this configuration applies to, as defined by ISO 3166-2, e.g. "US".
   """
 
