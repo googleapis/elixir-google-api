@@ -23,6 +23,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
 
   *   `deployment` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Deployment whose traffic is managed by the specified HTTPRoute and Service.
   *   `httpRoute` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Gateway API HTTPRoute.
+  *   `podSelectorLabel` (*type:* `String.t`, *default:* `nil`) - Optional. The label to use when selecting Pods for the Deployment and Service resources. This label must already be present in both resources.
   *   `routeUpdateWaitTime` (*type:* `String.t`, *default:* `nil`) - Optional. The time to wait for route updates to propagate. The maximum configurable time is 3 hours, in seconds format. If unspecified, there is no wait time.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Required. Name of the Kubernetes Service.
   *   `stableCutbackDuration` (*type:* `String.t`, *default:* `nil`) - Optional. The amount of time to migrate traffic back from the canary Service to the original Service during the stable phase deployment. If specified, must be between 15s and 3600s. If unspecified, there is no cutback time.
@@ -33,6 +34,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
   @type t :: %__MODULE__{
           :deployment => String.t() | nil,
           :httpRoute => String.t() | nil,
+          :podSelectorLabel => String.t() | nil,
           :routeUpdateWaitTime => String.t() | nil,
           :service => String.t() | nil,
           :stableCutbackDuration => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.GatewayServiceMesh do
 
   field(:deployment)
   field(:httpRoute)
+  field(:podSelectorLabel)
   field(:routeUpdateWaitTime)
   field(:service)
   field(:stableCutbackDuration)
