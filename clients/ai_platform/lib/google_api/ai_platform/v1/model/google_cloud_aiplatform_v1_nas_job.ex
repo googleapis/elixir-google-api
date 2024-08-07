@@ -31,6 +31,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJob do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the NasJob.
   *   `nasJobOutput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobOutput.t`, *default:* `nil`) - Output only. Output of the NasJob.
   *   `nasJobSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobSpec.t`, *default:* `nil`) - Required. The specification of a NasJob.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the NasJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the NasJob was most recently updated.
@@ -52,6 +54,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJob do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobOutput.t() | nil,
           :nasJobSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobSpec.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -67,6 +71,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJob do
   field(:name)
   field(:nasJobOutput, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobOutput)
   field(:nasJobSpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NasJobSpec)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:startTime, as: DateTime)
   field(:state)
   field(:updateTime, as: DateTime)

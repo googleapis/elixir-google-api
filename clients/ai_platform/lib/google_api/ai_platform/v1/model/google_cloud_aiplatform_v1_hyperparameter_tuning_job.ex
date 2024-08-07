@@ -31,6 +31,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1HyperparameterTun
   *   `maxTrialCount` (*type:* `integer()`, *default:* `nil`) - Required. The desired total number of Trials.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the HyperparameterTuningJob.
   *   `parallelTrialCount` (*type:* `integer()`, *default:* `nil`) - Required. The desired number of Trials to run in parallel.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the job.
   *   `studySpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StudySpec.t`, *default:* `nil`) - Required. Study configuration of the HyperparameterTuningJob.
@@ -53,6 +55,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1HyperparameterTun
           :maxTrialCount => integer() | nil,
           :name => String.t() | nil,
           :parallelTrialCount => integer() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :studySpec => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StudySpec.t() | nil,
@@ -72,6 +76,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1HyperparameterTun
   field(:maxTrialCount)
   field(:name)
   field(:parallelTrialCount)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:startTime, as: DateTime)
   field(:state)
   field(:studySpec, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1StudySpec)

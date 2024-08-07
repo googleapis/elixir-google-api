@@ -23,17 +23,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceCon
 
   *   `enablePrivateServiceConnect` (*type:* `boolean()`, *default:* `nil`) - Required. If true, expose the IndexEndpoint via private service connect.
   *   `projectAllowlist` (*type:* `list(String.t)`, *default:* `nil`) - A list of Projects from which the forwarding rule will target the service attachment.
+  *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the generated service attachment resource. This is only populated if the endpoint is deployed with PrivateServiceConnect.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :enablePrivateServiceConnect => boolean() | nil,
-          :projectAllowlist => list(String.t()) | nil
+          :projectAllowlist => list(String.t()) | nil,
+          :serviceAttachment => String.t() | nil
         }
 
   field(:enablePrivateServiceConnect)
   field(:projectAllowlist, type: :list)
+  field(:serviceAttachment)
 end
 
 defimpl Poison.Decoder,
