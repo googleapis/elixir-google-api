@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryStartingLocation do
 
   ## Attributes
 
-  *   `folderId` (*type:* `String.t`, *default:* `nil`) - The ID of the folder within an organization to scan.
+  *   `folderId` (*type:* `String.t`, *default:* `nil`) - The ID of the folder within an organization to be scanned.
   *   `organizationId` (*type:* `String.t`, *default:* `nil`) - The ID of an organization to scan.
   """
 
