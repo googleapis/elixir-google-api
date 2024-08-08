@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.DataRange do
   @moduledoc """
-  Report data range.
+  The date range to be reported on.
 
   ## Attributes
 
-  *   `customEndDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The ending date for the data that is shown in the report. Note, `customEndDate` is required if `range` is `CUSTOM_DATES` and ignored otherwise.
-  *   `customStartDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The starting data for the data that is shown in the report. Note, `customStartDate` is required if `range` is `CUSTOM_DATES` and ignored otherwise.
-  *   `range` (*type:* `String.t`, *default:* `nil`) - Report data range used to generate the report.
+  *   `customEndDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - If `CUSTOM_DATES` is assigned to range, this field specifies the end date for the date range that is reported on. This field is required if using `CUSTOM_DATES` range and will be ignored otherwise.
+  *   `customStartDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - If `CUSTOM_DATES` is assigned to range, this field specifies the starting date for the date range that is reported on. This field is required if using `CUSTOM_DATES` range and will be ignored otherwise.
+  *   `range` (*type:* `String.t`, *default:* `nil`) - The preset date range to be reported on. If `CUSTOM_DATES` is assigned to this field, fields custom_start_date and custom_end_date must be set to specify the custom date range.
   """
 
   use GoogleApi.Gax.ModelBase

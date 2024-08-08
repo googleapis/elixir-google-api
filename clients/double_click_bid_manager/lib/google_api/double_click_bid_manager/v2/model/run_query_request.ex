@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.RunQueryRequest do
   @moduledoc """
-  Request to run a stored query to generate a report.
+  Details specifying how to run a query.
 
   ## Attributes
 
-  *   `dataRange` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.DataRange.t`, *default:* `nil`) - Report data range used to generate the report. If unspecified, the original parent query's data range is used.
+  *   `dataRange` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.DataRange.t`, *default:* `nil`) - The date range used by the query to generate the report. If unspecified, the query's original data_range is used.
   """
 
   use GoogleApi.Gax.ModelBase

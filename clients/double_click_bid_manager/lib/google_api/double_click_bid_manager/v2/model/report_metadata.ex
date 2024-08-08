@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.ReportMetadata do
   @moduledoc """
-  Report metadata.
+  The metadata of a report.
 
   ## Attributes
 
-  *   `googleCloudStoragePath` (*type:* `String.t`, *default:* `nil`) - Output only. The path to the location in Google Cloud Storage where the report is stored.
-  *   `reportDataEndDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The ending time for the data that is shown in the report.
-  *   `reportDataStartDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The starting time for the data that is shown in the report.
-  *   `status` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.ReportStatus.t`, *default:* `nil`) - Report status.
+  *   `googleCloudStoragePath` (*type:* `String.t`, *default:* `nil`) - Output only. The location of the generated report file in Google Cloud Storage. This field will be absent if status.state is not `DONE`.
+  *   `reportDataEndDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The end date of the report data date range.
+  *   `reportDataStartDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The start date of the report data date range.
+  *   `status` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.ReportStatus.t`, *default:* `nil`) - The status of the report.
   """
 
   use GoogleApi.Gax.ModelBase
