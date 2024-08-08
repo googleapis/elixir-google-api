@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.QuorumInfo do
   @moduledoc """
-  Information about the dual region quorum.
+  Information about the dual-region quorum.
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. The etag is used for optimistic concurrency control as a way to help prevent simultaneous ChangeQuorum requests that could create a race condition.
-  *   `initiator` (*type:* `String.t`, *default:* `nil`) - Output only. Whether this ChangeQuorum is a Google or User initiated.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. The etag is used for optimistic concurrency control as a way to help prevent simultaneous `ChangeQuorum` requests that might create a race condition.
+  *   `initiator` (*type:* `String.t`, *default:* `nil`) - Output only. Whether this `ChangeQuorum` is Google or User initiated.
   *   `quorumType` (*type:* `GoogleApi.Spanner.V1.Model.QuorumType.t`, *default:* `nil`) - Output only. The type of this quorum. See QuorumType for more information about quorum type specifications.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the request was triggered.
   """

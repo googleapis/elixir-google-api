@@ -21,9 +21,9 @@ defmodule GoogleApi.Spanner.V1.Model.ChangeQuorumRequest do
 
   ## Attributes
 
-  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. The etag is the hash of the QuorumInfo. The ChangeQuorum operation will only be performed if the etag matches that of the QuorumInfo in the current database resource. Otherwise the API will return an `ABORTED` error. The etag is used for optimistic concurrency control as a way to help prevent simultaneous change quorum requests that could create a race condition.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the database in which to apply the ChangeQuorum. Values are of the form `projects//instances//databases/`.
-  *   `quorumType` (*type:* `GoogleApi.Spanner.V1.Model.QuorumType.t`, *default:* `nil`) - Required. The type of this Quorum.
+  *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. The etag is the hash of the `QuorumInfo`. The `ChangeQuorum` operation is only performed if the etag matches that of the `QuorumInfo` in the current database resource. Otherwise the API returns an `ABORTED` error. The etag is used for optimistic concurrency control as a way to help prevent simultaneous change quorum requests that could create a race condition.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the database in which to apply `ChangeQuorum`. Values are of the form `projects//instances//databases/`.
+  *   `quorumType` (*type:* `GoogleApi.Spanner.V1.Model.QuorumType.t`, *default:* `nil`) - Required. The type of this quorum.
   """
 
   use GoogleApi.Gax.ModelBase

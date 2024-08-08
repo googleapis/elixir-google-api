@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.Spanner.V1.Model.QuorumType do
   @moduledoc """
-  Information about the database quorum type. this applies only for dual region instance configs.
+  Information about the database quorum type. This only applies to dual-region instance configs.
 
   ## Attributes
 
-  *   `dualRegion` (*type:* `GoogleApi.Spanner.V1.Model.DualRegionQuorum.t`, *default:* `nil`) - Dual region quorum type.
-  *   `singleRegion` (*type:* `GoogleApi.Spanner.V1.Model.SingleRegionQuorum.t`, *default:* `nil`) - Single region quorum type.
+  *   `dualRegion` (*type:* `GoogleApi.Spanner.V1.Model.DualRegionQuorum.t`, *default:* `nil`) - Dual-region quorum type.
+  *   `singleRegion` (*type:* `GoogleApi.Spanner.V1.Model.SingleRegionQuorum.t`, *default:* `nil`) - Single-region quorum type.
   """
 
   use GoogleApi.Gax.ModelBase
