@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfile do
   @moduledoc """
-  SecurityProfile is a resource that defines the behavior for one of many ProfileTypes. Next ID: 11
+  SecurityProfile is a resource that defines the behavior for one of many ProfileTypes. Next ID: 12
 
   ## Attributes
 
