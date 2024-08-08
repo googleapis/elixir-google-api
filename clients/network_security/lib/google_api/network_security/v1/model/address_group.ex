@@ -27,6 +27,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.AddressGroup do
   *   `items` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of items.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Set of label tags associated with the AddressGroup resource.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Name of the AddressGroup resource. It matches pattern `projects/*/locations/{location}/addressGroups/`.
+  *   `purpose` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of supported purposes of the Address Group.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined fully-qualified URL for this resource.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The type of the Address Group. Possible values are "IPv4" or "IPV6".
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when the resource was updated.
@@ -41,6 +42,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.AddressGroup do
           :items => list(String.t()) | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
+          :purpose => list(String.t()) | nil,
           :selfLink => String.t() | nil,
           :type => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -52,6 +54,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.AddressGroup do
   field(:items, type: :list)
   field(:labels, type: :map)
   field(:name)
+  field(:purpose, type: :list)
   field(:selfLink)
   field(:type)
   field(:updateTime, as: DateTime)

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
   @moduledoc """
-  SecurityProfileGroup is a resource that defines the behavior for various ProfileTypes. Next ID: 10
+  SecurityProfileGroup is a resource that defines the behavior for various ProfileTypes. Next ID: 11
 
   ## Attributes
 
@@ -26,7 +26,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier. Name of the SecurityProfileGroup resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfileGroups/{security_profile_group}`.
-  *   `threatPreventionProfile` (*type:* `String.t`, *default:* `nil`) - Optional. Reference to a SecurityProfile with the threat prevention configuration for the SecurityProfileGroup.
+  *   `threatPreventionProfile` (*type:* `String.t`, *default:* `nil`) - Optional. Reference to a SecurityProfile with the ThreatPrevention configuration.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last resource update timestamp.
   """
 
