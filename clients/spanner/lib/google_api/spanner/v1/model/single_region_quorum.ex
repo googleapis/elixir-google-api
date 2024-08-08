@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.SingleRegionQuorum do
 
   ## Attributes
 
-  *   `servingLocation` (*type:* `String.t`, *default:* `nil`) - Required. The location of the serving region, e.g. "us-central1". The location must be one of the regions within the dual region instance configuration of your database. The list of valid locations is available via [GetInstanceConfig[InstanceAdmin.GetInstanceConfig] API. This should only be used if you plan to change quorum in single-region quorum type.
+  *   `servingLocation` (*type:* `String.t`, *default:* `nil`) - Required. The location of the serving region, e.g. "us-central1". The location must be one of the regions within the dual-region instance configuration of your database. The list of valid locations is available using the GetInstanceConfig API. This should only be used if you plan to change quorum to the single-region quorum type.
   """
 
   use GoogleApi.Gax.ModelBase

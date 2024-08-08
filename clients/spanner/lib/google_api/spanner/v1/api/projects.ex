@@ -2717,12 +2717,12 @@ defmodule GoogleApi.Spanner.V1.Api.Projects do
   end
 
   @doc """
-  ChangeQuorum is strictly restricted to databases that use dual region instance configurations. Initiates a background operation to change quorum a database from dual-region mode to single-region mode and vice versa. The returned long-running operation will have a name of the format `projects//instances//databases//operations/` and can be used to track execution of the ChangeQuorum. The metadata field type is ChangeQuorumMetadata. Authorization requires `spanner.databases.changequorum` permission on the resource database.
+  `ChangeQuorum` is strictly restricted to databases that use dual-region instance configurations. Initiates a background operation to change the quorum of a database from dual-region mode to single-region mode or vice versa. The returned long-running operation has a name of the format `projects//instances//databases//operations/` and can be used to track execution of the `ChangeQuorum`. The metadata field type is ChangeQuorumMetadata. Authorization requires `spanner.databases.changequorum` permission on the resource database.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Spanner.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. Name of the database in which to apply the ChangeQuorum. Values are of the form `projects//instances//databases/`.
+  *   `name` (*type:* `String.t`) - Required. Name of the database in which to apply `ChangeQuorum`. Values are of the form `projects//instances//databases/`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
