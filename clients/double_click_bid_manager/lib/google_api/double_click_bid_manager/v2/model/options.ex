@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.Options do
   @moduledoc """
-  Additional query options.
+  Report parameter options.
 
   ## Attributes
 
-  *   `includeOnlyTargetedUserLists` (*type:* `boolean()`, *default:* `nil`) - Set to true and filter your report by `FILTER_INSERTION_ORDER` or `FILTER_LINE_ITEM` to include data for audience lists specifically targeted by those items.
+  *   `includeOnlyTargetedUserLists` (*type:* `boolean()`, *default:* `nil`) - Whether to include data for audience lists specifically targeted by filtered line items or insertion orders. Requires the use of `FILTER_INSERTION_ORDER` or `FILTER_LINE_ITEM` filters.
   """
 
   use GoogleApi.Gax.ModelBase

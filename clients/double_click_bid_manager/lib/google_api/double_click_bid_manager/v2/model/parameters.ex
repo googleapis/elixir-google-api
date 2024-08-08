@@ -17,15 +17,15 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.Parameters do
   @moduledoc """
-  Parameters of a query or report.
+  Parameters of a generated report.
 
   ## Attributes
 
-  *   `filters` (*type:* `list(GoogleApi.DoubleClickBidManager.V2.Model.FilterPair.t)`, *default:* `nil`) - Filters used to match traffic data in your report.
-  *   `groupBys` (*type:* `list(String.t)`, *default:* `nil`) - Data is grouped by the filters listed in this field.
-  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Metrics to include as columns in your report.
-  *   `options` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Options.t`, *default:* `nil`) - Additional query options.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the report. The type of the report will dictate what dimesions, filters, and metrics can be used.
+  *   `filters` (*type:* `list(GoogleApi.DoubleClickBidManager.V2.Model.FilterPair.t)`, *default:* `nil`) - Filters to limit the scope of reported data.
+  *   `groupBys` (*type:* `list(String.t)`, *default:* `nil`) - Dimensions by which to segment and group the data. Defined by [Filter](/bid-manager/reference/rest/v2/filters-metrics#filters) values.
+  *   `metrics` (*type:* `list(String.t)`, *default:* `nil`) - Metrics to define the data populating the report. Defined by [Metric](/bid-manager/reference/rest/v2/filters-metrics#metrics) values.
+  *   `options` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Options.t`, *default:* `nil`) - Additional report parameter options.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the report. The type of the report determines the dimesions, filters, and metrics that can be used.
   """
 
   use GoogleApi.Gax.ModelBase

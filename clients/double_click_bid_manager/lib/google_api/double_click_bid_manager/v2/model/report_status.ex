@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.ReportStatus do
   @moduledoc """
-  Report status.
+  The status of a report.
 
   ## Attributes
 
-  *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this report either completed successfully or failed.
-  *   `format` (*type:* `String.t`, *default:* `nil`) - The file type of the report.
-  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the report.
+  *   `finishTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of when report generation finished successfully or in failure. This field will not be set unless state is `DONE` or `FAILED`.
+  *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the generated report file.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the report generation.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -26,7 +26,7 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Creates a query.
+  Creates a new query.
 
   ## Parameters
 
@@ -85,12 +85,12 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   end
 
   @doc """
-  Deletes a query as well as the associated reports.
+  Deletes an existing query as well as its generated reports.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DoubleClickBidManager.V2.Connection.t`) - Connection to server
-  *   `query_id` (*type:* `String.t`) - Required. ID of query to delete.
+  *   `query_id` (*type:* `String.t`) - Required. The ID of the query to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -152,7 +152,7 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DoubleClickBidManager.V2.Connection.t`) - Connection to server
-  *   `query_id` (*type:* `String.t`) - Required. ID of query to retrieve.
+  *   `query_id` (*type:* `String.t`) - Required. The ID of the query to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -224,9 +224,9 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Name of a field used to order results. The default sorting order is ascending. To specify descending order for a field, append a " desc" suffix. For example "metadata.title desc". Sorting is only supported for the following fields: * `queryId` * `metadata.title`
+      *   `:orderBy` (*type:* `String.t`) - Field to sort the list by. Accepts the following values: * `queryId` (default) * `metadata.title` The default sorting order is ascending. To specify descending order for a field, add the suffix `desc` to the field name. For example, `queryId desc`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. Must be between `1` and `100`. Defaults to `100` if unspecified.
-      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous list call. Provide this to retrieve the subsequent page of queries.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying which page of results the server should return. Typically, this is the value of nextPageToken, returned from the previous call to the `queries.list` method. If unspecified, the first page of results is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -272,12 +272,12 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   end
 
   @doc """
-  Runs a stored query to generate a report.
+  Runs an existing query to generate a report.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DoubleClickBidManager.V2.Connection.t`) - Connection to server
-  *   `query_id` (*type:* `String.t`) - Required. ID of query to run.
+  *   `query_id` (*type:* `String.t`) - Required. The ID of the query to run.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -290,7 +290,7 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:synchronous` (*type:* `boolean()`) - Whether the query should be run synchronously. When true, this method will not return until the query has finished running. When false or not specified, this method will return immediately.
+      *   `:synchronous` (*type:* `boolean()`) - Whether the query should be run synchronously. When `true`, the request won't return until the resulting report has finished running. This parameter is `false` by default. Setting this parameter to `true` is **not recommended**.
       *   `:body` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.RunQueryRequest.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -341,8 +341,8 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DoubleClickBidManager.V2.Connection.t`) - Connection to server
-  *   `query_id` (*type:* `String.t`) - Required. ID of the query the report is associated with.
-  *   `report_id` (*type:* `String.t`) - Required. ID of the report to retrieve.
+  *   `query_id` (*type:* `String.t`) - Required. The ID of the query that generated the report.
+  *   `report_id` (*type:* `String.t`) - Required. The ID of the query to retrieve.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -410,12 +410,12 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
   end
 
   @doc """
-  Lists reports associated with a query.
+  Lists reports generated by the provided query.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DoubleClickBidManager.V2.Connection.t`) - Connection to server
-  *   `query_id` (*type:* `String.t`) - Required. ID of the query with which the reports are associated.
+  *   `query_id` (*type:* `String.t`) - Required. The ID of the query that generated the reports.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -428,9 +428,9 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Api.Queries do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:orderBy` (*type:* `String.t`) - Name of a field used to order results. The default sorting order is ascending. To specify descending order for a field, append a " desc" suffix. For example "key.reportId desc". Sorting is only supported for the following fields: * `key.reportId`
+      *   `:orderBy` (*type:* `String.t`) - Field to sort the list by. Accepts the following values: * `key.reportId` (default) The default sorting order is ascending. To specify descending order for a field, add the suffix `desc` to the field name. For example, `key.reportId desc`.
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results per page. Must be between `1` and `100`. Defaults to `100` if unspecified.
-      *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous list call. Provide this to retrieve the subsequent page of reports.
+      *   `:pageToken` (*type:* `String.t`) - A token identifying which page of results the server should return. Typically, this is the value of nextPageToken returned from the previous call to the `queries.reports.list` method. If unspecified, the first page of results is returned.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns

@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.ReportKey do
   @moduledoc """
-  Key used to identify a report.
+  Identifying information of a report.
 
   ## Attributes
 
-  *   `queryId` (*type:* `String.t`, *default:* `nil`) - Output only. Query ID.
-  *   `reportId` (*type:* `String.t`, *default:* `nil`) - Output only. Report ID.
+  *   `queryId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the query that generated the report.
+  *   `reportId` (*type:* `String.t`, *default:* `nil`) - Output only. The unique ID of the report.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.QuerySchedule do
   @moduledoc """
-  Information on when and how frequently to run a query.
+  Settings on when and how frequently to run a query.
 
   ## Attributes
 
-  *   `endDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - Date to periodically run the query until. Not applicable to `ONE_TIME` frequency.
-  *   `frequency` (*type:* `String.t`, *default:* `nil`) - How often the query is run.
-  *   `nextRunTimezoneCode` (*type:* `String.t`, *default:* `nil`) - Canonical timezone code for report generation time. Defaults to `America/New_York`.
-  *   `startDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - When to start running the query. Not applicable to `ONE_TIME` frequency.
+  *   `endDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The date on which to end the scheduled runs. This field is required if frequency is not set to `ONE_TIME`. Otherwise, it will be ignored.
+  *   `frequency` (*type:* `String.t`, *default:* `nil`) - How frequently to run the query. If set to `ONE_TIME`, the query will only be run when queries.run is called.
+  *   `nextRunTimezoneCode` (*type:* `String.t`, *default:* `nil`) - The canonical code for the timezone the query schedule is based on. Scheduled runs are usually conducted in the morning of a given day. Defaults to `America/New_York`.
+  *   `startDate` (*type:* `GoogleApi.DoubleClickBidManager.V2.Model.Date.t`, *default:* `nil`) - The date on which to begin the scheduled runs. This field is required if frequency is not set to `ONE_TIME`. Otherwise, it will be ignored.
   """
 
   use GoogleApi.Gax.ModelBase

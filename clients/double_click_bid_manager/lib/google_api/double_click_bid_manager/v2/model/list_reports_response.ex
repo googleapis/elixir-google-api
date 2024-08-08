@@ -21,8 +21,8 @@ defmodule GoogleApi.DoubleClickBidManager.V2.Model.ListReportsResponse do
 
   ## Attributes
 
-  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token, which can be sent as page_token to retrieve the next page of reports. If this field is omitted, there are no subsequent pages.
-  *   `reports` (*type:* `list(GoogleApi.DoubleClickBidManager.V2.Model.Report.t)`, *default:* `nil`) - Retrieved reports.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve the next page of results. Pass this value in the page_token field in the subsequent call to `queries.reports.list` method to retrieve the next page of results.
+  *   `reports` (*type:* `list(GoogleApi.DoubleClickBidManager.V2.Model.Report.t)`, *default:* `nil`) - The list of reports. This field will be absent if empty.
   """
 
   use GoogleApi.Gax.ModelBase

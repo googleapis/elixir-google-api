@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.DoubleClickBidManager.V2.Model.FilterPair do
   @moduledoc """
-  Filter used to match traffic data in your report.
+  Represents a single filter rule.
 
   ## Attributes
 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Filter type.
-  *   `value` (*type:* `String.t`, *default:* `nil`) - Filter value.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - The type of value to filter by. Defined by a [Filter](/bid-manager/reference/rest/v2/filters-metrics#filters) value.
+  *   `value` (*type:* `String.t`, *default:* `nil`) - The identifying value to filter by, such as a relevant resource ID.
   """
 
   use GoogleApi.Gax.ModelBase
