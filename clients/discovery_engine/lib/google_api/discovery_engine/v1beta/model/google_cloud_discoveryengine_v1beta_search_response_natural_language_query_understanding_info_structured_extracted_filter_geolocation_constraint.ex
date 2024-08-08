@@ -23,6 +23,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `address` (*type:* `String.t`, *default:* `nil`) - The reference address that was inferred from the input query. The proximity of the reference address to the geolocation field will be used to filter the results.
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - The name of the geolocation field as defined in the schema.
+  *   `latitude` (*type:* `float()`, *default:* `nil`) - The latitude of the geolocation inferred from the input query.
+  *   `longitude` (*type:* `float()`, *default:* `nil`) - The longitude of the geolocation inferred from the input query.
   *   `radiusInMeters` (*type:* `number()`, *default:* `nil`) - The radius in meters around the address. The record is returned if the location of the geolocation field is within the radius.
   """
 
@@ -31,11 +33,15 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   @type t :: %__MODULE__{
           :address => String.t() | nil,
           :fieldName => String.t() | nil,
+          :latitude => float() | nil,
+          :longitude => float() | nil,
           :radiusInMeters => number() | nil
         }
 
   field(:address)
   field(:fieldName)
+  field(:latitude)
+  field(:longitude)
   field(:radiusInMeters)
 end
 

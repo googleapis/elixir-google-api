@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - The Document resource ID.
+  *   `joined` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the referenced Document can be found in the data store.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The Document resource full name, of the form: `projects/{project_id}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/branches/{branch_id}/documents/{document_id}`
   *   `promotionIds` (*type:* `list(String.t)`, *default:* `nil`) - The promotion IDs associated with this Document. Currently, this field is restricted to at most one ID.
   *   `quantity` (*type:* `integer()`, *default:* `nil`) - Quantity of the Document associated with the user event. Defaults to 1. For example, this field is 2 if two quantities of the same Document are involved in a `add-to-cart` event. Required for events of the following event types: * `add-to-cart` * `purchase`
@@ -32,6 +33,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   @type t :: %__MODULE__{
           :id => String.t() | nil,
+          :joined => boolean() | nil,
           :name => String.t() | nil,
           :promotionIds => list(String.t()) | nil,
           :quantity => integer() | nil,
@@ -39,6 +41,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
         }
 
   field(:id)
+  field(:joined)
   field(:name)
   field(:promotionIds, type: :list)
   field(:quantity)
