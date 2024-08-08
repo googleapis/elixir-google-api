@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AndroidPublisher.V3.Model.MultiAbi do
   @moduledoc """
-  Represents a list of apis.
+  Represents a list of ABIs.
 
   ## Attributes
 
