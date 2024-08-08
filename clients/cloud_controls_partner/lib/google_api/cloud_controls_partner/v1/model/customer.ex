@@ -22,7 +22,7 @@ defmodule GoogleApi.CloudControlsPartner.V1.Model.Customer do
   ## Attributes
 
   *   `customerOnboardingState` (*type:* `GoogleApi.CloudControlsPartner.V1.Model.CustomerOnboardingState.t`, *default:* `nil`) - Output only. Container for customer onboarding steps
-  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. The customer organization's display name. E.g. "google.com".
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. The customer organization's display name. E.g. "Google".
   *   `isOnboarded` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether a customer is fully onboarded
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}`
   """
