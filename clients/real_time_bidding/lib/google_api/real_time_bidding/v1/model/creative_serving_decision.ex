@@ -26,6 +26,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   *   `dealsPolicyCompliance` (*type:* `GoogleApi.RealTimeBidding.V1.Model.PolicyCompliance.t`, *default:* `nil`) - Policy compliance of this creative when bidding on Programmatic Guaranteed and Preferred Deals (outside of Russia and China).
   *   `detectedAdvertisers` (*type:* `list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t)`, *default:* `nil`) - Detected advertisers and brands.
   *   `detectedAttributes` (*type:* `list(String.t)`, *default:* `nil`) - Publisher-excludable attributes that were detected for this creative. Can be used to filter the response of the creatives.list method. If the `excluded_attribute` field of a [bid request](https://developers.google.com/authorized-buyers/rtb/downloads/realtime-bidding-proto) contains one of the attributes that were declared or detected for a given creative, and a bid is submitted with that creative, the bid will be filtered before the auction.
+  *   `detectedCategories` (*type:* `list(String.t)`, *default:* `nil`) - Output only. IDs of the detected categories, if any. The taxonomy in which the categories are expressed is specified by the detected_categories_taxonomy field. Can be used to filter the response of the creatives.list method.
+  *   `detectedCategoriesTaxonomy` (*type:* `String.t`, *default:* `nil`) - Output only. The taxonomy in which the detected_categories field is expressed.
   *   `detectedClickThroughUrls` (*type:* `list(String.t)`, *default:* `nil`) - The set of detected destination URLs for the creative. Can be used to filter the response of the creatives.list method.
   *   `detectedDomains` (*type:* `list(String.t)`, *default:* `nil`) - The detected domains for this creative.
   *   `detectedLanguages` (*type:* `list(String.t)`, *default:* `nil`) - The detected languages for this creative. The order is arbitrary. The codes are 2 or 5 characters and are documented at https://developers.google.com/adwords/api/docs/appendix/languagecodes. Can be used to filter the response of the creatives.list method.
@@ -48,6 +50,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
           :detectedAdvertisers =>
             list(GoogleApi.RealTimeBidding.V1.Model.AdvertiserAndBrand.t()) | nil,
           :detectedAttributes => list(String.t()) | nil,
+          :detectedCategories => list(String.t()) | nil,
+          :detectedCategoriesTaxonomy => String.t() | nil,
           :detectedClickThroughUrls => list(String.t()) | nil,
           :detectedDomains => list(String.t()) | nil,
           :detectedLanguages => list(String.t()) | nil,
@@ -72,6 +76,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.CreativeServingDecision do
   )
 
   field(:detectedAttributes, type: :list)
+  field(:detectedCategories, type: :list)
+  field(:detectedCategoriesTaxonomy)
   field(:detectedClickThroughUrls, type: :list)
   field(:detectedDomains, type: :list)
   field(:detectedLanguages, type: :list)
