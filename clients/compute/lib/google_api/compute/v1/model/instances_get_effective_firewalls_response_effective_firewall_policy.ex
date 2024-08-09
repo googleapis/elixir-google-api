@@ -23,6 +23,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - [Output Only] Deprecated, please use short name instead. The display name of the firewall policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - [Output Only] The name of the firewall policy.
+  *   `priority` (*type:* `integer()`, *default:* `nil`) - [Output only] Priority of firewall policy association. Not applicable for type=HIERARCHY.
   *   `rules` (*type:* `list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t)`, *default:* `nil`) - The rules that apply to the network.
   *   `shortName` (*type:* `String.t`, *default:* `nil`) - [Output Only] The short name of the firewall policy.
   *   `type` (*type:* `String.t`, *default:* `nil`) - [Output Only] The type of the firewall policy. Can be one of HIERARCHY, NETWORK, NETWORK_REGIONAL, SYSTEM_GLOBAL, SYSTEM_REGIONAL.
@@ -33,6 +34,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :name => String.t() | nil,
+          :priority => integer() | nil,
           :rules => list(GoogleApi.Compute.V1.Model.FirewallPolicyRule.t()) | nil,
           :shortName => String.t() | nil,
           :type => String.t() | nil
@@ -40,6 +42,7 @@ defmodule GoogleApi.Compute.V1.Model.InstancesGetEffectiveFirewallsResponseEffec
 
   field(:displayName)
   field(:name)
+  field(:priority)
   field(:rules, as: GoogleApi.Compute.V1.Model.FirewallPolicyRule, type: :list)
   field(:shortName)
   field(:type)
