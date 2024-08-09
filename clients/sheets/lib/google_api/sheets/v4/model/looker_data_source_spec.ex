@@ -21,9 +21,9 @@ defmodule GoogleApi.Sheets.V4.Model.LookerDataSourceSpec do
 
   ## Attributes
 
-  *   `explore` (*type:* `String.t`, *default:* `nil`) - Name of a LookerML model explore.
+  *   `explore` (*type:* `String.t`, *default:* `nil`) - Name of a Looker model explore.
   *   `instanceUri` (*type:* `String.t`, *default:* `nil`) - A Looker instance URL.
-  *   `model` (*type:* `String.t`, *default:* `nil`) - Name of a LookerML model.
+  *   `model` (*type:* `String.t`, *default:* `nil`) - Name of a Looker model.
   """
 
   use GoogleApi.Gax.ModelBase
