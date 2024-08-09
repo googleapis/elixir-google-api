@@ -30,6 +30,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
   *   `gpuDriverConfig` (*type:* `GoogleApi.Notebooks.V2.Model.GPUDriverConfig.t`, *default:* `nil`) - Optional. Configuration for GPU drivers.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - Optional. The machine type of the VM instance. https://cloud.google.com/compute/docs/machine-resource
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Optional. Custom metadata to apply to this instance.
+  *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Optional. The minimum CPU platform to use for this instance. The list of valid values can be found in https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform#availablezones
   *   `networkInterfaces` (*type:* `list(GoogleApi.Notebooks.V2.Model.NetworkInterface.t)`, *default:* `nil`) - Optional. The network interfaces for the VM. Supports only one interface.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Notebooks.V2.Model.ServiceAccount.t)`, *default:* `nil`) - Optional. The service account that serves as an identity for the VM instance. Currently supports only one service account.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Notebooks.V2.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded VM configuration. [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
@@ -49,6 +50,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
           :gpuDriverConfig => GoogleApi.Notebooks.V2.Model.GPUDriverConfig.t() | nil,
           :machineType => String.t() | nil,
           :metadata => map() | nil,
+          :minCpuPlatform => String.t() | nil,
           :networkInterfaces => list(GoogleApi.Notebooks.V2.Model.NetworkInterface.t()) | nil,
           :serviceAccounts => list(GoogleApi.Notebooks.V2.Model.ServiceAccount.t()) | nil,
           :shieldedInstanceConfig =>
@@ -66,6 +68,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
   field(:gpuDriverConfig, as: GoogleApi.Notebooks.V2.Model.GPUDriverConfig)
   field(:machineType)
   field(:metadata, type: :map)
+  field(:minCpuPlatform)
   field(:networkInterfaces, as: GoogleApi.Notebooks.V2.Model.NetworkInterface, type: :list)
   field(:serviceAccounts, as: GoogleApi.Notebooks.V2.Model.ServiceAccount, type: :list)
   field(:shieldedInstanceConfig, as: GoogleApi.Notebooks.V2.Model.ShieldedInstanceConfig)
