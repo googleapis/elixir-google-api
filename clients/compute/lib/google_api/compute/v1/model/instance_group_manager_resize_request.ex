@@ -27,7 +27,7 @@ defmodule GoogleApi.Compute.V1.Model.InstanceGroupManagerResizeRequest do
   *   `kind` (*type:* `String.t`, *default:* `compute#instanceGroupManagerResizeRequest`) - [Output Only] The resource type, which is always compute#instanceGroupManagerResizeRequest for resize requests.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of this resize request. The name must be 1-63 characters long, and comply with RFC1035.
   *   `requestedRunDuration` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Requested run duration for instances that will be created by this request. At the end of the run duration instance will be deleted.
-  *   `resizeBy` (*type:* `integer()`, *default:* `nil`) - The number of instances to be created by this resize request. The group's target size will be increased by this number.
+  *   `resizeBy` (*type:* `integer()`, *default:* `nil`) - The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL for this resize request. The server defines this URL.
   *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource with the resource id.
   *   `state` (*type:* `String.t`, *default:* `nil`) - [Output only] Current state of the request.
