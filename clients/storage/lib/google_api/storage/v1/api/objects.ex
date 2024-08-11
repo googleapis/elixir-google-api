@@ -350,7 +350,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -855,7 +855,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to objects whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
-      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see Soft Delete.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
       *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.

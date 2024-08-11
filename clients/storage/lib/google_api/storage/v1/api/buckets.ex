@@ -26,7 +26,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Permanently deletes an empty bucket.
+  Deletes an empty bucket. Deletions are permanent unless soft delete is enabled on the bucket.
 
   ## Parameters
 
@@ -98,9 +98,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
       *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:generation` (*type:* `String.t`) - If present, specifies the generation of the bucket. This is required if softDeleted is true.
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the return of the bucket metadata conditional on whether the bucket's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the return of the bucket metadata conditional on whether the bucket's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, return the soft-deleted version of this bucket. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -124,9 +126,11 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :quotaUser => :query,
       :uploadType => :query,
       :userIp => :query,
+      :generation => :query,
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
+      :softDeleted => :query,
       :userProject => :query
     }
 
@@ -343,6 +347,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
       *   `:prefix` (*type:* `String.t`) - Filter results to buckets whose names begin with this prefix.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
+      *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted bucket versions will be returned. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -370,6 +375,7 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
       :pageToken => :query,
       :prefix => :query,
       :projection => :query,
+      :softDeleted => :query,
       :userProject => :query
     }
 
@@ -522,6 +528,61 @@ defmodule GoogleApi.Storage.V1.Api.Buckets do
     connection
     |> Connection.execute(request)
     |> Response.decode(opts ++ [struct: %GoogleApi.Storage.V1.Model.Bucket{}])
+  end
+
+  @doc """
+  Restores a soft-deleted bucket.
+
+  ## Parameters
+
+  *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
+  *   `bucket` (*type:* `String.t`) - Name of a bucket.
+  *   `generation` (*type:* `String.t`) - Generation of a bucket.
+  *   `optional_params` (*type:* `keyword()`) - Optional parameters
+      *   `:alt` (*type:* `String.t`) - Data format for the response.
+      *   `:fields` (*type:* `String.t`) - Selector specifying which fields to include in a partial response.
+      *   `:key` (*type:* `String.t`) - API key. Your API key identifies your project and provides you with API access, quota, and reports. Required unless you provide an OAuth 2.0 token.
+      *   `:oauth_token` (*type:* `String.t`) - OAuth 2.0 token for the current user.
+      *   `:prettyPrint` (*type:* `boolean()`) - Returns response with indentations and line breaks.
+      *   `:quotaUser` (*type:* `String.t`) - An opaque string that represents a user for quota purposes. Must not exceed 40 characters.
+      *   `:uploadType` (*type:* `String.t`) - Upload protocol for media (e.g. "media", "multipart", "resumable").
+      *   `:userIp` (*type:* `String.t`) - Deprecated. Please use quotaUser instead.
+      *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
+  *   `opts` (*type:* `keyword()`) - Call options
+
+  ## Returns
+
+  *   `{:ok, %{}}` on success
+  *   `{:error, info}` on failure
+  """
+  @spec storage_buckets_restore(Tesla.Env.client(), String.t(), String.t(), keyword(), keyword()) ::
+          {:ok, nil} | {:ok, Tesla.Env.t()} | {:ok, list()} | {:error, any()}
+  def storage_buckets_restore(connection, bucket, generation, optional_params \\ [], opts \\ []) do
+    optional_params_config = %{
+      :alt => :query,
+      :fields => :query,
+      :key => :query,
+      :oauth_token => :query,
+      :prettyPrint => :query,
+      :quotaUser => :query,
+      :uploadType => :query,
+      :userIp => :query,
+      :userProject => :query
+    }
+
+    request =
+      Request.new()
+      |> Request.method(:post)
+      |> Request.url("/storage/v1/b/{bucket}/restore", %{
+        "bucket" => URI.encode(bucket, &URI.char_unreserved?/1)
+      })
+      |> Request.add_param(:query, :generation, generation)
+      |> Request.add_optional_params(optional_params_config, optional_params)
+      |> Request.library_version(@library_version)
+
+    connection
+    |> Connection.execute(request)
+    |> Response.decode(opts ++ [decode: false])
   end
 
   @doc """
