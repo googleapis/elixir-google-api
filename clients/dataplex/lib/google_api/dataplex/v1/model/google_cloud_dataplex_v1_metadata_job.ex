@@ -25,9 +25,9 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJob do
   *   `importResult` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobResult.t`, *default:* `nil`) - Output only. Import job result.
   *   `importSpec` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobImportJobSpec.t`, *default:* `nil`) - Import job specification.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. User-defined labels.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the resource that the configuration is applied to, in the format projects/{project_number}/locations/{location_id}/metadataJobs/{metadata_job_id}.
-  *   `status` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobStatus.t`, *default:* `nil`) - 
-  *   `type` (*type:* `String.t`, *default:* `nil`) - 
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The name of the resource that the configuration is applied to, in the format projects/{project_number}/locations/{location_id}/metadataJobs/{metadata_job_id}.
+  *   `status` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1MetadataJobStatus.t`, *default:* `nil`) - Output only. Metadata job status.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. Metadata job type.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the metadata job was updated.
   """
