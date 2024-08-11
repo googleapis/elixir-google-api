@@ -116,6 +116,7 @@ defmodule GoogleApi.BigQueryDataPolicy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:force` (*type:* `boolean()`) - Optional. If true, the data policy will be deleted even when it is referenced by one or more table columns.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -150,7 +151,8 @@ defmodule GoogleApi.BigQueryDataPolicy.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :force => :query
     }
 
     request =
@@ -406,6 +408,7 @@ defmodule GoogleApi.BigQueryDataPolicy.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If set to true, and the data policy is not found, a new data policy will be created. In this situation, update_mask is ignored.
       *   `:updateMask` (*type:* `String.t`) - The update mask applies to the resource. For the `FieldMask` definition, see https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask If not set, defaults to all of the fields that are allowed to update. Updates to the `name` and `dataPolicyId` fields are not allowed.
       *   `:body` (*type:* `GoogleApi.BigQueryDataPolicy.V1.Model.DataPolicy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -443,6 +446,7 @@ defmodule GoogleApi.BigQueryDataPolicy.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :updateMask => :query,
       :body => :body
     }
