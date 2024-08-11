@@ -45,12 +45,14 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the bucket. Object data for objects in the bucket resides in physical storage within this region. Defaults to US. See the developer's guide for the authoritative list.
   *   `defaultObjectAcl` (*type:* `list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t)`, *default:* `nil`) - Default access controls to apply to new objects when no ACL is provided.
   *   `metageneration` (*type:* `String.t`, *default:* `nil`) - The metadata generation of this bucket.
+  *   `generation` (*type:* `String.t`, *default:* `nil`) - The generation of this bucket.
   *   `storageClass` (*type:* `String.t`, *default:* `nil`) - The bucket's default storage class, used whenever no storageClass is specified for a newly-created object. This defines how objects in the bucket are stored and determines the SLA and the cost of storage. Values include MULTI_REGIONAL, REGIONAL, STANDARD, NEARLINE, COLDLINE, ARCHIVE, and DURABLE_REDUCED_AVAILABILITY. If this value is not specified when the bucket is created, it will default to STANDARD. For more information, see storage classes.
   *   `cors` (*type:* `list(GoogleApi.Storage.V1.Model.BucketCors.t)`, *default:* `nil`) - The bucket's Cross-Origin Resource Sharing (CORS) configuration.
   *   `billing` (*type:* `GoogleApi.Storage.V1.Model.BucketBilling.t`, *default:* `nil`) - The bucket's billing configuration.
   *   `hierarchicalNamespace` (*type:* `GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace.t`, *default:* `nil`) - The bucket's hierarchical namespace configuration.
   *   `retentionPolicy` (*type:* `GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t`, *default:* `nil`) - The bucket's retention policy. The retention policy enforces a minimum retention time for all objects contained in the bucket, based on their creation time. Any attempt to overwrite or delete objects younger than the retention period will result in a PERMISSION_DENIED error. An unlocked retention policy can be modified or removed from the bucket via a storage.buckets.update operation. A locked retention policy cannot be removed or shortened in duration for the lifetime of the bucket. Attempting to remove or decrease period of a locked retention policy will result in a PERMISSION_DENIED error.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - HTTP 1.1 Entity tag for the bucket.
+  *   `satisfiesPZI` (*type:* `boolean()`, *default:* `nil`) - Reserved for future use.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the bucket. For buckets, the id and name properties are the same.
   *   `versioning` (*type:* `GoogleApi.Storage.V1.Model.BucketVersioning.t`, *default:* `nil`) - The bucket's versioning configuration.
   *   `logging` (*type:* `GoogleApi.Storage.V1.Model.BucketLogging.t`, *default:* `nil`) - The bucket's logging configuration, which defines the destination bucket and optional name prefix for the current bucket's logs.
@@ -85,6 +87,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
           :location => String.t() | nil,
           :defaultObjectAcl => list(GoogleApi.Storage.V1.Model.ObjectAccessControl.t()) | nil,
           :metageneration => String.t() | nil,
+          :generation => String.t() | nil,
           :storageClass => String.t() | nil,
           :cors => list(GoogleApi.Storage.V1.Model.BucketCors.t()) | nil,
           :billing => GoogleApi.Storage.V1.Model.BucketBilling.t() | nil,
@@ -92,6 +95,7 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
             GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace.t() | nil,
           :retentionPolicy => GoogleApi.Storage.V1.Model.BucketRetentionPolicy.t() | nil,
           :etag => String.t() | nil,
+          :satisfiesPZI => boolean() | nil,
           :id => String.t() | nil,
           :versioning => GoogleApi.Storage.V1.Model.BucketVersioning.t() | nil,
           :logging => GoogleApi.Storage.V1.Model.BucketLogging.t() | nil,
@@ -122,12 +126,14 @@ defmodule GoogleApi.Storage.V1.Model.Bucket do
   field(:location)
   field(:defaultObjectAcl, as: GoogleApi.Storage.V1.Model.ObjectAccessControl, type: :list)
   field(:metageneration)
+  field(:generation)
   field(:storageClass)
   field(:cors, as: GoogleApi.Storage.V1.Model.BucketCors, type: :list)
   field(:billing, as: GoogleApi.Storage.V1.Model.BucketBilling)
   field(:hierarchicalNamespace, as: GoogleApi.Storage.V1.Model.BucketHierarchicalNamespace)
   field(:retentionPolicy, as: GoogleApi.Storage.V1.Model.BucketRetentionPolicy)
   field(:etag)
+  field(:satisfiesPZI)
   field(:id)
   field(:versioning, as: GoogleApi.Storage.V1.Model.BucketVersioning)
   field(:logging, as: GoogleApi.Storage.V1.Model.BucketLogging)
