@@ -21,6 +21,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.V1ResourceEvent do
 
   ## Attributes
 
+  *   `contextId` (*type:* `String.t`, *default:* `nil`) - The ESF unique context id of the api request, from which this resource event originated. This field is only needed for CAIS integration via api annotation. See go/cais-lro-delete for more details.
   *   `destinations` (*type:* `String.t`, *default:* `nil`) - The destinations field determines which backend services should handle the event. This should be specified as a comma-delimited string.
   *   `parent` (*type:* `GoogleApi.ServiceControl.V1.Model.Resource.t`, *default:* `nil`) - The parent resource for the resource.
   *   `path` (*type:* `String.t`, *default:* `nil`) - The api path the resource event was created in. This should match the source of the `payload` field. For direct integrations with Chemist, this should generally be the RESPONSE. go/resource-event-pipeline-type
@@ -32,6 +33,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.V1ResourceEvent do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :contextId => String.t() | nil,
           :destinations => String.t() | nil,
           :parent => GoogleApi.ServiceControl.V1.Model.Resource.t() | nil,
           :path => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.ServiceControl.V1.Model.V1ResourceEvent do
           :type => String.t() | nil
         }
 
+  field(:contextId)
   field(:destinations)
   field(:parent, as: GoogleApi.ServiceControl.V1.Model.Resource)
   field(:path)
