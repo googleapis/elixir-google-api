@@ -1749,10 +1749,10 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
-      *   `:orderBy` (*type:* `String.t`) - A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
-      *   `:pageToken` (*type:* `String.t`) - If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
+      *   `:filter` (*type:* `String.t`) - Optional. If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
+      *   `:orderBy` (*type:* `String.t`) - Optional. A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
+      *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+      *   `:pageToken` (*type:* `String.t`) - Optional. If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1829,7 +1829,7 @@ defmodule GoogleApi.Monitoring.V3.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - The fields to update.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The fields to update.
       *   `:body` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationChannel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
