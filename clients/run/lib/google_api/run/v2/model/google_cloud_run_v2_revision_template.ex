@@ -32,6 +32,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
   *   `revision` (*type:* `String.t`, *default:* `nil`) - Optional. The unique name for the revision. If this field is omitted, it will be automatically generated based on the Service name.
   *   `scaling` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t`, *default:* `nil`) - Optional. Scaling settings for this Revision.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account.
+  *   `serviceMesh` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh.t`, *default:* `nil`) - Optional. Enables service mesh connectivity.
   *   `sessionAffinity` (*type:* `boolean()`, *default:* `nil`) - Optional. Enable session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Optional. Max allowed time for an instance to respond to a request.
   *   `volumes` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t)`, *default:* `nil`) - Optional. A list of Volumes to make available to containers.
@@ -52,6 +53,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
           :revision => String.t() | nil,
           :scaling => GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling.t() | nil,
           :serviceAccount => String.t() | nil,
+          :serviceMesh => GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh.t() | nil,
           :sessionAffinity => boolean() | nil,
           :timeout => String.t() | nil,
           :volumes => list(GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume.t()) | nil,
@@ -69,6 +71,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate do
   field(:revision)
   field(:scaling, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling)
   field(:serviceAccount)
+  field(:serviceMesh, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh)
   field(:sessionAffinity)
   field(:timeout)
   field(:volumes, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2Volume, type: :list)

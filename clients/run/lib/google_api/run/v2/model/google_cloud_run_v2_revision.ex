@@ -46,6 +46,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   *   `scalingStatus` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus.t`, *default:* `nil`) - Output only. The current effective scaling settings for the revision.
   *   `service` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the parent service.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has.
+  *   `serviceMesh` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh.t`, *default:* `nil`) - Enables service mesh connectivity.
   *   `sessionAffinity` (*type:* `boolean()`, *default:* `nil`) - Enable session affinity.
   *   `timeout` (*type:* `String.t`, *default:* `nil`) - Max allowed time for an instance to respond to a request.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. Server assigned unique identifier for the Revision. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
@@ -83,6 +84,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
             GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus.t() | nil,
           :service => String.t() | nil,
           :serviceAccount => String.t() | nil,
+          :serviceMesh => GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh.t() | nil,
           :sessionAffinity => boolean() | nil,
           :timeout => String.t() | nil,
           :uid => String.t() | nil,
@@ -116,6 +118,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Revision do
   field(:scalingStatus, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScalingStatus)
   field(:service)
   field(:serviceAccount)
+  field(:serviceMesh, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh)
   field(:sessionAffinity)
   field(:timeout)
   field(:uid)
