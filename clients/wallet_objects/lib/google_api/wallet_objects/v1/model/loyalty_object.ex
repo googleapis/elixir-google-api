@@ -36,6 +36,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
   *   `imageModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t)`, *default:* `nil`) - Image module data. The maximum number of these fields displayed is 1 from object level and 1 for class object level.
   *   `infoModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.InfoModuleData.t`, *default:* `nil`) - Deprecated. Use textModulesData instead.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string `"walletobjects#loyaltyObject"`.
+  *   `linkedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - linked_object_ids are a list of other objects such as event ticket, loyalty, offer, generic, giftcard, transit and boarding pass that should be automatically attached to this loyalty object. If a user had saved this loyalty card, then these linked_object_ids would be automatically pushed to the user's wallet (unless they turned off the setting to receive such linked passes). Make sure that objects present in linked_object_ids are already inserted - if not, calls would fail. Once linked, the linked objects cannot be unlinked. You cannot link objects belonging to another issuer. There is a limit to the number of objects that can be linked to a single object. After the limit is reached, new linked objects in the call will be ignored silently. Object IDs should follow the format issuer ID. identifier where the former is issued by Google and the latter is chosen by you.
   *   `linkedOfferIds` (*type:* `list(String.t)`, *default:* `nil`) - A list of offer objects linked to this loyalty card. The offer objects must already exist. Offer object IDs should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you.
   *   `linksModuleData` (*type:* `GoogleApi.WalletObjects.V1.Model.LinksModuleData.t`, *default:* `nil`) - Links module data. If links module data is also defined on the class, both will be displayed.
   *   `locations` (*type:* `list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t)`, *default:* `nil`) - Note: This field is currently not supported to trigger geo notifications.
@@ -70,6 +71,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
           :imageModulesData => list(GoogleApi.WalletObjects.V1.Model.ImageModuleData.t()) | nil,
           :infoModuleData => GoogleApi.WalletObjects.V1.Model.InfoModuleData.t() | nil,
           :kind => String.t() | nil,
+          :linkedObjectIds => list(String.t()) | nil,
           :linkedOfferIds => list(String.t()) | nil,
           :linksModuleData => GoogleApi.WalletObjects.V1.Model.LinksModuleData.t() | nil,
           :locations => list(GoogleApi.WalletObjects.V1.Model.LatLongPoint.t()) | nil,
@@ -101,6 +103,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
   field(:imageModulesData, as: GoogleApi.WalletObjects.V1.Model.ImageModuleData, type: :list)
   field(:infoModuleData, as: GoogleApi.WalletObjects.V1.Model.InfoModuleData)
   field(:kind)
+  field(:linkedObjectIds, type: :list)
   field(:linkedOfferIds, type: :list)
   field(:linksModuleData, as: GoogleApi.WalletObjects.V1.Model.LinksModuleData)
   field(:locations, as: GoogleApi.WalletObjects.V1.Model.LatLongPoint, type: :list)
