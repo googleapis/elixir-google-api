@@ -22,6 +22,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
   ## Attributes
 
   *   `cvssv3` (*type:* `GoogleApi.SecurityCenter.V1.Model.Cvssv3.t`, *default:* `nil`) - Describe Common Vulnerability Scoring System specified at https://www.first.org/cvss/v3.1/specification-document
+  *   `exploitReleaseDate` (*type:* `DateTime.t`, *default:* `nil`) - Date the first publicly available exploit or PoC was released.
   *   `exploitationActivity` (*type:* `String.t`, *default:* `nil`) - The exploitation activity of the vulnerability in the wild.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the vulnerability. e.g. CVE-2021-34527
   *   `impact` (*type:* `String.t`, *default:* `nil`) - The potential impact of the vulnerability if it was to be exploited.
@@ -35,6 +36,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
 
   @type t :: %__MODULE__{
           :cvssv3 => GoogleApi.SecurityCenter.V1.Model.Cvssv3.t() | nil,
+          :exploitReleaseDate => DateTime.t() | nil,
           :exploitationActivity => String.t() | nil,
           :id => String.t() | nil,
           :impact => String.t() | nil,
@@ -45,6 +47,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Cve do
         }
 
   field(:cvssv3, as: GoogleApi.SecurityCenter.V1.Model.Cvssv3)
+  field(:exploitReleaseDate, as: DateTime)
   field(:exploitationActivity)
   field(:id)
   field(:impact)
