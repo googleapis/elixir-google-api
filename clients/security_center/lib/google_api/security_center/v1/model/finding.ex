@@ -36,6 +36,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   *   `notebook` (*type:* `GoogleApi.SecurityCenter.V1.Model.Notebook.t`, *default:* `nil`) - Notebook associated with the finding.
   *   `cloudDlpDataProfile` (*type:* `GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile.t`, *default:* `nil`) - Cloud DLP data profile that is associated with the finding.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of the finding. This field is managed by the source that writes the finding.
+  *   `muteInfo` (*type:* `GoogleApi.SecurityCenter.V1.Model.MuteInfo.t`, *default:* `nil`) - Output only. The mute information regarding this finding.
   *   `kubernetes` (*type:* `GoogleApi.SecurityCenter.V1.Model.Kubernetes.t`, *default:* `nil`) - Kubernetes resources associated with the finding.
   *   `toxicCombination` (*type:* `GoogleApi.SecurityCenter.V1.Model.ToxicCombination.t`, *default:* `nil`) - Contains details about a group of security issues that, when the issues occur together, represent a greater risk than when the issues occur independently. A group of such issues is referred to as a toxic combination. This field cannot be updated. Its value is ignored in all update requests.
   *   `sourceProperties` (*type:* `map()`, *default:* `nil`) - Source specific properties. These properties are managed by the source that writes the finding. The key names in the source_properties map must be between 1 and 255 characters, and must start with a letter and contain alphanumeric characters or underscores only.
@@ -90,6 +91,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
           :notebook => GoogleApi.SecurityCenter.V1.Model.Notebook.t() | nil,
           :cloudDlpDataProfile => GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile.t() | nil,
           :severity => String.t() | nil,
+          :muteInfo => GoogleApi.SecurityCenter.V1.Model.MuteInfo.t() | nil,
           :kubernetes => GoogleApi.SecurityCenter.V1.Model.Kubernetes.t() | nil,
           :toxicCombination => GoogleApi.SecurityCenter.V1.Model.ToxicCombination.t() | nil,
           :sourceProperties => map() | nil,
@@ -148,6 +150,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.Finding do
   field(:notebook, as: GoogleApi.SecurityCenter.V1.Model.Notebook)
   field(:cloudDlpDataProfile, as: GoogleApi.SecurityCenter.V1.Model.CloudDlpDataProfile)
   field(:severity)
+  field(:muteInfo, as: GoogleApi.SecurityCenter.V1.Model.MuteInfo)
   field(:kubernetes, as: GoogleApi.SecurityCenter.V1.Model.Kubernetes)
   field(:toxicCombination, as: GoogleApi.SecurityCenter.V1.Model.ToxicCombination)
   field(:sourceProperties, type: :map)

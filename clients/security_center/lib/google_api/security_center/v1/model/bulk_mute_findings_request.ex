@@ -23,17 +23,20 @@ defmodule GoogleApi.SecurityCenter.V1.Model.BulkMuteFindingsRequest do
 
   *   `filter` (*type:* `String.t`, *default:* `nil`) - Expression that identifies findings that should be updated. The expression is a list of zero or more restrictions combined via logical operators `AND` and `OR`. Parentheses are supported, and `OR` has higher precedence than `AND`. Restrictions have the form ` ` and may have a `-` character in front of them to indicate negation. The fields map to those defined in the corresponding resource. The supported operators are: * `=` for all value types. * `>`, `<`, `>=`, `<=` for integer values. * `:`, meaning substring matching, for strings. The supported value types are: * string literals in quotes. * integer literals without quotes. * boolean literals `true` and `false` without quotes.
   *   `muteAnnotation` (*type:* `String.t`, *default:* `nil`) - This can be a mute configuration name or any identifier for mute/unmute of findings based on the filter.
+  *   `muteState` (*type:* `String.t`, *default:* `nil`) - Optional. All findings matching the given filter will have their mute state set to this value. The default value is `MUTED`. Setting this to `UNDEFINED` will clear the mute state on all matching findings.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :filter => String.t() | nil,
-          :muteAnnotation => String.t() | nil
+          :muteAnnotation => String.t() | nil,
+          :muteState => String.t() | nil
         }
 
   field(:filter)
   field(:muteAnnotation)
+  field(:muteState)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.BulkMuteFindingsRequest do
