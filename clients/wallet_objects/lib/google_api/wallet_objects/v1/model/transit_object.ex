@@ -51,6 +51,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   *   `heroImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - Optional banner image displayed on the front of the card. If none is present, hero image of the class, if present, will be displayed. If hero image of the class is also not present, nothing will be displayed.
   *   `hasLinkedDevice` (*type:* `boolean()`, *default:* `nil`) - Whether this object is currently linked to a single device. This field is set by the platform when a user saves the object, linking it to their device. Intended for use by select partners. Contact support for additional information.
   *   `customTicketStatus` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - A custom status to use for the ticket status value when `ticketStatus` does not provide the right option. Both `ticketStatus` and `customTicketStatus` may not be set.
+  *   `linkedObjectIds` (*type:* `list(String.t)`, *default:* `nil`) - linked_object_ids are a list of other objects such as event ticket, loyalty, offer, generic, giftcard, transit and boarding pass that should be automatically attached to this transit object. If a user had saved this transit card, then these linked_object_ids would be automatically pushed to the user's wallet (unless they turned off the setting to receive such linked passes). Make sure that objects present in linked_object_ids are already inserted - if not, calls would fail. Once linked, the linked objects cannot be unlinked. You cannot link objects belonging to another issuer. There is a limit to the number of objects that can be linked to a single object. After the limit is reached, new linked objects in the call will be ignored silently. Object IDs should follow the format issuer ID. identifier where the former is issued by Google and the latter is chosen by you.
   *   `disableExpirationNotification` (*type:* `boolean()`, *default:* `nil`) - Indicates if notifications should explicitly be suppressed. If this field is set to true, regardless of the `messages` field, expiration notifications to the user will be suppressed. By default, this field is set to false. Currently, this can only be set for offers.
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode type and value.
@@ -95,6 +96,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
           :heroImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
           :hasLinkedDevice => boolean() | nil,
           :customTicketStatus => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :linkedObjectIds => list(String.t()) | nil,
           :disableExpirationNotification => boolean() | nil,
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
@@ -136,6 +138,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   field(:heroImage, as: GoogleApi.WalletObjects.V1.Model.Image)
   field(:hasLinkedDevice)
   field(:customTicketStatus, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+  field(:linkedObjectIds, type: :list)
   field(:disableExpirationNotification)
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
