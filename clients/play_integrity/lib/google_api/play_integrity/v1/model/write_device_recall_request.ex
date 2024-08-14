@@ -21,7 +21,7 @@ defmodule GoogleApi.PlayIntegrity.V1.Model.WriteDeviceRecallRequest do
 
   ## Attributes
 
-  *   `integrityToken` (*type:* `String.t`, *default:* `nil`) - Required. Integrity token obtained from calling Play Integrity API. Note that the integrity token contains the existing device recall bits. The write will only succeed if those bits in the integrity token are up to date.
+  *   `integrityToken` (*type:* `String.t`, *default:* `nil`) - Required. Integrity token obtained from calling Play Integrity API.
   *   `newValues` (*type:* `GoogleApi.PlayIntegrity.V1.Model.Values.t`, *default:* `nil`) - Required. The new values for the device recall bits to be written.
   """
 
