@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TargetAttribute do
 
   ## Attributes
 
-  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the `Target`. The value of this field could be one of the following: * The last segment of a target name. It only needs the ID to determine which target is being referred to * "*", all targets in a location.
+  *   `id` (*type:* `String.t`, *default:* `nil`) - ID of the `Target`. The value of this field could be one of the following: * The last segment of a target name * "*", all targets in a location
   *   `labels` (*type:* `map()`, *default:* `nil`) - Target labels.
   """
 
