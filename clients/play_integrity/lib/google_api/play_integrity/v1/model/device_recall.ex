@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.PlayIntegrity.V1.Model.DeviceRecall do
   @moduledoc """
-  Contains the recall bits per device set by the developer. Next tag: 3
+  Contains the recall bits per device set by the developer.
 
   ## Attributes
 
