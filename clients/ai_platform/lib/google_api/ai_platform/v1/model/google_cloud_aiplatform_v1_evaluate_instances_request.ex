@@ -27,8 +27,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   *   `fluencyInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyInput.t`, *default:* `nil`) - LLM-based metric instance. General text generation metrics, applicable to other categories. Input for fluency metric.
   *   `fulfillmentInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t`, *default:* `nil`) - Input for fulfillment metric.
   *   `groundednessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t`, *default:* `nil`) - Input for groundedness metric.
+  *   `pairwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t`, *default:* `nil`) - Input for pairwise metric.
   *   `pairwiseQuestionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for pairwise question answering quality metric.
   *   `pairwiseSummarizationQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t`, *default:* `nil`) - Input for pairwise summarization quality metric.
+  *   `pointwiseMetricInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t`, *default:* `nil`) - Input for pointwise metric.
   *   `questionAnsweringCorrectnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput.t`, *default:* `nil`) - Input for question answering correctness metric.
   *   `questionAnsweringHelpfulnessInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessInput.t`, *default:* `nil`) - Input for question answering helpfulness metric.
   *   `questionAnsweringQualityInput` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityInput.t`, *default:* `nil`) - Input for question answering quality metric.
@@ -58,12 +60,16 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentInput.t() | nil,
           :groundednessInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput.t() | nil,
+          :pairwiseMetricInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput.t() | nil,
           :pairwiseQuestionAnsweringQualityInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput.t()
             | nil,
           :pairwiseSummarizationQualityInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput.t()
             | nil,
+          :pointwiseMetricInput =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput.t() | nil,
           :questionAnsweringCorrectnessInput =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessInput.t()
             | nil,
@@ -116,12 +122,20 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessInput
   )
 
+  field(:pairwiseMetricInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricInput
+  )
+
   field(:pairwiseQuestionAnsweringQualityInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityInput
   )
 
   field(:pairwiseSummarizationQualityInput,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityInput
+  )
+
+  field(:pointwiseMetricInput,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricInput
   )
 
   field(:questionAnsweringCorrectnessInput,

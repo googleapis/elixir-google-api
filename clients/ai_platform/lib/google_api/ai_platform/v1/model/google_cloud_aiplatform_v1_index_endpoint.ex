@@ -34,6 +34,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexEndpoint do
   *   `privateServiceConnectConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PrivateServiceConnectConfig.t`, *default:* `nil`) - Optional. Configuration for private service connect. network and private_service_connect_config are mutually exclusive.
   *   `publicEndpointDomainName` (*type:* `String.t`, *default:* `nil`) - Output only. If public_endpoint_enabled is true, this field will be populated with the domain name to use for this index endpoint.
   *   `publicEndpointEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, the deployed index will be accessible through public endpoint.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this IndexEndpoint was last updated. This timestamp is not updated when the endpoint's DeployedIndexes are updated, e.g. due to updates of the original Indexes they are the deployments of.
   """
 
@@ -57,6 +59,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexEndpoint do
             | nil,
           :publicEndpointDomainName => String.t() | nil,
           :publicEndpointEnabled => boolean() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -82,6 +86,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexEndpoint do
 
   field(:publicEndpointDomainName)
   field(:publicEndpointEnabled)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:updateTime, as: DateTime)
 end
 

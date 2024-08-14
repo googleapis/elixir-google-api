@@ -29,6 +29,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata to organize your FeatureOnlineStore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one FeatureOnlineStore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureOnlineStore. Format: `projects/{project}/locations/{location}/featureOnlineStores/{featureOnlineStore}`
   *   `optimized` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized.t`, *default:* `nil`) - Contains settings for the Optimized store that will be created to serve featureValues for all FeatureViews under this FeatureOnlineStore. When choose Optimized storage type, need to set PrivateServiceConnectConfig.enable_private_service_connect to use private endpoint. Otherwise will use public endpoint by default.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the featureOnlineStore.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureOnlineStore was last updated.
   """
@@ -51,6 +53,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
           :optimized =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized.t()
             | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -75,6 +79,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStor
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureOnlineStoreOptimized
   )
 
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:updateTime, as: DateTime)
 end

@@ -40,6 +40,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelDeploymentMo
   *   `nextScheduleTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this monitoring pipeline will be scheduled to run for the next round.
   *   `predictInstanceSchemaUri` (*type:* `String.t`, *default:* `nil`) - YAML schema file uri describing the format of a single instance, which are given to format this Endpoint's prediction (and explanation). If not set, we will generate predict schema from collected predict requests.
   *   `samplePredictInstance` (*type:* `any()`, *default:* `nil`) - Sample Predict instance, same format as PredictRequest.instances, this can be set as a replacement of ModelDeploymentMonitoringJob.predict_instance_schema_uri. If not set, we will generate predict schema from collected predict requests.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `scheduleState` (*type:* `String.t`, *default:* `nil`) - Output only. Schedule state when the monitoring job is in Running state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of the monitoring job. When the job is still creating, the state will be 'PENDING'. Once the job is successfully created, the state will be 'RUNNING'. Pause the job, the state will be 'PAUSED'. Resume the job, the state will return to 'RUNNING'.
   *   `statsAnomaliesBaseDirectory` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GcsDestination.t`, *default:* `nil`) - Stats anomalies base folder path.
@@ -84,6 +86,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelDeploymentMo
           :nextScheduleTime => DateTime.t() | nil,
           :predictInstanceSchemaUri => String.t() | nil,
           :samplePredictInstance => any() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :scheduleState => String.t() | nil,
           :state => String.t() | nil,
           :statsAnomaliesBaseDirectory =>
@@ -137,6 +141,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ModelDeploymentMo
   field(:nextScheduleTime, as: DateTime)
   field(:predictInstanceSchemaUri)
   field(:samplePredictInstance)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:scheduleState)
   field(:state)
 
