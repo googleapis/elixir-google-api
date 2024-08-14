@@ -17,20 +17,24 @@
 
 defmodule GoogleApi.Redis.V1.Model.CustomMetadataData do
   @moduledoc """
-  Any custom metadata associated with the resource. i.e. A spanner instance can have multiple databases with its own unique metadata. Information for these individual databases can be captured in custom metadata data
+  Any custom metadata associated with the resource. e.g. A spanner instance can have multiple databases with its own unique metadata. Information for these individual databases can be captured in custom metadata data
 
   ## Attributes
 
-  *   `databaseMetadata` (*type:* `list(GoogleApi.Redis.V1.Model.DatabaseMetadata.t)`, *default:* `nil`) - 
+  *   `internalResourceMetadata` (*type:* `list(GoogleApi.Redis.V1.Model.InternalResourceMetadata.t)`, *default:* `nil`) - Metadata for individual internal resources in an instance. e.g. spanner instance can have multiple databases with unique configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databaseMetadata => list(GoogleApi.Redis.V1.Model.DatabaseMetadata.t()) | nil
+          :internalResourceMetadata =>
+            list(GoogleApi.Redis.V1.Model.InternalResourceMetadata.t()) | nil
         }
 
-  field(:databaseMetadata, as: GoogleApi.Redis.V1.Model.DatabaseMetadata, type: :list)
+  field(:internalResourceMetadata,
+    as: GoogleApi.Redis.V1.Model.InternalResourceMetadata,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1.Model.CustomMetadataData do

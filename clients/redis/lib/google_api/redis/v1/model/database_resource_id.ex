@@ -23,7 +23,7 @@ defmodule GoogleApi.Redis.V1.Model.DatabaseResourceId do
 
   *   `provider` (*type:* `String.t`, *default:* `nil`) - Required. Cloud provider name. Ex: GCP/AWS/Azure/OnPrem/SelfManaged
   *   `providerDescription` (*type:* `String.t`, *default:* `nil`) - Optional. Needs to be used only when the provider is PROVIDER_OTHER.
-  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Required. The type of resource this ID is identifying. Ex redis.googleapis.com/Instance, redis.googleapis.com/Cluster, alloydb.googleapis.com/Cluster, alloydb.googleapis.com/Instance, spanner.googleapis.com/Instance REQUIRED Please refer go/condor-common-datamodel
+  *   `resourceType` (*type:* `String.t`, *default:* `nil`) - Required. The type of resource this ID is identifying. Ex redis.googleapis.com/Instance, redis.googleapis.com/Cluster, alloydb.googleapis.com/Cluster, alloydb.googleapis.com/Instance, spanner.googleapis.com/Instance, spanner.googleapis.com/Database, firestore.googleapis.com/Database, sqladmin.googleapis.com/Instance, bigtableadmin.googleapis.com/Cluster, bigtableadmin.googleapis.com/Instance REQUIRED Please refer go/condor-common-datamodel
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - Required. A service-local token that distinguishes this resource from other resources within the same service.
   """
 
