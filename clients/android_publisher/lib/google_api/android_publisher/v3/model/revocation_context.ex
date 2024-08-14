@@ -21,16 +21,20 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.RevocationContext do
 
   ## Attributes
 
+  *   `fullRefund` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RevocationContextFullRefund.t`, *default:* `nil`) - Optional. Used when users should be refunded the full amount of the latest order of the subscription.
   *   `proratedRefund` (*type:* `GoogleApi.AndroidPublisher.V3.Model.RevocationContextProratedRefund.t`, *default:* `nil`) - Optional. Used when users should be refunded a prorated amount they paid for their subscription based on the amount of time remaining in a subscription.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :fullRefund =>
+            GoogleApi.AndroidPublisher.V3.Model.RevocationContextFullRefund.t() | nil,
           :proratedRefund =>
             GoogleApi.AndroidPublisher.V3.Model.RevocationContextProratedRefund.t() | nil
         }
 
+  field(:fullRefund, as: GoogleApi.AndroidPublisher.V3.Model.RevocationContextFullRefund)
   field(:proratedRefund, as: GoogleApi.AndroidPublisher.V3.Model.RevocationContextProratedRefund)
 end
 
