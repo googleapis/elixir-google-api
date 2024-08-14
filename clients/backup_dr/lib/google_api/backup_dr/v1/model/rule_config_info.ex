@@ -21,7 +21,6 @@ defmodule GoogleApi.BackupDR.V1.Model.RuleConfigInfo do
 
   ## Attributes
 
-  *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Output only. TODO b/341576760: Remove deprecated BV and Datasource field form BP and BPA once UI removed all dependencies on them Output Only. Resource name of data source which will be used as storage location for backups taken by specified rule. Format : projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
   *   `lastBackupError` (*type:* `GoogleApi.BackupDR.V1.Model.Status.t`, *default:* `nil`) - Output only. Output Only. google.rpc.Status object to store the last backup error.
   *   `lastBackupState` (*type:* `String.t`, *default:* `nil`) - Output only. The last backup state for rule.
   *   `lastSuccessfulBackupConsistencyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The point in time when the last successful backup was captured from the source.
@@ -31,14 +30,12 @@ defmodule GoogleApi.BackupDR.V1.Model.RuleConfigInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataSource => String.t() | nil,
           :lastBackupError => GoogleApi.BackupDR.V1.Model.Status.t() | nil,
           :lastBackupState => String.t() | nil,
           :lastSuccessfulBackupConsistencyTime => DateTime.t() | nil,
           :ruleId => String.t() | nil
         }
 
-  field(:dataSource)
   field(:lastBackupError, as: GoogleApi.BackupDR.V1.Model.Status)
   field(:lastBackupState)
   field(:lastSuccessfulBackupConsistencyTime, as: DateTime)
