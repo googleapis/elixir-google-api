@@ -27,6 +27,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   *   `color` (*type:* `String.t`, *default:* `nil`) - The color of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#color.
   *   `imageLink` (*type:* `GoogleApi.Manufacturers.V1.Model.Image.t`, *default:* `nil`) - The image of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#image.
   *   `suggestedRetailPrice` (*type:* `GoogleApi.Manufacturers.V1.Model.Price.t`, *default:* `nil`) - The suggested retail price (MSRP) of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#price.
+  *   `intendedCountry` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of countries to show this product in. Countries provided in this attribute will override any of the countries configured at feed level. The values should be: the [CLDR territory code](http://www.unicode.org/repos/cldr/tags/latest/common/main/en.xml) of the countries in which this item will be shown.
   *   `format` (*type:* `String.t`, *default:* `nil`) - The format of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#format.
   *   `certification` (*type:* `list(GoogleApi.Manufacturers.V1.Model.GoogleShoppingManufacturersV1ProductCertification.t)`, *default:* `nil`) - Optional. List of certifications claimed by this product.
   *   `productHighlight` (*type:* `list(String.t)`, *default:* `nil`) - The product highlights. For more information, see https://support.google.com/manufacturers/answer/10066942
@@ -73,6 +74,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
           :color => String.t() | nil,
           :imageLink => GoogleApi.Manufacturers.V1.Model.Image.t() | nil,
           :suggestedRetailPrice => GoogleApi.Manufacturers.V1.Model.Price.t() | nil,
+          :intendedCountry => list(String.t()) | nil,
           :format => String.t() | nil,
           :certification =>
             list(
@@ -121,6 +123,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Attributes do
   field(:color)
   field(:imageLink, as: GoogleApi.Manufacturers.V1.Model.Image)
   field(:suggestedRetailPrice, as: GoogleApi.Manufacturers.V1.Model.Price)
+  field(:intendedCountry, type: :list)
   field(:format)
 
   field(:certification,

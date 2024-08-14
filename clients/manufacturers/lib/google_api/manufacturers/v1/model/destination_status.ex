@@ -21,18 +21,27 @@ defmodule GoogleApi.Manufacturers.V1.Model.DestinationStatus do
 
   ## Attributes
 
+  *   `approvedCountries` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of country codes (ISO 3166-1 alpha-2) where the offer is approved.
   *   `destination` (*type:* `String.t`, *default:* `nil`) - The name of the destination.
+  *   `disapprovedCountries` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of country codes (ISO 3166-1 alpha-2) where the offer is disapproved.
+  *   `pendingCountries` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of country codes (ISO 3166-1 alpha-2) where the offer is pending approval.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the destination.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :approvedCountries => list(String.t()) | nil,
           :destination => String.t() | nil,
+          :disapprovedCountries => list(String.t()) | nil,
+          :pendingCountries => list(String.t()) | nil,
           :status => String.t() | nil
         }
 
+  field(:approvedCountries, type: :list)
   field(:destination)
+  field(:disapprovedCountries, type: :list)
+  field(:pendingCountries, type: :list)
   field(:status)
 end
 

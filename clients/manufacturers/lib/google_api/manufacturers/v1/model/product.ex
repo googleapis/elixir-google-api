@@ -24,6 +24,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
   *   `attributes` (*type:* `GoogleApi.Manufacturers.V1.Model.Attributes.t`, *default:* `nil`) - Attributes of the product uploaded to the Manufacturer Center. Manually edited attributes are taken into account.
   *   `contentLanguage` (*type:* `String.t`, *default:* `nil`) - The content language of the product as a two-letter ISO 639-1 language code (for example, en).
   *   `destinationStatuses` (*type:* `list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t)`, *default:* `nil`) - The status of the destinations.
+  *   `feedLabel` (*type:* `String.t`, *default:* `nil`) - Optional. The feed label for the product.
   *   `issues` (*type:* `list(GoogleApi.Manufacturers.V1.Model.Issue.t)`, *default:* `nil`) - A server-generated list of issues associated with the product.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name in the format `{target_country}:{content_language}:{product_id}`. `target_country` - The target country of the product as a CLDR territory code (for example, US). `content_language` - The content language of the product as a two-letter ISO 639-1 language code (for example, en). `product_id` - The ID of the product. For more information, see https://support.google.com/manufacturers/answer/6124116#id.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
           :contentLanguage => String.t() | nil,
           :destinationStatuses =>
             list(GoogleApi.Manufacturers.V1.Model.DestinationStatus.t()) | nil,
+          :feedLabel => String.t() | nil,
           :issues => list(GoogleApi.Manufacturers.V1.Model.Issue.t()) | nil,
           :name => String.t() | nil,
           :parent => String.t() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.Manufacturers.V1.Model.Product do
   field(:attributes, as: GoogleApi.Manufacturers.V1.Model.Attributes)
   field(:contentLanguage)
   field(:destinationStatuses, as: GoogleApi.Manufacturers.V1.Model.DestinationStatus, type: :list)
+  field(:feedLabel)
   field(:issues, as: GoogleApi.Manufacturers.V1.Model.Issue, type: :list)
   field(:name)
   field(:parent)
