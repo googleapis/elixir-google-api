@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Con
 
   ## Attributes
 
-  *   `associatedServingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of all ServingConfig ids this control is attached to. May take up to 10 minutes to update after changes.
+  *   `associatedServingConfigIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. List of all ServingConfig IDs this control is attached to. May take up to 10 minutes to update after changes.
   *   `boostAction` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ControlBoostAction.t`, *default:* `nil`) - Defines a boost-type control
   *   `conditions` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Condition.t)`, *default:* `nil`) - Determines when the associated action will trigger. Omit to always apply the action. Currently only a single condition may be specified. Otherwise an INVALID ARGUMENT error is thrown.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Human readable name. The identifier used in UI views. Must be UTF-8 encoded string. Length limit is 128 characters. Otherwise an INVALID ARGUMENT error is thrown.

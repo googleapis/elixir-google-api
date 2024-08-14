@@ -25,7 +25,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CloudSq
   *   `gcsStagingDir` (*type:* `String.t`, *default:* `nil`) - Intermediate Cloud Storage directory used for the import with a length limit of 2,000 characters. Can be specified if one wants to have the Cloud SQL export to a specific Cloud Storage directory. Ensure that the Cloud SQL service account has the necessary Cloud Storage Admin permissions to access the specified Cloud Storage directory.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud SQL instance to copy the data from with a length limit of 256 characters.
   *   `offload` (*type:* `boolean()`, *default:* `nil`) - Option for serverless export. Enabling this option will incur additional cost. More info can be found [here](https://cloud.google.com/sql/pricing#serverless).
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that the Cloud SQL source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that contains the Cloud SQL source. Has a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The Cloud SQL table to copy the data from with a length limit of 256 characters.
   """
 

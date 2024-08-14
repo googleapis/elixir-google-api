@@ -25,7 +25,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1BigQuer
   *   `datasetId` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery data set to copy the data from with a length limit of 1,024 characters.
   *   `gcsStagingDir` (*type:* `String.t`, *default:* `nil`) - Intermediate Cloud Storage directory used for the import with a length limit of 2,000 characters. Can be specified if one wants to have the BigQuery export to a specific Cloud Storage directory.
   *   `partitionDate` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleTypeDate.t`, *default:* `nil`) - BigQuery time partitioned table's _PARTITIONDATE in YYYY-MM-DD format.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID (can be project # or ID) that the BigQuery source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID or the project number that contains the BigQuery source. Has a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery table to copy the data from with a length limit of 1,024 characters.
   """
 

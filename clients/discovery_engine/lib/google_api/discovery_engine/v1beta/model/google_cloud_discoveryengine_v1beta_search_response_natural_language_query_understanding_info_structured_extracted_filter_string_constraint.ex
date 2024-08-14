@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Name of the string field as defined in the schema.
+  *   `querySegment` (*type:* `String.t`, *default:* `nil`) - Identifies the keywords within the search query that match a filter.
   *   `values` (*type:* `list(String.t)`, *default:* `nil`) - Values of the string field. The record will only be returned if the field value matches one of the values specified here.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   @type t :: %__MODULE__{
           :fieldName => String.t() | nil,
+          :querySegment => String.t() | nil,
           :values => list(String.t()) | nil
         }
 
   field(:fieldName)
+  field(:querySegment)
   field(:values, type: :list)
 end
 
