@@ -23,7 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Bigtabl
 
   *   `bigtableOptions` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1BigtableOptions.t`, *default:* `nil`) - Required. Bigtable options that contains information needed when parsing data into typed structures. For example, column type annotations.
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The instance ID of the Cloud Bigtable that needs to be imported.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that the Bigtable source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that contains the Bigtable source. Has a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The table ID of the Cloud Bigtable that needs to be imported.
   """
 

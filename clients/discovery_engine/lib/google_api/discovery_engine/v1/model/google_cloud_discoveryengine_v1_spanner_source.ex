@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Spanner
   *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The database ID of the source Spanner table.
   *   `enableDataBoost` (*type:* `boolean()`, *default:* `nil`) - Whether to apply data boost on Spanner export. Enabling this option will incur additional cost. More info can be found [here](https://cloud.google.com/spanner/docs/databoost/databoost-overview#billing_and_quotas).
   *   `instanceId` (*type:* `String.t`, *default:* `nil`) - Required. The instance ID of the source Spanner table.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that the Spanner source is in with a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The project ID that contains the Spanner source. Has a length limit of 128 characters. If not specified, inherits the project ID from the parent request.
   *   `tableId` (*type:* `String.t`, *default:* `nil`) - Required. The table name of the Spanner database that needs to be imported.
   """
 

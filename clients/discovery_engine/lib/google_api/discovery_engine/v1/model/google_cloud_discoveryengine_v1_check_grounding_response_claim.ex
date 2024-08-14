@@ -25,6 +25,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
   *   `claimText` (*type:* `String.t`, *default:* `nil`) - Text for the claim in the answer candidate. Always provided regardless of whether citations or anti-citations are found.
   *   `endPos` (*type:* `integer()`, *default:* `nil`) - Position indicating the end of the claim in the answer candidate, exclusive.
   *   `groundingCheckRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates that this claim required grounding check. When the system decided this claim doesn't require attribution/grounding check, this field will be set to false. In that case, no grounding check was done for the claim and therefore citation_indices, and anti_citation_indices should not be returned.
+  *   `score` (*type:* `float()`, *default:* `nil`) - Confidence score for the claim in the answer candidate, in the range of [0, 1].
   *   `startPos` (*type:* `integer()`, *default:* `nil`) - Position indicating the start of the claim in the answer candidate, measured in bytes.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
           :claimText => String.t() | nil,
           :endPos => integer() | nil,
           :groundingCheckRequired => boolean() | nil,
+          :score => float() | nil,
           :startPos => integer() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CheckGr
   field(:claimText)
   field(:endPos)
   field(:groundingCheckRequired)
+  field(:score)
   field(:startPos)
 end
 
