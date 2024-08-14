@@ -25,6 +25,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSync d
   *   `finalStatus` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. Final status of the FeatureViewSync.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the FeatureViewSync. Format: `projects/{project}/locations/{location}/featureOnlineStores/{feature_online_store}/featureViews/{feature_view}/featureViewSyncs/{feature_view_sync}`
   *   `runTime` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleTypeInterval.t`, *default:* `nil`) - Output only. Time when this FeatureViewSync is finished.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `syncSummary` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncSyncSummary.t`, *default:* `nil`) - Output only. Summary of the sync job.
   """
 
@@ -35,6 +37,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSync d
           :finalStatus => GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus.t() | nil,
           :name => String.t() | nil,
           :runTime => GoogleApi.AIPlatform.V1.Model.GoogleTypeInterval.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :syncSummary =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncSyncSummary.t()
             | nil
@@ -44,6 +48,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSync d
   field(:finalStatus, as: GoogleApi.AIPlatform.V1.Model.GoogleRpcStatus)
   field(:name)
   field(:runTime, as: GoogleApi.AIPlatform.V1.Model.GoogleTypeInterval)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 
   field(:syncSummary,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncSyncSummary

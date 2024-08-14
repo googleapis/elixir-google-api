@@ -44,6 +44,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Publishers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:huggingFaceToken` (*type:* `String.t`) - Optional. Token used to access Hugging Face gated models.
       *   `:isHuggingFaceModel` (*type:* `boolean()`) - Optional. Boolean indicates whether the requested model is a Hugging Face model.
       *   `:languageCode` (*type:* `String.t`) - Optional. The IETF BCP-47 language code representing the language in which the publisher model's text information should be written in.
       *   `:view` (*type:* `String.t`) - Optional. PublisherModel view specifying which fields to read.
@@ -72,6 +73,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Publishers do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :huggingFaceToken => :query,
       :isHuggingFaceModel => :query,
       :languageCode => :query,
       :view => :query

@@ -27,8 +27,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
   *   `fluencyResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FluencyResult.t`, *default:* `nil`) - LLM-based metric evaluation result. General text generation metrics, applicable to other categories. Result for fluency metric.
   *   `fulfillmentResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentResult.t`, *default:* `nil`) - Result for fulfillment metric.
   *   `groundednessResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult.t`, *default:* `nil`) - Result for groundedness metric.
+  *   `pairwiseMetricResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult.t`, *default:* `nil`) - Result for pairwise metric.
   *   `pairwiseQuestionAnsweringQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult.t`, *default:* `nil`) - Result for pairwise question answering quality metric.
   *   `pairwiseSummarizationQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityResult.t`, *default:* `nil`) - Result for pairwise summarization quality metric.
+  *   `pointwiseMetricResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricResult.t`, *default:* `nil`) - Generic metrics. Result for pointwise metric.
   *   `questionAnsweringCorrectnessResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessResult.t`, *default:* `nil`) - Result for question answering correctness metric.
   *   `questionAnsweringHelpfulnessResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringHelpfulnessResult.t`, *default:* `nil`) - Result for question answering helpfulness metric.
   *   `questionAnsweringQualityResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringQualityResult.t`, *default:* `nil`) - Question answering only metrics. Result for question answering quality metric.
@@ -59,12 +61,16 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FulfillmentResult.t() | nil,
           :groundednessResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult.t() | nil,
+          :pairwiseMetricResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult.t() | nil,
           :pairwiseQuestionAnsweringQualityResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult.t()
             | nil,
           :pairwiseSummarizationQualityResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityResult.t()
             | nil,
+          :pointwiseMetricResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricResult.t() | nil,
           :questionAnsweringCorrectnessResult =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1QuestionAnsweringCorrectnessResult.t()
             | nil,
@@ -120,6 +126,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundednessResult
   )
 
+  field(:pairwiseMetricResult,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseMetricResult
+  )
+
   field(:pairwiseQuestionAnsweringQualityResult,
     as:
       GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseQuestionAnsweringQualityResult
@@ -127,6 +137,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1EvaluateInstances
 
   field(:pairwiseSummarizationQualityResult,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PairwiseSummarizationQualityResult
+  )
+
+  field(:pointwiseMetricResult,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PointwiseMetricResult
   )
 
   field(:questionAnsweringCorrectnessResult,

@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
 
   ## Attributes
 
+  *   `avgLogprobs` (*type:* `float()`, *default:* `nil`) - Output only. Average log probability score of the candidate.
   *   `citationMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CitationMetadata.t`, *default:* `nil`) - Output only. Source attribution of the generated content.
   *   `content` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Output only. Content parts of the candidate.
   *   `finishMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Describes the reason the mode stopped generating tokens in more detail. This is only filled when `finish_reason` is set.
@@ -33,6 +34,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :avgLogprobs => float() | nil,
           :citationMetadata =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CitationMetadata.t() | nil,
           :content => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t() | nil,
@@ -44,6 +46,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
           :safetyRatings =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t()) | nil
         }
+
+  field(:avgLogprobs)
 
   field(:citationMetadata,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CitationMetadata

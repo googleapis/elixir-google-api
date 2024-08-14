@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   *   `responseMimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Output response mimetype of the generated candidate text. Supported mimetype: - `text/plain`: (default) Text output. - `application/json`: JSON response in the candidates. The model needs to be prompted to output the appropriate response type, otherwise the behavior is undefined. This is a preview feature.
   *   `responseSchema` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. The `Schema` object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema). If set, a compatible response_mime_type must also be set. Compatible mimetypes: `application/json`: Schema for JSON response.
   *   `routingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig.t`, *default:* `nil`) - Optional. Routing configuration.
+  *   `seed` (*type:* `integer()`, *default:* `nil`) - Optional. Seed.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Stop sequences.
   *   `temperature` (*type:* `number()`, *default:* `nil`) - Optional. Controls the randomness of predictions.
   *   `topK` (*type:* `number()`, *default:* `nil`) - Optional. If specified, top-k sampling will be used.
@@ -47,6 +48,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
           :routingConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig.t()
             | nil,
+          :seed => integer() | nil,
           :stopSequences => list(String.t()) | nil,
           :temperature => number() | nil,
           :topK => number() | nil,
@@ -64,6 +66,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig
   )
 
+  field(:seed)
   field(:stopSequences, type: :list)
   field(:temperature)
   field(:topK)

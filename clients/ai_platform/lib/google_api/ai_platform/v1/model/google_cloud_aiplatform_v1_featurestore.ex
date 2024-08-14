@@ -28,6 +28,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Featurestore do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the Featurestore. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}`
   *   `onlineServingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig.t`, *default:* `nil`) - Optional. Config for online storage resources. The field should not co-exist with the field of `OnlineStoreReplicationConfig`. If both of it and OnlineStoreReplicationConfig are unset, the feature store will not have an online store and cannot be used for online serving.
   *   `onlineStorageTtlDays` (*type:* `integer()`, *default:* `nil`) - Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the featurestore.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Featurestore was last updated.
   """
@@ -45,6 +47,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Featurestore do
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig.t()
             | nil,
           :onlineStorageTtlDays => integer() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -60,6 +64,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Featurestore do
   )
 
   field(:onlineStorageTtlDays)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:state)
   field(:updateTime, as: DateTime)
 end
