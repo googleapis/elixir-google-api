@@ -22,6 +22,7 @@ defmodule GoogleApi.GKEHub.V1.Model.DefaultClusterConfig do
   ## Attributes
 
   *   `binaryAuthorizationConfig` (*type:* `GoogleApi.GKEHub.V1.Model.BinaryAuthorizationConfig.t`, *default:* `nil`) - Optional. Enable/Disable binary authorization features for the cluster.
+  *   `compliancePostureConfig` (*type:* `GoogleApi.GKEHub.V1.Model.CompliancePostureConfig.t`, *default:* `nil`) - Optional. Enable/Disable Compliance Posture features for the cluster. Note that on UpdateFleet, only full replacement of this field is allowed. Users are not allowed for partial updates through field mask.
   *   `securityPostureConfig` (*type:* `GoogleApi.GKEHub.V1.Model.SecurityPostureConfig.t`, *default:* `nil`) - Enable/Disable Security Posture features for the cluster.
   """
 
@@ -30,10 +31,12 @@ defmodule GoogleApi.GKEHub.V1.Model.DefaultClusterConfig do
   @type t :: %__MODULE__{
           :binaryAuthorizationConfig =>
             GoogleApi.GKEHub.V1.Model.BinaryAuthorizationConfig.t() | nil,
+          :compliancePostureConfig => GoogleApi.GKEHub.V1.Model.CompliancePostureConfig.t() | nil,
           :securityPostureConfig => GoogleApi.GKEHub.V1.Model.SecurityPostureConfig.t() | nil
         }
 
   field(:binaryAuthorizationConfig, as: GoogleApi.GKEHub.V1.Model.BinaryAuthorizationConfig)
+  field(:compliancePostureConfig, as: GoogleApi.GKEHub.V1.Model.CompliancePostureConfig)
   field(:securityPostureConfig, as: GoogleApi.GKEHub.V1.Model.SecurityPostureConfig)
 end
 
