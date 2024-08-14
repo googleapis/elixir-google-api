@@ -23,6 +23,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
 
   *   `fieldMask` (*type:* `String.t`, *default:* `nil`) - Specifies which fields to include in the ProcessResponse.document output. Only supports top-level document and pages field, so it must be in the form of `{document_field_name}` or `pages.{page_field_name}`.
   *   `gcsDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsDocument.t`, *default:* `nil`) - A raw document on Google Cloud Storage.
+  *   `imagelessMode` (*type:* `boolean()`, *default:* `nil`) - Optional. Option to remove images from the document.
   *   `inlineDocument` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t`, *default:* `nil`) - An inline document proto.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
   *   `processOptions` (*type:* `GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptions.t`, *default:* `nil`) - Inference-time options for the process API
@@ -36,6 +37,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
           :fieldMask => String.t() | nil,
           :gcsDocument =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsDocument.t() | nil,
+          :imagelessMode => boolean() | nil,
           :inlineDocument =>
             GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document.t() | nil,
           :labels => map() | nil,
@@ -48,6 +50,7 @@ defmodule GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessRequest do
 
   field(:fieldMask)
   field(:gcsDocument, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1GcsDocument)
+  field(:imagelessMode)
   field(:inlineDocument, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1Document)
   field(:labels, type: :map)
   field(:processOptions, as: GoogleApi.DocumentAI.V1.Model.GoogleCloudDocumentaiV1ProcessOptions)
