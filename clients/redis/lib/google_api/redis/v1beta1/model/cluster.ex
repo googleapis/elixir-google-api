@@ -23,6 +23,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
 
   *   `authorizationMode` (*type:* `String.t`, *default:* `nil`) - Optional. The authorization mode of the Redis cluster. If not provided, auth feature is disabled for the cluster.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp associated with the cluster creation request.
+  *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
@@ -33,7 +34,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   *   `pscConnections` (*type:* `list(GoogleApi.Redis.V1beta1.Model.PscConnection.t)`, *default:* `nil`) - Output only. PSC connections for discovery of the cluster topology and accessing the cluster.
   *   `redisConfigs` (*type:* `map()`, *default:* `nil`) - Optional. Key/Value pairs of customer overrides for mutable Redis Configs
   *   `replicaCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of replica nodes per shard.
-  *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Required. Number of shards for the Redis cluster.
+  *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of shards for the Redis cluster.
   *   `sizeGb` (*type:* `integer()`, *default:* `nil`) - Output only. Redis memory size in GB for the entire cluster rounded up to the next integer.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED
   *   `stateInfo` (*type:* `GoogleApi.Redis.V1beta1.Model.StateInfo.t`, *default:* `nil`) - Output only. Additional information about the current state of the cluster.
@@ -47,6 +48,8 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   @type t :: %__MODULE__{
           :authorizationMode => String.t() | nil,
           :createTime => DateTime.t() | nil,
+          :crossClusterReplicationConfig =>
+            GoogleApi.Redis.V1beta1.Model.CrossClusterReplicationConfig.t() | nil,
           :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint.t()) | nil,
           :name => String.t() | nil,
@@ -69,6 +72,11 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
 
   field(:authorizationMode)
   field(:createTime, as: DateTime)
+
+  field(:crossClusterReplicationConfig,
+    as: GoogleApi.Redis.V1beta1.Model.CrossClusterReplicationConfig
+  )
+
   field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1beta1.Model.DiscoveryEndpoint, type: :list)
   field(:name)
