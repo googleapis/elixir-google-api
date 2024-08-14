@@ -22,8 +22,6 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupRule do
   ## Attributes
 
   *   `backupRetentionDays` (*type:* `integer()`, *default:* `nil`) - Required. Configures the duration for which backup data will be kept. It is defined in “days”. The value should be greater than or equal to minimum enforced retention of the backup vault.
-  *   `backupVault` (*type:* `String.t`, *default:* `nil`) - Optional. TODO b/341576760: Remove deprecated BV and Datasource field form BP and BPA once UI removed all dependencies on them Required. Resource name of backup vault which will be used as storage location for backups. Format: projects/{project}/locations/{location}/backupVaults/{backupvault}
-  *   `backupVaultServiceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. TODO b/341576760: Remove deprecated BV and Datasource field form BP and BPA once UI removed all dependencies on them Output only. The Google Cloud Platform Service Account to be used by the BackupVault for taking backups. Specify the email address of the Backup Vault Service Account.
   *   `ruleId` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The unique id of this `BackupRule`. The `rule_id` is unique per `BackupPlan`.The `rule_id` must start with a lowercase letter followed by up to 62 lowercase letters, numbers, or hyphens. Pattern, /a-z{,62}/.
   *   `standardSchedule` (*type:* `GoogleApi.BackupDR.V1.Model.StandardSchedule.t`, *default:* `nil`) - Required. Defines a schedule that runs within the confines of a defined window of time.
   """
@@ -32,15 +30,11 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupRule do
 
   @type t :: %__MODULE__{
           :backupRetentionDays => integer() | nil,
-          :backupVault => String.t() | nil,
-          :backupVaultServiceAccount => String.t() | nil,
           :ruleId => String.t() | nil,
           :standardSchedule => GoogleApi.BackupDR.V1.Model.StandardSchedule.t() | nil
         }
 
   field(:backupRetentionDays)
-  field(:backupVault)
-  field(:backupVaultServiceAccount)
   field(:ruleId)
   field(:standardSchedule, as: GoogleApi.BackupDR.V1.Model.StandardSchedule)
 end
