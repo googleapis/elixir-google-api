@@ -21,9 +21,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
 
   ## Attributes
 
+  *   `backupType` (*type:* `String.t`, *default:* `nil`) - Indicates the backup type of the backup.
   *   `encryptionInfo` (*type:* `GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t`, *default:* `nil`) - Output only. The encryption information for the backup.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. `end_time` is the time that the backup was finished. The row data in the backup will be no newer than this timestamp.
-  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The expiration time of the backup. When creating a backup or updating its `expire_time`, the new value must: - Be at most 90 days in the future - Be at least 6 hours in the future Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
+  *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Required. The expiration time of the backup. When creating a backup or updating its `expire_time`, the value must be greater than the backup creation time by: - At least 6 hours - At most 90 days Once the `expire_time` has passed, Cloud Bigtable will delete the backup.
+  *   `hotToStandardTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the hot backup will be converted to a standard backup. Once the `hot_to_standard_time` has passed, Cloud Bigtable will convert the hot backup to a standard backup. This value must be greater than the backup creation time by: - At least 24 hours This field only applies for hot backups. When creating or updating a standard backup, attempting to set this field will fail the request.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A globally unique identifier for the backup which cannot be changed. Values are of the form `projects/{project}/instances/{instance}/clusters/{cluster}/ backups/_a-zA-Z0-9*` The final segment of the name must be between 1 and 50 characters in length. The backup is stored in the cluster identified by the prefix of the backup name of the form `projects/{project}/instances/{instance}/clusters/{cluster}`.
   *   `sizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Size of the backup in bytes.
   *   `sourceBackup` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the backup from which this backup was copied. If a backup is not created by copying a backup, this field will be empty. Values are of the form: projects//instances//clusters//backups/
@@ -35,9 +37,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :backupType => String.t() | nil,
           :encryptionInfo => GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo.t() | nil,
           :endTime => DateTime.t() | nil,
           :expireTime => DateTime.t() | nil,
+          :hotToStandardTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :sizeBytes => String.t() | nil,
           :sourceBackup => String.t() | nil,
@@ -46,9 +50,11 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Backup do
           :state => String.t() | nil
         }
 
+  field(:backupType)
   field(:encryptionInfo, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionInfo)
   field(:endTime, as: DateTime)
   field(:expireTime, as: DateTime)
+  field(:hotToStandardTime, as: DateTime)
   field(:name)
   field(:sizeBytes)
   field(:sourceBackup)
