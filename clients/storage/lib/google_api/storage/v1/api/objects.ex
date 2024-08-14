@@ -858,7 +858,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
-      *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
+      *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see [Object Versioning](https://cloud.google.com/storage/docs/object-versioning).
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -993,7 +993,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
 
   *   `connection` (*type:* `GoogleApi.Storage.V1.Connection.t`) - Connection to server
   *   `bucket` (*type:* `String.t`) - Name of the bucket in which the object resides.
-  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see Encoding URI Path Parts.
+  *   `object` (*type:* `String.t`) - Name of the object. For information about how to URL encode object names to be path safe, see [Encoding URI Path Parts](https://cloud.google.com/storage/docs/request-endpoints#encoding).
   *   `generation` (*type:* `String.t`) - Selects a specific revision of this object.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:alt` (*type:* `String.t`) - Data format for the response.
@@ -1434,7 +1434,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
       *   `:startOffset` (*type:* `String.t`) - Filter results to objects whose names are lexicographically equal to or after startOffset. If endOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
-      *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see Object Versioning.
+      *   `:versions` (*type:* `boolean()`) - If true, lists all versions of an object as distinct results. The default is false. For more information, see [Object Versioning](https://cloud.google.com/storage/docs/object-versioning).
       *   `:resource` (*type:* `GoogleApi.Storage.V1.Model.Channel.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 

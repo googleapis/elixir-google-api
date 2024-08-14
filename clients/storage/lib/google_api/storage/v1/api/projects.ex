@@ -296,7 +296,7 @@ defmodule GoogleApi.Storage.V1.Api.Projects do
   end
 
   @doc """
-  Updates the state of an HMAC key. See the HMAC Key resource descriptor for valid states.
+  Updates the state of an HMAC key. See the [HMAC Key resource descriptor](https://cloud.google.com/storage/docs/json_api/v1/projects/hmacKeys/update#request-body) for valid states.
 
   ## Parameters
 
