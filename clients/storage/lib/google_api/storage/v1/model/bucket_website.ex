@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Storage.V1.Model.BucketWebsite do
   @moduledoc """
-  The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the Static Website Examples for more information.
+  The bucket's website configuration, controlling how the service behaves when accessing bucket contents as a web site. See the [Static Website Examples](https://cloud.google.com/storage/docs/static-website) for more information.
 
   ## Attributes
 

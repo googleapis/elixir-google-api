@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Storage.V1.Model.BucketLifecycle do
   @moduledoc """
-  The bucket's lifecycle configuration. See lifecycle management for more information.
+  The bucket's lifecycle configuration. See [Lifecycle Management](https://cloud.google.com/storage/docs/lifecycle) for more information.
 
   ## Attributes
 
