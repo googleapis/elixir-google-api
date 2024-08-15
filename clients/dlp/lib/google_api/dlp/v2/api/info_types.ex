@@ -46,7 +46,7 @@ defmodule GoogleApi.DLP.V2.Api.InfoTypes do
       *   `:filter` (*type:* `String.t`) - filter to only return infoTypes supported by certain parts of the API. Defaults to supported_by=INSPECT.
       *   `:languageCode` (*type:* `String.t`) - BCP-47 language code for localized infoType friendly names. If omitted, or if localized strings are not available, en-US strings will be returned.
       *   `:locationId` (*type:* `String.t`) - Deprecated. This field has no effect.
-      *   `:parent` (*type:* `String.t`) - The parent resource name. The format of this value is as follows: locations/ LOCATION_ID
+      *   `:parent` (*type:* `String.t`) - The parent resource name. The format of this value is as follows: `locations/{location_id}`
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
