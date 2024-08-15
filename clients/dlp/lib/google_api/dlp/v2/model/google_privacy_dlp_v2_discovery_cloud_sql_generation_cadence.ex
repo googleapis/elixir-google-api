@@ -21,6 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCa
 
   ## Attributes
 
+  *   `inspectTemplateModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t`, *default:* `nil`) - Governs when to update data profiles when the inspection rules defined by the `InspectTemplate` change. If not set, changing the template will not cause a data profile to update.
   *   `refreshFrequency` (*type:* `String.t`, *default:* `nil`) - Data changes (non-schema changes) in Cloud SQL tables can't trigger reprofiling. If you set this field, profiles are refreshed at this frequency regardless of whether the underlying tables have changed. Defaults to never.
   *   `schemaModifiedCadence` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SchemaModifiedCadence.t`, *default:* `nil`) - When to reprofile if the schema has changed.
   """
@@ -28,10 +29,17 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryCloudSqlGenerationCa
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :inspectTemplateModifiedCadence =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence.t()
+            | nil,
           :refreshFrequency => String.t() | nil,
           :schemaModifiedCadence =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SchemaModifiedCadence.t() | nil
         }
+
+  field(:inspectTemplateModifiedCadence,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryInspectTemplateModifiedCadence
+  )
 
   field(:refreshFrequency)
 

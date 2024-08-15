@@ -23,6 +23,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction do
 
   *   `exportData` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export.t`, *default:* `nil`) - Export data profiles into a provided location.
   *   `pubSubNotification` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification.t`, *default:* `nil`) - Publish a message into the Pub/Sub topic.
+  *   `tagResources` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources.t`, *default:* `nil`) - Tags the profiled resources with the specified tag values.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +31,13 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction do
   @type t :: %__MODULE__{
           :exportData => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export.t() | nil,
           :pubSubNotification =>
-            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification.t() | nil
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification.t() | nil,
+          :tagResources => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources.t() | nil
         }
 
   field(:exportData, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export)
   field(:pubSubNotification, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification)
+  field(:tagResources, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction do
