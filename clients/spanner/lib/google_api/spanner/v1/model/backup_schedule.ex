@@ -23,6 +23,7 @@ defmodule GoogleApi.Spanner.V1.Model.BackupSchedule do
 
   *   `encryptionConfig` (*type:* `GoogleApi.Spanner.V1.Model.CreateBackupEncryptionConfig.t`, *default:* `nil`) - Optional. The encryption configuration that will be used to encrypt the backup. If this field is not specified, the backup will use the same encryption configuration as the database.
   *   `fullBackupSpec` (*type:* `GoogleApi.Spanner.V1.Model.FullBackupSpec.t`, *default:* `nil`) - The schedule creates only full backups.
+  *   `incrementalBackupSpec` (*type:* `GoogleApi.Spanner.V1.Model.IncrementalBackupSpec.t`, *default:* `nil`) - The schedule creates incremental backup chains.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Output only for the CreateBackupSchedule operation. Required for the UpdateBackupSchedule operation. A globally unique identifier for the backup schedule which cannot be changed. Values are of the form `projects//instances//databases//backupSchedules/a-z*[a-z0-9]` The final segment of the name must be between 2 and 60 characters in length.
   *   `retentionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. The retention duration of a backup that must be at least 6 hours and at most 366 days. The backup is eligible to be automatically deleted once the retention period has elapsed.
   *   `spec` (*type:* `GoogleApi.Spanner.V1.Model.BackupScheduleSpec.t`, *default:* `nil`) - Optional. The schedule specification based on which the backup creations are triggered.
@@ -34,6 +35,7 @@ defmodule GoogleApi.Spanner.V1.Model.BackupSchedule do
   @type t :: %__MODULE__{
           :encryptionConfig => GoogleApi.Spanner.V1.Model.CreateBackupEncryptionConfig.t() | nil,
           :fullBackupSpec => GoogleApi.Spanner.V1.Model.FullBackupSpec.t() | nil,
+          :incrementalBackupSpec => GoogleApi.Spanner.V1.Model.IncrementalBackupSpec.t() | nil,
           :name => String.t() | nil,
           :retentionDuration => String.t() | nil,
           :spec => GoogleApi.Spanner.V1.Model.BackupScheduleSpec.t() | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.Spanner.V1.Model.BackupSchedule do
 
   field(:encryptionConfig, as: GoogleApi.Spanner.V1.Model.CreateBackupEncryptionConfig)
   field(:fullBackupSpec, as: GoogleApi.Spanner.V1.Model.FullBackupSpec)
+  field(:incrementalBackupSpec, as: GoogleApi.Spanner.V1.Model.IncrementalBackupSpec)
   field(:name)
   field(:retentionDuration)
   field(:spec, as: GoogleApi.Spanner.V1.Model.BackupScheduleSpec)
