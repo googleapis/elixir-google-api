@@ -24,6 +24,7 @@ defmodule GoogleApi.DataMigration.V1.Model.OracleConnectionProfile do
   *   `databaseService` (*type:* `String.t`, *default:* `nil`) - Required. Database service for the Oracle connection.
   *   `forwardSshConnectivity` (*type:* `GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity.t`, *default:* `nil`) - Forward SSH tunnel connectivity.
   *   `host` (*type:* `String.t`, *default:* `nil`) - Required. The IP or hostname of the source Oracle database.
+  *   `oracleAsmConfig` (*type:* `GoogleApi.DataMigration.V1.Model.OracleAsmConfig.t`, *default:* `nil`) - Optional. Configuration for Oracle ASM connection.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Required. Input only. The password for the user that Database Migration Service will be using to connect to the database. This field is not returned on request, and the value is encrypted when stored in Database Migration Service.
   *   `passwordSet` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether a new password is included in the request.
   *   `port` (*type:* `integer()`, *default:* `nil`) - Required. The network port of the source Oracle database.
@@ -40,6 +41,7 @@ defmodule GoogleApi.DataMigration.V1.Model.OracleConnectionProfile do
           :forwardSshConnectivity =>
             GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity.t() | nil,
           :host => String.t() | nil,
+          :oracleAsmConfig => GoogleApi.DataMigration.V1.Model.OracleAsmConfig.t() | nil,
           :password => String.t() | nil,
           :passwordSet => boolean() | nil,
           :port => integer() | nil,
@@ -55,6 +57,7 @@ defmodule GoogleApi.DataMigration.V1.Model.OracleConnectionProfile do
   field(:forwardSshConnectivity, as: GoogleApi.DataMigration.V1.Model.ForwardSshTunnelConnectivity)
 
   field(:host)
+  field(:oracleAsmConfig, as: GoogleApi.DataMigration.V1.Model.OracleAsmConfig)
   field(:password)
   field(:passwordSet)
   field(:port)
