@@ -21,7 +21,7 @@ defmodule GoogleApi.Spanner.V1.Model.CreateInstanceConfigRequest do
 
   ## Attributes
 
-  *   `instanceConfig` (*type:* `GoogleApi.Spanner.V1.Model.InstanceConfig.t`, *default:* `nil`) - Required. The InstanceConfig proto of the configuration to create. instance_config.name must be `/instanceConfigs/`. instance_config.base_config must be a Google-managed configuration name, e.g. /instanceConfigs/us-east1, /instanceConfigs/nam3.
+  *   `instanceConfig` (*type:* `GoogleApi.Spanner.V1.Model.InstanceConfig.t`, *default:* `nil`) - Required. The `InstanceConfig` proto of the configuration to create. `instance_config.name` must be `/instanceConfigs/`. `instance_config.base_config` must be a Google-managed configuration name, e.g. /instanceConfigs/us-east1, /instanceConfigs/nam3.
   *   `instanceConfigId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the instance configuration to create. Valid identifiers are of the form `custom-[-a-z0-9]*[a-z0-9]` and must be between 2 and 64 characters in length. The `custom-` prefix is required to avoid name conflicts with Google-managed configurations.
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - An option to validate, but not actually execute, a request, and provide the same response.
   """
