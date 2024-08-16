@@ -17,25 +17,25 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainCustomMetadataData do
   @moduledoc """
-  Any custom metadata associated with the resource. i.e. A spanner instance can have multiple databases with its own unique metadata. Information for these individual databases can be captured in custom metadata data
+  Any custom metadata associated with the resource. e.g. A spanner instance can have multiple databases with its own unique metadata. Information for these individual databases can be captured in custom metadata data
 
   ## Attributes
 
-  *   `databaseMetadata` (*type:* `list(GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseMetadata.t)`, *default:* `nil`) - 
+  *   `internalResourceMetadata` (*type:* `list(GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata.t)`, *default:* `nil`) - Metadata for individual internal resources in an instance. e.g. spanner instance can have multiple databases with unique configuration.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :databaseMetadata =>
+          :internalResourceMetadata =>
             list(
-              GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseMetadata.t()
+              GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata.t()
             )
             | nil
         }
 
-  field(:databaseMetadata,
-    as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseMetadata,
+  field(:internalResourceMetadata,
+    as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainInternalResourceMetadata,
     type: :list
   )
 end

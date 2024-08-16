@@ -21,6 +21,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.RestartInstanceRequest do
 
   ## Attributes
 
+  *   `nodeIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Full name of the nodes as obtained from INSTANCE_VIEW_FULL to restart upon. Only applicable for read instances.
   *   `requestId` (*type:* `String.t`, *default:* `nil`) - Optional. An optional request ID to identify requests. Specify a unique request ID so that if you must retry your request, the server will know to ignore the request if it has already been completed. The server will guarantee that for at least 60 minutes after the first request. For example, consider a situation where you make an initial request and the request times out. If you make the request again with the same request ID, the server can check if original operation with the same request ID was received, and if so, will ignore the second request. This prevents clients from accidentally creating duplicate commitments. The request ID must be a valid UUID with the exception that zero UUID is not supported (00000000-0000-0000-0000-000000000000).
   *   `validateOnly` (*type:* `boolean()`, *default:* `nil`) - Optional. If set, performs request validation (e.g. permission checks and any other type of validation), but do not actually execute the restart.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.AlloyDB.V1.Model.RestartInstanceRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :nodeIds => list(String.t()) | nil,
           :requestId => String.t() | nil,
           :validateOnly => boolean() | nil
         }
 
+  field(:nodeIds, type: :list)
   field(:requestId)
   field(:validateOnly)
 end

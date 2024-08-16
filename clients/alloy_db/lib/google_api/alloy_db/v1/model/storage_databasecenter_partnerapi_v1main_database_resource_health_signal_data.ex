@@ -32,6 +32,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Database resource name associated with the signal. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
   *   `signalClass` (*type:* `String.t`, *default:* `nil`) - Required. The class of the signal, such as if it's a THREAT or VULNERABILITY.
   *   `signalId` (*type:* `String.t`, *default:* `nil`) - Required. Unique identifier for the signal. This is an unique id which would be mainatined by partner to identify a signal.
+  *   `signalSeverity` (*type:* `String.t`, *default:* `nil`) - The severity of the signal, such as if it's a HIGH or LOW severity.
   *   `signalType` (*type:* `String.t`, *default:* `nil`) - Required. Type of signal, for example, `AVAILABLE_IN_MULTIPLE_ZONES`, `LOGGING_MOST_ERRORS`, etc.
   *   `state` (*type:* `String.t`, *default:* `nil`) - 
   """
@@ -52,6 +53,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
           :resourceName => String.t() | nil,
           :signalClass => String.t() | nil,
           :signalId => String.t() | nil,
+          :signalSeverity => String.t() | nil,
           :signalType => String.t() | nil,
           :state => String.t() | nil
         }
@@ -72,6 +74,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   field(:resourceName)
   field(:signalClass)
   field(:signalId)
+  field(:signalSeverity)
   field(:signalType)
   field(:state)
 end
