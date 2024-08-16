@@ -23,7 +23,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
 
   *   `feedTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - Required. Timestamp when feed is generated.
   *   `feedType` (*type:* `String.t`, *default:* `nil`) - Required. Type feed to be ingested into condor
-  *   `observabilityMetricData` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainObservabilityMetricData.t`, *default:* `nil`) - More feed data would be added in subsequent CLs
+  *   `observabilityMetricData` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainObservabilityMetricData.t`, *default:* `nil`) - 
   *   `recommendationSignalData` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceRecommendationSignalData.t`, *default:* `nil`) - 
   *   `resourceHealthSignalData` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceHealthSignalData.t`, *default:* `nil`) - 
   *   `resourceId` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId.t`, *default:* `nil`) - Primary key associated with the Resource. resource_id is available in individual feed level as well.

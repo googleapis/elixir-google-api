@@ -22,6 +22,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.TrialMetadata do
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - End time of the trial cluster.
+  *   `graceEndTime` (*type:* `DateTime.t`, *default:* `nil`) - grace end time of the cluster.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - start time of the trial cluster.
   *   `upgradeTime` (*type:* `DateTime.t`, *default:* `nil`) - Upgrade time of trial cluster to Standard cluster.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.AlloyDB.V1.Model.TrialMetadata do
 
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
+          :graceEndTime => DateTime.t() | nil,
           :startTime => DateTime.t() | nil,
           :upgradeTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)
+  field(:graceEndTime, as: DateTime)
   field(:startTime, as: DateTime)
   field(:upgradeTime, as: DateTime)
 end
