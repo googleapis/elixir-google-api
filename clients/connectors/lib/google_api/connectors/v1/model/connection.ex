@@ -36,6 +36,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   *   `eventingConfig` (*type:* `GoogleApi.Connectors.V1.Model.EventingConfig.t`, *default:* `nil`) - Optional. Eventing config of a connection
   *   `eventingEnablementType` (*type:* `String.t`, *default:* `nil`) - Optional. Eventing enablement type. Will be nil if eventing is not enabled.
   *   `eventingRuntimeData` (*type:* `GoogleApi.Connectors.V1.Model.EventingRuntimeData.t`, *default:* `nil`) - Output only. Eventing Runtime Data.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Hostname of the Service Directory service with TLS.
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `isTrustedTester` (*type:* `boolean()`, *default:* `nil`) - Output only. Is trusted tester program enabled for the project.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
@@ -49,6 +50,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   *   `status` (*type:* `GoogleApi.Connectors.V1.Model.ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. This subscription type enum states the subscription type of the project.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
+  *   `tlsServiceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service with TLS.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
 
@@ -71,6 +73,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
           :eventingConfig => GoogleApi.Connectors.V1.Model.EventingConfig.t() | nil,
           :eventingEnablementType => String.t() | nil,
           :eventingRuntimeData => GoogleApi.Connectors.V1.Model.EventingRuntimeData.t() | nil,
+          :host => String.t() | nil,
           :imageLocation => String.t() | nil,
           :isTrustedTester => boolean() | nil,
           :labels => map() | nil,
@@ -84,6 +87,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
           :status => GoogleApi.Connectors.V1.Model.ConnectionStatus.t() | nil,
           :subscriptionType => String.t() | nil,
           :suspended => boolean() | nil,
+          :tlsServiceDirectory => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -106,6 +110,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   field(:eventingConfig, as: GoogleApi.Connectors.V1.Model.EventingConfig)
   field(:eventingEnablementType)
   field(:eventingRuntimeData, as: GoogleApi.Connectors.V1.Model.EventingRuntimeData)
+  field(:host)
   field(:imageLocation)
   field(:isTrustedTester)
   field(:labels, type: :map)
@@ -119,6 +124,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   field(:status, as: GoogleApi.Connectors.V1.Model.ConnectionStatus)
   field(:subscriptionType)
   field(:suspended)
+  field(:tlsServiceDirectory)
   field(:updateTime, as: DateTime)
 end
 
