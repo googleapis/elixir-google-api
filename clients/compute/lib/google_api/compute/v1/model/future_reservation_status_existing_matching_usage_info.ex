@@ -22,18 +22,18 @@ defmodule GoogleApi.Compute.V1.Model.FutureReservationStatusExistingMatchingUsag
   ## Attributes
 
   *   `count` (*type:* `String.t`, *default:* `nil`) - Count to represent min(FR total_count, matching_reserved_capacity+matching_unreserved_instances)
-  *   `timestamp` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp when the matching usage was calculated
+  *   `timestamp` (*type:* `String.t`, *default:* `nil`) - Timestamp when the matching usage was calculated
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :count => String.t() | nil,
-          :timestamp => DateTime.t() | nil
+          :timestamp => String.t() | nil
         }
 
   field(:count)
-  field(:timestamp, as: DateTime)
+  field(:timestamp)
 end
 
 defimpl Poison.Decoder,
