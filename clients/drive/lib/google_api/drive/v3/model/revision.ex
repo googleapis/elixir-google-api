@@ -25,7 +25,7 @@ defmodule GoogleApi.Drive.V3.Model.Revision do
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the revision.
   *   `keepForever` (*type:* `boolean()`, *default:* `nil`) - Whether to keep this revision forever, even if it is no longer the head revision. If not set, the revision will be automatically purged 30 days after newer content is uploaded. This can be set on a maximum of 200 revisions for a file. This field is only applicable to files with binary content in Drive.
   *   `kind` (*type:* `String.t`, *default:* `drive#revision`) - Output only. Identifies what kind of resource this is. Value: the fixed string `"drive#revision"`.
-  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The last user to modify this revision.
+  *   `lastModifyingUser` (*type:* `GoogleApi.Drive.V3.Model.User.t`, *default:* `nil`) - Output only. The last user to modify this revision. This field is only populated when the last modification was performed by a signed-in user.
   *   `md5Checksum` (*type:* `String.t`, *default:* `nil`) - Output only. The MD5 checksum of the revision's content. This is only applicable to files with binary content in Drive.
   *   `mimeType` (*type:* `String.t`, *default:* `nil`) - Output only. The MIME type of the revision.
   *   `modifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The last time the revision was modified (RFC 3339 date-time).
