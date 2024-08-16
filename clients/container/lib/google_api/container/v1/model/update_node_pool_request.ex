@@ -46,6 +46,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   *   `queuedProvisioning` (*type:* `GoogleApi.Container.V1.Model.QueuedProvisioning.t`, *default:* `nil`) - Specifies the configuration of queued provisioning.
   *   `resourceLabels` (*type:* `GoogleApi.Container.V1.Model.ResourceLabels.t`, *default:* `nil`) - The resource labels for the node pool to use to annotate any related Google Compute Engine resources.
   *   `resourceManagerTags` (*type:* `GoogleApi.Container.V1.Model.ResourceManagerTags.t`, *default:* `nil`) - Desired resource manager tag keys and values to be attached to the nodes for managing Compute Engine firewalls using Network Firewall Policies. Existing tags will be replaced with new values.
+  *   `storagePools` (*type:* `list(String.t)`, *default:* `nil`) - List of Storage Pools where boot disks are provisioned. Existing Storage Pools will be replaced with storage-pools.
   *   `tags` (*type:* `GoogleApi.Container.V1.Model.NetworkTags.t`, *default:* `nil`) - The desired network tags to be applied to all nodes in the node pool. If this field is not present, the tags will not be changed. Otherwise, the existing network tags will be *replaced* with the provided tags.
   *   `taints` (*type:* `GoogleApi.Container.V1.Model.NodeTaints.t`, *default:* `nil`) - The desired node taints to be applied to all nodes in the node pool. If this field is not present, the taints will not be changed. Otherwise, the existing node taints will be *replaced* with the provided taints.
   *   `upgradeSettings` (*type:* `GoogleApi.Container.V1.Model.UpgradeSettings.t`, *default:* `nil`) - Upgrade settings control disruption and speed of the upgrade.
@@ -82,6 +83,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
           :queuedProvisioning => GoogleApi.Container.V1.Model.QueuedProvisioning.t() | nil,
           :resourceLabels => GoogleApi.Container.V1.Model.ResourceLabels.t() | nil,
           :resourceManagerTags => GoogleApi.Container.V1.Model.ResourceManagerTags.t() | nil,
+          :storagePools => list(String.t()) | nil,
           :tags => GoogleApi.Container.V1.Model.NetworkTags.t() | nil,
           :taints => GoogleApi.Container.V1.Model.NodeTaints.t() | nil,
           :upgradeSettings => GoogleApi.Container.V1.Model.UpgradeSettings.t() | nil,
@@ -116,6 +118,7 @@ defmodule GoogleApi.Container.V1.Model.UpdateNodePoolRequest do
   field(:queuedProvisioning, as: GoogleApi.Container.V1.Model.QueuedProvisioning)
   field(:resourceLabels, as: GoogleApi.Container.V1.Model.ResourceLabels)
   field(:resourceManagerTags, as: GoogleApi.Container.V1.Model.ResourceManagerTags)
+  field(:storagePools, type: :list)
   field(:tags, as: GoogleApi.Container.V1.Model.NetworkTags)
   field(:taints, as: GoogleApi.Container.V1.Model.NodeTaints)
   field(:upgradeSettings, as: GoogleApi.Container.V1.Model.UpgradeSettings)
