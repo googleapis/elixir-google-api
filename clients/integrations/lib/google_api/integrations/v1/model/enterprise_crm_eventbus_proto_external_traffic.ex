@@ -26,7 +26,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoExternalTraf
   *   `gcpProjectNumber` (*type:* `String.t`, *default:* `nil`) - User’s GCP project number the traffic is referring to.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Location for the user's request.
   *   `retryRequestForQuota` (*type:* `boolean()`, *default:* `nil`) - Enqueue the execution request due to quota issue
-  *   `source` (*type:* `String.t`, *default:* `nil`) - LINT.ThenChange(//depot/google3/enterprise/crm/eventbus/proto/product.proto:product, //depot/google3/java/com/google/enterprise/crm/integrationplatform/api/utils/ConverterUtils.java:source_to_product)
+  *   `source` (*type:* `String.t`, *default:* `nil`) - 
   """
 
   use GoogleApi.Gax.ModelBase

@@ -24,6 +24,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
   *   `containsLargeData` (*type:* `boolean()`, *default:* `nil`) - Indicates whether this variable contains large data and need to be uploaded to Cloud Storage.
   *   `dataType` (*type:* `String.t`, *default:* `nil`) - Type of the parameter.
   *   `defaultValue` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t`, *default:* `nil`) - Default values for the defined keys. Each value can either be string, int, double or any proto message or a serialized object.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the parameter.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The name (without prefix) to be displayed in the UI for this parameter. E.g. if the key is "foo.bar.myName", then the name would be "myName".
   *   `inputOutputType` (*type:* `String.t`, *default:* `nil`) - Specifies the input/output type for the parameter.
   *   `isTransient` (*type:* `boolean()`, *default:* `nil`) - Whether this parameter is a transient parameter.
@@ -41,6 +42,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
           :dataType => String.t() | nil,
           :defaultValue =>
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t() | nil,
+          :description => String.t() | nil,
           :displayName => String.t() | nil,
           :inputOutputType => String.t() | nil,
           :isTransient => boolean() | nil,
@@ -56,6 +58,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaIntegrat
 
   field(:defaultValue, as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType)
 
+  field(:description)
   field(:displayName)
   field(:inputOutputType)
   field(:isTransient)

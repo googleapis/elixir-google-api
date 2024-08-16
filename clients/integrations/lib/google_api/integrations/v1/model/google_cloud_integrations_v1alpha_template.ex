@@ -23,7 +23,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplate
 
   *   `author` (*type:* `String.t`, *default:* `nil`) - Optional. Creator of the template.
   *   `categories` (*type:* `list(String.t)`, *default:* `nil`) - Required. Categories associated with the Template. The categories listed below will be utilized for the Template listing.
-  *   `clientId` (*type:* `String.t`, *default:* `nil`) - Required. Client id with which Template is associated
   *   `components` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplateComponent.t)`, *default:* `nil`) - Optional. Components being used in the template. This could be used to categorize and filter.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Auto-generated.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the template. The length should not be more than 255 characters
@@ -45,7 +44,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplate
   @type t :: %__MODULE__{
           :author => String.t() | nil,
           :categories => list(String.t()) | nil,
-          :clientId => String.t() | nil,
           :components =>
             list(
               GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplateComponent.t()
@@ -69,7 +67,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplate
 
   field(:author)
   field(:categories, type: :list)
-  field(:clientId)
 
   field(:components,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTemplateComponent,

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEventExecutionInfo do
   @moduledoc """
-  Contains all the execution details for a workflow instance. Next available id: 26
+  Contains all the execution details for a workflow instance. Next available id: 27
 
   ## Attributes
 
@@ -29,6 +29,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEve
   *   `eventExecutionDetails` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEventExecutionDetails.t`, *default:* `nil`) - The execution info about this event.
   *   `eventExecutionInfoId` (*type:* `String.t`, *default:* `nil`) - Auto-generated primary key.
   *   `executionTraceInfo` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoExecutionTraceInfo.t`, *default:* `nil`) - Execution trace info to aggregate parent-child executions.
+  *   `integrationVersionUserLabel` (*type:* `String.t`, *default:* `nil`) - User-defined label that annotates the executed integration version.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Auto-generated.
   *   `postMethod` (*type:* `String.t`, *default:* `nil`) - The ways user posts this event.
   *   `product` (*type:* `String.t`, *default:* `nil`) - Which Google product the execution_info belongs to. If not set, the execution_info belongs to Integration Platform by default.
@@ -61,6 +62,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEve
           :eventExecutionInfoId => String.t() | nil,
           :executionTraceInfo =>
             GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoExecutionTraceInfo.t() | nil,
+          :integrationVersionUserLabel => String.t() | nil,
           :lastModifiedTime => String.t() | nil,
           :postMethod => String.t() | nil,
           :product => String.t() | nil,
@@ -106,6 +108,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoEve
     as: GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoExecutionTraceInfo
   )
 
+  field(:integrationVersionUserLabel)
   field(:lastModifiedTime)
   field(:postMethod)
   field(:product)

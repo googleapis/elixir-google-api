@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecutionDetails do
   @moduledoc """
-  Contains the details of the execution info of this event: this includes the tasks execution details plus the event execution statistics. Next available id: 11
+  Contains the details of the execution info of this event: this includes the tasks execution details plus the event execution statistics. Next available id: 12
 
   ## Attributes
 
+  *   `cancelReason` (*type:* `String.t`, *default:* `nil`) - If the execution is manually canceled, this field will contain the reason for cancellation.
   *   `eventAttemptStats` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats.t)`, *default:* `nil`) - 
   *   `eventExecutionSnapshot` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecutionSnapshot.t)`, *default:* `nil`) - 
   *   `eventExecutionSnapshotsSize` (*type:* `String.t`, *default:* `nil`) - Total size of all event_execution_snapshots for an execution
@@ -35,6 +36,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecuti
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cancelReason => String.t() | nil,
           :eventAttemptStats =>
             list(
               GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecutionDetailsEventAttemptStats.t()
@@ -53,6 +55,8 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoEventExecuti
           :nextExecutionTime => String.t() | nil,
           :ryeLockUnheldCount => integer() | nil
         }
+
+  field(:cancelReason)
 
   field(:eventAttemptStats,
     as:

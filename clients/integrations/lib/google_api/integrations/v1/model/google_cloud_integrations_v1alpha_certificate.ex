@@ -22,7 +22,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCertific
   ## Attributes
 
   *   `certificateStatus` (*type:* `String.t`, *default:* `nil`) - Status of the certificate
-  *   `credentialId` (*type:* `String.t`, *default:* `nil`) - Immutable. Credential id that will be used to register with trawler INTERNAL_ONLY
+  *   `credentialId` (*type:* `String.t`, *default:* `nil`) - Immutable. Credential id that will be used to register with trawler
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the certificate
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. Name of the certificate
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Auto generated primary key

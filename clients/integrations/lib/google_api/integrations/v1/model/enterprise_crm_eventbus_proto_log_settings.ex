@@ -22,33 +22,21 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoLogSettings 
   ## Attributes
 
   *   `logFieldName` (*type:* `String.t`, *default:* `nil`) - The name of corresponding logging field of the event property. If omitted, assumes the same name as the event property key.
-  *   `sanitizeOptions` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsSanitizeOptions.t`, *default:* `nil`) - Contains the scrubbing options, such as whether to scrub, obfuscate, etc.
   *   `seedPeriod` (*type:* `String.t`, *default:* `nil`) - 
   *   `seedScope` (*type:* `String.t`, *default:* `nil`) - 
-  *   `shorteningLimits` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsFieldLimits.t`, *default:* `nil`) - Contains the field limits for shortening, such as max string length and max array length.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :logFieldName => String.t() | nil,
-          :sanitizeOptions =>
-            GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsSanitizeOptions.t() | nil,
           :seedPeriod => String.t() | nil,
-          :seedScope => String.t() | nil,
-          :shorteningLimits =>
-            GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsFieldLimits.t() | nil
+          :seedScope => String.t() | nil
         }
 
   field(:logFieldName)
-
-  field(:sanitizeOptions,
-    as: GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsSanitizeOptions
-  )
-
   field(:seedPeriod)
   field(:seedScope)
-  field(:shorteningLimits, as: GoogleApi.Integrations.V1.Model.EnterpriseCrmLoggingGwsFieldLimits)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoLogSettings do

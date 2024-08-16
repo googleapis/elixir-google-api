@@ -21,6 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
 
   ## Attributes
 
+  *   `asyncOperationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Async operations enabled for the connection. If Async Operations is enabled, Connection allows the customers to initiate async long running operations using the actions API.
   *   `authConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
   *   `billingConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1BillingConfig.t`, *default:* `nil`) - Output only. Billing config for the connection.
   *   `configVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   *   `eventingConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingConfig.t`, *default:* `nil`) - Optional. Eventing config of a connection
   *   `eventingEnablementType` (*type:* `String.t`, *default:* `nil`) - Optional. Eventing enablement type. Will be nil if eventing is not enabled.
   *   `eventingRuntimeData` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeData.t`, *default:* `nil`) - Output only. Eventing Runtime Data.
+  *   `host` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Hostname of the Service Directory service with TLS.
   *   `imageLocation` (*type:* `String.t`, *default:* `nil`) - Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
   *   `isTrustedTester` (*type:* `boolean()`, *default:* `nil`) - Output only. Is trusted tester program enabled for the project.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
@@ -48,12 +50,14 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   *   `status` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. This subscription type enum states the subscription type of the project.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
+  *   `tlsServiceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service with TLS.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :asyncOperationsEnabled => boolean() | nil,
           :authConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t() | nil,
           :billingConfig =>
@@ -77,6 +81,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
           :eventingEnablementType => String.t() | nil,
           :eventingRuntimeData =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeData.t() | nil,
+          :host => String.t() | nil,
           :imageLocation => String.t() | nil,
           :isTrustedTester => boolean() | nil,
           :labels => map() | nil,
@@ -95,9 +100,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t() | nil,
           :subscriptionType => String.t() | nil,
           :suspended => boolean() | nil,
+          :tlsServiceDirectory => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
+  field(:asyncOperationsEnabled)
   field(:authConfig, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig)
   field(:billingConfig, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1BillingConfig)
 
@@ -132,6 +139,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
     as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1EventingRuntimeData
   )
 
+  field(:host)
   field(:imageLocation)
   field(:isTrustedTester)
   field(:labels, type: :map)
@@ -145,6 +153,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   field(:status, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus)
   field(:subscriptionType)
   field(:suspended)
+  field(:tlsServiceDirectory)
   field(:updateTime, as: DateTime)
 end
 
