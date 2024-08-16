@@ -56,6 +56,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `imageType` (*type:* `String.t`, *default:* `nil`) - The image type to use for this node. Note that for a given image type, the latest version of it will be used. Please see https://cloud.google.com/kubernetes-engine/docs/concepts/node-images for available image types.
   *   `preemptible` (*type:* `boolean()`, *default:* `nil`) - Whether the nodes are created as preemptible VM instances. See: https://cloud.google.com/compute/docs/instances/preemptible for more information about preemptible VM instances.
   *   `spot` (*type:* `boolean()`, *default:* `nil`) - Spot flag for enabling Spot VM, which is a rebrand of the existing preemptible flag.
+  *   `storagePools` (*type:* `list(String.t)`, *default:* `nil`) - List of Storage Pools where boot disks are provisioned.
   *   `oauthScopes` (*type:* `list(String.t)`, *default:* `nil`) - The set of Google API scopes to be made available on all of the node VMs under the "default" service account. The following scopes are recommended, but not required, and by default are not included: * `https://www.googleapis.com/auth/compute` is required for mounting persistent storage on your nodes. * `https://www.googleapis.com/auth/devstorage.read_only` is required for communicating with **gcr.io** (the [Google Container Registry](https://cloud.google.com/container-registry/)). If unspecified, no scopes are added, unless Cloud Logging or Cloud Monitoring are enabled, in which case their required scopes will be added.
   *   `soleTenantConfig` (*type:* `GoogleApi.Container.V1.Model.SoleTenantConfig.t`, *default:* `nil`) - Parameters for node pools to be backed by shared sole tenant node groups.
   *   `workloadMetadataConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadMetadataConfig.t`, *default:* `nil`) - The workload metadata configuration for this node.
@@ -105,6 +106,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :imageType => String.t() | nil,
           :preemptible => boolean() | nil,
           :spot => boolean() | nil,
+          :storagePools => list(String.t()) | nil,
           :oauthScopes => list(String.t()) | nil,
           :soleTenantConfig => GoogleApi.Container.V1.Model.SoleTenantConfig.t() | nil,
           :workloadMetadataConfig =>
@@ -155,6 +157,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:imageType)
   field(:preemptible)
   field(:spot)
+  field(:storagePools, type: :list)
   field(:oauthScopes, type: :list)
   field(:soleTenantConfig, as: GoogleApi.Container.V1.Model.SoleTenantConfig)
   field(:workloadMetadataConfig, as: GoogleApi.Container.V1.Model.WorkloadMetadataConfig)

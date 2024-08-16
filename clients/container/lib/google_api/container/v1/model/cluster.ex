@@ -50,6 +50,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `maintenancePolicy` (*type:* `GoogleApi.Container.V1.Model.MaintenancePolicy.t`, *default:* `nil`) - Configure the maintenance policy for this cluster.
   *   `verticalPodAutoscaling` (*type:* `GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t`, *default:* `nil`) - Cluster-level Vertical Pod Autoscaling configuration.
   *   `nodePoolAutoConfig` (*type:* `GoogleApi.Container.V1.Model.NodePoolAutoConfig.t`, *default:* `nil`) - Node pool configs that apply to all auto-provisioned node pools in autopilot clusters and node auto-provisioning enabled clusters.
+  *   `secretManagerConfig` (*type:* `GoogleApi.Container.V1.Model.SecretManagerConfig.t`, *default:* `nil`) - Secret CSI driver configuration.
   *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
   *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -127,6 +128,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :verticalPodAutoscaling =>
             GoogleApi.Container.V1.Model.VerticalPodAutoscaling.t() | nil,
           :nodePoolAutoConfig => GoogleApi.Container.V1.Model.NodePoolAutoConfig.t() | nil,
+          :secretManagerConfig => GoogleApi.Container.V1.Model.SecretManagerConfig.t() | nil,
           :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
           :clusterIpv4Cidr => String.t() | nil,
           :expireTime => String.t() | nil,
@@ -202,6 +204,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:maintenancePolicy, as: GoogleApi.Container.V1.Model.MaintenancePolicy)
   field(:verticalPodAutoscaling, as: GoogleApi.Container.V1.Model.VerticalPodAutoscaling)
   field(:nodePoolAutoConfig, as: GoogleApi.Container.V1.Model.NodePoolAutoConfig)
+  field(:secretManagerConfig, as: GoogleApi.Container.V1.Model.SecretManagerConfig)
   field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:clusterIpv4Cidr)
   field(:expireTime)
