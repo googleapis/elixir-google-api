@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2beta1ResponseMess
 
   ## Attributes
 
-  *   `text` (*type:* `list(String.t)`, *default:* `nil`) - A collection of text responses.
+  *   `text` (*type:* `list(String.t)`, *default:* `nil`) - A collection of text response variants. If multiple variants are defined, only one text response variant is returned at runtime.
   """
 
   use GoogleApi.Gax.ModelBase
