@@ -23,8 +23,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
 
   *   `connectionRatelimitWindowSeconds` (*type:* `String.t`, *default:* `nil`) - Output only. The window used for ratelimiting runtime requests to connections.
   *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Optional. Indicates whether connector is deployed on GKE/CloudRun
+  *   `deploymentModelMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the deployment model migration.
   *   `hpaConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1HPAConfig.t`, *default:* `nil`) - Output only. HPA autoscaling config.
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Output only. Max QPS supported for internal requests originating from Connd.
+  *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Output only. Max instance request concurrency.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Output only. Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceLimits.t`, *default:* `nil`) - Output only. System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceRequests.t`, *default:* `nil`) - Output only. System resource requests.
@@ -36,9 +38,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
   @type t :: %__MODULE__{
           :connectionRatelimitWindowSeconds => String.t() | nil,
           :deploymentModel => String.t() | nil,
+          :deploymentModelMigrationState => String.t() | nil,
           :hpaConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1HPAConfig.t() | nil,
           :internalclientRatelimitThreshold => String.t() | nil,
+          :maxInstanceRequestConcurrency => integer() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceLimits.t() | nil,
@@ -49,8 +53,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
 
   field(:connectionRatelimitWindowSeconds)
   field(:deploymentModel)
+  field(:deploymentModelMigrationState)
   field(:hpaConfig, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1HPAConfig)
   field(:internalclientRatelimitThreshold)
+  field(:maxInstanceRequestConcurrency)
   field(:ratelimitThreshold)
 
   field(:resourceLimits, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceLimits)

@@ -31,7 +31,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTriggerC
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. Configurable properties of the trigger, not to be confused with integration parameters. E.g. "name" is a property for API triggers and "subscription" is a property for Pub/sub triggers.
   *   `startTasks` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaNextTask.t)`, *default:* `nil`) - Optional. Set of tasks numbers from where the integration execution is started by this trigger. If this is empty, then integration is executed with default start tasks. In the list of start tasks, none of two tasks can have direct ancestor-descendant relationships (i.e. in a same integration execution graph).
   *   `trigger` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the trigger. Example: "API Trigger", "Cloud Pub Sub Trigger" When set will be sent out to monitoring dashabord for tracking purpose.
-  *   `triggerId` (*type:* `String.t`, *default:* `nil`) - Optional. The backend trigger ID.
+  *   `triggerId` (*type:* `String.t`, *default:* `nil`) - Optional. Auto-generated trigger ID. The ID is based on the properties that you define in the trigger config. For example, for an API trigger, the trigger ID follows the format: api_trigger/TRIGGER_NAME Where trigger config has properties with value {"Trigger name": TRIGGER_NAME}
   *   `triggerNumber` (*type:* `String.t`, *default:* `nil`) - Required. A number to uniquely identify each trigger config within the integration on UI.
   *   `triggerType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of trigger
   """
