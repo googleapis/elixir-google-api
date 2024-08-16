@@ -26,6 +26,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfigTemplate do
   *   `configVariableTemplates` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t)`, *default:* `nil`) - Config variables to describe an `AuthConfig` for a `Connection`.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Connector specific description for an authentication template.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Display name for authentication template.
+  *   `isDefault` (*type:* `boolean()`, *default:* `nil`) - Whether the auth config is the default one.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -36,7 +37,8 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfigTemplate do
           :configVariableTemplates =>
             list(GoogleApi.Connectors.V1.Model.ConfigVariableTemplate.t()) | nil,
           :description => String.t() | nil,
-          :displayName => String.t() | nil
+          :displayName => String.t() | nil,
+          :isDefault => boolean() | nil
         }
 
   field(:authKey)
@@ -49,6 +51,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfigTemplate do
 
   field(:description)
   field(:displayName)
+  field(:isDefault)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Connectors.V1.Model.AuthConfigTemplate do

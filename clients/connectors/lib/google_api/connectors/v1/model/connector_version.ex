@@ -30,6 +30,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Output only. Display name.
   *   `egressControlConfig` (*type:* `GoogleApi.Connectors.V1.Model.EgressControlConfig.t`, *default:* `nil`) - Output only. Configuration for Egress Control.
   *   `eventingConfigTemplate` (*type:* `GoogleApi.Connectors.V1.Model.EventingConfigTemplate.t`, *default:* `nil`) - Output only. Eventing configuration supported by the Connector.
+  *   `isAsyncOperationsSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is async operations supported.
   *   `isCustomActionsSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is custom actions supported.
   *   `isCustomEntitiesSupported` (*type:* `boolean()`, *default:* `nil`) - Output only. Is custom entities supported.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Output only. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
@@ -63,6 +64,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
           :egressControlConfig => GoogleApi.Connectors.V1.Model.EgressControlConfig.t() | nil,
           :eventingConfigTemplate =>
             GoogleApi.Connectors.V1.Model.EventingConfigTemplate.t() | nil,
+          :isAsyncOperationsSupported => boolean() | nil,
           :isCustomActionsSupported => boolean() | nil,
           :isCustomEntitiesSupported => boolean() | nil,
           :labels => map() | nil,
@@ -102,6 +104,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorVersion do
   field(:displayName)
   field(:egressControlConfig, as: GoogleApi.Connectors.V1.Model.EgressControlConfig)
   field(:eventingConfigTemplate, as: GoogleApi.Connectors.V1.Model.EventingConfigTemplate)
+  field(:isAsyncOperationsSupported)
   field(:isCustomActionsSupported)
   field(:isCustomEntitiesSupported)
   field(:labels, type: :map)
