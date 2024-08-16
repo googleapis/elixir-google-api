@@ -18,7 +18,7 @@
 defmodule GoogleApi.Drive.Mixfile do
   use Mix.Project
 
-  @version "0.29.2"
+  @version "0.29.3"
 
   def project() do
     [
