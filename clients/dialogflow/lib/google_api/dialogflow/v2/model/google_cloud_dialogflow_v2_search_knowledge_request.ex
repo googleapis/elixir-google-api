@@ -26,7 +26,7 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2SearchKnowledgeRe
   *   `latestMessage` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the latest conversation message when the request is triggered. Format: `projects//locations//conversations//messages/`.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - Required. The parent resource contains the conversation profile Format: 'projects/' or `projects//locations/`.
   *   `query` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2TextInput.t`, *default:* `nil`) - Required. The natural language text query for knowledge search.
-  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Optional. The ID of the search session. The session_id can be combined with Dialogflow V3 Agent ID retrieved from conversation profile or on its own to identify a search session. The search history of the same session will impact the search result. It's up to the API caller to choose an appropriate `Session ID`. It can be a random number or some type of session identifiers (preferably hashed). The length must not exceed 36 characters.
+  *   `sessionId` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the search session. The session_id can be combined with Dialogflow V3 Agent ID retrieved from conversation profile or on its own to identify a search session. The search history of the same session will impact the search result. It's up to the API caller to choose an appropriate `Session ID`. It can be a random number or some type of session identifiers (preferably hashed). The length must not exceed 36 characters.
   """
 
   use GoogleApi.Gax.ModelBase

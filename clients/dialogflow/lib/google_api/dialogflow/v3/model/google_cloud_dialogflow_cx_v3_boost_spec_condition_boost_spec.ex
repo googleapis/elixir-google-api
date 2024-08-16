@@ -22,6 +22,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecCondit
   ## Attributes
 
   *   `boost` (*type:* `number()`, *default:* `nil`) - Optional. Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the document a big promotion. However, it does not necessarily mean that the boosted document will be the top result at all times, nor that other documents will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant documents. Setting to -1.0 gives the document a big demotion. However, results that are deeply relevant might still be shown. The document will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+  *   `boostControlSpec` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpecBoostControlSpec.t`, *default:* `nil`) - Optional. Complex specification for custom ranking based on customer defined attribute value.
   *   `condition` (*type:* `String.t`, *default:* `nil`) - Optional. An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. Examples: * To boost documents with document ID "doc_1" or "doc_2", and color "Red" or "Blue": * (id: ANY("doc_1", "doc_2")) AND (color: ANY("Red","Blue"))
   """
 
@@ -29,10 +30,19 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecCondit
 
   @type t :: %__MODULE__{
           :boost => number() | nil,
+          :boostControlSpec =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpecBoostControlSpec.t()
+            | nil,
           :condition => String.t() | nil
         }
 
   field(:boost)
+
+  field(:boostControlSpec,
+    as:
+      GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3BoostSpecConditionBoostSpecBoostControlSpec
+  )
+
   field(:condition)
 end
 
