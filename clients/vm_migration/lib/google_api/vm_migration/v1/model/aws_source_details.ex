@@ -27,7 +27,6 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceDetails do
   *   `inventorySecurityGroupNames` (*type:* `list(String.t)`, *default:* `nil`) - AWS security group names to limit the scope of the source inventory.
   *   `inventoryTagList` (*type:* `list(GoogleApi.VMMigration.V1.Model.Tag.t)`, *default:* `nil`) - AWS resource tags to limit the scope of the source inventory.
   *   `migrationResourcesUserTags` (*type:* `map()`, *default:* `nil`) - User specified tags to add to every M2VM generated resource in AWS. These tags will be set in addition to the default tags that are set as part of the migration process. The tags must not begin with the reserved prefix `m2vm`.
-  *   `networkInsights` (*type:* `GoogleApi.VMMigration.V1.Model.NetworkInsights.t`, *default:* `nil`) - Output only. Information about the network coniguration of the source. Only gatherred upon request.
   *   `publicIp` (*type:* `String.t`, *default:* `nil`) - Output only. The source's public IP. All communication initiated by this source will originate from this IP.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the source as determined by the health check.
   """
@@ -41,7 +40,6 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceDetails do
           :inventorySecurityGroupNames => list(String.t()) | nil,
           :inventoryTagList => list(GoogleApi.VMMigration.V1.Model.Tag.t()) | nil,
           :migrationResourcesUserTags => map() | nil,
-          :networkInsights => GoogleApi.VMMigration.V1.Model.NetworkInsights.t() | nil,
           :publicIp => String.t() | nil,
           :state => String.t() | nil
         }
@@ -52,7 +50,6 @@ defmodule GoogleApi.VMMigration.V1.Model.AwsSourceDetails do
   field(:inventorySecurityGroupNames, type: :list)
   field(:inventoryTagList, as: GoogleApi.VMMigration.V1.Model.Tag, type: :list)
   field(:migrationResourcesUserTags, type: :map)
-  field(:networkInsights, as: GoogleApi.VMMigration.V1.Model.NetworkInsights)
   field(:publicIp)
   field(:state)
 end

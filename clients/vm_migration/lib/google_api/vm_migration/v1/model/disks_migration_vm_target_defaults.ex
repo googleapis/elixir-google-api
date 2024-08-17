@@ -24,6 +24,8 @@ defmodule GoogleApi.VMMigration.V1.Model.DisksMigrationVmTargetDefaults do
   *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Additional licenses to assign to the VM.
   *   `bootDiskDefaults` (*type:* `GoogleApi.VMMigration.V1.Model.BootDiskDefaults.t`, *default:* `nil`) - Optional. Details of the boot disk of the VM.
   *   `computeScheduling` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeScheduling.t`, *default:* `nil`) - Optional. Compute instance scheduling information (if empty default is used).
+  *   `enableIntegrityMonitoring` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines whether the instance has integrity monitoring enabled.
+  *   `enableVtpm` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines whether the instance has vTPM enabled.
   *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. The encryption to apply to the VM.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - Optional. The hostname to assign to the VM.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. A map of labels to associate with the VM.
@@ -43,6 +45,8 @@ defmodule GoogleApi.VMMigration.V1.Model.DisksMigrationVmTargetDefaults do
           :additionalLicenses => list(String.t()) | nil,
           :bootDiskDefaults => GoogleApi.VMMigration.V1.Model.BootDiskDefaults.t() | nil,
           :computeScheduling => GoogleApi.VMMigration.V1.Model.ComputeScheduling.t() | nil,
+          :enableIntegrityMonitoring => boolean() | nil,
+          :enableVtpm => boolean() | nil,
           :encryption => GoogleApi.VMMigration.V1.Model.Encryption.t() | nil,
           :hostname => String.t() | nil,
           :labels => map() | nil,
@@ -59,6 +63,8 @@ defmodule GoogleApi.VMMigration.V1.Model.DisksMigrationVmTargetDefaults do
   field(:additionalLicenses, type: :list)
   field(:bootDiskDefaults, as: GoogleApi.VMMigration.V1.Model.BootDiskDefaults)
   field(:computeScheduling, as: GoogleApi.VMMigration.V1.Model.ComputeScheduling)
+  field(:enableIntegrityMonitoring)
+  field(:enableVtpm)
   field(:encryption, as: GoogleApi.VMMigration.V1.Model.Encryption)
   field(:hostname)
   field(:labels, type: :map)
