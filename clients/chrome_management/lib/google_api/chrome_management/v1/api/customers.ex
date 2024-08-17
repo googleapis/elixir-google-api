@@ -1918,7 +1918,7 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:readMask` (*type:* `String.t`) - Read mask to specify which fields to return. Supported read_mask paths are: - name - org_unit_id - user_id - user_email - user_device.device_id - user_device.audio_status_report - user_device.device_activity_report - user_device.network_bandwidth_report - user_device.peripherals_report 
+      *   `:readMask` (*type:* `String.t`) - Read mask to specify which fields to return. Supported read_mask paths are: - name - org_unit_id - user_id - user_email - user_device.device_id - user_device.audio_status_report - user_device.device_activity_report - user_device.network_bandwidth_report - user_device.peripherals_report - user_device.app_report 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1996,7 +1996,7 @@ defmodule GoogleApi.ChromeManagement.V1.Api.Customers do
       *   `:filter` (*type:* `String.t`) - Only include resources that match the filter. Supported filter fields: - user_id - user_org_unit_id 
       *   `:pageSize` (*type:* `integer()`) - Maximum number of results to return. Default value is 100. Maximum value is 1000.
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list.
-      *   `:readMask` (*type:* `String.t`) - Read mask to specify which fields to return. Supported read_mask paths are: - name - org_unit_id - user_id - user_email - user_device.device_id - user_device.audio_status_report - user_device.device_activity_report - user_device.network_bandwidth_report - user_device.peripherals_report 
+      *   `:readMask` (*type:* `String.t`) - Read mask to specify which fields to return. Supported read_mask paths are: - name - org_unit_id - user_id - user_email - user_device.device_id - user_device.audio_status_report - user_device.device_activity_report - user_device.network_bandwidth_report - user_device.peripherals_report - user_device.app_report 
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
