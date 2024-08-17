@@ -36,7 +36,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conve
   *   `floodlightOrderId` (*type:* `String.t`, *default:* `nil`) - Output only. The Floodlight order ID provided by the advertiser for the conversion.
   *   `floodlightOriginalRevenue` (*type:* `String.t`, *default:* `nil`) - Output only. The original, unchanged revenue associated with the Floodlight event (in the currency of the current report), before Floodlight currency instruction modifications.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the conversion
-  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - Output only. The SearchAds360 inventory account ID containing the product that was clicked on. SearchAds360 generates this ID when you link an inventory account in SearchAds360.
+  *   `merchantId` (*type:* `String.t`, *default:* `nil`) - Output only. The Search Ads 360 inventory account ID containing the product that was clicked on. Search Ads 360 generates this ID when you link an inventory account in Search Ads 360.
   *   `productChannel` (*type:* `String.t`, *default:* `nil`) - Output only. The sales channel of the product that was clicked on: Online or Local.
   *   `productCountryCode` (*type:* `String.t`, *default:* `nil`) - Output only. The country (ISO-3166-format) registered for the inventory feed that contains the product clicked on.
   *   `productId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the product clicked on.
@@ -44,7 +44,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Conve
   *   `productStoreId` (*type:* `String.t`, *default:* `nil`) - Output only. The store in the Local Inventory Ad that was clicked on. This should match the store IDs used in your local products feed.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the conversion. Conversion resource names have the form: `customers/{customer_id}/conversions/{ad_group_id}~{criterion_id}~{ds_conversion_id}`
   *   `status` (*type:* `String.t`, *default:* `nil`) - Output only. The status of the conversion, either ENABLED or REMOVED..
-  *   `visitId` (*type:* `String.t`, *default:* `nil`) - Output only. The SearchAds360 visit ID that the conversion is attributed to.
+  *   `visitId` (*type:* `String.t`, *default:* `nil`) - Output only. The Search Ads 360 visit ID that the conversion is attributed to.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -23,7 +23,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
 
   *   `ad` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Ad.t`, *default:* `nil`) - Immutable. The ad.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this ad_group_ad was created. The datetime is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss.ssssss" format.
-  *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the ad in the external engine account. This field is for SearchAds 360 account only, for example, Yahoo Japan, Microsoft, Baidu etc. For non-SearchAds 360 entity, use "ad_group_ad.ad.id" instead.
+  *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the ad in the external engine account. This field is for Search Ads 360 account only, for example, Yahoo Japan, Microsoft, Baidu etc. For non-Search Ads 360 entity, use "ad_group_ad.ad.id" instead.
   *   `engineStatus` (*type:* `String.t`, *default:* `nil`) - Output only. Additional status of the ad in the external engine account. Possible statuses (depending on the type of external account) include active, eligible, pending review, etc.
   *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of labels attached to this ad group ad.
   *   `lastModifiedTime` (*type:* `String.t`, *default:* `nil`) - Output only. The datetime when this ad group ad was last modified. The datetime is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss.ssssss" format.

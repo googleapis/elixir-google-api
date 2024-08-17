@@ -39,6 +39,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
   *   `productCustomAttribute4` (*type:* `String.t`, *default:* `nil`) - Custom attribute 4 of the product.
   *   `dayOfWeek` (*type:* `String.t`, *default:* `nil`) - Day of the week, for example, MONDAY.
   *   `productSoldTypeL3` (*type:* `String.t`, *default:* `nil`) - Type (level 3) of the product sold.
+  *   `geoTargetCountry` (*type:* `String.t`, *default:* `nil`) - Resource name of the geo target constant that represents a country.
   *   `conversionActionCategory` (*type:* `String.t`, *default:* `nil`) - Conversion action category.
   *   `quarter` (*type:* `String.t`, *default:* `nil`) - Quarter as represented by the date of the first day of a quarter. Uses the calendar year for quarters, for example, the second quarter of 2018 starts on 2018-04-01. Formatted as yyyy-MM-dd.
   *   `productStoreId` (*type:* `String.t`, *default:* `nil`) - Store ID of the product.
@@ -64,19 +65,23 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
   *   `productLanguage` (*type:* `String.t`, *default:* `nil`) - Resource name of the language constant for the language of the product.
   *   `productSoldBiddingCategoryLevel3` (*type:* `String.t`, *default:* `nil`) - Bidding category (level 3) of the product sold.
   *   `productSoldCustomAttribute1` (*type:* `String.t`, *default:* `nil`) - Custom attribute 1 of the product sold.
+  *   `hour` (*type:* `integer()`, *default:* `nil`) - Hour of day as a number between 0 and 23, inclusive.
   *   `year` (*type:* `integer()`, *default:* `nil`) - Year, formatted as yyyy.
   *   `productItemId` (*type:* `String.t`, *default:* `nil`) - Item ID of the product.
   *   `productSoldTypeL5` (*type:* `String.t`, *default:* `nil`) - Type (level 5) of the product sold.
+  *   `geoTargetCity` (*type:* `String.t`, *default:* `nil`) - Resource name of the geo target constant that represents a city.
   *   `month` (*type:* `String.t`, *default:* `nil`) - Month as represented by the date of the first day of a month. Formatted as yyyy-MM-dd.
   *   `productSoldCustomAttribute4` (*type:* `String.t`, *default:* `nil`) - Custom attribute 4 of the product sold.
   *   `productCustomAttribute0` (*type:* `String.t`, *default:* `nil`) - Custom attribute 0 of the product.
   *   `productTypeL4` (*type:* `String.t`, *default:* `nil`) - Type (level 4) of the product.
   *   `assetInteractionTarget` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AssetInteractionTarget.t`, *default:* `nil`) - Only used with CustomerAsset, CampaignAsset and AdGroupAsset metrics. Indicates whether the interaction metrics occurred on the asset itself or a different asset or ad unit. Interactions (for example, clicks) are counted across all the parts of the served ad (for example, Ad itself and other components like Sitelinks) when they are served together. When interaction_on_this_asset is true, it means the interactions are on this specific asset and when interaction_on_this_asset is false, it means the interactions is not on this specific asset but on other parts of the served ad this asset is served with.
   *   `rawEventConversionDimensions` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The raw event conversion dimensions.
+  *   `geoTargetMetro` (*type:* `String.t`, *default:* `nil`) - Resource name of the geo target constant that represents a metro.
   *   `device` (*type:* `String.t`, *default:* `nil`) - Device to which metrics apply.
   *   `week` (*type:* `String.t`, *default:* `nil`) - Week as defined as Monday through Sunday, and represented by the date of Monday. Formatted as yyyy-MM-dd.
   *   `productTypeL5` (*type:* `String.t`, *default:* `nil`) - Type (level 5) of the product.
   *   `conversionCustomDimensions` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The conversion custom dimensions.
+  *   `geoTargetRegion` (*type:* `String.t`, *default:* `nil`) - Resource name of the geo target constant that represents a region.
   *   `adNetworkType` (*type:* `String.t`, *default:* `nil`) - Ad network type.
   *   `productSoldBrand` (*type:* `String.t`, *default:* `nil`) - Brand of the product sold.
   """
@@ -102,6 +107,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
           :productCustomAttribute4 => String.t() | nil,
           :dayOfWeek => String.t() | nil,
           :productSoldTypeL3 => String.t() | nil,
+          :geoTargetCountry => String.t() | nil,
           :conversionActionCategory => String.t() | nil,
           :quarter => String.t() | nil,
           :productStoreId => String.t() | nil,
@@ -128,9 +134,11 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
           :productLanguage => String.t() | nil,
           :productSoldBiddingCategoryLevel3 => String.t() | nil,
           :productSoldCustomAttribute1 => String.t() | nil,
+          :hour => integer() | nil,
           :year => integer() | nil,
           :productItemId => String.t() | nil,
           :productSoldTypeL5 => String.t() | nil,
+          :geoTargetCity => String.t() | nil,
           :month => String.t() | nil,
           :productSoldCustomAttribute4 => String.t() | nil,
           :productCustomAttribute0 => String.t() | nil,
@@ -140,11 +148,13 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
             | nil,
           :rawEventConversionDimensions =>
             list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
+          :geoTargetMetro => String.t() | nil,
           :device => String.t() | nil,
           :week => String.t() | nil,
           :productTypeL5 => String.t() | nil,
           :conversionCustomDimensions =>
             list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
+          :geoTargetRegion => String.t() | nil,
           :adNetworkType => String.t() | nil,
           :productSoldBrand => String.t() | nil
         }
@@ -167,6 +177,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
   field(:productCustomAttribute4)
   field(:dayOfWeek)
   field(:productSoldTypeL3)
+  field(:geoTargetCountry)
   field(:conversionActionCategory)
   field(:quarter)
   field(:productStoreId)
@@ -192,9 +203,11 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
   field(:productLanguage)
   field(:productSoldBiddingCategoryLevel3)
   field(:productSoldCustomAttribute1)
+  field(:hour)
   field(:year)
   field(:productItemId)
   field(:productSoldTypeL5)
+  field(:geoTargetCity)
   field(:month)
   field(:productSoldCustomAttribute4)
   field(:productCustomAttribute0)
@@ -209,6 +222,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
     type: :list
   )
 
+  field(:geoTargetMetro)
   field(:device)
   field(:week)
   field(:productTypeL5)
@@ -218,6 +232,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Segments
     type: :list
   )
 
+  field(:geoTargetRegion)
   field(:adNetworkType)
   field(:productSoldBrand)
 end

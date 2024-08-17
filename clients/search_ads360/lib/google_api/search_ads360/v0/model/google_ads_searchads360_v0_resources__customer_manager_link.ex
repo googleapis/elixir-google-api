@@ -24,6 +24,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Custo
   *   `managerCustomer` (*type:* `String.t`, *default:* `nil`) - Output only. The manager customer linked to the customer.
   *   `managerLinkId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the customer-manager link. This field is read only.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the resource. CustomerManagerLink resource names have the form: `customers/{customer_id}/customerManagerLinks/{manager_customer_id}~{manager_link_id}`
+  *   `startTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when the CustomerManagerLink was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Status of the link between the customer and the manager.
   """
 
@@ -33,12 +34,14 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Custo
           :managerCustomer => String.t() | nil,
           :managerLinkId => String.t() | nil,
           :resourceName => String.t() | nil,
+          :startTime => String.t() | nil,
           :status => String.t() | nil
         }
 
   field(:managerCustomer)
   field(:managerLinkId)
   field(:resourceName)
+  field(:startTime)
   field(:status)
 end
 

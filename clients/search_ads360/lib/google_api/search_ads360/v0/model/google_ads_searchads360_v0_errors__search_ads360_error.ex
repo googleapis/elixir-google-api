@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Errors_SearchAds360Error do
   @moduledoc """
-  SearchAds360-specific error.
+  Search Ads 360-specific error.
 
   ## Attributes
 

@@ -22,7 +22,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSp
   ## Attributes
 
   *   `cpcBidCeilingMicros` (*type:* `String.t`, *default:* `nil`) - Maximum bid limit that can be set by the bid strategy. The limit applies to all keywords managed by the strategy.
-  *   `targetSpendMicros` (*type:* `String.t`, *default:* `nil`) - The spend target under which to maximize clicks. A TargetSpend bidder will attempt to spend the smaller of this value or the natural throttling spend amount. If not specified, the budget is used as the spend target. This field is deprecated and should no longer be used. See https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html for details.
+  *   `targetSpendMicros` (*type:* `String.t`, *default:* `nil`) - Deprecated: The spend target under which to maximize clicks. A TargetSpend bidder will attempt to spend the smaller of this value or the natural throttling spend amount. If not specified, the budget is used as the spend target. This field is deprecated and should no longer be used. See https://ads-developers.googleblog.com/2020/05/reminder-about-sunset-creation-of.html for details.
   """
 
   use GoogleApi.Gax.ModelBase
