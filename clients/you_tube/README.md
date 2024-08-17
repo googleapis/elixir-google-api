@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_you_tube, "~> 0.45"}]
+  [{:google_api_you_tube, "~> 0.46"}]
 end
 ```
 

@@ -154,7 +154,7 @@ defmodule GoogleApi.YouTube.V3.Api.LiveChatMessages do
 
   *   `connection` (*type:* `GoogleApi.YouTube.V3.Connection.t`) - Connection to server
   *   `live_chat_id` (*type:* `String.t`) - The id of the live chat for which comments should be returned.
-  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id and snippet.
+  *   `part` (*type:* `list(String.t)`) - The *part* parameter specifies the liveChatComment resource parts that the API response will include. Supported values are id, snippet, and authorDetails.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
