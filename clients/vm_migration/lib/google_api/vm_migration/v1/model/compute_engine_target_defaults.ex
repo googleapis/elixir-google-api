@@ -23,9 +23,12 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults do
 
   *   `additionalLicenses` (*type:* `list(String.t)`, *default:* `nil`) - Additional licenses to assign to the VM.
   *   `appliedLicense` (*type:* `GoogleApi.VMMigration.V1.Model.AppliedLicense.t`, *default:* `nil`) - Output only. The OS license returned from the adaptation module report.
+  *   `bootConversion` (*type:* `String.t`, *default:* `nil`) - Optional. By default the virtual machine will keep its existing boot option. Setting this property will trigger an internal process which will convert the virtual machine from using the existing boot option to another.
   *   `bootOption` (*type:* `String.t`, *default:* `nil`) - Output only. The VM Boot Option, as set in the source VM.
   *   `computeScheduling` (*type:* `GoogleApi.VMMigration.V1.Model.ComputeScheduling.t`, *default:* `nil`) - Compute instance scheduling information (if empty default is used).
   *   `diskType` (*type:* `String.t`, *default:* `nil`) - The disk type to use in the VM.
+  *   `enableIntegrityMonitoring` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines whether the instance has integrity monitoring enabled. This can be set to true only if the VM boot option is EFI, and vTPM is enabled.
+  *   `enableVtpm` (*type:* `boolean()`, *default:* `nil`) - Optional. Defines whether the instance has vTPM enabled. This can be set to true only if the VM boot option is EFI.
   *   `encryption` (*type:* `GoogleApi.VMMigration.V1.Model.Encryption.t`, *default:* `nil`) - Optional. Immutable. The encryption to apply to the VM disks.
   *   `hostname` (*type:* `String.t`, *default:* `nil`) - The hostname to assign to the VM.
   *   `labels` (*type:* `map()`, *default:* `nil`) - A map of labels to associate with the VM.
@@ -47,9 +50,12 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults do
   @type t :: %__MODULE__{
           :additionalLicenses => list(String.t()) | nil,
           :appliedLicense => GoogleApi.VMMigration.V1.Model.AppliedLicense.t() | nil,
+          :bootConversion => String.t() | nil,
           :bootOption => String.t() | nil,
           :computeScheduling => GoogleApi.VMMigration.V1.Model.ComputeScheduling.t() | nil,
           :diskType => String.t() | nil,
+          :enableIntegrityMonitoring => boolean() | nil,
+          :enableVtpm => boolean() | nil,
           :encryption => GoogleApi.VMMigration.V1.Model.Encryption.t() | nil,
           :hostname => String.t() | nil,
           :labels => map() | nil,
@@ -68,9 +74,12 @@ defmodule GoogleApi.VMMigration.V1.Model.ComputeEngineTargetDefaults do
 
   field(:additionalLicenses, type: :list)
   field(:appliedLicense, as: GoogleApi.VMMigration.V1.Model.AppliedLicense)
+  field(:bootConversion)
   field(:bootOption)
   field(:computeScheduling, as: GoogleApi.VMMigration.V1.Model.ComputeScheduling)
   field(:diskType)
+  field(:enableIntegrityMonitoring)
+  field(:enableVtpm)
   field(:encryption, as: GoogleApi.VMMigration.V1.Model.Encryption)
   field(:hostname)
   field(:labels, type: :map)
