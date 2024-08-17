@@ -34,7 +34,6 @@ defmodule GoogleApi.Compute.V1.Model.FutureReservation do
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined fully-qualified URL for this resource.
   *   `selfLinkWithId` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for this resource with the resource id.
   *   `shareSettings` (*type:* `GoogleApi.Compute.V1.Model.ShareSettings.t`, *default:* `nil`) - List of Projects/Folders to share with.
-  *   `specificReservationRequired` (*type:* `boolean()`, *default:* `nil`) - Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation. If set to true,the delivered resevervation will have the same name as the future reservation.
   *   `specificSkuProperties` (*type:* `GoogleApi.Compute.V1.Model.FutureReservationSpecificSKUProperties.t`, *default:* `nil`) - Future Reservation configuration to indicate instance properties and total count.
   *   `status` (*type:* `GoogleApi.Compute.V1.Model.FutureReservationStatus.t`, *default:* `nil`) - [Output only] Status of the Future Reservation
   *   `timeWindow` (*type:* `GoogleApi.Compute.V1.Model.FutureReservationTimeWindow.t`, *default:* `nil`) - Time window for this Future Reservation.
@@ -57,7 +56,6 @@ defmodule GoogleApi.Compute.V1.Model.FutureReservation do
           :selfLink => String.t() | nil,
           :selfLinkWithId => String.t() | nil,
           :shareSettings => GoogleApi.Compute.V1.Model.ShareSettings.t() | nil,
-          :specificReservationRequired => boolean() | nil,
           :specificSkuProperties =>
             GoogleApi.Compute.V1.Model.FutureReservationSpecificSKUProperties.t() | nil,
           :status => GoogleApi.Compute.V1.Model.FutureReservationStatus.t() | nil,
@@ -78,7 +76,6 @@ defmodule GoogleApi.Compute.V1.Model.FutureReservation do
   field(:selfLink)
   field(:selfLinkWithId)
   field(:shareSettings, as: GoogleApi.Compute.V1.Model.ShareSettings)
-  field(:specificReservationRequired)
 
   field(:specificSkuProperties,
     as: GoogleApi.Compute.V1.Model.FutureReservationSpecificSKUProperties
