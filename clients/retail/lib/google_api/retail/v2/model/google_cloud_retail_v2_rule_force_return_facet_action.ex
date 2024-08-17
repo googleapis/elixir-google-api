@@ -21,7 +21,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetActio
 
   ## Attributes
 
-  *   `facetPositionAdjustments` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetActionFacetPositionAdjustment.t)`, *default:* `nil`) - Each instance corresponds to a force return attribute for the given condition. There can't be more 3 instances here.
+  *   `facetPositionAdjustments` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2RuleForceReturnFacetActionFacetPositionAdjustment.t)`, *default:* `nil`) - Each instance corresponds to a force return attribute for the given condition. There can't be more 15 instances here.
   """
 
   use GoogleApi.Gax.ModelBase
