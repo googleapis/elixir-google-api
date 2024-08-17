@@ -22,6 +22,8 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_SearchAd
   ## Attributes
 
   *   `adTrackingId` (*type:* `String.t`, *default:* `nil`) - The tracking id of the ad.
+  *   `descriptions` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset.t)`, *default:* `nil`) - List of text assets for descriptions. When the ad serves the descriptions will be selected from this list.
+  *   `headlines` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset.t)`, *default:* `nil`) - List of text assets for headlines. When the ad serves the headlines will be selected from this list.
   *   `path1` (*type:* `String.t`, *default:* `nil`) - Text appended to the auto-generated visible URL with a delimiter.
   *   `path2` (*type:* `String.t`, *default:* `nil`) - Text appended to path1 with a delimiter.
   """
@@ -30,11 +32,28 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_SearchAd
 
   @type t :: %__MODULE__{
           :adTrackingId => String.t() | nil,
+          :descriptions =>
+            list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset.t())
+            | nil,
+          :headlines =>
+            list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset.t())
+            | nil,
           :path1 => String.t() | nil,
           :path2 => String.t() | nil
         }
 
   field(:adTrackingId)
+
+  field(:descriptions,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset,
+    type: :list
+  )
+
+  field(:headlines,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_AdTextAsset,
+    type: :list
+  )
+
   field(:path1)
   field(:path2)
 end
