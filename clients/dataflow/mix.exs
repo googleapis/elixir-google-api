@@ -18,7 +18,7 @@
 defmodule GoogleApi.Dataflow.Mixfile do
   use Mix.Project
 
-  @version "0.48.0"
+  @version "0.49.0"
 
   def project() do
     [
