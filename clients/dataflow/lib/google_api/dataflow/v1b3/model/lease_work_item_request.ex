@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
 
   *   `currentWorkerTime` (*type:* `DateTime.t`, *default:* `nil`) - The current timestamp at the worker.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The [regional endpoint] (https://cloud.google.com/dataflow/docs/concepts/regional-endpoints) that contains the WorkItem's job.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Optional. The project number of the project this worker belongs to.
   *   `requestedLeaseDuration` (*type:* `String.t`, *default:* `nil`) - The initial lease period.
   *   `unifiedWorkerRequest` (*type:* `map()`, *default:* `nil`) - Untranslated bag-of-bytes WorkRequest from UnifiedWorker.
   *   `workItemTypes` (*type:* `list(String.t)`, *default:* `nil`) - Filter for WorkItem type.
@@ -35,6 +36,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
   @type t :: %__MODULE__{
           :currentWorkerTime => DateTime.t() | nil,
           :location => String.t() | nil,
+          :projectNumber => String.t() | nil,
           :requestedLeaseDuration => String.t() | nil,
           :unifiedWorkerRequest => map() | nil,
           :workItemTypes => list(String.t()) | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.Dataflow.V1b3.Model.LeaseWorkItemRequest do
 
   field(:currentWorkerTime, as: DateTime)
   field(:location)
+  field(:projectNumber)
   field(:requestedLeaseDuration)
   field(:unifiedWorkerRequest, type: :map)
   field(:workItemTypes, type: :list)
