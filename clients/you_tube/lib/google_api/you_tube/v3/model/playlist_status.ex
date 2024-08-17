@@ -21,15 +21,18 @@ defmodule GoogleApi.YouTube.V3.Model.PlaylistStatus do
 
   ## Attributes
 
+  *   `podcastStatus` (*type:* `String.t`, *default:* `nil`) - The playlist's podcast status.
   *   `privacyStatus` (*type:* `String.t`, *default:* `nil`) - The playlist's privacy status.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :podcastStatus => String.t() | nil,
           :privacyStatus => String.t() | nil
         }
 
+  field(:podcastStatus)
   field(:privacyStatus)
 end
 
