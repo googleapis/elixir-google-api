@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1PlatformDataSource do
   ## Attributes
 
   *   `commonDataSource` (*type:* `String.t`, *default:* `nil`) - A data source shared by all Google Workspace applications, such as users in a Google Workspace organization.
-  *   `hostAppDataSource` (*type:* `GoogleApi.Chat.V1.Model.HostAppDataSourceMarkup.t`, *default:* `nil`) - A data source that's unique to a Google Workspace host application, such spaces in Google Chat.
+  *   `hostAppDataSource` (*type:* `GoogleApi.Chat.V1.Model.HostAppDataSourceMarkup.t`, *default:* `nil`) - A data source that's unique to a Google Workspace host application, such spaces in Google Chat. This field supports the Google API Client Libraries but isn't available in the Cloud Client Libraries. To learn more, see [Install the client libraries](https://developers.google.com/workspace/chat/libraries).
   """
 
   use GoogleApi.Gax.ModelBase
