@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   *   `description` (*type:* `String.t`, *default:* `nil`) - One or more paragraphs of text description of this resource. Maximum length could be up to 1M bytes. This field is available only when the resource's Protobuf contains it. To search against the `description`: * Use a field query. Example: `description:"important instance"` * Use a free text query. Example: `"important instance"`
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of this resource. This field is available only when the resource's Protobuf contains it. To search against the `display_name`: * Use a field query. Example: `displayName:"My Instance"` * Use a free text query. Example: `"My Instance"`
   *   `effectiveTags` (*type:* `list(GoogleApi.CloudAsset.V1.Model.EffectiveTagDetails.t)`, *default:* `nil`) - The effective tags on this resource. All of the tags that are both attached to and inherited by a resource are collectively called the effective tags. For more information, see [tag inheritance](https://cloud.google.com/resource-manager/docs/tags/tags-overview#inheritance). To search against the `effective_tags`: * Use a field query. Example: - `effectiveTagKeys:"123456789/env*"` - `effectiveTagKeys="123456789/env"` - `effectiveTagKeys:"env"` - `effectiveTagKeyIds="tagKeys/123"` - `effectiveTagValues:"env"` - `effectiveTagValues:"env/prod"` - `effectiveTagValues:"123456789/env/prod*"` - `effectiveTagValues="123456789/env/prod"` - `effectiveTagValueIds="tagValues/456"`
+  *   `enrichments` (*type:* `list(GoogleApi.CloudAsset.V1.Model.AssetEnrichment.t)`, *default:* `nil`) - Enrichments of the asset.
   *   `folders` (*type:* `list(String.t)`, *default:* `nil`) - The folder(s) that this resource belongs to, in the form of folders/{FOLDER_NUMBER}. This field is available when the resource belongs to one or more folders. To search against `folders`: * Use a field query. Example: `folders:(123 OR 456)` * Use a free text query. Example: `123` * Specify the `scope` field as this folder in your search request.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - The Cloud KMS [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) name or [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) name. This field only presents for the purpose of backward compatibility. Use the `kms_keys` field to retrieve Cloud KMS key information. This field is available only when the resource's Protobuf contains it and will only be populated for [these resource types](https://cloud.google.com/asset-inventory/docs/legacy-field-names#resource_types_with_the_to_be_deprecated_kmskey_field) for backward compatible purposes. To search against the `kms_key`: * Use a field query. Example: `kmsKey:key` * Use a free text query. Example: `key`
   *   `kmsKeys` (*type:* `list(String.t)`, *default:* `nil`) - The Cloud KMS [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) names or [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) names. This field is available only when the resource's Protobuf contains it. To search against the `kms_keys`: * Use a field query. Example: `kmsKeys:key` * Use a free text query. Example: `key`
@@ -60,6 +61,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
           :description => String.t() | nil,
           :displayName => String.t() | nil,
           :effectiveTags => list(GoogleApi.CloudAsset.V1.Model.EffectiveTagDetails.t()) | nil,
+          :enrichments => list(GoogleApi.CloudAsset.V1.Model.AssetEnrichment.t()) | nil,
           :folders => list(String.t()) | nil,
           :kmsKey => String.t() | nil,
           :kmsKeys => list(String.t()) | nil,
@@ -90,6 +92,7 @@ defmodule GoogleApi.CloudAsset.V1.Model.ResourceSearchResult do
   field(:description)
   field(:displayName)
   field(:effectiveTags, as: GoogleApi.CloudAsset.V1.Model.EffectiveTagDetails, type: :list)
+  field(:enrichments, as: GoogleApi.CloudAsset.V1.Model.AssetEnrichment, type: :list)
   field(:folders, type: :list)
   field(:kmsKey)
   field(:kmsKeys, type: :list)
