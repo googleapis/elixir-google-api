@@ -20,7 +20,7 @@ defmodule GoogleApi.CloudTrace.V1 do
   API client metadata for GoogleApi.CloudTrace.V1.
   """
 
-  @discovery_revision "20240301"
+  @discovery_revision "20240816"
 
   def discovery_revision(), do: @discovery_revision
 end
