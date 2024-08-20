@@ -22,7 +22,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.SynthesizeLongAudioRequest do
   ## Attributes
 
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig.t`, *default:* `nil`) - Required. The configuration of the synthesized audio.
-  *   `input` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input. While Long Audio is in preview, SSML is temporarily unsupported.
+  *   `input` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input.
   *   `outputGcsUri` (*type:* `String.t`, *default:* `nil`) - Required. Specifies a Cloud Storage URI for the synthesis results. Must be specified in the format: `gs://bucket_name/object_name`, and the bucket must already exist.
   *   `voice` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.VoiceSelectionParams.t`, *default:* `nil`) - Required. The desired voice of the synthesized audio.
   """
