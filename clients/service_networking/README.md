@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_service_networking, "~> 0.33"}]
+  [{:google_api_service_networking, "~> 0.34"}]
 end
 ```
 

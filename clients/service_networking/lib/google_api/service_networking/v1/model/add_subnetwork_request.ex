@@ -37,6 +37,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
   *   `requestedRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The name of one or more allocated IP address ranges associated with this private service access connection. If no range names are provided all ranges associated with this connection will be considered. If a CIDR range with the specified IP prefix length is not available within these ranges, the call fails.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. Defines the role field of the subnet, e.g. 'ACTIVE'. For information about the roles that can be set using this field, see [subnetwork](https://cloud.google.com/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `secondaryIpRangeSpecs` (*type:* `list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t)`, *default:* `nil`) - Optional. A list of secondary IP ranges to be created within the new subnetwork.
+  *   `skipRequestedAddressValidation` (*type:* `boolean()`, *default:* `nil`) - Optional. Skips validating if the requested_address is in use by SN VPC’s peering group. Compute Engine will still perform this check and fail the request if the requested_address is in use. Note that Compute Engine does not check for the existence of dynamic routes when performing this check. Caller of this API should make sure that there are no dynamic routes overlapping with the requested_address/prefix_length IP address range otherwise the created subnet could cause misrouting.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - Required. A name for the new subnet. For information about the naming requirements, see [subnetwork](/compute/docs/reference/rest/v1/subnetworks) in the Compute API documentation.
   *   `subnetworkUsers` (*type:* `list(String.t)`, *default:* `nil`) - A list of members that are granted the `roles/servicenetworking.subnetworkAdmin` role on the subnet.
   *   `useCustomComputeIdempotencyWindow` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies if Service Networking should use a custom time bucket for Arcus idempotency. If false, Service Networking uses a 300 second (5 minute) Arcus idempotency window. If true, Service Networking uses a custom idempotency window provided by the user in field compute_idempotency_window. For more information on how to use, see: go/revisit-sn-idempotency-window
@@ -62,6 +63,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
           :role => String.t() | nil,
           :secondaryIpRangeSpecs =>
             list(GoogleApi.ServiceNetworking.V1.Model.SecondaryIpRangeSpec.t()) | nil,
+          :skipRequestedAddressValidation => boolean() | nil,
           :subnetwork => String.t() | nil,
           :subnetworkUsers => list(String.t()) | nil,
           :useCustomComputeIdempotencyWindow => boolean() | nil
@@ -88,6 +90,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.AddSubnetworkRequest do
     type: :list
   )
 
+  field(:skipRequestedAddressValidation)
   field(:subnetwork)
   field(:subnetworkUsers, type: :list)
   field(:useCustomComputeIdempotencyWindow)
