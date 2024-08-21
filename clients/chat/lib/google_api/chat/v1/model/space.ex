@@ -27,6 +27,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The space's display name. Required when [creating a space](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/create). If you receive the error message `ALREADY_EXISTS` when creating a space or updating the `displayName`, try a different `displayName`. An existing space within the Google Workspace organization might already use this display name. For direct messages, this field might be empty. Supports up to 128 characters.
   *   `externalUserAllowed` (*type:* `boolean()`, *default:* `nil`) - Immutable. Whether this space permits any Google Chat user as a member. Input when creating a space in a Google Workspace organization. Omit this field when creating spaces in the following conditions: * The authenticated user uses a consumer account (unmanaged user account). By default, a space created by a consumer account permits any Google Chat user. For existing spaces, this field is output only.
   *   `importMode` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether this space is created in `Import Mode` as part of a data migration into Google Workspace. While spaces are being imported, they aren't visible to users until the import is complete.
+  *   `lastActiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of the last message in the space. [Developer Preview](https://developers.google.com/workspace/preview).
+  *   `membershipCount` (*type:* `GoogleApi.Chat.V1.Model.MembershipCount.t`, *default:* `nil`) - Output only. The count of joined memberships grouped by member type. Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or `GROUP_CHAT`. [Developer Preview](https://developers.google.com/workspace/preview).
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space. Format: `spaces/{space}`
   *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the space is a DM between a Chat app and a single human.
   *   `spaceDetails` (*type:* `GoogleApi.Chat.V1.Model.SpaceDetails.t`, *default:* `nil`) - Details about the space including description and rules.
@@ -47,6 +49,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
           :displayName => String.t() | nil,
           :externalUserAllowed => boolean() | nil,
           :importMode => boolean() | nil,
+          :lastActiveTime => DateTime.t() | nil,
+          :membershipCount => GoogleApi.Chat.V1.Model.MembershipCount.t() | nil,
           :name => String.t() | nil,
           :singleUserBotDm => boolean() | nil,
           :spaceDetails => GoogleApi.Chat.V1.Model.SpaceDetails.t() | nil,
@@ -64,6 +68,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   field(:displayName)
   field(:externalUserAllowed)
   field(:importMode)
+  field(:lastActiveTime, as: DateTime)
+  field(:membershipCount, as: GoogleApi.Chat.V1.Model.MembershipCount)
   field(:name)
   field(:singleUserBotDm)
   field(:spaceDetails, as: GoogleApi.Chat.V1.Model.SpaceDetails)
