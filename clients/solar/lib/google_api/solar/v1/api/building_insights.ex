@@ -43,6 +43,7 @@ defmodule GoogleApi.Solar.V1.Api.BuildingInsights do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:experiments` (*type:* `list(String.t)`) - Optional. Specifies the pre-GA features to enable.
       *   `:"location.latitude"` (*type:* `float()`) - The latitude in degrees. It must be in the range [-90.0, +90.0].
       *   `:"location.longitude"` (*type:* `float()`) - The longitude in degrees. It must be in the range [-180.0, +180.0].
       *   `:requiredQuality` (*type:* `String.t`) - Optional. The minimum quality level allowed in the results. No result with lower quality than this will be returned. Not specifying this is equivalent to restricting to HIGH quality only.
@@ -71,6 +72,7 @@ defmodule GoogleApi.Solar.V1.Api.BuildingInsights do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :experiments => :query,
       :"location.latitude" => :query,
       :"location.longitude" => :query,
       :requiredQuality => :query
