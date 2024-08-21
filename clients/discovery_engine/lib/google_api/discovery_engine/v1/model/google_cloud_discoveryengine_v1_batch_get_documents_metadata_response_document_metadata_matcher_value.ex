@@ -21,15 +21,18 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1BatchGe
 
   ## Attributes
 
+  *   `fhirResource` (*type:* `String.t`, *default:* `nil`) - Required. Format: projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
   *   `uri` (*type:* `String.t`, *default:* `nil`) - If match by URI, the URI of the Document.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :fhirResource => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:fhirResource)
   field(:uri)
 end
 

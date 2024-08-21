@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
+  *   `dataIngestionSource` (*type:* `String.t`, *default:* `nil`) - The data ingestion source of the Document. Allowed values are: * `batch`: Data ingested via Batch API, e.g., ImportDocuments. * `streaming` Data ingested via Streaming API, e.g., FHIR streaming.
   *   `lastRefreshedTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the last time the Document was last indexed.
   *   `matcherValue` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBatchGetDocumentsMetadataResponseDocumentMetadataMatcherValue.t`, *default:* `nil`) - The value of the matcher that was used to match the Document.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the document.
@@ -29,6 +30,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :dataIngestionSource => String.t() | nil,
           :lastRefreshedTime => DateTime.t() | nil,
           :matcherValue =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBatchGetDocumentsMetadataResponseDocumentMetadataMatcherValue.t()
@@ -36,6 +38,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :status => String.t() | nil
         }
 
+  field(:dataIngestionSource)
   field(:lastRefreshedTime, as: DateTime)
 
   field(:matcherValue,
