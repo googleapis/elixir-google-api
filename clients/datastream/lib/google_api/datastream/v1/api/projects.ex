@@ -1948,7 +1948,7 @@ defmodule GoogleApi.Datastream.V1.Api.Projects do
   end
 
   @doc """
-  Use this method to start, resume or recover a stream with a non default CDC strategy. NOTE: This feature is currently experimental.
+  Use this method to start, resume or recover a stream with a non default CDC strategy.
 
   ## Parameters
 
