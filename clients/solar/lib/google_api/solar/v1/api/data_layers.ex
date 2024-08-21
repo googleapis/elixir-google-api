@@ -44,6 +44,7 @@ defmodule GoogleApi.Solar.V1.Api.DataLayers do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:exactQualityRequired` (*type:* `boolean()`) - Optional. Whether to require exact quality of the imagery. If set to false, the `required_quality` field is interpreted as the minimum required quality, such that HIGH quality imagery may be returned when `required_quality` is set to MEDIUM. If set to true, `required_quality` is interpreted as the exact required quality and only `MEDIUM` quality imagery is returned if `required_quality` is set to `MEDIUM`.
+      *   `:experiments` (*type:* `list(String.t)`) - Optional. Specifies the pre-GA experiments to enable.
       *   `:"location.latitude"` (*type:* `float()`) - The latitude in degrees. It must be in the range [-90.0, +90.0].
       *   `:"location.longitude"` (*type:* `float()`) - The longitude in degrees. It must be in the range [-180.0, +180.0].
       *   `:pixelSizeMeters` (*type:* `number()`) - Optional. The minimum scale, in meters per pixel, of the data to return. Values of 0.1 (the default, if this field is not set explicitly), 0.25, 0.5, and 1.0 are supported. Imagery components whose normal resolution is less than `pixel_size_meters` will be returned at the resolution specified by `pixel_size_meters`; imagery components whose normal resolution is equal to or greater than `pixel_size_meters` will be returned at that normal resolution.
@@ -76,6 +77,7 @@ defmodule GoogleApi.Solar.V1.Api.DataLayers do
       :uploadType => :query,
       :upload_protocol => :query,
       :exactQualityRequired => :query,
+      :experiments => :query,
       :"location.latitude" => :query,
       :"location.longitude" => :query,
       :pixelSizeMeters => :query,
