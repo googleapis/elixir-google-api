@@ -892,6 +892,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"matcher.fhirMatcher.fhirResources"` (*type:* `list(String.t)`) - Required. The FHIR resources to match by. Format: projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
       *   `:"matcher.urisMatcher.uris"` (*type:* `list(String.t)`) - The exact URIs to match by.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -929,6 +930,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :"matcher.fhirMatcher.fhirResources" => :query,
       :"matcher.urisMatcher.uris" => :query
     }
 
@@ -9494,6 +9496,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:"matcher.fhirMatcher.fhirResources"` (*type:* `list(String.t)`) - Required. The FHIR resources to match by. Format: projects/{project}/locations/{location}/datasets/{dataset}/fhirStores/{fhir_store}/fhir/{resource_type}/{fhir_resource_id}
       *   `:"matcher.urisMatcher.uris"` (*type:* `list(String.t)`) - The exact URIs to match by.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -9531,6 +9534,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :"matcher.fhirMatcher.fhirResources" => :query,
       :"matcher.urisMatcher.uris" => :query
     }
 

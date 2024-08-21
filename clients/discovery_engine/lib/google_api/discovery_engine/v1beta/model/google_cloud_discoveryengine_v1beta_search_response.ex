@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   ## Attributes
 
   *   `appliedControls` (*type:* `list(String.t)`, *default:* `nil`) - Controls applied as part of the Control service.
-  *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance.
+  *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance. This also helps to identify a request during the customer support scenarios.
   *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results are based on corrected_query. Otherwise the original query is used for search.
   *   `facets` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
   *   `geoSearchDebugInfo` (*type:* `list(GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaSearchResponseGeoSearchDebugInfo.t)`, *default:* `nil`) - 

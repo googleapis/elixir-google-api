@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   *   `comparison` (*type:* `String.t`, *default:* `nil`) - The comparison operation performed between the field value and the value specified in the constraint.
   *   `fieldName` (*type:* `String.t`, *default:* `nil`) - Name of the numerical field as defined in the schema.
+  *   `querySegment` (*type:* `String.t`, *default:* `nil`) - Identifies the keywords within the search query that match a filter.
   *   `value` (*type:* `float()`, *default:* `nil`) - The value specified in the numerical constraint.
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   @type t :: %__MODULE__{
           :comparison => String.t() | nil,
           :fieldName => String.t() | nil,
+          :querySegment => String.t() | nil,
           :value => float() | nil
         }
 
   field(:comparison)
   field(:fieldName)
+  field(:querySegment)
   field(:value)
 end
 
