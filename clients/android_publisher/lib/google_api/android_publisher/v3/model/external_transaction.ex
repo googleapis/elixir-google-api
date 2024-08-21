@@ -24,6 +24,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when this transaction was created. This is the time when Google was notified of the transaction.
   *   `currentPreTaxAmount` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Output only. The current transaction amount before tax. This represents the current pre-tax amount including any refunds that may have been applied to this transaction.
   *   `currentTaxAmount` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Output only. The current tax amount. This represents the current tax amount including any refunds that may have been applied to this transaction.
+  *   `externalOfferInitialAcquisitionDetails` (*type:* `GoogleApi.AndroidPublisher.V3.Model.ExternalOfferInitialAcquisitionDetails.t`, *default:* `nil`) - Optional. Details about the first time a user/device completed a transaction using external offers. Not required for transactions made using user choice billing or alternative billing only.
   *   `externalTransactionId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of this transaction. All transaction ids under the same package name must be unique. Set when creating the external transaction.
   *   `oneTimeTransaction` (*type:* `GoogleApi.AndroidPublisher.V3.Model.OneTimeExternalTransaction.t`, *default:* `nil`) - This is a one-time transaction and not part of a subscription.
   *   `originalPreTaxAmount` (*type:* `GoogleApi.AndroidPublisher.V3.Model.Price.t`, *default:* `nil`) - Required. The original transaction amount before taxes. This represents the pre-tax amount originally notified to Google before any refunds were applied.
@@ -43,6 +44,8 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
           :createTime => DateTime.t() | nil,
           :currentPreTaxAmount => GoogleApi.AndroidPublisher.V3.Model.Price.t() | nil,
           :currentTaxAmount => GoogleApi.AndroidPublisher.V3.Model.Price.t() | nil,
+          :externalOfferInitialAcquisitionDetails =>
+            GoogleApi.AndroidPublisher.V3.Model.ExternalOfferInitialAcquisitionDetails.t() | nil,
           :externalTransactionId => String.t() | nil,
           :oneTimeTransaction =>
             GoogleApi.AndroidPublisher.V3.Model.OneTimeExternalTransaction.t() | nil,
@@ -63,6 +66,11 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.ExternalTransaction do
   field(:createTime, as: DateTime)
   field(:currentPreTaxAmount, as: GoogleApi.AndroidPublisher.V3.Model.Price)
   field(:currentTaxAmount, as: GoogleApi.AndroidPublisher.V3.Model.Price)
+
+  field(:externalOfferInitialAcquisitionDetails,
+    as: GoogleApi.AndroidPublisher.V3.Model.ExternalOfferInitialAcquisitionDetails
+  )
+
   field(:externalTransactionId)
   field(:oneTimeTransaction, as: GoogleApi.AndroidPublisher.V3.Model.OneTimeExternalTransaction)
   field(:originalPreTaxAmount, as: GoogleApi.AndroidPublisher.V3.Model.Price)
