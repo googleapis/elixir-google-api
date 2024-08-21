@@ -28,6 +28,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   *   `cryptoKeyName` (*type:* `String.t`, *default:* `nil`) - Optional. The resource name of a KMS crypto key used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. If not provided, data associated with the workflow will not be CMEK-encrypted.
   *   `cryptoKeyVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of a KMS crypto key version used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
   *   `description` (*type:* `String.t`, *default:* `nil`) - Description of the workflow provided by the user. Must be at most 1000 Unicode characters long. This is a workflow-wide field and is not tied to a specific revision.
+  *   `executionHistoryLevel` (*type:* `String.t`, *default:* `nil`) - Optional. Describes the level of the execution history feature to apply to this workflow.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this workflow. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. This is a workflow-wide field and is not tied to a specific revision.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the workflow. Format: projects/{project}/locations/{location}/workflows/{workflow}. This is a workflow-wide field and is not tied to a specific revision.
   *   `revisionCreateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp for the latest revision of the workflow's creation.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
           :cryptoKeyName => String.t() | nil,
           :cryptoKeyVersion => String.t() | nil,
           :description => String.t() | nil,
+          :executionHistoryLevel => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
           :revisionCreateTime => DateTime.t() | nil,
@@ -69,6 +71,7 @@ defmodule GoogleApi.Workflows.V1.Model.Workflow do
   field(:cryptoKeyName)
   field(:cryptoKeyVersion)
   field(:description)
+  field(:executionHistoryLevel)
   field(:labels, type: :map)
   field(:name)
   field(:revisionCreateTime, as: DateTime)
