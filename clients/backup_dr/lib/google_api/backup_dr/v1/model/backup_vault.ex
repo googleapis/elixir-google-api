@@ -28,7 +28,6 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
   *   `deletable` (*type:* `boolean()`, *default:* `nil`) - Output only. Set to true when there are no backups nested under this resource.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the BackupVault instance (2048 characters or less).
   *   `effectiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Time after which the BackupVault resource is locked.
-  *   `enforcedRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Required. The default retention period for each backup in the backup vault (Deprecated).
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Server specified ETag for the backup vault resource to prevent simultaneous updates from overwiting each other.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined:
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
@@ -49,7 +48,6 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
           :deletable => boolean() | nil,
           :description => String.t() | nil,
           :effectiveTime => DateTime.t() | nil,
-          :enforcedRetentionDuration => String.t() | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -67,7 +65,6 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
   field(:deletable)
   field(:description)
   field(:effectiveTime, as: DateTime)
-  field(:enforcedRetentionDuration)
   field(:etag)
   field(:labels, type: :map)
   field(:name)
