@@ -961,7 +961,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Deprecated. The installation warning has been removed, it's not necessary to set this field anymore.
       *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1042,7 +1042,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Deprecated. The installation warning has been removed, it's not necessary to set this field anymore.
       *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1133,7 +1133,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Deprecated. The installation warning has been removed, it's not necessary to set this field anymore.
       *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1216,7 +1216,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Api.Edits do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Must be set to true if the app bundle installation may trigger a warning on user devices (for example, if installation size may be over a threshold, typically 100 MB).
+      *   `:ackBundleInstallationWarning` (*type:* `boolean()`) - Deprecated. The installation warning has been removed, it's not necessary to set this field anymore.
       *   `:deviceTierConfigId` (*type:* `String.t`) - Device tier config (DTC) to be used for generating deliverables (APKs). Contains id of the DTC or "LATEST" for last uploaded DTC.
   *   `opts` (*type:* `keyword()`) - Call options
 
