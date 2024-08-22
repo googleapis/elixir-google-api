@@ -22,19 +22,23 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do
   ## Attributes
 
   *   `linkEventStats` (*type:* `list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t)`, *default:* `nil`) - Dynamic Link event stats.
+  *   `warnings` (*type:* `list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t)`, *default:* `nil`) - Optional warnings associated this API request.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :linkEventStats =>
-            list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t()) | nil
+            list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat.t()) | nil,
+          :warnings => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t()) | nil
         }
 
   field(:linkEventStats,
     as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkEventStat,
     type: :list
   )
+
+  field(:warnings, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkStats do

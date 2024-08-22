@@ -30,6 +30,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   *   `utmMedium` (*type:* `String.t`, *default:* `nil`) - Scion medium value to be propagated by iSDK to Scion at app-reopen.
   *   `utmSource` (*type:* `String.t`, *default:* `nil`) - Scion source value to be propagated by iSDK to Scion at app-reopen.
   *   `utmTerm` (*type:* `String.t`, *default:* `nil`) - Scion term value to be propagated by iSDK to Scion at app-reopen.
+  *   `warning` (*type:* `list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t)`, *default:* `nil`) - Optional warnings associated this API request.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +44,8 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
           :utmContent => String.t() | nil,
           :utmMedium => String.t() | nil,
           :utmSource => String.t() | nil,
-          :utmTerm => String.t() | nil
+          :utmTerm => String.t() | nil,
+          :warning => list(GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning.t()) | nil
         }
 
   field(:deepLink)
@@ -55,6 +57,7 @@ defmodule GoogleApi.FirebaseDynamicLinks.V1.Model.GetIosReopenAttributionRespons
   field(:utmMedium)
   field(:utmSource)
   field(:utmTerm)
+  field(:warning, as: GoogleApi.FirebaseDynamicLinks.V1.Model.DynamicLinkWarning, type: :list)
 end
 
 defimpl Poison.Decoder,
