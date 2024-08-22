@@ -27,6 +27,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   *   `operationalLimits` (*type:* `GoogleApi.Dataflow.V1b3.Model.StreamingOperationalLimits.t`, *default:* `nil`) - Operational limits for the streaming job. Can be used by the worker to validate outputs sent to the backend.
   *   `streamingComputationConfigs` (*type:* `list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t)`, *default:* `nil`) - Set of computation configuration information.
   *   `userStepToStateFamilyNameMap` (*type:* `map()`, *default:* `nil`) - Map from user step names to state families.
+  *   `userWorkerRunnerV1Settings` (*type:* `String.t`, *default:* `nil`) - Binary encoded proto to control runtime behavior of the java runner v1 user worker.
+  *   `userWorkerRunnerV2Settings` (*type:* `String.t`, *default:* `nil`) - Binary encoded proto to control runtime behavior of the runner v2 user worker.
   *   `windmillServiceEndpoint` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this endpoint to communicate with Windmill Service dispatchers, otherwise the worker must continue to use whatever endpoint it had been using.
   *   `windmillServicePort` (*type:* `String.t`, *default:* `nil`) - If present, the worker must use this port to communicate with Windmill Service dispatchers. Only applicable when windmill_service_endpoint is specified.
   """
@@ -42,6 +44,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
           :streamingComputationConfigs =>
             list(GoogleApi.Dataflow.V1b3.Model.StreamingComputationConfig.t()) | nil,
           :userStepToStateFamilyNameMap => map() | nil,
+          :userWorkerRunnerV1Settings => String.t() | nil,
+          :userWorkerRunnerV2Settings => String.t() | nil,
           :windmillServiceEndpoint => String.t() | nil,
           :windmillServicePort => String.t() | nil
         }
@@ -57,6 +61,8 @@ defmodule GoogleApi.Dataflow.V1b3.Model.StreamingConfigTask do
   )
 
   field(:userStepToStateFamilyNameMap, type: :map)
+  field(:userWorkerRunnerV1Settings)
+  field(:userWorkerRunnerV2Settings)
   field(:windmillServiceEndpoint)
   field(:windmillServicePort)
 end
