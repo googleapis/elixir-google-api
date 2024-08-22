@@ -2887,7 +2887,7 @@ defmodule GoogleApi.Translate.V3.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Translate.V3.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Identifier. The resource name of the entry. Format: "projects/*/locations/*/glossaries/*/glossaryEntries/*"
+  *   `name` (*type:* `String.t`) - Identifier. The resource name of the entry. Format: `projects/*/locations/*/glossaries/*/glossaryEntries/*`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

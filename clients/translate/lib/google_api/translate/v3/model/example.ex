@@ -21,7 +21,7 @@ defmodule GoogleApi.Translate.V3.Model.Example do
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the example, in form of `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}'
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the example, in form of `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}/examples/{example_id}`
   *   `sourceText` (*type:* `String.t`, *default:* `nil`) - Sentence in source language.
   *   `targetText` (*type:* `String.t`, *default:* `nil`) - Sentence in target language.
   *   `usage` (*type:* `String.t`, *default:* `nil`) - Output only. Usage of the sentence pair. Options are TRAIN|VALIDATION|TEST.
