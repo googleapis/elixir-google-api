@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.TelephonyInfo do
   ## Attributes
 
   *   `carrierName` (*type:* `String.t`, *default:* `nil`) - The carrier name associated with this SIM card.
+  *   `iccId` (*type:* `String.t`, *default:* `nil`) - Output only. The ICCID associated with this SIM card.
   *   `phoneNumber` (*type:* `String.t`, *default:* `nil`) - The phone number associated with this SIM card.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AndroidManagement.V1.Model.TelephonyInfo do
 
   @type t :: %__MODULE__{
           :carrierName => String.t() | nil,
+          :iccId => String.t() | nil,
           :phoneNumber => String.t() | nil
         }
 
   field(:carrierName)
+  field(:iccId)
   field(:phoneNumber)
 end
 
