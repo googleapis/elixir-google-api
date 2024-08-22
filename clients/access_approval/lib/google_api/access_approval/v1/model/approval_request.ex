@@ -25,6 +25,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
   *   `dismiss` (*type:* `GoogleApi.AccessApproval.V1.Model.DismissDecision.t`, *default:* `nil`) - The request was dismissed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the request. Format is "{projects|folders|organizations}/{id}/approvalRequests/{approval_request}".
   *   `requestTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which approval was requested.
+  *   `requestedAugmentedInfo` (*type:* `GoogleApi.AccessApproval.V1.Model.AugmentedInfo.t`, *default:* `nil`) - This field contains the augmented information of the request.
   *   `requestedDuration` (*type:* `String.t`, *default:* `nil`) - The requested access duration.
   *   `requestedExpiration` (*type:* `DateTime.t`, *default:* `nil`) - The original requested expiration for the approval. Calculated by adding the requested_duration to the request_time.
   *   `requestedLocations` (*type:* `GoogleApi.AccessApproval.V1.Model.AccessLocations.t`, *default:* `nil`) - The locations for which approval is being requested.
@@ -40,6 +41,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
           :dismiss => GoogleApi.AccessApproval.V1.Model.DismissDecision.t() | nil,
           :name => String.t() | nil,
           :requestTime => DateTime.t() | nil,
+          :requestedAugmentedInfo => GoogleApi.AccessApproval.V1.Model.AugmentedInfo.t() | nil,
           :requestedDuration => String.t() | nil,
           :requestedExpiration => DateTime.t() | nil,
           :requestedLocations => GoogleApi.AccessApproval.V1.Model.AccessLocations.t() | nil,
@@ -53,6 +55,7 @@ defmodule GoogleApi.AccessApproval.V1.Model.ApprovalRequest do
   field(:dismiss, as: GoogleApi.AccessApproval.V1.Model.DismissDecision)
   field(:name)
   field(:requestTime, as: DateTime)
+  field(:requestedAugmentedInfo, as: GoogleApi.AccessApproval.V1.Model.AugmentedInfo)
   field(:requestedDuration)
   field(:requestedExpiration, as: DateTime)
   field(:requestedLocations, as: GoogleApi.AccessApproval.V1.Model.AccessLocations)
