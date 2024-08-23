@@ -20,7 +20,7 @@ defmodule GoogleApi.CustomSearch.V1 do
   API client metadata for GoogleApi.CustomSearch.V1.
   """
 
-  @discovery_revision "20240417"
+  @discovery_revision "20240821"
 
   def discovery_revision(), do: @discovery_revision
 end

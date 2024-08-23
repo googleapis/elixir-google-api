@@ -43,38 +43,39 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:c2coff` (*type:* `String.t`) - Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)
-      *   `:cr` (*type:* `String.t`) - Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter.
-      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
-      *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include: * `d[number]`: requests results from the specified number of past days. * `w[number]`: requests results from the specified number of past weeks. * `m[number]`: requests results from the specified number of past months. * `y[number]`: requests results from the specified number of past years.
-      *   `:exactTerms` (*type:* `String.t`) - Identifies a phrase that all documents in the search results must contain.
-      *   `:excludeTerms` (*type:* `String.t`) - Identifies a word or phrase that should not appear in any documents in the search results.
-      *   `:fileType` (*type:* `String.t`) - Restricts results to files of a specified extension. A list of file types indexable by Google can be found in Search Console [Help Center](https://support.google.com/webmasters/answer/35287).
-      *   `:filter` (*type:* `String.t`) - Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter.
-      *   `:gl` (*type:* `String.t`) - Geolocation of end user. * The `gl` parameter value is a two-letter country code. The `gl` parameter boosts search results whose country of origin matches the parameter value. See the [Country Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes) page for a list of valid values. * Specifying a `gl` parameter value should lead to more relevant results. This is particularly true for international customers and, even more specifically, for customers in English- speaking countries other than the United States.
-      *   `:googlehost` (*type:* `String.t`) - **Deprecated**. Use the `gl` parameter for a similar effect. The local Google domain (for example, google.com, google.de, or google.fr) to use to perform the search.
-      *   `:highRange` (*type:* `String.t`) - Specifies the ending value for a search range. * Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
-      *   `:hl` (*type:* `String.t`) - Sets the user interface language. * Explicitly setting this parameter improves the performance and the quality of your search results. * See the [Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#wsInterfaceLanguages) section of [Internationalizing Queries and Results Presentation](https://developers.google.com/custom-search/docs/json_api_reference#wsInternationalizing) for more information, and [Supported Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages) for a list of supported languages.
-      *   `:hq` (*type:* `String.t`) - Appends the specified query terms to the query, as if they were combined with a logical AND operator.
-      *   `:imgColorType` (*type:* `String.t`) - Returns black and white, grayscale, transparent, or color images. Acceptable values are: * `"color"` * `"gray"` * `"mono"`: black and white * `"trans"`: transparent background
-      *   `:imgDominantColor` (*type:* `String.t`) - Returns images of a specific dominant color. Acceptable values are: * `"black"` * `"blue"` * `"brown"` * `"gray"` * `"green"` * `"orange"` * `"pink"` * `"purple"` * `"red"` * `"teal"` * `"white"` * `"yellow"`
-      *   `:imgSize` (*type:* `String.t`) - Returns images of a specified size. Acceptable values are: * `"huge"` * `"icon"` * `"large"` * `"medium"` * `"small"` * `"xlarge"` * `"xxlarge"`
-      *   `:imgType` (*type:* `String.t`) - Returns images of a type. Acceptable values are: * `"clipart"` * `"face"` * `"lineart"` * `"stock"` * `"photo"` * `"animated"`
-      *   `:linkSite` (*type:* `String.t`) - Specifies that all search results should contain a link to a particular URL.
-      *   `:lowRange` (*type:* `String.t`) - Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
-      *   `:lr` (*type:* `String.t`) - Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
       *   `:num` (*type:* `integer()`) - Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
-      *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
-      *   `:q` (*type:* `String.t`) - Query
-      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
       *   `:rights` (*type:* `String.t`) - Filters based on licensing. Supported values include: `cc_publicdomain`, `cc_attribute`, `cc_sharealike`, `cc_noncommercial`, `cc_nonderived` and combinations of these. See [typical combinations](https://wiki.creativecommons.org/wiki/CC_Search_integration).
-      *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
-      *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
-      *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
-      *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
-      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. Note: this feature is limited to specific engines. * Valid values are integers between 161 and 1000, inclusive.
-      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
+      *   `:hq` (*type:* `String.t`) - Appends the specified query terms to the query, as if they were combined with a logical AND operator.
+      *   `:c2coff` (*type:* `String.t`) - Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)
+      *   `:imgDominantColor` (*type:* `String.t`) - Returns images of a specific dominant color. Acceptable values are: * `"black"` * `"blue"` * `"brown"` * `"gray"` * `"green"` * `"orange"` * `"pink"` * `"purple"` * `"red"` * `"teal"` * `"white"` * `"yellow"`
+      *   `:googlehost` (*type:* `String.t`) - **Deprecated**. Use the `gl` parameter for a similar effect. The local Google domain (for example, google.com, google.de, or google.fr) to use to perform the search.
+      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
+      *   `:excludeTerms` (*type:* `String.t`) - Identifies a word or phrase that should not appear in any documents in the search results.
+      *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
+      *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include: * `d[number]`: requests results from the specified number of past days. * `w[number]`: requests results from the specified number of past weeks. * `m[number]`: requests results from the specified number of past months. * `y[number]`: requests results from the specified number of past years.
+      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
+      *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
+      *   `:gl` (*type:* `String.t`) - Geolocation of end user. * The `gl` parameter value is a two-letter country code. The `gl` parameter boosts search results whose country of origin matches the parameter value. See the [Country Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes) page for a list of valid values. * Specifying a `gl` parameter value should lead to more relevant results. This is particularly true for international customers and, even more specifically, for customers in English- speaking countries other than the United States.
+      *   `:exactTerms` (*type:* `String.t`) - Identifies a phrase that all documents in the search results must contain.
+      *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
+      *   `:imgColorType` (*type:* `String.t`) - Returns black and white, grayscale, transparent, or color images. Acceptable values are: * `"color"` * `"gray"` * `"mono"`: black and white * `"trans"`: transparent background
+      *   `:imgType` (*type:* `String.t`) - Returns images of a type. Acceptable values are: * `"clipart"` * `"face"` * `"lineart"` * `"stock"` * `"photo"` * `"animated"`
+      *   `:filter` (*type:* `String.t`) - Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter.
+      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
+      *   `:lowRange` (*type:* `String.t`) - Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
+      *   `:imgSize` (*type:* `String.t`) - Returns images of a specified size. Acceptable values are: * `"huge"` * `"icon"` * `"large"` * `"medium"` * `"small"` * `"xlarge"` * `"xxlarge"`
+      *   `:lr` (*type:* `String.t`) - Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
+      *   `:fileType` (*type:* `String.t`) - Restricts results to files of a specified extension. A list of file types indexable by Google can be found in Search Console [Help Center](https://support.google.com/webmasters/answer/35287).
+      *   `:q` (*type:* `String.t`) - Query
+      *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
+      *   `:linkSite` (*type:* `String.t`) - Specifies that all search results should contain a link to a particular URL.
+      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. Note: this feature is limited to specific engines. * Valid values are integers between 161 and 1000, inclusive.
+      *   `:highRange` (*type:* `String.t`) - Specifies the ending value for a search range. * Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
+      *   `:enableAlternateSearchHandler` (*type:* `boolean()`) - Optional. Enables routing of Programmable Search Engine requests to an alternate search handler.
+      *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
+      *   `:hl` (*type:* `String.t`) - Sets the user interface language. * Explicitly setting this parameter improves the performance and the quality of your search results. * See the [Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#wsInterfaceLanguages) section of [Internationalizing Queries and Results Presentation](https://developers.google.com/custom-search/docs/json_api_reference#wsInternationalizing) for more information, and [Supported Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages) for a list of supported languages.
+      *   `:cr` (*type:* `String.t`) - Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -100,38 +101,39 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :c2coff => :query,
-      :cr => :query,
-      :cx => :query,
-      :dateRestrict => :query,
-      :exactTerms => :query,
-      :excludeTerms => :query,
-      :fileType => :query,
-      :filter => :query,
-      :gl => :query,
-      :googlehost => :query,
-      :highRange => :query,
-      :hl => :query,
-      :hq => :query,
-      :imgColorType => :query,
-      :imgDominantColor => :query,
-      :imgSize => :query,
-      :imgType => :query,
-      :linkSite => :query,
-      :lowRange => :query,
-      :lr => :query,
       :num => :query,
-      :orTerms => :query,
-      :q => :query,
-      :relatedSite => :query,
       :rights => :query,
-      :safe => :query,
-      :searchType => :query,
-      :siteSearch => :query,
+      :hq => :query,
+      :c2coff => :query,
+      :imgDominantColor => :query,
+      :googlehost => :query,
+      :cx => :query,
+      :start => :query,
+      :excludeTerms => :query,
       :siteSearchFilter => :query,
-      :snippetLength => :query,
+      :dateRestrict => :query,
+      :relatedSite => :query,
+      :siteSearch => :query,
+      :gl => :query,
+      :exactTerms => :query,
+      :searchType => :query,
+      :imgColorType => :query,
+      :imgType => :query,
+      :filter => :query,
       :sort => :query,
-      :start => :query
+      :lowRange => :query,
+      :imgSize => :query,
+      :lr => :query,
+      :fileType => :query,
+      :q => :query,
+      :safe => :query,
+      :linkSite => :query,
+      :snippetLength => :query,
+      :highRange => :query,
+      :enableAlternateSearchHandler => :query,
+      :orTerms => :query,
+      :hl => :query,
+      :cr => :query
     }
 
     request =
@@ -164,38 +166,39 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:c2coff` (*type:* `String.t`) - Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)
-      *   `:cr` (*type:* `String.t`) - Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter.
-      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
-      *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include: * `d[number]`: requests results from the specified number of past days. * `w[number]`: requests results from the specified number of past weeks. * `m[number]`: requests results from the specified number of past months. * `y[number]`: requests results from the specified number of past years.
-      *   `:exactTerms` (*type:* `String.t`) - Identifies a phrase that all documents in the search results must contain.
-      *   `:excludeTerms` (*type:* `String.t`) - Identifies a word or phrase that should not appear in any documents in the search results.
-      *   `:fileType` (*type:* `String.t`) - Restricts results to files of a specified extension. A list of file types indexable by Google can be found in Search Console [Help Center](https://support.google.com/webmasters/answer/35287).
-      *   `:filter` (*type:* `String.t`) - Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter.
-      *   `:gl` (*type:* `String.t`) - Geolocation of end user. * The `gl` parameter value is a two-letter country code. The `gl` parameter boosts search results whose country of origin matches the parameter value. See the [Country Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes) page for a list of valid values. * Specifying a `gl` parameter value should lead to more relevant results. This is particularly true for international customers and, even more specifically, for customers in English- speaking countries other than the United States.
-      *   `:googlehost` (*type:* `String.t`) - **Deprecated**. Use the `gl` parameter for a similar effect. The local Google domain (for example, google.com, google.de, or google.fr) to use to perform the search.
-      *   `:highRange` (*type:* `String.t`) - Specifies the ending value for a search range. * Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
-      *   `:hl` (*type:* `String.t`) - Sets the user interface language. * Explicitly setting this parameter improves the performance and the quality of your search results. * See the [Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#wsInterfaceLanguages) section of [Internationalizing Queries and Results Presentation](https://developers.google.com/custom-search/docs/json_api_reference#wsInternationalizing) for more information, and [Supported Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages) for a list of supported languages.
-      *   `:hq` (*type:* `String.t`) - Appends the specified query terms to the query, as if they were combined with a logical AND operator.
-      *   `:imgColorType` (*type:* `String.t`) - Returns black and white, grayscale, transparent, or color images. Acceptable values are: * `"color"` * `"gray"` * `"mono"`: black and white * `"trans"`: transparent background
-      *   `:imgDominantColor` (*type:* `String.t`) - Returns images of a specific dominant color. Acceptable values are: * `"black"` * `"blue"` * `"brown"` * `"gray"` * `"green"` * `"orange"` * `"pink"` * `"purple"` * `"red"` * `"teal"` * `"white"` * `"yellow"`
-      *   `:imgSize` (*type:* `String.t`) - Returns images of a specified size. Acceptable values are: * `"huge"` * `"icon"` * `"large"` * `"medium"` * `"small"` * `"xlarge"` * `"xxlarge"`
-      *   `:imgType` (*type:* `String.t`) - Returns images of a type. Acceptable values are: * `"clipart"` * `"face"` * `"lineart"` * `"stock"` * `"photo"` * `"animated"`
-      *   `:linkSite` (*type:* `String.t`) - Specifies that all search results should contain a link to a particular URL.
-      *   `:lowRange` (*type:* `String.t`) - Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
-      *   `:lr` (*type:* `String.t`) - Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
       *   `:num` (*type:* `integer()`) - Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
-      *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
-      *   `:q` (*type:* `String.t`) - Query
-      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
       *   `:rights` (*type:* `String.t`) - Filters based on licensing. Supported values include: `cc_publicdomain`, `cc_attribute`, `cc_sharealike`, `cc_noncommercial`, `cc_nonderived` and combinations of these. See [typical combinations](https://wiki.creativecommons.org/wiki/CC_Search_integration).
-      *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
-      *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
-      *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
-      *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
-      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. Note: this feature is limited to specific engines. * Valid values are integers between 161 and 1000, inclusive.
-      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
+      *   `:hq` (*type:* `String.t`) - Appends the specified query terms to the query, as if they were combined with a logical AND operator.
+      *   `:c2coff` (*type:* `String.t`) - Enables or disables [Simplified and Traditional Chinese Search](https://developers.google.com/custom-search/docs/json_api_reference#chineseSearch). The default value for this parameter is 0 (zero), meaning that the feature is enabled. Supported values are: * `1`: Disabled * `0`: Enabled (default)
+      *   `:imgDominantColor` (*type:* `String.t`) - Returns images of a specific dominant color. Acceptable values are: * `"black"` * `"blue"` * `"brown"` * `"gray"` * `"green"` * `"orange"` * `"pink"` * `"purple"` * `"red"` * `"teal"` * `"white"` * `"yellow"`
+      *   `:googlehost` (*type:* `String.t`) - **Deprecated**. Use the `gl` parameter for a similar effect. The local Google domain (for example, google.com, google.de, or google.fr) to use to perform the search.
+      *   `:cx` (*type:* `String.t`) - The Programmable Search Engine ID to use for this request.
       *   `:start` (*type:* `integer()`) - The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
+      *   `:excludeTerms` (*type:* `String.t`) - Identifies a word or phrase that should not appear in any documents in the search results.
+      *   `:siteSearchFilter` (*type:* `String.t`) - Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
+      *   `:dateRestrict` (*type:* `String.t`) - Restricts results to URLs based on date. Supported values include: * `d[number]`: requests results from the specified number of past days. * `w[number]`: requests results from the specified number of past weeks. * `m[number]`: requests results from the specified number of past months. * `y[number]`: requests results from the specified number of past years.
+      *   `:relatedSite` (*type:* `String.t`) - Deprecated.
+      *   `:siteSearch` (*type:* `String.t`) - Specifies a given site which should always be included or excluded from results (see `siteSearchFilter` parameter, below).
+      *   `:gl` (*type:* `String.t`) - Geolocation of end user. * The `gl` parameter value is a two-letter country code. The `gl` parameter boosts search results whose country of origin matches the parameter value. See the [Country Codes](https://developers.google.com/custom-search/docs/json_api_reference#countryCodes) page for a list of valid values. * Specifying a `gl` parameter value should lead to more relevant results. This is particularly true for international customers and, even more specifically, for customers in English- speaking countries other than the United States.
+      *   `:exactTerms` (*type:* `String.t`) - Identifies a phrase that all documents in the search results must contain.
+      *   `:searchType` (*type:* `String.t`) - Specifies the search type: `image`. If unspecified, results are limited to webpages. Acceptable values are: * `"image"`: custom image search.
+      *   `:imgColorType` (*type:* `String.t`) - Returns black and white, grayscale, transparent, or color images. Acceptable values are: * `"color"` * `"gray"` * `"mono"`: black and white * `"trans"`: transparent background
+      *   `:imgType` (*type:* `String.t`) - Returns images of a type. Acceptable values are: * `"clipart"` * `"face"` * `"lineart"` * `"stock"` * `"photo"` * `"animated"`
+      *   `:filter` (*type:* `String.t`) - Controls turning on or off the duplicate content filter. * See [Automatic Filtering](https://developers.google.com/custom-search/docs/json_api_reference#automaticFiltering) for more information about Google's search results filters. Note that host crowding filtering applies only to multi-site searches. * By default, Google applies filtering to all search results to improve the quality of those results. Acceptable values are: * `0`: Turns off duplicate content filter. * `1`: Turns on duplicate content filter.
+      *   `:sort` (*type:* `String.t`) - The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
+      *   `:lowRange` (*type:* `String.t`) - Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
+      *   `:imgSize` (*type:* `String.t`) - Returns images of a specified size. Acceptable values are: * `"huge"` * `"icon"` * `"large"` * `"medium"` * `"small"` * `"xlarge"` * `"xxlarge"`
+      *   `:lr` (*type:* `String.t`) - Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
+      *   `:fileType` (*type:* `String.t`) - Restricts results to files of a specified extension. A list of file types indexable by Google can be found in Search Console [Help Center](https://support.google.com/webmasters/answer/35287).
+      *   `:q` (*type:* `String.t`) - Query
+      *   `:safe` (*type:* `String.t`) - Search safety level. Acceptable values are: * `"active"`: Enables SafeSearch filtering. * `"off"`: Disables SafeSearch filtering. (default)
+      *   `:linkSite` (*type:* `String.t`) - Specifies that all search results should contain a link to a particular URL.
+      *   `:snippetLength` (*type:* `integer()`) - Optional. Maximum length of snippet text, in characters, to be returned with results. Note: this feature is limited to specific engines. * Valid values are integers between 161 and 1000, inclusive.
+      *   `:highRange` (*type:* `String.t`) - Specifies the ending value for a search range. * Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
+      *   `:enableAlternateSearchHandler` (*type:* `boolean()`) - Optional. Enables routing of Programmable Search Engine requests to an alternate search handler.
+      *   `:orTerms` (*type:* `String.t`) - Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
+      *   `:hl` (*type:* `String.t`) - Sets the user interface language. * Explicitly setting this parameter improves the performance and the quality of your search results. * See the [Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#wsInterfaceLanguages) section of [Internationalizing Queries and Results Presentation](https://developers.google.com/custom-search/docs/json_api_reference#wsInternationalizing) for more information, and [Supported Interface Languages](https://developers.google.com/custom-search/docs/json_api_reference#interfaceLanguages) for a list of supported languages.
+      *   `:cr` (*type:* `String.t`) - Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#booleanOperators) in the cr parameter's value. Google Search determines the country of a document by analyzing: * the top-level domain (TLD) of the document's URL * the geographic location of the Web server's IP address See the [Country Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) page for a list of valid values for this parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -221,38 +224,39 @@ defmodule GoogleApi.CustomSearch.V1.Api.Cse do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :c2coff => :query,
-      :cr => :query,
-      :cx => :query,
-      :dateRestrict => :query,
-      :exactTerms => :query,
-      :excludeTerms => :query,
-      :fileType => :query,
-      :filter => :query,
-      :gl => :query,
-      :googlehost => :query,
-      :highRange => :query,
-      :hl => :query,
-      :hq => :query,
-      :imgColorType => :query,
-      :imgDominantColor => :query,
-      :imgSize => :query,
-      :imgType => :query,
-      :linkSite => :query,
-      :lowRange => :query,
-      :lr => :query,
       :num => :query,
-      :orTerms => :query,
-      :q => :query,
-      :relatedSite => :query,
       :rights => :query,
-      :safe => :query,
-      :searchType => :query,
-      :siteSearch => :query,
+      :hq => :query,
+      :c2coff => :query,
+      :imgDominantColor => :query,
+      :googlehost => :query,
+      :cx => :query,
+      :start => :query,
+      :excludeTerms => :query,
       :siteSearchFilter => :query,
-      :snippetLength => :query,
+      :dateRestrict => :query,
+      :relatedSite => :query,
+      :siteSearch => :query,
+      :gl => :query,
+      :exactTerms => :query,
+      :searchType => :query,
+      :imgColorType => :query,
+      :imgType => :query,
+      :filter => :query,
       :sort => :query,
-      :start => :query
+      :lowRange => :query,
+      :imgSize => :query,
+      :lr => :query,
+      :fileType => :query,
+      :q => :query,
+      :safe => :query,
+      :linkSite => :query,
+      :snippetLength => :query,
+      :highRange => :query,
+      :enableAlternateSearchHandler => :query,
+      :orTerms => :query,
+      :hl => :query,
+      :cr => :query
     }
 
     request =
