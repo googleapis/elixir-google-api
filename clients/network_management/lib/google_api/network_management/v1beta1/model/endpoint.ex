@@ -36,6 +36,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   *   `networkType` (*type:* `String.t`, *default:* `nil`) - Type of the network where the endpoint is located. Applicable only to source endpoint, as destination network type can be inferred from the source.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The IP protocol port of the endpoint. Only applicable when protocol is TCP or UDP.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID where the endpoint is located. The Project ID can be derived from the URI if you provide a VM instance or network URI. The following are two cases where you must provide the project ID: 1. Only the IP address is specified, and the IP address is within a Google Cloud project. 2. When you are using Shared VPC and the IP address that you provide is from the service project. In this case, the network that the IP address resides in is defined in the host project.
+  *   `redisCluster` (*type:* `String.t`, *default:* `nil`) - A [Redis Cluster](https://cloud.google.com/memorystore/docs/cluster) URI.
+  *   `redisInstance` (*type:* `String.t`, *default:* `nil`) - A [Redis Instance](https://cloud.google.com/memorystore/docs/redis) URI.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -58,7 +60,9 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
           :network => String.t() | nil,
           :networkType => String.t() | nil,
           :port => integer() | nil,
-          :projectId => String.t() | nil
+          :projectId => String.t() | nil,
+          :redisCluster => String.t() | nil,
+          :redisInstance => String.t() | nil
         }
 
   field(:appEngineVersion, as: GoogleApi.NetworkManagement.V1beta1.Model.AppEngineVersionEndpoint)
@@ -76,6 +80,8 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
   field(:networkType)
   field(:port)
   field(:projectId)
+  field(:redisCluster)
+  field(:redisInstance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.NetworkManagement.V1beta1.Model.Endpoint do
