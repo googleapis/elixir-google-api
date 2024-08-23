@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_sql_admin, "~> 0.60"}]
+  [{:google_api_sql_admin, "~> 0.61"}]
 end
 ```
 
