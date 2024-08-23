@@ -23,6 +23,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
 
   *   `adGroupAd` (*type:* `String.t`, *default:* `nil`) - Immutable. The ad group ad to which the label is attached.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Immutable. The label assigned to the ad group ad.
+  *   `ownerCustomerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Customer which owns the label.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the ad group ad label. Ad group ad label resource names have the form: `customers/{customer_id}/adGroupAdLabels/{ad_group_id}~{ad_id}~{label_id}`
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   @type t :: %__MODULE__{
           :adGroupAd => String.t() | nil,
           :label => String.t() | nil,
+          :ownerCustomerId => String.t() | nil,
           :resourceName => String.t() | nil
         }
 
   field(:adGroupAd)
   field(:label)
+  field(:ownerCustomerId)
   field(:resourceName)
 end
 
