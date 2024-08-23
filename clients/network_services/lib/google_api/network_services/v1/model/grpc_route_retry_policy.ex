@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.NetworkServices.V1.Model.GrpcRouteRetryPolicy do
   @moduledoc """
-  The specifications for retries.
+  The specifications for retries. Specifies one or more conditions for which this retry rule applies. Valid values are:
 
   ## Attributes
 

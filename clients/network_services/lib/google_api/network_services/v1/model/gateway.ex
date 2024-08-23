@@ -32,6 +32,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the Gateway resource. It matches pattern `projects/*/locations/*/gateways/`.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Optional. The relative resource name identifying the VPC network that is using this configuration. For example: `projects/*/global/networks/network-1`. Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY'.
   *   `ports` (*type:* `list(integer())`, *default:* `nil`) - Required. One or more port numbers (1-65535), on which the Gateway will receive traffic. The proxy binds to the specified ports. Gateways of type 'SECURE_WEB_GATEWAY' are limited to 1 port. Gateways of type 'OPEN_MESH' listen on 0.0.0.0 for IPv4 and :: for IPv6 and support multiple ports.
+  *   `routingMode` (*type:* `String.t`, *default:* `nil`) - Optional. The routing mode of the Gateway. This field is configurable only for gateways of type SECURE_WEB_GATEWAY. This field is required for gateways of type SECURE_WEB_GATEWAY.
   *   `scope` (*type:* `String.t`, *default:* `nil`) - Optional. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single coniguration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - Output only. Server-defined URL of this resource
   *   `serverTlsPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled.
@@ -54,6 +55,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
           :name => String.t() | nil,
           :network => String.t() | nil,
           :ports => list(integer()) | nil,
+          :routingMode => String.t() | nil,
           :scope => String.t() | nil,
           :selfLink => String.t() | nil,
           :serverTlsPolicy => String.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.NetworkServices.V1.Model.Gateway do
   field(:name)
   field(:network)
   field(:ports, type: :list)
+  field(:routingMode)
   field(:scope)
   field(:selfLink)
   field(:serverTlsPolicy)
