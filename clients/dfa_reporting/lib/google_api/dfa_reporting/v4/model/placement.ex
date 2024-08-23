@@ -43,6 +43,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
   *   `conversionDomainOverride` (*type:* `GoogleApi.DFAReporting.V4.Model.PlacementConversionDomainOverride.t`, *default:* `nil`) - Optional. Conversion domain overrides for a placement.
   *   `siteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V4.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the site. This is a read-only, auto-generated field.
   *   `placementGroupId` (*type:* `String.t`, *default:* `nil`) - ID of this placement's group, if applicable.
+  *   `siteServed` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the ads in the placement are served by another platform and CM is only used for tracking or they are served by CM. A false value indicates the ad is served by CM.
   *   `size` (*type:* `GoogleApi.DFAReporting.V4.Model.Size.t`, *default:* `nil`) - Size associated with this placement. When inserting or updating a placement, only the size ID field is used. This field is required on insertion.
   *   `comment` (*type:* `String.t`, *default:* `nil`) - Comments for this placement.
   *   `paymentSource` (*type:* `String.t`, *default:* `nil`) - Payment source for this placement. This is a required field that is read-only after insertion.
@@ -53,6 +54,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
   *   `tagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag formats to generate for this placement. This field is required on insertion. Acceptable values are: - "PLACEMENT_TAG_STANDARD" - "PLACEMENT_TAG_IFRAME_JAVASCRIPT" - "PLACEMENT_TAG_IFRAME_ILAYER" - "PLACEMENT_TAG_INTERNAL_REDIRECT" - "PLACEMENT_TAG_JAVASCRIPT" - "PLACEMENT_TAG_INTERSTITIAL_IFRAME_JAVASCRIPT" - "PLACEMENT_TAG_INTERSTITIAL_INTERNAL_REDIRECT" - "PLACEMENT_TAG_INTERSTITIAL_JAVASCRIPT" - "PLACEMENT_TAG_CLICK_COMMANDS" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_3" - "PLACEMENT_TAG_INSTREAM_VIDEO_PREFETCH_VAST_4" - "PLACEMENT_TAG_TRACKING" - "PLACEMENT_TAG_TRACKING_IFRAME" - "PLACEMENT_TAG_TRACKING_JAVASCRIPT" 
   *   `siteId` (*type:* `String.t`, *default:* `nil`) - Site ID associated with this placement. On insert, you must set either this field or the directorySiteId field to specify the site associated with this placement. This is a required field that is read-only after insertion.
   *   `placementStrategyId` (*type:* `String.t`, *default:* `nil`) - ID of the placement strategy assigned to this placement.
+  *   `adServingPlatformId` (*type:* `String.t`, *default:* `nil`) - Optional. Ad serving platform ID to identify the ad serving platform used by the placement. Measurement partners can use this field to add ad-server specific macros. Possible values are: * `1`, Adelphic * `2`, Adform * `3`, Adobe * `4`, Amobee * `5`, Basis (Centro) * `6`, Beeswax * `7`, Amazon * `8`, DV360 (DBM) * `9`, Innovid * `10`, MediaMath * `11`, Roku OneView DSP * `12`, TabMo Hawk * `13`, The Trade Desk * `14`, Xandr Invest DSP * `15`, Yahoo DSP * `16`, Zeta Global * `17`, Scaleout * `18`, Bidtellect * `19`, Unicorn * `20`, Teads * `21`, Quantcast * `22`, Cognitiv
   *   `additionalSizes` (*type:* `list(GoogleApi.DFAReporting.V4.Model.Size.t)`, *default:* `nil`) - Additional sizes associated with this placement. When inserting or updating a placement, only the size ID field is used.
   *   `campaignId` (*type:* `String.t`, *default:* `nil`) - Campaign ID of this placement. This field is a required field on insertion.
   *   `adBlockingOptOut` (*type:* `boolean()`, *default:* `nil`) - Whether this placement opts out of ad blocking. When true, ad blocking is disabled for this placement. When false, the campaign and site settings take effect.
@@ -97,6 +99,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
             GoogleApi.DFAReporting.V4.Model.PlacementConversionDomainOverride.t() | nil,
           :siteIdDimensionValue => GoogleApi.DFAReporting.V4.Model.DimensionValue.t() | nil,
           :placementGroupId => String.t() | nil,
+          :siteServed => boolean() | nil,
           :size => GoogleApi.DFAReporting.V4.Model.Size.t() | nil,
           :comment => String.t() | nil,
           :paymentSource => String.t() | nil,
@@ -107,6 +110,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
           :tagFormats => list(String.t()) | nil,
           :siteId => String.t() | nil,
           :placementStrategyId => String.t() | nil,
+          :adServingPlatformId => String.t() | nil,
           :additionalSizes => list(GoogleApi.DFAReporting.V4.Model.Size.t()) | nil,
           :campaignId => String.t() | nil,
           :adBlockingOptOut => boolean() | nil,
@@ -147,6 +151,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
 
   field(:siteIdDimensionValue, as: GoogleApi.DFAReporting.V4.Model.DimensionValue)
   field(:placementGroupId)
+  field(:siteServed)
   field(:size, as: GoogleApi.DFAReporting.V4.Model.Size)
   field(:comment)
   field(:paymentSource)
@@ -157,6 +162,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Placement do
   field(:tagFormats, type: :list)
   field(:siteId)
   field(:placementStrategyId)
+  field(:adServingPlatformId)
   field(:additionalSizes, as: GoogleApi.DFAReporting.V4.Model.Size, type: :list)
   field(:campaignId)
   field(:adBlockingOptOut)

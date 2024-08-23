@@ -27,6 +27,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.DirectorySite do
   *   `interstitialTagFormats` (*type:* `list(String.t)`, *default:* `nil`) - Tag types for interstitial placements. Acceptable values are: - "IFRAME_JAVASCRIPT_INTERSTITIAL" - "INTERNAL_REDIRECT_INTERSTITIAL" - "JAVASCRIPT_INTERSTITIAL" 
   *   `kind` (*type:* `String.t`, *default:* `nil`) - Identifies what kind of resource this is. Value: the fixed string "dfareporting#directorySite".
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of this directory site.
+  *   `publisherSpecificationId` (*type:* `String.t`, *default:* `nil`) - Output only. Default publisher specification ID of video placements under this directory site. Possible values are: * `1`, Hulu * `2`, NBC * `3`, CBS * `4`, CBS Desktop * `5`, Discovery * `6`, VEVO HD * `7`, VEVO Vertical * `8`, Fox * `9`, CW Network * `10`, Disney * `11`, IGN * `12`, NFL.com * `13`, Turner Broadcasting * `14`, Tubi on Fox * `15`, Hearst Corporation * `16`, Twitch Desktop * `17`, ABC * `18`, Univision * `19`, MLB.com * `20`, MLB.com Mobile * `21`, MLB.com OTT * `22`, Polsat * `23`, TVN * `24`, Mediaset * `25`, Antena 3 * `26`, Mediamond * `27`, Sky Italia * `28`, Tubi on CBS * `29`, Spotify * `30`, Paramount * `31`, Max
   *   `settings` (*type:* `GoogleApi.DFAReporting.V4.Model.DirectorySiteSettings.t`, *default:* `nil`) - Directory site settings.
   *   `url` (*type:* `String.t`, *default:* `nil`) - URL of this directory site.
   """
@@ -40,6 +41,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.DirectorySite do
           :interstitialTagFormats => list(String.t()) | nil,
           :kind => String.t() | nil,
           :name => String.t() | nil,
+          :publisherSpecificationId => String.t() | nil,
           :settings => GoogleApi.DFAReporting.V4.Model.DirectorySiteSettings.t() | nil,
           :url => String.t() | nil
         }
@@ -50,6 +52,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.DirectorySite do
   field(:interstitialTagFormats, type: :list)
   field(:kind)
   field(:name)
+  field(:publisherSpecificationId)
   field(:settings, as: GoogleApi.DFAReporting.V4.Model.DirectorySiteSettings)
   field(:url)
 end
