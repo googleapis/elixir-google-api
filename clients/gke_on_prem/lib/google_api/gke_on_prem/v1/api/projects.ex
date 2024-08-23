@@ -170,6 +170,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowPreflightFailure` (*type:* `boolean()`) - Optional. If set to true, CLM will force CCFE to persist the cluster resource in RMS when the creation fails during standalone preflight checks. In that case the subsequent create call will fail with "cluster already exists" error and hence a update cluster is required to fix the cluster.
       *   `:bareMetalAdminClusterId` (*type:* `String.t`) - Required. User provided identifier that is used as part of the resource name; must conform to RFC-1034 and additionally restrict to lower-cased letters. This comes out roughly to: /^a-z+[a-z0-9]$/
       *   `:validateOnly` (*type:* `boolean()`) - Validate the request without actually doing any updates.
       *   `:body` (*type:* `GoogleApi.GKEOnPrem.V1.Model.BareMetalAdminCluster.t`) - 
@@ -208,6 +209,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowPreflightFailure => :query,
       :bareMetalAdminClusterId => :query,
       :validateOnly => :query,
       :body => :body
@@ -318,6 +320,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return BareMetal Admin Cluster including the one that only exists in RMS.
       *   `:view` (*type:* `String.t`) - View for bare metal admin cluster. When `BASIC` is specified, only the cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -354,6 +357,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :view => :query
     }
 
@@ -462,6 +466,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return list of BareMetal Admin Clusters including the ones that only exists in RMS.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
       *   `:view` (*type:* `String.t`) - View for bare metal admin clusters. When `BASIC` is specified, only the admin cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete admin cluster configuration details.
@@ -500,6 +505,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
@@ -1060,6 +1066,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowPreflightFailure` (*type:* `boolean()`) - Optional. If set to true, CLM will force CCFE to persist the cluster resource in RMS when the creation fails during standalone preflight checks. In that case the subsequent create call will fail with "cluster already exists" error and hence a update cluster is required to fix the cluster.
       *   `:bareMetalClusterId` (*type:* `String.t`) - Required. User provided identifier that is used as part of the resource name; must conform to RFC-1034 and additionally restrict to lower-cased letters. This comes out roughly to: /^a-z+[a-z0-9]$/
       *   `:validateOnly` (*type:* `boolean()`) - Validate the request without actually doing any updates.
       *   `:body` (*type:* `GoogleApi.GKEOnPrem.V1.Model.BareMetalCluster.t`) - 
@@ -1098,6 +1105,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowPreflightFailure => :query,
       :bareMetalClusterId => :query,
       :validateOnly => :query,
       :body => :body
@@ -1288,6 +1296,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return BareMetal Cluster including the one that only exists in RMS.
       *   `:view` (*type:* `String.t`) - View for bare metal user cluster. When `BASIC` is specified, only the cluster resource name and admin cluster membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1324,6 +1333,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :view => :query
     }
 
@@ -1432,6 +1442,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return list of BareMetal Clusters including the ones that only exists in RMS.
       *   `:filter` (*type:* `String.t`) - A resource filtering expression following https://google.aip.dev/160. When non-empty, only resource's whose attributes field matches the filter are returned.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
@@ -1471,6 +1482,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :filter => :query,
       :pageSize => :query,
       :pageToken => :query,
@@ -3292,6 +3304,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return Vmware Admin Cluster including the one that only exists in RMS.
       *   `:view` (*type:* `String.t`) - View for VMware admin cluster. When `BASIC` is specified, only the cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3328,6 +3341,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :view => :query
     }
 
@@ -3436,6 +3450,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return list of Vmware Admin Clusters including the ones that only exists in RMS.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
       *   `:view` (*type:* `String.t`) - View for VMware admin clusters. When `BASIC` is specified, only the admin cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete admin cluster configuration details.
@@ -3474,6 +3489,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :pageSize => :query,
       :pageToken => :query,
       :view => :query
@@ -3958,6 +3974,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowPreflightFailure` (*type:* `boolean()`) - Optional. If set to true, CLM will force CCFE to persist the cluster resource in RMS when the creation fails during standalone preflight checks. In that case the subsequent create call will fail with "cluster already exists" error and hence a update cluster is required to fix the cluster.
       *   `:validateOnly` (*type:* `boolean()`) - Validate the request without actually doing any updates.
       *   `:vmwareClusterId` (*type:* `String.t`) - User provided identifier that is used as part of the resource name; This value must be up to 40 characters and follow RFC-1123 (https://tools.ietf.org/html/rfc1123) format.
       *   `:body` (*type:* `GoogleApi.GKEOnPrem.V1.Model.VmwareCluster.t`) - 
@@ -3996,6 +4013,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowPreflightFailure => :query,
       :validateOnly => :query,
       :vmwareClusterId => :query,
       :body => :body
@@ -4186,6 +4204,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return Vmware Cluster including the one that only exists in RMS.
       *   `:view` (*type:* `String.t`) - View for VMware user cluster. When `BASIC` is specified, only the cluster resource name and admin cluster membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4222,6 +4241,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :view => :query
     }
 
@@ -4330,6 +4350,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:allowMissing` (*type:* `boolean()`) - Optional. If true, return list of Vmware Clusters including the ones that only exists in RMS.
       *   `:filter` (*type:* `String.t`) - A resource filtering expression following https://google.aip.dev/160. When non-empty, only resource's whose attributes field matches the filter are returned.
       *   `:pageSize` (*type:* `integer()`) - Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - A token identifying a page of results the server should return.
@@ -4369,6 +4390,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :allowMissing => :query,
       :filter => :query,
       :pageSize => :query,
       :pageToken => :query,

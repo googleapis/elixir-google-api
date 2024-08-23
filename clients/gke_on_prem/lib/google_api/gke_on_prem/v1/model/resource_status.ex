@@ -23,17 +23,23 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.ResourceStatus do
 
   *   `conditions` (*type:* `list(GoogleApi.GKEOnPrem.V1.Model.ResourceCondition.t)`, *default:* `nil`) - ResourceCondition provide a standard mechanism for higher-level status reporting from controller.
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Human-friendly representation of the error message from controller. The error message can be temporary as the controller controller creates a cluster or node pool. If the error message persists for a longer period of time, it can be used to surface error message to indicate real problems requiring user intervention.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Reflect current version of the resource.
+  *   `versions` (*type:* `GoogleApi.GKEOnPrem.V1.Model.Versions.t`, *default:* `nil`) - Shows the mapping of a given version to the number of machines under this version.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :conditions => list(GoogleApi.GKEOnPrem.V1.Model.ResourceCondition.t()) | nil,
-          :errorMessage => String.t() | nil
+          :errorMessage => String.t() | nil,
+          :version => String.t() | nil,
+          :versions => GoogleApi.GKEOnPrem.V1.Model.Versions.t() | nil
         }
 
   field(:conditions, as: GoogleApi.GKEOnPrem.V1.Model.ResourceCondition, type: :list)
   field(:errorMessage)
+  field(:version)
+  field(:versions, as: GoogleApi.GKEOnPrem.V1.Model.Versions)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.GKEOnPrem.V1.Model.ResourceStatus do
