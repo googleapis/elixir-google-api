@@ -23,7 +23,7 @@ defmodule GoogleApi.GKEHub.V1.Model.ConfigManagementMembershipSpec do
 
   *   `cluster` (*type:* `String.t`, *default:* `nil`) - The user-specified cluster name used by Config Sync cluster-name-selector annotation or ClusterSelector, for applying configs to only a subset of clusters. Omit this field if the cluster's fleet membership name is used by Config Sync cluster-name-selector annotation or ClusterSelector. Set this field if a name different from the cluster's fleet membership name is used by Config Sync cluster-name-selector annotation or ClusterSelector.
   *   `configSync` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementConfigSync.t`, *default:* `nil`) - Config Sync configuration for the cluster.
-  *   `hierarchyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig.t`, *default:* `nil`) - Hierarchy Controller configuration for the cluster.
+  *   `hierarchyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementHierarchyControllerConfig.t`, *default:* `nil`) - Hierarchy Controller configuration for the cluster. Deprecated: Configuring Hierarchy Controller through the configmanagement feature is no longer recommended. Use https://github.com/kubernetes-sigs/hierarchical-namespaces instead.
   *   `management` (*type:* `String.t`, *default:* `nil`) - Enables automatic Feature management.
   *   `policyController` (*type:* `GoogleApi.GKEHub.V1.Model.ConfigManagementPolicyController.t`, *default:* `nil`) - Policy Controller configuration for the cluster. Deprecated: Configuring Policy Controller through the configmanagement feature is no longer recommended. Use the policycontroller feature instead.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Version of ACM installed.

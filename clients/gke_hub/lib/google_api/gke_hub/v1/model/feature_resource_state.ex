@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.FeatureResourceState do
   @moduledoc """
-  FeatureResourceState describes the state of a Feature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the Feature in the Hub and across Memberships.
+  FeatureResourceState describes the state of a Feature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the Feature in the Fleet and across Memberships.
 
   ## Attributes
 

@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureState do
   @moduledoc """
-  CommonFeatureState contains Hub-wide Feature status information.
+  CommonFeatureState contains Fleet-wide Feature status information.
 
   ## Attributes
 
   *   `appdevexperience` (*type:* `GoogleApi.GKEHub.V1.Model.AppDevExperienceFeatureState.t`, *default:* `nil`) - Appdevexperience specific state.
   *   `clusterupgrade` (*type:* `GoogleApi.GKEHub.V1.Model.ClusterUpgradeFleetState.t`, *default:* `nil`) - ClusterUpgrade fleet-level state.
   *   `fleetobservability` (*type:* `GoogleApi.GKEHub.V1.Model.FleetObservabilityFeatureState.t`, *default:* `nil`) - FleetObservability feature state.
-  *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.FeatureState.t`, *default:* `nil`) - Output only. The "running state" of the Feature in this Hub.
+  *   `state` (*type:* `GoogleApi.GKEHub.V1.Model.FeatureState.t`, *default:* `nil`) - Output only. The "running state" of the Feature in this Fleet.
   """
 
   use GoogleApi.Gax.ModelBase
