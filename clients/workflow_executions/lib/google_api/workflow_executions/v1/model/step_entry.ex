@@ -32,6 +32,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.StepEntry do
   *   `stepEntryMetadata` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata.t`, *default:* `nil`) - Output only. The StepEntryMetadata associated to this step.
   *   `stepType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the step this step entry belongs to.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recently updated time of the step entry.
+  *   `variableData` (*type:* `GoogleApi.WorkflowExecutions.V1.Model.VariableData.t`, *default:* `nil`) - Output only. The VariableData associated to this step.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -47,7 +48,8 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.StepEntry do
           :step => String.t() | nil,
           :stepEntryMetadata => GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata.t() | nil,
           :stepType => String.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :variableData => GoogleApi.WorkflowExecutions.V1.Model.VariableData.t() | nil
         }
 
   field(:createTime, as: DateTime)
@@ -61,6 +63,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.StepEntry do
   field(:stepEntryMetadata, as: GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata)
   field(:stepType)
   field(:updateTime, as: DateTime)
+  field(:variableData, as: GoogleApi.WorkflowExecutions.V1.Model.VariableData)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.WorkflowExecutions.V1.Model.StepEntry do
