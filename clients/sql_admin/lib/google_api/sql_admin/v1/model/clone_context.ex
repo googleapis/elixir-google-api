@@ -28,6 +28,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#cloneContext`.
   *   `pitrTimestampMs` (*type:* `String.t`, *default:* `nil`) - Reserved for future use.
   *   `pointInTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp, if specified, identifies the time to which the source instance is cloned.
+  *   `preferredSecondaryZone` (*type:* `String.t`, *default:* `nil`) - Optional. Copy clone and point-in-time recovery clone of a regional instance in the specified zones. If not specified, clone to the same secondary zone as the source instance. This value cannot be the same as the preferred_zone field. This field applies to all DB types.
   *   `preferredZone` (*type:* `String.t`, *default:* `nil`) - Optional. Copy clone and point-in-time recovery clone of an instance to the specified zone. If no zone is specified, clone to the same primary zone as the source instance. This field applies to all DB types.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
           :kind => String.t() | nil,
           :pitrTimestampMs => String.t() | nil,
           :pointInTime => DateTime.t() | nil,
+          :preferredSecondaryZone => String.t() | nil,
           :preferredZone => String.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.CloneContext do
   field(:kind)
   field(:pitrTimestampMs)
   field(:pointInTime, as: DateTime)
+  field(:preferredSecondaryZone)
   field(:preferredZone)
 end
 
