@@ -20,7 +20,7 @@ defmodule GoogleApi.SecretManager.V1beta1 do
   API client metadata for GoogleApi.SecretManager.V1beta1.
   """
 
-  @discovery_revision "20240527"
+  @discovery_revision "20240726"
 
   def discovery_revision(), do: @discovery_revision
 end
