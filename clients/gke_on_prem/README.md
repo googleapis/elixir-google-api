@@ -1,6 +1,6 @@
 # GoogleApi.GKEOnPrem
 
-Anthos On-Prem API client library.
+GDC Virtual API client library.
 
 
 
@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_gke_on_prem, "~> 0.3"}]
+  [{:google_api_gke_on_prem, "~> 0.4"}]
 end
 ```
 

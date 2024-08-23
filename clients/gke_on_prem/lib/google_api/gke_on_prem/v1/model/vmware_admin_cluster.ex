@@ -46,6 +46,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
   *   `status` (*type:* `GoogleApi.GKEOnPrem.V1.Model.ResourceStatus.t`, *default:* `nil`) - Output only. ResourceStatus representing detailed cluster state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The unique identifier of the VMware admin cluster.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which VMware admin cluster was last updated.
+  *   `validationCheck` (*type:* `GoogleApi.GKEOnPrem.V1.Model.ValidationCheck.t`, *default:* `nil`) - Output only. ValidationCheck represents the result of the preflight check job.
   *   `vcenter` (*type:* `GoogleApi.GKEOnPrem.V1.Model.VmwareAdminVCenterConfig.t`, *default:* `nil`) - The VMware admin cluster VCenter configuration.
   """
 
@@ -79,6 +80,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
           :status => GoogleApi.GKEOnPrem.V1.Model.ResourceStatus.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
+          :validationCheck => GoogleApi.GKEOnPrem.V1.Model.ValidationCheck.t() | nil,
           :vcenter => GoogleApi.GKEOnPrem.V1.Model.VmwareAdminVCenterConfig.t() | nil
         }
 
@@ -107,6 +109,7 @@ defmodule GoogleApi.GKEOnPrem.V1.Model.VmwareAdminCluster do
   field(:status, as: GoogleApi.GKEOnPrem.V1.Model.ResourceStatus)
   field(:uid)
   field(:updateTime, as: DateTime)
+  field(:validationCheck, as: GoogleApi.GKEOnPrem.V1.Model.ValidationCheck)
   field(:vcenter, as: GoogleApi.GKEOnPrem.V1.Model.VmwareAdminVCenterConfig)
 end
 

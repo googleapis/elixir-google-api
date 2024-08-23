@@ -18,7 +18,7 @@
 defmodule GoogleApi.GKEOnPrem.Mixfile do
   use Mix.Project
 
-  @version "0.3.0"
+  @version "0.4.0"
 
   def project() do
     [
@@ -48,7 +48,7 @@ defmodule GoogleApi.GKEOnPrem.Mixfile do
 
   defp description() do
     """
-    Anthos On-Prem API client library. 
+    GDC Virtual API client library. 
     """
   end
 
