@@ -20,7 +20,7 @@ defmodule GoogleApi.NetworkServices.V1 do
   API client metadata for GoogleApi.NetworkServices.V1.
   """
 
-  @discovery_revision "20240721"
+  @discovery_revision "20240818"
 
   def discovery_revision(), do: @discovery_revision
 end
