@@ -22,6 +22,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
   ## Attributes
 
   *   `adUserDataConsent` (*type:* `String.t`, *default:* `nil`) - This represents consent for ad user data.
+  *   `cartData` (*type:* `GoogleApi.DFAReporting.V4.Model.CartData.t`, *default:* `nil`) - The cart data associated with this conversion.
   *   `childDirectedTreatment` (*type:* `boolean()`, *default:* `nil`) - Whether this particular request may come from a user under the age of 13, under COPPA compliance.
   *   `customVariables` (*type:* `list(GoogleApi.DFAReporting.V4.Model.CustomFloodlightVariable.t)`, *default:* `nil`) - Custom floodlight variables. This field may only be used when calling batchinsert; it is not supported by batchupdate.
   *   `dclid` (*type:* `String.t`, *default:* `nil`) - The display click ID. This field is mutually exclusive with encryptedUserId, encryptedUserIdCandidates[], matchId, mobileDeviceId, gclid, and impressionId. This or encryptedUserId or encryptedUserIdCandidates[] or matchId or mobileDeviceId or gclid or impressionId is a required field.
@@ -48,6 +49,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
 
   @type t :: %__MODULE__{
           :adUserDataConsent => String.t() | nil,
+          :cartData => GoogleApi.DFAReporting.V4.Model.CartData.t() | nil,
           :childDirectedTreatment => boolean() | nil,
           :customVariables =>
             list(GoogleApi.DFAReporting.V4.Model.CustomFloodlightVariable.t()) | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Conversion do
         }
 
   field(:adUserDataConsent)
+  field(:cartData, as: GoogleApi.DFAReporting.V4.Model.CartData)
   field(:childDirectedTreatment)
 
   field(:customVariables,

@@ -22,6 +22,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Site do
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Account ID of this site. This is a read-only field that can be left blank.
+  *   `adServingPlatformId` (*type:* `String.t`, *default:* `nil`) - Optional. Ad serving platform ID to identify the ad serving platform used by the site. Measurement partners can use this field to add ad-server specific macros. If set, this value acts as the default during placement creation. Possible values are: * `1`, Adelphic * `2`, Adform * `3`, Adobe * `4`, Amobee * `5`, Basis (Centro) * `6`, Beeswax * `7`, Amazon * `8`, DV360 (DBM) * `9`, Innovid * `10`, MediaMath * `11`, Roku OneView DSP * `12`, TabMo Hawk * `13`, The Trade Desk * `14`, Xandr Invest DSP * `15`, Yahoo DSP * `16`, Zeta Global * `17`, Scaleout * `18`, Bidtellect * `19`, Unicorn * `20`, Teads * `21`, Quantcast * `22`, Cognitiv
   *   `approved` (*type:* `boolean()`, *default:* `nil`) - Whether this site is approved.
   *   `directorySiteId` (*type:* `String.t`, *default:* `nil`) - Directory site associated with this site. This is a required field that is read-only after insertion.
   *   `directorySiteIdDimensionValue` (*type:* `GoogleApi.DFAReporting.V4.Model.DimensionValue.t`, *default:* `nil`) - Dimension value for the ID of the directory site. This is a read-only, auto-generated field.
@@ -40,6 +41,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Site do
 
   @type t :: %__MODULE__{
           :accountId => String.t() | nil,
+          :adServingPlatformId => String.t() | nil,
           :approved => boolean() | nil,
           :directorySiteId => String.t() | nil,
           :directorySiteIdDimensionValue =>
@@ -56,6 +58,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Site do
         }
 
   field(:accountId)
+  field(:adServingPlatformId)
   field(:approved)
   field(:directorySiteId)
   field(:directorySiteIdDimensionValue, as: GoogleApi.DFAReporting.V4.Model.DimensionValue)
