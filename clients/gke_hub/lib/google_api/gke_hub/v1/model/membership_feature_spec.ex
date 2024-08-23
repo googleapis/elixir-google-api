@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.MembershipFeatureSpec do
   @moduledoc """
-  MembershipFeatureSpec contains configuration information for a single Membership. NOTE: Please use snake case in your feature name.
+  MembershipFeatureSpec contains configuration information for a single Membership.
 
   ## Attributes
 

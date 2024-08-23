@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.GKEHub.V1.Model.CommonFeatureSpec do
   @moduledoc """
-  CommonFeatureSpec contains Hub-wide configuration information
+  CommonFeatureSpec contains Fleet-wide configuration information
 
   ## Attributes
 
