@@ -18,7 +18,7 @@
 defmodule GoogleApi.SecretManager.Mixfile do
   use Mix.Project
 
-  @version "0.22.0"
+  @version "0.22.1"
 
   def project() do
     [
