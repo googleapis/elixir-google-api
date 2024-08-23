@@ -36,7 +36,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableFieldSchema do
   *   `rangeElementType` (*type:* `GoogleApi.BigQuery.V2.Model.TableFieldSchemaRangeElementType.t`, *default:* `nil`) - Represents the type of a field element.
   *   `roundingMode` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the rounding mode to be used when storing values of NUMERIC and BIGNUMERIC type.
   *   `scale` (*type:* `String.t`, *default:* `nil`) - Optional. See documentation for precision.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The field data type. Possible values include: * STRING * BYTES * INTEGER (or INT64) * FLOAT (or FLOAT64) * BOOLEAN (or BOOL) * TIMESTAMP * DATE * TIME * DATETIME * GEOGRAPHY * NUMERIC * BIGNUMERIC * JSON * RECORD (or STRUCT) * RANGE ([Preview](/products/#product-launch-stages)) Use of RECORD/STRUCT indicates that the field contains a nested schema.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Required. The field data type. Possible values include: * STRING * BYTES * INTEGER (or INT64) * FLOAT (or FLOAT64) * BOOLEAN (or BOOL) * TIMESTAMP * DATE * TIME * DATETIME * GEOGRAPHY * NUMERIC * BIGNUMERIC * JSON * RECORD (or STRUCT) * RANGE Use of RECORD/STRUCT indicates that the field contains a nested schema.
   """
 
   use GoogleApi.Gax.ModelBase

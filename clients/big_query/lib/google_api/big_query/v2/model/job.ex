@@ -24,7 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.Job do
   *   `configuration` (*type:* `GoogleApi.BigQuery.V2.Model.JobConfiguration.t`, *default:* `nil`) - Required. Describes the job configuration.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A hash of this resource.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. Opaque ID field of the job.
-  *   `jobCreationReason` (*type:* `GoogleApi.BigQuery.V2.Model.JobCreationReason.t`, *default:* `nil`) - Output only. If set, it provides the reason why a Job was created. If not set, it should be treated as the default: REQUESTED. This feature is not yet available. Jobs will always be created.
+  *   `jobCreationReason` (*type:* `GoogleApi.BigQuery.V2.Model.JobCreationReason.t`, *default:* `nil`) - Output only. The reason why a Job was created. [Preview](/products/#product-launch-stages)
   *   `jobReference` (*type:* `GoogleApi.BigQuery.V2.Model.JobReference.t`, *default:* `nil`) - Optional. Reference describing the unique-per-user name of the job.
   *   `kind` (*type:* `String.t`, *default:* `bigquery#job`) - Output only. The type of the resource.
   *   `principal_subject` (*type:* `String.t`, *default:* `nil`) - Output only. [Full-projection-only] String representation of identity of requesting party. Populated for both first- and third-party identities. Only present for APIs that support third-party identities.
