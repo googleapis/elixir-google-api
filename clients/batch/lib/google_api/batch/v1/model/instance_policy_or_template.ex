@@ -21,6 +21,7 @@ defmodule GoogleApi.Batch.V1.Model.InstancePolicyOrTemplate do
 
   ## Attributes
 
+  *   `blockProjectSshKeys` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this field to `true` if you want Batch to block project-level SSH keys from accessing this job's VMs. Alternatively, you can configure the job to specify a VM instance template that blocks project-level SSH keys. In either case, Batch blocks project-level SSH keys while creating the VMs for this job. Batch allows project-level SSH keys for a job's VMs only if all the following are true: + This field is undefined or set to `false`. + The job's VM instance template (if any) doesn't block project-level SSH keys. Notably, you can override this behavior by manually updating a VM to block or allow project-level SSH keys. For more information about blocking project-level SSH keys, see the Compute Engine documentation: https://cloud.google.com/compute/docs/connect/restrict-ssh-keys#block-keys
   *   `installGpuDrivers` (*type:* `boolean()`, *default:* `nil`) - Set this field true if you want Batch to help fetch drivers from a third party location and install them for GPUs specified in `policy.accelerators` or `instance_template` on your behalf. Default is false. For Container-Optimized Image cases, Batch will install the accelerator driver following milestones of https://cloud.google.com/container-optimized-os/docs/release-notes. For non Container-Optimized Image cases, following https://github.com/GoogleCloudPlatform/compute-gpu-installation/blob/main/linux/install_gpu_driver.py.
   *   `installOpsAgent` (*type:* `boolean()`, *default:* `nil`) - Optional. Set this field true if you want Batch to install Ops Agent on your behalf. Default is false.
   *   `instanceTemplate` (*type:* `String.t`, *default:* `nil`) - Name of an instance template used to create VMs. Named the field as 'instance_template' instead of 'template' to avoid c++ keyword conflict.
@@ -30,12 +31,14 @@ defmodule GoogleApi.Batch.V1.Model.InstancePolicyOrTemplate do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blockProjectSshKeys => boolean() | nil,
           :installGpuDrivers => boolean() | nil,
           :installOpsAgent => boolean() | nil,
           :instanceTemplate => String.t() | nil,
           :policy => GoogleApi.Batch.V1.Model.InstancePolicy.t() | nil
         }
 
+  field(:blockProjectSshKeys)
   field(:installGpuDrivers)
   field(:installOpsAgent)
   field(:instanceTemplate)
