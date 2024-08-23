@@ -29,7 +29,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBigQ
   *   `freshDailyExportEnabled` (*type:* `boolean()`, *default:* `nil`) - If set true, enables fresh daily export to the linked Google Cloud project.
   *   `includeAdvertisingId` (*type:* `boolean()`, *default:* `nil`) - If set true, exported data will include advertising identifiers for mobile app streams.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of this BigQuery link. Format: 'properties/{property_id}/bigQueryLinks/{bigquery_link_id}' Format: 'properties/1234/bigQueryLinks/abc567'
-  *   `project` (*type:* `String.t`, *default:* `nil`) - Immutable. The linked Google Cloud project. When creating a BigQueryLink, you may provide this resource name using either a project number or project ID. Once this resource has been created, the returned project will always have a project that contains a project number. Format: 'projects/{project number}' Example: 'projects/1234'
+  *   `project` (*type:* `String.t`, *default:* `nil`) - Immutable. The linked Google Cloud project resource name. Currently, this API always uses a project number, but may use project IDs in the future. Format: 'projects/{project number}' Example: 'projects/1234'
   *   `streamingExportEnabled` (*type:* `boolean()`, *default:* `nil`) - If set true, enables streaming export to the linked Google Cloud project.
   """
 
