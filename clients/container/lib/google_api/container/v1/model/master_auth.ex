@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.MasterAuth do
 
   ## Attributes
 
-  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate used by clients to authenticate to the cluster endpoint.
+  *   `clientCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate used by clients to authenticate to the cluster endpoint. Issued only if client_certificate_config is set.
   *   `clientCertificateConfig` (*type:* `GoogleApi.Container.V1.Model.ClientCertificateConfig.t`, *default:* `nil`) - Configuration for client certificate authentication on the cluster. For clusters before v1.12, if no configuration is specified, a client certificate is issued.
   *   `clientKey` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded private key used by clients to authenticate to the cluster endpoint.
   *   `clusterCaCertificate` (*type:* `String.t`, *default:* `nil`) - Output only. Base64-encoded public certificate that is the root of trust for the cluster.
