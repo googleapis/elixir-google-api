@@ -24,6 +24,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   *   `advancedSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AdvancedSettings.t`, *default:* `nil`) - Hierarchical advanced settings for this agent. The settings exposed at the lower level overrides the settings exposed at the higher level.
   *   `answerFeedbackSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings.t`, *default:* `nil`) - Optional. Answer feedback collection settings.
   *   `avatarUri` (*type:* `String.t`, *default:* `nil`) - The URI of the agent's avatar. Avatars are used throughout the Dialogflow console and in the self-hosted [Web Demo](https://cloud.google.com/dialogflow/docs/integrations/web-demo) integration.
+  *   `clientCertificateSettings` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentClientCertificateSettings.t`, *default:* `nil`) - Optional. Settings for custom client certificates.
   *   `defaultLanguageCode` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The default language of the agent as a language tag. See [Language Support](https://cloud.google.com/dialogflow/cx/docs/reference/language) for a list of the currently supported language codes. This field cannot be set by the Agents.UpdateAgent method.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the agent. The maximum length is 500 characters. If exceeded, the request is rejected.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The human-readable name of the agent, unique within the location.
@@ -52,6 +53,9 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentAnswerFeedbackSettings.t()
             | nil,
           :avatarUri => String.t() | nil,
+          :clientCertificateSettings =>
+            GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentClientCertificateSettings.t()
+            | nil,
           :defaultLanguageCode => String.t() | nil,
           :description => String.t() | nil,
           :displayName => String.t() | nil,
@@ -88,6 +92,11 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3Agent do
   )
 
   field(:avatarUri)
+
+  field(:clientCertificateSettings,
+    as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3AgentClientCertificateSettings
+  )
+
   field(:defaultLanguageCode)
   field(:description)
   field(:displayName)
