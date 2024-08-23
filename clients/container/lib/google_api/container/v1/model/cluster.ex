@@ -78,6 +78,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `network` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the cluster is connected. If left unspecified, the `default` network will be used.
   *   `autopilot` (*type:* `GoogleApi.Container.V1.Model.Autopilot.t`, *default:* `nil`) - Autopilot configuration for the cluster.
   *   `autoscaling` (*type:* `GoogleApi.Container.V1.Model.ClusterAutoscaling.t`, *default:* `nil`) - Cluster-level autoscaling configuration.
+  *   `rbacBindingConfig` (*type:* `GoogleApi.Container.V1.Model.RBACBindingConfig.t`, *default:* `nil`) - RBACBindingConfig allows user to restrict ClusterRoleBindings an RoleBindings that can be created.
   *   `labelFingerprint` (*type:* `String.t`, *default:* `nil`) - The fingerprint of the set of labels for this cluster.
   *   `enableKubernetesAlpha` (*type:* `boolean()`, *default:* `nil`) - Kubernetes alpha features are enabled on this cluster. This includes alpha API groups (e.g. v1alpha1) and features that may not be production ready in the kubernetes version of the master and nodes. The cluster has no SLA for uptime and master/node upgrades are disabled. Alpha enabled clusters are automatically deleted thirty days after creation.
   *   `notificationConfig` (*type:* `GoogleApi.Container.V1.Model.NotificationConfig.t`, *default:* `nil`) - Notification configuration of the cluster.
@@ -158,6 +159,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :network => String.t() | nil,
           :autopilot => GoogleApi.Container.V1.Model.Autopilot.t() | nil,
           :autoscaling => GoogleApi.Container.V1.Model.ClusterAutoscaling.t() | nil,
+          :rbacBindingConfig => GoogleApi.Container.V1.Model.RBACBindingConfig.t() | nil,
           :labelFingerprint => String.t() | nil,
           :enableKubernetesAlpha => boolean() | nil,
           :notificationConfig => GoogleApi.Container.V1.Model.NotificationConfig.t() | nil,
@@ -236,6 +238,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:network)
   field(:autopilot, as: GoogleApi.Container.V1.Model.Autopilot)
   field(:autoscaling, as: GoogleApi.Container.V1.Model.ClusterAutoscaling)
+  field(:rbacBindingConfig, as: GoogleApi.Container.V1.Model.RBACBindingConfig)
   field(:labelFingerprint)
   field(:enableKubernetesAlpha)
   field(:notificationConfig, as: GoogleApi.Container.V1.Model.NotificationConfig)

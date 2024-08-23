@@ -42,6 +42,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredAutopilotWorkloadPolicyConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadPolicyConfig.t`, *default:* `nil`) - The desired workload policy configuration for the autopilot cluster.
   *   `desiredServiceExternalIpsConfig` (*type:* `GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t`, *default:* `nil`) - ServiceExternalIPsConfig specifies the config for the use of Services with ExternalIPs field.
   *   `desiredReleaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - The desired release channel configuration.
+  *   `desiredRbacBindingConfig` (*type:* `GoogleApi.Container.V1.Model.RBACBindingConfig.t`, *default:* `nil`) - RBACBindingConfig allows user to restrict ClusterRoleBindings an RoleBindings that can be created.
   *   `desiredDnsConfig` (*type:* `GoogleApi.Container.V1.Model.DNSConfig.t`, *default:* `nil`) - DNSConfig contains clusterDNS config for this cluster.
   *   `desiredImageType` (*type:* `String.t`, *default:* `nil`) - The desired image type for the node pool. NOTE: Set the "desired_node_pool" field as well.
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
@@ -113,6 +114,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredServiceExternalIpsConfig =>
             GoogleApi.Container.V1.Model.ServiceExternalIPsConfig.t() | nil,
           :desiredReleaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
+          :desiredRbacBindingConfig => GoogleApi.Container.V1.Model.RBACBindingConfig.t() | nil,
           :desiredDnsConfig => GoogleApi.Container.V1.Model.DNSConfig.t() | nil,
           :desiredImageType => String.t() | nil,
           :desiredShieldedNodes => GoogleApi.Container.V1.Model.ShieldedNodes.t() | nil,
@@ -199,6 +201,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredReleaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
+  field(:desiredRbacBindingConfig, as: GoogleApi.Container.V1.Model.RBACBindingConfig)
   field(:desiredDnsConfig, as: GoogleApi.Container.V1.Model.DNSConfig)
   field(:desiredImageType)
   field(:desiredShieldedNodes, as: GoogleApi.Container.V1.Model.ShieldedNodes)
