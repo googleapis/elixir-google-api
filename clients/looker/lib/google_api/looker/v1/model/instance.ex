@@ -40,6 +40,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
   *   `oauthConfig` (*type:* `GoogleApi.Looker.V1.Model.OAuthConfig.t`, *default:* `nil`) - Looker instance OAuth login settings.
   *   `platformEdition` (*type:* `String.t`, *default:* `nil`) - Platform edition.
   *   `privateIpEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether private IP is enabled on the Looker instance.
+  *   `pscConfig` (*type:* `GoogleApi.Looker.V1.Model.PscConfig.t`, *default:* `nil`) - Optional. PSC configuration. Used when `psc_enabled` is true.
+  *   `pscEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to use Private Service Connect (PSC) for private IP connectivity. If true, neither `public_ip_enabled` nor `private_ip_enabled` can be true.
   *   `publicIpEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether public IP is enabled on the Looker instance.
   *   `reservedRange` (*type:* `String.t`, *default:* `nil`) - Name of a reserved IP address range within the Instance.consumer_network, to be used for private services access connection. May or may not be specified in a create request.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state of the instance.
@@ -69,6 +71,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
           :oauthConfig => GoogleApi.Looker.V1.Model.OAuthConfig.t() | nil,
           :platformEdition => String.t() | nil,
           :privateIpEnabled => boolean() | nil,
+          :pscConfig => GoogleApi.Looker.V1.Model.PscConfig.t() | nil,
+          :pscEnabled => boolean() | nil,
           :publicIpEnabled => boolean() | nil,
           :reservedRange => String.t() | nil,
           :state => String.t() | nil,
@@ -95,6 +99,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
   field(:oauthConfig, as: GoogleApi.Looker.V1.Model.OAuthConfig)
   field(:platformEdition)
   field(:privateIpEnabled)
+  field(:pscConfig, as: GoogleApi.Looker.V1.Model.PscConfig)
+  field(:pscEnabled)
   field(:publicIpEnabled)
   field(:reservedRange)
   field(:state)
