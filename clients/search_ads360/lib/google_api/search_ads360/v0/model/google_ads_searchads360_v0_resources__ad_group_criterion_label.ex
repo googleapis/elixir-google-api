@@ -23,6 +23,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
 
   *   `adGroupCriterion` (*type:* `String.t`, *default:* `nil`) - Immutable. The ad group criterion to which the label is attached.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Immutable. The label assigned to the ad group criterion.
+  *   `ownerCustomerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Customer which owns the label.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the ad group criterion label. Ad group criterion label resource names have the form: `customers/{customer_id}/adGroupCriterionLabels/{ad_group_id}~{criterion_id}~{label_id}`
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   @type t :: %__MODULE__{
           :adGroupCriterion => String.t() | nil,
           :label => String.t() | nil,
+          :ownerCustomerId => String.t() | nil,
           :resourceName => String.t() | nil
         }
 
   field(:adGroupCriterion)
   field(:label)
+  field(:ownerCustomerId)
   field(:resourceName)
 end
 

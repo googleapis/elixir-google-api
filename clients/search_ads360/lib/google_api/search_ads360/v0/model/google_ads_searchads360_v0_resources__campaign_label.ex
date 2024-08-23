@@ -23,6 +23,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
 
   *   `campaign` (*type:* `String.t`, *default:* `nil`) - Immutable. The campaign to which the label is attached.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Immutable. The label assigned to the campaign.
+  *   `ownerCustomerId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the Customer which owns the label.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. Name of the resource. Campaign label resource names have the form: `customers/{customer_id}/campaignLabels/{campaign_id}~{label_id}`
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   @type t :: %__MODULE__{
           :campaign => String.t() | nil,
           :label => String.t() | nil,
+          :ownerCustomerId => String.t() | nil,
           :resourceName => String.t() | nil
         }
 
   field(:campaign)
   field(:label)
+  field(:ownerCustomerId)
   field(:resourceName)
 end
 
