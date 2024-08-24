@@ -2594,6 +2594,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Optional. Specifies which fields of the EndpointAttachment are returned in the response. Defaults to `ENDPOINT_ATTACHMENT_VIEW_BASIC` view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2628,7 +2629,8 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :view => :query
     }
 
     request =
@@ -2668,6 +2670,7 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Order by parameters.
       *   `:pageSize` (*type:* `integer()`) - Page size.
       *   `:pageToken` (*type:* `String.t`) - Page token.
+      *   `:view` (*type:* `String.t`) - Optional. Specifies which fields of the EndpointAttachment are returned in the response. Defaults to `ENDPOINT_ATTACHMENT_VIEW_BASIC` view.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2706,7 +2709,8 @@ defmodule GoogleApi.Connectors.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =

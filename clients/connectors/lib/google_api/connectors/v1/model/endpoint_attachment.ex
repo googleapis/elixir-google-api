@@ -28,6 +28,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of the Endpoint Attachment. Format: projects/{project}/locations/{location}/endpointAttachments/{endpoint_attachment}
   *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Required. The path of the service attachment
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The Private Service Connect Connection Endpoint State. This value is only available in the Full view.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
           :labels => map() | nil,
           :name => String.t() | nil,
           :serviceAttachment => String.t() | nil,
+          :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.Connectors.V1.Model.EndpointAttachment do
   field(:labels, type: :map)
   field(:name)
   field(:serviceAttachment)
+  field(:state)
   field(:updateTime, as: DateTime)
 end
 
