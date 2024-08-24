@@ -34,9 +34,11 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
   *   `encryptionKey` (*type:* `GoogleApi.Workstations.V1.Model.CustomerEncryptionKey.t`, *default:* `nil`) - Immutable. Encrypts resources of this workstation configuration using a customer-managed encryption key (CMEK). If specified, the boot disk of the Compute Engine instance and the persistent disk are encrypted using this encryption key. If this field is not set, the disks are encrypted using a generated key. Customer-managed encryption keys do not protect disk metadata. If the customer-managed encryption key is rotated, when the workstation instance is stopped, the system attempts to recreate the persistent disk with the new version of the key. Be sure to keep older versions of the key until the persistent disk is recreated. Otherwise, data on the persistent disk might be lost. If the encryption key is revoked, the workstation session automatically stops within 7 hours. Immutable after the workstation configuration is created.
   *   `ephemeralDirectories` (*type:* `list(GoogleApi.Workstations.V1.Model.EphemeralDirectory.t)`, *default:* `nil`) - Optional. Ephemeral directories which won't persist across workstation sessions.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Checksum computed by the server. May be sent on update and delete requests to make sure that the client has an up-to-date value before proceeding.
+  *   `grantWorkstationAdminRoleOnCreate` (*type:* `boolean()`, *default:* `nil`) - Optional. Grant creator of a workstation `roles/workstations.policyAdmin` role along with `roles/workstations.user` role on the workstation created by them. This allows workstation users to share access to either their entire workstation, or individual ports. Defaults to false.
   *   `host` (*type:* `GoogleApi.Workstations.V1.Model.Host.t`, *default:* `nil`) - Optional. Runtime host for the workstation.
   *   `idleTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Number of seconds to wait before automatically stopping a workstation after it last received user traffic. A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration should never time out due to idleness. Provide [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration) terminated by `s` for seconds—for example, `"7200s"` (2 hours). The default is `"1200s"` (20 minutes).
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation configuration and that are also propagated to the underlying Compute Engine resources.
+  *   `maxUsableWorkstations` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of workstations under this config a user can have `workstations.workstation.use` permission on. Only enforced on CreateWorkstation API calls on the user issuing the API request. Can be overridden by: - granting a user workstations.workstationConfigs.exemptMaxUsableWorkstationLimit permission, or - having a user with that permission create a workstation and granting another user `workstations.workstation.use` permission on that workstation. If not specified defaults to 0 which indicates unlimited.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Full name of this workstation configuration.
   *   `persistentDirectories` (*type:* `list(GoogleApi.Workstations.V1.Model.PersistentDirectory.t)`, *default:* `nil`) - Optional. Directories to persist across workstation sessions.
   *   `readinessChecks` (*type:* `list(GoogleApi.Workstations.V1.Model.ReadinessCheck.t)`, *default:* `nil`) - Optional. Readiness checks to perform when starting a workstation using this workstation configuration. Mark a workstation as running only after all specified readiness checks return 200 status codes.
@@ -64,9 +66,11 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
           :ephemeralDirectories =>
             list(GoogleApi.Workstations.V1.Model.EphemeralDirectory.t()) | nil,
           :etag => String.t() | nil,
+          :grantWorkstationAdminRoleOnCreate => boolean() | nil,
           :host => GoogleApi.Workstations.V1.Model.Host.t() | nil,
           :idleTimeout => String.t() | nil,
           :labels => map() | nil,
+          :maxUsableWorkstations => integer() | nil,
           :name => String.t() | nil,
           :persistentDirectories =>
             list(GoogleApi.Workstations.V1.Model.PersistentDirectory.t()) | nil,
@@ -93,9 +97,11 @@ defmodule GoogleApi.Workstations.V1.Model.WorkstationConfig do
   field(:ephemeralDirectories, as: GoogleApi.Workstations.V1.Model.EphemeralDirectory, type: :list)
 
   field(:etag)
+  field(:grantWorkstationAdminRoleOnCreate)
   field(:host, as: GoogleApi.Workstations.V1.Model.Host)
   field(:idleTimeout)
   field(:labels, type: :map)
+  field(:maxUsableWorkstations)
   field(:name)
 
   field(:persistentDirectories,

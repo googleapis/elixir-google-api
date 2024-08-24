@@ -20,7 +20,7 @@ defmodule GoogleApi.Workstations.V1 do
   API client metadata for GoogleApi.Workstations.V1.
   """
 
-  @discovery_revision "20240723"
+  @discovery_revision "20240820"
 
   def discovery_revision(), do: @discovery_revision
 end
