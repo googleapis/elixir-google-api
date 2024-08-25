@@ -28,6 +28,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateDescription do
   *   `publicKey` (*type:* `GoogleApi.PrivateCA.V1.Model.PublicKey.t`, *default:* `nil`) - The public key that corresponds to an issued certificate.
   *   `subjectDescription` (*type:* `GoogleApi.PrivateCA.V1.Model.SubjectDescription.t`, *default:* `nil`) - Describes some of the values in a certificate that are related to the subject and lifetime.
   *   `subjectKeyId` (*type:* `GoogleApi.PrivateCA.V1.Model.KeyId.t`, *default:* `nil`) - Provides a means of identifiying certificates that contain a particular public key, per https://tools.ietf.org/html/rfc5280#section-4.2.1.2.
+  *   `tbsCertificateDigest` (*type:* `String.t`, *default:* `nil`) - The hash of the pre-signed certificate, which will be signed by the CA. Corresponds to the TBS Certificate in https://tools.ietf.org/html/rfc5280#section-4.1.2. The field will always be populated.
   *   `x509Description` (*type:* `GoogleApi.PrivateCA.V1.Model.X509Parameters.t`, *default:* `nil`) - Describes some of the technical X.509 fields in a certificate.
   """
 
@@ -41,6 +42,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateDescription do
           :publicKey => GoogleApi.PrivateCA.V1.Model.PublicKey.t() | nil,
           :subjectDescription => GoogleApi.PrivateCA.V1.Model.SubjectDescription.t() | nil,
           :subjectKeyId => GoogleApi.PrivateCA.V1.Model.KeyId.t() | nil,
+          :tbsCertificateDigest => String.t() | nil,
           :x509Description => GoogleApi.PrivateCA.V1.Model.X509Parameters.t() | nil
         }
 
@@ -51,6 +53,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateDescription do
   field(:publicKey, as: GoogleApi.PrivateCA.V1.Model.PublicKey)
   field(:subjectDescription, as: GoogleApi.PrivateCA.V1.Model.SubjectDescription)
   field(:subjectKeyId, as: GoogleApi.PrivateCA.V1.Model.KeyId)
+  field(:tbsCertificateDigest)
   field(:x509Description, as: GoogleApi.PrivateCA.V1.Model.X509Parameters)
 end
 
