@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudKMS.V1.Model.EkmConnection do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Etag of the currently stored EkmConnection.
   *   `keyManagementMode` (*type:* `String.t`, *default:* `nil`) - Optional. Describes who can perform control plane operations on the EKM. If unset, this defaults to MANUAL.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.
-  *   `serviceResolvers` (*type:* `list(GoogleApi.CloudKMS.V1.Model.ServiceResolver.t)`, *default:* `nil`) - A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported.
+  *   `serviceResolvers` (*type:* `list(GoogleApi.CloudKMS.V1.Model.ServiceResolver.t)`, *default:* `nil`) - Optional. A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported.
   """
 
   use GoogleApi.Gax.ModelBase

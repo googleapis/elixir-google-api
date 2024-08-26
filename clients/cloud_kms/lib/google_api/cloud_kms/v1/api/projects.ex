@@ -1411,6 +1411,8 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - Optional. Filter to apply when listing KeyHandles, e.g. `resource_type_selector="{SERVICE}.googleapis.com/{TYPE}"`.
+      *   `:pageSize` (*type:* `integer()`) - Optional. Optional limit on the number of KeyHandles to include in the response. The service may return fewer than this value. Further KeyHandles can subsequently be obtained by including the ListKeyHandlesResponse.next_page_token in a subsequent request. If unspecified, at most KeyHandles 100 will be returned.
+      *   `:pageToken` (*type:* `String.t`) - Optional. Optional pagination token, returned earlier via ListKeyHandlesResponse.next_page_token.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1446,7 +1448,9 @@ defmodule GoogleApi.CloudKMS.V1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :filter => :query
+      :filter => :query,
+      :pageSize => :query,
+      :pageToken => :query
     }
 
     request =

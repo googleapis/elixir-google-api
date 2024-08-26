@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudKMS.V1.Model.ListKeyHandlesResponse do
   ## Attributes
 
   *   `keyHandles` (*type:* `list(GoogleApi.CloudKMS.V1.Model.KeyHandle.t)`, *default:* `nil`) - Resulting KeyHandles.
+  *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - A token to retrieve next page of results. Pass this value in ListKeyHandlesRequest.page_token to retrieve the next page of results.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :keyHandles => list(GoogleApi.CloudKMS.V1.Model.KeyHandle.t()) | nil
+          :keyHandles => list(GoogleApi.CloudKMS.V1.Model.KeyHandle.t()) | nil,
+          :nextPageToken => String.t() | nil
         }
 
   field(:keyHandles, as: GoogleApi.CloudKMS.V1.Model.KeyHandle, type: :list)
+  field(:nextPageToken)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.ListKeyHandlesResponse do

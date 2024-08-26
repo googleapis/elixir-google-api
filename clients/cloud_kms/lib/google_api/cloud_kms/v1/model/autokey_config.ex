@@ -23,17 +23,20 @@ defmodule GoogleApi.CloudKMS.V1.Model.AutokeyConfig do
 
   *   `keyProject` (*type:* `String.t`, *default:* `nil`) - Optional. Name of the key project, e.g. `projects/{PROJECT_ID}` or `projects/{PROJECT_NUMBER}`, where Cloud KMS Autokey will provision a new CryptoKey when a KeyHandle is created. On UpdateAutokeyConfig, the caller will require `cloudkms.cryptoKeys.setIamPolicy` permission on this key project. Once configured, for Cloud KMS Autokey to function properly, this key project must have the Cloud KMS API activated and the Cloud KMS Service Agent for this key project must be granted the `cloudkms.admin` role (or pertinent permissions). A request with an empty key project field will clear the configuration.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. Name of the AutokeyConfig resource, e.g. `folders/{FOLDER_NUMBER}/autokeyConfig`.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The state for the AutokeyConfig.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :keyProject => String.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :state => String.t() | nil
         }
 
   field(:keyProject)
   field(:name)
+  field(:state)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudKMS.V1.Model.AutokeyConfig do
