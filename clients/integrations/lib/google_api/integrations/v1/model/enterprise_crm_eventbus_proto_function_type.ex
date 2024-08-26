@@ -28,7 +28,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoFunctionType
   *   `doubleFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoDoubleFunction.t`, *default:* `nil`) - 
   *   `intArrayFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoIntArrayFunction.t`, *default:* `nil`) - 
   *   `intFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoIntFunction.t`, *default:* `nil`) - 
-  *   `jsonFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoJsonFunction.t`, *default:* `nil`) - LINT.ThenChange(//depot/google3/alkali/apps/integrationplatform/client/workflow_editor/utils/transform_function.ts)
+  *   `jsonFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoJsonFunction.t`, *default:* `nil`) - 
   *   `protoArrayFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoProtoArrayFunction.t`, *default:* `nil`) - 
   *   `protoFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoProtoFunction.t`, *default:* `nil`) - 
   *   `stringArrayFunction` (*type:* `GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoStringArrayFunction.t`, *default:* `nil`) - 
