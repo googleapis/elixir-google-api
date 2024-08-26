@@ -26,6 +26,8 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
   *   `crossClusterReplicationConfig` (*type:* `GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t`, *default:* `nil`) - Optional. Cross cluster replication config.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. The delete operation will fail when the value is set to true.
   *   `discoveryEndpoints` (*type:* `list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t)`, *default:* `nil`) - Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
+  *   `maintenancePolicy` (*type:* `GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy.t`, *default:* `nil`) - Optional. ClusterMaintenancePolicy determines when to allow or deny updates.
+  *   `maintenanceSchedule` (*type:* `GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule.t`, *default:* `nil`) - Output only. ClusterMaintenanceSchedule Output only Published maintenance schedule.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. Identifier. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/clusters/{cluster_id}`
   *   `nodeType` (*type:* `String.t`, *default:* `nil`) - Optional. The type of a redis node in the cluster. NodeType determines the underlying machine-type of a redis node.
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
@@ -52,6 +54,8 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
             GoogleApi.Redis.V1.Model.CrossClusterReplicationConfig.t() | nil,
           :deletionProtectionEnabled => boolean() | nil,
           :discoveryEndpoints => list(GoogleApi.Redis.V1.Model.DiscoveryEndpoint.t()) | nil,
+          :maintenancePolicy => GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy.t() | nil,
+          :maintenanceSchedule => GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule.t() | nil,
           :name => String.t() | nil,
           :nodeType => String.t() | nil,
           :persistenceConfig => GoogleApi.Redis.V1.Model.ClusterPersistenceConfig.t() | nil,
@@ -76,6 +80,8 @@ defmodule GoogleApi.Redis.V1.Model.Cluster do
 
   field(:deletionProtectionEnabled)
   field(:discoveryEndpoints, as: GoogleApi.Redis.V1.Model.DiscoveryEndpoint, type: :list)
+  field(:maintenancePolicy, as: GoogleApi.Redis.V1.Model.ClusterMaintenancePolicy)
+  field(:maintenanceSchedule, as: GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule)
   field(:name)
   field(:nodeType)
   field(:persistenceConfig, as: GoogleApi.Redis.V1.Model.ClusterPersistenceConfig)

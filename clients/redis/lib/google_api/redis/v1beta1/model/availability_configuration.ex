@@ -21,6 +21,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.AvailabilityConfiguration do
 
   ## Attributes
 
+  *   `automaticFailoverRoutingConfigured` (*type:* `boolean()`, *default:* `nil`) - Checks for existence of (multi-cluster) routing configuration that allows automatic failover to a different zone/region in case of an outage. Applicable to Bigtable resources.
   *   `availabilityType` (*type:* `String.t`, *default:* `nil`) - Availability type. Potential values: * `ZONAL`: The instance serves data from only one zone. Outages in that zone affect data accessibility. * `REGIONAL`: The instance can serve data from more than one zone in a region (it is highly available).
   *   `crossRegionReplicaConfigured` (*type:* `boolean()`, *default:* `nil`) - Checks for resources that are configured to have redundancy, and ongoing replication across regions
   *   `externalReplicaConfigured` (*type:* `boolean()`, *default:* `nil`) - 
@@ -30,12 +31,14 @@ defmodule GoogleApi.Redis.V1beta1.Model.AvailabilityConfiguration do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :automaticFailoverRoutingConfigured => boolean() | nil,
           :availabilityType => String.t() | nil,
           :crossRegionReplicaConfigured => boolean() | nil,
           :externalReplicaConfigured => boolean() | nil,
           :promotableReplicaConfigured => boolean() | nil
         }
 
+  field(:automaticFailoverRoutingConfigured)
   field(:availabilityType)
   field(:crossRegionReplicaConfigured)
   field(:externalReplicaConfigured)
