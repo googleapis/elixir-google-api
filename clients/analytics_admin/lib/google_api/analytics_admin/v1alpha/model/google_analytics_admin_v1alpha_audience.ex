@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAudience do
   @moduledoc """
-  A resource message representing a GA4 Audience.
+  A resource message representing an Audience.
 
   ## Attributes
 

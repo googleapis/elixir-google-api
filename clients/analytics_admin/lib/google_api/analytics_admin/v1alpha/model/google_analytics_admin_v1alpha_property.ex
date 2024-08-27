@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaProperty do
   @moduledoc """
-  A resource message representing a Google Analytics GA4 property.
+  A resource message representing a Google Analytics property.
 
   ## Attributes
 

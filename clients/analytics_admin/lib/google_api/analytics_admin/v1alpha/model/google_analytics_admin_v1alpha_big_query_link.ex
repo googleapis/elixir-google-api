@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaBigQueryLink do
   @moduledoc """
-  A link between a GA4 Property and BigQuery project.
+  A link between a Google Analytics property and BigQuery project.
 
   ## Attributes
 

@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaAdSenseLink do
   @moduledoc """
-  A link between a GA4 Property and an AdSense for Content ad client.
+  A link between a Google Analytics property and an AdSense for Content ad client.
 
   ## Attributes
 
-  *   `adClientCode` (*type:* `String.t`, *default:* `nil`) - Immutable. The AdSense ad client code that the GA4 property is linked to. Example format: "ca-pub-1234567890"
+  *   `adClientCode` (*type:* `String.t`, *default:* `nil`) - Immutable. The AdSense ad client code that the Google Analytics property is linked to. Example format: "ca-pub-1234567890"
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this AdSense Link resource. Format: properties/{propertyId}/adSenseLinks/{linkId} Example: properties/1234/adSenseLinks/6789
   """
 

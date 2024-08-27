@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaFirebaseLink do
   @moduledoc """
-  A link between a GA4 property and a Firebase project.
+  A link between a Google Analytics property and a Firebase project.
 
   ## Attributes
 

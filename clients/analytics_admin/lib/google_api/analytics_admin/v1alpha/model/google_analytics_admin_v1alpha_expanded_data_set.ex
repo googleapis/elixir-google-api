@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaExpandedDataSet do
   @moduledoc """
-  A resource message representing a GA4 ExpandedDataSet.
+  A resource message representing an `ExpandedDataSet`.
 
   ## Attributes
 
