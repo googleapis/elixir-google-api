@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunPivotReportResponse do
   *   `metadata` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.ResponseMetaData.t`, *default:* `nil`) - Metadata for the report.
   *   `metricHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.MetricHeader.t)`, *default:* `nil`) - Describes metric columns. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows.
   *   `pivotHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.PivotHeader.t)`, *default:* `nil`) - Summarizes the columns and rows created by a pivot. Each pivot in the request produces one header in the response. If we have a request like this: "pivots": [{ "fieldNames": ["country", "city"] }, { "fieldNames": "eventName" }] We will have the following `pivotHeaders` in the response: "pivotHeaders" : [{ "dimensionHeaders": [{ "dimensionValues": [ { "value": "United Kingdom" }, { "value": "London" } ] }, { "dimensionValues": [ { "value": "Japan" }, { "value": "Osaka" } ] }] }, { "dimensionHeaders": [{ "dimensionValues": [{ "value": "session_start" }] }, { "dimensionValues": [{ "value": "scroll" }] }] }]
-  *   `propertyQuota` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota.t`, *default:* `nil`) - This Analytics Property's quota state including this request.
+  *   `propertyQuota` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota.t`, *default:* `nil`) - This Google Analytics property's quota state including this request.
   *   `rows` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Row.t)`, *default:* `nil`) - Rows of dimension value combinations and metric values in the report.
   """
 

@@ -27,7 +27,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunReportResponse do
   *   `metadata` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.ResponseMetaData.t`, *default:* `nil`) - Metadata for the report.
   *   `metricHeaders` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.MetricHeader.t)`, *default:* `nil`) - Describes metric columns. The number of MetricHeaders and ordering of MetricHeaders matches the metrics present in rows.
   *   `minimums` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Row.t)`, *default:* `nil`) - If requested, the minimum values of metrics.
-  *   `propertyQuota` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota.t`, *default:* `nil`) - This Analytics Property's quota state including this request.
+  *   `propertyQuota` (*type:* `GoogleApi.AnalyticsData.V1beta.Model.PropertyQuota.t`, *default:* `nil`) - This Google Analytics property's quota state including this request.
   *   `rowCount` (*type:* `integer()`, *default:* `nil`) - The total number of rows in the query result. `rowCount` is independent of the number of rows returned in the response, the `limit` request parameter, and the `offset` request parameter. For example if a query returns 175 rows and includes `limit` of 50 in the API request, the response will contain `rowCount` of 175 but only 50 rows. To learn more about this pagination parameter, see [Pagination](https://developers.google.com/analytics/devguides/reporting/data/v1/basics#pagination).
   *   `rows` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Row.t)`, *default:* `nil`) - Rows of dimension value combinations and metric values in the report.
   *   `totals` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Row.t)`, *default:* `nil`) - If requested, the totaled values of metrics.

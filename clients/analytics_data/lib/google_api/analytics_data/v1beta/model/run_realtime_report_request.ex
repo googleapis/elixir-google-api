@@ -29,7 +29,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Model.RunRealtimeReportRequest do
   *   `metrics` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.Metric.t)`, *default:* `nil`) - The metrics requested and displayed.
   *   `minuteRanges` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.MinuteRange.t)`, *default:* `nil`) - The minute ranges of event data to read. If unspecified, one minute range for the last 30 minutes will be used. If multiple minute ranges are requested, each response row will contain a zero based minute range index. If two minute ranges overlap, the event data for the overlapping minutes is included in the response rows for both minute ranges.
   *   `orderBys` (*type:* `list(GoogleApi.AnalyticsData.V1beta.Model.OrderBy.t)`, *default:* `nil`) - Specifies how rows are ordered in the response.
-  *   `returnPropertyQuota` (*type:* `boolean()`, *default:* `nil`) - Toggles whether to return the current state of this Analytics Property's Realtime quota. Quota is returned in [PropertyQuota](#PropertyQuota).
+  *   `returnPropertyQuota` (*type:* `boolean()`, *default:* `nil`) - Toggles whether to return the current state of this Google Analytics property's Realtime quota. Quota is returned in [PropertyQuota](#PropertyQuota).
   """
 
   use GoogleApi.Gax.ModelBase
