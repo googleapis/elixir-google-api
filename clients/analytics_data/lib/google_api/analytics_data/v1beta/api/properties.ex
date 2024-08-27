@@ -26,12 +26,12 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   @library_version Mix.Project.config() |> Keyword.get(:version, "")
 
   @doc """
-  Returns multiple pivot reports in a batch. All reports must be for the same GA4 Property.
+  Returns multiple pivot reports in a batch. All reports must be for the same Google Analytics property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). This property must be specified for the batch. The property within RunPivotReportRequest may either be unspecified or consistent with this property. Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). This property must be specified for the batch. The property within RunPivotReportRequest may either be unspecified or consistent with this property. Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -100,12 +100,12 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   end
 
   @doc """
-  Returns multiple reports in a batch. All reports must be for the same GA4 Property.
+  Returns multiple reports in a batch. All reports must be for the same Google Analytics property.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). This property must be specified for the batch. The property within RunReportRequest may either be unspecified or consistent with this property. Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). This property must be specified for the batch. The property within RunReportRequest may either be unspecified or consistent with this property. Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -179,7 +179,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). `property` should be the same value as in your `runReport` request. Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). `property` should be the same value as in your `runReport` request. Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -248,12 +248,12 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   end
 
   @doc """
-  Returns metadata for dimensions and metrics available in reporting methods. Used to explore the dimensions and metrics. In this method, a Google Analytics GA4 Property Identifier is specified in the request, and the metadata response includes Custom dimensions and metrics as well as Universal metadata. For example if a custom metric with parameter name `levels_unlocked` is registered to a property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
+  Returns metadata for dimensions and metrics available in reporting methods. Used to explore the dimensions and metrics. In this method, a Google Analytics property identifier is specified in the request, and the metadata response includes Custom dimensions and metrics as well as Universal metadata. For example if a custom metric with parameter name `levels_unlocked` is registered to a property, the Metadata response will contain `customEvent:levels_unlocked`. Universal metadata are dimensions and metrics applicable to any property such as `country` and `totalUsers`.
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the metadata to retrieve. This name field is specified in the URL path and not URL parameters. Property is a numeric Google Analytics GA4 Property identifier. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Example: properties/1234/metadata Set the Property ID to 0 for dimensions and metrics common to all properties. In this special mode, this method will not return custom dimensions and metrics.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the metadata to retrieve. This name field is specified in the URL path and not URL parameters. Property is a numeric Google Analytics property identifier. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Example: properties/1234/metadata Set the Property ID to 0 for dimensions and metrics common to all properties. In this special mode, this method will not return custom dimensions and metrics.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -318,7 +318,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Within a batch request, this property should either be unspecified or consistent with the batch-level property. Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Within a batch request, this property should either be unspecified or consistent with the batch-level property. Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -392,7 +392,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -466,7 +466,7 @@ defmodule GoogleApi.AnalyticsData.V1beta.Api.Properties do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsData.V1beta.Connection.t`) - Connection to server
-  *   `property` (*type:* `String.t`) - A Google Analytics GA4 property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Within a batch request, this property should either be unspecified or consistent with the batch-level property. Example: properties/1234
+  *   `property` (*type:* `String.t`) - A Google Analytics property identifier whose events are tracked. Specified in the URL path and not the body. To learn more, see [where to find your Property ID](https://developers.google.com/analytics/devguides/reporting/data/v1/property-id). Within a batch request, this property should either be unspecified or consistent with the batch-level property. Example: properties/1234
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
