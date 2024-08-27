@@ -105,7 +105,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Creates an "GA4" property with the specified location and attributes.
+  Creates a Google Analytics property with the specified location and attributes.
 
   ## Parameters
 
@@ -311,7 +311,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Marks target Property as soft-deleted (ie: "trashed") and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found, or is not a GA4 Property.
+  Marks target Property as soft-deleted (ie: "trashed") and returns it. This API does not have a method to restore soft-deleted properties. However, they can be restored using the Trash Can UI. If the properties are not restored before the expiration time, the Property and all child resources (eg: GoogleAdsLinks, Streams, AccessBindings) will be permanently purged. https://support.google.com/analytics/answer/6154772 Returns an error if the target is not found.
 
   ## Parameters
 
@@ -591,7 +591,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single "GA4" Property.
+  Lookup for a single GA Property.
 
   ## Parameters
 
@@ -885,7 +885,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Returns child Properties under the specified parent Account. Only "GA4" properties will be returned. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.
+  Returns child Properties under the specified parent Account. Properties will be excluded if the caller does not have access. Soft-deleted (ie: "trashed") properties are excluded by default. Returns an empty list if no relevant properties are found.
 
   ## Parameters
 
@@ -1168,12 +1168,12 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years. Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators. These data access records include GA4 UI Reporting, GA4 UI Explorations, GA4 Data API, and other products like Firebase & Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
+  Returns a customized report of data access records. The report provides records of each time a user reads Google Analytics reporting data. Access records are retained for up to 2 years. Data Access Reports can be requested for a property. Reports may be requested for any property, but dimensions that aren't related to quota can only be requested on Google Analytics 360 properties. This method is only available to Administrators. These data access records include GA UI Reporting, GA UI Explorations, GA Data API, and other products like Firebase & Admob that can retrieve data from Google Analytics through a linkage. These records don't include property configuration changes like adding a stream or changing a property's time zone. For configuration change history, see [searchChangeHistoryEvents](https://developers.google.com/analytics/devguides/config/admin/v1/rest/v1alpha/accounts/searchChangeHistoryEvents).
 
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AnalyticsAdmin.V1alpha.Connection.t`) - Connection to server
-  *   `entity` (*type:* `String.t`) - The Data Access Report supports requesting at the property level or account level. If requested at the account level, Data Access Reports include all access for all properties under that account. To request at the property level, entity should be for example 'properties/123' if "123" is your GA4 property ID. To request at the account level, entity should be for example 'accounts/1234' if "1234" is your GA4 Account ID.
+  *   `entity` (*type:* `String.t`) - The Data Access Report supports requesting at the property level or account level. If requested at the account level, Data Access Reports include all access for all properties under that account. To request at the property level, entity should be for example 'properties/123' if "123" is your Google Analytics property ID. To request at the account level, entity should be for example 'accounts/1234' if "1234" is your Google Analytics Account ID.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7061,7 +7061,7 @@ defmodule GoogleApi.AnalyticsAdmin.V1alpha.Api.Properties do
   end
 
   @doc """
-  Lookup for a single "GA4" MeasurementProtocolSecret.
+  Lookup for a single MeasurementProtocolSecret.
 
   ## Parameters
 

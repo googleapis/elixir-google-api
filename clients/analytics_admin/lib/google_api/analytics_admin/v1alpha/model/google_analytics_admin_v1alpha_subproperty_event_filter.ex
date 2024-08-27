@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1alpha.Model.GoogleAnalyticsAdminV1alphaSubpropertyEventFilter do
   @moduledoc """
-  A resource message representing a GA4 Subproperty event filter.
+  A resource message representing a Google Analytics subproperty event filter.
 
   ## Attributes
 

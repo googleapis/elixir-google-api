@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1beta.Model.GoogleAnalyticsAdminV1betaPropertySummary do
   @moduledoc """
-  A virtual resource representing metadata for a GA4 property.
+  A virtual resource representing metadata for a Google Analytics property.
 
   ## Attributes
 

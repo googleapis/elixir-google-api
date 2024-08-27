@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsAdmin.V1beta.Model.GoogleAnalyticsAdminV1betaGoogleAdsLink do
   @moduledoc """
-  A link between a GA4 property and a Google Ads account.
+  A link between a Google Analytics property and a Google Ads account.
 
   ## Attributes
 
