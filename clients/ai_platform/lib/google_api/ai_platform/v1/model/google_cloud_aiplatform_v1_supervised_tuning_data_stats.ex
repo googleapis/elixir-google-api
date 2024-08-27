@@ -23,7 +23,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
 
   *   `totalBillableCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable characters in the tuning dataset.
   *   `totalBillableTokenCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of billable tokens in the tuning dataset.
+  *   `totalTruncatedExampleCount` (*type:* `String.t`, *default:* `nil`) - The number of examples in the dataset that have been truncated by any amount.
   *   `totalTuningCharacterCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning characters in the tuning dataset.
+  *   `truncatedExampleIndices` (*type:* `list(String.t)`, *default:* `nil`) - A partial sample of the indices (starting from 1) of the truncated examples.
   *   `tuningDatasetExampleCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of examples in the tuning dataset.
   *   `tuningStepCount` (*type:* `String.t`, *default:* `nil`) - Output only. Number of tuning steps for this Tuning Job.
   *   `userDatasetExamples` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Output only. Sample user messages in the training dataset uri.
@@ -37,7 +39,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
   @type t :: %__MODULE__{
           :totalBillableCharacterCount => String.t() | nil,
           :totalBillableTokenCount => String.t() | nil,
+          :totalTruncatedExampleCount => String.t() | nil,
           :totalTuningCharacterCount => String.t() | nil,
+          :truncatedExampleIndices => list(String.t()) | nil,
           :tuningDatasetExampleCount => String.t() | nil,
           :tuningStepCount => String.t() | nil,
           :userDatasetExamples =>
@@ -55,7 +59,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningD
 
   field(:totalBillableCharacterCount)
   field(:totalBillableTokenCount)
+  field(:totalTruncatedExampleCount)
   field(:totalTuningCharacterCount)
+  field(:truncatedExampleIndices, type: :list)
   field(:tuningDatasetExampleCount)
   field(:tuningStepCount)
 

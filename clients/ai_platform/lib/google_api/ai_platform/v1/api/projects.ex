@@ -6804,7 +6804,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AIPlatform.V1.Connection.t`) - Connection to server
-  *   `model` (*type:* `String.t`) - Required. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `model` (*type:* `String.t`) - Required. The fully qualified name of the publisher model or tuned model endpoint to use. Publisher model format: `projects/{project}/locations/{location}/publishers/*/models/*` Tuned model endpoint format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7405,7 +7405,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AIPlatform.V1.Connection.t`) - Connection to server
-  *   `model` (*type:* `String.t`) - Required. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `model` (*type:* `String.t`) - Required. The fully qualified name of the publisher model or tuned model endpoint to use. Publisher model format: `projects/{project}/locations/{location}/publishers/*/models/*` Tuned model endpoint format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -30025,7 +30025,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AIPlatform.V1.Connection.t`) - Connection to server
-  *   `model` (*type:* `String.t`) - Required. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `model` (*type:* `String.t`) - Required. The fully qualified name of the publisher model or tuned model endpoint to use. Publisher model format: `projects/{project}/locations/{location}/publishers/*/models/*` Tuned model endpoint format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -30321,7 +30321,7 @@ defmodule GoogleApi.AIPlatform.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.AIPlatform.V1.Connection.t`) - Connection to server
-  *   `model` (*type:* `String.t`) - Required. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
+  *   `model` (*type:* `String.t`) - Required. The fully qualified name of the publisher model or tuned model endpoint to use. Publisher model format: `projects/{project}/locations/{location}/publishers/*/models/*` Tuned model endpoint format: `projects/{project}/locations/{location}/endpoints/{endpoint}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

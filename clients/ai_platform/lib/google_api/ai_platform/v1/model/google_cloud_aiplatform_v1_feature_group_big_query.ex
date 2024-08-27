@@ -23,7 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQu
 
   *   `bigQuerySource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1BigQuerySource.t`, *default:* `nil`) - Required. Immutable. The BigQuery source URI that points to either a BigQuery Table or View.
   *   `entityIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Columns to construct entity_id / row keys. If not provided defaults to `entity_id`.
-  *   `timeSeries` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQueryTimeSeries.t`, *default:* `nil`) - Optional. If the source is a time-series source, this can be set to control how downstream sources (ex: FeatureOnlineStore.FeatureView) will treat time series sources. If not set, will treat the source as a time-series source with feature_timestamp as timestamp column and no scan boundary.
+  *   `timeSeries` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQueryTimeSeries.t`, *default:* `nil`) - Optional. If the source is a time-series source, this can be set to control how downstream sources (ex: FeatureView ) will treat time-series sources. If not set, will treat the source as a time-series source with `feature_timestamp` as timestamp column and no scan boundary.
   """
 
   use GoogleApi.Gax.ModelBase

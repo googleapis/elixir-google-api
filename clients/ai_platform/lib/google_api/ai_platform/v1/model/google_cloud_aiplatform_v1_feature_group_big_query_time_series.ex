@@ -21,7 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureGroupBigQu
 
   ## Attributes
 
-  *   `timestampColumn` (*type:* `String.t`, *default:* `nil`) - Optional. Column hosting timestamp values for a time-series source. Will be used to determine the latest featureValues for each entity. Optional. If not provided, a feature_timestamp column of type TIMESTAMP will be used.
+  *   `timestampColumn` (*type:* `String.t`, *default:* `nil`) - Optional. Column hosting timestamp values for a time-series source. Will be used to determine the latest `feature_values` for each entity. Optional. If not provided, column named `feature_timestamp` of type `TIMESTAMP` will be used.
   """
 
   use GoogleApi.Gax.ModelBase

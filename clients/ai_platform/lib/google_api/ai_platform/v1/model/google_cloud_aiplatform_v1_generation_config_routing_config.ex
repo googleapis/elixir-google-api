@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig do
   @moduledoc """
-  Routing config.
+  The configuration for routing the request to a specific model.
 
   ## Attributes
 
