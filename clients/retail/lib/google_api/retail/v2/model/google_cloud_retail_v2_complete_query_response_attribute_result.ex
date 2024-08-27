@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2CompleteQueryResponseAttributeResult do
   @moduledoc """
-  Resource that represents attribute results.
+  Resource that represents attribute results. The list of suggestions for the attribute.
 
   ## Attributes
 
