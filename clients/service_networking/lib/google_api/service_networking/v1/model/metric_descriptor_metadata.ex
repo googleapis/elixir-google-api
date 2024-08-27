@@ -24,6 +24,7 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.MetricDescriptorMetadata do
   *   `ingestDelay` (*type:* `String.t`, *default:* `nil`) - The delay of data points caused by ingestion. Data points older than this age are guaranteed to be ingested and available to be read, excluding data loss due to errors.
   *   `launchStage` (*type:* `String.t`, *default:* `nil`) - Deprecated. Must use the MetricDescriptor.launch_stage instead.
   *   `samplePeriod` (*type:* `String.t`, *default:* `nil`) - The sampling period of metric data points. For metrics which are written periodically, consecutive data points are stored at this time interval, excluding data loss due to errors. Metrics with a higher granularity have a smaller sampling period.
+  *   `timeSeriesResourceHierarchyLevel` (*type:* `list(String.t)`, *default:* `nil`) - The scope of the timeseries data of the metric.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.MetricDescriptorMetadata do
   @type t :: %__MODULE__{
           :ingestDelay => String.t() | nil,
           :launchStage => String.t() | nil,
-          :samplePeriod => String.t() | nil
+          :samplePeriod => String.t() | nil,
+          :timeSeriesResourceHierarchyLevel => list(String.t()) | nil
         }
 
   field(:ingestDelay)
   field(:launchStage)
   field(:samplePeriod)
+  field(:timeSeriesResourceHierarchyLevel, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.MetricDescriptorMetadata do
