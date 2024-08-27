@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncSy
   ## Attributes
 
   *   `rowSynced` (*type:* `String.t`, *default:* `nil`) - Output only. Total number of rows synced.
+  *   `systemWatermarkTime` (*type:* `DateTime.t`, *default:* `nil`) - Lower bound of the system time watermark for the sync job. This is only set for continuously syncing feature views.
   *   `totalSlot` (*type:* `String.t`, *default:* `nil`) - Output only. BigQuery slot milliseconds consumed for the sync job.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncSy
 
   @type t :: %__MODULE__{
           :rowSynced => String.t() | nil,
+          :systemWatermarkTime => DateTime.t() | nil,
           :totalSlot => String.t() | nil
         }
 
   field(:rowSynced)
+  field(:systemWatermarkTime, as: DateTime)
   field(:totalSlot)
 end
 

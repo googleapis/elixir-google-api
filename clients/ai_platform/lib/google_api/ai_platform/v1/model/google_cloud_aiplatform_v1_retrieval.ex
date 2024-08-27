@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval do
 
   *   `disableAttribution` (*type:* `boolean()`, *default:* `nil`) - Optional. Deprecated. This option is no longer supported.
   *   `vertexAiSearch` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch.t`, *default:* `nil`) - Set to use data source powered by Vertex AI Search.
+  *   `vertexRagStore` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStore.t`, *default:* `nil`) - Set to use data source powered by Vertex RAG store. User data is uploaded via the VertexRagDataService.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,11 +31,14 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval do
   @type t :: %__MODULE__{
           :disableAttribution => boolean() | nil,
           :vertexAiSearch =>
-            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch.t() | nil
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch.t() | nil,
+          :vertexRagStore =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStore.t() | nil
         }
 
   field(:disableAttribution)
   field(:vertexAiSearch, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexAISearch)
+  field(:vertexRagStore, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1VertexRagStore)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Retrieval do

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1NearestNeighborQueryNumericFilter do
   @moduledoc """
-  Numeric filter is used to search a subset of the entities by using boolean rules on numeric columns. For example: Database Point 0: {name: “a” value_int: 42} {name: “b” value_float: 1.0} Database Point 1: {name: “a” value_int: 10} {name: “b” value_float: 2.0} Database Point 2: {name: “a” value_int: -1} {name: “b” value_float: 3.0} Query: {name: “a” value_int: 12 operator: LESS} // Matches Point 1, 2 {name: “b” value_float: 2.0 operator: EQUAL} // Matches Point 1
+  Numeric filter is used to search a subset of the entities by using boolean rules on numeric columns. For example: Database Point 0: {name: "a" value_int: 42} {name: "b" value_float: 1.0} Database Point 1: {name: "a" value_int: 10} {name: "b" value_float: 2.0} Database Point 2: {name: "a" value_int: -1} {name: "b" value_float: 3.0} Query: {name: "a" value_int: 12 operator: LESS} // Matches Point 1, 2 {name: "b" value_float: 2.0 operator: EQUAL} // Matches Point 1
 
   ## Attributes
 

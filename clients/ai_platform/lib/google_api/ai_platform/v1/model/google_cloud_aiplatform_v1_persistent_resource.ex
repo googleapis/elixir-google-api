@@ -32,6 +32,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
   *   `resourcePools` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourcePool.t)`, *default:* `nil`) - Required. The spec of the pools of different resources.
   *   `resourceRuntime` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntime.t`, *default:* `nil`) - Output only. Runtime information of the Persistent Resource.
   *   `resourceRuntimeSpec` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntimeSpec.t`, *default:* `nil`) - Optional. Persistent Resource runtime spec. For example, used for Ray cluster configuration.
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the PersistentResource for the first time entered the `RUNNING` state.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The detailed state of a Study.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time when the PersistentResource was most recently updated.
@@ -55,6 +57,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntime.t() | nil,
           :resourceRuntimeSpec =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntimeSpec.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :startTime => DateTime.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil
@@ -80,6 +84,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PersistentResourc
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ResourceRuntimeSpec
   )
 
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
   field(:startTime, as: DateTime)
   field(:state)
   field(:updateTime, as: DateTime)
