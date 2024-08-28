@@ -29,6 +29,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SessionTemplate do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels to associate with sessions created using this template. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty, but, if present, must contain 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a session.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the session template.
   *   `runtimeConfig` (*type:* `GoogleApi.Dataproc.V1.Model.RuntimeConfig.t`, *default:* `nil`) - Optional. Runtime configuration for session execution.
+  *   `sparkConnectSession` (*type:* `GoogleApi.Dataproc.V1.Model.SparkConnectConfig.t`, *default:* `nil`) - Optional. Spark connect session config.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the template was last updated.
   *   `uuid` (*type:* `String.t`, *default:* `nil`) - Output only. A session template UUID (Unique Universal Identifier). The service generates this value when it creates the session template.
   """
@@ -44,6 +45,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SessionTemplate do
           :labels => map() | nil,
           :name => String.t() | nil,
           :runtimeConfig => GoogleApi.Dataproc.V1.Model.RuntimeConfig.t() | nil,
+          :sparkConnectSession => GoogleApi.Dataproc.V1.Model.SparkConnectConfig.t() | nil,
           :updateTime => DateTime.t() | nil,
           :uuid => String.t() | nil
         }
@@ -56,6 +58,7 @@ defmodule GoogleApi.Dataproc.V1.Model.SessionTemplate do
   field(:labels, type: :map)
   field(:name)
   field(:runtimeConfig, as: GoogleApi.Dataproc.V1.Model.RuntimeConfig)
+  field(:sparkConnectSession, as: GoogleApi.Dataproc.V1.Model.SparkConnectConfig)
   field(:updateTime, as: DateTime)
   field(:uuid)
 end
