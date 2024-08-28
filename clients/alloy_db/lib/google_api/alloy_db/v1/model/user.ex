@@ -22,6 +22,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.User do
   ## Attributes
 
   *   `databaseRoles` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of database roles this user has. The database role strings are subject to the PostgreSQL naming conventions.
+  *   `keepExtraRoles` (*type:* `boolean()`, *default:* `nil`) - Input only. If the user already exists and it has additional roles, keep them granted.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the resource in the form of projects/{project}/locations/{location}/cluster/{cluster}/users/{user}.
   *   `password` (*type:* `String.t`, *default:* `nil`) - Input only. Password for the user.
   *   `userType` (*type:* `String.t`, *default:* `nil`) - Optional. Type of this user.
@@ -31,12 +32,14 @@ defmodule GoogleApi.AlloyDB.V1.Model.User do
 
   @type t :: %__MODULE__{
           :databaseRoles => list(String.t()) | nil,
+          :keepExtraRoles => boolean() | nil,
           :name => String.t() | nil,
           :password => String.t() | nil,
           :userType => String.t() | nil
         }
 
   field(:databaseRoles, type: :list)
+  field(:keepExtraRoles)
   field(:name)
   field(:password)
   field(:userType)
