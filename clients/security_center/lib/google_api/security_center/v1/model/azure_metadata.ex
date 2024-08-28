@@ -24,6 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AzureMetadata do
   *   `managementGroups` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.AzureManagementGroup.t)`, *default:* `nil`) - A list of Azure management groups associated with the resource, ordered from lowest level (closest to the subscription) to highest level.
   *   `resourceGroup` (*type:* `GoogleApi.SecurityCenter.V1.Model.AzureResourceGroup.t`, *default:* `nil`) - The Azure resource group associated with the resource.
   *   `subscription` (*type:* `GoogleApi.SecurityCenter.V1.Model.AzureSubscription.t`, *default:* `nil`) - The Azure subscription associated with the resource.
+  *   `tenant` (*type:* `GoogleApi.SecurityCenter.V1.Model.AzureTenant.t`, *default:* `nil`) - The Azure Entra tenant associated with the resource.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,13 +33,15 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AzureMetadata do
           :managementGroups =>
             list(GoogleApi.SecurityCenter.V1.Model.AzureManagementGroup.t()) | nil,
           :resourceGroup => GoogleApi.SecurityCenter.V1.Model.AzureResourceGroup.t() | nil,
-          :subscription => GoogleApi.SecurityCenter.V1.Model.AzureSubscription.t() | nil
+          :subscription => GoogleApi.SecurityCenter.V1.Model.AzureSubscription.t() | nil,
+          :tenant => GoogleApi.SecurityCenter.V1.Model.AzureTenant.t() | nil
         }
 
   field(:managementGroups, as: GoogleApi.SecurityCenter.V1.Model.AzureManagementGroup, type: :list)
 
   field(:resourceGroup, as: GoogleApi.SecurityCenter.V1.Model.AzureResourceGroup)
   field(:subscription, as: GoogleApi.SecurityCenter.V1.Model.AzureSubscription)
+  field(:tenant, as: GoogleApi.SecurityCenter.V1.Model.AzureTenant)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SecurityCenter.V1.Model.AzureMetadata do
