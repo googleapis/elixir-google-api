@@ -29,6 +29,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `orgPolicies` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2OrgPolicy.t)`, *default:* `nil`) - Contains information about the org policies associated with the finding.
   *   `database` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Database.t`, *default:* `nil`) - Database associated with the finding.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The [relative resource name](https://cloud.google.com/apis/design/resource_names#relative_resource_name) of the finding. The following list shows some examples: + `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}` + `organizations/{organization_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}`
+  *   `dataFlowEvents` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataFlowEvent.t)`, *default:* `nil`) - Data flow events associated with the finding.
   *   `vulnerability` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Vulnerability.t`, *default:* `nil`) - Represents vulnerability-specific fields like CVE and CVSS scores. CVE stands for Common Vulnerabilities and Exposures (https://cve.mitre.org/about/)
   *   `mute` (*type:* `String.t`, *default:* `nil`) - Indicates the mute state of a finding (either muted, unmuted or undefined). Unlike other attributes of a finding, a finding provider shouldn't set the value of mute.
   *   `moduleName` (*type:* `String.t`, *default:* `nil`) - Unique identifier of the module which generated the finding. Example: folders/598186756061/securityHealthAnalyticsSettings/customModules/56799441161885
@@ -64,6 +65,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
   *   `exfiltration` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Exfiltration.t`, *default:* `nil`) - Represents exfiltrations associated with the finding.
   *   `findingClass` (*type:* `String.t`, *default:* `nil`) - The class of the finding.
   *   `eventTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the finding was first detected. If an existing finding is updated, then this is the time the update occurred. For example, if the finding represents an open firewall, this property captures the time the detector believes the firewall became open. The accuracy is determined by the detector. If the finding is later resolved, then this time reflects when the finding was resolved. This must not be set to a value greater than the current timestamp.
+  *   `dataAccessEvents` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataAccessEvent.t)`, *default:* `nil`) - Data access events associated with the finding.
   *   `canonicalName` (*type:* `String.t`, *default:* `nil`) - Output only. The canonical name of the finding. The following list shows some examples: + `organizations/{organization_id}/sources/{source_id}/findings/{finding_id}` + `organizations/{organization_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/findings/{finding_id}` + `folders/{folder_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/findings/{finding_id}` + `projects/{project_id}/sources/{source_id}/locations/{location_id}/findings/{finding_id}` The prefix is the closest CRM ancestor of the resource associated with the finding.
   *   `parent` (*type:* `String.t`, *default:* `nil`) - The relative resource name of the source and location the finding belongs to. See: https://cloud.google.com/apis/design/resource_names#relative_resource_name This field is immutable after creation time. The following list shows some examples: + `organizations/{organization_id}/sources/{source_id}` + `folders/{folders_id}/sources/{source_id}` + `projects/{projects_id}/sources/{source_id}` + `organizations/{organization_id}/sources/{source_id}/locations/{location_id}` + `folders/{folders_id}/sources/{source_id}/locations/{location_id}` + `projects/{projects_id}/sources/{source_id}/locations/{location_id}`
   *   `muteUpdateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The most recent time this finding was muted or unmuted.
@@ -89,6 +91,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
           :database =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Database.t() | nil,
           :name => String.t() | nil,
+          :dataFlowEvents =>
+            list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataFlowEvent.t())
+            | nil,
           :vulnerability =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Vulnerability.t() | nil,
           :mute => String.t() | nil,
@@ -159,6 +164,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Exfiltration.t() | nil,
           :findingClass => String.t() | nil,
           :eventTime => DateTime.t() | nil,
+          :dataAccessEvents =>
+            list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataAccessEvent.t())
+            | nil,
           :canonicalName => String.t() | nil,
           :parent => String.t() | nil,
           :muteUpdateTime => DateTime.t() | nil,
@@ -197,6 +205,11 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
 
   field(:database, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Database)
   field(:name)
+
+  field(:dataFlowEvents,
+    as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataFlowEvent,
+    type: :list
+  )
 
   field(:vulnerability,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Vulnerability
@@ -299,6 +312,12 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Finding d
 
   field(:findingClass)
   field(:eventTime, as: DateTime)
+
+  field(:dataAccessEvents,
+    as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2DataAccessEvent,
+    type: :list
+  )
+
   field(:canonicalName)
   field(:parent)
   field(:muteUpdateTime, as: DateTime)

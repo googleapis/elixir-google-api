@@ -24,6 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMeta
   *   `managementGroups` (*type:* `list(GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureManagementGroup.t)`, *default:* `nil`) - A list of Azure management groups associated with the resource, ordered from lowest level (closest to the subscription) to highest level.
   *   `resourceGroup` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureResourceGroup.t`, *default:* `nil`) - The Azure resource group associated with the resource.
   *   `subscription` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureSubscription.t`, *default:* `nil`) - The Azure subscription associated with the resource.
+  *   `tenant` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureTenant.t`, *default:* `nil`) - The Azure Entra tenant associated with the resource.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -39,7 +40,9 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMeta
             | nil,
           :subscription =>
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureSubscription.t()
-            | nil
+            | nil,
+          :tenant =>
+            GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureTenant.t() | nil
         }
 
   field(:managementGroups,
@@ -54,6 +57,8 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureMeta
   field(:subscription,
     as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureSubscription
   )
+
+  field(:tenant, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2AzureTenant)
 end
 
 defimpl Poison.Decoder,

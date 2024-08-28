@@ -24,6 +24,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cve do
   *   `cvssv3` (*type:* `GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cvssv3.t`, *default:* `nil`) - Describe Common Vulnerability Scoring System specified at https://www.first.org/cvss/v3.1/specification-document
   *   `exploitReleaseDate` (*type:* `DateTime.t`, *default:* `nil`) - Date the first publicly available exploit or PoC was released.
   *   `exploitationActivity` (*type:* `String.t`, *default:* `nil`) - The exploitation activity of the vulnerability in the wild.
+  *   `firstExploitationDate` (*type:* `DateTime.t`, *default:* `nil`) - Date of the earliest known exploitation.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique identifier for the vulnerability. e.g. CVE-2021-34527
   *   `impact` (*type:* `String.t`, *default:* `nil`) - The potential impact of the vulnerability if it was to be exploited.
   *   `observedInTheWild` (*type:* `boolean()`, *default:* `nil`) - Whether or not the vulnerability has been observed in the wild.
@@ -39,6 +40,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cve do
             GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cvssv3.t() | nil,
           :exploitReleaseDate => DateTime.t() | nil,
           :exploitationActivity => String.t() | nil,
+          :firstExploitationDate => DateTime.t() | nil,
           :id => String.t() | nil,
           :impact => String.t() | nil,
           :observedInTheWild => boolean() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cve do
   field(:cvssv3, as: GoogleApi.SecurityCenter.V1.Model.GoogleCloudSecuritycenterV2Cvssv3)
   field(:exploitReleaseDate, as: DateTime)
   field(:exploitationActivity)
+  field(:firstExploitationDate, as: DateTime)
   field(:id)
   field(:impact)
   field(:observedInTheWild)
