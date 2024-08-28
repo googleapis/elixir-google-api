@@ -30,6 +30,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Session do
   *   `runtimeConfig` (*type:* `GoogleApi.Dataproc.V1.Model.RuntimeConfig.t`, *default:* `nil`) - Optional. Runtime configuration for the session execution.
   *   `runtimeInfo` (*type:* `GoogleApi.Dataproc.V1.Model.RuntimeInfo.t`, *default:* `nil`) - Output only. Runtime information about session execution.
   *   `sessionTemplate` (*type:* `String.t`, *default:* `nil`) - Optional. The session template used by the session.Only resource names, including project ID and location, are valid.Example: * https://www.googleapis.com/compute/v1/projects/[project_id]/locations/[dataproc_region]/sessionTemplates/[template_id] * projects/[project_id]/locations/[dataproc_region]/sessionTemplates/[template_id]The template must be in the same project and Dataproc region as the session.
+  *   `sparkConnectSession` (*type:* `GoogleApi.Dataproc.V1.Model.SparkConnectConfig.t`, *default:* `nil`) - Optional. Spark connect session config.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. A state of the session.
   *   `stateHistory` (*type:* `list(GoogleApi.Dataproc.V1.Model.SessionStateHistory.t)`, *default:* `nil`) - Output only. Historical state information for the session.
   *   `stateMessage` (*type:* `String.t`, *default:* `nil`) - Output only. Session state details, such as the failure description if the state is FAILED.
@@ -50,6 +51,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Session do
           :runtimeConfig => GoogleApi.Dataproc.V1.Model.RuntimeConfig.t() | nil,
           :runtimeInfo => GoogleApi.Dataproc.V1.Model.RuntimeInfo.t() | nil,
           :sessionTemplate => String.t() | nil,
+          :sparkConnectSession => GoogleApi.Dataproc.V1.Model.SparkConnectConfig.t() | nil,
           :state => String.t() | nil,
           :stateHistory => list(GoogleApi.Dataproc.V1.Model.SessionStateHistory.t()) | nil,
           :stateMessage => String.t() | nil,
@@ -67,6 +69,7 @@ defmodule GoogleApi.Dataproc.V1.Model.Session do
   field(:runtimeConfig, as: GoogleApi.Dataproc.V1.Model.RuntimeConfig)
   field(:runtimeInfo, as: GoogleApi.Dataproc.V1.Model.RuntimeInfo)
   field(:sessionTemplate)
+  field(:sparkConnectSession, as: GoogleApi.Dataproc.V1.Model.SparkConnectConfig)
   field(:state)
   field(:stateHistory, as: GoogleApi.Dataproc.V1.Model.SessionStateHistory, type: :list)
   field(:stateMessage)
