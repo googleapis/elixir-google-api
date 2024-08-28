@@ -26,7 +26,7 @@ defmodule GoogleApi.CloudFunctions.V2.Model.Function do
   *   `description` (*type:* `String.t`, *default:* `nil`) - User-provided description of a function.
   *   `environment` (*type:* `String.t`, *default:* `nil`) - Describe whether the function is 1st Gen or 2nd Gen.
   *   `eventTrigger` (*type:* `GoogleApi.CloudFunctions.V2.Model.EventTrigger.t`, *default:* `nil`) - An Eventarc trigger managed by Google Cloud Functions that fires events in response to a condition in another service.
-  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - [Preview] Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
+  *   `kmsKeyName` (*type:* `String.t`, *default:* `nil`) - Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt function resources. It must match the pattern `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels associated with this Cloud Function.
   *   `name` (*type:* `String.t`, *default:* `nil`) - A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
