@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.HealthCare.V1.Model.RollbackHL7MessagesFilteringFields do
   @moduledoc """
-  Filtering fields for an HL7 rollback. Currently only supports a list of operation ids to roll back.
+  Filtering fields for an HL7v2 rollback. Currently only supports a list of operation ids to roll back.
 
   ## Attributes
 

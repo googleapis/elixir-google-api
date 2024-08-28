@@ -21,7 +21,7 @@ defmodule GoogleApi.HealthCare.V1beta1.Model.RollbackHl7V2MessagesResponse do
 
   ## Attributes
 
-  *   `hl7v2Store` (*type:* `String.t`, *default:* `nil`) - The name of the HL7 store to rollback, in the format of "projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /hl7v2Stores/{fhir_store_id}".
+  *   `hl7v2Store` (*type:* `String.t`, *default:* `nil`) - The name of the HL7v2 store to rollback, in the format of "projects/{project_id}/locations/{location_id}/datasets/{dataset_id} /hl7v2Stores/{fhir_store_id}".
   """
 
   use GoogleApi.Gax.ModelBase
