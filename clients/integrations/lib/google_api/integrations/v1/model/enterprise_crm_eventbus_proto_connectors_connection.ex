@@ -23,6 +23,7 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoConnectorsCo
 
   *   `connectionName` (*type:* `String.t`, *default:* `nil`) - Connection name Format: projects/{project}/locations/{location}/connections/{connection}
   *   `connectorVersion` (*type:* `String.t`, *default:* `nil`) - Connector version Format: projects/{project}/locations/{location}/providers/{provider}/connectors/{connector}/versions/{version}
+  *   `host` (*type:* `String.t`, *default:* `nil`) - The name of the Hostname of the Service Directory service with TLS if used.
   *   `serviceName` (*type:* `String.t`, *default:* `nil`) - Service name Format: projects/{project}/locations/{location}/namespaces/{namespace}/services/{service}
   """
 
@@ -31,11 +32,13 @@ defmodule GoogleApi.Integrations.V1.Model.EnterpriseCrmEventbusProtoConnectorsCo
   @type t :: %__MODULE__{
           :connectionName => String.t() | nil,
           :connectorVersion => String.t() | nil,
+          :host => String.t() | nil,
           :serviceName => String.t() | nil
         }
 
   field(:connectionName)
   field(:connectorVersion)
+  field(:host)
   field(:serviceName)
 end
 
