@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1EncryptionConfig do
   @moduledoc """
-  Encryption configuration for a new database being created from another source. The source could be a Backup or a DatabaseSnapshot.
+  Encryption configuration for a new database being created from another source. The source could be a Backup .
 
   ## Attributes
 

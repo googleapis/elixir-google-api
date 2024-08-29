@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Field do
   @moduledoc """
-  Represents a single field in the database. Fields are grouped by their "Collection Group", which represent all collections in the database with the same id.
+  Represents a single field in the database. Fields are grouped by their "Collection Group", which represent all collections in the database with the same ID.
 
   ## Attributes
 

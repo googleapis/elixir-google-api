@@ -22,6 +22,8 @@ defmodule GoogleApi.Firestore.V1.Model.FindNearest do
   ## Attributes
 
   *   `distanceMeasure` (*type:* `String.t`, *default:* `nil`) - Required. The distance measure to use, required.
+  *   `distanceResultField` (*type:* `String.t`, *default:* `nil`) - Optional. Optional name of the field to output the result of the vector distance calculation. Must conform to document field name limitations.
+  *   `distanceThreshold` (*type:* `float()`, *default:* `nil`) - Optional. Option to specify a threshold for which no less similar documents will be returned. The behavior of the specified `distance_measure` will affect the meaning of the distance threshold. Since DOT_PRODUCT distances increase when the vectors are more similar, the comparison is inverted. For EUCLIDEAN, COSINE: WHERE distance <= distance_threshold For DOT_PRODUCT: WHERE distance >= distance_threshold
   *   `limit` (*type:* `integer()`, *default:* `nil`) - Required. The number of nearest neighbors to return. Must be a positive integer of no more than 1000.
   *   `queryVector` (*type:* `GoogleApi.Firestore.V1.Model.Value.t`, *default:* `nil`) - Required. The query vector that we are searching on. Must be a vector of no more than 2048 dimensions.
   *   `vectorField` (*type:* `GoogleApi.Firestore.V1.Model.FieldReference.t`, *default:* `nil`) - Required. An indexed vector field to search upon. Only documents which contain vectors whose dimensionality match the query_vector can be returned.
@@ -31,12 +33,16 @@ defmodule GoogleApi.Firestore.V1.Model.FindNearest do
 
   @type t :: %__MODULE__{
           :distanceMeasure => String.t() | nil,
+          :distanceResultField => String.t() | nil,
+          :distanceThreshold => float() | nil,
           :limit => integer() | nil,
           :queryVector => GoogleApi.Firestore.V1.Model.Value.t() | nil,
           :vectorField => GoogleApi.Firestore.V1.Model.FieldReference.t() | nil
         }
 
   field(:distanceMeasure)
+  field(:distanceResultField)
+  field(:distanceThreshold)
   field(:limit)
   field(:queryVector, as: GoogleApi.Firestore.V1.Model.Value)
   field(:vectorField, as: GoogleApi.Firestore.V1.Model.FieldReference)
