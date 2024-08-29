@@ -21,8 +21,8 @@ defmodule GoogleApi.GKEHub.V1.Model.ResourceManifest do
 
   ## Attributes
 
-  *   `clusterScoped` (*type:* `boolean()`, *default:* `nil`) - Whether the resource provided in the manifest is `cluster_scoped`. If unset, the manifest is assumed to be namespace scoped. This field is used for REST mapping when applying the resource in a cluster.
-  *   `manifest` (*type:* `String.t`, *default:* `nil`) - YAML manifest of the resource.
+  *   `clusterScoped` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether the resource provided in the manifest is `cluster_scoped`. If unset, the manifest is assumed to be namespace scoped. This field is used for REST mapping when applying the resource in a cluster.
+  *   `manifest` (*type:* `String.t`, *default:* `nil`) - Output only. YAML manifest of the resource.
   """
 
   use GoogleApi.Gax.ModelBase
