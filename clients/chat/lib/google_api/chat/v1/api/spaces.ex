@@ -400,7 +400,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Chat.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Resource name of the space. Format: `spaces/{space}`
+  *   `name` (*type:* `String.t`) - Resource name of the space. Format: `spaces/{space}` Where `{space}` represents the system-assigned ID for the space. You can obtain the space ID by calling the [`spaces.list()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/list) method or from the space URL. For example, if the space URL is `https://mail.google.com/mail/u/0/#chat/space/AAAAAAAAA`, the space ID is `AAAAAAAAA`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -913,7 +913,7 @@ defmodule GoogleApi.Chat.V1.Api.Spaces do
   end
 
   @doc """
-  Creates a message in a Google Chat space. The maximum message size, including text and cards, is 32,000 bytes. For an example, see [Send a message](https://developers.google.com/workspace/chat/create-messages). Calling this method requires [authentication](https://developers.google.com/workspace/chat/authenticate-authorize) and supports the following authentication types: - For text messages, user authentication or app authentication are supported. - For card messages, only app authentication is supported. (Only Chat apps can create card messages.)
+  Creates a message in a Google Chat space. For an example, see [Send a message](https://developers.google.com/workspace/chat/create-messages). The `create()` method requires either user or app authentication. Chat attributes the message sender differently depending on the type of authentication that you use in your request. The following image shows how Chat attributes a message when you use app authentication. Chat displays the Chat app as the message sender. The content of the message can contain text (`text`), cards (`cardsV2`), and accessory widgets (`accessoryWidgets`). ![Message sent with app authentication](https://developers.google.com/workspace/chat/images/message-app-auth.svg) The following image shows how Chat attributes a message when you use user authentication. Chat displays the user as the message sender and attributes the Chat app to the message by displaying its name. The content of message can only contain text (`text`). ![Message sent with user authentication](https://developers.google.com/workspace/chat/images/message-user-auth.svg) The maximum message size, including the message contents, is 32,000 bytes.
 
   ## Parameters
 
