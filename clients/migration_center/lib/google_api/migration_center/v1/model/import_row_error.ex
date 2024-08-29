@@ -21,25 +21,32 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ImportRowError do
 
   ## Attributes
 
+  *   `csvError` (*type:* `GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails.t`, *default:* `nil`) - Error details for a CSV file.
   *   `errors` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.ImportError.t)`, *default:* `nil`) - The list of errors detected in the row.
   *   `rowNumber` (*type:* `integer()`, *default:* `nil`) - The row number where the error was detected.
   *   `vmName` (*type:* `String.t`, *default:* `nil`) - The name of the VM in the row.
   *   `vmUuid` (*type:* `String.t`, *default:* `nil`) - The VM UUID.
+  *   `xlsxError` (*type:* `GoogleApi.MigrationCenter.V1.Model.ImportRowErrorXlsxErrorDetails.t`, *default:* `nil`) - Error details for an XLSX file.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :csvError => GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails.t() | nil,
           :errors => list(GoogleApi.MigrationCenter.V1.Model.ImportError.t()) | nil,
           :rowNumber => integer() | nil,
           :vmName => String.t() | nil,
-          :vmUuid => String.t() | nil
+          :vmUuid => String.t() | nil,
+          :xlsxError =>
+            GoogleApi.MigrationCenter.V1.Model.ImportRowErrorXlsxErrorDetails.t() | nil
         }
 
+  field(:csvError, as: GoogleApi.MigrationCenter.V1.Model.ImportRowErrorCsvErrorDetails)
   field(:errors, as: GoogleApi.MigrationCenter.V1.Model.ImportError, type: :list)
   field(:rowNumber)
   field(:vmName)
   field(:vmUuid)
+  field(:xlsxError, as: GoogleApi.MigrationCenter.V1.Model.ImportRowErrorXlsxErrorDetails)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.MigrationCenter.V1.Model.ImportRowError do
