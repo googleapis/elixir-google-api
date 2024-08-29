@@ -21,9 +21,9 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1BulkDeleteDocuments
 
   ## Attributes
 
-  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - The ids of the collection groups that are being deleted.
+  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - The IDs of the collection groups that are being deleted.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
-  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace ids are being deleted.
+  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace IDs are being deleted.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the operation.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.

@@ -21,8 +21,8 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1RestoreDatabaseRequ
 
   ## Attributes
 
-  *   `backup` (*type:* `String.t`, *default:* `nil`) - Backup to restore from. Must be from the same project as the parent. The restored database will be created in the same location as the source backup. Format is: `projects/{project_id}/locations/{location}/backups/{backup}`
-  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the database, which will become the final component of the database's resource name. This database id must not be associated with an existing database. This value should be 4-63 characters. Valid characters are /a-z-/ with first character a letter and the last a letter or a number. Must not be UUID-like /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/. "(default)" database id is also valid.
+  *   `backup` (*type:* `String.t`, *default:* `nil`) - Required. Backup to restore from. Must be from the same project as the parent. The restored database will be created in the same location as the source backup. Format is: `projects/{project_id}/locations/{location}/backups/{backup}`
+  *   `databaseId` (*type:* `String.t`, *default:* `nil`) - Required. The ID to use for the database, which will become the final component of the database's resource name. This database ID must not be associated with an existing database. This value should be 4-63 characters. Valid characters are /a-z-/ with first character a letter and the last a letter or a number. Must not be UUID-like /[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/. "(default)" database ID is also valid.
   *   `encryptionConfig` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1EncryptionConfig.t`, *default:* `nil`) - Optional. Encryption configuration for the restored database. If this field is not specified, the restored database will use the same encryption configuration as the backup, namely use_source_encryption.
   """
 

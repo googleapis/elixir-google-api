@@ -21,10 +21,10 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1ImportDocumentsMeta
 
   ## Attributes
 
-  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection ids are being imported.
+  *   `collectionIds` (*type:* `list(String.t)`, *default:* `nil`) - Which collection IDs are being imported.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - The time this operation completed. Will be unset if operation still in progress.
   *   `inputUriPrefix` (*type:* `String.t`, *default:* `nil`) - The location of the documents being imported.
-  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace ids are being imported.
+  *   `namespaceIds` (*type:* `list(String.t)`, *default:* `nil`) - Which namespace IDs are being imported.
   *   `operationState` (*type:* `String.t`, *default:* `nil`) - The state of the import operation.
   *   `progressBytes` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in bytes, of this operation.
   *   `progressDocuments` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Progress.t`, *default:* `nil`) - The progress, in documents, of this operation.
