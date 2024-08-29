@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AnalyticsHub.V1.Model.RevokeSubscriptionResponse do
   @moduledoc """
-  Message for response when you revoke a subscription.
+  Message for response when you revoke a subscription. Empty for now.
 
   ## Attributes
 
