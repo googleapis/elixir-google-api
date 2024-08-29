@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
 
   *   `assertion` (*type:* `GoogleApi.Dataform.V1beta1.Model.Assertion.t`, *default:* `nil`) - The assertion executed by this action.
   *   `canonicalTarget` (*type:* `GoogleApi.Dataform.V1beta1.Model.Target.t`, *default:* `nil`) - The action's identifier if the project had been compiled without any overrides configured. Unique within the compilation result.
+  *   `dataPreparation` (*type:* `GoogleApi.Dataform.V1beta1.Model.DataPreparation.t`, *default:* `nil`) - The data preparation executed by this action.
   *   `declaration` (*type:* `GoogleApi.Dataform.V1beta1.Model.Declaration.t`, *default:* `nil`) - The declaration declared by this action.
   *   `filePath` (*type:* `String.t`, *default:* `nil`) - The full path including filename in which this action is located, relative to the workspace root.
   *   `notebook` (*type:* `GoogleApi.Dataform.V1beta1.Model.Notebook.t`, *default:* `nil`) - The notebook executed by this action.
@@ -36,6 +37,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
   @type t :: %__MODULE__{
           :assertion => GoogleApi.Dataform.V1beta1.Model.Assertion.t() | nil,
           :canonicalTarget => GoogleApi.Dataform.V1beta1.Model.Target.t() | nil,
+          :dataPreparation => GoogleApi.Dataform.V1beta1.Model.DataPreparation.t() | nil,
           :declaration => GoogleApi.Dataform.V1beta1.Model.Declaration.t() | nil,
           :filePath => String.t() | nil,
           :notebook => GoogleApi.Dataform.V1beta1.Model.Notebook.t() | nil,
@@ -46,6 +48,7 @@ defmodule GoogleApi.Dataform.V1beta1.Model.CompilationResultAction do
 
   field(:assertion, as: GoogleApi.Dataform.V1beta1.Model.Assertion)
   field(:canonicalTarget, as: GoogleApi.Dataform.V1beta1.Model.Target)
+  field(:dataPreparation, as: GoogleApi.Dataform.V1beta1.Model.DataPreparation)
   field(:declaration, as: GoogleApi.Dataform.V1beta1.Model.Declaration)
   field(:filePath)
   field(:notebook, as: GoogleApi.Dataform.V1beta1.Model.Notebook)
