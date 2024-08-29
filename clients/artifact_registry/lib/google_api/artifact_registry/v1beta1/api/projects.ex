@@ -543,6 +543,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:orderBy` (*type:* `String.t`) - Optional. The field to order the results by.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of repositories to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -580,6 +581,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
@@ -1127,6 +1129,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:orderBy` (*type:* `String.t`) - Optional. The field to order the results by.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of packages to return. Maximum page size is 1,000.
       *   `:pageToken` (*type:* `String.t`) - The next_page_token value returned from a previous list request, if any.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1164,6 +1167,7 @@ defmodule GoogleApi.ArtifactRegistry.V1beta1.Api.Projects do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :orderBy => :query,
       :pageSize => :query,
       :pageToken => :query
     }
