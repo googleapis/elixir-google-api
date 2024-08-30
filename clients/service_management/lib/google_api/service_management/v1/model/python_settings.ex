@@ -22,15 +22,19 @@ defmodule GoogleApi.ServiceManagement.V1.Model.PythonSettings do
   ## Attributes
 
   *   `common` (*type:* `GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t`, *default:* `nil`) - Some settings.
+  *   `experimentalFeatures` (*type:* `GoogleApi.ServiceManagement.V1.Model.ExperimentalFeatures.t`, *default:* `nil`) - Experimental features to be included during client library generation.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :common => GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t() | nil
+          :common => GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings.t() | nil,
+          :experimentalFeatures =>
+            GoogleApi.ServiceManagement.V1.Model.ExperimentalFeatures.t() | nil
         }
 
   field(:common, as: GoogleApi.ServiceManagement.V1.Model.CommonLanguageSettings)
+  field(:experimentalFeatures, as: GoogleApi.ServiceManagement.V1.Model.ExperimentalFeatures)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceManagement.V1.Model.PythonSettings do
