@@ -26,7 +26,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProjectDataProfile do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the profile.
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status of the last attempt to profile the project.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that was profiled.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID or account that was profiled.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this project.
   *   `tableDataProfileCount` (*type:* `String.t`, *default:* `nil`) - The number of table data profiles generated for this project.
   """
