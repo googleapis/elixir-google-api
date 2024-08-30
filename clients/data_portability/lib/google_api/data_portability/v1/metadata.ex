@@ -20,7 +20,7 @@ defmodule GoogleApi.DataPortability.V1 do
   API client metadata for GoogleApi.DataPortability.V1.
   """
 
-  @discovery_revision "20240827"
+  @discovery_revision "20240828"
 
   def discovery_revision(), do: @discovery_revision
 end
