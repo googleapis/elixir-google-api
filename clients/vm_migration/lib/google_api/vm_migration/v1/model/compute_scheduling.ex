@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.VMMigration.V1.Model.ComputeScheduling do
   @moduledoc """
-  Scheduling information for VM on maintenance/restart behaviour and node allocation in sole tenant nodes.
+  Scheduling information for VM on maintenance/restart behaviour and node allocation in sole tenant nodes. Options for instance behavior when the host machine undergoes maintenance that may temporarily impact instance performance.
 
   ## Attributes
 
