@@ -21,8 +21,10 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityCusto
 
   ## Attributes
 
+  *   `channelPartnerCloudIdentityId` (*type:* `String.t`, *default:* `nil`) - If existing = true, and is 2-tier customer, the channel partner of the customer.
   *   `customerCloudIdentityId` (*type:* `String.t`, *default:* `nil`) - If existing = true, the Cloud Identity ID of the customer.
   *   `customerName` (*type:* `String.t`, *default:* `nil`) - If owned = true, the name of the customer that owns the Cloud Identity account. Customer_name uses the format: accounts/{account_id}/customers/{customer_id}
+  *   `customerType` (*type:* `String.t`, *default:* `nil`) - If existing = true, the type of the customer.
   *   `existing` (*type:* `boolean()`, *default:* `nil`) - Returns true if a Cloud Identity account exists for a specific domain.
   *   `owned` (*type:* `boolean()`, *default:* `nil`) - Returns true if the Cloud Identity account is associated with a customer of the Channel Services partner.
   """
@@ -30,14 +32,18 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CloudIdentityCusto
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :channelPartnerCloudIdentityId => String.t() | nil,
           :customerCloudIdentityId => String.t() | nil,
           :customerName => String.t() | nil,
+          :customerType => String.t() | nil,
           :existing => boolean() | nil,
           :owned => boolean() | nil
         }
 
+  field(:channelPartnerCloudIdentityId)
   field(:customerCloudIdentityId)
   field(:customerName)
+  field(:customerType)
   field(:existing)
   field(:owned)
 end

@@ -27,6 +27,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ImportCustomerRequ
   *   `customer` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the customer that will receive imported Cloud Identity information. Format: accounts/{account_id}/customers/{customer_id}
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Customer domain.
   *   `overwriteIfExists` (*type:* `boolean()`, *default:* `nil`) - Required. Choose to overwrite an existing customer if found. This must be set to true if there is an existing customer with a conflicting region code or domain.
+  *   `primaryAdminEmail` (*type:* `String.t`, *default:* `nil`) - Optional. Customer's primary admin email.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -37,7 +38,8 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ImportCustomerRequ
           :cloudIdentityId => String.t() | nil,
           :customer => String.t() | nil,
           :domain => String.t() | nil,
-          :overwriteIfExists => boolean() | nil
+          :overwriteIfExists => boolean() | nil,
+          :primaryAdminEmail => String.t() | nil
         }
 
   field(:authToken)
@@ -46,6 +48,7 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1ImportCustomerRequ
   field(:customer)
   field(:domain)
   field(:overwriteIfExists)
+  field(:primaryAdminEmail)
 end
 
 defimpl Poison.Decoder,

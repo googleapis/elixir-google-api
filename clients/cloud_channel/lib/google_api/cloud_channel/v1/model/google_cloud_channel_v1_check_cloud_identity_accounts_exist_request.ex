@@ -22,15 +22,18 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CheckCloudIdentity
   ## Attributes
 
   *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Domain to fetch for Cloud Identity account customers, including domained and domainless.
+  *   `primaryAdminEmail` (*type:* `String.t`, *default:* `nil`) - Optional. Primary admin email to fetch for Cloud Identity account domainless customer.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :domain => String.t() | nil
+          :domain => String.t() | nil,
+          :primaryAdminEmail => String.t() | nil
         }
 
   field(:domain)
+  field(:primaryAdminEmail)
 end
 
 defimpl Poison.Decoder,
