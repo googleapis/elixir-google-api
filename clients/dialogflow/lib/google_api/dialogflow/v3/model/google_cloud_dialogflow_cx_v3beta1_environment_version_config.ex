@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3beta1Environmen
 
   ## Attributes
 
-  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. Format: projects//locations//agents//flows//versions/.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Required. Both flow and playbook versions are supported. Format for flow version: projects//locations//agents//flows//versions/. Format for playbook version: projects//locations//agents//playbooks//versions/.
   """
 
   use GoogleApi.Gax.ModelBase
