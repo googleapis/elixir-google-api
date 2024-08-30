@@ -22,7 +22,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `expectedAction` (*type:* `String.t`, *default:* `nil`) - Optional. The expected action for this type of event. This should be the same action provided at token generation time on client-side platforms already integrated with recaptcha enterprise.
-  *   `express` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag for a reCAPTCHA express request for an assessment without a token. If enabled, `site_key` must reference a SCORE key with WAF feature set to EXPRESS.
+  *   `express` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag for a reCAPTCHA express request for an assessment without a token. If enabled, `site_key` must reference an Express site key.
   *   `firewallPolicyEvaluation` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag for enabling firewall policy config assessment. If this flag is enabled, the firewall policy will be evaluated and a suggested firewall action will be returned in the response.
   *   `fraudPrevention` (*type:* `String.t`, *default:* `nil`) - Optional. The Fraud Prevention setting for this assessment.
   *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. Deprecated: use `user_info.account_id` instead. Unique stable hashed user identifier for the request. The identifier must be hashed using hmac-sha256 with stable secret.
