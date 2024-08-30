@@ -24,6 +24,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions do
   *   `bakType` (*type:* `String.t`, *default:* `nil`) - Type of this bak file will be export, FULL or DIFF, SQL Server only
   *   `copyOnly` (*type:* `boolean()`, *default:* `nil`) - Deprecated: copy_only is deprecated. Use differential_base instead
   *   `differentialBase` (*type:* `boolean()`, *default:* `nil`) - Whether or not the backup can be used as a differential base copy_only backup can not be served as differential base
+  *   `exportLogEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The end timestamp when transaction log will be included in the export operation. [RFC 3339](https://tools.ietf.org/html/rfc3339) format (for example, `2023-10-01T16:19:00.094`) in UTC. When omitted, all available logs until current time will be included. Only applied to Cloud SQL for SQL Server.
+  *   `exportLogStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The begin timestamp when transaction log will be included in the export operation. [RFC 3339](https://tools.ietf.org/html/rfc3339) format (for example, `2023-10-01T16:19:00.094`) in UTC. When omitted, all available logs from the beginning of retention period will be included. Only applied to Cloud SQL for SQL Server.
   *   `stripeCount` (*type:* `integer()`, *default:* `nil`) - Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen.
   *   `striped` (*type:* `boolean()`, *default:* `nil`) - Whether or not the export should be striped.
   """
@@ -34,6 +36,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions do
           :bakType => String.t() | nil,
           :copyOnly => boolean() | nil,
           :differentialBase => boolean() | nil,
+          :exportLogEndTime => DateTime.t() | nil,
+          :exportLogStartTime => DateTime.t() | nil,
           :stripeCount => integer() | nil,
           :striped => boolean() | nil
         }
@@ -41,6 +45,8 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.ExportContextBakExportOptions do
   field(:bakType)
   field(:copyOnly)
   field(:differentialBase)
+  field(:exportLogEndTime, as: DateTime)
+  field(:exportLogStartTime, as: DateTime)
   field(:stripeCount)
   field(:striped)
 end
