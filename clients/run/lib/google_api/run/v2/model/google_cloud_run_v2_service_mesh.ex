@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh do
   @moduledoc """
-  Service mesh configuration.
+  Settings for Cloud Service Mesh. For more information see https://cloud.google.com/service-mesh/docs/overview.
 
   ## Attributes
 
-  *   `mesh` (*type:* `String.t`, *default:* `nil`) - The service mesh resource name. Format: projects/{project_number}/locations/global/meshes/{mesh}.
+  *   `mesh` (*type:* `String.t`, *default:* `nil`) - The Mesh resource name. Format: projects/{project}/locations/global/meshes/{mesh}, where {project} can be project id or number.
   """
 
   use GoogleApi.Gax.ModelBase
