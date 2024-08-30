@@ -22,6 +22,7 @@ defmodule GoogleApi.Batch.V1.Model.AgentTaskSpec do
   ## Attributes
 
   *   `environment` (*type:* `GoogleApi.Batch.V1.Model.AgentEnvironment.t`, *default:* `nil`) - Environment variables to set before running the Task.
+  *   `loggingOption` (*type:* `GoogleApi.Batch.V1.Model.AgentTaskLoggingOption.t`, *default:* `nil`) - Logging option for the task.
   *   `maxRunDuration` (*type:* `String.t`, *default:* `nil`) - Maximum duration the task should run before being automatically retried (if enabled) or automatically failed. Format the value of this field as a time limit in seconds followed by `s`—for example, `3600s` for 1 hour. The field accepts any value between 0 and the maximum listed for the `Duration` field type at https://protobuf.dev/reference/protobuf/google.protobuf/#duration; however, the actual maximum run time for a job will be limited to the maximum run time for a job listed at https://cloud.google.com/batch/quotas#max-job-duration.
   *   `runnables` (*type:* `list(GoogleApi.Batch.V1.Model.AgentTaskRunnable.t)`, *default:* `nil`) - AgentTaskRunnable is runanbles that will be executed on the agent.
   *   `userAccount` (*type:* `GoogleApi.Batch.V1.Model.AgentTaskUserAccount.t`, *default:* `nil`) - User account on the VM to run the runnables in the agentTaskSpec. If not set, the runnable will be run under root user.
@@ -31,12 +32,14 @@ defmodule GoogleApi.Batch.V1.Model.AgentTaskSpec do
 
   @type t :: %__MODULE__{
           :environment => GoogleApi.Batch.V1.Model.AgentEnvironment.t() | nil,
+          :loggingOption => GoogleApi.Batch.V1.Model.AgentTaskLoggingOption.t() | nil,
           :maxRunDuration => String.t() | nil,
           :runnables => list(GoogleApi.Batch.V1.Model.AgentTaskRunnable.t()) | nil,
           :userAccount => GoogleApi.Batch.V1.Model.AgentTaskUserAccount.t() | nil
         }
 
   field(:environment, as: GoogleApi.Batch.V1.Model.AgentEnvironment)
+  field(:loggingOption, as: GoogleApi.Batch.V1.Model.AgentTaskLoggingOption)
   field(:maxRunDuration)
   field(:runnables, as: GoogleApi.Batch.V1.Model.AgentTaskRunnable, type: :list)
   field(:userAccount, as: GoogleApi.Batch.V1.Model.AgentTaskUserAccount)
