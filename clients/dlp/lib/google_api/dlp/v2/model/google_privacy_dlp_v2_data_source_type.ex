@@ -21,7 +21,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataSourceType do
 
   ## Attributes
 
-  *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Output only. An identifying string to the type of resource being profiled. Current values: google/bigquery/table, google/project
+  *   `dataSource` (*type:* `String.t`, *default:* `nil`) - Output only. An identifying string to the type of resource being profiled. Current values: * google/bigquery/table * google/project * google/sql/table * google/gcs/bucket
   """
 
   use GoogleApi.Gax.ModelBase
