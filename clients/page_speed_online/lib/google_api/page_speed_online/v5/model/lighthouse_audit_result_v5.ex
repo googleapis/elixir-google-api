@@ -27,6 +27,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
   *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - An error message from a thrown error inside the audit.
   *   `explanation` (*type:* `String.t`, *default:* `nil`) - An explanation of the errors in the audit.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The audit's id.
+  *   `metricSavings` (*type:* `GoogleApi.PageSpeedOnline.V5.Model.MetricSavings.t`, *default:* `nil`) - The metric savings of the audit.
   *   `numericUnit` (*type:* `String.t`, *default:* `nil`) - The unit of the numeric_value field. Used to format the numeric value for display.
   *   `numericValue` (*type:* `float()`, *default:* `nil`) - A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present.
   *   `score` (*type:* `any()`, *default:* `nil`) - The score of the audit, can be null.
@@ -44,6 +45,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
           :errorMessage => String.t() | nil,
           :explanation => String.t() | nil,
           :id => String.t() | nil,
+          :metricSavings => GoogleApi.PageSpeedOnline.V5.Model.MetricSavings.t() | nil,
           :numericUnit => String.t() | nil,
           :numericValue => float() | nil,
           :score => any() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.PageSpeedOnline.V5.Model.LighthouseAuditResultV5 do
   field(:errorMessage)
   field(:explanation)
   field(:id)
+  field(:metricSavings, as: GoogleApi.PageSpeedOnline.V5.Model.MetricSavings)
   field(:numericUnit)
   field(:numericValue)
   field(:score)
