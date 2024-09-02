@@ -22,7 +22,7 @@ defmodule GoogleApi.AirQuality.V1.Model.Concentration do
   ## Attributes
 
   *   `units` (*type:* `String.t`, *default:* `nil`) - Units for measuring this pollutant concentration.
-  *   `value` (*type:* `number()`, *default:* `nil`) - Value of pollutant concentration.
+  *   `value` (*type:* `number()`, *default:* `nil`) - Value of the pollutant concentration.
   """
 
   use GoogleApi.Gax.ModelBase
