@@ -21,7 +21,7 @@ defmodule GoogleApi.File.V1.Model.Replication do
 
   ## Attributes
 
-  *   `replicas` (*type:* `list(GoogleApi.File.V1.Model.ReplicaConfig.t)`, *default:* `nil`) - Optional. Replicas configuration on the instance. For now, only a single replica config is supported.
+  *   `replicas` (*type:* `list(GoogleApi.File.V1.Model.ReplicaConfig.t)`, *default:* `nil`) - Optional. Replication configuration for the replica instance associated with this instance. Only a single replica is supported.
   *   `role` (*type:* `String.t`, *default:* `nil`) - Optional. The replication role.
   """
 

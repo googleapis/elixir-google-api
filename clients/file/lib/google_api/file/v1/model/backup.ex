@@ -25,6 +25,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the backup was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
   *   `downloadBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Amount of bytes that will be downloaded if the backup is restored. This may be different than storage bytes, since sequential backups of the same disk will share storage.
+  *   `fileSystemProtocol` (*type:* `String.t`, *default:* `nil`) - Output only. The file system protocol of the source Filestore instance that this backup is created from.
   *   `kmsKey` (*type:* `String.t`, *default:* `nil`) - Immutable. KMS key name used for data encryption.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
@@ -35,7 +36,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
   *   `sourceInstanceTier` (*type:* `String.t`, *default:* `nil`) - Output only. The service tier of the source Filestore instance that this backup is created from.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The backup state.
   *   `storageBytes` (*type:* `String.t`, *default:* `nil`) - Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
-  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
+  *   `tags` (*type:* `map()`, *default:* `nil`) - Optional. Input only. Immutable. Tag key-value pairs are bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,6 +46,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :downloadBytes => String.t() | nil,
+          :fileSystemProtocol => String.t() | nil,
           :kmsKey => String.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.File.V1.Model.Backup do
   field(:createTime, as: DateTime)
   field(:description)
   field(:downloadBytes)
+  field(:fileSystemProtocol)
   field(:kmsKey)
   field(:labels, type: :map)
   field(:name)
