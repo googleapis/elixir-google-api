@@ -22,10 +22,10 @@ defmodule GoogleApi.AirQuality.V1.Model.Pollutant do
   ## Attributes
 
   *   `additionalInfo` (*type:* `GoogleApi.AirQuality.V1.Model.AdditionalInfo.t`, *default:* `nil`) - Additional information about the pollutant.
-  *   `code` (*type:* `String.t`, *default:* `nil`) - The pollutant's code name. For example: "so2". A list of all available codes could be found [here](/maps/documentation/air-quality/pollutants#reported_pollutants).
+  *   `code` (*type:* `String.t`, *default:* `nil`) - The pollutant's code name (for example, "so2"). For a list of supported pollutant codes, see [Reported pollutants](/maps/documentation/air-quality/pollutants#reported_pollutants).
   *   `concentration` (*type:* `GoogleApi.AirQuality.V1.Model.Concentration.t`, *default:* `nil`) - The pollutant's concentration level measured by one of the standard air pollutation measure units.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The pollutant's display name. For example: "NOx".
-  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The pollutant's full name. For chemical compounds, this is the IUPAC name. Example: "Sulfur Dioxide". For more information about the IUPAC names table, see https://iupac.org/what-we-do/periodic-table-of-elements/
+  *   `fullName` (*type:* `String.t`, *default:* `nil`) - The pollutant's full name. For chemical compounds, this is the IUPAC name. Example: "Sulfur Dioxide". For more information about the IUPAC names table, see https://iupac.org/what-we-do/periodic-table-of-elements/.
   """
 
   use GoogleApi.Gax.ModelBase

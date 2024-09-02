@@ -20,7 +20,7 @@ defmodule GoogleApi.AirQuality.V1 do
   API client metadata for GoogleApi.AirQuality.V1.
   """
 
-  @discovery_revision "20240609"
+  @discovery_revision "20240901"
 
   def discovery_revision(), do: @discovery_revision
 end
