@@ -40,6 +40,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `defaultPermissionPolicy` (*type:* `String.t`, *default:* `nil`) - The default permission policy for runtime permission requests.
   *   `unmuteMicrophoneDisabled` (*type:* `boolean()`, *default:* `nil`) - If microphone_access is set to any value other than MICROPHONE_ACCESS_UNSPECIFIED, this has no effect. Otherwise this field controls whether microphones are disabled: If true, all microphones are disabled, otherwise they are available. This is available only on fully managed devices.
   *   `createWindowsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether creating windows besides app windows is disabled.
+  *   `assistContentPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether AssistContent (https://developer.android.com/reference/android/app/assist/AssistContent) is allowed to be sent to a privileged app such as an assistant app. AssistContent includes screenshots and information about an app, such as package name. This is supported on Android 15 and above.
   *   `displaySettings` (*type:* `GoogleApi.AndroidManagement.V1.Model.DisplaySettings.t`, *default:* `nil`) - Optional. Controls for the display settings.
   *   `bluetoothDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether bluetooth is disabled. Prefer this setting over bluetooth_config_disabled because bluetooth_config_disabled can be bypassed by the user.
   *   `setUserIconDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether changing the user icon is disabled.
@@ -85,7 +86,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   *   `oncCertificateProviders` (*type:* `list(GoogleApi.AndroidManagement.V1.Model.OncCertificateProvider.t)`, *default:* `nil`) - This feature is not generally available.
   *   `installAppsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether user installation of apps is disabled.
   *   `printingPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether printing is allowed. This is supported on devices running Android 9 and above. .
-  *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - DEPRECATED - Use wifi_config_disabled.
+  *   `wifiConfigsLockdownEnabled` (*type:* `boolean()`, *default:* `nil`) - This is deprecated.
   *   `shareLocationDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether location sharing is disabled. share_location_disabled is supported for both fully managed devices and personally owned work profiles.
   *   `smsDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether sending and receiving SMS messages is disabled.
   *   `usbFileTransferDisabled` (*type:* `boolean()`, *default:* `nil`) - Whether transferring files over USB is disabled. This is supported only on company-owned devices.
@@ -139,6 +140,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
           :defaultPermissionPolicy => String.t() | nil,
           :unmuteMicrophoneDisabled => boolean() | nil,
           :createWindowsDisabled => boolean() | nil,
+          :assistContentPolicy => String.t() | nil,
           :displaySettings => GoogleApi.AndroidManagement.V1.Model.DisplaySettings.t() | nil,
           :bluetoothDisabled => boolean() | nil,
           :setUserIconDisabled => boolean() | nil,
@@ -252,6 +254,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.Policy do
   field(:defaultPermissionPolicy)
   field(:unmuteMicrophoneDisabled)
   field(:createWindowsDisabled)
+  field(:assistContentPolicy)
   field(:displaySettings, as: GoogleApi.AndroidManagement.V1.Model.DisplaySettings)
   field(:bluetoothDisabled)
   field(:setUserIconDisabled)
