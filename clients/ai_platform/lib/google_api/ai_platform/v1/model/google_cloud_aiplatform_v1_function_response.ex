@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FunctionResponse 
   ## Attributes
 
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The name of the function to call. Matches [FunctionDeclaration.name] and [FunctionCall.name].
-  *   `response` (*type:* `map()`, *default:* `nil`) - Required. The function response in JSON object format.
+  *   `response` (*type:* `map()`, *default:* `nil`) - Required. The function response in JSON object format. Use "output" key to specify function output and "error" key to specify error details (if any). If "output" and "error" keys are not specified, then whole "response" is treated as function output.
   """
 
   use GoogleApi.Gax.ModelBase

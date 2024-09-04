@@ -23,7 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
 
   *   `candidatesTokenCount` (*type:* `integer()`, *default:* `nil`) - Number of tokens in the response(s).
   *   `promptTokenCount` (*type:* `integer()`, *default:* `nil`) - Number of tokens in the request. When `cached_content` is set, this is still the total effective prompt size meaning this includes the number of tokens in the cached content.
-  *   `totalTokenCount` (*type:* `integer()`, *default:* `nil`) - 
+  *   `totalTokenCount` (*type:* `integer()`, *default:* `nil`) - Total token count for prompt and response candidates.
   """
 
   use GoogleApi.Gax.ModelBase

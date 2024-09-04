@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
   @moduledoc """
-  Schema is used to define the format of input/output data. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema). More fields may be added in the future as needed.
+  Schema is used to define the format of input/output data. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema-object). More fields may be added in the future as needed.
 
   ## Attributes
 

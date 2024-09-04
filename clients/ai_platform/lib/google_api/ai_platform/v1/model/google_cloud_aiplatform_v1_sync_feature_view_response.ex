@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SyncFeatureViewResponse do
   @moduledoc """
-  Respose message for FeatureOnlineStoreAdminService.SyncFeatureView.
+  Response message for FeatureOnlineStoreAdminService.SyncFeatureView.
 
   ## Attributes
 
