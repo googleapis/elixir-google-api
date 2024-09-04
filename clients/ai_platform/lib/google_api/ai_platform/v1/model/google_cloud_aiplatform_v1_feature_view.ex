@@ -32,6 +32,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `syncConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncConfig.t`, *default:* `nil`) - Configures when data is to be synced/updated for this FeatureView. At the end of the sync the latest featureValues for each entityId of this FeatureView are made ready for online serving.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this FeatureView was last updated.
+  *   `vertexRagSource` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewVertexRagSource.t`, *default:* `nil`) - Optional. The Vertex RAG Source that the FeatureView is linked to.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -53,7 +54,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
           :satisfiesPzs => boolean() | nil,
           :syncConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewSyncConfig.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :vertexRagSource =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewVertexRagSource.t()
+            | nil
         }
 
   field(:bigQuerySource,
@@ -81,6 +85,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
   )
 
   field(:updateTime, as: DateTime)
+
+  field(:vertexRagSource,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewVertexRagSource
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureView do
