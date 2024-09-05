@@ -22,6 +22,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
   ## Attributes
 
   *   `commonCriteriaMode` (*type:* `String.t`, *default:* `nil`) - Controls Common Criteria Mode—security standards defined in the Common Criteria for Information Technology Security Evaluation (https://www.commoncriteriaportal.org/) (CC). Enabling Common Criteria Mode increases certain security components on a device, including AES-GCM encryption of Bluetooth Long Term Keys, and Wi-Fi configuration stores.Common Criteria Mode is only supported on company-owned devices running Android 11 or above.Warning: Common Criteria Mode enforces a strict security model typically only required for IT products used in national security systems and other highly sensitive organizations. Standard device use may be affected. Only enabled if required.
+  *   `contentProtectionPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls whether content protection, which scans for deceptive apps, is enabled. This is supported on Android 15 and above.
   *   `developerSettings` (*type:* `String.t`, *default:* `nil`) - Controls access to developer settings: developer options and safe boot. Replaces safeBootDisabled (deprecated) and debuggingFeaturesAllowed (deprecated).
   *   `googlePlayProtectVerifyApps` (*type:* `String.t`, *default:* `nil`) - Whether Google Play Protect verification (https://support.google.com/accounts/answer/2812853) is enforced. Replaces ensureVerifyAppsEnabled (deprecated).
   *   `mtePolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Controls Memory Tagging Extension (MTE) (https://source.android.com/docs/security/test/memory-safety/arm-mte) on the device. The device needs to be rebooted to apply changes to the MTE policy.
@@ -33,6 +34,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
 
   @type t :: %__MODULE__{
           :commonCriteriaMode => String.t() | nil,
+          :contentProtectionPolicy => String.t() | nil,
           :developerSettings => String.t() | nil,
           :googlePlayProtectVerifyApps => String.t() | nil,
           :mtePolicy => String.t() | nil,
@@ -41,6 +43,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.AdvancedSecurityOverrides do
         }
 
   field(:commonCriteriaMode)
+  field(:contentProtectionPolicy)
   field(:developerSettings)
   field(:googlePlayProtectVerifyApps)
   field(:mtePolicy)
