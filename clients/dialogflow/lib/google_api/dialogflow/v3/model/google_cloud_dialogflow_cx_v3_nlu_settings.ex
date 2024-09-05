@@ -21,7 +21,7 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowCxV3NluSettings do
 
   ## Attributes
 
-  *   `classificationThreshold` (*type:* `number()`, *default:* `nil`) - To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a no-match event will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used.
+  *   `classificationThreshold` (*type:* `number()`, *default:* `nil`) - To filter out false positive results and still get variety in matched natural language inputs for your agent, you can tune the machine learning classification threshold. If the returned score value is less than the threshold value, then a no-match event will be triggered. The score values range from 0.0 (completely uncertain) to 1.0 (completely certain). If set to 0.0, the default of 0.3 is used. You can set a separate classification threshold for the flow in each language enabled for the agent.
   *   `modelTrainingMode` (*type:* `String.t`, *default:* `nil`) - Indicates NLU model training mode.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Indicates the type of NLU model.
   """
