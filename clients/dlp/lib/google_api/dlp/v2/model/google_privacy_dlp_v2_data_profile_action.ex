@@ -23,6 +23,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction do
 
   *   `exportData` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export.t`, *default:* `nil`) - Export data profiles into a provided location.
   *   `pubSubNotification` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification.t`, *default:* `nil`) - Publish a message into the Pub/Sub topic.
+  *   `publishToChronicle` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToChronicle.t`, *default:* `nil`) - Publishes generated data profiles to Google Security Operations. For more information, see [Use Sensitive Data Protection data in context-aware analytics](https://cloud.google.com/chronicle/docs/detection/usecase-dlp-high-risk-user-download).
+  *   `publishToScc` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToSecurityCommandCenter.t`, *default:* `nil`) - Publishes findings to SCC for each data profile.
   *   `tagResources` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources.t`, *default:* `nil`) - Tags the profiled resources with the specified tag values.
   """
 
@@ -32,11 +34,19 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataProfileAction do
           :exportData => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export.t() | nil,
           :pubSubNotification =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification.t() | nil,
+          :publishToChronicle =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToChronicle.t() | nil,
+          :publishToScc =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToSecurityCommandCenter.t() | nil,
           :tagResources => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources.t() | nil
         }
 
   field(:exportData, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Export)
   field(:pubSubNotification, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PubSubNotification)
+  field(:publishToChronicle, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToChronicle)
+
+  field(:publishToScc, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2PublishToSecurityCommandCenter)
+
   field(:tagResources, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TagResources)
 end
 
