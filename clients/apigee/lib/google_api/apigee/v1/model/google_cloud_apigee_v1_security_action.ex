@@ -22,6 +22,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityAction do
   ## Attributes
 
   *   `allow` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionAllow.t`, *default:* `nil`) - Allow a request through if it matches this SecurityAction.
+  *   `apiProxies` (*type:* `list(String.t)`, *default:* `nil`) - Optional. If unset, this would apply to all proxies in the environment. If set, this action is enforced only if at least one proxy in the repeated list is deployed at the time of enforcement. If set, several restrictions are enforced on SecurityActions. There can be at most 100 enabled actions with proxies set in an env. Several other restrictions apply on conditions and are detailed later.
   *   `conditionConfig` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionConditionConfig.t`, *default:* `nil`) - Required. A valid SecurityAction must contain at least one condition.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The create time for this SecurityAction.
   *   `deny` (*type:* `GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionDeny.t`, *default:* `nil`) - Deny a request through if it matches this SecurityAction.
@@ -38,6 +39,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityAction do
 
   @type t :: %__MODULE__{
           :allow => GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionAllow.t() | nil,
+          :apiProxies => list(String.t()) | nil,
           :conditionConfig =>
             GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionConditionConfig.t() | nil,
           :createTime => DateTime.t() | nil,
@@ -52,6 +54,7 @@ defmodule GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityAction do
         }
 
   field(:allow, as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionAllow)
+  field(:apiProxies, type: :list)
 
   field(:conditionConfig,
     as: GoogleApi.Apigee.V1.Model.GoogleCloudApigeeV1SecurityActionConditionConfig
