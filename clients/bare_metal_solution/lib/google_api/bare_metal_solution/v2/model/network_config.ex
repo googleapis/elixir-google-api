@@ -30,8 +30,9 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.NetworkConfig do
   *   `serviceCidr` (*type:* `String.t`, *default:* `nil`) - Service CIDR, if any.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of this network, either Client or Private.
   *   `userNote` (*type:* `String.t`, *default:* `nil`) - User note field, it can be used by customers to add additional information for the BMS Ops team .
-  *   `vlanAttachments` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.IntakeVlanAttachment.t)`, *default:* `nil`) - List of VLAN attachments. As of now there are always 2 attachments, but it is going to change in the future (multi vlan).
+  *   `vlanAttachments` (*type:* `list(GoogleApi.BareMetalSolution.V2.Model.IntakeVlanAttachment.t)`, *default:* `nil`) - List of VLAN attachments. As of now there are always 2 attachments, but it is going to change in the future (multi vlan). Use only one of vlan_attachments or vrf
   *   `vlanSameProject` (*type:* `boolean()`, *default:* `nil`) - Whether the VLAN attachment pair is located in the same project.
+  *   `vrf` (*type:* `String.t`, *default:* `nil`) - Optional. The name of a pre-existing Vrf that the network should be attached to. Format is `vrfs/{vrf}`. If vrf is specified, vlan_attachments must be empty.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +49,8 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.NetworkConfig do
           :userNote => String.t() | nil,
           :vlanAttachments =>
             list(GoogleApi.BareMetalSolution.V2.Model.IntakeVlanAttachment.t()) | nil,
-          :vlanSameProject => boolean() | nil
+          :vlanSameProject => boolean() | nil,
+          :vrf => String.t() | nil
         }
 
   field(:bandwidth)
@@ -67,6 +69,7 @@ defmodule GoogleApi.BareMetalSolution.V2.Model.NetworkConfig do
   )
 
   field(:vlanSameProject)
+  field(:vrf)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BareMetalSolution.V2.Model.NetworkConfig do
