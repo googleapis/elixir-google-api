@@ -21,6 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.RichLinkMetadata do
 
   ## Attributes
 
+  *   `chatSpaceLinkData` (*type:* `GoogleApi.Chat.V1.Model.ChatSpaceLinkData.t`, *default:* `nil`) - Data for a chat space link. [Developer Preview](https://developers.google.com/workspace/preview).
   *   `driveLinkData` (*type:* `GoogleApi.Chat.V1.Model.DriveLinkData.t`, *default:* `nil`) - Data for a drive link.
   *   `richLinkType` (*type:* `String.t`, *default:* `nil`) - The rich link type.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of this link.
@@ -29,11 +30,13 @@ defmodule GoogleApi.Chat.V1.Model.RichLinkMetadata do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :chatSpaceLinkData => GoogleApi.Chat.V1.Model.ChatSpaceLinkData.t() | nil,
           :driveLinkData => GoogleApi.Chat.V1.Model.DriveLinkData.t() | nil,
           :richLinkType => String.t() | nil,
           :uri => String.t() | nil
         }
 
+  field(:chatSpaceLinkData, as: GoogleApi.Chat.V1.Model.ChatSpaceLinkData)
   field(:driveLinkData, as: GoogleApi.Chat.V1.Model.DriveLinkData)
   field(:richLinkType)
   field(:uri)
