@@ -22,6 +22,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
   ## Attributes
 
   *   `authorizedExternalNetworks` (*type:* `list(GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork.t)`, *default:* `nil`) - Optional. A list of external network authorized to access this instance.
+  *   `enableOutboundPublicIp` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling an outbound public IP address to support a database server sending requests out into the internet.
   *   `enablePublicIp` (*type:* `boolean()`, *default:* `nil`) - Optional. Enabling public ip for the instance.
   """
 
@@ -30,11 +31,13 @@ defmodule GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
   @type t :: %__MODULE__{
           :authorizedExternalNetworks =>
             list(GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork.t()) | nil,
+          :enableOutboundPublicIp => boolean() | nil,
           :enablePublicIp => boolean() | nil
         }
 
   field(:authorizedExternalNetworks, as: GoogleApi.AlloyDB.V1.Model.AuthorizedNetwork, type: :list)
 
+  field(:enableOutboundPublicIp)
   field(:enablePublicIp)
 end
 
