@@ -50,6 +50,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   *   `status` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. This subscription type enum states the subscription type of the project.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
+  *   `tlsMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the TLS migration.
   *   `tlsServiceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service with TLS.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
@@ -100,6 +101,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t() | nil,
           :subscriptionType => String.t() | nil,
           :suspended => boolean() | nil,
+          :tlsMigrationState => String.t() | nil,
           :tlsServiceDirectory => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
@@ -153,6 +155,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   field(:status, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus)
   field(:subscriptionType)
   field(:suspended)
+  field(:tlsMigrationState)
   field(:tlsServiceDirectory)
   field(:updateTime, as: DateTime)
 end
