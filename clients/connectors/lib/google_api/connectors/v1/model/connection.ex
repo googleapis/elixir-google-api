@@ -23,6 +23,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
 
   *   `asyncOperationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Async operations enabled for the connection. If Async Operations is enabled, Connection allows the customers to initiate async long running operations using the actions API.
   *   `authConfig` (*type:* `GoogleApi.Connectors.V1.Model.AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
+  *   `authOverrideEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Auth override enabled for the connection. If Auth Override is enabled, Connection allows the backend service auth to be overridden in the entities/actions API.
   *   `billingConfig` (*type:* `GoogleApi.Connectors.V1.Model.BillingConfig.t`, *default:* `nil`) - Output only. Billing config for the connection.
   *   `configVariables` (*type:* `list(GoogleApi.Connectors.V1.Model.ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
   *   `connectionRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Connection revision. This field is only updated when the connection is created or updated by User.
@@ -59,6 +60,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
   @type t :: %__MODULE__{
           :asyncOperationsEnabled => boolean() | nil,
           :authConfig => GoogleApi.Connectors.V1.Model.AuthConfig.t() | nil,
+          :authOverrideEnabled => boolean() | nil,
           :billingConfig => GoogleApi.Connectors.V1.Model.BillingConfig.t() | nil,
           :configVariables => list(GoogleApi.Connectors.V1.Model.ConfigVariable.t()) | nil,
           :connectionRevision => String.t() | nil,
@@ -93,6 +95,7 @@ defmodule GoogleApi.Connectors.V1.Model.Connection do
 
   field(:asyncOperationsEnabled)
   field(:authConfig, as: GoogleApi.Connectors.V1.Model.AuthConfig)
+  field(:authOverrideEnabled)
   field(:billingConfig, as: GoogleApi.Connectors.V1.Model.BillingConfig)
   field(:configVariables, as: GoogleApi.Connectors.V1.Model.ConfigVariable, type: :list)
   field(:connectionRevision)
