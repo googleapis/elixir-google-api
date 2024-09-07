@@ -26,6 +26,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ComputeInstanceBackupProperties do
   *   `disk` (*type:* `list(GoogleApi.BackupDR.V1.Model.AttachedDisk.t)`, *default:* `nil`) - An array of disks that are associated with the instances that are created from these properties.
   *   `guestAccelerator` (*type:* `list(GoogleApi.BackupDR.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of guest accelerator cards' type and count to use for instances created from these properties.
   *   `keyRevocationActionType` (*type:* `String.t`, *default:* `nil`) - KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Labels to apply to instances that are created from these properties.
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The machine type to use for instances that are created from these properties.
   *   `metadata` (*type:* `GoogleApi.BackupDR.V1.Model.Metadata.t`, *default:* `nil`) - The metadata key/value pairs to assign to instances that are created from these properties. These pairs can consist of custom metadata or predefined keys. See https://cloud.google.com/compute/docs/metadata/overview for more information.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such as `minCpuPlatform: Intel Haswell` or `minCpuPlatform: Intel Sandy Bridge`. For more information, read https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
@@ -44,6 +45,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ComputeInstanceBackupProperties do
           :disk => list(GoogleApi.BackupDR.V1.Model.AttachedDisk.t()) | nil,
           :guestAccelerator => list(GoogleApi.BackupDR.V1.Model.AcceleratorConfig.t()) | nil,
           :keyRevocationActionType => String.t() | nil,
+          :labels => map() | nil,
           :machineType => String.t() | nil,
           :metadata => GoogleApi.BackupDR.V1.Model.Metadata.t() | nil,
           :minCpuPlatform => String.t() | nil,
@@ -59,6 +61,7 @@ defmodule GoogleApi.BackupDR.V1.Model.ComputeInstanceBackupProperties do
   field(:disk, as: GoogleApi.BackupDR.V1.Model.AttachedDisk, type: :list)
   field(:guestAccelerator, as: GoogleApi.BackupDR.V1.Model.AcceleratorConfig, type: :list)
   field(:keyRevocationActionType)
+  field(:labels, type: :map)
   field(:machineType)
   field(:metadata, as: GoogleApi.BackupDR.V1.Model.Metadata)
   field(:minCpuPlatform)
