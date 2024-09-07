@@ -25,6 +25,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig do
   *   `authKey` (*type:* `String.t`, *default:* `nil`) - Identifier key for auth config
   *   `authType` (*type:* `String.t`, *default:* `nil`) - The type of authentication configured.
   *   `oauth2AuthCodeFlow` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlow.t`, *default:* `nil`) - Oauth2AuthCodeFlow.
+  *   `oauth2AuthCodeFlowGoogleManaged` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged.t`, *default:* `nil`) - Oauth2AuthCodeFlowGoogleManaged.
   *   `oauth2ClientCredentials` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2ClientCredentials.t`, *default:* `nil`) - Oauth2ClientCredentials.
   *   `oauth2JwtBearer` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2JwtBearer.t`, *default:* `nil`) - Oauth2JwtBearer.
   *   `sshPublicKey` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigSshPublicKey.t`, *default:* `nil`) - SSH Public Key.
@@ -40,6 +41,9 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig do
           :authType => String.t() | nil,
           :oauth2AuthCodeFlow =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlow.t()
+            | nil,
+          :oauth2AuthCodeFlowGoogleManaged =>
+            GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged.t()
             | nil,
           :oauth2ClientCredentials =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2ClientCredentials.t()
@@ -65,6 +69,11 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig do
 
   field(:oauth2AuthCodeFlow,
     as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlow
+  )
+
+  field(:oauth2AuthCodeFlowGoogleManaged,
+    as:
+      GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfigOauth2AuthCodeFlowGoogleManaged
   )
 
   field(:oauth2ClientCredentials,
