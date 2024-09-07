@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionScaling do
 
   ## Attributes
 
-  *   `maxInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of serving instances that this resource should have.
+  *   `maxInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. Maximum number of serving instances that this resource should have. When unspecified, the field is set to the server default value of 100. For more information see https://cloud.google.com/run/docs/configuring/max-instances
   *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. Minimum number of serving instances that this resource should have.
   """
 

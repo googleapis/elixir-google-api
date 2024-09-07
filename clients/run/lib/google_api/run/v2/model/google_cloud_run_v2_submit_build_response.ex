@@ -22,6 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2SubmitBuildResponse do
   ## Attributes
 
   *   `baseImageUri` (*type:* `String.t`, *default:* `nil`) - URI of the base builder image in Artifact Registry being used in the build. Used to opt into automatic base image updates.
+  *   `baseImageWarning` (*type:* `String.t`, *default:* `nil`) - Warning message for the base image.
   *   `buildOperation` (*type:* `GoogleApi.Run.V2.Model.GoogleLongrunningOperation.t`, *default:* `nil`) - Cloud Build operation to be polled via CloudBuild API.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2SubmitBuildResponse do
 
   @type t :: %__MODULE__{
           :baseImageUri => String.t() | nil,
+          :baseImageWarning => String.t() | nil,
           :buildOperation => GoogleApi.Run.V2.Model.GoogleLongrunningOperation.t() | nil
         }
 
   field(:baseImageUri)
+  field(:baseImageWarning)
   field(:buildOperation, as: GoogleApi.Run.V2.Model.GoogleLongrunningOperation)
 end
 
