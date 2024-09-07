@@ -21,15 +21,19 @@ defmodule GoogleApi.GKEHub.V1.Model.IdentityServiceIdentityServiceOptions do
 
   ## Attributes
 
-  *   `sessionDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Determines the lifespan of STS tokens issued by Anthos Identity Service.
+  *   `diagnosticInterface` (*type:* `GoogleApi.GKEHub.V1.Model.IdentityServiceDiagnosticInterface.t`, *default:* `nil`) - Configuration options for the AIS diagnostic interface.
+  *   `sessionDuration` (*type:* `String.t`, *default:* `nil`) - Determines the lifespan of STS tokens issued by Anthos Identity Service.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :diagnosticInterface =>
+            GoogleApi.GKEHub.V1.Model.IdentityServiceDiagnosticInterface.t() | nil,
           :sessionDuration => String.t() | nil
         }
 
+  field(:diagnosticInterface, as: GoogleApi.GKEHub.V1.Model.IdentityServiceDiagnosticInterface)
   field(:sessionDuration)
 end
 
