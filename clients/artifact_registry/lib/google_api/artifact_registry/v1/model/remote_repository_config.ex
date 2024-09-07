@@ -22,6 +22,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig do
   ## Attributes
 
   *   `aptRepository` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.AptRepository.t`, *default:* `nil`) - Specific settings for an Apt remote repository.
+  *   `commonRepository` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.CommonRemoteRepository.t`, *default:* `nil`) - Common remote repository settings. Used as the RR upstream URL instead of Predefined and Custom remote repositories. UI and Gcloud will map all the new remote repositories to this field.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the remote source.
   *   `disableUpstreamValidation` (*type:* `boolean()`, *default:* `nil`) - Input only. A create/update remote repo option to avoid making a HEAD/GET request to validate a remote repo and any supplied upstream credentials.
   *   `dockerRepository` (*type:* `GoogleApi.ArtifactRegistry.V1.Model.DockerRepository.t`, *default:* `nil`) - Specific settings for a Docker remote repository.
@@ -36,6 +37,8 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig do
 
   @type t :: %__MODULE__{
           :aptRepository => GoogleApi.ArtifactRegistry.V1.Model.AptRepository.t() | nil,
+          :commonRepository =>
+            GoogleApi.ArtifactRegistry.V1.Model.CommonRemoteRepository.t() | nil,
           :description => String.t() | nil,
           :disableUpstreamValidation => boolean() | nil,
           :dockerRepository => GoogleApi.ArtifactRegistry.V1.Model.DockerRepository.t() | nil,
@@ -48,6 +51,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.RemoteRepositoryConfig do
         }
 
   field(:aptRepository, as: GoogleApi.ArtifactRegistry.V1.Model.AptRepository)
+  field(:commonRepository, as: GoogleApi.ArtifactRegistry.V1.Model.CommonRemoteRepository)
   field(:description)
   field(:disableUpstreamValidation)
   field(:dockerRepository, as: GoogleApi.ArtifactRegistry.V1.Model.DockerRepository)
