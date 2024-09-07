@@ -27,6 +27,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   *   `internalclientRatelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported for internal requests originating from Connd.
   *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Max Instance Request Conncurrency for Cloud Run service.
   *   `migrateDeploymentModel` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to cloud run deployment model.
+  *   `migrateTls` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to TLS.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Connectors.V1.Model.ResourceLimits.t`, *default:* `nil`) - System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Connectors.V1.Model.ResourceRequests.t`, *default:* `nil`) - System resource requests.
@@ -42,6 +43,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
           :internalclientRatelimitThreshold => String.t() | nil,
           :maxInstanceRequestConcurrency => integer() | nil,
           :migrateDeploymentModel => boolean() | nil,
+          :migrateTls => boolean() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits => GoogleApi.Connectors.V1.Model.ResourceLimits.t() | nil,
           :resourceRequests => GoogleApi.Connectors.V1.Model.ResourceRequests.t() | nil,
@@ -54,6 +56,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   field(:internalclientRatelimitThreshold)
   field(:maxInstanceRequestConcurrency)
   field(:migrateDeploymentModel)
+  field(:migrateTls)
   field(:ratelimitThreshold)
   field(:resourceLimits, as: GoogleApi.Connectors.V1.Model.ResourceLimits)
   field(:resourceRequests, as: GoogleApi.Connectors.V1.Model.ResourceRequests)

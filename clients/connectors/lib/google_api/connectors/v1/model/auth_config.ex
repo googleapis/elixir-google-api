@@ -25,6 +25,7 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
   *   `authKey` (*type:* `String.t`, *default:* `nil`) - Identifier key for auth config
   *   `authType` (*type:* `String.t`, *default:* `nil`) - The type of authentication configured.
   *   `oauth2AuthCodeFlow` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlow.t`, *default:* `nil`) - Oauth2AuthCodeFlow.
+  *   `oauth2AuthCodeFlowGoogleManaged` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlowGoogleManaged.t`, *default:* `nil`) - Oauth2AuthCodeFlowGoogleManaged.
   *   `oauth2ClientCredentials` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials.t`, *default:* `nil`) - Oauth2ClientCredentials.
   *   `oauth2JwtBearer` (*type:* `GoogleApi.Connectors.V1.Model.Oauth2JwtBearer.t`, *default:* `nil`) - Oauth2JwtBearer.
   *   `sshPublicKey` (*type:* `GoogleApi.Connectors.V1.Model.SshPublicKey.t`, *default:* `nil`) - SSH Public Key.
@@ -38,6 +39,8 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
           :authKey => String.t() | nil,
           :authType => String.t() | nil,
           :oauth2AuthCodeFlow => GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlow.t() | nil,
+          :oauth2AuthCodeFlowGoogleManaged =>
+            GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlowGoogleManaged.t() | nil,
           :oauth2ClientCredentials =>
             GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials.t() | nil,
           :oauth2JwtBearer => GoogleApi.Connectors.V1.Model.Oauth2JwtBearer.t() | nil,
@@ -49,6 +52,11 @@ defmodule GoogleApi.Connectors.V1.Model.AuthConfig do
   field(:authKey)
   field(:authType)
   field(:oauth2AuthCodeFlow, as: GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlow)
+
+  field(:oauth2AuthCodeFlowGoogleManaged,
+    as: GoogleApi.Connectors.V1.Model.Oauth2AuthCodeFlowGoogleManaged
+  )
+
   field(:oauth2ClientCredentials, as: GoogleApi.Connectors.V1.Model.Oauth2ClientCredentials)
   field(:oauth2JwtBearer, as: GoogleApi.Connectors.V1.Model.Oauth2JwtBearer)
   field(:sshPublicKey, as: GoogleApi.Connectors.V1.Model.SshPublicKey)
