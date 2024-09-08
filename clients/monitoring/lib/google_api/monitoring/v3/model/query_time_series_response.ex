@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.QueryTimeSeriesResponse do
   @moduledoc """
-  The QueryTimeSeries response.
+  The QueryTimeSeries response. For information about the status of Monitoring Query Language (MQL), see the MQL deprecation notice (https://cloud.google.com/stackdriver/docs/deprecations/mql).
 
   ## Attributes
 
