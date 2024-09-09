@@ -21,7 +21,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.FitDescriptor do
 
   ## Attributes
 
-  *   `fitLevel` (*type:* `String.t`, *default:* `nil`) - Fit level.
+  *   `fitLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Fit level.
   """
 
   use GoogleApi.Gax.ModelBase

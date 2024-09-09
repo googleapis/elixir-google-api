@@ -21,12 +21,12 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ComputeEngineShapeDescriptor do
 
   ## Attributes
 
-  *   `logicalCoreCount` (*type:* `integer()`, *default:* `nil`) - Number of logical cores.
-  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine type.
+  *   `logicalCoreCount` (*type:* `integer()`, *default:* `nil`) - Output only. Number of logical cores.
+  *   `machineType` (*type:* `String.t`, *default:* `nil`) - Output only. Compute Engine machine type.
   *   `memoryMb` (*type:* `integer()`, *default:* `nil`) - Memory in mebibytes.
   *   `physicalCoreCount` (*type:* `integer()`, *default:* `nil`) - Number of physical cores.
-  *   `series` (*type:* `String.t`, *default:* `nil`) - Compute Engine machine series.
-  *   `storage` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.ComputeStorageDescriptor.t)`, *default:* `nil`) - Compute Engine storage. Never empty.
+  *   `series` (*type:* `String.t`, *default:* `nil`) - Output only. Compute Engine machine series.
+  *   `storage` (*type:* `list(GoogleApi.MigrationCenter.V1.Model.ComputeStorageDescriptor.t)`, *default:* `nil`) - Output only. Compute Engine storage. Never empty.
   """
 
   use GoogleApi.Gax.ModelBase
