@@ -21,6 +21,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
 
   ## Attributes
 
+  *   `configurablePerformanceEnabled` (*type:* `boolean()`, *default:* `nil`) - Output only. Indicates whether this instance's performance is configurable. If enabled, adjust it using the 'performance_config' field.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was created.
   *   `deletionProtectionEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the instance is protected against deletion.
   *   `deletionProtectionReason` (*type:* `String.t`, *default:* `nil`) - Optional. The reason for enabling deletion protection.
@@ -31,6 +32,8 @@ defmodule GoogleApi.File.V1.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Resource labels to represent user provided metadata.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`.
   *   `networks` (*type:* `list(GoogleApi.File.V1.Model.NetworkConfig.t)`, *default:* `nil`) - VPC networks to which the instance is connected. For this version, only a single network is supported.
+  *   `performanceConfig` (*type:* `GoogleApi.File.V1.Model.PerformanceConfig.t`, *default:* `nil`) - Optional. Used to configure performance.
+  *   `performanceLimits` (*type:* `GoogleApi.File.V1.Model.PerformanceLimits.t`, *default:* `nil`) - Output only. Used for getting performance limits.
   *   `protocol` (*type:* `String.t`, *default:* `nil`) - Immutable. The protocol indicates the access protocol for all shares in the instance. This field is immutable and it cannot be changed after the instance has been created. Default value: `NFS_V3`.
   *   `replication` (*type:* `GoogleApi.File.V1.Model.Replication.t`, *default:* `nil`) - Optional. Replication configuration.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
@@ -45,6 +48,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :configurablePerformanceEnabled => boolean() | nil,
           :createTime => DateTime.t() | nil,
           :deletionProtectionEnabled => boolean() | nil,
           :deletionProtectionReason => String.t() | nil,
@@ -55,6 +59,8 @@ defmodule GoogleApi.File.V1.Model.Instance do
           :labels => map() | nil,
           :name => String.t() | nil,
           :networks => list(GoogleApi.File.V1.Model.NetworkConfig.t()) | nil,
+          :performanceConfig => GoogleApi.File.V1.Model.PerformanceConfig.t() | nil,
+          :performanceLimits => GoogleApi.File.V1.Model.PerformanceLimits.t() | nil,
           :protocol => String.t() | nil,
           :replication => GoogleApi.File.V1.Model.Replication.t() | nil,
           :satisfiesPzi => boolean() | nil,
@@ -66,6 +72,7 @@ defmodule GoogleApi.File.V1.Model.Instance do
           :tier => String.t() | nil
         }
 
+  field(:configurablePerformanceEnabled)
   field(:createTime, as: DateTime)
   field(:deletionProtectionEnabled)
   field(:deletionProtectionReason)
@@ -76,6 +83,8 @@ defmodule GoogleApi.File.V1.Model.Instance do
   field(:labels, type: :map)
   field(:name)
   field(:networks, as: GoogleApi.File.V1.Model.NetworkConfig, type: :list)
+  field(:performanceConfig, as: GoogleApi.File.V1.Model.PerformanceConfig)
+  field(:performanceLimits, as: GoogleApi.File.V1.Model.PerformanceLimits)
   field(:protocol)
   field(:replication, as: GoogleApi.File.V1.Model.Replication)
   field(:satisfiesPzi)
