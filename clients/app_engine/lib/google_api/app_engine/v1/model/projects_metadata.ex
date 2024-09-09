@@ -24,6 +24,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ProjectsMetadata do
   *   `consumerProjectId` (*type:* `String.t`, *default:* `nil`) - The consumer project id.
   *   `consumerProjectNumber` (*type:* `String.t`, *default:* `nil`) - The consumer project number.
   *   `consumerProjectState` (*type:* `String.t`, *default:* `nil`) - The CCFE state of the consumer project. It is the same state that is communicated to the CLH during project events. Notice that this field is not set in the DB, it is only set in this proto when communicated to CLH in the side channel.
+  *   `gceTag` (*type:* `list(GoogleApi.AppEngine.V1.Model.GceTag.t)`, *default:* `nil`) - The GCE tags associated with the consumer project and those inherited due to their ancestry, if any. Not supported by CCFE.
   *   `p4ServiceAccount` (*type:* `String.t`, *default:* `nil`) - The service account authorized to operate on the consumer project. Note: CCFE only propagates P4SA with default tag to CLH.
   *   `producerProjectId` (*type:* `String.t`, *default:* `nil`) - The producer project id.
   *   `producerProjectNumber` (*type:* `String.t`, *default:* `nil`) - The producer project number.
@@ -37,6 +38,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ProjectsMetadata do
           :consumerProjectId => String.t() | nil,
           :consumerProjectNumber => String.t() | nil,
           :consumerProjectState => String.t() | nil,
+          :gceTag => list(GoogleApi.AppEngine.V1.Model.GceTag.t()) | nil,
           :p4ServiceAccount => String.t() | nil,
           :producerProjectId => String.t() | nil,
           :producerProjectNumber => String.t() | nil,
@@ -47,6 +49,7 @@ defmodule GoogleApi.AppEngine.V1.Model.ProjectsMetadata do
   field(:consumerProjectId)
   field(:consumerProjectNumber)
   field(:consumerProjectState)
+  field(:gceTag, as: GoogleApi.AppEngine.V1.Model.GceTag, type: :list)
   field(:p4ServiceAccount)
   field(:producerProjectId)
   field(:producerProjectNumber)
