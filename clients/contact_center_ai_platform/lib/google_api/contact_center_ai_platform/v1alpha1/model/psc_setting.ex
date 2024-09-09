@@ -22,15 +22,18 @@ defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.PscSetting do
   ## Attributes
 
   *   `allowedConsumerProjectIds` (*type:* `list(String.t)`, *default:* `nil`) - The list of project ids that are allowed to send traffic to the service attachment. This field should be filled only for the ingress components.
+  *   `producerProjectIds` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The CCAIP tenant project ids.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :allowedConsumerProjectIds => list(String.t()) | nil
+          :allowedConsumerProjectIds => list(String.t()) | nil,
+          :producerProjectIds => list(String.t()) | nil
         }
 
   field(:allowedConsumerProjectIds, type: :list)
+  field(:producerProjectIds, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.PscSetting do

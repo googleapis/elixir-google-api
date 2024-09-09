@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.ContactCenterAIPlatform.V1alpha1.Model.Critical do
   @moduledoc """
-  Instances in this Channel will receive updates after all instances in `Critical` were updated + 2 days. They also will only be updated outside of their peak hours.
+  Instances in this Channel will receive updates after all instances in `Normal` were updated. They also will only be updated outside of their peak hours.
 
   ## Attributes
 
