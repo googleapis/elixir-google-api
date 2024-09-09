@@ -21,8 +21,8 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ComputeStorageDescriptor do
 
   ## Attributes
 
-  *   `sizeGb` (*type:* `integer()`, *default:* `nil`) - Disk size in GiB.
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Disk type backing the storage.
+  *   `sizeGb` (*type:* `integer()`, *default:* `nil`) - Output only. Disk size in GiB.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Output only. Disk type backing the storage.
   """
 
   use GoogleApi.Gax.ModelBase
