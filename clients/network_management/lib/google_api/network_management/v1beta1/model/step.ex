@@ -43,6 +43,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   *   `network` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo.t`, *default:* `nil`) - Display information of a Google Cloud network.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Project ID that contains the configuration this step is validating.
   *   `proxyConnection` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t`, *default:* `nil`) - Display information of a ProxyConnection.
+  *   `redisCluster` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.RedisClusterInfo.t`, *default:* `nil`) - Display information of a Redis Cluster.
   *   `redisInstance` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.RedisInstanceInfo.t`, *default:* `nil`) - Display information of a Redis Instance.
   *   `route` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t`, *default:* `nil`) - Display information of a Compute Engine route.
   *   `serverlessNeg` (*type:* `GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo.t`, *default:* `nil`) - Display information of a Serverless network endpoint group backend. Used only for return traces.
@@ -84,6 +85,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
           :projectId => String.t() | nil,
           :proxyConnection =>
             GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo.t() | nil,
+          :redisCluster => GoogleApi.NetworkManagement.V1beta1.Model.RedisClusterInfo.t() | nil,
           :redisInstance => GoogleApi.NetworkManagement.V1beta1.Model.RedisInstanceInfo.t() | nil,
           :route => GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo.t() | nil,
           :serverlessNeg => GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo.t() | nil,
@@ -120,6 +122,7 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.Step do
   field(:network, as: GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo)
   field(:projectId)
   field(:proxyConnection, as: GoogleApi.NetworkManagement.V1beta1.Model.ProxyConnectionInfo)
+  field(:redisCluster, as: GoogleApi.NetworkManagement.V1beta1.Model.RedisClusterInfo)
   field(:redisInstance, as: GoogleApi.NetworkManagement.V1beta1.Model.RedisInstanceInfo)
   field(:route, as: GoogleApi.NetworkManagement.V1beta1.Model.RouteInfo)
   field(:serverlessNeg, as: GoogleApi.NetworkManagement.V1beta1.Model.ServerlessNegInfo)
