@@ -21,6 +21,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   ## Attributes
 
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the property. Could be used to provide more information about the property for model calls.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User defined name for the property.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the property. Follows the same guidelines as the EntityType name.
   *   `occurrenceType` (*type:* `String.t`, *default:* `nil`) - Occurrence type limits the number of instances an entity type appears in the document.
@@ -31,6 +32,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :description => String.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil,
           :occurrenceType => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
           :valueType => String.t() | nil
         }
 
+  field(:description)
   field(:displayName)
   field(:name)
   field(:occurrenceType)

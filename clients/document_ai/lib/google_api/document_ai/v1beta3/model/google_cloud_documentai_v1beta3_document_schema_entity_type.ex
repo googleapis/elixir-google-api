@@ -22,6 +22,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
   ## Attributes
 
   *   `baseTypes` (*type:* `list(String.t)`, *default:* `nil`) - The entity type that this type is derived from. For now, one and only one should be set.
+  *   `description` (*type:* `String.t`, *default:* `nil`) - The description of the entity type. Could be used to provide more information about the entity type for model calls.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User defined name for the type.
   *   `entityTypeMetadata` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityTypeMetadata.t`, *default:* `nil`) - Metadata for the entity type.
   *   `enumValues` (*type:* `GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3DocumentSchemaEntityTypeEnumValues.t`, *default:* `nil`) - If specified, lists all the possible values for this entity. This should not be more than a handful of values. If the number of values is >10 or could change frequently use the `EntityType.value_ontology` field and specify a list of all possible values in a value ontology file.
@@ -33,6 +34,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
 
   @type t :: %__MODULE__{
           :baseTypes => list(String.t()) | nil,
+          :description => String.t() | nil,
           :displayName => String.t() | nil,
           :entityTypeMetadata =>
             GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3EntityTypeMetadata.t()
@@ -49,6 +51,7 @@ defmodule GoogleApi.DocumentAI.V1beta3.Model.GoogleCloudDocumentaiV1beta3Documen
         }
 
   field(:baseTypes, type: :list)
+  field(:description)
   field(:displayName)
 
   field(:entityTypeMetadata,
