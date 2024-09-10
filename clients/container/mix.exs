@@ -18,7 +18,7 @@
 defmodule GoogleApi.Container.Mixfile do
   use Mix.Project
 
-  @version "0.48.0"
+  @version "0.49.0"
 
   def project() do
     [
@@ -59,7 +59,7 @@ defmodule GoogleApi.Container.Mixfile do
       licenses: ["Apache-2.0"],
       links: %{
         "GitHub" => "https://github.com/googleapis/elixir-google-api/tree/master/clients/container",
-        "Homepage" => "https://cloud.google.com/container-engine/"
+        "Homepage" => "https://cloud.google.com/kubernetes-engine/docs/"
       }
     ]
   end
