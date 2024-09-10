@@ -80,6 +80,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredNodeKubeletConfig` (*type:* `GoogleApi.Container.V1.Model.NodeKubeletConfig.t`, *default:* `nil`) - The desired node kubelet config for the cluster.
   *   `desiredDatabaseEncryption` (*type:* `GoogleApi.Container.V1.Model.DatabaseEncryption.t`, *default:* `nil`) - Configuration of etcd encryption.
   *   `desiredNetworkPerformanceConfig` (*type:* `GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t`, *default:* `nil`) - The desired network performance config.
+  *   `desiredCompliancePostureConfig` (*type:* `GoogleApi.Container.V1.Model.CompliancePostureConfig.t`, *default:* `nil`) - Enable/Disable Compliance Posture features for the cluster.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -167,7 +168,9 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredNodeKubeletConfig => GoogleApi.Container.V1.Model.NodeKubeletConfig.t() | nil,
           :desiredDatabaseEncryption => GoogleApi.Container.V1.Model.DatabaseEncryption.t() | nil,
           :desiredNetworkPerformanceConfig =>
-            GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t() | nil
+            GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig.t() | nil,
+          :desiredCompliancePostureConfig =>
+            GoogleApi.Container.V1.Model.CompliancePostureConfig.t() | nil
         }
 
   field(:desiredNodePoolLoggingConfig, as: GoogleApi.Container.V1.Model.NodePoolLoggingConfig)
@@ -264,6 +267,8 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   field(:desiredNetworkPerformanceConfig,
     as: GoogleApi.Container.V1.Model.ClusterNetworkPerformanceConfig
   )
+
+  field(:desiredCompliancePostureConfig, as: GoogleApi.Container.V1.Model.CompliancePostureConfig)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.ClusterUpdate do

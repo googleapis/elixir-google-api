@@ -53,6 +53,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `secretManagerConfig` (*type:* `GoogleApi.Container.V1.Model.SecretManagerConfig.t`, *default:* `nil`) - Secret CSI driver configuration.
   *   `defaultMaxPodsConstraint` (*type:* `GoogleApi.Container.V1.Model.MaxPodsConstraint.t`, *default:* `nil`) - The default constraint on the maximum number of pods that can be run simultaneously on a node in the node pool of this cluster. Only honored if cluster created with IP Alias support.
   *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
+  *   `compliancePostureConfig` (*type:* `GoogleApi.Container.V1.Model.CompliancePostureConfig.t`, *default:* `nil`) - Enable/Disable Compliance Posture features for the cluster.
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the cluster is connected.
   *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration. If left unspecified on cluster creation and a version is specified, the cluster is enrolled in the most mature release channel where the version is available (first checking STABLE, then REGULAR, and finally RAPID). Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version.
@@ -132,6 +133,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :secretManagerConfig => GoogleApi.Container.V1.Model.SecretManagerConfig.t() | nil,
           :defaultMaxPodsConstraint => GoogleApi.Container.V1.Model.MaxPodsConstraint.t() | nil,
           :clusterIpv4Cidr => String.t() | nil,
+          :compliancePostureConfig =>
+            GoogleApi.Container.V1.Model.CompliancePostureConfig.t() | nil,
           :expireTime => String.t() | nil,
           :subnetwork => String.t() | nil,
           :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
@@ -209,6 +212,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:secretManagerConfig, as: GoogleApi.Container.V1.Model.SecretManagerConfig)
   field(:defaultMaxPodsConstraint, as: GoogleApi.Container.V1.Model.MaxPodsConstraint)
   field(:clusterIpv4Cidr)
+  field(:compliancePostureConfig, as: GoogleApi.Container.V1.Model.CompliancePostureConfig)
   field(:expireTime)
   field(:subnetwork)
   field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)

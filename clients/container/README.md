@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_container, "~> 0.48"}]
+  [{:google_api_container, "~> 0.49"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/container-engine/](https://cloud.google.com/container-engine/).
+Product documentation is available at [https://cloud.google.com/kubernetes-engine/docs/](https://cloud.google.com/kubernetes-engine/docs/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_container](https://hexdocs.pm/google_api_container).
