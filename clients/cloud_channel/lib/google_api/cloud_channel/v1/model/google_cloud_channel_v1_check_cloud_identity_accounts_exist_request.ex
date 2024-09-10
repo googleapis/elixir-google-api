@@ -21,8 +21,8 @@ defmodule GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1CheckCloudIdentity
 
   ## Attributes
 
-  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Domain to fetch for Cloud Identity account customers, including domained and domainless.
-  *   `primaryAdminEmail` (*type:* `String.t`, *default:* `nil`) - Optional. Primary admin email to fetch for Cloud Identity account domainless customer.
+  *   `domain` (*type:* `String.t`, *default:* `nil`) - Required. Domain to fetch for Cloud Identity account customers, including domain and team customers. For team customers, please use the domain for their emails.
+  *   `primaryAdminEmail` (*type:* `String.t`, *default:* `nil`) - Optional. Primary admin email to fetch for Cloud Identity account team customer.
   """
 
   use GoogleApi.Gax.ModelBase
