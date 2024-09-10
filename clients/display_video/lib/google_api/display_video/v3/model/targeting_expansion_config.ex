@@ -23,7 +23,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.TargetingExpansionConfig do
 
   *   `audienceExpansionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Magnitude of expansion for eligible first-party user lists under this ad group. This field only applies to YouTube and Partners line item and ad group resources.
   *   `audienceExpansionSeedListExcluded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether to exclude seed list for audience expansion. This field only applies to YouTube and Partners line item and ad group resources.
-  *   `enableOptimizedTargeting` (*type:* `boolean()`, *default:* `nil`) - Required. Whether to enable Optimized Targeting for the line item.
+  *   `enableOptimizedTargeting` (*type:* `boolean()`, *default:* `nil`) - Required. Whether to enable Optimized Targeting for the line item. *Warning*: Starting on **September 30, 2024**, optimized targeting will no longer be compatible with a subset of bid strategies. [Read more about this announced change](/display-video/api/deprecations#features.ot_bid_strategies).
   """
 
   use GoogleApi.Gax.ModelBase
