@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
   ## Attributes
 
   *   `answerGenerationSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestAnswerGenerationSpec.t`, *default:* `nil`) - Answer generation specification.
-  *   `asynchronousMode` (*type:* `boolean()`, *default:* `nil`) - Asynchronous mode control. If enabled, the response will be returned with answer/session resource name without final answer. The API users need to do the polling to get the latest status of answer/session by calling ConversationalSearchService.GetAnswer or ConversationalSearchService.GetSession method.
+  *   `asynchronousMode` (*type:* `boolean()`, *default:* `nil`) - Deprecated: This field is deprecated. Streaming Answer API will be supported. Asynchronous mode control. If enabled, the response will be returned with answer/session resource name without final answer. The API users need to do the polling to get the latest status of answer/session by calling ConversationalSearchService.GetAnswer or ConversationalSearchService.GetSession method.
   *   `query` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Query.t`, *default:* `nil`) - Required. Current user query.
   *   `queryUnderstandingSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestQueryUnderstandingSpec.t`, *default:* `nil`) - Query understanding specification.
   *   `relatedQuestionsSpec` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestRelatedQuestionsSpec.t`, *default:* `nil`) - Related questions specification.

@@ -23,17 +23,26 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
 
   *   `chunk` (*type:* `String.t`, *default:* `nil`) - Chunk resource name.
   *   `content` (*type:* `String.t`, *default:* `nil`) - Chunk textual content.
+  *   `documentMetadata` (*type:* `GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata.t`, *default:* `nil`) - Metadata of the document from the current chunk.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :chunk => String.t() | nil,
-          :content => String.t() | nil
+          :content => String.t() | nil,
+          :documentMetadata =>
+            GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata.t()
+            | nil
         }
 
   field(:chunk)
   field(:content)
+
+  field(:documentMetadata,
+    as:
+      GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQueryRequestSearchSpecSearchResultListSearchResultChunkInfoDocumentMetadata
+  )
 end
 
 defimpl Poison.Decoder,

@@ -1879,7 +1879,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1960,7 +1960,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2032,7 +2032,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2109,7 +2109,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2273,7 +2273,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2352,7 +2352,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2431,7 +2431,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2503,7 +2503,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2580,7 +2580,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3745,7 +3745,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3822,7 +3822,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4142,7 +4142,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4221,7 +4221,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4293,7 +4293,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4370,7 +4370,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4536,7 +4536,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6048,7 +6048,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the catalog under which the events are created. The format is `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the catalog under which the events are created. The format is `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6507,7 +6507,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Immutable. The fully qualified resource name of the engine. This field must be a UTF-8 encoded string with a length limit of 1024 characters. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}` engine should be 1-63 characters, and valid characters are /a-z0-9*/. Otherwise, an INVALID_ARGUMENT error is returned.
+  *   `name` (*type:* `String.t`) - Immutable. The fully qualified resource name of the engine. This field must be a UTF-8 encoded string with a length limit of 1024 characters. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}` engine should be 1-63 characters, and valid characters are /a-z0-9*/. Otherwise, an INVALID_ARGUMENT error is returned.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6584,7 +6584,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the engine to pause. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the engine to pause. Format: `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6659,7 +6659,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The name of the engine to resume. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+  *   `name` (*type:* `String.t`) - Required. The name of the engine to resume. Format: `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6734,7 +6734,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the engine to tune. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the engine to tune. Format: `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6808,7 +6808,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6889,7 +6889,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -6961,7 +6961,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7038,7 +7038,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7202,7 +7202,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7281,7 +7281,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7360,7 +7360,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7432,7 +7432,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7509,7 +7509,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7909,7 +7909,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -7986,7 +7986,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8306,7 +8306,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8385,7 +8385,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8457,7 +8457,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8534,7 +8534,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -8700,7 +8700,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10483,7 +10483,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10564,7 +10564,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to delete. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10636,7 +10636,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Control to get. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}/controls/{control_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10713,7 +10713,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`.
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}` or `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10877,7 +10877,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`. Use `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/-` to activate auto session mode, which automatically creates a new conversation inside a ConverseConversation session.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -10956,7 +10956,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11035,7 +11035,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11107,7 +11107,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Conversation to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/conversations/{conversation_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -11184,7 +11184,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12117,7 +12117,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the ServingConfig to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/servingConfigs/{serving_config_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12194,7 +12194,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project_number}/locations/{location}/collections/{collection}/engines/{engine}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of the parent resource. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12514,7 +12514,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. Full resource name of parent data store. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12593,7 +12593,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to delete. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12665,7 +12665,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Session to get. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}/sessions/{session_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12742,7 +12742,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/dataStores/{data_store_id}`
+  *   `parent` (*type:* `String.t`) - Required. The data store resource name. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -12908,7 +12908,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project_number}/locations/{location_id}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
+  *   `name` (*type:* `String.t`) - Required. The resource name of the Answer to get. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine_id}/sessions/{session_id}/answers/{answer_id}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -13955,7 +13955,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The resource name of the catalog under which the events are created. The format is `projects/${projectId}/locations/global/collections/{$collectionId}/dataStores/${dataStoreId}`
+  *   `parent` (*type:* `String.t`) - Required. The resource name of the catalog under which the events are created. The format is `projects/{project}/locations/global/collections/{collection}/dataStores/{dataStore}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -14729,7 +14729,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Connection.t`) - Connection to server
-  *   `ranking_config` (*type:* `String.t`) - Required. The resource name of the rank service config, such as `projects/{project_num}/locations/{location_id}/rankingConfigs/default_ranking_config`.
+  *   `ranking_config` (*type:* `String.t`) - Required. The resource name of the rank service config, such as `projects/{project_num}/locations/{location}/rankingConfigs/default_ranking_config`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

@@ -26,7 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1CustomT
   *   `metrics` (*type:* `map()`, *default:* `nil`) - The metrics of the trained model.
   *   `modelState` (*type:* `String.t`, *default:* `nil`) - The state that the model is in (e.g.`TRAINING` or `TRAINING_FAILED`).
   *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - The version of the model.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified resource name of the model. Format: `projects/{project_number}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}` model must be an alpha-numerical string with limit of 40 characters.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The fully qualified resource name of the model. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/customTuningModels/{custom_tuning_model}`. Model must be an alpha-numerical string with limit of 40 characters.
   *   `trainingStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp the model training was initiated.
   """
 

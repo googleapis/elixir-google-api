@@ -22,7 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this project is created.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full resource name of the project, for example `projects/{project_number}`. Note that when making requests, project number and project id are both acceptable, but the server will always respond in project number.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Full resource name of the project, for example `projects/{project}`. Note that when making requests, project number and project id are both acceptable, but the server will always respond in project number.
   *   `provisionCompletionTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp when this project is successfully provisioned. Empty value means this project is still provisioning and is not ready for use.
   *   `serviceTermsMap` (*type:* `%{optional(String.t) => GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaProjectServiceTerms.t}`, *default:* `nil`) - Output only. A map of terms of services. The key is the `id` of ServiceTerms.
   """

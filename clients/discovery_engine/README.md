@@ -11,13 +11,13 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_discovery_engine, "~> 0.15"}]
+  [{:google_api_discovery_engine, "~> 0.16"}]
 end
 ```
 
 ## For more information
 
-Product documentation is available at [https://cloud.google.com/discovery-engine/docs](https://cloud.google.com/discovery-engine/docs).
+Product documentation is available at [https://cloud.google.com/generative-ai-app-builder/docs/](https://cloud.google.com/generative-ai-app-builder/docs/).
 
 Library reference documentation is published on Hexdocs at
 [https://hexdocs.pm/google_api_discovery_engine](https://hexdocs.pm/google_api_discovery_engine).

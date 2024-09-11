@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
 
   ## Attributes
 
-  *   `engine` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the engine that this tune applies to. Format: `projects/{project_number}/locations/{location_id}/collections/{collection_id}/engines/{engine_id}`
+  *   `engine` (*type:* `String.t`, *default:* `nil`) - Required. The resource name of the engine that this tune applies to. Format: `projects/{project}/locations/{location}/collections/{collection_id}/engines/{engine_id}`
   """
 
   use GoogleApi.Gax.ModelBase

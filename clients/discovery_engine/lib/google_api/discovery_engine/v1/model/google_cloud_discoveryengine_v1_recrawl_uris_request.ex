@@ -21,15 +21,18 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1Recrawl
 
   ## Attributes
 
+  *   `siteCredential` (*type:* `String.t`, *default:* `nil`) - Optional. Full resource name of the SiteCredential, such as `projects/*/locations/*/collections/*/dataStores/*/siteSearchEngine/siteCredentials/*`. Only set to crawl private URIs.
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - Required. List of URIs to crawl. At most 10K URIs are supported, otherwise an INVALID_ARGUMENT error is thrown. Each URI should match at least one TargetSite in `site_search_engine`.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :siteCredential => String.t() | nil,
           :uris => list(String.t()) | nil
         }
 
+  field(:siteCredential)
   field(:uris, type: :list)
 end
 
