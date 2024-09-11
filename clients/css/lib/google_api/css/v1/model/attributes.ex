@@ -43,6 +43,7 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - The item's pattern (e.g. polka dots).
   *   `cppAdsRedirect` (*type:* `String.t`, *default:* `nil`) - Allows advertisers to override the item URL when the product is shown within the context of Product Ads.
   *   `headlineOfferLink` (*type:* `String.t`, *default:* `nil`) - Link to the headline offer.
+  *   `headlineOfferInstallment` (*type:* `GoogleApi.CSS.V1.Model.HeadlineOfferInstallment.t`, *default:* `nil`) - Number and amount of installments to pay for an item.
   *   `highPrice` (*type:* `GoogleApi.CSS.V1.Model.Price.t`, *default:* `nil`) - High Price of the aggregate offer.
   *   `numberOfOffers` (*type:* `String.t`, *default:* `nil`) - The number of aggregate offers.
   *   `productTypes` (*type:* `list(String.t)`, *default:* `nil`) - Categories of the item (formatted as in [products data specification](https://support.google.com/merchants/answer/6324406)).
@@ -67,6 +68,7 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   *   `cppLink` (*type:* `String.t`, *default:* `nil`) - URL directly linking to your the Product Detail Page of the CSS.
   *   `brand` (*type:* `String.t`, *default:* `nil`) - Product Related Attributes.[14-36] Brand of the item.
   *   `sizeTypes` (*type:* `list(String.t)`, *default:* `nil`) - The cut of the item. It can be used to represent combined size types for apparel items. Maximum two of size types can be provided (see [https://support.google.com/merchants/answer/6324497](size type)).
+  *   `headlineOfferSubscriptionCost` (*type:* `GoogleApi.CSS.V1.Model.HeadlineOfferSubscriptionCost.t`, *default:* `nil`) - Number of periods (months or years) and amount of payment per period for an item with an associated subscription contract.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Title of the item.
   *   `gender` (*type:* `String.t`, *default:* `nil`) - Target gender of the item.
   """
@@ -96,6 +98,7 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
           :pattern => String.t() | nil,
           :cppAdsRedirect => String.t() | nil,
           :headlineOfferLink => String.t() | nil,
+          :headlineOfferInstallment => GoogleApi.CSS.V1.Model.HeadlineOfferInstallment.t() | nil,
           :highPrice => GoogleApi.CSS.V1.Model.Price.t() | nil,
           :numberOfOffers => String.t() | nil,
           :productTypes => list(String.t()) | nil,
@@ -120,6 +123,8 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
           :cppLink => String.t() | nil,
           :brand => String.t() | nil,
           :sizeTypes => list(String.t()) | nil,
+          :headlineOfferSubscriptionCost =>
+            GoogleApi.CSS.V1.Model.HeadlineOfferSubscriptionCost.t() | nil,
           :title => String.t() | nil,
           :gender => String.t() | nil
         }
@@ -146,6 +151,7 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   field(:pattern)
   field(:cppAdsRedirect)
   field(:headlineOfferLink)
+  field(:headlineOfferInstallment, as: GoogleApi.CSS.V1.Model.HeadlineOfferInstallment)
   field(:highPrice, as: GoogleApi.CSS.V1.Model.Price)
   field(:numberOfOffers)
   field(:productTypes, type: :list)
@@ -170,6 +176,7 @@ defmodule GoogleApi.CSS.V1.Model.Attributes do
   field(:cppLink)
   field(:brand)
   field(:sizeTypes, type: :list)
+  field(:headlineOfferSubscriptionCost, as: GoogleApi.CSS.V1.Model.HeadlineOfferSubscriptionCost)
   field(:title)
   field(:gender)
 end
