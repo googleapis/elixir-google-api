@@ -75,7 +75,7 @@ defmodule GoogleApi.CivicInfo.V2.Api.Divisions do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/civicinfo/v2/divisions", %{})
+      |> Request.url("/civicinfo/v2/divisionsByAddress", %{})
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
