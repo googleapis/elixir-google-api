@@ -31,7 +31,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The resource that owns the locations collection, if applicable.
+  *   `name` (*type:* `String.t`) - The resource that owns the locations collection, if applicable.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -59,12 +59,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def vpcaccess_projects_locations_list(
-        connection,
-        projects_id,
-        optional_params \\ [],
-        opts \\ []
-      ) do
+  def vpcaccess_projects_locations_list(connection, name, optional_params \\ [], opts \\ []) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -85,8 +80,8 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}/locations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -102,8 +97,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project ID and location in which the configuration should be created, specified in the format `projects/*/locations/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project ID and location in which the configuration should be created, specified in the format `projects/*/locations/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -128,7 +122,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_connectors_create(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -138,8 +131,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_connectors_create(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -162,9 +154,8 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/connectors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/connectors", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -180,9 +171,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of a Serverless VPC Access connector to delete.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `connectors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of a Serverless VPC Access connector to delete.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -205,8 +194,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_connectors_delete(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -216,9 +203,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_connectors_delete(
         connection,
-        projects_id,
-        locations_id,
-        connectors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -239,14 +224,9 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:delete)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/connectors/{connectorsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "connectorsId" => URI.encode(connectors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -261,9 +241,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. Required. Name of a Serverless VPC Access connector to get.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `connectors_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - Required. Name of a Serverless VPC Access connector to get.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -286,8 +264,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_connectors_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -297,9 +273,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_connectors_get(
         connection,
-        projects_id,
-        locations_id,
-        connectors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -320,14 +294,9 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/connectors/{connectorsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "connectorsId" => URI.encode(connectors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -342,8 +311,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `parent`. Required. The project and location from which the routes should be listed.
-  *   `locations_id` (*type:* `String.t`) - Part of `parent`. See documentation of `projectsId`.
+  *   `parent` (*type:* `String.t`) - Required. The project and location from which the routes should be listed.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -368,7 +336,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_connectors_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -378,8 +345,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_connectors_list(
         connection,
-        projects_id,
-        locations_id,
+        parent,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -402,9 +368,8 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/connectors", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+parent}/connectors", %{
+        "parent" => URI.encode(parent, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
@@ -420,9 +385,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `connector.name`. The resource name in the format `projects/*/locations/*/connectors/*`.
-  *   `locations_id` (*type:* `String.t`) - Part of `connector.name`. See documentation of `projectsId`.
-  *   `connectors_id` (*type:* `String.t`) - Part of `connector.name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The resource name in the format `projects/*/locations/*/connectors/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -447,8 +410,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_connectors_patch(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -458,9 +419,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_connectors_patch(
         connection,
-        projects_id,
-        locations_id,
-        connectors_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -483,14 +442,9 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:patch)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/connectors/{connectorsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "connectorsId" => URI.encode(connectors_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -505,9 +459,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
-  *   `operations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -530,8 +482,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_operations_get(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -541,9 +491,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_operations_get(
         connection,
-        projects_id,
-        locations_id,
-        operations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -564,14 +512,9 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url(
-        "/v1/projects/{projectsId}/locations/{locationsId}/operations/{operationsId}",
-        %{
-          "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-          "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1),
-          "operationsId" => URI.encode(operations_id, &(URI.char_unreserved?(&1) || &1 == ?/))
-        }
-      )
+      |> Request.url("/v1/{+name}", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
+      })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
 
@@ -586,8 +529,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.VPCAccess.V1.Connection.t`) - Connection to server
-  *   `projects_id` (*type:* `String.t`) - Part of `name`. The name of the operation's parent resource.
-  *   `locations_id` (*type:* `String.t`) - Part of `name`. See documentation of `projectsId`.
+  *   `name` (*type:* `String.t`) - The name of the operation's parent resource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -613,7 +555,6 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
   @spec vpcaccess_projects_locations_operations_list(
           Tesla.Env.client(),
           String.t(),
-          String.t(),
           keyword(),
           keyword()
         ) ::
@@ -623,8 +564,7 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
           | {:error, any()}
   def vpcaccess_projects_locations_operations_list(
         connection,
-        projects_id,
-        locations_id,
+        name,
         optional_params \\ [],
         opts \\ []
       ) do
@@ -648,9 +588,8 @@ defmodule GoogleApi.VPCAccess.V1.Api.Projects do
     request =
       Request.new()
       |> Request.method(:get)
-      |> Request.url("/v1/projects/{projectsId}/locations/{locationsId}/operations", %{
-        "projectsId" => URI.encode(projects_id, &URI.char_unreserved?/1),
-        "locationsId" => URI.encode(locations_id, &URI.char_unreserved?/1)
+      |> Request.url("/v1/{+name}/operations", %{
+        "name" => URI.encode(name, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
       |> Request.library_version(@library_version)
