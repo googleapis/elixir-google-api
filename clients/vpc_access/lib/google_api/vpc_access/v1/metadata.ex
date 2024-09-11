@@ -20,7 +20,7 @@ defmodule GoogleApi.VPCAccess.V1 do
   API client metadata for GoogleApi.VPCAccess.V1.
   """
 
-  @discovery_revision "20240229"
+  @discovery_revision "20240905"
 
   def discovery_revision(), do: @discovery_revision
 end
