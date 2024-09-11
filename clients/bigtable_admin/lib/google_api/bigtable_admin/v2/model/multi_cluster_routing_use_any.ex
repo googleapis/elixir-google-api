@@ -22,15 +22,18 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny do
   ## Attributes
 
   *   `clusterIds` (*type:* `list(String.t)`, *default:* `nil`) - The set of clusters to route to. The order is ignored; clusters will be tried in order of distance. If left empty, all clusters are eligible.
+  *   `rowAffinity` (*type:* `GoogleApi.BigtableAdmin.V2.Model.RowAffinity.t`, *default:* `nil`) - Row affinity sticky routing based on the row key of the request. Requests that span multiple rows are routed non-deterministically.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :clusterIds => list(String.t()) | nil
+          :clusterIds => list(String.t()) | nil,
+          :rowAffinity => GoogleApi.BigtableAdmin.V2.Model.RowAffinity.t() | nil
         }
 
   field(:clusterIds, type: :list)
+  field(:rowAffinity, as: GoogleApi.BigtableAdmin.V2.Model.RowAffinity)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.BigtableAdmin.V2.Model.MultiClusterRoutingUseAny do
