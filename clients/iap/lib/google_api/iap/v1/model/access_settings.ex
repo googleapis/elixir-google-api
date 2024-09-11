@@ -26,7 +26,7 @@ defmodule GoogleApi.IAP.V1.Model.AccessSettings do
   *   `gcipSettings` (*type:* `GoogleApi.IAP.V1.Model.GcipSettings.t`, *default:* `nil`) - Optional. GCIP claims and endpoint configurations for 3p identity providers.
   *   `identitySources` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Identity sources that IAP can use to authenticate the end user. Only one identity source can be configured.
   *   `oauthSettings` (*type:* `GoogleApi.IAP.V1.Model.OAuthSettings.t`, *default:* `nil`) - Optional. Settings to configure IAP's OAuth behavior.
-  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Optional. Settings to configure Policy delegation for apps hosted in tenant projects. INTERNAL_ONLY.
+  *   `policyDelegationSettings` (*type:* `GoogleApi.IAP.V1.Model.PolicyDelegationSettings.t`, *default:* `nil`) - Optional. Settings to allow google-internal teams to use IAP for apps hosted in a tenant project.
   *   `reauthSettings` (*type:* `GoogleApi.IAP.V1.Model.ReauthSettings.t`, *default:* `nil`) - Optional. Settings to configure reauthentication policies in IAP.
   *   `workforceIdentitySettings` (*type:* `GoogleApi.IAP.V1.Model.WorkforceIdentitySettings.t`, *default:* `nil`) - Optional. Settings to configure the workforce identity federation, including workforce pools and OAuth 2.0 settings.
   """
