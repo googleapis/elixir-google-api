@@ -22,6 +22,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
   ## Attributes
 
   *   `ignoreAdversarialQuery` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out adversarial queries. The default value is `false`. Google employs search-query classification to detect adversarial queries. No summary is returned if the search query is classified as an adversarial query. For example, a user might ask a question regarding negative comments about the company or submit a query designed to generate unsafe, policy-violating output. If this field is set to `true`, we skip generating summaries for adversarial queries and return fallback messages instead.
+  *   `ignoreJailBreakingQuery` (*type:* `boolean()`, *default:* `nil`) - Optional. Specifies whether to filter out jail-breaking queries. The default value is `false`. Google employs search-query classification to detect jail-breaking queries. No summary is returned if the search query is classified as a jail-breaking query. A user might add instructions to the query to change the tone, style, language, content of the answer, or ask the model to act as a different entity, e.g. "Reply in the tone of a competing company's CEO". If this field is set to `true`, we skip generating summaries for jail-breaking queries and return fallback messages instead.
   *   `ignoreLowRelevantContent` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out queries that have low relevance. The default value is `false`. If this field is set to `false`, all search results are used regardless of relevance to generate answers. If set to `true`, only queries with high relevance search results will generate answers.
   *   `ignoreNonSummarySeekingQuery` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to filter out queries that are not summary-seeking. The default value is `false`. Google employs search-query classification to detect summary-seeking queries. No summary is returned if the search query is classified as a non-summary seeking query. For example, `why is the sky blue` and `Who is the best soccer player in the world?` are summary-seeking queries, but `SFO airport` and `world cup 2026` are not. They are most likely navigational queries. If this field is set to `true`, we skip generating summaries for non-summary seeking queries and return fallback messages instead.
   *   `includeCitations` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to include citations in the summary. The default value is `false`. When this field is set to `true`, summaries include in-line citation numbers. Example summary including citations: BigQuery is Google Cloud's fully managed and completely serverless enterprise data warehouse [1]. BigQuery supports all data types, works across clouds, and has built-in machine learning and business intelligence, all within a unified platform [2, 3]. The citation numbers refer to the returned search results and are 1-indexed. For example, [1] means that the sentence is attributed to the first search result. [2, 3] means that the sentence is attributed to both the second and third search results.
@@ -36,6 +37,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
 
   @type t :: %__MODULE__{
           :ignoreAdversarialQuery => boolean() | nil,
+          :ignoreJailBreakingQuery => boolean() | nil,
           :ignoreLowRelevantContent => boolean() | nil,
           :ignoreNonSummarySeekingQuery => boolean() | nil,
           :includeCitations => boolean() | nil,
@@ -51,6 +53,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1SearchR
         }
 
   field(:ignoreAdversarialQuery)
+  field(:ignoreJailBreakingQuery)
   field(:ignoreLowRelevantContent)
   field(:ignoreNonSummarySeekingQuery)
   field(:includeCitations)

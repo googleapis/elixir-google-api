@@ -28,6 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
   *   `documentProcessingConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DocumentProcessingConfig.t`, *default:* `nil`) - Configuration for Document understanding and enrichment.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - Immutable. The industry vertical that the data store registers.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The full resource name of the data store. Format: `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
+  *   `servingConfigDataStore` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t`, *default:* `nil`) - Optional. Stores serving config at DataStore level.
   *   `solutionTypes` (*type:* `list(String.t)`, *default:* `nil`) - The solutions that the data store enrolls. Available solutions for each industry_vertical: * `MEDIA`: `SOLUTION_TYPE_RECOMMENDATION` and `SOLUTION_TYPE_SEARCH`. * `SITE_SEARCH`: `SOLUTION_TYPE_SEARCH` is automatically enrolled. Other solutions cannot be enrolled.
   *   `startingSchema` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Schema.t`, *default:* `nil`) - The start schema to use for this DataStore when provisioning it. If unset, a default vertical specialized schema will be used. This field is only used by CreateDataStore API, and will be ignored if used in other APIs. This field will be omitted from all API responses including CreateDataStore API. To retrieve a schema of a DataStore, use SchemaService.GetSchema API instead. The provided schema will be validated against certain rules on schema. Learn more from [this doc](https://cloud.google.com/generative-ai-app-builder/docs/provide-schema).
   *   `workspaceConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1WorkspaceConfig.t`, *default:* `nil`) - Config to store data store type configuration for workspace data. This must be set when DataStore.content_config is set as DataStore.ContentConfig.GOOGLE_WORKSPACE.
@@ -45,6 +46,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
             | nil,
           :industryVertical => String.t() | nil,
           :name => String.t() | nil,
+          :servingConfigDataStore =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore.t()
+            | nil,
           :solutionTypes => list(String.t()) | nil,
           :startingSchema =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Schema.t() | nil,
@@ -65,6 +69,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
 
   field(:industryVertical)
   field(:name)
+
+  field(:servingConfigDataStore,
+    as: GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1ServingConfigDataStore
+  )
+
   field(:solutionTypes, type: :list)
 
   field(:startingSchema,
