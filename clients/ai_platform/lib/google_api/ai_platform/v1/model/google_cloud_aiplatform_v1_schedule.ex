@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schedule do
 
   *   `allowQueueing` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether new scheduled runs can be queued when max_concurrent_runs limit is reached. If set to true, new runs will be queued instead of skipped. Default to false.
   *   `catchUp` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether to backfill missed runs when the schedule is resumed from PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled after the backfill is complete. Default to false.
+  *   `createNotebookExecutionJobRequest` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest.t`, *default:* `nil`) - Request for NotebookService.CreateNotebookExecutionJob.
   *   `createPipelineJobRequest` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreatePipelineJobRequest.t`, *default:* `nil`) - Request for PipelineService.CreatePipelineJob. CreatePipelineJobRequest.parent field is required (format: projects/{project}/locations/{location}).
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp when this Schedule was created.
   *   `cron` (*type:* `String.t`, *default:* `nil`) - Cron schedule (https://en.wikipedia.org/wiki/Cron) to launch scheduled runs. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".
@@ -46,6 +47,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schedule do
   @type t :: %__MODULE__{
           :allowQueueing => boolean() | nil,
           :catchUp => boolean() | nil,
+          :createNotebookExecutionJobRequest =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest.t()
+            | nil,
           :createPipelineJobRequest =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreatePipelineJobRequest.t()
             | nil,
@@ -69,6 +73,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schedule do
 
   field(:allowQueueing)
   field(:catchUp)
+
+  field(:createNotebookExecutionJobRequest,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreateNotebookExecutionJobRequest
+  )
 
   field(:createPipelineJobRequest,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CreatePipelineJobRequest
