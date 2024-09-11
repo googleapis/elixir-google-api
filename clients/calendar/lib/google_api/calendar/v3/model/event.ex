@@ -74,11 +74,12 @@ defmodule GoogleApi.Calendar.V3.Model.Event do
       Note that the iCalUID and the id are not identical and only one of them should be supplied at event creation time. One difference in their semantics is that in recurring events, all occurrences of one event have different ids while they all share the same iCalUIDs. To retrieve an event using its iCalUID, call the events.list method using the iCalUID parameter. To retrieve an event using its id, call the events.get method.
   *   `end` (*type:* `GoogleApi.Calendar.V3.Model.EventDateTime.t`, *default:* `nil`) - The (exclusive) end time of the event. For a recurring event, this is the end time of the first instance.
   *   `eventType` (*type:* `String.t`, *default:* `default`) - Specific type of the event. This cannot be modified after the event is created. Possible values are:  
+      - "birthday" - A special all-day event with an annual recurrence. 
       - "default" - A regular event or not further specified. 
-      - "outOfOffice" - An out-of-office event. 
       - "focusTime" - A focus-time event. 
-      - "workingLocation" - A working location event. 
-      - "fromGmail" - An event from Gmail. This type of event cannot be created.
+      - "fromGmail" - An event from Gmail. This type of event cannot be created. 
+      - "outOfOffice" - An out-of-office event. 
+      - "workingLocation" - A working location event.
   *   `locked` (*type:* `boolean()`, *default:* `false`) - Whether this is a locked event copy where no changes can be made to the main event fields "summary", "description", "location", "start", "end" or "recurrence". The default is False. Read-Only.
   *   `endTimeUnspecified` (*type:* `boolean()`, *default:* `false`) - Whether the end time is actually unspecified. An end time is still provided for compatibility reasons, even if this attribute is set to True. The default is False.
   *   `summary` (*type:* `String.t`, *default:* `nil`) - Title of the event.
