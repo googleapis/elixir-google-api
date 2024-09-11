@@ -466,7 +466,7 @@ defmodule GoogleApi.Calendar.V3.Api.Events do
   end
 
   @doc """
-  Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; outOfOffice, focusTime, workingLocation and fromGmail events cannot be moved.
+  Moves an event to another calendar, i.e. changes an event's organizer. Note that only default events can be moved; birthday, focusTime, fromGmail, outOfOffice and workingLocation events cannot be moved.
 
   ## Parameters
 
