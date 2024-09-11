@@ -24,7 +24,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
   *   `dataIngestionSource` (*type:* `String.t`, *default:* `nil`) - The data ingestion source of the Document. Allowed values are: * `batch`: Data ingested via Batch API, e.g., ImportDocuments. * `streaming` Data ingested via Streaming API, e.g., FHIR streaming.
   *   `lastRefreshedTime` (*type:* `DateTime.t`, *default:* `nil`) - The timestamp of the last time the Document was last indexed.
   *   `matcherValue` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBatchGetDocumentsMetadataResponseDocumentMetadataMatcherValue.t`, *default:* `nil`) - The value of the matcher that was used to match the Document.
-  *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the document.
+  *   `state` (*type:* `String.t`, *default:* `nil`) - The state of the document.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -35,7 +35,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
           :matcherValue =>
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBatchGetDocumentsMetadataResponseDocumentMetadataMatcherValue.t()
             | nil,
-          :status => String.t() | nil
+          :state => String.t() | nil
         }
 
   field(:dataIngestionSource)
@@ -46,7 +46,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1bet
       GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1betaBatchGetDocumentsMetadataResponseDocumentMetadataMatcherValue
   )
 
-  field(:status)
+  field(:state)
 end
 
 defimpl Poison.Decoder,
