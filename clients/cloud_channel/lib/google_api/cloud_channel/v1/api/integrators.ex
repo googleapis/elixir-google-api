@@ -132,13 +132,23 @@ defmodule GoogleApi.CloudChannel.V1.Api.Integrators do
   *   `{:ok, %GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RegisterSubscriberResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudchannel_integrators_register(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec cloudchannel_integrators_register_subscriber(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok,
            GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1RegisterSubscriberResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudchannel_integrators_register(connection, integrator, optional_params \\ [], opts \\ []) do
+  def cloudchannel_integrators_register_subscriber(
+        connection,
+        integrator,
+        optional_params \\ [],
+        opts \\ []
+      ) do
     optional_params_config = %{
       :"$.xgafv" => :query,
       :access_token => :query,
@@ -158,7 +168,7 @@ defmodule GoogleApi.CloudChannel.V1.Api.Integrators do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{+integrator}:register", %{
+      |> Request.url("/v1/{+integrator}:registerSubscriber", %{
         "integrator" => URI.encode(integrator, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
@@ -203,13 +213,18 @@ defmodule GoogleApi.CloudChannel.V1.Api.Integrators do
   *   `{:ok, %GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1UnregisterSubscriberResponse{}}` on success
   *   `{:error, info}` on failure
   """
-  @spec cloudchannel_integrators_unregister(Tesla.Env.client(), String.t(), keyword(), keyword()) ::
+  @spec cloudchannel_integrators_unregister_subscriber(
+          Tesla.Env.client(),
+          String.t(),
+          keyword(),
+          keyword()
+        ) ::
           {:ok,
            GoogleApi.CloudChannel.V1.Model.GoogleCloudChannelV1UnregisterSubscriberResponse.t()}
           | {:ok, Tesla.Env.t()}
           | {:ok, list()}
           | {:error, any()}
-  def cloudchannel_integrators_unregister(
+  def cloudchannel_integrators_unregister_subscriber(
         connection,
         integrator,
         optional_params \\ [],
@@ -234,7 +249,7 @@ defmodule GoogleApi.CloudChannel.V1.Api.Integrators do
     request =
       Request.new()
       |> Request.method(:post)
-      |> Request.url("/v1/{+integrator}:unregister", %{
+      |> Request.url("/v1/{+integrator}:unregisterSubscriber", %{
         "integrator" => URI.encode(integrator, &URI.char_unreserved?/1)
       })
       |> Request.add_optional_params(optional_params_config, optional_params)
