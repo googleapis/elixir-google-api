@@ -21,7 +21,7 @@ defmodule GoogleApi.Chat.V1.Model.RichLinkMetadata do
 
   ## Attributes
 
-  *   `chatSpaceLinkData` (*type:* `GoogleApi.Chat.V1.Model.ChatSpaceLinkData.t`, *default:* `nil`) - Data for a chat space link. [Developer Preview](https://developers.google.com/workspace/preview).
+  *   `chatSpaceLinkData` (*type:* `GoogleApi.Chat.V1.Model.ChatSpaceLinkData.t`, *default:* `nil`) - Data for a chat space link.
   *   `driveLinkData` (*type:* `GoogleApi.Chat.V1.Model.DriveLinkData.t`, *default:* `nil`) - Data for a drive link.
   *   `richLinkType` (*type:* `String.t`, *default:* `nil`) - The rich link type.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - The URI of this link.
