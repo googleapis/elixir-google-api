@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.ChatSpaceLinkData do
   @moduledoc """
-  Data for Chat space links. [Developer Preview](https://developers.google.com/workspace/preview).
+  Data for Chat space links.
 
   ## Attributes
 
