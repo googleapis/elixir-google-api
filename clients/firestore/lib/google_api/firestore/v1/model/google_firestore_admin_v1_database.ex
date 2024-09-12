@@ -34,6 +34,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   *   `name` (*type:* `String.t`, *default:* `nil`) - The resource name of the Database. Format: `projects/{project}/databases/{database}`
   *   `pointInTimeRecoveryEnablement` (*type:* `String.t`, *default:* `nil`) - Whether to enable the PITR feature on this database.
   *   `previousId` (*type:* `String.t`, *default:* `nil`) - Output only. The database resource's prior database ID. This field is only populated for deleted databases.
+  *   `sourceInfo` (*type:* `GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1SourceInfo.t`, *default:* `nil`) - Output only. Information about the provenance of this database.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. The system-generated UUID4 for this Database.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp at which this database was most recently updated. Note this only includes updates to the database resource and not data contained by the database.
@@ -56,6 +57,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
           :name => String.t() | nil,
           :pointInTimeRecoveryEnablement => String.t() | nil,
           :previousId => String.t() | nil,
+          :sourceInfo => GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1SourceInfo.t() | nil,
           :type => String.t() | nil,
           :uid => String.t() | nil,
           :updateTime => DateTime.t() | nil,
@@ -75,6 +77,7 @@ defmodule GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1Database do
   field(:name)
   field(:pointInTimeRecoveryEnablement)
   field(:previousId)
+  field(:sourceInfo, as: GoogleApi.Firestore.V1.Model.GoogleFirestoreAdminV1SourceInfo)
   field(:type)
   field(:uid)
   field(:updateTime, as: DateTime)

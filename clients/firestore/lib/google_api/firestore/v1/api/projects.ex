@@ -3386,6 +3386,7 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - An expression that filters the list of returned backups. A filter expression consists of a field name, a comparison operator, and a value for filtering. The value must be a string, a number, or a boolean. The comparison operator must be one of: `<`, `>`, `<=`, `>=`, `!=`, `=`, or `:`. Colon `:` is the contains operator. Filter rules are not case sensitive. The following fields in the Backup are eligible for filtering: * `database_uid` (supports `=` only)
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3420,7 +3421,8 @@ defmodule GoogleApi.Firestore.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :filter => :query
     }
 
     request =
