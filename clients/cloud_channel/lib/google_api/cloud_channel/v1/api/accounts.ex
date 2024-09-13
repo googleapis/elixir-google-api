@@ -123,7 +123,6 @@ defmodule GoogleApi.CloudChannel.V1.Api.Accounts do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:integrator` (*type:* `String.t`) - Optional. Resource name of the integrator.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of service accounts to return. The service may return fewer than this value. If unspecified, returns at most 100 service accounts. The maximum value is 1000; the server will coerce values above 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListSubscribers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSubscribers` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -161,7 +160,6 @@ defmodule GoogleApi.CloudChannel.V1.Api.Accounts do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
-      :integrator => :query,
       :pageSize => :query,
       :pageToken => :query
     }
