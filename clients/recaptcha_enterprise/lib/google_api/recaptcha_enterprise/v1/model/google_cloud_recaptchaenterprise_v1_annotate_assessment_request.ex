@@ -22,7 +22,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - Optional. A stable account identifier to apply to the assessment. This is an alternative to setting `account_id` in `CreateAssessment`, for example when a stable account identifier is not yet known in the initial request.
-  *   `annotation` (*type:* `String.t`, *default:* `nil`) - Optional. The annotation that will be assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent.
+  *   `annotation` (*type:* `String.t`, *default:* `nil`) - Optional. The annotation that is assigned to the Event. This field can be left empty to provide reasons that apply to an event without concluding whether the event is legitimate or fraudulent.
   *   `hashedAccountId` (*type:* `String.t`, *default:* `nil`) - Optional. A stable hashed account identifier to apply to the assessment. This is an alternative to setting `hashed_account_id` in `CreateAssessment`, for example when a stable account identifier is not yet known in the initial request.
   *   `reasons` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Reasons for the annotation that are assigned to the event.
   *   `transactionEvent` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1TransactionEvent.t`, *default:* `nil`) - Optional. If the assessment is part of a payment transaction, provide details on payment lifecycle events that occur in the transaction.

@@ -110,7 +110,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the project in which the assessment will be created, in the format `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which the assessment is created, in the format `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -189,7 +189,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the project this policy will apply to, in the format `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project this policy applies to, in the format `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -511,7 +511,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields of the policy get updated. If the mask is not present, all fields will be updated.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields of the policy get updated. If the mask is not present, all fields are updated.
       *   `:body` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicy.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -653,7 +653,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   end
 
   @doc """
-  Adds an IP override to a key. The following restrictions hold: * The maximum number of IP overrides per key is 100. * For any conflict (such as IP already exists or IP part of an existing IP range), an error will be returned.
+  Adds an IP override to a key. The following restrictions hold: * The maximum number of IP overrides per key is 100. * For any conflict (such as IP already exists or IP part of an existing IP range), an error is returned.
 
   ## Parameters
 
@@ -737,7 +737,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the project in which the key will be created, in the format `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project in which the key is created, in the format `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1029,7 +1029,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The name of the project that contains the keys that will be listed, in the format `projects/{project}`.
+  *   `parent` (*type:* `String.t`) - Required. The name of the project that contains the keys that is listed, in the format `projects/{project}`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1279,7 +1279,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields of the key get updated. If the mask is not present, all fields will be updated.
+      *   `:updateMask` (*type:* `String.t`) - Optional. The mask to control which fields of the key get updated. If the mask is not present, all fields are updated.
       *   `:body` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1Key.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1333,7 +1333,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Api.Projects do
   end
 
   @doc """
-  Removes an IP override from a key. The following restrictions hold: * If the IP isn't found in an existing IP override, a `NOT_FOUND` error will be returned. * If the IP is found in an existing IP override, but the override type does not match, a `NOT_FOUND` error will be returned.
+  Removes an IP override from a key. The following restrictions hold: * If the IP isn't found in an existing IP override, a `NOT_FOUND` error is returned. * If the IP is found in an existing IP override, but the override type does not match, a `NOT_FOUND` error is returned.
 
   ## Parameters
 

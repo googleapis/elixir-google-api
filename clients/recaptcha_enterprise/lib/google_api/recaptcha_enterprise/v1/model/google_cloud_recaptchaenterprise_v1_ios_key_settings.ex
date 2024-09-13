@@ -23,7 +23,7 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   *   `allowAllBundleIds` (*type:* `boolean()`, *default:* `nil`) - Optional. If set to true, allowed_bundle_ids are not enforced.
   *   `allowedBundleIds` (*type:* `list(String.t)`, *default:* `nil`) - Optional. iOS bundle ids of apps allowed to use the key. Example: 'com.companyname.productname.appname'
-  *   `appleDeveloperId` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AppleDeveloperId.t`, *default:* `nil`) - Optional. Apple Developer account details for the app that is protected by the reCAPTCHA Key. reCAPTCHA Enterprise leverages platform-specific checks like Apple App Attest and Apple DeviceCheck to protect your app from abuse. Providing these fields allows reCAPTCHA Enterprise to get a better assessment of the integrity of your app.
+  *   `appleDeveloperId` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1AppleDeveloperId.t`, *default:* `nil`) - Optional. Apple Developer account details for the app that is protected by the reCAPTCHA Key. reCAPTCHA leverages platform-specific checks like Apple App Attest and Apple DeviceCheck to protect your app from abuse. Providing these fields allows reCAPTCHA to get a better assessment of the integrity of your app.
   """
 
   use GoogleApi.Gax.ModelBase
