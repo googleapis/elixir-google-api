@@ -22,11 +22,11 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.InstallmentsBasePlanType do
   ## Attributes
 
   *   `accountHoldDuration` (*type:* `String.t`, *default:* `nil`) - Optional. Account hold period of the subscription, specified exclusively in days and in ISO 8601 format. Acceptable values are P0D (zero days) to P30D (30days). If not specified, the default value is P30D (30 days).
-  *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.
-  *   `committedPaymentsCount` (*type:* `integer()`, *default:* `nil`) - Required. The number of payments the user is committed to.
+  *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center. The duration is immutable after the base plan is created.
+  *   `committedPaymentsCount` (*type:* `integer()`, *default:* `nil`) - Required. Immutable. The number of payments the user is committed to. It is immutable after the base plan is created.
   *   `gracePeriodDuration` (*type:* `String.t`, *default:* `nil`) - Grace period of the subscription, specified in ISO 8601 format. Acceptable values are P0D (zero days), P3D (3 days), P7D (7 days), P14D (14 days), and P30D (30 days). If not specified, a default value will be used based on the recurring period duration.
   *   `prorationMode` (*type:* `String.t`, *default:* `nil`) - The proration mode for the base plan determines what happens when a user switches to this plan from another base plan. If unspecified, defaults to CHARGE_ON_NEXT_BILLING_DATE.
-  *   `renewalType` (*type:* `String.t`, *default:* `nil`) - Required. Installments base plan renewal type. Determines the behavior at the end of the initial commitment.
+  *   `renewalType` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Installments base plan renewal type. Determines the behavior at the end of the initial commitment. The renewal type is immutable after the base plan is created.
   *   `resubscribeState` (*type:* `String.t`, *default:* `nil`) - Whether users should be able to resubscribe to this base plan in Google Play surfaces. Defaults to RESUBSCRIBE_STATE_ACTIVE if not specified.
   """
 
