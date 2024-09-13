@@ -22,15 +22,18 @@ defmodule GoogleApi.Datastream.V1.Model.RunStreamRequest do
   ## Attributes
 
   *   `cdcStrategy` (*type:* `GoogleApi.Datastream.V1.Model.CdcStrategy.t`, *default:* `nil`) - Optional. The CDC strategy of the stream. If not set, the system's default value will be used.
+  *   `force` (*type:* `boolean()`, *default:* `nil`) - Optional. Update the stream without validating it.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :cdcStrategy => GoogleApi.Datastream.V1.Model.CdcStrategy.t() | nil
+          :cdcStrategy => GoogleApi.Datastream.V1.Model.CdcStrategy.t() | nil,
+          :force => boolean() | nil
         }
 
   field(:cdcStrategy, as: GoogleApi.Datastream.V1.Model.CdcStrategy)
+  field(:force)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Datastream.V1.Model.RunStreamRequest do
