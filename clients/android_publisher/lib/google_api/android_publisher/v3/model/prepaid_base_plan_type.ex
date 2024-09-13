@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidPublisher.V3.Model.PrepaidBasePlanType do
 
   ## Attributes
 
-  *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center.
+  *   `billingPeriodDuration` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. Subscription period, specified in ISO 8601 format. For a list of acceptable billing periods, refer to the help center. The duration is immutable after the base plan is created.
   *   `timeExtension` (*type:* `String.t`, *default:* `nil`) - Whether users should be able to extend this prepaid base plan in Google Play surfaces. Defaults to TIME_EXTENSION_ACTIVE if not specified.
   """
 
