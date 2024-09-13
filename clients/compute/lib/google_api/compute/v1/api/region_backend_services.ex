@@ -524,7 +524,7 @@ defmodule GoogleApi.Compute.V1.Api.RegionBackendServices do
   end
 
   @doc """
-  Retrieves an aggregated list of all usable backend services in the specified project in the given region.
+  Retrieves a list of all usable backend services in the specified project in the given region.
 
   ## Parameters
 

@@ -22,6 +22,7 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupPscData do
   ## Attributes
 
   *   `consumerPscAddress` (*type:* `String.t`, *default:* `nil`) - [Output Only] Address allocated from given subnetwork for PSC. This IP address acts as a VIP for a PSC NEG, allowing it to act as an endpoint in L7 PSC-XLB.
+  *   `producerPort` (*type:* `integer()`, *default:* `nil`) - The psc producer port is used to connect PSC NEG with specific port on the PSC Producer side; should only be used for the PRIVATE_SERVICE_CONNECT NEG type
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The PSC connection id of the PSC Network Endpoint Group Consumer.
   *   `pscConnectionStatus` (*type:* `String.t`, *default:* `nil`) - [Output Only] The connection status of the PSC Forwarding Rule.
   """
@@ -30,11 +31,13 @@ defmodule GoogleApi.Compute.V1.Model.NetworkEndpointGroupPscData do
 
   @type t :: %__MODULE__{
           :consumerPscAddress => String.t() | nil,
+          :producerPort => integer() | nil,
           :pscConnectionId => String.t() | nil,
           :pscConnectionStatus => String.t() | nil
         }
 
   field(:consumerPscAddress)
+  field(:producerPort)
   field(:pscConnectionId)
   field(:pscConnectionStatus)
 end
