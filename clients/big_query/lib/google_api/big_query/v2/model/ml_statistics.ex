@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQuery.V2.Model.MlStatistics do
 
   ## Attributes
 
-  *   `hparamTrials` (*type:* `list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t)`, *default:* `nil`) - Output only. Trials of a [hyperparameter tuning job](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) sorted by trial_id.
-  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Results for all completed iterations. Empty for [hyperparameter tuning jobs](/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview).
+  *   `hparamTrials` (*type:* `list(GoogleApi.BigQuery.V2.Model.HparamTuningTrial.t)`, *default:* `nil`) - Output only. Trials of a [hyperparameter tuning job](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) sorted by trial_id.
+  *   `iterationResults` (*type:* `list(GoogleApi.BigQuery.V2.Model.IterationResult.t)`, *default:* `nil`) - Results for all completed iterations. Empty for [hyperparameter tuning jobs](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview).
   *   `maxIterations` (*type:* `String.t`, *default:* `nil`) - Output only. Maximum number of iterations specified as max_iterations in the 'CREATE MODEL' query. The actual number of iterations may be less than this number due to early stop.
   *   `modelType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of the model that is being trained.
   *   `trainingType` (*type:* `String.t`, *default:* `nil`) - Output only. Training type of the job.

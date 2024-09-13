@@ -24,7 +24,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TableMetadataCacheUsage do
   *   `explanation` (*type:* `String.t`, *default:* `nil`) - Free form human-readable reason metadata caching was unused for the job.
   *   `staleness` (*type:* `String.t`, *default:* `nil`) - Duration since last refresh as of this job for managed tables (indicates metadata cache staleness as seen by this job).
   *   `tableReference` (*type:* `GoogleApi.BigQuery.V2.Model.TableReference.t`, *default:* `nil`) - Metadata caching eligible table referenced in the query.
-  *   `tableType` (*type:* `String.t`, *default:* `nil`) - [Table type](/bigquery/docs/reference/rest/v2/tables#Table.FIELDS.type).
+  *   `tableType` (*type:* `String.t`, *default:* `nil`) - [Table type](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#Table.FIELDS.type).
   *   `unusedReason` (*type:* `String.t`, *default:* `nil`) - Reason for not using metadata caching for the table.
   """
 

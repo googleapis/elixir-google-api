@@ -22,7 +22,7 @@ defmodule GoogleApi.BigQuery.V2.Model.StorageDescriptor do
   ## Attributes
 
   *   `inputFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the fully qualified class name of the InputFormat (e.g. "org.apache.hadoop.hive.ql.io.orc.OrcInputFormat"). The maximum length is 128 characters.
-  *   `locationUri` (*type:* `String.t`, *default:* `nil`) - Optional. The physical location of the table (e.g. 'gs://spark-dataproc-data/pangea-data/case_sensitive/' or 'gs://spark-dataproc-data/pangea-data/*'). The maximum length is 2056 bytes.
+  *   `locationUri` (*type:* `String.t`, *default:* `nil`) - Optional. The physical location of the table (e.g. `gs://spark-dataproc-data/pangea-data/case_sensitive/` or `gs://spark-dataproc-data/pangea-data/*`). The maximum length is 2056 bytes.
   *   `outputFormat` (*type:* `String.t`, *default:* `nil`) - Optional. Specifies the fully qualified class name of the OutputFormat (e.g. "org.apache.hadoop.hive.ql.io.orc.OrcOutputFormat"). The maximum length is 128 characters.
   *   `serdeInfo` (*type:* `GoogleApi.BigQuery.V2.Model.SerDeInfo.t`, *default:* `nil`) - Optional. Serializer and deserializer information.
   """
