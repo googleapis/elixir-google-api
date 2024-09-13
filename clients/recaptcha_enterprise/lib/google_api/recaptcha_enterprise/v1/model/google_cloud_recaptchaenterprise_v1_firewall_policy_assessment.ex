@@ -21,8 +21,8 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `error` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. If the processing of a policy config fails, an error will be populated and the firewall_policy will be left empty.
-  *   `firewallPolicy` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicy.t`, *default:* `nil`) - Output only. The policy that matched the request. If more than one policy may match, this is the first match. If no policy matches the incoming request, the policy field will be left empty.
+  *   `error` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - Output only. If the processing of a policy config fails, an error is populated and the firewall_policy is left empty.
+  *   `firewallPolicy` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallPolicy.t`, *default:* `nil`) - Output only. The policy that matched the request. If more than one policy may match, this is the first match. If no policy matches the incoming request, the policy field is left empty.
   """
 
   use GoogleApi.Gax.ModelBase

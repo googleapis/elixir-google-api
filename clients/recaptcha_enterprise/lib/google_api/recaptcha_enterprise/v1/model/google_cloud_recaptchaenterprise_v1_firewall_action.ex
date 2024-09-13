@@ -22,11 +22,11 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
   ## Attributes
 
   *   `allow` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionAllowAction.t`, *default:* `nil`) - The user request did not match any policy and should be allowed access to the requested resource.
-  *   `block` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction.t`, *default:* `nil`) - This action will deny access to a given page. The user will get an HTTP error code.
-  *   `includeRecaptchaScript` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionIncludeRecaptchaScriptAction.t`, *default:* `nil`) - This action will inject reCAPTCHA JavaScript code into the HTML page returned by the site backend.
-  *   `redirect` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction.t`, *default:* `nil`) - This action will redirect the request to a ReCaptcha interstitial to attach a token.
-  *   `setHeader` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction.t`, *default:* `nil`) - This action will set a custom header but allow the request to continue to the customer backend.
-  *   `substitute` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction.t`, *default:* `nil`) - This action will transparently serve a different page to an offending user.
+  *   `block` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionBlockAction.t`, *default:* `nil`) - This action denies access to a given page. The user gets an HTTP error code.
+  *   `includeRecaptchaScript` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionIncludeRecaptchaScriptAction.t`, *default:* `nil`) - This action injects reCAPTCHA JavaScript code into the HTML page returned by the site backend.
+  *   `redirect` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionRedirectAction.t`, *default:* `nil`) - This action redirects the request to a reCAPTCHA interstitial to attach a token.
+  *   `setHeader` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionSetHeaderAction.t`, *default:* `nil`) - This action sets a custom header but allow the request to continue to the customer backend.
+  *   `substitute` (*type:* `GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV1FirewallActionSubstituteAction.t`, *default:* `nil`) - This action transparently serves a different page to an offending user.
   """
 
   use GoogleApi.Gax.ModelBase

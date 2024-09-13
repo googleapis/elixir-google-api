@@ -21,8 +21,8 @@ defmodule GoogleApi.RecaptchaEnterprise.V1.Model.GoogleCloudRecaptchaenterpriseV
 
   ## Attributes
 
-  *   `testingChallenge` (*type:* `String.t`, *default:* `nil`) - Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site will return nocaptcha if NOCAPTCHA, or an unsolvable challenge if CHALLENGE.
-  *   `testingScore` (*type:* `number()`, *default:* `nil`) - Optional. All assessments for this Key will return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
+  *   `testingChallenge` (*type:* `String.t`, *default:* `nil`) - Optional. For challenge-based keys only (CHECKBOX, INVISIBLE), all challenge requests for this site return nocaptcha if NOCAPTCHA, or an unsolvable challenge if CHALLENGE.
+  *   `testingScore` (*type:* `number()`, *default:* `nil`) - Optional. All assessments for this Key return this score. Must be between 0 (likely not legitimate) and 1 (likely legitimate) inclusive.
   """
 
   use GoogleApi.Gax.ModelBase
