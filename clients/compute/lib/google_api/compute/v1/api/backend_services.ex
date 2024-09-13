@@ -730,7 +730,7 @@ defmodule GoogleApi.Compute.V1.Api.BackendServices do
   end
 
   @doc """
-  Retrieves an aggregated list of all usable backend services in the specified project.
+  Retrieves a list of all usable backend services in the specified project.
 
   ## Parameters
 
