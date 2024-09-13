@@ -22,8 +22,8 @@ defmodule GoogleApi.Classroom.V1.Model.AddOnContext do
   ## Attributes
 
   *   `courseId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the course.
-  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached.
-  *   `postId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated, use item_id instead.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached.
+  *   `postId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated, use `item_id` instead.
   *   `studentContext` (*type:* `GoogleApi.Classroom.V1.Model.StudentContext.t`, *default:* `nil`) - Add-on context corresponding to the requesting user's role as a student. Its presence implies that the requesting user is a student in the course.
   *   `supportsStudentWork` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the post allows the teacher to see student work and passback grades.
   *   `teacherContext` (*type:* `GoogleApi.Classroom.V1.Model.TeacherContext.t`, *default:* `nil`) - Add-on context corresponding to the requesting user's role as a teacher. Its presence implies that the requesting user is a teacher in the course.

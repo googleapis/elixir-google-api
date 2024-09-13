@@ -826,7 +826,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -841,7 +841,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither of the following is true: * The add-on has attachments on the post. * The developer project issuing the request is the same project that created the post.
       *   `:attachmentId` (*type:* `String.t`) - Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/classroom/add-ons/get-started/iframes/attachment-discovery-iframe).
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1135,7 +1135,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1149,7 +1149,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Classroom attachment creation but optional for partner-first attachment creation. Returns an error if not provided for partner-first attachment creation and the developer projects that created the attachment and its parent stream item do not match.
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1215,7 +1215,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1229,7 +1229,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1298,7 +1298,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -1312,7 +1312,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1381,7 +1381,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1396,7 +1396,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be coerced to 20.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListAddOnAttachments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAddOnAttachments` must match the call that provided the page token.
-      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1765,7 +1765,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1780,7 +1780,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither of the following is true: * The add-on has attachments on the post. * The developer project issuing the request is the same project that created the post.
       *   `:attachmentId` (*type:* `String.t`) - Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/classroom/add-ons/get-started/iframes/attachment-discovery-iframe).
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2067,7 +2067,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2081,7 +2081,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Classroom attachment creation but optional for partner-first attachment creation. Returns an error if not provided for partner-first attachment creation and the developer projects that created the attachment and its parent stream item do not match.
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -2147,7 +2147,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2161,7 +2161,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2230,7 +2230,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -2244,7 +2244,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2313,7 +2313,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2328,7 +2328,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be coerced to 20.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListAddOnAttachments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAddOnAttachments` must match the call that provided the page token.
-      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2482,7 +2482,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `submission_id` (*type:* `String.t`) - Required. Identifier of the student’s submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2497,7 +2497,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2571,7 +2571,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `submission_id` (*type:* `String.t`) - Required. Identifier of the student's submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -2586,7 +2586,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
       *   `:updateMask` (*type:* `String.t`) - Required. Mask that identifies which fields on the attachment to update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the `AddOnAttachmentStudentSubmission` object. The following fields may be specified by teachers: * `points_earned`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachmentStudentSubmission.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
@@ -3468,7 +3468,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3483,7 +3483,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither of the following is true: * The add-on has attachments on the post. * The developer project issuing the request is the same project that created the post.
       *   `:attachmentId` (*type:* `String.t`) - Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/classroom/add-ons/get-started/iframes/attachment-discovery-iframe).
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3710,7 +3710,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3724,7 +3724,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Classroom attachment creation but optional for partner-first attachment creation. Returns an error if not provided for partner-first attachment creation and the developer projects that created the attachment and its parent stream item do not match.
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -3790,7 +3790,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3804,7 +3804,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3873,7 +3873,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -3887,7 +3887,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -3956,7 +3956,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `item_id` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
+  *   `item_id` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -3971,7 +3971,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:pageSize` (*type:* `integer()`) - The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be coerced to 20.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListAddOnAttachments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAddOnAttachments` must match the call that provided the page token.
-      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use item_id instead.
+      *   `:postId` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use `item_id` instead.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4125,7 +4125,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4140,7 +4140,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. The authorization token is required when neither of the following is true: * The add-on has attachments on the post. * The developer project issuing the request is the same project that created the post.
       *   `:attachmentId` (*type:* `String.t`) - Optional. The identifier of the attachment. This field is required for all requests except when the user is in the [Attachment Discovery iframe](https://developers.google.com/classroom/add-ons/get-started/iframes/attachment-discovery-iframe).
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4205,7 +4205,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4219,7 +4219,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:addOnToken` (*type:* `String.t`) - Optional. Token that authorizes the request. The token is passed as a query parameter when the user is redirected from Classroom to the add-on's URL. This authorization token is required for in-Classroom attachment creation but optional for partner-first attachment creation. Returns an error if not provided for partner-first attachment creation and the developer projects that created the attachment and its parent stream item do not match.
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which to create the attachment. This field is required, but is not marked as such while we are migrating from post_id.
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachment.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -4285,7 +4285,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4299,7 +4299,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4365,7 +4365,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
@@ -4379,7 +4379,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4445,7 +4445,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Identifier of the post under the course whose attachments to enumerate. Deprecated, use `item_id` instead.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -4458,7 +4458,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` whose attachments should be enumerated. This field is required, but is not marked as such while we are migrating from post_id.
       *   `:pageSize` (*type:* `integer()`) - The maximum number of attachments to return. The service may return fewer than this value. If unspecified, at most 20 attachments will be returned. The maximum value is 20; values above 20 will be coerced to 20.
       *   `:pageToken` (*type:* `String.t`) - A page token, received from a previous `ListAddOnAttachments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListAddOnAttachments` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -4611,7 +4611,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `submission_id` (*type:* `String.t`) - Required. Identifier of the student’s submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4626,7 +4626,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -4700,7 +4700,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
 
   *   `connection` (*type:* `GoogleApi.Classroom.V1.Connection.t`) - Connection to server
   *   `course_id` (*type:* `String.t`) - Required. Identifier of the course.
-  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use item_id instead.
+  *   `post_id` (*type:* `String.t`) - Optional. Deprecated, use `item_id` instead.
   *   `attachment_id` (*type:* `String.t`) - Required. Identifier of the attachment.
   *   `submission_id` (*type:* `String.t`) - Required. Identifier of the student's submission.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
@@ -4715,7 +4715,7 @@ defmodule GoogleApi.Classroom.V1.Api.Courses do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:itemId` (*type:* `String.t`) - Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
+      *   `:itemId` (*type:* `String.t`) - Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached. This field is required, but is not marked as such while we are migrating from post_id.
       *   `:updateMask` (*type:* `String.t`) - Required. Mask that identifies which fields on the attachment to update. The update fails if invalid fields are specified. If a field supports empty values, it can be cleared by specifying it in the update mask and not in the `AddOnAttachmentStudentSubmission` object. The following fields may be specified by teachers: * `points_earned`
       *   `:body` (*type:* `GoogleApi.Classroom.V1.Model.AddOnAttachmentStudentSubmission.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options

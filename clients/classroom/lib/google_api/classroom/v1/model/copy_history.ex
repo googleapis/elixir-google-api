@@ -23,8 +23,8 @@ defmodule GoogleApi.Classroom.V1.Model.CopyHistory do
 
   *   `attachmentId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the attachment.
   *   `courseId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the course.
-  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the announcement, courseWork, or courseWorkMaterial under which the attachment is attached.
-  *   `postId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated, use item_id instead.
+  *   `itemId` (*type:* `String.t`, *default:* `nil`) - Immutable. Identifier of the `Announcement`, `CourseWork`, or `CourseWorkMaterial` under which the attachment is attached.
+  *   `postId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated, use `item_id` instead.
   """
 
   use GoogleApi.Gax.ModelBase
