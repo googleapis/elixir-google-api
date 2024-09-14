@@ -28,6 +28,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
   *   `denyMaintenancePeriod` (*type:* `GoogleApi.Looker.V1.Model.DenyMaintenancePeriod.t`, *default:* `nil`) - Maintenance denial period for this instance.
   *   `egressPublicIp` (*type:* `String.t`, *default:* `nil`) - Output only. Public Egress IP (IPv4).
   *   `encryptionConfig` (*type:* `GoogleApi.Looker.V1.Model.EncryptionConfig.t`, *default:* `nil`) - Encryption configuration (CMEK). Only set if CMEK has been enabled on the instance.
+  *   `fipsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether FIPS is enabled on the Looker instance.
+  *   `geminiEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether Gemini feature is enabled on the Looker instance or not.
   *   `ingressPrivateIp` (*type:* `String.t`, *default:* `nil`) - Output only. Private Ingress IP (IPv4).
   *   `ingressPublicIp` (*type:* `String.t`, *default:* `nil`) - Output only. Public Ingress IP (IPv4).
   *   `lastDenyMaintenancePeriod` (*type:* `GoogleApi.Looker.V1.Model.DenyMaintenancePeriod.t`, *default:* `nil`) - Output only. Last computed maintenance denial period for this instance.
@@ -59,6 +61,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
           :denyMaintenancePeriod => GoogleApi.Looker.V1.Model.DenyMaintenancePeriod.t() | nil,
           :egressPublicIp => String.t() | nil,
           :encryptionConfig => GoogleApi.Looker.V1.Model.EncryptionConfig.t() | nil,
+          :fipsEnabled => boolean() | nil,
+          :geminiEnabled => boolean() | nil,
           :ingressPrivateIp => String.t() | nil,
           :ingressPublicIp => String.t() | nil,
           :lastDenyMaintenancePeriod => GoogleApi.Looker.V1.Model.DenyMaintenancePeriod.t() | nil,
@@ -87,6 +91,8 @@ defmodule GoogleApi.Looker.V1.Model.Instance do
   field(:denyMaintenancePeriod, as: GoogleApi.Looker.V1.Model.DenyMaintenancePeriod)
   field(:egressPublicIp)
   field(:encryptionConfig, as: GoogleApi.Looker.V1.Model.EncryptionConfig)
+  field(:fipsEnabled)
+  field(:geminiEnabled)
   field(:ingressPrivateIp)
   field(:ingressPublicIp)
   field(:lastDenyMaintenancePeriod, as: GoogleApi.Looker.V1.Model.DenyMaintenancePeriod)
