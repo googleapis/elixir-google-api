@@ -29,7 +29,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
   *   `measurementId` (*type:* `String.t`, *default:* `nil`) - The unique Google-assigned identifier of the Google Analytics web stream associated with the `WebApp`. Firebase SDKs use this ID to interact with Google Analytics APIs. This field is only present if the `WebApp` is linked to a web stream in a Google Analytics App + Web property. Learn more about this ID and Google Analytics web streams in the [Analytics documentation](https://support.google.com/analytics/answer/9304153). To generate a `measurementId` and link the `WebApp` with a Google Analytics web stream, call [`AddGoogleAnalytics`](../../v1beta1/projects/addGoogleAnalytics). For apps using the Firebase JavaScript SDK v7.20.0 and later, Firebase dynamically fetches the `measurementId` when your app initializes Analytics. Having this ID in your config object is optional, but it does serve as a fallback in the rare case that the dynamic fetch fails.
   *   `messagingSenderId` (*type:* `String.t`, *default:* `nil`) - The sender ID for use with Firebase Cloud Messaging.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Immutable. A user-assigned unique identifier for the `FirebaseProject`.
+  *   `projectNumber` (*type:* `String.t`, *default:* `nil`) - Output only. Immutable. The globally unique, Google-assigned canonical identifier for the Project. Use this identifier when configuring integrations and/or making API calls to Google Cloud or third-party services.
+  *   `realtimeDatabaseUrl` (*type:* `String.t`, *default:* `nil`) - Optional. Duplicate field for the URL of the default RTDB instances (if there is one) that uses the same field name as the unified V2 config file format. We wanted to make a single config file format for all the app platforms (Android, iOS and web) and we had to pick consistent names for all the fields since there was some varience between the platforms. If the request asks for the V2 format we will populate this field instead of realtime_database_instance_uri.
   *   `storageBucket` (*type:* `String.t`, *default:* `nil`) - **DEPRECATED.** _Instead, find the default Cloud Storage for Firebase bucket using the [list endpoint](https://firebase.google.com/docs/reference/rest/storage/rest/v1beta/projects.buckets/list) within the Cloud Storage for Firebase REST API. Note that the default bucket for the Project might not yet be provisioned, so the return might not contain a default bucket._ The default Cloud Storage for Firebase storage bucket name.
+  *   `version` (*type:* `String.t`, *default:* `nil`) - Version of the config specification.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -43,7 +46,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
           :measurementId => String.t() | nil,
           :messagingSenderId => String.t() | nil,
           :projectId => String.t() | nil,
-          :storageBucket => String.t() | nil
+          :projectNumber => String.t() | nil,
+          :realtimeDatabaseUrl => String.t() | nil,
+          :storageBucket => String.t() | nil,
+          :version => String.t() | nil
         }
 
   field(:apiKey)
@@ -54,7 +60,10 @@ defmodule GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
   field(:measurementId)
   field(:messagingSenderId)
   field(:projectId)
+  field(:projectNumber)
+  field(:realtimeDatabaseUrl)
   field(:storageBucket)
+  field(:version)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Firebase.V1beta1.Model.WebAppConfig do
