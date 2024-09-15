@@ -24,13 +24,15 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
   *   `consumerAddress` (*type:* `String.t`, *default:* `nil`) - The resource reference of the consumer address.
   *   `consumerForwardingRule` (*type:* `String.t`, *default:* `nil`) - The resource reference of the PSC Forwarding Rule within the consumer VPC.
   *   `consumerTargetProject` (*type:* `String.t`, *default:* `nil`) - The project where the PSC connection is created.
-  *   `error` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The most recent error during operating this connection.
+  *   `error` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcStatus.t`, *default:* `nil`) - The most recent error during operating this connection. Deprecated, please use error_info instead.
   *   `errorInfo` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.GoogleRpcErrorInfo.t`, *default:* `nil`) - Output only. The error info for the latest error during operating this connection.
   *   `errorType` (*type:* `String.t`, *default:* `nil`) - The error type indicates whether the error is consumer facing, producer facing or system internal.
   *   `gceOperation` (*type:* `String.t`, *default:* `nil`) - The last Compute Engine operation to setup PSC connection.
-  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. An immutable identifier for the producer instance.
+  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated. Use producer_instance_metadata instead. An immutable identifier for the producer instance.
+  *   `producerInstanceMetadata` (*type:* `map()`, *default:* `nil`) - Immutable. An immutable map for the producer instance metadata.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - The PSC connection id of the PSC forwarding rule.
   *   `selectedSubnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the subnetwork selected to allocate IP address for this connection.
+  *   `serviceClass` (*type:* `String.t`, *default:* `nil`) - Output only. [Output only] The service class associated with this PSC Connection. The value is derived from the SCPolicy and matches the service class name provided by the customer.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of the PSC Connection
   """
 
@@ -45,8 +47,10 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
           :errorType => String.t() | nil,
           :gceOperation => String.t() | nil,
           :producerInstanceId => String.t() | nil,
+          :producerInstanceMetadata => map() | nil,
           :pscConnectionId => String.t() | nil,
           :selectedSubnetwork => String.t() | nil,
+          :serviceClass => String.t() | nil,
           :state => String.t() | nil
         }
 
@@ -58,8 +62,10 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.PscConnection do
   field(:errorType)
   field(:gceOperation)
   field(:producerInstanceId)
+  field(:producerInstanceMetadata, type: :map)
   field(:pscConnectionId)
   field(:selectedSubnetwork)
+  field(:serviceClass)
   field(:state)
 end
 

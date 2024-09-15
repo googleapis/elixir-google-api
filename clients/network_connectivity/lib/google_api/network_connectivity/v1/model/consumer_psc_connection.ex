@@ -28,7 +28,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConnection do
   *   `gceOperation` (*type:* `String.t`, *default:* `nil`) - The last Compute Engine operation to setup PSC connection.
   *   `ip` (*type:* `String.t`, *default:* `nil`) - The IP literal allocated on the consumer network for the PSC forwarding rule that is created to connect to the producer service attachment in this service connection map.
   *   `network` (*type:* `String.t`, *default:* `nil`) - The consumer network whose PSC forwarding rule is connected to the service attachments in this service connection map. Note that the network could be on a different project (shared VPC).
-  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. An immutable identifier for the producer instance.
+  *   `producerInstanceId` (*type:* `String.t`, *default:* `nil`) - Immutable. Deprecated. Use producer_instance_metadata instead. An immutable identifier for the producer instance.
+  *   `producerInstanceMetadata` (*type:* `map()`, *default:* `nil`) - Immutable. An immutable map for the producer instance metadata.
   *   `project` (*type:* `String.t`, *default:* `nil`) - The consumer project whose PSC forwarding rule is connected to the service attachments in this service connection map.
   *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - The PSC connection id of the PSC forwarding rule connected to the service attachments in this service connection map.
   *   `selectedSubnetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The URI of the selected subnetwork selected to allocate IP address for this connection.
@@ -47,6 +48,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConnection do
           :ip => String.t() | nil,
           :network => String.t() | nil,
           :producerInstanceId => String.t() | nil,
+          :producerInstanceMetadata => map() | nil,
           :project => String.t() | nil,
           :pscConnectionId => String.t() | nil,
           :selectedSubnetwork => String.t() | nil,
@@ -62,6 +64,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.ConsumerPscConnection do
   field(:ip)
   field(:network)
   field(:producerInstanceId)
+  field(:producerInstanceMetadata, type: :map)
   field(:project)
   field(:pscConnectionId)
   field(:selectedSubnetwork)
