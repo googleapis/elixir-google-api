@@ -23,6 +23,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
 
   *   `appliedControls` (*type:* `list(String.t)`, *default:* `nil`) - The fully qualified resource name of applied [controls](https://cloud.google.com/retail/docs/serving-control-rules).
   *   `attributionToken` (*type:* `String.t`, *default:* `nil`) - A unique search token. This should be included in the UserEvent logs resulting from this search, which enables accurate attribution of search model performance.
+  *   `conversationalSearchResult` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseConversationalSearchResult.t`, *default:* `nil`) - This field specifies all related information that is needed on client side for UI rendering of conversational retail search.
   *   `correctedQuery` (*type:* `String.t`, *default:* `nil`) - Contains the spell corrected query, if found. If the spell correction type is AUTOMATIC, then the search results are based on corrected_query. Otherwise the original query is used for search.
   *   `experimentInfo` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ExperimentInfo.t)`, *default:* `nil`) - Metadata related to A/B testing Experiment associated with this response. Only exists when an experiment is triggered.
   *   `facets` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseFacet.t)`, *default:* `nil`) - Results of facets requested by user.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   *   `queryExpansionInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseQueryExpansionInfo.t`, *default:* `nil`) - Query expansion information for the returned results.
   *   `redirectUri` (*type:* `String.t`, *default:* `nil`) - The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response.
   *   `results` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResult.t)`, *default:* `nil`) - A list of matched items. The order represents the ranking.
+  *   `tileNavigationResult` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseTileNavigationResult.t`, *default:* `nil`) - This field specifies all related information for tile navigation that will be used in client side.
   *   `totalSize` (*type:* `integer()`, *default:* `nil`) - The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
   """
 
@@ -39,6 +41,9 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   @type t :: %__MODULE__{
           :appliedControls => list(String.t()) | nil,
           :attributionToken => String.t() | nil,
+          :conversationalSearchResult =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseConversationalSearchResult.t()
+            | nil,
           :correctedQuery => String.t() | nil,
           :experimentInfo =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2ExperimentInfo.t()) | nil,
@@ -57,11 +62,19 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
           :results =>
             list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResult.t())
             | nil,
+          :tileNavigationResult =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseTileNavigationResult.t()
+            | nil,
           :totalSize => integer() | nil
         }
 
   field(:appliedControls, type: :list)
   field(:attributionToken)
+
+  field(:conversationalSearchResult,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseConversationalSearchResult
+  )
+
   field(:correctedQuery)
 
   field(:experimentInfo,
@@ -87,6 +100,10 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponse do
   field(:results,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseSearchResult,
     type: :list
+  )
+
+  field(:tileNavigationResult,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchResponseTileNavigationResult
   )
 
   field(:totalSize)
