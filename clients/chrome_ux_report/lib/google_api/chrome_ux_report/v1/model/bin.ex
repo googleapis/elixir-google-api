@@ -21,7 +21,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Bin do
 
   ## Attributes
 
-  *   `density` (*type:* `float()`, *default:* `nil`) - The proportion of users that experienced this bin's value for the given metric.
+  *   `density` (*type:* `any()`, *default:* `nil`) - The proportion of users that experienced this bin's value for the given metric.
   *   `end` (*type:* `any()`, *default:* `nil`) - End is the end of the data bin. If end is not populated, then the bin has no end and is valid from start to +inf.
   *   `start` (*type:* `any()`, *default:* `nil`) - Start is the beginning of the data bin.
   """
@@ -29,7 +29,7 @@ defmodule GoogleApi.ChromeUXReport.V1.Model.Bin do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :density => float() | nil,
+          :density => any() | nil,
           :end => any() | nil,
           :start => any() | nil
         }
