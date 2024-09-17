@@ -24,6 +24,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `boostSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec.t`, *default:* `nil`) - Boost specification to boost certain products. For more information, see [Boost results](https://cloud.google.com/retail/docs/boosting). Notice that if both ServingConfig.boost_control_ids and SearchRequest.boost_spec are set, the boost conditions from both places are evaluated. If a search request matches multiple boost conditions, the final boost score is equal to the sum of the boost scores from all matched boost conditions.
   *   `branch` (*type:* `String.t`, *default:* `nil`) - The branch resource name, such as `projects/*/locations/global/catalogs/default_catalog/branches/0`. Use "default_branch" as the branch ID or leave this field empty, to search products under the default branch.
   *   `canonicalFilter` (*type:* `String.t`, *default:* `nil`) - The default filter that is applied when a user performs a search without checking any filters on the search page. The filter applied to every search request when quality improvement such as query expansion is needed. In the case a query does not have a sufficient amount of results this filter will be used to determine whether or not to enable the query expansion flow. The original filter will still be used for the query expanded search. This field is strongly recommended to achieve high search quality. For more information about filter syntax, see SearchRequest.filter.
+  *   `conversationalSearchSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestConversationalSearchSpec.t`, *default:* `nil`) - Optional. This field specifies all conversational related parameters addition to traditional retail search.
   *   `dynamicFacetSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestDynamicFacetSpec.t`, *default:* `nil`) - Deprecated. Refer to https://cloud.google.com/retail/docs/configs#dynamic to enable dynamic facets. Do not set this field. The specification for dynamically generated facets. Notice that only textual facets can be dynamically generated.
   *   `entity` (*type:* `String.t`, *default:* `nil`) - The entity for customers that may run multiple different entities, domains, sites or regions, for example, `Google US`, `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. If this is set, it should be exactly matched with UserEvent.entity to get search results boosted by entity.
   *   `facetSpecs` (*type:* `list(GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestFacetSpec.t)`, *default:* `nil`) - Facet specifications for faceted search. If empty, no facets are returned. A maximum of 200 values are allowed. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   *   `queryExpansionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestQueryExpansionSpec.t`, *default:* `nil`) - The query expansion specification that specifies the conditions under which query expansion occurs. For more information, see [Query expansion](https://cloud.google.com/retail/docs/result-size#query_expansion).
   *   `searchMode` (*type:* `String.t`, *default:* `nil`) - The search mode of the search request. If not specified, a single search request triggers both product search and faceted search.
   *   `spellCorrectionSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestSpellCorrectionSpec.t`, *default:* `nil`) - The spell correction specification that specifies the mode under which spell correction will take effect.
+  *   `tileNavigationSpec` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestTileNavigationSpec.t`, *default:* `nil`) - Optional. This field specifies tile navigation related parameters.
   *   `userInfo` (*type:* `GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserInfo.t`, *default:* `nil`) - User information.
   *   `variantRollupKeys` (*type:* `list(String.t)`, *default:* `nil`) - The keys to fetch and rollup the matching variant Products attributes, FulfillmentInfo or LocalInventorys attributes. The attributes from all the matching variant Products or LocalInventorys are merged and de-duplicated. Notice that rollup attributes will lead to extra query latency. Maximum number of keys is 30. For FulfillmentInfo, a fulfillment type and a fulfillment ID must be provided in the format of "fulfillmentType.fulfillmentId". E.g., in "pickupInStore.store123", "pickupInStore" is fulfillment type and "store123" is the store ID. Supported keys are: * colorFamilies * price * originalPrice * discount * variantId * inventory(place_id,price) * inventory(place_id,original_price) * inventory(place_id,attributes.key), where key is any key in the Product.local_inventories.attributes map. * attributes.key, where key is any key in the Product.attributes map. * pickupInStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "pickup-in-store". * shipToStore.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "ship-to-store". * sameDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "same-day-delivery". * nextDayDelivery.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "next-day-delivery". * customFulfillment1.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "custom-type-1". * customFulfillment2.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "custom-type-2". * customFulfillment3.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "custom-type-3". * customFulfillment4.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "custom-type-4". * customFulfillment5.id, where id is any FulfillmentInfo.place_ids for FulfillmentInfo.type "custom-type-5". If this field is set to an invalid value other than these, an INVALID_ARGUMENT error is returned.
   *   `visitorId` (*type:* `String.t`, *default:* `nil`) - Required. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor logs in or out of the website. This should be the same identifier as UserEvent.visitor_id. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -51,6 +53,9 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec.t() | nil,
           :branch => String.t() | nil,
           :canonicalFilter => String.t() | nil,
+          :conversationalSearchSpec =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestConversationalSearchSpec.t()
+            | nil,
           :dynamicFacetSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestDynamicFacetSpec.t() | nil,
           :entity => String.t() | nil,
@@ -73,6 +78,8 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
           :spellCorrectionSpec =>
             GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestSpellCorrectionSpec.t()
             | nil,
+          :tileNavigationSpec =>
+            GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestTileNavigationSpec.t() | nil,
           :userInfo => GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserInfo.t() | nil,
           :variantRollupKeys => list(String.t()) | nil,
           :visitorId => String.t() | nil
@@ -81,6 +88,10 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
   field(:boostSpec, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestBoostSpec)
   field(:branch)
   field(:canonicalFilter)
+
+  field(:conversationalSearchSpec,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestConversationalSearchSpec
+  )
 
   field(:dynamicFacetSpec,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestDynamicFacetSpec
@@ -115,6 +126,10 @@ defmodule GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequest do
 
   field(:spellCorrectionSpec,
     as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestSpellCorrectionSpec
+  )
+
+  field(:tileNavigationSpec,
+    as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2SearchRequestTileNavigationSpec
   )
 
   field(:userInfo, as: GoogleApi.Retail.V2.Model.GoogleCloudRetailV2UserInfo)
