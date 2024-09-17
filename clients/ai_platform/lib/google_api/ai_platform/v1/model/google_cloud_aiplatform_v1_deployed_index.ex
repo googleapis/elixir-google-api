@@ -32,6 +32,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedIndex do
   *   `index` (*type:* `String.t`, *default:* `nil`) - Required. The name of the Index this is the deployment of. We may refer to this Index as the DeployedIndex's "original" Index.
   *   `indexSyncTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The DeployedIndex may depend on various data on its original Index. Additionally when certain changes to the original Index are being done (e.g. when what the Index contains is being changed) the DeployedIndex may be asynchronously updated in the background to reflect these changes. If this timestamp's value is at least the Index.update_time of the original Index, it means that this DeployedIndex and the original Index are in sync. If this timestamp is older, then to see which updates this DeployedIndex already contains (and which it does not), one must list the operations that are running on the original Index. Only the successfully completed Operations with update_time equal or before this sync time are contained in this DeployedIndex.
   *   `privateEndpoints` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexPrivateEndpoints.t`, *default:* `nil`) - Output only. Provides paths for users to send requests directly to the deployed index services running on Cloud via private services access. This field is populated if network is configured.
+  *   `pscAutomationConfigs` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PSCAutomationConfig.t)`, *default:* `nil`) - Optional. If set for PSC deployed index, PSC connection will be automatically created after deployment is done and the endpoint information is populated in private_endpoints.psc_automated_endpoints.
   *   `reservedIpRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of reserved ip ranges under the VPC network that can be used for this DeployedIndex. If set, we will deploy the index within the provided ip ranges. Otherwise, the index might be deployed to any ip ranges under the provided VPC network. The value should be the name of the address (https://cloud.google.com/compute/docs/reference/rest/v1/addresses) Example: ['vertex-ai-ip-range']. For more information about subnets and network IP ranges, please see https://cloud.google.com/vpc/docs/subnets#manually_created_subnet_ip_ranges.
   """
 
@@ -53,6 +54,9 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedIndex do
           :indexSyncTime => DateTime.t() | nil,
           :privateEndpoints =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexPrivateEndpoints.t() | nil,
+          :pscAutomationConfigs =>
+            list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PSCAutomationConfig.t())
+            | nil,
           :reservedIpRanges => list(String.t()) | nil
         }
 
@@ -79,6 +83,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DeployedIndex do
 
   field(:privateEndpoints,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1IndexPrivateEndpoints
+  )
+
+  field(:pscAutomationConfigs,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1PSCAutomationConfig,
+    type: :list
   )
 
   field(:reservedIpRanges, type: :list)

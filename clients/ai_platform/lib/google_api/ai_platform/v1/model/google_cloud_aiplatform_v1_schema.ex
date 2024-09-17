@@ -38,6 +38,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
   *   `nullable` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates if the value may be null.
   *   `pattern` (*type:* `String.t`, *default:* `nil`) - Optional. Pattern of the Type.STRING to restrict a string to a regular expression.
   *   `properties` (*type:* `%{optional(String.t) => GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t}`, *default:* `nil`) - Optional. SCHEMA FIELDS FOR TYPE OBJECT Properties of Type.OBJECT.
+  *   `propertyOrdering` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The order of the properties. Not a standard field in open api spec. Only used to support the order of the properties.
   *   `required` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Required properties of Type.OBJECT.
   *   `title` (*type:* `String.t`, *default:* `nil`) - Optional. The title of the Schema.
   *   `type` (*type:* `String.t`, *default:* `nil`) - Optional. The type of the data.
@@ -68,6 +69,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
                 GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t()
             }
             | nil,
+          :propertyOrdering => list(String.t()) | nil,
           :required => list(String.t()) | nil,
           :title => String.t() | nil,
           :type => String.t() | nil
@@ -90,6 +92,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
   field(:nullable)
   field(:pattern)
   field(:properties, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema, type: :map)
+  field(:propertyOrdering, type: :list)
   field(:required, type: :list)
   field(:title)
   field(:type)

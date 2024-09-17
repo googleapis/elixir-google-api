@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
 
   *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Required. The content of the current conversation with the model. For single-turn queries, this is a single instance. For multi-turn queries, this is a repeated field that contains conversation history + latest request.
   *   `generationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t`, *default:* `nil`) - Optional. Generation config.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. The labels with user-defined metadata for the request. It is used for billing and reporting only. Label keys and values can be no longer than 63 characters (Unicode codepoints) and can only contain lowercase letters, numeric characters, underscores, and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter.
   *   `safetySettings` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t)`, *default:* `nil`) - Optional. Per request settings for blocking unsafe content. Enforced on GenerateContentResponse.candidates.
   *   `systemInstruction` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Optional. The user provided system instructions for the model. Note: only text should be used in parts and content in each part will be in a separate paragraph.
   *   `toolConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1ToolConfig.t`, *default:* `nil`) - Optional. Tool config. This config is shared for all tools provided in the request.
@@ -36,6 +37,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
           :generationConfig =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t() | nil,
+          :labels => map() | nil,
           :safetySettings =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting.t()) | nil,
           :systemInstruction =>
@@ -50,6 +52,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   field(:generationConfig,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig
   )
+
+  field(:labels, type: :map)
 
   field(:safetySettings,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetySetting,

@@ -17,10 +17,11 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
   @moduledoc """
-
+  Next ID: 6
 
   ## Attributes
 
+  *   `blockedEntities` (*type:* `list(String.t)`, *default:* `nil`) - List of blocked entities from the blocklist if it is detected.
   *   `detectedLabels` (*type:* `list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t)`, *default:* `nil`) - The list of detected labels for different rai categories.
   *   `modelName` (*type:* `String.t`, *default:* `nil`) - The model name used to indexing into the RaiFilterConfig map. Would either be one of imagegeneration@002-006, imagen-3.0-... api endpoint names, or internal names used for mapping to different filter configs (genselfie, ai_watermark) than its api endpoint.
   *   `raiCategories` (*type:* `list(String.t)`, *default:* `nil`) - List of rai categories' information to return
@@ -30,6 +31,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :blockedEntities => list(String.t()) | nil,
           :detectedLabels =>
             list(GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels.t())
             | nil,
@@ -37,6 +39,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfo do
           :raiCategories => list(String.t()) | nil,
           :scores => list(number()) | nil
         }
+
+  field(:blockedEntities, type: :list)
 
   field(:detectedLabels,
     as: GoogleApi.AIPlatform.V1.Model.CloudAiLargeModelsVisionRaiInfoDetectedLabels,

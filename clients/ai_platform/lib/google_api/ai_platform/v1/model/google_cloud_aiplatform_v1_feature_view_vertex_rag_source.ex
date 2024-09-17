@@ -22,7 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1FeatureViewVertex
   ## Attributes
 
   *   `ragCorpusId` (*type:* `String.t`, *default:* `nil`) - Optional. The RAG corpus id corresponding to this FeatureView.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery view/table URI that will be materialized on each manual sync trigger. The table/view is expected to have the following columns at least: Field name Type Mode corpus_id STRING REQUIRED/NULLABLE file_id STRING REQUIRED/NULLABLE chunk_id STRING REQUIRED/NULLABLE chunk_data_type STRING REQUIRED/NULLABLE chunk_data STRING REQUIRED/NULLABLE embeddings FLOAT REPEATED file_original_uri STRING REQUIRED/NULLABLE
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. The BigQuery view/table URI that will be materialized on each manual sync trigger. The table/view is expected to have the following columns and types at least: - `corpus_id` (STRING, NULLABLE/REQUIRED) - `file_id` (STRING, NULLABLE/REQUIRED) - `chunk_id` (STRING, NULLABLE/REQUIRED) - `chunk_data_type` (STRING, NULLABLE/REQUIRED) - `chunk_data` (STRING, NULLABLE/REQUIRED) - `embeddings` (FLOAT, REPEATED) - `file_original_uri` (STRING, NULLABLE/REQUIRED)
   """
 
   use GoogleApi.Gax.ModelBase
