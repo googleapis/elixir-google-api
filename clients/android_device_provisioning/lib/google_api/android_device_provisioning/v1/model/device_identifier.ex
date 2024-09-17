@@ -24,8 +24,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   *   `chromeOsAttestedDeviceId` (*type:* `String.t`, *default:* `nil`) - An identifier provided by OEMs, carried through the production and sales process. Only applicable to Chrome OS devices.
   *   `deviceType` (*type:* `String.t`, *default:* `nil`) - The type of the device
   *   `imei` (*type:* `String.t`, *default:* `nil`) - The device’s IMEI number. Validated on input.
+  *   `imei2` (*type:* `String.t`, *default:* `nil`) - The device’s second IMEI number.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The device manufacturer’s name. Matches the device's built-in value returned from `android.os.Build.MANUFACTURER`. Allowed values are listed in [Android manufacturers](/zero-touch/resources/manufacturer-names#manufacturers-names).
   *   `meid` (*type:* `String.t`, *default:* `nil`) - The device’s MEID number.
+  *   `meid2` (*type:* `String.t`, *default:* `nil`) - The device’s second MEID number.
   *   `model` (*type:* `String.t`, *default:* `nil`) - The device model's name. Allowed values are listed in [Android models](/zero-touch/resources/manufacturer-names#model-names) and [Chrome OS models](https://support.google.com/chrome/a/answer/10130175#identify_compatible).
   *   `serialNumber` (*type:* `String.t`, *default:* `nil`) - The manufacturer's serial number for the device. This value might not be unique across different device models.
   """
@@ -36,8 +38,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
           :chromeOsAttestedDeviceId => String.t() | nil,
           :deviceType => String.t() | nil,
           :imei => String.t() | nil,
+          :imei2 => String.t() | nil,
           :manufacturer => String.t() | nil,
           :meid => String.t() | nil,
+          :meid2 => String.t() | nil,
           :model => String.t() | nil,
           :serialNumber => String.t() | nil
         }
@@ -45,8 +49,10 @@ defmodule GoogleApi.AndroidDeviceProvisioning.V1.Model.DeviceIdentifier do
   field(:chromeOsAttestedDeviceId)
   field(:deviceType)
   field(:imei)
+  field(:imei2)
   field(:manufacturer)
   field(:meid)
+  field(:meid2)
   field(:model)
   field(:serialNumber)
 end
