@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensReques
   ## Attributes
 
   *   `contents` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t)`, *default:* `nil`) - Optional. Input content.
+  *   `generationConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t`, *default:* `nil`) - Optional. Generation config that the model will use to generate the response.
   *   `instances` (*type:* `list(any())`, *default:* `nil`) - Optional. The instances that are the input to token counting call. Schema is identical to the prediction schema of the underlying model.
   *   `model` (*type:* `String.t`, *default:* `nil`) - Optional. The name of the publisher model requested to serve the prediction. Format: `projects/{project}/locations/{location}/publishers/*/models/*`
   *   `systemInstruction` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t`, *default:* `nil`) - Optional. The user provided system instructions for the model. Note: only text should be used in parts and content in each part will be in a separate paragraph.
@@ -33,6 +34,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensReques
   @type t :: %__MODULE__{
           :contents =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content.t()) | nil,
+          :generationConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig.t() | nil,
           :instances => list(any()) | nil,
           :model => String.t() | nil,
           :systemInstruction =>
@@ -41,6 +44,11 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1CountTokensReques
         }
 
   field(:contents, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content, type: :list)
+
+  field(:generationConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig
+  )
+
   field(:instances, type: :list)
   field(:model)
   field(:systemInstruction, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Content)

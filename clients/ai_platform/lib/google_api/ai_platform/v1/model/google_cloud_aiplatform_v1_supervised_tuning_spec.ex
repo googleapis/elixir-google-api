@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SupervisedTuningSpec do
   @moduledoc """
-  Tuning Spec for Supervised Tuning.
+  Tuning Spec for Supervised Tuning for first party models.
 
   ## Attributes
 
