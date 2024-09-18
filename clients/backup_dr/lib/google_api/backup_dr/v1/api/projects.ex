@@ -1072,6 +1072,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Optional. Reserved for future use to provide a BASIC & FULL view of Backup Vault
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1106,7 +1107,8 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :view => :query
     }
 
     request =
@@ -1146,6 +1148,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Optional. Hint for how to order the results.
       *   `:pageSize` (*type:* `integer()`) - Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional. A token identifying a page of results the server should return.
+      *   `:view` (*type:* `String.t`) - Optional. Reserved for future use to provide a BASIC & FULL view of Backup Vault.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -1184,7 +1187,8 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
@@ -2104,6 +2108,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:view` (*type:* `String.t`) - Optional. Reserved for future use to provide a BASIC & FULL view of Backup resource.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2138,7 +2143,8 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query
+      :upload_protocol => :query,
+      :view => :query
     }
 
     request =
@@ -2178,6 +2184,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       *   `:orderBy` (*type:* `String.t`) - Optional. Hint for how to order the results.
       *   `:pageSize` (*type:* `integer()`) - Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
       *   `:pageToken` (*type:* `String.t`) - Optional. A token identifying a page of results the server should return.
+      *   `:view` (*type:* `String.t`) - Optional. Reserved for future use to provide a BASIC & FULL view of Backup resource.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -2216,7 +2223,8 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
       :filter => :query,
       :orderBy => :query,
       :pageSize => :query,
-      :pageToken => :query
+      :pageToken => :query,
+      :view => :query
     }
 
     request =
