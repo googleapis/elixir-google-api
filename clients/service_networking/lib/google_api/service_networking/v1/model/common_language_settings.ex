@@ -23,17 +23,24 @@ defmodule GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings do
 
   *   `destinations` (*type:* `list(String.t)`, *default:* `nil`) - The destination where API teams want this client library to be published.
   *   `referenceDocsUri` (*type:* `String.t`, *default:* `nil`) - Link to automatically generated reference documentation. Example: https://cloud.google.com/nodejs/docs/reference/asset/latest
+  *   `selectiveGapicGeneration` (*type:* `GoogleApi.ServiceNetworking.V1.Model.SelectiveGapicGeneration.t`, *default:* `nil`) - Configuration for which RPCs should be generated in the GAPIC client.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :destinations => list(String.t()) | nil,
-          :referenceDocsUri => String.t() | nil
+          :referenceDocsUri => String.t() | nil,
+          :selectiveGapicGeneration =>
+            GoogleApi.ServiceNetworking.V1.Model.SelectiveGapicGeneration.t() | nil
         }
 
   field(:destinations, type: :list)
   field(:referenceDocsUri)
+
+  field(:selectiveGapicGeneration,
+    as: GoogleApi.ServiceNetworking.V1.Model.SelectiveGapicGeneration
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.ServiceNetworking.V1.Model.CommonLanguageSettings do
