@@ -21,7 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1AnswerQ
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - Document content.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - Document content to be used for answer generation.
   *   `pageIdentifier` (*type:* `String.t`, *default:* `nil`) - Page identifier.
   """
 
