@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.MembershipCount do
   @moduledoc """
-  [Developer Preview](https://developers.google.com/workspace/preview). Represents the count of memberships of a space, grouped into categories.
+  Represents the count of memberships of a space, grouped into categories.
 
   ## Attributes
 
