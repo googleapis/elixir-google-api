@@ -31,6 +31,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
   *   `resourceLimits` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceLimits.t`, *default:* `nil`) - Output only. System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceRequests.t`, *default:* `nil`) - Output only. System resource requests.
   *   `sharedDeployment` (*type:* `String.t`, *default:* `nil`) - Output only. The name of shared connector deployment.
+  *   `tlsMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the TLS migration.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -48,7 +49,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceLimits.t() | nil,
           :resourceRequests =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ResourceRequests.t() | nil,
-          :sharedDeployment => String.t() | nil
+          :sharedDeployment => String.t() | nil,
+          :tlsMigrationState => String.t() | nil
         }
 
   field(:connectionRatelimitWindowSeconds)
@@ -66,6 +68,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectorVersio
   )
 
   field(:sharedDeployment)
+  field(:tlsMigrationState)
 end
 
 defimpl Poison.Decoder,

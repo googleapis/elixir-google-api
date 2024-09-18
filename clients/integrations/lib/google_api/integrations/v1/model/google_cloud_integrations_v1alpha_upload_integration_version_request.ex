@@ -21,7 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaUploadIn
 
   ## Attributes
 
-  *   `content` (*type:* `String.t`, *default:* `nil`) - The textproto of the integration_version.
+  *   `content` (*type:* `String.t`, *default:* `nil`) - The textproto of the IntegrationVersion.
   *   `fileFormat` (*type:* `String.t`, *default:* `nil`) - File format for upload request.
   """
 

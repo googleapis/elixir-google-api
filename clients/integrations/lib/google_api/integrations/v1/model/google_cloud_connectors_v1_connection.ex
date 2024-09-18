@@ -23,6 +23,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
 
   *   `asyncOperationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Async operations enabled for the connection. If Async Operations is enabled, Connection allows the customers to initiate async long running operations using the actions API.
   *   `authConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t`, *default:* `nil`) - Optional. Configuration for establishing the connection's authentication with an external system.
+  *   `authOverrideEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Auth override enabled for the connection. If Auth Override is enabled, Connection allows the backend service auth to be overridden in the entities/actions API.
   *   `billingConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1BillingConfig.t`, *default:* `nil`) - Output only. Billing config for the connection.
   *   `configVariables` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConfigVariable.t)`, *default:* `nil`) - Optional. Configuration for configuring the connection with an external system.
   *   `connectionRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Connection revision. This field is only updated when the connection is created or updated by User.
@@ -50,7 +51,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   *   `status` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t`, *default:* `nil`) - Output only. Current status of the connection.
   *   `subscriptionType` (*type:* `String.t`, *default:* `nil`) - Output only. This subscription type enum states the subscription type of the project.
   *   `suspended` (*type:* `boolean()`, *default:* `nil`) - Optional. Suspended indicates if a user has suspended a connection or not.
-  *   `tlsMigrationState` (*type:* `String.t`, *default:* `nil`) - Output only. Status of the TLS migration.
   *   `tlsServiceDirectory` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Service Directory service with TLS.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Updated time.
   """
@@ -61,6 +61,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
           :asyncOperationsEnabled => boolean() | nil,
           :authConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig.t() | nil,
+          :authOverrideEnabled => boolean() | nil,
           :billingConfig =>
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1BillingConfig.t() | nil,
           :configVariables =>
@@ -101,13 +102,13 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
             GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus.t() | nil,
           :subscriptionType => String.t() | nil,
           :suspended => boolean() | nil,
-          :tlsMigrationState => String.t() | nil,
           :tlsServiceDirectory => String.t() | nil,
           :updateTime => DateTime.t() | nil
         }
 
   field(:asyncOperationsEnabled)
   field(:authConfig, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1AuthConfig)
+  field(:authOverrideEnabled)
   field(:billingConfig, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1BillingConfig)
 
   field(:configVariables,
@@ -155,7 +156,6 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1Connection do
   field(:status, as: GoogleApi.Integrations.V1.Model.GoogleCloudConnectorsV1ConnectionStatus)
   field(:subscriptionType)
   field(:suspended)
-  field(:tlsMigrationState)
   field(:tlsServiceDirectory)
   field(:updateTime, as: DateTime)
 end
