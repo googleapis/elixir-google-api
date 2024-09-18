@@ -21,7 +21,7 @@ defmodule GoogleApi.ServiceConsumerManagement.V1.Model.V1DefaultIdentity do
 
   ## Attributes
 
-  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the default identity.
+  *   `email` (*type:* `String.t`, *default:* `nil`) - The email address of the default identity. Calling GenerateDefaultIdentity with a deleted or purged default identity should expect does_not_exist@invalid-project.iam.gserviceaccount.com placeholder email.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Default identity resource name. An example name would be: `services/serviceconsumermanagement.googleapis.com/projects/123/defaultIdentity`
   *   `tag` (*type:* `String.t`, *default:* `nil`) - The Default Identity tag. If specified when creating the account, the tag must be present in activation_grants. If not specified when creating the account, the tag is set to the tag specified in activation_grants.
   *   `uniqueId` (*type:* `String.t`, *default:* `nil`) - The unique and stable id of the default identity.
