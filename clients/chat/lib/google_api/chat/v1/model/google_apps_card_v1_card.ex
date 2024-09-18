@@ -27,7 +27,7 @@ defmodule GoogleApi.Chat.V1.Model.GoogleAppsCardV1Card do
   *   `header` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader.t`, *default:* `nil`) - The header of the card. A header usually contains a leading image and a title. Headers always appear at the top of a card.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the card. Used as a card identifier in card navigation. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
   *   `peekCardHeader` (*type:* `GoogleApi.Chat.V1.Model.GoogleAppsCardV1CardHeader.t`, *default:* `nil`) - When displaying contextual content, the peek card header acts as a placeholder so that the user can navigate forward between the homepage cards and the contextual cards. [Google Workspace Add-ons](https://developers.google.com/workspace/add-ons):
-  *   `sectionDividerStyle` (*type:* `String.t`, *default:* `nil`) - The divider style between sections.
+  *   `sectionDividerStyle` (*type:* `String.t`, *default:* `nil`) - The divider style between the header, sections and footer.
   *   `sections` (*type:* `list(GoogleApi.Chat.V1.Model.GoogleAppsCardV1Section.t)`, *default:* `nil`) - Contains a collection of widgets. Each section has its own, optional header. Sections are visually separated by a line divider. For an example in Google Chat apps, see [Define a section of a card](https://developers.google.com/workspace/chat/design-components-card-dialog#define_a_section_of_a_card).
   """
 
