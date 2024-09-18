@@ -904,8 +904,8 @@ defmodule GoogleApi.VMMigration.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter request (according to https://google.aip.dev/160).
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order by fields for the result (according to https://google.aip.dev/132#ordering). Currently ordering is only possible by "name" field.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter request (according to AIP-160).
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order by fields for the result (according to AIP-132). Currently ordering is only possible by "name" field.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of targets to return. The service may return fewer than this value. If unspecified, at most 500 targets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListImageImports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListImageImports` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -1126,8 +1126,8 @@ defmodule GoogleApi.VMMigration.V1.Api.Projects do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:filter` (*type:* `String.t`) - Optional. The filter request (according to https://google.aip.dev/160).
-      *   `:orderBy` (*type:* `String.t`) - Optional. The order by fields for the result (according to https://google.aip.dev/132#ordering). Currently ordering is only possible by "name" field.
+      *   `:filter` (*type:* `String.t`) - Optional. The filter request (according to AIP-160).
+      *   `:orderBy` (*type:* `String.t`) - Optional. The order by fields for the result (according to AIP-132). Currently ordering is only possible by "name" field.
       *   `:pageSize` (*type:* `integer()`) - Optional. The maximum number of targets to return. The service may return fewer than this value. If unspecified, at most 500 targets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
       *   `:pageToken` (*type:* `String.t`) - Optional. A page token, received from a previous `ListImageImportJobs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListImageImportJobs` must match the call that provided the page token.
   *   `opts` (*type:* `keyword()`) - Call options
