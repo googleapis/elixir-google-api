@@ -21,7 +21,7 @@ defmodule GoogleApi.Logging.V2.Model.LogBucket do
 
   ## Attributes
 
-  *   `analyticsEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether log analytics is enabled for this bucket.Once enabled, log analytics features cannot be disabled.
+  *   `analyticsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether log analytics is enabled for this bucket.Once enabled, log analytics features cannot be disabled.
   *   `cmekSettings` (*type:* `GoogleApi.Logging.V2.Model.CmekSettings.t`, *default:* `nil`) - Optional. The CMEK settings of the log bucket. If present, new log entries written to this log bucket are encrypted using the CMEK key provided in this configuration. If a log bucket has CMEK settings, the CMEK settings cannot be disabled later by updating the log bucket. Changing the KMS key is allowed.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Describes this bucket.
