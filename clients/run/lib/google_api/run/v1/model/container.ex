@@ -30,7 +30,7 @@ defmodule GoogleApi.Run.V1.Model.Container do
   *   `livenessProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - Periodic probe of container liveness. Container will be restarted if the probe fails.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Name of the container specified as a DNS_LABEL (RFC 1123).
   *   `ports` (*type:* `list(GoogleApi.Run.V1.Model.ContainerPort.t)`, *default:* `nil`) - List of ports to expose from the container. Only a single port can be specified. The specified ports must be listening on all interfaces (0.0.0.0) within the container to be accessible. If omitted, a port number will be chosen and passed to the container through the PORT environment variable for the container to listen on.
-  *   `readinessProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - Not supported by Cloud Run.
+  *   `readinessProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - Readiness probe to be used for health checks. Not supported by Cloud Run.
   *   `resources` (*type:* `GoogleApi.Run.V1.Model.ResourceRequirements.t`, *default:* `nil`) - Compute Resources required by this container.
   *   `securityContext` (*type:* `GoogleApi.Run.V1.Model.SecurityContext.t`, *default:* `nil`) - Not supported by Cloud Run.
   *   `startupProbe` (*type:* `GoogleApi.Run.V1.Model.Probe.t`, *default:* `nil`) - Startup probe of application within the container. All other probes are disabled if a startup probe is provided, until it succeeds. Container will not receive traffic if the probe fails. If not provided, a default startup probe with TCP socket action is used.
