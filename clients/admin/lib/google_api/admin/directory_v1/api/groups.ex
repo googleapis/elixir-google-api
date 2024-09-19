@@ -226,7 +226,7 @@ defmodule GoogleApi.Admin.Directory_v1.Api.Groups do
       *   `:pageToken` (*type:* `String.t`) - Token to specify next page in the list
       *   `:query` (*type:* `String.t`) - Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-groups
       *   `:sortOrder` (*type:* `String.t`) - Whether to return results in ascending or descending order. Only of use when orderBy is also used
-      *   `:userKey` (*type:* `String.t`) - Email or immutable ID of the user if only those groups are to be listed, the given user is a member of. If it's an ID, it should match with the ID of the user object.
+      *   `:userKey` (*type:* `String.t`) - Email or immutable ID of the user if only those groups are to be listed, the given user is a member of. If it's an ID, it should match with the ID of the user object. Cannot be used with the `customer` parameter.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
