@@ -29,6 +29,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - User specified display name for the data transfer.
   *   `emailPreferences` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t`, *default:* `nil`) - Email notifications will be sent according to these preferences to the email address of the user who owns this transfer config.
   *   `encryptionConfiguration` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration.t`, *default:* `nil`) - The encryption configuration part. Currently, it is only used for the optional KMS key name. The BigQuery service account of your project must be granted permissions to use the key. Read methods will return the key name applied in effect. Write methods will apply the key if it is present, or otherwise try to apply project default keys if it is absent.
+  *   `error` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.Status.t`, *default:* `nil`) - Output only. Error code with detailed information about reason of the latest config failure.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the transfer config. Transfer config names have the form either `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or `projects/{project_id}/transferConfigs/{config_id}`, where `config_id` is usually a UUID, even though it is not guaranteed or required. The name is ignored when creating a transfer config.
   *   `nextRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Next time when data transfer will run.
   *   `notificationPubsubTopic` (*type:* `String.t`, *default:* `nil`) - Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project_id}/topics/{topic_id}`
@@ -36,6 +37,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   *   `params` (*type:* `map()`, *default:* `nil`) - Parameters specific to each data source. For more information see the bq tab in the 'Setting up a data transfer' section for each data source. For example the parameters for Cloud Storage transfers are listed here: https://cloud.google.com/bigquery-transfer/docs/cloud-storage-transfer#bq
   *   `schedule` (*type:* `String.t`, *default:* `nil`) - Data transfer schedule. If the data source does not support a custom schedule, this should be empty. If it is empty, the default value for the data source will be used. The specified times are in UTC. Examples of valid format: `1st,3rd monday of month 15:30`, `every wed,fri of jan,jun 13:15`, and `first sunday of quarter 00:00`. See more explanation about the format here: https://cloud.google.com/appengine/docs/flexible/python/scheduling-jobs-with-cron-yaml#the_schedule_format NOTE: The minimum interval time between recurring transfers depends on the data source; refer to the documentation for your data source.
   *   `scheduleOptions` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t`, *default:* `nil`) - Options customizing the data transfer schedule.
+  *   `scheduleOptionsV2` (*type:* `GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptionsV2.t`, *default:* `nil`) - Options customizing different types of data transfer schedule. This field replaces "schedule" and "schedule_options" fields. ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the most recently updated transfer run.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Data transfer modification time. Ignored by server on input.
   *   `userId` (*type:* `String.t`, *default:* `nil`) - Deprecated. Unique ID of the user on whose behalf transfer is done.
@@ -53,6 +55,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
           :emailPreferences => GoogleApi.BigQueryDataTransfer.V1.Model.EmailPreferences.t() | nil,
           :encryptionConfiguration =>
             GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration.t() | nil,
+          :error => GoogleApi.BigQueryDataTransfer.V1.Model.Status.t() | nil,
           :name => String.t() | nil,
           :nextRunTime => DateTime.t() | nil,
           :notificationPubsubTopic => String.t() | nil,
@@ -60,6 +63,8 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
           :params => map() | nil,
           :schedule => String.t() | nil,
           :scheduleOptions => GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions.t() | nil,
+          :scheduleOptionsV2 =>
+            GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptionsV2.t() | nil,
           :state => String.t() | nil,
           :updateTime => DateTime.t() | nil,
           :userId => String.t() | nil
@@ -77,6 +82,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
     as: GoogleApi.BigQueryDataTransfer.V1.Model.EncryptionConfiguration
   )
 
+  field(:error, as: GoogleApi.BigQueryDataTransfer.V1.Model.Status)
   field(:name)
   field(:nextRunTime, as: DateTime)
   field(:notificationPubsubTopic)
@@ -84,6 +90,7 @@ defmodule GoogleApi.BigQueryDataTransfer.V1.Model.TransferConfig do
   field(:params, type: :map)
   field(:schedule)
   field(:scheduleOptions, as: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptions)
+  field(:scheduleOptionsV2, as: GoogleApi.BigQueryDataTransfer.V1.Model.ScheduleOptionsV2)
   field(:state)
   field(:updateTime, as: DateTime)
   field(:userId)

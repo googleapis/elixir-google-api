@@ -11,7 +11,7 @@ Install this package from [Hex](https://hex.pm) by adding
 
 ```elixir
 def deps do
-  [{:google_api_big_query_data_transfer, "~> 0.28"}]
+  [{:google_api_big_query_data_transfer, "~> 0.29"}]
 end
 ```
 
