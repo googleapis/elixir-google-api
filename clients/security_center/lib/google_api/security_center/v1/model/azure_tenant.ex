@@ -21,15 +21,18 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AzureTenant do
 
   ## Attributes
 
+  *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the Azure tenant.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the Microsoft Entra tenant, for example, "a11aaa11-aa11-1aa1-11aa-1aaa11a".
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :displayName => String.t() | nil,
           :id => String.t() | nil
         }
 
+  field(:displayName)
   field(:id)
 end
 
