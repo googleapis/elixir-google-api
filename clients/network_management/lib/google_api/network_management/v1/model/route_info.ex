@@ -21,6 +21,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RouteInfo do
 
   ## Attributes
 
+  *   `advertisedRouteNextHopUri` (*type:* `String.t`, *default:* `nil`) - For advertised routes, the URI of their next hop, i.e. the URI of the hybrid endpoint (VPN tunnel, Interconnect attachment, NCC router appliance) the advertised prefix is advertised through, or URI of the source peered network.
+  *   `advertisedRouteSourceRouterUri` (*type:* `String.t`, *default:* `nil`) - For advertised dynamic routes, the URI of the Cloud Router that advertised the corresponding IP prefix.
   *   `destIpRange` (*type:* `String.t`, *default:* `nil`) - Destination IP range of the route.
   *   `destPortRanges` (*type:* `list(String.t)`, *default:* `nil`) - Destination port ranges of the route. Policy based routes only.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a route.
@@ -32,16 +34,19 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RouteInfo do
   *   `nextHopType` (*type:* `String.t`, *default:* `nil`) - Type of next hop.
   *   `priority` (*type:* `integer()`, *default:* `nil`) - Priority of the route.
   *   `protocols` (*type:* `list(String.t)`, *default:* `nil`) - Protocols of the route. Policy based routes only.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - Region of the route (if applicable).
   *   `routeScope` (*type:* `String.t`, *default:* `nil`) - Indicates where route is applicable.
   *   `routeType` (*type:* `String.t`, *default:* `nil`) - Type of route.
   *   `srcIpRange` (*type:* `String.t`, *default:* `nil`) - Source IP address range of the route. Policy based routes only.
   *   `srcPortRanges` (*type:* `list(String.t)`, *default:* `nil`) - Source port ranges of the route. Policy based routes only.
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a route. Dynamic, peering static and peering dynamic routes do not have an URI. Advertised route from Google Cloud VPC to on-premises network also does not have an URI.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a route (if applicable).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advertisedRouteNextHopUri => String.t() | nil,
+          :advertisedRouteSourceRouterUri => String.t() | nil,
           :destIpRange => String.t() | nil,
           :destPortRanges => list(String.t()) | nil,
           :displayName => String.t() | nil,
@@ -53,6 +58,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RouteInfo do
           :nextHopType => String.t() | nil,
           :priority => integer() | nil,
           :protocols => list(String.t()) | nil,
+          :region => String.t() | nil,
           :routeScope => String.t() | nil,
           :routeType => String.t() | nil,
           :srcIpRange => String.t() | nil,
@@ -60,6 +66,8 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RouteInfo do
           :uri => String.t() | nil
         }
 
+  field(:advertisedRouteNextHopUri)
+  field(:advertisedRouteSourceRouterUri)
   field(:destIpRange)
   field(:destPortRanges, type: :list)
   field(:displayName)
@@ -71,6 +79,7 @@ defmodule GoogleApi.NetworkManagement.V1.Model.RouteInfo do
   field(:nextHopType)
   field(:priority)
   field(:protocols, type: :list)
+  field(:region)
   field(:routeScope)
   field(:routeType)
   field(:srcIpRange)
