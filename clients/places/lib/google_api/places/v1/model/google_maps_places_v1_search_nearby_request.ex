@@ -30,6 +30,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyRequest do
   *   `maxResultCount` (*type:* `integer()`, *default:* `nil`) - Maximum number of results to return. It must be between 1 and 20 (default), inclusively. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
   *   `rankPreference` (*type:* `String.t`, *default:* `nil`) - How results will be ranked in the response.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The Unicode country/region code (CLDR) of the location where the request is coming from. This parameter is used to display the place details, like region-specific place name, if available. The parameter can affect results based on applicable law. For more information, see https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html. Note that 3-digit region codes are not currently supported.
+  *   `routingParameters` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters.t`, *default:* `nil`) - Optional. Parameters that affect the routing to the search results.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,9 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyRequest do
             | nil,
           :maxResultCount => integer() | nil,
           :rankPreference => String.t() | nil,
-          :regionCode => String.t() | nil
+          :regionCode => String.t() | nil,
+          :routingParameters =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters.t() | nil
         }
 
   field(:excludedPrimaryTypes, type: :list)
@@ -61,6 +64,7 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyRequest do
   field(:maxResultCount)
   field(:rankPreference)
   field(:regionCode)
+  field(:routingParameters, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyRequest do
