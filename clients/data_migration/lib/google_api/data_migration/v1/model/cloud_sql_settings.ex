@@ -30,7 +30,8 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   *   `dataDiskSizeGb` (*type:* `String.t`, *default:* `nil`) - The storage capacity available to the database, in GB. The minimum (and default) size is 10GB.
   *   `dataDiskType` (*type:* `String.t`, *default:* `nil`) - The type of storage: `PD_SSD` (default) or `PD_HDD`.
   *   `databaseFlags` (*type:* `map()`, *default:* `nil`) - The database flags passed to the Cloud SQL instance at startup. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
-  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version.
+  *   `databaseVersion` (*type:* `String.t`, *default:* `nil`) - The database engine type and version. Deprecated. Use database_version_name instead.
+  *   `databaseVersionName` (*type:* `String.t`, *default:* `nil`) - Optional. The database engine type and version name.
   *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. The edition of the given Cloud SQL instance.
   *   `ipConfig` (*type:* `GoogleApi.DataMigration.V1.Model.SqlIpConfig.t`, *default:* `nil`) - The settings for IP Management. This allows to enable or disable the instance IP and manage which external networks can connect to the instance. The IPv4 address cannot be disabled.
   *   `rootPassword` (*type:* `String.t`, *default:* `nil`) - Input only. Initial root password.
@@ -56,6 +57,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
           :dataDiskType => String.t() | nil,
           :databaseFlags => map() | nil,
           :databaseVersion => String.t() | nil,
+          :databaseVersionName => String.t() | nil,
           :edition => String.t() | nil,
           :ipConfig => GoogleApi.DataMigration.V1.Model.SqlIpConfig.t() | nil,
           :rootPassword => String.t() | nil,
@@ -78,6 +80,7 @@ defmodule GoogleApi.DataMigration.V1.Model.CloudSqlSettings do
   field(:dataDiskType)
   field(:databaseFlags, type: :map)
   field(:databaseVersion)
+  field(:databaseVersionName)
   field(:edition)
   field(:ipConfig, as: GoogleApi.DataMigration.V1.Model.SqlIpConfig)
   field(:rootPassword)
