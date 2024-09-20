@@ -22,15 +22,18 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling do
   ## Attributes
 
   *   `minInstanceCount` (*type:* `integer()`, *default:* `nil`) - Optional. total min instances for the service. This number of instances is divided among all revisions with specified traffic based on the percent of traffic they are receiving. (BETA)
+  *   `scalingMode` (*type:* `String.t`, *default:* `nil`) - Optional. The scaling mode for the service.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :minInstanceCount => integer() | nil
+          :minInstanceCount => integer() | nil,
+          :scalingMode => String.t() | nil
         }
 
   field(:minInstanceCount)
+  field(:scalingMode)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceScaling do
