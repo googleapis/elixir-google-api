@@ -25,10 +25,12 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEvent do
   *   `assetId` (*type:* `String.t`, *default:* `nil`) - The id of the associated asset.
   *   `config` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventConfigDetails.t`, *default:* `nil`) - Details about discovery configuration in effect.
   *   `dataLocation` (*type:* `String.t`, *default:* `nil`) - The data location associated with the event.
+  *   `datascanId` (*type:* `String.t`, *default:* `nil`) - The id of the associated datascan for standalone discovery.
   *   `entity` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventEntityDetails.t`, *default:* `nil`) - Details about the entity associated with the event.
   *   `lakeId` (*type:* `String.t`, *default:* `nil`) - The id of the associated lake.
   *   `message` (*type:* `String.t`, *default:* `nil`) - The log message.
   *   `partition` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventPartitionDetails.t`, *default:* `nil`) - Details about the partition associated with the event.
+  *   `table` (*type:* `GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventTableDetails.t`, *default:* `nil`) - Details about the BigQuery table publishing associated with the event.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The type of the event being logged.
   *   `zoneId` (*type:* `String.t`, *default:* `nil`) - The id of the associated zone.
   """
@@ -42,6 +44,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEvent do
           :config =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventConfigDetails.t() | nil,
           :dataLocation => String.t() | nil,
+          :datascanId => String.t() | nil,
           :entity =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventEntityDetails.t() | nil,
           :lakeId => String.t() | nil,
@@ -49,6 +52,8 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEvent do
           :partition =>
             GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventPartitionDetails.t()
             | nil,
+          :table =>
+            GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventTableDetails.t() | nil,
           :type => String.t() | nil,
           :zoneId => String.t() | nil
         }
@@ -57,6 +62,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEvent do
   field(:assetId)
   field(:config, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventConfigDetails)
   field(:dataLocation)
+  field(:datascanId)
   field(:entity, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventEntityDetails)
   field(:lakeId)
   field(:message)
@@ -65,6 +71,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEvent do
     as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventPartitionDetails
   )
 
+  field(:table, as: GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1DiscoveryEventTableDetails)
   field(:type)
   field(:zoneId)
 end

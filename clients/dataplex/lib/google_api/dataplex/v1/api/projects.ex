@@ -156,7 +156,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Looks up a single Entry by name using the permission on the source system.
+  Looks up a single Entry by name using the permission on the source system.Caution: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see Changes to BigQuery metadata stored in Dataplex Catalog (https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
 
   ## Parameters
 
@@ -4460,7 +4460,7 @@ defmodule GoogleApi.Dataplex.V1.Api.Projects do
   end
 
   @doc """
-  Gets an Entry.
+  Gets an Entry.Caution: The BigQuery metadata that is stored in Dataplex Catalog is changing. For more information, see Changes to BigQuery metadata stored in Dataplex Catalog (https://cloud.google.com/dataplex/docs/biqquery-metadata-changes).
 
   ## Parameters
 

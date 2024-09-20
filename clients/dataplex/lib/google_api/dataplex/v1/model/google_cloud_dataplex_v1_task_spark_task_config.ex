@@ -28,7 +28,7 @@ defmodule GoogleApi.Dataplex.V1.Model.GoogleCloudDataplexV1TaskSparkTaskConfig d
   *   `mainJarFileUri` (*type:* `String.t`, *default:* `nil`) - The Cloud Storage URI of the jar file that contains the main class. The execution args are passed in as a sequence of named process arguments (--key=value).
   *   `pythonScriptFile` (*type:* `String.t`, *default:* `nil`) - The Gcloud Storage URI of the main Python file to use as the driver. Must be a .py file. The execution args are passed in as a sequence of named process arguments (--key=value).
   *   `sqlScript` (*type:* `String.t`, *default:* `nil`) - The query text. The execution args are used to declare a set of script variables (set key="value";).
-  *   `sqlScriptFile` (*type:* `String.t`, *default:* `nil`) - A reference to a query file. This can be the Cloud Storage URI of the query file or it can the path to a SqlScript Content. The execution args are used to declare a set of script variables (set key="value";).
+  *   `sqlScriptFile` (*type:* `String.t`, *default:* `nil`) - A reference to a query file. This should be the Cloud Storage URI of the query file. The execution args are used to declare a set of script variables (set key="value";).
   """
 
   use GoogleApi.Gax.ModelBase
