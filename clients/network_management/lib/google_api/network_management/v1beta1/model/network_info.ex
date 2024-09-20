@@ -17,12 +17,14 @@
 
 defmodule GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo do
   @moduledoc """
-  For display only. Metadata associated with a Compute Engine network.
+  For display only. Metadata associated with a Compute Engine network. Next ID: 7
 
   ## Attributes
 
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Name of a Compute Engine network.
-  *   `matchedIpRange` (*type:* `String.t`, *default:* `nil`) - The IP range that matches the test.
+  *   `matchedIpRange` (*type:* `String.t`, *default:* `nil`) - The IP range of the subnet matching the source IP address of the test.
+  *   `matchedSubnetUri` (*type:* `String.t`, *default:* `nil`) - URI of the subnet matching the source IP address of the test.
+  *   `region` (*type:* `String.t`, *default:* `nil`) - The region of the subnet matching the source IP address of the test.
   *   `uri` (*type:* `String.t`, *default:* `nil`) - URI of a Compute Engine network.
   """
 
@@ -31,11 +33,15 @@ defmodule GoogleApi.NetworkManagement.V1beta1.Model.NetworkInfo do
   @type t :: %__MODULE__{
           :displayName => String.t() | nil,
           :matchedIpRange => String.t() | nil,
+          :matchedSubnetUri => String.t() | nil,
+          :region => String.t() | nil,
           :uri => String.t() | nil
         }
 
   field(:displayName)
   field(:matchedIpRange)
+  field(:matchedSubnetUri)
+  field(:region)
   field(:uri)
 end
 
