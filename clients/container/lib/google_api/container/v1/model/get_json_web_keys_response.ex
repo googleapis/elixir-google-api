@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.GetJSONWebKeysResponse do
 
   ## Attributes
 
-  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP Cache-Control header.
+  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - For HTTP requests, this field is automatically extracted into the Cache-Control HTTP header.
   *   `keys` (*type:* `list(GoogleApi.Container.V1.Model.Jwk.t)`, *default:* `nil`) - The public component of the keys used by the cluster to sign token requests.
   """
 
