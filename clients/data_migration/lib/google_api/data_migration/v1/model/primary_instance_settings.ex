@@ -23,8 +23,10 @@ defmodule GoogleApi.DataMigration.V1.Model.PrimaryInstanceSettings do
 
   *   `databaseFlags` (*type:* `map()`, *default:* `nil`) - Database flags to pass to AlloyDB when DMS is creating the AlloyDB cluster and instances. See the AlloyDB documentation for how these can be used.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The ID of the AlloyDB primary instance. The ID must satisfy the regex expression "[a-z0-9-]+".
+  *   `instanceNetworkConfig` (*type:* `GoogleApi.DataMigration.V1.Model.InstanceNetworkConfig.t`, *default:* `nil`) - Optional. Metadata related to instance level network configuration.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels for the AlloyDB primary instance created by DMS. An object containing a list of 'key', 'value' pairs.
   *   `machineConfig` (*type:* `GoogleApi.DataMigration.V1.Model.MachineConfig.t`, *default:* `nil`) - Configuration for the machines that host the underlying database engine.
+  *   `outboundPublicIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All outbound public IP addresses configured for the instance.
   *   `privateIp` (*type:* `String.t`, *default:* `nil`) - Output only. The private IP address for the Instance. This is the connection endpoint for an end-user application.
   """
 
@@ -33,15 +35,20 @@ defmodule GoogleApi.DataMigration.V1.Model.PrimaryInstanceSettings do
   @type t :: %__MODULE__{
           :databaseFlags => map() | nil,
           :id => String.t() | nil,
+          :instanceNetworkConfig =>
+            GoogleApi.DataMigration.V1.Model.InstanceNetworkConfig.t() | nil,
           :labels => map() | nil,
           :machineConfig => GoogleApi.DataMigration.V1.Model.MachineConfig.t() | nil,
+          :outboundPublicIpAddresses => list(String.t()) | nil,
           :privateIp => String.t() | nil
         }
 
   field(:databaseFlags, type: :map)
   field(:id)
+  field(:instanceNetworkConfig, as: GoogleApi.DataMigration.V1.Model.InstanceNetworkConfig)
   field(:labels, type: :map)
   field(:machineConfig, as: GoogleApi.DataMigration.V1.Model.MachineConfig)
+  field(:outboundPublicIpAddresses, type: :list)
   field(:privateIp)
 end
 
