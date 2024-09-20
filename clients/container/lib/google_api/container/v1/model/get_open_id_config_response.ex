@@ -21,7 +21,7 @@ defmodule GoogleApi.Container.V1.Model.GetOpenIDConfigResponse do
 
   ## Attributes
 
-  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - OnePlatform automatically extracts this field and uses it to set the HTTP Cache-Control header.
+  *   `cacheHeader` (*type:* `GoogleApi.Container.V1.Model.HttpCacheControlResponseHeader.t`, *default:* `nil`) - For HTTP requests, this field is automatically extracted into the Cache-Control HTTP header.
   *   `claims_supported` (*type:* `list(String.t)`, *default:* `nil`) - Supported claims.
   *   `grant_types` (*type:* `list(String.t)`, *default:* `nil`) - Supported grant types.
   *   `id_token_signing_alg_values_supported` (*type:* `list(String.t)`, *default:* `nil`) - supported ID Token signing Algorithms.
