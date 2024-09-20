@@ -26,6 +26,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   *   `form` (*type:* `String.t`, *default:* `nil`) - Whether this device is virtual or physical.
   *   `formFactor` (*type:* `String.t`, *default:* `nil`) - Whether this device is a phone, tablet, wearable, etc.
   *   `id` (*type:* `String.t`, *default:* `nil`) - The unique opaque id for this model. Use this for invoking the TestExecutionService.
+  *   `labInfo` (*type:* `GoogleApi.Testing.V1.Model.LabInfo.t`, *default:* `nil`) - Output only. Lab info of this device.
   *   `lowFpsVideoRecording` (*type:* `boolean()`, *default:* `nil`) - True if and only if tests with this model are recorded by stitching together screenshots. See use_low_spec_video_recording in device config.
   *   `manufacturer` (*type:* `String.t`, *default:* `nil`) - The manufacturer of this device.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The human-readable marketing name for this device model. Examples: "Nexus 5", "Galaxy S5".
@@ -47,6 +48,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
           :form => String.t() | nil,
           :formFactor => String.t() | nil,
           :id => String.t() | nil,
+          :labInfo => GoogleApi.Testing.V1.Model.LabInfo.t() | nil,
           :lowFpsVideoRecording => boolean() | nil,
           :manufacturer => String.t() | nil,
           :name => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.Testing.V1.Model.AndroidModel do
   field(:form)
   field(:formFactor)
   field(:id)
+  field(:labInfo, as: GoogleApi.Testing.V1.Model.LabInfo)
   field(:lowFpsVideoRecording)
   field(:manufacturer)
   field(:name)
