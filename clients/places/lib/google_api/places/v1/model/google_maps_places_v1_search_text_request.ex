@@ -34,6 +34,8 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   *   `priceLevels` (*type:* `list(String.t)`, *default:* `nil`) - Used to restrict the search to places that are marked as certain price levels. Users can choose any combinations of price levels. Default to select all price levels.
   *   `rankPreference` (*type:* `String.t`, *default:* `nil`) - How results will be ranked in the response.
   *   `regionCode` (*type:* `String.t`, *default:* `nil`) - The Unicode country/region code (CLDR) of the location where the request is coming from. This parameter is used to display the place details, like region-specific place name, if available. The parameter can affect results based on applicable law. For more information, see https://www.unicode.org/cldr/charts/latest/supplemental/territory_language_information.html. Note that 3-digit region codes are not currently supported.
+  *   `routingParameters` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters.t`, *default:* `nil`) - Optional. Additional parameters for routing to results.
+  *   `searchAlongRouteParameters` (*type:* `GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters.t`, *default:* `nil`) - Optional. Additional parameters proto for searching along a route.
   *   `strictTypeFiltering` (*type:* `boolean()`, *default:* `nil`) - Used to set strict type filtering for included_type. If set to true, only results of the same type will be returned. Default to false.
   *   `textQuery` (*type:* `String.t`, *default:* `nil`) - Required. The text query for textual search.
   """
@@ -58,6 +60,11 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
           :priceLevels => list(String.t()) | nil,
           :rankPreference => String.t() | nil,
           :regionCode => String.t() | nil,
+          :routingParameters =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters.t() | nil,
+          :searchAlongRouteParameters =>
+            GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters.t()
+            | nil,
           :strictTypeFiltering => boolean() | nil,
           :textQuery => String.t() | nil
         }
@@ -82,6 +89,12 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequest do
   field(:priceLevels, type: :list)
   field(:rankPreference)
   field(:regionCode)
+  field(:routingParameters, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingParameters)
+
+  field(:searchAlongRouteParameters,
+    as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchTextRequestSearchAlongRouteParameters
+  )
+
   field(:strictTypeFiltering)
   field(:textQuery)
 end

@@ -22,15 +22,23 @@ defmodule GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyResponse do
   ## Attributes
 
   *   `places` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t)`, *default:* `nil`) - A list of places that meets user's requirements like places types, number of places and specific location restriction.
+  *   `routingSummaries` (*type:* `list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary.t)`, *default:* `nil`) - A list of routing summaries where each entry associates to the corresponding place in the same index in the `places` field. If the routing summary is not available for one of the places, it will contain an empty entry. This list should have as many entries as the list of places if requested.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :places => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t()) | nil
+          :places => list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place.t()) | nil,
+          :routingSummaries =>
+            list(GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary.t()) | nil
         }
 
   field(:places, as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1Place, type: :list)
+
+  field(:routingSummaries,
+    as: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1RoutingSummary,
+    type: :list
+  )
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Places.V1.Model.GoogleMapsPlacesV1SearchNearbyResponse do
