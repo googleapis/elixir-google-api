@@ -48,6 +48,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   *   `componentCount` (*type:* `integer()`, *default:* `nil`) - Number of underlying components that make up this object. Components are accumulated by compose operations.
   *   `storageClass` (*type:* `String.t`, *default:* `nil`) - Storage class of the object.
   *   `bucket` (*type:* `String.t`, *default:* `nil`) - The name of the bucket containing this object.
+  *   `restoreToken` (*type:* `String.t`, *default:* `nil`) - Restore token used to differentiate deleted objects with the same name and generation. This field is only returned for deleted objects in hierarchical namespace buckets.
   *   `cacheControl` (*type:* `String.t`, *default:* `nil`) - Cache-Control directive for the object data. If omitted, and the object is accessible to all anonymous users, the default will be public, max-age=3600.
   *   `hardDeleteTime` (*type:* `DateTime.t`, *default:* `nil`) - This is the time (in the future) when the soft-deleted object will no longer be restorable. It is equal to the soft delete time plus the current soft delete retention duration of the bucket.
   *   `crc32c` (*type:* `String.t`, *default:* `nil`) - CRC32c checksum, as described in RFC 4960, Appendix B; encoded using base64 in big-endian byte order. For more information about using the CRC32c checksum, see [Data Validation and Change Detection](https://cloud.google.com/storage/docs/data-validation).
@@ -88,6 +89,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
           :componentCount => integer() | nil,
           :storageClass => String.t() | nil,
           :bucket => String.t() | nil,
+          :restoreToken => String.t() | nil,
           :cacheControl => String.t() | nil,
           :hardDeleteTime => DateTime.t() | nil,
           :crc32c => String.t() | nil,
@@ -125,6 +127,7 @@ defmodule GoogleApi.Storage.V1.Model.Object do
   field(:componentCount)
   field(:storageClass)
   field(:bucket)
+  field(:restoreToken)
   field(:cacheControl)
   field(:hardDeleteTime, as: DateTime)
   field(:crc32c)

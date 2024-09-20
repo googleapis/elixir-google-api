@@ -350,6 +350,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's current metageneration does not match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to noAcl.
+      *   `:restoreToken` (*type:* `String.t`) - Restore token used to differentiate soft-deleted objects with the same name and generation. Only applicable for hierarchical namespace buckets and if softDeleted is set to true. This parameter is optional, and is only required in the rare case when there are multiple soft-deleted objects with the same name and generation.
       *   `:softDeleted` (*type:* `boolean()`) - If true, only soft-deleted object versions will be listed. The default is false. For more information, see [Soft Delete](https://cloud.google.com/storage/docs/soft-delete).
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
@@ -385,6 +386,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
+      :restoreToken => :query,
       :softDeleted => :query,
       :userProject => :query
     }
@@ -1010,6 +1012,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       *   `:ifMetagenerationMatch` (*type:* `String.t`) - Makes the operation conditional on whether the object's one live metageneration matches the given value.
       *   `:ifMetagenerationNotMatch` (*type:* `String.t`) - Makes the operation conditional on whether none of the object's live metagenerations match the given value.
       *   `:projection` (*type:* `String.t`) - Set of properties to return. Defaults to full.
+      *   `:restoreToken` (*type:* `String.t`) - Restore token used to differentiate sof-deleted objects with the same name and generation. Only applicable for hierarchical namespace buckets. This parameter is optional, and is only required in the rare case when there are multiple soft-deleted objects with the same name and generation.
       *   `:userProject` (*type:* `String.t`) - The project to be billed for this request. Required for Requester Pays buckets.
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -1053,6 +1056,7 @@ defmodule GoogleApi.Storage.V1.Api.Objects do
       :ifMetagenerationMatch => :query,
       :ifMetagenerationNotMatch => :query,
       :projection => :query,
+      :restoreToken => :query,
       :userProject => :query
     }
 
