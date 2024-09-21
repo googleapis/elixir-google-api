@@ -29,6 +29,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
   *   `lastRunTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The timestamp of the last time this config was executed.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Unique resource name for the DiscoveryConfig, assigned by the service when the DiscoveryConfig is created, for example `projects/dlp-test-project/locations/global/discoveryConfigs/53234423`.
   *   `orgConfig` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig.t`, *default:* `nil`) - Only set when the parent is an org.
+  *   `otherCloudStartingLocation` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation.t`, *default:* `nil`) - Must be set only when scanning other clouds.
   *   `status` (*type:* `String.t`, *default:* `nil`) - Required. A status for this configuration.
   *   `targets` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget.t)`, *default:* `nil`) - Target to match against for determining what to scan and how frequently.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The last update timestamp of a DiscoveryConfig.
@@ -45,6 +46,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
           :lastRunTime => DateTime.t() | nil,
           :name => String.t() | nil,
           :orgConfig => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig.t() | nil,
+          :otherCloudStartingLocation =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation.t() | nil,
           :status => String.t() | nil,
           :targets => list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget.t()) | nil,
           :updateTime => DateTime.t() | nil
@@ -58,6 +61,11 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryConfig do
   field(:lastRunTime, as: DateTime)
   field(:name)
   field(:orgConfig, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OrgConfig)
+
+  field(:otherCloudStartingLocation,
+    as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryStartingLocation
+  )
+
   field(:status)
   field(:targets, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget, type: :list)
   field(:updateTime, as: DateTime)
