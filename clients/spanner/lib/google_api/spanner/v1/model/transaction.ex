@@ -22,6 +22,7 @@ defmodule GoogleApi.Spanner.V1.Model.Transaction do
   ## Attributes
 
   *   `id` (*type:* `String.t`, *default:* `nil`) - `id` may be used to identify the transaction in subsequent Read, ExecuteSql, Commit, or Rollback calls. Single-use read-only transactions do not have IDs, because single-use transactions do not support multiple requests.
+  *   `precommitToken` (*type:* `GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t`, *default:* `nil`) - A precommit token will be included in the response of a BeginTransaction request if the read-write transaction is on a multiplexed session and a mutation_key was specified in the BeginTransaction. The precommit token with the highest sequence number from this transaction attempt should be passed to the Commit request for this transaction.
   *   `readTimestamp` (*type:* `DateTime.t`, *default:* `nil`) - For snapshot read-only transactions, the read timestamp chosen for the transaction. Not returned by default: see TransactionOptions.ReadOnly.return_read_timestamp. A timestamp in RFC3339 UTC \\"Zulu\\" format, accurate to nanoseconds. Example: `"2014-10-02T15:01:23.045123456Z"`.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.Spanner.V1.Model.Transaction do
 
   @type t :: %__MODULE__{
           :id => String.t() | nil,
+          :precommitToken =>
+            GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken.t() | nil,
           :readTimestamp => DateTime.t() | nil
         }
 
   field(:id)
+  field(:precommitToken, as: GoogleApi.Spanner.V1.Model.MultiplexedSessionPrecommitToken)
   field(:readTimestamp, as: DateTime)
 end
 
