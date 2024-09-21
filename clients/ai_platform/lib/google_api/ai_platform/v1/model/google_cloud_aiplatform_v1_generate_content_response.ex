@@ -22,6 +22,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   ## Attributes
 
   *   `candidates` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate.t)`, *default:* `nil`) - Output only. Generated candidates.
+  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Output only. The model version used to generate the response.
   *   `promptFeedback` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback.t`, *default:* `nil`) - Output only. Content filter results for a prompt sent in the request. Note: Sent only in the first stream chunk. Only happens when no candidates were generated due to content violations.
   *   `usageMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponseUsageMetadata.t`, *default:* `nil`) - Usage metadata about the response(s).
   """
@@ -31,6 +32,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
   @type t :: %__MODULE__{
           :candidates =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate.t()) | nil,
+          :modelVersion => String.t() | nil,
           :promptFeedback =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback.t()
             | nil,
@@ -43,6 +45,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentRe
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate,
     type: :list
   )
+
+  field(:modelVersion)
 
   field(:promptFeedback,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerateContentResponsePromptFeedback

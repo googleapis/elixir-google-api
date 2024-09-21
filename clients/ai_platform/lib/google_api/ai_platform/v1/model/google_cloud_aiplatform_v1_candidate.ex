@@ -28,6 +28,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
   *   `finishReason` (*type:* `String.t`, *default:* `nil`) - Output only. The reason why the model stopped generating tokens. If empty, the model has not stopped generating the tokens.
   *   `groundingMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata.t`, *default:* `nil`) - Output only. Metadata specifies sources used to ground generated content.
   *   `index` (*type:* `integer()`, *default:* `nil`) - Output only. Index of the candidate.
+  *   `logprobsResult` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1LogprobsResult.t`, *default:* `nil`) - Output only. Log-likelihood scores for the response tokens and top tokens
   *   `safetyRatings` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t)`, *default:* `nil`) - Output only. List of ratings for the safety of a response candidate. There is at most one rating per category.
   """
 
@@ -43,6 +44,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
           :groundingMetadata =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata.t() | nil,
           :index => integer() | nil,
+          :logprobsResult =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1LogprobsResult.t() | nil,
           :safetyRatings =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating.t()) | nil
         }
@@ -62,6 +65,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Candidate do
   )
 
   field(:index)
+  field(:logprobsResult, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1LogprobsResult)
 
   field(:safetyRatings,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SafetyRating,

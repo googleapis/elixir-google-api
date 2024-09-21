@@ -23,8 +23,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
 
   *   `candidateCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of candidates to generate.
   *   `frequencyPenalty` (*type:* `number()`, *default:* `nil`) - Optional. Frequency penalties.
+  *   `logprobs` (*type:* `integer()`, *default:* `nil`) - Optional. Logit probabilities.
   *   `maxOutputTokens` (*type:* `integer()`, *default:* `nil`) - Optional. The maximum number of output tokens to generate per message.
   *   `presencePenalty` (*type:* `number()`, *default:* `nil`) - Optional. Positive penalties.
+  *   `responseLogprobs` (*type:* `boolean()`, *default:* `nil`) - Optional. If true, export the logprobs results in response.
   *   `responseMimeType` (*type:* `String.t`, *default:* `nil`) - Optional. Output response mimetype of the generated candidate text. Supported mimetype: - `text/plain`: (default) Text output. - `application/json`: JSON response in the candidates. The model needs to be prompted to output the appropriate response type, otherwise the behavior is undefined. This is a preview feature.
   *   `responseSchema` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t`, *default:* `nil`) - Optional. The `Schema` object allows the definition of input and output data types. These types can be objects, but also primitives and arrays. Represents a select subset of an [OpenAPI 3.0 schema object](https://spec.openapis.org/oas/v3.0.3#schema). If set, a compatible response_mime_type must also be set. Compatible mimetypes: `application/json`: Schema for JSON response.
   *   `routingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfigRoutingConfig.t`, *default:* `nil`) - Optional. Routing configuration.
@@ -40,8 +42,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
   @type t :: %__MODULE__{
           :candidateCount => integer() | nil,
           :frequencyPenalty => number() | nil,
+          :logprobs => integer() | nil,
           :maxOutputTokens => integer() | nil,
           :presencePenalty => number() | nil,
+          :responseLogprobs => boolean() | nil,
           :responseMimeType => String.t() | nil,
           :responseSchema =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t() | nil,
@@ -57,8 +61,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GenerationConfig 
 
   field(:candidateCount)
   field(:frequencyPenalty)
+  field(:logprobs)
   field(:maxOutputTokens)
   field(:presencePenalty)
+  field(:responseLogprobs)
   field(:responseMimeType)
   field(:responseSchema, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema)
 

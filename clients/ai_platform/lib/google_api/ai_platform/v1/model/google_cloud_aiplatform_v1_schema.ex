@@ -21,6 +21,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
 
   ## Attributes
 
+  *   `anyOf` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t)`, *default:* `nil`) - Optional. The value should be validated against any (one or more) of the subschemas in the list.
   *   `default` (*type:* `any()`, *default:* `nil`) - Optional. Default value of the data.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. The description of the data.
   *   `enum` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Possible values of the element of Type.STRING with enum format. For example we can define an Enum Direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]}
@@ -47,6 +48,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :anyOf => list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema.t()) | nil,
           :default => any() | nil,
           :description => String.t() | nil,
           :enum => list(String.t()) | nil,
@@ -75,6 +77,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema do
           :type => String.t() | nil
         }
 
+  field(:anyOf, as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1Schema, type: :list)
   field(:default)
   field(:description)
   field(:enum, type: :list)
