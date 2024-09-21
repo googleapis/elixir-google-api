@@ -33,7 +33,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.Cluster do
   *   `persistenceConfig` (*type:* `GoogleApi.Redis.V1beta1.Model.ClusterPersistenceConfig.t`, *default:* `nil`) - Optional. Persistence config (RDB, AOF) for the cluster.
   *   `preciseSizeGb` (*type:* `float()`, *default:* `nil`) - Output only. Precise value of redis memory size in GB for the entire cluster.
   *   `pscConfigs` (*type:* `list(GoogleApi.Redis.V1beta1.Model.PscConfig.t)`, *default:* `nil`) - Required. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
-  *   `pscConnections` (*type:* `list(GoogleApi.Redis.V1beta1.Model.PscConnection.t)`, *default:* `nil`) - Output only. PSC connections for discovery of the cluster topology and accessing the cluster.
+  *   `pscConnections` (*type:* `list(GoogleApi.Redis.V1beta1.Model.PscConnection.t)`, *default:* `nil`) - Output only. The list of PSC connections that are auto-created through service connectivity automation.
   *   `redisConfigs` (*type:* `map()`, *default:* `nil`) - Optional. Key/Value pairs of customer overrides for mutable Redis Configs
   *   `replicaCount` (*type:* `integer()`, *default:* `nil`) - Optional. The number of replica nodes per shard.
   *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of shards for the Redis cluster.
