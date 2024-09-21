@@ -21,11 +21,11 @@ defmodule GoogleApi.HealthCare.V1.Model.SchemaPackage do
 
   ## Attributes
 
-  *   `ignoreMinOccurs` (*type:* `boolean()`, *default:* `nil`) - Flag to ignore all min_occurs restrictions in the schema. This means that incoming messages can omit any group, segment, field, component, or subcomponent.
-  *   `schemas` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7SchemaConfig.t)`, *default:* `nil`) - Schema configs that are layered based on their VersionSources that match the incoming message. Schema configs present in higher indices override those in lower indices with the same message type and trigger event if their VersionSources all match an incoming message.
-  *   `schematizedParsingType` (*type:* `String.t`, *default:* `nil`) - Determines how messages that fail to parse are handled.
-  *   `types` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7TypesConfig.t)`, *default:* `nil`) - Schema type definitions that are layered based on their VersionSources that match the incoming message. Type definitions present in higher indices override those in lower indices with the same type name if their VersionSources all match an incoming message.
-  *   `unexpectedSegmentHandling` (*type:* `String.t`, *default:* `nil`) - Determines how unexpected segments (segments not matched to the schema) are handled.
+  *   `ignoreMinOccurs` (*type:* `boolean()`, *default:* `nil`) - Optional. Flag to ignore all min_occurs restrictions in the schema. This means that incoming messages can omit any group, segment, field, component, or subcomponent.
+  *   `schemas` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7SchemaConfig.t)`, *default:* `nil`) - Optional. Schema configs that are layered based on their VersionSources that match the incoming message. Schema configs present in higher indices override those in lower indices with the same message type and trigger event if their VersionSources all match an incoming message.
+  *   `schematizedParsingType` (*type:* `String.t`, *default:* `nil`) - Optional. Determines how messages that fail to parse are handled.
+  *   `types` (*type:* `list(GoogleApi.HealthCare.V1.Model.Hl7TypesConfig.t)`, *default:* `nil`) - Optional. Schema type definitions that are layered based on their VersionSources that match the incoming message. Type definitions present in higher indices override those in lower indices with the same type name if their VersionSources all match an incoming message.
+  *   `unexpectedSegmentHandling` (*type:* `String.t`, *default:* `nil`) - Optional. Determines how unexpected segments (segments not matched to the schema) are handled.
   """
 
   use GoogleApi.Gax.ModelBase
