@@ -20,7 +20,7 @@ defmodule GoogleApi.DLP.V2 do
   API client metadata for GoogleApi.DLP.V2.
   """
 
-  @discovery_revision "20240901"
+  @discovery_revision "20240916"
 
   def discovery_revision(), do: @discovery_revision
 end

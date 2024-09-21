@@ -24,6 +24,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
   *   `bigQueryTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2BigQueryDiscoveryTarget.t`, *default:* `nil`) - BigQuery target for Discovery. The first target to match a table will be the one applied.
   *   `cloudSqlTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t`, *default:* `nil`) - Cloud SQL target for Discovery. The first target to match a table will be the one applied.
   *   `cloudStorageTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget.t`, *default:* `nil`) - Cloud Storage target for Discovery. The first target to match a table will be the one applied.
+  *   `otherCloudTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget.t`, *default:* `nil`) - Other clouds target for discovery. The first target to match a resource will be the one applied.
   *   `secretsTarget` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t`, *default:* `nil`) - Discovery target that looks for credentials and secrets stored in cloud resource metadata and reports them as vulnerabilities to Security Command Center. Only one target of this type is allowed.
   """
 
@@ -36,6 +37,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudSqlDiscoveryTarget.t() | nil,
           :cloudStorageTarget =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget.t() | nil,
+          :otherCloudTarget =>
+            GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget.t() | nil,
           :secretsTarget =>
             GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget.t() | nil
         }
@@ -47,6 +50,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DiscoveryTarget do
     as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2CloudStorageDiscoveryTarget
   )
 
+  field(:otherCloudTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherCloudDiscoveryTarget)
   field(:secretsTarget, as: GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SecretsDiscoveryTarget)
 end
 

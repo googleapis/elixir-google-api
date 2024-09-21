@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   @moduledoc """
-  The profile for a file store. * Cloud Storage: maps 1:1 with a bucket.
+  The profile for a file store. * Cloud Storage: maps 1:1 with a bucket. * Amazon S3: maps 1:1 with a bucket.
 
   ## Attributes
 
@@ -29,16 +29,16 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreDataProfile do
   *   `fileClusterSummaries` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileClusterSummary.t)`, *default:* `nil`) - FileClusterSummary per each cluster.
   *   `fileStoreInfoTypeSummaries` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2FileStoreInfoTypeSummary.t)`, *default:* `nil`) - InfoTypes detected in this file store.
   *   `fileStoreIsEmpty` (*type:* `boolean()`, *default:* `nil`) - The file store does not have any files.
-  *   `fileStoreLocation` (*type:* `String.t`, *default:* `nil`) - The location of the file store. * Cloud Storage: https://cloud.google.com/storage/docs/locations#available-locations
-  *   `fileStorePath` (*type:* `String.t`, *default:* `nil`) - The file store path. * Cloud Storage: `gs://{bucket}`
-  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `fileStoreLocation` (*type:* `String.t`, *default:* `nil`) - The location of the file store. * Cloud Storage: https://cloud.google.com/storage/docs/locations#available-locations * Amazon S3: https://docs.aws.amazon.com/general/latest/gr/rande.html#regional-endpoints
+  *   `fileStorePath` (*type:* `String.t`, *default:* `nil`) - The file store path. * Cloud Storage: `gs://{bucket}` * Amazon S3: `s3://{bucket}`
+  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name Example format of an S3 bucket full resource name: `//cloudasset.googleapis.com/organizations/{org_id}/otherCloudConnections/aws/arn:aws:s3:::{bucket_name}`
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time the file store was last modified.
   *   `locationType` (*type:* `String.t`, *default:* `nil`) - The location type of the bucket (region, dual-region, multi-region, etc). If dual-region, expect data_storage_locations to be populated.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the profile.
   *   `profileLastGenerated` (*type:* `DateTime.t`, *default:* `nil`) - The last time the profile was generated.
   *   `profileStatus` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ProfileStatus.t`, *default:* `nil`) - Success or error status from the most recent profile generation attempt. May be empty if the profile is still being generated.
   *   `projectDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name of the project data profile for this file store.
-  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID that owns the resource.
+  *   `projectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID that owns the resource. For Amazon S3 buckets, this is the AWS Account Id.
   *   `resourceAttributes` (*type:* `%{optional(String.t) => GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2Value.t}`, *default:* `nil`) - Attributes of the resource being profiled. Currently used attributes: * customer_managed_encryption: boolean - true: the resource is encrypted with a customer-managed key. - false: the resource is encrypted with a provider-managed key.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The labels applied to the resource at the time the profile was generated.
   *   `resourceVisibility` (*type:* `String.t`, *default:* `nil`) - How broadly a resource has been shared.
