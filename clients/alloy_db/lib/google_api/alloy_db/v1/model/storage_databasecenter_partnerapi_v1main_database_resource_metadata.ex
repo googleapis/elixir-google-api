@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata.
+  Common model for database resource instance metadata. Next ID: 21
 
   ## Attributes
 
@@ -37,6 +37,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   *   `product` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
+  *   `tagsSet` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainTags.t`, *default:* `nil`) - Optional. Tags associated with this resources.
   *   `updationTime` (*type:* `DateTime.t`, *default:* `nil`) - The time at which the resource was updated and recorded at partner service.
   *   `userLabelSet` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainUserLabels.t`, *default:* `nil`) - User-provided labels associated with the resource
   """
@@ -76,6 +77,8 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t() | nil,
           :resourceContainer => String.t() | nil,
           :resourceName => String.t() | nil,
+          :tagsSet =>
+            GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainTags.t() | nil,
           :updationTime => DateTime.t() | nil,
           :userLabelSet =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainUserLabels.t() | nil
@@ -122,6 +125,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   field(:product, as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct)
   field(:resourceContainer)
   field(:resourceName)
+  field(:tagsSet, as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainTags)
   field(:updationTime, as: DateTime)
 
   field(:userLabelSet,
