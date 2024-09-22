@@ -22,7 +22,6 @@ defmodule GoogleApi.Redis.V1.Model.ClusterWeeklyMaintenanceWindow do
   ## Attributes
 
   *   `day` (*type:* `String.t`, *default:* `nil`) - Allows to define schedule that runs specified day of the week.
-  *   `duration` (*type:* `String.t`, *default:* `nil`) - Duration of the time window.
   *   `startTime` (*type:* `GoogleApi.Redis.V1.Model.TimeOfDay.t`, *default:* `nil`) - Start time of the window in UTC.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.Redis.V1.Model.ClusterWeeklyMaintenanceWindow do
 
   @type t :: %__MODULE__{
           :day => String.t() | nil,
-          :duration => String.t() | nil,
           :startTime => GoogleApi.Redis.V1.Model.TimeOfDay.t() | nil
         }
 
   field(:day)
-  field(:duration)
   field(:startTime, as: GoogleApi.Redis.V1.Model.TimeOfDay)
 end
 
