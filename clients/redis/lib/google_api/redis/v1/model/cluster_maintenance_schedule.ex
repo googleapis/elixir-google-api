@@ -22,7 +22,6 @@ defmodule GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule do
   ## Attributes
 
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end time of any upcoming scheduled maintenance for this instance.
-  *   `scheduleDeadlineTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The deadline that the maintenance schedule start time can not go beyond, including reschedule.
   *   `startTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start time of any upcoming scheduled maintenance for this instance.
   """
 
@@ -30,12 +29,10 @@ defmodule GoogleApi.Redis.V1.Model.ClusterMaintenanceSchedule do
 
   @type t :: %__MODULE__{
           :endTime => DateTime.t() | nil,
-          :scheduleDeadlineTime => DateTime.t() | nil,
           :startTime => DateTime.t() | nil
         }
 
   field(:endTime, as: DateTime)
-  field(:scheduleDeadlineTime, as: DateTime)
   field(:startTime, as: DateTime)
 end
 

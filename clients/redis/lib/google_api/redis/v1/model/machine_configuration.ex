@@ -23,17 +23,20 @@ defmodule GoogleApi.Redis.V1.Model.MachineConfiguration do
 
   *   `cpuCount` (*type:* `integer()`, *default:* `nil`) - The number of CPUs. TODO(b/342344482, b/342346271) add proto validations again after bug fix.
   *   `memorySizeInBytes` (*type:* `String.t`, *default:* `nil`) - Memory size in bytes. TODO(b/342344482, b/342346271) add proto validations again after bug fix.
+  *   `shardCount` (*type:* `integer()`, *default:* `nil`) - Optional. Number of shards (if applicable).
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :cpuCount => integer() | nil,
-          :memorySizeInBytes => String.t() | nil
+          :memorySizeInBytes => String.t() | nil,
+          :shardCount => integer() | nil
         }
 
   field(:cpuCount)
   field(:memorySizeInBytes)
+  field(:shardCount)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Redis.V1.Model.MachineConfiguration do
