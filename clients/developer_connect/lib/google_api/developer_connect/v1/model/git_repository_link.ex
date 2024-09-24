@@ -31,6 +31,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
   *   `reconciling` (*type:* `boolean()`, *default:* `nil`) - Output only. Set to true when the connection is being set up or updated in the background.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A system-assigned unique identifier for a the GitRepositoryLink.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Update timestamp
+  *   `webhookId` (*type:* `String.t`, *default:* `nil`) - Output only. External ID of the webhook created for the repository.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -45,7 +46,8 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
           :name => String.t() | nil,
           :reconciling => boolean() | nil,
           :uid => String.t() | nil,
-          :updateTime => DateTime.t() | nil
+          :updateTime => DateTime.t() | nil,
+          :webhookId => String.t() | nil
         }
 
   field(:annotations, type: :map)
@@ -58,6 +60,7 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
   field(:reconciling)
   field(:uid)
   field(:updateTime, as: DateTime)
+  field(:webhookId)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.DeveloperConnect.V1.Model.GitRepositoryLink do
