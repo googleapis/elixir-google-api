@@ -23,10 +23,14 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
 
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Allows clients to store small amounts of arbitrary data.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Create timestamp
+  *   `cryptoKeyConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig.t`, *default:* `nil`) - Optional. The crypto key configuration. This field is used by the Customer-Managed Encryption Keys (CMEK) feature.
   *   `deleteTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. [Output only] Delete timestamp
   *   `disabled` (*type:* `boolean()`, *default:* `nil`) - Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `githubConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitHubConfig.t`, *default:* `nil`) - Configuration for connections to github.com.
+  *   `githubEnterpriseConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig.t`, *default:* `nil`) - Configuration for connections to an instance of GitHub Enterprise.
+  *   `gitlabConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitLabConfig.t`, *default:* `nil`) - Configuration for connections to gitlab.com.
+  *   `gitlabEnterpriseConfig` (*type:* `GoogleApi.DeveloperConnect.V1.Model.GitLabEnterpriseConfig.t`, *default:* `nil`) - Configuration for connections to an instance of GitLab Enterprise.
   *   `installationState` (*type:* `GoogleApi.DeveloperConnect.V1.Model.InstallationState.t`, *default:* `nil`) - Output only. Installation state of the Connection.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs
   *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.
@@ -40,10 +44,16 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
   @type t :: %__MODULE__{
           :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
+          :cryptoKeyConfig => GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig.t() | nil,
           :deleteTime => DateTime.t() | nil,
           :disabled => boolean() | nil,
           :etag => String.t() | nil,
           :githubConfig => GoogleApi.DeveloperConnect.V1.Model.GitHubConfig.t() | nil,
+          :githubEnterpriseConfig =>
+            GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig.t() | nil,
+          :gitlabConfig => GoogleApi.DeveloperConnect.V1.Model.GitLabConfig.t() | nil,
+          :gitlabEnterpriseConfig =>
+            GoogleApi.DeveloperConnect.V1.Model.GitLabEnterpriseConfig.t() | nil,
           :installationState => GoogleApi.DeveloperConnect.V1.Model.InstallationState.t() | nil,
           :labels => map() | nil,
           :name => String.t() | nil,
@@ -54,10 +64,14 @@ defmodule GoogleApi.DeveloperConnect.V1.Model.Connection do
 
   field(:annotations, type: :map)
   field(:createTime, as: DateTime)
+  field(:cryptoKeyConfig, as: GoogleApi.DeveloperConnect.V1.Model.CryptoKeyConfig)
   field(:deleteTime, as: DateTime)
   field(:disabled)
   field(:etag)
   field(:githubConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitHubConfig)
+  field(:githubEnterpriseConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitHubEnterpriseConfig)
+  field(:gitlabConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitLabConfig)
+  field(:gitlabEnterpriseConfig, as: GoogleApi.DeveloperConnect.V1.Model.GitLabEnterpriseConfig)
   field(:installationState, as: GoogleApi.DeveloperConnect.V1.Model.InstallationState)
   field(:labels, type: :map)
   field(:name)
