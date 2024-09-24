@@ -21,8 +21,8 @@ defmodule GoogleApi.BigQueryReservation.V1.Model.CapacityCommitment do
 
   ## Attributes
 
-  *   `commitmentEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end of the current commitment period. It is applicable only for ACTIVE capacity commitments.
-  *   `commitmentStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start of the current commitment period. It is applicable only for ACTIVE capacity commitments.
+  *   `commitmentEndTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The end of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after renewal, commitment_end_time is the time the renewed commitment expires. So itwould be at a time after commitment_start_time + committed period, because we don't change commitment_start_time ,
+  *   `commitmentStartTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The start of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after the commitment is renewed, commitment_start_time won't be changed. It refers to the start time of the original commitment.
   *   `edition` (*type:* `String.t`, *default:* `nil`) - Edition of the capacity commitment.
   *   `failureStatus` (*type:* `GoogleApi.BigQueryReservation.V1.Model.Status.t`, *default:* `nil`) - Output only. For FAILED commitment plan, provides the reason of failure.
   *   `isFlatRate` (*type:* `boolean()`, *default:* `nil`) - Output only. If true, the commitment is a flat-rate commitment, otherwise, it's an edition commitment.
