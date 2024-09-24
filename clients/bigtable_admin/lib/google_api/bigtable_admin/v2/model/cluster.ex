@@ -26,6 +26,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   *   `encryptionConfig` (*type:* `GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t`, *default:* `nil`) - Immutable. The encryption configuration for CMEK-protected clusters.
   *   `location` (*type:* `String.t`, *default:* `nil`) - Immutable. The location where this cluster's nodes and storage reside. For best performance, clients should be located as close as possible to this cluster. Currently only zones are supported, so values should be of the form `projects/{project}/locations/{zone}`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The unique name of the cluster. Values are of the form `projects/{project}/instances/{instance}/clusters/a-z*`.
+  *   `nodeScalingFactor` (*type:* `String.t`, *default:* `nil`) - Immutable. The node scaling factor of this cluster.
   *   `serveNodes` (*type:* `integer()`, *default:* `nil`) - The number of nodes in the cluster. If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The current state of the cluster.
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
           :encryptionConfig => GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig.t() | nil,
           :location => String.t() | nil,
           :name => String.t() | nil,
+          :nodeScalingFactor => String.t() | nil,
           :serveNodes => integer() | nil,
           :state => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.BigtableAdmin.V2.Model.Cluster do
   field(:encryptionConfig, as: GoogleApi.BigtableAdmin.V2.Model.EncryptionConfig)
   field(:location)
   field(:name)
+  field(:nodeScalingFactor)
   field(:serveNodes)
   field(:state)
 end
