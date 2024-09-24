@@ -22,15 +22,18 @@ defmodule GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo do
   ## Attributes
 
   *   `commonCriteriaModeStatus` (*type:* `String.t`, *default:* `nil`) - Whether Common Criteria Mode is enabled.
+  *   `policySignatureVerificationStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The status of policy signature verification.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :commonCriteriaModeStatus => String.t() | nil
+          :commonCriteriaModeStatus => String.t() | nil,
+          :policySignatureVerificationStatus => String.t() | nil
         }
 
   field(:commonCriteriaModeStatus)
+  field(:policySignatureVerificationStatus)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.AndroidManagement.V1.Model.CommonCriteriaModeInfo do
