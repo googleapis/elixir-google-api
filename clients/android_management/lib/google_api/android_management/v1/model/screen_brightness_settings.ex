@@ -21,7 +21,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.ScreenBrightnessSettings do
 
   ## Attributes
 
-  *   `screenBrightness` (*type:* `integer()`, *default:* `nil`) - Optional. The screen brightness between 1 and 255 where 1 is the lowest and 255 is the highest brightness. A value of 0 (default) means no screen brightness set. Any other value is rejected. screenBrightnessMode must be either BRIGHTNESS_AUTOMATIC or BRIGHTNESS_FIXED to set this. Supported on Android 9 and above on fully managed devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 9.
+  *   `screenBrightness` (*type:* `integer()`, *default:* `nil`) - Optional. The screen brightness between 1 and 255 where 1 is the lowest and 255 is the highest brightness. A value of 0 (default) means no screen brightness set. Any other value is rejected. screenBrightnessMode must be either BRIGHTNESS_AUTOMATIC or BRIGHTNESS_FIXED to set this. Supported on Android 9 and above on fully managed devices. A NonComplianceDetail with API_LEVEL is reported if the Android version is less than 9. Supported on work profiles on company-owned devices on Android 15 and above.
   *   `screenBrightnessMode` (*type:* `String.t`, *default:* `nil`) - Optional. Controls the screen brightness mode.
   """
 
