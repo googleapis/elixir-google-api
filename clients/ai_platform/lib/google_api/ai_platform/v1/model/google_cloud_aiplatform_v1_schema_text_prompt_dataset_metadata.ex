@@ -25,9 +25,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   *   `gcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the prompt data.
   *   `groundingConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig.t`, *default:* `nil`) - Grounding checking configuration.
   *   `hasPromptVariable` (*type:* `boolean()`, *default:* `nil`) - Whether the prompt dataset has prompt variable.
+  *   `logprobs` (*type:* `boolean()`, *default:* `nil`) - Whether or not the user has enabled logit probabilities in the model parameters.
   *   `maxOutputTokens` (*type:* `String.t`, *default:* `nil`) - Value of the maximum number of tokens generated set when the dataset was saved.
   *   `note` (*type:* `String.t`, *default:* `nil`) - User-created prompt note. Note size limit is 2KB.
   *   `promptType` (*type:* `String.t`, *default:* `nil`) - Type of the prompt dataset.
+  *   `seedEnabled` (*type:* `boolean()`, *default:* `nil`) - Seeding enables model to return a deterministic response on a best effort basis. Determinism isn't guaranteed. This field determines whether or not seeding is enabled.
+  *   `seedValue` (*type:* `String.t`, *default:* `nil`) - The actual value of the seed.
   *   `stopSequences` (*type:* `list(String.t)`, *default:* `nil`) - Customized stop sequences.
   *   `systemInstruction` (*type:* `String.t`, *default:* `nil`) - The content of the prompt dataset system instruction.
   *   `systemInstructionGcsUri` (*type:* `String.t`, *default:* `nil`) - The Google Cloud Storage URI that stores the system instruction, starting with gs://.
@@ -46,9 +49,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaPredictParamsGroundingConfig.t()
             | nil,
           :hasPromptVariable => boolean() | nil,
+          :logprobs => boolean() | nil,
           :maxOutputTokens => String.t() | nil,
           :note => String.t() | nil,
           :promptType => String.t() | nil,
+          :seedEnabled => boolean() | nil,
+          :seedValue => String.t() | nil,
           :stopSequences => list(String.t()) | nil,
           :systemInstruction => String.t() | nil,
           :systemInstructionGcsUri => String.t() | nil,
@@ -66,9 +72,12 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SchemaTextPromptD
   )
 
   field(:hasPromptVariable)
+  field(:logprobs)
   field(:maxOutputTokens)
   field(:note)
   field(:promptType)
+  field(:seedEnabled)
+  field(:seedValue)
   field(:stopSequences, type: :list)
   field(:systemInstruction)
   field(:systemInstructionGcsUri)
