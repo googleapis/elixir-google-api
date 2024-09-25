@@ -34,7 +34,7 @@ defmodule GoogleApi.Notebooks.V2.Model.GceSetup do
   *   `networkInterfaces` (*type:* `list(GoogleApi.Notebooks.V2.Model.NetworkInterface.t)`, *default:* `nil`) - Optional. The network interfaces for the VM. Supports only one interface.
   *   `serviceAccounts` (*type:* `list(GoogleApi.Notebooks.V2.Model.ServiceAccount.t)`, *default:* `nil`) - Optional. The service account that serves as an identity for the VM instance. Currently supports only one service account.
   *   `shieldedInstanceConfig` (*type:* `GoogleApi.Notebooks.V2.Model.ShieldedInstanceConfig.t`, *default:* `nil`) - Optional. Shielded VM configuration. [Images using supported Shielded VM features](https://cloud.google.com/compute/docs/instances/modifying-shielded-vm).
-  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/compute/docs/label-or-tag-resources#tags)).
+  *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The Compute Engine network tags to add to runtime (see [Add network tags](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
   *   `vmImage` (*type:* `GoogleApi.Notebooks.V2.Model.VmImage.t`, *default:* `nil`) - Optional. Use a Compute Engine VM image to start the notebook instance.
   """
 
