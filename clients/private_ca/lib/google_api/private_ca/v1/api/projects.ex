@@ -599,7 +599,7 @@ defmodule GoogleApi.PrivateCA.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.PrivateCA.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. The resource name for this CaPool in the format `projects/*/locations/*/caPools/*`.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name for this CaPool in the format `projects/*/locations/*/caPools/*`.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
