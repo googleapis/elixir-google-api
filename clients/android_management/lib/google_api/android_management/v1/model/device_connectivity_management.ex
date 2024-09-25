@@ -25,6 +25,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do
   *   `tetheringSettings` (*type:* `String.t`, *default:* `nil`) - Controls tethering settings. Based on the value set, the user is partially or fully disallowed from using different forms of tethering.
   *   `usbDataAccess` (*type:* `String.t`, *default:* `nil`) - Controls what files and/or data can be transferred via USB. Supported only on company-owned devices.
   *   `wifiDirectSettings` (*type:* `String.t`, *default:* `nil`) - Controls configuring and using Wi-Fi direct settings. Supported on company-owned devices running Android 13 and above.
+  *   `wifiRoamingPolicy` (*type:* `GoogleApi.AndroidManagement.V1.Model.WifiRoamingPolicy.t`, *default:* `nil`) - Optional. Wi-Fi roaming policy.
   *   `wifiSsidPolicy` (*type:* `GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy.t`, *default:* `nil`) - Restrictions on which Wi-Fi SSIDs the device can connect to. Note that this does not affect which networks can be configured on the device. Supported on company-owned devices running Android 13 and above.
   """
 
@@ -35,6 +36,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do
           :tetheringSettings => String.t() | nil,
           :usbDataAccess => String.t() | nil,
           :wifiDirectSettings => String.t() | nil,
+          :wifiRoamingPolicy => GoogleApi.AndroidManagement.V1.Model.WifiRoamingPolicy.t() | nil,
           :wifiSsidPolicy => GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.AndroidManagement.V1.Model.DeviceConnectivityManagement do
   field(:tetheringSettings)
   field(:usbDataAccess)
   field(:wifiDirectSettings)
+  field(:wifiRoamingPolicy, as: GoogleApi.AndroidManagement.V1.Model.WifiRoamingPolicy)
   field(:wifiSsidPolicy, as: GoogleApi.AndroidManagement.V1.Model.WifiSsidPolicy)
 end
 
