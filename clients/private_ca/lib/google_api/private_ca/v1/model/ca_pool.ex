@@ -23,7 +23,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CaPool do
 
   *   `issuancePolicy` (*type:* `GoogleApi.PrivateCA.V1.Model.IssuancePolicy.t`, *default:* `nil`) - Optional. The IssuancePolicy to control how Certificates will be issued from this CaPool.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels with user-defined metadata.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CaPool in the format `projects/*/locations/*/caPools/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name for this CaPool in the format `projects/*/locations/*/caPools/*`.
   *   `publishingOptions` (*type:* `GoogleApi.PrivateCA.V1.Model.PublishingOptions.t`, *default:* `nil`) - Optional. The PublishingOptions to follow when issuing Certificates from any CertificateAuthority in this CaPool.
   *   `tier` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The Tier of this CaPool.
   """
