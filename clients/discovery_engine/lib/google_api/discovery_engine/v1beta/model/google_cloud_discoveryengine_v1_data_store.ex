@@ -21,6 +21,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
 
   ## Attributes
 
+  *   `billingEstimation` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t`, *default:* `nil`) - Output only. Data size estimation for billing.
   *   `contentConfig` (*type:* `String.t`, *default:* `nil`) - Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the DataStore was created at.
   *   `defaultSchemaId` (*type:* `String.t`, *default:* `nil`) - Output only. The id of the default Schema asscociated to this data store.
@@ -37,6 +38,9 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :billingEstimation =>
+            GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation.t()
+            | nil,
           :contentConfig => String.t() | nil,
           :createTime => DateTime.t() | nil,
           :defaultSchemaId => String.t() | nil,
@@ -56,6 +60,11 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Dat
             GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1WorkspaceConfig.t()
             | nil
         }
+
+  field(:billingEstimation,
+    as:
+      GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1DataStoreBillingEstimation
+  )
 
   field(:contentConfig)
   field(:createTime, as: DateTime)

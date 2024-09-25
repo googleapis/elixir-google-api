@@ -22,15 +22,18 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaSe
   ## Attributes
 
   *   `dataStore` (*type:* `String.t`, *default:* `nil`) - Required. Full resource name of DataStore, such as `projects/{project}/locations/{location}/collections/{collection_id}/dataStores/{data_store_id}`.
+  *   `filter` (*type:* `String.t`, *default:* `nil`) - Optional. Filter specification to filter documents in the data store specified by data_store field. For more information on filtering, see [Filtering](https://cloud.google.com/generative-ai-app-builder/docs/filter-search-metadata)
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :dataStore => String.t() | nil
+          :dataStore => String.t() | nil,
+          :filter => String.t() | nil
         }
 
   field(:dataStore)
+  field(:filter)
 end
 
 defimpl Poison.Decoder,

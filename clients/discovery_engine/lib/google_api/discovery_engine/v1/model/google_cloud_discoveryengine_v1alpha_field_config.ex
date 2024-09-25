@@ -28,6 +28,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaFi
   *   `fieldType` (*type:* `String.t`, *default:* `nil`) - Output only. Raw type of the field.
   *   `indexableOption` (*type:* `String.t`, *default:* `nil`) - If indexable_option is INDEXABLE_ENABLED, field values are indexed so that it can be filtered or faceted in SearchService.Search. If indexable_option is unset, the server behavior defaults to INDEXABLE_DISABLED for fields that support setting indexable options. For those fields that do not support setting indexable options, such as `object` and `boolean` and key properties, the server will skip indexable_option setting, and setting indexable_option for those fields will throw `INVALID_ARGUMENT` error.
   *   `keyPropertyType` (*type:* `String.t`, *default:* `nil`) - Output only. Type of the key property that this field is mapped to. Empty string if this is not annotated as mapped to a key property. Example types are `title`, `description`. Full list is defined by `keyPropertyMapping` in the schema field annotation. If the schema field has a `KeyPropertyMapping` annotation, `indexable_option` and `searchable_option` of this field cannot be modified.
+  *   `metatagName` (*type:* `String.t`, *default:* `nil`) - Optional. The metatag name found in the HTML page. If user defines this field, the value of this metatag name will be used to extract metatag. If the user does not define this field, the FieldConfig.field_path will be used to extract metatag.
   *   `recsFilterableOption` (*type:* `String.t`, *default:* `nil`) - If recs_filterable_option is FILTERABLE_ENABLED, field values are filterable by filter expression in RecommendationService.Recommend. If FILTERABLE_ENABLED but the field type is numerical, field values are not filterable by text queries in RecommendationService.Recommend. Only textual fields are supported. If recs_filterable_option is unset, the default setting is FILTERABLE_DISABLED for fields that support setting filterable options. When a field set to [FILTERABLE_DISABLED] is filtered, a warning is generated and an empty result is returned.
   *   `retrievableOption` (*type:* `String.t`, *default:* `nil`) - If retrievable_option is RETRIEVABLE_ENABLED, field values are included in the search results. If retrievable_option is unset, the server behavior defaults to RETRIEVABLE_DISABLED for fields that support setting retrievable options. For those fields that do not support setting retrievable options, such as `object` and `boolean`, the server will skip retrievable option setting, and setting retrievable_option for those fields will throw `INVALID_ARGUMENT` error.
   *   `schemaOrgPaths` (*type:* `list(String.t)`, *default:* `nil`) - Field paths for indexing custom attribute from schema.org data. More details of schema.org and its defined types can be found at [schema.org](https://schema.org). It is only used on advanced site search schema. Currently only support full path from root. The full path to a field is constructed by concatenating field names, starting from `_root`, with a period `.` as the delimiter. Examples: * Publish date of the root: _root.datePublished * Publish date of the reviews: _root.review.datePublished
@@ -44,6 +45,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaFi
           :fieldType => String.t() | nil,
           :indexableOption => String.t() | nil,
           :keyPropertyType => String.t() | nil,
+          :metatagName => String.t() | nil,
           :recsFilterableOption => String.t() | nil,
           :retrievableOption => String.t() | nil,
           :schemaOrgPaths => list(String.t()) | nil,
@@ -57,6 +59,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1alphaFi
   field(:fieldType)
   field(:indexableOption)
   field(:keyPropertyType)
+  field(:metatagName)
   field(:recsFilterableOption)
   field(:retrievableOption)
   field(:schemaOrgPaths, type: :list)
