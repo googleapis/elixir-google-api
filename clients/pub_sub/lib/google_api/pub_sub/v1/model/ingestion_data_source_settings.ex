@@ -22,15 +22,21 @@ defmodule GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings do
   ## Attributes
 
   *   `awsKinesis` (*type:* `GoogleApi.PubSub.V1.Model.AwsKinesis.t`, *default:* `nil`) - Optional. Amazon Kinesis Data Streams.
+  *   `cloudStorage` (*type:* `GoogleApi.PubSub.V1.Model.CloudStorage.t`, *default:* `nil`) - Optional. Cloud Storage.
+  *   `platformLogsSettings` (*type:* `GoogleApi.PubSub.V1.Model.PlatformLogsSettings.t`, *default:* `nil`) - Optional. Platform Logs settings. If unset, no Platform Logs will be generated.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :awsKinesis => GoogleApi.PubSub.V1.Model.AwsKinesis.t() | nil
+          :awsKinesis => GoogleApi.PubSub.V1.Model.AwsKinesis.t() | nil,
+          :cloudStorage => GoogleApi.PubSub.V1.Model.CloudStorage.t() | nil,
+          :platformLogsSettings => GoogleApi.PubSub.V1.Model.PlatformLogsSettings.t() | nil
         }
 
   field(:awsKinesis, as: GoogleApi.PubSub.V1.Model.AwsKinesis)
+  field(:cloudStorage, as: GoogleApi.PubSub.V1.Model.CloudStorage)
+  field(:platformLogsSettings, as: GoogleApi.PubSub.V1.Model.PlatformLogsSettings)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.PubSub.V1.Model.IngestionDataSourceSettings do
