@@ -28,6 +28,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. The weak etag of the `AutomationRun` resource. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time the `AutomationRun` expires. An `AutomationRun` expires after 14 days from its creation date.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the `AutomationRun`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automationRuns/{automation_run}`.
+  *   `policyViolation` (*type:* `GoogleApi.CloudDeploy.V1.Model.PolicyViolation.t`, *default:* `nil`) - Output only. Contains information about what policies prevented the `AutomationRun` to proceed.
   *   `promoteReleaseOperation` (*type:* `GoogleApi.CloudDeploy.V1.Model.PromoteReleaseOperation.t`, *default:* `nil`) - Output only. Promotes a release to a specified 'Target'.
   *   `repairRolloutOperation` (*type:* `GoogleApi.CloudDeploy.V1.Model.RepairRolloutOperation.t`, *default:* `nil`) - Output only. Repairs a failed 'Rollout'.
   *   `ruleId` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the automation rule that initiated the operation.
@@ -50,6 +51,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
           :etag => String.t() | nil,
           :expireTime => DateTime.t() | nil,
           :name => String.t() | nil,
+          :policyViolation => GoogleApi.CloudDeploy.V1.Model.PolicyViolation.t() | nil,
           :promoteReleaseOperation =>
             GoogleApi.CloudDeploy.V1.Model.PromoteReleaseOperation.t() | nil,
           :repairRolloutOperation =>
@@ -70,6 +72,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AutomationRun do
   field(:etag)
   field(:expireTime, as: DateTime)
   field(:name)
+  field(:policyViolation, as: GoogleApi.CloudDeploy.V1.Model.PolicyViolation)
   field(:promoteReleaseOperation, as: GoogleApi.CloudDeploy.V1.Model.PromoteReleaseOperation)
   field(:repairRolloutOperation, as: GoogleApi.CloudDeploy.V1.Model.RepairRolloutOperation)
   field(:ruleId)

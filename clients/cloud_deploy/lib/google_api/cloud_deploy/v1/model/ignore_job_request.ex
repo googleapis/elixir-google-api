@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.IgnoreJobRequest do
   ## Attributes
 
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Required. The job ID for the Job to ignore.
+  *   `overrideDeployPolicy` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deploy policies to override. Format is `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Required. The phase ID the Job to ignore belongs to.
   """
 
@@ -29,10 +30,12 @@ defmodule GoogleApi.CloudDeploy.V1.Model.IgnoreJobRequest do
 
   @type t :: %__MODULE__{
           :jobId => String.t() | nil,
+          :overrideDeployPolicy => list(String.t()) | nil,
           :phaseId => String.t() | nil
         }
 
   field(:jobId)
+  field(:overrideDeployPolicy, type: :list)
   field(:phaseId)
 end
 

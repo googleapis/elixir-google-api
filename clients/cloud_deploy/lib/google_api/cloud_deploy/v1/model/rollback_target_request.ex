@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RollbackTargetRequest do
 
   ## Attributes
 
+  *   `overrideDeployPolicy` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deploy policies to override. Format is `projects/{project}/locations/{location}/deployPolicies/{deploy_policy}`.
   *   `releaseId` (*type:* `String.t`, *default:* `nil`) - Optional. ID of the `Release` to roll back to. If this isn't specified, the previous successful `Rollout` to the specified target will be used to determine the `Release`.
   *   `rollbackConfig` (*type:* `GoogleApi.CloudDeploy.V1.Model.RollbackTargetConfig.t`, *default:* `nil`) - Optional. Configs for the rollback `Rollout`.
   *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Required. ID of the rollback `Rollout` to create.
@@ -32,6 +33,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RollbackTargetRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :overrideDeployPolicy => list(String.t()) | nil,
           :releaseId => String.t() | nil,
           :rollbackConfig => GoogleApi.CloudDeploy.V1.Model.RollbackTargetConfig.t() | nil,
           :rolloutId => String.t() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RollbackTargetRequest do
           :validateOnly => boolean() | nil
         }
 
+  field(:overrideDeployPolicy, type: :list)
   field(:releaseId)
   field(:rollbackConfig, as: GoogleApi.CloudDeploy.V1.Model.RollbackTargetConfig)
   field(:rolloutId)
