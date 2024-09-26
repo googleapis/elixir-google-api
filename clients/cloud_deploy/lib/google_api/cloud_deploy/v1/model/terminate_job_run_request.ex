@@ -21,11 +21,16 @@ defmodule GoogleApi.CloudDeploy.V1.Model.TerminateJobRunRequest do
 
   ## Attributes
 
+  *   `overrideDeployPolicy` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deploy policies to override. Format is `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :overrideDeployPolicy => list(String.t()) | nil
+        }
+
+  field(:overrideDeployPolicy, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.CloudDeploy.V1.Model.TerminateJobRunRequest do

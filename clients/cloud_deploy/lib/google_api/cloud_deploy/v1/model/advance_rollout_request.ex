@@ -21,15 +21,18 @@ defmodule GoogleApi.CloudDeploy.V1.Model.AdvanceRolloutRequest do
 
   ## Attributes
 
+  *   `overrideDeployPolicy` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Deploy policies to override. Format is `projects/{project}/locations/{location}/deployPolicies/{deployPolicy}`.
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Required. The phase ID to advance the `Rollout` to.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :overrideDeployPolicy => list(String.t()) | nil,
           :phaseId => String.t() | nil
         }
 
+  field(:overrideDeployPolicy, type: :list)
   field(:phaseId)
 end
 
