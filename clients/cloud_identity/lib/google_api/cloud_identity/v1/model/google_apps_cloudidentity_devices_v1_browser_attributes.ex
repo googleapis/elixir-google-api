@@ -23,7 +23,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Brows
 
   *   `chromeBrowserInfo` (*type:* `GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1BrowserInfo.t`, *default:* `nil`) - Represents the current state of the [Chrome browser attributes](https://cloud.google.com/access-context-manager/docs/browser-attributes) sent by the [Endpoint Verification extension](https://chromewebstore.google.com/detail/endpoint-verification/callobklhcbilhphinckomhgkigmfocg?pli=1).
   *   `chromeProfileId` (*type:* `String.t`, *default:* `nil`) - Chrome profile ID that is exposed by the Chrome API. It is unique for each device.
-  *   `lastProfileSyncTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in milliseconds since Epoch when the profile/gcm id was last synced.
+  *   `lastProfileSyncTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp in milliseconds since the Unix epoch when the profile/gcm id was last synced.
   """
 
   use GoogleApi.Gax.ModelBase

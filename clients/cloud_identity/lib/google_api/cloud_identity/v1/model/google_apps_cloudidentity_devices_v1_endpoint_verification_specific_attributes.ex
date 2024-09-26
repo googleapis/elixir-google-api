@@ -21,7 +21,7 @@ defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1Endpo
 
   ## Attributes
 
-  *   `additionalSignals` (*type:* `map()`, *default:* `nil`) - Additional signals reported by Endpoint Verification. It includes the following attributes: 1. Non-configurable attributes: hotfixes, av_installed, av_enabled, windows_domain_name, is_os_native_firewall_enabled, and is_secure_boot_enabled. 2. [Configurable attributes](https://cloud.google.com/endpoint-verification/docs/collect-config-attributes): file, folder, and binary attributes; registry entries; and properties in a plist.
+  *   `additionalSignals` (*type:* `map()`, *default:* `nil`) - [Additional signals](https://cloud.google.com/endpoint-verification/docs/device-information) reported by Endpoint Verification. It includes the following attributes: * Non-configurable attributes: hotfixes, av_installed, av_enabled, windows_domain_name, is_os_native_firewall_enabled, and is_secure_boot_enabled. * [Configurable attributes](https://cloud.google.com/endpoint-verification/docs/collect-config-attributes): file, folder, and binary attributes; registry entries; and properties in a plist.
   *   `browserAttributes` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1BrowserAttributes.t)`, *default:* `nil`) - Details of browser profiles reported by Endpoint Verification.
   *   `certificateAttributes` (*type:* `list(GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1CertificateAttributes.t)`, *default:* `nil`) - Details of certificates.
   """

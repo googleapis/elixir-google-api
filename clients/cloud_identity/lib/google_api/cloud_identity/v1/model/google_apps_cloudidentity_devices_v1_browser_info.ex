@@ -17,12 +17,12 @@
 
 defmodule GoogleApi.CloudIdentity.V1.Model.GoogleAppsCloudidentityDevicesV1BrowserInfo do
   @moduledoc """
-  Browser-specific fields reported by the [Endpoint Verification extension](https://chromewebstore.google.com/detail/endpoint-verification/callobklhcbilhphinckomhgkigmfocg?pli=1). LINT.IfChange
+  Browser-specific fields reported by the [Endpoint Verification extension](https://chromewebstore.google.com/detail/endpoint-verification/callobklhcbilhphinckomhgkigmfocg?pli=1).
 
   ## Attributes
 
   *   `browserManagementState` (*type:* `String.t`, *default:* `nil`) - Output only. Browser's management state.
-  *   `browserVersion` (*type:* `String.t`, *default:* `nil`) - Version of the request initiating browser.
+  *   `browserVersion` (*type:* `String.t`, *default:* `nil`) - Version of the request initiating browser. E.g. `91.0.4442.4`.
   *   `isBuiltInDnsClientEnabled` (*type:* `boolean()`, *default:* `nil`) - Current state of [built-in DNS client](https://chromeenterprise.google/policies/#BuiltInDnsClientEnabled).
   *   `isBulkDataEntryAnalysisEnabled` (*type:* `boolean()`, *default:* `nil`) - Current state of [bulk data analysis](https://chromeenterprise.google/policies/#OnBulkDataEntryEnterpriseConnector). Set to true if provider list from Chrome is non-empty.
   *   `isChromeCleanupEnabled` (*type:* `boolean()`, *default:* `nil`) - Current state of [Chrome Cleanup](https://chromeenterprise.google/policies/#ChromeCleanupEnabled).
