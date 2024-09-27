@@ -23,7 +23,7 @@ defmodule GoogleApi.SecretManager.V1.Model.SecretVersion do
 
   *   `clientSpecifiedPayloadChecksum` (*type:* `boolean()`, *default:* `nil`) - Output only. True if payload checksum specified in SecretPayload object has been received by SecretManagerService on SecretManagerService.AddSecretVersion.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time at which the SecretVersion was created.
-  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t`, *default:* `nil`) - Output only. The customer-managed encryption status of the SecretVersion. Only populated if customer-managed encryption is used and Secret is a Regionalised Secret.
+  *   `customerManagedEncryption` (*type:* `GoogleApi.SecretManager.V1.Model.CustomerManagedEncryptionStatus.t`, *default:* `nil`) - Output only. The customer-managed encryption status of the SecretVersion. Only populated if customer-managed encryption is used and Secret is a regionalized secret.
   *   `destroyTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. Etag of the currently stored SecretVersion.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name of the SecretVersion in the format `projects/*/secrets/*/versions/*`. SecretVersion IDs in a Secret start at 1 and are incremented for each subsequent version of the secret.
