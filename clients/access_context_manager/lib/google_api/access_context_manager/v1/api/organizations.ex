@@ -335,7 +335,8 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:updateMask` (*type:* `String.t`) - Required. Only the fields specified in this mask are updated. Because name and group_key cannot be changed, update_mask is required and may only contain the following fields: `access_levels`, `dry_run_access_levels`. update_mask { paths: "access_levels" }
+      *   `:appendScopedAccessSettings` (*type:* `boolean()`) - Optional. This field will be used to control whether or not scoped access settings are appended to the existing list of scoped access settings. If true, the scoped access settings in the request will be appended to the existing list of scoped access settings. If false, the scoped access settings in the request replace the existing list of scoped access settings.
+      *   `:updateMask` (*type:* `String.t`) - Required. Only the fields specified in this mask are updated. Because name and group_key cannot be changed, update_mask is required and may only contain the following fields: `access_levels`, `dry_run_access_levels`, `reauth_settings`, `scoped_access_settings`. update_mask { paths: "access_levels" }
       *   `:body` (*type:* `GoogleApi.AccessContextManager.V1.Model.GcpUserAccessBinding.t`) - 
   *   `opts` (*type:* `keyword()`) - Call options
 
@@ -372,6 +373,7 @@ defmodule GoogleApi.AccessContextManager.V1.Api.Organizations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :appendScopedAccessSettings => :query,
       :updateMask => :query,
       :body => :body
     }
