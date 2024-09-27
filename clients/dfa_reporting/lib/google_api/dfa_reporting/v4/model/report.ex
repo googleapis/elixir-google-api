@@ -24,6 +24,7 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
   *   `accountId` (*type:* `String.t`, *default:* `nil`) - The account ID to which this report belongs.
   *   `criteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportCriteria.t`, *default:* `nil`) - The report criteria for a report of type "STANDARD".
   *   `crossDimensionReachCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportCrossDimensionReachCriteria.t`, *default:* `nil`) - The report criteria for a report of type "CROSS_DIMENSION_REACH".
+  *   `crossMediaReachCriteria` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportCrossMediaReachCriteria.t`, *default:* `nil`) - Optional. The report criteria for a report of type "CROSS_MEDIA_REACH".
   *   `delivery` (*type:* `GoogleApi.DFAReporting.V4.Model.ReportDelivery.t`, *default:* `nil`) - The report's email delivery settings.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - The eTag of this response for caching purposes.
   *   `fileName` (*type:* `String.t`, *default:* `nil`) - The filename used when generating report files for this report.
@@ -48,6 +49,8 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
           :criteria => GoogleApi.DFAReporting.V4.Model.ReportCriteria.t() | nil,
           :crossDimensionReachCriteria =>
             GoogleApi.DFAReporting.V4.Model.ReportCrossDimensionReachCriteria.t() | nil,
+          :crossMediaReachCriteria =>
+            GoogleApi.DFAReporting.V4.Model.ReportCrossMediaReachCriteria.t() | nil,
           :delivery => GoogleApi.DFAReporting.V4.Model.ReportDelivery.t() | nil,
           :etag => String.t() | nil,
           :fileName => String.t() | nil,
@@ -72,6 +75,10 @@ defmodule GoogleApi.DFAReporting.V4.Model.Report do
 
   field(:crossDimensionReachCriteria,
     as: GoogleApi.DFAReporting.V4.Model.ReportCrossDimensionReachCriteria
+  )
+
+  field(:crossMediaReachCriteria,
+    as: GoogleApi.DFAReporting.V4.Model.ReportCrossMediaReachCriteria
   )
 
   field(:delivery, as: GoogleApi.DFAReporting.V4.Model.ReportDelivery)

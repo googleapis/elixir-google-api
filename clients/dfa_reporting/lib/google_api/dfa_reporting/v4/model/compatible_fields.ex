@@ -17,11 +17,12 @@
 
 defmodule GoogleApi.DFAReporting.V4.Model.CompatibleFields do
   @moduledoc """
-  Represents a response to the queryCompatibleFields method.
+  Represents a response to the queryCompatibleFields method. Next ID: 10
 
   ## Attributes
 
   *   `crossDimensionReachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V4.Model.CrossDimensionReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "CROSS_DIMENSION_REACH".
+  *   `crossMediaReachReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V4.Model.CrossMediaReachReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "CROSS_MEDIA_REACH".
   *   `floodlightReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V4.Model.FloodlightReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "FLOODLIGHT".
   *   `kind` (*type:* `String.t`, *default:* `nil`) - The kind of resource this is, in this case dfareporting#compatibleFields.
   *   `pathToConversionReportCompatibleFields` (*type:* `GoogleApi.DFAReporting.V4.Model.PathToConversionReportCompatibleFields.t`, *default:* `nil`) - Contains items that are compatible to be selected for a report of type "PATH_TO_CONVERSION".
@@ -34,6 +35,8 @@ defmodule GoogleApi.DFAReporting.V4.Model.CompatibleFields do
   @type t :: %__MODULE__{
           :crossDimensionReachReportCompatibleFields =>
             GoogleApi.DFAReporting.V4.Model.CrossDimensionReachReportCompatibleFields.t() | nil,
+          :crossMediaReachReportCompatibleFields =>
+            GoogleApi.DFAReporting.V4.Model.CrossMediaReachReportCompatibleFields.t() | nil,
           :floodlightReportCompatibleFields =>
             GoogleApi.DFAReporting.V4.Model.FloodlightReportCompatibleFields.t() | nil,
           :kind => String.t() | nil,
@@ -47,6 +50,10 @@ defmodule GoogleApi.DFAReporting.V4.Model.CompatibleFields do
 
   field(:crossDimensionReachReportCompatibleFields,
     as: GoogleApi.DFAReporting.V4.Model.CrossDimensionReachReportCompatibleFields
+  )
+
+  field(:crossMediaReachReportCompatibleFields,
+    as: GoogleApi.DFAReporting.V4.Model.CrossMediaReachReportCompatibleFields
   )
 
   field(:floodlightReportCompatibleFields,
