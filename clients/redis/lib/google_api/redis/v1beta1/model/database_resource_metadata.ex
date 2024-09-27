@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata. Next ID: 21
+  Common model for database resource instance metadata. Next ID: 23
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the resource, i.e. the time when resource is created and recorded in partner service.
   *   `currentState` (*type:* `String.t`, *default:* `nil`) - Current state of the instance.
   *   `customMetadata` (*type:* `GoogleApi.Redis.V1beta1.Model.CustomMetadataData.t`, *default:* `nil`) - Any custom metadata associated with the resource
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. Edition represents whether the instance is ENTERPRISE or ENTERPRISE_PLUS. This information is core to Cloud SQL only and is used to identify the edition of the instance.
   *   `entitlements` (*type:* `list(GoogleApi.Redis.V1beta1.Model.Entitlement.t)`, *default:* `nil`) - Entitlements associated with the resource
   *   `expectedState` (*type:* `String.t`, *default:* `nil`) - The state that the instance is expected to be in. For example, an instance state can transition to UNHEALTHY due to wrong patch update, while the expected state will remain at the HEALTHY.
   *   `id` (*type:* `GoogleApi.Redis.V1beta1.Model.DatabaseResourceId.t`, *default:* `nil`) - Required. Unique identifier for a Database resource
@@ -34,6 +35,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   *   `location` (*type:* `String.t`, *default:* `nil`) - The resource location. REQUIRED
   *   `machineConfiguration` (*type:* `GoogleApi.Redis.V1beta1.Model.MachineConfiguration.t`, *default:* `nil`) - Machine configuration for this resource.
   *   `primaryResourceId` (*type:* `GoogleApi.Redis.V1beta1.Model.DatabaseResourceId.t`, *default:* `nil`) - Identifier for this resource's immediate parent/primary resource if the current resource is a replica or derived form of another Database resource. Else it would be NULL. REQUIRED if the immediate parent exists when first time resource is getting ingested, otherwise optional.
+  *   `primaryResourceLocation` (*type:* `String.t`, *default:* `nil`) - Primary resource location. REQUIRED if the immediate parent exists when first time resource is getting ingested, otherwise optional.
   *   `product` (*type:* `GoogleApi.Redis.V1beta1.Model.Product.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
@@ -52,6 +54,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
           :creationTime => DateTime.t() | nil,
           :currentState => String.t() | nil,
           :customMetadata => GoogleApi.Redis.V1beta1.Model.CustomMetadataData.t() | nil,
+          :edition => String.t() | nil,
           :entitlements => list(GoogleApi.Redis.V1beta1.Model.Entitlement.t()) | nil,
           :expectedState => String.t() | nil,
           :id => GoogleApi.Redis.V1beta1.Model.DatabaseResourceId.t() | nil,
@@ -59,6 +62,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
           :location => String.t() | nil,
           :machineConfiguration => GoogleApi.Redis.V1beta1.Model.MachineConfiguration.t() | nil,
           :primaryResourceId => GoogleApi.Redis.V1beta1.Model.DatabaseResourceId.t() | nil,
+          :primaryResourceLocation => String.t() | nil,
           :product => GoogleApi.Redis.V1beta1.Model.Product.t() | nil,
           :resourceContainer => String.t() | nil,
           :resourceName => String.t() | nil,
@@ -73,6 +77,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   field(:creationTime, as: DateTime)
   field(:currentState)
   field(:customMetadata, as: GoogleApi.Redis.V1beta1.Model.CustomMetadataData)
+  field(:edition)
   field(:entitlements, as: GoogleApi.Redis.V1beta1.Model.Entitlement, type: :list)
   field(:expectedState)
   field(:id, as: GoogleApi.Redis.V1beta1.Model.DatabaseResourceId)
@@ -80,6 +85,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.DatabaseResourceMetadata do
   field(:location)
   field(:machineConfiguration, as: GoogleApi.Redis.V1beta1.Model.MachineConfiguration)
   field(:primaryResourceId, as: GoogleApi.Redis.V1beta1.Model.DatabaseResourceId)
+  field(:primaryResourceLocation)
   field(:product, as: GoogleApi.Redis.V1beta1.Model.Product)
   field(:resourceContainer)
   field(:resourceName)

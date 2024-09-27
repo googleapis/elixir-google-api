@@ -25,7 +25,7 @@ defmodule GoogleApi.Redis.V1beta1.Model.PscConnection do
   *   `forwardingRule` (*type:* `String.t`, *default:* `nil`) - Required. The URI of the consumer side forwarding rule. Example: projects/{projectNumOrId}/regions/us-east1/forwardingRules/{resourceId}.
   *   `network` (*type:* `String.t`, *default:* `nil`) - Required. The consumer network where the IP address resides, in the form of projects/{project_id}/global/networks/{network_id}.
   *   `projectId` (*type:* `String.t`, *default:* `nil`) - Optional. Project ID of the consumer project where the forwarding rule is created in.
-  *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - Optional. The PSC connection id of the forwarding rule connected to the service attachment.
+  *   `pscConnectionId` (*type:* `String.t`, *default:* `nil`) - Required. The PSC connection id of the forwarding rule connected to the service attachment.
   *   `serviceAttachment` (*type:* `String.t`, *default:* `nil`) - Required. The service attachment which is the target of the PSC connection, in the form of projects/{project-id}/regions/{region}/serviceAttachments/{service-attachment-id}.
   """
 
