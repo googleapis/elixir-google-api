@@ -816,7 +816,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   end
 
   @doc """
-
+  Creates a new BackupVault in a given project and location.
 
   ## Parameters
 
@@ -1211,7 +1211,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Name of the backup vault to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}"`. `{backupvault}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the project and location.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -1801,7 +1801,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Identifier. The resource name.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Name of the datasource to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}"`. `{datasource}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the backup vault.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
@@ -2247,7 +2247,7 @@ defmodule GoogleApi.BackupDR.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.BackupDR.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - Output only. Identifier. Name of the resource.
+  *   `name` (*type:* `String.t`) - Output only. Identifier. Name of the backup to create. It must have the format`"projects//locations//backupVaults//dataSources/{datasource}/backups/{backup}"`. `{backup}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the datasource.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.
