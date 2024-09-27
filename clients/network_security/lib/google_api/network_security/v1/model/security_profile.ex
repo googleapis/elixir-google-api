@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfile do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Resource creation timestamp.
+  *   `customMirroringProfile` (*type:* `GoogleApi.NetworkSecurity.V1.Model.CustomMirroringProfile.t`, *default:* `nil`) - The custom Packet Mirroring v2 configuration for the SecurityProfile.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the profile. Max length 512 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs.
@@ -35,6 +36,8 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfile do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :customMirroringProfile =>
+            GoogleApi.NetworkSecurity.V1.Model.CustomMirroringProfile.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
@@ -46,6 +49,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfile do
         }
 
   field(:createTime, as: DateTime)
+  field(:customMirroringProfile, as: GoogleApi.NetworkSecurity.V1.Model.CustomMirroringProfile)
   field(:description)
   field(:etag)
   field(:labels, type: :map)

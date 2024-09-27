@@ -22,6 +22,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
   ## Attributes
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Resource creation timestamp.
+  *   `customMirroringProfile` (*type:* `String.t`, *default:* `nil`) - Optional. Reference to a SecurityProfile with the CustomMirroring configuration.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. An optional description of the profile group. Max length 2048 characters.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels as key value pairs.
@@ -34,6 +35,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
 
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
+          :customMirroringProfile => String.t() | nil,
           :description => String.t() | nil,
           :etag => String.t() | nil,
           :labels => map() | nil,
@@ -43,6 +45,7 @@ defmodule GoogleApi.NetworkSecurity.V1.Model.SecurityProfileGroup do
         }
 
   field(:createTime, as: DateTime)
+  field(:customMirroringProfile)
   field(:description)
   field(:etag)
   field(:labels, type: :map)
