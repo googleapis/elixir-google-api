@@ -27,6 +27,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
   *   `hub` (*type:* `String.t`, *default:* `nil`) - Immutable. The name of the hub that this spoke is attached to.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
   *   `linkedInterconnectAttachments` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments.t`, *default:* `nil`) - VLAN attachments that are associated with the spoke.
+  *   `linkedProducerVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork.t`, *default:* `nil`) - Optional. The linked producer VPC that is associated with the spoke.
   *   `linkedRouterApplianceInstances` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances.t`, *default:* `nil`) - Router appliance instances that are associated with the spoke.
   *   `linkedVpcNetwork` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork.t`, *default:* `nil`) - Optional. VPC network that is associated with the spoke.
   *   `linkedVpnTunnels` (*type:* `GoogleApi.NetworkConnectivity.V1.Model.LinkedVpnTunnels.t`, *default:* `nil`) - VPN tunnels that are associated with the spoke.
@@ -48,6 +49,8 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
           :labels => map() | nil,
           :linkedInterconnectAttachments =>
             GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments.t() | nil,
+          :linkedProducerVpcNetwork =>
+            GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork.t() | nil,
           :linkedRouterApplianceInstances =>
             GoogleApi.NetworkConnectivity.V1.Model.LinkedRouterApplianceInstances.t() | nil,
           :linkedVpcNetwork => GoogleApi.NetworkConnectivity.V1.Model.LinkedVpcNetwork.t() | nil,
@@ -68,6 +71,10 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.Spoke do
 
   field(:linkedInterconnectAttachments,
     as: GoogleApi.NetworkConnectivity.V1.Model.LinkedInterconnectAttachments
+  )
+
+  field(:linkedProducerVpcNetwork,
+    as: GoogleApi.NetworkConnectivity.V1.Model.LinkedProducerVpcNetwork
   )
 
   field(:linkedRouterApplianceInstances,
