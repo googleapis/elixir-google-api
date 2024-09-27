@@ -21,7 +21,7 @@ defmodule GoogleApi.NetworkConnectivity.V1.Model.LinkedVpnTunnels do
 
   ## Attributes
 
-  *   `includeImportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included during import from hub.(does not control transit connectivity) The only allowed value for now is "ALL_IPV4_RANGES".
+  *   `includeImportRanges` (*type:* `list(String.t)`, *default:* `nil`) - Optional. IP ranges allowed to be included during import from hub (does not control transit connectivity). The only allowed value for now is "ALL_IPV4_RANGES".
   *   `siteToSiteDataTransfer` (*type:* `boolean()`, *default:* `nil`) - A value that controls whether site-to-site data transfer is enabled for these resources. Data transfer is available only in [supported locations](https://cloud.google.com/network-connectivity/docs/network-connectivity-center/concepts/locations).
   *   `uris` (*type:* `list(String.t)`, *default:* `nil`) - The URIs of linked VPN tunnel resources.
   *   `vpcNetwork` (*type:* `String.t`, *default:* `nil`) - Output only. The VPC network where these VPN tunnels are located.
