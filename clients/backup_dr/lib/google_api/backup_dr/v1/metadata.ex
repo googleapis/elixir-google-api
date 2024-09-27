@@ -20,7 +20,7 @@ defmodule GoogleApi.BackupDR.V1 do
   API client metadata for GoogleApi.BackupDR.V1.
   """
 
-  @discovery_revision "20240913"
+  @discovery_revision "20240918"
 
   def discovery_revision(), do: @discovery_revision
 end

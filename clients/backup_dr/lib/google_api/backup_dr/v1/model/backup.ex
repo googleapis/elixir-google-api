@@ -33,7 +33,7 @@ defmodule GoogleApi.BackupDR.V1.Model.Backup do
   *   `expireTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. When this backup is automatically expired.
   *   `gcpBackupPlanInfo` (*type:* `GoogleApi.BackupDR.V1.Model.GCPBackupPlanInfo.t`, *default:* `nil`) - Output only. Configuration for a Google Cloud resource.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Name of the resource.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Name of the backup to create. It must have the format`"projects//locations//backupVaults//dataSources/{datasource}/backups/{backup}"`. `{backup}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the datasource.
   *   `resourceSizeBytes` (*type:* `String.t`, *default:* `nil`) - Output only. source resource size in bytes at the time of the backup.
   *   `serviceLocks` (*type:* `list(GoogleApi.BackupDR.V1.Model.BackupLock.t)`, *default:* `nil`) - Output only. The list of BackupLocks taken by the service to prevent the deletion of the backup.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The Backup resource instance state.

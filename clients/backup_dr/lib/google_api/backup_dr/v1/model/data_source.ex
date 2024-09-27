@@ -29,7 +29,7 @@ defmodule GoogleApi.BackupDR.V1.Model.DataSource do
   *   `dataSourceGcpResource` (*type:* `GoogleApi.BackupDR.V1.Model.DataSourceGcpResource.t`, *default:* `nil`) - The backed up resource is a Google Cloud resource. The word 'DataSource' was included in the names to indicate that this is the representation of the Google Cloud resource used within the DataSource object.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Server specified ETag for the ManagementServer resource to prevent simultaneous updates from overwiting each other.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined:
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Name of the datasource to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}"`. `{datasource}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the backup vault.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The DataSource resource instance state.
   *   `totalStoredBytes` (*type:* `String.t`, *default:* `nil`) - The number of bytes (metadata and data) stored in this datasource.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the instance was updated.

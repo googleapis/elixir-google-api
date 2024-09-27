@@ -21,6 +21,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
 
   ## Attributes
 
+  *   `accessRestriction` (*type:* `String.t`, *default:* `nil`) - Optional. Note: This field is added for future use case and will not be supported in the current release. Optional. Access restriction for the backup vault. Default value is WITHIN_ORGANIZATION if not provided during creation.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. User annotations. See https://google.aip.dev/128#annotations Stores small amounts of arbitrary data.
   *   `backupCount` (*type:* `String.t`, *default:* `nil`) - Output only. The number of backups in this backup vault.
   *   `backupMinimumEnforcedRetentionDuration` (*type:* `String.t`, *default:* `nil`) - Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended.
@@ -30,7 +31,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
   *   `effectiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. Time after which the BackupVault resource is locked.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Optional. Server specified ETag for the backup vault resource to prevent simultaneous updates from overwiting each other.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Resource labels to represent user provided metadata. No labels currently defined:
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. Name of the backup vault to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}"`. `{backupvault}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the project and location.
   *   `serviceAccount` (*type:* `String.t`, *default:* `nil`) - Output only. Service account used by the BackupVault Service for this BackupVault. The user should grant this account permissions in their workload project to enable the service to run backups and restores there.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. The BackupVault resource instance state.
   *   `totalStoredBytes` (*type:* `String.t`, *default:* `nil`) - Output only. Total size of the storage used by all backup resources.
@@ -41,6 +42,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :accessRestriction => String.t() | nil,
           :annotations => map() | nil,
           :backupCount => String.t() | nil,
           :backupMinimumEnforcedRetentionDuration => String.t() | nil,
@@ -58,6 +60,7 @@ defmodule GoogleApi.BackupDR.V1.Model.BackupVault do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:accessRestriction)
   field(:annotations, type: :map)
   field(:backupCount)
   field(:backupMinimumEnforcedRetentionDuration)
