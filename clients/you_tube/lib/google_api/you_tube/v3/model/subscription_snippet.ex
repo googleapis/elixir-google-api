@@ -22,7 +22,6 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionSnippet do
   ## Attributes
 
   *   `channelId` (*type:* `String.t`, *default:* `nil`) - The ID that YouTube uses to uniquely identify the subscriber's channel.
-  *   `channelTitle` (*type:* `String.t`, *default:* `nil`) - Channel title for the channel that the subscription belongs to.
   *   `description` (*type:* `String.t`, *default:* `nil`) - The subscription's details.
   *   `publishedAt` (*type:* `DateTime.t`, *default:* `nil`) - The date and time that the subscription was created.
   *   `resourceId` (*type:* `GoogleApi.YouTube.V3.Model.ResourceId.t`, *default:* `nil`) - The id object contains information about the channel that the user subscribed to.
@@ -34,7 +33,6 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionSnippet do
 
   @type t :: %__MODULE__{
           :channelId => String.t() | nil,
-          :channelTitle => String.t() | nil,
           :description => String.t() | nil,
           :publishedAt => DateTime.t() | nil,
           :resourceId => GoogleApi.YouTube.V3.Model.ResourceId.t() | nil,
@@ -43,7 +41,6 @@ defmodule GoogleApi.YouTube.V3.Model.SubscriptionSnippet do
         }
 
   field(:channelId)
-  field(:channelTitle)
   field(:description)
   field(:publishedAt, as: DateTime)
   field(:resourceId, as: GoogleApi.YouTube.V3.Model.ResourceId)
