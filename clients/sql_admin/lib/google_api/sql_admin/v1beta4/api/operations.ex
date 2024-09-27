@@ -168,6 +168,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
+      *   `:filter` (*type:* `String.t`) - Optional. A filter string that follows the rules of EBNF grammar (https://google.aip.dev/assets/misc/ebnf-filtering.txt). Cloud SQL provides filters for status, operationType, and startTime.
       *   `:instance` (*type:* `String.t`) - Cloud SQL instance ID. This does not include the project ID.
       *   `:maxResults` (*type:* `integer()`) - Maximum number of operations per response.
       *   `:pageToken` (*type:* `String.t`) - A previously-returned page token representing part of the larger set of results to view.
@@ -196,6 +197,7 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Api.Operations do
       :quotaUser => :query,
       :uploadType => :query,
       :upload_protocol => :query,
+      :filter => :query,
       :instance => :query,
       :maxResults => :query,
       :pageToken => :query
