@@ -27,6 +27,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2ConversationModel
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the model. At most 64 bytes long.
   *   `languageCode` (*type:* `String.t`, *default:* `nil`) - Language code for the conversation model. If not specified, the language is en-US. Language at ConversationModel should be set for all non en-us languages. This should be a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US".
   *   `name` (*type:* `String.t`, *default:* `nil`) - ConversationModel resource name. Format: `projects//conversationModels/`
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. A read only boolean field reflecting Zone Isolation status of the model.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. A read only boolean field reflecting Zone Separation status of the model.
   *   `smartReplyModelMetadata` (*type:* `GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SmartReplyModelMetadata.t`, *default:* `nil`) - Metadata for smart reply models.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. State of the model. A model can only serve prediction requests after it gets deployed.
   """
@@ -43,6 +45,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2ConversationModel
           :displayName => String.t() | nil,
           :languageCode => String.t() | nil,
           :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil,
           :smartReplyModelMetadata =>
             GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SmartReplyModelMetadata.t() | nil,
           :state => String.t() | nil
@@ -62,6 +66,8 @@ defmodule GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2ConversationModel
   field(:displayName)
   field(:languageCode)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 
   field(:smartReplyModelMetadata,
     as: GoogleApi.Dialogflow.V3.Model.GoogleCloudDialogflowV2SmartReplyModelMetadata

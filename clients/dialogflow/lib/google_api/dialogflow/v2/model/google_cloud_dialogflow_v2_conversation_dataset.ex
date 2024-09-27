@@ -28,6 +28,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationDatas
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the dataset. Maximum of 64 bytes.
   *   `inputConfig` (*type:* `GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputConfig.t`, *default:* `nil`) - Output only. Input configurations set during conversation data import.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. ConversationDataset resource name. Format: `projects//locations//conversationDatasets/`
+  *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. A read only boolean field reflecting Zone Isolation status of the dataset.
+  *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. A read only boolean field reflecting Zone Separation status of the dataset.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -41,7 +43,9 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationDatas
           :displayName => String.t() | nil,
           :inputConfig =>
             GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputConfig.t() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :satisfiesPzi => boolean() | nil,
+          :satisfiesPzs => boolean() | nil
         }
 
   field(:conversationCount)
@@ -55,6 +59,8 @@ defmodule GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2ConversationDatas
   field(:displayName)
   field(:inputConfig, as: GoogleApi.Dialogflow.V2.Model.GoogleCloudDialogflowV2InputConfig)
   field(:name)
+  field(:satisfiesPzi)
+  field(:satisfiesPzs)
 end
 
 defimpl Poison.Decoder,
