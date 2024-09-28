@@ -32,8 +32,8 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecutio
   *   `replayInfo` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaExecutionReplayInfo.t`, *default:* `nil`) - Output only. Replay info for the execution
   *   `requestParameters` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t}`, *default:* `nil`) - Event parameters come in as part of the request.
   *   `requestParams` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry.t)`, *default:* `nil`) - Event parameters come in as part of the request.
-  *   `responseParameters` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t}`, *default:* `nil`) - Event parameters returned as part of the response.
-  *   `responseParams` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry.t)`, *default:* `nil`) - Event parameters come out as part of the response.
+  *   `responseParameters` (*type:* `%{optional(String.t) => GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaValueType.t}`, *default:* `nil`) - Event parameters returned as part of the response. In the case of error, the `ErrorInfo` field is returned in the following format: { "ErrorInfo": { "message": String, "code": Number } } 
+  *   `responseParams` (*type:* `list(GoogleApi.Integrations.V1.Model.EnterpriseCrmFrontendsEventbusProtoParameterEntry.t)`, *default:* `nil`) - 
   *   `snapshotNumber` (*type:* `String.t`, *default:* `nil`) - Output only. An increasing sequence that is set when a new snapshot is created
   *   `triggerId` (*type:* `String.t`, *default:* `nil`) - The trigger id of the integration trigger config. If both trigger_id and client_id is present, the integration is executed from the start tasks provided by the matching trigger config otherwise it is executed from the default start tasks.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Last modified time of the execution.
