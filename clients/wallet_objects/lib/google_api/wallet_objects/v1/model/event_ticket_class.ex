@@ -58,6 +58,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketClass do
   *   `classTemplateInfo` (*type:* `GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t`, *default:* `nil`) - Template information about how the class should be displayed. If unset, Google will fallback to a default set of fields to display.
   *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the class. For a pass only ten will be displayed, prioritizing those from the object.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
   *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the event ticket.
   *   `customSeatLabel` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - A custom label to use for the seat value (`eventTicketObject.seatInfo.seat`) on the card detail view. This should only be used if the default "Seat" label or one of the `seatLabel` options is not sufficient. Both `seatLabel` and `customSeatLabel` may not be set. If neither is set, the label will default to "Seat", localized. If the seat field is unset, this label will not be used.
@@ -108,6 +109,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketClass do
           :classTemplateInfo => GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo.t() | nil,
           :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
           :enableSmartTap => boolean() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :countryCode => String.t() | nil,
           :viewUnlockRequirement => String.t() | nil,
           :customSeatLabel => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
@@ -154,6 +157,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.EventTicketClass do
   field(:classTemplateInfo, as: GoogleApi.WalletObjects.V1.Model.ClassTemplateInfo)
   field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
   field(:enableSmartTap)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:countryCode)
   field(:viewUnlockRequirement)
   field(:customSeatLabel, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)

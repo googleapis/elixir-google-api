@@ -60,6 +60,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
   *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and one of object level `smartTapRedemptionLevel`, barcode.value`, or `accountId` fields must also be set up correctly in order for a pass to support Smart Tap.
   *   `accountIdLabel` (*type:* `String.t`, *default:* `nil`) - The account ID label, such as "Member ID." Recommended maximum length is 15 characters to ensure full string is displayed on smaller screens.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the class. For a pass only ten will be displayed, prioritizing those from the object.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
   *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the loyalty card.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for a class. This ID must be unique across all classes from an issuer. This value should follow the format issuer ID. identifier where the former is issued by Google and latter is chosen by you. Your unique identifier should only include alphanumeric characters, '.', '_', or '-'.
@@ -112,6 +113,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
           :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
           :enableSmartTap => boolean() | nil,
           :accountIdLabel => String.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :countryCode => String.t() | nil,
           :viewUnlockRequirement => String.t() | nil,
           :id => String.t() | nil,
@@ -159,6 +162,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyClass do
   field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
   field(:enableSmartTap)
   field(:accountIdLabel)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:countryCode)
   field(:viewUnlockRequirement)
   field(:id)

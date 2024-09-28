@@ -46,6 +46,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
   *   `subheader` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - The title label of the pass, such as location where this pass can be used. Appears right above the title in the title row in the pass detail view.
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If `textModulesData` is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from class and 10 from object.
   *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be considered valid or usable. When the time period is passed, the object will be considered expired, which will affect the rendering on user's devices.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the object.
   *   `wideLogo` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The wide logo of the pass. When provided, this will be used in place of the logo in the top left of the card view.
   """
 
@@ -77,6 +78,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
           :subheader => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
           :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :wideLogo => GoogleApi.WalletObjects.V1.Model.Image.t() | nil
         }
 
@@ -105,6 +108,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.GenericObject do
   field(:subheader, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
   field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:wideLogo, as: GoogleApi.WalletObjects.V1.Model.Image)
 end
 

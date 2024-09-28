@@ -54,6 +54,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardClass do
   *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
   *   `eventNumberLabel` (*type:* `String.t`, *default:* `nil`) - The label to display for event number, such as "Target Event #".
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the class. For a pass only ten will be displayed, prioritizing those from the object.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
   *   `localizedCardNumberLabel` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the card_number_label.
   *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the gift card.
@@ -97,6 +98,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardClass do
           :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
           :eventNumberLabel => String.t() | nil,
           :enableSmartTap => boolean() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :countryCode => String.t() | nil,
           :localizedCardNumberLabel => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
           :viewUnlockRequirement => String.t() | nil,
@@ -138,6 +141,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.GiftCardClass do
   field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
   field(:eventNumberLabel)
   field(:enableSmartTap)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:countryCode)
   field(:localizedCardNumberLabel, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
   field(:viewUnlockRequirement)
