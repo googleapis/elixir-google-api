@@ -68,6 +68,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
   *   `customRouteRestrictionsDetailsLabel` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - A custom label to use for the route restrictions details value (`transitObject.ticketRestrictions.routeRestrictionsDetails`).
   *   `transitOperatorName` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - The name of the transit operator.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the class. For a pass only ten will be displayed, prioritizing those from the object.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
   *   `customDiscountMessageLabel` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - A custom label to use for the transit discount message value (`transitObject.purchaseDetails.ticketCost.discountMessage`).
   *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the transit ticket.
@@ -135,6 +136,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
           :customRouteRestrictionsDetailsLabel =>
             GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
           :transitOperatorName => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :countryCode => String.t() | nil,
           :customDiscountMessageLabel =>
             GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
@@ -193,6 +196,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitClass do
   field(:customRouteRestrictionsDetailsLabel, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
 
   field(:transitOperatorName, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:countryCode)
   field(:customDiscountMessageLabel, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
   field(:viewUnlockRequirement)

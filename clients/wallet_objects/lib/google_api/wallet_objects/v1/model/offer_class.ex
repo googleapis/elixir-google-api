@@ -57,6 +57,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferClass do
   *   `callbackOptions` (*type:* `GoogleApi.WalletObjects.V1.Model.CallbackOptions.t`, *default:* `nil`) - Callback options to be used to call the issuer back for every save/delete of an object for this class by the end-user. All objects of this class are eligible for the callback.
   *   `enableSmartTap` (*type:* `boolean()`, *default:* `nil`) - Identifies whether this class supports Smart Tap. The `redemptionIssuers` and object level `smartTapRedemptionLevel` fields must also be set up correctly in order for a pass to support Smart Tap.
   *   `localizedProvider` (*type:* `GoogleApi.WalletObjects.V1.Model.LocalizedString.t`, *default:* `nil`) - Translated strings for the provider. Recommended maximum length is 12 characters to ensure full string is displayed on smaller screens.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the class. For a pass only ten will be displayed, prioritizing those from the object.
   *   `countryCode` (*type:* `String.t`, *default:* `nil`) - Country code used to display the card's country (when the user is not in that country), as well as to display localized content when content is not available in the user's locale.
   *   `titleImage` (*type:* `GoogleApi.WalletObjects.V1.Model.Image.t`, *default:* `nil`) - The title image of the offer. This image is displayed in both the details and list views of the app.
   *   `viewUnlockRequirement` (*type:* `String.t`, *default:* `nil`) - View Unlock Requirement options for the offer.
@@ -103,6 +104,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferClass do
           :callbackOptions => GoogleApi.WalletObjects.V1.Model.CallbackOptions.t() | nil,
           :enableSmartTap => boolean() | nil,
           :localizedProvider => GoogleApi.WalletObjects.V1.Model.LocalizedString.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :countryCode => String.t() | nil,
           :titleImage => GoogleApi.WalletObjects.V1.Model.Image.t() | nil,
           :viewUnlockRequirement => String.t() | nil,
@@ -146,6 +149,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.OfferClass do
   field(:callbackOptions, as: GoogleApi.WalletObjects.V1.Model.CallbackOptions)
   field(:enableSmartTap)
   field(:localizedProvider, as: GoogleApi.WalletObjects.V1.Model.LocalizedString)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:countryCode)
   field(:titleImage, as: GoogleApi.WalletObjects.V1.Model.Image)
   field(:viewUnlockRequirement)

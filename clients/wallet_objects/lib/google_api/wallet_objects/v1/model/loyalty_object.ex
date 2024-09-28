@@ -50,6 +50,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
   *   `state` (*type:* `String.t`, *default:* `nil`) - Required. The state of the object. This field is used to determine how an object is displayed in the app. For example, an `inactive` object is moved to the "Expired passes" section.
   *   `textModulesData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t)`, *default:* `nil`) - Text module data. If text module data is also defined on the class, both will be displayed. The maximum number of these fields displayed is 10 from the object and 10 from the class.
   *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be `active` and object can be used. An object's state will be changed to `expired` when this time period has passed.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the object.
   *   `version` (*type:* `String.t`, *default:* `nil`) - Deprecated
   """
 
@@ -85,6 +86,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
           :state => String.t() | nil,
           :textModulesData => list(GoogleApi.WalletObjects.V1.Model.TextModuleData.t()) | nil,
           :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :version => String.t() | nil
         }
 
@@ -117,6 +120,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.LoyaltyObject do
   field(:state)
   field(:textModulesData, as: GoogleApi.WalletObjects.V1.Model.TextModuleData, type: :list)
   field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:version)
 end
 

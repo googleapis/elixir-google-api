@@ -56,6 +56,7 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   *   `passConstraints` (*type:* `GoogleApi.WalletObjects.V1.Model.PassConstraints.t`, *default:* `nil`) - Pass constraints for the object. Includes limiting NFC and screenshot behaviors.
   *   `rotatingBarcode` (*type:* `GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t`, *default:* `nil`) - The rotating barcode type and value.
   *   `classReference` (*type:* `GoogleApi.WalletObjects.V1.Model.TransitClass.t`, *default:* `nil`) - A copy of the inherited fields of the parent class. These fields are retrieved during a GET.
+  *   `valueAddedModuleData` (*type:* `list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t)`, *default:* `nil`) - Optional value added module data. Maximum of ten on the object.
   *   `passengerType` (*type:* `String.t`, *default:* `nil`) - The number of passengers.
   *   `validTimeInterval` (*type:* `GoogleApi.WalletObjects.V1.Model.TimeInterval.t`, *default:* `nil`) - The time period this object will be `active` and object can be used. An object's state will be changed to `expired` when this time period has passed.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Required. The unique identifier for an object. This ID must be unique across all objects from an issuer. This value should follow the format issuer ID.identifier where the former is issued by Google and latter is chosen by you. The unique identifier should only include alphanumeric characters, '.', '_', or '-'.
@@ -101,6 +102,8 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
           :passConstraints => GoogleApi.WalletObjects.V1.Model.PassConstraints.t() | nil,
           :rotatingBarcode => GoogleApi.WalletObjects.V1.Model.RotatingBarcode.t() | nil,
           :classReference => GoogleApi.WalletObjects.V1.Model.TransitClass.t() | nil,
+          :valueAddedModuleData =>
+            list(GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData.t()) | nil,
           :passengerType => String.t() | nil,
           :validTimeInterval => GoogleApi.WalletObjects.V1.Model.TimeInterval.t() | nil,
           :id => String.t() | nil,
@@ -143,6 +146,12 @@ defmodule GoogleApi.WalletObjects.V1.Model.TransitObject do
   field(:passConstraints, as: GoogleApi.WalletObjects.V1.Model.PassConstraints)
   field(:rotatingBarcode, as: GoogleApi.WalletObjects.V1.Model.RotatingBarcode)
   field(:classReference, as: GoogleApi.WalletObjects.V1.Model.TransitClass)
+
+  field(:valueAddedModuleData,
+    as: GoogleApi.WalletObjects.V1.Model.ValueAddedModuleData,
+    type: :list
+  )
+
   field(:passengerType)
   field(:validTimeInterval, as: GoogleApi.WalletObjects.V1.Model.TimeInterval)
   field(:id)
