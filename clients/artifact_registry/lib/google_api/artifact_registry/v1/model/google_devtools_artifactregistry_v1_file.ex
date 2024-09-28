@@ -21,6 +21,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Fi
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client specified annotations.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the File was created.
   *   `fetchTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the last attempt to refresh the file's data was made. Only set when the repository is remote.
   *   `hashes` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Hash.t)`, *default:* `nil`) - The hashes of the file content.
@@ -33,6 +34,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Fi
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
           :fetchTime => DateTime.t() | nil,
           :hashes => list(GoogleApi.ArtifactRegistry.V1.Model.Hash.t()) | nil,
@@ -42,6 +44,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.GoogleDevtoolsArtifactregistryV1Fi
           :updateTime => DateTime.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:createTime, as: DateTime)
   field(:fetchTime, as: DateTime)
   field(:hashes, as: GoogleApi.ArtifactRegistry.V1.Model.Hash, type: :list)
