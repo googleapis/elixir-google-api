@@ -25,8 +25,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTriggerC
   *   `cloudSchedulerConfig` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCloudSchedulerConfig.t`, *default:* `nil`) - Optional. Cloud Scheduler Trigger related metadata
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-provided description intended to give additional business context about the task.
   *   `errorCatcherId` (*type:* `String.t`, *default:* `nil`) - Optional. Optional Error catcher id of the error catch flow which will be executed when execution error happens in the task
+  *   `inputVariables` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of input variables for the api trigger.
   *   `label` (*type:* `String.t`, *default:* `nil`) - Optional. The user created label for a particular trigger.
   *   `nextTasksExecutionPolicy` (*type:* `String.t`, *default:* `nil`) - Optional. Dictates how next tasks will be executed.
+  *   `outputVariables` (*type:* `list(String.t)`, *default:* `nil`) - Optional. List of output variables for the api trigger.
   *   `position` (*type:* `GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCoordinate.t`, *default:* `nil`) - Optional. Informs the front-end application where to draw this error catcher config on the UI.
   *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. Configurable properties of the trigger, not to be confused with integration parameters. E.g. "name" is a property for API triggers and "subscription" is a property for Pub/sub triggers.
   *   `startTasks` (*type:* `list(GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaNextTask.t)`, *default:* `nil`) - Optional. Set of tasks numbers from where the integration execution is started by this trigger. If this is empty, then integration is executed with default start tasks. In the list of start tasks, none of two tasks can have direct ancestor-descendant relationships (i.e. in a same integration execution graph).
@@ -49,8 +51,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTriggerC
             | nil,
           :description => String.t() | nil,
           :errorCatcherId => String.t() | nil,
+          :inputVariables => list(String.t()) | nil,
           :label => String.t() | nil,
           :nextTasksExecutionPolicy => String.t() | nil,
+          :outputVariables => list(String.t()) | nil,
           :position =>
             GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCoordinate.t() | nil,
           :properties => map() | nil,
@@ -73,8 +77,10 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaTriggerC
 
   field(:description)
   field(:errorCatcherId)
+  field(:inputVariables, type: :list)
   field(:label)
   field(:nextTasksExecutionPolicy)
+  field(:outputVariables, type: :list)
   field(:position, as: GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCoordinate)
   field(:properties, type: :map)
 
