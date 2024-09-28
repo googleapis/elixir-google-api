@@ -21,6 +21,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Version do
 
   ## Attributes
 
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. Client specified annotations.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when the version was created.
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. Description of the version, as specified in its metadata.
   *   `metadata` (*type:* `map()`, *default:* `nil`) - Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the resources could be: DockerImage MavenArtifact
@@ -32,6 +33,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Version do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations => map() | nil,
           :createTime => DateTime.t() | nil,
           :description => String.t() | nil,
           :metadata => map() | nil,
@@ -40,6 +42,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.Version do
           :updateTime => DateTime.t() | nil
         }
 
+  field(:annotations, type: :map)
   field(:createTime, as: DateTime)
   field(:description)
   field(:metadata, type: :map)
