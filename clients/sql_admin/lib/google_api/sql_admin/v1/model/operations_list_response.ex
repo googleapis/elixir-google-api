@@ -24,6 +24,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.OperationsListResponse do
   *   `items` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.Operation.t)`, *default:* `nil`) - List of operation resources.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#operationsList`.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The continuation token, used to page through large result sets. Provide this value in a subsequent request to return the next page of results.
+  *   `warnings` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.ApiWarning.t)`, *default:* `nil`) - List of warnings that occurred while handling the request.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.SQLAdmin.V1.Model.OperationsListResponse do
   @type t :: %__MODULE__{
           :items => list(GoogleApi.SQLAdmin.V1.Model.Operation.t()) | nil,
           :kind => String.t() | nil,
-          :nextPageToken => String.t() | nil
+          :nextPageToken => String.t() | nil,
+          :warnings => list(GoogleApi.SQLAdmin.V1.Model.ApiWarning.t()) | nil
         }
 
   field(:items, as: GoogleApi.SQLAdmin.V1.Model.Operation, type: :list)
   field(:kind)
   field(:nextPageToken)
+  field(:warnings, as: GoogleApi.SQLAdmin.V1.Model.ApiWarning, type: :list)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.OperationsListResponse do
