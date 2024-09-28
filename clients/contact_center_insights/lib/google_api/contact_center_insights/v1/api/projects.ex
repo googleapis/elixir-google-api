@@ -488,7 +488,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
   end
 
   @doc """
-  Creates a conversation. Does not support audio transcription or DLP redaction. Use `conversations.upload` instead.
+  Creates a conversation. Note that this method does not support audio transcription or redaction. Use `conversations.upload` instead.
 
   ## Parameters
 
@@ -816,7 +816,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Api.Projects do
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
       *   `:filter` (*type:* `String.t`) - A filter to reduce results to a specific subset. Useful for querying conversations with specific properties.
       *   `:orderBy` (*type:* `String.t`) - Optional. The attribute by which to order conversations in the response. If empty, conversations will be ordered by descending creation time. Supported values are one of the following: * create_time * customer_satisfaction_rating * duration * latest_analysis * start_time * turn_count The default sort order is ascending. To specify order, append `asc` or `desc` (`create_time desc`). For more details, see [Google AIPs Ordering](https://google.aip.dev/132#ordering).
-      *   `:pageSize` (*type:* `integer()`) - The maximum number of conversations to return in the response. A valid page size ranges from 0 to 1,000 inclusive. If the page size is zero or unspecified, a default page size of 100 will be chosen. Note that a call might return fewer results than the requested page size.
+      *   `:pageSize` (*type:* `integer()`) - The maximum number of conversations to return in the response. A valid page size ranges from 0 to 100,000 inclusive. If the page size is zero or unspecified, a default page size of 100 will be chosen. Note that a call might return fewer results than the requested page size.
       *   `:pageToken` (*type:* `String.t`) - The value returned by the last `ListConversationsResponse`. This value indicates that this is a continuation of a prior `ListConversations` call and that the system should return the next page of data.
       *   `:view` (*type:* `String.t`) - The level of details of the conversation. Default is `BASIC`.
   *   `opts` (*type:* `keyword()`) - Call options
