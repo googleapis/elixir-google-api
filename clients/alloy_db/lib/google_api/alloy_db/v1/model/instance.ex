@@ -35,7 +35,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.Instance do
   *   `labels` (*type:* `map()`, *default:* `nil`) - Labels as key value pairs
   *   `machineConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.MachineConfig.t`, *default:* `nil`) - Configurations for the machines that host the underlying database engine.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
-  *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t`, *default:* `nil`) - Optional. Instance level network configuration.
+  *   `networkConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig.t`, *default:* `nil`) - Optional. Instance-level network configuration.
   *   `nodes` (*type:* `list(GoogleApi.AlloyDB.V1.Model.Node.t)`, *default:* `nil`) - Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance.
   *   `outboundPublicIpAddresses` (*type:* `list(String.t)`, *default:* `nil`) - Output only. All outbound public IP addresses configured for the instance.
   *   `pscInstanceConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.PscInstanceConfig.t`, *default:* `nil`) - Optional. The configuration for Private Service Connect (PSC) for the instance.

@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata. Next ID: 21
+  Common model for database resource instance metadata. Next ID: 22
 
   ## Attributes
 
@@ -34,6 +34,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   *   `location` (*type:* `String.t`, *default:* `nil`) - The resource location. REQUIRED
   *   `machineConfiguration` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainMachineConfiguration.t`, *default:* `nil`) - Machine configuration for this resource.
   *   `primaryResourceId` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId.t`, *default:* `nil`) - Identifier for this resource's immediate parent/primary resource if the current resource is a replica or derived form of another Database resource. Else it would be NULL. REQUIRED if the immediate parent exists when first time resource is getting ingested, otherwise optional.
+  *   `primaryResourceLocation` (*type:* `String.t`, *default:* `nil`) - Primary resource location. REQUIRED if the immediate parent exists when first time resource is getting ingested, otherwise optional.
   *   `product` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t`, *default:* `nil`) - The product this resource represents.
   *   `resourceContainer` (*type:* `String.t`, *default:* `nil`) - Closest parent Cloud Resource Manager container of this resource. It must be resource name of a Cloud Resource Manager project with the format of "/", such as "projects/123". For GCP provided resources, number should be project number.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Required. Different from DatabaseResourceId.unique_id, a resource name can be reused over time. That is, after a resource named "ABC" is deleted, the name "ABC" can be used to to create a new resource within the same source. Resource name to follow CAIS resource_name format as noted here go/condor-common-datamodel
@@ -73,6 +74,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
           :primaryResourceId =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId.t()
             | nil,
+          :primaryResourceLocation => String.t() | nil,
           :product =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct.t() | nil,
           :resourceContainer => String.t() | nil,
@@ -122,6 +124,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
     as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId
   )
 
+  field(:primaryResourceLocation)
   field(:product, as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterProtoCommonProduct)
   field(:resourceContainer)
   field(:resourceName)
