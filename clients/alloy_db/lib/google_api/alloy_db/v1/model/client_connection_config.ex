@@ -22,7 +22,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.ClientConnectionConfig do
   ## Attributes
 
   *   `requireConnectors` (*type:* `boolean()`, *default:* `nil`) - Optional. Configuration to enforce connectors only (ex: AuthProxy) connections to the database.
-  *   `sslConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.SslConfig.t`, *default:* `nil`) - Optional. SSL config option for this instance.
+  *   `sslConfig` (*type:* `GoogleApi.AlloyDB.V1.Model.SslConfig.t`, *default:* `nil`) - Optional. SSL configuration option for this instance.
   """
 
   use GoogleApi.Gax.ModelBase

@@ -21,6 +21,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainRetent
 
   ## Attributes
 
+  *   `durationBasedRetention` (*type:* `String.t`, *default:* `nil`) - Duration based retention period i.e. 172800 seconds (2 days)
   *   `quantityBasedRetention` (*type:* `integer()`, *default:* `nil`) - 
   *   `retentionUnit` (*type:* `String.t`, *default:* `nil`) - The unit that 'retained_backups' represents.
   *   `timeBasedRetention` (*type:* `String.t`, *default:* `nil`) - 
@@ -29,11 +30,13 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainRetent
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :durationBasedRetention => String.t() | nil,
           :quantityBasedRetention => integer() | nil,
           :retentionUnit => String.t() | nil,
           :timeBasedRetention => String.t() | nil
         }
 
+  field(:durationBasedRetention)
   field(:quantityBasedRetention)
   field(:retentionUnit)
   field(:timeBasedRetention)

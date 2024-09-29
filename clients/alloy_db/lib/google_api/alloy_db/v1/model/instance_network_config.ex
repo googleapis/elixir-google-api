@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.InstanceNetworkConfig do
   @moduledoc """
-  Metadata related to instance level network configuration.
+  Metadata related to instance-level network configuration.
 
   ## Attributes
 
