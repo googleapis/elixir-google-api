@@ -21,6 +21,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
 
   ## Attributes
 
+  *   `alwaysAllocateCpu` (*type:* `boolean()`, *default:* `nil`) - Indicates that the Cloud Run CPU should always be allocated.
   *   `connectionRatelimitWindowSeconds` (*type:* `String.t`, *default:* `nil`) - The window used for ratelimiting runtime requests to connections.
   *   `deploymentModel` (*type:* `String.t`, *default:* `nil`) - Indicate whether connector is deployed on GKE/CloudRun
   *   `hpaConfig` (*type:* `GoogleApi.Connectors.V1.Model.HPAConfig.t`, *default:* `nil`) - HPA autoscaling config.
@@ -28,6 +29,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   *   `maxInstanceRequestConcurrency` (*type:* `integer()`, *default:* `nil`) - Max Instance Request Conncurrency for Cloud Run service.
   *   `migrateDeploymentModel` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to cloud run deployment model.
   *   `migrateTls` (*type:* `boolean()`, *default:* `nil`) - Indicate whether connector is being migrated to TLS.
+  *   `provisionCloudSpanner` (*type:* `boolean()`, *default:* `nil`) - Indicate whether cloud spanner is required for connector job.
   *   `ratelimitThreshold` (*type:* `String.t`, *default:* `nil`) - Max QPS supported by the connector version before throttling of requests.
   *   `resourceLimits` (*type:* `GoogleApi.Connectors.V1.Model.ResourceLimits.t`, *default:* `nil`) - System resource limits.
   *   `resourceRequests` (*type:* `GoogleApi.Connectors.V1.Model.ResourceRequests.t`, *default:* `nil`) - System resource requests.
@@ -37,6 +39,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :alwaysAllocateCpu => boolean() | nil,
           :connectionRatelimitWindowSeconds => String.t() | nil,
           :deploymentModel => String.t() | nil,
           :hpaConfig => GoogleApi.Connectors.V1.Model.HPAConfig.t() | nil,
@@ -44,12 +47,14 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
           :maxInstanceRequestConcurrency => integer() | nil,
           :migrateDeploymentModel => boolean() | nil,
           :migrateTls => boolean() | nil,
+          :provisionCloudSpanner => boolean() | nil,
           :ratelimitThreshold => String.t() | nil,
           :resourceLimits => GoogleApi.Connectors.V1.Model.ResourceLimits.t() | nil,
           :resourceRequests => GoogleApi.Connectors.V1.Model.ResourceRequests.t() | nil,
           :sharedDeployment => String.t() | nil
         }
 
+  field(:alwaysAllocateCpu)
   field(:connectionRatelimitWindowSeconds)
   field(:deploymentModel)
   field(:hpaConfig, as: GoogleApi.Connectors.V1.Model.HPAConfig)
@@ -57,6 +62,7 @@ defmodule GoogleApi.Connectors.V1.Model.ConnectorInfraConfig do
   field(:maxInstanceRequestConcurrency)
   field(:migrateDeploymentModel)
   field(:migrateTls)
+  field(:provisionCloudSpanner)
   field(:ratelimitThreshold)
   field(:resourceLimits, as: GoogleApi.Connectors.V1.Model.ResourceLimits)
   field(:resourceRequests, as: GoogleApi.Connectors.V1.Model.ResourceRequests)
