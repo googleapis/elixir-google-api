@@ -21,6 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.SynthesizeSpeechRequest do
 
   ## Attributes
 
+  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Adnanced voice options.
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig.t`, *default:* `nil`) - Required. The configuration of the synthesized audio.
   *   `enableTimePointing` (*type:* `list(String.t)`, *default:* `nil`) - Whether and what timepoints are returned in the response.
   *   `input` (*type:* `GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input.
@@ -30,12 +31,15 @@ defmodule GoogleApi.TextToSpeech.V1beta1.Model.SynthesizeSpeechRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedVoiceOptions =>
+            GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions.t() | nil,
           :audioConfig => GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig.t() | nil,
           :enableTimePointing => list(String.t()) | nil,
           :input => GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput.t() | nil,
           :voice => GoogleApi.TextToSpeech.V1beta1.Model.VoiceSelectionParams.t() | nil
         }
 
+  field(:advancedVoiceOptions, as: GoogleApi.TextToSpeech.V1beta1.Model.AdvancedVoiceOptions)
   field(:audioConfig, as: GoogleApi.TextToSpeech.V1beta1.Model.AudioConfig)
   field(:enableTimePointing, type: :list)
   field(:input, as: GoogleApi.TextToSpeech.V1beta1.Model.SynthesisInput)
