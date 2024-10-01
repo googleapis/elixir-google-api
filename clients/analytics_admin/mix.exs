@@ -18,7 +18,7 @@
 defmodule GoogleApi.AnalyticsAdmin.Mixfile do
   use Mix.Project
 
-  @version "0.25.3"
+  @version "0.25.4"
 
   def project() do
     [
