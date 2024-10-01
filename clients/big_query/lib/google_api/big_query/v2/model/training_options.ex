@@ -45,6 +45,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `maxTreeDepth` (*type:* `String.t`, *default:* `nil`) - Maximum depth of a tree for boosted tree models.
   *   `timeSeriesIdColumn` (*type:* `String.t`, *default:* `nil`) - The time series id column that was used during ARIMA model training.
   *   `warmStart` (*type:* `boolean()`, *default:* `nil`) - Whether to train a model from the last checkpoint.
+  *   `isTestColumn` (*type:* `String.t`, *default:* `nil`) - Name of the column used to determine the rows corresponding to control and test. Applies to contribution analysis models.
   *   `batchSize` (*type:* `String.t`, *default:* `nil`) - Batch size for dnn models.
   *   `dataSplitMethod` (*type:* `String.t`, *default:* `nil`) - The data split type for training and evaluation, e.g. RANDOM.
   *   `earlyStop` (*type:* `boolean()`, *default:* `nil`) - Whether to stop early when the loss doesn't improve significantly any more (compared to min_relative_progress). Used only for iterative training algorithms.
@@ -70,6 +71,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `labelClassWeights` (*type:* `map()`, *default:* `nil`) - Weights associated with each label class, for rebalancing the training data. Only applicable for classification models.
   *   `l1RegActivation` (*type:* `float()`, *default:* `nil`) - L1 regularization coefficient to activations.
   *   `itemColumn` (*type:* `String.t`, *default:* `nil`) - Item column specified for matrix factorization models.
+  *   `dimensionIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Names of the columns to slice on. Applies to contribution analysis models.
   *   `kmeansInitializationMethod` (*type:* `String.t`, *default:* `nil`) - The method used to initialize the centroids for kmeans algorithm.
   *   `minTimeSeriesLength` (*type:* `String.t`, *default:* `nil`) - The minimum number of time points in a time series that are used in modeling the trend component of the time series. If you use this option you must also set the `timeSeriesLengthFraction` option. This training option ensures that enough time points are available when you use `timeSeriesLengthFraction` in trend modeling. This is particularly important when forecasting multiple time series in a single query using `timeSeriesIdColumn`. If the total number of time points is less than the `minTimeSeriesLength` value, then the query uses all available time points.
   *   `kmeansInitializationColumn` (*type:* `String.t`, *default:* `nil`) - The column used to provide the initial centroids for kmeans algorithm when kmeans_initialization_method is CUSTOM.
@@ -83,12 +85,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   *   `autoClassWeights` (*type:* `boolean()`, *default:* `nil`) - Whether to calculate class weights automatically based on the popularity of each label.
   *   `optimizer` (*type:* `String.t`, *default:* `nil`) - Optimizer used for training the neural nets.
   *   `colsampleBynode` (*type:* `float()`, *default:* `nil`) - Subsample ratio of columns for each node(split) for boosted tree models.
+  *   `contributionMetric` (*type:* `String.t`, *default:* `nil`) - The contribution metric. Applies to contribution analysis models. Allowed formats supported are for summable and summable ratio contribution metrics. These include expressions such as "SUM(x)" or "SUM(x)/SUM(y)", where x and y are column names from the base table.
   *   `modelUri` (*type:* `String.t`, *default:* `nil`) - Google Cloud Storage URI from which the model was imported. Only applicable for imported models.
   *   `sampledShapleyNumPaths` (*type:* `String.t`, *default:* `nil`) - Number of paths for the sampled Shapley explain method.
   *   `initialLearnRate` (*type:* `float()`, *default:* `nil`) - Specifies the initial learning rate for the line search learn rate strategy.
   *   `modelRegistry` (*type:* `String.t`, *default:* `nil`) - The model registry.
   *   `timeSeriesIdColumns` (*type:* `list(String.t)`, *default:* `nil`) - The time series id columns that were used during ARIMA model training.
   *   `learnRate` (*type:* `float()`, *default:* `nil`) - Learning rate in training. Used only for iterative training algorithms.
+  *   `minAprioriSupport` (*type:* `float()`, *default:* `nil`) - The apriori support minimum. Applies to contribution analysis models.
   *   `dataSplitEvalFraction` (*type:* `float()`, *default:* `nil`) - The fraction of evaluation data over the whole input data. The rest of data will be used as training data. The format should be double. Accurate to two decimal places. Default value is 0.2.
   *   `tfVersion` (*type:* `String.t`, *default:* `nil`) - Based on the selected TF version, the corresponding docker image is used to train external models.
   *   `optimizationStrategy` (*type:* `String.t`, *default:* `nil`) - Optimization strategy for training linear regression models.
@@ -136,6 +140,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :maxTreeDepth => String.t() | nil,
           :timeSeriesIdColumn => String.t() | nil,
           :warmStart => boolean() | nil,
+          :isTestColumn => String.t() | nil,
           :batchSize => String.t() | nil,
           :dataSplitMethod => String.t() | nil,
           :earlyStop => boolean() | nil,
@@ -161,6 +166,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :labelClassWeights => map() | nil,
           :l1RegActivation => float() | nil,
           :itemColumn => String.t() | nil,
+          :dimensionIdColumns => list(String.t()) | nil,
           :kmeansInitializationMethod => String.t() | nil,
           :minTimeSeriesLength => String.t() | nil,
           :kmeansInitializationColumn => String.t() | nil,
@@ -174,12 +180,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
           :autoClassWeights => boolean() | nil,
           :optimizer => String.t() | nil,
           :colsampleBynode => float() | nil,
+          :contributionMetric => String.t() | nil,
           :modelUri => String.t() | nil,
           :sampledShapleyNumPaths => String.t() | nil,
           :initialLearnRate => float() | nil,
           :modelRegistry => String.t() | nil,
           :timeSeriesIdColumns => list(String.t()) | nil,
           :learnRate => float() | nil,
+          :minAprioriSupport => float() | nil,
           :dataSplitEvalFraction => float() | nil,
           :tfVersion => String.t() | nil,
           :optimizationStrategy => String.t() | nil,
@@ -224,6 +232,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:maxTreeDepth)
   field(:timeSeriesIdColumn)
   field(:warmStart)
+  field(:isTestColumn)
   field(:batchSize)
   field(:dataSplitMethod)
   field(:earlyStop)
@@ -249,6 +258,7 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:labelClassWeights, type: :map)
   field(:l1RegActivation)
   field(:itemColumn)
+  field(:dimensionIdColumns, type: :list)
   field(:kmeansInitializationMethod)
   field(:minTimeSeriesLength)
   field(:kmeansInitializationColumn)
@@ -262,12 +272,14 @@ defmodule GoogleApi.BigQuery.V2.Model.TrainingOptions do
   field(:autoClassWeights)
   field(:optimizer)
   field(:colsampleBynode)
+  field(:contributionMetric)
   field(:modelUri)
   field(:sampledShapleyNumPaths)
   field(:initialLearnRate)
   field(:modelRegistry)
   field(:timeSeriesIdColumns, type: :list)
   field(:learnRate)
+  field(:minAprioriSupport)
   field(:dataSplitEvalFraction)
   field(:tfVersion)
   field(:optimizationStrategy)
