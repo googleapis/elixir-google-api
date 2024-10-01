@@ -22,8 +22,8 @@ defmodule GoogleApi.RealTimeBidding.V1.Model.VideoContent do
   ## Attributes
 
   *   `videoMetadata` (*type:* `GoogleApi.RealTimeBidding.V1.Model.VideoMetadata.t`, *default:* `nil`) - Output only. Video metadata.
-  *   `videoUrl` (*type:* `String.t`, *default:* `nil`) - The URL to fetch a video ad.
-  *   `videoVastXml` (*type:* `String.t`, *default:* `nil`) - The contents of a VAST document for a video ad. This document should conform to the VAST 2.0 or 3.0 standard.
+  *   `videoUrl` (*type:* `String.t`, *default:* `nil`) - The URL to fetch a video ad. The URL should return an XML response that conforms to the VAST 2.0, 3.0 or 4.x standard.
+  *   `videoVastXml` (*type:* `String.t`, *default:* `nil`) - The contents of a VAST document for a video ad. This document should conform to the VAST 2.0, 3.0, or 4.x standard.
   """
 
   use GoogleApi.Gax.ModelBase
