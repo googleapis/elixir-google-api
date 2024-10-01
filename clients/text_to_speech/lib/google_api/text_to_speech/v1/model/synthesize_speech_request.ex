@@ -21,6 +21,7 @@ defmodule GoogleApi.TextToSpeech.V1.Model.SynthesizeSpeechRequest do
 
   ## Attributes
 
+  *   `advancedVoiceOptions` (*type:* `GoogleApi.TextToSpeech.V1.Model.AdvancedVoiceOptions.t`, *default:* `nil`) - Adnanced voice options.
   *   `audioConfig` (*type:* `GoogleApi.TextToSpeech.V1.Model.AudioConfig.t`, *default:* `nil`) - Required. The configuration of the synthesized audio.
   *   `input` (*type:* `GoogleApi.TextToSpeech.V1.Model.SynthesisInput.t`, *default:* `nil`) - Required. The Synthesizer requires either plain text or SSML as input.
   *   `voice` (*type:* `GoogleApi.TextToSpeech.V1.Model.VoiceSelectionParams.t`, *default:* `nil`) - Required. The desired voice of the synthesized audio.
@@ -29,11 +30,13 @@ defmodule GoogleApi.TextToSpeech.V1.Model.SynthesizeSpeechRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :advancedVoiceOptions => GoogleApi.TextToSpeech.V1.Model.AdvancedVoiceOptions.t() | nil,
           :audioConfig => GoogleApi.TextToSpeech.V1.Model.AudioConfig.t() | nil,
           :input => GoogleApi.TextToSpeech.V1.Model.SynthesisInput.t() | nil,
           :voice => GoogleApi.TextToSpeech.V1.Model.VoiceSelectionParams.t() | nil
         }
 
+  field(:advancedVoiceOptions, as: GoogleApi.TextToSpeech.V1.Model.AdvancedVoiceOptions)
   field(:audioConfig, as: GoogleApi.TextToSpeech.V1.Model.AudioConfig)
   field(:input, as: GoogleApi.TextToSpeech.V1.Model.SynthesisInput)
   field(:voice, as: GoogleApi.TextToSpeech.V1.Model.VoiceSelectionParams)
