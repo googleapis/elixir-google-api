@@ -26,6 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
   *   `commonConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaEngineCommonConfig.t`, *default:* `nil`) - Common config spec that specifies the metadata of the engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the Recommendation Engine was created at.
   *   `dataStoreIds` (*type:* `list(String.t)`, *default:* `nil`) - The data stores associated with this engine. For SOLUTION_TYPE_SEARCH and SOLUTION_TYPE_RECOMMENDATION type of engines, they can only associate with at most one data store. If solution_type is SOLUTION_TYPE_CHAT, multiple DataStores in the same Collection can be associated here. Note that when used in CreateEngineRequest, one DataStore id must be provided as the system will use it for necessary initializations.
+  *   `disableAnalytics` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to disable analytics for searches performed on this engine.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to `GENERIC`. Vertical on Engine has to match vertical of the DataStore linked to the engine.
   *   `mediaRecommendationEngineConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alphaEngineMediaRecommendationEngineConfig.t`, *default:* `nil`) - Configurations for the Media Engine. Only applicable on the data stores with solution_type SOLUTION_TYPE_RECOMMENDATION and IndustryVertical.MEDIA vertical.
@@ -51,6 +52,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
             | nil,
           :createTime => DateTime.t() | nil,
           :dataStoreIds => list(String.t()) | nil,
+          :disableAnalytics => boolean() | nil,
           :displayName => String.t() | nil,
           :industryVertical => String.t() | nil,
           :mediaRecommendationEngineConfig =>
@@ -86,6 +88,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1alp
 
   field(:createTime, as: DateTime)
   field(:dataStoreIds, type: :list)
+  field(:disableAnalytics)
   field(:displayName)
   field(:industryVertical)
 

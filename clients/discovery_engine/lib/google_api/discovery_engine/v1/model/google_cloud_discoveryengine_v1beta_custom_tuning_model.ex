@@ -23,6 +23,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaCus
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Timestamp the Model was created at.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - The display name of the model.
+  *   `errorMessage` (*type:* `String.t`, *default:* `nil`) - Currently this is only populated if the model state is `INPUT_VALIDATION_FAILED`.
   *   `metrics` (*type:* `map()`, *default:* `nil`) - The metrics of the trained model.
   *   `modelState` (*type:* `String.t`, *default:* `nil`) - The state that the model is in (e.g.`TRAINING` or `TRAINING_FAILED`).
   *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - The version of the model.
@@ -35,6 +36,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaCus
   @type t :: %__MODULE__{
           :createTime => DateTime.t() | nil,
           :displayName => String.t() | nil,
+          :errorMessage => String.t() | nil,
           :metrics => map() | nil,
           :modelState => String.t() | nil,
           :modelVersion => String.t() | nil,
@@ -44,6 +46,7 @@ defmodule GoogleApi.DiscoveryEngine.V1.Model.GoogleCloudDiscoveryengineV1betaCus
 
   field(:createTime, as: DateTime)
   field(:displayName)
+  field(:errorMessage)
   field(:metrics, type: :map)
   field(:modelState)
   field(:modelVersion)
