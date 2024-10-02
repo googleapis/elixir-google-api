@@ -30,6 +30,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   *   `lastActiveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp of the last message in the space.
   *   `membershipCount` (*type:* `GoogleApi.Chat.V1.Model.MembershipCount.t`, *default:* `nil`) - Output only. The count of joined memberships grouped by member type. Populated when the `space_type` is `SPACE`, `DIRECT_MESSAGE` or `GROUP_CHAT`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Resource name of the space. Format: `spaces/{space}` Where `{space}` represents the system-assigned ID for the space. You can obtain the space ID by calling the [`spaces.list()`](https://developers.google.com/workspace/chat/api/reference/rest/v1/spaces/list) method or from the space URL. For example, if the space URL is `https://mail.google.com/mail/u/0/#chat/space/AAAAAAAAA`, the space ID is `AAAAAAAAA`.
+  *   `permissionSettings` (*type:* `GoogleApi.Chat.V1.Model.PermissionSettings.t`, *default:* `nil`) - Optional. Exact permission settings which can be set to update the space. Input for updating a space. Otherwise, output only. For space creation, use `predefined_permission_settings` instead.
+  *   `predefinedPermissionSettings` (*type:* `String.t`, *default:* `nil`) - Optional. Input only. Space permission settings. Input for creating a space, a collaboration space is created if this field is not set. After you create the space, settings are populated in the `PermissionSettings` field.
   *   `singleUserBotDm` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether the space is a DM between a Chat app and a single human.
   *   `spaceDetails` (*type:* `GoogleApi.Chat.V1.Model.SpaceDetails.t`, *default:* `nil`) - Details about the space including description and rules.
   *   `spaceHistoryState` (*type:* `String.t`, *default:* `nil`) - The message history state for messages and threads in this space.
@@ -52,6 +54,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
           :lastActiveTime => DateTime.t() | nil,
           :membershipCount => GoogleApi.Chat.V1.Model.MembershipCount.t() | nil,
           :name => String.t() | nil,
+          :permissionSettings => GoogleApi.Chat.V1.Model.PermissionSettings.t() | nil,
+          :predefinedPermissionSettings => String.t() | nil,
           :singleUserBotDm => boolean() | nil,
           :spaceDetails => GoogleApi.Chat.V1.Model.SpaceDetails.t() | nil,
           :spaceHistoryState => String.t() | nil,
@@ -71,6 +75,8 @@ defmodule GoogleApi.Chat.V1.Model.Space do
   field(:lastActiveTime, as: DateTime)
   field(:membershipCount, as: GoogleApi.Chat.V1.Model.MembershipCount)
   field(:name)
+  field(:permissionSettings, as: GoogleApi.Chat.V1.Model.PermissionSettings)
+  field(:predefinedPermissionSettings)
   field(:singleUserBotDm)
   field(:spaceDetails, as: GoogleApi.Chat.V1.Model.SpaceDetails)
   field(:spaceHistoryState)
