@@ -21,7 +21,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.ReportSummaryAssetAggregateStats do
 
   ## Attributes
 
-  *   `coreCountHistogram` (*type:* `GoogleApi.MigrationCenter.V1.Model.ReportSummaryHistogramChartData.t`, *default:* `nil`) - Histogram showing a distribution of CPU core counts.
+  *   `coreCountHistogram` (*type:* `GoogleApi.MigrationCenter.V1.Model.ReportSummaryHistogramChartData.t`, *default:* `nil`) - Histogram showing a distribution of logical CPU core counts.
   *   `memoryBytesHistogram` (*type:* `GoogleApi.MigrationCenter.V1.Model.ReportSummaryHistogramChartData.t`, *default:* `nil`) - Histogram showing a distribution of memory sizes.
   *   `memoryUtilizationChart` (*type:* `GoogleApi.MigrationCenter.V1.Model.ReportSummaryUtilizationChartData.t`, *default:* `nil`) - Total memory split into Used/Free buckets.
   *   `operatingSystem` (*type:* `GoogleApi.MigrationCenter.V1.Model.ReportSummaryChartData.t`, *default:* `nil`) - Count of assets grouped by Operating System families.
