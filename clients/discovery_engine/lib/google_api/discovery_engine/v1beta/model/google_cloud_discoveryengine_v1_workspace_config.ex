@@ -22,6 +22,8 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Wor
   ## Attributes
 
   *   `dasherCustomerId` (*type:* `String.t`, *default:* `nil`) - Obfuscated Dasher customer ID.
+  *   `superAdminEmailAddress` (*type:* `String.t`, *default:* `nil`) - Optional. The super admin email address for the workspace that will be used for access token generation. For now we only use it for Native Google Drive connector data ingestion.
+  *   `superAdminServiceAccount` (*type:* `String.t`, *default:* `nil`) - Optional. The super admin service account for the workspace that will be used for access token generation. For now we only use it for Native Google Drive connector data ingestion.
   *   `type` (*type:* `String.t`, *default:* `nil`) - The Google Workspace data source.
   """
 
@@ -29,10 +31,14 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Wor
 
   @type t :: %__MODULE__{
           :dasherCustomerId => String.t() | nil,
+          :superAdminEmailAddress => String.t() | nil,
+          :superAdminServiceAccount => String.t() | nil,
           :type => String.t() | nil
         }
 
   field(:dasherCustomerId)
+  field(:superAdminEmailAddress)
+  field(:superAdminServiceAccount)
   field(:type)
 end
 

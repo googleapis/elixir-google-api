@@ -26,6 +26,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Eng
   *   `commonConfig` (*type:* `GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1EngineCommonConfig.t`, *default:* `nil`) - Common config spec that specifies the metadata of the engine.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Timestamp the Recommendation Engine was created at.
   *   `dataStoreIds` (*type:* `list(String.t)`, *default:* `nil`) - The data stores associated with this engine. For SOLUTION_TYPE_SEARCH and SOLUTION_TYPE_RECOMMENDATION type of engines, they can only associate with at most one data store. If solution_type is SOLUTION_TYPE_CHAT, multiple DataStores in the same Collection can be associated here. Note that when used in CreateEngineRequest, one DataStore id must be provided as the system will use it for necessary initializations.
+  *   `disableAnalytics` (*type:* `boolean()`, *default:* `nil`) - Optional. Whether to disable analytics for searches performed on this engine.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Required. The display name of the engine. Should be human readable. UTF-8 encoded string with limit of 1024 characters.
   *   `industryVertical` (*type:* `String.t`, *default:* `nil`) - The industry vertical that the engine registers. The restriction of the Engine industry vertical is based on DataStore: If unspecified, default to `GENERIC`. Vertical on Engine has to match vertical of the DataStore linked to the engine.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The fully qualified resource name of the engine. This field must be a UTF-8 encoded string with a length limit of 1024 characters. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}` engine should be 1-63 characters, and valid characters are /a-z0-9*/. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -48,6 +49,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Eng
             | nil,
           :createTime => DateTime.t() | nil,
           :dataStoreIds => list(String.t()) | nil,
+          :disableAnalytics => boolean() | nil,
           :displayName => String.t() | nil,
           :industryVertical => String.t() | nil,
           :name => String.t() | nil,
@@ -73,6 +75,7 @@ defmodule GoogleApi.DiscoveryEngine.V1beta.Model.GoogleCloudDiscoveryengineV1Eng
 
   field(:createTime, as: DateTime)
   field(:dataStoreIds, type: :list)
+  field(:disableAnalytics)
   field(:displayName)
   field(:industryVertical)
   field(:name)
