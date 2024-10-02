@@ -25,7 +25,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.MachineArchitectureDetails do
   *   `cpuArchitecture` (*type:* `String.t`, *default:* `nil`) - CPU architecture, e.g., "x64-based PC", "x86_64", "i686" etc.
   *   `cpuName` (*type:* `String.t`, *default:* `nil`) - CPU name, e.g., "Intel Xeon E5-2690", "AMD EPYC 7571" etc.
   *   `cpuSocketCount` (*type:* `integer()`, *default:* `nil`) - Number of processor sockets allocated to the machine.
-  *   `cpuThreadCount` (*type:* `integer()`, *default:* `nil`) - Number of CPU threads allocated to the machine.
+  *   `cpuThreadCount` (*type:* `integer()`, *default:* `nil`) - Deprecated: use MachineDetails.core_count instead. Number of CPU threads allocated to the machine.
   *   `firmwareType` (*type:* `String.t`, *default:* `nil`) - Firmware type.
   *   `hyperthreading` (*type:* `String.t`, *default:* `nil`) - CPU hyper-threading support.
   *   `vendor` (*type:* `String.t`, *default:* `nil`) - Hardware vendor.
