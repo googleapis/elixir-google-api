@@ -27,7 +27,7 @@ defmodule GoogleApi.Batch.V1.Model.InstancePolicy do
   *   `machineType` (*type:* `String.t`, *default:* `nil`) - The Compute Engine machine type.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - The minimum CPU platform. See https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform.
   *   `provisioningModel` (*type:* `String.t`, *default:* `nil`) - The provisioning model.
-  *   `reservation` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, VMs will consume only the specified reservation. If not specified (default), VMs will consume any applicable reservation.
+  *   `reservation` (*type:* `String.t`, *default:* `nil`) - Optional. If specified, VMs will consume only the specified reservation. If not specified (default), VMs will consume any applicable reservation. Additionally, VMs will not consume any reservation if "NO_RESERVATION" is specified.
   """
 
   use GoogleApi.Gax.ModelBase
