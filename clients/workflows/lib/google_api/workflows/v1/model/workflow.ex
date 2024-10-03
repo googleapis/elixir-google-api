@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Workflows.V1.Model.Workflow do
   @moduledoc """
-  LINT.IfChange Workflow program to be executed by Workflows.
+  Workflow program to be executed by Workflows.
 
   ## Attributes
 
