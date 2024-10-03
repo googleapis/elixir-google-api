@@ -26,7 +26,7 @@ defmodule GoogleApi.Dataproc.V1.Model.FlinkJob do
   *   `loggingConfig` (*type:* `GoogleApi.Dataproc.V1.Model.LoggingConfig.t`, *default:* `nil`) - Optional. The runtime log config for job execution.
   *   `mainClass` (*type:* `String.t`, *default:* `nil`) - The name of the driver's main class. The jar file that contains the class must be in the default CLASSPATH or specified in jarFileUris.
   *   `mainJarFileUri` (*type:* `String.t`, *default:* `nil`) - The HCFS URI of the jar file that contains the main class.
-  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Flink. Properties that conflict with values set by the Dataproc API might beoverwritten. Can include properties set in/etc/flink/conf/flink-defaults.conf and classes in user code.
+  *   `properties` (*type:* `map()`, *default:* `nil`) - Optional. A mapping of property names to values, used to configure Flink. Properties that conflict with values set by the Dataproc API might be overwritten. Can include properties set in /etc/flink/conf/flink-defaults.conf and classes in user code.
   *   `savepointUri` (*type:* `String.t`, *default:* `nil`) - Optional. HCFS URI of the savepoint, which contains the last saved progress for starting the current job.
   """
 
