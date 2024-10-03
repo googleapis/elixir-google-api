@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RepairRolloutOperation do
 
   ## Attributes
 
+  *   `currentRepairPhaseIndex` (*type:* `String.t`, *default:* `nil`) - Output only. The index of the current repair action in the repair sequence.
   *   `jobId` (*type:* `String.t`, *default:* `nil`) - Output only. The job ID for the Job to repair.
   *   `phaseId` (*type:* `String.t`, *default:* `nil`) - Output only. The phase ID of the phase that includes the job being repaired.
   *   `repairPhases` (*type:* `list(GoogleApi.CloudDeploy.V1.Model.RepairPhase.t)`, *default:* `nil`) - Output only. Records of the repair attempts. Each repair phase may have multiple retry attempts or single rollback attempt.
@@ -30,12 +31,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RepairRolloutOperation do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :currentRepairPhaseIndex => String.t() | nil,
           :jobId => String.t() | nil,
           :phaseId => String.t() | nil,
           :repairPhases => list(GoogleApi.CloudDeploy.V1.Model.RepairPhase.t()) | nil,
           :rollout => String.t() | nil
         }
 
+  field(:currentRepairPhaseIndex)
   field(:jobId)
   field(:phaseId)
   field(:repairPhases, as: GoogleApi.CloudDeploy.V1.Model.RepairPhase, type: :list)

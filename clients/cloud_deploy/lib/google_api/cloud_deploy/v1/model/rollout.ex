@@ -21,6 +21,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
 
   ## Attributes
 
+  *   `activeRepairAutomationRun` (*type:* `String.t`, *default:* `nil`) - Output only. The AutomationRun actively repairing the rollout.
   *   `annotations` (*type:* `map()`, *default:* `nil`) - User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
   *   `approvalState` (*type:* `String.t`, *default:* `nil`) - Output only. Approval state of the `Rollout`.
   *   `approveTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Time at which the `Rollout` was approved.
@@ -48,6 +49,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :activeRepairAutomationRun => String.t() | nil,
           :annotations => map() | nil,
           :approvalState => String.t() | nil,
           :approveTime => DateTime.t() | nil,
@@ -72,6 +74,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.Rollout do
           :uid => String.t() | nil
         }
 
+  field(:activeRepairAutomationRun)
   field(:annotations, type: :map)
   field(:approvalState)
   field(:approveTime, as: DateTime)

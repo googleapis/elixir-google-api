@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.DeployPolicy do
   @moduledoc """
-  A `DeployPolicy` resource in the Cloud Deploy API. A `DeployPolicy` inhibits manual or automation driven actions within a Delivery Pipeline or Target.
+  A `DeployPolicy` resource in the Cloud Deploy API. A `DeployPolicy` inhibits manual or automation-driven actions within a Delivery Pipeline or Target.
 
   ## Attributes
 

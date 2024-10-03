@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.CloudDeploy.V1.Model.TimeWindows do
   @moduledoc """
-  Time windows within which actions are restricted.
+  Time windows within which actions are restricted. See the [documentation](https://cloud.google.com/deploy/docs/deploy-policy#dates_times) for more information on how to configure dates/times.
 
   ## Attributes
 
