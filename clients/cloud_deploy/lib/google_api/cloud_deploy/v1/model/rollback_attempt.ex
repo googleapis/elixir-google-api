@@ -22,6 +22,7 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RollbackAttempt do
   ## Attributes
 
   *   `destinationPhase` (*type:* `String.t`, *default:* `nil`) - Output only. The phase to which the rollout will be rolled back to.
+  *   `disableRollbackIfRolloutPending` (*type:* `boolean()`, *default:* `nil`) - Output only. If active rollout exists on the target, abort this rollback.
   *   `rolloutId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the rollback `Rollout` to create.
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Valid state of this rollback action.
   *   `stateDesc` (*type:* `String.t`, *default:* `nil`) - Output only. Description of the state of the Rollback.
@@ -31,12 +32,14 @@ defmodule GoogleApi.CloudDeploy.V1.Model.RollbackAttempt do
 
   @type t :: %__MODULE__{
           :destinationPhase => String.t() | nil,
+          :disableRollbackIfRolloutPending => boolean() | nil,
           :rolloutId => String.t() | nil,
           :state => String.t() | nil,
           :stateDesc => String.t() | nil
         }
 
   field(:destinationPhase)
+  field(:disableRollbackIfRolloutPending)
   field(:rolloutId)
   field(:state)
   field(:stateDesc)
