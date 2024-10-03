@@ -34,7 +34,7 @@ defmodule GoogleApi.Calendar.V3.Model.EventAttendee do
       - "needsAction" - The attendee has not responded to the invitation (recommended for new events). 
       - "declined" - The attendee has declined the invitation. 
       - "tentative" - The attendee has tentatively accepted the invitation. 
-      - "accepted" - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the "Add invitations to my calendar" setting set to "When I respond to invitation in email" won't see an event on their calendar unless they choose to change their invitation response in the event invitation email.
+      - "accepted" - The attendee has accepted the invitation.  Warning: If you add an event using the values declined, tentative, or accepted, attendees with the "Add invitations to my calendar" setting set to "When I respond to invitation in email" or "Only if the sender is known" might have their response reset to needsAction and won't see an event in their calendar unless they change their response in the event invitation email. Furthermore, if more than 200 guests are invited to the event, response status is not propagated to the guests.
   *   `self` (*type:* `boolean()`, *default:* `false`) - Whether this entry represents the calendar on which this copy of the event appears. Read-only. The default is False.
   """
 
