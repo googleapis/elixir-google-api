@@ -143,10 +143,10 @@ defmodule GoogleApi.BusinessProfilePerformance.V1.Api.Locations do
       *   `:"dailyRange.startDate.month"` (*type:* `integer()`) - Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
       *   `:"dailyRange.startDate.year"` (*type:* `integer()`) - Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
       *   `:"dailySubEntityType.dayOfWeek"` (*type:* `String.t`) - Represents the day of the week. Eg: MONDAY. Currently supported DailyMetrics = NONE.
-      *   `:"dailySubEntityType.timeOfDay.hours"` (*type:* `integer()`) - Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
-      *   `:"dailySubEntityType.timeOfDay.minutes"` (*type:* `integer()`) - Minutes of hour of day. Must be from 0 to 59.
-      *   `:"dailySubEntityType.timeOfDay.nanos"` (*type:* `integer()`) - Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
-      *   `:"dailySubEntityType.timeOfDay.seconds"` (*type:* `integer()`) - Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+      *   `:"dailySubEntityType.timeOfDay.hours"` (*type:* `integer()`) - Hours of a day in 24 hour format. Must be greater than or equal to 0 and typically must be less than or equal to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+      *   `:"dailySubEntityType.timeOfDay.minutes"` (*type:* `integer()`) - Minutes of an hour. Must be greater than or equal to 0 and less than or equal to 59.
+      *   `:"dailySubEntityType.timeOfDay.nanos"` (*type:* `integer()`) - Fractions of seconds, in nanoseconds. Must be greater than or equal to 0 and less than or equal to 999,999,999.
+      *   `:"dailySubEntityType.timeOfDay.seconds"` (*type:* `integer()`) - Seconds of a minute. Must be greater than or equal to 0 and typically must be less than or equal to 59. An API may allow the value 60 if it allows leap-seconds.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
