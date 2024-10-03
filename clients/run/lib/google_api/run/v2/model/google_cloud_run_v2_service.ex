@@ -52,6 +52,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
   *   `clientVersion` (*type:* `String.t`, *default:* `nil`) - Arbitrary version identifier for the API client.
   *   `etag` (*type:* `String.t`, *default:* `nil`) - Output only. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
   *   `template` (*type:* `GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate.t`, *default:* `nil`) - Required. The template used to create revisions for this Service.
+  *   `invokerIamDisabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Disables IAM permission check for run.routes.invoke for callers of this service. This setting should not be used with external ingress.
   *   `latestReadyRevision` (*type:* `String.t`, *default:* `nil`) - Output only. Name of the latest revision that is serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   *   `trafficStatuses` (*type:* `list(GoogleApi.Run.V2.Model.GoogleCloudRunV2TrafficTargetStatus.t)`, *default:* `nil`) - Output only. Detailed status information for corresponding traffic targets. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
   """
@@ -91,6 +92,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
           :clientVersion => String.t() | nil,
           :etag => String.t() | nil,
           :template => GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate.t() | nil,
+          :invokerIamDisabled => boolean() | nil,
           :latestReadyRevision => String.t() | nil,
           :trafficStatuses =>
             list(GoogleApi.Run.V2.Model.GoogleCloudRunV2TrafficTargetStatus.t()) | nil
@@ -127,6 +129,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2Service do
   field(:clientVersion)
   field(:etag)
   field(:template, as: GoogleApi.Run.V2.Model.GoogleCloudRunV2RevisionTemplate)
+  field(:invokerIamDisabled)
   field(:latestReadyRevision)
 
   field(:trafficStatuses,
