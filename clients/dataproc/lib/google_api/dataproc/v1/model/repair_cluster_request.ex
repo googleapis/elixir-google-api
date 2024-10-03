@@ -21,6 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RepairClusterRequest do
 
   ## Attributes
 
+  *   `cluster` (*type:* `GoogleApi.Dataproc.V1.Model.ClusterToRepair.t`, *default:* `nil`) - Optional. Cluster to be repaired
   *   `clusterUuid` (*type:* `String.t`, *default:* `nil`) - Optional. Specifying the cluster_uuid means the RPC will fail (with error NOT_FOUND) if a cluster with the specified UUID does not exist.
   *   `gracefulDecommissionTimeout` (*type:* `String.t`, *default:* `nil`) - Optional. Timeout for graceful YARN decommissioning. Graceful decommissioning facilitates the removal of cluster nodes without interrupting jobs in progress. The timeout specifies the amount of time to wait for jobs finish before forcefully removing nodes. The default timeout is 0 for forceful decommissioning, and the maximum timeout period is 1 day. (see JSON Mapping—Duration (https://developers.google.com/protocol-buffers/docs/proto3#json)).graceful_decommission_timeout is supported in Dataproc image versions 1.2+.
   *   `nodePools` (*type:* `list(GoogleApi.Dataproc.V1.Model.NodePool.t)`, *default:* `nil`) - Optional. Node pools and corresponding repair action to be taken. All node pools should be unique in this request. i.e. Multiple entries for the same node pool id are not allowed.
@@ -31,6 +32,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RepairClusterRequest do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :cluster => GoogleApi.Dataproc.V1.Model.ClusterToRepair.t() | nil,
           :clusterUuid => String.t() | nil,
           :gracefulDecommissionTimeout => String.t() | nil,
           :nodePools => list(GoogleApi.Dataproc.V1.Model.NodePool.t()) | nil,
@@ -38,6 +40,7 @@ defmodule GoogleApi.Dataproc.V1.Model.RepairClusterRequest do
           :requestId => String.t() | nil
         }
 
+  field(:cluster, as: GoogleApi.Dataproc.V1.Model.ClusterToRepair)
   field(:clusterUuid)
   field(:gracefulDecommissionTimeout)
   field(:nodePools, as: GoogleApi.Dataproc.V1.Model.NodePool, type: :list)

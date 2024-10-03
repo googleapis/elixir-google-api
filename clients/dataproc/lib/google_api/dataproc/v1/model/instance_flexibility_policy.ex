@@ -23,6 +23,7 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy do
 
   *   `instanceSelectionList` (*type:* `list(GoogleApi.Dataproc.V1.Model.InstanceSelection.t)`, *default:* `nil`) - Optional. List of instance selection options that the group will use when creating new VMs.
   *   `instanceSelectionResults` (*type:* `list(GoogleApi.Dataproc.V1.Model.InstanceSelectionResult.t)`, *default:* `nil`) - Output only. A list of instance selection results in the group.
+  *   `provisioningModelMix` (*type:* `GoogleApi.Dataproc.V1.Model.ProvisioningModelMix.t`, *default:* `nil`) - Optional. Defines how the Group selects the provisioning model to ensure required reliability.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -30,7 +31,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy do
   @type t :: %__MODULE__{
           :instanceSelectionList => list(GoogleApi.Dataproc.V1.Model.InstanceSelection.t()) | nil,
           :instanceSelectionResults =>
-            list(GoogleApi.Dataproc.V1.Model.InstanceSelectionResult.t()) | nil
+            list(GoogleApi.Dataproc.V1.Model.InstanceSelectionResult.t()) | nil,
+          :provisioningModelMix => GoogleApi.Dataproc.V1.Model.ProvisioningModelMix.t() | nil
         }
 
   field(:instanceSelectionList, as: GoogleApi.Dataproc.V1.Model.InstanceSelection, type: :list)
@@ -39,6 +41,8 @@ defmodule GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy do
     as: GoogleApi.Dataproc.V1.Model.InstanceSelectionResult,
     type: :list
   )
+
+  field(:provisioningModelMix, as: GoogleApi.Dataproc.V1.Model.ProvisioningModelMix)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Dataproc.V1.Model.InstanceFlexibilityPolicy do

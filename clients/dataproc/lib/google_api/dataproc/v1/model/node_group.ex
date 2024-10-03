@@ -21,7 +21,7 @@ defmodule GoogleApi.Dataproc.V1.Model.NodeGroup do
 
   ## Attributes
 
-  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Node group labels. Label keys must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty. If specified, they must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). The node group must have no more than 32 labelsn.
+  *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Node group labels. Label keys must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty. If specified, they must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). The node group must have no more than 32 labels.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The Node group resource name (https://aip.dev/122).
   *   `nodeGroupConfig` (*type:* `GoogleApi.Dataproc.V1.Model.InstanceGroupConfig.t`, *default:* `nil`) - Optional. The node group instance group configuration.
   *   `roles` (*type:* `list(String.t)`, *default:* `nil`) - Required. Node group roles.
