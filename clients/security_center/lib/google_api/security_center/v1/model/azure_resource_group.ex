@@ -21,15 +21,18 @@ defmodule GoogleApi.SecurityCenter.V1.Model.AzureResourceGroup do
 
   ## Attributes
 
+  *   `id` (*type:* `String.t`, *default:* `nil`) - The ID of the Azure resource group.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the Azure resource group. This is not a UUID.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :id => String.t() | nil,
           :name => String.t() | nil
         }
 
+  field(:id)
   field(:name)
 end
 
