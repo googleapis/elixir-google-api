@@ -20,7 +20,7 @@ defmodule GoogleApi.BeyondCorp.V1 do
   API client metadata for GoogleApi.BeyondCorp.V1.
   """
 
-  @discovery_revision "20240802"
+  @discovery_revision "20240925"
 
   def discovery_revision(), do: @discovery_revision
 end
