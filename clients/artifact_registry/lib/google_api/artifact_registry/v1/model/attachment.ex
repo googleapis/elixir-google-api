@@ -17,18 +17,18 @@
 
 defmodule GoogleApi.ArtifactRegistry.V1.Model.Attachment do
   @moduledoc """
-  An Attachment refers to additional metadata that can be attached to artifacts in ArtifactRegistry. An attachment consists of one or more files.
+  An Attachment refers to additional metadata that can be attached to artifacts in Artifact Registry. An attachment consists of one or more files.
 
   ## Attributes
 
-  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. User annotations. These attributes can only be set and used by the user, and not by Artifact Registry. See https://google.aip.dev/128#annotations for more details such as format and size limitations. Client specified annotations.
-  *   `attachmentNamespace` (*type:* `String.t`, *default:* `nil`) - The namespace this attachment belongs to. E.g. If an Attachment is created by artifact analysis, namespace is set to artifactanalysis.googleapis.com.
+  *   `annotations` (*type:* `map()`, *default:* `nil`) - Optional. User annotations. These attributes can only be set and used by the user, and not by Artifact Registry. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
+  *   `attachmentNamespace` (*type:* `String.t`, *default:* `nil`) - The namespace this attachment belongs to. E.g. If an Attachment is created by artifact analysis, namespace is set to `artifactanalysis.googleapis.com`.
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the attachment was created.
-  *   `files` (*type:* `list(String.t)`, *default:* `nil`) - Required. The files that blong to this Attachment. If the file ID part contains slashes, they are escaped. E.g. "projects/p1/locations/us-central1/repositories/repo1/files/sha:".
+  *   `files` (*type:* `list(String.t)`, *default:* `nil`) - Required. The files that belong to this attachment. If the file ID part contains slashes, they are escaped. E.g. `projects/p1/locations/us-central1/repositories/repo1/files/sha:`.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the attachment. E.g. "projects/p1/locations/us/repositories/repo/attachments/sbom".
-  *   `ociVersionName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the OCI version that this attachment created. Only populated for Docker attachments. E.g. "projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1".
+  *   `ociVersionName` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the OCI version that this attachment created. Only populated for Docker attachments. E.g. `projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1`.
   *   `target` (*type:* `String.t`, *default:* `nil`) - Required. The target the attachment is for, can be a Version, Package or Repository. E.g. "projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1".
-  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of Attachment. E.g. application/vnd.spdx+jsonn
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Type of Attachment. E.g. `application/vnd.spdx+json`
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time when the attachment was last updated.
   """
 
