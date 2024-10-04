@@ -21,7 +21,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1UpdateServ
 
   ## Attributes
 
-  *   `service` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1Service.t`, *default:* `nil`) - Required. The Service to update. The Service's `name` field is used to identify the Service to be updated, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore)
+  *   `service` (*type:* `GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1Service.t`, *default:* `nil`) - Required. The Service to update. The Service's `name` field is used to identify the Service to be updated, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `oauth2.googleapis.com` (Google Identity for iOS)
   *   `updateMask` (*type:* `String.t`, *default:* `nil`) - Required. A comma-separated list of names of fields in the Service to update. Example: `enforcement_mode`.
   """
 
