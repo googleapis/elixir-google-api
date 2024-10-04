@@ -22,7 +22,7 @@ defmodule GoogleApi.FirebaseAppCheck.V1.Model.GoogleFirebaseAppcheckV1Service do
   ## Attributes
 
   *   `enforcementMode` (*type:* `String.t`, *default:* `nil`) - Required. The App Check enforcement mode for this service.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative resource name of the service configuration object, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore)
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Required. The relative resource name of the service configuration object, in the format: ``` projects/{project_number}/services/{service_id} ``` Note that the `service_id` element must be a supported service ID. Currently, the following service IDs are supported: * `firebasestorage.googleapis.com` (Cloud Storage for Firebase) * `firebasedatabase.googleapis.com` (Firebase Realtime Database) * `firestore.googleapis.com` (Cloud Firestore) * `oauth2.googleapis.com` (Google Identity for iOS)
   """
 
   use GoogleApi.Gax.ModelBase
