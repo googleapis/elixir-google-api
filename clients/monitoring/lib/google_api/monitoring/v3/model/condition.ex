@@ -25,6 +25,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
   *   `conditionMatchedLog` (*type:* `GoogleApi.Monitoring.V3.Model.LogMatch.t`, *default:* `nil`) - A condition that checks for log messages matching given constraints. If set, no other conditions can be present.
   *   `conditionMonitoringQueryLanguage` (*type:* `GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t`, *default:* `nil`) - A condition that uses the Monitoring Query Language to define alerts.
   *   `conditionPrometheusQueryLanguage` (*type:* `GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition.t`, *default:* `nil`) - A condition that uses the Prometheus query language to define alerts.
+  *   `conditionSql` (*type:* `GoogleApi.Monitoring.V3.Model.SqlCondition.t`, *default:* `nil`) - A condition that uses SQL to define alerts in Logs Analytics.
   *   `conditionThreshold` (*type:* `GoogleApi.Monitoring.V3.Model.MetricThreshold.t`, *default:* `nil`) - A condition that compares a time series against a threshold.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - A short name or phrase used to identify the condition in dashboards, notifications, and incidents. To avoid confusion, don't use the same display name for multiple conditions in the same policy.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Required if the condition exists. The unique resource name for this condition. Its format is: projects/[PROJECT_ID_OR_NUMBER]/alertPolicies/[POLICY_ID]/conditions/[CONDITION_ID] [CONDITION_ID] is assigned by Cloud Monitoring when the condition is created as part of a new or updated alerting policy.When calling the alertPolicies.create method, do not include the name field in the conditions of the requested alerting policy. Cloud Monitoring creates the condition identifiers and includes them in the new policy.When calling the alertPolicies.update method to update a policy, including a condition name causes the existing condition to be updated. Conditions without names are added to the updated policy. Existing conditions are deleted if they are not updated.Best practice is to preserve [CONDITION_ID] if you make only small changes, such as those to condition thresholds, durations, or trigger values. Otherwise, treat the change as a new condition and let the existing condition be deleted.
@@ -39,6 +40,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
             GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition.t() | nil,
           :conditionPrometheusQueryLanguage =>
             GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition.t() | nil,
+          :conditionSql => GoogleApi.Monitoring.V3.Model.SqlCondition.t() | nil,
           :conditionThreshold => GoogleApi.Monitoring.V3.Model.MetricThreshold.t() | nil,
           :displayName => String.t() | nil,
           :name => String.t() | nil
@@ -55,6 +57,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Condition do
     as: GoogleApi.Monitoring.V3.Model.PrometheusQueryLanguageCondition
   )
 
+  field(:conditionSql, as: GoogleApi.Monitoring.V3.Model.SqlCondition)
   field(:conditionThreshold, as: GoogleApi.Monitoring.V3.Model.MetricThreshold)
   field(:displayName)
   field(:name)
