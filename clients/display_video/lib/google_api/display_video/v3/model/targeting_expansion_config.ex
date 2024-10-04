@@ -23,7 +23,7 @@ defmodule GoogleApi.DisplayVideo.V3.Model.TargetingExpansionConfig do
 
   *   `audienceExpansionLevel` (*type:* `String.t`, *default:* `nil`) - Output only. Magnitude of expansion for eligible first-party user lists under this ad group. This field only applies to YouTube and Partners line item and ad group resources.
   *   `audienceExpansionSeedListExcluded` (*type:* `boolean()`, *default:* `nil`) - Output only. Whether to exclude seed list for audience expansion. This field only applies to YouTube and Partners line item and ad group resources.
-  *   `enableOptimizedTargeting` (*type:* `boolean()`, *default:* `nil`) - Required. Whether to enable Optimized Targeting for the line item. *Warning*: Starting on **September 30, 2024**, optimized targeting will no longer be compatible with a subset of bid strategies. [Read more about this announced change](/display-video/api/deprecations#features.ot_bid_strategies).
+  *   `enableOptimizedTargeting` (*type:* `boolean()`, *default:* `nil`) - Required. Whether to enable Optimized Targeting for the line item. Optimized targeting is not compatible with all bid strategies. Attempting to set this field to `true` for a line item using one of the following combinations of BiddingStrategy fields and BiddingStrategyPerformanceGoalType will result in an error: maximize_auto_spend_bid: * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_CIVA` * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_IVO_TEN` * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_AV_VIEWED` performance_goal_auto_bid: * `BIDDING_STRATEGY_PERFORMANCE_GOAL_TYPE_VIEWABLE_CPM`
   """
 
   use GoogleApi.Gax.ModelBase
