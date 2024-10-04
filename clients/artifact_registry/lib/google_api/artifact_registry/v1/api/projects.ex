@@ -1427,7 +1427,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Creates an attachment. The returned Operation will finish once the attachment has been created. Its response will be the created Attachment.
+  Creates an attachment. The returned Operation will finish once the attachment has been created. Its response will be the created attachment.
 
   ## Parameters
 
@@ -1501,7 +1501,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Deletes an attachment. The returned Operation will finish once the attachments has been deleted. It will not have any Operation metadata and will return a google.protobuf.Empty response.
+  Deletes an attachment. The returned Operation will finish once the attachments has been deleted. It will not have any Operation metadata and will return a `google.protobuf.Empty` response.
 
   ## Parameters
 
@@ -1641,7 +1641,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Lists repositories.
+  Lists attachments.
 
   ## Parameters
 
@@ -2242,7 +2242,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Directly uploads a File to a repository. The returned Operation will complete once the resources are uploaded.
+  Directly uploads a file to a repository. The returned Operation will complete once the resources are uploaded.
 
   ## Parameters
 
@@ -2316,7 +2316,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Directly uploads a File to a repository. The returned Operation will complete once the resources are uploaded.
+  Directly uploads a file to a repository. The returned Operation will complete once the resources are uploaded.
 
   ## Parameters
 
@@ -2400,7 +2400,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Directly uploads a File to a repository. The returned Operation will complete once the resources are uploaded.
+  Directly uploads a file to a repository. The returned Operation will complete once the resources are uploaded.
 
   ## Parameters
 
@@ -2472,7 +2472,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   end
 
   @doc """
-  Directly uploads a File to a repository. The returned Operation will complete once the resources are uploaded.
+  Directly uploads a file to a repository. The returned Operation will complete once the resources are uploaded.
 
   ## Parameters
 
@@ -4921,7 +4921,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.ArtifactRegistry.V1.Connection.t`) - Connection to server
-  *   `name` (*type:* `String.t`) - The name of the version, for example: "projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1". If the package or version ID parts contain slashes, the slashes are escaped.
+  *   `name` (*type:* `String.t`) - The name of the version, for example: `projects/p1/locations/us-central1/repositories/repo1/packages/pkg1/versions/art1`. If the package or version ID parts contain slashes, the slashes are escaped.
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

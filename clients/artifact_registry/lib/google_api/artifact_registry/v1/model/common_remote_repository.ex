@@ -21,7 +21,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.CommonRemoteRepository do
 
   ## Attributes
 
-  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. A common public repository base for Remote Repository.
+  *   `uri` (*type:* `String.t`, *default:* `nil`) - Required. A common public repository base for remote repository.
   """
 
   use GoogleApi.Gax.ModelBase
