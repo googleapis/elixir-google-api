@@ -32,6 +32,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `geoTargetConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_GeoTargetConstant.t`, *default:* `nil`) - The geo target constant referenced in the query.
   *   `adGroupAd` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t`, *default:* `nil`) - The ad referenced in the query.
   *   `cartDataSalesView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t`, *default:* `nil`) - The cart data sales view referenced in the query.
+  *   `adGroupEffectiveLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupEffectiveLabel.t`, *default:* `nil`) - The ad group effective label referenced in the query.
   *   `productBiddingCategoryConstant` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t`, *default:* `nil`) - The Product Bidding Category referenced in the query.
   *   `dynamicSearchAdsSearchTermView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_DynamicSearchAdsSearchTermView.t`, *default:* `nil`) - The dynamic search ads search term view referenced in the query.
   *   `assetSetAsset` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AssetSetAsset.t`, *default:* `nil`) - The asset set asset referenced in the query.
@@ -74,6 +75,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
   *   `adGroupCriterionLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupCriterionLabel.t`, *default:* `nil`) - The ad group criterion label referenced in the query.
   *   `productGroupView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductGroupView.t`, *default:* `nil`) - The product group view referenced in the query.
   *   `shoppingPerformanceView` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t`, *default:* `nil`) - The shopping performance view referenced in the query.
+  *   `campaignEffectiveLabel` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignEffectiveLabel.t`, *default:* `nil`) - The campaign effective label referenced in the query.
   *   `label` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t`, *default:* `nil`) - The label referenced in the query.
   """
 
@@ -108,6 +110,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupAd.t() | nil,
           :cartDataSalesView =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView.t()
+            | nil,
+          :adGroupEffectiveLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupEffectiveLabel.t()
             | nil,
           :productBiddingCategoryConstant =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ProductBiddingCategoryConstant.t()
@@ -222,6 +227,9 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
           :shoppingPerformanceView =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView.t()
             | nil,
+          :campaignEffectiveLabel =>
+            GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignEffectiveLabel.t()
+            | nil,
           :label =>
             GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label.t() | nil
         }
@@ -261,6 +269,10 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   field(:cartDataSalesView,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CartDataSalesView
+  )
+
+  field(:adGroupEffectiveLabel,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGroupEffectiveLabel
   )
 
   field(:productBiddingCategoryConstant,
@@ -416,6 +428,10 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Services_Search
 
   field(:shoppingPerformanceView,
     as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_ShoppingPerformanceView
+  )
+
+  field(:campaignEffectiveLabel,
+    as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_CampaignEffectiveLabel
   )
 
   field(:label, as: GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Label)

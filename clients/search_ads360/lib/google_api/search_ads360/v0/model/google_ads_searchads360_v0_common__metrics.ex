@@ -30,6 +30,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   *   `searchBudgetLostAbsoluteTopImpressionShare` (*type:* `float()`, *default:* `nil`) - The number estimating how often your ad wasn't the very first ad among the top ads in the search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
   *   `conversionCustomMetrics` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t)`, *default:* `nil`) - The conversion custom metrics.
   *   `clientAccountLeadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Client account lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+  *   `generalInvalidClicks` (*type:* `String.t`, *default:* `nil`) - Number of general invalid clicks. These are a subset of your invalid clicks that are detected through routine means of filtration (such as known invalid data-center traffic, bots and spiders or other crawlers, irregular patterns, etc.). You're not charged for them, and they don't affect your account statistics. See the help page at https://support.google.com/campaignmanager/answer/6076504 for details.
   *   `conversions` (*type:* `float()`, *default:* `nil`) - The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
   *   `searchExactMatchImpressionShare` (*type:* `float()`, *default:* `nil`) - The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
   *   `averageQualityScore` (*type:* `float()`, *default:* `nil`) - The average quality score.
@@ -41,6 +42,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   *   `ctr` (*type:* `float()`, *default:* `nil`) - The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).
   *   `leadGrossProfitMicros` (*type:* `String.t`, *default:* `nil`) - Lead gross profit is the profit you made from products sold as a result of advertising the same product, minus cost of goods sold (COGS). How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the revenue you made from these sales minus the cost of goods sold is your lead gross profit. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and has a cost of goods sold value of $3. The lead gross profit of this order is $7 = $10 - $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
   *   `clientAccountCrossSellUnitsSold` (*type:* `float()`, *default:* `nil`) - Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+  *   `crossDeviceConversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The sum of cross-device conversions value by conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
   *   `allConversionsValueByConversionDate` (*type:* `float()`, *default:* `nil`) - The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
   *   `valuePerConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date.
   *   `allConversionsFromOtherEngagement` (*type:* `float()`, *default:* `nil`) - The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only.
@@ -98,6 +100,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   *   `allConversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions.
   *   `costMicros` (*type:* `String.t`, *default:* `nil`) - The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
   *   `interactionRate` (*type:* `float()`, *default:* `nil`) - How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown.
+  *   `crossDeviceConversionsByConversionDate` (*type:* `float()`, *default:* `nil`) - The number of cross-device conversions by conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
   *   `mobileFriendlyClicksPercentage` (*type:* `float()`, *default:* `nil`) - The percentage of mobile clicks that go to a mobile-friendly page.
   *   `allConversionsValue` (*type:* `float()`, *default:* `nil`) - The value of all conversions.
   *   `clicks` (*type:* `String.t`, *default:* `nil`) - The number of clicks.
@@ -106,6 +109,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   *   `conversionsFromInteractionsRate` (*type:* `float()`, *default:* `nil`) - Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion.
   *   `allConversionsFromInteractionsValuePerInteraction` (*type:* `float()`, *default:* `nil`) - The value of all conversions from interactions divided by the total number of interactions.
   *   `allConversionsFromOrder` (*type:* `float()`, *default:* `nil`) - The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only.
+  *   `generalInvalidClickRate` (*type:* `float()`, *default:* `nil`) - The percentage of clicks that have been filtered out of your total number of clicks (filtered + non-filtered clicks) due to being general invalid clicks. These are clicks Google considers illegitimate that are detected through routine means of filtration (that is, known invalid data-center traffic, bots and spiders or other crawlers, irregular patterns, etc). You're not charged for them, and they don't affect your account statistics. See the help page at https://support.google.com/campaignmanager/answer/6076504 for details.
   *   `costPerConversion` (*type:* `float()`, *default:* `nil`) - Average conversion eligible cost per biddable conversion.
   """
 
@@ -122,6 +126,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
           :conversionCustomMetrics =>
             list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Value.t()) | nil,
           :clientAccountLeadGrossProfitMicros => String.t() | nil,
+          :generalInvalidClicks => String.t() | nil,
           :conversions => float() | nil,
           :searchExactMatchImpressionShare => float() | nil,
           :averageQualityScore => float() | nil,
@@ -133,6 +138,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
           :ctr => float() | nil,
           :leadGrossProfitMicros => String.t() | nil,
           :clientAccountCrossSellUnitsSold => float() | nil,
+          :crossDeviceConversionsValueByConversionDate => float() | nil,
           :allConversionsValueByConversionDate => float() | nil,
           :valuePerConversionsByConversionDate => float() | nil,
           :allConversionsFromOtherEngagement => float() | nil,
@@ -190,6 +196,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
           :allConversionsFromInteractionsRate => float() | nil,
           :costMicros => String.t() | nil,
           :interactionRate => float() | nil,
+          :crossDeviceConversionsByConversionDate => float() | nil,
           :mobileFriendlyClicksPercentage => float() | nil,
           :allConversionsValue => float() | nil,
           :clicks => String.t() | nil,
@@ -199,6 +206,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
           :conversionsFromInteractionsRate => float() | nil,
           :allConversionsFromInteractionsValuePerInteraction => float() | nil,
           :allConversionsFromOrder => float() | nil,
+          :generalInvalidClickRate => float() | nil,
           :costPerConversion => float() | nil
         }
 
@@ -216,6 +224,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   )
 
   field(:clientAccountLeadGrossProfitMicros)
+  field(:generalInvalidClicks)
   field(:conversions)
   field(:searchExactMatchImpressionShare)
   field(:averageQualityScore)
@@ -227,6 +236,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   field(:ctr)
   field(:leadGrossProfitMicros)
   field(:clientAccountCrossSellUnitsSold)
+  field(:crossDeviceConversionsValueByConversionDate)
   field(:allConversionsValueByConversionDate)
   field(:valuePerConversionsByConversionDate)
   field(:allConversionsFromOtherEngagement)
@@ -284,6 +294,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   field(:allConversionsFromInteractionsRate)
   field(:costMicros)
   field(:interactionRate)
+  field(:crossDeviceConversionsByConversionDate)
   field(:mobileFriendlyClicksPercentage)
   field(:allConversionsValue)
   field(:clicks)
@@ -297,6 +308,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_Metrics 
   field(:conversionsFromInteractionsRate)
   field(:allConversionsFromInteractionsValuePerInteraction)
   field(:allConversionsFromOrder)
+  field(:generalInvalidClickRate)
   field(:costPerConversion)
 end
 

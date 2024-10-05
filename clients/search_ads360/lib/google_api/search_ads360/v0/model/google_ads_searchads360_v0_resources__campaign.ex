@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
 
   ## Attributes
 
-  *   `biddingStrategy` (*type:* `String.t`, *default:* `nil`) - Portfolio bidding strategy used by campaign.
+  *   `biddingStrategy` (*type:* `String.t`, *default:* `nil`) - The resource name of the portfolio bidding strategy used by the campaign.
   *   `createTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this campaign was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format. create_time will be deprecated in v1. Use creation_time instead.
   *   `labels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of labels attached to this campaign.
   *   `advertisingChannelType` (*type:* `String.t`, *default:* `nil`) - Immutable. The primary serving target for ads within the campaign. The targeting options can be refined in `network_settings`. This field is required and should not be empty when creating new campaigns. Can be set only when creating campaigns. After the campaign is created, the field can not be changed.
@@ -57,13 +57,14 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   *   `targetSpend` (*type:* `GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_TargetSpend.t`, *default:* `nil`) - Standard Target Spend bidding strategy that automatically sets your bids to help get as many clicks as possible within your budget.
   *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the campaign in the external engine account. This field is for non-Google Ads account only, for example, Yahoo Japan, Microsoft, Baidu etc. For Google Ads entity, use "campaign.id" instead.
   *   `resourceName` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the campaign. Campaign resource names have the form: `customers/{customer_id}/campaigns/{campaign_id}`
-  *   `campaignBudget` (*type:* `String.t`, *default:* `nil`) - The budget of the campaign.
+  *   `campaignBudget` (*type:* `String.t`, *default:* `nil`) - The resource name of the campaign budget of the campaign.
   *   `frequencyCaps` (*type:* `list(GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Common_FrequencyCapEntry.t)`, *default:* `nil`) - A list that limits how often each user will see this campaign's ads.
   *   `status` (*type:* `String.t`, *default:* `nil`) - The status of the campaign. When a new campaign is added, the status defaults to ENABLED.
   *   `excludedParentAssetFieldTypes` (*type:* `list(String.t)`, *default:* `nil`) - The asset field types that should be excluded from this campaign. Asset links with these field types will not be inherited by this campaign from the upper level.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - The last day of the campaign in serving customer's timezone in YYYY-MM-DD format. On create, defaults to 2037-12-30, which means the campaign will run indefinitely. To set an existing campaign to run indefinitely, set this field to 2037-12-30.
   *   `biddingStrategyType` (*type:* `String.t`, *default:* `nil`) - Output only. The type of bidding strategy. A bidding strategy can be created by setting either the bidding scheme to create a standard bidding strategy or the `bidding_strategy` field to create a portfolio bidding strategy. This field is read-only.
   *   `accessibleBiddingStrategy` (*type:* `String.t`, *default:* `nil`) - Output only. Resource name of AccessibleBiddingStrategy, a read-only view of the unrestricted attributes of the attached portfolio bidding strategy identified by 'bidding_strategy'. Empty, if the campaign does not use a portfolio strategy. Unrestricted strategy attributes are available to all customers with whom the strategy is shared and are read from the AccessibleBiddingStrategy resource. In contrast, restricted attributes are only available to the owner customer of the strategy and their managers. Restricted attributes can only be read from the BiddingStrategy resource.
+  *   `effectiveLabels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of effective labels attached to this campaign. An effective label is a label inherited or directly assigned to this campaign.
   *   `startDate` (*type:* `String.t`, *default:* `nil`) - The date when campaign started in serving customer's timezone in YYYY-MM-DD format.
   *   `id` (*type:* `String.t`, *default:* `nil`) - Output only. The ID of the campaign.
   """
@@ -152,6 +153,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
           :endDate => String.t() | nil,
           :biddingStrategyType => String.t() | nil,
           :accessibleBiddingStrategy => String.t() | nil,
+          :effectiveLabels => list(String.t()) | nil,
           :startDate => String.t() | nil,
           :id => String.t() | nil
         }
@@ -255,6 +257,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
   field(:endDate)
   field(:biddingStrategyType)
   field(:accessibleBiddingStrategy)
+  field(:effectiveLabels, type: :list)
   field(:startDate)
   field(:id)
 end

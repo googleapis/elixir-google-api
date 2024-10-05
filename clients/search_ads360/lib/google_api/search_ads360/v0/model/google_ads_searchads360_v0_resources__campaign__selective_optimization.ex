@@ -21,7 +21,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_Campa
 
   ## Attributes
 
-  *   `conversionActions` (*type:* `list(String.t)`, *default:* `nil`) - The selected set of conversion actions for optimizing this campaign.
+  *   `conversionActions` (*type:* `list(String.t)`, *default:* `nil`) - The selected set of resource names for conversion actions for optimizing this campaign.
   """
 
   use GoogleApi.Gax.ModelBase

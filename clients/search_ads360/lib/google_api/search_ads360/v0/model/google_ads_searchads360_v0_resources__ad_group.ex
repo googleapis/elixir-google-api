@@ -24,6 +24,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   *   `adRotationMode` (*type:* `String.t`, *default:* `nil`) - The ad rotation mode of the ad group.
   *   `cpcBidMicros` (*type:* `String.t`, *default:* `nil`) - The maximum CPC (cost-per-click) bid.
   *   `creationTime` (*type:* `String.t`, *default:* `nil`) - Output only. The timestamp when this ad_group was created. The timestamp is in the customer's time zone and in "yyyy-MM-dd HH:mm:ss" format.
+  *   `effectiveLabels` (*type:* `list(String.t)`, *default:* `nil`) - Output only. The resource names of effective labels attached to this ad group. An effective label is a label inherited or directly assigned to this ad group.
   *   `endDate` (*type:* `String.t`, *default:* `nil`) - Output only. Date when the ad group ends serving ads. By default, the ad group ends on the ad group's end date. If this field is set, then the ad group ends at the end of the specified date in the customer's time zone. This field is only available for Microsoft Advertising and Facebook gateway accounts. Format: YYYY-MM-DD Example: 2019-03-14
   *   `engineId` (*type:* `String.t`, *default:* `nil`) - Output only. ID of the ad group in the external engine account. This field is for non-Google Ads account only, for example, Yahoo Japan, Microsoft, Baidu etc. For Google Ads entity, use "ad_group.id" instead.
   *   `engineStatus` (*type:* `String.t`, *default:* `nil`) - Output only. The Engine Status for ad group.
@@ -45,6 +46,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
           :adRotationMode => String.t() | nil,
           :cpcBidMicros => String.t() | nil,
           :creationTime => String.t() | nil,
+          :effectiveLabels => list(String.t()) | nil,
           :endDate => String.t() | nil,
           :engineId => String.t() | nil,
           :engineStatus => String.t() | nil,
@@ -65,6 +67,7 @@ defmodule GoogleApi.SearchAds360.V0.Model.GoogleAdsSearchads360V0Resources_AdGro
   field(:adRotationMode)
   field(:cpcBidMicros)
   field(:creationTime)
+  field(:effectiveLabels, type: :list)
   field(:endDate)
   field(:engineId)
   field(:engineStatus)
