@@ -48,6 +48,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   *   `desiredShieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Configuration for Shielded Nodes.
   *   `desiredMasterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The desired configuration options for master authorized networks feature.
   *   `desiredInTransitEncryptionConfig` (*type:* `String.t`, *default:* `nil`) - Specify the details of in-transit encryption.
+  *   `userManagedKeysConfig` (*type:* `GoogleApi.Container.V1.Model.UserManagedKeysConfig.t`, *default:* `nil`) - The Custom keys configuration for the cluster.
   *   `desiredStackType` (*type:* `String.t`, *default:* `nil`) - The desired stack type of the cluster. If a stack type is provided and does not match the current stack type of the cluster, update will attempt to change the stack type to the new type.
   *   `desiredWorkloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for Workload Identity.
   *   `desiredIdentityServiceConfig` (*type:* `GoogleApi.Container.V1.Model.IdentityServiceConfig.t`, *default:* `nil`) - The desired Identity Service component configuration.
@@ -122,6 +123,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
           :desiredMasterAuthorizedNetworksConfig =>
             GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t() | nil,
           :desiredInTransitEncryptionConfig => String.t() | nil,
+          :userManagedKeysConfig => GoogleApi.Container.V1.Model.UserManagedKeysConfig.t() | nil,
           :desiredStackType => String.t() | nil,
           :desiredWorkloadIdentityConfig =>
             GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t() | nil,
@@ -214,6 +216,7 @@ defmodule GoogleApi.Container.V1.Model.ClusterUpdate do
   )
 
   field(:desiredInTransitEncryptionConfig)
+  field(:userManagedKeysConfig, as: GoogleApi.Container.V1.Model.UserManagedKeysConfig)
   field(:desiredStackType)
   field(:desiredWorkloadIdentityConfig, as: GoogleApi.Container.V1.Model.WorkloadIdentityConfig)
   field(:desiredIdentityServiceConfig, as: GoogleApi.Container.V1.Model.IdentityServiceConfig)

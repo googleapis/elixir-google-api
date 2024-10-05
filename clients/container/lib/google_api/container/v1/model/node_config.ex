@@ -44,6 +44,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   *   `accelerators` (*type:* `list(GoogleApi.Container.V1.Model.AcceleratorConfig.t)`, *default:* `nil`) - A list of hardware accelerators to be attached to each node. See https://cloud.google.com/compute/docs/gpus for more information about support for GPUs.
   *   `windowsNodeConfig` (*type:* `GoogleApi.Container.V1.Model.WindowsNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Windows nodes.
   *   `linuxNodeConfig` (*type:* `GoogleApi.Container.V1.Model.LinuxNodeConfig.t`, *default:* `nil`) - Parameters that can be configured on Linux nodes.
+  *   `effectiveCgroupMode` (*type:* `String.t`, *default:* `nil`) - Output only. effective_cgroup_mode is the cgroup mode actually used by the node pool. It is determined by the cgroup mode specified in the LinuxNodeConfig or the default cgroup mode based on the cluster creation version.
   *   `minCpuPlatform` (*type:* `String.t`, *default:* `nil`) - Minimum CPU platform to be used by this instance. The instance may be scheduled on the specified or newer CPU platform. Applicable values are the friendly names of CPU platforms, such as `minCpuPlatform: "Intel Haswell"` or `minCpuPlatform: "Intel Sandy Bridge"`. For more information, read [how to specify min CPU platform](https://cloud.google.com/compute/docs/instances/specify-min-cpu-platform)
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the node pool to use to annotate any related Google Compute Engine resources.
   *   `tags` (*type:* `list(String.t)`, *default:* `nil`) - The list of instance tags applied to all nodes. Tags are used to identify valid sources or targets for network firewalls and are specified by the client during cluster or node pool creation. Each tag within the list must comply with RFC1035.
@@ -92,6 +93,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
           :accelerators => list(GoogleApi.Container.V1.Model.AcceleratorConfig.t()) | nil,
           :windowsNodeConfig => GoogleApi.Container.V1.Model.WindowsNodeConfig.t() | nil,
           :linuxNodeConfig => GoogleApi.Container.V1.Model.LinuxNodeConfig.t() | nil,
+          :effectiveCgroupMode => String.t() | nil,
           :minCpuPlatform => String.t() | nil,
           :resourceLabels => map() | nil,
           :tags => list(String.t()) | nil,
@@ -137,6 +139,7 @@ defmodule GoogleApi.Container.V1.Model.NodeConfig do
   field(:accelerators, as: GoogleApi.Container.V1.Model.AcceleratorConfig, type: :list)
   field(:windowsNodeConfig, as: GoogleApi.Container.V1.Model.WindowsNodeConfig)
   field(:linuxNodeConfig, as: GoogleApi.Container.V1.Model.LinuxNodeConfig)
+  field(:effectiveCgroupMode)
   field(:minCpuPlatform)
   field(:resourceLabels, type: :map)
   field(:tags, type: :list)

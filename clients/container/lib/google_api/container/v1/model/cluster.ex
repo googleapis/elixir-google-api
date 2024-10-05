@@ -55,6 +55,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `clusterIpv4Cidr` (*type:* `String.t`, *default:* `nil`) - The IP address range of the container pods in this cluster, in [CIDR](http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing) notation (e.g. `10.96.0.0/14`). Leave blank to have one automatically chosen or specify a `/14` block in `10.0.0.0/8`.
   *   `compliancePostureConfig` (*type:* `GoogleApi.Container.V1.Model.CompliancePostureConfig.t`, *default:* `nil`) - Enable/Disable Compliance Posture features for the cluster.
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
+  *   `userManagedKeysConfig` (*type:* `GoogleApi.Container.V1.Model.UserManagedKeysConfig.t`, *default:* `nil`) - The Custom keys configuration for the cluster.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the cluster is connected.
   *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration. If left unspecified on cluster creation and a version is specified, the cluster is enrolled in the most mature release channel where the version is available (first checking STABLE, then REGULAR, and finally RAPID). Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version.
   *   `parentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The configuration of the parent product of the cluster. This field is used by Google internal products that are built on top of the GKE cluster and take the ownership of the cluster.
@@ -136,6 +137,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :compliancePostureConfig =>
             GoogleApi.Container.V1.Model.CompliancePostureConfig.t() | nil,
           :expireTime => String.t() | nil,
+          :userManagedKeysConfig => GoogleApi.Container.V1.Model.UserManagedKeysConfig.t() | nil,
           :subnetwork => String.t() | nil,
           :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
           :parentProductConfig => GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
@@ -214,6 +216,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:clusterIpv4Cidr)
   field(:compliancePostureConfig, as: GoogleApi.Container.V1.Model.CompliancePostureConfig)
   field(:expireTime)
+  field(:userManagedKeysConfig, as: GoogleApi.Container.V1.Model.UserManagedKeysConfig)
   field(:subnetwork)
   field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
   field(:parentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
