@@ -23,17 +23,20 @@ defmodule GoogleApi.Language.V2.Model.ClassificationCategory do
 
   *   `confidence` (*type:* `number()`, *default:* `nil`) - The classifier's confidence of the category. Number represents how certain the classifier is that this category represents the given text.
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the category representing the document.
+  *   `severity` (*type:* `number()`, *default:* `nil`) - Optional. The classifier's severity of the category. This is only present when the ModerateTextRequest.ModelVersion is set to MODEL_VERSION_2, and the corresponding category has a severity score.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :confidence => number() | nil,
-          :name => String.t() | nil
+          :name => String.t() | nil,
+          :severity => number() | nil
         }
 
   field(:confidence)
   field(:name)
+  field(:severity)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V2.Model.ClassificationCategory do

@@ -22,15 +22,18 @@ defmodule GoogleApi.Language.V2.Model.ModerateTextRequest do
   ## Attributes
 
   *   `document` (*type:* `GoogleApi.Language.V2.Model.Document.t`, *default:* `nil`) - Required. Input document.
+  *   `modelVersion` (*type:* `String.t`, *default:* `nil`) - Optional. The model version to use for ModerateText.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :document => GoogleApi.Language.V2.Model.Document.t() | nil
+          :document => GoogleApi.Language.V2.Model.Document.t() | nil,
+          :modelVersion => String.t() | nil
         }
 
   field(:document, as: GoogleApi.Language.V2.Model.Document)
+  field(:modelVersion)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Language.V2.Model.ModerateTextRequest do
