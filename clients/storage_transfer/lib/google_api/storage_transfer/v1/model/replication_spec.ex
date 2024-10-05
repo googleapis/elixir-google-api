@@ -17,14 +17,14 @@
 
 defmodule GoogleApi.StorageTransfer.V1.Model.ReplicationSpec do
   @moduledoc """
-  Specifies the configuration for running a replication job.
+  Specifies the configuration for a cross-bucket replication job. Cross-bucket replication copies new or updated objects from a source Cloud Storage bucket to a destination Cloud Storage bucket. Existing objects in the source bucket are not copied by a new cross-bucket replication job.
 
   ## Attributes
 
-  *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - Specifies cloud Storage data sink.
-  *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - Specifies cloud Storage data source.
-  *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Specifies the object conditions to only include objects that satisfy these conditions in the set of data source objects. Object conditions based on objects' "last modification time" do not exclude objects in a data sink.
-  *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - Specifies the actions to be performed on the object during replication. Delete options are not supported for replication and when specified, the request fails with an INVALID_ARGUMENT error.
+  *   `gcsDataSink` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - The Cloud Storage bucket to which to replicate objects.
+  *   `gcsDataSource` (*type:* `GoogleApi.StorageTransfer.V1.Model.GcsData.t`, *default:* `nil`) - The Cloud Storage bucket from which to replicate objects.
+  *   `objectConditions` (*type:* `GoogleApi.StorageTransfer.V1.Model.ObjectConditions.t`, *default:* `nil`) - Object conditions that determine which objects are transferred. For replication jobs, only `include_prefixes` and `exclude_prefixes` are supported.
+  *   `transferOptions` (*type:* `GoogleApi.StorageTransfer.V1.Model.TransferOptions.t`, *default:* `nil`) - Specifies the metadata options to be applied during replication. Delete options are not supported. If a delete option is specified, the request fails with an INVALID_ARGUMENT error.
   """
 
   use GoogleApi.Gax.ModelBase
