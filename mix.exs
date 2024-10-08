@@ -46,7 +46,7 @@ defmodule GoogleApis.Mixfile do
     [
       {:google_api_discovery, "~> 0.12.0"},
       {:tesla, "~> 1.8"},
-      {:oauth2, "~> 0.9"},
+      {:oauth2, "~> 2.0"},
       {:temp, "~> 0.4"},
       {:jason, "~> 1.1"},
       {:poison, "~> 3.1"}
