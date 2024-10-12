@@ -21,6 +21,7 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
 
   ## Attributes
 
+  *   `annotations` (*type:* `list(GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1IssueAnnotation.t)`, *default:* `nil`) - List of annotations for an issue. Annotations provide additional information that may help in diagnosing and fixing the issue.
   *   `cause` (*type:* `String.t`, *default:* `nil`) - Cause of the issue. Depending on the type this can be either: * APPLICATION_NOT_RESPONDING: the type of ANR that occurred, e.g., 'Input dispatching timed out'. * CRASH: for Java unhandled exception errors, the type of the innermost exception that was thrown, e.g., IllegalArgumentException. For signals in native code, the signal that was raised, e.g. SIGSEGV.
   *   `distinctUsers` (*type:* `String.t`, *default:* `nil`) - An estimate of the number of unique users who have experienced this issue (only considering occurrences matching the filters and within the requested time period).
   *   `distinctUsersPercent` (*type:* `GoogleApi.PlayDeveloperReporting.V1beta1.Model.GoogleTypeDecimal.t`, *default:* `nil`) - An estimated percentage of users affected by any issue that are affected by this issue (only considering occurrences matching the filters and within the requested time period).
@@ -40,6 +41,11 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :annotations =>
+            list(
+              GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1IssueAnnotation.t()
+            )
+            | nil,
           :cause => String.t() | nil,
           :distinctUsers => String.t() | nil,
           :distinctUsersPercent =>
@@ -64,6 +70,12 @@ defmodule GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperRepo
           :sampleErrorReports => list(String.t()) | nil,
           :type => String.t() | nil
         }
+
+  field(:annotations,
+    as:
+      GoogleApi.PlayDeveloperReporting.V1beta1.Model.GooglePlayDeveloperReportingV1beta1IssueAnnotation,
+    type: :list
+  )
 
   field(:cause)
   field(:distinctUsers)
