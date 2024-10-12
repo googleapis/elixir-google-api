@@ -33,7 +33,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
   *   `latestAnalysis` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1Analysis.t`, *default:* `nil`) - Output only. The conversation's latest analysis, if one exists.
   *   `latestSummary` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationSummarizationSuggestionData.t`, *default:* `nil`) - Output only. Latest summary of the conversation.
   *   `medium` (*type:* `String.t`, *default:* `nil`) - Immutable. The conversation medium, if unspecified will default to PHONE_CALL.
-  *   `metadataJson` (*type:* `String.t`, *default:* `nil`) - Input only. JSON Metadata encoded as a string. This field is primarily used by Insights integrations with various telphony systems and must be in one of Insights' supported formats.
+  *   `metadataJson` (*type:* `String.t`, *default:* `nil`) - Input only. JSON metadata encoded as a string. This field is primarily used by Insights integrations with various telphony systems and must be in one of Insight's supported formats.
   *   `name` (*type:* `String.t`, *default:* `nil`) - Immutable. The resource name of the conversation. Format: projects/{project}/locations/{location}/conversations/{conversation}
   *   `obfuscatedUserId` (*type:* `String.t`, *default:* `nil`) - Obfuscated user ID which the customer sent to us.
   *   `qualityMetadata` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1ConversationQualityMetadata.t`, *default:* `nil`) - Conversation metadata related to quality management.

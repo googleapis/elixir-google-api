@@ -23,7 +23,7 @@ defmodule GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsig
 
   *   `createTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation was created.
   *   `endTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. The time the operation finished running.
-  *   `partialErrors` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Partial errors during initialising operation that might cause the operation output to be incomplete.
+  *   `partialErrors` (*type:* `list(GoogleApi.ContactCenterInsights.V1.Model.GoogleRpcStatus.t)`, *default:* `nil`) - Partial errors during initializing operation that might cause the operation output to be incomplete.
   *   `request` (*type:* `GoogleApi.ContactCenterInsights.V1.Model.GoogleCloudContactcenterinsightsV1InitializeEncryptionSpecRequest.t`, *default:* `nil`) - Output only. The original request for initialization.
   """
 
