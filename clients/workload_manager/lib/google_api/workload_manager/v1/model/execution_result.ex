@@ -26,6 +26,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExecutionResult do
   *   `resource` (*type:* `GoogleApi.WorkloadManager.V1.Model.Resource.t`, *default:* `nil`) - The resource that violates the rule.
   *   `rule` (*type:* `String.t`, *default:* `nil`) - The rule that is violated in an evaluation.
   *   `severity` (*type:* `String.t`, *default:* `nil`) - The severity of violation.
+  *   `type` (*type:* `String.t`, *default:* `nil`) - Execution result type of the scanned resource
   *   `violationDetails` (*type:* `GoogleApi.WorkloadManager.V1.Model.ViolationDetails.t`, *default:* `nil`) - The details of violation in an evaluation result.
   *   `violationMessage` (*type:* `String.t`, *default:* `nil`) - The violation message of an execution.
   """
@@ -38,6 +39,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExecutionResult do
           :resource => GoogleApi.WorkloadManager.V1.Model.Resource.t() | nil,
           :rule => String.t() | nil,
           :severity => String.t() | nil,
+          :type => String.t() | nil,
           :violationDetails => GoogleApi.WorkloadManager.V1.Model.ViolationDetails.t() | nil,
           :violationMessage => String.t() | nil
         }
@@ -47,6 +49,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.ExecutionResult do
   field(:resource, as: GoogleApi.WorkloadManager.V1.Model.Resource)
   field(:rule)
   field(:severity)
+  field(:type)
   field(:violationDetails, as: GoogleApi.WorkloadManager.V1.Model.ViolationDetails)
   field(:violationMessage)
 end
