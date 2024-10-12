@@ -22,6 +22,7 @@ defmodule GoogleApi.SQLAdmin.V1.Model.PscConfig do
   ## Attributes
 
   *   `allowedConsumerProjects` (*type:* `list(String.t)`, *default:* `nil`) - Optional. The list of consumer projects that are allow-listed for PSC connections to this instance. This instance can be connected to with PSC from any network in these projects. Each consumer project in this list may be represented by a project number (numeric) or by a project id (alphanumeric).
+  *   `pscAutoConnections` (*type:* `list(GoogleApi.SQLAdmin.V1.Model.PscAutoConnectionConfig.t)`, *default:* `nil`) - Optional. The list of settings for requested Private Service Connect consumer endpoints that can be used to connect to this Cloud SQL instance.
   *   `pscEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether PSC connectivity is enabled for this instance.
   """
 
@@ -29,10 +30,13 @@ defmodule GoogleApi.SQLAdmin.V1.Model.PscConfig do
 
   @type t :: %__MODULE__{
           :allowedConsumerProjects => list(String.t()) | nil,
+          :pscAutoConnections =>
+            list(GoogleApi.SQLAdmin.V1.Model.PscAutoConnectionConfig.t()) | nil,
           :pscEnabled => boolean() | nil
         }
 
   field(:allowedConsumerProjects, type: :list)
+  field(:pscAutoConnections, as: GoogleApi.SQLAdmin.V1.Model.PscAutoConnectionConfig, type: :list)
   field(:pscEnabled)
 end
 
