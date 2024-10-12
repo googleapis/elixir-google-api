@@ -21,7 +21,7 @@ defmodule GoogleApi.ArtifactRegistry.V1.Model.ListAttachmentsResponse do
 
   ## Attributes
 
-  *   `attachments` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Attachment.t)`, *default:* `nil`) - The Attachments returned.
+  *   `attachments` (*type:* `list(GoogleApi.ArtifactRegistry.V1.Model.Attachment.t)`, *default:* `nil`) - The attachments returned.
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - The token to retrieve the next page of attachments, or empty if there are no more attachments to return.
   """
 
