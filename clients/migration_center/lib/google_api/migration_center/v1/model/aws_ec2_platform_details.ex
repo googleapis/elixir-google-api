@@ -21,6 +21,7 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AwsEc2PlatformDetails do
 
   ## Attributes
 
+  *   `hyperthreading` (*type:* `String.t`, *default:* `nil`) - Optional. Whether the machine is hyperthreaded.
   *   `location` (*type:* `String.t`, *default:* `nil`) - The location of the machine in the AWS format.
   *   `machineTypeLabel` (*type:* `String.t`, *default:* `nil`) - AWS platform's machine type label.
   """
@@ -28,10 +29,12 @@ defmodule GoogleApi.MigrationCenter.V1.Model.AwsEc2PlatformDetails do
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
+          :hyperthreading => String.t() | nil,
           :location => String.t() | nil,
           :machineTypeLabel => String.t() | nil
         }
 
+  field(:hyperthreading)
   field(:location)
   field(:machineTypeLabel)
 end
