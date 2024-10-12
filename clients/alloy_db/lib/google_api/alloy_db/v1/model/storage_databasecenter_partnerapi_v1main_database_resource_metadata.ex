@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceMetadata do
   @moduledoc """
-  Common model for database resource instance metadata. Next ID: 22
+  Common model for database resource instance metadata. Next ID: 23
 
   ## Attributes
 
@@ -27,6 +27,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   *   `creationTime` (*type:* `DateTime.t`, *default:* `nil`) - The creation time of the resource, i.e. the time when resource is created and recorded in partner service.
   *   `currentState` (*type:* `String.t`, *default:* `nil`) - Current state of the instance.
   *   `customMetadata` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainCustomMetadataData.t`, *default:* `nil`) - Any custom metadata associated with the resource
+  *   `edition` (*type:* `String.t`, *default:* `nil`) - Optional. Edition represents whether the instance is ENTERPRISE or ENTERPRISE_PLUS. This information is core to Cloud SQL only and is used to identify the edition of the instance.
   *   `entitlements` (*type:* `list(GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainEntitlement.t)`, *default:* `nil`) - Entitlements associated with the resource
   *   `expectedState` (*type:* `String.t`, *default:* `nil`) - The state that the instance is expected to be in. For example, an instance state can transition to UNHEALTHY due to wrong patch update, while the expected state will remain at the HEALTHY.
   *   `id` (*type:* `GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDatabaseResourceId.t`, *default:* `nil`) - Required. Unique identifier for a Database resource
@@ -59,6 +60,7 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
           :customMetadata =>
             GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainCustomMetadataData.t()
             | nil,
+          :edition => String.t() | nil,
           :entitlements =>
             list(GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainEntitlement.t())
             | nil,
@@ -101,6 +103,8 @@ defmodule GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainDataba
   field(:customMetadata,
     as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainCustomMetadataData
   )
+
+  field(:edition)
 
   field(:entitlements,
     as: GoogleApi.AlloyDB.V1.Model.StorageDatabasecenterPartnerapiV1mainEntitlement,
