@@ -300,7 +300,7 @@ defmodule GoogleApi.Run.V2.Api.Projects do
   ## Parameters
 
   *   `connection` (*type:* `GoogleApi.Run.V2.Connection.t`) - Connection to server
-  *   `parent` (*type:* `String.t`) - Required. The project and location to build in. Location must be a region, e.g., 'us-central1' or 'global' if the global builder is to be used. Format: projects/{project}/locations/{location}
+  *   `parent` (*type:* `String.t`) - Required. The project and location to build in. Location must be a region, e.g., 'us-central1' or 'global' if the global builder is to be used. Format: `projects/{project}/locations/{location}`
   *   `optional_params` (*type:* `keyword()`) - Optional parameters
       *   `:"$.xgafv"` (*type:* `String.t`) - V1 error format.
       *   `:access_token` (*type:* `String.t`) - OAuth access token.

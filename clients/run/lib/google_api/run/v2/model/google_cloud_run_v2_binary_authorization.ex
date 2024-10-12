@@ -22,7 +22,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2BinaryAuthorization do
   ## Attributes
 
   *   `breakglassJustification` (*type:* `String.t`, *default:* `nil`) - Optional. If present, indicates to use Breakglass using this justification. If use_default is False, then it must be empty. For more information on breakglass, see https://cloud.google.com/binary-authorization/docs/using-breakglass
-  *   `policy` (*type:* `String.t`, *default:* `nil`) - Optional. The path to a binary authorization policy. Format: projects/{project}/platforms/cloudRun/{policy-name}
+  *   `policy` (*type:* `String.t`, *default:* `nil`) - Optional. The path to a binary authorization policy. Format: `projects/{project}/platforms/cloudRun/{policy-name}`
   *   `useDefault` (*type:* `boolean()`, *default:* `nil`) - Optional. If True, indicates to use the default project's binary authorization policy. If False, binary authorization will be disabled.
   """
 
