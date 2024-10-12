@@ -21,9 +21,10 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
 
   ## Attributes
 
-  *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alert policy that was active has no data for this long, any open incidents will close
+  *   `autoClose` (*type:* `String.t`, *default:* `nil`) - If an alerting policy that was active has no data for this long, any open incidents will close
   *   `notificationChannelStrategy` (*type:* `list(GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy.t)`, *default:* `nil`) - Control how notifications will be sent out, on a per-channel basis.
-  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for log-based alert policies, i.e. policies with a LogMatch condition.This limit is not implemented for alert policies that do not have a LogMatch condition.
+  *   `notificationPrompts` (*type:* `list(String.t)`, *default:* `nil`) - For log-based alert policies, the notification prompts is always OPENED. For non log-based alert policies, the notification prompts can be OPENED or OPENED, CLOSED.
+  *   `notificationRateLimit` (*type:* `GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t`, *default:* `nil`) - Required for log-based alerting policies, i.e. policies with a LogMatch condition.This limit is not implemented for alerting policies that do not have a LogMatch condition.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -32,6 +33,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
           :autoClose => String.t() | nil,
           :notificationChannelStrategy =>
             list(GoogleApi.Monitoring.V3.Model.NotificationChannelStrategy.t()) | nil,
+          :notificationPrompts => list(String.t()) | nil,
           :notificationRateLimit => GoogleApi.Monitoring.V3.Model.NotificationRateLimit.t() | nil
         }
 
@@ -42,6 +44,7 @@ defmodule GoogleApi.Monitoring.V3.Model.AlertStrategy do
     type: :list
   )
 
+  field(:notificationPrompts, type: :list)
   field(:notificationRateLimit, as: GoogleApi.Monitoring.V3.Model.NotificationRateLimit)
 end
 

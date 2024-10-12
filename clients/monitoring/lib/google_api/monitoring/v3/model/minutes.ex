@@ -21,7 +21,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Minutes do
 
   ## Attributes
 
-  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. LINT.IfChange Number of minutes between runs. The interval must be between 5 minutes and 1440 minutes. LINT.ThenChange(//depot/google3/cloud/monitoring/api/alerts/policy_validation.cc)
+  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. Number of minutes between runs. The interval must be greater than or equal to 5 minutes and less than or equal to 1440 minutes.
   """
 
   use GoogleApi.Gax.ModelBase
