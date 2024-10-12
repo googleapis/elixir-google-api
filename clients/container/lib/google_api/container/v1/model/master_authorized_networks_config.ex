@@ -24,6 +24,7 @@ defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
   *   `cidrBlocks` (*type:* `list(GoogleApi.Container.V1.Model.CidrBlock.t)`, *default:* `nil`) - cidr_blocks define up to 50 external networks that could access Kubernetes master through HTTPS.
   *   `enabled` (*type:* `boolean()`, *default:* `nil`) - Whether or not master authorized networks is enabled.
   *   `gcpPublicCidrsAccessEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether master is accessbile via Google Compute Engine Public IP addresses.
+  *   `privateEndpointEnforcementEnabled` (*type:* `boolean()`, *default:* `nil`) - Whether master authorized networks is enforced on private endpoint or not.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -31,12 +32,14 @@ defmodule GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do
   @type t :: %__MODULE__{
           :cidrBlocks => list(GoogleApi.Container.V1.Model.CidrBlock.t()) | nil,
           :enabled => boolean() | nil,
-          :gcpPublicCidrsAccessEnabled => boolean() | nil
+          :gcpPublicCidrsAccessEnabled => boolean() | nil,
+          :privateEndpointEnforcementEnabled => boolean() | nil
         }
 
   field(:cidrBlocks, as: GoogleApi.Container.V1.Model.CidrBlock, type: :list)
   field(:enabled)
   field(:gcpPublicCidrsAccessEnabled)
+  field(:privateEndpointEnforcementEnabled)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig do

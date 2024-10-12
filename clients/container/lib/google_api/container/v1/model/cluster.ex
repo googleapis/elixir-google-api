@@ -57,6 +57,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `expireTime` (*type:* `String.t`, *default:* `nil`) - Output only. The time the cluster will be automatically deleted in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
   *   `userManagedKeysConfig` (*type:* `GoogleApi.Container.V1.Model.UserManagedKeysConfig.t`, *default:* `nil`) - The Custom keys configuration for the cluster.
   *   `subnetwork` (*type:* `String.t`, *default:* `nil`) - The name of the Google Compute Engine [subnetwork](https://cloud.google.com/compute/docs/subnetworks) to which the cluster is connected.
+  *   `controlPlaneEndpointsConfig` (*type:* `GoogleApi.Container.V1.Model.ControlPlaneEndpointsConfig.t`, *default:* `nil`) - Configuration for all cluster's control plane endpoints.
   *   `releaseChannel` (*type:* `GoogleApi.Container.V1.Model.ReleaseChannel.t`, *default:* `nil`) - Release channel configuration. If left unspecified on cluster creation and a version is specified, the cluster is enrolled in the most mature release channel where the version is available (first checking STABLE, then REGULAR, and finally RAPID). Otherwise, if no release channel configuration and no version is specified, the cluster is enrolled in the REGULAR channel with its default version.
   *   `parentProductConfig` (*type:* `GoogleApi.Container.V1.Model.ParentProductConfig.t`, *default:* `nil`) - The configuration of the parent product of the cluster. This field is used by Google internal products that are built on top of the GKE cluster and take the ownership of the cluster.
   *   `resourceLabels` (*type:* `map()`, *default:* `nil`) - The resource labels for the cluster to use to annotate any related Google Compute Engine resources.
@@ -71,7 +72,7 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   *   `shieldedNodes` (*type:* `GoogleApi.Container.V1.Model.ShieldedNodes.t`, *default:* `nil`) - Shielded Nodes configuration.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field is deprecated, use location instead.
   *   `enableTpu` (*type:* `boolean()`, *default:* `nil`) - Enable the ability to use Cloud TPUs in this cluster.
-  *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The configuration options for master authorized networks feature.
+  *   `masterAuthorizedNetworksConfig` (*type:* `GoogleApi.Container.V1.Model.MasterAuthorizedNetworksConfig.t`, *default:* `nil`) - The configuration options for master authorized networks feature. Deprecated: Use ControlPlaneEndpointsConfig.IPEndpointsConfig.authorized_networks_config instead.
   *   `workloadIdentityConfig` (*type:* `GoogleApi.Container.V1.Model.WorkloadIdentityConfig.t`, *default:* `nil`) - Configuration for the use of Kubernetes Service Accounts in GCP IAM policies.
   *   `currentNodeVersion` (*type:* `String.t`, *default:* `nil`) - Output only. Deprecated, use [NodePools.version](https://cloud.google.com/kubernetes-engine/docs/reference/rest/v1/projects.locations.clusters.nodePools) instead. The current version of the node software components. If they are currently at multiple versions because they're in the process of being upgraded, this reflects the minimum version of all nodes.
   *   `securityPostureConfig` (*type:* `GoogleApi.Container.V1.Model.SecurityPostureConfig.t`, *default:* `nil`) - Enable/Disable Security Posture API features for the cluster.
@@ -139,6 +140,8 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
           :expireTime => String.t() | nil,
           :userManagedKeysConfig => GoogleApi.Container.V1.Model.UserManagedKeysConfig.t() | nil,
           :subnetwork => String.t() | nil,
+          :controlPlaneEndpointsConfig =>
+            GoogleApi.Container.V1.Model.ControlPlaneEndpointsConfig.t() | nil,
           :releaseChannel => GoogleApi.Container.V1.Model.ReleaseChannel.t() | nil,
           :parentProductConfig => GoogleApi.Container.V1.Model.ParentProductConfig.t() | nil,
           :resourceLabels => map() | nil,
@@ -218,6 +221,9 @@ defmodule GoogleApi.Container.V1.Model.Cluster do
   field(:expireTime)
   field(:userManagedKeysConfig, as: GoogleApi.Container.V1.Model.UserManagedKeysConfig)
   field(:subnetwork)
+
+  field(:controlPlaneEndpointsConfig, as: GoogleApi.Container.V1.Model.ControlPlaneEndpointsConfig)
+
   field(:releaseChannel, as: GoogleApi.Container.V1.Model.ReleaseChannel)
   field(:parentProductConfig, as: GoogleApi.Container.V1.Model.ParentProductConfig)
   field(:resourceLabels, type: :map)
