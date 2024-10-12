@@ -22,7 +22,7 @@ defmodule GoogleApi.WorkflowExecutions.V1.Model.StepEntryMetadata do
   ## Attributes
 
   *   `expectedIteration` (*type:* `String.t`, *default:* `nil`) - Expected iteration represents the expected number of iterations in the step's progress.
-  *   `progressNumber` (*type:* `String.t`, *default:* `nil`) - Progress number represents the current state of the current progress. eg: A step entry represents the 4th iteration in a progress of PROGRESS_TYPE_FOR.
+  *   `progressNumber` (*type:* `String.t`, *default:* `nil`) - Progress number represents the current state of the current progress. eg: A step entry represents the 4th iteration in a progress of PROGRESS_TYPE_FOR. Note: This field is only populated when an iteration exists and the starting value is 1.
   *   `progressType` (*type:* `String.t`, *default:* `nil`) - Progress type of this step entry.
   *   `threadId` (*type:* `String.t`, *default:* `nil`) - Child thread id that this step entry belongs to.
   """
