@@ -21,7 +21,7 @@ defmodule GoogleApi.Run.V2.Model.GoogleCloudRunV2ServiceMesh do
 
   ## Attributes
 
-  *   `mesh` (*type:* `String.t`, *default:* `nil`) - The Mesh resource name. Format: projects/{project}/locations/global/meshes/{mesh}, where {project} can be project id or number.
+  *   `mesh` (*type:* `String.t`, *default:* `nil`) - The Mesh resource name. Format: `projects/{project}/locations/global/meshes/{mesh}`, where `{project}` can be project id or number.
   """
 
   use GoogleApi.Gax.ModelBase
