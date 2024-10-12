@@ -17,13 +17,13 @@
 
 defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaReplayExecutionResponse do
   @moduledoc """
-  Response for replaying an execution Next ID: 4
+  Response for replaying an execution.
 
   ## Attributes
 
-  *   `executionId` (*type:* `String.t`, *default:* `nil`) - The id of the execution corresponding to this run of integration.
-  *   `outputParameters` (*type:* `map()`, *default:* `nil`) - OUTPUT parameters in format of Map. Where Key is the name of the parameter. The parameters would only be present in case of synchrounous execution Note: Name of the system generated parameters are wrapped by backtick(`) to distinguish them from the user defined parameters.
-  *   `replayedExecutionId` (*type:* `String.t`, *default:* `nil`) - The execution id which is replayed
+  *   `executionId` (*type:* `String.t`, *default:* `nil`) - Next ID: 4 The id of the execution corresponding to this run of the integration.
+  *   `outputParameters` (*type:* `map()`, *default:* `nil`) - OUTPUT parameters in format of Map. Where Key is the name of the parameter. The parameters would only be present in case of synchrounous execution. Note: Name of the system generated parameters are wrapped by backtick(`) to distinguish them from the user defined parameters.
+  *   `replayedExecutionId` (*type:* `String.t`, *default:* `nil`) - The execution id which is replayed.
   """
 
   use GoogleApi.Gax.ModelBase

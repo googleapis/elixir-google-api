@@ -21,7 +21,7 @@ defmodule GoogleApi.Integrations.V1.Model.GoogleCloudIntegrationsV1alphaCancelEx
 
   ## Attributes
 
-  *   `cancelReason` (*type:* `String.t`, *default:* `nil`) - Optional. Reason for cancelling the execution This is provided by the client requesting the cancellation Platform will not use this field
+  *   `cancelReason` (*type:* `String.t`, *default:* `nil`) - Required. Reason for cancelling the execution. This is provided by the client requesting the cancellation, and is not used by the Platform.
   """
 
   use GoogleApi.Gax.ModelBase
