@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.MonitoringQueryLanguageCondition do
   @moduledoc """
-  A condition type that allows alert policies to be defined using Monitoring Query Language (https://cloud.google.com/monitoring/mql).
+  A condition type that allows alerting policies to be defined using Monitoring Query Language (https://cloud.google.com/monitoring/mql).
 
   ## Attributes
 

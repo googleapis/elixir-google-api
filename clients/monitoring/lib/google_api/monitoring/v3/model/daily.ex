@@ -22,7 +22,7 @@ defmodule GoogleApi.Monitoring.V3.Model.Daily do
   ## Attributes
 
   *   `executionTime` (*type:* `GoogleApi.Monitoring.V3.Model.TimeOfDay.t`, *default:* `nil`) - Optional. The time of day (in UTC) at which the query should run. If left unspecified, the server picks an arbitrary time of day and runs the query at the same time each day.
-  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. LINT.IfChange The number of days between runs. Must be greater than or equal to 1 day and less than or equal to 31 days. LINT.ThenChange(//depot/google3/cloud/monitoring/api/alerts/policy_validation.cc)
+  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. The number of days between runs. Must be greater than or equal to 1 day and less than or equal to 31 days.
   """
 
   use GoogleApi.Gax.ModelBase

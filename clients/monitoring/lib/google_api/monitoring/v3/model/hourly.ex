@@ -21,8 +21,8 @@ defmodule GoogleApi.Monitoring.V3.Model.Hourly do
 
   ## Attributes
 
-  *   `minuteOffset` (*type:* `integer()`, *default:* `nil`) - Optional. LINT.IfChange The number of minutes after the hour (in UTC) to run the query. Must be between 0 and 59 inclusive. If left unspecified, then an arbitrary offset is used. LINT.ThenChange(//depot/google3/cloud/monitoring/api/alerts/policy_validation.cc)
-  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. LINT.IfChange The number of hours between runs. Must be greater than or equal to 1 hour and less than or equal to 48 hours. LINT.ThenChange(//depot/google3/cloud/monitoring/api/alerts/policy_validation.cc)
+  *   `minuteOffset` (*type:* `integer()`, *default:* `nil`) - Optional. The number of minutes after the hour (in UTC) to run the query. Must be greater than or equal to 0 minutes and less than or equal to 59 minutes. If left unspecified, then an arbitrary offset is used.
+  *   `periodicity` (*type:* `integer()`, *default:* `nil`) - Required. The number of hours between runs. Must be greater than or equal to 1 hour and less than or equal to 48 hours.
   """
 
   use GoogleApi.Gax.ModelBase

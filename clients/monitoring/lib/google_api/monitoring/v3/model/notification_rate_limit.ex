@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Monitoring.V3.Model.NotificationRateLimit do
   @moduledoc """
-  Control over the rate of notifications sent to this alert policy's notification channels.
+  Control over the rate of notifications sent to this alerting policy's notification channels.
 
   ## Attributes
 
