@@ -31,7 +31,7 @@ defmodule GoogleApi.PrivateCA.V1.Model.CertificateAuthority do
   *   `keySpec` (*type:* `GoogleApi.PrivateCA.V1.Model.KeyVersionSpec.t`, *default:* `nil`) - Required. Immutable. Used when issuing certificates for this CertificateAuthority. If this CertificateAuthority is a self-signed CertificateAuthority, this key is also used to sign the self-signed CA certificate. Otherwise, it is used to sign a CSR.
   *   `labels` (*type:* `map()`, *default:* `nil`) - Optional. Labels with user-defined metadata.
   *   `lifetime` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The desired lifetime of the CA certificate. Used to create the "not_before_time" and "not_after_time" fields inside an X.509 certificate.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. The resource name for this CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Output only. Identifier. The resource name for this CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
   *   `pemCaCertificates` (*type:* `list(String.t)`, *default:* `nil`) - Output only. This CertificateAuthority's certificate chain, including the current CertificateAuthority's certificate. Ordered such that the root issuer is the final element (consistent with RFC 5246). For a self-signed CA, this will only list the current CertificateAuthority's certificate.
   *   `satisfiesPzi` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
   *   `satisfiesPzs` (*type:* `boolean()`, *default:* `nil`) - Output only. Reserved for future use.
