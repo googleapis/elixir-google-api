@@ -17,11 +17,11 @@
 
 defmodule GoogleApi.AppHub.V1.Model.DiscoveredService do
   @moduledoc """
-  DiscoveredService is a network/api interface that exposes some functionality to clients for consumption over the network. A discovered service can be registered to a App Hub service.
+  DiscoveredService is a network or API interface that exposes some functionality to clients for consumption over the network. A discovered service can be registered to a App Hub service.
 
   ## Attributes
 
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the discovered service. Format: "projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}""
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the discovered service. Format: `"projects/{host-project-id}/locations/{location}/discoveredServices/{uuid}"`
   *   `serviceProperties` (*type:* `GoogleApi.AppHub.V1.Model.ServiceProperties.t`, *default:* `nil`) - Output only. Properties of an underlying compute resource that can comprise a Service. These are immutable.
   *   `serviceReference` (*type:* `GoogleApi.AppHub.V1.Model.ServiceReference.t`, *default:* `nil`) - Output only. Reference to an underlying networking resource that can comprise a Service. These are immutable.
   """

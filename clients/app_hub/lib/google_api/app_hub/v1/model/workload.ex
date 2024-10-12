@@ -26,7 +26,7 @@ defmodule GoogleApi.AppHub.V1.Model.Workload do
   *   `description` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined description of a Workload. Can have a maximum length of 2048 characters.
   *   `discoveredWorkload` (*type:* `String.t`, *default:* `nil`) - Required. Immutable. The resource name of the original discovered workload.
   *   `displayName` (*type:* `String.t`, *default:* `nil`) - Optional. User-defined name for the Workload. Can have a maximum length of 63 characters.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the Workload. Format: "projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"
+  *   `name` (*type:* `String.t`, *default:* `nil`) - Identifier. The resource name of the Workload. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
   *   `state` (*type:* `String.t`, *default:* `nil`) - Output only. Workload state.
   *   `uid` (*type:* `String.t`, *default:* `nil`) - Output only. A universally unique identifier (UUID) for the `Workload` in the UUID4 format.
   *   `updateTime` (*type:* `DateTime.t`, *default:* `nil`) - Output only. Update time.

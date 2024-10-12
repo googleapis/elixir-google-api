@@ -21,9 +21,9 @@ defmodule GoogleApi.AppHub.V1.Model.WorkloadProperties do
 
   ## Attributes
 
-  *   `gcpProject` (*type:* `String.t`, *default:* `nil`) - Output only. The service project identifier that the underlying cloud resource resides in. Empty for non cloud resources.
-  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The location that the underlying compute resource resides in (e.g us-west1).
-  *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. The location that the underlying compute resource resides in if it is zonal (e.g us-west1-a).
+  *   `gcpProject` (*type:* `String.t`, *default:* `nil`) - Output only. The service project identifier that the underlying cloud resource resides in. Empty for non-cloud resources.
+  *   `location` (*type:* `String.t`, *default:* `nil`) - Output only. The location that the underlying compute resource resides in (for example, us-west1).
+  *   `zone` (*type:* `String.t`, *default:* `nil`) - Output only. The location that the underlying compute resource resides in if it is zonal (for example, us-west1-a).
   """
 
   use GoogleApi.Gax.ModelBase
