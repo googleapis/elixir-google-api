@@ -25,8 +25,8 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ColumnDataProfile do
   *   `columnInfoType` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2InfoTypeSummary.t`, *default:* `nil`) - If it's been determined this column can be identified as a single type, this will be set. Otherwise the column either has unidentifiable content or mixed types.
   *   `columnType` (*type:* `String.t`, *default:* `nil`) - The data type of a given column.
   *   `dataRiskLevel` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2DataRiskLevel.t`, *default:* `nil`) - The data risk level for this column.
-  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery dataset ID.
-  *   `datasetLocation` (*type:* `String.t`, *default:* `nil`) - The BigQuery location where the dataset's data is stored. See https://cloud.google.com/bigquery/docs/locations for supported locations.
+  *   `datasetId` (*type:* `String.t`, *default:* `nil`) - The BigQuery dataset ID, if the resource profiled is a BigQuery table.
+  *   `datasetLocation` (*type:* `String.t`, *default:* `nil`) - If supported, the location where the dataset's data is stored. See https://cloud.google.com/bigquery/docs/locations for supported BigQuery locations.
   *   `datasetProjectId` (*type:* `String.t`, *default:* `nil`) - The Google Cloud project ID that owns the profiled resource.
   *   `estimatedNullPercentage` (*type:* `String.t`, *default:* `nil`) - Approximate percentage of entries being null in the column.
   *   `estimatedUniquenessScore` (*type:* `String.t`, *default:* `nil`) - Approximate uniqueness of the column.
@@ -40,7 +40,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2ColumnDataProfile do
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
   *   `tableDataProfile` (*type:* `String.t`, *default:* `nil`) - The resource name of the table data profile.
   *   `tableFullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource this column is within.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - The BigQuery table ID.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - The table ID.
   """
 
   use GoogleApi.Gax.ModelBase
