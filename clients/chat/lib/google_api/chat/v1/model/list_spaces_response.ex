@@ -22,7 +22,7 @@ defmodule GoogleApi.Chat.V1.Model.ListSpacesResponse do
   ## Attributes
 
   *   `nextPageToken` (*type:* `String.t`, *default:* `nil`) - You can send a token as `pageToken` to retrieve the next page of results. If empty, there are no subsequent pages.
-  *   `spaces` (*type:* `list(GoogleApi.Chat.V1.Model.Space.t)`, *default:* `nil`) - List of spaces in the requested (or first) page.
+  *   `spaces` (*type:* `list(GoogleApi.Chat.V1.Model.Space.t)`, *default:* `nil`) - List of spaces in the requested (or first) page. Note: The `permissionSettings` field is not returned in the Space object for list requests.
   """
 
   use GoogleApi.Gax.ModelBase

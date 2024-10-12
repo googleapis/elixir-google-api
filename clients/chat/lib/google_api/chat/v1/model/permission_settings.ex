@@ -17,7 +17,7 @@
 
 defmodule GoogleApi.Chat.V1.Model.PermissionSettings do
   @moduledoc """
-  [Permission settings](https://support.google.com/chat/answer/13340792) for a named space. To set permission settings when creating a space, specify the `PredefinedPermissionSettings` field in your request.
+  [Permission settings](https://support.google.com/chat/answer/13340792) that you can specify when updating an existing named space. To set permission settings when creating a space, specify the `PredefinedPermissionSettings` field in your request.
 
   ## Attributes
 
