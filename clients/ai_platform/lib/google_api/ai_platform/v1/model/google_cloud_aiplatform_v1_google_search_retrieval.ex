@@ -21,11 +21,19 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GoogleSearchRetri
 
   ## Attributes
 
+  *   `dynamicRetrievalConfig` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DynamicRetrievalConfig.t`, *default:* `nil`) - Specifies the dynamic retrieval configuration for the given source.
   """
 
   use GoogleApi.Gax.ModelBase
 
-  @type t :: %__MODULE__{}
+  @type t :: %__MODULE__{
+          :dynamicRetrievalConfig =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DynamicRetrievalConfig.t() | nil
+        }
+
+  field(:dynamicRetrievalConfig,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1DynamicRetrievalConfig
+  )
 end
 
 defimpl Poison.Decoder,

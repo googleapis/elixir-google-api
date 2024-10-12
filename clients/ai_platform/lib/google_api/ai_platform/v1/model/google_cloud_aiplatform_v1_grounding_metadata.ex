@@ -23,6 +23,7 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
 
   *   `groundingChunks` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunk.t)`, *default:* `nil`) - List of supporting references retrieved from specified grounding source.
   *   `groundingSupports` (*type:* `list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport.t)`, *default:* `nil`) - Optional. List of grounding support.
+  *   `retrievalMetadata` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalMetadata.t`, *default:* `nil`) - Optional. Output only. Retrieval metadata.
   *   `searchEntryPoint` (*type:* `GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t`, *default:* `nil`) - Optional. Google search entry for the following-up web searches.
   *   `webSearchQueries` (*type:* `list(String.t)`, *default:* `nil`) - Optional. Web search queries for the following-up web search.
   """
@@ -34,6 +35,8 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingChunk.t()) | nil,
           :groundingSupports =>
             list(GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport.t()) | nil,
+          :retrievalMetadata =>
+            GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalMetadata.t() | nil,
           :searchEntryPoint =>
             GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1SearchEntryPoint.t() | nil,
           :webSearchQueries => list(String.t()) | nil
@@ -47,6 +50,10 @@ defmodule GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingMetadata
   field(:groundingSupports,
     as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1GroundingSupport,
     type: :list
+  )
+
+  field(:retrievalMetadata,
+    as: GoogleApi.AIPlatform.V1.Model.GoogleCloudAiplatformV1RetrievalMetadata
   )
 
   field(:searchEntryPoint,
