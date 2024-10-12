@@ -25,6 +25,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
   *   `clusterInstances` (*type:* `list(String.t)`, *default:* `nil`) - Optional. A list of instance URIs that are part of a cluster with this one.
   *   `instanceNumber` (*type:* `String.t`, *default:* `nil`) - Optional. The VM's instance number.
   *   `instanceRole` (*type:* `String.t`, *default:* `nil`) - Optional. Bitmask of instance role, a resource may have multiple roles at once.
+  *   `isDrSite` (*type:* `boolean()`, *default:* `nil`) - Optional. Instance is part of a DR site.
   *   `virtualHostname` (*type:* `String.t`, *default:* `nil`) - Optional. A virtual hostname of the instance if it has one.
   """
 
@@ -39,6 +40,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
           :clusterInstances => list(String.t()) | nil,
           :instanceNumber => String.t() | nil,
           :instanceRole => String.t() | nil,
+          :isDrSite => boolean() | nil,
           :virtualHostname => String.t() | nil
         }
 
@@ -50,6 +52,7 @@ defmodule GoogleApi.WorkloadManager.V1.Model.SapDiscoveryResourceInstancePropert
   field(:clusterInstances, type: :list)
   field(:instanceNumber)
   field(:instanceRole)
+  field(:isDrSite)
   field(:virtualHostname)
 end
 
