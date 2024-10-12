@@ -31,7 +31,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `encryptionStatus` (*type:* `String.t`, *default:* `nil`) - How the table is encrypted.
   *   `expirationTime` (*type:* `DateTime.t`, *default:* `nil`) - Optional. The time when this table expires.
   *   `failedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns skipped in the table because of an error.
-  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The resource name of the resource profiled. https://cloud.google.com/apis/design/resource_names#full_resource_name
+  *   `fullResource` (*type:* `String.t`, *default:* `nil`) - The Cloud Asset Inventory resource that was profiled in order to generate this TableDataProfile. https://cloud.google.com/apis/design/resource_names#full_resource_name
   *   `lastModifiedTime` (*type:* `DateTime.t`, *default:* `nil`) - The time when this table was last modified
   *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the profile.
   *   `otherInfoTypes` (*type:* `list(GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2OtherInfoTypeSummary.t)`, *default:* `nil`) - Other infoTypes found in this table's data.
@@ -45,7 +45,7 @@ defmodule GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2TableDataProfile do
   *   `scannedColumnCount` (*type:* `String.t`, *default:* `nil`) - The number of columns profiled in the table.
   *   `sensitivityScore` (*type:* `GoogleApi.DLP.V2.Model.GooglePrivacyDlpV2SensitivityScore.t`, *default:* `nil`) - The sensitivity score of this table.
   *   `state` (*type:* `String.t`, *default:* `nil`) - State of a profile.
-  *   `tableId` (*type:* `String.t`, *default:* `nil`) - If the resource is BigQuery, the BigQuery table ID.
+  *   `tableId` (*type:* `String.t`, *default:* `nil`) - The table ID.
   *   `tableSizeBytes` (*type:* `String.t`, *default:* `nil`) - The size of the table when the profile was generated.
   """
 
