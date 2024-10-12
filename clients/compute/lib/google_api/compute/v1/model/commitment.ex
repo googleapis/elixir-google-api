@@ -24,6 +24,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `autoRenew` (*type:* `boolean()`, *default:* `nil`) - Specifies whether to enable automatic renewal for the commitment. The default value is false if not specified. The field can be updated until the day of the commitment expiration at 12:00am PST. If the field is set to true, the commitment will be automatically renewed for either one or three years according to the terms of the existing commitment.
   *   `category` (*type:* `String.t`, *default:* `nil`) - The category of the commitment. Category MACHINE specifies commitments composed of machine resources such as VCPU or MEMORY, listed in resources. Category LICENSE specifies commitments composed of software licenses, listed in licenseResources. Note that only MACHINE commitments should have a Type specified.
   *   `creationTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Creation timestamp in RFC3339 text format.
+  *   `customEndTimestamp` (*type:* `String.t`, *default:* `nil`) - [Input Only] Optional, specifies the CUD end time requested by the customer in RFC3339 text format. Needed when the customer wants CUD's end date is later than the start date + term duration.
   *   `description` (*type:* `String.t`, *default:* `nil`) - An optional description of this resource. Provide this property when you create the resource.
   *   `endTimestamp` (*type:* `String.t`, *default:* `nil`) - [Output Only] Commitment end time in RFC3339 text format.
   *   `existingReservations` (*type:* `list(String.t)`, *default:* `nil`) - Specifies the already existing reservations to attach to the Commitment. This field is optional, and it can be a full or partial URL. For example, the following are valid URLs to an reservation: - https://www.googleapis.com/compute/v1/projects/project/zones/zone /reservations/reservation - projects/project/zones/zone/reservations/reservation 
@@ -35,6 +36,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   *   `plan` (*type:* `String.t`, *default:* `nil`) - The plan for this commitment, which determines duration and discount rate. The currently supported plans are TWELVE_MONTH (1 year), and THIRTY_SIX_MONTH (3 years).
   *   `region` (*type:* `String.t`, *default:* `nil`) - [Output Only] URL of the region where this commitment may be used.
   *   `reservations` (*type:* `list(GoogleApi.Compute.V1.Model.Reservation.t)`, *default:* `nil`) - List of create-on-create reservations for this commitment.
+  *   `resourceStatus` (*type:* `GoogleApi.Compute.V1.Model.CommitmentResourceStatus.t`, *default:* `nil`) - [Output Only] Status information for Commitment resource.
   *   `resources` (*type:* `list(GoogleApi.Compute.V1.Model.ResourceCommitment.t)`, *default:* `nil`) - A list of commitment amounts for particular resources. Note that VCPU and MEMORY resource commitments must occur together.
   *   `selfLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] Server-defined URL for the resource.
   *   `splitSourceCommitment` (*type:* `String.t`, *default:* `nil`) - Source commitment to be split into a new commitment.
@@ -50,6 +52,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :autoRenew => boolean() | nil,
           :category => String.t() | nil,
           :creationTimestamp => String.t() | nil,
+          :customEndTimestamp => String.t() | nil,
           :description => String.t() | nil,
           :endTimestamp => String.t() | nil,
           :existingReservations => list(String.t()) | nil,
@@ -61,6 +64,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
           :plan => String.t() | nil,
           :region => String.t() | nil,
           :reservations => list(GoogleApi.Compute.V1.Model.Reservation.t()) | nil,
+          :resourceStatus => GoogleApi.Compute.V1.Model.CommitmentResourceStatus.t() | nil,
           :resources => list(GoogleApi.Compute.V1.Model.ResourceCommitment.t()) | nil,
           :selfLink => String.t() | nil,
           :splitSourceCommitment => String.t() | nil,
@@ -73,6 +77,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   field(:autoRenew)
   field(:category)
   field(:creationTimestamp)
+  field(:customEndTimestamp)
   field(:description)
   field(:endTimestamp)
   field(:existingReservations, type: :list)
@@ -84,6 +89,7 @@ defmodule GoogleApi.Compute.V1.Model.Commitment do
   field(:plan)
   field(:region)
   field(:reservations, as: GoogleApi.Compute.V1.Model.Reservation, type: :list)
+  field(:resourceStatus, as: GoogleApi.Compute.V1.Model.CommitmentResourceStatus)
   field(:resources, as: GoogleApi.Compute.V1.Model.ResourceCommitment, type: :list)
   field(:selfLink)
   field(:splitSourceCommitment)

@@ -27,6 +27,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   *   `healthState` (*type:* `String.t`, *default:* `nil`) - Health state of the IPv4 address of the instance.
   *   `instance` (*type:* `String.t`, *default:* `nil`) - URL of the instance resource.
   *   `ipAddress` (*type:* `String.t`, *default:* `nil`) - For target pool based Network Load Balancing, it indicates the forwarding rule's IP address assigned to this instance. For other types of load balancing, the field indicates VM internal ip.
+  *   `ipv6Address` (*type:* `String.t`, *default:* `nil`) - 
+  *   `ipv6HealthState` (*type:* `String.t`, *default:* `nil`) - Health state of the IPv6 address of the instance.
   *   `port` (*type:* `integer()`, *default:* `nil`) - The named port of the instance group, not necessarily the port that is health-checked.
   *   `weight` (*type:* `String.t`, *default:* `nil`) - 
   *   `weightError` (*type:* `String.t`, *default:* `nil`) - 
@@ -41,6 +43,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
           :healthState => String.t() | nil,
           :instance => String.t() | nil,
           :ipAddress => String.t() | nil,
+          :ipv6Address => String.t() | nil,
+          :ipv6HealthState => String.t() | nil,
           :port => integer() | nil,
           :weight => String.t() | nil,
           :weightError => String.t() | nil
@@ -52,6 +56,8 @@ defmodule GoogleApi.Compute.V1.Model.HealthStatus do
   field(:healthState)
   field(:instance)
   field(:ipAddress)
+  field(:ipv6Address)
+  field(:ipv6HealthState)
   field(:port)
   field(:weight)
   field(:weightError)

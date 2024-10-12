@@ -43,6 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   *   `customRequestHeaders` (*type:* `list(String.t)`, *default:* `nil`) - Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers).
   *   `connectionDraining` (*type:* `GoogleApi.Compute.V1.Model.ConnectionDraining.t`, *default:* `nil`) - 
   *   `maxStreamDuration` (*type:* `GoogleApi.Compute.V1.Model.Duration.t`, *default:* `nil`) - Specifies the default maximum duration (timeout) for streams to this service. Duration is computed from the beginning of the stream until the response has been completely processed, including all retries. A stream that does not complete in this duration is closed. If not specified, there will be no timeout limit, i.e. the maximum duration is infinite. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. This field is only allowed when the loadBalancingScheme of the backend service is INTERNAL_SELF_MANAGED.
+  *   `ipAddressSelectionPolicy` (*type:* `String.t`, *default:* `nil`) - Specifies a preference for traffic sent from the proxy to the backend (or from the client to the backend for proxyless gRPC). The possible values are: - IPV4_ONLY: Only send IPv4 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv4 health checks are used to check the health of the backends. This is the default setting. - PREFER_IPV6: Prioritize the connection to the endpoint's IPv6 address over its IPv4 address (provided there is a healthy IPv6 address). - IPV6_ONLY: Only send IPv6 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv6 health checks are used to check the health of the backends. This field is applicable to either: - Advanced global external Application Load Balancer (load balancing scheme EXTERNAL_MANAGED), - Regional external Application Load Balancer, - Internal proxy Network Load Balancer (load balancing scheme INTERNAL_MANAGED), - Regional internal Application Load Balancer (load balancing scheme INTERNAL_MANAGED), - Traffic Director with Envoy proxies and proxyless gRPC (load balancing scheme INTERNAL_SELF_MANAGED). 
   *   `consistentHash` (*type:* `GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t`, *default:* `nil`) - Consistent Hash-based load balancing can be used to provide soft session affinity based on HTTP headers, cookies or other properties. This load balancing policy is applicable only for HTTP connections. The affinity to a particular destination host will be lost when one or more hosts are added/removed from the destination service. This field specifies parameters that control consistent hashing. This field is only applicable when localityLbPolicy is set to MAGLEV or RING_HASH. This field is applicable to either: - A regional backend service with the service_protocol set to HTTP, HTTPS, or HTTP2, and load_balancing_scheme set to INTERNAL_MANAGED. - A global backend service with the load_balancing_scheme set to INTERNAL_SELF_MANAGED. 
   *   `circuitBreakers` (*type:* `GoogleApi.Compute.V1.Model.CircuitBreakers.t`, *default:* `nil`) - 
   *   `backends` (*type:* `list(GoogleApi.Compute.V1.Model.Backend.t)`, *default:* `nil`) - The list of backends that serve this BackendService.
@@ -91,6 +92,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
           :customRequestHeaders => list(String.t()) | nil,
           :connectionDraining => GoogleApi.Compute.V1.Model.ConnectionDraining.t() | nil,
           :maxStreamDuration => GoogleApi.Compute.V1.Model.Duration.t() | nil,
+          :ipAddressSelectionPolicy => String.t() | nil,
           :consistentHash =>
             GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings.t() | nil,
           :circuitBreakers => GoogleApi.Compute.V1.Model.CircuitBreakers.t() | nil,
@@ -142,6 +144,7 @@ defmodule GoogleApi.Compute.V1.Model.BackendService do
   field(:customRequestHeaders, type: :list)
   field(:connectionDraining, as: GoogleApi.Compute.V1.Model.ConnectionDraining)
   field(:maxStreamDuration, as: GoogleApi.Compute.V1.Model.Duration)
+  field(:ipAddressSelectionPolicy)
   field(:consistentHash, as: GoogleApi.Compute.V1.Model.ConsistentHashLoadBalancerSettings)
   field(:circuitBreakers, as: GoogleApi.Compute.V1.Model.CircuitBreakers)
   field(:backends, as: GoogleApi.Compute.V1.Model.Backend, type: :list)

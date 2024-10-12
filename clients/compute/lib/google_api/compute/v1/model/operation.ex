@@ -43,7 +43,7 @@ defmodule GoogleApi.Compute.V1.Model.Operation do
   *   `status` (*type:* `String.t`, *default:* `nil`) - [Output Only] The status of the operation, which can be one of the following: `PENDING`, `RUNNING`, or `DONE`.
   *   `statusMessage` (*type:* `String.t`, *default:* `nil`) - [Output Only] An optional textual description of the current status of the operation.
   *   `targetId` (*type:* `String.t`, *default:* `nil`) - [Output Only] The unique target ID, which identifies a specific incarnation of the target resource.
-  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the persistent disk that the snapshot was created from.
+  *   `targetLink` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the resource that the operation modifies. For operations related to creating a snapshot, this points to the disk that the snapshot was created from.
   *   `user` (*type:* `String.t`, *default:* `nil`) - [Output Only] User who requested the operation, for example: `user@example.com` or `alice_smith_identifier (global/workforcePools/example-com-us-employees)`.
   *   `warnings` (*type:* `list(GoogleApi.Compute.V1.Model.OperationWarnings.t)`, *default:* `nil`) - [Output Only] If warning messages are generated during processing of the operation, this field will be populated.
   *   `zone` (*type:* `String.t`, *default:* `nil`) - [Output Only] The URL of the zone where the operation resides. Only applicable when performing per-zone operations.
