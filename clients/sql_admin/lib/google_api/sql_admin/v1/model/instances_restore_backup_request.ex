@@ -21,22 +21,16 @@ defmodule GoogleApi.SQLAdmin.V1.Model.InstancesRestoreBackupRequest do
 
   ## Attributes
 
-  *   `backup` (*type:* `String.t`, *default:* `nil`) - The name of the backup to restore from in following format: projects/{project-id}/backups/{backup-uid} Only one of restore_backup_context or backup can be passed to the input.
   *   `restoreBackupContext` (*type:* `GoogleApi.SQLAdmin.V1.Model.RestoreBackupContext.t`, *default:* `nil`) - Parameters required to perform the restore backup operation.
-  *   `restoreInstanceSettings` (*type:* `GoogleApi.SQLAdmin.V1.Model.DatabaseInstance.t`, *default:* `nil`) - Optional. Restore instance settings overrides the instance settings stored as part of the backup. Instance's major database version cannot be changed and the disk size can only be increased. This feature is only available for restores to new instances using the backup name.
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
-          :backup => String.t() | nil,
-          :restoreBackupContext => GoogleApi.SQLAdmin.V1.Model.RestoreBackupContext.t() | nil,
-          :restoreInstanceSettings => GoogleApi.SQLAdmin.V1.Model.DatabaseInstance.t() | nil
+          :restoreBackupContext => GoogleApi.SQLAdmin.V1.Model.RestoreBackupContext.t() | nil
         }
 
-  field(:backup)
   field(:restoreBackupContext, as: GoogleApi.SQLAdmin.V1.Model.RestoreBackupContext)
-  field(:restoreInstanceSettings, as: GoogleApi.SQLAdmin.V1.Model.DatabaseInstance)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1.Model.InstancesRestoreBackupRequest do

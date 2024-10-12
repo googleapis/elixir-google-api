@@ -102,7 +102,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Rotates the server certificate version to one previously added with the addServerCertificate method. For instances not using Certificate Authority Service (CAS) server CA, please use RotateServerCa instead.
+  Rotates the server certificate version to one previously added with the addServerCertificate method. For instances not using Certificate Authority Service (CAS) server CA, use RotateServerCa instead.
 
   ## Parameters
 
@@ -256,7 +256,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Adds a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in. For instances that have enabled Certificate Authority Service (CAS) based server CA, please use AddServerCertificate to add a new server certificate.
+  Adds a new trusted Certificate Authority (CA) version for the specified instance. Required to prepare for a certificate rotation. If a CA version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one CA version waiting to be rotated in. For instances that have enabled Certificate Authority Service (CAS) based server CA, use AddServerCertificate to add a new server certificate.
 
   ## Parameters
 
@@ -330,7 +330,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Add a new trusted server certificate version for the specified instance using Certificate Authority Service (CAS) server CA. Required to prepare for a certificate rotation. If a server certificate version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one certificate version waiting to be rotated in. For instances not using CAS server CA, please use AddServerCa instead.
+  Add a new trusted server certificate version for the specified instance using Certificate Authority Service (CAS) server CA. Required to prepare for a certificate rotation. If a server certificate version was previously added but never used in a certificate rotation, this operation replaces that version. There cannot be more than one certificate version waiting to be rotated in. For instances not using CAS server CA, use AddServerCa instead.
 
   ## Parameters
 
@@ -487,10 +487,6 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
       *   `:quotaUser` (*type:* `String.t`) - Available to use for quota purposes for server-side applications. Can be any arbitrary string assigned to a user, but should not exceed 40 characters.
       *   `:uploadType` (*type:* `String.t`) - Legacy upload protocol for media (e.g. "media", "multipart").
       *   `:upload_protocol` (*type:* `String.t`) - Upload protocol for media (e.g. "raw", "multipart").
-      *   `:enableFinalBackup` (*type:* `boolean()`) - Flag to opt-in for final backup. By default, it is turned off.
-      *   `:finalBackupDescription` (*type:* `String.t`) - Optional. The description of the final backup.
-      *   `:finalBackupExpiryTime` (*type:* `DateTime.t`) - Optional. Final Backup expiration time. Timestamp in UTC of when this resource is considered expired.
-      *   `:finalBackupTtlDays` (*type:* `String.t`) - Optional. Retention period of the final backup.
   *   `opts` (*type:* `keyword()`) - Call options
 
   ## Returns
@@ -515,11 +511,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
       :prettyPrint => :query,
       :quotaUser => :query,
       :uploadType => :query,
-      :upload_protocol => :query,
-      :enableFinalBackup => :query,
-      :finalBackupDescription => :query,
-      :finalBackupExpiryTime => :query,
-      :finalBackupTtlDays => :query
+      :upload_protocol => :query
     }
 
     request =
@@ -1628,7 +1620,7 @@ defmodule GoogleApi.SQLAdmin.V1.Api.Instances do
   end
 
   @doc """
-  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method. For instances that have enabled Certificate Authority Service (CAS) based server CA, please use RotateServerCertificate to rotate the server certificate.
+  Rotates the server certificate to one signed by the Certificate Authority (CA) version previously added with the addServerCA method. For instances that have enabled Certificate Authority Service (CAS) based server CA, use RotateServerCertificate to rotate the server certificate.
 
   ## Parameters
 

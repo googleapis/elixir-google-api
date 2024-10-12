@@ -23,20 +23,17 @@ defmodule GoogleApi.SQLAdmin.V1beta4.Model.BackupContext do
 
   *   `backupId` (*type:* `String.t`, *default:* `nil`) - The identifier of the backup.
   *   `kind` (*type:* `String.t`, *default:* `nil`) - This is always `sql#backupContext`.
-  *   `name` (*type:* `String.t`, *default:* `nil`) - The name of the backup. Format: projects/{project}/backups/{backup}
   """
 
   use GoogleApi.Gax.ModelBase
 
   @type t :: %__MODULE__{
           :backupId => String.t() | nil,
-          :kind => String.t() | nil,
-          :name => String.t() | nil
+          :kind => String.t() | nil
         }
 
   field(:backupId)
   field(:kind)
-  field(:name)
 end
 
 defimpl Poison.Decoder, for: GoogleApi.SQLAdmin.V1beta4.Model.BackupContext do
