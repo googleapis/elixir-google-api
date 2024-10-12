@@ -43,6 +43,7 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   *   `resources` (*type:* `list(GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadResourceInfo.t)`, *default:* `nil`) - Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
   *   `saaEnrollmentResponse` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t`, *default:* `nil`) - Output only. Represents the SAA enrollment response of the given workload. SAA enrollment response is queried during GetWorkload call. In failure cases, user friendly error message is shown in SAA details page.
   *   `violationNotificationsEnabled` (*type:* `boolean()`, *default:* `nil`) - Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
+  *   `workloadOptions` (*type:* `GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadWorkloadOptions.t`, *default:* `nil`) - Optional. Options to be set for the given created workload.
   """
 
   use GoogleApi.Gax.ModelBase
@@ -87,7 +88,10 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
           :saaEnrollmentResponse =>
             GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadSaaEnrollmentResponse.t()
             | nil,
-          :violationNotificationsEnabled => boolean() | nil
+          :violationNotificationsEnabled => boolean() | nil,
+          :workloadOptions =>
+            GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadWorkloadOptions.t()
+            | nil
         }
 
   field(:billingAccount)
@@ -143,6 +147,10 @@ defmodule GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1Workl
   )
 
   field(:violationNotificationsEnabled)
+
+  field(:workloadOptions,
+    as: GoogleApi.AssuredWorkloads.V1.Model.GoogleCloudAssuredworkloadsV1WorkloadWorkloadOptions
+  )
 end
 
 defimpl Poison.Decoder,
